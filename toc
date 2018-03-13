@@ -11,7 +11,7 @@ Cloud Internet Services (CIS)
     reliability-features.md
     performance-features.md
     ssl-options.md
-    dns.md
+    dns-concepts.md
     glb.md
     cache.md
     best-practices.md
@@ -19,6 +19,7 @@ Cloud Internet Services (CIS)
 
     {: .navgroup id="howto"}
     how-to.md
+    dns.md
     managing-for-security.md
     managing-for-reliability.md
     managing-for-performance.md
