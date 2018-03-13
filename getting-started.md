@@ -48,22 +48,12 @@ Begin protecting and improving the performance of your web service by entering y
 Meanwhile, the Overview screen will show your domain in "Pending" status.
 Note: The IBM CIS instance will not be able to be deleted when a domain has been added. To delete the instance, please delete the domain from the instance first.
 
-**Step 3. (Optional) Review, verify, and add your Domain's DNS Records.**
-
-You can select the "Reliability" link from the left navigation panel on your screen, then click "DNS" to see the DNS page.
-
-![Secure DNS](images/dns/dns-page.png)
-
-Now that your domain records have been gathered, verify that they are correct. Make sure that your old DNS records are added to the domain name. You also may add new DNS records.
-
-![Secure DNS](images/dns/list-dns-records.png)
-
-**Step 4. Configure your Name Servers with the Registrar or existing DNS Provider.**
+**Step 3. Configure your Name Servers with the Registrar or existing DNS Provider.**
 
 To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers.
 
 After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect.
 
-**Step 5. In the meantime, you can begin managing other IBM CIS functions and features.**
+**Step 4. In the meantime, you can begin managing other IBM CIS functions and features.**
 
 For more details about managing other functions and features, please see our [tutorial](caching-tutorial.html) or the [step-by-step instructions](how-to.html).
