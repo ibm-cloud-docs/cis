@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-02-16"
+lastupdated: "2018-03-13"
 ---
 
 {:shortdesc: .shortdesc}
@@ -26,7 +26,7 @@ On the Overview screen, you may see that your domain name configuration is in **
 
 Go to your DNS page and add a record (most likely an A record). Type in the information about your DNS record and then click `Add record` to implement your changes.
 
-![add-DNS](images/create-a-type-record.png)
+![add-DNS](images/dns/create-a-type-record.png)
 
 ## Set up and manage your caching
 
@@ -64,7 +64,7 @@ You also can enable or disable your Page Rules from the table displayed in the P
  
  ## Security settings
  
-Apply DDoS protection by enabling the proxy toggle on DNS records, which can be done from the **Records** table on the DNS page. Turn on WAF using the toggle. When you toggle the rules on or off, the changes are applied immediately.
+By default, DDoS protection is enabled for any DNS records with proxy on, which can be done from the **Records** table on the DNS page. Turn on WAF using the toggle. When you toggle the rules on or off, the changes are applied immediately.
 
 ![IMAGE](images/ddos-waf-ssl-screen.png)
 
