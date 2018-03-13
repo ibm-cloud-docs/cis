@@ -106,6 +106,6 @@ What happened:
 
 What you can do:
 
-* Email the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` to the [CIS support team](need an email address)
-* Temporarily toggle your CIS services to off (No proxy)
+* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a ticket to [Support](https://console.bluemix.net/docs/support/index.html#contacting-support).
+* Temporarily toggle your DNS Records to off (No proxy).
 
