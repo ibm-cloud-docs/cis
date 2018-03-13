@@ -1,0 +1,40 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="cis" audience="service" href="/docs/infrastructure/cis/getting-started.html"}
+Cloud Internet Services (CIS)
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about.md
+    security-features.md
+    reliability-features.md
+    performance-features.md
+    ssl-options.md
+    dns.md
+    glb.md
+    cache.md
+    best-practices.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    how-to.md
+    managing-for-security.md
+    managing-for-reliability.md
+    managing-for-performance.md
+    helpful-tools.md
+    using-page-rules.md
+    caching-with-page-rules.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    api-resource.md
+    example-code.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    getting-help.md
+    {: .navgroup-end}
