@@ -66,4 +66,4 @@ After you've configured your registrar or DNS provider, it may require up to 24 
 
 **Step 5. In the meantime, you can begin managing other IBM CIS functions and features.**
 
-For more details about managing other functions and features, please see our [tutorial](caching-tutorial.html) or the [step-by-step instructions](how-to.html).
+For more details about managing other functions and features, please see the [step-by-step instructions](how-to.html).
