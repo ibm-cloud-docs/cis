@@ -44,30 +44,22 @@ You can find the updated list of IP ranges for IBM CIS [at this location](whitel
 IBM CIS usually accelerates API traffic by removing connection overhead. However, the default security stance can interfere with many API calls. We recommend that you take a few actions to prevent interference with your API traffic once proxying is active.
 
  * Turn security features off selectively, using the **Page Rules** features.
- 
-   * Select the domain you'd like to modify
    * Create a Page Rule with the URL pattern of your API, such as `api.example.com`
-   * Add the following changes:
-      * Find **Security** and select **Off**
-      * Turn **Security Level** to **Low**
-      * Reset the **Security Level** to **Low**, **Essentially Off**, or **Off**
-      * Set the **Browser Integrity Check** to **Off**
-      * Select **Save and Deploy**
+   * Add the following rule behaviors:
+      * Select **Security Level** to **Essentially off**
+      * Select **TLS** to **Off**
+      * Select **Browser Integrity Check** to **Off**
+   * Select **Provision Resource**
 
- * Alternatively, you can turn off **Browser Integrity Check** globally.
-   * Select the domain you'd like to modify
-     * Select the **Firewall** application
-     * Select the **Web Application Firewall** application
-     * Scroll to the bottom of the page
-     * Select **Off**
+ * Alternatively, you can turn off **Web Application Firewall** globally from the Security page.
 
 | *What does the Browser Integrity Check do?* | 
 |------------------------------------------------|
-| *The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks visitors that do not have a user agent, or who add a non-standard user agent (this tactic is commonly used by abuse bots, crawlers. or APIs).* |
+| *The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks visitors that do not have a user agent, or who add a non-standard user agent (this tactic is commonly used by abuse bots, crawlers, or APIs).* |
 
 ## Best practice 4: Configure your security settings as strictly as possible
 
-CIS provides some options for encrypting your traffic. As a reverse proxy, we close SSL connections at our datacenters and open a new TLS connection to your origin servers. For your termination with CIS, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by CIS, or both.
+CIS provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our datacenters and open a new TLS connection to your origin servers. For your termination with CIS, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by CIS, or both.
 
 ### Upload a custom certificate
  

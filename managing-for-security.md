@@ -47,29 +47,26 @@ Your **Security Level** establishes the sensitivity of our **IP Reputation Datab
 ### Increase the Security Level for Sensitive Areas to 'High'
 You can increase this setting by adding a **Page Rule** for administration pages or login pages, to reduce brute-force attempts:
 
-1. Select the domain you'd like to modify.
-2. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/wp-login`). 
-3. Identify the **Securty Level** setting.
-4. Mark the setting as **High**.
-5. Select **Save and Deploy**.
+1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/wp-login`). 
+2. Identify the **Securty Level** setting.
+3. Mark the setting as **High**.
+4. Select **Provision Resource**.
 
 ### Decrease the Security Level for non-sensitive paths or APIs to reduce false positives
 This setting can be decreased for general pages and API traffic: 
 
-1. Select domain you'd like to modify. 
-2. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/api/*`).
-3. Identify the **Security Level** setting.
-4. Turn Security Level to **Low**, **O** , or **Essentially O**.
-5. Select **Save and Deploy**.
+1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/api/*`).
+2. Identify the **Security Level** setting.
+3. Turn Security Level to **Low** or **Essentially off**.
+4. Select **Provision Resource**.
 
 ### What do Security Level settings mean?
 Our Security Level settings are aligned with threat scores that certain IP addresses acquire from malicious behavior on our network. A threat score above 10 is considered high.
 
 * **HIGH**: Threat scores greater than 0 are challenged.
-* **MEDIUM**: Treat scores greater than 14 are challenged.
+* **MEDIUM**: Threat scores greater than 14 are challenged.
 * **LOW**: Threat scores greater than 24 are challenged.
 * **ESSENTIALLY OFF**: Threat scores greater than 49 are challenged.
-* **OFF** - Enterprise customers can remove this security feature entirely.
 
 We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for Setup document](best-practices.html#best-practice-3-review-your-security-settings-to-make-sure-they-dont-interfere-with-api-traffic)
 
@@ -92,7 +89,7 @@ TLS offers four modes of operation:
 * **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between CIS and your origin server(s).
 * **End-to-end CA signed**: TLS encrypts all traffic; you must use a CA-signed certificate.
 
-For more detail about your TLS options, please refer to [this document](tls-options.html).
+For more detail about your TLS options, please refer to [this document](ssl-options.html).
 
 CIS allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by CIS.
 
