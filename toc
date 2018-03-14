@@ -30,7 +30,6 @@ Cloud Internet Services (CIS)
 
     {: .navgroup id="reference"}
     api-resource.md
-    example-code.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
