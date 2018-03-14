@@ -15,7 +15,7 @@ lastupdated: "2018-03-13"
 {:download: .download}
 
 
-# DNS concepts
+# DNS Concepts
 
 This document contains some concepts and definitions related to the internet's domain name system (DNS) and how it affects your IBM Cloud Internet Services (CIS) deployment. 
 

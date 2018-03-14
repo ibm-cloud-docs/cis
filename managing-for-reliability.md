@@ -1,15 +1,15 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-06"
+lastupdated: "2018-03-13"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Managing your CIS deployment for optimal reliability
+# Manage your CIS deployment for optimal reliability
 
-To achieve optimal reliability for your IBM Cloud CIS deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content will be delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your CIS deployment optimally reliable.
+To achieve optimal reliability for your IBM CIS deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your IBM CIS deployment optimally reliable.
 
 Generally, our recommended best practices are these:
 
@@ -36,7 +36,7 @@ Notice that the CIS interface is organized into sections for *security*, *reliab
 
 To get started setting up your Global Load Balancers, select **Global Load Balancers** from the navigation menu.
 
- For detailed information about settng up and managing your Global Load Balancers, please [refer to this document](glb.html#global-load-balancer-glb-concepts).
+For detailed information about settng up and managing your Global Load Balancers, please [refer to this document](glb.html#global-load-balancer-glb-concepts).
 
 ## Using Page Rules to increase reliability
 
@@ -98,19 +98,19 @@ Setting **Origin Cache Control** invokes caching rules that seek to adhere close
 
 Two specific Page Rules take precedence for caching overall:
 
- * If a Page Rule is set to "Bypass Cache", the resources that match that Page Rule are not cached. CIS still acts as a proxy, and our other performance features remain active. However, your content won't be served from our cache, it will be fetched from your origin server directly.
+ * If a Page Rule is set to **Bypass Cache**, the resources that match that Page Rule are not cached. IBM CIS still acts as a proxy, and our other performance features remain active. However, your content won't be served from our cache, it will be fetched from your origin server directly.
 
- * If a Page Rule is set to "Cache Everything", resources that match the Page Rule are cached. Using this Page Rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.
+ * If a Page Rule is set to **Cache Everything**, resources that match the Page Rule are cached. Using this Page Rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.
 
  * If no Page Rule is set, we will use the Standard caching mode, which is based the extension of the resource. We will cache static resources only (as mentioned previously).
 
 ### Origin cache-control headers
 
-The second way to alter what IBM CIS will cache is through caching headers sent from the origin. CIS will respect these settings, but you can override them by specifying an "Edge Cache TTL". Here are the headers we consider when deciding what resources to cache from your origin:
+The second way to alter what IBM CIS will cache is through caching headers sent from the origin. CIS will respect these settings, but you can override them by specifying an **Edge Cache TTL**. Here are the headers we consider when deciding what resources to cache from your origin:
 
- * If the Cache-Control header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then CIS will not cache the resource. Note that all sensitive material should not be cached, so you might consider using one of these headers in that case.
+ * If the **Cache-Control** header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then IBM CIS will not cache the resource. Note that sensitive material should not be cached, so you might consider using one of these headers in that case.
 
- * If the Cache-Control header is set to `public` and the `max-age` is greater than 0, or if the `Expires` headers are set any time in the future, we will cache the resource.
+ * If the **Cache-Control** header is set to `public` and the `max-age` is greater than 0, or if the `Expires` headers are set any time in the future, we will cache the resource.
 
 **Note:** As per RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If we see both and they do not agree, `max-age` wins.
 

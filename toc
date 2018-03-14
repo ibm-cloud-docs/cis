@@ -23,9 +23,9 @@ Cloud Internet Services (CIS)
     managing-for-security.md
     managing-for-reliability.md
     managing-for-performance.md
-    helpful-tools.md
     using-page-rules.md
     caching-with-page-rules.md
+    helpful-tools.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

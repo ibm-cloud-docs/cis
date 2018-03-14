@@ -7,7 +7,7 @@ lastupdated: "2018-03-13"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Managing your IBM Cloud Internet Services (CIS) deployment
+# Manage your IBM Cloud Internet Services (CIS) deployment
 
 You'll begin by using the Overview screen as your working base of operations. It shows all of the current parameters for your deployment.
 

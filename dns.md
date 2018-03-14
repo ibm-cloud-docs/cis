@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-05"
+lastupdated: "2018-03-13"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-03-05"
 {:tip: .tip}
 {:download: .download}
 
-# Setting up your Domain Name System (DNS) for IBM CIS
+# Set up your Domain Name System (DNS) for IBM CIS
 
 This document contains some specific instructions about how to configure your IBM CIS DNS records, including how to configure Secure DNS.
 

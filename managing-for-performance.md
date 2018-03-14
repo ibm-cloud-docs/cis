@@ -2,7 +2,7 @@
   
 copyright:
    years: 2018
-lastupdated: "2018-02-27"
+lastupdated: "2018-03-13"
  
 ---
 
@@ -10,11 +10,11 @@ lastupdated: "2018-02-27"
 {:new_window: target="_blank"}
 
 
-# Managing your CIS deployment for best performance
+# Manage your CIS deployment for best performance
 
-IBM Cloud Internet Services can provide the fastest experience for your customers because it optimizes your images, and it stores your web content as near as possible to your end-users. Your content is loaded from proxied edge servers (which reduces latency).
+IBM Cloud Internet Services (CIS) can provide the fastest experience for your customers because it optimizes your images, and it stores your web content as near as possible to your end-users. Your content is loaded from proxied edge servers (which reduces latency).
 
-With IBM Cloud CIS, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within CIS.
+With IBM CIS, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within CIS.
 
 **Recommended and best practices:**
 
@@ -30,7 +30,7 @@ With IBM Cloud CIS, you can enhance your site's performance further by using bes
 If content rarely changes, you can set a conservative TTL to utilize our cache as much as possible. If you have a high percentage of re-validation requests, you could increase the TTLs of your content without negatively affecting your customers. By using the cache more effectively, you'll increase performance because you'll revalidate less often.
 
 ### How do I tell if items are being cached?
-CIS adds the response header `CF-Cache-Status` when it attempts to cache an object. If caching is successful, the value of this header indicates its status with one of these keywords:
+IBM CIS adds the response header `CF-Cache-Status` when it attempts to cache an object. If caching is successful, the value of this header indicates its status with one of these keywords:
 
 * **MISS:** The asset was not yet in the cache or the TTL had expired (that is, it had reached the cache-control maximum age of 0).
 * **HIT:** The asset was delivered from the cache.
