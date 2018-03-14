@@ -9,7 +9,7 @@ lastupdated: "2018-03-01"
 
 # Helpful tools for managing your CIS deployment
 
-Some public-domain unix system administration tools exist that can help you manage your IBM Cloud CIS deployment.
+Some public-domain unix system administration tools exist that can help you manage your IBM CIS deployment.
 
 ## Sysadmin tools
 
@@ -43,7 +43,7 @@ Examples:
 
 ### Using `dig`
 
-`dig` is a unix command line tool that can perform DNS queries and check DNS records for a specific domain. it is similar to `nslookup`.
+`dig` is a unix command line tool that can perform DNS queries and check DNS records for a specific domain. It is similar to `nslookup`.
 
 The schema of this command is : dig <recordtype. <domainname> <options>
 

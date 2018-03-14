@@ -53,10 +53,6 @@ You also have the option to force our entire cache to revalidate. You can reset 
 ### Purge the cache by Page Rule
 Page Rules let you purge the entire cache based upon a regular expression. You can utilize a pre-defined Page Rule and re-validate all hits against that Page Rule. You can create up to 50 Page Rules per page.
 
-### Use advanced caching features for Enterprise customers
+### Use advanced caching features
 
-**Bypass Cache Cookie:** Configured in a Page Rule, this feature allows you to serve a cached object unless a cookie of a specific name exists. For example, you can serve a cached version of the homepage unless you find a `SessionID` cookie indicating that the customer is logged in, and therefore should be presented with personalized content.
-
-**Cache on Cookie:** Presents a cached page when only when a specific cookie is present, for instance, it only serves a cached page once a "device-type" cookie has been set by the origin server.
-
-**Custom Cache Keys:** Generally, objects in the CIS cache are referenced by only their URI, for example, `https:// www.example.com/logo.png`. You can create custom cache keys so that a different object is served for the same URI based on any arbitrary request header or cookie, for example, `https://www.example.com/logo.png` with a device-type cookie set to "desktop" would be a different object in our cache than `https://www.example.com/logo.png` with device-type cookie set to "tablet."
+**Bypass Cache on Cookie:** Configured in a Page Rule, this feature allows you to serve a cached object unless a cookie of a specific name exists. For example, you can serve a cached version of the homepage unless you find a `SessionID` cookie indicating that the customer is logged in, and therefore should be presented with personalized content.

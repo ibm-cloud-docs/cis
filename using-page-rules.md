@@ -9,34 +9,35 @@ lastupdated: "2018-03-13"
 
 # Use Page Rules
 
-A Page Rule specifies some settings and values that you can apply to a specific URL. Page Rules help you manage security and performance, based on each individual URL in your site. The following table describes the Page Rules that are available to all customers, the behaviors they produce, and any special considerations you should keep in mind before using them.
+A Page Rule specifies some settings and values that you can apply to a specific URL pattern that references your domain. Page Rules help you manage security, performance, and reliability based on each individual URL in your site. The following table describes the Page Rules that are available to all customers, the behaviors they produce, and any special considerations you should keep in mind before using them.
 
 ## Security
 
-| **Rule Settings** | **Behavior** | **Considerations** |
+| **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
 |**Browser Integrity Check**|Looks for common HTTP headers abused by spammers, and denies access to your page. It also blocks visitors that do not have a user agent or add a non-standard user agent (also commonly used by abuse bots, crawlers, or APIs). | |
-|**Disable Security**|Disables the following features: <ul><li>Email Obfuscation</li> <li>Server Side Excludes</li> <li>WAF</li> <li>Rate Limiting</li> <li>Scrape Shield</li>|If a rule is set to disable security, and another rule is set to enable the WAF, the WAF rule takes precedence, regardless of the order in which they appear.|
+|**Disable Security**|Disables the following features: <ul><li>Email Obfuscation</li> <li>Server Side Excludes</li> <li>WAF</li>|If a rule is set to disable security, and another rule is set to enable the WAF, the WAF rule takes precedence, regardless of the order in which they appear.|
 |**Email Obfuscation**|Toggles Email Obfuscation on or off. | |
 |**IP Geolocation Header**|Includes the country code of the visitor location with all requests to your website. The information can be found in the `CF-IPCountry` HTTP header. | |  
 |**Security Level**|Controls how high a client threat score must be so that a client will encounter a challenge page. This setting can be used so that your site always presents visitors with the **Defense Mode** challenge when they visit your site. | |
-|**Server Side Excludes**|Toggles SSE on or off.  | |
-|**SSL**|Controls which of the TLS modes is used. | |
+|**Server Side Excludes**|Toggles Server Side Excludes on or off.  | |
+|**TLS**|Controls which of the TLS modes is used. | |
 |**WAF**|Toggles WAF on or off. | |  
 |**Automatic HTTPS Rewrites**|Toggles Automatic HTTPS Rewrites on or off.  | |
 |**Opportunistic Encryption**|Toggles Opportunistic Encryption on or off.  | |
+|**Cache Deception Armor**|Toggles Cache Deception Armor on or off.  | |
 |**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables configuring all other settings for the rule, because IBM CIS forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against Page Rules. |
 
 ## Performance
-| **Rule Settings** | **Behavior** | **Considerations** |
+| **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
 |**Browser Cache TTL**|Controls how long resources cached by client browsers remain valid. | |
-|**Bypass Cache Cookie**|Serve a cached object unless we see a cookie of a specific name, for example, serve a cached version of the homepage unless we see a `SessionID` cookie indicating the customer is logged in and therefore should be presented personalized content. | |
-|**Cache Level**|**No Query String** / Basic - Only delivers resources from cache when there is no query string<br>**Ignore Query String** / Simple - Delivers the same resource to everyone independent of the query string<br>**Standard** / Aggressive - Delivers a different resource each time the query string changes. |By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
+|**Bypass Cache on Cookie**|Serve a cached object unless we see a cookie of a specific name, for example, serve a cached version of the homepage unless we see a `SessionID` cookie indicating the customer is logged in and therefore should be presented personalized content. | |
+|**Cache Level**|**Bypass** - Resources that match that Page Rule are not cached.<br>**No query string** - Only delivers resources from cache when there is no query string.<br>**Ignore query string** - Delivers the same resource to everyone independent of the query string.<br>**Standard** - Delivers a different resource each time the query string changes.<br> **Cache everything** - Resources that match the Page Rule are cached.|By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
 |**Edge Cache TTL**|Controls how long IBM CIS will retain files in our cache. |This setting is optional when specifying cache level. |
 
 ## Reliability
-| Rule Settings | Behavior | Considerations |
+| **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
 |**Always Online**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html) |
 |**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html) |

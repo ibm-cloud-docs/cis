@@ -48,7 +48,7 @@ Here are some recommended Page Rule settings to give your site maximum reliabili
 
  ## Always Online
 
-**Always Online** keeps a limited version of your site online if your server goes down.
+You can use the **Always Online** Page Rule setting to keep a limited version of your site online if your server goes down.
 
 With **Always Online**, your server goes down, IBM CIS will serve pages from our cache, so your visitors still see some of the pages they are trying to visit. Your visitors will see a message at the top of the page telling them that they are in offline browsing mode. Always Online returns an HTTP status 503, however, 503 is also used by many other web applications. When your server comes back online, IBM CIS will bump users back to regular browsing seamlessly.
 
@@ -58,14 +58,12 @@ If IBM CIS does not have the requested page in its cache, your visitor sees an e
 
 To enable **Always Online**, follow these steps:
 
- * Log in to your CIS account.
- * Select the domain you wish to modify.
- * Choose the "Caching" link on the menu at the top of the page.
- * Scroll to the "Always Online" section and toggle it on or off as needed.
+ * Use the navigation menu to select Page Rules under Performance.
+ * Create a Page Rule with the URL pattern of your domain.
+ * Add the **Always Online** setting with the toggle on.
+ * Select Provision Resource.
 
  ### Limitations of Always Online
-
- * Only content hosted on the domain that has **Always Online** enabled will be cached in the **Always Online** cache.
 
  * **Always Online** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site will be viewable when your origin server goes down.
 
@@ -77,11 +75,9 @@ To enable **Always Online**, follow these steps:
 
  * **Always Online** will not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency (Free customers: 7 days, Pro customers: 3 days, and Business and Enterprise customers: 1 day), because the "Edge Cache Expire TTL" causes the **Always Online** cache to be purged in the corresponding interval.
 
- * **Always Online** will not function if you have the United States listed as a country on your Threat Control block list. If the US is listed as a block, the **Always Online** crawler will not be able to crawl your site.
-
 ## Origin Cache Control
 
-You can use the *Origin Cache Control* Page Rule settings to determine what content is cached from your origin and how often the content is updated, which has an effect on reliability and on performance. By default, if no settings are changed and no headers that prevent caching are sent from your origin server, IBM CIS caches all static content with certain extensions. These types of content include images, CSS, and JavaScript. This caching is primarily for performance reasons.
+You can use the **Origin Cache Control** Page Rule setting to determine what content is cached from your origin and how often the content is updated, which has an effect on reliability and on performance. By default, if no settings are changed and no headers that prevent caching are sent from your origin server, IBM CIS caches all static content with certain extensions. These types of content include images, CSS, and JavaScript. This caching is primarily for performance reasons.
 
 To set up **Origin Cache Control** you would use Page Rules to turn on specific headers that give the desired behavior with respect to each resource of your content. To understand how to use **Origin Caache Conrol**, some more general explanation of Page Rules and overall caching behavior for CIS is required to provide context, which you'll see in the next several sections. Three methods exist that you can use to control caching in general, and **Origin Cache Control** is the second one.
 
@@ -89,24 +85,24 @@ Setting **Origin Cache Control** invokes caching rules that seek to adhere close
 
 ### How to set up Origin Cache Control
 
- * Log into your IBM CIS account.
- * From the dropdown menu on the top left, select your domain.
- * Select the **Page Rules** app.
- * Apply the Page Rules Origin Cache Control settings that best meet your requirements, as described in the following sections.
+ * Use the navigation menu to select Page Rules under Performance.
+ * Create a Page Rule with the URL pattern that references your domain.
+ * Add the **Origin Cache Control** setting with the toggle on.
+ * Select Provision Resource.
 
 ### Page Rule precedence
 
 Two specific Page Rules take precedence for caching overall:
 
- * If a Page Rule is set to **Bypass Cache**, the resources that match that Page Rule are not cached. IBM CIS still acts as a proxy, and our other performance features remain active. However, your content won't be served from our cache, it will be fetched from your origin server directly.
+ * If a Page Rule has **Cache Level** set to `Bypass`, the resources that match that Page Rule are not cached. IBM CIS still acts as a proxy, and our other performance features remain active. However, your content won't be served from our cache, it will be fetched from your origin server directly.
 
- * If a Page Rule is set to **Cache Everything**, resources that match the Page Rule are cached. Using this Page Rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.
+ * If a Page Rule has **Cache Level** set to `Cache everything`, resources that match the Page Rule are cached. **Using this Page Rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.**
 
- * If no Page Rule is set, we will use the Standard caching mode, which is based the extension of the resource. We will cache static resources only (as mentioned previously).
+If no Page Rule is set, we will use the `Standard` caching mode, which is based the extension of the resource. We will cache static resources only (as mentioned previously).
 
 ### Origin cache-control headers
 
-The second way to alter what IBM CIS will cache is through caching headers sent from the origin. CIS will respect these settings, but you can override them by specifying an **Edge Cache TTL**. Here are the headers we consider when deciding what resources to cache from your origin:
+The second way to alter what IBM CIS will cache is through caching headers sent from the origin. CIS will respect these settings, but you can override them by specifying an **Edge Cache TTL** Page Rule setting. Here are the headers we consider when deciding what resources to cache from your origin:
 
  * If the **Cache-Control** header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then IBM CIS will not cache the resource. Note that sensitive material should not be cached, so you might consider using one of these headers in that case.
 
@@ -144,24 +140,24 @@ To sum up, here are some main areas to consider for reliability with regard to c
 any        0s;
 ```
 
- * To cache more, create a Page Rule set to cache everything on the desired URL (if your webserver returns a 404 when requesting this URL, we will cache this result for 5mn only).
+ * To cache more, create a Page Rule with **Cache Level** set to "Cache everything" on the desired URL (if your webserver returns a 404 when requesting this URL, we will cache this result for 5m only).
 
- * To avoid caching on a URL, create a Page Rule to bypass the cache.
+ * To avoid caching on a URL, create a Page Rule with **Cache Level** set to "Bypass".
 
 
  ## Forwarding URL
 
-To ensure that your content is always available (HA), you can set up a forwarding URL to be used in case your site is unavailable.
+To ensure that your content is always available (HA), you can create a Page Rule with the **Forwarding URL** setting to be used in case your site is unavailable.
 
  **Note:** When you enable a **Forwarding URL**, all of your other settings are disabled becuase you are sending all your traffic to another URL.
 
-### How to set up a forwarding URL
+### How to set up a Forwarding URL
 
- * Log into your IBM CIS account.
- * From the dropdown menu on the top left, select your domain.
- * Select the **Page Rules** app.
- * Add a new page rule, and select enable Forwarding.
- * Enter the destination URL and select the forwarding type.
+ * Use the navigation menu to select Page Rules under Performance.
+ * Create a Page Rule with the URL pattern that references your domain.
+ * Add the **Forwarding URL** setting.
+ * Select the forwarding type and enter the destination URL.
+ * Select Provision Resource.
 
 ### Forwarding examples:
 
@@ -186,11 +182,11 @@ It will not match:
     http://www.example.com+  [no trailing slash]
 
 
-Once you've created the pattern that matches what you want, click the **Forwarding** toggle to expose a field in which you can enter the forwarding address. For example:
+Once you've created the pattern that matches what you want, add the **Forwarding URL** setting and select the forwarding type and enter the destination URL. For example:
 
     https://plus.google.com/yourid
 
-Enter that URL in the **Forwarding** field and click the **Add Rule** button. Within a few seconds any requests that match the pattern will be forwarded to the new URL with a 302 Redirect.
+Select Provision Resource. Within a few seconds any requests that match the pattern will be forwarded to the new URL with the specified redirect.
 
 ### Advanced forwarding options:
 
