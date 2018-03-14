@@ -9,7 +9,7 @@ lastupdated: "2018-03-02"
 
 # Troubleshooting your CIS network connection
 
-## How do I know if my data is passing through my IBM Cloud CIS connection?
+## How do I know if my data is passing through my IBM CIS connection?
 
 IBM Cloud Internet Services (CIS) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plug in called "Claire".
 
