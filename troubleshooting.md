@@ -11,9 +11,9 @@ lastupdated: "2018-03-02"
 
 ## How do I know if my data is passing through my IBM Cloud CIS connection?
 
-IBM Cloud CIS uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plug in called "Claire".
+IBM Cloud Internet Services (CIS) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plug in called "Claire".
 
-To know whether data has passed through IBM Cloud CIS, you need to locate the “Ray ID” which will be present on every packet.
+To know whether data has passed through IBM CIS, locate the `Ray ID` which will be present on every packet.
 
 **Unix command line tools:**
 
@@ -34,7 +34,7 @@ Results in: `CF-RAY: 1ca349b6c1300da3-SJC`
 
 ## How do I trace a route?
 
-To see whether a route goes through your IBM Cloud CIS pathway, you can perform a ‘dig’ in a Terminal window for Mac or Linux
+To see whether a route goes through your IBM CIS pathway, you can perform a ‘dig’ in a Terminal window for Mac or Linux
 or use `nslookup` in the Windows command prompt for Windows.
 
 If the packet has a CF-Ray value, then it has travelled through CIS.
@@ -45,7 +45,7 @@ The support team makes use of these commands to assist you.
 
 ## If you see a privacy warning:
 
-The certificates issued by IBM Cloud CIS cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) you will see a privacy warning in your browser, because these host names are not added to the SAN.
+The certificates issued by IBM CIS cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) you will see a privacy warning in your browser, because these host names are not added to the SAN.
 
 Also, please allow up to 15 minutes for one of our partner Certificates Authorities (CAs) to issue a new certificate. You’ll see a privacy warning in your browser if your new certificate has not yet been issued.
 
@@ -82,12 +82,12 @@ Here is what you might see:
 
 **Website offline - no cached version**
 
-1. The server is online, but it is blocking the CIS request.
-2. The origin server is offline and CIS does not have a backup website image (Always Online is turned off).
+1. The server is online, but it is blocking the IBM CIS request.
+2. The origin server is offline and IBM CIS does not have a backup website image (**Always Online** is turned off).
 
 What you can do:
 
-* Verify that the CIS IP addresses are whitelisted..
+* Verify that the IBM CIS IP addresses are whitelisted..
 * Make sure that IBM CIS IPs are not being rate-limited.
 * Here is the list of [IPs to whitelist](whitelisted-ips.html)
 
