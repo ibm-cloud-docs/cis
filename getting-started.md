@@ -24,8 +24,7 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
 You can start using IBM Cloud Internet Services (CIS) for your internet traffic with just a few steps.
 
  * Open the IBM CIS application from your IBM Cloud dashboard.
- * Add the domain you want to manage. IBM CIS scans the existing DNS records.
- * Optionally review and verify your domain records.
+ * Add the domain you want to manage.
  * Configure your DNS information with the name servers we've provided.
  * Continue getting started with IBM CIS, by following a tutorial or by setting up other features.
 
@@ -41,11 +40,11 @@ You'll see the first screen of the IBM CIS application, where you'll select the 
 
 **Step 2. Add and configure your Domain.**
 
-Begin protecting and improving the performance of your web service by entering your domain or a subdomain. When you select "Add Domain" our system begins gathering your domain records, if any. It could take a few minutes for your domain to be created.
+Begin protecting and improving the performance of your web service by entering your domain or a subdomain.
 
 ![Getting Started](images/overview-add-domain.png)
 
-Meanwhile, the Overview screen will show your domain in "Pending" status.
+The Overview screen will show your domain in "Pending" status.
 Note: The IBM CIS instance will not be able to be deleted when a domain has been added. To delete the instance, please delete the domain from the instance first.
 
 **Step 3. Configure your Name Servers with the Registrar or existing DNS Provider.**
