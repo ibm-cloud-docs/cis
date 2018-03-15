@@ -7,11 +7,6 @@ lastupdated: "2018-03-14"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Before you begin
-Before you begin using IBM Cloud Internet Services, you'll first need an IBMid. You can then order your Cloud Internet Services through your IBM Cloud Account, or through the new IBM Cloud Internet Services Portal, depending on your preference.
-
-If you need assistance in obtaining an account to use IBM Cloud Content Delivery Network, you can contact your IBM sales representative for additional guidance on getting started.
-
 # Getting Started with IBM Cloud Internet Services (CIS)
 
 IBM Cloud Internet Services (CIS) offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis/managing-for-security.html), [reliability](/docs/infrastructure/cis/managing-for-reliability.html), and [performance](/docs/infrastructure/cis/managing-for-performance.html).
@@ -23,6 +18,12 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
  * Web Application Firewall (WAF)
  * Caching and page rules
  * DDoS Protection
+
+
+## Before you begin
+Before you begin using IBM Cloud Internet Services, you'll first need an IBMid. You can then order your Cloud Internet Services through your IBM Cloud Account, or through the new IBM Cloud Internet Services Portal, depending on your preference.
+
+If you need assistance in obtaining an account to use IBM Cloud Content Delivery Network, you can contact your IBM sales representative for additional guidance on getting started.
 
 ## Process overview
 
@@ -60,4 +61,4 @@ After you've configured your registrar or DNS provider, it may require up to 24 
 
 **Step 4. In the meantime, you can begin managing other IBM CIS functions and features.**
 
-For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis/how-to.html).
+For more details about managing other functions and features, please see the [step-by-step instructions](how-to.html).
