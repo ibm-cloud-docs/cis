@@ -7,6 +7,11 @@ lastupdated: "2018-03-14"
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
+# Before you begin
+Before you begin using IBM Cloud Internet Services, you'll first need an IBMid. You can then order your Cloud Internet Services through your IBM Cloud Account, or through the new IBM Cloud Internet Services Portal, depending on your preference.
+
+If you need assistance in obtaining an account to use IBM Cloud Content Delivery Network, you can contact your IBM sales representative for additional guidance on getting started.
+
 # Getting Started with IBM Cloud Internet Services (CIS)
 
 IBM Cloud Internet Services (CIS) offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis/managing-for-security.html), [reliability](/docs/infrastructure/cis/managing-for-reliability.html), and [performance](/docs/infrastructure/cis/managing-for-performance.html).
@@ -30,7 +35,7 @@ You can start using IBM Cloud Internet Services (CIS) for your internet traffic 
 
 **Step 1: Open the IBM CIS application**
 
-To begin, open your IBM Cloud dashboard and find the IBM CIS application icon under the **Platform -> Network** category.
+Open your IBM Cloud dashboard and find the IBM Cloud Internet Services application icon under the **Platform -> Network** category.
 
 ![Catalog](images/catalog-cis-tile.png)
 
