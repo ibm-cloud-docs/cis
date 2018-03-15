@@ -9,6 +9,10 @@ lastupdated: "2018-03-02"
 
 # FAQ
 
+## What do I get with an Early Access Plan?
+The Early Access program, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during Early Access program.
+
+
 ## What is TLS?
 TLS is a standard security protocol for establishing encrypted links between a web server and a browser in an online communication. A TLS certificate is necessary to create a TLS connection with a website, and comprises of the domain name, the name of the company, and additional data such as company address, city, state, and country. The certificate also shows the expiration date, and details of the issuing Certificate Authority (CA).
 
