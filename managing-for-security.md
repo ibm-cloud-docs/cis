@@ -41,36 +41,8 @@ Any records that cannot be proxied through IBM CIS, and that still use your orig
 ### Use separate IP ranges for HTTP and non-HTTP traffic if possible
 Some customers use separate IP ranges for HTTP and non-HTTP traffic, thereby allowing them to proxy all records pointing to their HTTP IP range, and to obscure all non-HTTP traffic with a different IP subnet.
 
-## Best practice 2: Configure your Security Level selectively
-Your **Security Level** establishes the sensitivity of our **IP Reputation Database**. IBM CIS sees over 1 billion unique IP addresses every month, from more than 4 million websites, which allows our system to identify malicious actors and prevent them from reaching your web assets. To prevent negative interactions or false positives, configure your **Security Level** by domain to heighten security where necessary, and to decrease it where appropriate.
 
-### Increase the Security Level for Sensitive Areas to 'High'
-You can increase this setting by adding a **Page Rule** for administration pages or login pages, to reduce brute-force attempts:
-
-1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/wp-login`). 
-2. Identify the **Securty Level** setting.
-3. Mark the setting as **High**.
-4. Select **Provision Resource**.
-
-### Decrease the Security Level for non-sensitive paths or APIs to reduce false positives
-This setting can be decreased for general pages and API traffic: 
-
-1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/api/*`).
-2. Identify the **Security Level** setting.
-3. Turn Security Level to **Low** or **Essentially off**.
-4. Select **Provision Resource**.
-
-### What do Security Level settings mean?
-Our Security Level settings are aligned with threat scores that certain IP addresses acquire from malicious behavior on our network. A threat score above 10 is considered high.
-
-* **HIGH**: Threat scores greater than 0 are challenged.
-* **MEDIUM**: Threat scores greater than 14 are challenged.
-* **LOW**: Threat scores greater than 24 are challenged.
-* **ESSENTIALLY OFF**: Threat scores greater than 49 are challenged.
-
-We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for Setup document](best-practices.html#best-practice-3-review-your-security-settings-to-make-sure-they-dont-interfere-with-api-traffic)
-
-## Best practice 3: Activate your Web Application Firewall (WAF) safely
+## Best practice 2: Activate your Web Application Firewall (WAF) safely
 Your WAF is available in the **Security** section. We will walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before turning it on for your entire domain. These initial settings can reduce false positives by populating the Traffic Application with WAF events for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified.
 
 The WAF protects you against the following types of attacks:
@@ -80,7 +52,7 @@ The WAF protects you against the following types of attacks:
 
 The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF. See the [WAF default rule set](waf-rule-set.html) document for more details on the default rule set and the behavior of each rule.
 
-## Best practice 4: Configure your TLS settings
+## Best practice 3: Configure your TLS settings
 CIS provides some options for encrypting your traffic. As a reverse proxy, we close TLS conections at our datacenters and open a new TLS connection to your origin server.
 
 TLS offers four modes of operation:
