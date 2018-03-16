@@ -33,7 +33,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 
 ## What do I do if I’m under a DDoS attack?
 
-**Step 1:** Turn on “Defense mode" [Here's how](needs a link).
+**Step 1:** Turn on “Defense mode" in the Overview screen.
 
 **Step 2:** Set your DNS records for maximum security.
 
