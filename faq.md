@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-02"
+lastupdated: "2018-03-16"
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +33,9 @@ The flood of incoming messages, connection requests, or malformed packets to the
 
 ## What do I do if I’m under a DDoS attack?
 
-**Step 1:** Turn on “Defense mode" in the Overview screen.
+**Step 1:** Turn on “Defense mode" in the **Overview** screen. 
+
+![Defense Mode](images/defense-mode.png)
 
 **Step 2:** Set your DNS records for maximum security.
 

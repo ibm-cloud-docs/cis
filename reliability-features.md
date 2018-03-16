@@ -23,7 +23,7 @@ Here’s a quick feature overview:
  * Origin pools and health monitors
  * DNS management
  
- ### Summary
+### Summary
  
   * Health monitors check whether your origin pools are healthy.
   * In case of health monitor failure, your requests are re-routed to healthy origins.
