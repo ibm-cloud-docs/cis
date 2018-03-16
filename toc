@@ -12,6 +12,7 @@ Cloud Internet Services (CIS)
     performance-features.md
     ssl-options.md
     dns-concepts.md
+    ddos-concept.md
     glb.md
     cache.md
     best-practices.md
