@@ -13,6 +13,7 @@ Cloud Internet Services (CIS)
     ssl-options.md
     dns-concepts.md
     ddos-concept.md
+    waf-concept.md
     glb.md
     cache.md
     best-practices.md
