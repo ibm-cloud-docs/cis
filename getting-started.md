@@ -21,13 +21,15 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
 
 
 ## Before you begin
-Before you begin using IBM Cloud Internet Services, you'll first need an IBMid. Then you can order your IBM Cloud Internet Services through your IBM Cloud Account, or through the new IBM Cloud Internet Services Portal, depending on your preference.
+Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/us-en/signup/register.html). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://console.bluemix.net/catalog/services/internet-services), depending on your preference.
 
-If you need assistance in obtaining an account to use IBM Cloud Internet Services, contact your IBM sales representative for additional guidance on getting started.
+If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://www.ibm.com/cloud-computing/bluemix/contact-us) for additional guidance on getting started.
+
+If you have an existing Softlayer account, you can [link](https://console.bluemix.net/docs/account/softlayerlink.html#unifyingaccounts)your account with your IBMid. 
 
 ## Process overview
 
-You can start using IBM Cloud Internet Services (CIS) for your internet traffic with just a few steps.
+You can start using IBM CIS for your internet traffic with just a few steps.
 
  * Open the IBM CIS application from your IBM Cloud dashboard.
  * Add the domain you want to manage.

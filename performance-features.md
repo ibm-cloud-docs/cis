@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-06"
+lastupdated: "2018-03-16"
 ---
 
 {:shortdesc: .shortdesc}
@@ -21,7 +21,7 @@ Here’s a quick feature overview:
  * Page Rules that fine-tune your cache behavior and create content optimization
  * Caching
 
-### Summary
+## Summary
 
  * With Global Load Balancing, your customers receive data from your closest origin servers, thereby reducing latency and improving your customer's experience.
- * With Caching and Page Rules settings, you can enhance your web services and application performance.
+ * With Caching and Page Rules settings, you can enhance the performance of your web services and applications.

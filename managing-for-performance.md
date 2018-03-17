@@ -2,7 +2,7 @@
   
 copyright:
    years: 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-03-16"
  
 ---
 
@@ -43,6 +43,7 @@ For example, every time a new post is added to your blog, you could easily purge
   * Purge the cache by using a Cache-Tag
   * Purge the cache globally
   * Purge the cache by Page Rule
+  * Use advanced caching features
 
 ### Purge the cache by Cache-Tag
 Cache-Tags let you define buckets of content that you wish to purge. It is an excellent way to combine objects that are commonly changed together. So an HTML blog post, for example, and all of its image content could be tagged together. Mobile-only content also could be bundled using cache-tags, so that you can purge everything when you push a new update to your mobile domain.
