@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-03-19"
 ---
 
 {:shortdesc: .shortdesc}
@@ -16,8 +16,9 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
  * Authoritative DNS servers
  * Global and Local Load Balancing
  * Web Application Firewall (WAF)
- * Caching and page rules
  * DDoS Protection
+ * Caching and page rules
+
 
 
 ## Before you begin
@@ -25,7 +26,7 @@ Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com
 
 If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://www.ibm.com/cloud-computing/bluemix/contact-us) for additional guidance on getting started.
 
-If you have an existing Softlayer account, you can [link](https://console.bluemix.net/docs/account/softlayerlink.html#unifyingaccounts)your account with your IBMid. 
+If you have an existing Softlayer account, you can [link your account](https://console.bluemix.net/docs/account/softlayerlink.html#unifyingaccounts) with your IBMid. 
 
 ## Process overview
 
@@ -54,7 +55,7 @@ For the _Early Access_ release, there is only one plan you can choose, and it is
 
 You'll see the first screen of the IBM CIS application, where you'll select the **Add Domain** button to begin.
 
-**Note that the Early Access program is limited to one instance per account.** |
+|**Note that the Early Access program is limited to one instance per account.** |
 |-------------------------------------------------------------------|
 | After you've created a resource instance and added a domain to it, you are not permitted to add new resource instances for IBM CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.|
 

@@ -11,7 +11,7 @@ lastupdated: "2018-03-02"
 
 ## How do I know if my data is passing through my IBM CIS connection?
 
-IBM Cloud Internet Services (CIS) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plug in called "Claire".
+IBM Cloud Internet Services (CIS) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
 
 To know whether data has passed through IBM CIS, locate the `Ray ID` which will be present on every packet.
 
@@ -54,8 +54,7 @@ Also, please allow up to 15 minutes for one of our partner Certificates Authorit
  * **Step 1:** Turn on "Defense Mode" from your dashboard
  * **Step 2:** Set your DNS records for maximum security
  * **Step 3:** Do not rate-limit or throttle requests from IBM CIS
- * **Step 4:** Block specific IP ranges, countries, and visitors as needed
-
+ 
 During "Defense Mode", each new visitor is met with a "Captcha" security challenge, which they must pass before being given a cookie for unchallenged access. That way, botnet traffic is blocked until the "Defense Mode" is turned off. Visitors that do not meet the security challenge are added to the (bad) IP Reputation database.
 
 ## Other problems you might encounter:
@@ -83,7 +82,7 @@ Here is what you might see:
 **Website offline - no cached version**
 
 1. The server is online, but it is blocking the IBM CIS request.
-2. The origin server is offline and IBM CIS does not have a backup website image (**Always Online** is turned off).
+2. The origin server is offline and IBM CIS does not have a backup website image 
 
 What you can do:
 
@@ -93,7 +92,7 @@ What you can do:
 
 ### 502 error “The dreaded 502”
 
-This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable, for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. Run a trace route or check the IBM CIS status page. 
+This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable, for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. Run a trace route. 
 
 Here is what you might see: `Error 502 - bad gateway error`
 

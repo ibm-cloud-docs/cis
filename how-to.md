@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-03-17"
 ---
 
 {:shortdesc: .shortdesc}
@@ -85,27 +85,34 @@ On your dashboard, you'll see three lists that show the load balancers, origin p
 
 #### Create
 **Note**: <sup>`*`</sup> indicates this step is optional
+
 1) <sup>`*`</sup>Create a health check, click "Create health check".
   ![IMAGE](images/glb-health-check-list.png)
-    * **Path**: The endpoint path to health check against.
-    * **Type**: The protocol to use for the health check.
-    * **Description**: User provided description.
+    <ul>
+      <li>* **Path**: The endpoint path to health check against.</li> 
+      <li>* **Type**: The protocol to use for the health check.</li>
+      <li>* **Description**: User provided description.</li>
+    </ul>
 
 2) Create a pool, click "Create pool". 
   ![IMAGE](images/glb-pool-list.png)
-    * **Health**: Status of the pool.
-    * **Name**: User provided name.
-    * **Origins**: Count of healthy origins in the pool.
-    * **Health Check**: Path of the attached health check, if any.
+    <ul>
+      <li>* **Health**: Status of the pool.</li>
+      <li>* **Name**: User provided name.</li>
+      <li>* **Origins**: Count of healthy origins in the pool.</li>
+      <li>* **Health Check**: Path of the attached health check, if any.</li>
+    </ul>
 
 3) Create a load balancer, click "Create load balancer".
   ![IMAGE](images/glb-load-balancer-list.png)
-    * **Health**: Status of the load balancer.
-    * **Hostname**: Name prepended to the domain name.
-    * **Available Pools**: Count of healthy pools.
-    * **TTL**: Time To Live.
-    * **Proxy**: Enable or disable proxy traffic flow.
-    * **Status**: Enable or disable the load balancer.
+    <ul>
+      <li>* **Health**: Status of the load balancer.</li>
+      <li>* **Hostname**: Name prepended to the domain name.</li>
+      <li>* **Available Pools**: Count of healthy pools.</li>
+      <li>* **TTL**: Time To Live.</li>
+      <li>* **Proxy**: Enable or disable proxy traffic flow.</li>
+      <li>* **Status**: Enable or disable the load balancer.</li>
+    </ul>
 
 #### Edit/Delete
 To edit or delete a load balancer or one of its components click the overflow menu button located on the far right of each row.
@@ -117,24 +124,15 @@ Overflow menu button:
 The following options are provided for each list.
 
 * Health Check
-
-  ![IMAGE](images/health-check-overflow.png)
-  
     * **Edit health check**: This option redirects the user to the edit flow. 
     * **Delete health check**: This option brings up the confirmation dialog box for the deletion flow.
 
 * Pool
-
-  ![IMAGE](images/pool-overflow.png)
-  
     * **View pool details**: This option brings up a modal dialog box with information about the pool.
     * **Edit pool**: This option redirects the user to the edit flow.
     * **Delete pool**: This option brings up the confirmation dialog box for the deletion flow.
 
 * Load Balancer
-
-  ![IMAGE](images/load-balancer-overflow.png)
-  
     * **Disable/Enable**: Enable or disable a load balancer.
     * **Edit load balancer**: Redirects to the edit flow. 
     * **Delete load balancer**: Brings up the confirmation dialog box for the deletion flow.
