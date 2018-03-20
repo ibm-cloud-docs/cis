@@ -7,6 +7,7 @@ Cloud Internet Services (CIS)
     {: .navgroup id="learn"}
     getting-started.md
     about.md
+    cis-video.md
     security-features.md
     reliability-features.md
     performance-features.md
