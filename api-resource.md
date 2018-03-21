@@ -18,9 +18,9 @@ lastupdated: "2018-02-26"
 
 Here's how to view the CIS API specifications: 
 
-1. To view CIS APIs, navigate to the [CIS API Spec](https://developer.ibm.com/api/view/cis-prod:cloud-internet-services:title-Cloud_Internet_Services) page. 
+1. To view CIS APIs, navigate to the [CIS API Spec](https://console.bluemix.net/apidocs/2640-cloud-internet-services) page. 
 
-2. From the left navigation menu, select **Documentation** to view available APIs.
+2. From the left navigation menu, choose from the list of available APIs.
 
 
 ## Notes

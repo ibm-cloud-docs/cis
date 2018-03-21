@@ -31,6 +31,10 @@ Cloud Internet Services (CIS)
     helpful-tools.md
     {: .navgroup-end}
 
+    {: .navgroup id="reference"}
+    api-resource.md
+    {: .navgroup-end}
+
     {: .navgroup id="help"}
     faq.md
     known-limitations.md
