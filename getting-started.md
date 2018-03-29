@@ -66,16 +66,16 @@ Begin protecting and improving the performance of your web service by entering y
 **Note:** Please specify DNS zones. You can configure the nameservers for these domains or subdomains at the domain's registrar or DNS provider. Do not use CNAMEs.
 
 ![Getting Started](images/overview-add-domain.png)
-
-The Overview screen will show your domain in `Pending` status.
+th
+The Overview screen will show your domain in `Pending` status. Your domain will remain `Pending` until you complete Step 3.
 
 **Note:** The IBM CIS instance cannot be deleted after a domain has been added. To delete the instance, please delete the domain from the instance first.
 
 ### Step 3. Configure your Name Servers with the Registrar or existing DNS Provider.
 
-To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers.
+To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers.
 
-After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect.
+After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. Once we verify that the specified nameservers have been configured corrrectly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
 
 ### Step 4. Ensure that IBM Cloud Internet Services is resolving the domain information for your application, hostname, or website.
 
@@ -85,4 +85,4 @@ To proceed, select the **Reliability** tab from your left-hand navbar, then sele
 
 ### Step 5. In the meantime, you can begin managing other IBM CIS functions and features.
 
-For more details about managing other functions and features, please see the [step-by-step instructions](how-to.html).
+For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis/how-to.html).
