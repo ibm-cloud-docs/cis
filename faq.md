@@ -12,6 +12,9 @@ lastupdated: "2018-28-03"
 ## What do I get with an Early Access Plan?
 The Early Access program, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during Early Access program.
 
+## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
+It is possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: "platform access" and "service access". Platform access roles are required to create and manage service instances, but service access roles are required to perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.
+
 ## Why is my domain in Pending state? How do I activate it?
 When you add a domain to CIS, we give you a couple of nameservers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the nameservers correctly. Make sure you add both the nameservers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the nameservers have been configured as instructed. As soon as we are able to verify the nameserver change (this may take up to 24 hours), we activate your domain. You can submit a request to recheck nameservers by clicking on **Recheck nameservers** in the overview page.
 

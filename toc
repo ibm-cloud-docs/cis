@@ -26,6 +26,7 @@ Cloud Internet Services (CIS)
     managing-for-security.md
     managing-for-reliability.md
     managing-for-performance.md
+    glb-setup.md
     using-page-rules.md
     caching-with-page-rules.md
     helpful-tools.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-05"
+lastupdated: "2018-04-12"
 
 ---
 
@@ -25,3 +25,23 @@ A pool is a group of origin servers that traffic is intelligently routed to when
 ## Health Check
 
 A health check helps gain insight into the availability of pools so that traffic can be routed to the healthy ones. These checks periodically send HTTP/HTTPS requests and monitor the responses. They can be configured with customized intervals, timeouts, status codes, and more. As soon as a pool is marked unhealthy, traffic will be intelligently rerouted to another available pool, if available.
+**Note**: Be aware that your logs have references to Cloudflare because of IBM's partnership with Cloudflare to power CIS.
+
+### Health Check Events
+Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of Health Check Events. You can filter by date, health of the pool or origin, pool name, and origin name by selecting the filter parameters from the drop down menus. Columns within the table are sortable by clicking on the column name.
+![Health Check Events table](images/health-check-events-table.png)
+
+Individual rows within the table expand with more information about the entry. If the pool is healthy, only the **Pool Details** tile is visible. When the row has an origin that is critical, or a pool that is degraded, the **Affected Origin Details** tile also appears. 
+
+![Health Check Events details](images/health-check-events-details.png)
+
+#### Pool Details:
+* Pool Name - Name of the pool
+* Healthy Origins - ratio of health origins/total origins in a pool
+* Healthy Threshold - number of origins that need to be healthy in order to consider the pool healthy
+* Healthy Origins - names of the health origins
+* Critical Origins - names of the unhealthy origins
+
+#### Affected Origin Details:
+* Origin Name - Name of the origin
+* Origin Address - Address of the origin

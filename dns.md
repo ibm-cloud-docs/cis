@@ -149,3 +149,15 @@ In each record row, you can select the **Delete record** option from the menu, w
 You can select the **Delete** button to confirm your delete action. Select **Cancel** if you don't want to delete.
 
 ![Delete DNS record Dialog](images/dns/delete-record-dialog.png)
+
+## Import and export records
+DNS records can be imported into and exported from CIS. All files are imported and exported as .txt files in BIND format. More information on [BIND format](https://en.wikipedia.org/wiki/Zone_file).
+Click the overflow menu and select import or export records.
+![DNS Records Option](images/dns/import-export-records.png)
+
+### Import records
+By default, a total of 3500 DNS records are allowed (imported and created on CIS). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After importing, you are shown a summary with the number of records successfully added and the number that failed, along with the reason why each record failed.
+![Import DNS Records Summary](images/dns/import-records-summary.png)
+
+### Export records
+Use `Export records` to create a backup of your zone file, or export it to use with another DNS provider. When this menu option is clicked, the records are downloaded to the location specified by your browser settings (typically the Downloads folder). To select another folder location, change your browser's settings to prompt you for a location with each download.

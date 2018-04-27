@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-04-23"
 ---
 
 {:shortdesc: .shortdesc}
@@ -28,7 +28,7 @@ Notice that the CIS interface is organized into sections for *security*, *reliab
  
  To get started setting up your DNS configuration, select **DNS** from the navigation menu, as shown previously.
  
- For detailed information about settng up and managing your DNS for reliability, please [refer to this document](dns.html#setting-up-your-domain-name-system-dns-for-ibm-cis).
+ For detailed information about setting up and managing your DNS for reliability, please [refer to this document](dns.html#setting-up-your-domain-name-system-dns-for-ibm-cis).
 
 
 ## Setting up Global Load Balancers
@@ -42,38 +42,38 @@ For detailed information about settng up and managing your Global Load Balancers
 
 Here are some recommended Page Rule settings to give your site maximum reliability:
 
- * Always Online
+ * Serve Stale Content
  * Origin Cache Control
  * Forwarding URL
 
- ## Always Online
+ ## Serve Stale Content
 
-You can use the **Always Online** Page Rule setting to keep a limited version of your site online if your server goes down.
+You can use the **Serve Stale Content** Page Rule setting to keep a limited version of your site online if your server goes down.
 
-With **Always Online**, your server goes down, IBM CIS will serve pages from our cache, so your visitors still see some of the pages they are trying to visit. Your visitors will see a message at the top of the page telling them that they are in offline browsing mode. Always Online returns an HTTP status 503, however, 503 is also used by many other web applications. When your server comes back online, IBM CIS will bump users back to regular browsing seamlessly.
+With **Serve Stale Content**, your server goes down, IBM CIS will serve pages from our cache, so your visitors still see some of the pages they are trying to visit. Your visitors will see a message at the top of the page telling them that they are in offline browsing mode. Always Online returns an HTTP status 503, however, 503 is also used by many other web applications. When your server comes back online, IBM CIS will bump users back to regular browsing seamlessly.
 
 If IBM CIS does not have the requested page in its cache, your visitor sees an error page letting them know that the website page they are requesting is offline.
 
-### How to set up Always Online
+### How to set up Serve Stale Content
 
-To enable **Always Online**, follow these steps:
+To enable **Serve Stale Content**, follow these steps:
 
  * Use the navigation menu to select Page Rules under Performance.
  * Create a Page Rule with the URL pattern of your domain.
- * Add the **Always Online** setting with the toggle on.
+ * Add the **Serve Stale Content** setting with the toggle on.
  * Select Provision Resource.
 
- ### Limitations of Always Online
+ ### Limitations of Serve Stale Content
 
- * **Always Online** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site will be viewable when your origin server goes down.
+ * **Serve Stale Content** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site will be viewable when your origin server goes down.
 
- * Recently added sites won't have a large cache of their site available, which means that **Always Online** may not work if you only added the site a few days ago.
+ * Recently added sites won't have a large cache of their site available, which means that **Serve Stale Content** may not work if you only added the site a few days ago.
 
  * CIS won't be able to show private content or handle form submission (POSTs) if your server is down. Visitors will be shown an error on checkout pages or items requiring a login to view.
 
- * To trigger **Always Online**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Always Online also works when we encounter issues contacting your origin (Errors 521 & 523), timeouts (522 & 524), SSL errors (525 & 526) or an unknown error (520). **Always Online** will not be triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
+ * To trigger **Serve Stale Content**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Serve Stale Content also works when we encounter issues contacting your origin (Errors 521 & 523), timeouts (522 & 524), SSL errors (525 & 526) or an unknown error (520). **Serve Stale Content** will not be triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
 
- * **Always Online** will not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency (Free customers: 7 days, Pro customers: 3 days, and Business and Enterprise customers: 1 day), because the "Edge Cache Expire TTL" causes the **Always Online** cache to be purged in the corresponding interval.
+ * **Serve Stale Content** will not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency, because the "Edge Cache Expire TTL" causes the **Serve Stale Content** cache to be purged in the corresponding interval.
 
 ## Origin Cache Control
 
