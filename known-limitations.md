@@ -24,3 +24,5 @@ lastupdated: "2018-04-25"
  * At this time, LOC records cannot be imported. As a workaround, use the UI or API to create any LOC records.
  
  * If you import records, the UI may display DDoS as "inactive", and you may not be able to modify caching features even when you have proxied records. This issue only occurs if you import records, and a fix is currently under development.
+ 
+ * Wildcard A, AAAA, and CNAME records (*) cannot be proxied.

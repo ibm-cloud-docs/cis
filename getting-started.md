@@ -60,29 +60,43 @@ You'll see the first screen of the IBM CIS application, where you'll select the 
 | After you've created a resource instance and added a domain to it, you are not permitted to add new resource instances for IBM CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.|
 
 ### Step 2. Add and configure your Domain.
+Select **Let's get started** from the welcome page to begin setting up CIS.
 
-Begin protecting and improving the performance of your web service by entering your domain or a subdomain.
+![Getting Started](images/overview-setup-step1.png)
+
+Next, begin protecting and improving the performance of your web service by entering your domain or a subdomain.
 
 **Note:** Please specify DNS zones. You can configure the nameservers for these domains or subdomains at the domain's registrar or DNS provider. Do not use CNAMEs.
 
-![Getting Started](images/overview-add-domain.png)
-th
-The Overview screen will show your domain in `Pending` status. Your domain will remain `Pending` until you complete Step 3.
+![Getting Started](images/overview-setup-step2.png)
+
+The Overview screen will show your domain in `Pending` status. Your domain will remain `Pending` until you complete Step 4.
 
 **Note:** The IBM CIS instance cannot be deleted after a domain has been added. To delete the instance, please delete the domain from the instance first.
 
-### Step 3. Configure your Name Servers with the Registrar or existing DNS Provider.
+### Step 3. Set up your DNS records (optional).
+Before transitioning the traffic for your domain to CIS, we strongly recommend that you import or re-create your DNS records in CIS. You can choose to skip this step, but if your DNS records are not configured properly in CIS, it could leave parts of your website inaccessible.
 
-To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers.
+Import records by uploading your exported records from your current DNS or manually create your DNS records. To import records select **Import records**.
+
+![Getting Started](images/overview-setup-step3.png)
+
+When you are finished, or if you would like to skip this step, select **Next step**.
+
+### Step 4. Configure your Name Servers with the Registrar or existing DNS Provider.
+
+To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers. See [Managing DNS Records (![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/sections/200038106-Managing-DNS-Records){:new_window}, written by our partners at Cloudflare, for detailed instructions by provider.
 
 After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. Once we verify that the specified nameservers have been configured corrrectly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
 
-### Step 4. Ensure that IBM Cloud Internet Services is resolving the domain information for your application, hostname, or website.
+![Getting Started](images/overview-setup-step4.png)
 
-To proceed, select the **Reliability** tab from your left-hand navbar, then select the **DNS** option. Be sure to add the appropriate _DNS Records_. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, IBM Cloud Internet Services cannot resolve the domain information for your internet-facing applications.  
+### Step 5. Ensure that IBM Cloud Internet Services is resolving the domain information for your application, hostname, or website.
+
+To proceed, select the **Reliability** tab from your left-hand navbar, then select the **DNS** option. Be sure to add the appropriate _DNS Records_. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, IBM Cloud Internet Services cannot resolve the domain information for your internet-facing applications.
 
 ![Getting Started](images/dns-records.png)
 
-### Step 5. In the meantime, you can begin managing other IBM CIS functions and features.
+### Step 6. In the meantime, you can begin managing other IBM CIS functions and features.
 
 For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis/how-to.html).

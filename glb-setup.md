@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-04-24"
+lastupdated: "2018-05-08"
 ---
 
 {:shortdesc: .shortdesc}
@@ -29,7 +29,7 @@ For fully configurable options, use the longer setup method in the sections that
 ### Create
 **Note**: <sup>`*`</sup> indicates this step is optional
 
-1) <sup>`*`</sup>Create a health check, click "Create health check".
+1) <sup>`*`</sup>Create a health check, click **Create health check**.
   ![IMAGE](images/glb-health-check-list.png)
     <ul>
       <li><b>Path</b>: The endpoint path to health check against.</li> 
@@ -37,7 +37,7 @@ For fully configurable options, use the longer setup method in the sections that
       <li><b>Description</b>: User provided description.</li>
     </ul>
 
-2) Create a pool, click "Create pool". 
+2) Create a pool, click **Create pool**. 
   ![IMAGE](images/glb-pool-list.png)
     <ul>
       <li><b>Health</b>: Status of the pool.</li>
@@ -46,7 +46,7 @@ For fully configurable options, use the longer setup method in the sections that
       <li><b>Health Check</b>: Path of the attached health check, if any.</li>
     </ul>
 
-3) Create a load balancer, click "Create load balancer".
+3) Create a load balancer, click **Create load balancer**.
   ![IMAGE](images/glb-load-balancer-list.png)
     <ul>
       <li><b>Health</b>: Status of the load balancer.</li>
@@ -56,6 +56,8 @@ For fully configurable options, use the longer setup method in the sections that
       <li><b>Proxy</b>: Enable or disable proxy traffic flow.</li>
       <li><b>Status</b>: Enable or disable the load balancer.</li>
     </ul>
+
+**Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}.     
 
 ### Edit/Delete
 To edit or delete a load balancer or one of its components click the overflow menu button located on the far right of each row.
@@ -67,6 +69,7 @@ Overflow menu button:
 The following options are provided for each list.
 
 * Health Check
+    * **View health check**: This option shows a short summary of the health check, with a link that takes you to the edit flow.
     * **Edit health check**: This option redirects the user to the edit flow. 
     * **Delete health check**: This option brings up the confirmation dialog box for the deletion flow.
 
@@ -110,7 +113,7 @@ Additional optional fields:
  * **Description**: A human-readable description of the pool.
  * **Enabled**: Whether to enable (the default) this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any (default to true).
  * **Healthy Origin Threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and will fail over to the next available pool. (defaults to 1)
- * **Health Check Regions**: Region from which the health check will perform monitoring.
+ * **Health Check Regions**: Region from which the health check will perform monitoring. **Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}. 
  * **Health Check**: The health check to use for checking origins within this pool. (defaults to no health check)
  * **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
 
@@ -126,5 +129,5 @@ Optionally, the following fields can be configured:
  * **Proxy**: Route traffic through IBM's performance and metrics service.
  * **Session Affinity**: Always route through the same performance and metrics instance. This option is available only if proxy is enabled.
  * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to `Automatic`.
- * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools.
+ * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools. **Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}. 
  
