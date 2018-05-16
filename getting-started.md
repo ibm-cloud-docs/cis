@@ -39,7 +39,7 @@ You can start using IBM CIS for your internet traffic with just a few steps.
 
 ### Step 1: Open the IBM CIS application
 
-Open your [IBM Cloud dashboard](https://console.bluemix.net/catalog/). Then navigate to the IBM CIS application icon by selecting the **Platform -> Network** category in the left-hand navigation bar of the dashboard. Open the IBM Cloud Internet Services application by clicking the icon that you'll see near the middle of your screen. 
+Open your [IBM Cloud dashboard](https://console.bluemix.net/catalog/). Then navigate to the IBM CIS application icon by selecting the **Infrastructure -> Network** category in the left-hand navigation bar of the dashboard. Open the IBM Cloud Internet Services application by clicking the icon that you'll see near the middle of your screen. 
 
 ![Catalog](images/catalog-cis-tile.png)
 

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-04-25"
+lastupdated: "2018-05-15"
 ---
 
 {:shortdesc: .shortdesc}
@@ -23,6 +23,9 @@ lastupdated: "2018-04-25"
  
  * At this time, LOC records cannot be imported. As a workaround, use the UI or API to create any LOC records.
  
- * If you import records, the UI may display DDoS as "inactive", and you may not be able to modify caching features even when you have proxied records. This issue only occurs if you import records, and a fix is currently under development.
- 
  * Wildcard A, AAAA, and CNAME records (*) cannot be proxied.
+
+ * When you delete a dedicated certificate, it may reappear in the list for a short time before the deletion is complete.
+ 
+ * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one. 
+  
