@@ -63,7 +63,7 @@ The schema of this command is : dig <recordtype. <domainname> <options>
 
 `cURL` is a unix command line tool that lets you transmit data using URL syntax. It’s commonly used to make HTTP requests or compare server responses.
 
-The schema for this command is: curl -option1 -option2 http://example.com/url
+The schema for this command is: `curl -option1 -option2 http://example.com/url`
 
 **Examples:**
 

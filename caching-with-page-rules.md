@@ -36,7 +36,7 @@ For example, suppose you set the following rule:
 
 ![image](images/url-redirection-example.png)
 
-Here, a request to "www.example.com/stuff/things" will be redirected to "http://example.com/stuff/things".
+Here, a request to `www.example.com/stuff/things` will be redirected to `http://example.com/stuff/things`.
 
 **Note:** Be careful not to create a redirect in which the domain points to itself as a destination. This mistake can cause an infinite redirect error, and the affected URLs will not be able to resolve.
 
