@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-05-08"
+lastupdated: "2018-05-18"
 ---
 
 {:shortdesc: .shortdesc}
@@ -10,21 +10,14 @@ lastupdated: "2018-05-08"
 
 # Set up and configure your load balancers
  
- IBM CIS provides global load balancing as a service.
+ IBM CIS provides global load balancing as a service. Here's how the GLB Dashboard looks:
 
 ![IMAGE](images/glb-screen.png)
 
 ## GLB Dashboard
 On your dashboard, you'll see three lists that show the load balancers, origin pools, and health checks. The lists display the new or updated global load balancer or one of its components after you've provisioned or updated it. Initially the lists are empty, and before you create a load balancer you must take a few actions.
 
-### GLB Quick setup
-You can directly create pools and health checks from the **Create Load Balancer** menu option. Navigate to **Reliability > Global Load Balancer > Create load balancer > Add pool**, and select the option to **Create New** under Origin pool. 
-
-![IMAGE](images/create-new-origin-pool.png)
-
-Input a pool name, origins, and select a health check. You can create a new health check here by choosing **Create New** in the Health Check dropdown menu, and entering the information to create the health check. 
-
-For fully configurable options, use the longer setup method in the sections that follow. 
+Refer to the [Quick Start Guide](glb-quick-setup.html) if you already know what you need to do!
 
 ### Create
 **Note**: <sup>`*`</sup> indicates this step is optional
@@ -131,3 +124,4 @@ Optionally, the following fields can be configured:
  * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to `Automatic`.
  * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools. **Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}. 
  
+For definitions of terms used in this document, which generally are common terms used throughout the industry, refer to the [Glossary](glossary.html).

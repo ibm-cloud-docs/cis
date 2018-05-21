@@ -26,6 +26,7 @@ Cloud Internet Services (CIS)
     managing-for-security.md
     managing-for-reliability.md
     managing-for-performance.md
+    glb-quick-setup.md
     glb-setup.md
     using-page-rules.md
     caching-with-page-rules.md
@@ -34,6 +35,7 @@ Cloud Internet Services (CIS)
 
     {: .navgroup id="reference"}
     api-resource.md
+    glossary.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
