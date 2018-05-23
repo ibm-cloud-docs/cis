@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-04-18"
+lastupdated: "2018-05-21"
 ---
 
 {:shortdesc: .shortdesc}
@@ -95,10 +95,23 @@ For more detail about your TLS options, please refer to [this document](ssl-opti
 
 IBM CIS allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by CIS.
 
-### Upload a custom certificate
-You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, IBM CIS won't track the certificate expiration dates. 
+### Upload custom certificates
+You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, IBM CIS won't track the certificate expiration date. 
 
 ![custom-certificate](images/upload-custom-certificate.png)
+
+### Order dedicated certificates
+CIS makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** button and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
+
+ * SHA-2/ECDSA signed certificate using P-256 key, 
+ * SHA-2/RSA signed certificate using RSA 2048-bit key, and 
+ * SHA-1/RSA signed certificate using RSA 2048-bit key. 
+ 
+ CIS can issue for all TLDs except for `.cu`, `.iq`, `.ir`, `.kp`, `.sd`, `.ss`, and `.ye`. CIS manages the expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete.
+
+**Note**: The first time you order a dedicated certificate Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process happens again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
+
+![dedicated-certificate](images/order-dedicated-certificate.png)
 
 ### Utilize a provisioned certificate
 IBM has partnered with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers. Manual verification could be required for setting up these certificates. Your support team can help you perform these additional steps.
