@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-28-03"
+lastupdated: "2018-05-30"
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,8 +9,8 @@ lastupdated: "2018-28-03"
 
 # FAQ
 
-## What do I get with an Early Access Plan?
-The Early Access program, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during Early Access program.
+## What do I get with a Free Trial Plan?
+The Free Trial plan, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during Early Access program.
 
 ## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
 It is possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: "platform access" and "service access". Platform access roles are required to create and manage service instances, but service access roles are required to perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.

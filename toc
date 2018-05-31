@@ -31,6 +31,7 @@ Cloud Internet Services (CIS)
     using-page-rules.md
     caching-with-page-rules.md
     helpful-tools.md
+    [Using CIS to secure your Cloud Foundry applications across regions](https://console.bluemix.net/docs/tutorials/multi-region-webapp.html#register-a-custom-domain-with-ibm-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

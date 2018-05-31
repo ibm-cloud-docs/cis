@@ -39,11 +39,11 @@ The CIS CLI documentation is shown in modified `man` page format. The `overview`
 **Output messages**:
 
   * Service Mode
-    * Service Details
+  * Service Details
     *  Domain Name
-       * Status
-       * ID
-       * Service Plan
+    * Status
+    * ID
+    * Service Plan
 
   * Security
     * Web Application Firewall
