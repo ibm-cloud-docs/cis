@@ -26,7 +26,7 @@ Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com
 
 If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://www.ibm.com/cloud-computing/bluemix/contact-us) for additional guidance on getting started.
 
-If you have an existing Softlayer account, you can [link your account](https://console.bluemix.net/docs/account/softlayerlink.html#unifyingaccounts) with your IBMid. 
+If you have an existing SoftLayer account, you can [link your account](https://console.bluemix.net/docs/account/softlayerlink.html#unifyingaccounts) with your IBMid. 
 
 ## Process overview
 
@@ -49,9 +49,9 @@ Once the IBM CIS application starts up, you'll see the IBM CIS **Overview** scre
 
 **What plan do I choose?**
 
-There are 2 plans to choose from, the **Standard Plan** and the **Free Trial**. The **Free Trial** expires after 30 days, at which point you would need to upgrade to the **Standard Plan**. Select the **Create** button at the lower left of your **Overview** screen to begin provisioning your account.
+There are 2 plans to choose from, the **Standard** and **Free Trial**. The **Free Trial** expires after 30 days, at which point you would need to upgrade to **Standard**. Select the **Create** button at the lower left of your **Overview** screen to begin provisioning your account.
 
-**Note:** The **Free Trial** is limited to one instance per account. 
+**Note:** The **Free Trial** is limited to one instance and one domain per account. 
 
 **Begin Provisioning**
 
