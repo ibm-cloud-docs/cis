@@ -35,7 +35,7 @@ The following `waf` commands are available:
   `ibmcloud cis waf-setting DNS_DOMAIN_ID`
 
 ### ARGUMENTS:
-   `DNS_DOMAIN_ID` is the id of DNS domain.
+   `DNS_DOMAIN_ID` is the ID of DNS domain.
 
 ### OPTIONS:
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
@@ -56,7 +56,7 @@ The following `waf` commands are available:
   `ibmcloud cis waf-setting-update DNS_DOMAIN_ID WAF_MODE`
 
 ### ARGUMENTS:
-   `DNS_DOMAIN_ID` is the id of DNS domain.
+   `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_MODE` is the mode of WAF setting. Valid values are:  `waf-enable` , `waf-disable`.
 
@@ -79,14 +79,14 @@ The following `waf` commands are available:
   `ibmcloud cis waf-packages DNS_DOMAIN_ID`
 
 ### ARGUMENTS:
-   `DNS_DOMAIN_ID` is the id of DNS domain.
+   `DNS_DOMAIN_ID` is the ID of DNS domain.
 
 ### OPTIONS:
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 #### Output Message:
 
-   * package id
+   * package ID
    * package name
    * package mode
 
@@ -126,7 +126,7 @@ The following `waf` commands are available:
   `ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID SENSITIVITY ACTION_MODE`
 
 ### ARGUMENTS:
-   `DNS_DOMAIN_ID` is the id of DNS domain.
+   `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `OWASP_PACKAGE_ID` is the package ID of OWASP.
    

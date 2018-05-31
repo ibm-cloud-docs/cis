@@ -21,7 +21,7 @@ The following families of commands are available from the command line interface
   * [WAF](cli/cli-waf.html)
   * [Pagerule](cli/cli-pagerule.html)
   * [Metrics](cli/cli-metrics.html)
-  * [Overview](#overview)
+  * [Overview](#the-overview-command-definition)
 
 The CIS CLI documentation is shown in modified `man` page format. The `overview` command also is one of the CLI commands available to you. It just happens to make a good example as well, so we included it here.
 

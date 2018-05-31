@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-05-31"
 ---
 
 {:shortdesc: .shortdesc}
@@ -10,7 +10,7 @@ lastupdated: "2018-05-30"
 # FAQ
 
 ## What do I get with a Free Trial Plan?
-The Free Trial plan, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during Early Access program.
+The Free Trial plan, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during the Free Trial Plan.
 
 ## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
 It is possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: "platform access" and "service access". Platform access roles are required to create and manage service instances, but service access roles are required to perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.
@@ -66,7 +66,7 @@ All of these IPs must be whitelisted to avoid 522 errors. It's also worth checki
 
 522 errors can also be caused by network connectivity issues, so confirm that your server and network is generally healthy and not overloaded.
 
-If after taking the above steps you still receive errors, please contact IBM CIS support and confirm the following:
+If after taking the above steps you still receive errors, contact IBM CIS support and confirm the following:
 
 * You've whitelisted our IP ranges
 * Your server/network is online and generally healthy
@@ -82,8 +82,12 @@ $ whois 104.28.22.57 | grep OrgName
 OrgName:        IBM
 ```
 
-If you would rather bypass CIS on a domain (we will still resolve DNS), then non-proxying the record would be a possible solution.
+If you would rather bypass CIS on a domain (we will still resolve DNS), then non-proxying the record is a possible solution.
 
 ## I got a DNS Validation error: 1004; now what can I do?
 
 For page rules to work, DNS needs to resolve for your zone. As a result, you must have a proxied DNS record for your zone. 
+
+## Can I add a CNAME for a root record?
+
+Yes. IBM CIS supports a feature called "CNAME Flattening" which allows our users to add a CNAME as a root record. Our authoritative DNS servers enumerate the CNAME target's records and respond with those records instead of the CNAME itself, effectively hiding the fact that the user configured a CNAME at the root of the domain.
