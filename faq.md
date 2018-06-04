@@ -9,8 +9,23 @@ lastupdated: "2018-05-31"
 
 # FAQ
 
+## What happened to the Early Access Plan that used to be in the catalog?
+The Early Access Plan was removed from the Catalog on May 31, 2018. It was replaced by the Standard paid plan, and a new 30-day Free Trial plan. If you have an instance of Early Access Plan, upgrade to the Standard plan right away to avoid data loss; you will not be allowed to create a Free Trial instance if you participated in the Early Access beta.
+
 ## What do I get with a Free Trial Plan?
 The Free Trial plan, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during the Free Trial Plan.
+
+## I have a service instance that is subscribed to the Early Access Plan. Can I change it to a Free Trial?
+No. Early Access Plan can only be upgraded to a paid plan, which is the Standard plan at this time.
+
+## I had an Early Access instance that I (may or may not have) deleted. Can I create a Free Trial instance now?
+No. Each account is entitled to only one free instance. Both the Early Access Plan and the Free Trial plan that replaced it count as free plans. This also means that you can have at most one Free Trial instance.
+
+## Can I downgrade from Standard to Free Trial?
+No. This is not allowed.
+
+## My Free Trial has expired. What are my options?
+To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. Once the Free Trial expires, your data may be deleted at any time. We may not clean up expired Free Trials immediately. However, we will not provide any guarantees or support for expired trial plans.
 
 ## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
 It is possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: "platform access" and "service access". Platform access roles are required to create and manage service instances, but service access roles are required to perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.
