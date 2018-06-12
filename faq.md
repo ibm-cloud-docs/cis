@@ -15,9 +15,12 @@ The Early Access Plan was removed from the Catalog on May 31, 2018. It was repla
 ## What do I get with a Free Trial Plan?
 The Free Trial plan, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during the Free Trial Plan.
 
+<<<<<<< HEAD
 ## How many Free Trial instances can I have?
 You can have at most one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, or if you delete a free trial instance, or if the free trial expires, you will not be allowed to creat another free trial instance. You can, however, create instances of other paid plan types (e.g., Standard), independent of any free trials you may have created.
 
+=======
+>>>>>>> e81752bc5f11327033d6e1d9c5e2dbd751ccafd1
 ## I have a service instance that is subscribed to the Early Access Plan. Can I change it to a Free Trial?
 No. Early Access Plan can only be upgraded to a paid plan, which is the Standard plan at this time.
 
