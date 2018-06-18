@@ -36,6 +36,7 @@ Cloud Internet Services (CIS)
 
     {: .navgroup id="reference"}
     api-resource.md
+    at_events.md
     cis-cli-overview.md
     glossary.md
     external-resources.md
