@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -30,16 +30,20 @@ The following `glb` commands are available:
 * Update GLB monitor
 
 ## Create GLB
-### NAME:
+**NAME**
+
    glb-create - Create a global load balancer under a given DNS domain.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### ARGUMENTS:
-   DNS_DOMAIN_ID is the id of DNS domain.
+**ARGUMENTS**
 
-### OPTIONS:
+   DNS_DOMAIN_ID is the ID of DNS domain.
+
+**OPTIONS**
+
    -s, --json-str  The JSON data describing a global load balancer.
 
                    The required fields in JSON data are name, fallback_pool, default_pools:
@@ -83,7 +87,7 @@ The following `glb` commands are available:
    -o, --output     Output the result as JSON style to a file. If not set, will output the result to terminal.
 
 
-#### Output Table Columns:
+**Output Table Columns**
 
   *  ID
   *  Name
@@ -95,13 +99,16 @@ The following `glb` commands are available:
   *  Region Pools
 
 ## Update GLB
-### NAME:
+**NAME**
+
    glb-update - Update a global load balancer under a given DNS domain.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### OPTIONS:
+**OPTIONS**
+
    -s, --json-str  The JSON data describing a global load balancer.
 
                    The required fields in JSON data are name, fallback_pool, default_pools:
@@ -144,7 +151,7 @@ The following `glb` commands are available:
    
    -o, --output     Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Name
@@ -156,22 +163,26 @@ The following `glb` commands are available:
    * Region Pools
 
 ## Show GLB
-### NAME:
+**NAME**
+
    glb - Show a global load balancer under a given DNS domain.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### ARGUMENTS:
-   DNS_DOMAIN_ID is the id of DNS domain.
-   GLB_ID is the id of global load balancer.
+**ARGUMENTS**
 
-### OPTIONS:
+   DNS_DOMAIN_ID is the ID of DNS domain.
+   GLB_ID is the ID of global load balancer.
+
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
    
    -o, --output    Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
   *  ID
   *  Name
@@ -186,35 +197,44 @@ The following `glb` commands are available:
   * Region Pools
 
 ## Delete GLB
-### NAME:
+**NAME**
+
    glb-delete - Delete a global load balancer under a given DNS domain.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-delete DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE_NAME]
 
-### ARGUMENTS:
-   DNS_DOMAIN_ID is the id of DNS domain.
-   GLB_ID is the id of global load balancer.
+**ARGUMENTS**
 
-### OPTIONS:
+   DNS_DOMAIN_ID is the ID of DNS domain.
+   
+   GLB_ID is the ID of global load balancer.
+
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
 
 ## List GLB
-### NAME:
+**NAME**
+
    glbs - List all load balancers for the given domain.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glbs DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### ARGUMENTS:
-   DNS_DOMAIN_ID is the id of DNS domain.
+**ARGUMENTS**
 
-### OPTIONS:
+   DNS_DOMAIN_ID is the ID of DNS domain.
+
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
    
    -o, --output    Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
   * ID
   * Name
@@ -224,19 +244,22 @@ The following `glb` commands are available:
   * Enabled
 
 ## List GLB pools
-### NAME:
+**NAME**
+
    glb-pools - List all GLB pools for a given service instance.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-pools [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### OPTIONS:
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
    
    -o, --output    Output the result as JSON style to a file. If not set, will output the result to terminal.
 
 
-#### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Name
@@ -247,13 +270,16 @@ The following `glb` commands are available:
    * Notification Email
    
 ## Create GLB pool
-### NAME:
+**NAME**
+
    glb-pool-create - Create a GLB pool for a given service instance.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-pool-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### OPTIONS:
+**OPTIONS**
+
    -s, --json-str  The JSON data used to describe a GLB pool.
 
                    The required fields in JSON data are name, origins, check_regions:
@@ -294,7 +320,7 @@ The following `glb` commands are available:
    
    -o, --output     Output the result as JSON style to a file. If not set, will output the result to terminal.
    
-   #### Output Table Columns:
+  **Output Table Columns**
 
    * ID
    * Name
@@ -310,21 +336,25 @@ The following `glb` commands are available:
    * Check Regions
    
 ## Show GLB pool
-### NAME:
+**NAME**
+
    glb-pool - Show the details of a given GLB pool.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-pool GLB_POOL_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### ARGUMENTS:
-   GLB_POOL_ID is the id of global load balancer pool.
+**ARGUMENTS**
 
-### OPTIONS:
+   GLB_POOL_ID is the ID of global load balancer pool.
+
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
    
    -o, --output    Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Name
@@ -340,29 +370,37 @@ The following `glb` commands are available:
    * Check Regions
    
 ## Delete GLB pool
-### NAME:
+**NAME**
+
    glb-pool-delete - Delete a given GLB pool.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-pool-delete GLB_POOL_ID [-i, --instance INSTANCE_NAME]
 
-### ARGUMENTS:
-   GLB_POOL_ID is the id of global load balancer pool.
+**ARGUMENTS**
 
-### OPTIONS:
+   GLB_POOL_ID is the ID of global load balancer pool.
+
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
    
 ## Update GLB pool
-### NAME:
+**NAME**
+
    glb-pool-update - Update the details of a given GLB pool.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-pool-update GLB_POOL_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### ARGUMENTS:
-   GLB_POOL_ID is the id of global load balancer pool.
+**ARGUMENTS**
 
-### OPTIONS:
+   GLB_POOL_ID is the ID of global load balancer pool.
+
+**OPTIONS**
+
    -s, --json-str  The JSON data used to describe a GLB pool.
 
                    The required fields in JSON data are name, origins, check_regions:
@@ -403,7 +441,7 @@ The following `glb` commands are available:
    
    -o, --output     Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Name
@@ -419,18 +457,21 @@ The following `glb` commands are available:
    * Check Regions
    
 ## List GLB monitors   
-### NAME:
+**NAME**
+
    glb-monitors - List GLB monitors for a given service instance.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-monitors [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### OPTIONS:
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
    
    -o, --output    Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Type
@@ -440,13 +481,16 @@ The following `glb` commands are available:
    * Expected Codes
    
 ## Create GLB monitor
-### NAME:
+**NAME**
+
    glb-monitor-create - Create a GLB monitor for a given service instance.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-monitor-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### OPTIONS:
+**OPTIONS**
+
    -s, --json-str  The JSON data used to describe a GLB monitor.
 
                    The required fields in JSON data are expected_body, expected_codes:
@@ -482,7 +526,7 @@ The following `glb` commands are available:
    
    -o, --output     Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Created On
@@ -499,21 +543,25 @@ The following `glb` commands are available:
    * Expected Codes
    
 ## Show GLB monitor 
-### NAME:
+**NAME**
+
    glb-monitor - Show the GLB monitor for a given service instance.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-monitor GLB_MON_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### ARGUMENTS:
-   GLB_MON_ID is the id of global load balancer monitor.
+**ARGUMENTS**
 
-### OPTIONS:
+   GLB_MON_ID is the ID of global load balancer monitor.
+
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used. 
    
    -o, --output    Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-#### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Created On
@@ -530,31 +578,39 @@ The following `glb` commands are available:
    * Expected Codes
    
 ## Delete GLB Monitor
-### NAME:
+**NAME**
+
    glb-monitor-delete - Delete the GLB monitor for a given service instance.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-monitor-delete GLB_MON_ID [-i, --instance INSTANCE_NAME]
 
-### ARGUMENTS:
-   GLB_MON_ID is the id of global load balancer monitor.
+**ARGUMENTS**
 
-### OPTIONS:
+   GLB_MON_ID is the ID of global load balancer monitor.
+
+**OPTIONS**
+
    -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
 
 
 ## Update GLB monitor
 
-### NAME:
+**NAME**
+
    glb-monitor-update - Update the GLB monitor for a given service instance.
 
-### USAGE:
+**USAGE**
+
    ibmcloud cis glb-monitor-update GLB_MON_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]
 
-### ARGUMENTS:
-   GLB_MON_ID is the id of global load balancer monitor.
+**ARGUMENTS**
 
-### OPTIONS:
+   GLB_MON_ID is the ID of global load balancer monitor.
+
+**OPTIONS**
+
    -s, --json-str  The JSON data used to describe a GLB monitor.
 
                    The required fields in JSON data are expected_body, expected_codes:
@@ -590,7 +646,7 @@ The following `glb` commands are available:
    
    -o, --output     Output the result as JSON style to a file. If not set, will output the result to terminal.
 
-### Output Table Columns:
+**Output Table Columns**
 
    * ID
    * Created On

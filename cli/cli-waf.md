@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-21"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -28,19 +28,23 @@ The following `waf` commands are available:
 
 ## Show WAF setting
 
-### NAME
+**NAME**
+
   `waf-setting` - Show WAF setting.
 
-### USAGE
-  `ibmcloud cis waf-setting DNS_DOMAIN_ID`
+**USAGE**
 
-### ARGUMENTS:
+  `ibmcloud cis waf-setting DNS_DOMAIN_ID`
+  
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
+**Output Message**
 
    * waf setting ID
    * waf mode
@@ -49,42 +53,48 @@ The following `waf` commands are available:
 
 ## Update WAF Setting
 
-### NAME
+**NAME**
+
   `waf-setting-update` - Update WAF setting.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-setting-update DNS_DOMAIN_ID WAF_MODE`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_MODE` is the mode of WAF setting. Valid values are:  `waf-enable` , `waf-disable`.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
+**Output Message**
 
    * waf setting ID
    * waf mode
 
-
-
 ## List WAF packages
 
-### NAME
+**NAME**
+
   `waf-packages` - List all WAF packages.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-packages DNS_DOMAIN_ID`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
+**Output Message**
 
    * package ID
    * package name
@@ -94,22 +104,25 @@ The following `waf` commands are available:
 
 ## Show a WAF package
 
-### NAME
+**NAME**
+
   `waf-package` - Get detail of a package.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_PACKAGE_ID` is the ID of WAF package.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
-
+**Output Message**
    * Package ID
    * Package Name
    * Package Description
@@ -119,13 +132,16 @@ The following `waf` commands are available:
 
 ## Update WAF OWASP package
 
-### NAME
+**NAME**
+
   `waf-package-set` - Set config of the OWASP package.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID SENSITIVITY ACTION_MODE`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `OWASP_PACKAGE_ID` is the package ID of OWASP.
@@ -134,10 +150,11 @@ The following `waf` commands are available:
    
    `ACTION_MODE` is the action that is taken for rules under the package. Valid values are: `simulate`, `block`, `challenge`.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
+**Output Message**
 
    * Package ID
    * Package Name
@@ -151,22 +168,25 @@ The following `waf` commands are available:
 
 ## List WAF groups
 
-### NAME
+**NAME**
+
   `waf-groups` - List WAF groups in a given WAF package.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_PACKAGE_ID` is the ID of WAF package.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
-
+**Output Message**
    * Group ID
    * Group Name
    * Group Description
@@ -175,24 +195,27 @@ The following `waf` commands are available:
 
 ## Show a WAF group
 
-### NAME
+**NAME**
+
   `waf-group` - Get detail of a WAF group.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_PACKAGE_ID` is the ID of WAF package.
    
    `WAF_GROUP_ID` is the ID of WAF group.
    
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
-
+**Output Message**
    * Group Name
    * Group ID
    * Group mode
@@ -203,13 +226,16 @@ The following `waf` commands are available:
 
 ## Update a WAF group
 
-### NAME
+**NAME**
+
   `waf-group-mode-set` - Set mode of a WAF group.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-group-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID WAF_GROUP_MODE`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_PACKAGE_ID` is the ID of WAF package.
@@ -218,36 +244,40 @@ The following `waf` commands are available:
    
    `WAF_GROUP_MODE` is the mode of WAF group. Valid values are: `on`, `off`.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
-
+**Output Message**
    * Group ID
    * Group Mode
 
 
 ## List WAF rules
 
-### NAME
+**NAME**
+
   `waf-rules` - List all WAF rules of a given WAF package.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_PACKAGE_ID` is the ID of WAF package.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
    `-p, --page-no` Page num
    
    `-n, --number-per-page`  Number of rules per page. Min value is `5` and max value is `1000`.
 
-Output Message:
+**Output Message**
 
    * Rule ID
    * Rule Description
@@ -257,24 +287,27 @@ Output Message:
 
 ## Show a WAF rule
 
-### NAME
+**NAME**
+
   `waf-rule` - Get detail of a WAF rule.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_PACKAGE_ID` is the ID of WAF package.
    
    `WAF_RULE_ID` is the ID of WAF rule.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
-
+**Output Message**
    * Rule ID
    * Rule Description
    * Rule Current Mode
@@ -287,13 +320,16 @@ Output Message:
 
 ## Update a WAF rule
 
-### NAME
+**NAME**
+
   `waf-rule-mode-set` - Set mode of a WAF rule.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE_MODE`  
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `WAF_PACKAGE_ID` is the ID of WAF package.
@@ -302,10 +338,10 @@ Output Message:
    
    `WAF_RULE_MODE` is the mode of WAF rule. Valid values are: `on`, `off`, `default`, `disable`, `simulate`, `block`,  `challenge`.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output Message:
-
+**Output Message**
    * Rule ID
    * Rule Current Mode
