@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-06-21"
 ---
 
 {:shortdesc: .shortdesc}
@@ -16,9 +16,11 @@ IBM CIS is a globally distributed cloud service that blocks threats and limits a
 Here’s a quick feature overview:
 
 ## Security features
-
- * Web Application Firewall (WAF)
- * Unlimited DDoS mitigation
+ * Proxy [DNS records](dns-concepts.md#proxying-dns-records) or [GLB](glb.md) to use security features. This allows traffic to flow through our servers and the data can be monitored.
+### Web Application Firewall (WAF)
+ * WAF is implemented through two rule sets: [OWASP](waf-owasp-rule set.md) and [CIS](waf-cis-rule set.md).
+### Unlimited DDoS mitigation
+ * DDoS mitigation is typically an expensive service that can grow in cost when under attack. We include unlimited DDoS mitigation with CIS at no additonal cost.
 
 ## Security Standards and platform
 

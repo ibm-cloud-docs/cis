@@ -19,3 +19,8 @@ A pool is a group of origin servers that traffic is intelligently routed to when
 
 #### Health check
 A health check helps gain insight into the availability of pools so that traffic can be routed to the healthy ones. These checks periodically send HTTP/HTTPS requests and monitor the responses. They can be configured with customized intervals, timeouts, status codes, and more. As soon as a pool is marked unhealthy, traffic will be intelligently rerouted to another available pool, if available.
+
+#### Origin Servers
+An origin server processes and responds to incoming requests from clients, and are typically used with caching servers. Origin servers run one or more programs that are designed to listen for and process incoming Internet requests. The physical distance between the origin server and the client making a request adds latency to the connection, increasing load time. Using caching servers reduces this latency.
+
+

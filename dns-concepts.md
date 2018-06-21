@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-06-21"
 
 ---
 
@@ -37,3 +37,7 @@ A **custom domain name server** allows you to utilize the DNS provider's servers
 ## Root Record CNAME Flattening
 
 IBM CIS supports a feature called "CNAME Flattening." Using this method, root records can overcome the IETF RFC restriction that if a root record is a CNAME, it cannot have any other records for that domain. CIS Authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records such as MX records to be added to the domain, even though the root record is a CNAME.
+
+## Proxying DNS Records
+
+IBM CIS supports the ability to toggle whether a record is proxied or not. When a record is proxied, it means that its traffic will run directly through IBM CIS. Currently, records with types **A**, **AAAA**, or **CNAME** can be proxied.

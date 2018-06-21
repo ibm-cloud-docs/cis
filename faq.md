@@ -109,3 +109,19 @@ For page rules to work, DNS needs to resolve for your zone. As a result, you mus
 ## Can I add a CNAME for a root record?
 
 Yes. IBM CIS supports a feature called "CNAME Flattening" which allows our users to add a CNAME as a root record. Our authoritative DNS servers enumerate the CNAME target's records and respond with those records instead of the CNAME itself, effectively hiding the fact that the user configured a CNAME at the root of the domain.
+
+## What is the default health check timeout?
+
+The default health check timeout for the Free Trial and Standard plans is 60 seconds.
+
+## Can health checks be configured for non-HTTP/HTTPS traffic?
+
+No, they can only be configured with HTTP/HTTPS.
+
+## Can GLB be configured for non-HTTP/HTTPS traffic?
+
+No, they can only be configured with HTTP/HTTPS.
+
+## Will disabling all of my origins in an origin pool disable the entire origin pool itself?
+
+Yes, if the origin pool is being used in a load balancer, the traffic is routed to the next highest priority pool or the fallback pool.
