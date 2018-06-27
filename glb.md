@@ -34,7 +34,7 @@ The origins can be configured with weights, and for proxied GLBs, the weights de
 
 For each origin: 
 
-``` Percent of traffic to the origin = origin weight / sum of all origin weights```
+` Percent of traffic to the origin = origin weight / sum of all origin weights`
 
 If all origins have weight `1`, traffic is distributed evenly. 
 
