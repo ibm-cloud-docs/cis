@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-05-08"
+lastupdated: "2018-07-09"
 ---
 
 {:shortdesc: .shortdesc}
@@ -10,9 +10,8 @@ lastupdated: "2018-05-08"
 # OWASP Rule Set for WAF
 
 The OWASP Rule Set contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL Injection, Cross-Site Scripting, and Locale File Inclusion, among others. IBM CIS provides but does not curate these rules. OWASP is an industry standard that provides a good security baseline. See the following links for more information:
-
-* [OWASP on Github](https://github.com/SpiderLabs/owasp-modsecurity-crs)
-* [OWASP.org](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project)
+  * [OWASP on Github](https://github.com/SpiderLabs/owasp-modsecurity-crs)
+  * [OWASP.org](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project)
 
 ## Managing OWASP
 

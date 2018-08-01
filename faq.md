@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-17"
 ---
 
 {:shortdesc: .shortdesc}
@@ -125,3 +125,7 @@ No, they can only be configured with HTTP/HTTPS.
 ## Will disabling all of my origins in an origin pool disable the entire origin pool itself?
 
 Yes, if the origin pool is being used in a load balancer, the traffic is routed to the next highest priority pool or the fallback pool.
+
+## I have an error in my Kubernetes Ingress, what do I do?
+
+The hostname in a Kubernetes ingress must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. Using `_` in the load balancer name, though permitted, can cause an ingress error in Kubernetes clusters. We recommend that you not use `-` in the load balancer name to avoid issues with Kubernetes clusters.
