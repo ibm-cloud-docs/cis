@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-08-14"
 ---
 
 {:shortdesc: .shortdesc}
@@ -28,7 +28,10 @@ No. Each account is entitled to only one free instance. Both the Early Access Pl
 No. This is not allowed.
 
 ## My Free Trial has expired. What are my options?
-To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. Once the Free Trial expires, your data may be deleted at any time. We may not clean up expired Free Trials immediately. However, we will not provide any guarantees or support for expired trial plans.
+To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, GLB, pools, and health checks are deleted automatically.
+
+## How do I delete my CIS Instance?
+To delete a CIS instance, you must first delete all GLBs, pools, and health checks. Then delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
 
 ## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
 It is possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: "platform access" and "service access". Platform access roles are required to create and manage service instances, but service access roles are required to perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.

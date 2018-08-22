@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-02"
+lastupdated: "2018-08-16"
 ---
 
 {:shortdesc: .shortdesc}
@@ -26,3 +26,6 @@ lastupdated: "2018-03-02"
 | 190.93.240.0/20|
 |197.234.240.0/22|
 | 198.41.128.0/17|
+
+
+For programmatic access, you can retrieve this list via our partner's API: [https://api.cloudflare.com/client/v4/ips](https://api.cloudflare.com/client/v4/ips). This API is public and does not require any credentials. Polling this API once a week is sufficient to get the information you need to update your whitelists.

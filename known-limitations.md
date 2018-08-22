@@ -31,3 +31,6 @@ lastupdated: "2018-08-10"
 * If you filter Health check events by `Pool Health`, `Degraded` pools are included because they technically are healthy, but may contain 1 or more critical origins.
 
 * When adding the request header name for a health check, use `Host`. Using lower-case `host` for a health check fails.
+
+## Web Application Firewall
+ * For groups that are disabled by default, changing the mode or enablement of an individual rule in that group might result in an error. To work around this issue you can enable and disable the group prior to modifying the rules.
