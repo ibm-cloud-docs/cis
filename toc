@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" audience="service" href="/docs/infrastructure/cis/getting-started.html"}
+{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis/getting-started.html"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
@@ -18,6 +18,7 @@ Cloud Internet Services (CIS)
     glb.md
     cache.md
     best-practices.md
+    
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -30,15 +31,25 @@ Cloud Internet Services (CIS)
     glb-setup.md
     using-page-rules.md
     caching-with-page-rules.md
+    waf-custom-rules.md
+    routing.md
+    rate-limiting.md
+    multi-domain.md
     helpful-tools.md
-    [Using CIS to secure your Cloud Foundry applications across regions](https://console.bluemix.net/docs/tutorials/multi-region-webapp.html#register-a-custom-domain-with-ibm-cloud-internet-services)
-    {: .navgroup-end}
-
-    {: .navgroup id="reference"}
-    api-resource.md
-    cis-cli-overview.md
-    glossary.md
-    external-resources.md
+    
+    {: .topicgroup}
+    Step-by-step guides 
+        [Secure and resilient multi-region Kubernetes clusters with Cloud Internet Services](https://console.bluemix.net/docs/tutorials/multi-region-k8s-cis.html)  
+        [Using CIS to secure your Cloud Foundry applications across regions](https://console.bluemix.net/docs/tutorials/multi-region-webapp.html#register-a-custom-domain-with-ibm-cloud-internet-services)
+        
+    {: .topicgroup}
+    Step-by-step: Improving application reliability and scalability with Global Load Balancing
+        application-reliability.md
+        create-cis.md
+        input-domain.md
+        begin-config.md
+        identify-app-resources.md
+        define-global-lb.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
@@ -46,4 +57,14 @@ Cloud Internet Services (CIS)
     known-limitations.md
     troubleshooting.md
     getting-help.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="reference"}
+    hipaa-advisory.md
+    plan-comparison.md
+    api-resource.md
+    at_events.md
+    cis-cli-overview.md
+    glossary.md
+    external-resources.md
     {: .navgroup-end}
