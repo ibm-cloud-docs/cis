@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-08-14"
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,6 +15,9 @@ The Early Access Plan was removed from the Catalog on May 31, 2018. It was repla
 ## What do I get with a Free Trial Plan?
 The Free Trial plan, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during the Free Trial Plan.
 
+## How many Free Trial instances can I have?
+You can have at most one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, or if you delete a free trial instance, or if the free trial expires, you will not be allowed to creat another free trial instance. You can, however, create instances of other paid plan types (e.g., Standard), independent of any free trials you may have created.
+
 ## I have a service instance that is subscribed to the Early Access Plan. Can I change it to a Free Trial?
 No. Early Access Plan can only be upgraded to a paid plan, which is the Standard plan at this time.
 
@@ -25,7 +28,10 @@ No. Each account is entitled to only one free instance. Both the Early Access Pl
 No. This is not allowed.
 
 ## My Free Trial has expired. What are my options?
-To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. Once the Free Trial expires, your data may be deleted at any time. We may not clean up expired Free Trials immediately. However, we will not provide any guarantees or support for expired trial plans.
+To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, GLB, pools, and health checks are deleted automatically.
+
+## How do I delete my CIS Instance?
+To delete a CIS instance, you must first delete all GLBs, pools, and health checks. Then delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
 
 ## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
 It is possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: "platform access" and "service access". Platform access roles are required to create and manage service instances, but service access roles are required to perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.
@@ -106,3 +112,23 @@ For page rules to work, DNS needs to resolve for your zone. As a result, you mus
 ## Can I add a CNAME for a root record?
 
 Yes. IBM CIS supports a feature called "CNAME Flattening" which allows our users to add a CNAME as a root record. Our authoritative DNS servers enumerate the CNAME target's records and respond with those records instead of the CNAME itself, effectively hiding the fact that the user configured a CNAME at the root of the domain.
+
+## What is the default health check timeout?
+
+The default health check timeout for the Free Trial and Standard plans is 60 seconds.
+
+## Can health checks be configured for non-HTTP/HTTPS traffic?
+
+No, they can only be configured with HTTP/HTTPS.
+
+## Can GLB be configured for non-HTTP/HTTPS traffic?
+
+No, they can only be configured with HTTP/HTTPS.
+
+## Will disabling all of my origins in an origin pool disable the entire origin pool itself?
+
+Yes, if the origin pool is being used in a load balancer, the traffic is routed to the next highest priority pool or the fallback pool.
+
+## I have an error in my Kubernetes Ingress, what do I do?
+
+The hostname in a Kubernetes ingress must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. Using `_` in the load balancer name, though permitted, can cause an ingress error in Kubernetes clusters. We recommend that you not use `-` in the load balancer name to avoid issues with Kubernetes clusters.

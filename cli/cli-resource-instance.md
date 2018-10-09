@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-21"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -17,13 +17,15 @@ The following `instance` commands are available:
 * Set Context CIS Service Instance
 
 ## List CIS Service Instances
-### NAME:
+**NAME**
+
    `instances` - List all CIS service instances.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis instances`
 
-#### Output:
+**Output**
    * Name
    * Location
    * State
@@ -31,14 +33,18 @@ The following `instance` commands are available:
 
 
 ## Set Context CIS Service Instance
-### NAME:
+**NAME**
+
    `instance-set` - Set context service instance to operate.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis instance-set [INSTANCE_NAME] [--unset]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `INSTANCE_NAME` is the name of CIS service instance. If it is presented, set the context instance to operate, if not, show the current context instance.
 
-### OPTIONS:
+**OPTIONS**
+
    `--unset`  Unset context instance.

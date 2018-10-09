@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-06-21"
 ---
 
 {:shortdesc: .shortdesc}
@@ -24,3 +24,11 @@ A WAF typically protects web applications from attacks such as cross-site forger
 A WAF operates through a set of rules often called policies. These policies aim to protect against vulnerabilities in the application by filtering out malicious traffic. 
 
 The value of a WAF comes from the speed and ease with which its policy modifications can be implemented, thereby allowing a faster response to varying attack vectors. For example, during a [DDoS attack ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Denial-of-service_attack), rate limiting can be implemented by modifying WAF policies.
+
+## What are the key benefits of the IBM Cloud CIS Web Application Firewall?
+
+The IBM Cloud CIS WAF is an easy way to set up, manage, and customize security rules to protect your web applications from common web threats. See the following list for key features:
+
+ * **Easy setup**: The CIS WAF is part of our overall service, which takes just a few minutes to set up. Once you redirect your DNS to us, you can switch on the WAF and set up the rules you need.
+
+ * **Detailed reporting** See greater detail in the reporting, for example, threats blocked by rule/rule group. 

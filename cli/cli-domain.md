@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-21"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -22,21 +22,25 @@ The following `domain` commands are available:
 * Domain activation check
 
 ## Add domain
-### NAME:
+**NAME**
+
    `domain-add` - Add a domain.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis domain-add DNS_DOMAIN_NAME [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_NAME` is the FQDN of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
    `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
 
-#### Output:
+**Output**
   * ID                     
   * Created On         
   * Modified On  
@@ -50,22 +54,26 @@ The following `domain` commands are available:
 
 ## Resume domain
 
-### NAME:
+**NAME**
+
    `domain-resume` - Resume the given domain.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis domain-resume DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
    `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
 
 
-#### Output:
+**Output**
   * ID                     
   * Created On         
   * Modified On  
@@ -79,21 +87,25 @@ The following `domain` commands are available:
 
 ## Pause domain
 
-### NAME:
+**NAME**
+
    `domain-pause` - Pause the given domain.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis domain-pause DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    DNS_DOMAIN_ID is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
    `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
 
-#### Output:
+**Output**
   * ID                     
   * Created On         
   * Modified On  
@@ -105,25 +117,27 @@ The following `domain` commands are available:
   * Original Name Server
   * Name Servers         
 
-
-
 ## Display domain
 
-### NAME:
+**NAME**
+
    `domain` - Display the given domain details.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis domain DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
    `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
 
-#### Output:
+**Output**
   * ID                     
   * Created On         
   * Modified On  
@@ -137,34 +151,41 @@ The following `domain` commands are available:
 
 ## Remove domain
 
-### NAME:
+**NAME**
+
    `domain-remove` - Remove a domain.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis domain-remove DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 
 ## List domains
 
-### NAME:
+**NAME**
+
    `domains` - List domains for a given service instance.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis domains [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
    `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
 
 
-#### Output:
+**Output**
   * ID                      
   * Name                   
   * Status                
@@ -173,14 +194,18 @@ The following `domain` commands are available:
 
 ## Domain activation check
 
-### NAME:
+**NAME**
+
    `domain-activation-check` - Perform activation check on the given domain.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis domain-activation-check DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-21"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -20,16 +20,20 @@ The following `dns-record` commands are available:
 * List DNS records
 
 ## Create DNS record
-### NAME:
+**NAME**
+
    `dns-record-create` - Create a DNS record for a given domain of a service instance.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis dns-record-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-s, --json-str`  The JSON data used to describe a DNS Record.
 
    Supported DNS Record types are: `A`, `AAAA`, `CNAME`, `NS`, `TXT`, `SPF`, `MX`, `LOC`, `SRV`, `CAA`.
@@ -187,7 +191,7 @@ ARGUMENTS:
    `-o, --output`     Outputs the result as JSON style to a file. If the filename is not set, it outputs the result to terminal.
 
 
-#### Output Table Columns:
+**Output Table Columns**
    * ID
    * Created On
    * Modified On
@@ -204,18 +208,22 @@ ARGUMENTS:
 
 ## Update DNS record
 
-### NAME:
+**NAME**
+
    `dns-record-update` - Update a DNS record for a given domain of a service instance.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
    `DNS_RECORD_ID` is the ID of DNS record.
 
-### OPTIONS:
+**OPTIONS**
+
    `-s, --json-str`  The JSON data used to describe a DNS Record.
 
    Supported DNS Record types are: `A`, `AAAA`, `CNAME`, `NS`, `TXT`, `SPF`, `MX`, `LOC`, `SRV`, `CAA`.
@@ -382,7 +390,7 @@ ARGUMENTS:
    `-o, --output`     Outputs the result as JSON style to a file. If the filename is not set, it outputs the result to terminal.
 
 
-#### Output Table Columns:
+**Output Table Columns**
    * ID
    * Created On
    * Modified On
@@ -399,24 +407,28 @@ ARGUMENTS:
 
 ## Get DNS record
 
-### NAME:
+**NAME**
+
    `dns-record` - Get a DNS record details for a given domain under a service instance.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis dns-record DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
    `DNS_RECORD_ID` is the ID of DNS record.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
    `-o, --output`    Outputs the result as JSON style to a file. If the filename not set, it outputs the result to terminal.
 
 
-#### Output Table Columns:
+**Output Table Columns**
    * ID
    * Created On
    * Modified On
@@ -432,33 +444,41 @@ ARGUMENTS:
 
 ## Delete DNS record
 
-### NAME:
+**NAME**
+
    `dns-record-delete` - Delete a DNS record for a given domain of a service instance.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis dns-record-delete DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE_NAME]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
    `DNS_RECORD_ID` is the ID of DNS record.
 
-### OPTIONS:
+**OPTIONS**
+
    `-i, --instance`  Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 
 ## List DNS Records
 
-### NAME:
+**NAME**
+
    `dns-records` - List all DNS records for a given domain of a service instance.
 
-### USAGE:
+**USAGE**
+
    `ibmcloud cis dns-records DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
 
-### ARGUMENTS:
+**ARGUMENTS**
+
    `DNS_DOMAIN_ID` is the ID of DNS domain.
 
-### OPTIONS:
+**OPTIONS**
+
    `-s, --json-str`  The JSON data to query DNS records.
 
 The optional fields are `type`, `name`, `content`, `page`, `per_page`, `order`, `direction`,`match`:
@@ -487,7 +507,7 @@ The optional fields are `type`, `name`, `content`, `page`, `per_page`, `order`, 
    `-o, --output`     Outputs the result as JSON style to a file. If the file name not set, it outputs the result to terminal.
 
 
-#### Output Table Columns:
+**Output Table Columns**
    * ID
    * Name
    * Type

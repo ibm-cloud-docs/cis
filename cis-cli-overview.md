@@ -27,16 +27,19 @@ The CIS CLI documentation is shown in modified `man` page format. The `overview`
 
 ## The Overview command definition
 
-### NAME
+**NAME**
+
   `overview` - Show the overview information for an instance. 
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis overview [-i, --instance INSTANCE_NAME]` 
 
-### OPTIONS
+**OPTIONS**
+
  `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis   instance-set` is used.
 
-**Output messages**:
+**Output messages**
 
   * Service Mode
   * Service Details

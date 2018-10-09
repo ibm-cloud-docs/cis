@@ -18,13 +18,15 @@ The following `cache` commands are available:
 * Update cache settings
 
 ## Purge Cache
-### NAME
+**NAME**
+
   `cache-purge` -  Clear cached assets file by file or entirely for a given DNS domain to guarantee served assets are updated.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis cache-purge DNS_DOMAIN_ID (--all | -f, --file file1,file2,...) [-i, --instance INSTANCE_NAME]`
 
-### OPTIONS
+**OPTIONS**
 
    * `-i, --instance INSTANCE_NAME` (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
@@ -33,23 +35,26 @@ The following `cache` commands are available:
    * `-f, --file file1,file2,...`  an array of files (separated by commas) that should be cleared from cache. You may purge up to 30 files at a time with comma-separated files. To specify a file, you must enter the full path. Wildcards are not supported at this time.
 
 
-#### Output messages:
+**Output messages:**
+
 Result of cache purging.
 
 
 ## Show cache settings
 
-### NAME
+**NAME**
+
   `cache-settings` - Get caching settings for a given DNS domain.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis cache-settings DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]`
 
-### OPTIONS
+**OPTIONS**
 
    * `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-#### Output messages:
+**Output messages:**
 
   * Caching Level
   * Browser Expiration
@@ -57,13 +62,15 @@ Result of cache purging.
 
 ## Update cache settings
 
-### NAME
+**NAME**
+
   `cache-settings-update` - Update cache settings for a give DNS domain.
 
-### USAGE
+**USAGE**
+
   `ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--browser-expiration EXPIRATION][--development-mode (enabled | disabled)][-i, --instance INSTANCE_NAME]`
 
-### OPTIONS
+**OPTIONS**
 
    * `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
@@ -86,5 +93,6 @@ Result of cache purging.
    * `--development-mode _value_` Bypass all edge caches and send traffic toward your origin servers.
 
 
-#### Output messages:
+**Output messages:**
+
 The output message contains the result of your cache settings update.
