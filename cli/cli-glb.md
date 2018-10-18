@@ -493,33 +493,74 @@ The following `glb` commands are available:
 
    -s, --json-str  The JSON data used to describe a GLB monitor.
 
-                   The required fields in JSON data are expected_body, expected_codes:
+                   The required fields in JSON data are "type".
 
+                       "type": The protocol to use for the healthcheck. Valid values: "HTTP", "HTTPS", "TCP".
 
-                   The optional fields are description, type, method, path, header, timeout, retries, interval:
+                   The optional fields are "description", "timeout", "retries", "interval".
+
+                       "description": Description.
+                       "timeout": The timeout (in seconds) before marking the health check as failed.
+                       "retries": The number of retries to attempt in case of a timeout before marking the origin as unhealthy.
+                       "interval": The interval between each health check.
+
+                   For "TCP" type health check:
+
+                       Extra required fields are "port".
+
+                           "port": The TCP port to use for the health check.
+
+                   For "HTTP/HTTPS" type health check:
+
+                       Extra option fields are "port", "expected_body", "expected_codes", "method", "path", "header", "follow_redirects", "allow_insecure".
+
+                           "port": The TCP port to use for the health check.
+                           "expected_body": A case-insensitive sub-string to look for in the response body.
+                           "expected_codes": The expected HTTP response code or code range of the health check.
+                           "method": The HTTP method to use for the health check.
+                           "path": The endpoint path to health check against.
+                           "header": The HTTP request headers to send in the health check.
+                           "follow_redirects": Follow redirects if returned by the origin.
+                           "allow_insecure": Do not validate the certificate when monitor use HTTPS.
 
 
                    Sample JSON data:
 
-                   {
-                       "description": "Health monitor of web service",
-                       "type": "https",
-                       "method": "GET",
-                       "path": "/health",
-                       "header": {
-                           "Host": [
-                               "example.com"
-                           ],
-                           "X-App-ID": [
-                               "abc123"
-                           ]
-                       },
-                       "timeout": 5,
-                       "retries": 2,
-                       "interval": 90,
-                       "expected_codes": "2xx",
-                       "expected_body": "alive"
-                   }
+                       For HTTP/HTTPS:
+
+                           {
+                               "description": "Health monitor of web service",
+                               "type": "https",
+                               "method": "GET",
+                               "path": "/health",
+                               "header": {
+                                   "Host": [
+                                       "example.com"
+                                   ],
+                                   "X-App-ID": [
+                                       "abc123"
+                                   ]
+                               },
+                               "timeout": 5,
+                               "retries": 2,
+                               "interval": 90,
+                               "follow_redirects": true,
+                               "allow_insecure": false,
+                               "expected_codes": "2xx",
+                               "expected_body": "alive"
+                           }
+
+                       For TCP:
+
+                           {
+                               "description": "Health monitor of TCP",
+                               "type": "tcp",
+                               "port": 80,
+                               "timeout": 5,
+                               "retries": 2,
+                               "interval": 90
+                           }
+
    -j, --json-file  A file contains input JSON data.
    
    -i, --instance   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
@@ -613,33 +654,73 @@ The following `glb` commands are available:
 
    -s, --json-str  The JSON data used to describe a GLB monitor.
 
-                   The required fields in JSON data are expected_body, expected_codes:
+                   The required fields in JSON data are "type".
 
+                       "type": The protocol to use for the healthcheck. Valid values: "HTTP", "HTTPS", "TCP".
 
-                   The optional fields are description, type, method, path, header, timeout, retries, interval:
+                   The optional fields are "description", "timeout", "retries", "interval".
+
+                       "description": Description.
+                       "timeout": The timeout (in seconds) before marking the health check as failed.
+                       "retries": The number of retries to attempt in case of a timeout before marking the origin as unhealthy.
+                       "interval": The interval between each health check.
+
+                   For "TCP" type health check:
+
+                       Extra required fields are "port".
+
+                           "port": The TCP port to use for the health check.
+
+                   For "HTTP/HTTPS" type health check:
+
+                       Extra option fields are "port", "expected_body", "expected_codes", "method", "path", "header", "follow_redirects", "allow_insecure".
+
+                           "port": The TCP port to use for the health check.
+                           "expected_body": A case-insensitive sub-string to look for in the response body.
+                           "expected_codes": The expected HTTP response code or code range of the health check.
+                           "method": The HTTP method to use for the health check.
+                           "path": The endpoint path to health check against.
+                           "header": The HTTP request headers to send in the health check.
+                           "follow_redirects": Follow redirects if returned by the origin.
+                           "allow_insecure": Do not validate the certificate when monitor use HTTPS.
 
 
                    Sample JSON data:
 
-                   {
-                       "description": "Health monitor of web service",
-                       "type": "https",
-                       "method": "GET",
-                       "path": "/health",
-                       "header": {
-                           "Host": [
-                               "example.com"
-                           ],
-                           "X-App-ID": [
-                               "abc123"
-                           ]
-                       },
-                       "timeout": 5,
-                       "retries": 2,
-                       "interval": 90,
-                       "expected_codes": "2xx",
-                       "expected_body": "alive"
-                   }
+                       For HTTP/HTTPS:
+
+                           {
+                               "description": "Health monitor of web service",
+                               "type": "https",
+                               "method": "GET",
+                               "path": "/health",
+                               "header": {
+                                   "Host": [
+                                       "example.com"
+                                   ],
+                                   "X-App-ID": [
+                                       "abc123"
+                                   ]
+                               },
+                               "timeout": 5,
+                               "retries": 2,
+                               "interval": 90,
+                               "follow_redirects": true,
+                               "allow_insecure": false,
+                               "expected_codes": "2xx",
+                               "expected_body": "alive"
+                           }
+
+                       For TCP:
+
+                           {
+                               "description": "Health monitor of TCP",
+                               "type": "tcp",
+                               "port": 80,
+                               "timeout": 5,
+                               "retries": 2,
+                               "interval": 90
+                           }
    -j, --json-file  A file contains input JSON data.
    
    -i, --instance   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.

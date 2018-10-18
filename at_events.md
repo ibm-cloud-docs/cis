@@ -3,7 +3,7 @@
 copyright:
   years: 2016, 2018
 
-lastupdated: "2018-06-21"
+lastupdated: "2018-09-26"
 
 ---
 
@@ -48,9 +48,10 @@ The following table lists the actions that are related to DNS records and genera
 
 |Action|Description|
 |---|---|  
-|internet-svcs.zones.dns_records.create<|Create a DNS record.|
+|internet-svcs.zones.dns_records.create|Create a DNS record.|
 |internet-svcs.zones.dns_records.update|Update a DNS record.|
-|internet-svcs.zones.dns_records.delete<|Delete a DNS record.|
+|internet-svcs.zones.dns_records.delete|Delete a DNS record.|
+|internet-svcs.zones.dns_records_bulk.create|Import DNS records from zone file.|
 
 
 ## List of events: Load balancers
@@ -80,6 +81,8 @@ The following table lists the actions that are related to purging the cache and 
 |---|---|  
 |internet-svcs.zones.purge_cache.purge_all.update|Purge all cached assets of a domain from edge server.|
 |internet-svcs.zones.purge_cache.purge_by_urls.update|Purge cached assets by URLs from edge server.|
+|internet-svcs.zones.purge_cache.purge_by_cache_tags.update|Purge cached assets by cache tags from edge server.|
+|internet-svcs.zones.purge_cache.purge_by_hosts.update|Purge cached assets by hostnames from edge server.|
 
 
 ## List of events: Page rules
@@ -103,7 +106,31 @@ The following table lists the actions that are related to firewalls and generate
 |---|---|  
 |internet-svcs.zones.firewall.waf.packages.groups.update|Enable or Disable a group of WAF rule sets.|
 |internet-svcs.zones.firewall.waf.packages.rules.update|Enable or Disable a WAF rule.|
+|internet-svcs.zones.firewall.access_rules.rules.create|Create domain level IP firewall rule.|
+|internet-svcs.zones.firewall.access_rules.rules.update|Update domain level IP firewall rule.|
+|internet-svcs.zones.firewall.access_rules.rules.delete|Delete domain level IP firewall rule.|
+|internet-svcs.firewall.access_rules.rules.create|Create instance level IP firewall rule.|
+|internet-svcs.firewall.access_rules.rules.update|Update instance level IP firewall rule.|
+|internet-svcs.firewall.access_rules.rules.delete|Delete instance level IP firewall rule.|
+|internet-svcs.zones.rate_limits.create|Create rate limiting rule.|
+|internet-svcs.zones.rate_limits.update|Update rate limiting rule.|
+|internet-svcs.zones.rate_limits.delete|Delete rate limiting rule.|
+|internet-svcs.zones.ua_rules.create|Create user agent blocking rule.|
+|internet-svcs.zones.ua_rules.update|Update user agent blocking rule.|
+|internet-svcs.zones.ua_rules.delete|Delete user agent blocking rule.|
+|internet-svcs.zones.firewall.lockdowns.create|Create domain lockdown rule.|
+|internet-svcs.zones.firewall.lockdowns.update|Update domain lockdown rule.|
+|internet-svcs.zones.firewall.lockdowns.delete|Delete domain lockdown rule.|
 
+## List of events: Routing
+{: #events_routing}
+
+The following table lists the actions that are related to routing and generate an event:
+
+|Action|Description|
+|---|---|  
+|internet-svcs.zones.routing.smart_routing.update	|Enable or disable smart routing.|
+|internet-svcs.zones.routing.tiered_caching.update	|Enable or disable tiered caching.|
 
 ## List of events: Certificate packs
 {: #events_certificate_packs}
@@ -142,6 +169,12 @@ The following table lists the actions that are related to configuring settings a
 |internet-svcs.zones.settings.ssl.update|Change SSL setting.|
 |internet-svcs.zones.settings.tls_1_2_only.update|Enable or Disable TLS 1.2 support.|
 |internet-svcs.zones.settings.waf.update|Enable or Disable web application firewall.|
+|internet-svcs.zones.settings.cname_flattening.update|Change CNAME flattening setting.|
+|internet-svcs.zones.settings.always_online.update|Enable or disable always online for the domain.|
+|internet-svcs.zones.settings.sort_query_string_for_cache.update|Enable or disable sorting query arguments when querying content in cache.|
+|internet-svcs.zones.settings.tls_1_3.update|Change TLS 1.3 setting.|
+|internet-svcs.zones.settings.automatic_https_rewrites.update|Enable or disable automatic HTTPS rewrites.
+|internet-svcs.zones.settings.opportunistic_encryption.update|Enable or disable opportunistic encryption.|
 
 
 ## Where to look for the events

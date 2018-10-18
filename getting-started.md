@@ -9,7 +9,7 @@ lastupdated: "2018-05-30"
 
 # Getting Started with IBM Cloud Internet Services (CIS)
 
-IBM Cloud Internet Services (CIS), powered by Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis/managing-for-security.html), [reliability](/docs/infrastructure/cis/managing-for-reliability.html), and [performance](/docs/infrastructure/cis/managing-for-performance.html). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
+IBM Cloud Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis/managing-for-security.html), [reliability](/docs/infrastructure/cis/managing-for-reliability.html), and [performance](/docs/infrastructure/cis/managing-for-performance.html). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
 
 For each capability, IBM CIS helps you tune its features to suit your specific needs, including:
 

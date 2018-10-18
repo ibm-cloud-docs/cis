@@ -35,6 +35,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Bypass Cache on Cookie**|Serve a cached object unless we see a cookie of a specific name, for example, serve a cached version of the homepage unless we see a `SessionID` cookie indicating the customer is logged in and therefore should be presented personalized content. | |
 |**Cache Level**|**Bypass** - Resources that match that Page Rule are not cached.<br>**No query string** - Only delivers resources from cache when there is no query string.<br>**Ignore query string** - Delivers the same resource to everyone independent of the query string.<br>**Standard** - Delivers a different resource each time the query string changes.<br> **Cache everything** - Resources that match the Page Rule are cached.|By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
 |**Edge Cache TTL**|Controls how long IBM CIS will retain files in our cache. |This setting is optional when specifying cache level. |
+|**Resolve Override**|Change the URL or IP that the request matching the page rule resolves to.||
 
 ## Reliability
 | **Setting** | **Behavior** | **Considerations** |
@@ -42,6 +43,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Always Online**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html) |
 |**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html) |
 |**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html)|
+|**Host Header Override**|Replace the host header for URI matching the page rule to the value specified. This is commonly used for content hosted in an S3 bucket.||
 
 ## Page Rule URL patterns
 

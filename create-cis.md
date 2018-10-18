@@ -4,7 +4,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2018-06-20"
+lastupdated: "2018-09-18"
 
 
 ---
@@ -27,6 +27,6 @@ To create a CIS instance, perform the following procedure:
 
 3. Specify the name for your service instance, and identify the resource group you’d like to place this service in. The default resource group is `default`. Review the plan summary and click **Create**.
     
-The system will take you to a Getting Started page for a quick review of the service.
+The system will take you to a setup flow on the Overview page for a quick review of the service.
     
 <img src="images/reliability2.png" alt="drawing" style="width: 300px;"/>

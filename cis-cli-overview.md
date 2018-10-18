@@ -20,7 +20,10 @@ The following families of commands are available from the command line interface
   * [TLS](cli/cli-tls.html)
   * [WAF](cli/cli-waf.html)
   * [Pagerule](cli/cli-pagerule.html)
+  * [Firewall](cli/cli-firewall.html)
   * [Metrics](cli/cli-metrics.html)
+  * [Routing](cli/cli-routing.html)
+  * [RateLimit](cli/cli-ratelimit.html)
   * [Overview](#the-overview-command-definition)
 
 The CIS CLI documentation is shown in modified `man` page format. The `overview` command also is one of the CLI commands available to you. It just happens to make a good example as well, so we included it here.
