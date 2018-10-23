@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-03-02"
+lastupdated: "2018-10-23"
 ---
 
 {:shortdesc: .shortdesc}
@@ -31,6 +31,27 @@ To know whether data has passed through IBM CIS, locate the `Ray ID` which will 
 Terminal command:  `curl -svo /dev/null YOUR_URL_HERE. -L`
 
 Results in: `CF-RAY: 1ca349b6c1300da3-SJC`
+
+## Adding CF-Ray headers
+
+The CF-RAY header is added to help trace a request to a website through the network. Use it when working with Support to help troubleshoot any related issues with connectivity. You can reveal this "Ray ID" in your logs by making some edits to configuration files in Apache and nginx.
+
+### Apache
+```
+LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %{CF-Ray}i" cf_custom
+
+CustomLog log/access_log cf_custom
+```
+
+### nginx
+```
+log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
+                    '"$request" $status $body_bytes_sent '
+                    '"$http_referer" "$http_user_agent" '
+                    '$http_cf_ray';
+
+access_log  /var/log/nginx/access.log cf_custom;
+```
 
 ## How do I trace a route?
 
