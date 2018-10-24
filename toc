@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis/getting-started.html"}
+{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis/getting-started.html" path="infrastructure/cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
