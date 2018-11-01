@@ -25,7 +25,7 @@ Scroll to the right to view the rest of the table!
 |**TLS**|<ul><li>1 Universal wildcard</li><li>1 Dedicated wildcard</li><li>1 Dedicated custom</li><li>1 Uploaded custom</li></ul>|<ul><li>1 Universal wildcard</li> <li>1 Dedicated wildcard</li><li>1 Dedicated custom</li><li>1 Uploaded custom</li></ul>|<ul><li>1 Universal wildcard per domain. Up to 10 free certificates per CIS instance</li> <li>2 Dedicated wildcard with ability to request more</li><li>10 Dedicated custom</li><li>1 Uploaded custom with ability to request more</li></ul>
 |**Page Rules**|50 Page Rules|50 Page Rules|<ul><li>100 Page Rules</li><li>Additional settings for fine-grained control</li></ul> |
 |**Rate Limiting**|No|No|Yes|
-|**IP Firewall**|Challenge Only|Challenge Only|<ul><li>Challenge</li><li>Block</li><li>JS Challenge</li><li>Simulate</li></ul>|
+|**IP Firewall**|Challenge Only|Challenge Only|<ul><li>Challenge</li><li>Block</li><li>JS Challenge</li><li>Whitelist</li></ul>|
 |**Caching**|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 seconds|
 
 
