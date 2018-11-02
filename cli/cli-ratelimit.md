@@ -28,7 +28,7 @@ The following `ratelimit` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule-create  DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis ratelimit-rule-create  DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -125,7 +125,7 @@ The optional fields are `id`, `disabled`, `description`, and `bypass`:
    
    `-i, --instance` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output` Output the result in JSON format to a file. If not set, outputs the result to terminal.
+   `-o, --output` Specify output format, only JSON is supported now.
 
 **Output Table Columns:**
 
@@ -146,7 +146,7 @@ The optional fields are `id`, `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID  (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID  (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 
 **ARGUMENTS**
@@ -194,7 +194,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
   
   `-i, --instance` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
   
-  `-o, --output` Output the result in JSON format to a file. If not set, outputs the result to terminal.
+  `-o, --output` Specify output format, only JSON is supported now.
 
 
 **Output Table Columns**
@@ -217,7 +217,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rules  DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis ratelimit-rules  DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -227,7 +227,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
   `-i, --instance`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
   
-  `-o, --output`     Output the result in JSON format to a file. If not set, outputs the result to terminal.
+  `-o, --output`     Specify output format, only JSON is supported now.
 
 
 **Output Table Columns**
@@ -251,7 +251,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -263,7 +263,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
    `-i, --instance`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output`     Output the result in JSON format to a file. If not set, outputs the result to terminal.
+   `-o, --output`     Specify output format, only JSON is supported now.
 
 
 **Output Table Columns**
@@ -287,7 +287,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -299,7 +299,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
    `-i, --instance`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output`     Output the result in JSON format to a file. If not set, outputs the result to terminal.
+   `-o, --output`     Specify output format, only JSON is supported now.
 
 
 **Output Table Columns**

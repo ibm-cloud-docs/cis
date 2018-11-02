@@ -87,13 +87,13 @@ The following `tls` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis certificates DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis certificates DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **OPTIONS**
 
    `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output OUTPUT_FILE`  (Optional) Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 **Output Table Columns**
    * Type
@@ -121,7 +121,7 @@ The following `tls` commands are available:
 
 **USAGE**
 
- `ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+ `ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **OPTIONS**
 
@@ -131,7 +131,7 @@ The following `tls` commands are available:
 
    `--universal:` Show universal certificate details.
 
-   `-o, --output OUTPUT_FILE`  (Optional) Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 
 **Output message**
@@ -161,7 +161,7 @@ The following `tls` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis certificate-order DNS_DOMAIN_ID [--hostnames host1 --hostnames host2 ...] [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+  `ibmcloud cis certificate-order DNS_DOMAIN_ID [--hostnames host1 --hostnames host2 ...] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **OPTIONS**
 
@@ -170,7 +170,7 @@ affect price.
 
    `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output OUTPUT_FILE` (Optional) Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output FORMAT` (Optional) Specify output format, only JSON is supported now.
 
 **Output Message**
 
@@ -196,7 +196,7 @@ affect price.
 
 **USAGE**
 
-  `ibmcloud cis certificate-upload DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output OUTPUT_FILE]`
+  `ibmcloud cis certificate-upload DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output FORMAT]`
 
 **OPTIONS**
 
@@ -219,7 +219,7 @@ affect price.
                       
    `-j, --json-file JSON_FILE`  (Optional) A file contains input JSON data.
 
-   `-o, --output OUTPUT_FILE`  (Optional) Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 **Output Message**
 
@@ -244,7 +244,7 @@ affect price.
 
 **USAGE**
 
-  `ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output OUTPUT_FILE]`
+  `ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output FORMAT]`
 
 **OPTIONS**
 
@@ -265,7 +265,7 @@ affect price.
 
 `-j, --json-file JSON_FILE`  (Optional) A file contains input JSON data.
 
-`-o, --output OUTPUT_FILE`  (Optional) Output the result as JSON style to a file. If not set, outputs the result to terminal.
+`-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 **Output Message**
 
@@ -290,7 +290,7 @@ affect price.
 
 **USAGE**
 
-  `ibmcloud cis certificate-priority-change DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output OUTPUT_FILE]`
+  `ibmcloud cis certificate-priority-change DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output FORMAT]`
 
 **OPTIONS**
 
@@ -318,7 +318,7 @@ affect price.
 
    `-j, --json-file JSON_FILE`  (Optional) A file contains input JSON data.
 
-   `-o, --output OUTPUT_FILE`  (Optional) Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 **Output message**
 

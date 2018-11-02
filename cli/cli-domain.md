@@ -28,7 +28,7 @@ The following `domain` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis domain-add DNS_DOMAIN_NAME [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis domain-add DNS_DOMAIN_NAME [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -38,7 +38,7 @@ The following `domain` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 **Output**
   * ID                     
@@ -60,7 +60,7 @@ The following `domain` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis domain-resume DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis domain-resume DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -70,7 +70,7 @@ The following `domain` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 
 **Output**
@@ -93,7 +93,7 @@ The following `domain` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis domain-pause DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis domain-pause DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -103,7 +103,7 @@ The following `domain` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 **Output**
   * ID                     
@@ -125,7 +125,7 @@ The following `domain` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis domain DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis domain DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -135,7 +135,7 @@ The following `domain` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 **Output**
   * ID                     
@@ -176,13 +176,13 @@ The following `domain` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis domains [-i, --instance INSTANCE_NAME] [-o, --output OUTPUT_FILE]`
+   `ibmcloud cis domains [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **OPTIONS**
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 
 **Output**
