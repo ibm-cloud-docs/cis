@@ -9,7 +9,7 @@ lastupdated: "2018-03-16"
 
 # How IBM Cloud Internet Services (CIS) optimizes performance
 
-IBM Cloud Internet Services (CIS) helps you improve perfomance of your web services and applications by leveraging three major features: Global Load Balancing, Content Optimization through Page Rules, and Caching. Superior web performance requires more than just moving static files closer to visitors; it means you must be sure that every page renders as quickly and efficiently as possible. By protecting your origin servers from spammers, bots, and malicious crawlers, you can protect your origin’s resources for your application's performance, which improves your customer experience.
+IBM Cloud Internet Services (CIS) helps you improve performance of your web services and applications by leveraging three major features: Global Load Balancing, Content Optimization through Page Rules, and Caching. Superior web performance requires more than just moving static files closer to visitors; it means you must be sure that every page renders as quickly and efficiently as possible. By protecting your origin servers from spammers, bots, and malicious crawlers, you can protect your origin’s resources for your application's performance, which improves your customer experience.
 
 ![performance-graphic.png](images/performance-graphic.png)
 
