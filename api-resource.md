@@ -18,7 +18,7 @@ lastupdated: "2018-11-16"
 
 Here's how to view the CIS API specifications: 
 
-1. To view the CIS APIs, navigate to the [API Docs](../../bluemix.net/apidocs/) page. 
+1. To view the CIS APIs, navigate to the [API Docs](../bluemix.net/apidocs/) page. 
 
 2. From the left navigation menu, check the Networking box to filter the APIs.
 
