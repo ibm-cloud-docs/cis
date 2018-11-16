@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-05"
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,7 +19,7 @@ These options are listed in the order from the least secure (Off) to the most se
  * Off (not recommended)
  * Client-to-Edge (edge to origin not encrypted, self-signed certificates are not supported) 
  * End-to-End flexible (edge to origin certificates can be self-signed) 
- * End-to-End CA signed (recommended)
+ * End-to-End CA signed (default and recommended)
  * HTTPS only origin pull (Enterprise only)
 
 ### Off 
@@ -32,7 +32,7 @@ A secure connection between your visitor and CIS, but no secure connection betwe
 A secure connection between your visitor and CIS, and secure connection (but not authenticated) between CIS and your web server. You must have your server configured to answer HTTPS connections, with a self-signed certificate at least. The authenticity of the certificate is not verified: from CIS’s point of view (when we connect to your origin webserver), it’s the equivalent of bypassing this error message. As long as the address of your origin webserver is correct in your DNS settings, you know that we’re connecting to your webserver, and not someone else’s.
 
 ### End-to-End CA Signed
-Recommended. A secure connection between the visitor and CIS, and secure and authenticated connection between CIS and your web server. You must have your server configured to answer HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority, have an expiration date in the future, and respond for the request domain name (hostname).
+Default and recommended. A secure connection between the visitor and CIS, and secure and authenticated connection between CIS and your web server. You must have your server configured to answer HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority, have an expiration date in the future, and respond for the request domain name (hostname). We recommend that you keep using this TLS mode for best security practices, unless you understand the potential security threats of changing to one of the less strict modes.
 
 ### HTTPS Only Origin Pull
 *Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between CIS and your origin websever from HTTP to HTTPS, even if the original content requested is over HTTP.
