@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-20"
+lastupdated: "2018-11-07"
 
 ---
 
@@ -84,7 +84,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-packages DNS_DOMAIN_ID`
+  `ibmcloud cis waf-packages DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -93,12 +93,16 @@ The following `waf` commands are available:
 **OPTIONS**
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 **Output Message**
 
-   * package ID
-   * package name
-   * package mode
+   * ID
+   * Name
+   * Detection mode
+   * Sensitivity
+   * Action mode 
 
 
 
@@ -110,7 +114,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID`
+  `ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -122,11 +126,16 @@ The following `waf` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
+   `-o, --output`    Specify output format, only JSON is supported now.
+
 **Output Message**
-   * Package ID
-   * Package Name
-   * Package Description
-   * Package Mode
+   * ID
+   * Name
+   * Description
+   * Detection Mode
+   * Domain ID 
+   * Sensitivity
+   * Action mode 
 
 
 
@@ -134,36 +143,37 @@ The following `waf` commands are available:
 
 **NAME**
 
-  `waf-package-set` - Set config of the OWASP package.
+  `waf-package-set` - Update OWASP Package setting.
 
 **USAGE**
 
-  `ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID SENSITIVITY ACTION_MODE`
+  `ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity  SENSITIVITY] [--action_mode ACTION_MODE] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
    `DNS_DOMAIN_ID` is the ID of DNS domain.
    
    `OWASP_PACKAGE_ID` is the package ID of OWASP.
-   
-   `SENSITIVITY` is the sensitivity of the package. Valid values are: `high`, `low`, `off`.
-   
-   `ACTION_MODE` is the action that is taken for rules under the package. Valid values are: `simulate`, `block`, `challenge`.
 
 **OPTIONS**
 
+   `--sensitivity`   The sensitivity of the firewall package. Valid values: `high`, `medium`, `low`, `off`.
+   
+   `--action-mode`   The default action that will be taken for rules under the firewall package. Valid values: `simulate`, `block`, `challenge`.
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 **Output Message**
 
-   * Package ID
-   * Package Name
-   * Package Description
-   * Package Detection Mode
+   * ID
+   * Name
+   * Description
+   * Detection Mode
    * Domain ID
-   * Package Status
-   * Package Sensitivity
-   * Package Action Mode
+   * Sensitivity
+   * Action Mode
 
 
 ## List WAF groups
@@ -174,7 +184,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID`
+  `ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -184,13 +194,20 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
+   `--page`         Page number of paginated results. (default: 1)
+
+   `--per-page`    Number of groups per page.The min value is 5 and max value is 1000. (default: 50)
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
+   `-o, --output`    Specify output format, only JSON is supported now.
+   
 **Output Message**
-   * Group ID
-   * Group Name
-   * Group Description
-   * Group Mode
+   * ID
+   * Name
+   * Mode
+   * Number of rules
+   * Number of modified rules
 
 
 ## Show a WAF group
@@ -201,7 +218,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID`
+  `ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -215,13 +232,16 @@ The following `waf` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
+   `-o, --output`    Specify output format, only JSON is supported now.
+
+
 **Output Message**
-   * Group Name
-   * Group ID
-   * Group mode
-   * Group Description
-   * Rules Count
-   * Modified Rules Count
+   * ID
+   * Name
+   * Description
+   * Mode
+   * Number of rules
+   * Number of modified rules
 
 
 ## Update a WAF group
@@ -248,9 +268,16 @@ The following `waf` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
+  `-o, --output`    Specify output format, only JSON is supported now.
+
+
 **Output Message**
-   * Group ID
-   * Group Mode
+   * ID
+   * Name
+   * Description
+   * Mode
+   * Number of rules
+   * Number of modified rules
 
 
 ## List WAF rules
@@ -261,7 +288,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID`
+  `ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -271,17 +298,20 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
+   `--page`                Page number of paginated results. (default: 1)
+
+   `--per-page`         Number of rules per page. (default: 50)
+
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-p, --page-no` Page num
-   
-   `-n, --number-per-page`  Number of rules per page. Min value is `5` and max value is `1000`.
+   `-o, --output`    Specify output format, only JSON is supported now.
 
 **Output Message**
 
-   * Rule ID
-   * Rule Description
-   * Rule Current Mode
+   * ID
+   * Description
+   * Mode
+   * Priority
 
 
 
@@ -293,7 +323,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID`
+  `ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
 
 **ARGUMENTS**
 
@@ -307,15 +337,17 @@ The following `waf` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
+   `-o, --output`    Specify output format, only JSON is supported now.
+
+
 **Output Message**
-   * Rule ID
-   * Rule Description
-   * Rule Current Mode
-   * Rule Default Mode
-   * Rule Allowed Mode
-   * Rule Priority
-   * Group ID of the rule belonging to
-   * Group Name of the rule belonging to
+   * ID
+   * Description
+   * Mode
+   * Allowed Mode
+   * Priority
+   * Group ID
+   * Group Name 
 
 
 ## Update a WAF rule
@@ -326,7 +358,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE_MODE`  
+  `ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE_MODE [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`  
 
 **ARGUMENTS**
 
@@ -342,6 +374,14 @@ The following `waf` commands are available:
 
    `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
+   `-o, --output`    Specify output format, only JSON is supported now.
+
+
 **Output Message**
-   * Rule ID
-   * Rule Current Mode
+   * ID
+   * Description
+   * Mode
+   * Allowed Mode
+   * Priority
+   * Group ID
+   * Group Name 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-20"
+lastupdated: "2018-11-07"
 
 ---
 
@@ -18,6 +18,8 @@ The following `dns-record` commands are available:
 * Get DNS record
 * Delete DNS record
 * List DNS records
+* Upload your BIND config
+* Export BIND config
 
 ## Create DNS record
 **NAME**
@@ -514,3 +516,47 @@ The optional fields are `type`, `name`, `content`, `page`, `per_page`, `order`, 
    * Content
    * Proxied
    * TTL
+
+
+## Upload your BIND config
+
+**NAME**
+
+   `dns-records-import` - Upload your BIND config.
+
+**USAGE**
+
+   `ibmcloud cis dns-records-import DNS_DOMAIN_ID (--file FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+
+**ARGUMENTS**
+
+   `DNS_DOMAIN_ID` is the ID of DNS domain.
+
+**OPTIONS**
+
+  `--file`                BIND config to upload.
+
+   `-i, --instance`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+
+   `-o, --output`    Specify output format, only JSON is supported now.
+
+
+## Export BIND config
+
+**NAME**
+
+   `dns-records-export` - Export BIND config.
+
+**USAGE**
+
+   `ibmcloud cis dns-records-export DNS_DOMAIN_ID [--file FILE] [-i, --instance INSTANCE_NAME]`
+
+**ARGUMENTS**
+
+   `DNS_DOMAIN_ID` is the ID of DNS domain.
+
+**OPTIONS**
+
+  `--file`                The BIND config saves exported DNS records..
+
+   `-i, --instance`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
