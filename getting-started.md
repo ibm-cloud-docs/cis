@@ -1,15 +1,16 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-12-03"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Getting Started with IBM Cloud Internet Services (CIS)
 
-IBM Cloud Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis/managing-for-security.html), [reliability](/docs/infrastructure/cis/managing-for-reliability.html), and [performance](/docs/infrastructure/cis/managing-for-performance.html). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
+IBM Cloud Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](managing-for-security.html), [reliability](managing-for-reliability.html), and [performance](managing-for-performance.html). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
 
 For each capability, IBM CIS helps you tune its features to suit your specific needs, including:
 
@@ -22,11 +23,11 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
 
 
 ## Before you begin
-Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/us-en/signup/register.html). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://console.bluemix.net/catalog/services/internet-services), depending on your preference.
+Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/us-en/signup/register.html). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
 If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://www.ibm.com/cloud-computing/bluemix/contact-us) for additional guidance on getting started.
 
-If you have an existing Softlayer account, you can [link your account](https://console.bluemix.net/docs/account/softlayerlink.html#unifyingaccounts) with your IBMid. 
+If you have an existing Softlayer account, you can [link your account](https://{DomainName}/docs/account/softlayerlink.html#unifyingaccounts) with your IBMid. 
 
 ## Process overview
 
@@ -98,4 +99,4 @@ To proceed, select the **Reliability** tab from your left-hand navbar, then sele
 
 ### Step 6. In the meantime, you can begin managing other IBM CIS functions and features.
 
-For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis/how-to.html).
+For more details about managing other functions and features, please see the [step-by-step instructions](how-to.html).

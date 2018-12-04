@@ -40,10 +40,12 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 ## Reliability
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
-|**Always Online**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html) |
+|**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html) |
 |**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html) |
 |**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your CIS deployment for optimal reliability](managing-for-reliability.html)|
-|**Host Header Override**|Replace the host header for URI matching the page rule to the value specified. This is commonly used for content hosted in an S3 bucket.||
+|**Host Header Override**|Replace the host header for URI matching the page rule to the value specified. This is commonly used for content hosted in an S3 bucket.|
+|**Disable Apps**|Turn off all CIS Apps. | Enterprise only |
+|**Origin Error Page Pass-through**|Disables CIS error pages that would trigger for issues sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only ||
 
 ## Page Rule URL patterns
 

@@ -36,3 +36,7 @@ And another user requests:
 CIS goes back to the origin, even though we have the file in our cache.
 
 Query String Sort sorts the query strings _before_ they hit our cache, resulting in a higher cache hit rate. Enable Query String Sort using the toggle in the **Caching** page.
+
+## Serve Stale Content
+
+Keeps a limited version of the site online if the server goes down. Even if the content has expired, CIS will continue serving cached content to users when origin servers are offline.

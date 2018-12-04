@@ -1,19 +1,19 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-12-03"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Getting Help and Support
 <!-- Common attributes used in the template are defined as follows: -->
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
+
 
 <!-- # {{site.data.keyword.blockstorageshort}} troubleshooting
 {: #ts} -->
@@ -38,6 +38,6 @@ When using the forums to ask a question, tag your question so that it is seen by
 <!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
 * For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/cis.html?smartspace=ibm-cloud){:new_window} forum. Include the  "cis" and "ibm-cloud" tags.
 
-See [Getting help](../support/index.html#getting-help) for more details about using the forums.
+See [Getting help]({DomainName}/support/index.html#getting-help) for more details about using the forums.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](../support/index.html#contacting-support).
+For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support]({DomainName}/support/index.html#contacting-support).

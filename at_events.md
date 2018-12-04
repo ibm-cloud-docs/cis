@@ -170,7 +170,7 @@ The following table lists the actions that are related to configuring settings a
 |internet-svcs.zones.settings.tls_1_2_only.update|Enable or Disable TLS 1.2 support.|
 |internet-svcs.zones.settings.waf.update|Enable or Disable web application firewall.|
 |internet-svcs.zones.settings.cname_flattening.update|Change CNAME flattening setting.|
-|internet-svcs.zones.settings.always_online.update|Enable or disable always online for the domain.|
+|internet-svcs.zones.settings.always_online.update|Enable or disable serve stale content for the domain.|
 |internet-svcs.zones.settings.sort_query_string_for_cache.update|Enable or disable sorting query arguments when querying content in cache.|
 |internet-svcs.zones.settings.tls_1_3.update|Change TLS 1.3 setting.|
 |internet-svcs.zones.settings.automatic_https_rewrites.update|Enable or disable automatic HTTPS rewrites.
