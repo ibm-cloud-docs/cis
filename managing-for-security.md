@@ -131,5 +131,5 @@ The priority by which the certificates are displayed at our edge is:
 3. Dedicated wildcard
 4. Universal
 
-### Require Modern TLS
-**Require Modern TLS** prevents older browsers from connecting using older, less secure versions of TLS. Any connections from browsers using TLS 1.1 or earlier are refused. TLS versions 1.2 and 1.3 are included in Modern TLS and are considered secure.
+### Minimum TLS version
+See [Minimum TLS version](ssl-options.html). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.

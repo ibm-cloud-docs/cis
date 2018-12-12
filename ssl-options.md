@@ -11,7 +11,7 @@ lastupdated: "2018-11-05"
 The TLS options let you control whether visitors can browse your website over a secure connection, and when they do, how CIS will connect to your origin server.
 
 ## Automatic HTTPS rewrite
-Automatic HTTPS rewrites help fix mixed content by changing “http” to “https” for all resources or links on your web site that can be served with HTTPS.
+Automatic HTTPS rewrites help fix mixed content by changing “http” to “https” for all resources or links on your web site that can be served with HTTPS. This setting is located in the **Advanced** security configuration page.
 
 ## TLS encryption modes
 
@@ -36,3 +36,7 @@ Default and recommended. A secure connection between the visitor and CIS, and se
 
 ### HTTPS Only Origin Pull
 *Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between CIS and your origin websever from HTTP to HTTPS, even if the original content requested is over HTTP.
+
+## Minimum TLS version
+
+This sets the minimum TLS version for traffic trying to connect to your site. By default this is set to 1.0. Higher TLS versions provide additional security, but might not be supported by all browsers. This could result in some customers being unable to connect to your site.

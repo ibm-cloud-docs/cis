@@ -13,6 +13,8 @@ The Security Events Table shows you detailed information about web requests that
   * **Block** : A hard block.
   * **Challenge**: A CAPTCHA page that humans can bypass.
   * **Simulate**: A request that is allowed through normally, but is logged.
+
+  Sometimes the triggered rule is not identified. In this case the UI shows a '-' instead of the rule ID.
 * **IP Address**: Shows the source IP address of the web request.
 * **Location**: Shows the country associated with the source IP of the web request.
 * **Host**: Shows the hostname of the server that has been reached by the web request.
