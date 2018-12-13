@@ -35,16 +35,17 @@ Cloud Internet Services (CIS)
     routing.md
     rate-limiting.md
     multi-domain.md
+    iam.md
     helpful-tools.md
     
     {: .topicgroup}
-    Step-by-step guides 
+    Detailed guides 
         [Secure and resilient multi-region Kubernetes clusters with Cloud Internet Services](https://console.bluemix.net/docs/tutorials/multi-region-k8s-cis.html)  
         [Using CIS to secure your Cloud Foundry applications across regions](https://console.bluemix.net/docs/tutorials/multi-region-webapp.html#register-a-custom-domain-with-ibm-cloud-internet-services)
         [Deploy serverless apps across multiple locations](https://console.bluemix.net/docs/tutorials/multi-region-serverless.html)
         
     {: .topicgroup}
-    Step-by-step: Improving application reliability and scalability with Global Load Balancing
+    Guided instructions: Improving application reliability and scalability with Global Load Balancing
         application-reliability.md
         create-cis.md
         input-domain.md
