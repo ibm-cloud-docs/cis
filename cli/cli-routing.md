@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-12-11"
 
 ---
 
@@ -13,8 +13,9 @@ lastupdated: "2018-09-20"
 
 The following `routing` commands are available:
 
-* Show
-* Update
+* Show routing
+* Update routing settings
+* Show routing analytics
 
 ## Show Routing Setting
 
@@ -72,3 +73,29 @@ The following `routing` commands are available:
 * routing feature id
 * routing feature value
 * routing feature modified time
+
+## Display routing analytics
+
+**NAME**
+
+   `routing-analytics` - Get analytics of smart-routing latency. (enterprise plan only)
+
+**USAGE**
+
+   `ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+
+**ARGUMENTS**
+
+   `DNS_DOMAIN_ID` is the id of DNS domain.
+
+**OPTIONS**
+
+   `--colos`                      Analytics of smart-routing latency colos.
+   
+   `-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+
+   `-o value, --output value`     Specify output format, only JSON is supported now.
+
+
+**Output Message**
+  * Analytics Data

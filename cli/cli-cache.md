@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-21"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -48,17 +48,26 @@ Result of cache purging.
 
 **USAGE**
 
-  `ibmcloud cis cache-settings DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]`
+  `ibmcloud cis cache-settings DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+
+**ARGUMENTS**
+
+   * `DNS_DOMAIN_ID` The ID of DNS domain.
 
 **OPTIONS**
 
-   * `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   * `-i, --instance INSTANCE_NAME` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+  
+   * `-o, --output FORMAT`   Specify output format, only JSON is supported now.
+
 
 **Output messages:**
 
-  * Caching Level
   * Browser Expiration
+  * Caching Level
   * Development Mode
+  * Serve Stale Content
+  * Query String Sort
 
 ## Update cache settings
 
@@ -68,12 +77,13 @@ Result of cache purging.
 
 **USAGE**
 
-  `ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--browser-expiration EXPIRATION][--development-mode (enabled | disabled)][-i, --instance INSTANCE_NAME]`
+  `ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--browser-expiration EXPIRATION] [--development-mode (on | off)] [--serve-stale-content (on | off)] [--query-string-sort (on | off)] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+
+**ARGUMENTS**
+
+   * `DNS_DOMAIN_ID`  The ID of DNS domain.
 
 **OPTIONS**
-
-   * `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
-   
 
    * `--caching-level _value_`  Specify under what URL conditions you want to deliver cached assets to the user.  Valid _value_ tokens are: `no-query-string`,  `query-string-independent`,  `query-string-dependent`.
    
@@ -93,6 +103,19 @@ Result of cache purging.
    * `--development-mode _value_` Bypass all edge caches and send traffic toward your origin servers.
 
 
+   * `--serve-stale-content _value_`  Continue serving cached content to users when origin servers are offline, even if the content has expired.
+
+   * `--query-string-sort _value_`    In the cache, CIS treats files with the same query strings as the same file, regardless of the order of the query strings.
+
+   * `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+
+   * `-o, --output FORMAT`   Specify output format, only JSON is supported now.
+
+
 **Output messages:**
 
-The output message contains the result of your cache settings update.
+  * Browser Expiration
+  * Caching Level
+  * Development Mode
+  * Serve Stale Content
+  * Query String Sort

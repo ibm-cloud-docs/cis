@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-06-20"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -22,6 +22,10 @@ The following `tls` commands are available:
 * Update certificate
 * Change the priority of custom certificate
 * Delete certificate
+* List origin certificates
+* Create origin certificate
+* Show a origin certificate
+* Delete origin certificate
 
 ## Show TLS setting
 **NAME**
@@ -352,3 +356,121 @@ affect price.
 **Output Message**
 
   Result of deleting certificate
+
+
+
+##  List origin certificates
+
+**NAME**
+
+  `origin-certificates` - List all origin certificates for a given DNS domain.
+
+**USAGE**
+
+  `ibmcloud cis origin-certificates DNS_DOMAIN_ID [--instance INSTANCE_NAME] [--output FORMAT]`
+
+**ARGUMENTS**
+
+  `DNS_DOMAIN_ID`  The id of DNS domain.
+
+**OPTIONS**
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   
+   `-o, --output FORMAT`    Specify output format, only JSON is supported now.
+
+
+##  Create origin certificate
+
+**NAME**
+
+  `origin-certificate-create` - Create a CIS-signed certificate.
+
+**USAGE**
+
+  `ibmcloud cis origin-certificate-create DNS_DOMAIN_ID [--request-type REQUEST_TYPE] [--hostnames HOST_NAME1] [--hostnames HOST_NAME2] [--requested-validity DAYS] [--csr CSR] [--json-str JSON_STR | --json-file JSON_FILE] [--instance INSTANCE_NAME] [--output FORMAT]`
+
+**ARGUMENTS**
+
+  `DNS_DOMAIN_ID`  The id of DNS domain.
+
+**OPTIONS**
+   `--request-type REQUEST_TYPE`        Signature type desired on certificate. Valid values: "origin-rsa", "origin-ecc".
+
+   `--hostnames HOSTNAME`           hostname or wildcard name bound to the certificate.
+   
+   `--requested-validity DAYS`  The number of days for which the certificate should be valid. (default: 5475)
+   
+   `--csr CSR`                 The Certificate Signing Request (CSR). If not set, CIS will generate one.
+   
+   `-s, --json-str JSON_STR`  The JSON data describing an origin certificate.
+
+                   The required fields in JSON data are "request_type", "hostnames".
+                       
+                       "request_type": Signature type desired on certificate. Valid values: "origin-rsa", "origin-ecc".
+                       "hostnames": Array of hostnames or wildcard names bound to the certificate.
+
+                   The optional fields are "requested_validity", "csr".
+                       
+                       "requested_validity": The number of days for which the certificate should be valid. Valid values: "0", "7", "30", "90", "365", "730", "1095", "5475".
+                       "csr": The Certificate Signing Request (CSR). If not set, CIS will generate one.
+
+                   Sample JSON data:
+                   
+                   {
+                       "request_type": "origin-rsa",
+                       "hostnames": [
+                           "*.example.com",
+                           "example.com",
+                     ],
+                       "requested_validity": 5475,
+                       "csr": "your_csr"
+                   }
+   `-j, --json-file JSON_FILE`  A file contains input JSON data.
+
+
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   
+   `-o, --output FORMAT`    Specify output format, only JSON is supported now.
+
+
+##  Show a origin certificate
+
+**NAME**
+
+  `origin-certificate` - Get details of a given origin certificate.
+
+**USAGE**
+
+  `ibmcloud cis origin-certificate DNS_DOMAIN_ID CERT_ID [--instance INSTANCE_NAME] [--output FORMAT]`
+
+**ARGUMENTS**
+
+  `DNS_DOMAIN_ID`  The id of DNS domain.
+
+  `CERT_ID` The id of Origin Certificate.
+
+
+**OPTIONS**
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   
+   `-o, --output FORMAT`    Specify output format, only JSON is supported now.
+
+##  Delete origin certificate
+
+**NAME**
+
+  `origin-certificate-delete` - Delete an origin certificate.
+
+**USAGE**
+
+  `ibmcloud cis  origin-certificate-delete DNS_DOMAIN_ID CERT_ID [--instance INSTANCE_NAME]`
+
+**ARGUMENTS**
+
+  `DNS_DOMAIN_ID`  The id of DNS domain.
+
+  `CERT_ID` The id of Origin Certificate.
+
+
+**OPTIONS**
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.

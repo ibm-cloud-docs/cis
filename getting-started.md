@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-12-12"
+lastupdated: "2018-12-17"
 ---
 
 {:shortdesc: .shortdesc}
@@ -101,6 +101,8 @@ When you are finished, or if you would like to skip this step, select **Next ste
 To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers. See [Managing DNS Records (![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/sections/200038106-Managing-DNS-Records){:new_window}, written by our partners at Cloudflare, for detailed instructions by provider.
 
 After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. Once we verify that the specified nameservers have been configured corrrectly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
+
+Your domain must move to `Active` state within 60 days or your domain and any configuration data will be removed. {:note}
 
 ![Getting Started](images/overview-setup-step4.png)
 

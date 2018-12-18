@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -18,6 +18,7 @@ The following `firewall` commands are available:
 * List
 * Detail
 * Delete
+* Events
 
 ## Create Firewall
 
@@ -449,3 +450,22 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 `-d value, --domain value`    DNS Domain ID.
    
 `-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+
+## Get Firewall events
+
+**NAME**
+
+   `firewall-events` - List events triggered by an active web application firewall rule.
+
+**USAGE**
+
+   `ibmcloud cis firewall-events DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]  [-o, --output FORMAT]`
+
+**ARGUMENTS**
+
+   `DNS_DOMAIN_ID` is the ID of DNS domain.
+
+**OPTIONS**
+   
+   `-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-o, --output`                Output the result as JSON style to a file. If not set, outputs the result to terminal.
