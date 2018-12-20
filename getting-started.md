@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-12-17"
+lastupdated: "2018-12-20"
 ---
 
 {:shortdesc: .shortdesc}
@@ -79,13 +79,15 @@ Select **Let's get started** from the welcome page to begin setting up CIS.
 
 Next, begin protecting and improving the performance of your web service by entering your domain or a subdomain.
 
-**Note:** Please specify DNS zones. You can configure the nameservers for these domains or subdomains at the domain's registrar or DNS provider. Do not use CNAMEs.
+Please specify DNS zones. You can configure the nameservers for these domains or subdomains at the domain's registrar or DNS provider. Do not use CNAMEs.
+{:note}
 
 ![Getting Started](images/overview-setup-step2.png)
 
 The Overview screen will show your domain in `Pending` status. Your domain will remain `Pending` until you complete Step 4.
 
-**Note:** The IBM CIS instance cannot be deleted after a domain has been added. To delete the instance, please delete the domain from the instance first.
+The IBM CIS instance cannot be deleted after a domain has been added. To delete the instance, please delete the domain from the instance first.
+{:note}
 
 ### Step 3. Set up your DNS records (optional).
 Before transitioning the traffic for your domain to CIS, we strongly recommend that you import or re-create your DNS records in CIS. You can choose to skip this step, but if your DNS records are not configured properly in CIS, it could leave parts of your website inaccessible.
@@ -102,7 +104,8 @@ To begin receiving the benefits of IBM CIS, configure your registrar or domain n
 
 After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. Once we verify that the specified nameservers have been configured corrrectly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
 
-Your domain must move to `Active` state within 60 days or your domain and any configuration data will be removed. {:note}
+Your domain must move to `Active` state within 60 days or your domain and any configuration data will be removed. 
+{:note}
 
 ![Getting Started](images/overview-setup-step4.png)
 
