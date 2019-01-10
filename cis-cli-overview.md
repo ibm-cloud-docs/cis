@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-05-22"
+lastupdated: "2019-01-07"
 
 ---
 
@@ -25,6 +25,7 @@ The following families of commands are available from the command line interface
   * [Routing](cli/cli-routing.html)
   * [RateLimit](cli/cli-ratelimit.html)
   * [Overview](#the-overview-command-definition)
+  * [Log](cli/cli-log.md)
 
 The CIS CLI documentation is shown in modified `man` page format. The `overview` command also is one of the CLI commands available to you. It just happens to make a good example as well, so we included it here.
 
@@ -32,15 +33,17 @@ The CIS CLI documentation is shown in modified `man` page format. The `overview`
 
 **NAME**
 
-  `overview` - Show the overview information for an instance. 
+  `cloud-internet-services overview` - Show the overview information for an instance. 
 
 **USAGE**
 
-  `ibmcloud cis overview [-i, --instance INSTANCE_NAME]` 
+  `ibmcloud cis overview DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
- `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis   instance-set` is used.
+ `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+ `--output FORMAT`    Specify output format, only JSON is supported now.
+
 
 **Output messages**
 

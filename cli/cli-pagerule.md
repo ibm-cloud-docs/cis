@@ -26,7 +26,7 @@ The following `pagerule` commmands are available:
 
 **USAGE**
 
-   ibmcloud cis page-rule-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis page-rule-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -105,19 +105,9 @@ The following `pagerule` commmands are available:
                    
    -j, --json-file  A file contains input JSON data.
    
-   -i, --instance   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
-
-**Output Message**
-   * page rule ID
-   * target
-   * priority
-   * status
-   * actions table (columns as below):
-       * action ID
-       * action value
-
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 ## Update a Page Rule
@@ -128,7 +118,7 @@ The following `pagerule` commmands are available:
 
 **USAGE**
 
-   ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -208,19 +198,9 @@ The following `pagerule` commmands are available:
                    
    -j, --json-file  A file contains input JSON data.
    
-   -i, --instance   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
-
-**Output Message**
-   * page rule ID
-   * target
-   * priority
-   * status
-   * actions table (columns as below):
-       * action ID
-       * action value
-
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 ## Delete a Page Rule
@@ -241,10 +221,7 @@ The following `pagerule` commmands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
-
-**Output Message**
-   * result of deleting the page rule
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
 
 
 ## List Page Rules
@@ -255,7 +232,7 @@ The following `pagerule` commmands are available:
 
 **USAGE**
 
-   ibmcloud cis page-rules DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis page-rules DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -263,15 +240,9 @@ The following `pagerule` commmands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
    
-   -o, --output    Specify output format, only JSON is supported now.
-
-**Output Table Columns**
-   * page rule ID
-   * target
-   * priority
-   * status
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## Show a Page Rule
@@ -282,7 +253,7 @@ The following `pagerule` commmands are available:
 
 **USAGE**
 
-   ibmcloud cis page-rule DNS_DOMAIN_ID PAGE_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis page-rule DNS_DOMAIN_ID PAGE_RULE_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -292,18 +263,8 @@ The following `pagerule` commmands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
    
-   -o, --output    Specify output format, only JSON is supported now.
-
-
-**Output Message**
-   * page rule ID
-   * target
-   * priority
-   * status
-   * actions table (columns as below):
-     1. action ID
-     1. action value
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 

@@ -42,12 +42,7 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
-
-**Output Message**
-
-   * waf setting ID
-   * waf mode
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 
 
@@ -69,12 +64,7 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
-
-**Output Message**
-
-   * waf setting ID
-   * waf mode
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 ## List WAF packages
 
@@ -84,7 +74,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-packages DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis waf-packages DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -92,17 +82,9 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output`    Specify output format, only JSON is supported now.
-
-**Output Message**
-
-   * ID
-   * Name
-   * Detection mode
-   * Sensitivity
-   * Action mode 
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 
@@ -114,7 +96,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -124,18 +106,9 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
-
-**Output Message**
-   * ID
-   * Name
-   * Description
-   * Detection Mode
-   * Domain ID 
-   * Sensitivity
-   * Action mode 
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 
@@ -147,7 +120,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity  SENSITIVITY] [--action_mode ACTION_MODE] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity  SENSITIVITY] [--action_mode MODE] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -157,23 +130,13 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `--sensitivity`   The sensitivity of the firewall package. Valid values: `high`, `medium`, `low`, `off`.
+   `--sensitivity SENSITIVITY`   The sensitivity of the firewall package. Valid values: `high`, `medium`, `low`, `off`.
    
-   `--action-mode`   The default action that will be taken for rules under the firewall package. Valid values: `simulate`, `block`, `challenge`.
+   `--action-mode MODE`   The default action that will be taken for rules under the firewall package. Valid values: `simulate`, `block`, `challenge`.
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
-
-**Output Message**
-
-   * ID
-   * Name
-   * Description
-   * Detection Mode
-   * Domain ID
-   * Sensitivity
-   * Action Mode
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## List WAF groups
@@ -184,7 +147,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -194,20 +157,13 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `--page`         Page number of paginated results. (default: 1)
+   `--page PAGE`         Page number of paginated results. (default: 1)
 
-   `--per-page`    Number of groups per page.The min value is 5 and max value is 1000. (default: 50)
+   `--per-page NUM`    Number of groups per page.The min value is 5 and max value is 1000. (default: 50)
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
-   
-**Output Message**
-   * ID
-   * Name
-   * Mode
-   * Number of rules
-   * Number of modified rules
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## Show a WAF group
@@ -218,7 +174,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -230,18 +186,9 @@ The following `waf` commands are available:
    
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
-
-
-**Output Message**
-   * ID
-   * Name
-   * Description
-   * Mode
-   * Number of rules
-   * Number of modified rules
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## Update a WAF group
@@ -266,18 +213,9 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-  `-o, --output`    Specify output format, only JSON is supported now.
-
-
-**Output Message**
-   * ID
-   * Name
-   * Description
-   * Mode
-   * Number of rules
-   * Number of modified rules
+  `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## List WAF rules
@@ -288,7 +226,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -298,20 +236,13 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `--page`                Page number of paginated results. (default: 1)
+   `--page PAGE`                Page number of paginated results. (default: 1)
 
-   `--per-page`         Number of rules per page. (default: 50)
+   `--per-page NUM`         Number of rules per page. (default: 50)
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output`    Specify output format, only JSON is supported now.
-
-**Output Message**
-
-   * ID
-   * Description
-   * Mode
-   * Priority
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 
@@ -323,7 +254,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -335,19 +266,9 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
-
-
-**Output Message**
-   * ID
-   * Description
-   * Mode
-   * Allowed Mode
-   * Priority
-   * Group ID
-   * Group Name 
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## Update a WAF rule
@@ -358,7 +279,7 @@ The following `waf` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE_MODE [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`  
+  `ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE_MODE [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -372,16 +293,6 @@ The following `waf` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
-
-
-**Output Message**
-   * ID
-   * Description
-   * Mode
-   * Allowed Mode
-   * Priority
-   * Group ID
-   * Group Name 
+   `--output FORMAT`    Specify output format, only JSON is supported now.

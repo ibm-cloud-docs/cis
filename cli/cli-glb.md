@@ -37,7 +37,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -83,21 +83,10 @@ The following `glb` commands are available:
                   }
    -j, --json-file  A file contains input JSON data.
    
-   -i, --instance   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
-
-**Output Table Columns**
-
-  *  ID
-  *  Name
-  *  TTL
-  *  Proxied
-  *  Enabled
-  *  Session Affinity
-  *  Default Pools
-  *  Region Pools
 
 ## Update GLB
 **NAME**
@@ -106,7 +95,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **OPTIONS**
 
@@ -148,20 +137,10 @@ The following `glb` commands are available:
                   }
    -j, --json-file  A file contains input JSON data.
    
-   -i, --instance   Instance name. If not set, the context instance specified by `ibmcloud  cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud  cis instance-set` is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-   * ID
-   * Name
-   * TTL
-   * Proxied
-   * Enabled
-   * Session Affinity
-   * Default Pools
-   * Region Pools
 
 ## Show GLB
 **NAME**
@@ -170,7 +149,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -179,23 +158,10 @@ The following `glb` commands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-  *  ID
-  *  Name
-  *  Created_On
-  *  Modified_On
-  *  Description
-  * TTL
-  *  Proxied
-  *  Enabled
-  * Session Affinity
-  *  Default Pools
-  * Region Pools
 
 ## Delete GLB
 **NAME**
@@ -214,7 +180,7 @@ The following `glb` commands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 ## List GLB
 **NAME**
@@ -223,7 +189,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glbs DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glbs DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -231,18 +197,10 @@ The following `glb` commands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-  * ID
-  * Name
-  * Available Pools
-  * TTL
-  * Proxied
-  * Enabled
 
 ## List GLB pools
 **NAME**
@@ -251,24 +209,15 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-pools [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-pools [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
-**Output Table Columns**
-
-   * ID
-   * Name
-   * Enabled
-   * Minimum Origins
-   * Monitor
-   * Healthy Status
-   * Notification Email
    
 ## Create GLB pool
 **NAME**
@@ -277,7 +226,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-pool-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-pool-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **OPTIONS**
 
@@ -317,24 +266,10 @@ The following `glb` commands are available:
                    }
    -j, --json-file  A file contains input JSON data.
    
-   -i, --instance   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
    
-  **Output Table Columns**
-
-   * ID
-   * Name
-   * Created On
-   * Modified On
-   * Description
-   * Enabled
-   * Minimum Origins
-   * Monitor
-   * Healthy Status
-   * Origins
-   * Notification Email
-   * Check Regions
    
 ## Show GLB pool
 **NAME**
@@ -343,7 +278,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-pool GLB_POOL_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-pool GLB_POOL_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -351,24 +286,10 @@ The following `glb` commands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-   * ID
-   * Name
-   * Created On
-   * Modified On
-   * Description
-   * Enabled
-   * Minimum Origins
-   * Monitor
-   * Healthy Status
-   * Origins
-   * Notification Email
-   * Check Regions
    
 ## Delete GLB pool
 **NAME**
@@ -385,7 +306,7 @@ The following `glb` commands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
 ## Update GLB pool
 **NAME**
@@ -394,7 +315,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-pool-update GLB_POOL_ID [-s, --json-str JSON_STR | -j, --json-file JSON_FILE] [--enable-origin ORIGIN_NAME --enable-origin ORIGIN_NAME ...] [--disable-origin ORIGIN_NAME --disable-origin ORIGIN_NAME ...] [--add-origin ORIGIN_PARAMETER --add-origin ORIGIN_PARAMETER ...] [--remove-origin ORIGIN_NAME --remove-origin ORIGIN_NAME ...] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-pool-update GLB_POOL_ID [-s, --json-str JSON_STR | -j, --json-file JSON_FILE] [--enable-origin ORIGIN_NAME --enable-origin ORIGIN_NAME ...] [--disable-origin ORIGIN_NAME --disable-origin ORIGIN_NAME ...] [--add-origin ORIGIN_PARAMETER --add-origin ORIGIN_PARAMETER ...] [--remove-origin ORIGIN_NAME --remove-origin ORIGIN_NAME ...] [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 
 **ARGUMENTS**
@@ -448,24 +369,10 @@ The following `glb` commands are available:
                                 
    --remove-origin value       Remove an origin from the Pool. The value can be ORIGIN_NAME or ORIGIN_ADDRESS.
    
-   -i, --instance   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-   * ID
-   * Name
-   * Created On
-   * Modified On
-   * Description
-   * Enabled
-   * Minimum Origins
-   * Monitor
-   * Healthy Status
-   * Origins
-   * Notification Email
-   * Check Regions
    
 ## List GLB monitors   
 **NAME**
@@ -474,22 +381,14 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-monitors [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-monitors [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **OPTIONS**
 
    -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-   * ID
-   * Type
-   * Method
-   * Path
-   * Expected Body
-   * Expected Codes
    
 ## Create GLB monitor
 **NAME**
@@ -498,7 +397,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-monitor-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-monitor-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **OPTIONS**
 
@@ -574,25 +473,10 @@ The following `glb` commands are available:
 
    -j, --json-file  A file contains input JSON data.
    
-   -i, --instance   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-   * ID
-   * Created On
-   * Modified On
-   * Type
-   * Description
-   * Method
-   * Path
-   * Header
-   * Timeout
-   * Retries
-   * Interval
-   * Expected Body
-   * Expected Codes
    
 ## Show GLB monitor 
 **NAME**
@@ -601,7 +485,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-monitor GLB_MON_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-monitor GLB_MON_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -609,25 +493,10 @@ The following `glb` commands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used. 
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used. 
    
-   -o, --output    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
-**Output Table Columns**
-
-   * ID
-   * Created On
-   * Modified On
-   * Type
-   * Description
-   * Method
-   * Path
-   * Header
-   * Timeout
-   * Retries
-   * Interval
-   * Expected Body
-   * Expected Codes
    
 ## Delete GLB Monitor
 **NAME**
@@ -644,7 +513,7 @@ The following `glb` commands are available:
 
 **OPTIONS**
 
-   -i, --instance  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 
 ## Update GLB monitor
@@ -655,7 +524,7 @@ The following `glb` commands are available:
 
 **USAGE**
 
-   ibmcloud cis glb-monitor-update GLB_MON_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]
+   ibmcloud cis glb-monitor-update GLB_MON_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]
 
 **ARGUMENTS**
 
@@ -734,25 +603,9 @@ The following `glb` commands are available:
                            }
    -j, --json-file  A file contains input JSON data.
    
-   -i, --instance   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   -o, --output     Specify output format, only JSON is supported now.
-
-**Output Table Columns**
-
-   * ID
-   * Created On
-   * Modified On
-   * Type
-   * Description
-   * Method
-   * Path
-   * Header
-   * Timeout
-   * Retries
-   * Interval
-   * Expected Body
-   * Expected Codes
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 ## Get GLB events
@@ -765,7 +618,7 @@ The following `glb` commands are available:
 
    ibmcloud cis glb-events [-s, --since START_DATE] [-u, --until END_DATE] [--origin-name ORIGIN_NAME] [--pool-name POOL_NAME] 
                            [--origin-healthy (true | false)] [--pool-healthy (true | false)]
-                           [-i, --instance INSTANCE_NAME]  [-o, --output FORMAT]
+                           [-i, --instance INSTANCE_NAME]  [--output FORMAT]
 
 **ARGUMENTS**
   
@@ -785,15 +638,6 @@ The following `glb` commands are available:
    --pool-healthy    If true, filter events where the pool status is healthy, if false, filter events where the pool status is unhealthy. 
                      Default value is `true`,  valid values are `true` and `false`.
 
-   -i, --instance    Instance name. If not set, the context instance specified by `ibmcloudcis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`    Instance name. If not set, the context instance specified by `ibmcloudcis instance-set` is used.
    
-   -o, --output      Output the result as JSON style to a file. If not set, outputs the result to terminal.
-
-**Output Table Columns**
-
-   * Date(UTC)
-   * Origin Health
-   * Affected Origin
-   * Event Description
-   * Pool Health
-   * Pool Name
+   `--output FORMAT`      Output the result as JSON style to a file. If not set, outputs the result to terminal.

@@ -23,7 +23,7 @@ The following `domain-settings` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis domain-settings DNS_DOMAIN_ID (-g, --group GROUP | -f, --feature FEATURE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis domain-settings DNS_DOMAIN_ID (-g, --group GROUP | -f, --feature FEATURE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -31,9 +31,9 @@ The following `domain-settings` commands are available:
 
 **OPTIONS**
 
-   `-g value, --group value`    Display features in a same group.Valid values for "group" are "all", "domain", "reliability", "performance", "security".
+   `-g, --group value`    Display features in a same group.Valid values for "group" are "all", "domain", "reliability", "performance", "security".
 
-   `-f value, --feature value`  Feature of domain settings to check. Valid values are as follow: 
+   `-f, --feature value`  Feature of domain settings to check. Valid values are as follow: 
    
                                "always_use_https": 
                                    Redirect all requests with scheme "http" to "https". This applies to all http requests to the domain.
@@ -94,15 +94,10 @@ The following `domain-settings` commands are available:
                                "websockets": 
                                    Allow WebSockets connections to your origin server.
                                    
-   `-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o value, --output value`    Specify output format, only JSON is supported now.
-
-**Output**
-  * ID                     
-  * Value         
-  * Modified On  
-  * Editable      
+   `--output FORMAT`    Specify output format, only JSON is supported now.
+  
 
 ## Update domain-settings
 
@@ -112,7 +107,7 @@ The following `domain-settings` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, --value VALUE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, --value VALUE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -120,7 +115,7 @@ The following `domain-settings` commands are available:
 
 **OPTIONS**
 
-   `-f value, --feature value`      The Domain feature to get Valid values are as follow: 
+   `-f, --feature value`      The Domain feature to get Valid values are as follow: 
    
                                "always_use_https": 
                                    Redirect all requests with scheme "http" to "https". This applies to all http requests to the domain.
@@ -181,7 +176,7 @@ The following `domain-settings` commands are available:
                                "websockets": 
                                    Allow WebSockets connections to your origin server.
 
-   `-v value, --type value`      The value set to the feature for domain.
+   `-v, --value value`      The value set to the feature for domain.
  
                               Valid values for "always_use_https" are "on", "off".
                               Valid values for "automatic_https_rewrites" are "on", "off".
@@ -235,13 +230,6 @@ The following `domain-settings` commands are available:
                               Valid values for "waf" are "on", "off".
                               Valid values for "websockets" are "on", "off".
    
-   `-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o value, --output value`    Specify output format, only JSON is supported now.
-
-
-**Output**
-  * ID                     
-  * Value         
-  * Modified On  
-  * Editable       
+   `--output FORMAT`    Specify output format, only JSON is supported now.     

@@ -28,7 +28,7 @@ The following `firewall` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis firewall-create (-t, --type Type) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-create (-t, --type Type) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -44,9 +44,9 @@ The following `firewall` commands are available:
    
 `-j value, --json-file value`  A file contains input JSON data.
    
-`-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+`-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-`-o value, --output value`     Specify output format, only JSON is supported now.
+`--output FORMAT`     Specify output format, only JSON is supported now.
 
 ### Create Firewall with access rules
 
@@ -56,7 +56,7 @@ The following `firewall` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis firewall-create -t access-rules [-d --domain DNS_DOMAIN_ID] (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-create -t access-rules [-d --domain DNS_DOMAIN_ID] (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
    
@@ -94,9 +94,9 @@ The optional field is `configuration`.
    
    `-j value, --json-file value`  A file contains input JSON data.
    
-   `-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o value, --output value`     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 ### Create Firewall with user agent rules
@@ -107,7 +107,7 @@ The optional field is `configuration`.
 
 **USAGE**
 
-   `ibmcloud cis firewall-create -t ua-rules (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-create -t ua-rules (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -140,9 +140,9 @@ The optional fields are `paused`, `description`, `configuration`.
                    
    `-j value, --json-file value`  A file contains input JSON data.
    
-   `-i value, --instance value`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' will be used.
    
-   `-o value, --output value`     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 ### Create Firewall with lockdowns
@@ -152,7 +152,7 @@ The optional fields are `paused`, `description`, `configuration`.
 
 **USAGE**
 
-   `ibmcloud cis firewall-create -t lockdowns (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-create -t lockdowns (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -189,9 +189,9 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 ```                   
    `-j value, --json-file value`  A file contains input JSON data.
    
-   `-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o value, --output value`     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 ## Update Firewall rule
@@ -202,7 +202,7 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 
 **USAGE**
 
-   `ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -222,9 +222,9 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
    
 `-j value, --json-file value`  A file contains input JSON data.
    
-`-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+`-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-`-o value, --output value`     Specify output format, only JSON is supported now.
+`--output FORMAT`     Specify output format, only JSON is supported now.
 
 ### Update Firewalls with access rules
 
@@ -234,7 +234,7 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 
 **USAGE**
 
-   `ibmcloud cis firewall-update -t access-rules [-d --domain DNS_DOMAIN_ID] (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-update -t access-rules [-d --domain DNS_DOMAIN_ID] (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -267,9 +267,9 @@ The optional field is `configuration`.
 ```   
    `-j value, --json-file value`  A file contains input JSON data.
    
-   `-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o value, --output value`     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 ### Update Firewalls with user agent rules
 **NAME**
@@ -278,7 +278,7 @@ The optional field is `configuration`.
 
 **USAGE**
 
-   `ibmcloud cis firewall-update -t ua-rules (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-update -t ua-rules (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -312,9 +312,9 @@ The optional fields are `paused`, `description`, `configuration`.
 
    `-j value, --json-file value`  A file contains input JSON data.
    
-   `-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o value, --output value`    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ### Update Firewalls with lockdowns
@@ -325,7 +325,7 @@ The optional fields are `paused`, `description`, `configuration`.
 
 **USAGE**
 
-   `ibmcloud cis firewall-update -t lockdowns (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall-update -t lockdowns (-d --domain DNS_DOMAIN_ID) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -363,9 +363,9 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 
    `-j value, --json-file value`  A file contains input JSON data.
    
-   `-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o value, --output value`     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 ## List Firewall rules
 
@@ -375,7 +375,7 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 
 **USAGE**
 
-   `ibmcloud cis firewalls (-t, --type Type) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewalls (-t, --type Type) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -391,9 +391,9 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
    
 `--per-page value`            Maximum number of access rules per page. The minimum value is 5. (default: 20)
    
-`-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+`-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-`-o value, --output value`    Specify output format, only JSON is supported now.
+`--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## Detail Firewall rule
@@ -404,7 +404,7 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 
 **USAGE**
 
-   `ibmcloud cis firewall FIREWALL_RULE_ID (-t, --type Type) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis firewall FIREWALL_RULE_ID (-t, --type Type) [-d --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -420,9 +420,9 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
    
 `-d value, --domain value`    DNS Domain ID.
    
-`-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+`-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-`-o value, --output value`    Specify output format, only JSON is supported now.
+`--output FORMAT`    Specify output format, only JSON is supported now.
 
 ## Delete Firewall
 
@@ -449,7 +449,7 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
    
 `-d value, --domain value`    DNS Domain ID.
    
-`-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+`--output FORMAT`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 ## Get Firewall events
 
@@ -459,7 +459,7 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 
 **USAGE**
 
-   `ibmcloud cis firewall-events DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]  [-o, --output FORMAT]`
+   `ibmcloud cis firewall-events DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]  [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -467,5 +467,5 @@ The optional fields are `paused`, `description`, `urls`, `configurations`.
 
 **OPTIONS**
    
-   `-i value, --instance value`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
-   `-o, --output`                Output the result as JSON style to a file. If not set, outputs the result to terminal.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `--output FORMAT`                Specify output format, only JSON is supported now.

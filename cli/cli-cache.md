@@ -35,10 +35,6 @@ The following `cache` commands are available:
    * `-f, --file file1,file2,...`  an array of files (separated by commas) that should be cleared from cache. You may purge up to 30 files at a time with comma-separated files. To specify a file, you must enter the full path. Wildcards are not supported at this time.
 
 
-**Output messages:**
-
-Result of cache purging.
-
 
 ## Show cache settings
 
@@ -48,7 +44,7 @@ Result of cache purging.
 
 **USAGE**
 
-  `ibmcloud cis cache-settings DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis cache-settings DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -58,16 +54,8 @@ Result of cache purging.
 
    * `-i, --instance INSTANCE_NAME` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
   
-   * `-o, --output FORMAT`   Specify output format, only JSON is supported now.
+   * `--output FORMAT`   Specify output format, only JSON is supported now.
 
-
-**Output messages:**
-
-  * Browser Expiration
-  * Caching Level
-  * Development Mode
-  * Serve Stale Content
-  * Query String Sort
 
 ## Update cache settings
 
@@ -77,7 +65,7 @@ Result of cache purging.
 
 **USAGE**
 
-  `ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--browser-expiration EXPIRATION] [--development-mode (on | off)] [--serve-stale-content (on | off)] [--query-string-sort (on | off)] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--browser-expiration EXPIRATION] [--development-mode (on | off)] [--serve-stale-content (on | off)] [--query-string-sort (on | off)] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -109,13 +97,4 @@ Result of cache purging.
 
    * `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   * `-o, --output FORMAT`   Specify output format, only JSON is supported now.
-
-
-**Output messages:**
-
-  * Browser Expiration
-  * Caching Level
-  * Development Mode
-  * Serve Stale Content
-  * Query String Sort
+   * `--output FORMAT`   Specify output format, only JSON is supported now.

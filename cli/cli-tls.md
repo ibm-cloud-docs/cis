@@ -40,12 +40,6 @@ The following `tls` commands are available:
 
   `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-**Output Message**
-   * TLS Mode
-   * Universal SSL
-   * TLS 1.2 only
-   * TLS 1.3
-
 
 
 ## Update TLS Settings
@@ -78,10 +72,6 @@ The following `tls` commands are available:
    `--tls-1-3 value:`  Specify whether Crypto TLS 1.3 feature is enabled for your domain. Valid values are `on` and
                                `off`.
 
-**Output Message**
-
-  Result of updating tls settings
-
 
 ## List Certificates
 
@@ -91,31 +81,13 @@ The following `tls` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis certificates DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis certificates DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
    `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
-
-**Output Table Columns**
-   * Type
-   * ID: for dedicated certificate only
-   * Hosts:  not applicable for custom uploaded certificate
-   * Primary certificate: not applicable for custom uploaded certificate
-   * Certificates: not applicable for custom uploaded certificate
-     * ID:  not applicable for universal certificate
-     * Hosts: not applicable for universal certificate
-     * Issuer: not applicable for universal certificate
-     * Status: not applicable for universal certificate
-     * Uploaded On: not applicable for universal certificate
-     * Modified On:  not applicable for universal certificate
-     * Expires On: not applicable for universal certificate
-     * Signature: not applicable for universal certificate
-     * Bundle method:  for custom uploaded certificate only
-     * Domain ID: for custom uploaded certificate only
-     * Priority: for custom uploaded certificate only
+   `--output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 ## Show a certificate
 
@@ -125,7 +97,7 @@ The following `tls` commands are available:
 
 **USAGE**
 
- `ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+ `ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
@@ -135,27 +107,8 @@ The following `tls` commands are available:
 
    `--universal:` Show universal certificate details.
 
-   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
+   `--output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
-
-**Output message**
-
-   * Type
-   * ID: for dedicated certificate only
-   * Hosts:  not applicable for custom uploaded certificate
-   * Primary certificate: not applicable for custom uploaded certificate
-   * Certificates: not applicable for custom uploaded certificate
-     * ID:  not applicable for universal certificate
-     * Hosts: not applicable for universal certificate
-     * Issuer: not applicable for universal certificate
-     * Status: not applicable for universal certificate
-     * Uploaded On: not applicable for universal certificate
-     * Modified On:  not applicable for universal certificate
-     * Expires On: not applicable for universal certificate
-     * Signature: not applicable for universal certificate
-     * Bundle method:  for custom uploaded certificate only
-     * Domain ID: for custom uploaded certificate only
-     * Priority: for custom uploaded certificate only
 
 ## Order dedicated certificate
 
@@ -165,32 +118,16 @@ The following `tls` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis certificate-order DNS_DOMAIN_ID [--hostnames host1 --hostnames host2 ...] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+  `ibmcloud cis certificate-order DNS_DOMAIN_ID [--hostnames host1 --hostnames host2 ...] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
-   `--hostnames`  (Optional) valid host names for the certificate packs. Add up to 50 custom hostnames - May
+   `--hostnames HOSTNAME`  (Optional) valid host names for the certificate packs. Add up to 50 custom hostnames - May
 affect price.
 
    `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output FORMAT` (Optional) Specify output format, only JSON is supported now.
-
-**Output Message**
-
-   * Type
-   * ID
-   * Hosts
-   * Primary certificate
-   * Certificates
-     * ID
-     * Hosts
-     * Issuer
-     * Status
-     * Uploaded On
-     * Modified On
-     * Expires On
-     * Signature
+   `--output FORMAT` (Optional) Specify output format, only JSON is supported now.
 
 ## Upload certificate
 
@@ -200,13 +137,13 @@ affect price.
 
 **USAGE**
 
-  `ibmcloud cis certificate-upload DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output FORMAT]`
+  `ibmcloud cis certificate-upload DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [--output FORMAT]`
 
 **OPTIONS**
 
    `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-s, --json-str`  The JSON data used to upload a custom certificate.
+   `-s, --json-str JSON_STR`  The JSON data used to upload a custom certificate.
    * The required fields in JSON data are `certificate`, `private_key`:
      * `certificate` SSL certificate or certificate and the intermediate(s) for the domain.
      * `private_key` Private key for the domain.
@@ -223,21 +160,7 @@ affect price.
                       
    `-j, --json-file JSON_FILE`  (Optional) A file contains input JSON data.
 
-   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
-
-**Output Message**
-
-   * ID
-   * Hosts
-   * Issuer
-   * Signature
-   * Status
-   * Bundle method
-   * Domain ID
-   * Uploaded On
-   * Modified On
-   * Expires On
-   * Priority
+   `--output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 
 ## Update certificate
@@ -248,12 +171,12 @@ affect price.
 
 **USAGE**
 
-  `ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output FORMAT]`
+  `ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [--output FORMAT]`
 
 **OPTIONS**
 
 `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
-`-s, --json-str`  The JSON data used to update a custom certificate.
+`-s, --json-str JSON_STR`  The JSON data used to update a custom certificate.
    * The required fields in JSON data are `certificate`, `private_key`:
      * `certificate` SSL certificate or certificate and the intermediate(s) for the domain.
      * `private_key` Private key for the domain.
@@ -269,21 +192,7 @@ affect price.
 
 `-j, --json-file JSON_FILE`  (Optional) A file contains input JSON data.
 
-`-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
-
-**Output Message**
-
-   * ID
-   * Hosts
-   * Issuer
-   * Signature
-   * Status
-   * Bundle method
-   * Domain ID
-   * Uploaded On
-   * Modified On
-   * Expires On
-   * Priority
+`--output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 
 ## Change the priority of custom certificate
@@ -294,14 +203,14 @@ affect price.
 
 **USAGE**
 
-  `ibmcloud cis certificate-priority-change DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [-o, --output FORMAT]`
+  `ibmcloud cis certificate-priority-change DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-s, --json-str JSON_STR] [-j, --json-file JSON_FILE] [--output FORMAT]`
 
 **OPTIONS**
 
    `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-s, --json-str`  The JSON data used to change the custom certificates' priority.
-   * The required fields in JSON data are `certificates`:
+   `-s, --json-str JSON_STR`  The JSON data used to change the custom certificates' priority.
+     * The required fields in JSON data are `certificates`:
      * `certificates` An array of objects with the follow fields.
      * `id` Custom certificate identifier.
      * `priority` The order/priority in which the certificate is used in a request. Higher numbers are tried first.
@@ -322,22 +231,7 @@ affect price.
 
    `-j, --json-file JSON_FILE`  (Optional) A file contains input JSON data.
 
-   `-o, --output FORMAT`  (Optional) Specify output format, only JSON is supported now.
-
-**Output message**
-
-   * ID
-   * Hosts
-   * Issuer
-   * Signature
-   * Status
-   * Bundle method
-   * Domain ID
-   * Uploaded On
-   * Modified On
-   * Expires On
-   * Priority
-
+   `--output FORMAT`  (Optional) Specify output format, only JSON is supported now.
 
 ## Delete certificate
 
@@ -352,11 +246,6 @@ affect price.
 **OPTIONS**
 
    `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
-
-**Output Message**
-
-  Result of deleting certificate
-
 
 
 ##  List origin certificates
@@ -376,7 +265,7 @@ affect price.
 **OPTIONS**
    `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
    
-   `-o, --output FORMAT`    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ##  Create origin certificate
@@ -430,7 +319,7 @@ affect price.
 
    `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
    
-   `-o, --output FORMAT`    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ##  Show a origin certificate
@@ -453,7 +342,7 @@ affect price.
 **OPTIONS**
    `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
    
-   `-o, --output FORMAT`    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 ##  Delete origin certificate
 

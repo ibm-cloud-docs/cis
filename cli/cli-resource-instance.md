@@ -25,12 +25,6 @@ The following `instance` commands are available:
 
    `ibmcloud cis instances`
 
-**Output**
-   * Name
-   * Location
-   * State
-   * Service Name
-
 
 ## Set Context CIS Service Instance
 **NAME**

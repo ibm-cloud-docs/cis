@@ -28,7 +28,7 @@ The following `dns-record` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis dns-record-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis dns-record-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -188,24 +188,9 @@ The following `dns-record` commands are available:
                    }
    `-j, --json-file`  A file contains input JSON data.
 
-   `-i, --instance`   Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`     Specify output format, only JSON is supported now.
-
-
-**Output Table Columns**
-   * ID
-   * Created On
-   * Modified On
-   * Name
-   * Type
-   * Content
-   * Domain ID
-   * Domain Name
-   * Proxied
-   * TTL
-   * Priority(MX Only)
-   * Data(LOC, SRV, CAA Only)
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 ## Update DNS record
@@ -216,7 +201,7 @@ The following `dns-record` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -387,25 +372,9 @@ The following `dns-record` commands are available:
                    
     `-j, --json-file`   A file contains input JSON data.
 
-   `-i, --instance`   Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`     Specify output format, only JSON is supported now.
-
-
-**Output Table Columns**
-   * ID
-   * Created On
-   * Modified On
-   * Name
-   * Type
-   * Content
-   * Domain ID
-   * Domain Name
-   * Proxied
-   * TTL
-   * Priority(MX Only)
-   * Data(LOC, SRV, CAA Only)
-
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 ## Get DNS record
 
@@ -415,7 +384,7 @@ The following `dns-record` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis dns-record DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis dns-record DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -425,24 +394,10 @@ The following `dns-record` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
-
-**Output Table Columns**
-   * ID
-   * Created On
-   * Modified On
-   * Name
-   * Type
-   * Content
-   * Domain ID
-   * Domain Name
-   * Proxied
-   * TTL
-   * Priority(MX Only)
-   * Data(LOC, SRV, CAA Only)
 
 ## Delete DNS record
 
@@ -462,7 +417,7 @@ The following `dns-record` commands are available:
 
 **OPTIONS**
 
-   `-i, --instance`  Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If the name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 
 ## List DNS Records
@@ -473,7 +428,7 @@ The following `dns-record` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis dns-records DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis dns-records DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -504,9 +459,9 @@ The optional fields are `type`, `name`, `content`, `page`, `per_page`, `order`, 
                    
    `-j, --json-file`  A file contains input JSON data.
 
-   `-i, --instance`   Instance name. If name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If name is not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o, --output`     Specify output format, only JSON is supported now.
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 **Output Table Columns**
@@ -526,7 +481,7 @@ The optional fields are `type`, `name`, `content`, `page`, `per_page`, `order`, 
 
 **USAGE**
 
-   `ibmcloud cis dns-records-import DNS_DOMAIN_ID (--file FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis dns-records-import DNS_DOMAIN_ID (--file FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -536,9 +491,9 @@ The optional fields are `type`, `name`, `content`, `page`, `per_page`, `order`, 
 
   `--file`                BIND config to upload.
 
-   `-i, --instance`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
 
-   `-o, --output`    Specify output format, only JSON is supported now.
+   `--output FORMAT`    Specify output format, only JSON is supported now.
 
 
 ## Export BIND config
@@ -559,4 +514,4 @@ The optional fields are `type`, `name`, `content`, `page`, `per_page`, `order`, 
 
   `--file`                The BIND config saves exported DNS records..
 
-   `-i, --instance`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by 'ibmcloud cis instance-set' is used.

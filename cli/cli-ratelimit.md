@@ -28,7 +28,7 @@ The following `ratelimit` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule-create  DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis ratelimit-rule-create  DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -123,20 +123,9 @@ The optional fields are `id`, `disabled`, `description`, and `bypass`:
 
    `-j, --json-file` A file contains input JSON data.
    
-   `-i, --instance` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output` Specify output format, only JSON is supported now.
-
-**Output Table Columns:**
-
-  * ID
-  * disabled
-  * description
-  * match
-  * bypass
-  * threshold
-  * period
-  * action
+   `--output FORMAT` Specify output format, only JSON is supported now.
 
 ## Update Rate Limit rule
 
@@ -146,7 +135,7 @@ The optional fields are `id`, `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID  (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID  (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 
 **ARGUMENTS**
@@ -192,21 +181,9 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
   `-j, --json-file` A file contains input JSON data.
   
-  `-i, --instance` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+  `-i, --instance INSTANCE_NAME` Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
   
-  `-o, --output` Specify output format, only JSON is supported now.
-
-
-**Output Table Columns**
-
-  * ID
-  * disabled
-  * description
-  * match
-  * bypass
-  * threshold
-  * period
-  * action
+  `--output FORMAT` Specify output format, only JSON is supported now.
 
 
 ## List Rate Limit rules
@@ -217,7 +194,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rules  DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis ratelimit-rules  DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -225,21 +202,9 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **OPTIONS**
 
-  `-i, --instance`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+  `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
   
-  `-o, --output`     Specify output format, only JSON is supported now.
-
-
-**Output Table Columns**
-
-  * ID
-  * disabled
-  * description
-  * match
-  * bypass
-  * threshold
-  * period
-  * action
+  `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 
@@ -251,7 +216,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -261,21 +226,9 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **OPTIONS**
 
-   `-i, --instance`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output`     Specify output format, only JSON is supported now.
-
-
-**Output Table Columns**
-
-  * ID
-  * disabled
-  * description
-  * match
-  * bypass
-  * threshold
-  * period
-  * action
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 
 
@@ -287,7 +240,7 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **USAGE**
 
-   `ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -297,13 +250,8 @@ The optional fields are `disabled`, `description`, and `bypass`:
 
 **OPTIONS**
 
-   `-i, --instance`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
    
-   `-o, --output`     Specify output format, only JSON is supported now.
-
-
-**Output Table Columns**
-
-   * ID
+   `--output FORMAT`     Specify output format, only JSON is supported now.
 
 

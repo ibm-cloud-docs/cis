@@ -1,11 +1,16 @@
 ---
 copyright:
   years: 2018
-lastupdated: "2018-09-13"
+lastupdated: "2019-01-10"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"} 
+{:note: .note} 
+{:important: .important} 
+{:deprecated: .deprecated} 
+{:generic: data-hd-programlang="generic"}
 
 # Known Limitations
 
@@ -34,3 +39,34 @@ lastupdated: "2018-09-13"
 
 * When adding the request header name for a health check, use `Host`. Using lower-case `host` for a health check fails.
 
+## DNS
+ * Exporting DNS records includes Cloudflare CNAME records that should be hidden. These records begin with `_` and usually have a second record with the same name but the `_` is removed.
+   ```
+   Ex.
+   _cf.generate.yourdomain.com 0	IN	CNAME address.alias.com
+   cf.generate.yourdomain.com 0	IN	CNAME address2.alias.com
+   ```
+ 
+   These records must be removed from the zone file to properly import.
+ 
+ * Exporting CAA DNS records does not work correctly. The `<tag>` and `<value>` are HEX encoded. 
+ 
+    CAA `<flags>` `<tag>` `<value>`
+  {:note}
+   ```
+   Ex.
+   Original CAA record
+   caa.yourdomain.com.	1	IN	CAA	0 issue "letsencrypt.org"
+ 
+   Exported CAA record
+   caa.yourdomain.com.	1	IN	CAA	0 6973737565 "6c657473656e63727970742e6f7267"
+   ```
+   These records must be converted from HEX to string or removed and added manually before importing.
+
+## Page Rules
+   * Updating page rules settings using the CIS plugin for IBM Cloud CLI may result in an error if the page rule ID is not included in the JSON string or JSON file for the update. To work around this, submit the update using a complete JSON configuration file for the page rule, including the ID.
+   * Removing page rule settings using the CIS UI may not remove the setting, even though the UI reports a successful update. To work around this problem, use the CIS plugin for IBM Cloud CLI to remove the setting and include the page rule ID in the JSON update document:
+      ```
+      $> ibmcloud cis page-rule-update <domain-id> <rule-id> -j <file>
+      ```
+      The JSON file should include the complete page rule configuration, including ID, with the necessary updates.

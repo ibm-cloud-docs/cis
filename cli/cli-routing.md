@@ -37,13 +37,7 @@ The following `routing` commands are available:
 
    `--tiered-caching` One of Routing features.
 
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
-
-**Output Message**
-
-* routing feature ID
-* routing feature value
-* routing feature modified time
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
 
 ## Update Routing Setting
@@ -66,13 +60,8 @@ The following `routing` commands are available:
 
    `--tiered-caching value`      One of Routing features. Valid values: "on", "off".
    
-   `-i, --instance`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-**Output Message**
-
-* routing feature id
-* routing feature value
-* routing feature modified time
 
 ## Display routing analytics
 
@@ -82,7 +71,7 @@ The following `routing` commands are available:
 
 **USAGE**
 
-   `ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE_NAME] [-o, --output FORMAT]`
+   `ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **ARGUMENTS**
 
@@ -92,10 +81,6 @@ The following `routing` commands are available:
 
    `--colos`                      Analytics of smart-routing latency colos.
    
-   `-i value, --instance value`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `-i, --instance INSTANCE_NAME`   Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
 
-   `-o value, --output value`     Specify output format, only JSON is supported now.
-
-
-**Output Message**
-  * Analytics Data
+   `--output FORMAT`     Specify output format, only JSON is supported now.
