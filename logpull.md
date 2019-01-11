@@ -1,13 +1,12 @@
 ---
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-10"
+lastupdated: "2019-01-11"
 ---
 
 # Logpull
 
-IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a RESTful API.
-This API provides a method for customers to access a domain’s request logs using an IAM token.
+IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a [CLI](cli/cli-log.html). 
 
 These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
 
