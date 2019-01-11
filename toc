@@ -36,6 +36,7 @@ Cloud Internet Services (CIS)
     rate-limiting.md
     multi-domain.md
     iam.md
+    logpull.md
     helpful-tools.md
     
     {: .topicgroup}
