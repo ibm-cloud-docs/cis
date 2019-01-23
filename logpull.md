@@ -15,6 +15,10 @@ These logs contain data related to the connecting client, the request path throu
 ### Based on RayID
 If a user receives an error message after executing a command, they can use the RayID provided in the response header to get the logs related to the command.
 
+*Note*: If you have a RAY_ID with `-XXX` on the end be sure to remove it. 
+
+```Ex) Wrong: 12ab34cdef567gh8-XXX Correct: 12ab34cdef567gh8```
+
 **Request**
 
 ```
