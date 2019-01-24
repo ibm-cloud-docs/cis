@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis/getting-started.html" path="infrastructure/cis"}
+{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis?topic=cis-getting-started-with-ibm-cloud-internet-services-cis-" path="infrastructure/cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
@@ -32,6 +32,7 @@ Cloud Internet Services (CIS)
     using-page-rules.md
     caching-with-page-rules.md
     waf-custom-rules.md
+    origin.md
     routing.md
     rate-limiting.md
     multi-domain.md
