@@ -34,11 +34,14 @@ The following `tls` commands are available:
 
 **USAGE**
 
- `ibmcloud cis tls-settings DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME]`
+ `ibmcloud cis tls-settings DNS_DOMAIN_ID [-i, --instance INSTANCE_NAME] [--output FORMAT]`
 
 **OPTIONS**
 
-  `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+  `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+
+  `--output FORMAT`              Specify output format, only JSON is supported now.
+
 
 
 
@@ -50,27 +53,29 @@ The following `tls` commands are available:
 
 **USAGE**
 
-  `ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true | false)]
-                              [--tls-1-2-only (on | off)] [--tls-1-3 (on | off)] [-i, --instance INSTANCE_NAME]`
+  `ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true|false)] [--tls-1-2-only (on|off)] [--tls-1-3 (on|off|zrt)] [-i, --instance INSTANCE_NAME][--output FORMAT]`
 
 **OPTIONS**
 
-   `-i, --instance INSTANCE_NAME`  (Optional) Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+   `--mode value` Specify whether visitors can browse your website over a secure connection, and when they do, how CIS will connect to your origin server.
+                Valid values: `off`, `client-to-edge`, `end-to-end-flexible`, `end-to-end-ca-signed`, `https-only-origin-pull`.
+                See below documentation link for detailed TLS mode description.
+                    https://console.bluemix.net/docs/infrastructure/cis/ssl-options.html#tls-options
 
-   `--mode value:` Specify whether visitors can browse your website over a secure connection, and when they
-                do, how CIS connect to your origin server.
-                Valid values are: `off`, `client-to-edge`, `end-to-end-flexible`, `end-to-end-ca-signed`.
-                See documentation link for detailed TLS mode description.
-                https://console.bluemix.net/docs/infrastructure/cis/ssl-options.html#tls-options
-
-   `--universal-ssl value:` Specify whether universal ssl is enabled for you domain. Valid values are `true` and
+   `--universal value` Specify whether universal ssl is enabled for you domain. Valid values are `true` and
                                        `false`.
 
-   `--tls-1-2-only value:`  Specify whether Crypto TLS 1.2 feature is enable for your domain. Enabling this
+   `--tls-1-2-only value`  Specify whether Crypto TLS 1.2 feature is enable for your domain. Enabling this
                                        feature prevents use of previous versions. Valid values are `on` and `off`.
 
-   `--tls-1-3 value:`  Specify whether Crypto TLS 1.3 feature is enabled for your domain. Valid values are `on` and
+   `--tls-1-3 value`  Specify whether Crypto TLS 1.3 feature is enabled for your domain. Valid values are `on` and
                                `off`.
+
+   `--min-tls-version value`     Only accept HTTPS requests that use at least the TLS protocol version specified.  Valid values: `1.0`, `1.1`, `1.2`, `1.3`.
+
+   `-i, --instance INSTANCE_NAME`  Instance name. If not set, the context instance specified by `ibmcloud cis instance-set` is used.
+
+   `--output FORMAT`              Specify output format, only JSON is supported now.
 
 
 ## List Certificates
