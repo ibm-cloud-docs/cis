@@ -1,8 +1,19 @@
 ---
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-24"
 ---
+
+
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
+{:note: .note}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Logpull
 
@@ -14,6 +25,9 @@ These logs contain data related to the connecting client, the request path throu
 ## Use Cases
 ### Based on RayID
 If a user receives an error message after executing a command, they can use the RayID provided in the response header to get the logs related to the command.
+
+If you have a RAY_ID with `-XXX` on the end, be sure to remove it. For example, `12ab34cdef567gh8-XXX` becomes `12ab34cdef567gh8`.
+{.note}
 
 **Request**
 
