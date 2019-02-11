@@ -27,6 +27,7 @@ Scroll to the right to view the rest of the table!
 |**Rate Limiting**|No|No|Yes|
 |**IP Firewall**|Challenge Only|Challenge Only|<ul><li>Challenge</li><li>Block</li><li>JS Challenge</li><li>Whitelist</li></ul>|
 |**Caching**|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 seconds|
-
+|**Range**|No|No|Yes<br/>(at additional cost per GB)|
+|**Edge Functions (Beta)**|1 action<br/>(must be named after domain)|1 action<br/>(must be named after domain)|Unlimited actions|
 
 

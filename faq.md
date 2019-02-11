@@ -24,7 +24,7 @@ The Free Trial plan, by design, allows only one zone per account. It is recommen
 ## How many Free Trial instances can I have?
 {: faq}
 
-You can have at most one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, or if you delete a free trial instance, or if the free trial expires, you will not be allowed to creat another free trial instance. You can, however, create instances of other paid plan types (e.g., Standard), independent of any free trials you may have created.
+You can have at most one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, or if you delete a free trial instance, or if the free trial expires, you will not be allowed to create another free trial instance. You can, however, create instances of other paid plan types (e.g., Standard), independent of any free trials you may have created.
 
 ## I have a service instance that is subscribed to the Early Access Plan. Can I change it to a Free Trial?
 {: faq}
@@ -178,3 +178,8 @@ Yes, if the origin pool is being used in a load balancer, the traffic is routed 
 {: faq}
 
 The hostname in a Kubernetes ingress must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. Using `_` in the load balancer name, though permitted, can cause an ingress error in Kubernetes clusters. We recommend that you not use `-` in the load balancer name to avoid issues with Kubernetes clusters.
+
+## I got a 502 error attempting to save an Edge Functions Action, what do I do?
+{: faq}
+
+Contact [IBM support](/docs/infrastructure/cis/getting-help.html) and provide the script that you were attempting to save.

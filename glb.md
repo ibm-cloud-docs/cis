@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2019-01-21"
+  years: 2018, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -34,13 +34,27 @@ For example, an origin pool is created with two origins identifying IP addresses
 $ ping glbcust.ibmom.com
 PING glbcust.ibmom.com (169.61.244.18): 56 data bytes
 ```
-In this example, the global load balancer:
+In this example, CIS:
 
-    * created a DNS record named `glbcust.ibmom.com`
-    * resolved the DNS name to one of the IP addresses identified in the origin pool
+    * created a DNS record named `glbcust.ibmmo.com`
+    * used the GLB to resolve the DNS name to one of the IP addresses identified in the origin pool
 
 Notice that the global load balancer does not terminate the TCP connection.
 {:note}
+
+Setting a DNS element or GLB to "proxy" changes the behavior.
+If, for example, you turn on proxy and **Security > TLS > Mode** to something besides `Off`, the CIS now terminates the TCP connection and establishes a second connection between CIS and the originator.
+
+In this example, CIS:
+
+    * created a DNS record named: `glbcust.ibmmo.com`
+    * used the GLB to resolve the DNS name to a CIS provided IP address
+    
+Now, connections to `glbcust.ibmmo.com` are terminated by CIS, and HTTPS certificates are hosted by CIS (which is required for TCP termination).
+
+After the client connects to the application the picture looks like this:
+
+`[client]<--tls-->[cis]<-->[origin server]`
 
 ## Pool
 
