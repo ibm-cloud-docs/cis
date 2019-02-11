@@ -38,6 +38,8 @@ Cloud Internet Services (CIS)
     multi-domain.md
     iam.md
     logpull.md
+    range.md
+    edge-functions.md
     helpful-tools.md
     
     {: .topicgroup}
