@@ -1,8 +1,16 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-10-16"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
+
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Caching Concepts
 
@@ -14,13 +22,13 @@ Caching is the process of storing files on our edge servers, which we do for the
 
 Cached files have a specified expiration time, **Time-to-live (TTL)** after which they are purged from the cache. It also is possible to purge files from the cache manually. After files are removed from the cache, CIS goes back to your origin server to reload your files and update the cache with the latest versions.
 
-A deeper explanation of the cache settings and your caching options can be found in the [Caching and Page Rules tutorial](caching-with-page-rules.html).
+A deeper explanation of the cache settings and your caching options can be found in the [Caching and Page Rules tutorial](/docs/infrastructure/cis?topic=cis-use-page-rules-with-caching).
 ### What content is cached?
 
 By default, we cache **static files**, which include many types of image and text files (non-HTML files). This only includes files from your websites and not 3rd party resources from social networking sites, etc. Also, we currently do not cache by MIME type.
 
 ### How do I cache HTML? 
-We do not cache HTML files by default because we do not consider them to be static; however, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files [using the Page Rules feature](using-page-rules.html).
+We do not cache HTML files by default because we do not consider them to be static; however, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files [using the Page Rules feature](/docs/infrastructure/cis?topic=cis-use-page-rules).
 
 
 ## Query String Sorting

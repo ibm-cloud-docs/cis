@@ -1,11 +1,8 @@
 ---
 
-
-
 copyright:
-  years: 2017
-lastupdated: "2018-09-18"
-
+  years: 2017-2019
+lastupdated: "2019-02-18"
 
 ---
 
@@ -15,12 +12,17 @@ lastupdated: "2018-09-18"
 {:new_window: target="_blank"}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Create your IBM Cloud Internet Services (CIS) instance
 
 To create a CIS instance, perform the following procedure:
 
-1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://control.softlayer.com/){: new_window} and log into your account. 
+1. From your browser, open the [Customer Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/){: new_window} and log into your account. 
 2. Click **Catalog** at the top right, and from the  **Infrastructure** section select **Network**. Then click **Internet Services**.
 
    <img src="images/reliability0.png" alt="drawing" style="width: 300px;"/>

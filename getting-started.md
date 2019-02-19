@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-12-20"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,7 +14,7 @@ lastupdated: "2018-12-20"
 
 # Getting Started with IBM Cloud Internet Services (CIS)
 
-IBM Cloud Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis/managing-for-security.html), [reliability](/docs/infrastructure/cis/managing-for-reliability.html), and [performance](/docs/infrastructure/cis/managing-for-performance.html). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
+IBM Cloud Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
 
 For each capability, IBM CIS helps you tune its features to suit your specific needs, including:
 
@@ -25,9 +25,8 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
  * Caching and page rules
 
 
-
 ## Before you begin
-Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/us-en/signup/register.html). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
+Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
 If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://www.ibm.com/cloud-computing/bluemix/contact-us) for additional guidance on getting started.
 
@@ -44,13 +43,13 @@ You can start using IBM CIS for your Internet traffic with just a few steps.
 
 ### Step 1: Open the IBM CIS application
 
-Open your [IBM Cloud dashboard](https://console.bluemix.net/catalog/). Then navigate to the IBM CIS application icon by selecting the **Infrastructure -> Network** category in the left-hand navigation bar of the dashboard. Open the IBM Cloud Internet Services application by clicking the icon that you'll see near the middle of your screen. 
+Open your [IBM Cloud dashboard](https://{DomainName}/catalog/). Then navigate to the IBM CIS application icon by selecting the **Infrastructure -> Network** category in the left-hand navigation bar of the dashboard. Open the IBM Cloud Internet Services application by clicking the icon that you'll see near the middle of your screen. 
 
 ![Catalog](images/catalog-cis-tile.png)
 
 **The Overview Screen**
 
-Once the IBM CIS application starts up, you'll see the IBM CIS **Overview** screen, and you'll find the tabs for **Security**, **Reliability**, and **Perfomance** on the left area of the UI display.
+Once the IBM CIS application starts up, you'll see the IBM CIS **Overview** screen, and you'll find the tabs for **Security**, **Reliability**, and **Performance** on the left area of the UI display.
 
 **Which plan do I choose?**
 
@@ -102,7 +101,7 @@ When you are finished, or if you would like to skip this step, select **Next ste
 
 To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers. See [Managing DNS Records (![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/sections/200038106-Managing-DNS-Records){:new_window}, written by our partners at Cloudflare, for detailed instructions by provider.
 
-After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. Once we verify that the specified nameservers have been configured corrrectly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
+After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. Once we verify that the specified nameservers have been configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
 
 Your domain must move to `Active` state within 60 days or your domain and any configuration data will be removed. 
 {:note}
@@ -117,4 +116,4 @@ To proceed, select the **Reliability** tab from your left-hand navbar, then sele
 
 ### Step 6. In the meantime, you can begin managing other IBM CIS functions and features.
 
-For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis/how-to.html).
+For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-cis-deployment).

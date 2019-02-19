@@ -1,11 +1,16 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-04-23"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Manage your IBM CIS deployment for optimal reliability
 
@@ -19,7 +24,7 @@ Generally, our recommended best practices are these:
 
 Each of these items provides certain functionality you can use to create a more reliable CIS deployment.
 
-Notice that the CIS interface is organized into sections for *security*, *reliability*, and *perfomance*. The main navigation menu is shown in the following figure, with the Global Load Balancers and DNS menu items revealed:
+Notice that the CIS interface is organized into sections for *security*, *reliability*, and *performance*. The main navigation menu is shown in the following figure, with the Global Load Balancers and DNS menu items revealed:
 
 ![Left navigation DNS ](images/cis-left-navigation.png)
 
@@ -28,7 +33,7 @@ Notice that the CIS interface is organized into sections for *security*, *reliab
  
  To get started setting up your DNS configuration, select **DNS** from the navigation menu, as shown previously.
  
- For detailed information about setting up and managing your DNS for reliability, please [refer to this document](dns.html#setting-up-your-domain-name-system-dns-for-ibm-cis).
+ For detailed information about setting up and managing your DNS for reliability, please [refer to this document](/docs/infrastructure/cis?topic=cis-set-up-your-domain-name-system-dns-for-ibm-cis).
 
 
 ## Setting up Global Load Balancers
@@ -36,7 +41,7 @@ Notice that the CIS interface is organized into sections for *security*, *reliab
 
 To get started setting up your Global Load Balancers, select **Global Load Balancers** from the navigation menu.
 
-For detailed information about setting up and managing your Global Load Balancers, please [refer to this document](glb.html#global-load-balancer-glb-concepts).
+For detailed information about setting up and managing your Global Load Balancers, please [refer to this document](/docs/infrastructure/cis?topic=cis-global-load-balancer-glb-concepts).
 
 ## Using Page Rules to increase reliability
 
@@ -79,7 +84,7 @@ To enable **Serve Stale Content**, follow these steps:
 
 You can use the **Origin Cache Control** Page Rule setting to determine what content is cached from your origin and how often the content is updated, which has an effect on reliability and on performance. By default, if no settings are changed and no headers that prevent caching are sent from your origin server, IBM CIS caches all static content with certain extensions. These types of content include images, CSS, and JavaScript. This caching is primarily for performance reasons.
 
-To set up **Origin Cache Control** use Page Rules to turn on specific headers that give the desired behavior with respect to each resource of your content. To understand how to use **Origin Cache Conrol**, some more general explanation of Page Rules and overall caching behavior for CIS is required to provide context, which is covered in the next several sections. Three methods exist that you can use to control caching in general, and **Origin Cache Control** is the second one.
+To set up **Origin Cache Control** use Page Rules to turn on specific headers that give the desired behavior with respect to each resource of your content. To understand how to use **Origin Cache Control**, some more general explanation of Page Rules and overall caching behavior for CIS is required to provide context, which is covered in the next several sections. Three methods exist that you can use to control caching in general, and **Origin Cache Control** is the second one.
 
 Setting **Origin Cache Control** invokes caching rules that seek to adhere closely to internet best practices and RFCs, primarily with respect to revalidation. For example, the CIS default behavior with `max-age=0` is not to cache at all, whereas setting **Origin Cache Control** caches, but it always revalidates.
 

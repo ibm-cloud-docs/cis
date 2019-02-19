@@ -6,6 +6,12 @@ lastupdated: "2018-07-09"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
+
 
 # OWASP Rule Set for WAF
 
@@ -15,14 +21,14 @@ The OWASP Rule Set contains generic attack detection rules. The OWASP rules prot
 
 ## Managing OWASP
 
-Unlike the [CIS rule set](waf-cis-ruleset.html), OWASP allows you to set Sensitivity.
+Unlike the [CIS rule set](/docs/infrastructure/cis?topic=cis-cis-rule-set-for-waf), OWASP allows you to set Sensitivity.
 A request may trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, CIS compares it to the sensitivity threshold selected in the beginning, and then either blocks or allows the request.
 
-|Sensitivity    score| Trigger threshold|
+|Sensitivity score| Trigger threshold|
 |------|---------------|
-|Low   |        60 and higher|
-|Medium|        40 and higher|
-|High    |  25 and higher|
+|Low   |  60 and higher|
+|Medium|  40 and higher|
+|High  |  25 and higher|
 
 We suggest that you set OWASP sensitivity to `low`. If you set it to `high`, check the logs on CIS, and fine-tune the OWASP rule set to work for your application.
 

@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-12-13"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
@@ -254,7 +254,7 @@ Writer	Resource	Only service instance cis-test-instance of CIS
 ## Manage IAM policies 
 
 CIS allows users to create IAM policies, but management must be done through the [IAM Page](
-https://cloud.ibm.com/iam#/overview).
+https://{DomainName}/iam#/overview).
 
 ## Note
 For every policy created on the Access page in the CIS instance, 2-3 policies will be created in turn.
@@ -300,6 +300,6 @@ FAQ
 
 3. What permissions are needed to provision Internet Services?
 
-   If you are unable to create a resource and add it to a resource group, you're most likely dealing with an access issue. You must have at least the Viewer role on the resource group itself and at least the Editor role on the service in the account. You can contact the account administrator to verify your assigned access in the account. See [Managing access to resources](https://cloud.ibm.com/docs/iam/mngiam.html#assignaccess) for more information.
+   If you are unable to create a resource and add it to a resource group, you're most likely dealing with an access issue. You must have at least the Viewer role on the resource group itself and at least the Editor role on the service in the account. You can contact the account administrator to verify your assigned access in the account. See [Managing access to resources](/docs/iam?topic=iam-iammanidaccser) for more information.
    
  

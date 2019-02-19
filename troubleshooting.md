@@ -109,7 +109,7 @@ What you can do:
 
 * Verify that the IBM CIS IP addresses are whitelisted..
 * Make sure that IBM CIS IPs are not being rate-limited.
-* Here is the list of [IPs to whitelist](whitelisted-ips.html)
+* Here is the list of [IPs to whitelist](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses)
 
 ### 502 error “The dreaded 502”
 
@@ -126,6 +126,6 @@ What happened:
 
 What you can do:
 
-* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a ticket to [Support](https://console.bluemix.net/docs/support/index.html#contacting-support).
+* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a ticket to [Support](/docs/get-support?topic=get-support-getting-customer-support).
 * Temporarily toggle your DNS Records to off (No proxy).
 

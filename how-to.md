@@ -1,11 +1,16 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-04-25"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Manage your IBM Cloud Internet Services (CIS) deployment
 
@@ -85,7 +90,7 @@ Notice that when certain rules are enabled, other options become grayed out, if 
  
  ![PAGE RULES MENUS](images/page-rule-dropdown-settings.png)
  
-You also can enable or disable your Page Rules from the table displayed in the Page Rules screen. See [Using Page Rules](using-page-rules.html) for more information.
+You also can enable or disable your Page Rules from the table displayed in the Page Rules screen. See [Using Page Rules](/docs/infrastructure/cis?topic=cis-use-page-rules) for more information.
  
  ## Security settings
  

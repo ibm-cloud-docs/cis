@@ -12,7 +12,7 @@ lastupdated: "2019-01-14"
 
 Origin Certificates are free TLS certificates issued by CIS that encrypt traffic between your origin server and your users. Order free TLS certificates to install on your origin server.
 
-## Ordering an origin certfificate
+## Ordering an origin certificate
 
 To order an origin certificate, provide a Certificate Signing Request (CSR) or select a private key type for CIS to generate a key and CSR.
 
@@ -27,7 +27,7 @@ The private key will only be available immediately after ordering a certificate 
 ### Apache httpd
 1. Order an origin certificate.
 1. Copy the private key and origin certificate in PEM format into separate files to the directory on your server where you keep key and certificate files.
-1. Locate your Apache configuration file. Typically the filenames are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file may vary, espcially if you use a special interface to manage your server. Refer to Apache's [DistrosDefaultLayout](https://wiki.apache.org/httpd/DistrosDefaultLayout) for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on linux. 
+1. Locate your Apache configuration file. Typically the filenames are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file may vary, especially if you use a special interface to manage your server. Refer to Apache's [DistrosDefaultLayout](https://wiki.apache.org/httpd/DistrosDefaultLayout) for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on linux. 
     ```
     grep -i -r "SSLCertificateFile" /etc/httpd/
     ```

@@ -1,11 +1,16 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-11-30"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Manage your IBM CIS for optimal security
 
@@ -36,7 +41,7 @@ $ dig proxied.theburritobot.com +short
 ```
 
 ### Obscure non-proxied origin records with non-standard names
-Any records that cannot be proxied through IBM CIS, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by IBM CIS, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addreses.
+Any records that cannot be proxied through IBM CIS, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by IBM CIS, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
 ### Use separate IP ranges for HTTP and non-HTTP traffic if possible
 Some customers use separate IP ranges for HTTP and non-HTTP traffic, thereby allowing them to proxy all records pointing to their HTTP IP range, and to obscure all non-HTTP traffic with a different IP subnet.
@@ -70,7 +75,7 @@ Our Security Level settings are aligned with threat scores that certain IP addre
 * **OFF**: *Enterprise Only* 
 * **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while CIS analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** may affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
 
-We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for CIS Setup document](best-practices.html)
+We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for CIS Setup document](/docs/infrastructure/cis?topic=cis-best-practices-for-cis-setup)
 
 ## Best practice 3: Activate your Web Application Firewall (WAF) safely
 Your WAF is available in the **Security** section. We will walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before turning it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified.
@@ -80,9 +85,9 @@ The WAF protects you against the following types of attacks:
 * Cross-site scripting
 * Cross-site forgery
 
-The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](waf-rule-set.html) document for more details on the default rule set and the behavior of each rule.
+The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](/docs/infrastructure/cis?topic=cis-waf-default-rule-set) document for more details on the default rule set and the behavior of each rule.
 
-For more information about the WAF, please see the [WAF Concepts document](waf-concept.html)
+For more information about the WAF, please see the [WAF Concepts document](/docs/infrastructure/cis?topic=cis-web-application-firewall-concepts-q-a)
 
 ## Best practice 4: Configure your TLS settings
 IBM CIS provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our datacenters and open a new TLS connection to your origin server.
@@ -93,7 +98,7 @@ TLS offers four modes of operation:
 * **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between CIS and your origin server(s).
 * **End-to-end CA signed**: TLS encrypts all traffic; you must use a CA-signed certificate.
 
-For more detail about your TLS options, please refer to [this document](ssl-options.html).
+For more detail about your TLS options, please refer to [this document](/docs/infrastructure/cis?topic=cis-tls-options).
 
 IBM CIS allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by CIS.
 
@@ -132,4 +137,4 @@ The priority by which the certificates are displayed at our edge is:
 4. Universal
 
 ### Minimum TLS version
-See [Minimum TLS version](ssl-options.html). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.
+See [Minimum TLS version](/docs/infrastructure/cis?topic=cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.

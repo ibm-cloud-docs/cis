@@ -1,12 +1,13 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:faq: data-hd-content-type='faq'}
+
 
 
 # FAQ
@@ -122,7 +123,7 @@ A 522 error indicates we weren't able to establish a connection with your origin
 
 This issue usually is caused by firewall or security software that accidentally blocks our IP addresses. Because CIS acts as a reverse proxy, connections to your site will appear to come from a range of CIS IPs. This behavior can cause certain firewalls to block these connections, which prevents us from serving content to your site visitors properly.
 
-To fix this issue, ask your host to whitelist all of the CIS IP ranges, which are listed [here](whitelisted-ips.html).
+To fix this issue, ask your host to whitelist all of the CIS IP ranges, which are listed [here](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses).
 
 All of these IPs must be whitelisted to avoid 522 errors. It's also worth checking to see if any IPs in these ranges are blocked.
 
@@ -148,6 +149,7 @@ OrgName:        IBM
 If you would rather bypass CIS on a domain (we will still resolve DNS), then non-proxying the record is a possible solution.
 
 ## I got a DNS Validation error: 1004; now what can I do?
+{: faq}
 
 For page rules to work, DNS needs to resolve for your zone. As a result, you must have a proxied DNS record for your zone. 
 
@@ -162,10 +164,12 @@ Yes. IBM CIS supports a feature called "CNAME Flattening" which allows our users
 The default health check timeout for the Free Trial and Standard plans is 60 seconds.
 
 ## Can health checks be configured for non-HTTP/HTTPS traffic?
+{: faq}
 
 No, they can only be configured with HTTP/HTTPS.
 
 ## Can GLB be configured for non-HTTP/HTTPS traffic?
+{: faq}
 
 No, they can only be configured with HTTP/HTTPS.
 
@@ -182,4 +186,4 @@ The hostname in a Kubernetes ingress must consist of lower case alphanumeric cha
 ## I got a 502 error attempting to save an Edge Functions Action, what do I do?
 {: faq}
 
-Contact [IBM support](/docs/infrastructure/cis/getting-help.html) and provide the script that you were attempting to save.
+Contact [IBM support](/docs/infrastructure/cis?topic=cis-getting-help-and-support) and provide the script that you were attempting to save.

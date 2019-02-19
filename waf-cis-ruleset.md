@@ -8,16 +8,25 @@ lastupdated: "2018-06-21"
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
+
 
 # WAF settings
+The following table shows the actions Web Application Firewalls (WAF) can take. 
+
+
 |Action| Definition|
 |---|---|
-Block | Blocking an attack will stop any action before it is posted to your website.
-Simulate | To test for false positives, set the WAF to Simulate mode, which records the response to possible attacks without challenging or blocking.
-Challenge | A challenge page asks visitors to submit a CAPTCHA to continue to your website.
-Threshold or sensitivity setting | Set rules to trigger more or less, depending on sensitivity.
+|Block | Blocking an attack will stop any action before it is posted to your website.|
+|Simulate | To test for false positives, set the WAF to Simulate mode, which records the response to possible attacks without challenging or blocking.|
+|Challenge | A challenge page asks visitors to submit a CAPTCHA to continue to your website.|
+|Threshold or sensitivity setting | Set rules to trigger more or less, depending on sensitivity.|
 
-# CIS Rule Set for WAF
+## CIS Rule Set for WAF
 
 Select **View CIS Rules** to reveal the rule sets of this package. The rule sets follow:
   * Drupal

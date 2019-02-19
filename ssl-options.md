@@ -35,7 +35,7 @@ A secure connection between your visitor and CIS, and secure connection (but not
 Default and recommended. A secure connection between the visitor and CIS, and secure and authenticated connection between CIS and your web server. You must have your server configured to answer HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority, have an expiration date in the future, and respond for the request domain name (hostname). We recommend that you keep using this TLS mode for best security practices, unless you understand the potential security threats of changing to one of the less strict modes.
 
 ### HTTPS Only Origin Pull
-*Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between CIS and your origin websever from HTTP to HTTPS, even if the original content requested is over HTTP.
+*Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between CIS and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
 
 ## Minimum TLS version
 

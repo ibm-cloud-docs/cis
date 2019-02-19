@@ -1,11 +1,16 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-08-22"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # How IBM Cloud Internet Services (CIS) keeps your work secure
 
@@ -16,9 +21,9 @@ IBM CIS is a globally distributed cloud service that blocks threats and limits a
 Here’s a quick feature overview:
 
 ## Security features
- * Proxy [DNS records](dns-concepts.html#proxying-dns-records) or [GLB](glb.html) to use security features. This allows traffic to flow through our servers and the data can be monitored.
+ * Proxy [DNS records](/docs/infrastructure/cis?topic=cis-dns-concepts#proxying-dns-records) or [GLB](/docs/infrastructure/cis?topic=cis-global-load-balancer-glb-concepts) to use security features. This allows traffic to flow through our servers and the data can be monitored.
 ### Web Application Firewall (WAF)
- * WAF is implemented through two rule sets: [OWASP](waf-owasp-ruleset.html) and [CIS](waf-cis-ruleset.html).
+ * WAF is implemented through two rule sets: [OWASP](/docs/infrastructure/cis?topic=cis-owasp-rule-set-for-waf) and [CIS](/docs/infrastructure/cis?topic=cis-waf-settings#cis-rule-set-for-waf).
 ### Unlimited DDoS mitigation
  * DDoS mitigation is typically an expensive service that can grow in cost when under attack. We include unlimited DDoS mitigation with CIS at no additonal cost.
 
@@ -56,7 +61,7 @@ The IP Rules allow you to control access for specific IP addresses, IP ranges, s
 For example, if you notice that a particular IP is causing malicious requests, you can block that user by IP address.
 
 ### User-Agent Blocking Rules
-User-Agent Blocking rules allow you to take action on any User-Agent string you select. This capability works like Domain Lockdown as described previously, except the block examines the incoming User-Agent string rather than the IP. You can choose how to handle a matching request with the same list of actions as you have estabilshed in the IP Rules (Block, Challenge, and JS Challenge). Note that User-Agent blocking applies to your entire zone. You cannot specify sub-domains in the same manner you can Domain Lockdowns.
+User-Agent Blocking rules allow you to take action on any User-Agent string you select. This capability works like Domain Lockdown as described previously, except the block examines the incoming User-Agent string rather than the IP. You can choose how to handle a matching request with the same list of actions as you have established in the IP Rules (Block, Challenge, and JS Challenge). Note that User-Agent blocking applies to your entire zone. You cannot specify sub-domains in the same manner you can Domain Lockdowns.
 
 This tool is useful for blocking any User-Agent strings that you deem suspicious. 
 
@@ -68,7 +73,7 @@ Domain Lockdown allows you whitelist specific IP addresses and IP ranges such th
 This capability is useful when you need more granularity in your access rules because, with the IP Rules, you can either apply the block to all sub-domains of the current domain, or all domains on your account, and you cannot specify URIs.
 
 ### Challenge Passage
-Located in the **Advanced** security settings, this setting allows you to control how long a visitor that passed a challenge or JavaScript challenge will gain access to your site before being challenged again. This is based on the visitor's IP and therefore does not apply to challenges presented by WAF rules, becaus they are based on an action the user performs on your site.
+Located in the **Advanced** security settings, this setting allows you to control how long a visitor that passed a challenge or JavaScript challenge will gain access to your site before being challenged again. This is based on the visitor's IP and therefore does not apply to challenges presented by WAF rules, because they are based on an action the user performs on your site.
 
 ### Browser Integrity Check
 This setting is located in the **Advanced** security settings. The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks or challenges visitors that do not have a user agent, or who add a non-standard user agent (this tactic is commonly used by abuse bots, crawlers, or APIs).

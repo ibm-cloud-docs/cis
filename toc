@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis/getting-started.html" path="infrastructure/cis"}
+{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis?topic=cis-getting-started-with-ibm-cloud-internet-services-cis-" path="infrastructure/cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
@@ -31,7 +31,6 @@ Cloud Internet Services (CIS)
     glb-setup.md
     using-page-rules.md
     caching-with-page-rules.md
-    waf-custom-rules.md
     origin.md
     routing.md
     rate-limiting.md
@@ -40,13 +39,14 @@ Cloud Internet Services (CIS)
     logpull.md
     range.md
     edge-functions.md
+    edge-functions-use-cases.md
     helpful-tools.md
     
     {: .topicgroup}
     Detailed guides 
-        [Secure and resilient multi-region Kubernetes clusters with Cloud Internet Services](https://console.bluemix.net/docs/tutorials/multi-region-k8s-cis.html)  
-        [Using CIS to secure your Cloud Foundry applications across regions](https://console.bluemix.net/docs/tutorials/multi-region-webapp.html#register-a-custom-domain-with-ibm-cloud-internet-services)
-        [Deploy serverless apps across multiple locations](https://console.bluemix.net/docs/tutorials/multi-region-serverless.html)
+        [Secure and resilient multi-region Kubernetes clusters with Cloud Internet Services](/tutorials/solution-tutorials-multi-region-k8s-cis)  
+        [Using CIS to secure your Cloud Foundry applications across regions](/tutorials/solution-tutorials-multi-region-webapp#register-a-custom-domain-with-ibm-cloud-internet-services)
+        [Deploy serverless apps across multiple locations](tutorials/solution-tutorials-multi-region-serverless#multi-region-serverless)
         
     {: .topicgroup}
     Guided instructions: Improving application reliability and scalability with Global Load Balancing
@@ -56,8 +56,16 @@ Cloud Internet Services (CIS)
         begin-config.md
         identify-app-resources.md
         define-global-lb.md
-    {: .navgroup-end}
-
+                
+    {: .topicgroup}
+    Guided instructions: Web Application Firewalls
+        waf-custom-rules.md
+        waf-rule-set.md
+        waf-cis-ruleset.md
+        waf-owasp-ruleset.md
+       
+    {: .navgroup-end}   
+        
     {: .navgroup id="help"}
     faq.md
     known-limitations.md
@@ -72,5 +80,6 @@ Cloud Internet Services (CIS)
     at_events.md
     cis-cli-overview.md
     glossary.md
+    whitelisted-ips.md
     external-resources.md
     {: .navgroup-end}

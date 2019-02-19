@@ -1,11 +1,16 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-05-18"
+  years: 2018-2019
+lastupdated: "2018-02-18"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 
 # Global Load Balancer quick setup
@@ -15,6 +20,6 @@ You can directly create pools and health checks from the **Create Load Balancer*
 
 Input a pool name, origins, and select a health check. You can create a new health check here by choosing **Create New** in the Health Check dropdown menu, and entering the information to create the health check. 
 
-For fully configurable options, use the longer setup method in [Set up and configure your load balancers](glb-setup.html).
+For fully configurable options, use the longer setup method in [Set up and configure your load balancers](/docs/infrastructure/cis?topic=cis-set-up-and-configure-your-load-balancers).
 
-For definitions of common terms, see this [Glossary](glossary.html).
+For definitions of common terms, see this [Glossary](/docs/infrastructure/cis?topic=cis-glossary).

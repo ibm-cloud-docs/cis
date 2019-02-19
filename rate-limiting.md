@@ -19,7 +19,7 @@ Enter a rule name that helps you remember what the rule does. This is an optiona
 
 **Traffic matching criteria** uses the AND operation. Enter a URL that you are rate limiting, and then when requests from the **Same IP exceeds** your specified number of **Requests per second**, the rule specified is triggered.
 
-The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to futher restrict the matching criteria. 
+The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria. 
 
 Select a value form the **Method** dropdown (ANY is the default).  
 

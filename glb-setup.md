@@ -1,11 +1,16 @@
 ---
 copyright:
-  years: 2018
-lastupdated: "2018-05-18"
+  years: 2018-2019
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 
 # Set up and configure your load balancers
@@ -17,7 +22,7 @@ lastupdated: "2018-05-18"
 ## GLB Dashboard
 On your dashboard, you'll see three lists that show the load balancers, origin pools, and health checks. The lists display the new or updated global load balancer or one of its components after you've provisioned or updated it. Initially the lists are empty, and before you create a load balancer you must take a few actions.
 
-Refer to the [Quick Start Guide](glb-quick-setup.html) if you already know what you need to do!
+Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-balancer-quick-setup) if you already know what you need to do!
 
 ### Create
 **Note**: <sup>`*`</sup> indicates this step is optional
@@ -124,4 +129,4 @@ Optionally, the following fields can be configured:
  * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to `Automatic`.
  * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools. **Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}. 
  
-For definitions of terms used in this document, which generally are common terms used throughout the industry, refer to the [Glossary](glossary.html).
+For definitions of terms used in this document, which generally are common terms used throughout the industry, refer to the [Glossary](/docs/infrastructure/cis?topic=cis-glossary).

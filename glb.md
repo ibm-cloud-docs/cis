@@ -79,7 +79,7 @@ Origins with weight `0` do not receive any traffic for this pool. However, sessi
 An origin pool is setup with 3 origins that have the following weights: origin-A: 0.4, origin-B: 0.3, and origin-C: 0.3. 
 
 * Initially, all origins are healthy. The amount of traffic each origin receives is: origin-A: 40%, origin-B: 30%, and origin-C: 30%.
-* Then origin-A turns critical; it no longer receives traffic. The remaining origins have the same weight and therefore traffic is distributed evently, each receiving 50%.
+* Then origin-A turns critical; it no longer receives traffic. The remaining origins have the same weight and therefore traffic is distributed evenly, each receiving 50%.
 * The administrator changes the weight for origin-C to `0`. Now 100% of new traffic goes to origin-B. But with session-affinity turned on, traffic for existing sessions on origin-C continues to go to origin-C until those sessions close (max. 24 hours).
 
 ### Fallback Pool

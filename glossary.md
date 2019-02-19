@@ -9,7 +9,7 @@ lastupdated: "2018-05-18"
 
 
 # Glossary
-This glossary contains defiitions for common terms you may encounter when working with Global Load Balancer (GLB).
+This glossary contains definitions for common terms you may encounter when working with Global Load Balancer (GLB).
 
 #### Load balancer
 A load balancer is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers. Load balancers are used to increase system capacity (the number of concurrent users) and improve the reliability of applications.

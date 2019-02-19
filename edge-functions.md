@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
@@ -56,7 +56,7 @@ Delete an action by clicking the **delete** icon in the **Actions** table. An ac
 ### Associated Triggers
 Add a trigger and associate it with an action.
 
-### Known Limitations
+### Edge Functions Known Limitations
 Uploading an action with the same name as an existing action. The existing action will be overwritten. Rename the action file before uploading to avoid this behavior.
 
 
@@ -81,13 +81,13 @@ Delete a trigger using the menu option in the table row for a selected trigger. 
 ## Use Cases
 These examples are for demonstration purposes only, and not intended for use in production. 
 {:important}
-* [A/B Testing](edge-functions-use-cases.html#ab-testing)
-* [Adding a Response Header](edge-functions-use-cases.html#add-response-header)
-* [Aggregating Multiple Requests](edge-functions-use-cases.html#aggregate-multiple-requests)
-* [Conditional Routing](edge-functions-use-cases.html#conditional-routing)
-* [Hot-link Protection](edge-functions-use-cases.html#hot-link-protection)
-* [Originless Responses](edge-functions-use-cases.html#originless-responses)
-* [Post Requests](edge-functions-use-cases.html#post-requests)
-* [Setting a Cookie](edge-functions-use-cases.html#setting-cookies)
-* [Signed Requests](edge-functions-use-cases.html#signed-requests)
-* [Streaming Responses](edge-functions-use-cases.html#streaming-responses)
+* [A/B Testing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#ab-testing)
+* [Adding a Response Header](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#add-response-header)
+* [Aggregating Multiple Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#aggregate-multiple-requests)
+* [Conditional Routing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#conditional-routing)
+* [Hot-link Protection](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#hot-link-protection)
+* [Originless Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#originless-responses)
+* [Post Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#post-requests)
+* [Setting a Cookie](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#setting-cookies)
+* [Signed Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#signed-requests)
+* [Streaming Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#streaming-responses)
