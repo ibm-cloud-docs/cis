@@ -18,7 +18,6 @@ Cloud Internet Services (CIS)
     glb.md
     cache.md
     best-practices.md
-    
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -62,16 +61,8 @@ Cloud Internet Services (CIS)
         waf-custom-rules.md
         waf-rule-set.md
         waf-cis-ruleset.md
-        waf-owasp-ruleset.md
-       
+        waf-owasp-ruleset.md   
     {: .navgroup-end}   
-        
-    {: .navgroup id="help"}
-    faq.md
-    known-limitations.md
-    troubleshooting.md
-    getting-help.md
-    {: .navgroup-end}
     
     {: .navgroup id="reference"}
     hipaa-advisory.md
@@ -82,4 +73,11 @@ Cloud Internet Services (CIS)
     glossary.md
     whitelisted-ips.md
     external-resources.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    getting-help.md
     {: .navgroup-end}
