@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-03-14"
+
+keywords: origin server, pool implementation, origin servers
+
+subcollection: cis
 
 ---
 
@@ -11,10 +15,12 @@ lastupdated: "2019-01-24"
 {:note: .note}
 
 # Global Load Balancer (GLB) Concepts
+{:#global-load-balancer-glb-concepts}
 
 This document contains some concepts and definitions related to the Global Load Balancer (GLB) and how it affects your IBM CIS deployment.
 
 ## Global Load Balancer
+{:#global-load-balancer-cis}
 
 The Global Load Balancer (GLB) manages traffic across server resources located in multiple regions. The origin server can serve up all of the content for a website, provided that the web traffic does not extend beyond the server's processing capabilities and latency is not a primary concern. The GLB utilizes a _pool_ implementation that allows for the traffic to be distributed to multiple origins. This pool capability provides many benefits including:
 
@@ -27,6 +33,7 @@ The GLB routes traffic to the pool with the highest priority, distributing the l
 If pools are set up for specific regions, traffic from those regions is sent to the pools for the specified region first. Only if all pools for a given region are down will traffic fall back to the default pools. In this case the fallback pool is the pool with the lowest priority. 
 
 ### How it works
+{:#how-glb-works}
 When the GLB is created a DNS record is automatically added for it with the name of the load balancer. The GLB then returns one of the origin IP addresses to a client making a DNS request.
 
 For example, an origin pool is created with two origins identifying IP addresses `169.61.244.18` and `169.61.244.19`. If a global load balancer is created with the name `glbcust.ibmmo.com` using the origin pool, then a client on the internet can execute the command:
@@ -57,10 +64,12 @@ After the client connects to the application the picture looks like this:
 `[client]<--tls-->[cis]<-->[origin server]`
 
 ## Pool
+{:#glb-pools}
 
 A pool is a group of origin servers that traffic is intelligently routed to when attached to a GLB. The minimum number of available origin servers for the pool to be marked healthy is configurable by the user along with which specific health check to use. The origin pool can be associated with a specific region or it can be made available to all regions.
 
 ### Distribution of traffic within a pool
+{:#distribution-of-traffic-within-a-pool}
 
 By default, all traffic is distributed evenly among the origins in the pool using round-robin protocol. This is also true for non-proxied GLBs.
 
@@ -83,15 +92,23 @@ An origin pool is setup with 3 origins that have the following weights: origin-A
 * The administrator changes the weight for origin-C to `0`. Now 100% of new traffic goes to origin-B. But with session-affinity turned on, traffic for existing sessions on origin-C continues to go to origin-C until those sessions close (max. 24 hours).
 
 ### Fallback Pool
+{:#fallback-pool}
+
 The origin pool with the lowest priority (the largest number) is the designated "fallback pool." When all pools for a given region are down, traffic is routed to the fallback pool, regardless of its health.
 
+When all pools are disabled, the fallback pool is not available.
+{:note}
+
 ## Health Check
+{:#cis-health-check}
 
 A health check helps gain insight into the availability of pools so that traffic can be routed to the healthy ones. These checks periodically send HTTP, HTTPS, or TCP requests and monitor the responses. They can be configured with a customized port, interval, timeout, status code, and more. As soon as a pool is marked unhealthy, traffic is intelligently rerouted to another available pool.
 Be aware that your logs have references to Cloudflare because of IBM's partnership with Cloudflare to power CIS.
 {:note}
 
 ### Health Check Events
+{:#health-check-events}
+
 Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of Health Check Events. You can filter by date, health of the pool or origin, pool name, and origin name by selecting the filter parameters from the drop down menus. Columns within the table are sortable by clicking on the column name.
 ![Health Check Events table](images/health-check-events-table.png)
 

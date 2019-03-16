@@ -1,16 +1,25 @@
 ---
+
 copyright:
-years: 2018
-lastupdated: "2018-05-08"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: DNS Security, public-key cryptography
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+
 # DNS Security
+{:#dns-security}
 
 DNS is the protocol that translates domain names such as `ibm.com` to IP addresses. Unfortunately, it has one major security flaw: the end user has no guarantee that no one tampered with the records received. For example, forged DNS records can redirect browsers to fetch content from a malicious website, add JavaScript to run on a page, or even route email to an attacker’s mail server.
 
-DNSSEC, an introduction
+## DNSSEC, an introduction
+{:#dnssec-introduction}
 
 DNSSEC is the protocol that ensures the authenticity of DNS records. It uses public-key cryptography to let the DNS server sign records with a private key, and allow the DNS resolvers to verify the signatures with a public key
 

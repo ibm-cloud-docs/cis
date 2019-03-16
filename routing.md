@@ -1,22 +1,33 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-09-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Smart Routing Route connections, routing decisions, Eliminate excess latency
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Routing
+{:#cis-routing}
 
 Eliminate excess latency by analyzing and optimizing routing decisions across the global Internet using real-time network connections. Reduce Internet latency on average by 35% and connection errors by 27%.
 
 ## Smart Routing
+{:#cis-smart-routing}
+
 Route connections across the Internet efficiently by avoiding packet loss, congestion, and outages.
 
 Smart Routing optimizes the paths your data takes across the Internet. Optimal paths are determined by analyzing latency and packet loss data collected from real-time network connections. Smart Routing uses this data to detect which transit providers are operating best between any two points on the planet.
 
 ## Tiered Caching
+{:#cis-tiered-caching}
+
 Increase cache hit ratios using concentrated connections to reduce requests to customer origins.
 
 Tiered Caching reduces requests to customer origins and decreases the load on the origin server. Tiered Caching accomplishes this by first asking other PoPs if they have the requested data when a cache miss takes place. Customers will see a performance increase since distances between our PoPs are typically shorter than the distances between PoPs and origins. By taking advantage of the cached data, customers will benefit by seeing a decrease in the load on their origin server.

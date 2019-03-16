@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2019-02-01"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: IBM CIS DNS records, parts of the DS record, Type
+
+subcollection: cis
 
 ---
 
@@ -20,14 +24,17 @@ lastupdated: "2019-02-01"
 {:generic: data-hd-programlang="generic"}
 
 # Set up your Domain Name System (DNS) for IBM CIS
+{:#set-up-your-dns-for-cis}
 
 This document contains some specific instructions about how to configure your IBM CIS DNS records, including how to configure Secure DNS.
 
 ## Secure DNS
+{:#secure-dns}
 
 **DNSSec** is a technology to digitally "sign" DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, www.icann.org).
 
 ## Configuring and managing your secure DNS 
+{:#configuring-and-managing-your-secure-dns}
 
 DNSSec adds a layer of authentication to the internet's DNS infrastructure, which otherwise is not secure. Secure DNS guarantees that visitors are directed to **your** web server when they type your domain name into a web browser.  All you need to do is enable DNSSec in your DNS page from your IBM CIS account and add the DS record to your registrar.
 
@@ -36,12 +43,14 @@ DNSSec adds a layer of authentication to the internet's DNS infrastructure, whic
 You can select **View DS records** button to open a dialog box that explains how to add the DS record to your registrar. You must copy parts of the DS record and paste them into your registrar’s dashboard. Every registrar is different, and your registrar may only require you to enter information for some of the available fields.
 
 ## Adding DNS records
+{:#adding-dns-records}
 
 You can use the **Type** dropdown to select the type of record you want to create. Each DNS record type has a Name and Time-To-Live (TTL) associated with it. 
 
 Whatever is entered into the Name field will have domain name appended to it unless domain name is manually appended in the field already (e.g. if `www` or `www.example.com` is typed into the field, the API will handle both as `www.example.com`). If the exact domain name is typed into the name field, then it won't be appended on itself (e.g. `example.com` will be handled as `example.com`). However, the list of DNS records will only show the names without the domain name being tacked on, so `www.example.com` is shown as `www` and `example.com` will be shown as `example.com`. The TTL will have a default value of `Automatic`, but can be changed by the user. A proxied DNS record will always have a TTL of `Automatic`, so a newly proxied record will change to this configuration during this change.
 
 ### A Type record
+{:#a-type-record}
 
 To add this record type, valid values must exist in the **Name** and **IPv4 Address** fields. A **TTL** also can be specified from the dropdown menu, with a default value of `Automatic`.
 
@@ -51,6 +60,7 @@ To add this record type, valid values must exist in the **Name** and **IPv4 Addr
     Optional Field: TTL (Default value is Automatic)
 
 ### AAAA Type record
+{:#aaaa-type-record}
 
 To add this record type, valid values must exist in the **Name** and **IPv6 Address** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -60,6 +70,7 @@ To add this record type, valid values must exist in the **Name** and **IPv6 Addr
     Optional Field: TTL (Default value is Automatic)
 
 ### CNAME Type record
+{:#cname-type-record}
 
 To add this record type, a valid value must exist in the **Name** field and a fully qualified domain name must be in the **Domain Name** (FQDN) field. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -82,6 +93,7 @@ test.example.com -CNAME-> test.different.com
 ```
 
 ### MX Type record
+{:#mx-type-record}
 
 To add this record type, a valid value must exist in the **Name** field and a valid address must exist in the **Mail Server** field. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -91,6 +103,7 @@ To add this record type, a valid value must exist in the **Name** field and a va
     Optional Fields: TTL (Default value is Automatic), Priority (Default value is 1)
 
 ### LOC Type record
+{:#loc-type-record}
 
 To add this record type, a valid value must exist in the **Name** field. If you need more specific information, select the **Configure LOC options** button. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -102,6 +115,7 @@ To add this record type, a valid value must exist in the **Name** field. If you 
 ![Create LOC Type record](images/dns/create-loc-type-record-2.png)
 
 ### CAA Type record
+{:#caa-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Value** fields. The Value field will correlate to the value of the **Tag** dropdown field, which defaults to "Send violation reports to URL". A **TTL** can also can be specified from the dropdown, with the default value of `Automatic`.
 
@@ -111,6 +125,7 @@ To add this record type, valid values must exist in the **Name** and **Value** f
     Optional Fields: TTL (Default value is Automatic), Tag (default is to send violation reports to URL)
 
 ### SRV Type record
+{:#srv-type-record}
 
 To add this record type, valid values must exist in the **Name**, **Service Name** and **Target** fields. Use the dropdown menu to select a **protocol**, which defaults to the UDP protocol. Additionally, you can specify **Priority**, **Weight** and **Port**. These three fields default to a value of 1. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -120,6 +135,7 @@ To add this record type, valid values must exist in the **Name**, **Service Name
     Optional Fields: TTL (Default value is Automatic), Protocol (Defaulted to UDP), Priority (Defaulted to 1), Weight (Defaulted to 1), Port (Defaulted to 1)
 
 ### SPF Type record
+{:#spf-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -129,6 +145,7 @@ To add this record type, valid values must exist in the **Name** and **Content**
     Optional Field: TTL (Default value is Automatic)
 
 ### TXT Type record
+{:#txt-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -141,6 +158,7 @@ The first time you order a dedicated certificate Domain Control Validation (DCV)
 {:note}
 
 ### NS Type record
+{:#ns-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Name Server** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
 
@@ -150,6 +168,7 @@ To add this record type, valid values must exist in the **Name** and **Name Serv
     Optional Field: TTL (Default value is Automatic)
 
 ## Updating DNS records
+{:#updating-dns-records}
 
 In each record row, you can click the **Edit record** option from the menu, which will open a dialog box, which you can use to update the record.
 
@@ -160,6 +179,7 @@ For example, this is the update dialog for **A** type record. Once you are finis
 ![Edit DNS record Dialog](images/dns/update-dns-dialog.png)
 
 ## Deleting records
+{:#deleting-dns-records}
 
 In each record row, you can select the **Delete record** option from the menu, which opens a dialog box to confirm the delete process.
 
@@ -170,13 +190,19 @@ You can select the **Delete** button to confirm your delete action. Select **Can
 ![Delete DNS record Dialog](images/dns/delete-record-dialog.png)
 
 ## Import and export records
+{:#import-export-records}
+
 DNS records can be imported into and exported from CIS. All files are imported and exported as .txt files in BIND format. More information on [BIND format](https://en.wikipedia.org/wiki/Zone_file).
 Click the overflow menu and select import or export records.
 ![DNS Records Option](images/dns/import-export-records.png)
 
 ### Import records
+{:#import-dns-records}
+
 By default, a total of 3500 DNS records are allowed (imported and created on CIS). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After importing, you are shown a summary with the number of records successfully added and the number that failed, along with the reason why each record failed.
 ![Import DNS Records Summary](images/dns/import-records-summary.png)
 
 ### Export records
+{:#export-dns-records}
+
 Use `Export records` to create a backup of your zone file, or export it to use with another DNS provider. When this menu option is clicked, the records are downloaded to the location specified by your browser settings (typically the Downloads folder). To select another folder location, change your browser's settings to prompt you for a location with each download.

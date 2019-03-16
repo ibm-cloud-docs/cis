@@ -1,8 +1,15 @@
 ---
+
 copyright:
-  years: 1994, 2017
-lastupdated: "2018-12-05"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Advisory, Use of Caching, content caching, Cache-Control header
+
+subcollection: cis
+
 ---
+
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:note: .note}
@@ -11,6 +18,7 @@ lastupdated: "2018-12-05"
 {:generic: data-hd-programlang="generic"}
 
 # HIPAA Advisory
+{:#hipaa-advisory}
 
 Use of Caching (CDN) for regulated data (for example, PHI, ITAR) is **prohibited**. All regulated data flows that use CIS must be set to **not cache**.
 {:important}

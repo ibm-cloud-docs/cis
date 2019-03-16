@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: IBM Cloud Internet Services, setup flow
+
+subcollection: cis
 
 ---
 
@@ -19,6 +23,7 @@ lastupdated: "2019-02-18"
 {:generic: data-hd-programlang="generic"}
 
 # Create your IBM Cloud Internet Services (CIS) instance
+{:#create-your-cis-instance}
 
 To create a CIS instance, perform the following procedure:
 

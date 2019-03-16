@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: CIS Command Line Interface, Firewall, Metrics, Routing, RateLimit, Overview
+
+subcollection: cis
 
 ---
 
@@ -16,6 +20,8 @@ lastupdated: "2019-02-18"
 
 
 # CIS Command Line Interface
+{:#cis-command-line-interface}
+
 The following families of commands are available from the command line interface (CLI) in CIS. Within the [CIS CLI Commands](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#cis-cli-commands) page, you'll find the full set of commands within each set, including `Create`, `Delete`, `Update`, and so forth.
   
   * [Resource Instance](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#resource-instance)

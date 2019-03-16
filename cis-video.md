@@ -1,14 +1,24 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-12-05"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: introductory video
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock} {:screen: .screen} {:pre: .pre} {:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock} 
+{:screen: .screen} 
+{:pre: .pre} 
+{:table: .aria-labeledby="caption"}
 
 # Video 
+{:#video}
 
 Watch a short introductory video that describes the security benefits of IBM Cloud Internet Services (CIS).
 

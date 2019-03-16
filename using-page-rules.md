@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Use Page Rules, Page Rule
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,10 +20,12 @@ lastupdated: "2019-02-18"
 
 
 # Use Page Rules
+{:#use-page-rules}
 
 A Page Rule specifies some settings and values that you can apply to a specific URL pattern that references your domain. Page Rules help you manage security, performance, and reliability based on each individual URL in your site. The following table describes the Page Rules that are available to all customers, the behaviors they produce, and any special considerations you should keep in mind before using them.
 
 ## Security
+{:#page-rules-security}
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
@@ -33,8 +41,11 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Opportunistic Encryption**|Toggles Opportunistic Encryption on or off.  | |
 |**Cache Deception Armor**|Toggles Cache Deception Armor on or off.  | |
 |**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables configuring all other settings for the rule, because IBM CIS forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against Page Rules. |
+|**True Client IP Header**|CIS will send the end user's IP address in the `True-Client-IP` header.  |Enterprise only |
 
 ## Performance
+{:#page-rules-performance}
+
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
 |**Browser Cache TTL**|Controls how long resources cached by client browsers remain valid. | |
@@ -42,8 +53,18 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Cache Level**|**Bypass** - Resources that match that Page Rule are not cached.<br>**No query string** - Only delivers resources from cache when there is no query string.<br>**Ignore query string** - Delivers the same resource to everyone independent of the query string.<br>**Standard** - Delivers a different resource each time the query string changes.<br> **Cache everything** - Resources that match the Page Rule are cached.|By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
 |**Edge Cache TTL**|Controls how long IBM CIS will retain files in our cache. |This setting is optional when specifying cache level. |
 |**Resolve Override**|Change the URL or IP that the request matching the page rule resolves to.||
+|**Cache on Cookie**|Apply the `Cache Everything` option (`Cache Level` setting) based on a regular expression match against a cookie name. If you add both this setting and `Bypass Cache on Cookie` to the same page rule, `Cache On Cookie` takes precedence over `Bypass Cache on Cookie`.|Enterprise only |
+|**Disable Performance**|Turn off:<ul><li>`Minify Web Content`</li><li>`Image Load Optimization`</li><li>`Image Size Optimization`</li><li>`Script Load Optimization`</li></ul> |Enterprise only |
+|**Minify Web Content**|Minify HTML, CSS and/or JavaScript files by removing all unnecessary characters from these files. |Enterprise only |
+|**Image Load Optimization**|Improves load time for pages that include images based on network connection and device type by:<ul><li>**Image Virtualizing** - Replaces images with low resolution placeholder images that have the same dimensions as the original (including third party images). Once the page renders completely, full resolution images are then lazy-loaded (prioritizing images in the browser viewport). This process allows pages to render quickly and minimizes browser reflow.</li><li>**Request Streamlining** - Combines multiple individual network requests for images into a single request.</li><ul> |Enterprise only |
+|**Image Size Optimization**|Reduce image file size by removing metadata (date and time, camera manufacturer and model, etc.), and by compressing images when possible. Smaller file sizes mean faster load times for images and web pages. |Enterprise only |
+|**Sort Query String**|Treats files with the same query strings as the same file in cache, regardless of the order of the query strings. |Enterprise only |
+|**Response Buffering**|Enable or disable buffering of responses from the origin server. By default, CIS sends packets to the client as we receive them. Enabling Response Buffering means that CIS will wait until it has the entire file before forwarding it to the end user. |Enterprise only |
+|**Script Load Optimization**|Improve paint times by asynchronously loading your Javascripts, including third party scripts, so that they do not block rendering the content of your pages. |Enterprise only |
 
 ## Reliability
+{:#page-rules-reliability}
+
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
 |**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability) |
@@ -54,6 +75,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Origin Error Page Pass-through**|Disables CIS error pages that would trigger for issues sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only ||
 
 ## Page Rule URL patterns
+{:#page-rule-url-patterns}
 
 A Page Rule will take effect on a given URL pattern, matching the following format:
 

@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-06-21"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: CIS Rule Set, WAF settings, WAF CIS Rules
+
+subcollection: cis
 
 ---
 
@@ -16,6 +20,8 @@ lastupdated: "2018-06-21"
 
 
 # WAF settings
+{:#waf-settings}
+
 The following table shows the actions Web Application Firewalls (WAF) can take. 
 
 
@@ -27,6 +33,7 @@ The following table shows the actions Web Application Firewalls (WAF) can take.
 |Threshold or sensitivity setting | Set rules to trigger more or less, depending on sensitivity.|
 
 ## CIS Rule Set for WAF
+{:#cis-ruleset-for-waf}
 
 Select **View CIS Rules** to reveal the rule sets of this package. The rule sets follow:
   * Drupal

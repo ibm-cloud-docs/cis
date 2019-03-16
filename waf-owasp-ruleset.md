@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-07-09"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: OWASP Rule Set, Rule Set
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,12 +20,14 @@ lastupdated: "2018-07-09"
 
 
 # OWASP Rule Set for WAF
+{:#owasp-rule-set-for-waf}
 
 The OWASP Rule Set contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL Injection, Cross-Site Scripting, and Locale File Inclusion, among others. IBM CIS provides but does not curate these rules. OWASP is an industry standard that provides a good security baseline. See the following links for more information:
   * [OWASP on Github](https://github.com/SpiderLabs/owasp-modsecurity-crs)
   * [OWASP.org](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project)
 
 ## Managing OWASP
+{:#managing-owasp}
 
 Unlike the [CIS rule set](/docs/infrastructure/cis?topic=cis-cis-rule-set-for-waf), OWASP allows you to set Sensitivity.
 A request may trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, CIS compares it to the sensitivity threshold selected in the beginning, and then either blocks or allows the request.
@@ -35,6 +43,7 @@ We suggest that you set OWASP sensitivity to `low`. If you set it to `high`, che
 Keep in mind that OWASP rules can only be toggled _on_ or _off_, unlike rules in the CIS rule sets, which can be set to _Disable_, _Simulate_, _Challenge_, or _Block_.
 
 ## How to deal with False Positives?
+{:#owasp-false-positives}
 
 False positives can occur when variable or value evaluates as _true_ or _positive_ but it's actually a negative. In the context of our WAF, a false positive means that a request is blocked because it was mistakenly evaluated as malicious.
 

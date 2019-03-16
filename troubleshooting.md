@@ -1,15 +1,23 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-10-23"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: IBM CIS connection, CIS network connection, Origin web server, troubleshooting
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Troubleshooting your CIS network connection
+{:#troubleshooting-your-cis-network-connection}
 
 ## How do I know if my data is passing through my IBM CIS connection?
+{:#how-do-i-know-if-my-data-is-passing-through-my-cis-connection}
 
 IBM Cloud Internet Services (CIS) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
 
@@ -37,6 +45,8 @@ Results in: `CF-RAY: 1ca349b6c1300da3-SJC`
 The CF-RAY header is added to help trace a request to a website through the network. Use it when working with Support to help troubleshoot any related issues with connectivity. You can reveal this "Ray ID" in your logs by making some edits to configuration files in Apache and nginx.
 
 ### Apache
+{:#troubleshooting-cis-apache}
+
 ```
 LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %{CF-Ray}i" cf_custom
 
@@ -44,6 +54,8 @@ CustomLog log/access_log cf_custom
 ```
 
 ### nginx
+{:#troubleshooting-cis-nginx}
+
 ```
 log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
                     '"$request" $status $body_bytes_sent '
@@ -54,6 +66,7 @@ access_log  /var/log/nginx/access.log cf_custom;
 ```
 
 ## How do I trace a route?
+{:#how-do-i-trace-a-route}
 
 To see whether a route goes through your IBM CIS pathway, you can perform a ‘dig’ in a Terminal window for Mac or Linux
 or use `nslookup` in the Windows command prompt for Windows.
@@ -64,13 +77,15 @@ The `traceroute` command shows the entire path that an IP request has taken.
 
 The support team makes use of these commands to assist you.
 
-## If you see a privacy warning:
+## If you see a privacy warning
+{:#troubleshooting-cis-privacy-warning}
 
 The certificates issued by IBM CIS cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) you will see a privacy warning in your browser, because these host names are not added to the SAN.
 
 Also, please allow up to 15 minutes for one of our partner Certificates Authorities (CAs) to issue a new certificate. You’ll see a privacy warning in your browser if your new certificate has not yet been issued.
 
 ## What do I do if I’m under a DDoS attack?
+{:#troubleshooting-cis-ddos-attack}
 
  * **Step 1:** Turn on "Defense Mode" from your dashboard
  * **Step 2:** Set your DNS records for maximum security
@@ -78,7 +93,8 @@ Also, please allow up to 15 minutes for one of our partner Certificates Authorit
  
 During "Defense Mode", each new visitor is met with a "Captcha" security challenge, which they must pass before being given a cookie for unchallenged access. That way, botnet traffic is blocked until the "Defense Mode" is turned off. Visitors that do not meet the security challenge are added to the (bad) IP Reputation database.
 
-## Other problems you might encounter:
+## Other problems you might encounter
+{:#troubleshooting-cis-other-problems}
 
 Here are some common error messages that you or your support team might see:
 
@@ -91,10 +107,12 @@ Here are some common error messages that you or your support team might see:
 | 524  | IBM CIS could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
 
 ### Not seeing any network traffic
+{:#troubleshooting-cis-network-traffic}
 
 If you’re not seeing traffic, and you’re using a CNAME, make sure that there is a redirect in place, so the traffic is not being routed to the root domain. Remember that some DNS propagations can take up to 48 hours to complete.
 
 ### Website offline
+{:#troubleshooting-cis-website-offline}
 
 Here is what you might see:
 
@@ -112,6 +130,7 @@ What you can do:
 * Here is the list of [IPs to whitelist](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses)
 
 ### 502 error “The dreaded 502”
+{:#troubleshooting-cis-502-error}
 
 This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable, for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. Run a trace route. 
 

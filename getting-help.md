@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: support ticket,IBM Cloud development teams
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,6 +15,7 @@ lastupdated: "2019-02-18"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Getting Help and Support
+
 <!-- Common attributes used in the template are defined as follows: -->
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -26,8 +33,6 @@ lastupdated: "2019-02-18"
 
 
 {: #gettinghelp}
-
-
 
 If you have problems or questions when using CIS, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
 {:shortdesc}

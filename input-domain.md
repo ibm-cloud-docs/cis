@@ -1,11 +1,12 @@
 ---
 
-
-
 copyright:
-  years: 2017
-lastupdated: "2018-06-20"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
 
+keywords: domain Input information, IBM Cloud Internet Service, Domain Name
+
+subcollection: cis
 
 ---
 
@@ -17,13 +18,16 @@ lastupdated: "2018-06-20"
 {:table: .aria-labeledby="caption"}
 
 # Input information about your domain
+{:#input-information-about-your-domain}
+
 Input information about the domain you wish to protect and provide global load balancing for.
 
 1. Click **Overview** on the left side of the Getting Started screen. Input your Domain Name (or Sub-domain Name) and click **Add domain**. 
     
     <img src="images/reliability3.png" alt="drawing" style="width: 300px;"/>
     
-    **NOTE:** The IBM Cloud Internet Service is not a DNS registrar, so this domain (or sub-domain) must have been previously created.
+    The IBM Cloud Internet Service is not a DNS registrar, so this domain (or sub-domain) must have been previously created.
+    {:note}
 
     Under the Service Details section, you’ll notice that the newly-added domain will initially show up in a Pending state. 
 

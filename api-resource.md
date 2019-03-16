@@ -1,10 +1,15 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: API Specs, CIS APIs
+
+subcollection: cis
 
 ---
+
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -15,6 +20,7 @@ lastupdated: "2018-12-03"
 {:download: .download}
 
 # API Specs
+{:#api-specs}
 
 Here's how to view the CIS API specifications: 
 
@@ -26,6 +32,7 @@ Here's how to view the CIS API specifications:
 
 
 ## Notes
+{:#api-notes}
 
 1. API endpoint: `https://api.cis.cloud.ibm.com`.
 

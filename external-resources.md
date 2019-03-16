@@ -1,9 +1,12 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
+lastupdated: "2019-03-14"
 
-lastupdated: "2018-06-14"
+keywords: IBM Cloud Internet Services, Blog Post, External Resources
+
+subcollection: cis
 
 ---
 
@@ -16,6 +19,7 @@ lastupdated: "2018-06-14"
 {:download: .download}
 
 # External Resources
+{:#external-resources}
 
 These resources are created by IBM and some of our partners and customers.
 

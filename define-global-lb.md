@@ -1,11 +1,12 @@
 ---
 
-
-
 copyright:
-  years: 2017
-lastupdated: "2018-06-20"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
 
+keywords: global load balancer, global load balancer configuration
+
+subcollection: cis
 
 ---
 
@@ -17,6 +18,7 @@ lastupdated: "2018-06-20"
 {:table: .aria-labeledby="caption"}
 
 # Define the global load balancer
+{:#define-the-global-load-balancer}
 
 Define your global load balancer configuration by specifying a hostname, adding and adjusting your origin pools and defining additional rules to control how traffic is served to clients.
 

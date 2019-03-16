@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Page Rules, web content, IBM CIS deployment
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +19,7 @@ lastupdated: "2019-02-18"
 {:generic: data-hd-programlang="generic"}
 
 # Manage your IBM CIS deployment for optimal reliability
+{:manage-your-ibm-cis-deployment-for-optimal-reliability}
 
 To achieve optimal reliability for your IBM CIS deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your IBM CIS deployment optimally reliable.
 
@@ -30,6 +37,7 @@ Notice that the CIS interface is organized into sections for *security*, *reliab
 
 
 ## Setting up DNS
+{:#setting-up-dns}
  
  To get started setting up your DNS configuration, select **DNS** from the navigation menu, as shown previously.
  
@@ -37,6 +45,7 @@ Notice that the CIS interface is organized into sections for *security*, *reliab
 
 
 ## Setting up Global Load Balancers
+{:#setting-up-glb}
 
 
 To get started setting up your Global Load Balancers, select **Global Load Balancers** from the navigation menu.
@@ -44,6 +53,7 @@ To get started setting up your Global Load Balancers, select **Global Load Balan
 For detailed information about setting up and managing your Global Load Balancers, please [refer to this document](/docs/infrastructure/cis?topic=cis-global-load-balancer-glb-concepts).
 
 ## Using Page Rules to increase reliability
+{:#using-page-rules-to-increase-reliability}
 
 Here are some recommended Page Rule settings to give your site maximum reliability:
 
@@ -52,6 +62,7 @@ Here are some recommended Page Rule settings to give your site maximum reliabili
  * Forwarding URL
 
 ## Serve Stale Content
+{:#serve-stale-content}
 
 You can use the **Serve Stale Content** Page Rule setting to keep a limited version of your site online if your server goes down.
 
@@ -60,7 +71,7 @@ With **Serve Stale Content**, when your server goes down, IBM CIS serves pages f
 If IBM CIS does not have the requested page in its cache, your visitor sees an error page letting them know that the website page they are requesting is offline.
 
 ### How to set up Serve Stale Content
-
+{:#setting-up-serve-stale-content}
 To enable **Serve Stale Content**, follow these steps:
 
  * Use the navigation menu to select Page Rules under Performance.
@@ -69,6 +80,7 @@ To enable **Serve Stale Content**, follow these steps:
  * Select Provision Resource.
 
 ### Limitations of Serve Stale Content
+{limitations-serve-stale-content}
 
  * **Serve Stale Content** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site are viewable when your origin server goes down.
 
@@ -81,7 +93,7 @@ To enable **Serve Stale Content**, follow these steps:
  * **Serve Stale Content** does not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency, because the "Edge Cache Expire TTL" causes the **Serve Stale Content** cache to be purged in the corresponding interval.
 
 ## Origin Cache Control
-
+{:#origin-cache-control}
 You can use the **Origin Cache Control** Page Rule setting to determine what content is cached from your origin and how often the content is updated, which has an effect on reliability and on performance. By default, if no settings are changed and no headers that prevent caching are sent from your origin server, IBM CIS caches all static content with certain extensions. These types of content include images, CSS, and JavaScript. This caching is primarily for performance reasons.
 
 To set up **Origin Cache Control** use Page Rules to turn on specific headers that give the desired behavior with respect to each resource of your content. To understand how to use **Origin Cache Control**, some more general explanation of Page Rules and overall caching behavior for CIS is required to provide context, which is covered in the next several sections. Three methods exist that you can use to control caching in general, and **Origin Cache Control** is the second one.
@@ -89,6 +101,7 @@ To set up **Origin Cache Control** use Page Rules to turn on specific headers th
 Setting **Origin Cache Control** invokes caching rules that seek to adhere closely to internet best practices and RFCs, primarily with respect to revalidation. For example, the CIS default behavior with `max-age=0` is not to cache at all, whereas setting **Origin Cache Control** caches, but it always revalidates.
 
 ### How to set up Origin Cache Control
+{:#setting-up-origin-cache-control}
 
  * Use the navigation menu to select Page Rules under Performance.
  * Create a Page Rule with the URL pattern that references your domain.
@@ -96,6 +109,7 @@ Setting **Origin Cache Control** invokes caching rules that seek to adhere close
  * Select Provision Resource.
 
 ### Page Rule precedence
+{:#page-rule-precedence}
 
 Two specific Page Rules take precedence for caching overall:
 
@@ -106,6 +120,7 @@ Two specific Page Rules take precedence for caching overall:
 If no Page Rule is set, we use the `Standard` caching mode, which is based the extension of the resource. We cache static resources only.
 
 ### Origin cache-control headers
+{:#origin-cache-control-headers}
 
 The second way to alter what IBM CIS caches is through caching headers sent from the origin. CIS respects these settings, but you can override them by specifying an **Edge Cache TTL** Page Rule setting. Here are the headers we consider when deciding what resources to cache from your origin:
 
@@ -116,6 +131,7 @@ The second way to alter what IBM CIS caches is through caching headers sent from
 **Note:** As per RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If we see both and they do not agree, `max-age` wins.
 
 ### Using the 's-maxage' header
+{:#using-the-s-maxage-header}
 
 The third way to control caching behavior and browser caching behavior together is by using the `s-maxage` Cache-Control header.
 
@@ -130,6 +146,7 @@ But if you want to specify a cache timeout that's different from the browser, we
 Basically `s-maxage` is intended to be followed ONLY by reverse proxies (so the browser should ignore it) whilst on the other hand we (IBM CIS) give priority to `s-maxage` if it is present. We respect whichever value is higher: the browser cache setting or the `max-age` header.
 
 ### Summary on cache control headers and Page Rules for reliability
+{:#summary-cache-control-headers-page-rules}
 
 To sum up, here are some main areas to consider for reliability with regard to caching:
 
@@ -151,12 +168,15 @@ any        0s;
 
 
 ## Forwarding URL
+{:#forwarding-url}
 
 To ensure that your content is always available, create a Page Rule with the **Forwarding URL** setting used, in case your site is unavailable.
 
- **Note:** When you enable a **Forwarding URL**, all of your other settings are disabled becuase you are sending all of your traffic to another URL.
+When you enable a **Forwarding URL**, all of your other settings are disabled becuase you are sending all of your traffic to another URL.
+{:note}
 
 ### How to set up a Forwarding URL
+{:#setting-up-forwarding-url}
 
  * Use the navigation menu to select Page Rules under Performance.
  * Create a Page Rule with the URL pattern that references your domain.
@@ -164,7 +184,8 @@ To ensure that your content is always available, create a Page Rule with the **F
  * Select the forwarding type and enter the destination URL.
  * Select Provision Resource.
 
-### Forwarding examples:
+### Forwarding examples
+{:#forwarding-examples}
 
 Imagine you want to make it easy for anyone coming to reach a URL such as:
 
@@ -193,7 +214,8 @@ Once you've created the pattern that matches what you want, add the **Forwarding
 
 Select Provision Resource. Within a few seconds any requests that match the pattern are forwarded to the new URL with the specified redirect.
 
-### Advanced forwarding options:
+### Advanced forwarding options
+{:#advanced-forwarding-options}
 
 If you use a basic redirect, such as forwarding the root domain to `www.yourdomain.com`, you lose anything else in the URL. For example, you could set up the pattern:
 

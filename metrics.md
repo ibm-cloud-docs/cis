@@ -1,10 +1,25 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-04-26"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: CIS Metrics Tools, Web Traffic, DNS metrics
+
+subcollection: cis
+
 ---
 
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
+
 # How to use the CIS Metrics Tools
+{:#how-to-use-the-cis-metrics-tools}
 
 You can use the CIS Metrics tools (from the side navigation bar) to display information about Domain and DNS metrics in easy-to-digest charts and tables.
 
@@ -18,11 +33,14 @@ The CIS Metrics tools suite contains these tools:
  * Each chart displays only the top ten items. You can click on any item in the key to toggle the display of that item.
 
 ## Domain Metrics
+{:#domain-metrics}
 The **Domain Metrics** tools are a series of charts, tables, and graphs that show web traffic, performance, and security information.
 
-**Note**: **Domain Metrics** can retrieve up to 90 days at one time, but retrieving 3 different 30-day ranges is quicker.
+**Domain Metrics** can retrieve up to 90 days at one time, but retrieving 3 different 30-day ranges is quicker.
+{:note}
 
 ### Web Traffic
+{:#domain-metrics-web-traffic}
 The **Web Traffic** tool is a set of five tabs that show you helpful information about the traffic to your website. 
 * **Requests** shows cached and uncached requests made on the domain.
 * **Bandwidth** shows cached and uncached bandwidth in bytes. 
@@ -32,6 +50,7 @@ The **Web Traffic** tool is a set of five tabs that show you helpful information
 
 
 ### Performance
+{:#domain-metrics-performance}
 The **Performance** tool can help you optimize your site's performance.
 
 
@@ -42,20 +61,25 @@ The **Performance** tool can help you optimize your site's performance.
 * **Bandwidth Saved** is a percentage that shows how much bandwidth you've saved by using CIS. It is used in calculating the **Fewer Servers Needed** metric.
 
 ### Security
+{:#domain-metrics-security}
 The **Security** tool is a chart that shows the number of threats stopped.
 
 ![Domain Security Metrics image](images/domain-metrics-security.png)
 
 ## DNS Metrics
+{:#dns-metrics}
 The **DNS Metrics** tool provides a series of charts that cover DNS traffic and the top-queried DNS records.
 
 ### Traffic
+{:#dns-metrics-traffic}
 The Traffic section consists of two tabs that display **Queries by Response Code** and **Queries by Record Type**. Use the dropdown menu to select the date range displayed.
 
 ![DNS Traffic image](images/dns-metrics-traffic.png)
 
 ### Top queried DNS records
+{:#dns-metrics-top-queried-dns-records}
 This table contains a paginated list of the most-queried DNS records, in descending order. It shows the name and type of the record, and the number of queries received.
 
 ### Top DNS records returning NXDOMAIN
+{:#dns-metrics-top-dns-records-returning-nxdomain}
 This table contains a paginated list of the requests made to non-existent internet domains, in descending order. It shows the name and type of the record, and the number of queries received. If there are no NXDOMAIN responses, this chart will be empty.

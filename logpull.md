@@ -1,7 +1,13 @@
 ---
+
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-03-14"
+
+keywords: log pull, logpull, time-based, rayID
+
+subcollection: cis
+
 ---
 
 
@@ -16,6 +22,7 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Logpull
+{:#logpull}
 
 IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a [CLI](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#log). 
 
@@ -23,7 +30,11 @@ These logs contain data related to the connecting client, the request path throu
 
 
 ## Use Cases
+{:#logpull-usecases}
+
 ### Based on RayID
+{:#logpull-usecases-rayid}
+
 If a user receives an error message after executing a command, they can use the RayID provided in the response header to get the logs related to the command.
 
 If you have a RAY_ID with `-XXX` on the end, be sure to remove it. For example, `12ab34cdef567gh8-XXX` becomes `12ab34cdef567gh8`.
@@ -52,6 +63,8 @@ ibmcloud cis logpull DNS_DOMAIN_ID --ray-id RAY_ID
 ```
 
 ### Based on time duration
+{:#logpull-usecases-time-duration}
+
 If a user receives an error message after executing a command but does not know the RayID of the response, they can instead use a time duration. They receive all logs for the given zone during the window around when the error occurred, and can search among the results.
 
 
@@ -82,6 +95,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 ```
 
 ### Fields
+{:#logpull-usecases-fields}
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields here:
 
@@ -159,6 +173,7 @@ Currently available fields (as of Dec 2018):
 ```
 
 ### Example
+{:#logpull-usecases-example}
 The following is an example `logpull` call and examples of specific types responses.
 
 **Request**

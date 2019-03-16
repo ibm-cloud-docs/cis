@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Access Group Writer role, CIS instance, IAM
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +20,7 @@ lastupdated: "2019-02-18"
 
 
 # IAM and CIS
+{:#iam-and-cis}
 
 IBM Cloud Internet Services (CIS) leverages IAM to perform authorization and Authentication.
 
@@ -28,6 +35,7 @@ Restrict access by three CIS Functional Scopes, based on the navigation tree:
 This section walks through how to provide fine-grained access control of your instance.
 
 ## Roles
+{:#iam-and-cis-roles}
 
 Use the following three roles to leverage IAM
 * Reader - Able to get information about instance and domain
@@ -35,22 +43,28 @@ Use the following three roles to leverage IAM
 * Manager - Able to create or delete instances, domains, configuration
 
 ## Access groups and users
+{:#iam-and-cis-access-groups-users}
 
 A policy can be assigned to a User directly or to an Access Group.
 We recommend assigning it to an access group to minimize the number of policies created and to reduce the effort of managing these policies.
 
 ## Cache
+{:#iam-and-cis-cache}
 
 We cache the authorization results and use the cache to make a decision when the same request arrives again. After the cache reaches its time to live ( 10 min), it expires.
 
 ## Best Practices
+{:#iam-and-cis-best-practices}
 
 1. Instead of modifying a policy, delete the existing policy and then create a new one.
 
 ## Scenarios
+{:#iam-and-cis-scenarios}
+
 This section walks through the different examples of access policies created through CIS. 
 
 ### Domain level with `config` type
+{:#iam-and-cis-scenarios-domain-level}
 
 #### Access to single domain with `security config` on an Access Group
 ##### Writer role
@@ -179,6 +193,7 @@ After Bob logs into cis-test-instance, he:
 This creates two policies on the backend for each config type.
 
 ### Domain level with all config types
+{:#iam-and-cis-scenarios-domain-level-all-config-types}
 
 Bob wants to grant read/write/mange at a the domain level to Tony.
 
@@ -232,6 +247,7 @@ Viewer	Resource	Only service instance cis-test-instance of CIS
 ```
 
 ### Instance level - all your domains
+{:#iam-and-cis-scenarios-instance-level}
 
 This policy must be created and managed through the IAM manage page.
 
@@ -252,11 +268,13 @@ Writer	Resource	Only service instance cis-test-instance of CIS
 ```
 
 ## Manage IAM policies 
+{:#manage-iam-policies}
 
 CIS allows users to create IAM policies, but management must be done through the [IAM Page](
 https://{DomainName}/iam#/overview).
 
 ## Note
+{:#iam-note}
 For every policy created on the Access page in the CIS instance, 2-3 policies will be created in turn.
 
 1. The service instance Platform viewer role allows the added user to view the instance on the dashboard.
@@ -279,7 +297,7 @@ Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-
 Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 4b23ec772965f672f96f05670e36827e
 ```
 
-FAQ
+**FAQ**
 1. How do I get my service instance ID?
 
    Copy the CRN on the overview page

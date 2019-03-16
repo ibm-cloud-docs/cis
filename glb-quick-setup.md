@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018-2019
-lastupdated: "2018-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Create Load Balancer, Global Load Balancer, health checks, quick setup
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,6 +20,8 @@ lastupdated: "2018-02-18"
 
 
 # Global Load Balancer quick setup
+{:#global-load-balancer-quick-setup}
+
 You can directly create pools and health checks from the **Create Load Balancer** menu option. Navigate to **Reliability > Global Load Balancer > Create load balancer > Add pool**, and select the option to **Create New** under Origin pool. 
 
 <img src="images/create-new-origin-pool.png" alt="drawing" style="width: 300px;"/>

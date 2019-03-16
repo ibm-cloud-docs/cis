@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: health checks, origin pools, load balancers, IBM CIS
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -14,18 +20,24 @@ lastupdated: "2019-02-18"
 
 
 # Set up and configure your load balancers
+{:#set-up-and-configure-your-load-balancers}
  
  IBM CIS provides global load balancing as a service. Here's how the GLB Dashboard looks:
 
 ![IMAGE](images/glb-screen.png)
 
 ## GLB Dashboard
+{:#glb-dashboard}
+
 On your dashboard, you'll see three lists that show the load balancers, origin pools, and health checks. The lists display the new or updated global load balancer or one of its components after you've provisioned or updated it. Initially the lists are empty, and before you create a load balancer you must take a few actions.
 
 Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-balancer-quick-setup) if you already know what you need to do!
 
 ### Create
-**Note**: <sup>`*`</sup> indicates this step is optional
+{:#create-health-check}
+
+<sup>`*`</sup> indicates this step is optional
+{:note}
 
 1) <sup>`*`</sup>Create a health check, click **Create health check**.
   ![IMAGE](images/glb-health-check-list.png)
@@ -55,9 +67,11 @@ Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-
       <li><b>Status</b>: Enable or disable the load balancer.</li>
     </ul>
 
-**Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}.     
+IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}.  
+{:note}
 
 ### Edit/Delete
+{:#edit-delete-load-balancer}
 To edit or delete a load balancer or one of its components click the overflow menu button located on the far right of each row.
 
 Overflow menu button:
@@ -82,6 +96,7 @@ The following options are provided for each list.
     * **Delete load balancer**: Brings up the confirmation dialog box for the deletion flow.
 
 ## Add a Health Check
+{:#add-a-health-check}
 
 Health checks are optional attachments for origin pools. They use a custom repeating interval to probe for a specific response body, or for a status code, to monitor the pool's health. Once created, health checks can be added to a new or an existing origin pool.
 
@@ -100,6 +115,7 @@ Additional optional fields:
  * **Request Headers**: The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The `User-Agent` header cannot be overridden.
 
 ## Add a Pool
+{:#add-a-pool}
 
 At least one pool is required for each provisioned load balancer. Pools group your origins for the load balancer to use.
 
@@ -116,6 +132,7 @@ Additional optional fields:
  * **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
 
 ## Add a Load Balancer
+{:#add-a-load-balancer}
 
 Load balancers help to distribute your proxied traffic across multiple origin pools using a round-robin distribution.
 

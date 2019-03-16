@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018-2019
-lastupdated: "2019-02-18"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +19,7 @@ lastupdated: "2019-02-18"
 {:generic: data-hd-programlang="generic"}
 
 # Getting Started with IBM Cloud Internet Services (CIS)
+{:#getting-started}
 
 IBM Cloud Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
 
@@ -26,6 +33,8 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
 
 
 ## Before you begin
+{:#before-you-begin}
+
 Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
 If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://www.ibm.com/cloud-computing/bluemix/contact-us) for additional guidance on getting started.
@@ -33,6 +42,7 @@ If you need assistance in obtaining an account to use IBM Cloud Internet Service
 If you have an existing Softlayer account, you can [link your account](https://{DomainName}/docs/account/softlayerlink.html#unifyingaccounts) with your IBMid. 
 
 ## Process overview
+{:#process-overview}
 
 You can start using IBM CIS for your Internet traffic with just a few steps.
 
@@ -42,6 +52,7 @@ You can start using IBM CIS for your Internet traffic with just a few steps.
  * Continue getting started with IBM CIS, by following a tutorial or by setting up other features.
 
 ### Step 1: Open the IBM CIS application
+{:#open-cis-application}
 
 Open your [IBM Cloud dashboard](https://{DomainName}/catalog/). Then navigate to the IBM CIS application icon by selecting the **Infrastructure -> Network** category in the left-hand navigation bar of the dashboard. Open the IBM Cloud Internet Services application by clicking the icon that you'll see near the middle of your screen. 
 
@@ -72,6 +83,8 @@ You'll see the first screen of the IBM CIS application, where you'll select the 
 
 
 ### Step 2. Add and configure your Domain.
+{:#add-configure-your-domain}
+
 Select **Let's get started** from the welcome page to begin setting up CIS.
 
 ![Getting Started](images/overview-setup-step1.png)
@@ -89,6 +102,8 @@ The IBM CIS instance cannot be deleted after a domain has been added. To delete 
 {:note}
 
 ### Step 3. Set up your DNS records (optional).
+{:#setup-your-dns-records}
+
 Before transitioning the traffic for your domain to CIS, we strongly recommend that you import or re-create your DNS records in CIS. You can choose to skip this step, but if your DNS records are not configured properly in CIS, it could leave parts of your website inaccessible.
 
 Import records by uploading your exported records from your current DNS or manually create your DNS records. To import records select **Import records**.
@@ -98,6 +113,7 @@ Import records by uploading your exported records from your current DNS or manua
 When you are finished, or if you would like to skip this step, select **Next step**.
 
 ### Step 4. Configure your Name Servers with the Registrar or existing DNS Provider.
+{:#configure-your-name-servers-with-the-registrar-or-existing-dns-provider}
 
 To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers. See [Managing DNS Records (![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/sections/200038106-Managing-DNS-Records){:new_window}, written by our partners at Cloudflare, for detailed instructions by provider.
 
@@ -109,11 +125,13 @@ Your domain must move to `Active` state within 60 days or your domain and any co
 ![Getting Started](images/overview-setup-step4.png)
 
 ### Step 5. Ensure that IBM Cloud Internet Services is resolving the domain information for your application, hostname, or website.
+{:#ensure-cis-is-resolving-domain-info}
 
 To proceed, select the **Reliability** tab from your left-hand navbar, then select the **DNS** option. Be sure to add the appropriate _DNS Records_. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, IBM Cloud Internet Services cannot resolve the domain information for your internet-facing applications.
 
 ![Getting Started](images/dns-records.png)
 
 ### Step 6. In the meantime, you can begin managing other IBM CIS functions and features.
+{:#manage-other-cis-functions}
 
 For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-cis-deployment).

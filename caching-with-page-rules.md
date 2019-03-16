@@ -1,13 +1,25 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-04-23"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Use Page Rules, standard cache levels, Custom Caching Sets
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Use Page Rules with Caching
+{:#use-page-rules-with-caching}
 
 Page Rules give you the ability to take various actions based on the page's URL, such as creating redirects, fine-tuning caching behavior, or enabling and disabling services.
 
@@ -30,6 +42,8 @@ The `scheme` and `port` components are optional. If the `scheme` component is om
 
 
 ## Forwarding (URL Redirection)
+{:#forwarding-url-redirection}
+
 Redirects one URL to another using an HTTP 301 or 302 redirect. The contents of any section of a URL that a wildcard matches can be referenced using `$X` syntax. The `X` indicates the index of a glob in the pattern: `$1` is replaced with the first wildcard match,  `$2` with the second wildcard match, and so on.
 
 For example, suppose you set the following rule:
@@ -38,16 +52,21 @@ For example, suppose you set the following rule:
 
 Here, a request to `www.example.com/stuff/things` will be redirected to `http://example.com/stuff/things`.
 
-**Note:** Be careful not to create a redirect in which the domain points to itself as a destination. This mistake can cause an infinite redirect error, and the affected URLs will not be able to resolve.
+Be careful not to create a redirect in which the domain points to itself as a destination. This mistake can cause an infinite redirect error, and the affected URLs will not be able to resolve.
+{:note}
 
 
 ## Redirecting to HTTPS
+{:#redirecting-to-https}
+
 If you want to redirect your visitors to use HTTPS, use the **Always Use HTTPS** setting instead:
 
 ![image2](images/url-matching-patterns.png)
 
 
 ## Custom Caching
+{:#custom-caching}
+
 Sets caching behavior for any URL matching the Page Rule pattern, using any of our standard cache levels. Setting **Cache Level** to **Cache Everything** caches any content, even if it is not one of our default static file types. Setting **Cache Level** to the **Bypass** setting prevents caching on that URL.
 
 When specifying cache level using Page Rules, you can set an **Edge Cache TTL**, which controls how long CIS will retain files in our cache.
@@ -65,4 +84,5 @@ The following example sets a Page Rule to cache everything found in the `/images
 This feature returns an HTTP status 503. When servers are online again, CIS seamlessly takes visitors to regular browsing.
 
 If the requested page is not in the cache, the visitor sees an error page that informs them the page they are requesting is offline.
-**Note**: If a **Cache Everything** page rule is enabled with expiration times set lower than the caching frequency, the **Serve Stale Content** is purged in the corresponding interval.
+If a **Cache Everything** page rule is enabled with expiration times set lower than the caching frequency, the **Serve Stale Content** is purged in the corresponding interval.
+{:note}

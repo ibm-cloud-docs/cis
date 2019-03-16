@@ -1,11 +1,15 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2018, 2019
+lastupdated: "2019-03-14"
 
-lastupdated: "2018-09-26"
+keywords: IBM Cloud Internet Services, CIS Activity Tracker events
+
+subcollection: cis
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}

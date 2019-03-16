@@ -1,13 +1,21 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-02-27"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: entire organization, CIS pages, Domain-Wide
+
+subcollection: cis
+
 ---
+
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Administrative best practices
+{:#administrative-best-practices}
 
 IBM Cloud CIS provides many ways you can administer your brand presence, your account security, and your support process. We recommend working through each of the administrative best practices listed in this document, to ensure that your customers and your content are best served by your CIS network.
 
@@ -18,6 +26,8 @@ IBM Cloud CIS provides many ways you can administer your brand presence, your ac
 * Submit a test support ticket
 
 ## Manage your brand by customizing CIS pages
+{:#manage-your-brand-by-customizing-cis-pages}
+
 CIS must show content to your end-users occasionally. This content can include security challenge pages, block pages, and error pages. You can customize any of this content to create a consistent branding experience for your customers.
 
 Here are two ways to customize your CIS pages:
@@ -27,12 +37,16 @@ Here are two ways to customize your CIS pages:
 2. **Organization-Wide:** If you have many domains within your CIS account and you'd like to create Custom pages for all of them, you can do so within your **Organization** settings.
 
 ## Enforce 2-factor authentication across your entire organization
+{:#enforce-2-factor-authentication}
+
 CIS allows you to enforce 2-Factor Authentication. This extra element of security can prevent unauthorized access to your CIS console.
 
 1. First, go to the upper right hand corner and select your **Organization Settings**. 
 2. From the main Organization Page, you’ll see Enforce 2-Factor Authentication. Select it to engage the new level of security.
 
 ## Submit a test ticket with our support team
+{:#submit-a-test-ticket}
+
 Feel free to write a quick note to our support team to test our support workflow. 
 
 Here are two easy ways to submit a ticket:

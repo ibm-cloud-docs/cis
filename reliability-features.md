@@ -1,13 +1,20 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-06"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: IBM Cloud Internet Services, reliable IBM Cloud Internet Services, Global Load Balancing
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # How IBM Cloud Internet Services (CIS) keeps your work reliable
+{:#how-cis-keeps-your-work-reliable}
 
 IBM Cloud Internet Services (CIS) helps you improve the reliability of your web services and applications, because it helps you avoid downtime caused by application and infrastructure outages. For example, with Global Load Balancing, you can deploy your web services and applications in multiple regions. IBM CIS routes your customer requests to the closest regions available when Global Load Balancing is enabled. If any region fails, the requests are routed to the next closest location, so that your customers are not affected by downtime. If your website or API fails, IBM CIS sends you notifications automatically, and it notifies you when it is restored.
 
@@ -17,6 +24,7 @@ IBM Cloud Internet Services (CIS) helps you improve the reliability of your web 
 Here’s a quick feature overview:
 
 ## Reliability features
+{:#cis-reliability-features}
 
  * Global load balancing 
  * Proxy and non-proxy options for load balancing
@@ -24,6 +32,7 @@ Here’s a quick feature overview:
  * DNS management
  
 ### Summary
+{:#cis-reliability-features-summary}
  
   * Health monitors check whether your origin pools are healthy.
   * In case of health monitor failure, your requests are re-routed to healthy origins.

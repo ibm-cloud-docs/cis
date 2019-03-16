@@ -1,17 +1,25 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-01"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Helpful tools, whois, IPv4
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Helpful tools for managing your CIS deployment
+{:#helpful-tools-for-managing-your-cis-deployment}
 
 Some public-domain unix system administration tools exist that can help you manage your IBM CIS deployment.
 
 ## Sysadmin tools
+{:#cis-sysadmin-tools}
 
  * whois (domain identification tool)
  * dig (DNS tool)
@@ -19,7 +27,8 @@ Some public-domain unix system administration tools exist that can help you mana
  * netcat (IP and port tool)
  * traceroute (network tool)
 
-## Commercial tools for external and remote testing:
+## Commercial tools for external and remote testing
+{:#commercial-tools-for-external-and-remote-testing}
 
  * GTMetrix (http)
  * Web page test (http)
@@ -27,11 +36,13 @@ Some public-domain unix system administration tools exist that can help you mana
  * G Suite Toolbox (DNS and HTTP)
 
 ## Tools for looking at logs and history
+{:#tools-for-looking-at-logs-and-history}
 
  * HTTP Archive files (HAR files)
 
 
 ### Using `whois`
+{:#using-whois}
 
 `whois` is a unix system command line tool you can use to look up registrar information for a given domain name or IP address, for example, the domain’s given authoritative servers or the owner of a particular IP address.
 
@@ -42,6 +53,7 @@ Examples:
 `whois 8.8.8.8`
 
 ### Using `dig`
+{:#using-dig}
 
 `dig` is a unix command line tool that can perform DNS queries and check DNS records for a specific domain. It is similar to `nslookup`.
 
@@ -60,6 +72,7 @@ The schema of this command is : dig <recordtype. <domainname> <options>
 `dig example.com @ns.example.com`
 
 ### Using `cURL`
+{:#using-curl}
 
 `cURL` is a unix command line tool that lets you transmit data using URL syntax. It’s commonly used to make HTTP requests or compare server responses.
 
@@ -76,6 +89,7 @@ The schema for this command is: `curl -option1 -option2 http://example.com/url`
 `curl -svo /dev/null -H https://www.example.com --resolve www.example.com:443:ORIGIN_IP`
 
 ### Using `mtr` and `traceroute`
+{:#using-mtr-and-traceroute}
 
 MTR and `traceroute` are unix command one tools that let you measure performance or latency along a specific network path to a specified host or destination server.
 
@@ -96,5 +110,6 @@ MTR and `traceroute` are unix command one tools that let you measure performance
 | -6 | Forces the use of IPv6 |
 
 ### Generating a HAR file
+{:#generating-a-har-file}
 
 A HAR file is a recording of HTTP requests from a web browser. Browsers such as Chrome have a Developer Tools section that can help you set up to make a HAR file.

@@ -1,10 +1,15 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2018-06-20"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: domain Input information, IBM Cloud Internet Services, Global Load balancing
+
+subcollection: cis
 
 ---
+
 
 {:shortdesc: .shortdesc}
 {:codeblock: .codeblock}
@@ -19,11 +24,14 @@ lastupdated: "2018-06-20"
 {:generic: data-hd-programlang="generic"}
 
 # Improving application reliability and scalability with Global Load Balancing from IBM Cloud Internet Services
+{:#improving-application-reliability-and-scalability-with-global-load-balancing-from-ibm-cloud-internet-services}
+
 If you have an e-commerce website or are hosting an application that needs to be accessible to your end-users at all times, then you're likely concerned about 24*7 availability and performance of your application. 
 
 The global load balancing capabilities available with the IBM Cloud Internet Services (CIS) can help improve reliability and scalability of your applications while delivering the best possible end-user experience. This guide provides a walkthrough of the global load balancing configuration.  
 
 ## What you'll accomplish
+{:#what-you-accomplish}
 
 In this Step-by-Step you will learn how to configure a setup similar to the one illustrated below.
 

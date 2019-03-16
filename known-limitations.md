@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2019-01-10"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: health checks, Free Trial plan, dedicated certificate, known issues
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +19,7 @@ lastupdated: "2019-01-10"
 {:generic: data-hd-programlang="generic"}
 
 # Known Limitations
+{:#known-limitations}
 
  * We recommend using Chrome.
  
@@ -29,6 +36,8 @@ lastupdated: "2019-01-10"
  * IP Rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
 
 ## Global Load Balancer
+{:#known-limitations-glb}
+
  * Cloud Internet Services allows you to use the character `_` in load balancer hostnames, however, Kubernetes clusters cannot use `_`. 
 
  * The Standard plan permits a maximum of 5 load balancers, pools, and health checks. Each pool can have a total of 6 origins, but only 6 unique origins are permitted throughout each CIS instance.
@@ -40,6 +49,8 @@ lastupdated: "2019-01-10"
 * When adding the request header name for a health check, use `Host`. Using lower-case `host` for a health check fails.
 
 ## DNS
+{:#known-limitations-dns}
+
  * Exporting DNS records includes Cloudflare CNAME records that should be hidden. These records begin with `_` and usually have a second record with the same name but the `_` is removed.
    ```
    Ex.
@@ -64,6 +75,8 @@ lastupdated: "2019-01-10"
    These records must be converted from HEX to string or removed and added manually before importing.
 
 ## Page Rules
+{:#known-limitations-pagerules}
+
    * Updating page rules settings using the CIS plugin for IBM Cloud CLI may result in an error if the page rule ID is not included in the JSON string or JSON file for the update. To work around this, submit the update using a complete JSON configuration file for the page rule, including the ID.
    * Removing page rule settings using the CIS UI may not remove the setting, even though the UI reports a successful update. To work around this problem, use the CIS plugin for IBM Cloud CLI to remove the setting and include the page rule ID in the JSON update document:
       ```

@@ -1,13 +1,18 @@
 ---
-  
+
 copyright:
-   years: 2018
-lastupdated: "2018-09-18"
- 
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Multi-domain support IBM CIS, additional domain
+
+subcollection: cis
+
 ---
 
 
 # Multi-domain support
+{:#multi-domain-support}
 
 IBM CIS supports multiple domains with the Enterprise Package and Enterprise Usage plans. 
 

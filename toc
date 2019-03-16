@@ -55,6 +55,7 @@ Cloud Internet Services (CIS)
         begin-config.md
         identify-app-resources.md
         define-global-lb.md
+        cloudant-and-cis.md
                 
     {: .topicgroup}
     Guided instructions: Web Application Firewalls
@@ -78,6 +79,7 @@ Cloud Internet Services (CIS)
     {: .navgroup id="help"}
     faq.md
     known-limitations.md
+    scheduled-maintenance.md
     troubleshooting.md
     getting-help.md
     {: .navgroup-end}

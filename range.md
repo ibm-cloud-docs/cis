@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2019
-lastupdated: "2019-02-11"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: range application, tls encryption, ddos protection, global tcp proxy
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -13,6 +19,8 @@ lastupdated: "2019-02-11"
 {:generic: data-hd-programlang="generic"}
 
 # Range
+{:#cis-range}
+
 The Range feature brings DDoS protection, load balancing, and content acceleration to any TCP-based protocol. 
 Range is a global TCP Proxy running on CIS/Cloudflare’s edge nodes. 
 
@@ -23,10 +31,13 @@ Range can be used to:
 * Configure load balancers with TCP health checks, failover, and steering policies to dictate where traffic should flow.
 
 ## Getting started with Range
+{:#getting-started-with-range}
+
 Range is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
 {:note}
 
 ### Add an application
+{:#range-add-an-application}
 Follow these steps to add an application.
 
 1. Navigate to **Security > Range**
@@ -62,6 +73,7 @@ Your application is now visible in a tile with the following properties:
 When a Range application is created, it is assigned a unique IPv4 and IPv6 address. These IP addresses are not static and may be subject to change. You can determine the assigned IP address by using DNS. The DNS name will always return the IP addressed assigned to the application.     
     
 ### View Metrics
+{:#range-view-metrics}
 Your application is now ready to proxy TCP traffic through Cloudflare/CIS.
 
 Navigate to **Metrics > Range** to view your number of Connections to applications and Throughput traffic.
@@ -71,6 +83,7 @@ The graphs show metrics for up to 10 applications.
 Application metrics may be toggled via the Chart key or by clicking the **Select applications** button. The Metrics data time frame can be changed using the dropdown menu.
 
 ## Range AppTiles
+{:#range-apptiles}
 After creating a few apps, the **Security > Range** page will be populated with applications tiles. The application tiles contain the following information:
 * Application name
 * Edge port
@@ -87,9 +100,11 @@ The application tile also contains an overflow menu in the top corner (3 dots). 
 
 
 ## API usage examples
+{:#range-api-usage-examples}
 These are examples to create and list applications using Range.
 
 ### Create Range app
+{:#create-range-app}
 There are two ways you can designate an origin in a Range app
 1. Origin IP - using parameter `origin_direct`
 2. Load Balancer - using parameters `origin_dns` and `origin_port`
@@ -174,6 +189,7 @@ curl -X POST \
 **Origin Port:** This is the port of your service. 
 
 ### List all apps
+{:#range-list-all-apps}
 
 **Request:**
 ```
@@ -208,7 +224,7 @@ curl -X GET \
 ```
 
 ### List a specfic Range app
-
+{:#range-list-a-specific-range-app}
 **Request:**
 ```
 curl -X GET \

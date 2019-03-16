@@ -1,11 +1,12 @@
 ---
 
-
-
 copyright:
-  years: 2017
-lastupdated: "2018-06-20"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
 
+keywords: global load balancer configuration, glb configuration
+
+subcollection: cis
 
 ---
 
@@ -15,8 +16,11 @@ lastupdated: "2018-06-20"
 {:new_window: target="_blank"}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
+{:note: .note}
 
 # Begin Global Load Balancer configuration
+{:#begin-global-load-balancer-configuration}
+
 Start configuring your Global Load Balancer.
 
 1. Under the **Reliability** section, select **Global Load Balancer**. 
@@ -25,7 +29,8 @@ Start configuring your Global Load Balancer.
 
 2. Scroll down to the Health Checks section. 
 
-   **NOTE:** This configuration is optional. If you do not define any custom health checks, the system will use “/” as your default health check path. 
+   This configuration is optional. If you do not define any custom health checks, the system will use “/” as your default health check path. 
+   {:note}
 
 3. Click the **Create health check** button to define a custom health check.   
 
