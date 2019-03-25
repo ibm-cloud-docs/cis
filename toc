@@ -30,6 +30,7 @@ Cloud Internet Services (CIS)
     glb-setup.md
     using-page-rules.md
     caching-with-page-rules.md
+    resolve-override-cos.md
     origin.md
     routing.md
     rate-limiting.md
