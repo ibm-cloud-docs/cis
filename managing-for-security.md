@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-26"
 
 keywords: IBM CIS, optimal security, Security Level
 
@@ -19,7 +19,7 @@ subcollection: cis
 {:generic: data-hd-programlang="generic"}
 
 # Manage your IBM CIS for optimal security
-{:#manage-your-imb-cis-for-optimal-security}
+{:#manage-your-ibm-cis-for-optimal-security}
 The IBM Cloud Internet Services (CIS) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your CIS account is configured in a safe and secure way.
 
 **Recommendations and best practices:**
