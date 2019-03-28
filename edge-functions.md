@@ -45,7 +45,7 @@ While Edge Functions does use V8, it does not use Node.js. The JavaScript APIs a
 Actions are written in JavaScript and require an event listener to respond to a trigger event. Actions will not affect your traffic unless used by a trigger. 
 
 ### Enterprise vs Standard Plans
-{:#edge-functions-enterprise-v-standard-plans}
+{: #edge-functions-enterprise-v-standard-plans}
 
 Standard plans have a maximum of one action. The action is assigned a name that is the same as your domain. You may replace your action by uploading another file or update your action using the code editor. Uploading another file will remove the existing action.
 
