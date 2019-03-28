@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-28"
 
 keywords: resolve override, Cloud Object Storage, bucket resource
 
@@ -19,22 +19,22 @@ subcollection: cis
 {:generic: data-hd-programlang="generic"}
 
 # Resolve Override with COS
-{:#resolve-override-cos}
+{: #resolve-override-cos}
 
 ## Use cases
-{:#cos-use-cases}
+{: #cos-use-cases}
 
 Make the request matching the page rule resolve to a Cloud Object Storage (COS) bucket resource.
 
 
 ## Prerequisites
-{:#cos-prerequisites}
+{: #cos-prerequisites}
 
 The following steps assume you have an existing COS instance and bucket with public access. For information on public access see [Allowing public access](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-allowing-public-access).
 
 
 ## Create Page Rule steps
-{:#cos-create-page-rule}
+{: #cos-create-page-rule}
 
 * Navigate to **Performance->Page Rules**.
 * Click **Create rule** button.
@@ -50,29 +50,29 @@ The following steps assume you have an existing COS instance and bucket with pub
 
 
 ## Detailed explanation of concepts
-{:#cos-detail-concepts}
+{: #cos-detail-concepts}
 
 When creating a **Resolve Override with COS** page rule, CIS will automatically create the other necessary resources for the COS integration. These include:
 
 **CNAME**
 * A CNAME DNS record for `<bucket-name>.<cos-endpoint>` as `<bucket-name>`.
-* For example, if your CIS domain is `foo.com`, you have a COS bucket called `images` and your public COS endpoint is `s3.us-west.objectstorage.uat.softlayer.net` then CIS will create a CNAME as `images.foo.com` that points to `images.s3.us-west.objectstorage.uat.softlayer.net`.
+* For example, if your CIS domain is `foo.com`, you have a COS bucket called `images` and your public COS endpoint is `s3.us-west.objectstorage.uat.test.net` then CIS will create a CNAME as `images.foo.com` that points to `images.s3.us-west.objectstorage.uat.test.net`.
 If the Resolve Override with COS page rule is no longer needed the CNAME should be manually deleted along with the page rule.
 {:note}
 
 **Host Header Override**
 * The Host Header Override setting will replace the host header for the URI matching the page rule to `<bucket-name>.<cos-endpoint>`.
-* Using the previous example, the Host Header Override value will be set to `images.s3.us-west.objectstorage.uat.softlayer.net`.
+* Using the previous example, the Host Header Override value will be set to `images.s3.us-west.objectstorage.uat.test.net`.
 
 
 ## Deleting the Page Rule
-{:#cos-delete-page-rule}
+{: #cos-delete-page-rule}
 
 If the Resolve Override with COS page rule is no longer needed, the CNAME should be _manually_ deleted along with the page rule.
 
 
 ## Editing the Page Rule
-{:#cos-edit-page-rule}
+{: #cos-edit-page-rule}
 
 After editing the page rule, the **Resolve Override with COS** will no longer be displayed on the page. However, the **Resolve Override** `<bucket>.<domain>` and **Host Header Override** `<bucket>.<cos-endpoint>` will replace **Resolve Override with COS**.
 

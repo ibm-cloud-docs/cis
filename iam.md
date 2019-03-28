@@ -302,7 +302,7 @@ Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-
 
    Copy the CRN on the overview page
    ```
-   crn:v1:bluemix:public:internet-svcs:global:a/2c38d9a9913332006a27665dab3d26e8:836f33a5-d3e1-4bc6-876a-982a8668b1bb::
+   crn:v1:test:public:internet-svcs:global:a/2c38d9a9913332006a27665dab3d26e8:836f33a5-d3e1-4bc6-876a-982a8668b1bb::
    ```
    The last part of the CRN is your service instance: `836f33a5-d3e1-4bc6-876a-982a8668b1bb`.
    

@@ -37,7 +37,7 @@ subcollection: cis
 If you have problems or questions when using CIS, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
 {:shortdesc}
 
-When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
+When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
 
 * If you have technical questions about CIS, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/search?q=cis+ibm-cloud){:new_window} and tag your question with "ibm-cloud" and "cis".
 <!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->

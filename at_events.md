@@ -24,10 +24,10 @@ subcollection: cis
 # CIS {{site.data.keyword.cloudaccesstrailshort}} events
 {: #at_events}
 
-Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the IBM Cloud Internet Services (CIS) in the {{site.data.keyword.Bluemix}}.
+Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the IBM Cloud Internet Services (CIS) in the {{site.data.keyword.IBM Cloud&trade;}}.
 {:shortdesc}
 
-The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.Bluemix_notm}}. For more information, see [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla).
+The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla).
 
 
 
@@ -184,7 +184,7 @@ The following table lists the actions that are related to configuring settings a
 ## Where to look for the events
 {: #ui}
 
-{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
+{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated.
 
 
 
