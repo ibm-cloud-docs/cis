@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-03-29"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers
 
@@ -37,7 +37,7 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
 
 Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
-If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://{DomainName}/unifiedsupport/supportcenter) for additional guidance on getting started.
+If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://{DomainName}/cloud/support) for additional guidance on getting started.
 
 If you have an existing Softlayer account, you can [link your account](https://{DomainName}/docs/account?topic=account-unifyingaccounts) with your IBMid. 
 
