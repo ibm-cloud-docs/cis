@@ -37,7 +37,7 @@ For each capability, IBM CIS helps you tune its features to suit your specific n
 
 Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
-If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://{DomainName}/cloud/support) for additional guidance on getting started.
+If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://{DomainName}/unifiedsupport/supportcenter) for additional guidance on getting started.
 
 If you have an existing Softlayer account, you can [link your account](https://{DomainName}/docs/account?topic=account-unifyingaccounts) with your IBMid. 
 
@@ -115,7 +115,7 @@ When you are finished, or if you would like to skip this step, select **Next ste
 ### Step 4. Configure your Name Servers with the Registrar or existing DNS Provider.
 {:#configure-your-name-servers-with-the-registrar-or-existing-dns-provider}
 
-To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers. See [Managing DNS Records (![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/sections/200038106-Managing-DNS-Records){:new_window}, written by our partners at Cloudflare, for detailed instructions by provider.
+To begin receiving the benefits of IBM CIS, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at https://whois.icann.org/. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must add a Name Server (NS) record for each of the listed name servers. See [Managing DNS Records ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare){:new_window}, written by our partners at Cloudflare, for detailed instructions by provider.
 
 After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. Once we verify that the specified nameservers have been configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
 

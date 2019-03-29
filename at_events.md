@@ -24,7 +24,7 @@ subcollection: cis
 # CIS {{site.data.keyword.cloudaccesstrailshort}} events
 {: #at_events}
 
-Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the IBM Cloud Internet Services (CIS) in the {{site.data.keyword.IBM Cloud&trade;}}.
+Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the IBM Cloud Internet Services (CIS) in the {{site.data.keyword.cloud}}.
 {:shortdesc}
 
 The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla).
