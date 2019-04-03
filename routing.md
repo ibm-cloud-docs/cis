@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-01"
 
 keywords: Smart Routing Route connections, routing decisions, Eliminate excess latency
 
@@ -12,6 +12,11 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Routing
 {:#cis-routing}
@@ -24,6 +29,9 @@ Eliminate excess latency by analyzing and optimizing routing decisions across th
 Route connections across the Internet efficiently by avoiding packet loss, congestion, and outages.
 
 Smart Routing optimizes the paths your data takes across the Internet. Optimal paths are determined by analyzing latency and packet loss data collected from real-time network connections. Smart Routing uses this data to detect which transit providers are operating best between any two points on the planet.
+
+The optimized route is different from the regular request path. It can take up to 24 hours to switch from the regular request path to the optimized route after you enable Smart Routing for your domain.
+{:note}
 
 ## Tiered Caching
 {:#cis-tiered-caching}

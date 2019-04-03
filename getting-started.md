@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-29"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers
 
@@ -21,7 +21,7 @@ subcollection: cis
 # Getting Started with IBM Cloud Internet Services (CIS)
 {:#getting-started}
 
-IBM Cloud Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
+{{site.data.keyword.cloud}} Internet Services (CIS), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the left-hand navbar of your screen, once you've opened the IBM CIS application.
 
 For each capability, IBM CIS helps you tune its features to suit your specific needs, including:
 
@@ -39,7 +39,7 @@ Before you begin using IBM CIS, you'll first need an [IBMid](https://www.ibm.com
 
 If you need assistance in obtaining an account to use IBM Cloud Internet Services, [contact your IBM sales representative](https://{DomainName}/cloud/support) for additional guidance on getting started.
 
-If you have an existing Softlayer account, you can [link your account](https://{DomainName}/docs/account?topic=account-unifyingaccounts) with your IBMid. 
+If you have an existing Softlayer account, you can [link your account](/docs/account?topic=account-unifyingaccounts) with your IBMid. 
 
 ## Process overview
 {:#process-overview}
@@ -134,4 +134,4 @@ To proceed, select the **Reliability** tab from your left-hand navbar, then sele
 ### Step 6. In the meantime, you can begin managing other IBM CIS functions and features.
 {:#manage-other-cis-functions}
 
-For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-cis-deployment).
+For more details about managing other functions and features, please see the [step-by-step instructions](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment#manage-your-cis-deployment).
