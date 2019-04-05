@@ -39,3 +39,6 @@ The following families of commands are available from the command line interface
   * [RateLimit](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#ratelimit)
   * [Overview](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#overview)
   * [Log](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#log)
+  * [Edge Functions](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#edge-functions)
+  * [Firewall Rule](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#firewall-rule)
+  * [Range App](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#range-app)
