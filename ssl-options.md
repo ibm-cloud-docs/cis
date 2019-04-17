@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-03"
 
 keywords: TLS Options, secure connection, Automatic HTTPS
 
@@ -60,4 +60,4 @@ Default and recommended. A secure connection between the visitor and CIS, and se
 ## Minimum TLS version
 {:#minimum-tls-version}
 
-This sets the minimum TLS version for traffic trying to connect to your site. By default this is set to 1.0. Higher TLS versions provide additional security, but might not be supported by all browsers. This could result in some customers being unable to connect to your site.
+This sets the minimum TLS version for traffic trying to connect to your site. By default this is set to 1.2. Higher TLS versions provide additional security, but might not be supported by all browsers. This could result in some customers being unable to connect to your site.
