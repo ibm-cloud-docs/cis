@@ -1,10 +1,15 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-03-22"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: API Specs, CIS APIs
+
+subcollection: cis
 
 ---
+
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -15,20 +20,24 @@ lastupdated: "2018-03-22"
 {:download: .download}
 
 # API-Spezifikationen
+{:#api-specs}
 
-Im Folgenden wird erläutert, wie Sie die CIS-API-Spezifikationen anzeigen können:  
+Im Folgenden wird erläutert, wie Sie die CIS-API-Spezifikationen anzeigen können: 
 
-1. Zum Anzeigen der CIS-APIs navigieren Sie zur Seite mit den [CIS-API-Spezifikationen](https://console.bluemix.net/apidocs/2640-cloud-internet-services).  
+1. Navigieren Sie zur Seite [API-Dokumente](/apidocs/), um die CIS-APIs anzuzeigen.  
 
-2. Treffen Sie im linken Navigationsmenü in der Liste von verfügbaren APIs eine Auswahl. 
+2. Überprüfen Sie im linken Navigationsmenü das Feld für den Netzbetrieb, um die APIs zu filtern. 
+
+3. Wählen Sie aus der Liste der verfügbaren Cloud Internet Services-APIs aus.
 
 
 ## Anmerkungen
+{:#api-notes}
 
-1. API-Endpunkt: https://api.cis.cloud.ibm.com.
+1. API-Endpunkt: `https://api.cis.cloud.ibm.com`.
 
-2. Der Header **X-Auth-User-Token** ist für jeden API-Aufruf erforderlich. Dabei handelt es sich um das Trägertoken für den Benutzer, das aus IAM abgerufen werden kann (z. B. mit dem Befehl 'bx iam oauth-tokens'). 
+2. Der Header **X-Auth-User-Token** ist für jeden API-Aufruf erforderlich. Dieser Header ist das Trägertoken für den Benutzer, das vom IAM (zum Beispiel mithilfe des Befehls `ibmcloud iam oauth-tokens`) abgerufen werden kann.
 
-3. Das Feld **crn** muss ebenfalls im Pfad für jeden API-Aufruf angegeben werden. Dies ist der vollständige Cloudressourcenname (CRN) für eine CIS-Ressourceninstanz, die gerade konfiguriert wird (z. B. kann der CRN für eine Ressourceninstanz mithilfe des Befehls 'bx resource service-instance <instanzame>' aus seinem Namen abgeleitet werden). Der CRN muss im API-Aufruf URL-codiert sein. 
+3. Das Feld **crn** muss ebenfalls im Pfad für jeden API-Aufruf angegeben werden. Dieses Feld enthält den vollständigen CRN (Cloud Resource Name) für eine CIS-Ressourceninstanz, die konfiguriert wird. (Die CRN für eine Ressourceninstanz kann beispielsweise mit dem Befehl `ibmcloud resource service-instance <instance-name>` von ihrem Namen abgerufen werden.) Der CRN muss im API-Aufruf URL-codiert sein.
 
-4. API-Aufrufe sind gedrosselt. Insgesamt können 100 API-Aufrufe in einer Minute ausgeführt werden. Wird diese Rate überschritten, werden nachfolgende Aufrufe für einen bestimmten Zeitraum blockiert. 
+4. API-Aufrufe sind gedrosselt. Insgesamt können 100 API-Aufrufe in einer Minute ausgeführt werden. Wenn diese Rate überschritten wird, werden nachfolgende Aufrufe für eine bestimmte Zeitdauer blockiert. 

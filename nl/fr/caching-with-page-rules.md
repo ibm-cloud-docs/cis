@@ -1,13 +1,25 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-12"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Use Page Rules, standard cache levels, Custom Caching Sets
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Utilisation des règles de page avec la mise en cache
+{:#use-page-rules-with-caching}
 
 Les règles de page vous permettent d'accomplir diverses actions en fonction de l'URL de la page, notamment la création de réacheminements, l'optimisation du comportement de mise en cache, ou l'activation et la désactivation des services.
 
@@ -30,25 +42,32 @@ Les composants `scheme` et `port` sont facultatifs. Si le composant `scheme` est
 
 
 ## Transfert (redirection d'URL)
+{:#forwarding-url-redirection}
+
 Redirige une adresse URL vers une autre à l'aide de la redirection HTTP 301 ou 302. Vous pouvez référencer le contenu d'une section d'adresse URL pour laquelle une correspondance avec le caractère générique est établie en utilisant la syntaxe `$X`. Le signe `X` indique l'index d'un Glob dans le modèle, et `$1` est remplacé par le premier caractère générique correspondant, `$2` par le deuxième, et ainsi de suite.
 
 Prenons la règle suivante comme exemple :
 
 ![image](images/url-redirection-example.png)
 
-Une demande envoyée à "www.example.com/stuff/things" est redirigée vers "http://example.com/stuff/things".
+Une demande envoyée à `www.example.com/stuff/things` est redirigée vers `http://example.com/stuff/things`.
 
-**Remarque :** Veillez à ne pas créer de redirection pour laquelle le domaine pointe vers lui-même. Ceci aurait pour conséquence de générer une erreur de redirection infinie, et les adresses URL ne seraient pas résolues.
+Veillez à ne pas créer de redirection pour laquelle le domaine pointe vers lui-même. Ceci aurait pour conséquence de générer une erreur de redirection infinie, et les adresses URL ne seraient pas résolues.
+{:note}
 
 
 ## Redirection vers HTTPS
+{:#redirecting-to-https}
+
 Si vous voulez rediriger vos visiteurs vers HTTPS, utilisez plutôt le paramètre **Toujours utiliser HTTPS** :
 
 ![image2](images/url-matching-patterns.png)
 
 
 ## Mise en cache personnalisée
-Définit le comportement de mise en cache pour toutes les adresses URL qui correspondent au modèle  de règle de page via nos niveaux de cache standard. La configuration du paramètre **Niveau de cache** sur **Tout mettre en cache** met en cache l'ensemble du contenu, même s'il ne s'agit pas de l'un de nos types de fichiers statiques par défaut. La configuration du paramètre **Niveau de cache** sur **Ignorer** empêche la mise en cache sur cette URL.
+{:#custom-caching}
+
+Définit le comportement de mise en cache pour toutes les adresses URL qui correspondent au modèle de règle de page via nos niveaux de cache standard. La configuration du paramètre **Niveau de cache** sur **Tout mettre en cache** met en cache l'ensemble du contenu, même s'il ne s'agit pas de l'un de nos types de fichiers statiques par défaut. La configuration du paramètre **Niveau de cache** sur **Ignorer** empêche la mise en cache sur cette URL.
 
 Lorsque vous configurez le niveau de mise en cache à l'aide des règles de page, vous pouvez définir une valeur **TTL cache de périphérie**, qui contrôle la durée de conservation des fichiers dans la mémoire cache.
 
@@ -59,3 +78,9 @@ Tous les comportements de mise en cache par défaut ne sont pas strictement comp
 L'exemple suivant définit une règle de page visant à mettre en cache tous les éléments situés dans le dossier `/images`. Les ressources mises en cache expirent dans un délai de 30 minutes dans le navigateur de l'utilisateur, et dans un délai de 1 jour dans les centres de données IBM CIS :
 
 ![image3](images/url-example.png)
+
+L'option **Serve Stale Content** sert des pages de notre cache, même lorsque votre serveur tombe en panne. Les visiteurs voient une version limitée de votre site, avec un message indiquant qu'ils sont en mode de navigation hors connexion.  
+
+Cette fonctionnalité renvoie le statut HTTP 503. Lorsque les serveurs sont à nouveau en ligne, CIS permet aux visiteurs de naviguer de manière transparente. 
+
+Si la page demandée ne se trouve pas dans le cache, le visiteur voit une page d'erreur qui l'informe que la page demandée est hors connexion. Si une règle de page **Tout mettre en cache** est activée avec des délais d'expiration définis inférieurs à la fréquence de mise en cache, le contenu **Serve Stale Content** est purgé dans l'intervalle correspondant.{:note}

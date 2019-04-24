@@ -1,28 +1,18 @@
 ---
-copyright:
-  years: 2018
-lastupdated: "2018-03-02"
----
 
+copyright:
+  years: 2018, 2019
+lastupdated: "2019-03-15"
+
+keywords: whitelisted IP addresses, CIS Edges
+
+subcollection: cis
+
+---
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # IBM Cloud CIS 화이트리스트 IP 주소
+{:#cis-whitelisted-ip-addresses}
 
-
-|IPv4|IPv6|
-|:-------------|:-------------|
-|103.21.244.0/22 |2400:cb00::/32
-| 103.22.200.0/22 |2405:8100::/32
-| 103.31.4.0/22|2405:b500::/32
-|104.16.0.0/12  |2606:4700::/32
-| 108.162.192.0/18|2803:f800::/32
-| 131.0.72.0/22|2c0f:f248::/32
-|141.101.64.0/18|2a06:98c0::/29
-| 162.158.0.0/15  |
-| 172.64.0.0/13|
-|173.245.48.0/20|
-| 188.114.96.0/20 |
-| 190.93.240.0/20|
-|197.234.240.0/22|
-| 198.41.128.0/17|
+다음 API에는 오리진과 통신할 때 CIS 에지에서 사용하는 모든 IP 주소가 나열됩니다. [https://api.cis.cloud.ibm.com/v1/ips](https://api.cis.cloud.ibm.com/v1/ips). 이 API를 일주일에 한 번 폴링하면 화이트리스트를 업데이트하는 데 필요한 정보를 가져올 수 있습니다.

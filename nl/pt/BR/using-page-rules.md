@@ -1,17 +1,31 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-13"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Use Page Rules, Page Rule
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
+
 
 # Use as regras de página
+{:#use-page-rules}
 
 Uma Regra de Página especifica algumas configurações e valores que podem ser aplicados a um padrão de URL específico que faz referência ao seu domínio. As Regras de Página ajudam a gerenciar a segurança, o desempenho e a confiabilidade com base em cada URL individual em seu site. A tabela a seguir descreve as Regras de Página que estão disponíveis para todos os clientes, os comportamentos que elas produzem e quaisquer considerações especiais que você deve ter em mente antes de usá-las.
 
 ## Segurança
+{:#page-rules-security}
 
 | **Configuração** | **Comportamento** | **Considerações** |
 |-----------|----------|----------------|
@@ -25,25 +39,43 @@ Uma Regra de Página especifica algumas configurações e valores que podem ser 
 |**WAF**|Ativa ou desativa o WAF. | |  
 |**Regravações de HTTPS automáticas**|Ativa ou desativa regravações de HTTPS automáticas.  | |
 |**Criptografia oportunista**|Ativa ou desativa a criptografia oportunista.  | |
-|**Cache Deception Armor**|Ativa ou desativa o Cache Deception Armor. | |
+|**Cache Deception Armor**|Ativa ou desativa o Cache Deception Armor.  | |
 |**Sempre usar HTTPS**|Converte qualquer URL `http://` em uma URL `https://` criando um redirecionamento`301`.|O uso dessa configuração desativa a definição de todas as outras configurações para a regra, porque o IBM CIS força um redirecionamento para `HTTPS` para a solicitação, que se torna uma nova solicitação que é, então, avaliada com relação às Regras de Página. |
+|**Cabeçalho True Client IP**|O CIS enviará o endereço IP do usuário final no cabeçalho `True-Client-IP`.  |Apenas corporativo |
 
 ## Desempenho
+{:#page-rules-performance}
+
 | **Configuração** | **Comportamento** | **Considerações** |
 |-----------|----------|----------------|
 |**TTL de cache do navegador**|Controla por quanto tempo os recursos armazenados em cache pelos navegadores do cliente permanecem válidos. | |
 |**Efetuar bypass de cache no cookie**|Entregar um objeto armazenado em cache a menos que vejamos um cookie de um nome específico, por exemplo, servir uma versão em cache da página inicial, a menos que vejamos um cookie `SessionID` indicando que o cliente está com login efetuado e, portanto, deve ser apresentado conteúdo personalizado. | |
 |**Nível de cache**|**Efetuar bypass** - Recursos que correspondem a essa Regra de Página não são armazenados em cache.<br>**Nenhuma sequência de consultas** - Entrega recursos do cache apenas quando não há sequência de consultas.<br>**Ignorar sequência de consultas** - Entrega o mesmo recurso para todos independente da sequência de consultas.<br>**Padrão** - Entrega um recurso diferente cada vez que a sequência de consultas muda.<br> **Armazenar tudo em cache** - Recursos que correspondem à Regra de Página são armazenados em cache.|Por padrão, o conteúdo HTML não é armazenado em cache. Uma Regra de Página para armazenar em cache conteúdo HTML estático deve ser gravada. |
 |**TTL do edge cache**|Controla por quanto tempo o IBM CIS reterá arquivos em nosso cache. |Essa configuração é opcional ao especificar o nível de cache. |
+|**Resolver substituição**|Mude a URL ou o IP para o qual a solicitação correspondente à regra de página é resolvida.||
+|**Cache em cookie**|Aplique a opção `Armazenar tudo em cache` (configuração de `Nível de cache`) com base em uma correspondência de expressão regular com relação a um nome de cookie. Se você incluir essa configuração e `Efetuar bypass do cache em cookie` para a mesma regra de página, `Cache em cookie` será usado em vez de `Efetuar bypass do cache em cookie`.|Apenas corporativo |
+|**Desativar desempenho**|Desativar:<ul><li>`Diminuir conteúdo da web`</li><li>`Otimização de carregamento de imagem`</li><li>`Otimização de tamanho de imagem`</li><li>`Otimização de carregamento de script`</li></ul> |Apenas corporativo |
+|**Diminuir conteúdo da web**|Diminua arquivos HTML, CSS e/ou JavaScript removendo todos os seus caracteres desnecessários. |Apenas corporativo |
+|**Otimização de carregamento de imagem**|Melhora o tempo de carregamento para páginas que incluem imagens com base na conexão de rede e no tipo de dispositivo em:<ul><li>**Virtualização de imagem** - Substitui as imagens por imagens temporárias de baixa resolução que possuem as mesmas dimensões das originais (incluindo imagens de terceiros). Por fim, quando a página é renderizada completamente, as imagens de resolução completa são carregadas lentamente (priorizando imagens na porta de visualização do navegador). Esse processo permite que páginas sejam renderizados rapidamente e minimizam o reflow do navegador.</li><li>**Simplificação de solicitações** - Combina diversas solicitações de rede individuais para imagens em uma única solicitação.</li></ul> |Apenas corporativo |
+|**Otimização de tamanho de imagem**|Reduza o tamanho de arquivos de imagem removendo os metadados (data e hora, fabricante e modelo da câmera, etc.) e compactando imagens sempre que possível. Os tamanhos de arquivo menores geram tempos de carregamento mais rápidos para imagens e páginas da web. |Apenas corporativo |
+|**Classificar sequência de consultas**|Trata arquivos com as mesmas sequências de consultas que o mesmo arquivo no cache, independentemente da ordem das sequências de consultas. |Apenas corporativo |
+|**Armazenar resposta em buffer**|Ative ou desative o armazenamento em buffer de respostas do servidor de origem. Por padrão, o CIS envia pacotes para o cliente à medida que os recebemos. A ativação do Armazenamento de resposta em buffer faz com que o CIS aguarde até que tenha o arquivo completo para encaminhá-lo para o usuário final. |Apenas corporativo |
+|**Otimização de carregamento de script**|Melhore os tempos de renderização por meio do carregamento assíncrono de seus Javascripts, incluindo scripts de terceiros, para que eles não bloqueiem a renderização do conteúdo de suas páginas. |Apenas corporativo |
 
 ## Confiabilidade
+{:#page-rules-reliability}
+
 | **Configuração** | **Comportamento** | **Considerações** |
 |-----------|----------|----------------|
-|**Sempre on-line**|Mantém uma versão limitada do site on-line se o servidor fica inativo. |Para obter mais informações, visualize [Gerenciando a implementação do CIS para confiabilidade ideal](managing-for-reliability.html) |
-|**Controle de cache de origem**|Determine qual conteúdo é armazenado em cache por meio da origem e com que frequência o conteúdo é atualizado |Para obter mais informações, visualize [Gerenciando a implementação do CIS para confiabilidade ideal](managing-for-reliability.html) |
-|**URL de encaminhamento** |URL a ser utilizada caso o site fique indisponível. | O uso dessa opção desativa a definição de todas as outras configurações, porque você está encaminhando a solicitação para outro lugar. Para obter mais informações, visualize [Gerenciando a implementação do CIS para confiabilidade ideal](managing-for-reliability.html)|
+|**Fornecer conteúdo antigo**|Mantém uma versão limitada do site on-line se o servidor fica inativo. |Para obter mais informações, visualize [Gerenciando a implementação do CIS para confiabilidade ideal](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability) |
+|**Controle de cache de origem**|Determine qual conteúdo é armazenado em cache por meio da origem e com que frequência o conteúdo é atualizado |Para obter mais informações, visualize [Gerenciando a implementação do CIS para confiabilidade ideal](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability) |
+|**URL de encaminhamento** |URL a ser utilizada caso o site fique indisponível. | O uso dessa opção desativa a definição de todas as outras configurações, porque você está encaminhando a solicitação para outro lugar. Para obter mais informações, visualize [Gerenciando a implementação do CIS para confiabilidade ideal](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability)|
+|**Substituição do cabeçalho do host**|Substitua o cabeçalho do host para o URI que corresponde à regra de página pelo valor especificado. Isso é comumente usado para conteúdos hospedados em um depósito S3.|
+|**Desativar aplicativos**|Desligue todos os aplicativos do CIS. | Apenas corporativo |
+|**Passagem da página de erro de origem**|Desativa as páginas de erro do CIS que seriam acionadas para os problemas enviados do servidor de origem e, em vez disso, exibe as páginas de erro configuradas na origem. |Apenas corporativo ||
 
 ## Padrões de URL da regra de página
+{:#page-rule-url-patterns}
 
 Uma Regra de Página terá efeito sobre um padrão de URL especificado, correspondendo ao seguinte formato:
 
@@ -63,4 +95,4 @@ Aqui estão três coisas importantes para lembrar com relação às Regras de P�
 
 As Regras de Página podem ser desativadas, nesse caso elas não executarão nenhuma ação. Elas ainda poderão ser vistas na lista e poderão ser editadas. Configurar o comutador **Ativado** para **Desativado** criará uma Regra de Página que inicialmente está desativada.
 
-Para obter mais informações, consulte o [documento de instruções Armazenamento em cache e regras de página](caching-with-page-rules.html).
+Para obter mais informações, consulte o [documento de instruções Armazenamento em cache e regras de página](/docs/infrastructure/cis?topic=cis-use-page-rules-with-caching).

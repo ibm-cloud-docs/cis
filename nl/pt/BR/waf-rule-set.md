@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-06"
+  years: 2018, 2019
+lastupdated: "2019-03-15"
+
+keywords: Web Application Firewall Ruleset, rule sets  
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,6 +15,7 @@ lastupdated: "2018-03-06"
 
 
 # Conjunto de regras padrão WAF
+{:#waf-default-ruleset}
 
 | Regra | Ação |
 |----------|---------------|
@@ -92,7 +99,7 @@ lastupdated: "2018-03-06"
 |RCE PHPMailer - CVE-2016-10033 Tipo A|bloquear
 |RCE PHPMailer - CVE-2016-10033 Tipo B|bloquear
 |Bloquear tentativas de exploração de CVE-2017-5638 (Content-Type)|bloquear
-|Evitar tentativas de IIS RCE CVE-2017-7269|bloquear
+|Evitar tentativas de IIS RCE CVE-2017-7269 |bloquear
 |Tentativa de inclusão de SSI Struts / OGNL (CVE-2017-9791 etc.)|bloquear
 |Bloquear tentativas de injeção de SQL 'drop table ...' []|simular
 |Bloquear solicitações de HTTP com agente do usuário que corresponde apenas a 26 caracteres alfabéticos|bloquear

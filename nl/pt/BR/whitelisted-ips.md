@@ -1,28 +1,18 @@
 ---
-copyright:
-  years: 2018
-lastupdated: "2018-03-02"
----
 
+copyright:
+  years: 2018, 2019
+lastupdated: "2019-03-15"
+
+keywords: whitelisted IP addresses, CIS Edges
+
+subcollection: cis
+
+---
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Endereços IP incluídos na lista de desbloqueio do IBM Cloud CIS
+{:#cis-whitelisted-ip-addresses}
 
-
-|IPv4|IPv6|
-|:-------------|:-------------|
-|103.21.244.0/22 |2400:cb00::/32
-| 103.22.200.0/22 |2405:8100::/32
-| 103.31.4.0/22|2405:b500::/32
-|104.16.0.0/12  |2606:4700::/32
-| 108.162.192.0/18|2803:f800::/32
-| 131.0.72.0/22|2c0f:f248::/32
-|141.101.64.0/18|2a06:98c0::/29
-| 162.158.0.0/15  |
-| 172.64.0.0/13|
-|173.245.48.0/20|
-| 188.114.96.0/20 |
-| 190.93.240.0/20|
-|197.234.240.0/22|
-| 198.41.128.0/17|
+A API a seguir lista todos os endereços IP usados pelo CIS Edges ao comunicar-se com as origens: [https://api.cis.cloud.ibm.com/v1/ips](https://api.cis.cloud.ibm.com/v1/ips). Pesquisar essa API uma vez por semana é suficiente para obter as informações necessárias para atualizar suas listas de desbloqueio.

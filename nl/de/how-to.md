@@ -1,186 +1,132 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-17"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Overview page, page rules, Service Mode
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Verwalten Ihrer IBM CIS-Bereitstellung (Cloud Internet Services)
+{:#manage-your-cis-deployment}
 
-Sie beginnen mit der Übersichtsanzeige als Ausgangspunkt für alle weiteren Aktivitäten. Darin finden Sie alle aktuellen Parameter für Ihre Bereitstellung. 
+Sie beginnen mit der Übersichtsanzeige als Ausgangspunkt für alle weiteren Aktivitäten. Darin finden Sie alle aktuellen Parameter für Ihre Bereitstellung.
 
-Nachdem Sie Ihr DNS eingerichtet und konfiguriert haben, kann es losgehen! 
+Nachdem Sie Ihr DNS eingerichtet und konfiguriert haben, kann es losgehen!
 
 ## Übersichtsanzeige verwenden
+{:#using-the-overview-screen}
 
-In der Übersichtsanzeige können Sie den Status aller Ihrer Auswahlen sehen. Sie können die Einstellungen direkt in der Übersichtsanzeige ändern, indem Sie einfach auf den unterstrichenen Namen der Einstellung klicken, die Sie ändern möchten. Sie können beispielsweise auf das Feld mit den `Lastausgleichsfunktionen` klicken, um eine Lastausgleichsfunktion hinzuzufügen. 
+In der Übersichtsanzeige können Sie den Status aller Ihrer Auswahlen sehen. Jede Einstellung ist mit dem Abschnitt der Benutzerschnittstelle verbunden, in dem die Einstellung konfiguriert ist. Um eine Auswahl zu ändern, können Sie durch Klicken auf den Link für die Einstellung dorthin navigieren. Um zum Beispiel die Lastausgleichskonfiguration zu ändern oder eine neue Lastausgleichskonfiguration hinzuzufügen, klicken Sie auf das Feld `Lastausgleichsfunktion`.
 
-In der Übersichtsanzeige können Sie sehen, dass Ihre Domänennamenkonfiguration den Status **Anstehend** oder **Aktiv** hat, wie in der folgenden Abbildung gezeigt. 
+In der Übersichtsanzeige können Sie sehen, dass Ihre Domänennamenkonfiguration den Status **Anstehend** oder **Aktiv** hat, wie in der folgenden Abbildung gezeigt.
 
-![Abbildung der Übersichtsanzeige](images/overview-screen-configuration-summary.png)
+
+![Abbildung der Übersichtsanzeige](images/overview-screen-configuration-summary.jpg)
+
+Der Status **Anstehend** zeigt an, dass Ihre Domäne noch nicht vollständig konfiguriert ist. Sie haben Ihren DNS-Provider oder Registrator mit den Nameservern aktualisiert, die als Teil des Einrichtungsprozesses bereitgestellt wurden. 
+
+**Nur Enterprise**: Im Abschnitt **Servicedetails** der Übersicht können Sie auch Domänen zu Ihrer CIS-Instanz hinzufügen und zwischen mehreren Domänen umschalten. 
+
+## Servicemodus ändern
+{#changing-the-service-mode}
+
+Auf der Übersichtsseite können Sie das Dropdown-Menü im Abschnitt 'Servicemodus' verwenden, um einen der beiden Modi auszuwählen: 
+
+* Der **Verteidigungsmodus** dient zum Schutz vor vorhandenen oder vorhergesagten DNS-Angriffen. Dieser Modus verhindert, dass der gesamte Datenverkehr Ihre Ursprungsserver über Ihre Domäne erreicht. 
+* Mit **Service anhalten** werden alle Sicherheits- und Leistungsvorteile für Ihre Domäne inaktiviert. DNS-Funktionen führen weiterhin Auflösungen für Ihre Website durch, aber der Datenverkehr wird direkt an die konfigurierten Ursprünge gesendet.  
+
+### Schritte beim Festlegen des Servicemodus
+{:#steps-to-set-service-mode}
+
+1. Wählen Sie den gewünschten Modus aus dem Dropdown-Menü aus.
+1. Klicken Sie auf die Schaltfläche `Aktivieren` .
+1. Bestätigen Sie die Auswahl oder stornieren Sie sie im Popup-Fenster für die Bestätigung. 
+
+Auf allen Seiten wird eine Benachrichtigung angezeigt, die besagt, dass entweder 'Service anhalten' oder 'Verteidigungsmodus' aktiviert wurde.
+Die Rückkehr zum Regelbetrieb erfolgt über das Klicken auf `Modus inaktivieren` innerhalb des Benachrichtigungsbanners ![Bild der Schaltfläche 'Modus inaktivieren'](images/deactivate-mode.png)
 
 
 ## DNS konfigurieren und verwalten
+{:#configure-and-manage-your-dns}
 
-Rufen Sie Ihre DNS-Seite auf und fügen Sie einen Datensatz hinzu (höchstwahrscheinlich ein Datensatz vom Typ A). Geben Sie die Informationen zu Ihrem DNS-Datensatz ein und klicken Sie auf `Datensatz hinzufügen`, um Ihre Änderungen zu implementieren. 
+Rufen Sie Ihre DNS-Seite auf und fügen Sie einen Datensatz hinzu (höchstwahrscheinlich ein Datensatz vom Typ A). Geben Sie die Informationen zu Ihrem DNS-Datensatz ein und klicken Sie auf `Datensatz hinzufügen`, um Ihre Änderungen zu implementieren.
 
 ![DNS hinzufügen](images/dns/create-a-type-record.png)
 
-## Caching einrichten und verwalten
+Nachdem Sie Ihre Datensätze erstellt haben, überlegen Sie, ob Sie die Einstellung `Proxy` aktivieren sollten. Die meisten Funktionen von CIS erfordern es, dass der Internetdatenverkehr auf Ihre Site über die CIS-Infrastruktur fließt. Mit anderen Worten, sie werden nur auf weitergeleitete Datensätze und Lastausgleichsfunktionen angewendet. Um tatsächliche die Vorteile von CIS voll auszunutzen, sollten Sie sicherstellen, dass Ihre DNS-Datensätze und Lastausgleichsfunktionen die Proxy-Einstellung aktiviert haben. 
 
-Als Nächstes können Sie das Caching einrichten.  
+## Caching einrichten und verwalten
+{:#set-up-and-manage-your-caching}
+
+Als Nächstes können Sie das Caching einrichten. 
 
 ![ABBILDUNG](images/caching-screen.png)
 
-Sie können zwischen drei Typen von Caching auswählen, die im Dropdown-Menü der Caching-Ansicht verfügbar sind:  
+Sie können zwischen drei Typen von Caching auswählen, die im Dropdown-Menü der Caching-Ansicht verfügbar sind: 
 
- * Keine Abfragezeichenfolge: Es werden nur Ressourcen aus dem Cache bereitgestellt, wenn keine Abfragezeichenfolge vorhanden ist. 
- * Unabhängig von Abfragezeichenfolge: Übergibt dieselbe Ressource an alle, unabhängig von der Abfragezeichenfolge. (Hinweis: Die Einstellung **Abfragezeichenfolge ignorieren** gilt nur für statische Dateierweiterungen. Diese Einstellung entfernt die Abfragezeichenfolge beim Generieren des Cache-Schlüssels, sodass eine Anforderung `style.css?something` normalisiert wird zu `style.css`, wenn sie den Cache passiert.) 
- * Abhängig von Abfragezeichenfolge: Übergibt jedes Mal eine andere Ressource, wenn sich die Abfragezeichenfolge ändert. 
+ * Keine Abfragezeichenfolge: Es werden nur Ressourcen aus dem Cache bereitgestellt, wenn keine Abfragezeichenfolge vorhanden ist.
+ * Unabhängig von Abfragezeichenfolge: Übergibt dieselbe Ressource an alle, unabhängig von der Abfragezeichenfolge. (Hinweis: Die Einstellung **Abfragezeichenfolge ignorieren** gilt nur für statische Dateierweiterungen. Diese Einstellung entfernt die Abfragezeichenfolge beim Generieren des Cache-Schlüssels, sodass eine Anforderung `style.css?something` normalisiert wird zu `style.css`, wenn sie den Cache passiert.)
+ * Abhängig von Abfragezeichenfolge: Übergibt jedes Mal eine andere Ressource, wenn sich die Abfragezeichenfolge ändert.
   
 ## Cache löschen
+{:#purge-cache-overview}
  
-Sie können Ihren Cache jederzeit in Vorbereitung auf Aktualisierungen löschen, indem Sie einfach die URL in das Feld zum Löschen des Cache einfügen. Sie können eine einzelne Datei oder mehrere Dateien (bis zu 30 gleichzeitig) löschen. 
+Sie können Ihren Cache jederzeit in Vorbereitung auf Aktualisierungen löschen, indem Sie einfach die URL in das Feld zum Löschen des Cache einfügen. Sie können eine einzelne Datei oder mehrere Dateien (bis zu 30 gleichzeitig) löschen.
  
  ## Verfallsdatum des Browsers
+ {:#browser-expiration}
  
-Im Dropdown-Menü können Sie das erforderliche Verfallsdatum des Browsers auswählen, z. B. 8 Stunden oder 1 Tag. 
+Im Dropdown-Menü können Sie das erforderliche Verfallsdatum des Browsers auswählen, z. B. 8 Stunden oder 1 Tag.
+
+Nur Enterprise: Sie können CIS auch anweisen, keine Steuerelemente des Browser-Cache zu überschreiben, indem Sie für diese Einstellung **Vorhandene Header respektieren** festlegen.
  
  ## Entwicklungsmodus verwenden
+ {:#using-development-mode}
  
-Der **Entwicklungsmodus** ist für die Verwendung bei wichtigen Aktualisierungen oder neuen Dateiuploads vorgesehen, oder wenn Sie vermeiden möchten, dass die Endbenutzer den Cache nutzen, und sie Dateien stattdessen direkt von den Ursprungsservern abrufen sollen. Um den **Entwicklungsmodus** zu verwenden, schalten Sie ihn auf `Aktiviert` um. Wenn Sie den **Entwicklungsmodus** nicht nicht mehr verwenden möchten, schalten Sie ihn zurück auf `Inaktiviert`. Die Aktivierung des **Entwicklungsmodus** läuft automatisch nach drei Stunden ab.  
+Der **Entwicklungsmodus** ist für die Verwendung bei wichtigen Aktualisierungen oder neuen Dateiuploads vorgesehen, oder wenn Sie vermeiden möchten, dass die Endbenutzer den Cache nutzen, und sie Dateien stattdessen direkt von den Ursprungsservern abrufen sollen. Um den **Entwicklungsmodus** zu verwenden, schalten Sie ihn auf `Aktiviert` um. Wenn Sie den **Entwicklungsmodus** nicht nicht mehr verwenden möchten, schalten Sie ihn zurück auf `Inaktiviert`. Die Aktivierung des **Entwicklungsmodus** läuft automatisch nach drei Stunden ab. 
 
 ## Seitenregeln verwalten
+{:#managing-your-page-rules}
  
-Sie können bis zu 50 Seitenregeln aktivieren. Verwenden Sie dazu die Dropdown-Menüs. Die Regeleinstellungen sind in drei Kategorien unterteilt: **Sicherheit**, **Leistung** und **Zuverlässigkeit**. 
+Sie können Seitenregeln verwenden, um bestimmte Einstellung anzugeben, die nur für bestimmte URLs gelten, um beispielsweise unterschiedliche Einstellungen für die Cachesteuerung für bestimmte URL-Pfade zu verwenden. Verwenden Sie dazu die Dropdown-Menüs. Die Regeleinstellungen sind in drei Kategorien unterteilt: **Sicherheit**, **Leistung** und **Zuverlässigkeit**.
 
-Beachten Sie: Wenn bestimmte Regeln aktiviert sind, werden andere Optionen abgeblendet, falls diese in Konflikt zu den eben ausgewählten Regeln stehen. Nachdem Sie die gewünschten Seitenregeln ausgewählt haben, klicken Sie auf **Bereitstellung**, um sie zu aktivieren. Die neuen Regeln werden sofort wirksam und sind auch sofort in der Ansicht 'Seitenregeln' sichtbar. 
+Beachten Sie: Wenn bestimmte Regeln aktiviert sind, werden andere Optionen abgeblendet, falls diese in Konflikt zu den eben ausgewählten Regeln stehen. Nachdem Sie die gewünschten Seitenregeln ausgewählt haben, klicken Sie auf **Bereitstellung**, um sie zu aktivieren. Die neuen Regeln werden sofort wirksam und sind auch sofort in der Ansicht 'Seitenregeln' sichtbar.
  
  ![SEITENREGELMENÜS](images/page-rule-dropdown-settings.png)
  
-Sie können Ihre Seitenregeln auch in der Tabelle aktivieren oder inaktivieren, die in der Ansicht 'Seitenregeln' enthalten ist. Weitere Informationen finden Sie unter [Seitenregeln verwenden](using-page-rules.html). 
+Sie können Ihre Seitenregeln auch in der Tabelle aktivieren oder inaktivieren, die in der Ansicht 'Seitenregeln' enthalten ist. Weitere Informationen finden Sie unter [Seitenregeln verwenden](/docs/infrastructure/cis?topic=cis-use-page-rules).
  
  ## Sicherheitseinstellungen
+ {:#security-settings-overview}
  
-Standardmäßig ist der DDoS-Schutz für alle DNS-Datensätze mit aktivem Proxy aktiviert, was in der Tabelle **Datensätze** auf der DNS-Seite vorgenommen werden kann. Schalten Sie die WAF ein. Wenn Sie die Regeln ein- oder ausschalten, werden die Änderungen sofort wirksam. 
+Standardmäßig ist der DDoS-Schutz für alle DNS-Datensätze oder Lastausgleichsfunktionen mit eingeschalteter Weiterleitung aktiviert.
+Die Sicherheitseinstellungen sind:  
 
-![ABBILDUNG](images/ddos-waf-ssl-screen.png)
+* Aktivieren Sie WAF mithilfe des Schalters auf der Seite **Web Application Firewall**. Wenn Sie die Regeln ein- oder ausschalten, werden die Änderungen sofort wirksam.
+
+* **Nur Enterprise**: Die Seite **Drosselung** ermöglicht Ihnen, Regeln für die Drosselung zu konfigurieren, um 'Noisy Neighbor'-Probleme zu vermeiden und DDoS abzuwehren. 
+
+* Auf der Seite **IP-Firewall** können Sie Zugriffsregeln auf Grundlage von IP, Ländercode oder ASN konfigurieren. Sie können auch Regeln konfigurieren, um Benutzeragenten zu blockieren. Im Abschnitt über Domänensperrung dieser Seite, erfahren Sie, wie Sie den Zugriff auf Ihre Domäne auf bestimmte IP-Adressen beschränken können. 
+
+* Sie können die für die Firewall wichtigen Ereignisse auf der Seite **Ereignisse** überprüfen. 
 
 ## Zertifikate
+{:#certificates-overview}
 
-Wenn Sie in einer Zone bereitstellen, implementiert IBM CIS automatisch ein universelles Zertifikat für diese Zone. Sie müssen für einen zertifikatsbasierten Schutz in dieser Zone folglich nichts unternehmen. Wenn Sie möchten, können Sie Ihr eigenes Zertifikat hochladen. Sie benötigen ein separates Zertifikat für jede Zone und es wird eine Fehlernachricht angezeigt, falls das von Ihnen hochgeladene Zertifikat nicht zu Ihrer Zone passt. 
+Wenn Sie eine Domäne konfigurieren, stellt IBM CIS automatisch ein universelles Zertifikat für diese Domäne zur Verfügung. Sie müssen also nichts unternehmen, um in dieser Domäne zertifikatbasierten Schutz zu erhalten. Wenn Sie möchten, können Sie Ihr eigenes Zertifikat hochladen. Sie benötigen ein separates Zertifikat für jede Domäne und Ihnen wird eine Fehlernachricht angezeigt, wenn das Zertifikat, das Sie hochladen, nicht mit Ihrer Domäne übereinstimmt. Auf dieser Seite können Sie auch angepasste Zertifikate anfordern.  
 
 ![ABBILDUNG](images/certificates-table.png)
  
- ## Lastausgleichsfunktionen einrichten und konfigurieren
  
- IBM CIS stellt einen globalen Lastausgleich als Service bereit. 
-
-![ABBILDUNG](images/glb-screen.png)
-
-### GLB-Dashboard
-Auf Ihrem Dashboard werden drei Listen angezeigt - für Lastausgleichsfunktionen, für Ursprungspools und für Statusprüfungen. In den Listen werden die neue oder aktualisierte globale Lastausgleichsfunktion oder eine ihrer Komponenten angezeigt. Anfänglich sind die Listen leer und bevor Sie eine Lastausgleichsfunktion erstellen, müssen Sie einige Aktionen ausführen. 
-
-#### Erstellen
-**Hinweis**: <sup>`*`</sup> weist darauf hin, dass dieser Schritt optional ist. 
-
-1) <sup>`*`</sup>Erstellen Sie eine Statusprüfung, klicken Sie auf 'Statusprüfung erstellen'.
-  ![ABBILDUNG](images/glb-health-check-list.png)
-    <ul>
-      <li>* **Pfad**: Der Pfad zu dem Endpunkt, an dem die Statusprüfung ausgeführt werden soll. </li> 
-      <li>* **Typ**: Das Protokoll für die Statusprüfung. </li>
-      <li>* **Beschreibung**: Vom Benutzer bereitgestellte Beschreibung. </li>
-    </ul>
-
-2) Erstellen Sie einen Pool, klicken Sie auf 'Pool erstellen'.
-  ![ABBILDUNG](images/glb-pool-list.png)
-    <ul>
-      <li>* **Status**: Status des Pools. </li>
-      <li>* **Name**: Vom Benutzer angegebener Name. </li>
-      <li>* **Ursprünge**: Anzahl von Ursprüngen in einwandfreiem Zustand im Pool. </li>
-      <li>* **Statusprüfung**: Pfad der angehängten Statusprüfung, falls vorhanden. </li>
-    </ul>
-
-3) Erstellen Sie eine Lastausgleichsfunktion, klicken Sie auf 'Lastausgleichsfunktion erstellen'.
-  ![ABBILDUNG](images/glb-load-balancer-list.png)
-    <ul>
-      <li>* **Status**: Status der Lastausgleichsfunktion. </li>
-      <li>* **Hostname**: Dem Domänennamen vorangestellter Name. </li>
-      <li>* **Verfügbare Pools**: Anzahl von Pools in einwandfreiem Zustand. </li>
-      <li>* **TTL**: Lebensdauer. </li>
-      <li>* **Proxy**: Proxy-Datenverkehr aktivieren oder inaktivieren. </li>
-      <li>* **Status**: Lastausgleichsfunktion aktivieren oder inaktivieren. </li>
-    </ul>
-
-#### Bearbeiten/Löschen
-Um eine Lastausgleichsfunktion oder eine ihrer Komponenten zu bearbeiten oder zu löschen, klicken Sie auf die Überlaufmenüschaltfläche am rechten Ende jeder Zeile. 
-
-Überlaufmenüschaltfläche: 
-
-![ABBILDUNG](images/overflow.png)
-
-Folgende Optionen stehen für jede Liste zur Verfügung. 
-
-* Statusprüfung
-    * **Statusprüfung bearbeiten**: Diese Option leitet den Benutzer an den Bearbeitungsablauf weiter.  
-    * **Statusprüfung löschen**: Diese Option ruft das Bestätigungsdialogfenster für den Löschablauf auf. 
-
-* Pool
-    * **Pooldetails anzeigen**: Diese Option ruft ein Modaldialogfenster mit Informationen zu dem Pool auf. 
-    * **Pool bearbeiten**: Diese Option leitet den Benutzer an den Bearbeitungsablauf weiter. 
-    * **Pool löschen**: Diese Option ruft das Bestätigungsdialogfenster für den Löschablauf auf. 
-
-* Lastausgleichsfunktion
-    * **Inaktivieren/Aktivieren**: Lastausgleichsfunktion aktivieren oder inaktivieren. 
-    * **Lastausgleichsfunktion bearbeiten**: Leitet den Benutzer an den Bearbeitungsablauf weiter.  
-    * **Lastausgleichsfunktion löschen**: Diese Option ruft das Bestätigungsdialogfenster für den Löschablauf auf. 
-
-### Statusprüfung hinzufügen
-
-Statusprüfungen sind optionale Anhänge für Ursprungspools. Sie setzen ein benutzerdefiniertes Wiederholungsintervall ein, um auf einen bestimmten Antworttext oder Statuscode zu prüfen und so den Status des Pools zu überwachen. Nachdem Statusprüfungen erstellt wurden, können sie einem neuen oder vorhandenen Ursprungspool hinzugefügt werden. 
-
-Beim Erstellen einer Statusprüfung ist nur ein Feld erforderlich: 
- * **Antwortcode**: Der erwartete HTTP-Antwortcode oder -codebereich der Statusprüfung. Dieser Wert muss zwischen 200 und 299 liegen, wobei Platzhalter durch ein 'x' dargestellt werden. 
-
-Zusätzliche optionale Felder:
- * **Pfad**: Der Pfad zu dem Endpunkt, an dem die Statusprüfung durchgeführt werden soll (Standardwert ist '/'). 
- * **Typ**: Das Protokoll für die Statusprüfung (Standardwert ist 'HTTP'). 
- * **Beschreibung**: Die Beschreibung der Statusprüfung. 
- * **Intervall**: Das Intervall (in Sekunden) zwischen den einzelnen Statusprüfungen. Kürzere Intervalle können die Failoverzeit verbessern, aber die Auslastung der Ursprünge erhöhen, wenn die Prüfungen an mehreren Orten durchgeführt werden (Standardwert ist '60'). 
- * **Methode**: Die HTTP-Methode für die Statusprüfung (Standardwert ist GET). 
- * **Zeitlimit**: Die Zeit (in Sekunden) vor dem Markieren der Statusprüfung als fehlgeschlagen (Standardwert ist '5'). 
- * **Wiederholungen**: Die Anzahl von Wiederholungen im Fall einer Zeitlimitüberschreitung, bevor der Ursprung als fehlerhaft markiert wird. Wiederholungen werden unmittelbar ausgeführt (Standardwert ist '2'). 
- * **Antwortteil**: Eine von Groß-/Kleinschreibung unabhängige Teilzeichenfolge, die mit dem Antwortteil abgeglichen werden soll. Wird diese Zeichenfolge nicht gefunden, wird der Ursprung als fehlerhaft markiert. 
- * **Anforderungsheader**: Die HTTP-Anforderungsheader, die im Rahmen der Statusprüfung gesendet werden sollen. Wir empfehlen, einen Host-Header standardmäßig festzulegen. Der Header `User-Agent` kann nicht überschrieben werden. 
-
-### Pool hinzufügen
-
-Für jede bereitgestellte Lastausgleichsfunktion ist mindestens ein Pool erforderlich. Pools gruppieren Ihre Ursprünge für die zu verwendende Lastausgleichsfunktion. 
-
-Wenn Sie einen Pool erstellen, sind zwei Felder erforderlich: 
- * **Name**: Ein Kurzname (Tag) für den Pool. Es sind nur alphanumerische Zeichen, Bindestriche und Unterstreichungszeichen zulässig. 
- * **Ursprünge**: Die Liste von Ursprüngen in diesem Pool. Der an diesen Pool umgeleitete Datenverkehr wird über alle Ursprünge ausgeglichen, die sich aktuell in einwandfreiem Zustand befinden, vorausgesetzt, der Pool selbst ist fehlerfrei. 
-
-Zusätzliche optionale Felder:
- * **Beschreibung**: Eine lesbare Beschreibung des Pools. 
- * **Aktiviert**: Eine Angabe, ob dieser Pool aktiviert werden soll (Standardeinstellung). Inaktivierte Pools empfangen keinen Datenverkehr und sind von Statusprüfungen ausgeschlossen. Das Inaktivieren eines Pools führt dazu, dass für alle Lastausgleichsfunktionen ein Failover zum nächsten Pool durchgeführt wird, falls vorhanden (Standardeinstellung ist 'wahr'). 
- * **Schwellenwert für Ursprünge in einwandfreiem Zustand**: Die Mindestanzahl von Ursprüngen, die sich in einwandfreiem Zustand befinden müssen, damit dieser Pool Datenverkehr verarbeiten kann. Wenn die Anzahl der Ursprünge in einwandfreiem Zustand unter diese Zahl fällt, wird der Pool als fehlerhaft markiert und es wird ein Failover zum nächsten verfügbaren Pool durchgeführt (Standardwert ist '1'). 
- * **Regionen der Statusprüfung**: Region, die von der Statusprüfung überwacht wird. 
- * **Statusprüfung**: Statusprüfung für die Prüfung von Ursprüngen in diesem Pool (standardmäßig ist keine Statusprüfung festgelegt). 
- * **Benachrichtigungs-E-Mail**: Die E-Mail-Adresse, an die Statusbenachrichtigungen gesendet werden sollen. Bei dieser Adresse kann es sich um eine einzelne Mailbox oder um eine Mailing-Liste handeln. 
-
- ### Lastausgleichsfunktion hinzufügen
-
-Lastausgleichsfunktionen helfen Ihnen, Ihren Proxy-Datenverkehr mithilfe einer Umlaufverteilung über mehrere Ursprungspools zu verteilen. 
-
-Beim Erstellen einer Lastausgleichsfunktion sind die erforderlichen Felder folgende: 
- * **Name**: Der DNS-Hostname, der Ihrer Lastausgleichsfunktion zugeordnet werden soll. Wenn dieser Hostname bereits als DNS-Eintrag im IBM DNS vorhanden ist, hat die Lastausgleichsfunktion Vorrang und der DNS-Datensatz wird nicht verwendet. 
- * **Standardpools**: Eine Liste von Pool-IDs. Die Liste ist nach Failoverpriorität geordnet. Hier definierte Pools werden standardmäßig verwendet, oder wenn für eine bestimmte Region keine Regionspools konfiguriert sind. 
-
-Optional können die folgenden Felder konfiguriert werden: 
- * **Proxy**: Leitet Datenverkehr über den IBM Performance and Metrics Service weiter. 
- * **Sitzungsaffinität**: Leitet Datenverkehr immer über dieselbe Instanz des Performance and Metrics Service weiter. Diese Option ist nur verfügbar, wenn ein Proxy aktiviert ist. 
- * **TTL**: Lebensdauer (Time to Live, TTL) des DNS-Eintrags für die von dieser Lastausgleichsfunktion zurückgegebene IP-Adresse. Diese Option gilt nur für Nicht-Proxy-Lastausgleichsfunktionen. Andernfalls nimmt sie standardmäßig den Wert `Automatisch` an. 
- * **Regionspools**: Zuordnung von Regions- oder Landescodes zu einer Liste von (nach Failoverpriorität sortierten) Pools für die gegebene Region. Alle nicht explizit definierten Regionen verwenden die Standardpools. 

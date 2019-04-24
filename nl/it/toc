@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" audience="service" href="/docs/infrastructure/cis/getting-started.html"}
+{: .toc subcollection="cis" audience="service" arm="3663386" href="/docs/infrastructure/cis?topic=cis-getting-started-with-ibm-cloud-internet-services-cis-" path="infrastructure/cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
@@ -26,18 +26,61 @@ Cloud Internet Services (CIS)
     managing-for-security.md
     managing-for-reliability.md
     managing-for-performance.md
+    glb-quick-setup.md
+    glb-setup.md
     using-page-rules.md
     caching-with-page-rules.md
+    resolve-override-cos.md
+    origin.md
+    routing.md
+    rate-limiting.md
+    multi-domain.md
+    iam.md
+    logpull.md
+    range.md
+    edge-functions.md
+    edge-functions-use-cases.md
     helpful-tools.md
-    {: .navgroup-end}
-
+    
+    {: .topicgroup}
+    Guide dettagliate
+        [Secure and resilient multi-region Kubernetes clusters with Cloud Internet Services](/tutorials/solution-tutorials-multi-region-k8s-cis)  
+        [Using CIS to secure your Cloud Foundry applications across regions](/tutorials/solution-tutorials-multi-region-webapp#register-a-custom-domain-with-ibm-cloud-internet-services)
+        [Deploy serverless apps across multiple locations](tutorials/solution-tutorials-multi-region-serverless#multi-region-serverless)
+        
+    {: .topicgroup}
+    Istruzioni guidate: miglioramento dell'affidabilità e della scalabilità con Bilanciamento del carico globale
+        application-reliability.md
+        create-cis.md
+        input-domain.md
+        begin-config.md
+        identify-app-resources.md
+        define-global-lb.md
+        cloudant-and-cis.md
+                
+    {: .topicgroup}
+    Istruzioni guidate: Web Application Firewall
+        waf-custom-rules.md
+        waf-rule-set.md
+        waf-cis-ruleset.md
+        waf-owasp-ruleset.md   
+    {: .navgroup-end}   
+    
     {: .navgroup id="reference"}
+    hipaa-advisory.md
+    plan-comparison.md
     api-resource.md
+    at_events.md
+    cis-cli-overview.md
+    glossary.md
+    whitelisted-ips.md
+    external-resources.md
     {: .navgroup-end}
-
+    
     {: .navgroup id="help"}
     faq.md
     known-limitations.md
+    scheduled-maintenance.md
     troubleshooting.md
     getting-help.md
     {: .navgroup-end}

@@ -1,13 +1,25 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-12"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Use Page Rules, standard cache levels, Custom Caching Sets
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # 搭配使用頁面規則與快取
+{:#use-page-rules-with-caching}
 
 「頁面規則」可讓您根據頁面 URL 採取各種動作（例如，建立重新導向、微調快取行為，或啟用及停用服務）。
 
@@ -30,24 +42,31 @@ lastupdated: "2018-03-12"
 
 
 ## 轉遞（URL 重新導向）
+{:#forwarding-url-redirection}
+
 使用 HTTP 301 或 302 重新導向，將一個 URL 重新導向至另一個 URL。您可以使用 `$X` 語法來參照萬用字元所符合之任何 URL 區段的內容。`X` 指出型樣中 glob 的索引：將 `$1` 取代為第一個萬用字元相符項、將 `$2` 取代為第二個萬用字元相符項，依此類推。
 
 例如，假設您設定下列規則：
 
 ![影像](images/url-redirection-example.png)
 
-在這裡，"www.example.com/stuff/things" 的要求將會重新導向至 "http://example.com/stuff/things"。
+這時，`www.example.com/stuff/things` 的要求會重新導向至 `http://example.com/stuff/things`。
 
-**附註：**請小心不要建立將網域指向本身作為目的地的重新導向。此錯誤可能會造成無限重新導向錯誤，而且無法解析受影響的 URL。
+請小心不要建立一個會使網域指向本身作為目的地的重新導向。此錯誤可能會造成無限重新導向錯誤，而且無法解析受影響的 URL。
+{:note}
 
 
 ## 重新導向至 HTTPS
+{:#redirecting-to-https}
+
 如果您要重新導向訪客以使用 HTTPS，則請改用**一律使用 HTTPS** 設定：
 
 ![影像 2](images/url-matching-patterns.png)
 
 
 ## 自訂快取
+{:#custom-caching}
+
 使用任何標準快取層次，設定任何符合「頁面規則」型樣之 URL 的快取行為。將**快取層次**設為**快取所有項目**可快取任何內容，即使它不是我們的其中一個預設靜態檔案類型也一樣。將**快取層次**設為**略過**設定，可防止在該 URL 上進行快取。
 
 使用「頁面規則」指定快取層次時，您可以設定**邊緣快取 TTL**，而此項目控制 CIS 將檔案保留在快取中多久的時間。
@@ -59,3 +78,11 @@ lastupdated: "2018-03-12"
 下列範例設定「頁面規則」，以快取 `/images` 資料夾中找到的所有項目。快取的資源在使用者瀏覽器中會於 30 分鐘內到期，而在 IBM CIS 資料中心內則於一天後到期：
 
 ![影像 3](images/url-example.png)
+
+**提供過時內容**會從快取中提供頁面，即使您的伺服器關閉也一樣。訪客會看到網站的有限版本，並出現一則訊息指出他們處於離線瀏覽模式。 
+
+這項特性會傳回 HTTP 狀態 503。當伺服器再次回到線上時，CSI 會無縫接軌讓訪客進入一般瀏覽。
+
+如果所要求的頁面不在快取中，則訪客會看到錯誤頁面，通知他們所要求的頁面已離線。
+如果啟用**快取所有項目**頁面規則，且有效期限設定低於快取頻率，則會依對應的間隔清除**提供過時內容**。
+{:note}

@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-06"
+  years: 2018, 2019
+lastupdated: "2019-03-15"
+
+keywords: Web Application Firewall Ruleset, rule sets  
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,6 +15,7 @@ lastupdated: "2018-03-06"
 
 
 # Jeu de règle WAF par défaut
+{:#waf-default-ruleset}
 
 | Règle | Action |
 |----------|---------------|
@@ -43,7 +50,7 @@ lastupdated: "2018-03-06"
 |Tentative SQLi (MultiLevel Func) []|blocage
 |Tentative SQLi (Union Vector) []|simulation
 |Recherche SQLi|blocage
-|Interdire les commentaires SQLi |blocage
+|Interdire les commentaires SQLi  |blocage
 |Interdire les chaînes se terminant par des commentaires SQLi |simulation
 |Tentative SQLi (Wildcard Escape)|blocage
 |Bloquer les en-têtes X-Forwarded-Host non valides |demande d'authentification
@@ -76,11 +83,11 @@ lastupdated: "2018-03-06"
 |Empêcher les faux yandexbot d'explorer vos pages|blocage
 |Bloquer les faux agents d'utilisateur baidu utilisés dans les attaques DoS|blocage
 |Bloquer toutes tentatives visant à obtenir des informations sur le serveur d'origine|blocage
-|Empêcher l'accès aux extensions susceptibles d'être utilisées par les éditeurs de texte pendant l'enregistrement/la sauvegarde|blocage
+|Empêcher l'accès aux extensions susceptibles d'être utilisées par les éditeurs de texte pendant l'enregistrement/la sauvegarde |blocage
 |Bloquer les tentatives d'accès à la page de statut apache/statut serveur|simulation
 |Annuler les analyses du scanner Acunetix|demande d'authentification
 |Annuler les analyses Java du scanner Acunetix|demande d'authentification
-|Injection SQL Joomla CVE-2015-7857 |blocage
+|Injection SQL Joomla CVE-2015-7857|blocage
 |Se connecter lorsque deux en-têtes sont envoyés avec une requête|simulation
 |Détecter les faux IE6 [Type B]|demande d'authentification
 |Détecter les faux IE6 [Type C]|demande d'authentification
@@ -107,7 +114,7 @@ lastupdated: "2018-03-06"
 |Protection RFI redirigée|simulation
 |SQLi pour UNION SELECT ALL NULL|simulation
 |CVE-2017-7525 - Struts / Jackson RCE|blocage
-|Mauvais AU :: Tentative par force brute|demande d'authentification
+|Mauvais AU :: Tentative d'intrusion illicite|demande d'authentification
 |Faux AU :: Utilisé dans les attaques par force brute Wordpress|demande d'authentification
 |Faux AU :: Utilisé dans les attaques par force brute Wordpress|demande d'authentification
 |Faux AU :: Utilisé dans les attaques par force brute Wordpress|demande d'authentification

@@ -1,25 +1,34 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-01"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Helpful tools, whois, IPv4
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Hilfreiche Tools zur Verwaltung Ihrer CIS-Bereitstellung
+{:#helpful-tools-for-managing-your-cis-deployment}
 
-Es gibt eine Reihe von Unix-Systemverwaltungstools für öffentliche Domänen, die Sie bei der Verwaltung Ihrer IBM CIS-Bereitstellung unterstützen können. 
+Es gibt eine Reihe von Unix-Systemverwaltungstools für öffentliche Domänen, die Sie bei der Verwaltung Ihrer IBM CIS-Bereitstellung unterstützen können.
 
 ## Sysadmin-Tools
+{:#cis-sysadmin-tools}
 
  * whois (Tool zur Identifizierung von Domänen)
  * dig (DNS-Tool)
  * curl (HTTP- und HTTPS-Tool)
- * netcat (IP- und Porttool)
+ * netcat (IP- und Port-Tool)
  * traceroute (Netztool)
 
-## Kommerzielle Tools für externe und ferne Tests:
+## Kommerzielle Tools für externe und ferne Tests
+{:#commercial-tools-for-external-and-remote-testing}
 
  * GTMetrix (http)
  * Webseitentest (http)
@@ -27,13 +36,15 @@ Es gibt eine Reihe von Unix-Systemverwaltungstools für öffentliche Domänen, d
  * G Suite Toolbox (DNS und HTTP)
 
 ## Tools zum Untersuchen von Protokollen und Verlauf
+{:#tools-for-looking-at-logs-and-history}
 
  * HTTP Archive-Dateien (HAR-Dateien)
 
 
 ### `whois`
+{:#using-whois}
 
-`whois` ist ein Befehlszeilentool des UNIX-Systems, mit dem Sie nach Registratorinformationen für einen gegebenen Domänennamen oder eine gegebene IP-Adresse suchen können, z. B. nach den gegebenen autoritativen Servern einer Domäne oder dem Eigner einer bestimmten IP-Adresse. 
+`whois` ist ein Befehlszeilentool des UNIX-Systems, mit dem Sie nach Registratorinformationen für einen gegebenen Domänennamen oder eine gegebene IP-Adresse suchen können, z. B. nach den gegebenen autoritativen Servern einer Domäne oder dem Eigner einer bestimmten IP-Adresse.
 
 Beispiele:
 
@@ -42,8 +53,9 @@ Beispiele:
 `whois 8.8.8.8`
 
 ### `dig`
+{:#using-dig}
 
-`dig` ist ein UNIX-Befehlszeilentool, das DNS-Abfragen durchführen und DNS-Datensätze für eine bestimmte Domäne prüfen kann. Es ähnelt `nslookup`. 
+`dig` ist ein UNIX-Befehlszeilentool, das DNS-Abfragen durchführen und DNS-Datensätze für eine bestimmte Domäne prüfen kann. Es ähnelt `nslookup`.
 
 Das Schema dieses Befehls lautet: dig <datensatztyp> <domänenname> <optionen>
 
@@ -60,10 +72,11 @@ Das Schema dieses Befehls lautet: dig <datensatztyp> <domänenname> <optionen>
 `dig beispiel.com @ns.beispiel.com`
 
 ### `cURL`
+{:#using-curl}
 
-`cURL` ist ein UNIX-Befehlszeilentool, mit dem Sie Daten unter Verwendung der URL-Syntax übertragen können. Es wird häufig verwendet, um HTTP-Anforderungen zu stellen oder Serverantworten zu vergleichen. 
+`cURL` ist ein UNIX-Befehlszeilentool, mit dem Sie Daten unter Verwendung der URL-Syntax übertragen können. Es wird häufig verwendet, um HTTP-Anforderungen zu stellen oder Serverantworten zu vergleichen.
 
-Das Schema für diesen Befehl lautet: curl -option1 -option2 http://beispiel.com/url
+Das Schema für diesen Befehl lautet: `curl -option1 -option2 http://beispiel.com/url`
 
 **Beispiele:**
 
@@ -76,8 +89,9 @@ Das Schema für diesen Befehl lautet: curl -option1 -option2 http://beispiel.com
 `curl -svo /dev/null -H https://www.beispiel.com --resolve www.beispiel.com:443:ORIGIN_IP`
 
 ### `mtr` und `traceroute`
+{:#using-mtr-and-traceroute}
 
-MTR und `traceroute` sind UNIX-Befehlszeilentools, mit denen Sie die Leistung oder Latenz entlang eines spezifischen Netzpfads bis zu einem angegebenen Host oder Zielserver messen können. 
+MTR und `traceroute` sind UNIX-Befehlszeilentools, mit denen Sie die Leistung oder Latenz entlang eines spezifischen Netzpfads bis zu einem angegebenen Host oder Zielserver messen können.
 
 **Beispiele:**
 
@@ -96,5 +110,6 @@ MTR und `traceroute` sind UNIX-Befehlszeilentools, mit denen Sie die Leistung od
 | -6 | Erzwingt die Verwendung von IPv6. |
 
 ### HAR-Datei generieren
+{:#generating-a-har-file}
 
-Eine HAR-Datei ist eine Aufzeichnung von HTTP-Anforderungen von einem Web-Browser. Browser wie Chrome verfügen über einen Entwicklertools-Abschnitt, in dem Sie Informationen zum Erstellen einer HAR-Datei finden können. 
+Eine HAR-Datei ist eine Aufzeichnung von HTTP-Anforderungen von einem Web-Browser. Browser wie Chrome verfügen über einen Entwicklertools-Abschnitt, in dem Sie Informationen zum Erstellen einer HAR-Datei finden können.

@@ -1,15 +1,22 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-06"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: IBM Cloud Internet Services, reliable IBM Cloud Internet Services, Global Load Balancing
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # IBM Cloud Internet Services (CIS) を使用して作業の信頼性を維持する方法
+{:#how-cis-keeps-your-work-reliable}
 
-IBM Cloud Internet Services (CIS) を使用すると、アプリケーションやインフラストラクチャーの障害によるダウン時間の発生を回避できるので、Web サービスとアプリケーションの信頼性を改善するために役立ちます。例えば、グローバル・ロード・バランシングによって、Web サービスやアプリケーションを複数の領域にデプロイすることができます。グローバル・ロード・バランシングが有効なとき、IBM CIS は、顧客の要求を使用可能な最も近い領域に経路指定します。いずれかの領域で障害が起こると、要求は次に近い場所に経路指定されるので、顧客はダウン時間の影響を受けません。Web サイトまたは API で障害が起こると IBM CIS は自動的に通知を送信し、それがリストアされたときにも通知が出されます。
+IBM Cloud Internet Services (CIS) を使用すると、アプリケーションやインフラストラクチャーの障害によるダウン時間の発生を回避できるので、Web サービスとアプリケーションの信頼性を改善するために役立ちます。 例えば、グローバル・ロード・バランシングによって、Web サービスやアプリケーションを複数の領域にデプロイすることができます。 グローバル・ロード・バランシングが有効なとき、IBM CIS は、顧客の要求を使用可能な最も近い領域に経路指定します。 いずれかの領域で障害が起こると、要求は次に近い場所に経路指定されるので、顧客はダウン時間の影響を受けません。 Web サイトまたは API で障害が起こると IBM CIS は自動的に通知を送信し、それがリストアされたときにも通知が出されます。
 
 
 ![reliability-graphic.png](images/reliability-graphic.png)
@@ -17,6 +24,7 @@ IBM Cloud Internet Services (CIS) を使用すると、アプリケーション�
 機能の概要を以下に示します。
 
 ## 信頼性の機能
+{:#cis-reliability-features}
 
  * グローバル・ロード・バランシング 
  * ロード・バランシングのためのプロキシーと非プロキシーのオプション
@@ -24,6 +32,7 @@ IBM Cloud Internet Services (CIS) を使用すると、アプリケーション�
  * DNS 管理
  
 ### 要約
+{:#cis-reliability-features-summary}
  
   * ヘルス・モニターは、発信元プールが正常かどうかを検査します。
   * ヘルス・モニターで障害が検出された場合、要求は正常な発信元に再度経路指定されます。

@@ -1,7 +1,13 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-06"
+  years: 2018, 2019
+lastupdated: "2019-03-15"
+
+keywords: Web Application Firewall Ruleset, rule sets  
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -9,8 +15,9 @@ lastupdated: "2018-03-06"
 
 
 # WAF 기본 규칙 세트
+{:#waf-default-ruleset}
 
-| 규칙 | 조치 |
+|규칙 |조치 |
 |----------|---------------|
 |Numbers Botnet|인증 확인
 |CtrlFunc Botnet|인증 확인

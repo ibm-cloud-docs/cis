@@ -1,15 +1,23 @@
 ---
+
 copyright:
-  years: 2018
-lastupdated: "2018-03-02"
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: IBM CIS connection, CIS network connection, Origin web server, troubleshooting
+
+subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
 # Solucionando problemas de conexão de rede do CIS
+{:#troubleshooting-your-cis-network-connection}
 
 ## Como sei se meus dados estão passando pela minha conexão do IBM CIS?
+{:#how-do-i-know-if-my-data-is-passing-through-my-cis-connection}
 
 O IBM Cloud Internet Services (CIS) usa cabeçalhos de HTTP, que ele pode ler, incluir ou modificar. O cabeçalho nos permite rastrear como uma solicitação foi roteada, usando um número CF-Ray. O número CF-Ray pode ser localizado por um comando `curl` ou com um plug-in do Google Chrome chamado "Claire".
 
@@ -33,7 +41,33 @@ Comando do terminal: `curl -svo /dev/null YOUR_URL_HERE. -L`
 
 Resultados em: `CF-RAY: 1ca349b6c1300da3-SJC`
 
+## Incluindo cabeçalhos CF-Ray
+
+O cabeçalho CF-RAY é incluído para ajudar a rastrear uma solicitação para um website por meio da rede. Use-o ao trabalhar com o Suporte para ajudar a solucionar quaisquer problemas relacionados à conectividade. É possível revelar esse "Ray ID" em seus logs fazendo algumas edições nos arquivos de configuração no Apache e no nginx.
+
+### Apache
+{:#troubleshooting-cis-apache}
+
+```
+LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %{CF-Ray}i" cf_custom
+
+CustomLog log/access_log cf_custom
+```
+
+### nginx
+{:#troubleshooting-cis-nginx}
+
+```
+log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
+                    '"$request" $status $body_bytes_sent '
+                    '"$http_referer" "$http_user_agent" '
+                    '$http_cf_ray';
+
+access_log  /var/log/nginx/access.log cf_custom;
+```
+
 ## Como rastrear uma rota?
+{:#how-do-i-trace-a-route}
 
 Para ver se uma rota passa por seu caminho do IBM CIS, é possível executar um 'dig' em uma janela do Terminal para Mac ou Linux
 ou usar `nslookup` no prompt de comandos para o Windows.
@@ -44,13 +78,15 @@ O comando `traceroute` mostra o caminho inteiro que uma solicitação de IP usou
 
 A equipe de suporte faz uso desses comandos para ajudá-lo.
 
-## Se você vir um aviso de privacidade:
+## Ao ver um aviso de privacidade
+{:#troubleshooting-cis-privacy-warning}
 
 Os certificados emitidos pelo IBM CIS cobrem o domínio-raiz (`example.com`) e um nível de subdomínio (`*.example.com`). Se você está tentando atingir um subdomínio de segundo nível (`*.*.example.com`), verá um aviso de privacidade em seu navegador, porque esses nomes de host não são incluídos na SAN.
 
 Além disso, permita até 15 minutos para que uma de nossas Autoridades de certificação (CAs) parceiras emita um novo certificado. Você verá um aviso de privacidade em seu navegador se o novo certificado ainda não tiver sido emitido.
 
 ## O que eu faço se estiver sob um ataque DDoS?
+{:#troubleshooting-cis-ddos-attack}
 
  * **Etapa 1:** ative o "Modo de Defesa" de seu painel
  * **Etapa 2:** configure seus registros de DNS para segurança máxima
@@ -58,7 +94,8 @@ Além disso, permita até 15 minutos para que uma de nossas Autoridades de certi
  
 Durante o "Modo de Defesa", cada novo visitante é atendido com um desafio de segurança "Captcha", pelo qual ele deve passar antes de ser fornecido um cookie para acesso ilimitado. Dessa maneira, o tráfego de botnet é bloqueado até que o "Modo de Defesa" seja desligado. Visitantes que não atendem ao desafio de segurança são incluídos no banco de dados de Reputação de IP (inválido).
 
-## Outros problemas que podem ser encontrados:
+## Outros problemas que podem ser encontrados
+{:#troubleshooting-cis-other-problems}
 
 A seguir estão algumas mensagens de erro comuns que você ou sua equipe de suporte poderá ver:
 
@@ -71,10 +108,12 @@ A seguir estão algumas mensagens de erro comuns que você ou sua equipe de supo
 | 524  | O IBM CIS pôde estabelecer uma conexão TCP, mas não recebeu uma resposta do servidor da web. Um aplicativo de longa execução ou consulta de banco de dados está interferindo. |
 
 ### Não vejo nenhum tráfego de rede
+{:#troubleshooting-cis-network-traffic}
 
 Se você não está vendo o tráfego e está usando um CNAME, certifique-se de que haja um redirecionamento em vigor, nesse caso, o tráfego não está sendo roteado para o domínio-raiz. Lembre-se de que algumas propagações de DNS podem levar até 48 horas para serem concluídas.
 
 ### Website off-line
+{:#troubleshooting-cis-website-offline}
 
 Aqui está o que você pode ver:
 
@@ -89,9 +128,10 @@ O que você pode fazer:
 
 * Verifique se os endereços IP do IBM CIS estão incluídos na lista de desbloqueio.
 * Certifique-se de que os IPs do IBM CIS não estejam sendo limitados por taxa.
-* Aqui está a lista de [IPs para a lista de desbloqueio](whitelisted-ips.html)
+* Aqui está a lista de [IPs para a lista de desbloqueio](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses)
 
 ### Erro 502 “O temido 502”
+{:#troubleshooting-cis-502-error}
 
 Esse erro é um dos mais comuns que você pode ver. Ele geralmente ocorre quando uma parte de uma rede está indisponível, por exemplo, no início de um ataque DDoS. Um data center específico pode estar indisponível por um tempo. O tráfego será roteado novamente. Execute um rastreio de rotas. 
 
@@ -106,6 +146,6 @@ O que aconteceu:
 
 O que você pode fazer:
 
-* Envie os resultados de `www.YOUR_DOMAIN.com/cdn-cgi/trace` em um chamado para [Suporte](https://console.bluemix.net/docs/support/index.html#contacting-support).
+* Envie os resultados de `www.YOUR_DOMAIN.com/cdn-cgi/trace` em um chamado para [Suporte](/docs/get-support?topic=get-support-getting-customer-support).
 * Alterne temporariamente seus Registros do DNS para desativado (sem proxy).
 

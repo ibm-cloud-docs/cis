@@ -1,19 +1,31 @@
 ---
-  
+
 copyright:
-   years: 2018
-lastupdated: "2018-03-13"
- 
+  years: 2018, 2019
+lastupdated: "2019-03-14"
+
+keywords: Best practices, CIS setup
+
+subcollection: cis
+
 ---
 
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:generic: data-hd-programlang="generic"}
 
 # Best Practices für die CIS-Konfiguration
+{:#best-practices-for-cis-setup}
 
-Da sich IBM CIS in der Peripherie Ihres Netzes befindet, müssen Sie einige Schritte ausführen, um eine reibungslose Integration in Ihre Cloud Internet Services zu garantieren. Im Folgenden gehen wir auf eine Auswahl von Best Practices für die Integration von CIS mit Ihren Ursprungsservern ein.  
+Da sich IBM CIS in der Peripherie Ihres Netzes befindet, müssen Sie einige Schritte ausführen, um eine reibungslose Integration in Ihre Cloud Internet Services zu garantieren. Im Folgenden gehen wir auf eine Auswahl von Best Practices für die Integration von CIS mit Ihren Ursprungsservern ein. 
 
-Sie können diese Schritte ausführen, bevor oder nachdem Sie Ihr DNS geändert und unseren Proxy-Service aktiviert haben. Diese Empfehlungen ermöglichen eine ordnungsgemäße Verbindung von IBM CIS mit Ihren Ursprungsservern. Sie helfen Ihnen, Probleme mit dem API- oder HTTPS-Datenverkehr auszuschließen, und sorgen dafür, dass Ihre Protokolle die richtigen IP-Adressen Ihrer Kunden erfassen und nicht die dem Schutz dienenden CIS-IP-Adressen. 
+Sie können diese Schritte ausführen, bevor oder nachdem Sie Ihr DNS geändert und unseren Proxy-Service aktiviert haben. Diese Empfehlungen ermöglichen eine ordnungsgemäße Verbindung von IBM CIS mit Ihren Ursprungsservern. Sie helfen Ihnen, Probleme mit dem API- oder HTTPS-Datenverkehr auszuschließen, und sorgen dafür, dass Ihre Protokolle die richtigen IP-Adressen Ihrer Kunden erfassen und nicht die dem Schutz dienenden CIS-IP-Adressen.
 
-Folgendes müssen Sie tun: 
+Folgendes müssen Sie tun:
 
  * Best Practice 1: Ursprungs-IPs Ihrer Kunden wiederherstellen
  * Best Practice 2: CIS-IP-Adressen einbauen
@@ -21,35 +33,38 @@ Folgendes müssen Sie tun:
  * Best Practice 4: Ihre Sicherheitseinstellungen möglichst streng konfigurieren
  
 ## Best Practice 1: Ursprungs-IPs Ihrer Kunden wiederherstellen
+{:#best-practice-know-how-to-restore-origininating-ip}
 
-Als Reverse Proxy stellen wir die Ursprungs-IP in diesen Headern bereit: 
+Als Reverse Proxy stellen wir die Ursprungs-IP in diesen Headern bereit:
 
   * `CF-Connecting-IP`
   * `X-Forwarded-For`
   * `True-Client-IP` (optional)
 
-Sie können Benutzer-IP-Adressen mit einer Reihe von Tools für Infrastrukturen wie Apache, Windows IIS und NGINX wiederherstellen. 
+Sie können Benutzer-IP-Adressen mit einer Reihe von Tools für Infrastrukturen wie Apache, Windows IIS und NGINX wiederherstellen.
 
 ## Best Practice 2: CIS-IP-Adressen für eine reibungslose Integration einbauen
+{:#best-practice-incorporate-cis-ip-addresses}
 
-Führen Sie diese beiden Schritte aus: 
+Führen Sie diese beiden Schritte aus:
 
-  * Entfernen Sie ggf. die Drosselung von CIS-IP-Adressen. 
-  * Richten Sie Ihre ACLs so ein, dass nur CIS-IP-Adressen und andere vertrauenswürdige Parteien zugelassen werden. 
+  * Entfernen Sie ggf. die Drosselung von CIS-IP-Adressen.
+  * Richten Sie Ihre ACLs so ein, dass nur CIS-IP-Adressen und andere vertrauenswürdige Parteien zugelassen werden.
 
-Die aktualisierte Liste von IP-Bereichen für IBM CIS finden Sie [hier](whitelisted-ips.html). 
+Die aktualisierte Liste von IP-Bereichen für IBM CIS finden Sie [hier](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses).
 
 ## Best Practice 3: Sicherheitseinstellungen überprüfen, um sicherzustellen, dass sie den API-Datenverkehr nicht beeinträchtigen
+{:#best-practice-review-security-settings-interference}
 
 IBM CIS beschleunigt den Datenverkehr üblicherweise, indem der Zusatzaufwand für Verbindungen reduziert wird. Allerdings kann die Standardsicherheitseinstellung viele API-Aufrufe beeinträchtigen. Wir empfehlen, die folgenden Aktionen auszuführen, um eine Beeinträchtigung Ihres API-Datenverkehrs zu vermeiden, sobald die Weiterleitung über Proxys aktiv ist.
 
- * Inaktivieren Sie bestimmte Sicherheitsfunktionen mithilfe von **Seitenregeln**. 
-   * Erstellen Sie eine Seitenregel mit dem URL-Muster Ihrer API, z. B. `api.beispiel.com`. 
-   * Fügen Sie die folgenden Regelverhalten hinzu: 
-      * Legen Sie **Sicherheitsstufe** auf **Praktisch aus** fest. 
-      * Legen Sie **TLS** auf **Aus** fest. 
-      * Legen Sie **Browserintegritätsprüfung** auf **Aus** fest. 
-   * Wählen Sie **Ressource bereitstellen** aus. 
+ * Inaktivieren Sie bestimmte Sicherheitsfunktionen mithilfe von **Seitenregeln**.
+   * Erstellen Sie eine Seitenregel mit dem URL-Muster Ihrer API, z. B. `api.beispiel.com`.
+   * Fügen Sie die folgenden Regelverhalten hinzu:
+     * Legen Sie **Sicherheitsstufe** auf **Praktisch aus** fest.
+     * Legen Sie **TLS** auf **Aus** fest.
+     * Legen Sie **Browserintegritätsprüfung** auf **Aus** fest.
+   * Wählen Sie **Ressource bereitstellen** aus.
 
  * Alternativ können Sie die **Web Application Firewall** global auf der Seite 'Sicherheit' inaktivieren.
 
@@ -58,18 +73,22 @@ IBM CIS beschleunigt den Datenverkehr üblicherweise, indem der Zusatzaufwand f�
 | *Die Integritätsprüfung des Browsers sucht nach HTTP-Headern, die oft von Spammern verwendet werden. Sie verweigert Datenverkehr mit diesen Headern den Zugriff auf Ihre Seite. Sie blockiert außerdem Besucher, die keinen Benutzeragenten haben oder einen vom Standard abweichenden Benutzeragenten hinzufügen (diese Taktik wird oft von böswilligen Bots, Crawlern oder APIs eingesetzt).* |
 
 ## Best Practice 4: Ihre Sicherheitseinstellungen möglichst streng konfigurieren
+{:#best-practice-configure-stict-security-settings}
 
-CIS stellt eine Reihe von Optionen zum Verschlüsseln Ihres Datenverkehrs bereit. Als Reverse Proxy schließen wir TLS-Verbindungen in unseren Rechenzentren und öffnen eine neue TLS-Verbindung mit Ihren Ursprungsservern. Sie können ein benutzerdefiniertes Zertifikat aus Ihrem Konto hochladen bzw. ein von CIS bereitgestelltes Platzhalterzertifikat verwenden. 
+CIS stellt eine Reihe von Optionen zum Verschlüsseln Ihres Datenverkehrs bereit. Als Reverse Proxy schließen wir TLS-Verbindungen in unseren Rechenzentren und öffnen eine neue TLS-Verbindung mit Ihren Ursprungsservern. Sie können ein benutzerdefiniertes Zertifikat aus Ihrem Konto hochladen bzw. ein von CIS bereitgestelltes Platzhalterzertifikat verwenden.
 
 ### Benutzerdefiniertes Zertifikat hochladen
+{:#strict-upload-custom-cert}
  
-Sie können Ihren öffentlichen und privaten Schlüssel hochladen, wenn Sie eine Unternehmensdomäne erstellen. Wenn Sie Ihr eigenes Zertifikat hochladen, erzielen Sie sofortige Kompatibilität mit verschlüsseltem Datenverkehr und behalten die Kontrolle über Ihr Zertifikat (z. B. ein EV-Zertifikat). Denken Sie daran, dass Sie für die Verwaltung eines benutzerdefinierten Zertifikats selbst verantwortlich sind. Beispielsweise überwacht IBM CIS nicht das Verfallsdatum des Zertifikats.  
+Sie können Ihren öffentlichen und privaten Schlüssel hochladen, wenn Sie eine Unternehmensdomäne erstellen. Wenn Sie Ihr eigenes Zertifikat hochladen, erzielen Sie sofortige Kompatibilität mit verschlüsseltem Datenverkehr und behalten die Kontrolle über Ihr Zertifikat (z. B. ein EV-Zertifikat). Denken Sie daran, dass Sie für die Verwaltung eines benutzerdefinierten Zertifikats selbst verantwortlich sind. Beispielsweise überwacht IBM CIS nicht das Verfallsdatum des Zertifikats. 
  
 ### Alternativ ein von CIS bereitgestelltes Zertifikat verwenden
+{:#strict-utilize-cert-cis-provisioned}
  
-IBM CIS zählt diverse Zertifizierungsstellen (Certificate Authorities, CAs) zu seinen Partnern, um unseren Kunden standardmäßig Platzhalterzertifikate für Domänen bereitstellen zu können. Für die Konfiguration dieser Zertifikate kann eine manuelle Überprüfung erforderlich sein und Ihr Support-Team unterstützt Sie bei diesen zusätzlichen Schritten. 
+IBM CIS zählt diverse Zertifizierungsstellen (Certificate Authorities, CAs) zu seinen Partnern, um unseren Kunden standardmäßig Platzhalterzertifikate für Domänen bereitstellen zu können. Für die Konfiguration dieser Zertifikate kann eine manuelle Überprüfung erforderlich sein und Ihr Support-Team unterstützt Sie bei diesen zusätzlichen Schritten.
  
 ### TLS-Einstellung in **End-to-End-CA-signiert** ändern
+{:#strict-change-tls-setting}
  
-Ein Großteil unserer Unternehmenskunden verwenden die Sicherheitseinstellung 'End-to-End-CA-signiert'. Für diese Einstellung muss ein gültiges, CA-signiertes Zertifikat auf Ihrem Web-Server installiert sein. Das Verfallsdatum des Zertifikats muss in der Zukunft liegen und es muss einen übereinstimmenden *Hostnamen* oder *SAN* (Subject Alternative Name, alternativer Name für Subjekt) aufweisen. 
+Ein Großteil unserer Enterprise-Kunden verwenden die Sicherheitseinstellung 'End-to-End-CA-signiert'. Für diese Einstellung muss ein gültiges, CA-signiertes Zertifikat auf Ihrem Web-Server installiert sein. Das Verfallsdatum des Zertifikats muss in der Zukunft liegen und es muss einen übereinstimmenden *Hostnamen* oder *SAN* (Subject Alternative Name, alternativer Name für Subjekt) aufweisen.
 
