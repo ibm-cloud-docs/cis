@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-25"
 
 keywords: Plan Comparison, Cloud Internet Services, Free Trial, enterprise
 
@@ -16,7 +16,7 @@ subcollection: cis
 # Plan Comparison
 {:#cis-plan-comparison}
 
-Cloud Internet Services offers three plans to choose from: Free Trial, Standard, and Enterprise. The following table compares each offering to help you choose the one that's right for you. To learn more about the individual offering, click its name in the table.
+Cloud Internet Services offers three plans to choose from: Free Trial, Standard, and Enterprise. The following table compares each offering to help you choose the one that's right for you. 
 
 Scroll to the right to view the rest of the table!
 
