@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: configuration domain, Free Trial plan, CIS instance
 
@@ -149,7 +149,7 @@ A 522 error indicates we weren't able to establish a connection with your origin
 
 This issue usually is caused by firewall or security software that accidentally blocks our IP addresses. Because CIS acts as a reverse proxy, connections to your site will appear to come from a range of CIS IPs. This behavior can cause certain firewalls to block these connections, which prevents us from serving content to your site visitors properly.
 
-To fix this issue, ask your host to whitelist all of the CIS IP ranges, which are listed [here](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses).
+To fix this issue, ask your host to whitelist all of the CIS IP ranges, which are listed [here](/docs/infrastructure/cis?topic=cis-cis-whitelisted-ip-addresses).
 
 All of these IPs must be whitelisted to avoid 522 errors. It's also worth checking to see if any IPs in these ranges are blocked.
 

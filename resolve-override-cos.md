@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-26"
 
 keywords: resolve override, Cloud Object Storage, bucket resource
 
@@ -30,7 +30,7 @@ Make the request matching the page rule resolve to a Cloud Object Storage (COS) 
 ## Prerequisites
 {: #cos-prerequisites}
 
-The following steps assume you have an existing COS instance and bucket with public access. For information on public access see [Allowing public access](/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-allowing-public-access).
+The following steps assume you have an existing COS instance and bucket with public access. For information on public access see [Allowing public access](/docs/services/cloud-object-storage?topic=cloud-object-storage-iam-public-access).
 
 
 ## Create Page Rule steps

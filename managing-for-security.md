@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-04-26"
 
 keywords: IBM CIS, optimal security, Security Level
 
@@ -100,9 +100,9 @@ The WAF protects you against the following types of attacks:
 * Cross-site scripting
 * Cross-site forgery
 
-The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](/docs/infrastructure/cis?topic=cis-waf-default-rule-set) document for more details on the default rule set and the behavior of each rule.
+The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](/docs/infrastructure/cis?topic=cis-waf-default-ruleset) document for more details on the default rule set and the behavior of each rule.
 
-For more information about the WAF, please see the [WAF Concepts document](/docs/infrastructure/cis?topic=cis-web-application-firewall-concepts-q-a)
+For more information about the WAF, please see the [WAF Concepts document](/docs/infrastructure/cis?topic=cis-waf-q-and-a)
 
 ## Best practice 4: Configure your TLS settings
 {:#best-practice-configure-tls-settings}

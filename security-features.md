@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: CIDR blocks, Whitelist Block Challenge, IBM Cloud Internet Services, security features
 
@@ -30,11 +30,13 @@ Here’s a quick feature overview:
 ## Security features
 {:#cis-security-features}
 
- * Proxy [DNS records](/docs/infrastructure/cis?topic=cis-dns-concepts#proxying-dns-records) or [GLB](/docs/infrastructure/cis?topic=cis-global-load-balancer-glb-concepts) to use security features. This allows traffic to flow through our servers and the data can be monitored.
+ * Proxy [DNS records](/docs/infrastructure/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or [GLB](/docs/infrastructure/cis?topic=cis-global-load-balancer-glb-concepts) to use security features. This allows traffic to flow through our servers and the data can be monitored.
+ 
 ### Web Application Firewall (WAF)
 {:#cis-web-application-firewall}
 
- * WAF is implemented through two rule sets: [OWASP](/docs/infrastructure/cis?topic=cis-owasp-rule-set-for-waf) and [CIS](/docs/infrastructure/cis?topic=cis-waf-settings#cis-rule-set-for-waf).
+ * WAF is implemented through two rule sets: [OWASP](/docs/infrastructure/cis?topic=cis-owasp-rule-set-for-waf) and [CIS](/docs/infrastructure/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
+ 
 ### Unlimited DDoS mitigation
 {:#cis-unlimited-ddos-mitigation}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: IBM CIS connection, CIS network connection, Origin web server, troubleshooting
 
@@ -127,7 +127,7 @@ What you can do:
 
 * Verify that the IBM CIS IP addresses are whitelisted..
 * Make sure that IBM CIS IPs are not being rate-limited.
-* Here is the list of [IPs to whitelist](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses)
+* Here is the list of [IPs to whitelist](/docs/infrastructure/cis?topic=cis-cis-whitelisted-ip-addresses)
 
 ### 502 error “The dreaded 502”
 {:#troubleshooting-cis-502-error}

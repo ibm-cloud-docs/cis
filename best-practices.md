@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: Best practices, CIS setup
 
@@ -51,7 +51,7 @@ Here are the two steps to take:
   * Remove any rate limiting of CIS IP addresses
   * Set up your ACLs to allow only CIS IP addresses and other trusted parties
 
-You can find the updated list of IP ranges for IBM CIS [at this location](/docs/infrastructure/cis?topic=cis-ibm-cloud-cis-whitelisted-ip-addresses).
+You can find the updated list of IP ranges for IBM CIS [at this location](/docs/infrastructure/cis?topic=cis-cis-whitelisted-ip-addresses).
 
 ## Best practice 3: Review your security settings to make sure they don’t interfere with API traffic
 {:#best-practice-review-security-settings-interference}

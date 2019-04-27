@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: domain Input information, IBM Cloud Internet Services, Global Load balancing
 
@@ -41,7 +41,7 @@ In this example, the application resources are deployed in two data center locat
 
 Task  | Description
 ------------- | -------------
-[Create a CIS instance](/docs/infrastructure/cis?topic=cis-create-your-ibm-cloud-internet-services-cis-instance) | Begin by Creating your IBM Cloud Internet Services (CIS) instance using the IBM Customer Portal.|
+[Create a CIS instance](/docs/infrastructure/cis?topic=cis-create-your-cis-instance) | Begin by Creating your IBM Cloud Internet Services (CIS) instance using the IBM Customer Portal.|
 [Input information about your domain](/docs/infrastructure/cis?topic=cis-input-information-about-your-domain) | Input information about the domain you wish to protect and provide global load balancing for.
 [Begin Global Load Balancer configuration](/docs/infrastructure/cis?topic=cis-begin-global-load-balancer-configuration) | Start configuring your Global Load Balancer.
 [Identify your application resources](/docs/infrastructure/cis?topic=cis-identify-your-application-resources) | Identify the your application's resources, such as origin pools and health check mechanisms.

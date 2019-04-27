@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: OWASP Rule Set, Rule Set
 
@@ -29,7 +29,7 @@ The OWASP Rule Set contains generic attack detection rules. The OWASP rules prot
 ## Managing OWASP
 {:#managing-owasp}
 
-Unlike the [CIS rule set](/docs/infrastructure/cis?topic=cis-cis-rule-set-for-waf), OWASP allows you to set Sensitivity.
+Unlike the [CIS rule set](/docs/infrastructure/cis?topic=cis-waf-settings#cis-ruleset-for-waf), OWASP allows you to set Sensitivity.
 A request may trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, CIS compares it to the sensitivity threshold selected in the beginning, and then either blocks or allows the request.
 
 |Sensitivity score| Trigger threshold|

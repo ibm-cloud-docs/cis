@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: Page Rules, web content, IBM CIS deployment
 
@@ -41,7 +41,7 @@ Notice that the CIS interface is organized into sections for *security*, *reliab
  
  To get started setting up your DNS configuration, select **DNS** from the navigation menu, as shown previously.
  
- For detailed information about setting up and managing your DNS for reliability, please [refer to this document](/docs/infrastructure/cis?topic=cis-set-up-your-domain-name-system-dns-for-ibm-cis).
+ For detailed information about setting up and managing your DNS for reliability, please [refer to this document](/docs/infrastructure/cis?topic=cis-set-up-your-dns-for-cis).
 
 
 ## Setting up Global Load Balancers
