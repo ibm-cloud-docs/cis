@@ -37,6 +37,7 @@ Cloud Internet Services (CIS)
     multi-domain.md
     iam.md
     logpull.md
+    logpush.md
     range.md
     edge-functions.md
     edge-functions-use-cases.md

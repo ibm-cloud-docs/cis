@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-30"
 
 keywords: CIS Command Line Interface, Firewall, Metrics, Routing, RateLimit, Overview
 
@@ -43,3 +43,4 @@ The following families of commands are available from the command line interface
   * [Firewall Rule](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#firewall-rule)
   * [Range App](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#range-app)
   * [Custom Page](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#custom-page)
+  * [Logpush](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#logpush)
