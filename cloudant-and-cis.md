@@ -23,7 +23,7 @@ Follow these steps to access your Cloudant Database through IBM Cloud Internet S
 ## Before you begin
 {: #access-cloudant-through-cis-begin}
 
-These instructions assume you have already added a domain to CIS as outlined in the [Getting Started](/docs/infrastructure/cis?topic=cis-getting-started-with-ibm-cloud-internet-services-cis-) page.
+These instructions assume you have already added a domain to CIS as outlined in the [Getting Started](/docs/infrastructure/cis?topic=cis-getting-started) page.
 
 ### Step 1: Add your CIS domain to the Cross-Origin Resource Sharing (CORS)
 {: #access-cloudant-through-cis-step1}
@@ -46,4 +46,4 @@ These instructions assume you have already added a domain to CIS as outlined in 
 * Select the Rule Behavior setting `Host Header Override`.
 * Set as the Cloudant database hostname, for example, `111-222-333-444-555-test.cloudant.com`.
 
-For more information on Cloudant, see the [Coudant documentation](/docs/services/Cloudant?topic=cloudant-getting-started-with-cloudant).
+For more information on Cloudant, see the [Coudant documentation](/docs/services/Cloudant?topic=cloudant-getting-started).

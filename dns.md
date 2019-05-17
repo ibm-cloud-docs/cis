@@ -92,6 +92,9 @@ Configured CIS Domains:
 test.example.com -CNAME-> test.different.com
 ```
 
+The CNAME flattening feature is enabled by default, and cannot be turned off.
+{:note}
+
 ### MX Type record
 {:#mx-type-record}
 
