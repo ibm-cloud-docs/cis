@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-04-25"
+  years: 2018
+lastupdated: "2019-05-23"
 
 keywords: Plan Comparison, Cloud Internet Services, Free Trial, enterprise
 
@@ -12,6 +12,13 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:download: .download}
 
 # Plan Comparison
 {:#cis-plan-comparison}
@@ -19,7 +26,7 @@ subcollection: cis
 Cloud Internet Services offers three plans to choose from: Free Trial, Standard, and Enterprise. The following table compares each offering to help you choose the one that's right for you. 
 
 Scroll to the right to view the rest of the table!
-
+{: tip}
 
 |         | Free Trial | Standard | Enterprise Package or Usage  
 | ------- | :--------- | :------------ | :--------- | 
@@ -36,5 +43,4 @@ Scroll to the right to view the rest of the table!
 |**Caching**|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 seconds|
 |**Range**|No|No|Yes<br/>(at additional cost per GB)|
 |**Edge Functions (Beta)**|1 action<br/>(must be named after domain)|1 action<br/>(must be named after domain)|Unlimited actions|
-
-
+|**Firewall Rules**|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li><ul>|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li><ul>|<ul><li>1000 active rules</li><li>Supports all actions</li><li>Supports all operators</li><ul>|

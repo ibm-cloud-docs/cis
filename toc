@@ -7,6 +7,7 @@ Cloud Internet Services (CIS)
     {: .navgroup id="learn"}
     getting-started.md
     about.md
+    plan-comparison.md
     cis-video.md
     security-features.md
     reliability-features.md
@@ -66,7 +67,16 @@ Cloud Internet Services (CIS)
         waf-rule-set.md
         waf-cis-ruleset.md
         waf-owasp-ruleset.md   
-    {: .navgroup-end}   
+    
+    {: .topicgroup}
+    Guided instructions: Firewall Rules
+        firewall-rules.md
+        firewall-rules/create-edit-delete.md   
+        firewall-rules/actions.md
+        firewall-rules/fields-and-expressions.md
+        firewall-rules/order-and-priority.md
+
+    {: .navgroup-end}
     
     {: .navgroup id="reference"}
     hipaa-advisory.md
