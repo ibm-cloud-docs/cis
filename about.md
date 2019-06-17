@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-17"
 
 keywords: Caching, IBM Cloud Internet Services, Web Application Firewall
 
@@ -48,7 +48,7 @@ IBM CIS Load Balancing operates at the Authoritative DNS level. It incorporates 
 Load Balancing Health Checks are performed on specific URLs through periodic HTTP or HTTPS requests, and they are configured with customizable intervals, timeouts, and status codes. When an origin server is marked as unhealthy, visitors are routed away from failures, using our fast failover routes.
  
 ### Geo Policies and Global Load Balancing (GLB)
-{geo-policies-and-glb}
+{: #geo-policies-and-glb}
 
 Geo policies give you control of the origin servers to which a given client is directed, based on the geographic location of that client. For instance, you could configure your Geo policies so that visitors in Europe are sent to the nearest European origin for your website or application, U.S. visitors are sent to a North American origin, and so forth.
 
