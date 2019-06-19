@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2019-05-23"
+lastupdated: "2019-06-03"
 
 keywords: Plan Comparison, Cloud Internet Services, Free Trial, enterprise
 
@@ -21,7 +21,7 @@ subcollection: cis
 {:download: .download}
 
 # Plan Comparison
-{:#cis-plan-comparison}
+{: #cis-plan-comparison}
 
 Cloud Internet Services offers three plans to choose from: Free Trial, Standard, and Enterprise. The following table compares each offering to help you choose the one that's right for you. 
 
@@ -44,3 +44,6 @@ Scroll to the right to view the rest of the table!
 |**Range**|No|No|Yes<br/>(at additional cost per GB)|
 |**Edge Functions (Beta)**|1 action<br/>(must be named after domain)|1 action<br/>(must be named after domain)|Unlimited actions|
 |**Firewall Rules**|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li><ul>|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li><ul>|<ul><li>1000 active rules</li><li>Supports all actions</li><li>Supports all operators</li><ul>|
+|**Routing**|No|No|Yes|  
+|**Origin Certificates**|Yes|Yes|Yes| 
+|**Logpull/Logpush**|No|No|Yes|   

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-18"
 
-keywords: edge functions beta, edge functions
+keywords: edge functions, CIS, 
 
 subcollection: cis
 
@@ -101,7 +101,7 @@ You must add a domain to add triggers. You may add triggers without having actio
 
 Go to the **Triggers** tab and click **Add trigger**. Enter a URL pattern and select an action from the list of existing actions. 
 
-For an action you can also select **Avoid Edge Functions**. This allows the trigger's path to remain active but avoid using any Edge Function actions. For example, there is an action called `my-function` and a trigger with the path `beta.cistest-load.com/*`. If the path `beta.cistest-load.com/data` should not use the action `my-function` create another trigger with the path `beta.cistest-load.com/data` and the option **Avoid Edge Functions**. This allows the path `beta.cistest-load.com/data` to remain active without using the action `my-function`.
+For an action you can also select **Avoid Edge Functions**. This allows the trigger's path to remain active but avoid using any Edge Function actions. For example, there is an action called `my-function` and a trigger with the path `gamma.cistest-load.com/*`. If the path `gamma.cistest-load.com/data` should not use the action `my-function` create another trigger with the path `gamma.cistest-load.com/data` and the option **Avoid Edge Functions**. This allows the path `gamma.cistest-load.com/data` to remain active without using the action `my-function`.
 
 ### Edit triggers
 {: #edit-triggers}
@@ -119,13 +119,13 @@ Delete a trigger using the menu option in the table row for a selected trigger. 
 
 These examples are for demonstration purposes only, and not intended for use in production. 
 {:important}
-* [A/B Testing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#ab-testing)
-* [Adding a Response Header](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#add-response-header)
-* [Aggregating Multiple Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#aggregate-multiple-requests)
-* [Conditional Routing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#conditional-routing)
-* [Hot-link Protection](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#hot-link-protection)
-* [Originless Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#originless-responses)
-* [Post Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#post-requests)
-* [Setting a Cookie](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#setting-cookies)
-* [Signed Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#signed-requests)
-* [Streaming Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases-beta-#streaming-responses)
+* [A/B Testing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#ab-testing)
+* [Adding a Response Header](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#add-response-header)
+* [Aggregating Multiple Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#aggregate-multiple-requests)
+* [Conditional Routing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#conditional-routing)
+* [Hot-link Protection](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#hot-link-protection)
+* [Originless Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#originless-responses)
+* [Post Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#post-requests)
+* [Setting a Cookie](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#setting-cookies)
+* [Signed Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#signed-requests)
+* [Streaming Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#streaming-responses)

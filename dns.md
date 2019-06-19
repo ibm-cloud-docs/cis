@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-07"
 
 keywords: IBM CIS DNS records, parts of the DS record, Type
 
@@ -94,6 +94,9 @@ test.example.com -CNAME-> test.different.com
 
 The CNAME flattening feature is enabled by default, and cannot be turned off.
 {:note}
+
+CIS does not support Cloudflare's CNAME setup. The only way to activate your domain in CIS is to delegate your NS Records management to CIS.
+{:important}
 
 ### MX Type record
 {:#mx-type-record}
