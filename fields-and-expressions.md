@@ -48,7 +48,7 @@ Each field value can be sourced from different places, such as:
 |http.user_agent|String|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36|The whole HTTP user agent|
 |http.x_forwarded_for|String|_The full X-Forwarded-For HTTP header_ |
 |ip.src|IP address|93.155.208.22|The client TCP IP address, which may be adjusted to reflect the real client IP of the original client as applicable (for example, using HTTP headers like X-Forwarded-For or X-Real-IP)|
-|ip.geoip.asnum|Number|222|The [Autonomous System](https://en.wikipedia.org/wiki/Autonomous_system_(Internet)) (AS) number|
+|ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
 |ip.geoip.country|String|GB|The [2-letter country code](https://support.cloudflare.com/hc/en-us/articles/205072537-What-are-the-two-letter-country-codes-for-the-Access-Rules-)|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
 
@@ -71,8 +71,8 @@ These are not currently supported in the CIS UI **Visual Expression Builder**.
 
 | Function name| Argument types | Return type | Usage example | Notes|
 | ------- | :--------- | :------------ | :--------- | :--------- |
-|lower|String|String|lower(http.host) == "www.example.com"|Converts a string field to lowercase. Only uppercase ASCII bytes are being converted, every other bytes are left as-is.|
-|upper|String|String|upper(http.host) == "www.example.com"|Converts a string field to uppercase. Only lowercase ASCII bytes are being converted, every other bytes are left as-is.|
+|lower|String|String|lower(http.host) == `"www.example.com"`|Converts a string field to lowercase. Only uppercase ASCII bytes are being converted, every other bytes are left as-is.|
+|upper|String|String|upper(http.host) == `"www.example.com"`|Converts a string field to uppercase. Only lowercase ASCII bytes are being converted, every other bytes are left as-is.|
 
 ## Expressions
 
@@ -146,10 +146,10 @@ You can create compound expressions by grouping two or more single expressions u
 
 | English| C-like| Description|Example|Precedence|
 | ------- | :--------- | :------------ | :--------- | :--------- |
-|not|!|Logical NOT|not ( http.host eq "www.example.com" and ip.src in 93.184.216.0/24 )|1|
-|and|&&|Logical AND|http.host eq "www.example.com" and ip.src in 93.184.216.0/24|2|
-|xor|^^|Logical XOR|http.host eq "www.example.com" xor ip.src in 93.184.216.0/24|3|
-|or|\|\||Logical OR|http.host eq "www.example.com" or ip.src in 93.184.216.0/24|4|
+|not|!|Logical NOT|not ( http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24 )|1|
+|and|&&|Logical AND|http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24|2|
+|xor|^^|Logical XOR|http.host eq `"www.example.com"` xor ip.src in 93.184.216.0/24|3|
+|or|<code>&#124;&#124;</code>|Logical OR|http.host eq `"www.example.com"` or ip.src in 93.184.216.0/24|4|
 
 To alter the order of precedence, you can group expressions with parentheses.
 
