@@ -44,3 +44,4 @@ The following families of commands are available from the command line interface
   * [Range App](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#range-app)
   * [Custom Page](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#custom-page)
   * [Logpush](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#logpush)
+  * [Security Events](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#security-events)
