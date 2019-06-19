@@ -18,7 +18,7 @@ subcollection: cis
 {:deprecated: .deprecated}
 {:generic: data-hd-programlang="generic"}
 
-# Edge Functions (Beta)
+# Edge Functions
 {: #edge-functions}
 
 CIS Edge Functions allow you to create new applications or modify existing applications, without having to configure or maintain infrastructure, by utilizing a serverless execution environment. Edge Functions can be defined and uploaded to the Cloud edge to process requests before they reach the origin. CIS Edge functions can be used to modify HTTP requests and responses, make parallel requests, or generate responses from the Cloud edge.
