@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-07-03"
 
 keywords: origin server, pool implementation, origin servers
 
@@ -17,7 +17,7 @@ subcollection: cis
 # Global Load Balancer (GLB) Concepts
 {:#global-load-balancer-glb-concepts}
 
-This document contains some concepts and definitions related to the Global Load Balancer (GLB) and how it affects your IBM CIS deployment.
+This document contains some concepts and definitions related to the Global Load Balancer (GLB) and how it affects your {{site.data.keyword.cis_full}} deployment.
 
 ## Global Load Balancer
 {:#global-load-balancer-cis}
@@ -41,7 +41,7 @@ For example, an origin pool is created with two origins identifying IP addresses
 $ ping glbcust.ibmom.com
 PING glbcust.ibmom.com (169.61.244.18): 56 data bytes
 ```
-In this example, CIS:
+In this example, {{site.data.keyword.cis_short_notm}}:
 
     * created a DNS record named `glbcust.ibmmo.com`
     * used the GLB to resolve the DNS name to one of the IP addresses identified in the origin pool
@@ -50,14 +50,14 @@ Notice that the global load balancer does not terminate the TCP connection.
 {:note}
 
 Setting a DNS element or GLB to "proxy" changes the behavior.
-If, for example, you turn on proxy and **Security > TLS > Mode** to something besides `Off`, the CIS now terminates the TCP connection and establishes a second connection between CIS and the originator.
+If, for example, you turn on proxy and **Security > TLS > Mode** to something besides `Off`, the {{site.data.keyword.cis_short_notm}} now terminates the TCP connection and establishes a second connection between {{site.data.keyword.cis_short_notm}} and the originator.
 
-In this example, CIS:
+In this example, {{site.data.keyword.cis_short_notm}}:
 
     * created a DNS record named: `glbcust.ibmmo.com`
-    * used the GLB to resolve the DNS name to a CIS provided IP address
+    * used the GLB to resolve the DNS name to a {{site.data.keyword.cis_short_notm}} provided IP address
     
-Now, connections to `glbcust.ibmmo.com` are terminated by CIS, and HTTPS certificates are hosted by CIS (which is required for TCP termination).
+Now, connections to `glbcust.ibmmo.com` are terminated by {{site.data.keyword.cis_short_notm}}, and HTTPS certificates are hosted by {{site.data.keyword.cis_short_notm}} (which is required for TCP termination).
 
 After the client connects to the application the picture looks like this:
 
@@ -103,7 +103,7 @@ When all pools are disabled, the fallback pool is not available.
 {:#cis-health-check}
 
 A health check helps gain insight into the availability of pools so that traffic can be routed to the healthy ones. These checks periodically send HTTP, HTTPS, or TCP requests and monitor the responses. They can be configured with a customized port, interval, timeout, status code, and more. As soon as a pool is marked unhealthy, traffic is intelligently rerouted to another available pool.
-Be aware that your logs have references to Cloudflare because of IBM's partnership with Cloudflare to power CIS.
+Be aware that your logs have references to Cloudflare because of IBM's partnership with Cloudflare to power {{site.data.keyword.cis_short_notm}}.
 {:note}
 
 ### Health Check Events

@@ -1,13 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" category="security" audience="service" arm="3663386" href="/docs/infrastructure/cis?topic=cis-getting-started" path="infrastructure/cis"}
+{: .toc subcollection="cis" category="network,mobile" audience="service" arm="3663386" href="/docs/infrastructure/cis?topic=cis-getting-started" path="infrastructure/cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
     getting-started.md
     about.md
-    plan-comparison.md
     cis-video.md
     security-features.md
     reliability-features.md
@@ -71,10 +70,10 @@ Cloud Internet Services (CIS)
     {: .topicgroup}
     Guided instructions: Firewall Rules
         firewall-rules.md
-        create-edit-delete.md   
-        actions.md
-        fields-and-expressions.md
-        order-and-priority.md
+        firewall-rules/create-edit-delete.md   
+        firewall-rules/actions.md
+        firewall-rules/fields-and-expressions.md
+        firewall-rules/order-and-priority.md
     {: .navgroup-end}
     
     {: .navgroup id="reference"}
@@ -91,7 +90,6 @@ Cloud Internet Services (CIS)
     {: .navgroup id="help"}
     faq.md
     known-limitations.md
-    scheduled-maintenance.md
     troubleshooting.md
     getting-help.md
     {: .navgroup-end}

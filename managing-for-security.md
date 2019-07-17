@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-07-11"
 
 keywords: IBM CIS, optimal security, Security Level
 
@@ -18,9 +18,9 @@ subcollection: cis
 {:deprecated: .deprecated}
 {:generic: data-hd-programlang="generic"}
 
-# Manage your IBM CIS for optimal security
+# Manage your {{site.data.keyword.cis_full_notm}} for optimal security
 {:#manage-your-ibm-cis-for-optimal-security}
-The IBM Cloud Internet Services (CIS) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your CIS account is configured in a safe and secure way.
+The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}})security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
 
 **Recommendations and best practices:**
 
@@ -31,9 +31,9 @@ The IBM Cloud Internet Services (CIS) security settings include safe defaults de
 ## Best practice 1: Secure Your Origin IP Addresses
 {:#best-practice-secure-origin-ip-address}
 
-When a subdomain is proxied using IBM CIS, all traffic is protected because we actively respond with IP addresses specific to IBM CIS (for example, all of your clients connect to CIS proxies first, and your origin IP addresses are obscured).
+When a subdomain is proxied using {{site.data.keyword.cis_short_notm}}, all traffic is protected because we actively respond with IP addresses specific to {{site.data.keyword.cis_short_notm}} (for example, all of your clients connect to {{site.data.keyword.cis_short_notm}} proxies first, and your origin IP addresses are obscured).
 
-### Use IBM CIS proxies for all DNS Records for HTTP(S) traffic from your origin
+### Use {{site.data.keyword.cis_short_notm}} proxies for all DNS Records for HTTP(S) traffic from your origin
 {:#use-cis-proxies-for-dns-records}
 
 To improve the security of your origin IP address, all HTTP(S) traffic should be proxied.
@@ -50,7 +50,7 @@ $ dig proxied.theburritobot.com +short
 
 ### Obscure non-proxied origin records with non-standard names
 {:#obsure-non-proxied-origin-records-with-non-standard-names}
-Any records that cannot be proxied through IBM CIS, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by IBM CIS, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
+Any records that cannot be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
 ### Use separate IP ranges for HTTP and non-HTTP traffic if possible
 {:#use-separate-ipranges-for-traffic}
@@ -86,10 +86,10 @@ Our Security Level settings are aligned with threat scores that certain IP addre
 * **MEDIUM**: Threat scores greater than 14 are challenged.
 * **LOW**: Threat scores greater than 24 are challenged.
 * **ESSENTIALLY OFF**: Threat scores greater than 49 are challenged.
-* **OFF**: *Enterprise Only* 
-* **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while CIS analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** may affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
+* **OFF**: *Enterprise only* 
+* **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** may affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
 
-We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for CIS Setup document](/docs/infrastructure/cis?topic=cis-best-practices-for-cis-setup)
+We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for {{site.data.keyword.cis_short_notm}} Setup document](/docs/infrastructure/cis?topic=cis-best-practices-for-cis-setup)
 
 ## Best practice 3: Activate your Web Application Firewall (WAF) safely
 {:#best-practice-activate-waf-safely}
@@ -106,33 +106,33 @@ For more information about the WAF, please see the [WAF Concepts document](/docs
 
 ## Best practice 4: Configure your TLS settings
 {:#best-practice-configure-tls-settings}
-IBM CIS provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our datacenters and open a new TLS connection to your origin server.
+IBM {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our datacenters and open a new TLS connection to your origin server.
 
 TLS offers four modes of operation:
 * **Off**: TLS is disabled in this mode, it is not recommended.
-* **Client-to-edge**: TLS encrypts traffic from CIS to your clients, but not from CIS to your origin server(s).
-* **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between CIS and your origin server(s).
+* **Client-to-edge**: TLS encrypts traffic from {{site.data.keyword.cis_short_notm}} to your clients, but not from {{site.data.keyword.cis_short_notm}} to your origin server(s).
+* **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between {{site.data.keyword.cis_short_notm}} and your origin server(s).
 * **End-to-end CA signed**: TLS encrypts all traffic; you must use a CA-signed certificate.
 
 For more detail about your TLS options, please refer to [this document](/docs/infrastructure/cis?topic=cis-tls-options).
 
-IBM CIS allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by CIS.
+IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}.
 
 ### Upload custom certificates
 {:#upload-custom-certs}
-You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, IBM CIS won't track the certificate expiration date. 
+You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date. 
 
 ![custom-certificate](images/upload-custom-certificate.png)
 
 ### Order dedicated certificates
 {:#order-dedicated-certs}
-CIS makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** button and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
+{{site.data.keyword.cis_short_notm}} makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** button and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
 
  * SHA-2/ECDSA signed certificate using P-256 key, 
  * SHA-2/RSA signed certificate using RSA 2048-bit key, and 
  * SHA-1/RSA signed certificate using RSA 2048-bit key. 
  
-CIS can issue for all TLDs except for `.cu`, `.iq`, `.ir`, `.kp`, `.sd`, `.ss`, and `.ye`. CIS manages the expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete. For example, you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterwards you _must_ delete the original dedicated custom certificate.
+{{site.data.keyword.cis_short_notm}} can issue for all TLDs except for `.cu`, `.iq`, `.ir`, `.kp`, `.sd`, `.ss`, and `.ye`. {{site.data.keyword.cis_short_notm}} manages the expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete. For example, you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterwards you _must_ delete the original dedicated custom certificate.
 
 The first time you order a dedicated certificate Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process happens again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
 {:note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-07-11"
 
 keywords: IBM CIS DNS records, parts of the DS record, Type
 
@@ -23,10 +23,10 @@ subcollection: cis
 {:deprecated: .deprecated} 
 {:generic: data-hd-programlang="generic"}
 
-# Set up your Domain Name System (DNS) for IBM CIS
+# Set up your Domain Name System (DNS) for {{site.data.keyword.cis_full_notm}}
 {:#set-up-your-dns-for-cis}
 
-This document contains some specific instructions about how to configure your IBM CIS DNS records, including how to configure Secure DNS.
+This document contains some specific instructions about how to configure your {{site.data.keyword.cis_full}} DNS records, including how to configure Secure DNS.
 
 ## Secure DNS
 {:#secure-dns}
@@ -36,7 +36,7 @@ This document contains some specific instructions about how to configure your IB
 ## Configuring and managing your secure DNS 
 {:#configuring-and-managing-your-secure-dns}
 
-DNSSec adds a layer of authentication to the internet's DNS infrastructure, which otherwise is not secure. Secure DNS guarantees that visitors are directed to **your** web server when they type your domain name into a web browser.  All you need to do is enable DNSSec in your DNS page from your IBM CIS account and add the DS record to your registrar.
+DNSSec adds a layer of authentication to the internet's DNS infrastructure, which otherwise is not secure. Secure DNS guarantees that visitors are directed to **your** web server when they type your domain name into a web browser.  All you need to do is enable DNSSec in your DNS page from your IBM {{site.data.keyword.cis_short_notm}} account and add the DS record to your registrar.
 
 ![Secure DNS](images/dns/secure-dns.png)
 
@@ -80,7 +80,7 @@ To add this record type, a valid value must exist in the **Name** field and a fu
     Required Fields: Name, Domain Name (for CNAME)
     Optional Field: TTL (Default value is Automatic)
 
-Enterprise plans are able to CNAME another domain as long as that domain is configured within CIS.
+Enterprise plans are able to CNAME another domain as long as that domain is configured within {{site.data.keyword.cis_short_notm}}.
 {:note}
 
 ```
@@ -95,7 +95,7 @@ test.example.com -CNAME-> test.different.com
 The CNAME flattening feature is enabled by default, and cannot be turned off.
 {:note}
 
-CIS does not support Cloudflare's CNAME setup. The only way to activate your domain in CIS is to delegate your NS Records management to CIS.
+{{site.data.keyword.cis_short_notm}} does not support Cloudflare's CNAME setup. The only way to activate your domain in {{site.data.keyword.cis_short_notm}} is to delegate your NS Records management to {{site.data.keyword.cis_short_notm}}.
 {:important}
 
 ### MX Type record
@@ -198,14 +198,14 @@ You can select the **Delete** button to confirm your delete action. Select **Can
 ## Import and export records
 {:#import-export-records}
 
-DNS records can be imported into and exported from CIS. All files are imported and exported as .txt files in BIND format. More information on [BIND format](https://en.wikipedia.org/wiki/Zone_file).
+DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. More information on [BIND format](https://en.wikipedia.org/wiki/Zone_file).
 Click the overflow menu and select import or export records.
 ![DNS Records Option](images/dns/import-export-records.png)
 
 ### Import records
 {:#import-dns-records}
 
-By default, a total of 3500 DNS records are allowed (imported and created on CIS). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After importing, you are shown a summary with the number of records successfully added and the number that failed, along with the reason why each record failed.
+By default, a total of 3500 DNS records are allowed (imported and created on {{site.data.keyword.cis_short_notm}}). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After importing, you are shown a summary with the number of records successfully added and the number that failed, along with the reason why each record failed.
 ![Import DNS Records Summary](images/dns/import-records-summary.png)
 
 ### Export records

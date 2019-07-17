@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-07-11"
 
 keywords: Page Rules, web content, IBM CIS deployment
 
@@ -18,20 +18,20 @@ subcollection: cis
 {:deprecated: .deprecated}
 {:generic: data-hd-programlang="generic"}
 
-# Manage your IBM CIS deployment for optimal reliability
+# Manage your {{site.data.keyword.cis_full_notm}} deployment for optimal reliability
 {:manage-your-ibm-cis-deployment-for-optimal-reliability}
 
-To achieve optimal reliability for your IBM CIS deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your IBM CIS deployment optimally reliable.
+To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your {{site.data.keyword.cis_short_notm}} deployment optimally reliable.
 
 Generally, our recommended best practices are these:
 
- * Set up your DNS to take advantage of IBM CIS proxy servers and other features
+ * Set up your DNS to take advantage of {{site.data.keyword.cis_short_notm}} proxy servers and other features
  * Use one or more Global Load Balancers to distribute your site traffic evenly
  * Set up appropriate Page Rules to manage your caching and other options
 
-Each of these items provides certain functionality you can use to create a more reliable CIS deployment.
+Each of these items provides certain functionality you can use to create a more reliable {{site.data.keyword.cis_short_notm}} deployment.
 
-Notice that the CIS interface is organized into sections for *security*, *reliability*, and *performance*. The main navigation menu is shown in the following figure, with the Global Load Balancers and DNS menu items revealed:
+Notice that the {{site.data.keyword.cis_short_notm}} interface is organized into sections for *security*, *reliability*, and *performance*. The main navigation menu is shown in the following figure, with the Global Load Balancers and DNS menu items revealed:
 
 ![Left navigation DNS ](images/cis-left-navigation.png)
 
@@ -66,9 +66,9 @@ Here are some recommended Page Rule settings to give your site maximum reliabili
 
 You can use the **Serve Stale Content** Page Rule setting to keep a limited version of your site online if your server goes down.
 
-With **Serve Stale Content**, when your server goes down, IBM CIS serves pages from our cache, so your visitors still see some of the pages they are trying to visit. Your visitors see a message at the top of the page telling them that they are in offline browsing mode. Serve Stale Content returns an HTTP status 503, however, 503 is also used by many other web applications. When your server comes back online, IBM CIS will bump users back to regular browsing seamlessly.
+With **Serve Stale Content**, when your server goes down, {{site.data.keyword.cis_short_notm}} serves pages from our cache, so your visitors still see some of the pages they are trying to visit. Your visitors see a message at the top of the page telling them that they are in offline browsing mode. Serve Stale Content returns an HTTP status 503, however, 503 is also used by many other web applications. When your server comes back online, {{site.data.keyword.cis_short_notm}} will bump users back to regular browsing seamlessly.
 
-If IBM CIS does not have the requested page in its cache, your visitor sees an error page letting them know that the website page they are requesting is offline.
+If {{site.data.keyword.cis_short_notm}} does not have the requested page in its cache, your visitor sees an error page letting them know that the website page they are requesting is offline.
 
 ### How to set up Serve Stale Content
 {:#setting-up-serve-stale-content}
@@ -86,7 +86,7 @@ To enable **Serve Stale Content**, follow these steps:
 
  * Recently added sites don't have a large cache of their site available, which means that **Serve Stale Content** may not work if you only added the site a few days ago.
 
- * CIS does not show private content or handle form submission (POSTs) if your server is down. Visitors are shown an `error on checkout` page or `items require a login to view`.
+ * {{site.data.keyword.cis_short_notm}} does not show private content or handle form submission (POSTs) if your server is down. Visitors are shown an `error on checkout` page or `items require a login to view`.
 
  * To trigger **Serve Stale Content**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Serve Stale Content also works when we encounter issues contacting your origin (Errors 521 & 523), timeouts (522 & 524), SSL errors (525 & 526) or an unknown error (520). **Serve Stale Content** is not triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
 
@@ -94,11 +94,11 @@ To enable **Serve Stale Content**, follow these steps:
 
 ## Origin Cache Control
 {:#origin-cache-control}
-You can use the **Origin Cache Control** Page Rule setting to determine what content is cached from your origin and how often the content is updated, which has an effect on reliability and on performance. By default, if no settings are changed and no headers that prevent caching are sent from your origin server, IBM CIS caches all static content with certain extensions. These types of content include images, CSS, and JavaScript. This caching is primarily for performance reasons.
+You can use the **Origin Cache Control** Page Rule setting to determine what content is cached from your origin and how often the content is updated, which has an effect on reliability and on performance. By default, if no settings are changed and no headers that prevent caching are sent from your origin server, {{site.data.keyword.cis_short_notm}} caches all static content with certain extensions. These types of content include images, CSS, and JavaScript. This caching is primarily for performance reasons.
 
-To set up **Origin Cache Control** use Page Rules to turn on specific headers that give the desired behavior with respect to each resource of your content. To understand how to use **Origin Cache Control**, some more general explanation of Page Rules and overall caching behavior for CIS is required to provide context, which is covered in the next several sections. Three methods exist that you can use to control caching in general, and **Origin Cache Control** is the second one.
+To set up **Origin Cache Control** use Page Rules to turn on specific headers that give the desired behavior with respect to each resource of your content. To understand how to use **Origin Cache Control**, some more general explanation of Page Rules and overall caching behavior for {{site.data.keyword.cis_short_notm}} is required to provide context, which is covered in the next several sections. Three methods exist that you can use to control caching in general, and **Origin Cache Control** is the second one.
 
-Setting **Origin Cache Control** invokes caching rules that seek to adhere closely to internet best practices and RFCs, primarily with respect to revalidation. For example, the CIS default behavior with `max-age=0` is not to cache at all, whereas setting **Origin Cache Control** caches, but it always revalidates.
+Setting **Origin Cache Control** invokes caching rules that seek to adhere closely to internet best practices and RFCs, primarily with respect to revalidation. For example, the {{site.data.keyword.cis_short_notm}} default behavior with `max-age=0` is not to cache at all, whereas setting **Origin Cache Control** caches, but it always revalidates.
 
 ### How to set up Origin Cache Control
 {:#setting-up-origin-cache-control}
@@ -113,7 +113,7 @@ Setting **Origin Cache Control** invokes caching rules that seek to adhere close
 
 Two specific Page Rules take precedence for caching overall:
 
- * If a Page Rule has **Cache Level** set to `Bypass`, the resources that match that Page Rule are not cached. IBM CIS still acts as a proxy, and our other performance features remain active. However, your content is fetched from your origin server directly, instead of served from our cache.
+ * If a Page Rule has **Cache Level** set to `Bypass`, the resources that match that Page Rule are not cached. {{site.data.keyword.cis_short_notm}} still acts as a proxy, and our other performance features remain active. However, your content is fetched from your origin server directly, instead of served from our cache.
 
  * If a Page Rule has **Cache Level** set to `Cache everything`, resources that match the Page Rule are cached. **Using this Page Rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.**
 
@@ -122,15 +122,15 @@ If no Page Rule is set, we use the `Standard` caching mode, which is based the e
 ### Origin cache-control headers
 {:#origin-cache-control-headers}
 
-The second way to alter what IBM CIS caches is through caching headers sent from the origin. CIS respects these settings, but you can override them by specifying an **Edge Cache TTL** Page Rule setting. Here are the headers we consider when deciding what resources to cache from your origin:
+The second way to alter what {{site.data.keyword.cis_short_notm}} caches is through caching headers sent from the origin. {{site.data.keyword.cis_short_notm}} respects these settings, but you can override them by specifying an **Edge Cache TTL** Page Rule setting. Here are the headers we consider when deciding what resources to cache from your origin:
 
- * If the **Cache-Control** header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then IBM CIS will not cache the resource. Note that sensitive material should not be cached, so you might consider using one of these headers in that case.
+ * If the **Cache-Control** header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then {{site.data.keyword.cis_short_notm}} will not cache the resource. Note that sensitive material should not be cached, so you might consider using one of these headers in that case.
 
  * If the **Cache-Control** header is set to `public` and the `max-age` is greater than 0, or if the `Expires` headers are set any time in the future, we will cache the resource.
 
 **Note:** As per RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If we see both and they do not agree, `max-age` wins.
 
-### Using the 's-maxage' header
+### Using the `s-maxage` header
 {:#using-the-s-maxage-header}
 
 The third way to control caching behavior and browser caching behavior together is by using the `s-maxage` Cache-Control header.
@@ -139,11 +139,11 @@ Normally we respect the `max-age` directive:
 
 `Cache-Control: max-age=1000`
 
-But if you want to specify a cache timeout that's different from the browser, we can use `s-maxage`. Here's an example that tells IBM CIS to cache the object for 200 seconds and the browser to cache the object for 60 seconds.
+But if you want to specify a cache timeout that's different from the browser, we can use `s-maxage`. Here's an example that tells {{site.data.keyword.cis_short_notm}} to cache the object for 200 seconds and the browser to cache the object for 60 seconds.
 
 `Cache-Control: s-maxage=200, max-age=60`
 
-Basically `s-maxage` is intended to be followed ONLY by reverse proxies (so the browser should ignore it) whilst on the other hand we (IBM CIS) give priority to `s-maxage` if it is present. We respect whichever value is higher: the browser cache setting or the `max-age` header.
+Basically `s-maxage` is intended to be followed ONLY by reverse proxies (so the browser should ignore it) whilst on the other hand we ({{site.data.keyword.cis_short_notm}}) give priority to `s-maxage` if it is present. We respect whichever value is higher: the browser cache setting or the `max-age` header.
 
 ### Summary on cache control headers and Page Rules for reliability
 {:#summary-cache-control-headers-page-rules}
@@ -152,7 +152,7 @@ To sum up, here are some main areas to consider for reliability with regard to c
 
  * Check your origin's caching headers to make sure there are no overriding headers for cacheable resources (`Cache-Control` and `Expires`).
 
- * CIS always caches static content by default, with the following TTL depending on the return code:
+ * {{site.data.keyword.cis_short_notm}} always caches static content by default, with the following TTL depending on the return code:
 
 ```
 200 301    120m;

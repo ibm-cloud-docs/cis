@@ -38,9 +38,9 @@ Each field value can be sourced from different places, such as:
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
 |http.cookie|String|session=A12345;-background=light|Entire cookie as a string|
-|http.cookie|String|www.example.com|The host name used in the full request URI|
+|http.cookie|String|`www.example.com`|The host name used in the full request URI|
 |http.referer|String|_HTTP referer header_||
-|http.request.full_uri|String|https://www.example.com/articles/index?section=539061&expand=comments|The full URI as received by the web server (does not include _#fragment_ which is not sent to web servers)|
+|http.request.full_uri|String|`https://www.example.com/articles/index?section=539061&expand=comments`|The full URI as received by the web server (does not include _#fragment_ which is not sent to web servers)|
 |http.request.method|String|POST|The HTTP method, in upper case|
 |http.request.uri|String|/articles/index?section=539061&expand=comments|The absolute URI of the request|
 |http.request.uri.path|String|/articles/index|The path of the request|
@@ -129,7 +129,7 @@ Certain comparison operators apply to specific fields based on type. The followi
 |matches|~|http.request.uri.path ~ "^/articles/200[7-8]/$"|||
 |in||http.request.method in { "HEAD" "GET" }|ip.src in { 93.184.216.0 93.184.216.1 }|cf.threat_score in {0 2 10}|
 
-The evaluation of expressions using string values is case-sensitive. As such, a firewall rule may require you to define more than one test condition. Standard and Enterprise customers can use a regular expression with the matches operator to capture multiple variations with a single expression.
+The evaluation of expressions using string values is case-sensitive. As such, a firewall rule may require you to define more than one test condition. Enterprise customers can use a regular expression with the matches operator to capture multiple variations with a single expression.
 {: important}
 
 ### Boolean Comparison

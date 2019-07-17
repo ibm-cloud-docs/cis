@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-06-25"
 
 keywords: TLS Options, secure connection, Automatic HTTPS
 
@@ -16,7 +16,7 @@ subcollection: cis
 # TLS Options
 {:#cis-tls-options}
 
-The TLS options let you control whether visitors can browse your website over a secure connection, and when they do, how CIS will connect to your origin server.
+The TLS options let you control whether visitors can browse your website over a secure connection, and when they do, how {{site.data.keyword.cis_full}} will connect to your origin server.
 
 ## Automatic HTTPS rewrite
 {:#automatic-https-rewrite}
@@ -35,27 +35,27 @@ These options are listed in the order from the least secure (Off) to the most se
 
 ### Off 
 {:#tls-encryption-modes-off}
-No secure connection between your visitor and CIS, and no secure connection between CIS and your web server. Visitors can only view your website over HTTP, and any visitor attempting to connect using HTTPS will receive an `HTTP 301 Redirect` to the plain HTTP version of your website.
+No secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, and no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. Visitors can only view your website over HTTP, and any visitor attempting to connect using HTTPS will receive an `HTTP 301 Redirect` to the plain HTTP version of your website.
 
 ### Client-to-Edge
 {:#tls-encryption-modes-client-to-edge}
 
-A secure connection between your visitor and CIS, but no secure connection between CIS and your web server. You don't need to have a TLS certificate on your web server, but your visitors still see the site as being HTTPS-enabled. This option is not recommended if you have any sensitive information on your website. This setting will only work for port 443->80. It should only be used as a last resort if you are not able to set up TLS on your own web server. It is _less secure_ than any other option (even “Off”), and could cause you trouble when you decide to switch away from it.
+A secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, but no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. You don't need to have a TLS certificate on your web server, but your visitors still see the site as being HTTPS-enabled. This option is not recommended if you have any sensitive information on your website. This setting will only work for port 443->80. It should only be used as a last resort if you are not able to set up TLS on your own web server. It is _less secure_ than any other option (even “Off”), and could cause you trouble when you decide to switch away from it.
 
 ### End-to-End Flexible
 {:#tls-encryption-modes-end-to-end-flexible}
 
-A secure connection between your visitor and CIS, and secure connection (but not authenticated) between CIS and your web server. You must have your server configured to answer HTTPS connections, with a self-signed certificate at least. The authenticity of the certificate is not verified: from CIS’s point of view (when we connect to your origin webserver), it’s the equivalent of bypassing this error message. As long as the address of your origin webserver is correct in your DNS settings, you know that we’re connecting to your webserver, and not someone else’s.
+A secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, and secure connection (but not authenticated) between {{site.data.keyword.cis_short_notm}} and your web server. You must have your server configured to answer HTTPS connections, with a self-signed certificate at least. The authenticity of the certificate is not verified: from {{site.data.keyword.cis_short_notm}}’s point of view (when we connect to your origin webserver), it’s the equivalent of bypassing this error message. As long as the address of your origin webserver is correct in your DNS settings, you know that we’re connecting to your webserver, and not someone else’s.
 
 ### End-to-End CA Signed
 {:#tls-encryption-modes-end-to-end-ca-signed}
 
-Default and recommended. A secure connection between the visitor and CIS, and secure and authenticated connection between CIS and your web server. You must have your server configured to answer HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority, have an expiration date in the future, and respond for the request domain name (hostname). We recommend that you keep using this TLS mode for best security practices, unless you understand the potential security threats of changing to one of the less strict modes.
+Default and recommended. A secure connection between the visitor and {{site.data.keyword.cis_short_notm}}, and secure and authenticated connection between {{site.data.keyword.cis_short_notm}} and your web server. You must have your server configured to answer HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority, have an expiration date in the future, and respond for the request domain name (hostname). We recommend that you keep using this TLS mode for best security practices, unless you understand the potential security threats of changing to one of the less strict modes.
 
 ### HTTPS Only Origin Pull
 {:#tls-encryption-modes-origin-only-pull}
 
-*Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between CIS and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
+*Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between {{site.data.keyword.cis_short_notm}} and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
 
 ## Minimum TLS version
 {:#minimum-tls-version}

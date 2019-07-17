@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-07-11"
 
-keywords: Page Rule Use, Cache-Tag Purge, web content
+keywords: Page Rule Use, Cache-Tag Purge, web content, CIS
 
 subcollection: cis
 
@@ -14,12 +14,12 @@ subcollection: cis
 {:new_window: target="_blank"}
 
 
-# Manage your CIS deployment for best performance
+# Manage your {{site.data.keyword.cis_full_notm}} deployment for best performance
 {:#manage-your-cis-deployment-for-best-performance}
 
-IBM Cloud Internet Services (CIS) can provide the fastest experience for your customers because it optimizes your images, and it stores your web content as near as possible to your end-users. Your content is loaded from proxied edge servers (which reduces latency).
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) can provide the fastest experience for your customers because it optimizes your images, and it stores your web content as near as possible to your end-users. Your content is loaded from proxied edge servers (which reduces latency).
 
-With IBM CIS, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within CIS.
+With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within {{site.data.keyword.cis_short_notm}}.
 
 **Recommended and best practices:**
 
@@ -40,7 +40,7 @@ If content rarely changes, you can set a conservative TTL to utilize our cache a
 ### How do I tell if items are being cached?
 {:#how-do-i-tell-if-items-are-being-cached}
 
-IBM CIS adds the response header `CF-Cache-Status` when it attempts to cache an object. If caching is successful, the value of this header indicates its status with one of these keywords:
+{{site.data.keyword.cis_short_notm}} adds the response header `CF-Cache-Status` when it attempts to cache an object. If caching is successful, the value of this header indicates its status with one of these keywords:
 
 * **MISS:** The asset was not yet in the cache or the TTL had expired (that is, it had reached the cache-control maximum age of 0).
 * **HIT:** The asset was delivered from the cache.
@@ -50,7 +50,7 @@ IBM CIS adds the response header `CF-Cache-Status` when it attempts to cache an 
 ## Best practice 2: For event-driven content, use the API to purge your cache
 {:#best-practice-api-purge-cache}
 
-For example, every time a new post is added to your blog, you could easily purge the CIS cache using an API command. It is common to see event-driven content, and we make it easy to guarantee that no stale content is reaching your users. The  commands to purge the cache immediately across our entire global network are listed next. You can use our caching application or you can use the API.
+For example, every time a new post is added to your blog, you could easily purge the {{site.data.keyword.cis_short_notm}} cache using an API command. It is common to see event-driven content, and we make it easy to guarantee that no stale content is reaching your users. The  commands to purge the cache immediately across our entire global network are listed next. You can use our caching application or you can use the API.
 
   * Purge the cache by using a Cache-Tag
   * Purge the cache globally

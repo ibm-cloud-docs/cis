@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-21"
 
 keywords: introductory video
 
@@ -20,7 +20,7 @@ subcollection: cis
 # Video 
 {:#video}
 
-Watch a short introductory video that describes the security benefits of IBM Cloud Internet Services (CIS).
+Watch a short introductory video that describes the security benefits of {{site.data.keyword.cis_full}}.
 
 
 <iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" title="cis_ddos_attacks" width="640" height="390" src="https://www.youtube.com/embed/TJqkBVogMvk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>

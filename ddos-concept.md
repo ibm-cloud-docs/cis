@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-25"
 
 keywords: Attack Concepts, Application layer attacks, common types of internet attacks
 
@@ -66,6 +66,6 @@ This category of attacks attempts to create congestion by consuming all availabl
 
 **Step 2:** Set your DNS records for maximum security.
 
-**Step 3:** Do not rate-limit or throttle requests from IBM CIS, we need the bandwidth to assist you with your situation.
+**Step 3:** Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}, we need the bandwidth to assist you with your situation.
 
 **Step 4:** Block specific countries and visitors if necessary.

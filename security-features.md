@@ -18,10 +18,10 @@ subcollection: cis
 {:deprecated: .deprecated}
 {:generic: data-hd-programlang="generic"}
 
-# How IBM Cloud Internet Services (CIS) keeps your work secure
+# How IBM {{site.data.keyword.cis_full_notm}} keeps your work secure
 {:#how-cis-keeps-your-work-secure}
 
-IBM CIS is a globally distributed cloud service that blocks threats and limits abusive bots and crawlers, which can waste your bandwidth and server resources. IBM CIS works as a global HTTP(S) reverse proxy and a managed DNS service provider. Your web traffic is routed through our intelligent global network to optimize both your performance and your security.
+{{site.data.keyword.cis_full}} is a globally distributed cloud service that blocks threats and limits abusive bots and crawlers, which can waste your bandwidth and server resources. IBM {{site.data.keyword.cis_short_notm}} works as a global HTTP(S) reverse proxy and a managed DNS service provider. Your web traffic is routed through our intelligent global network to optimize both your performance and your security.
 
 ![security-graphic.png](images/security-graphic.png)
 
@@ -35,12 +35,12 @@ Here’s a quick feature overview:
 ### Web Application Firewall (WAF)
 {:#cis-web-application-firewall}
 
- * WAF is implemented through two rule sets: [OWASP](/docs/infrastructure/cis?topic=cis-owasp-rule-set-for-waf) and [CIS](/docs/infrastructure/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
+ * WAF is implemented through two rule sets: [OWASP](/docs/infrastructure/cis?topic=cis-owasp-rule-set-for-waf) and [{{site.data.keyword.cis_short_notm}}](/docs/infrastructure/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
  
 ### Unlimited DDoS mitigation
 {:#cis-unlimited-ddos-mitigation}
 
- * DDoS mitigation is typically an expensive service that can grow in cost when under attack. We include unlimited DDoS mitigation with CIS at no additonal cost.
+ * DDoS mitigation is typically an expensive service that can grow in cost when under attack. We include unlimited DDoS mitigation with {{site.data.keyword.cis_short_notm}} at no additonal cost.
 
 ## Security Standards and platform
 {:#security-standards-and-platform}
@@ -68,7 +68,7 @@ Generally, we see attacks that fall into two categories
 ## IP Firewall
 {:#cis-ip-firewall}
 
-IBM Cloud Internet Services offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs. This section details the tools available.
+{{site.data.keyword.cis_full_notm}} offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs. This section details the tools available.
 
 ### IP Rules
 {:#cis-ip-rules}

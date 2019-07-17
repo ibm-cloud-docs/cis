@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-06-25"
 
 keywords: domain name system, DNS servers, match domain names, DNS Concepts
 
@@ -22,7 +22,7 @@ subcollection: cis
 # DNS Concepts
 {:#dns-concepts}
 
-This document contains some concepts and definitions related to the internet's domain name system (DNS) and how it affects your IBM Cloud Internet Services (CIS) deployment. 
+This document contains some concepts and definitions related to the internet's domain name system (DNS) and how it affects your {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) deployment. 
 
 The Domain Name System (DNS) underpins the web we use every day. It works transparently in the background, converting human-readable website names into computer-readable, numerical IP addresses that follow the [internet's RFC 1918 guidelines for IPv4 and RFC 4193 for IPv6](https://en.wikipedia.org/wiki/Private_network). In short, DNS servers match domain names, such as `ibm.com`, to their associated IP addresses, which most people do not need to know.
 
@@ -45,9 +45,9 @@ A **custom domain name server** allows you to utilize the DNS provider's servers
 ## Root Record CNAME Flattening
 {:#dns-concepts-root-record-cname-flattening}
 
-IBM CIS supports a feature called "CNAME Flattening." Using this method, root records can overcome the IETF RFC restriction that if a root record is a CNAME, it cannot have any other records for that domain. CIS Authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records such as MX records to be added to the domain, even though the root record is a CNAME.
+IBM {{site.data.keyword.cis_short_notm}} supports a feature called "CNAME Flattening." Using this method, root records can overcome the IETF RFC restriction that if a root record is a CNAME, it cannot have any other records for that domain. {{site.data.keyword.cis_short_notm}} Authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records such as MX records to be added to the domain, even though the root record is a CNAME.
 
 ## Proxying DNS Records
 {:#dns-concepts-proxying-dns-records}
 
-IBM CIS supports the ability to toggle whether a record is proxied or not. When a record is proxied, it means that its traffic will run directly through IBM CIS. Currently, records with types **A**, **AAAA**, or **CNAME** can be proxied.
+IBM {{site.data.keyword.cis_short_notm}} supports the ability to toggle whether a record is proxied or not. When a record is proxied, it means that its traffic will run directly through {{site.data.keyword.cis_short_notm}}. Currently, records with types **A**, **AAAA**, or **CNAME** can be proxied.
