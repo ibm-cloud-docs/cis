@@ -2,7 +2,6 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="cis" category="network,security" audience="service" arm="3663386" href="/docs/infrastructure/cis?topic=cis-getting-started" path="infrastructure/cis"}
-
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
