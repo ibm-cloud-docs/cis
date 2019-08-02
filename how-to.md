@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-07-26"
 
 keywords: Overview page, page rules, Service Mode
 
@@ -40,7 +40,7 @@ On the Overview screen, you may see that your domain name configuration is in **
 **Enterprise only**: The **Service Details** section of the Overview also allows you to add additional domains to your instance of {{site.data.keyword.cis_short_notm}}, and to switch between multiple domains.
 
 ## Changing the Service Mode
-{#changing-the-service-mode}
+{:#changing-the-service-mode}
 
 On the Overview page under the Service Mode section there is a dropdown to select one of two modes:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-15"
+lastupdated: "2019-07-25"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers, CIS
 
@@ -19,7 +19,7 @@ subcollection: cis
 {:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
 
-# Getting started tutorial
+# Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the navbar of your screen, once you've opened the {{site.data.keyword.cis_short_notm}} application.
