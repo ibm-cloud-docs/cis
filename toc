@@ -70,10 +70,10 @@ Cloud Internet Services (CIS)
     {: .topicgroup}
     Guided instructions: Firewall Rules
         firewall-rules.md
-        firewall-rules/create-edit-delete.md   
-        firewall-rules/actions.md
-        firewall-rules/fields-and-expressions.md
-        firewall-rules/order-and-priority.md
+        create-edit-delete.md   
+        actions.md
+        fields-and-expressions.md
+        order-and-priority.md
     {: .navgroup-end}
     
     {: .navgroup id="reference"}
