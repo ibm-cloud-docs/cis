@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-08-09"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers, CIS
 
@@ -22,7 +22,7 @@ subcollection: cis
 # Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
 
-{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the navbar of your screen, once you've opened the {{site.data.keyword.cis_short_notm}} application.
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the navbar of your screen, once you've opened the {{site.data.keyword.cis_short_notm}} application.
 
 For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs, including:
 
@@ -36,7 +36,7 @@ For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its fea
 ## Before you begin
 {:#before-you-begin}
 
-Before you begin using {{site.data.keyword.cis_short_notm}}, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services Portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
+Before you begin using {{site.data.keyword.cis_short_notm}}, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
 If you need assistance in obtaining an account to use {{site.data.keyword.cis_full_notm}}, [contact your IBM sales representative](https://{DomainName}/cloud/support) for additional guidance on getting started.
 
