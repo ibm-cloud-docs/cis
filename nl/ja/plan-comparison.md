@@ -14,7 +14,7 @@ subcollection: cis
 {:new_window: target="_blank"}
 
 # プランの比較
-{:#cis-plan-comparison}
+{: #cis-plan-comparison}
 
 Cloud Internet Services は、無料トライアル、標準、およびエンタープライズの 3 つのプランから選択できます。次の表は各オファリングを比較したもので、最適なソリューションを選択するのに役立ちます。個々のオファリングの詳細については、表の中のそれぞれのオファリングの名前をクリックしてください。
 
