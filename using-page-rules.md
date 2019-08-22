@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-08-22"
 
 keywords: Use Page Rules, Page Rule
 
@@ -67,9 +67,9 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
-|**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability) |
-|**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability) |
-|**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-deployment-for-optimal-reliability)|
+|**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
+|**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
+|**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability)|
 |**Host Header Override**|Replace the host header for URI matching the page rule to the value specified. This is commonly used for content hosted in an S3 bucket.|
 |**Disable Apps**|Turn off all CIS Apps. | Enterprise only |
 |**Origin Error Page Pass-through**|Disables CIS error pages that would trigger for issues sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only ||
