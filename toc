@@ -18,6 +18,12 @@ Cloud Internet Services (CIS)
     glb.md
     cache.md
     best-practices.md
+    {: .topicgroup}
+    Tutorials
+        /tutorials/solution-tutorials-multi-region-k8s-cis
+        /tutorials/solution-tutorials-highly-available-and-scalable-web-application
+        /tutorials/solution-tutorials-multi-region-webapp
+        /tutorials/solution-tutorials-multi-region-serverless
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -43,12 +49,6 @@ Cloud Internet Services (CIS)
     edge-functions.md
     edge-functions-use-cases.md
     helpful-tools.md
-    
-    {: .topicgroup}
-    Detailed guides 
-        [Secure and resilient multi-region Kubernetes clusters with Cloud Internet Services](/tutorials/solution-tutorials-multi-region-k8s-cis)  
-        [Using CIS to secure your Cloud Foundry applications across regions](/tutorials/solution-tutorials-multi-region-webapp#register-a-custom-domain-with-ibm-cloud-internet-services)
-        [Deploy serverless apps across multiple locations](/tutorials/solution-tutorials-multi-region-serverless#multi-region-serverless)
                 
     {: .topicgroup}
     Guided instructions: Improving application reliability and scalability with Global Load Balancing
