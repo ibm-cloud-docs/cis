@@ -34,7 +34,7 @@ Challenges
 CIS errors
 * 502, 504, and CF 52X errors
 * 10XX errors
-* Errors related to `Server Stale Content` 
+* Errors related to `Serve Stale Content` 
 
 500, 501, 503, and 505 responses do not trigger custom error pages to avoid breaking specific API endpoints and other web applications. Custom error pages should be reserved for cases where the origin server cannot return a response for the request (520-526 errors).
 {:note}

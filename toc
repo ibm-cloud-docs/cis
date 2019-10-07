@@ -50,7 +50,7 @@ Cloud Internet Services (CIS)
     edge-functions.md
     edge-functions-use-cases.md
     helpful-tools.md
-                
+                   
     {: .topicgroup}
     Guided instructions: Improving application reliability and scalability with Global Load Balancing
         application-reliability.md
@@ -75,6 +75,10 @@ Cloud Internet Services (CIS)
         actions.md
         fields-and-expressions.md
         order-and-priority.md
+    
+    {: .topicgroup} 
+    Guided instructions: Using Subdomains
+        start-with-subdomain.md
     {: .navgroup-end}
     
     {: .navgroup id="reference"}
