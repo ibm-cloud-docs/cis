@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-10-11"
 
 keywords: IBM CIS connection, CIS network connection, Origin web server, troubleshooting
 
@@ -64,6 +64,21 @@ log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
 
 access_log  /var/log/nginx/access.log cf_custom;
 ```
+
+## What do I do if I use the Cloudflare Origin root certificate, and it's expiring?
+{: #update-origin-root-ca}
+
+Some origin web servers (such as IIS and cPanel) validate origin root CA certificates and require you to upload one. 
+
+If you are using the RSA version of the Cloudflare origin root CA, it expires on November 11, 2019 (2019-11-14T01:43:50Z). You must take the following actions to avoid site disruptions.
+
+### Download and install new certificate
+{: #download-new-cert}
+
+Select one of the following root certificates to download and install.
+
+  * [RSA version certificate.](https://public.dhe.ibm.com/cloud/bluemix/network/cis/origin_ca_rsa_root.pem) The previous version expires on 2019-11-14T01:43:50Z.  
+  * [ECC version certificate.](https://public.dhe.ibm.com/cloud/bluemix/network/cis/origin_ca_ecc_root.pem) The previous version expires on 2021-02-22T00:24:00Z.
 
 ## How do I trace a route?
 {:#how-do-i-trace-a-route}
