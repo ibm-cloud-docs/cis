@@ -2,26 +2,32 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-11"
+lastupdated: "2019-10-31"
 
 keywords: Page Rules, web content, IBM CIS deployment
 
 subcollection: cis
 
 ---
-
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Manage your {{site.data.keyword.cis_full_notm}} deployment for optimal reliability
 {:manage-your-ibm-cis-deployment-for-optimal-reliability}
 
 To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your {{site.data.keyword.cis_short_notm}} deployment optimally reliable.
+{: shortdesc}
 
 Generally, our recommended best practices are these:
 
@@ -38,10 +44,10 @@ Notice that the {{site.data.keyword.cis_short_notm}} interface is organized into
 
 ## Setting up DNS
 {:#setting-up-dns}
- 
- To get started setting up your DNS configuration, select **DNS** from the navigation menu, as shown previously.
- 
- For detailed information about setting up and managing your DNS for reliability, please [refer to this document](/docs/infrastructure/cis?topic=cis-set-up-your-dns-for-cis).
+
+To get started setting up your DNS configuration, select **DNS** from the navigation menu, as shown previously.
+
+For detailed information about setting up and managing your DNS for reliability, please [refer to this document](/docs/infrastructure/cis?topic=cis-set-up-your-dns-for-cis).
 
 
 ## Setting up Global Load Balancers
@@ -128,20 +134,23 @@ The second way to alter what {{site.data.keyword.cis_short_notm}} caches is thro
 
  * If the **Cache-Control** header is set to `public` and the `max-age` is greater than 0, or if the `Expires` headers are set any time in the future, we will cache the resource.
 
-**Note:** As per RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If we see both and they do not agree, `max-age` wins.
+According to RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If we see both and they do not agree, `max-age` wins.
+{:note}
 
 ### Using the `s-maxage` header
 {:#using-the-s-maxage-header}
 
-The third way to control caching behavior and browser caching behavior together is by using the `s-maxage` Cache-Control header.
+The third way to control caching behavior and browser caching behavior together is by using the **`s-maxage`** Cache-Control header.
 
 Normally we respect the `max-age` directive:
 
 `Cache-Control: max-age=1000`
+{:pre}
 
 But if you want to specify a cache timeout that's different from the browser, we can use `s-maxage`. Here's an example that tells {{site.data.keyword.cis_short_notm}} to cache the object for 200 seconds and the browser to cache the object for 60 seconds.
 
 `Cache-Control: s-maxage=200, max-age=60`
+{:pre}
 
 Basically `s-maxage` is intended to be followed ONLY by reverse proxies (so the browser should ignore it) whilst on the other hand we ({{site.data.keyword.cis_short_notm}}) give priority to `s-maxage` if it is present. We respect whichever value is higher: the browser cache setting or the `max-age` header.
 
@@ -161,6 +170,7 @@ To sum up, here are some main areas to consider for reliability with regard to c
 404        5m;
 any        0s;
 ```
+{:pre}
 
  * To cache more, create a Page Rule with **Cache Level** set to `Cache everything` on the desired URL (if your webserver returns a 404 when requesting this URL, we will cache this result for 5m only).
 
@@ -189,28 +199,35 @@ When you enable a **Forwarding URL**, all of your other settings are disabled be
 
 Imagine you want to make it easy for anyone coming to reach a URL such as:
 
-    *www.example.com/+
+`*www.example.com/+`
+{:pre}
 
-    *example.com/+
+`*example.com/+`
+{:pre}
 
 This pattern matches:
 
-    http://example.com/+
-    http://www.example.com/+
-    https://www.example.com/+
-    https://blog.example.com/+
-    https://www.blog.example.com/+
-    Etc...
+```
+http://example.com/+
+http://www.example.com/+
+https://www.example.com/+
+https://blog.example.com/+
+https://www.blog.example.com/+
+```
+{:pre}
 
 It does not match:
 
-    http://www.example.com/blog/+  [extra directory before the +]
-    http://www.example.com+  [no trailing slash]
-
+```
+http://www.example.com/blog/+  [extra directory before the +]
+http://www.example.com+  [no trailing slash]
+```
+{:pre}
 
 Once you've created the pattern that matches what you want, add the **Forwarding URL** setting and select the forwarding type and enter the destination URL. For example:
 
-    https://plus.google.com/yourid
+`https://plus.google.com/yourid`
+{:pre}
 
 Select Provision Resource. Within a few seconds any requests that match the pattern are forwarded to the new URL with the specified redirect.
 
@@ -219,36 +236,45 @@ Select Provision Resource. Within a few seconds any requests that match the patt
 
 If you use a basic redirect, such as forwarding the root domain to `www.yourdomain.com`, you lose anything else in the URL. For example, you could set up the pattern:
 
-    example.com
+`example.com`
+{:pre}
 
 And have it forward to:
 
-    `http://www.example.com`
+`http://www.example.com`
+{:pre}
 
 But then if someone entered:
 
-    `example.com/some-particular-page.html`
+`example.com/some-particular-page.html`
+{:pre}
 
 Then they are redirected to:
 
-    `www.example.com`
+`www.example.com`
+{:pre}
 
 instead of
 
-    `www.example.com/some-particular-page.html`
+`www.example.com/some-particular-page.html`
+{:pre}
 
 The solution is to use variables. Each wildcard corresponds to a variable that can be referenced in the forwarding address. The variables are represented by a `$` followed by a number. To refer to the first wildcard you'd use `$1`, to refer to the second wildcard you'd use `$2`, and so on. To fix the forwarding from the root to `www` in the previous example, use the same pattern:
 
-    `example.com/*`
+`example.com/*`
+{:pre}
 
 Then set up the following URL for traffic to forward to:
 
-    `http://www.example.com/$1`
+`http://www.example.com/$1`
+{:pre}
 
 In this case, if someone went to:
 
-    `example.com/some-particular-page.html`
+`example.com/some-particular-page.html`
+{:pre}
 
 They are redirected to:
 
-    `http://www.example.com/some-particular-page.html`
+`http://www.example.com/some-particular-page.html`
+{:pre}

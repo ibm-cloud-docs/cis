@@ -17,6 +17,7 @@ subcollection: cis
 {:#helpful-tools-for-managing-your-cis-deployment}
 
 Some public-domain unix system administration tools exist that can help you manage your IBM CIS deployment.
+{: shortdesc}
 
 ## Sysadmin tools
 {:#cis-sysadmin-tools}

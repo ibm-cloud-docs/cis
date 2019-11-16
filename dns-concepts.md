@@ -22,7 +22,8 @@ subcollection: cis
 # DNS Concepts
 {:#dns-concepts}
 
-This document contains some concepts and definitions related to the internet's domain name system (DNS) and how it affects your {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) deployment. 
+This document contains some concepts and definitions related to the internet's domain name system (DNS) and how it affects your {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) deployment.
+{: shortdesc}
 
 The Domain Name System (DNS) underpins the web we use every day. It works transparently in the background, converting human-readable website names into computer-readable, numerical IP addresses that follow the [internet's RFC 1918 guidelines for IPv4 and RFC 4193 for IPv6](https://en.wikipedia.org/wiki/Private_network). In short, DNS servers match domain names, such as `ibm.com`, to their associated IP addresses, which most people do not need to know.
 

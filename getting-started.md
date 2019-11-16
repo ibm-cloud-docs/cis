@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-11-12"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers, CIS
 
@@ -22,7 +22,8 @@ subcollection: cis
 # Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
 
-{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). Each area of capability is represented in the navbar of your screen, once you've opened the {{site.data.keyword.cis_short_notm}} application.
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance).{:shortdesc} Each area of capability is represented in the navbar of your screen, after you've opened the {{site.data.keyword.cis_short_notm}} application.
+{: shortdesc}
 
 For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs, including:
 
@@ -36,11 +37,11 @@ For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its fea
 ## Before you begin
 {:#before-you-begin}
 
-Before you begin using {{site.data.keyword.cis_short_notm}}, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services portal](https://{DomainName}/catalog/services/internet-services), depending on your preference.
+Before you begin using {{site.data.keyword.cis_short_notm}}, you'll first need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then you can order your services through your IBM Cloud Account, or through the new [IBM Cloud Internet Services console](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
 If you need assistance in obtaining an account to use {{site.data.keyword.cis_full_notm}}, [contact your IBM sales representative](https://{DomainName}/cloud/support) for additional guidance on getting started.
 
-If you have an existing Softlayer account, you can [link your account](/docs/account?topic=account-unifyingaccounts) with your IBMid. 
+If you have an existing Softlayer account, you can [link your account](/docs/account?topic=account-unifyingaccounts) with your IBMid.
 
 ## Process overview
 {:#process-overview}
@@ -55,7 +56,7 @@ You can start using {{site.data.keyword.cis_short_notm}} for your Internet traff
 ### Step 1: Open the IBM CIS application
 {:#open-cis-application}
 
-Open your [IBM Cloud dashboard](https://{DomainName}/catalog/). Then navigate to the {{site.data.keyword.cis_short_notm}} application icon by selecting the **Infrastructure -> Network** category in the navigation bar of the dashboard. Open the {{site.data.keyword.cis_full_notm}} application by clicking the icon in the dashboard. 
+Open your [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/catalog/). Then navigate to the {{site.data.keyword.cis_short_notm}} application icon by selecting the **Infrastructure -> Network** category in the navigation bar of the dashboard. Open the {{site.data.keyword.cis_full_notm}} application by clicking the icon in the dashboard.
 
 ![Catalog](images/catalog-cis-tile.png)
 
@@ -65,17 +66,17 @@ After the {{site.data.keyword.cis_short_notm}} application starts up, you'll see
 
 **Which plan do I choose?**
 
-There are 4 plans to choose from, 
-* **Enterprise Usage** 
-* **Enterprise Package** 
-* **Standard Plan** 
-* **Free Trial**. 
+There are 4 plans to choose from,
+* **Enterprise Usage**
+* **Enterprise Package**
+* **Standard Plan**
+* **Free Trial**.
 
-The **Free Trial** expires after 30 days, at which point you can upgrade to the **Standard Plan** or an **Enterprise Plan**. A single **Standard** instance can manage one domain. You can create as many **Standard** service instances as you want within a single account, each managing a single domain. 
+The **Free Trial** expires after 30 days, at which point you can upgrade to the **Standard Plan** or an **Enterprise Plan**. A single **Standard** instance can manage one domain. You can create as many **Standard** service instances as you want within a single account, each managing a single domain.
 
 The **Enterprise Plans** allow you to manage multiple domains in a single service instance. Select the **Create** button on the **Overview** screen to begin provisioning your account.
 
-The **Free Trial** is limited to one instance per account. 
+The **Free Trial** is limited to one instance per account.
 {:note}
 
 **Begin Provisioning**
@@ -120,7 +121,7 @@ To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, configu
 
 After you've configured your registrar or DNS provider, it may require up to 24 hours for the changes to take effect. When we verify that the specified nameservers have been configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the nameservers, you may click on the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain (you can submit this check only once an hour).
 
-Your domain must move to `Active` state within 60 days or your domain and any configuration data will be removed. 
+Your domain must move to `Active` state within 60 days or your domain and any configuration data will be removed.
 {:note}
 
 ![Getting Started](images/overview-setup-step4.png)

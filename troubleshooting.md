@@ -13,15 +13,15 @@ subcollection: cis
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 
-# Troubleshooting your CIS network connection
+# Troubleshooting your {{site.data.keyword.cis_full_notm}} network connection
 {:#troubleshooting-your-cis-network-connection}
 
-## How do I know if my data is passing through my IBM CIS connection?
+## How do I know if my data is passing through my {{site.data.keyword.cis_full}} connection?
 {:#how-do-i-know-if-my-data-is-passing-through-my-cis-connection}
 
-IBM Cloud Internet Services (CIS) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
+{{site.data.keyword.cis_full_notm}} ({{site.data.keyword.cis_short_notm}}) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
 
-To know whether data has passed through IBM CIS, locate the `Ray ID` which will be present on every packet.
+To know whether data has passed through {{site.data.keyword.cis_short_notm}}, locate the `Ray ID` which will be present on every packet.
 
 **Unix command line tools:**
 
@@ -68,7 +68,7 @@ access_log  /var/log/nginx/access.log cf_custom;
 ## What do I do if I use the Cloudflare Origin root certificate, and it's expiring?
 {: #update-origin-root-ca}
 
-Some origin web servers (such as IIS and cPanel) validate origin root CA certificates and require you to upload one. 
+Some origin web servers (such as IIS and cPanel) validate origin root CA certificates and require you to upload one.
 
 If you are using the RSA version of the Cloudflare origin root CA, it expires on November 11, 2019 (2019-11-14T01:43:50Z). You must take the following actions to avoid site disruptions.
 
@@ -83,10 +83,9 @@ Select one of the following root certificates to download and install.
 ## How do I trace a route?
 {:#how-do-i-trace-a-route}
 
-To see whether a route goes through your IBM CIS pathway, you can perform a ‘dig’ in a Terminal window for Mac or Linux
-or use `nslookup` in the Windows command prompt for Windows.
+To see whether a route goes through your {{site.data.keyword.cis_short_notm}} pathway, you can perform a `dig` in a Terminal window for Mac or Linux or use `nslookup` in the Windows command prompt for Windows.
 
-If the packet has a CF-Ray value, then it has travelled through CIS.
+If the packet has a CF-Ray value, then it has travelled through {{site.data.keyword.cis_short_notm}}.
 
 The `traceroute` command shows the entire path that an IP request has taken.
 
@@ -95,7 +94,7 @@ The support team makes use of these commands to assist you.
 ## If you see a privacy warning
 {:#troubleshooting-cis-privacy-warning}
 
-The certificates issued by IBM CIS cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) you will see a privacy warning in your browser, because these host names are not added to the SAN.
+The certificates issued by {{site.data.keyword.cis_short_notm}} cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) you will see a privacy warning in your browser, because these host names are not added to the SAN.
 
 Also, please allow up to 15 minutes for one of our partner Certificates Authorities (CAs) to issue a new certificate. You’ll see a privacy warning in your browser if your new certificate has not yet been issued.
 
@@ -104,8 +103,8 @@ Also, please allow up to 15 minutes for one of our partner Certificates Authorit
 
  * **Step 1:** Turn on "Defense Mode" from your dashboard
  * **Step 2:** Set your DNS records for maximum security
- * **Step 3:** Do not rate-limit or throttle requests from IBM CIS
- 
+ * **Step 3:** Do not rate-limit or throttle requests from {{site.data.keyword.cis_short_notm}}
+
 During "Defense Mode", each new visitor is met with a "Captcha" security challenge, which they must pass before being given a cookie for unchallenged access. That way, botnet traffic is blocked until the "Defense Mode" is turned off. Visitors that do not meet the security challenge are added to the (bad) IP Reputation database.
 
 ## Other problems you might encounter
@@ -116,10 +115,10 @@ Here are some common error messages that you or your support team might see:
 | Error Code    | Reason |
 | ------------- | ------------- |
 | 1001  | DNS Resolution Error. Either the customer recently signed up and their DNS information has not yet propagated, or whomever is managing the DNS has a failure. |
-| 521  | Origin web server refused connection from CIS. Either the origin web server is not running, or something is blocking IBM CIS IP addresses. |
-| 522  | Connection timeout to the origin server (30 second default). Either CIS may be rate-limited, the web server may be consuming all resources (shared server), or there may be network connectivity issues between the web server and IBM CIS. |
-| 523  | Origin server is unreachable. Ensure that the origin IP address for the DNS record is the same as the one appearing in the CIS DNS Settings page. |
-| 524  | IBM CIS could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
+| 521  | Origin web server refused connection from {{site.data.keyword.cis_short_notm}}. Either the origin web server is not running, or something is blocking {{site.data.keyword.cis_short_notm}} IP addresses. |
+| 522  | Connection timeout to the origin server (30 second default). Either CIS may be rate-limited, the web server may be consuming all resources (shared server), or there may be network connectivity issues between the web server and {{site.data.keyword.cis_short_notm}}. |
+| 523  | Origin server is unreachable. Ensure that the origin IP address for the DNS record is the same as the one appearing in the {{site.data.keyword.cis_short_notm}} DNS Settings page. |
+| 524  | {{site.data.keyword.cis_short_notm}} could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
 
 ### Not seeing any network traffic
 {:#troubleshooting-cis-network-traffic}
@@ -135,31 +134,30 @@ Here is what you might see:
 
 **Website offline - no cached version**
 
-1. The server is online, but it is blocking the IBM CIS request.
-2. The origin server is offline and IBM CIS does not have a backup website image 
+1. The server is online, but it is blocking the {{site.data.keyword.cis_short_notm}} request.
+2. The origin server is offline and {{site.data.keyword.cis_short_notm}}S does not have a backup website image
 
 What you can do:
 
-* Verify that the IBM CIS IP addresses are whitelisted..
-* Make sure that IBM CIS IPs are not being rate-limited.
+* Verify that the {{site.data.keyword.cis_short_notm}} IP addresses are whitelisted..
+* Make sure that {{site.data.keyword.cis_short_notm}} IPs are not being rate-limited.
 * Here is the list of [IPs to whitelist](/docs/infrastructure/cis?topic=cis-cis-whitelisted-ip-addresses)
 
 ### 502 error “The dreaded 502”
 {:#troubleshooting-cis-502-error}
 
-This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable, for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. Run a trace route. 
+This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable, for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. Run a trace route.
 
 Here is what you might see: `Error 502 - bad gateway error`
 
 What happened:
 
-* A portion of the IBM CIS network is having an issue.
+* A portion of the {{site.data.keyword.cis_short_notm}} network is having an issue.
 * Usually the problem is limited to one server in one data center.
 * It affects only a portion of the site's visitors.
-* The IBM CIS Technical Operations team deals with these.
+* The {{site.data.keyword.cis_short_notm}} Technical Operations team deals with these.
 
 What you can do:
 
 * Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a ticket to [Support](/docs/get-support?topic=get-support-getting-customer-support).
 * Temporarily toggle your DNS Records to off (No proxy).
-

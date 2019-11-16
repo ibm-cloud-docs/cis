@@ -22,6 +22,7 @@ subcollection: cis
 {:#cis-rate-limiting}
 
 Rate Limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
+{: shortdesc}
 
 Select the type of rate limiting rule, either a **Custom rule** or **Protect login**
 
@@ -32,16 +33,16 @@ Enter a rule name that helps you remember what the rule does. This is an optiona
 
 **Traffic matching criteria** uses the AND operation. Enter a URL that you are rate limiting, and then when requests from the **Same IP exceeds** your specified number of **Requests per second**, the rule specified is triggered.
 
-The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria. 
+The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria.
 
 Select a value form the **Method** dropdown (ANY is the default).  
 
-Update **HTTP response header**.  You can also **Add response header** to include headers returned by your origin web server. 
+Update **HTTP response header**.  You can also **Add response header** to include headers returned by your origin web server.
 
 If you have more than one header under **HTTP response header**, an _AND_ boolean logic applies.  To exclude a header from being matched, use the _Not Equal_ option. Also, each header must be an exact match. However, case sensitivity doesn't apply.
 {:note}
 
-Under **Origin response code**, type the valid numerical value of each HTTP response code to match.  To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count. 
+Under **Origin response code**, type the valid numerical value of each HTTP response code to match.  To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
 
 ### Configure response
 {:#rate-limiting-configure-response}
@@ -57,7 +58,7 @@ Select from the actions listed, and specify the timeout period. In this case, th
 
 **Advanced response**
 
-Specify the response type when a rule's threshold is exceeded. 
+Specify the response type when a rule's threshold is exceeded.
 
 ### Bypass
 {:#rate-limiting-bypass}
@@ -67,6 +68,6 @@ Bypass lets you create the equivalent of a whitelist or exception for a set of U
 ## Protect login
 {:#rate-limiting-protect-login}
 
-Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes will be blocked for 15 minutes. 
+Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes will be blocked for 15 minutes.
 
 Enter a name for the rule, and the login URL.

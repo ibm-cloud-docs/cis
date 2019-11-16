@@ -16,19 +16,25 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
 {:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
+
 
 # API Specs
 {:#api-specs}
 
-Here's how to view the CIS API specifications: 
-
-1. To view the CIS APIs, navigate to the [API Docs](/apidocs/) page. 
-
-2. From the left navigation menu, check the Networking box to filter the APIs.
-
-3. Choose from the list of available Cloud Internet Services APIs.
+Here's how to view the {{site.data.keyword.cis_full}} API specifications:
+  1. To view the {{site.data.keyword.cis_short_notm}} APIs, navigate to the [API Docs](/apidocs/) page.
+  1. From the left navigation menu, check the Networking box to filter the APIs.
+  1. Choose from the list of available {{site.data.keyword.cis_short_notm}} APIs.
+{:shortdesc}
 
 
 ## Notes

@@ -22,13 +22,14 @@ DDoS attacks are among the most common types of internet attacks that your websi
 {:#what-is-a-ddos-attack}
 
 A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. DDoS attacks achieve effectiveness by utilizing many compromised computer systems as sources of attack traffic. Exploited machines can include computers and other networked resources such as IoT devices. From a high level, a DDoS attack is like a traffic jam clogging up a highway, preventing regular traffic from arriving at its desired destination.
+{: shortdesc}
 
 ## How does a DDoS attack work?
 {:#how-does-a-ddos-attack-work}
 
-An attacker gains control of a network of online machines to carry out a DDoS attack. Computers and other machines (such as IoT devices) are infected with malware, turning each one into a bot (or zombie). The attacker controls the group of bots, which is called a _botnet_. 
+An attacker gains control of a network of online machines to carry out a DDoS attack. Computers and other machines (such as IoT devices) are infected with malware, turning each one into a bot (or zombie). The attacker controls the group of bots, which is called a _botnet_.
 
-After establishing a botnet, the attacker directs the machines by sending updated instructions to each bot using remote control. A targeted IP address may receive requests from a multitude of bots, causing the targeted server or network to overflow capacity. This creates a denial-of-service to normal traffic. Because each bot is a legitimate Internet device, separating the attack traffic from normal traffic can be difficult. 
+After establishing a botnet, the attacker directs the machines by sending updated instructions to each bot using remote control. A targeted IP address may receive requests from a multitude of bots, causing the targeted server or network to overflow capacity. This creates a denial-of-service to normal traffic. Because each bot is a legitimate Internet device, separating the attack traffic from normal traffic can be difficult.
 
 ## What are common types of DDoS attacks?
 {:#what-are-common-types-of-ddos-attacks}
@@ -49,18 +50,18 @@ An application layer attack is sometimes referred to as a _layer-7 DDoS attack_ 
 ### Protocol Attacks
 {:#protocol-attacks}
 
-Protocol attacks utilize weaknesses in layer 3 and layer 4 of the ISO protocol stack to render the target inaccessible. These attacks, also known as a state-exhaustion attacks, cause a service disruption by consuming all the available _state table_ capacity of web application servers, or of intermediate resources such as firewalls and load balancers. 
-  
+Protocol attacks utilize weaknesses in layer 3 and layer 4 of the ISO protocol stack to render the target inaccessible. These attacks, also known as a state-exhaustion attacks, cause a service disruption by consuming all the available _state table_ capacity of web application servers, or of intermediate resources such as firewalls and load balancers.
+
 ### Volumetric Attacks
 {:#volumetric-attacks}
 
-This category of attacks attempts to create congestion by consuming all available bandwidth between the target and the wider Internet. Large amounts of data are sent to a target using a form of amplification, or by other means of creating massive traffic, such as requests from a botnet. 
+This category of attacks attempts to create congestion by consuming all available bandwidth between the target and the wider Internet. Large amounts of data are sent to a target using a form of amplification, or by other means of creating massive traffic, such as requests from a botnet.
 
 
 ## What do I do if I’m under a DDoS attack?
 {:#under-ddos-attack}
 
-**Step 1:** Turn on “Defense mode" from the **Overview** screen. 
+**Step 1:** Turn on “Defense mode" from the **Overview** screen.
 
 ![Defense Mode](images/defense-mode.png)
 

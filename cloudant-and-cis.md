@@ -10,15 +10,16 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc} 
-{:new_window: target="_blank"} 
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
 {:note: .note}
 
 
-# Access your Cloudant database through IBM Cloud Internet Services
+# Access your Cloudant database through {{site.data.keyword.cis_full_notm}}
 {: #access-cloudant-through-cis}
 
 Follow these steps to access your Cloudant Database through IBM Cloud Internet Services (CIS).
+{:shortdesc}
 
 ## Before you begin
 {: #access-cloudant-through-cis-begin}

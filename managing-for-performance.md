@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-11"
+lastupdated: "2019-10-31"
 
 keywords: Page Rule Use, Cache-Tag Purge, web content, CIS
 
@@ -12,12 +12,23 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Manage your {{site.data.keyword.cis_full_notm}} deployment for best performance
 {:#manage-your-cis-deployment-for-best-performance}
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) can provide the fastest experience for your customers because it optimizes your images, and it stores your web content as near as possible to your end-users. Your content is loaded from proxied edge servers (which reduces latency).
+{: shortdesc}
 
 With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within {{site.data.keyword.cis_short_notm}}.
 
@@ -25,7 +36,7 @@ With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performan
 
  * Cache as much of your static and semi-static web content as possible
  * For event-driven content, purge your cache using the API
- 
+
 ## Best practice 1: Cache as much static and semi-static content as possible
 {:#best-practice-cache-static-content}
 

@@ -18,18 +18,19 @@ subcollection: cis
 {:deprecated: .deprecated}
 {:generic: data-hd-programlang="generic"}
 
-# How to use the CIS Metrics Tools
+# How to use the {{site.data.keyword.cis_short_notm}} Metrics Tools
 {:#how-to-use-the-cis-metrics-tools}
 
-You can use the CIS Metrics tools (from the side navigation bar) to display information about Domain and DNS metrics in easy-to-digest charts and tables.
+You can use the {{site.data.keyword.cis_full}} Metrics tools (from the side navigation bar) to display information about Domain and DNS metrics in easy-to-digest charts and tables.
+{: shortdesc}
 
-The CIS Metrics tools suite contains these tools:
+The {{site.data.keyword.cis_short_notm}} Metrics tools suite contains these tools:
  * **Domain Metrics**, which consists of Web Traffic, Performance, and Security tools
  * **DNS Metrics**, which consists of three traffic tools
-    
-**Notes:** 
 
- * The smallest viewable increment for CIS Metrics is 6 hours.
+**Notes:**
+
+ * The smallest viewable increment for {{site.data.keyword.cis_short_notm}} Metrics is 6 hours.
  * Each chart displays only the top ten items. You can click on any item in the key to toggle the display of that item.
 
 ## Domain Metrics
@@ -41,9 +42,9 @@ The **Domain Metrics** tools are a series of charts, tables, and graphs that sho
 
 ### Web Traffic
 {:#domain-metrics-web-traffic}
-The **Web Traffic** tool is a set of five tabs that show you helpful information about the traffic to your website. 
+The **Web Traffic** tool is a set of five tabs that show you helpful information about the traffic to your website.
 * **Requests** shows cached and uncached requests made on the domain.
-* **Bandwidth** shows cached and uncached bandwidth in bytes. 
+* **Bandwidth** shows cached and uncached bandwidth in bytes.
 * **Unique Visitors** shows the number of unique visitors to the site.
 * **Threats** shows the total number of threats that are blocked.
 * **Status Codes** shows the different HTTP status codes returned to the end users.
@@ -56,9 +57,9 @@ The **Performance** tool can help you optimize your site's performance.
 
 ![Domain Performance Metrics image](images/domain-metrics-performance.png)
 
-* **Fewer Servers Needed** is shown as a percentage, which is a rough estimate of how much less capacity you need for handling your site’s traffic. It's based on the number of requests and bandwidth you've saved by using CIS. It is intended to help you see how much less web traffic is going to your Origin server.
+* **Fewer Servers Needed** is shown as a percentage, which is a rough estimate of how much less capacity you need for handling your site’s traffic. It's based on the number of requests and bandwidth you've saved by using {{site.data.keyword.cis_short_notm}}. It is intended to help you see how much less web traffic is going to your Origin server.
 
-* **Bandwidth Saved** is a percentage that shows how much bandwidth you've saved by using CIS. It is used in calculating the **Fewer Servers Needed** metric.
+* **Bandwidth Saved** is a percentage that shows how much bandwidth you've saved by using {{site.data.keyword.cis_short_notm}}. It is used in calculating the **Fewer Servers Needed** metric.
 
 ### Security
 {:#domain-metrics-security}

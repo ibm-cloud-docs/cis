@@ -22,6 +22,7 @@ subcollection: cis
 {:#use-page-rules-with-caching}
 
 Page Rules give you the ability to take various actions based on the page's URL, such as creating redirects, fine-tuning caching behavior, or enabling and disabling services.
+{:shortdesc}
 
 A Page Rule takes effect on a given URL pattern that matches the following format:
 
@@ -36,7 +37,7 @@ The `scheme` and `port` components are optional. If the `scheme` component is om
 **Important things to remember with Page Rules:**
 
  * Only one Page Rule takes effect on any given request.
- * Page Rules are given priority in an order from top to bottom. Once a URL matches a rule, only that rule is applied; that is, if a Page Rule has triggered already on a request, any subsequent rules that also match the URL pattern will not take effect. 
+ * Page Rules are given priority in an order from top to bottom. Once a URL matches a rule, only that rule is applied; that is, if a Page Rule has triggered already on a request, any subsequent rules that also match the URL pattern will not take effect.
  * As a general rule, we recommend ordering your rules from most specific to least specific.
  * Page Rules can be disabled, in which case they will take no action but can still be seen in the list and edited. Setting the *Enabled* toggle to "Off" creates a Page Rule that is disabled initially.
 
@@ -79,7 +80,7 @@ The following example sets a Page Rule to cache everything found in the `/images
 
 ![image3](images/url-example.png)
 
-**Serve Stale Content** serves pages from our cache, even when your server goes down. Visitors see a limited version of your site, with a message that they are in offline browsing mode. 
+**Serve Stale Content** serves pages from our cache, even when your server goes down. Visitors see a limited version of your site, with a message that they are in offline browsing mode.
 
 This feature returns an HTTP status 503. When servers are online again, CIS seamlessly takes visitors to regular browsing.
 

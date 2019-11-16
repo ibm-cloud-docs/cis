@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-11-13"
 
 keywords: health checks, origin pools, load balancers, IBM CIS
 
@@ -12,24 +12,31 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
+{:term: .term}
 
 
 # Set up and configure your load balancers
 {:#set-up-and-configure-your-load-balancers}
- 
- IBM CIS provides global load balancing as a service. Here's how the GLB Dashboard looks:
 
-![IMAGE](images/glb-screen.png)
+ {{site.data.keyword.cis_full}} provides global load balancing as a service. {: shortdesc} Here's how the GLB Dashboard looks:
+
+![GLB Dashboard](images/glb-screen.png)
 
 ## GLB Dashboard
 {:#glb-dashboard}
 
-On your dashboard, you'll see three lists that show the load balancers, origin pools, and health checks. The lists display the new or updated global load balancer or one of its components after you've provisioned or updated it. Initially the lists are empty, and before you create a load balancer you must take a few actions.
+On your dashboard, you'll see three lists that show the [load balancers](#x2788902){: term}, origin pools, and [health checks](#x4571658){: term}. The lists display the new or updated global load balancer or one of its components after you've provisioned or updated it. Initially the lists are empty, and before you create a load balancer you must take a few actions.
 
 Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-balancer-quick-setup) if you already know what you need to do!
 
@@ -42,12 +49,12 @@ Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-
 1) <sup>`*`</sup>Create a health check, click **Create health check**.
   ![IMAGE](images/glb-health-check-list.png)
     <ul>
-      <li><b>Path</b>: The endpoint path to health check against.</li> 
+      <li><b>Path</b>: The endpoint path to health check against.</li>
       <li><b>Type</b>: The protocol to use for the health check.</li>
       <li><b>Description</b>: User provided description.</li>
     </ul>
 
-2) Create a pool, click **Create pool**. 
+2) Create a pool, click **Create pool**.
   ![IMAGE](images/glb-pool-list.png)
     <ul>
       <li><b>Health</b>: Status of the pool.</li>
@@ -67,7 +74,7 @@ Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-
       <li><b>Status</b>: Enable or disable the load balancer.</li>
     </ul>
 
-IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}.  
+IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.  
 {:note}
 
 ### Edit/Delete
@@ -82,7 +89,7 @@ The following options are provided for each list.
 
 * Health Check
     * **View health check**: This option shows a short summary of the health check, with a link that takes you to the edit flow.
-    * **Edit health check**: This option redirects the user to the edit flow. 
+    * **Edit health check**: This option redirects the user to the edit flow.
     * **Delete health check**: This option brings up the confirmation dialog box for the deletion flow.
 
 * Pool
@@ -92,7 +99,7 @@ The following options are provided for each list.
 
 * Load Balancer
     * **Disable/Enable**: Enable or disable a load balancer.
-    * **Edit load balancer**: Redirects to the edit flow. 
+    * **Edit load balancer**: Redirects to the edit flow.
     * **Delete load balancer**: Brings up the confirmation dialog box for the deletion flow.
 
 ## Add a Health Check
@@ -112,7 +119,7 @@ Additional optional fields:
  * **Timeout**: The time (in seconds) before marking the health check as failed (defaults to 5).
  * **Retries**: The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately (defaults to 2).
  * **Response Body**: A case-insensitive sub-string to match against in the response body. If this string is not found, the origin is marked as unhealthy.
- * **Request Headers**: The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The `User-Agent` header cannot be overridden.
+ * **Request Headers**: The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The **`User-Agent`** header cannot be overridden.
 
 ## Add a Pool
 {:#add-a-pool}
@@ -127,7 +134,10 @@ Additional optional fields:
  * **Description**: A human-readable description of the pool.
  * **Enabled**: Whether to enable (the default) this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any (default to true).
  * **Healthy Origin Threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and will fail over to the next available pool. (defaults to 1)
- * **Health Check Regions**: Region from which the health check will perform monitoring. **Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}. 
+ * **Health Check Regions**: Region from which the health check will perform monitoring.
+
+   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.
+   {:note}
  * **Health Check**: The health check to use for checking origins within this pool. (defaults to no health check)
  * **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
 
@@ -143,7 +153,8 @@ When creating a load balancer, the required fields are:
 Optionally, the following fields can be configured:
  * **Proxy**: Route traffic through IBM's performance and metrics service.
  * **Session Affinity**: Always route through the same performance and metrics instance. This option is available only if proxy is enabled.
- * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to `Automatic`.
- * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools. **Note**: IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:new_window}. 
- 
-For definitions of terms used in this document, which generally are common terms used throughout the industry, refer to the [Glossary](/docs/infrastructure/cis?topic=cis-glossary).
+ * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to **`Automatic`**.
+ * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools.
+
+   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.
+   {:note}

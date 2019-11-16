@@ -22,6 +22,7 @@ subcollection: cis
 {: #fields-and-expressions}
 
 Along with actions, fields and expressions are the building blocks of Firewall Rules. These two elements work together when defining the criteria to use when a Firewall Rule is matched.
+{:shortdesc}
 
 ## Fields
 

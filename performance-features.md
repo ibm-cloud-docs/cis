@@ -17,6 +17,7 @@ subcollection: cis
 {:#how-cis-optimizes-performance}
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) helps you improve performance of your web services and applications by leveraging three major features: Global Load Balancing, Content Optimization through Page Rules, and Caching. Superior web performance requires more than just moving static files closer to visitors; it means you must be sure that every page renders as quickly and efficiently as possible. By protecting your origin servers from spammers, bots, and malicious crawlers, you can protect your origin’s resources for your application's performance, which improves your customer experience.
+{: shortdesc}
 
 ![performance-graphic.png](images/performance-graphic.png)
 
@@ -25,7 +26,7 @@ Here’s a quick feature overview:
 ## Performance features
 {:#cis-performance-features}
 
- * Global Load Balancing 
+ * Global Load Balancing
  * Page Rules that fine-tune your cache behavior and create content optimization
  * Caching
 

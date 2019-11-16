@@ -22,7 +22,8 @@ subcollection: cis
 # WAF settings
 {:#waf-settings}
 
-The following table shows the actions Web Application Firewalls (WAF) can take. 
+The following table shows the actions Web Application Firewalls (WAF) can take.
+{: shortdesc}
 
 
 |Action| Definition|
@@ -32,10 +33,10 @@ The following table shows the actions Web Application Firewalls (WAF) can take.
 |Challenge | A challenge page asks visitors to submit a CAPTCHA to continue to your website.|
 |Threshold or sensitivity setting | Set rules to trigger more or less, depending on sensitivity.|
 
-## CIS Rule Set for WAF
+## {{site.data.keyword.cis_full_notm}} Rule Set for WAF
 {:#cis-ruleset-for-waf}
 
-Select **View CIS Rules** to reveal the rule sets of this package. The rule sets follow:
+Select **View {{site.data.keyword.cis_short_notm}} Rules** to reveal the rule sets of this package. The rule sets follow:
   * Drupal
   * Flash
   * Joomla
@@ -53,7 +54,7 @@ Only enable the rule sets that correspond to your technology stack. For instance
 
 Select any of the specific Rule Sets to see further details about each of the rules included.
 
-CIS Rule set lets you perform four actions on each rule:
+{{site.data.keyword.cis_short_notm}} Rule set lets you perform four actions on each rule:
   1. **Disable**: Turns the rule off.
   2. **Simulate**: Logs the event and does not block or challenge the visitor (you can still decide to set to a block or challenge after reviewing your logs).
   3. **Block**: Block simply blocks the request entirely, with no option to bypass it for that request.

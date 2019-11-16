@@ -12,10 +12,25 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # WAF default rule set
 {:#waf-default-ruleset}
+
+The following table shows the default WAF rule set, and their associated actions.
+{: shortdesc}
 
 | Rule | Action |
 |----------|---------------|
@@ -31,7 +46,7 @@ subcollection: cis
 |Prevent RCE against the nc family of commands|block
 |SQLi probing|block
 |Block SQLi string function evasion|block
-|Block SQLi string concatination evasions|block
+|Block SQLi string concatenation evasions|block
 |Block SQLi sleep probing|block
 |Block SQLi sleep probing (wait for)|block
 |SQLi attempt (Conditional) |block

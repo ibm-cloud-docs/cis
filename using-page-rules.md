@@ -23,6 +23,7 @@ subcollection: cis
 {:#use-page-rules}
 
 A Page Rule specifies some settings and values that you can apply to a specific URL pattern that references your domain. Page Rules help you manage security, performance, and reliability based on each individual URL in your site. The following table describes the Page Rules that are available to all customers, the behaviors they produce, and any special considerations you should keep in mind before using them.
+{: shortdesc}
 
 ## Security
 {:#page-rules-security}
@@ -40,8 +41,8 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Automatic HTTPS Rewrites**|Toggles Automatic HTTPS Rewrites on or off.  | |
 |**Opportunistic Encryption**|Toggles Opportunistic Encryption on or off.  | |
 |**Cache Deception Armor**|Toggles Cache Deception Armor on or off.  | |
-|**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables configuring all other settings for the rule, because IBM CIS forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against Page Rules. |
-|**True Client IP Header**|CIS will send the end user's IP address in the `True-Client-IP` header.  |Enterprise only |
+|**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables configuring all other settings for the rule, because {{site.data.keyword.cis_short_notm}} forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against Page Rules. |
+|**True Client IP Header**|{{site.data.keyword.cis_short_notm}} will send the end user's IP address in the `True-Client-IP` header.  |Enterprise only |
 
 ## Performance
 {:#page-rules-performance}
@@ -51,7 +52,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Browser Cache TTL**|Controls how long resources cached by client browsers remain valid. | |
 |**Bypass Cache on Cookie**|Serve a cached object unless we see a cookie of a specific name, for example, serve a cached version of the homepage unless we see a `SessionID` cookie indicating the customer is logged in and therefore should be presented personalized content. | |
 |**Cache Level**|**Bypass** - Resources that match that Page Rule are not cached.<br>**No query string** - Only delivers resources from cache when there is no query string.<br>**Ignore query string** - Delivers the same resource to everyone independent of the query string.<br>**Standard** - Delivers a different resource each time the query string changes.<br> **Cache everything** - Resources that match the Page Rule are cached.|By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
-|**Edge Cache TTL**|Controls how long IBM CIS will retain files in our cache. |This setting is optional when specifying cache level. |
+|**Edge Cache TTL**|Controls how long {{site.data.keyword.cis_short_notm}} will retain files in our cache. |This setting is optional when specifying cache level. |
 |**Resolve Override**|Change the URL or IP that the request matching the page rule resolves to.||
 |**Cache on Cookie**|Apply the `Cache Everything` option (`Cache Level` setting) based on a regular expression match against a cookie name. If you add both this setting and `Bypass Cache on Cookie` to the same page rule, `Cache On Cookie` takes precedence over `Bypass Cache on Cookie`.|Enterprise only |
 |**Disable Performance**|Turn off:<ul><li>`Minify Web Content`</li><li>`Image Load Optimization`</li><li>`Image Size Optimization`</li><li>`Script Load Optimization`</li></ul> |Enterprise only |
@@ -59,7 +60,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Image Load Optimization**|Improves load time for pages that include images based on network connection and device type by:<ul><li>**Image Virtualizing** - Replaces images with low resolution placeholder images that have the same dimensions as the original (including third party images). Once the page renders completely, full resolution images are then lazy-loaded (prioritizing images in the browser viewport). This process allows pages to render quickly and minimizes browser reflow.</li><li>**Request Streamlining** - Combines multiple individual network requests for images into a single request.</li><ul> |Enterprise only |
 |**Image Size Optimization**|Reduce image file size by removing metadata (date and time, camera manufacturer and model, etc.), and by compressing images when possible. Smaller file sizes mean faster load times for images and web pages. |Enterprise only |
 |**Sort Query String**|Treats files with the same query strings as the same file in cache, regardless of the order of the query strings. |Enterprise only |
-|**Response Buffering**|Enable or disable buffering of responses from the origin server. By default, CIS sends packets to the client as we receive them. Enabling Response Buffering means that CIS will wait until it has the entire file before forwarding it to the end user. |Enterprise only |
+|**Response Buffering**|Enable or disable buffering of responses from the origin server. By default, {{site.data.keyword.cis_short_notm}} sends packets to the client as we receive them. Enabling Response Buffering means that {{site.data.keyword.cis_short_notm}} will wait until it has the entire file before forwarding it to the end user. |Enterprise only |
 |**Script Load Optimization**|Improve paint times by asynchronously loading your Javascripts, including third party scripts, so that they do not block rendering the content of your pages. |Enterprise only |
 
 ## Reliability
@@ -67,12 +68,12 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
-|**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
-|**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
-|**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your CIS deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability)|
+|**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
+|**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
+|**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability)|
 |**Host Header Override**|Replace the host header for URI matching the page rule to the value specified. This is commonly used for content hosted in an S3 bucket.|
-|**Disable Apps**|Turn off all CIS Apps. | Enterprise only |
-|**Origin Error Page Pass-through**|Disables CIS error pages that would trigger for issues sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only ||
+|**Disable Apps**|Turn off all {{site.data.keyword.cis_short_notm}} Apps. | Enterprise only |
+|**Origin Error Page Pass-through**|Disables {{site.data.keyword.cis_short_notm}} error pages that would trigger for issues sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only ||
 
 ## Page Rule URL patterns
 {:#page-rule-url-patterns}
@@ -96,4 +97,3 @@ Here are three important things to remember with Page Rules:
 Page Rules can be disabled, in which case they will take no action. They still can be seen in the list and they can be edited. Setting the **Enabled** toggle to **Off** will create a Page Rule that initially is disabled.
 
 For more information, please refer to the [Caching and Page Rules how-to document](/docs/infrastructure/cis?topic=cis-use-page-rules-with-caching).
-
