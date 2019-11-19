@@ -87,7 +87,6 @@ Cloud Internet Services (CIS)
     api-resource.md
     at_events.md
     cis-cli-overview.md
-    glossary.md
     whitelisted-ips.md
     external-resources.md
     {: .navgroup-end}

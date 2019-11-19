@@ -22,6 +22,7 @@ subcollection: cis
 {:#cis-routing}
 
 Eliminate excess latency by analyzing and optimizing routing decisions across the global Internet using real-time network connections. Reduce Internet latency on average by 35% and connection errors by 27%.
+{: shortdesc}
 
 ## Smart Routing
 {:#cis-smart-routing}

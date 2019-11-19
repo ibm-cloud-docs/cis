@@ -22,15 +22,18 @@ subcollection: cis
 # OWASP Rule Set for WAF
 {:#owasp-rule-set-for-waf}
 
-The OWASP Rule Set contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL Injection, Cross-Site Scripting, and Locale File Inclusion, among others. IBM CIS provides but does not curate these rules. OWASP is an industry standard that provides a good security baseline. See the following links for more information:
+The OWASP Rule Set contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL Injection, Cross-Site Scripting, and Locale File Inclusion, among others. {{site.data.keyword.cis_full}} provides but does not curate these rules.
+{: shortdesc}
+
+OWASP is an industry standard that provides a good security baseline. See the following links for more information:
   * [OWASP on Github](https://github.com/SpiderLabs/owasp-modsecurity-crs)
   * [OWASP.org](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project)
 
 ## Managing OWASP
 {:#managing-owasp}
 
-Unlike the [CIS rule set](/docs/infrastructure/cis?topic=cis-waf-settings#cis-ruleset-for-waf), OWASP allows you to set Sensitivity.
-A request may trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, CIS compares it to the sensitivity threshold selected in the beginning, and then either blocks or allows the request.
+Unlike the [{{site.data.keyword.cis_short_notm}} rule set](/docs/infrastructure/cis?topic=cis-waf-settings#cis-ruleset-for-waf), OWASP allows you to set Sensitivity.
+A request may trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, {{site.data.keyword.cis_short_notm}} compares it to the sensitivity threshold selected in the beginning, and then either blocks or allows the request.
 
 |Sensitivity score| Trigger threshold|
 |------|---------------|
@@ -38,9 +41,9 @@ A request may trigger a set of OWASP rules that have a high to low severity scor
 |Medium|  40 and higher|
 |High  |  25 and higher|
 
-We suggest that you set OWASP sensitivity to `low`. If you set it to `high`, check the logs on CIS, and fine-tune the OWASP rule set to work for your application.
+We suggest that you set OWASP sensitivity to `low`. If you set it to `high`, check the logs on {{site.data.keyword.cis_short_notm}}, and fine-tune the OWASP rule set to work for your application.
 
-Keep in mind that OWASP rules can only be toggled _on_ or _off_, unlike rules in the CIS rule sets, which can be set to _Disable_, _Simulate_, _Challenge_, or _Block_.
+Keep in mind that OWASP rules can only be toggled _on_ or _off_, unlike rules in the {{site.data.keyword.cis_short_notm}} rule sets, which can be set to _Disable_, _Simulate_, _Challenge_, or _Block_.
 
 ## How to deal with False Positives?
 {:#owasp-false-positives}

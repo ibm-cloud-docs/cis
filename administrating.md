@@ -10,14 +10,27 @@ subcollection: cis
 
 ---
 
-
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
+
 
 # Administrative best practices
 {:#administrative-best-practices}
 
-{{site.data.keyword.cis_full}} provides many ways you can administer your brand presence, your account security, and your support process. We recommend working through each of the administrative best practices listed in this document, to ensure that your customers and your content are best served by your {{site.data.keyword.cis_short_notm}} network.
+{{site.data.keyword.cis_full}} provides many ways you can administer your brand presence, your account security, and your support process. It is recommended that you work through each of the administrative best practices listed in this document, to ensure that your customers and your content are best served by your {{site.data.keyword.cis_short_notm}} network.
+{:shortdesc}
 
 ## Manage your brand by customizing {{site.data.keyword.cis_short_notm}} pages
 {:#manage-your-brand-by-customizing-cis-pages}
@@ -37,7 +50,7 @@ Follow the procedures described in [Requiring MFA for users in your account](/do
 ## Submit a test ticket with our support team
 {:#submit-a-test-ticket}
 
-Feel free to write a quick note to our support team to test our support workflow. 
+Feel free to write a quick note to our support team to test our support workflow.
 
 Here are two easy ways to submit a ticket:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-03"
+lastupdated: "2019-10-31"
 
 keywords: IBM CIS deployment, query strings, HTML files
 
@@ -12,16 +12,23 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Caching Concepts
 {:#caching-concepts}
 
 This document contains some concepts and definitions related to caching and how it affects your {{site.data.keyword.cis_full}} deployment.
+{:shortdesc}
 
 ## What is Caching?
 {:#what-is-caching}
@@ -37,7 +44,7 @@ A deeper explanation of the cache settings and your caching options can be found
 
 By default, we cache **static files**, which include many types of image and text files (non-HTML files). This only includes files from your websites and not 3rd party resources from social networking sites, etc. Also, we currently do not cache by MIME type.
 
-### How do I cache HTML? 
+### How do I cache HTML?
 {:#how-do-i-cache-html}
 
 We do not cache HTML files by default because we do not consider them to be static; however, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files [using the Page Rules feature](/docs/infrastructure/cis?topic=cis-use-page-rules).

@@ -21,7 +21,8 @@ subcollection: cis
 # Firewall Rules
 {: #firewall-rules}
 
-Cloud Internet Services Firewall Rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
+{{site.data.keyword.cis_full}} Firewall Rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
+{: shortdesc}
 
 ## Plan Entitlements
 

@@ -12,33 +12,36 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"} 
-{:note: .note} 
-{:important: .important} 
-{:deprecated: .deprecated} 
+{:DomainName: data-hd-keyref="DomainName"}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:generic: data-hd-programlang="generic"}
 
 # Known Limitations
 {:#known-limitations}
 
+The following information acknowledges some of the limitations, and some suggested courses of action to make your experience better.
+{: shortdesc}
+
  * We recommend using Chrome.
- 
+
  * The Free Trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed to add new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.
 
  * For this service, we support subdomain delegation only using NS records from another provider. CNAME delegation is not supported.
-  
+
  * A, AAAA, and CNAME wildcard records (*) cannot be proxied.
 
  * When you delete a dedicated certificate, it may reappear in the list for a short time before the deletion is complete.
- 
- * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one. 
- 
+
+ * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
+
  * IP Rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
 
 ## Global Load Balancer
 {:#known-limitations-glb}
 
- * Cloud Internet Services allows you to use the character `_` in load balancer hostnames, however, Kubernetes clusters cannot use `_`. 
+ * Cloud Internet Services allows you to use the character `_` in load balancer hostnames, however, Kubernetes clusters cannot use `_`.
 
  * The Standard plan permits a maximum of 5 load balancers, pools, and health checks. Each pool can have a total of 6 origins, but only 6 unique origins are permitted throughout each CIS instance.
 
@@ -57,18 +60,18 @@ subcollection: cis
    _cf.generate.yourdomain.com 0	IN	CNAME address.alias.com
    cf.generate.yourdomain.com 0	IN	CNAME address2.alias.com
    ```
- 
+
    These records must be removed from the zone file to properly import.
- 
- * Exporting CAA DNS records does not work correctly. The `<tag>` and `<value>` are HEX encoded. 
- 
+
+ * Exporting CAA DNS records does not work correctly. The `<tag>` and `<value>` are HEX encoded.
+
     CAA `<flags>` `<tag>` `<value>`
   {:note}
    ```
    Ex.
    Original CAA record
    caa.yourdomain.com.	1	IN	CAA	0 issue "letsencrypt.org"
- 
+
    Exported CAA record
    caa.yourdomain.com.	1	IN	CAA	0 6973737565 "6c657473656e63727970742e6f7267"
    ```

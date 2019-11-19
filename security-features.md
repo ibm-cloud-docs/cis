@@ -28,7 +28,8 @@ subcollection: cis
 # How {{site.data.keyword.cis_full_notm}} keeps your work secure
 {:#how-cis-keeps-your-work-secure}
 
-{{site.data.keyword.cis_full}} is a globally distributed cloud service that blocks threats and limits abusive bots and crawlers, which can waste your bandwidth and server resources. IBM {{site.data.keyword.cis_short_notm}} works as a global HTTP(S) reverse proxy and a managed DNS service provider. Your web traffic is routed through the intelligent global network to optimize both your performance and your security.
+{{site.data.keyword.cis_full}} is a globally distributed cloud service that blocks threats and limits abusive bots and crawlers, which can waste your bandwidth and server resources. IBM {{site.data.keyword.cis_short_notm}} works as a global HTTP(S) reverse proxy and a managed DNS service provider. Your web traffic is routed through our intelligent global network to optimize both your performance and your security.
+{: shortdesc} 
 
 ![security-graphic.png](images/security-graphic.png)
 
@@ -69,6 +70,7 @@ Generally, attacks that fall into two categories:
 
 | Layer 3 or Layer four attacks | Layer 7 attacks |
 |------------------------------|-----------------|
+
 |These attacks consist of a flood of traffic at ISO Layer 3 (the network layer), such as ICMP floods), or at Layer 4 (the transport layer), such as TCP SYN floods or reflected UDP floods) |These are attacks that send malicious ISO Layer 7 requests (the application layer), such as GET floods.  |
 | Automatically blocked at our edge | We handle these with "Defense Mode," WAF, and Security level settings |
 

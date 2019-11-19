@@ -22,9 +22,8 @@ subcollection: cis
 {:#external-resources}
 
 These resources are created by IBM and some of our partners and customers.
+{: shortdesc}
 
 * [**Blog Post: IBM Cloud Internet Services: Protecting your web-facing workloads, one enhanced experience at a time**](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-internet-services-ga)
-      
+
    >"Imagine a fully integrated, one-stop shop for network security and performance capabilities in your cloud infrastructure. Now, you have just that. Today, we’re excited to announce the general availability of IBM Cloud Internet Services (CIS)—an integrated set of secure, reliable, and highly performant network services, specially designed to optimize websites and applications."
-
-

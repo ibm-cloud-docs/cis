@@ -22,10 +22,11 @@ subcollection: cis
 {: #priority}
 
 By default, the action you specify in a rule determines the evaluation sequence for your entire ruleset. To learn more, see [Actions](/docs/infrastructure/cis?topic=cis-actions).
+{: shortdesc}
 
 However, a **priority** is an option that allows you to force the evaluation sequence to occur before triggering a rule.
 
-You can manage a priority using the Firewall Rules UI in the CIS dashboard. Priority management is also available from the Firewall Rules API.
+You can manage a priority using the Firewall Rules UI in the {{site.data.keyword.cis_short_notm}} dashboard. Priority management is also available from the Firewall Rules API.
 
 The Firewall Rules engine processes rules in parallel. If you do not specify priority in a large ruleset, a matching conflict is possible. To avoid any conflicts, it's recommended you explicitly controlling the evaluation sequence of your ruleset using a priority.
 {: note}

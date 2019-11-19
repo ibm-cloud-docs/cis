@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-06-18"
 
-keywords: edge functions, CIS, 
+keywords: edge functions, CIS,
 
 subcollection: cis
 
@@ -12,16 +12,24 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Edge Functions
 {: #edge-functions}
 
-CIS Edge Functions allow you to create new applications or modify existing applications, without having to configure or maintain infrastructure, by utilizing a serverless execution environment. Edge Functions can be defined and uploaded to the Cloud edge to process requests before they reach the origin. CIS Edge functions can be used to modify HTTP requests and responses, make parallel requests, or generate responses from the Cloud edge.
+{{site.data.keyword.cis_full}} Edge Functions allow you to create new applications or modify existing applications, without having to configure or maintain infrastructure, by utilizing a serverless execution environment. Edge Functions can be defined and uploaded to the Cloud edge to process requests before they reach the origin. {{site.data.keyword.cis_short_notm}} Edge functions can be used to modify HTTP requests and responses, make parallel requests, or generate responses from the Cloud edge.
+{: shortdesc}
 
 ## How Edge Functions work
 {: #how-edge-functions-work}
@@ -67,7 +75,7 @@ Uploading or creating an action with the same name as an existing action will ca
 ### Edit actions
 {: #edge-functions-edit-actions}
 
-Selecting an action opens the action in the editor for modification. Whenever you save your changes the action will upload to the cloud's edge. After updating select **Save**. If the action is in use, the changes will take effect immediately. 
+Selecting an action opens the action in the editor for modification. Whenever you save your changes the action will upload to the cloud's edge. After updating select **Save**. If the action is in use, the changes will take effect immediately.
 
 ### Delete actions
 {: #edge-functions-delete-actions}
@@ -99,7 +107,7 @@ You must add a domain to add triggers. You may add triggers without having actio
 ### Add triggers
 {: #add-triggers}
 
-Go to the **Triggers** tab and click **Add trigger**. Enter a URL pattern and select an action from the list of existing actions. 
+Go to the **Triggers** tab and click **Add trigger**. Enter a URL pattern and select an action from the list of existing actions.
 
 For an action you can also select **Avoid Edge Functions**. This allows the trigger's path to remain active but avoid using any Edge Function actions. For example, there is an action called `my-function` and a trigger with the path `gamma.cistest-load.com/*`. If the path `gamma.cistest-load.com/data` should not use the action `my-function` create another trigger with the path `gamma.cistest-load.com/data` and the option **Avoid Edge Functions**. This allows the path `gamma.cistest-load.com/data` to remain active without using the action `my-function`.
 
@@ -117,7 +125,7 @@ Delete a trigger using the menu option in the table row for a selected trigger. 
 ## Use Cases
 {: #edge-functions-use-cases-examples}
 
-These examples are for demonstration purposes only, and not intended for use in production. 
+These examples are for demonstration purposes only, and not intended for use in production.
 {:important}
 * [A/B Testing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#ab-testing)
 * [Adding a Response Header](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#add-response-header)

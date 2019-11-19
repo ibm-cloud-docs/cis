@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-10-31"
 
 keywords: Best practices, CIS setup
 
@@ -18,10 +18,11 @@ subcollection: cis
 {:deprecated: .deprecated}
 {:generic: data-hd-programlang="generic"}
 
-# Best practices for CIS setup
+# Best practices for {{site.data.keyword.cis_short_notm}} setup
 {:#best-practices-for-cis-setup}
 
-Because {{site.data.keyword.cis_full}} is positioned at the edge of your network, you’ll need to take a few steps to guarantee a smooth integration with your {{site.data.keyword.cis_short_notm}} services. Here are some recommended best practices for integrating {{site.data.keyword.cis_short_notm}} with your origin servers. 
+Because {{site.data.keyword.cis_full}} is positioned at the edge of your network, you’ll need to take a few steps to guarantee a smooth integration with your {{site.data.keyword.cis_short_notm}} services. Here are some recommended best practices for integrating {{site.data.keyword.cis_short_notm}} with your origin servers.
+{:shortdesc}
 
 You can do these steps either before or after you change your DNS and activate our proxy service. These recommendations allow {{site.data.keyword.cis_short_notm}} to connect to your origin servers properly. They’ll help you prevent any issues with API or HTTPS traffic, and help your logs capture the correct IP addresses of your customers, rather than the protective {{site.data.keyword.cis_short_notm}} IP addresses.
 
@@ -31,7 +32,7 @@ Here’s what you’ll need to set up:
  * Best practice 2: Incorporate {{site.data.keyword.cis_short_notm}} IP addresses
  * Best practice 3: Make sure your security settings don't interfere with API traffic
  * Best practice 4: Configure your security settings as strictly as possible
- 
+
 ## Best practice 1: Know how to restore the originating IPs of your customers
 {:#best-practice-know-how-to-restore-origininating-ip}
 
@@ -68,7 +69,7 @@ IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by remo
 
  * Alternatively, you can turn off **Web Application Firewall** globally from the Security page.
 
-| *What does the Browser Integrity Check do?* | 
+| *What does the Browser Integrity Check do?* |
 |------------------------------------------------|
 | *The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks visitors that do not have a user agent, or who add a non-standard user agent (this tactic is commonly used by abuse bots, crawlers, or APIs).* |
 
@@ -79,16 +80,15 @@ IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by remo
 
 ### Upload a custom certificate
 {:#strict-upload-custom-cert}
- 
-You can upload your public and private key when you create an Enterprise domain. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, IBM {{site.data.keyword.cis_short_notm}} won't track the certificate expiration dates. 
- 
+
+You can upload your public and private key when you create an Enterprise domain. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, IBM {{site.data.keyword.cis_short_notm}} won't track the certificate expiration dates.
+
 ### Alternatively, utilize a certificate provisioned by CIS
 {:#strict-utilize-cert-cis-provisioned}
- 
+
 IBM {{site.data.keyword.cis_short_notm}} has partnered with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers, by default. Manual verification could be required for setting up these certificates, and your support team can help you perform these additional steps.
- 
+
 ### Change your TLS setting to **End-to-End CA Signed**
 {:#strict-change-tls-setting}
- 
-Most of our Enterprise customers utilize the End-to-End CA Signed security setting. An **End-to-End CA Signed** setting requires a valid, CA-signed certificate installed on your web server. The certificate's expiration date must be in the future, and it must have a matching *hostname* or *Subject Alternative Name (SAN)*.
 
+Most of our Enterprise customers utilize the End-to-End CA Signed security setting. An **End-to-End CA Signed** setting requires a valid, CA-signed certificate installed on your web server. The certificate's expiration date must be in the future, and it must have a matching *hostname* or *Subject Alternative Name (SAN)*.

@@ -25,6 +25,7 @@ subcollection: cis
 {:#logpush}
 
 {{site.data.keyword.cis_full}} customers on Enterprise accounts have access to detailed logs of HTTP requests for their domains. These logs are helpful for debugging, identifying configuration adjustments, and creating analytics, especially when combined with other data sources such as application server logs.
+{: shortdesc}
 
 The data from Logpush is exactly the same as that from [Logpull](#logpull). Unlike Logpull, which allows {{site.data.keyword.cis_short_notm}} Enterprise customers to download request logs, Logpush provides {{site.data.keyword.cis_short_notm}} Enterprise customers the option to push the request logs to {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) buckets. You’re free to choose the method that’s most convenient.
 
@@ -46,21 +47,21 @@ Use the following command to create a Logpush job for a specific domain and enab
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name JOB_NAME --fields all --enable true
 ```
 where,
-  * `--destination` specifies the path to {{site.data.keyword.cos_short}} bucket 
+  * `--destination` specifies the path to {{site.data.keyword.cos_short}} bucket
     * It follows the syntax: `cos://<bucket_path>?region=xxx&instance-id=xxxx`, in which `bucket_path` is the bucket name followed by an optional path-like structure, `region` and {{site.data.keyword.cos_short}} `instance-id` are {{site.data.keyword.cos_short}} bucket region and instance ID, which must be also given in the query arguments.
     * For example, `cos://mybucket/cislog?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`.
   * `--name` specifies the Logpush job name.
-  * `--fields` specifies the list of log fields to be included in log files. 
-    * Multiple fields can be separated by commas. 
+  * `--fields` specifies the list of log fields to be included in log files.
+    * Multiple fields can be separated by commas.
     * Use command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get the comprehensive list of available log fields, or use `all` to include all available fields in log files.
-  * `--enable` is the flag to enable or disable the Logpush job. 
+  * `--enable` is the flag to enable or disable the Logpush job.
     * It is disabled by default.
 
 A domain can only have one Logpush job. Use the command line to interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge. When a challenge token is written to a file in the given {{site.data.keyword.cos_short}} bucket, you must:
-  * download the file from your {{site.data.keyword.cos_short}} bucket, 
-  * open the downloaded file, 
-  * copy and paste the challenge token in the command prompt to address the ownership challenge. 
-  
+  * download the file from your {{site.data.keyword.cos_short}} bucket,
+  * open the downloaded file,
+  * copy and paste the challenge token in the command prompt to address the ownership challenge.
+
 A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 5 minutes.
 
 You can use the token `{DATE}` in the bucket path to make the Logpush job push request logs in daily folders under the bucket path. For example, `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`.

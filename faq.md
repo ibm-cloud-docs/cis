@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-11-07"
 
 keywords: configuration domain, Free Trial plan, CIS instance
 
@@ -12,12 +12,26 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 {:faq: data-hd-content-type='faq'}
 
 
 
-# FAQ
+# FAQs
 {:#faq}
+
+Have a question about {{site.data.keyword.cis_full}}? Review frequently asked questions, which provide answers to provisioning concerns, application access, and other common inquiries.
 
 ## What happened to the Early Access Plan that used to be in the catalog?
 {:#cis-faq-early-access-plan}
@@ -131,7 +145,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 {:#cis-faq-what-to-do-in-ddos}
 {: faq}
 
-**Step 1:** Turn on “Defense mode" in the **Overview** screen. 
+**Step 1:** Turn on “Defense mode" in the **Overview** screen.
 
 ![Defense Mode](images/defense-mode.png)
 
@@ -172,6 +186,7 @@ Proxied records are records that proxy their traffic through IBM CIS. Only proxi
 $ whois 104.28.22.57 | grep OrgName
 OrgName:        IBM
 ```
+{:pre}
 
 If you would rather bypass CIS on a domain (we will still resolve DNS), then non-proxying the record is a possible solution.
 
@@ -179,7 +194,7 @@ If you would rather bypass CIS on a domain (we will still resolve DNS), then non
 {:#cis-faq-dns-validation-error}
 {: faq}
 
-For page rules to work, DNS needs to resolve for your zone. As a result, you must have a proxied DNS record for your zone. 
+For page rules to work, DNS needs to resolve for your zone. As a result, you must have a proxied DNS record for your zone.
 
 ## Can I add a CNAME for a root record?
 {:#cis-faq-add-cname-root-record}

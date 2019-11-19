@@ -24,11 +24,12 @@ subcollection: cis
 {: #cis-plan-comparison}
 
 {{site.data.keyword.cis_full}} offers several plans to choose from: Free Trial, Standard, and Enterprise variations.
+{: shortdesc}
 
 The Free Trial Plan is the same as the Standard Plan, but it expires after 30 days.
-{: note} 
+{: note}
 
-The following table compares each offering to help you choose the one that's right for you. 
+The following table compares each offering to help you choose the one that's right for you.
 
 Scroll to the right to view the rest of the table!
 {: tip}
@@ -50,7 +51,7 @@ Scroll to the right to view the rest of the table!
 |**Range**|No|Yes<br>Total of 10 TB<br>5 TB HTTPS<br>5 TB Range|No|Same as Enterprise|
 |**Edge Functions**|1 action<br/>(must be named after domain)|Unlimited actions|Not available|Not available|
 |**Firewall Rules**|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li><ul>|<ul><li>1000 active rules</li><li>Supports all actions</li><li>Supports all operators</li><ul>|No|Same as Enterprise|
-|**Routing**|No|Yes|No|No | 
+|**Routing**|No|Yes|No|No |
 |**Origin Certificates**|Yes|Yes|Yes| Yes|
 
 
@@ -76,6 +77,3 @@ The following table describes the key differences among the available plans.
 |GLB Origin Limit| Unlimited|18|0|6|
 |GLB Lowest Health<br> Check Interval|5s|5s|No|60s|
 |Page Rules<br> (Caching/Security)|100|No|No|50|
-
-
-

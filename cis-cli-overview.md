@@ -22,8 +22,9 @@ subcollection: cis
 # CIS Command Line Interface
 {:#cis-command-line-interface}
 
-The following families of commands are available from the command line interface (CLI) in CIS. Within the [CIS CLI Commands](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#cis-cli-commands) page, you'll find the full set of commands within each set, including `Create`, `Delete`, `Update`, and so forth.
-  
+The following families of commands are available from the command line interface (CLI) in {{site.data.keyword.cis_full}}. Within the [{{site.data.keyword.cis_short_notm}} CLI Commands](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#cis-cli-commands) page, you'll find the full set of commands within each set, including `Create`, `Delete`, `Update`, and so forth.
+{:shortdesc}
+
   * [Resource Instance](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#resource-instance)
   * [Domain Settings](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#domain-settings)
   * [Domain](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#domain)
@@ -45,3 +46,4 @@ The following families of commands are available from the command line interface
   * [Custom Page](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#custom-page)
   * [Logpush](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#logpush)
   * [Security Events](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#security-events)
+  * [Mutual TLS](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#mtls-enable)

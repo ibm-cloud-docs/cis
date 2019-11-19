@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-10-31"
 
 keywords: TLS Options, secure connection, Automatic HTTPS
 
@@ -12,35 +12,48 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # TLS Options
 {:#cis-tls-options}
 
 The TLS options let you control whether visitors can browse your website over a secure connection, and when they do, how {{site.data.keyword.cis_full}} will connect to your origin server.
+{: shortdesc}
 
 ## Automatic HTTPS rewrite
 {:#automatic-https-rewrite}
 
-Automatic HTTPS rewrites help fix mixed content by changing “http” to “https” for all resources or links on your web site that can be served with HTTPS. This setting is located in the **Advanced** security configuration page.
+Automatic HTTPS rewrites help fix mixed content by changing "http" to "https" for all resources or links on your web site that can be served with HTTPS. This setting is located in the **Advanced** security configuration page.
 
 ## TLS encryption modes
 {:#tls-encryption-modes}
 
-These options are listed in the order from the least secure (Off) to the most secure (End-to-End CA signed). 
+These options are listed in the order from the least secure (Off) to the most secure (End-to-End CA signed).
  * Off (not recommended)
- * Client-to-Edge (edge to origin not encrypted, self-signed certificates are not supported) 
- * End-to-End flexible (edge to origin certificates can be self-signed) 
+ * Client-to-Edge (edge to origin not encrypted, self-signed certificates are not supported)
+ * End-to-End flexible (edge to origin certificates can be self-signed)
  * End-to-End CA signed (default and recommended)
  * HTTPS only origin pull (Enterprise only)
 
-### Off 
+### Off
 {:#tls-encryption-modes-off}
 No secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, and no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. Visitors can only view your website over HTTP, and any visitor attempting to connect using HTTPS will receive an `HTTP 301 Redirect` to the plain HTTP version of your website.
 
 ### Client-to-Edge
 {:#tls-encryption-modes-client-to-edge}
 
-A secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, but no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. You don't need to have a TLS certificate on your web server, but your visitors still see the site as being HTTPS-enabled. This option is not recommended if you have any sensitive information on your website. This setting will only work for port 443->80. It should only be used as a last resort if you are not able to set up TLS on your own web server. It is _less secure_ than any other option (even “Off”), and could cause you trouble when you decide to switch away from it.
+A secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, but no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. You don't need to have a TLS certificate on your web server, but your visitors still see the site as being HTTPS-enabled. This option is not recommended if you have any sensitive information on your website. This setting will only work for port 443->80. It should only be used as a last resort if you are not able to set up TLS on your own web server. It is _less secure_ than any other option (even "Off"), and could cause you trouble when you decide to switch away from it.
 
 ### End-to-End Flexible
 {:#tls-encryption-modes-end-to-end-flexible}

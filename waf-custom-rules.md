@@ -22,14 +22,15 @@ subcollection: cis
 # WAF Custom Rules
 {:#waf-custom-rules}
 
-Navigate to Custom WAF Rules through **Security > Web Application Firewall > Custom rules**. WAF Rules are available on Enterprise plans and are created based on that customer's unique requirements and/or their website's traffic patterns. This means that you can ask us to block virtually any combination of characteristics of a request. 
+Navigate to Custom WAF Rules through **Security > Web Application Firewall > Custom rules**. WAF Rules are available on Enterprise plans and are created based on that customer's unique requirements and/or their website's traffic patterns. This means that you can ask us to block virtually any combination of characteristics of a request.
+{: shortdesc}
 
 Custom WAF Rules cater to situations where the IBM WAF doesn’t have a rule in place already, and the attacker uses a specific pattern or user agent that is targeted specifically for your website's structure. In these situations, you can create a custom rule for your web property.
 
 ## Request a Custom Rule
 {:#request-a-custom-rule}
 
-To request a rule, email wafsup@us.ibm.com with rule requirements or traffic patterns. 
+To request a rule, email wafsup@us.ibm.com with rule requirements or traffic patterns.
 
 Provide as much information as possible, including:
 * Access logs showing a sample of about 100 alleged malicious requests.

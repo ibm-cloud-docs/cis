@@ -21,7 +21,8 @@ subcollection: cis
 # Create, edit, and delete rules
 {: #create-edit-delete-rules}
 
-You can create, edit, and delete Firewall Rules using the information in this topic. 
+You can create, edit, and delete Firewall Rules using the information in this topic.
+{:shortdesc}
 
 Before getting started, it's a good idea to become familiar with [Fields and Expressions](/docs/infrastructure/cis?topic=cis-fields-and-expressions).
 {: note}
@@ -36,9 +37,9 @@ To configure a basic Firewall Rule, perform the following procedure:
 5. Use the UI builder in the **Incoming requests** section to add a condition.
  To build an expression with multiple conditions, click either:
 
- * **And** - to evaulaute conditions using _and_ logic
+ * **And** - to evaluate conditions using _and_ logic
  * **Or** - to evaluate conditions or groups of previously _and_'ed conditions using _or_ logic
-   
+
  You can see that as you build a condition, the Expression Preview shows the expression in plain text.
 
  In the Expression Preview, you can click to edit your expression manually instead of using the Visual Expression Builder, or switch between the two. However, depending on the complexity of a manually constructed expression, the Visual Expression Builder may be unable to render it.
@@ -46,7 +47,7 @@ To configure a basic Firewall Rule, perform the following procedure:
 
 6. For **Response**, pick an action from the dropdown.
 7. To save your rule, choose the most appropriate option by clicking either:
- 
+
  * **Save as draft** - to save your rule but leave it disabled
  * **Save and deploy** - to save your rule and activate it
 
@@ -58,7 +59,7 @@ To edit an existing rule, perform the following procedure:
 3. Select **Edit**.
 4. Make the desired changes to the rule.
 7. To save your rule, choose the most appropriate option by clicking either:
- 
+
  * **Save as draft** - to save your rule but leave it disabled
  * **Save and deploy** - to save your rule and activate it
 

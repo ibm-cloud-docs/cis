@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-11"
+lastupdated: "2019-10-31"
 
 keywords: IBM CIS, optimal security, Security Level
 
@@ -12,15 +12,22 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Manage your {{site.data.keyword.cis_full_notm}} for optimal security
 {:#manage-your-ibm-cis-for-optimal-security}
 The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}})security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
+{: shortdesc}
 
 **Recommendations and best practices:**
 
@@ -47,6 +54,7 @@ $ dig nonproxied.theburritobot.com +short
 $ dig proxied.theburritobot.com +short
 104.16.22.6 , 104.16.23.6 (CIS IP addresses)
 ```
+{:pre}
 
 ### Obscure non-proxied origin records with non-standard names
 {:#obsure-non-proxied-origin-records-with-non-standard-names}
@@ -64,14 +72,14 @@ Your **Security Level** establishes the sensitivity of our **IP Reputation Datab
 {:#increase-security-level-for-sensitive-areas}
 You can increase this setting from the Advanced Security page for your domain or by adding a **Page Rule** for administration pages or login pages, to reduce brute-force attempts:
 
-1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/wp-login`). 
+1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/wp-login`).
 2. Identify the **Security Level** setting.
 3. Mark the setting as **High**.
 4. Select **Provision Resource**.
 
 ### Decrease the Security Level for non-sensitive paths or APIs to reduce false positives
 {:#decrease-security-level-non-sensitive-paths-reduce-false-positives}
-This setting can be decreased for general pages and API traffic: 
+This setting can be decreased for general pages and API traffic:
 
 1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/api/*`).
 2. Identify the **Security Level** setting.
@@ -86,7 +94,7 @@ Our Security Level settings are aligned with threat scores that certain IP addre
 * **MEDIUM**: Threat scores greater than 14 are challenged.
 * **LOW**: Threat scores greater than 24 are challenged.
 * **ESSENTIALLY OFF**: Threat scores greater than 49 are challenged.
-* **OFF**: *Enterprise only* 
+* **OFF**: *Enterprise only*
 * **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** may affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
 
 We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for {{site.data.keyword.cis_short_notm}} Setup document](/docs/infrastructure/cis?topic=cis-best-practices-for-cis-setup)
@@ -120,7 +128,7 @@ IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, 
 
 ### Upload custom certificates
 {:#upload-custom-certs}
-You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date. 
+You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date.
 
 ![custom-certificate](images/upload-custom-certificate.png)
 
@@ -128,10 +136,10 @@ You can upload your custom certificate by clicking **Add Certificate** button an
 {:#order-dedicated-certs}
 {{site.data.keyword.cis_short_notm}} makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** button and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
 
- * SHA-2/ECDSA signed certificate using P-256 key, 
- * SHA-2/RSA signed certificate using RSA 2048-bit key, and 
- * SHA-1/RSA signed certificate using RSA 2048-bit key. 
- 
+ * SHA-2/ECDSA signed certificate using P-256 key,
+ * SHA-2/RSA signed certificate using RSA 2048-bit key, and
+ * SHA-1/RSA signed certificate using RSA 2048-bit key.
+
 {{site.data.keyword.cis_short_notm}} can issue for all TLDs except for `.cu`, `.iq`, `.ir`, `.kp`, `.sd`, `.ss`, and `.ye`. {{site.data.keyword.cis_short_notm}} manages the expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete. For example, you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterwards you _must_ delete the original dedicated custom certificate.
 
 The first time you order a dedicated certificate Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process happens again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.

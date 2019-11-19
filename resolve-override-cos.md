@@ -21,6 +21,9 @@ subcollection: cis
 # Resolve Override with COS
 {: #resolve-override-cos}
 
+This section offers use cases in resolving overrides with Cloud Object Storage.
+{: shortdesc}
+
 ## Use cases
 {: #cos-use-cases}
 

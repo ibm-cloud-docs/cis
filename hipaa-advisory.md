@@ -20,9 +20,10 @@ subcollection: cis
 # HIPAA Advisory
 {:#hipaa-advisory}
 
-Use of Caching (CDN) for regulated data (for example, PHI, ITAR) is **prohibited**. All regulated data flows that use CIS must be set to **not cache**.
+Use of Caching (CDN) for regulated data (for example, PHI, ITAR) is **prohibited**. All regulated data flows that use {{site.data.keyword.cis_full}} must be set to **not cache**.
 {:important}
+{: shortdesc}
 
-There are multiple ways to disable content caching by the CIS CDN. 
+There are multiple ways to disable content caching by the CIS CDN.
 - The origin server can set **no-cache** in the **Cache-Control** header for the regulated content
-- Use the CIS Page Rules to disable caching for any content on a specified path, even if the origin does not send a **no-cache** **Cache-Control** header. 
+- Use the {{site.data.keyword.cis_short_notm}} Page Rules to disable caching for any content on a specified path, even if the origin does not send a **no-cache** **Cache-Control** header.

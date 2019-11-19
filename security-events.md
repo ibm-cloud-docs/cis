@@ -9,16 +9,32 @@ keywords: CIS Security Events, Security Events
 subcollection: cis
 
 ---
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Using the CIS Security Events capability
+# Using the {{site.data.keyword.cis_full_notm}} Security Events capability
 {:#using-the-cis-security-events-capability}
 
 Reviewing Security Events gives you insight into your web traffic and into any potentially malicious activity against your website. Reviewing Security Events also helps you optimize your WAF configuration.
+{: shortdesc}
 
-## The CIS Security Events Table
+
+## The {{site.data.keyword.cis_short_notm}} Security Events Table
 {:#cis-security-events-table}
 
-The Security Events Table shows you detailed information about web requests that are blocked by the WAF. Each entry shows one blocked request. 
+The Security Events Table shows you detailed information about web requests that are blocked by the WAF. Each entry shows one blocked request.
 * **Triggered rule** indicates which rule blocked the request. Any of the following actions is available:
   * **Block** : A hard block.
   * **Challenge**: A CAPTCHA page that humans can bypass.
@@ -29,9 +45,9 @@ The Security Events Table shows you detailed information about web requests that
 * **Location**: Shows the country associated with the source IP of the web request.
 * **Host**: Shows the hostname of the server that has been reached by the web request.
 * **Date**: Shows the day the event occurred.
- 
 
-## CIS Security Events Details
+
+## {{site.data.keyword.cis_short_notm}} Security Events Details
 {:#cis-security-events-details}
 
 When viewing Security Events, you can click the arrow on an event to expand the details for that event.

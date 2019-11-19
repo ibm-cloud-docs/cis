@@ -23,6 +23,7 @@ subcollection: cis
 {: #custom-page}
 
 Cloud Internet Services (CIS) has a wide range of error codes that allow us to differentiate specific problems. By default, these error pages mention Cloudflare; however, you can customize and brand these error pages. Having custom error pages allows to provide a consistent experience for your users, even in the event of a page load error.
+{: shortdesc}
 
 There are two groups of customizable error pages:
 
@@ -34,7 +35,7 @@ Challenges
 CIS errors
 * 502, 504, and CF 52X errors
 * 10XX errors
-* Errors related to `Serve Stale Content` 
+* Errors related to `Serve Stale Content`
 
 500, 501, 503, and 505 responses do not trigger custom error pages to avoid breaking specific API endpoints and other web applications. Custom error pages should be reserved for cases where the origin server cannot return a response for the request (520-526 errors).
 {:note}
@@ -73,7 +74,7 @@ Some types of custom error pages must include one of the below tokens anywhere w
 ## Styling
 {: #styling-error-pages}
 
-Each tag has a unique class that you can use to style individual error codes. It is possible to use CSS to stylize the tags in the div/span/section since they all have class IDs. 
+Each tag has a unique class that you can use to style individual error codes. It is possible to use CSS to stylize the tags in the div/span/section since they all have class IDs.
 
 Each page (challenge, 5xx errors) has a different ID, so use the preview option to get the proper ID.
 {:tip}
@@ -88,7 +89,7 @@ When you publish, the custom error page is requested once by us, then cached on 
 ## Updating
 {: #updating-error-pages}
 
-Error pages can be updated by re-publishing them. 
+Error pages can be updated by re-publishing them.
 If we cannot load your site or you have blocked the US in the CIS firewall, publishing and previewing the error page will not work.
 {:note}
 

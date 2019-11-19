@@ -21,13 +21,14 @@ subcollection: cis
 # Range
 {:#cis-range}
 
-The Range feature brings DDoS protection, load balancing, and content acceleration to any TCP-based protocol. 
-Range is a global TCP Proxy running on CIS/Cloudflare’s edge nodes. 
+The Range feature brings DDoS protection, load balancing, and content acceleration to any TCP-based protocol.
+Range is a global TCP Proxy running on {{site.data.keyword.cis_full}}/Cloudflare’s edge nodes.
+{: shortdesc}
 
-Range can be used to: 
-* Protect your TCP ports and protocols from **layer 3 and 4 DDoS** attacks. 
+Range can be used to:
+* Protect your TCP ports and protocols from **layer 3 and 4 DDoS** attacks.
 * Reduce the ability of attackers to snoop and steal sensitive data by enabling **TLS encryption**.
-* Integrate with CIS IP Firewall, which allows you to block or challenge IP addresses, or entire IP ranges, from reaching your TCP services. 
+* Integrate with CIS IP Firewall, which allows you to block or challenge IP addresses, or entire IP ranges, from reaching your TCP services.
 * Configure load balancers with TCP health checks, failover, and steering policies to dictate where traffic should flow.
 
 ## Getting started with Range
@@ -41,8 +42,8 @@ Range is only available to Enterprise customers for an additional cost, and is p
 Follow these steps to add an application.
 
 1. Navigate to **Security > Range**
-1. Click on the **Add application** button 
-1. Enter the application name in the first input field. Your application becomes associated with a DNS name on your CIS domain.
+1. Click on the **Add application** button
+1. Enter the application name in the first input field. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
 1. Enter the edge port in the next input field. We'll listen for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin. (Proxying is supported on all ports except port 21.)
 1. In the Origin section, enter the origin IP and Port of your TCP application. You may also select an existing Load Balancer
 1. Enable IP Firewall. When enabled, firewall rules with a "block" or "whitelist" action are enforced for this application. Country or ASN-based rules are not yet supported.
@@ -55,7 +56,7 @@ Proxy Protocol prepends every connection with a header reporting the client IP a
     `PROXY TCP4 192.0.2.0 192.0.2.255 42300 443\r\n`
   * Here's an example Proxy Protocol line for an IPv6 address:
     `PROXY TCP6 2001:db8:: 2001:db8:ffff:ffff:ffff:ffff:ffff:ffff 42300 443\r\n`
-   
+
 Provisioning a Range application will incur additional costs, based on the amount of bandwidth used per app.
 {:note}
 
@@ -65,19 +66,19 @@ Your application is now visible in a tile with the following properties:
   * Origin & port
   * Connections from the past hour (polled every minute)
   * Throughput from the past hour (polled every minute)
-  * Overflow menu (Top right corner) allows the following 
+  * Overflow menu (Top right corner) allows the following
     * Edit the application
     * View metrics for the specified application
-    * Delete the application 
-    
+    * Delete the application
+
 When a Range application is created, it is assigned a unique IPv4 and IPv6 address. These IP addresses are not static and may be subject to change. You can determine the assigned IP address by using DNS. The DNS name will always return the IP addressed assigned to the application.     
-    
+
 ### View Metrics
 {:#range-view-metrics}
-Your application is now ready to proxy TCP traffic through Cloudflare/CIS.
+Your application is now ready to proxy TCP traffic through Cloudflare/{{site.data.keyword.cis_short_notm}}.
 
 Navigate to **Metrics > Range** to view your number of Connections to applications and Throughput traffic.
-The graphs show metrics for up to 10 applications. 
+The graphs show metrics for up to 10 applications.
 {:note}
 
 Application metrics may be toggled via the Chart key or by clicking the **Select applications** button. The Metrics data time frame can be changed using the dropdown menu.
@@ -186,7 +187,7 @@ curl -X POST \
 
 **Origin DNS:** This is the name of the load balancer you want to set as your origin.
 
-**Origin Port:** This is the port of your service. 
+**Origin Port:** This is the port of your service.
 
 ### List all apps
 {:#range-list-all-apps}
@@ -253,7 +254,7 @@ App using Origin IP
     "success": true,
     "errors": [],
     "messages": []
-} 
+}
 ```
 
 App using Load Balancer
