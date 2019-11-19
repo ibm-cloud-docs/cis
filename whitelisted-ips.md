@@ -27,12 +27,12 @@ subcollection: cis
 # {{site.data.keyword.cis_full_notm}}S whitelisted IP addresses
 {:#cis-whitelisted-ip-addresses}
 
-The following API lists all IP addresses used by the {{site.data.keyword.cis_full}} proxy. The {{site.data.keyword.cis_short_notm}} proxy uses only addresses from this list, for both client-to-proxy as well as proxy-to-origin communication.
-{: shortdesc}
+The following API lists all IP addresses used by the CIS proxy. The CIS proxy uses only addresses from this list, for both client-to-proxy and proxy-to-origin communication.
+{: shortdesc} 
 
 [https://api.cis.cloud.ibm.com/v1/ips](https://api.cis.cloud.ibm.com/v1/ips).
 
-Polling this API once a week is sufficient to get the information you need to update your whitelists.
+Polling this API one time a week is sufficient to get the information you need to update your whitelists.
 
 The IP addresses the {{site.data.keyword.cis_short_notm}} proxy uses for communication with the origins are not necessarily the same as the ones used for client-to-proxy communication, although all addresses are derived from the same list.
 {:note}
