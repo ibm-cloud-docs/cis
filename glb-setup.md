@@ -29,7 +29,10 @@ subcollection: cis
 # Set up and configure your load balancers
 {:#set-up-and-configure-your-load-balancers}
 
- {{site.data.keyword.cis_full}} provides global load balancing as a service. {: shortdesc} Here's how the GLB Dashboard looks:
+ {{site.data.keyword.cis_full}} provides global load balancing as a service. 
+ {: shortdesc} 
+ 
+ Here's how the GLB Dashboard looks:
 
 ![GLB Dashboard](images/glb-screen.png)
 

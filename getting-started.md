@@ -23,7 +23,7 @@ subcollection: cis
 {: #getting-started}
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/infrastructure/cis?topic=cis-manage-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
-{:shortdesc} 
+{:shortdesc}
 
  For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs, including:
 
@@ -37,7 +37,7 @@ subcollection: cis
 ## Before you begin
 {:#before-you-begin}
 
-Before you begin using {{site.data.keyword.cis_short_notm}}: 
+Before you begin using {{site.data.keyword.cis_short_notm}}:
 
 * You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then, you can order your services through your IBM Cloud Account, or through the new [IBM Cloud internet Services console](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
@@ -60,19 +60,17 @@ You can start using {{site.data.keyword.cis_short_notm}} for your internet traff
 
 Open the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/catalog/). Then, select the **Infrastructure > Network** category in the navigation pane. Click the **internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
 
-![Catalog](images/catalog-cis-tile.png) 
-
 **The Overview Screen**
 
 After the {{site.data.keyword.cis_short_notm}} application starts up, you'll see the {{site.data.keyword.cis_short_notm}} **Overview** screen, and you'll find the tabs for **Security**, **Reliability**, and **Performance**.
 
 **Which plan do I choose?**
 
-You can choose from the following four plans:
+There are four plans to choose from:
 * **Enterprise Usage**
 * **Enterprise Package**
 * **Standard Plan**
-* **Free Trial**
+* **Free Trial**.
 
 The **Free Trial** expires after 30 days, at which point you can upgrade to the **Standard Plan** or an **Enterprise Plan**. A single **Standard** instance can manage one domain. You can create as many **Standard** service instances as you want within a single account, each managing a single domain.
 
@@ -121,7 +119,6 @@ When you are finished, or to skip this step, select **Next step**.
 To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){:external}. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS Records](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare){:external}, written by our partners at Cloudflare, for detailed instructions by provider.
 
 After you configure your registrar or DNS provider, it can take up to 24 hours for the changes to take effect. When we verify that the specified name servers were configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the name servers, you can click the "Recheck name servers" link in the `Overview` page to potentially accelerate the activation of your domain. You can submit this check only one time an hour.
-
 
 Your domain must move to `Active` state within 60 days or your domain and any configuration data is removed.
 {:note}
