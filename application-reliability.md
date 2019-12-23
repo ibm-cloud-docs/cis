@@ -36,7 +36,7 @@ The global load balancing capabilities available with the {{site.data.keyword.ci
 
 In this Step-by-Step you will learn how to configure a setup similar to the one illustrated below.
 
-<img src="images/reliability1.png" alt="drawing" style="width: 300px;"/>
+![IMAGE](images/reliability1.png)
 
 In this example, the application resources are deployed in two data center locations, one in US West and the other in US East Coast. The end-users may be accessing this application from all over the world.
 

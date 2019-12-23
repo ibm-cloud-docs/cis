@@ -32,8 +32,8 @@ subcollection: cis
 You can directly create pools and health checks from the **Create Load Balancer** menu option. Navigate to **Reliability > Global Load Balancer > Create load balancer > Add pool**, and select the option to **Create New** under Origin pool.
 {: shortdesc}
 
-<img src="images/create-new-origin-pool.png" alt="drawing" style="width: 300px;"/>
+![IMAGE](images/create-new-origin-pool.png)
 
-Input a pool name, [origins](#x2210603){:term}, and select a [health check](#x4571658){:term}. You can create a new health check here by choosing **Create New** in the Health Check dropdown menu, and entering the information to create the health check.
+Input a pool name, [origins](#x2210603){:term}, and select a [health check](#x4571658){:term}. You can create a new health check here by choosing **Create New** in the **Health Check** list menu, and entering the information to create the health check.
 
 For fully configurable options, use the longer setup method in [Set up and configure your load balancers](/docs/infrastructure/cis?topic=cis-set-up-and-configure-your-load-balancers).

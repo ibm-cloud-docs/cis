@@ -46,9 +46,9 @@ The following steps assume you have an existing COS instance and bucket with pub
   * For example, if you have an object called reports.txt under the bucket `my-bucket1`, then both of these URL matches would be valid:
     * `*.foo.com/*`
     * `*.foo.com/reports.txt`
-* Use the dropdown to select **Resolve Override with COS** under the **Performance** section.
-* Use the **Cloud Object Storage Instance** dropdown to select the desired instance.
-* Use the **Bucket** dropdown to select the desired bucket.
+* Use the list menu to select **Resolve Override with COS** under the **Performance** section.
+* Use the **Cloud Object Storage Instance** list to select the desired instance.
+* Use the **Bucket** list to select the desired bucket.
 * To create the Page Rule click the **Provision 1 Resource** button.
 
 

@@ -35,7 +35,7 @@ Enter a rule name that helps you remember what the rule does. This is an optiona
 
 The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria.
 
-Select a value form the **Method** dropdown (ANY is the default).  
+Select a value form the **Method** list menu (ANY is the default).  
 
 Update **HTTP response header**.  You can also **Add response header** to include headers returned by your origin web server.
 

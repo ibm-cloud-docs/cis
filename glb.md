@@ -124,7 +124,7 @@ Be aware that your logs have references to Cloudflare because of IBM's partnersh
 ### Health Check Events
 {:#health-check-events}
 
-Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of Health Check Events. You can filter by date, health of the pool or origin, pool name, and origin name by selecting the filter parameters from the drop down menus. Columns within the table are sortable by clicking on the column name.
+Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of Health Check Events. You can filter by date, health of the pool or origin, pool name, and origin name by selecting the filter parameters from the list menus. Columns within the table are sortable by clicking on the column name.
 ![Health Check Events table](images/health-check-events-table.png)
 
 Individual rows within the table expand with more information about the entry. If the pool is healthy, only the **Pool Details** tile is visible. When the row has an origin that is critical, or a pool that is degraded, the **Affected Origin Details** tile also appears.

@@ -159,5 +159,5 @@ What happened:
 
 What you can do:
 
-* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a ticket to [Support](/docs/get-support?topic=get-support-getting-customer-support).
+* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a case to [IBM Support](/docs/get-support?topic=get-support-getting-customer-support).
 * Temporarily toggle your DNS Records to off (No proxy).

@@ -43,14 +43,14 @@ On the Overview screen, you may see that your domain name configuration is in **
 
 ![overview screen image](images/overview-screen-configuration-summary.jpg)
 
-**Pending** status indicates that your domain is not fully set up, yet. You have to update your DNS provider or registrar with the nameservers that are provided as part of the setup process.
+**Pending** status indicates that your domain is not fully set up, yet. You have to update your DNS provider or registrar with the name servers that are provided as part of the setup process.
 
 **Enterprise only**: The **Service Details** section of the Overview also allows you to add additional domains to your instance of {{site.data.keyword.cis_short_notm}}, and to switch between multiple domains.
 
 ## Changing the Service Mode
 {:#changing-the-service-mode}
 
-On the Overview page under the Service Mode section there is a dropdown to select one of two modes:
+On the Overview page under the Service Mode section there is a list to select one of two modes:
 
 * **Defense Mode** helps protect against existing or predicted DNS attacks. This mode prevents all traffic from reaching your origin servers through your domain.
 * **Pause Service** disables all security and performance benefits to your domain. DNS functions still resolve for your website, but traffic is sent directly to configured origins.
@@ -58,7 +58,7 @@ On the Overview page under the Service Mode section there is a dropdown to selec
 ### Steps to set Service Mode
 {:#steps-to-set-service-mode}
 
-1. Select the desired mode from the dropdown menu.
+1. Select the desired mode from the list menu.
 1. Click the `Activate` button.
 1. Confirm or cancel the selection in the confirmation popup.
 
@@ -83,7 +83,7 @@ Next, you can set up caching.
 
 ![IMAGE](images/caching-screen.png)
 
-You have the option of 3 types of caching, available from the caching screen dropdown menu:
+You have the option of 3 types of caching, available from the caching screen list menu:
 
  * No query string: Only delivers resources from cache when there is no query string.
  * Query string independent: Delivers the same resource to everyone independent of the query string.
@@ -99,7 +99,7 @@ You can purge your cache to prepare for updates at any time, just by entering th
  ## Browser Expiration
  {:#browser-expiration}
 
-You can use the dropdown menu to select the time of browser expiration that you require, for example 8 hours, or 1 day.
+You can use the list menu to select the time of browser expiration that you require, for example 8 hours, or 1 day.
 
 Enterprise only: You can also instruct {{site.data.keyword.cis_short_notm}} not to override browser cache control by setting this to **Respect Existing Headers**.
 
@@ -111,7 +111,7 @@ Enterprise only: You can also instruct {{site.data.keyword.cis_short_notm}} not 
 ## Managing your Page Rules
 {:#managing-your-page-rules}
 
-You can use page rules to specify particular settings that only apply to certain URLs, for example to have different cache control settings for certain URL paths. Use the dropdown menus to configure the Page Rule. The rule settings are divided into three categories: **Security**, **Performance**, and **Reliability**.
+You can use page rules to specify particular settings that only apply to certain URLs, for example to have different cache control settings for certain URL paths. Use the list menus to configure the Page Rule. The rule settings are divided into three categories: **Security**, **Performance**, and **Reliability**.
 
 Notice that when certain rules are enabled, other options become grayed out, if those options are in conflict with the other rules you've just selected. After you've selected the Page Rules you desire, click **Provision** to enable them. The new rules take effect immediately, and they can be viewed immediately on the Page Rules screen.
 

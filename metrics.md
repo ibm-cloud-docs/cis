@@ -73,7 +73,7 @@ The **DNS Metrics** tool provides a series of charts that cover DNS traffic and 
 
 ### Traffic
 {:#dns-metrics-traffic}
-The Traffic section consists of two tabs that display **Queries by Response Code** and **Queries by Record Type**. Use the dropdown menu to select the date range displayed.
+The Traffic section consists of two tabs that display **Queries by Response Code** and **Queries by Record Type**. Use the list menu to select the date range displayed.
 
 ![DNS Traffic image](images/dns-metrics-traffic.png)
 

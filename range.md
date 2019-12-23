@@ -81,7 +81,7 @@ Navigate to **Metrics > Range** to view your number of Connections to applicatio
 The graphs show metrics for up to 10 applications.
 {:note}
 
-Application metrics may be toggled via the Chart key or by clicking the **Select applications** button. The Metrics data time frame can be changed using the dropdown menu.
+Application metrics may be toggled via the Chart key or by clicking the **Select applications** button. The Metrics data time frame can be changed using the list menu.
 
 ## Range AppTiles
 {:#range-apptiles}

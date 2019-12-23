@@ -39,7 +39,7 @@ subcollection: cis
 
 Before you begin using {{site.data.keyword.cis_short_notm}}:
 
-* You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then, you can order your services through your IBM Cloud Account, or through the new [IBM Cloud internet Services console](https://{DomainName}/catalog/services/internet-services), depending on your preference.
+* You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then, you can order your services through your IBM Cloud Account, or through the new [{{site.data.keyword.cis_full_notm}} console](https://{DomainName}/catalog/services/internet-services), depending on your preference.
 
 * If you need assistance in obtaining an account to use {{site.data.keyword.cis_short_notm}}, [contact your IBM Sales representative](https://{DomainName}/cloud/support) for more guidance on getting started.
 
@@ -66,9 +66,11 @@ After the {{site.data.keyword.cis_short_notm}} application starts up, you'll see
 
 **Which plan do I choose?**
 
-There are four plans to choose from:
+There are several plans to choose from:
 * **Enterprise Usage**
 * **Enterprise Package**
+* **Enterprise GLB**
+* **Enterprise Security**
 * **Standard Plan**
 * **Free Trial**.
 

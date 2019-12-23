@@ -34,8 +34,8 @@ The following table describes the actions you can assign to your rules, and are 
 
 | Action | Description |
 | ------- | :--------- |
-|_Log_|<ul><li>Logs matching requests on the CIS edge for access with Enterprise Logpush and Logpull</li><li>Recommended for testing rule effectiveness before committing to a more severe action</li><li>Available to Enterprise customers only</li></ul>|
+|_Log_|Logs matching requests on the CIS edge for access with Enterprise Logpush and Logpull. Recommended for testing rule effectiveness before committing to a more severe action. Available to Enterprise customers only.|
 |_Allow_|Allows matching requests to access the site, as long as no other CIS Firewall features block the request (such as IP Firewall or Access Rules)|
-|_Challenge (Captcha)_|<ul><li>Requires a user to pass a Google reCaptcha Challenge before proceeding</li><li>If successful, CIS accepts the matched request; otherwise, it is blocked</li></ul>|
-|_JS Challenge_|<ul><li>Requires a user to pass a CIS Javascript Challenge before proceeding</li><li>If successful, CIS accepts the matched request; otherwise, it is blocked</li></ul>|
-|_Block_|<ul><li>Blocks a matching request from accessing the site</li></ul>|
+|_Challenge (Captcha)_|Requires a user to pass a Google reCaptcha Challenge before proceeding. If successful, CIS accepts the matched request; otherwise, it is blocked.|
+|_JS Challenge_|Requires a user to pass a CIS Javascript Challenge before proceeding. If successful, CIS accepts the matched request; otherwise, it is blocked.|
+|_Block_|Blocks a matching request from accessing the site.|

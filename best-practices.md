@@ -76,7 +76,7 @@ IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by remo
 ## Best practice 4: Configure your security settings as strictly as possible
 {:#best-practice-configure-stict-security-settings}
 
-{{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our datacenters and open a new TLS connection to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
+{{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
 
 ### Upload a custom certificate
 {:#strict-upload-custom-cert}

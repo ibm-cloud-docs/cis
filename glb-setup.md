@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-12-13"
 
 keywords: health checks, origin pools, load balancers, IBM CIS
 
@@ -46,36 +46,33 @@ Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-
 ### Create
 {:#create-health-check}
 
-<sup>`*`</sup> indicates this step is optional
+`*` indicates this step is optional
 {:note}
 
-1) <sup>`*`</sup>Create a health check, click **Create health check**.
-  ![IMAGE](images/glb-health-check-list.png)
-    <ul>
-      <li><b>Path</b>: The endpoint path to health check against.</li>
-      <li><b>Type</b>: The protocol to use for the health check.</li>
-      <li><b>Description</b>: User provided description.</li>
-    </ul>
+1) `*`Create a health check, click **Create health check**.
+   ![IMAGE](images/glb-health-check-list.png)
+   * **Path**: The endpoint path to health check against.
+   * **Type**: The protocol to use for the health check.
+   * **Description**: User provided description.
+    
 
 2) Create a pool, click **Create pool**.
-  ![IMAGE](images/glb-pool-list.png)
-    <ul>
-      <li><b>Health</b>: Status of the pool.</li>
-      <li><b>Name</b>: User provided name.</li>
-      <li><b>Origins</b>: Count of healthy origins in the pool.</li>
-      <li><b>Health Check</b>: Path of the attached health check, if any.</li>
-    </ul>
+   ![IMAGE](images/glb-pool-list.png)
+   * **Health**: Status of the pool.
+   * **Name**: User provided name.
+   * **Origins**: Count of healthy origins in the pool.
+   * **Health Check**: Path of the attached health check, if any.
+    
 
 3) Create a load balancer, click **Create load balancer**.
-  ![IMAGE](images/glb-load-balancer-list.png)
-    <ul>
-      <li><b>Health</b>: Status of the load balancer.</li>
-      <li><b>Hostname</b>: Name prepended to the domain name.</li>
-      <li><b>Available Pools</b>: Count of healthy pools.</li>
-      <li><b>TTL</b>: Time To Live.</li>
-      <li><b>Proxy</b>: Enable or disable proxy traffic flow.</li>
-      <li><b>Status</b>: Enable or disable the load balancer.</li>
-    </ul>
+   ![IMAGE](images/glb-load-balancer-list.png)
+   * **Health**: Status of the load balancer.
+   * **Hostname**: Name prepended to the domain name.
+   * **Available Pools**: Count of healthy pools.
+   * **TTL**: Time To Live.
+   * **Proxy**: Enable or disable proxy traffic flow.
+   * **Status**: Enable or disable the load balancer.
+    
 
 IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.  
 {:note}
@@ -122,7 +119,7 @@ Additional optional fields:
  * **Timeout**: The time (in seconds) before marking the health check as failed (defaults to 5).
  * **Retries**: The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately (defaults to 2).
  * **Response Body**: A case-insensitive sub-string to match against in the response body. If this string is not found, the origin is marked as unhealthy.
- * **Request Headers**: The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The **`User-Agent`** header cannot be overridden.
+ * **Request Headers**: The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The `User-Agent` header cannot be overridden.
 
 ## Add a Pool
 {:#add-a-pool}
@@ -156,7 +153,7 @@ When creating a load balancer, the required fields are:
 Optionally, the following fields can be configured:
  * **Proxy**: Route traffic through IBM's performance and metrics service.
  * **Session Affinity**: Always route through the same performance and metrics instance. This option is available only if proxy is enabled.
- * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to **`Automatic`**.
+ * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to `Automatic`.
  * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools.
 
    IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.

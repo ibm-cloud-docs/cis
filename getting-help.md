@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-03-14"
 
-keywords: support ticket,IBM Cloud development teams
+keywords: support ticket, IBM Cloud development teams support case
 
 subcollection: cis
 
@@ -12,37 +12,31 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Getting Help and Support
-
-<!-- Common attributes used in the template are defined as follows: -->
-{:tsSymptoms: .tsSymptoms}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-
-
-<!-- # {{site.data.keyword.blockstorageshort}} troubleshooting
-{: #ts} -->
-<!-- Provide an appropriate ID above -->
-
-<!-- IN PROGRESS - AUDIENCE BLUE, STAGING ONLY -->
-
-
-<!-- This is the template for troubleshooting topics.  -->
-
-
+# Getting help and support
 {: #gettinghelp}
 
-If you have problems or questions when using CIS, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
+If you have problems or questions when using {{site.data.keyword.cis_short_notm}}, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support case.
 {:shortdesc}
 
 When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
 
-* If you have technical questions about CIS, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/search?q=cis+ibm-cloud){:new_window} and tag your question with "ibm-cloud" and "cis".
-<!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
-* For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/cis.html?smartspace=ibm-cloud){:new_window} forum. Include the  "cis" and "ibm-cloud" tags.
+* If you have technical questions about {{site.data.keyword.cis_short_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=cis+ibm-cloud){:external} and tag your question with "ibm-cloud" and "cis".
+
+* For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/cis.html?smartspace=ibm-cloud){:external} forum. Include the  "cis" and "ibm-cloud" tags.
 
 See [Getting help](/docs/get-support?topic=get-support-getting-customer-support) for more details about using the forums.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+For information about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).

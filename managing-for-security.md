@@ -114,7 +114,7 @@ For more information about the WAF, please see the [WAF Concepts document](/docs
 
 ## Best practice 4: Configure your TLS settings
 {:#best-practice-configure-tls-settings}
-IBM {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our datacenters and open a new TLS connection to your origin server.
+IBM {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
 
 TLS offers four modes of operation:
 * **Off**: TLS is disabled in this mode, it is not recommended.

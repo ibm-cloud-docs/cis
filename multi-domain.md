@@ -23,4 +23,4 @@ To add an additional domain to your {{site.data.keyword.cis_short_notm}} instanc
   * Setup DNS records
   * Delegate domain management
 
-After adding a new domain, use the dropdown menu in the **Domain** section to switch between your domains. The **Domain** section is located on the **Overview** page and at the beginning of every page. Switching between domains allows you to configure settings for each domain.
+After adding a new domain, use the list menu in the **Domain** section to switch between your domains. The **Domain** section is located on the **Overview** page and at the beginning of every page. Switching between domains allows you to configure settings for each domain.

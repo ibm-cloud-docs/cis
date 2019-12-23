@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-22"
+lastupdated: "2019-12-13"
 
 keywords: Use Page Rules, Page Rule
 
@@ -31,7 +31,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
 |**Browser Integrity Check**|Looks for common HTTP headers abused by spammers, and denies access to your page. It also blocks visitors that do not have a user agent or add a non-standard user agent (also commonly used by abuse bots, crawlers, or APIs). | |
-|**Disable Security**|Disables the following features: <ul><li>Email Obfuscation</li> <li>Server Side Excludes</li> <li>WAF</li></ul>|If a rule is set to disable security, and another rule is set to enable the WAF, the WAF rule takes precedence, regardless of the order in which they appear.|
+|**Disable Security**|Disables the following features: Email Obfuscation, Server Side Excludes, WAF.|If a rule is set to disable security, and another rule is set to enable the WAF, the WAF rule takes precedence, regardless of the order in which they appear.|
 |**Email Obfuscation**|Toggles Email Obfuscation on or off. | |
 |**IP Geolocation Header**|Includes the country code of the visitor location with all requests to your website. The information can be found in the `CF-IPCountry` HTTP header. | |  
 |**Security Level**|Controls how high a client threat score must be so that a client will encounter a challenge page. This setting can be used so that your site always presents visitors with the **Defense Mode** challenge when they visit your site. | |
@@ -51,13 +51,13 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |-----------|----------|----------------|
 |**Browser Cache TTL**|Controls how long resources cached by client browsers remain valid. | |
 |**Bypass Cache on Cookie**|Serve a cached object unless we see a cookie of a specific name, for example, serve a cached version of the homepage unless we see a `SessionID` cookie indicating the customer is logged in and therefore should be presented personalized content. | |
-|**Cache Level**|**Bypass** - Resources that match that Page Rule are not cached.<br>**No query string** - Only delivers resources from cache when there is no query string.<br>**Ignore query string** - Delivers the same resource to everyone independent of the query string.<br>**Standard** - Delivers a different resource each time the query string changes.<br> **Cache everything** - Resources that match the Page Rule are cached.|By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
+|**Cache Level**|**Bypass** - Resources that match that Page Rule are not cached. **No query string** - Only delivers resources from cache when there is no query string. **Ignore query string** - Delivers the same resource to everyone independent of the query string. **Standard** - Delivers a different resource each time the query string changes.  **Cache everything** - Resources that match the Page Rule are cached.|By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
 |**Edge Cache TTL**|Controls how long {{site.data.keyword.cis_short_notm}} will retain files in our cache. |This setting is optional when specifying cache level. |
 |**Resolve Override**|Change the URL or IP that the request matching the page rule resolves to.||
 |**Cache on Cookie**|Apply the `Cache Everything` option (`Cache Level` setting) based on a regular expression match against a cookie name. If you add both this setting and `Bypass Cache on Cookie` to the same page rule, `Cache On Cookie` takes precedence over `Bypass Cache on Cookie`.|Enterprise only |
-|**Disable Performance**|Turn off:<ul><li>`Minify Web Content`</li><li>`Image Load Optimization`</li><li>`Image Size Optimization`</li><li>`Script Load Optimization`</li></ul> |Enterprise only |
+|**Disable Performance**|Turn off:`Minify Web Content`, `Image Load Optimization`, `Image Size Optimization`, `Script Load Optimization`. |Enterprise only |
 |**Minify Web Content**|Minify HTML, CSS and/or JavaScript files by removing all unnecessary characters from these files. |Enterprise only |
-|**Image Load Optimization**|Improves load time for pages that include images based on network connection and device type by:<ul><li>**Image Virtualizing** - Replaces images with low resolution placeholder images that have the same dimensions as the original (including third party images). Once the page renders completely, full resolution images are then lazy-loaded (prioritizing images in the browser viewport). This process allows pages to render quickly and minimizes browser reflow.</li><li>**Request Streamlining** - Combines multiple individual network requests for images into a single request.</li><ul> |Enterprise only |
+|**Image Load Optimization**|Improves load time for pages that include images based on network connection and device type by one of the following: **Image Virtualizing** - Replaces images with low resolution placeholder images that have the same dimensions as the original (including third party images). Once the page renders completely, full resolution images are then lazy-loaded (prioritizing images in the browser viewport). This process allows pages to render quickly and minimizes browser reflow. **Request Streamlining** - Combines multiple individual network requests for images into a single request. |Enterprise only |
 |**Image Size Optimization**|Reduce image file size by removing metadata (date and time, camera manufacturer and model, etc.), and by compressing images when possible. Smaller file sizes mean faster load times for images and web pages. |Enterprise only |
 |**Sort Query String**|Treats files with the same query strings as the same file in cache, regardless of the order of the query strings. |Enterprise only |
 |**Response Buffering**|Enable or disable buffering of responses from the origin server. By default, {{site.data.keyword.cis_short_notm}} sends packets to the client as we receive them. Enabling Response Buffering means that {{site.data.keyword.cis_short_notm}} will wait until it has the entire file before forwarding it to the end user. |Enterprise only |
@@ -81,10 +81,12 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 A Page Rule will take effect on a given URL pattern, matching the following format:
 
 `<scheme>://<hostname><:port>/<path>`
+{:pre}
 
 An example using each component would be:
 
 `https://www.example.com:80/image.png`
+{:pre}
 
 The *scheme* and *port* components are optional. If the scheme is omitted, it will cover both `http://` and `https://` protocols. If the port is not specified, then the rule will match all ports. You can perform basic wildcard matches by using a ‘*’ symbol in your rule pattern, allowing it to match a series of similar patterns rather than just one.
 

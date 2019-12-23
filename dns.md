@@ -46,14 +46,14 @@ You can select **View DS records** button to open a dialog box that explains how
 ## Adding DNS records
 {:#adding-dns-records}
 
-You can use the **Type** dropdown to select the type of record you want to create. Each DNS record type has a Name and Time-To-Live (TTL) associated with it.
+You can use the **Type** list menu to select the type of record you want to create. Each DNS record type has a Name and Time-To-Live (TTL) associated with it.
 
 Whatever is entered into the Name field will have domain name appended to it unless domain name is manually appended in the field already (e.g. if `www` or `www.example.com` is typed into the field, the API will handle both as `www.example.com`). If the exact domain name is typed into the name field, then it won't be appended on itself (e.g. `example.com` will be handled as `example.com`). However, the list of DNS records will only show the names without the domain name being tacked on, so `www.example.com` is shown as `www` and `example.com` will be shown as `example.com`. The TTL will have a default value of `Automatic`, but can be changed by the user. A proxied DNS record will always have a TTL of `Automatic`, so a newly proxied record will change to this configuration during this change.
 
 ### A Type record
 {:#a-type-record}
 
-To add this record type, valid values must exist in the **Name** and **IPv4 Address** fields. A **TTL** also can be specified from the dropdown menu, with a default value of `Automatic`.
+To add this record type, valid values must exist in the **Name** and **IPv4 Address** fields. A **TTL** also can be specified from the list menu, with a default value of `Automatic`.
 
 ![Create A Type record](images/dns/create-a-type-record.png)
 
@@ -63,7 +63,7 @@ To add this record type, valid values must exist in the **Name** and **IPv4 Addr
 ### AAAA Type record
 {:#aaaa-type-record}
 
-To add this record type, valid values must exist in the **Name** and **IPv6 Address** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, valid values must exist in the **Name** and **IPv6 Address** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 ![Create AAAA Type record](images/dns/create-aaaa-type-record.png)
 
@@ -73,7 +73,7 @@ To add this record type, valid values must exist in the **Name** and **IPv6 Addr
 ### CNAME Type record
 {:#cname-type-record}
 
-To add this record type, a valid value must exist in the **Name** field and a fully qualified domain name must be in the **Domain Name** (FQDN) field. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, a valid value must exist in the **Name** field and a fully qualified domain name must be in the **Domain Name** (FQDN) field. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 
 ![Create CNAME Type record](images/dns/create-cname-type-record.png)
@@ -103,7 +103,7 @@ The CNAME flattening feature is enabled by default, and cannot be turned off.
 ### MX Type record
 {:#mx-type-record}
 
-To add this record type, a valid value must exist in the **Name** field and a valid address must exist in the **Mail Server** field. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, a valid value must exist in the **Name** field and a valid address must exist in the **Mail Server** field. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 ![Create MX Type record](images/dns/create-mx-type-record.png)
 
@@ -113,7 +113,7 @@ To add this record type, a valid value must exist in the **Name** field and a va
 ### LOC Type record
 {:#loc-type-record}
 
-To add this record type, a valid value must exist in the **Name** field. If you need more specific information, select the **Configure LOC options** button. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, a valid value must exist in the **Name** field. If you need more specific information, select the **Configure LOC options** button. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 ![Create LOC Type record](images/dns/create-loc-type-record-1.png)
 
@@ -125,7 +125,7 @@ To add this record type, a valid value must exist in the **Name** field. If you 
 ### CAA Type record
 {:#caa-type-record}
 
-To add this record type, valid values must exist in the **Name** and **Value** fields. The Value field will correlate to the value of the **Tag** dropdown field, which defaults to "Send violation reports to URL". A **TTL** can also can be specified from the dropdown, with the default value of `Automatic`.
+To add this record type, valid values must exist in the **Name** and **Value** fields. The Value field will correlate to the value of the **Tag** list field, which defaults to "Send violation reports to URL". A **TTL** can also can be specified from the list, with the default value of `Automatic`.
 
 ![Create CAA Type record](images/dns/create-caa-type-record.png)
 
@@ -135,7 +135,7 @@ To add this record type, valid values must exist in the **Name** and **Value** f
 ### SRV Type record
 {:#srv-type-record}
 
-To add this record type, valid values must exist in the **Name**, **Service Name** and **Target** fields. Use the dropdown menu to select a **protocol**, which defaults to the UDP protocol. Additionally, you can specify **Priority**, **Weight** and **Port**. These three fields default to a value of 1. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, valid values must exist in the **Name**, **Service Name** and **Target** fields. Use the list menu to select a **protocol**, which defaults to the UDP protocol. Additionally, you can specify **Priority**, **Weight** and **Port**. These three fields default to a value of 1. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 ![Create SRV Type record](images/dns/create-srv-type-record.png)
 
@@ -145,7 +145,7 @@ To add this record type, valid values must exist in the **Name**, **Service Name
 ### SPF Type record
 {:#spf-type-record}
 
-To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 ![Create SPF Type record](images/dns/create-spf-type-record.png)
 
@@ -155,7 +155,7 @@ To add this record type, valid values must exist in the **Name** and **Content**
 ### TXT Type record
 {:#txt-type-record}
 
-To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 ![Create TXT Type record](images/dns/create-txt-type-record.png)
 
@@ -168,7 +168,7 @@ The first time you order a dedicated certificate Domain Control Validation (DCV)
 ### NS Type record
 {:#ns-type-record}
 
-To add this record type, valid values must exist in the **Name** and **Name Server** fields. A **TTL** also can be specified from the dropdown menu, with the default value of `Automatic`.
+To add this record type, valid values must exist in the **Name** and **Name Server** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
 ![Create NS Type record](images/dns/create-ns-type-record.png)
 

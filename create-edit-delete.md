@@ -45,7 +45,7 @@ To configure a basic Firewall Rule, perform the following procedure:
  In the Expression Preview, you can click to edit your expression manually instead of using the Visual Expression Builder, or switch between the two. However, depending on the complexity of a manually constructed expression, the Visual Expression Builder may be unable to render it.
 {: note}
 
-6. For **Response**, pick an action from the dropdown.
+6. Pick an action from the **Response** list menu.
 7. To save your rule, choose the most appropriate option by clicking either:
 
  * **Save as draft** - to save your rule but leave it disabled

@@ -91,19 +91,19 @@ It is possible that you did not assign "service access roles" to the user. Note 
 {:#cis-faq-pending-domain}
 {: faq}
 
-When you add a domain to CIS, we give you a couple of nameservers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the nameservers correctly. Make sure you add both the nameservers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the nameservers have been configured as instructed. As soon as we are able to verify the nameserver change (this may take up to 24 hours), we activate your domain. You can submit a request to recheck nameservers by clicking on **Recheck nameservers** in the overview page.
+When you add a domain to CIS, we give you a couple of name servers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the name servers correctly. Make sure you add both the name servers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the name servers have been configured as instructed. As soon as we are able to verify the name server change (this may take up to 24 hours), we activate your domain. You can submit a request to recheck name servers by clicking on **Recheck name servers** in the overview page.
 
 ## Who is the registrar for my domain?
 {:#cis-faq-who-is-registrar}
 {: faq}
 
-Consult https://whois.icann.org/ for this information. **Note**: You must have the administrative privilege to edit your domain's configuration at the registrar to update or add the nameservers provided for your domain when you add it to CIS. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the permission to update your domain's configuration at the registrar. Work with the owner of the domain in your organization to make the necessary changes.
+Consult https://whois.icann.org/ for this information. **Note**: You must have the administrative privilege to edit your domain's configuration at the registrar to update or add the name servers provided for your domain when you add it to CIS. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the permission to update your domain's configuration at the registrar. Work with the owner of the domain in your organization to make the necessary changes.
 
 ## I want to keep my current DNS provider for my domain (example.com). Can I delegate a subdomain (subdomain.example.com) from my current DNS provider to CIS?
 {:#cis-faq-keep-current-dns-provider}
 {: faq}
 
-Yes. The process is similar to adding a domain, but instead of the registrar, you work with the DNS provider for the higher level domain. When you add a subdomain to CIS, you are given two nameservers to configure, as usual. You configure a Name Server (NS) record for each of the two nameservers as DNS records within your domain being managed by the other DNS provider. When we are able to verify that the required NS records have been added, we activate your subdomain. If you do not manage the higher level domain within your organization, you must work with the owner of the higher level domain to get the NS records added.
+Yes. The process is similar to adding a domain, but instead of the registrar, you work with the DNS provider for the higher level domain. When you add a subdomain to CIS, you are given two name servers to configure, as usual. You configure a Name Server (NS) record for each of the two name servers as DNS records within your domain being managed by the other DNS provider. When we are able to verify that the required NS records have been added, we activate your subdomain. If you do not manage the higher level domain within your organization, you must work with the owner of the higher level domain to get the NS records added.
 
 ## What is TLS?
 {:#cis-faq-what-is-tls}
@@ -174,7 +174,7 @@ If after taking the above steps you still receive errors, contact IBM CIS suppor
 * You've whitelisted our IP ranges
 * Your server/network is online and generally healthy
 
-If you contact our support team, please provide a ray ID from a recent 522 error. We can use this to determine which CIS Datacenter you were hitting and run further tests.
+If you contact our support team, please provide a ray ID from a recent 522 error. We can use this to determine which CIS data center you were hitting and run further tests.
 
 ## What is a proxied record and why do I need them?
 {:#cis-faq-proxied-record}

@@ -47,12 +47,12 @@ Here are two ways to customize your {{site.data.keyword.cis_short_notm}} pages:
 {:#enforce-multifactor-authentication}
 Follow the procedures described in [Requiring MFA for users in your account](/docs/iam?topic=iam-enablemfa#enablemfa) to enable multifactor authentication (MFA) for all users.
 
-## Submit a test ticket with our support team
+## Submit a test case with our support team
 {:#submit-a-test-ticket}
 
 Feel free to write a quick note to our support team to test our support workflow.
 
-Here are two easy ways to submit a ticket:
+Here are two easy ways to submit a case:
 
 1. Email entsupport@CIS.com.
-2. Search our knowledge base and create a ticket at `support.CIS.com`.
+2. Search our knowledge base and create a case at `support.CIS.com`.
