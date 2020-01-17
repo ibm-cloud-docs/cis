@@ -35,7 +35,6 @@ Make the request matching the page rule resolve to a Cloud Object Storage (COS) 
 
 The following steps assume you have an existing COS instance and bucket with public access. For information on public access see [Allowing public access](/docs/services/cloud-object-storage?topic=cloud-object-storage-iam-public-access).
 
-
 ## Create Page Rule steps
 {: #cos-create-page-rule}
 
@@ -67,6 +66,8 @@ If the Resolve Override with COS page rule is no longer needed the CNAME should 
 * The Host Header Override setting will replace the host header for the URI matching the page rule to `<bucket-name>.<cos-endpoint>`.
 * Using the previous example, the Host Header Override value will be set to `images.s3.us-west.objectstorage.uat.test.net`.
 
+## Proxy DNS entries are required for domains that are to be matched by the page rule
+To perform the actual rewrite and redirecton to the COS bucket the domains to be used with this page rule, such as `www.foo.com` must have DNS entries in CIS with the 'proxy' flag set.  See [Proxying DNS Records](/docs/infrastructure/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) for more information.  If all requests to `www.foo.com` are to be redirected than a CNAME entry that points to `<bucket-name>` with proxy enabled will be sufficient.
 
 ## Deleting the Page Rule
 {: #cos-delete-page-rule}
