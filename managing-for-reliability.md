@@ -24,7 +24,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Manage your {{site.data.keyword.cis_full_notm}} deployment for optimal reliability
-{:manage-your-ibm-cis-deployment-for-optimal-reliability}
+{:#manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability}
 
 To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your {{site.data.keyword.cis_short_notm}} deployment optimally reliable.
 {: shortdesc}

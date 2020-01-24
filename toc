@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" category="network,security" audience="service" arm="3663386" href="/docs/infrastructure/cis?topic=cis-getting-started" path="infrastructure/cis"}
+{: .toc subcollection="cis" category="network,security" audience="service" href="/docs/infrastructure/cis?topic=cis-getting-started" path="infrastructure/cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
@@ -33,24 +33,19 @@ Cloud Internet Services (CIS)
     managing-for-security.md
     managing-for-reliability.md
     managing-for-performance.md
-    glb-quick-setup.md
-    glb-setup.md
-    using-page-rules.md
-    caching-with-page-rules.md
-    resolve-override-cos.md
     origin.md
     routing.md
     rate-limiting.md
     multi-domain.md
-    iam.md
-    logpull.md
-    logpush.md
-    custom-page.md
+    iam.md  
     range.md
-    edge-functions.md
-    edge-functions-use-cases.md
     helpful-tools.md
-                   
+    
+    {: .topicgroup} 
+    Working with Global Load Balancers
+        glb-quick-setup.md
+        glb-setup.md
+                      
     {: .topicgroup}
     Guided instructions: Improving application reliability and scalability with Global Load Balancing
         application-reliability.md
@@ -60,6 +55,23 @@ Cloud Internet Services (CIS)
         identify-app-resources.md
         define-global-lb.md
         cloudant-and-cis.md
+        
+{: .topicgroup} 
+    Working with Edge Functions
+        edge-functions.md
+        edge-functions-use-cases.md
+        
+{: .topicgroup} 
+    Working with Logs
+        logpull.md
+        logpush.md 
+
+{: .topicgroup} 
+    Working with Page Rules
+        using-page-rules.md
+        caching-with-page-rules.md 
+        resolve-override-cos.md
+        custom-page.md
                 
     {: .topicgroup}
     Guided instructions: Web Application Firewalls
