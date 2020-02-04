@@ -37,7 +37,7 @@ Caching is the process of storing files on our edge servers, which we do for the
 
 Cached files have a specified expiration time, **Time-to-live (TTL)** after which they are purged from the cache. It also is possible to purge files from the cache manually. After files are removed from the cache, {{site.data.keyword.cis_short_notm}} goes back to your origin server to reload your files and update the cache with the latest versions.
 
-A deeper explanation of the cache settings and your caching options can be found in the [Caching and Page Rules tutorial](/docs/infrastructure/cis?topic=cis-use-page-rules-with-caching).
+A deeper explanation of the cache settings and your caching options can be found in the [Caching and Page Rules tutorial](/docs/cis?topic=cis-use-page-rules-with-caching).
 
 ### What content is cached?
 {:#what-content-is-cached}
@@ -47,7 +47,7 @@ By default, we cache **static files**, which include many types of image and tex
 ### How do I cache HTML?
 {:#how-do-i-cache-html}
 
-We do not cache HTML files by default because we do not consider them to be static; however, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files [using the Page Rules feature](/docs/infrastructure/cis?topic=cis-use-page-rules).
+We do not cache HTML files by default because we do not consider them to be static; however, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files [using the Page Rules feature](/docs/cis?topic=cis-use-page-rules).
 
 
 ## Query String Sorting

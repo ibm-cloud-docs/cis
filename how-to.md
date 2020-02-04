@@ -117,7 +117,7 @@ Notice that when certain rules are enabled, other options become grayed out, if 
 
  ![PAGE RULES MENUS](images/page-rule-dropdown-settings.png)
 
-You also can enable or disable your Page Rules from the table displayed in the Page Rules screen. See [Using Page Rules](/docs/infrastructure/cis?topic=cis-use-page-rules) for more information.
+You also can enable or disable your Page Rules from the table displayed in the Page Rules screen. See [Using Page Rules](/docs/cis?topic=cis-use-page-rules) for more information.
 
  ## Security settings
  {:#security-settings-overview}

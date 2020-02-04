@@ -21,7 +21,7 @@ subcollection: cis
 # Priority
 {: #priority}
 
-By default, the action you specify in a rule determines the evaluation sequence for your entire ruleset. To learn more, see [Actions](/docs/infrastructure/cis?topic=cis-actions).
+By default, the action you specify in a rule determines the evaluation sequence for your entire ruleset. To learn more, see [Actions](/docs/cis?topic=cis-actions).
 {: shortdesc}
 
 However, a **priority** is an option that allows you to force the evaluation sequence to occur before triggering a rule.

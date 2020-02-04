@@ -141,7 +141,7 @@ What you can do:
 
 * Verify that the {{site.data.keyword.cis_short_notm}} IP addresses are whitelisted..
 * Make sure that {{site.data.keyword.cis_short_notm}} IPs are not being rate-limited.
-* Here is the list of [IPs to whitelist](/docs/infrastructure/cis?topic=cis-cis-whitelisted-ip-addresses)
+* Here is the list of [IPs to whitelist](/docs/cis?topic=cis-cis-whitelisted-ip-addresses)
 
 ### 502 error “The dreaded 502”
 {:#troubleshooting-cis-502-error}

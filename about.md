@@ -75,4 +75,4 @@ Caching is a way to store your static web content closest to your site visitors,
 
 Encrypt communication to and from your website using Transport Layer Security (TLS). It may take up to 24 hours after the site becomes active for your new certificates to be issued.
 
-You can find more information about TLS in our [FAQs](/docs/infrastructure/cis?topic=cis-faq).
+You can find more information about TLS in our [FAQs](/docs/cis?topic=cis-faq).

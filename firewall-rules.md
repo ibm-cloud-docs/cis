@@ -26,6 +26,6 @@ subcollection: cis
 
 ## Plan Entitlements
 
-You can create many types of Firewall Rules. However, the number of active rules on your site is limited by your customer plan. See the [Plan comparison](/docs/infrastructure/cis?topic=cis-cis-plan-comparison) page for more information on entitlements.
+You can create many types of Firewall Rules. However, the number of active rules on your site is limited by your customer plan. See the [Plan comparison](/docs/cis?topic=cis-cis-plan-comparison) page for more information on entitlements.
 
 The number of active rules per plan is fixed. You cannot purchase additional active rules at this time.

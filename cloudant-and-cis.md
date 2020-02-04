@@ -24,7 +24,7 @@ Follow these steps to access your Cloudant Database through IBM Cloud Internet S
 ## Before you begin
 {: #access-cloudant-through-cis-begin}
 
-These instructions assume you have already added a domain to CIS as outlined in the [Getting Started](/docs/infrastructure/cis?topic=cis-getting-started) page.
+These instructions assume you have already added a domain to CIS as outlined in the [Getting Started](/docs/cis?topic=cis-getting-started) page.
 
 ### Step 1: Add your CIS domain to the Cross-Origin Resource Sharing (CORS)
 {: #access-cloudant-through-cis-step1}

@@ -69,7 +69,7 @@ If the Resolve Override with COS page rule is no longer needed the CNAME should 
 
 ## Proxy DNS entries are required for domains that are to be matched by the page rule
 {: #proxy-dns-entry}
-To perform the actual rewrite and redirecton to the COS bucket, the domains that you want to use with this page rule (such as `www.foo.com`) must have DNS entries in {{site.data.keyword.cis_short_notm}} with the 'proxy' flag set.  See [Proxying DNS Records](/docs/infrastructure/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) for more information.  If all requests to `www.foo.com` are redirected, then a CNAME entry that points to `<bucket-name>` with proxy enabled is sufficient.
+To perform the actual rewrite and redirecton to the COS bucket, the domains that you want to use with this page rule (such as `www.foo.com`) must have DNS entries in {{site.data.keyword.cis_short_notm}} with the 'proxy' flag set.  See [Proxying DNS Records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) for more information.  If all requests to `www.foo.com` are redirected, then a CNAME entry that points to `<bucket-name>` with proxy enabled is sufficient.
 
 ## Deleting the Page Rule
 {: #cos-delete-page-rule}

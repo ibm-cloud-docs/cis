@@ -29,9 +29,9 @@ subcollection: cis
 # Set up and configure your load balancers
 {:#set-up-and-configure-your-load-balancers}
 
- {{site.data.keyword.cis_full}} provides global load balancing as a service. 
- {: shortdesc} 
- 
+ {{site.data.keyword.cis_full}} provides global load balancing as a service.
+ {: shortdesc}
+
  Here's how the GLB Dashboard looks:
 
 ![GLB Dashboard](images/glb-screen.png)
@@ -41,7 +41,7 @@ subcollection: cis
 
 On your dashboard, you'll see three lists that show the [load balancers](#x2788902){: term}, origin pools, and [health checks](#x4571658){: term}. The lists display the new or updated global load balancer or one of its components after you've provisioned or updated it. Initially the lists are empty, and before you create a load balancer you must take a few actions.
 
-Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-balancer-quick-setup) if you already know what you need to do!
+Refer to the [Quick Start Guide](/docs/cis?topic=cis-global-load-balancer-quick-setup) if you already know what you need to do!
 
 ### Create
 {:#create-health-check}
@@ -54,7 +54,7 @@ Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-
    * **Path**: The endpoint path to health check against.
    * **Type**: The protocol to use for the health check.
    * **Description**: User provided description.
-    
+
 
 2) Create a pool, click **Create pool**.
    ![IMAGE](images/glb-pool-list.png)
@@ -62,7 +62,7 @@ Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-
    * **Name**: User provided name.
    * **Origins**: Count of healthy origins in the pool.
    * **Health Check**: Path of the attached health check, if any.
-    
+
 
 3) Create a load balancer, click **Create load balancer**.
    ![IMAGE](images/glb-load-balancer-list.png)
@@ -72,7 +72,7 @@ Refer to the [Quick Start Guide](/docs/infrastructure/cis?topic=cis-global-load-
    * **TTL**: Time To Live.
    * **Proxy**: Enable or disable proxy traffic flow.
    * **Status**: Enable or disable the load balancer.
-    
+
 
 IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.  
 {:note}

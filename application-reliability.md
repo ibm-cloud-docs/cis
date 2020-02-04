@@ -42,8 +42,8 @@ In this example, the application resources are deployed in two data center locat
 
 Task  | Description
 ------------- | -------------
-[Create a {{site.data.keyword.cis_short_notm}} instance](/docs/infrastructure/cis?topic=cis-create-your-cis-instance) | Begin by Creating your {{site.data.keyword.cis_short_notm}} instance using the {{site.data.keyword.cloud_notm}} console.|
-[Input information about your domain](/docs/infrastructure/cis?topic=cis-input-information-about-your-domain) | Input information about the domain you wish to protect and provide global load balancing for.
-[Begin Global Load Balancer configuration](/docs/infrastructure/cis?topic=cis-begin-global-load-balancer-configuration) | Start configuring your Global Load Balancer.
-[Identify your application resources](/docs/infrastructure/cis?topic=cis-identify-your-application-resources) | Identify the your application's resources, such as origin pools and health check mechanisms.
-[Define the global load balancer](/docs/infrastructure/cis?topic=cis-define-the-global-load-balancer) | Define your global load balancer configuration by specifying a hostname, adding and adjusting your origin pools and defining additional rules to control how traffic is served to clients.
+[Create a {{site.data.keyword.cis_short_notm}} instance](/docs/cis?topic=cis-create-your-cis-instance) | Begin by Creating your {{site.data.keyword.cis_short_notm}} instance using the {{site.data.keyword.cloud_notm}} console.|
+[Input information about your domain](/docs/cis?topic=cis-input-information-about-your-domain) | Input information about the domain you wish to protect and provide global load balancing for.
+[Begin Global Load Balancer configuration](/docs/cis?topic=cis-begin-global-load-balancer-configuration) | Start configuring your Global Load Balancer.
+[Identify your application resources](/docs/cis?topic=cis-identify-your-application-resources) | Identify the your application's resources, such as origin pools and health check mechanisms.
+[Define the global load balancer](/docs/cis?topic=cis-define-the-global-load-balancer) | Define your global load balancer configuration by specifying a hostname, adding and adjusting your origin pools and defining additional rules to control how traffic is served to clients.

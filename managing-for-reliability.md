@@ -47,7 +47,7 @@ Notice that the {{site.data.keyword.cis_short_notm}} interface is organized into
 
 To get started setting up your DNS configuration, select **DNS** from the navigation menu, as shown previously.
 
-For detailed information about setting up and managing your DNS for reliability, please [refer to this document](/docs/infrastructure/cis?topic=cis-set-up-your-dns-for-cis).
+For detailed information about setting up and managing your DNS for reliability,  [refer to this document](/docs/cis?topic=cis-set-up-your-dns-for-cis).
 
 
 ## Setting up Global Load Balancers
@@ -56,7 +56,7 @@ For detailed information about setting up and managing your DNS for reliability,
 
 To get started setting up your Global Load Balancers, select **Global Load Balancers** from the navigation menu.
 
-For detailed information about setting up and managing your Global Load Balancers, please [refer to this document](/docs/infrastructure/cis?topic=cis-global-load-balancer-glb-concepts).
+For detailed information about setting up and managing your Global Load Balancers,  [refer to this document](/docs/cis?topic=cis-global-load-balancer-glb-concepts).
 
 ## Using Page Rules to increase reliability
 {:#using-page-rules-to-increase-reliability}

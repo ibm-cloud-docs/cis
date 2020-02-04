@@ -52,7 +52,7 @@ Here are the two steps to take:
   * Remove any rate limiting of {{site.data.keyword.cis_short_notm}} IP addresses
   * Set up your ACLs to allow only {{site.data.keyword.cis_short_notm}} IP addresses and other trusted parties
 
-You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short_notm}} [at this location](/docs/infrastructure/cis?topic=cis-cis-whitelisted-ip-addresses).
+You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short_notm}} [at this location](/docs/cis?topic=cis-cis-whitelisted-ip-addresses).
 
 ## Best practice 3: Review your security settings to make sure they don’t interfere with API traffic
 {:#best-practice-review-security-settings-interference}

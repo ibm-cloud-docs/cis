@@ -127,13 +127,13 @@ Delete a trigger using the menu option in the table row for a selected trigger. 
 
 These examples are for demonstration purposes only, and not intended for use in production.
 {:important}
-* [A/B Testing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#ab-testing)
-* [Adding a Response Header](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#add-response-header)
-* [Aggregating Multiple Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#aggregate-multiple-requests)
-* [Conditional Routing](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#conditional-routing)
-* [Hot-link Protection](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#hot-link-protection)
-* [Originless Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#originless-responses)
-* [Post Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#post-requests)
-* [Setting a Cookie](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#setting-cookies)
-* [Signed Requests](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#signed-requests)
-* [Streaming Responses](/docs/infrastructure/cis?topic=cis-edge-functions-use-cases#streaming-responses)
+* [A/B Testing](/docs/cis?topic=cis-edge-functions-use-cases#ab-testing)
+* [Adding a Response Header](/docs/cis?topic=cis-edge-functions-use-cases#add-response-header)
+* [Aggregating Multiple Requests](/docs/cis?topic=cis-edge-functions-use-cases#aggregate-multiple-requests)
+* [Conditional Routing](/docs/cis?topic=cis-edge-functions-use-cases#conditional-routing)
+* [Hot-link Protection](/docs/cis?topic=cis-edge-functions-use-cases#hot-link-protection)
+* [Originless Responses](/docs/cis?topic=cis-edge-functions-use-cases#originless-responses)
+* [Post Requests](/docs/cis?topic=cis-edge-functions-use-cases#post-requests)
+* [Setting a Cookie](/docs/cis?topic=cis-edge-functions-use-cases#setting-cookies)
+* [Signed Requests](/docs/cis?topic=cis-edge-functions-use-cases#signed-requests)
+* [Streaming Responses](/docs/cis?topic=cis-edge-functions-use-cases#streaming-responses)

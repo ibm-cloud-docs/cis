@@ -68,9 +68,9 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
-|**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
-|**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
-|**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/infrastructure/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability)|
+|**Serve Stale Content**|Keeps a limited version of the site online if the server goes down. |For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
+|**Origin Cache Control**|Determine what content is cached from the origin and how often the content is updated |For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability) |
+|**Forwarding URL** |URL to be used in case the site is unavailable. | Using this disables configuring all other settings because you are forwarding the request somewhere else. For more information view [Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability)|
 |**Host Header Override**|Replace the host header for URI matching the page rule to the value specified. This is commonly used for content hosted in an S3 bucket.|
 |**Disable Apps**|Turn off all {{site.data.keyword.cis_short_notm}} Apps. | Enterprise only |
 |**Origin Error Page Pass-through**|Disables {{site.data.keyword.cis_short_notm}} error pages that would trigger for issues sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only ||
@@ -98,4 +98,4 @@ Here are three important things to remember with Page Rules:
 
 Page Rules can be disabled, in which case they will take no action. They still can be seen in the list and they can be edited. Setting the **Enabled** toggle to **Off** will create a Page Rule that initially is disabled.
 
-For more information, please refer to the [Caching and Page Rules how-to document](/docs/infrastructure/cis?topic=cis-use-page-rules-with-caching).
+For more information, please refer to the [Caching and Page Rules how-to document](/docs/cis?topic=cis-use-page-rules-with-caching).

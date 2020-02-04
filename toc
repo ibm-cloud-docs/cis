@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" category="network,security" audience="service" href="/docs/infrastructure/cis?topic=cis-getting-started" path="infrastructure/cis"}
+{: .toc subcollection="cis" category="network,security" audience="service" href="/docs/cis?topic=cis-getting-started" path="cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
@@ -18,7 +18,7 @@ Cloud Internet Services (CIS)
     glb.md
     cache.md
     best-practices.md
-    
+
     {: .topicgroup}
     Tutorials
         /tutorials/solution-tutorials-multi-region-k8s-cis
@@ -37,15 +37,15 @@ Cloud Internet Services (CIS)
     routing.md
     rate-limiting.md
     multi-domain.md
-    iam.md  
+    iam.md
     range.md
     helpful-tools.md
-    
-    {: .topicgroup} 
+
+    {: .topicgroup}
     Working with Global Load Balancers
         glb-quick-setup.md
         glb-setup.md
-                      
+
     {: .topicgroup}
     Guided instructions: Improving application reliability and scalability with Global Load Balancing
         application-reliability.md
@@ -55,44 +55,44 @@ Cloud Internet Services (CIS)
         identify-app-resources.md
         define-global-lb.md
         cloudant-and-cis.md
-        
-{: .topicgroup} 
+
+{: .topicgroup}
     Working with Edge Functions
         edge-functions.md
         edge-functions-use-cases.md
-        
-{: .topicgroup} 
+
+{: .topicgroup}
     Working with Logs
         logpull.md
-        logpush.md 
+        logpush.md
 
-{: .topicgroup} 
+{: .topicgroup}
     Working with Page Rules
         using-page-rules.md
-        caching-with-page-rules.md 
+        caching-with-page-rules.md
         resolve-override-cos.md
         custom-page.md
-                
+
     {: .topicgroup}
     Guided instructions: Web Application Firewalls
         waf-custom-rules.md
         waf-rule-set.md
         waf-cis-ruleset.md
-        waf-owasp-ruleset.md   
-    
+        waf-owasp-ruleset.md
+
     {: .topicgroup}
     Guided instructions: Firewall Rules
         firewall-rules.md
-        create-edit-delete.md   
+        create-edit-delete.md
         actions.md
         fields-and-expressions.md
         order-and-priority.md
-    
-    {: .topicgroup} 
+
+    {: .topicgroup}
     Guided instructions: Using Subdomains
         start-with-subdomain.md
     {: .navgroup-end}
-    
+
     {: .navgroup id="reference"}
     hipaa-advisory.md
     plan-comparison.md
@@ -102,7 +102,7 @@ Cloud Internet Services (CIS)
     whitelisted-ips.md
     external-resources.md
     {: .navgroup-end}
-    
+
     {: .navgroup id="help"}
     faq.md
     known-limitations.md

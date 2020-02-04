@@ -163,7 +163,7 @@ A 522 error indicates we weren't able to establish a connection with your origin
 
 This issue usually is caused by firewall or security software that accidentally blocks our IP addresses. Because CIS acts as a reverse proxy, connections to your site will appear to come from a range of CIS IPs. This behavior can cause certain firewalls to block these connections, which prevents us from serving content to your site visitors properly.
 
-To fix this issue, ask your host to whitelist all of the CIS IP ranges, which are listed [here](/docs/infrastructure/cis?topic=cis-cis-whitelisted-ip-addresses).
+To fix this issue, ask your host to whitelist all of the CIS IP ranges, which are listed [here](/docs/cis?topic=cis-cis-whitelisted-ip-addresses).
 
 All of these IPs must be whitelisted to avoid 522 errors. It's also worth checking to see if any IPs in these ranges are blocked.
 
@@ -236,4 +236,4 @@ The hostname in a Kubernetes ingress must consist of lower case alphanumeric cha
 {:#cis-faq-502-error}
 {: faq}
 
-Contact [IBM support](/docs/infrastructure/cis?topic=cis-getting-help-and-support) and provide the script that you were attempting to save.
+Contact [IBM support](/docs/cis?topic=cis-getting-help-and-support) and provide the script that you were attempting to save.

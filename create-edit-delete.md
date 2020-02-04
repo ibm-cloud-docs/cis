@@ -24,7 +24,7 @@ subcollection: cis
 You can create, edit, and delete Firewall Rules using the information in this topic.
 {:shortdesc}
 
-Before getting started, it's a good idea to become familiar with [Fields and Expressions](/docs/infrastructure/cis?topic=cis-fields-and-expressions).
+Before getting started, it's a good idea to become familiar with [Fields and Expressions](/docs/cis?topic=cis-fields-and-expressions).
 {: note}
 
 ## Create a Firewall Rule

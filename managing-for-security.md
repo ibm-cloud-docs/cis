@@ -97,7 +97,7 @@ Our Security Level settings are aligned with threat scores that certain IP addre
 * **OFF**: *Enterprise only*
 * **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** may affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
 
-We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for {{site.data.keyword.cis_short_notm}} Setup document](/docs/infrastructure/cis?topic=cis-best-practices-for-cis-setup)
+We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for {{site.data.keyword.cis_short_notm}} Setup document](/docs/cis?topic=cis-best-practices-for-cis-setup)
 
 ## Best practice 3: Activate your Web Application Firewall (WAF) safely
 {:#best-practice-activate-waf-safely}
@@ -108,9 +108,9 @@ The WAF protects you against the following types of attacks:
 * Cross-site scripting
 * Cross-site forgery
 
-The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](/docs/infrastructure/cis?topic=cis-waf-default-ruleset) document for more details on the default rule set and the behavior of each rule.
+The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](/docs/cis?topic=cis-waf-default-ruleset) document for more details on the default rule set and the behavior of each rule.
 
-For more information about the WAF, please see the [WAF Concepts document](/docs/infrastructure/cis?topic=cis-waf-q-and-a)
+For more information about the WAF, please see the [WAF Concepts document](/docs/cis?topic=cis-waf-q-and-a)
 
 ## Best practice 4: Configure your TLS settings
 {:#best-practice-configure-tls-settings}
@@ -122,7 +122,7 @@ TLS offers four modes of operation:
 * **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between {{site.data.keyword.cis_short_notm}} and your origin server(s).
 * **End-to-end CA signed**: TLS encrypts all traffic; you must use a CA-signed certificate.
 
-For more detail about your TLS options, please refer to [this document](/docs/infrastructure/cis?topic=cis-tls-options).
+For more detail about your TLS options, please refer to [this document](/docs/cis?topic=cis-tls-options).
 
 IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}.
 
@@ -168,4 +168,4 @@ The priority by which the certificates are displayed at our edge is:
 
 ### Minimum TLS version
 {:#security-minimum-tls-version}
-See [Minimum TLS version](/docs/infrastructure/cis?topic=cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.
+See [Minimum TLS version](/docs/cis?topic=cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.

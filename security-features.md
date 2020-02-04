@@ -37,12 +37,12 @@ Here’s a quick feature overview:
 ## Security features
 {:#cis-security-features}
 
- * Proxy [DNS records](/docs/infrastructure/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or [GLB](/docs/infrastructure/cis?topic=cis-global-load-balancer-glb-concepts) to use security features. This allows traffic to flow through our servers and you can monitor the data.
+ * Proxy [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or [GLB](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use security features. This allows traffic to flow through our servers and you can monitor the data.
 
 ### Web Application Firewall (WAF)
 {:#cis-web-application-firewall}
 
- * WAF is implemented through two rule sets: [OWASP](/docs/infrastructure/cis?topic=cis-owasp-rule-set-for-waf) and [{{site.data.keyword.cis_short_notm}}](/docs/infrastructure/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
+ * WAF is implemented through two rule sets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf) and [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
 
 ### Unlimited DDoS mitigation
 {:#cis-unlimited-ddos-mitigation}
