@@ -47,4 +47,4 @@ These instructions assume you have already added a domain to CIS as outlined in 
 * Select the Rule Behavior setting `Host Header Override`.
 * Set as the Cloudant database hostname, for example, `111-222-333-444-555-test.cloudant.com`.
 
-For more information on Cloudant, see the [Coudant documentation](/docs/services/Cloudant?topic=cloudant-getting-started).
+For more information on Cloudant, see the [Cloudant documentation](/docs/services/Cloudant?topic=cloudant-getting-started-with-cloudant).
