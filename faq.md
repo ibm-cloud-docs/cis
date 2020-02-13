@@ -236,4 +236,4 @@ The hostname in a Kubernetes ingress must consist of lower case alphanumeric cha
 {:#cis-faq-502-error}
 {: faq}
 
-Contact [IBM support](/docs/cis?topic=cis-getting-help-and-support) and provide the script that you were attempting to save.
+Contact [IBM support](/docs/cis?topic=cis-gettinghelp) and provide the script that you were attempting to save.

@@ -74,7 +74,7 @@ Refer to the [Quick Start Guide](/docs/cis?topic=cis-global-load-balancer-quick-
    * **Status**: Enable or disable the load balancer.
 
 
-IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.  
+IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering-enterprise-plans-only){:external}.  
 {:note}
 
 ### Edit/Delete
@@ -136,7 +136,7 @@ Additional optional fields:
  * **Healthy Origin Threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and will fail over to the next available pool. (defaults to 1)
  * **Health Check Regions**: Region from which the health check will perform monitoring.
 
-   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.
+   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering-enterprise-plans-only){:external}.
    {:note}
  * **Health Check**: The health check to use for checking origins within this pool. (defaults to no health check)
  * **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
@@ -156,5 +156,5 @@ Optionally, the following fields can be configured:
  * **TTL**: Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This option  applies only to unproxied load balancers, otherwise it defaults to `Automatic`.
  * **Region Pools**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using the default pools.
 
-   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://support.cloudflare.com/hc/en-us/articles/115000540888-Load-Balancing-Geographic-Regions){:external}.
+   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering-enterprise-plans-only){:external}.
    {:note}

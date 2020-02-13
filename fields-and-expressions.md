@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-04-24"
+  years: 2019, 2020
+lastupdated: "2020-02-10"
 
 subcollection: cis
 
@@ -50,7 +50,7 @@ Each field value can be sourced from different places, such as:
 |http.x_forwarded_for|String|_The full X-Forwarded-For HTTP header_ |
 |ip.src|IP address|93.155.208.22|The client TCP IP address, which may be adjusted to reflect the real client IP of the original client as applicable (for example, using HTTP headers like X-Forwarded-For or X-Real-IP)|
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
-|ip.geoip.country|String|GB|The [2-letter country code](https://support.cloudflare.com/hc/en-us/articles/205072537-What-are-the-two-letter-country-codes-for-the-Access-Rules-)|
+|ip.geoip.country|String|GB|The [2-letter country code](https://support.cloudflare.com/hc/en-us/articles/217074967#1QrbtSK5NSL7A0FOWD2bbZ){:external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
 
 These standard fields follow the naming convention of the Wireshark display field reference. However, some subtle variations may exist in the example values provided above.
