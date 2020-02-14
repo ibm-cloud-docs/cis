@@ -82,6 +82,7 @@ An expression returns true or false based on a match against incoming traffic. F
 ```
 http.host eq "www.example.com" and ip.src in 92.182.212.0/24
 ```
+{:screen}
 
 In the example above, two single expressions comprise a compound expression. Think of each single expression as a condition. Each condition is evaluated individually before applying and logic to determine the final result of the compound expression.
 
@@ -150,7 +151,7 @@ You can create compound expressions by grouping two or more single expressions u
 |not|!|Logical NOT|not ( http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24 )|1|
 |and|&&|Logical AND|http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24|2|
 |xor|^^|Logical XOR|http.host eq `"www.example.com"` xor ip.src in 93.184.216.0/24|3|
-|or|`||`|Logical OR|http.host eq `"www.example.com"` or ip.src in 93.184.216.0/24|4|
+|or|<code>&#124;&#124;</code>|Logical OR|http.host eq `"www.example.com"` or ip.src in 93.184.216.0/24|4|
 
 To alter the order of precedence, you can group expressions with parentheses.
 
@@ -159,18 +160,21 @@ Using no parentheses, expressions are implicitly grouped based on standard prece
 ```
 ssl and http.request.uri.path eq /login or http.request.uri.path eq /oauth
 ```
+{:screen}
 
 Applying explicit grouping:
 
 ```
 (ssl and http.request.uri.path eq /login) or http.request.uri.path eq /oauth
 ```
+{:screen}
 
 Giving precedence to or with parentheses:
 
 ```
 ssl and (http.request.uri.path eq /login or http.request.uri.path eq /oauth)
 ```
+{:screen}
 
 Note that while `not` is used for grouping, it can be used to negate a single comparison. For example, `not ip.src eq 93.184.216.0` is equivalent to `not (ip.src eq 93.184.216.0)`.
 
@@ -179,6 +183,7 @@ Finally, you can also negate grouped expressions:
 ```
 not (http.request.method eq "POST" and http.request.uri.path eq "/login")
 ```
+{:screen}
 
 ### Deviations from Wireshark Display Filters
 
