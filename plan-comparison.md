@@ -50,7 +50,7 @@ Scroll to the right to view the rest of the table!
 |**Caching**|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 seconds|Not available|Same as Enterprise|
 |**Range**|No|Yes<br>Total of 10 TB<br>5 TB HTTPS<br>5 TB Range|No|Same as Enterprise|
 |**Edge Functions**|1 action<br/>(must be named after domain)|Unlimited actions|Not available|Not available|
-|**Firewall Rules**|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li><ul>|<ul><li>1000 active rules</li><li>Supports all actions</li><li>Supports all operators</li><ul>|No|Same as Enterprise|
+|**Firewall Rules**|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li></ul>|<ul><li>1000 active rules</li><li>Supports all actions</li><li>Supports all operators</li></ul>|No|Same as Enterprise|
 |**Routing**|No|Yes|No|No |
 |**Origin Certificates**|Yes|Yes|Yes| Yes|
 

@@ -150,7 +150,7 @@ You can create compound expressions by grouping two or more single expressions u
 |not|!|Logical NOT|not ( http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24 )|1|
 |and|&&|Logical AND|http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24|2|
 |xor|^^|Logical XOR|http.host eq `"www.example.com"` xor ip.src in 93.184.216.0/24|3|
-|or|<code>&#124;&#124;</code>|Logical OR|http.host eq `"www.example.com"` or ip.src in 93.184.216.0/24|4|
+|or|`||`|Logical OR|http.host eq `"www.example.com"` or ip.src in 93.184.216.0/24|4|
 
 To alter the order of precedence, you can group expressions with parentheses.
 
