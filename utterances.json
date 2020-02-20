@@ -1,0 +1,210 @@
+{
+    "cis-faq-early-access-plan": [
+      "what happened to the Early Access Plan",
+      "early access plan admission",
+      "still have early access plan",
+      "do you have the early access beta",
+      "want early access plan for CIS",
+      "early access beta sign up"
+    ],
+    "cis-faq-free-trial-plan": [
+      "get with a Free Trial Plan for CIS",
+      "want a free trial of Internet Services",
+      "get Internet Service's free trial",
+      "get CIS instance for free",
+      "Cloud internet Serive at no cost",
+      "do I have to pay for CIS"
+    ],
+    "cis-faq-free-trial-instances": [
+      "How many Free Trial instances of CIS",
+      "have more than one instance of CIS",
+      "have multiple Internet Service's instances",
+      "more than one Free Trial CIS instance per account",
+      "multiple CIS instances on my account"
+    ],
+    "cis-faq-early-access-to-free-trial-plan": [
+     "can I change Early access plan to a Free Trial",
+     "change early access Internet Services to a free trial",
+     "update to a free trial from early access for CIS",
+     "have early access plan for internet services, can I have a free trial",
+     "updating the early access to a lite plan for CIS"
+    ],
+    "cis-faq-early-access-and-free-trial-plan": [
+     "used to have an Early Access instance, can I create  free Trial",
+     "free trial of CIS if I had early access before",
+     "used to have early access and would like a free trial",
+     "sign up for beta after I had early access",
+     "after having an early access instance can I also get a free trial"
+      ],
+    "cis-faq-downgrade-standard-to-free-plan": [  
+     "downgrade CIS to Free Trial",
+     "downgrading Internet Services to a free trial",
+     "Cloud Internet Services downgrade to a free trial",
+     "down grade my standard internet services to free",
+     "downgrade CIS so it is free"
+      ],
+    "cis-faq-free-trial-plan-expired": [ 
+     "Free Trial for CIS has expired",
+     "free cis trial ended, what next",
+     "do I have to upgrade after my free trial is ended for CIS",
+     "Internet Services free trial has just expired",
+     "free trial expired, how do I avoid any data loss",
+     "free trial ended for Internet Services, will I lose my data"
+      ],
+    "how-do-i-delete-my-cis-instance-": [ 
+     "how do I delete CIS Instance",
+     "how to delete Internet Services",
+     "want to remove CIS",
+     "want my Cloud Internet Services deleted",
+     "need CIS removed",
+     "no longer want CIS instance",
+     "deactivate CIS instance"
+      ],
+    "cis-faq-user-authentication-issue": [ 
+     "a CIS user facing authentication issues",
+     "error authenticating to manage Internet Services instance",
+     "user can not manage CIS, and getting an error",
+     "authentication error given and I have management access for CIS",
+     "trying to manage CIS but getting an error"
+     ],
+     "cis-faq-pending-domain": [      
+      "my CIS domain in Pending state",
+      "added a domain to Cloud Internet Services and it is still pending",
+      "why is my domain pending in CIS",
+      "CIS subdomain remains in pending",
+      "domain in CIS is still pending"
+     ],
+     "cis-faq-who-is-registrar": [ 
+      "Who is the registrar for my CIS domain",
+      "registrar for CIS",
+      "CIS registrar",
+      "update my domain registrar",
+      "change registrar for my domain",
+      "registrar updates for internet services"
+  ],
+     "cis-faq-keep-current-dns-provider": [   
+      "delegate a subdomain from my current DNS provider to CIS",
+      "use my current DNS provider as a subdomain",
+      "current DNS provider for a subdomain",
+      "subdomain from my current DNS provider for CIS",
+      "use a subdomain from current set up for CIS"
+   ],
+     "cis-faq-what-is-tls": [    
+      "What is TLS?",
+      "define TLS",
+      "describe TLS",
+      "TLS description",
+      "TLS definition"
+   ],
+     "cis-faq-how-does-tls-work": [  
+      "How's TLS work",
+      "TLS certificate work",
+      "how to use TLS",
+      "whats the TLS certificate for",
+      "use of the TLS"
+    ],
+     "cis-faq-privacy-warning": [  
+       "see a privacy warning in CIS",
+       "privacy warning in CIS",
+       "privacy warning in my browser",
+       "privacy warning issued",
+       "privacy warning"
+    ],
+     "cis-faq-invalid-ssl-cert-error": [  
+      "see invalid SSL certificate error in CIS",
+      "Error 526, Invalid SSL Certificate",
+      "error 526 in CIS",
+      "Invalid SSL Certificate",
+      "error : Invalid SSL Certificate",
+      "invalid SSL error"
+     ],
+     "cis-faq-what-is-ddos": [  
+      "What's DDoS",
+      "What does Ddos mean",
+      "definition of DDOS",
+      "define ddos",
+      "what is denial-of-service",
+      "what's denial of service"
+     ],
+     "cis-faq-what-to-do-in-ddos": [  
+      "I’m under a DDoS attack",
+      "DDoS attack",
+      "denial of service attack",
+      "under DDOS attack",
+      "attck by DDOS",
+      "DDos attacking"
+     ],
+     "cis-faq-522-error": [ 
+     "I got a 522 error in CIS",
+     "522 error given",
+     "522 error message",
+     "error:522",
+     "error 522"
+    ],
+     "cis-faq-proxied-record": [ 
+      "What's a proxied record for",
+      "what do I do with a proxy record",
+      "proxied records for CIS",
+      "proxying record in CIS",
+      "use of proxied records"
+    ],
+     "cis-faq-dns-validation-error": [ 
+      "got a DNS Validation error 1004",
+      "DNS Validation error",
+      "error 1004 given",
+      "1004 error message",
+      "error: 1004",
+      "error 1004"
+  ],
+     "cis-faq-add-cname-root-record": [ 
+      "add a CNAME for a root record",
+      "what is CNAME Flattening",
+      "add a CNAME as a root record",
+      "add a CNAME to my root",
+      "update record root with CNAME"
+  ],
+     "cis-faq-default-health-check-timeout": [ 
+      "What's the default health check timeout",
+      "timeout for the health check by default",
+      "default time out for health check",
+      "health check timeout",
+      "how long before the health check timeouts"
+  ],
+     "cis-faq-health-check-non-http-traffic": [ 
+      "health checks be configured for non-HTTP traffic",
+      "configure health check for non-HTTP/HTTPS",
+      "update health check for non HTTP/HTTPS  traffic",
+      "add non-HTTP/HTTPS to the health check configuration",
+      "non-HTTP/HTTPS update to health checks"
+   ],
+     "cis-faq-glb-non-http-traffic": [     
+      "GLB be configured for non-HTTP traffic",
+      "Global Load Balancer confuration for non-HTTP",
+      "update GLB to have non-HTTP traffic",
+      "GLB with non-HTTP  traffic",
+      "non-HTTP  traffic for my GLB",
+      "add non HTTP to the global load balancer"
+   ],
+     "cis-faq-disabling-origins-disable-origin-pool": [    
+      "disabling all of my origins disable the entire pool",
+      "disable all of my origins",
+      "entire origin pool disabled",
+      "disabling all of my origins",
+      "pool of origins disabled"
+   ],
+     "cis-faq-kubernetes-ingress-error": [ 
+      "have an error in my Kubernetes Ingress",
+      "change the hostname in a Kubernetes ingress",
+      "error in my Kubernetes Ingress",
+      "kubernetes ingress error given",
+      "Kubernetes Ingress error"
+   ],
+     "cis-faq-502-error": [ 
+      "502 error when saving Edge Functions Action",
+      "error saving Edge Functions Action",
+      "trying to save Edge Functions Action and get error",
+      "error when saving Edge Functions Action",
+      "Edge Functions Action gives 502 error",
+      "502 Edge Functions Action error"
+    ]
+ }   
