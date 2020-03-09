@@ -98,7 +98,7 @@ Cloud Internet Services (CIS)
     plan-comparison.md
     api-resource.md
     at_events.md
-    cis-cli-overview.md
+    /cis-cli-plugin/cis-cli-plugin-cis-cli
     whitelisted-ips.md
     external-resources.md
     {: .navgroup-end}

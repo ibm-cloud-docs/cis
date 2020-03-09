@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-12"
+  years: 2018, 2020
+lastupdated: "2020-02-20"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers, CIS
 
@@ -58,7 +58,7 @@ You can start using {{site.data.keyword.cis_short_notm}} for your internet traff
 ### Step 1: Open the IBM {{site.data.keyword.cis_short_notm}} application
 {:#open-cis-application}
 
-Open the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/catalog/). Then, select the **Infrastructure > Network** category in the navigation pane. Click the **internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
+Open the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/). Then, select the **Networking** category in the navigation pane. Click the **Internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
 
 **The Overview Screen**
 
