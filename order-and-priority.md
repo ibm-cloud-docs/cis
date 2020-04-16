@@ -13,10 +13,15 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
 {:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Priority
 {: #priority}

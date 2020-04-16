@@ -25,6 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 {:faq: data-hd-content-type='faq'}
+{:support: data-reuse='support'}
 
 
 

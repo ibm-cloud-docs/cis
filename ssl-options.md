@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# TLS Options
+# TLS options
 {:#cis-tls-options}
 
 The TLS options let you control whether visitors can browse your website over a secure connection, and when they do, how {{site.data.keyword.cis_full}} will connect to your origin server.

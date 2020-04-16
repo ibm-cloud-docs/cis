@@ -15,13 +15,15 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Seting up your Domain Name System (DNS) for {{site.data.keyword.cis_full_notm}}
 {:#set-up-your-dns-for-cis}

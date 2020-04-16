@@ -12,13 +12,20 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Known Limitations
+# Known limitations
 {:#known-limitations}
 
 The following information acknowledges some of the limitations, and some suggested courses of action to make your experience better.
@@ -26,7 +33,7 @@ The following information acknowledges some of the limitations, and some suggest
 
  * We recommend using Chrome.
 
- * The Free Trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed to add new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.
+ * The free trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed to add new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.
 
  * For this service, we support subdomain delegation only using NS records from another provider. CNAME delegation is not supported.
 
@@ -36,9 +43,9 @@ The following information acknowledges some of the limitations, and some suggest
 
  * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
 
- * IP Rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
+ * IP rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
 
-## Global Load Balancer
+## Global load balancer
 {:#known-limitations-glb}
 
  * Cloud Internet Services allows you to use the character `_` in load balancer hostnames, however, Kubernetes clusters cannot use `_`.
@@ -60,6 +67,7 @@ The following information acknowledges some of the limitations, and some suggest
    _cf.generate.yourdomain.com 0	IN	CNAME address.alias.com
    cf.generate.yourdomain.com 0	IN	CNAME address2.alias.com
    ```
+   {:pre}
 
    These records must be removed from the zone file to properly import.
 
@@ -67,6 +75,7 @@ The following information acknowledges some of the limitations, and some suggest
 
     CAA `<flags>` `<tag>` `<value>`
   {:note}
+
    ```
    Ex.
    Original CAA record
@@ -77,12 +86,15 @@ The following information acknowledges some of the limitations, and some suggest
    ```
    These records must be converted from HEX to string or removed and added manually before importing.
 
-## Page Rules
+## Page rules
 {:#known-limitations-pagerules}
 
    * Updating page rules settings using the CIS plugin for IBM Cloud CLI may result in an error if the page rule ID is not included in the JSON string or JSON file for the update. To work around this, submit the update using a complete JSON configuration file for the page rule, including the ID.
    * Removing page rule settings using the CIS UI may not remove the setting, even though the UI reports a successful update. To work around this problem, use the CIS plugin for IBM Cloud CLI to remove the setting and include the page rule ID in the JSON update document:
-      ```
-      $> ibmcloud cis page-rule-update <domain-id> <rule-id> -j <file>
-      ```
-      The JSON file should include the complete page rule configuration, including ID, with the necessary updates.
+
+     ```
+     $> ibmcloud cis page-rule-update <domain-id> <rule-id> -j <file>
+     ```
+     {:pre}
+
+     The JSON file should include the complete page rule configuration, including ID, with the necessary updates.

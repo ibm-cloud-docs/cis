@@ -12,6 +12,18 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Glossary
@@ -38,5 +50,3 @@ A health check helps gain insight into the availability of pools so that traffic
 {:#glossary-origin-servers}
 
 An origin server processes and responds to incoming requests from clients, and are typically used with caching servers. Origin servers run one or more programs that are designed to listen for and process incoming Internet requests. The physical distance between the origin server and the client making a request adds latency to the connection, increasing load time. Using caching servers reduces this latency.
-
-

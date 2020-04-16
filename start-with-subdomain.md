@@ -12,13 +12,20 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Getting {{site.data.keyword.cis_short_notm}} running with a new Subdomain
+# Getting {{site.data.keyword.cis_short_notm}} running with a new subdomain
 
 Follow these steps to "practice" using {{site.data.keyword.cis_short_notm}} with a subdomain or CNAME. This example uses the GoDaddy domain registrar. Your case may be different, depending on which registrar you use.
 {: shortdesc}

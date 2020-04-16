@@ -12,11 +12,18 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # IAM and CIS
@@ -54,7 +61,7 @@ We recommend assigning it to an access group to minimize the number of policies 
 
 We cache the authorization results and use the cache to make a decision when the same request arrives again. After the cache reaches its time to live ( 10 min), it expires.
 
-## Best Practices
+## Best practices
 {:#iam-and-cis-best-practices}
 
 1. Instead of modifying a policy, delete the existing policy and then create a new one.
@@ -67,7 +74,7 @@ This section walks through the different examples of access policies created thr
 ### Domain level with `config` type
 {:#iam-and-cis-scenarios-domain-level}
 
-#### Access to single domain with `security config` on an Access Group
+#### Access to single domain with `security config` on an access group
 ##### Writer role
 
 Bob has a {{site.data.keyword.cis_short_notm}} instance, `cis-test-instance`, and two domains, `bob.com` and `bob-ibm.com`.
@@ -128,7 +135,7 @@ Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4
 
 If the existing policy (writer) is not deleted, then attempting to create policy for Manager fails.
 
-##### Update the configuration to include Performance along with Security
+##### Update the configuration to include performance along with security
 
 If Bob wants to give Manager sec-group access to performance configuration on `bob.com` along with security, he:
 1. Clicks on **Account > Access** tab in the nav bar

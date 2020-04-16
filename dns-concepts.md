@@ -15,11 +15,18 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
 {:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
-# DNS Concepts
+# DNS concepts
 {:#dns-concepts}
 
 This document contains some concepts and definitions related to the internet's domain name system (DNS) and how it affects your {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) deployment.
@@ -29,7 +36,7 @@ The Domain Name System (DNS) underpins the web we use every day. It works transp
 
 The DNS system looks up this IP address and host name information on a network of linked DNS servers across the internet, similarly to how people might look for someplace using a phone book or a map.
 
-## Name Servers
+## Name servers
 {:#dns-concepts-nameservers}
 
 A **name server** implements services that provide responses to queries against a directory service. It translates meaningful, text-based web or host identifiers into IP addresses.
@@ -43,12 +50,12 @@ A **custom domain name server** allows you to utilize the DNS provider's servers
 
 **DNSSec** is a technology to digitally 'sign' DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, www.icann.org).
 
-## Root Record CNAME Flattening
+## Root record CNAME flattening
 {:#dns-concepts-root-record-cname-flattening}
 
 IBM {{site.data.keyword.cis_short_notm}} supports a feature called "CNAME Flattening." Using this method, root records can overcome the IETF RFC restriction that if a root record is a CNAME, it cannot have any other records for that domain. {{site.data.keyword.cis_short_notm}} Authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records such as MX records to be added to the domain, even though the root record is a CNAME.
 
-## Proxying DNS Records
+## Proxying DNS records
 {:#dns-concepts-proxying-dns-records}
 
 IBM {{site.data.keyword.cis_short_notm}} supports the ability to toggle whether a record is proxied or not. When a record is proxied, it means that its traffic will run directly through {{site.data.keyword.cis_short_notm}}. Currently, records with types **A**, **AAAA**, or **CNAME** can be proxied.

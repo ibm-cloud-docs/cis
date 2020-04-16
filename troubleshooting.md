@@ -12,27 +12,38 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Troubleshooting your {{site.data.keyword.cis_full_notm}} network connection
 {:#troubleshooting-your-cis-network-connection}
 
-## How do I know if my data is passing through my {{site.data.keyword.cis_full}} connection?
+## How do I know if my data is passing through my {{site.data.keyword.cis_full_notm}} connection?
 {:#how-do-i-know-if-my-data-is-passing-through-my-cis-connection}
+{: help}
+{: support}
 
-{{site.data.keyword.cis_full_notm}} ({{site.data.keyword.cis_short_notm}}) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
+{{site.data.keyword.cis_full_}} ({{site.data.keyword.cis_short_notm}}) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
 
 To know whether data has passed through {{site.data.keyword.cis_short_notm}}, locate the `Ray ID` which will be present on every packet.
 
 **Unix command line tools:**
 
- * curl for HTTP:
-`$ curl -vso /dev/null http://example.com`
-
- * dig for DNS:
-`$ dig www.example.com`
-
- * traceroute for network:
-`$ traceroute example.com`
+ * curl for HTTP: `$ curl -vso /dev/null http://example.com`
+ * dig for DNS: `$ dig www.example.com`
+ * traceroute for network: `$ traceroute example.com`
 
 **For example:**
 
@@ -41,6 +52,7 @@ Terminal command:  `curl -svo /dev/null YOUR_URL_HERE. -L`
 Results in: `CF-RAY: 1ca349b6c1300da3-SJC`
 
 ## Adding CF-Ray headers
+{: #add-cf-ray-headers}
 
 The CF-RAY header is added to help trace a request to a website through the network. Use it when working with Support to help troubleshoot any related issues with connectivity. You can reveal this "Ray ID" in your logs by making some edits to configuration files in Apache and nginx.
 
@@ -52,8 +64,9 @@ LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %{CF-Ray
 
 CustomLog log/access_log cf_custom
 ```
+{:pre}
 
-### nginx
+### NGINX
 {:#troubleshooting-cis-nginx}
 
 ```
@@ -64,6 +77,7 @@ log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
 
 access_log  /var/log/nginx/access.log cf_custom;
 ```
+{:pre}
 
 ## What do I do if I use the Cloudflare Origin root certificate, and it's expiring?
 {: #update-origin-root-ca}
@@ -82,6 +96,8 @@ Select one of the following root certificates to download and install.
 
 ## How do I trace a route?
 {:#how-do-i-trace-a-route}
+{: help}
+{: support}
 
 To see whether a route goes through your {{site.data.keyword.cis_short_notm}} pathway, you can perform a `dig` in a Terminal window for Mac or Linux or use `nslookup` in the Windows command prompt for Windows.
 
@@ -100,6 +116,8 @@ Also, please allow up to 15 minutes for one of our partner Certificates Authorit
 
 ## What do I do if I’m under a DDoS attack?
 {:#troubleshooting-cis-ddos-attack}
+{: help}
+{: support}
 
  * **Step 1:** Turn on "Defense Mode" from your dashboard
  * **Step 2:** Set your DNS records for maximum security
@@ -122,15 +140,15 @@ Here are some common error messages that you or your support team might see:
 
 ### Not seeing any network traffic
 {:#troubleshooting-cis-network-traffic}
+{: help}
+{: support}
 
 If you’re not seeing traffic, and you’re using a CNAME, make sure that there is a redirect in place, so the traffic is not being routed to the root domain. Remember that some DNS propagations can take up to 48 hours to complete.
 
 ### Website offline
 {:#troubleshooting-cis-website-offline}
 
-Here is what you might see:
-
-`IBM CIS cannot connect to the origin server (error 521, 522, 523)`.
+Here is what you might see: `IBM CIS cannot connect to the origin server (error 521, 522, 523)`.
 
 **Website offline - no cached version**
 
@@ -145,6 +163,8 @@ What you can do:
 
 ### 502 error “The dreaded 502”
 {:#troubleshooting-cis-502-error}
+{: help}
+{: support}
 
 This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable, for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. Run a trace route.
 

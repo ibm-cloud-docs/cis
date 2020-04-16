@@ -16,8 +16,13 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
 {:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
@@ -27,7 +32,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} customers on Enterprise accounts have access to detailed logs of HTTP requests for their domains. These logs are helpful for debugging, identifying configuration adjustments, and creating analytics, especially when combined with other data sources such as application server logs.
 {: shortdesc}
 
-The data from Logpush is exactly the same as that from [Logpull](#logpull). Unlike Logpull, which allows {{site.data.keyword.cis_short_notm}} Enterprise customers to download request logs, Logpush provides {{site.data.keyword.cis_short_notm}} Enterprise customers the option to push the request logs to {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) buckets. You’re free to choose the method that’s most convenient.
+The data from Logpush is exactly the same as that from [Logpull](/docs/cis?topic=cis-logpull). Unlike Logpull, which allows {{site.data.keyword.cis_short_notm}} Enterprise customers to download request logs, Logpush provides {{site.data.keyword.cis_short_notm}} Enterprise customers the option to push the request logs to {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) buckets. You’re free to choose the method that’s most convenient.
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
 
@@ -58,14 +63,14 @@ where,
   * `--fields` specifies the list of log fields to be included in log files.
     * Multiple fields can be separated by commas.
     * Use command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get the comprehensive list of available log fields, or use `all` to include all available fields in log files.
-  * `--timestamps` sets the format in which response timestamps are returned. 
+  * `--timestamps` sets the format in which response timestamps are returned.
     * Valid values are `unix`, `unixnano`, and `rfc3339`.
-    * Default value is `rfc3339`. 
-  * `--dataset` is the category of logs you want to receive. 
+    * Default value is `rfc3339`.
+  * `--dataset` is the category of logs you want to receive.
     * This value cannot be changed after the job is created.
     * Valid values are `http_requests`, and `range_events`.
     * Default value is `http_requests`.
-  * `-i` or, `--instance` is the instance name. 
+  * `-i` or, `--instance` is the instance name.
     * If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 A domain can only have one Logpush job. Use the command line to interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge. When a challenge token is written to a file in the given {{site.data.keyword.cos_short}} bucket, you must:

@@ -14,6 +14,7 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}

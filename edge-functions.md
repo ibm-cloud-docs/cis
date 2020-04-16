@@ -28,7 +28,7 @@ subcollection: cis
 # Edge Functions
 {: #edge-functions}
 
-{{site.data.keyword.cis_full}} Edge Functions allow you to create new applications or modify existing applications, without having to configure or maintain infrastructure, by utilizing a serverless execution environment. Edge Functions can be defined and uploaded to the Cloud edge to process requests before they reach the origin. {{site.data.keyword.cis_short_notm}} Edge functions can be used to modify HTTP requests and responses, make parallel requests, or generate responses from the Cloud edge.
+{{site.data.keyword.cis_full}} Edge Functions allow you to create new applications or modify existing applications, without having to configure or maintain infrastructure, by utilizing a serverless execution environment. Edge Functions can be defined and uploaded to the Cloud edge to process requests before they reach the origin. {{site.data.keyword.cis_short_notm}} Edge Functions can be used to modify HTTP requests and responses, make parallel requests, or generate responses from the Cloud edge.
 {: shortdesc}
 
 ## How Edge Functions work
@@ -36,7 +36,7 @@ subcollection: cis
 
 Edge Functions associates **actions** with URIs based on a defined domain. This association is called a **trigger**. Incoming requests to your site will be intercepted at the cloud's edge and matched against the triggers in your account or domain. If the request URL matches the trigger's URI the action associated with the trigger is executed. 
 
-Edge functions are modeled on the [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) available in modern web browsers, and use the same API whenever possible.
+Edge Functions are modeled on the [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) available in modern web browsers, and use the same API whenever possible.
 
 The Service Worker API allows you to intercept any request which is made to your site. Once your JavaScript is handling the request, you may elect to make any number of subrequests to your site or others, and finally return any response you would like to your visitor.
 
@@ -52,7 +52,7 @@ While Edge Functions does use V8, it does not use Node.js. The JavaScript APIs a
 
 Actions are written in JavaScript and require an event listener to respond to a trigger event. Actions will not affect your traffic unless used by a trigger. 
 
-### Enterprise vs Standard Plans
+### Enterprise vs standard plans
 {: #edge-functions-enterprise-v-standard-plans}
 
 Standard plans have a maximum of one action. The action is assigned a name that is the same as your domain. You may replace your action by uploading another file or update your action using the code editor. Uploading another file will remove the existing action.
@@ -83,12 +83,12 @@ Selecting an action opens the action in the editor for modification. Whenever yo
 Delete an action by clicking the **delete** icon in the **Actions** table. An action cannot be deleted while in use. To delete the action, remove it from the triggers, first. The **Uses** column shows the number of triggers that are associated with this action. Delete cannot be undone.
 
 
-### Associated Triggers
+### Associated triggers
 {: #edge-functions-associated-triggers}
 
 Add a trigger and associate it with an action.
 
-### Edge Functions Known Limitations
+### Edge Functions known limitations
 {: #edge-functions-known-limitations}
 
 Uploading an action with the same name as an existing action. The existing action will be overwritten. Rename the action file before uploading to avoid this behavior.
@@ -97,7 +97,7 @@ Uploading an action with the same name as an existing action. The existing actio
 ## Triggers
 {: #triggers}
 
-### About Triggers
+### About triggers
 {: #about-triggers}
 
 Triggers (routes) determine domain traffic routing to the Actions. Triggers associate certain URL patterns, based on a domain on the account, with a predefined action. The URL must contain the domain, but it can contain wildcards either as a prefix to the domain or at the end of the path. If no path is given on the pattern a `/` is added implicitly. The URL pattern cannot contain infix wildcards or query parameters. 
@@ -122,7 +122,7 @@ Update a trigger using the menu option in the table row for a selected trigger. 
 Delete a trigger using the menu option in the table row for a selected trigger. This action cannot be undone.
 
 
-## Use Cases
+## Use cases
 {: #edge-functions-use-cases-examples}
 
 These examples are for demonstration purposes only, and not intended for use in production.

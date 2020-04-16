@@ -12,13 +12,20 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Rate Limiting
+# Rate limiting
 {:#cis-rate-limiting}
 
 Rate Limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
@@ -26,7 +33,7 @@ Rate Limiting (Enterprise plan only) protects against denial-of-service attacks,
 
 Select the type of rate limiting rule, either a **Custom rule** or **Protect login**
 
-## Create a Custom rate limiting rule
+## Create a custom rate limiting rule
 {:#create-a-custom-rate-limiting-rule}
 
 Enter a rule name that helps you remember what the rule does. This is an optional field.

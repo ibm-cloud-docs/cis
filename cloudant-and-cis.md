@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-03-28"
+  years: 2019, 2020
+lastupdated: "2020-03-19"
 
 keywords: Cloudant database, CORS, cross-origin resource sharing, host header
 
@@ -12,7 +12,18 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # Access your Cloudant database through {{site.data.keyword.cis_full_notm}}
@@ -47,4 +58,4 @@ These instructions assume you have already added a domain to CIS as outlined in 
 * Select the Rule Behavior setting `Host Header Override`.
 * Set as the Cloudant database hostname, for example, `111-222-333-444-555-test.cloudant.com`.
 
-For more information on Cloudant, see the [Coudant documentation](/docs/Cloudant?topic=cloudant-getting-started).
+For more information on Cloudant, see the [Coudant documentation](/docs/Cloudant?topic=cloudant-getting-started-with-cloudant).

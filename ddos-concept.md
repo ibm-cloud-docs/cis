@@ -12,8 +12,20 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Distributed Denial of Service (DDoS) Attack Concepts
+# Distributed Denial of Service (DDoS) attack concepts
 {:#distributed-denial-of-service-ddos-attack-concepts}
 
 DDoS attacks are among the most common types of internet attacks that your website or host can encounter.
@@ -42,17 +54,17 @@ Common types are:
  * Protocol attacks (layers 3 and 4)
  * Volumetric attacks (amplification attacks)
 
-### Application Layer Attacks
+### Application layer attacks
 {:#application-layer-attacks}
 
 An application layer attack is sometimes referred to as a _layer-7 DDoS attack_ (in reference to the 7th layer of the OSI model). The goal of these attacks is to exhaust the resources of the victim, by targeting the layer where web pages are generated on the server and delivered to the visitors in response to HTTP requests (that is, the application layer). Layer-7 attacks are challenging, because the traffic can be difficult to identify as malicious.
 
-### Protocol Attacks
+### Protocol attacks
 {:#protocol-attacks}
 
 Protocol attacks utilize weaknesses in layer 3 and layer 4 of the ISO protocol stack to render the target inaccessible. These attacks, also known as a state-exhaustion attacks, cause a service disruption by consuming all the available _state table_ capacity of web application servers, or of intermediate resources such as firewalls and load balancers.
 
-### Volumetric Attacks
+### Volumetric attacks
 {:#volumetric-attacks}
 
 This category of attacks attempts to create congestion by consuming all available bandwidth between the target and the wider Internet. Large amounts of data are sent to a target using a form of amplification, or by other means of creating massive traffic, such as requests from a botnet.

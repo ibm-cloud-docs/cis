@@ -12,13 +12,20 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Resolve Override with COS
+# Resolving override with COS
 {: #resolve-override-cos}
 
 This section offers use cases in resolving overrides with Cloud Object Storage.
@@ -36,7 +43,7 @@ Make the request matching the page rule resolve to a Cloud Object Storage (COS) 
 The following steps assume you have an existing COS instance and bucket with public access. For information on public access see [Allowing public access](/docs/cloud-object-storage?topic=cloud-object-storage-iam-public-access).
 
 
-## Create Page Rule steps
+## Create page rule steps
 {: #cos-create-page-rule}
 
 * Navigate to **Performance->Page Rules**.
@@ -71,15 +78,15 @@ If the Resolve Override with COS page rule is no longer needed the CNAME should 
 {: #proxy-dns-entry}
 To perform the actual rewrite and redirecton to the COS bucket, the domains that you want to use with this page rule (such as `www.foo.com`) must have DNS entries in {{site.data.keyword.cis_short_notm}} with the 'proxy' flag set.  See [Proxying DNS Records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) for more information.  If all requests to `www.foo.com` are redirected, then a CNAME entry that points to `<bucket-name>` with proxy enabled is sufficient.
 
-## Deleting the Page Rule
+## Deleting the page rule
 {: #cos-delete-page-rule}
 
 If the Resolve Override with COS page rule is no longer needed, the CNAME should be _manually_ deleted along with the page rule.
 
 
-## Editing the Page Rule
+## Editing the page rule
 {: #cos-edit-page-rule}
 
 After editing the page rule, the **Resolve Override with COS** will no longer be displayed on the page. However, the **Resolve Override** `<bucket>.<domain>` and **Host Header Override** `<bucket>.<cos-endpoint>` will replace **Resolve Override with COS**.
 
-Making changes to the **Resolve Override** will _not_ automatically create a new CNAME record (for example, `<updated-bucket>.<domain>`). This is only done upon the initial creation of a page rule using **Resolve Override with COS**. To automatically create the CNAME record for the bucket follow the [Create Page Rule](#cos-create-page-rule) steps.
+Making changes to the **Resolve Override** will _not_ automatically create a new CNAME record (for example, `<updated-bucket>.<domain>`). This is only done upon the initial creation of a page rule using **Resolve Override with COS**. To automatically create the CNAME record for the bucket follow the [Create page rule](#cos-create-page-rule) steps.

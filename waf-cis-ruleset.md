@@ -12,11 +12,18 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
 # WAF settings
@@ -33,7 +40,7 @@ The following table shows the actions Web Application Firewalls (WAF) can take.
 |Challenge | A challenge page asks visitors to submit a CAPTCHA to continue to your website.|
 |Threshold or sensitivity setting | Set rules to trigger more or less, depending on sensitivity.|
 
-## {{site.data.keyword.cis_full_notm}} Rule Set for WAF
+## {{site.data.keyword.cis_full_notm}} rule set for WAF
 {:#cis-ruleset-for-waf}
 
 Select **View {{site.data.keyword.cis_short_notm}} Rules** to reveal the rule sets of this package. The rule sets follow:

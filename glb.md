@@ -15,6 +15,7 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -24,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Global Load Balancer (GLB) Concepts
+# Global Load Balancer (GLB) concepts
 {:#global-load-balancer-glb-concepts}
 
 This document contains some concepts and definitions related to the Global Load Balancer (GLB) and how it affects your {{site.data.keyword.cis_full}} deployment.
@@ -106,7 +107,7 @@ An origin pool is setup with 3 origins that have the following weights: origin-A
 * The administrator changes the weight for origin-C to `0`. Now 100% of new traffic goes to origin-B. But with session-affinity turned on, traffic for existing sessions on origin-C continues to go to origin-C until those sessions close (max. 24 hours).
 * Finally, the weight for origin-B is changed to `0`. The pool will no longer receive traffic until origin-A returns to a healthy status or the weights for origin-C and origin-B are set to a non-zero value.
 
-### Fallback Pool
+### Fallback pool
 {:#fallback-pool}
 
 The origin pool with the lowest priority (the largest number) is the designated "fallback pool." When all pools for a given region are down, traffic is routed to the fallback pool, regardless of its health.
@@ -114,14 +115,14 @@ The origin pool with the lowest priority (the largest number) is the designated 
 When all pools are disabled, the fallback pool is not available.
 {:note}
 
-## Health Check
+## Health check
 {:#cis-health-check}
 
 A health check helps gain insight into the availability of pools so that traffic can be routed to the healthy ones. These checks periodically send HTTP, HTTPS, or TCP requests and monitor the responses. They can be configured with a customized port, interval, timeout, status code, and more. As soon as a pool is marked unhealthy, traffic is intelligently rerouted to another available pool.
 Be aware that your logs have references to Cloudflare because of IBM's partnership with Cloudflare to power {{site.data.keyword.cis_short_notm}}.
 {:note}
 
-### Health Check Events
+### Health check events
 {:#health-check-events}
 
 Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of Health Check Events. You can filter by date, health of the pool or origin, pool name, and origin name by selecting the filter parameters from the list menus. Columns within the table are sortable by clicking on the column name.
@@ -131,13 +132,13 @@ Individual rows within the table expand with more information about the entry. I
 
 ![Health Check Events details](images/health-check-events-details.png)
 
-#### Pool Details:
+#### Pool details:
 * Pool Name - Name of the pool
 * Healthy Origins - Ratio of health origins/total origins in a pool
 * Healthy Threshold - Number of origins that need to be healthy in order to consider the pool healthy
 * Healthy Origins - Names of the health origins
 * Critical Origins - Names of the unhealthy origins
 
-#### Affected Origin Details:
+#### Affected origin details:
 * Origin Name - Name of the origin
 * Origin Address - Address of the origin

@@ -12,9 +12,20 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Origin Certificates
+# Origin certificates
 {:#cis-origin-certificates}
 
 Origin Certificates are free TLS certificates issued by {{site.data.keyword.cis_full}} that encrypt traffic between your origin server and your users. Order free TLS certificates to install on your origin server.

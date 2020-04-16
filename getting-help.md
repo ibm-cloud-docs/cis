@@ -28,15 +28,13 @@ subcollection: cis
 # Getting help and support
 {: #gettinghelp}
 
-If you have problems or questions when using {{site.data.keyword.cis_short_notm}}, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support case.
+If you have problems or questions when using {{site.data.keyword.cis_short_notm}}, you can get help by searching for information or by asking questions through the forum listed here. You can also open a Support case.
 {:shortdesc}
 
-When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
+When using the forum to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
 
 * If you have technical questions about {{site.data.keyword.cis_short_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=cis+ibm-cloud){:external} and tag your question with "ibm-cloud" and "cis".
 
-* For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/cis.html?smartspace=ibm-cloud){:external} forum. Include the  "cis" and "ibm-cloud" tags.
+See [Getting help](/docs/get-support?topic=get-support-getting-customer-support) for more details about using the forum.
 
-See [Getting help](/docs/get-support?topic=get-support-getting-customer-support) for more details about using the forums.
-
-For information about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+For information about opening an IBM Support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).

@@ -12,18 +12,21 @@ subcollection: cis
 
 
 {:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
 {:new_window: target="_blank"}
+{:codeblock: .codeblock}
 {:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
-# Improving application reliability and scalability with Global Load Balancing from {{site.data.keyword.cis_full}}
+# Improving application reliability and scalability with Global Load Balancing from {{site.data.keyword.cis_full_notm}}
 {:#improving-application-reliability-and-scalability-with-global-load-balancing-from-ibm-cloud-internet-services}
 
 If you have an e-commerce website or are hosting an application that needs to be accessible to your end-users at all times, then you're likely concerned about 24*7 availability and performance of your application.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2019-08-19"
+  years: 2018, 2020
+lastupdated: "2020-04-02"
 
 keywords: Plan Comparison, Cloud Internet Services, Free Trial, enterprise
 
@@ -15,10 +15,15 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
 {:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Plan Comparison
 {: #cis-plan-comparison}
@@ -39,7 +44,7 @@ Scroll to the right to view the rest of the table!
 |**Time**|Monthly Billing |Monthly Billing|Monthly Billing|Monthly Billing|
 |**Domain**|1|Up to 1000, but recommend no more than 20|2|3|
 |**DNS**|3500 records |Multiple Domains (3500 records per Domain) |Same as Enterprise |Same as Enterprise|
-|**GLB**|<ul><li>6 origin servers</li><li>60 sec health checks</li><li>Geo Routing</li><li>Health checks from single region</li><li>60s minimum TTL for non-proxied GLBs</li></ul>|<ul><li>100 origin servers</li><li>5 sec health checks</li><li>Smart Routing</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied GLBs</li></ul>|<ul><li>18 origin servers</li><li>5 sec health checks</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied GLBs</li></ul>|Not available|
+|**GLB**|<ul><li>5 Pools</li><li>6 origin servers</li><li>5 Health checks</li><li>60 sec health checks</li><li>Geo Routing</li><li>Health checks from single region</li><li>60s minimum TTL for non-proxied GLBs</li></ul>|<ul><li>Up to 100 pools</li><li>100 origin servers</li><li>Up to 100 health checks</li><li>5 sec health checks</li><li>Smart Routing</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied GLBs</li></ul>|<ul><li>Up to 100 pools</li><li>18 origin servers</li><li>Up to 100 health checks</li><li>60 sec health checks</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied GLBs</li></ul>|Not available|
 |**WAF**|Preconfigured rules|Preconfigured and custom rules|Not available|Same as Enterprise|
 |**DDoS**|On (with Proxy) or Off (no Proxy)|On (with Proxy) or Off (no Proxy)|Yes (Proxy)|Yes|
 |**TLS**|<ul><li>1 Universal wildcard</li><li>1 Dedicated wildcard</li><li>1 Dedicated custom</li><li>1 Uploaded custom</li></ul>|<ul><li>1 Universal wildcard per domain. Up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 Dedicated wildcard with ability to request more</li><li>10 Dedicated custom</li><li>1 Uploaded custom</li></ul>|<ul><li>1 Universal wildcard per domain. Up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 Dedicated wildcard with ability to request more</li><li>2 Dedicated custom</li><li>1 Uploaded custom</li></ul>|<ul><li>1 Universal wildcard per domain. Up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 Dedicated wildcard with ability to request more</li><li>3 Dedicated custom</li><li>1 Uploaded custom</li></ul>|

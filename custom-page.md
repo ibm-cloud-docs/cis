@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-05-06"
+  years: 2019, 2020
+lastupdated: "2020-03-19"
 
 keywords: Custom error page, Cloud Internet Services, Custom page
 
@@ -12,12 +12,18 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:tip: .tip}
-{:important: .important}
-{:note: .note}
-{:deprecated: .deprecated}
-{:pre: .pre}
 {:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
+{:external: target="_blank" .external}
+{:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 # Custom page
 {: #custom-page}
@@ -82,7 +88,7 @@ Each page (challenge, 5xx errors) has a different ID, so use the preview option 
 ## Publishing
 {: #publishing-error-pages}
 
-Once you're done customizing your error pages, it's time to publish them to our edge. This is done through the [Custom Page CLI](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli-commands#custom-page).
+Once you're done customizing your error pages, it's time to publish them to our edge. This is done through the [Custom Page CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#custom-page).
 
 When you publish, the custom error page is requested once by us, then cached on the cloud's edge.
 

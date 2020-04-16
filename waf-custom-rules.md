@@ -12,22 +12,29 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
-# WAF Custom Rules
+# WAF custom rules
 {:#waf-custom-rules}
 
-Navigate to Custom WAF Rules through **Security > Web Application Firewall > Custom rules**. WAF Rules are available on Enterprise plans and are created based on that customer's unique requirements and/or their website's traffic patterns. This means that you can ask us to block virtually any combination of characteristics of a request.
+Navigate to custom WAF rules through **Security > Web Application Firewall > Custom rules**. WAF rules are available on Enterprise plans and are created based on that customer's unique requirements and/or their website's traffic patterns. This means that you can ask us to block virtually any combination of characteristics of a request.
 {: shortdesc}
 
-Custom WAF Rules cater to situations where the IBM WAF doesn’t have a rule in place already, and the attacker uses a specific pattern or user agent that is targeted specifically for your website's structure. In these situations, you can create a custom rule for your web property.
+Custom WAF rules cater to situations where the IBM WAF doesn’t have a rule in place already, and the attacker uses a specific pattern or user agent that is targeted specifically for your website's structure. In these situations, you can create a custom rule for your web property.
 
-## Request a Custom Rule
+## Request a custom rule
 {:#request-a-custom-rule}
 
 To request a rule, email wafsup@us.ibm.com with rule requirements or traffic patterns.

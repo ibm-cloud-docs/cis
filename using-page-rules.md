@@ -12,17 +12,24 @@ subcollection: cis
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:DomainName: data-hd-keyref="DomainName"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:term: .term}
+{:tip: .tip}
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
+{:download: .download}
+{:DomainName: data-hd-keyref="DomainName"}
 
 
-# Use Page Rules
+# Using page rules
 {:#use-page-rules}
 
-A Page Rule specifies some settings and values that you can apply to a specific URL pattern that references your domain. Page Rules help you manage security, performance, and reliability based on each individual URL in your site. The following table describes the Page Rules that are available to all customers, the behaviors they produce, and any special considerations you should keep in mind before using them.
+A page rule specifies some settings and values that you can apply to a specific URL pattern that references your domain. page rules help you manage security, performance, and reliability based on each individual URL in your site. The following table describes the page rules that are available to all customers, the behaviors they produce, and any special considerations you should keep in mind before using them.
 {: shortdesc}
 
 ## Security
@@ -41,7 +48,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Automatic HTTPS Rewrites**|Toggles Automatic HTTPS Rewrites on or off.  | |
 |**Opportunistic Encryption**|Toggles Opportunistic Encryption on or off.  | |
 |**Cache Deception Armor**|Toggles Cache Deception Armor on or off.  | |
-|**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables configuring all other settings for the rule, because {{site.data.keyword.cis_short_notm}} forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against Page Rules. |
+|**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables configuring all other settings for the rule, because {{site.data.keyword.cis_short_notm}} forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against page rules. |
 |**True Client IP Header**|{{site.data.keyword.cis_short_notm}} will send the end user's IP address in the `True-Client-IP` header.  |Enterprise only |
 
 ## Performance
@@ -51,7 +58,7 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |-----------|----------|----------------|
 |**Browser Cache TTL**|Controls how long resources cached by client browsers remain valid. | |
 |**Bypass Cache on Cookie**|Serve a cached object unless we see a cookie of a specific name, for example, serve a cached version of the homepage unless we see a `SessionID` cookie indicating the customer is logged in and therefore should be presented personalized content. | |
-|**Cache Level**|**Bypass** - Resources that match that Page Rule are not cached. **No query string** - Only delivers resources from cache when there is no query string. **Ignore query string** - Delivers the same resource to everyone independent of the query string. **Standard** - Delivers a different resource each time the query string changes.  **Cache everything** - Resources that match the Page Rule are cached.|By default, HTML content is not cached. A Page Rule to cache static HTML content must be written. |
+|**Cache Level**|**Bypass** - Resources that match that page rule are not cached. **No query string** - Only delivers resources from cache when there is no query string. **Ignore query string** - Delivers the same resource to everyone independent of the query string. **Standard** - Delivers a different resource each time the query string changes.  **Cache everything** - Resources that match the page rule are cached.|By default, HTML content is not cached. A page rule to cache static HTML content must be written. |
 |**Edge Cache TTL**|Controls how long {{site.data.keyword.cis_short_notm}} will retain files in our cache. |This setting is optional when specifying cache level. |
 |**Resolve Override**|Change the URL or IP that the request matching the page rule resolves to.||
 |**Cache on Cookie**|Apply the `Cache Everything` option (`Cache Level` setting) based on a regular expression match against a cookie name. If you add both this setting and `Bypass Cache on Cookie` to the same page rule, `Cache On Cookie` takes precedence over `Bypass Cache on Cookie`.|Enterprise only |
@@ -75,10 +82,10 @@ A Page Rule specifies some settings and values that you can apply to a specific 
 |**Disable Apps**|Turn off all {{site.data.keyword.cis_short_notm}} Apps. | Enterprise only |
 |**Origin Error Page Pass-through**|Disables {{site.data.keyword.cis_short_notm}} error pages that would trigger for issues sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only ||
 
-## Page Rule URL patterns
+## Page rule URL patterns
 {:#page-rule-url-patterns}
 
-A Page Rule will take effect on a given URL pattern, matching the following format:
+A page rule will take effect on a given URL pattern, matching the following format:
 
 `<scheme>://<hostname><:port>/<path>`
 {:pre}
@@ -90,12 +97,12 @@ An example using each component would be:
 
 The *scheme* and *port* components are optional. If the scheme is omitted, it will cover both `http://` and `https://` protocols. If the port is not specified, then the rule will match all ports. You can perform basic wildcard matches by using a ‘*’ symbol in your rule pattern, allowing it to match a series of similar patterns rather than just one.
 
-Here are three important things to remember with Page Rules:
+Here are three important things to remember with page rules:
 
- * Only one Page Rule will take effect on any given request.
- * Page Rules are given priority in order from top to bottom.
- * Once a URL matches a rule, only that rule only will be applied; that is, if a Page Rule already has been triggered on a request, any subsequent rules that also match the URL pattern do not take effect. As a general rule, we recommend ordering your rules from _most specific_ to _least specific_.
+ * Only one page rule will take effect on any given request.
+ * Page rules are given priority in order from top to bottom.
+ * Once a URL matches a rule, only that rule only will be applied; that is, if a page rule already has been triggered on a request, any subsequent rules that also match the URL pattern do not take effect. As a general rule, we recommend ordering your rules from _most specific_ to _least specific_.
 
-Page Rules can be disabled, in which case they will take no action. They still can be seen in the list and they can be edited. Setting the **Enabled** toggle to **Off** will create a Page Rule that initially is disabled.
+Page rules can be disabled, in which case they will take no action. They still can be seen in the list and they can be edited. Setting the **Enabled** toggle to **Off** will create a page rule that initially is disabled.
 
-For more information, please refer to the [Caching and Page Rules how-to document](/docs/cis?topic=cis-use-page-rules-with-caching).
+For more information, please refer to the [Caching and page rules how-to document](/docs/cis?topic=cis-use-page-rules-with-caching).

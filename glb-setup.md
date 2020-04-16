@@ -15,6 +15,7 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -23,7 +24,6 @@ subcollection: cis
 {:generic: data-hd-programlang="generic"}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
-{:term: .term}
 
 
 # Set up and configure your load balancers

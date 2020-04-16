@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-10-31"
+  years: 2018, 2020
+lastupdated: "2020-03-19"
 
 keywords: IBM CIS, optimal security, Security Level
 
@@ -15,6 +15,7 @@ subcollection: cis
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:screen: .screen}
+{:term: .term}
 {:tip: .tip}
 {:note: .note}
 {:important: .important}
@@ -35,7 +36,7 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}})securit
 * Configure your Security Level selectively
 * Activate your Web Application Firewall (WAF) safely
 
-## Best practice 1: Secure Your Origin IP Addresses
+## Best practice 1: secure your origin IP addresses
 {:#best-practice-secure-origin-ip-address}
 
 When a subdomain is proxied using {{site.data.keyword.cis_short_notm}}, all traffic is protected because we actively respond with IP addresses specific to {{site.data.keyword.cis_short_notm}} (for example, all of your clients connect to {{site.data.keyword.cis_short_notm}} proxies first, and your origin IP addresses are obscured).
@@ -64,11 +65,11 @@ Any records that cannot be proxied through {{site.data.keyword.cis_short_notm}},
 {:#use-separate-ipranges-for-traffic}
 Some customers use separate IP ranges for HTTP and non-HTTP traffic, thereby allowing them to proxy all records pointing to their HTTP IP range, and to obscure all non-HTTP traffic with a different IP subnet.
 
-## Best practice 2: Configure your Security Level selectively
+## Best practice 2: configure your security level selectively
 {:#best-practice-configure-security-level-selectively}
 Your **Security Level** establishes the sensitivity of our **IP Reputation Database**. To prevent negative interactions or false positives, configure your **Security Level** by domain to heighten security where necessary, and to decrease it where appropriate.
 
-### Increase the Security Level for Sensitive Areas to 'High'
+### Increase the security level for sensitive areas to 'High'
 {:#increase-security-level-for-sensitive-areas}
 You can increase this setting from the Advanced Security page for your domain or by adding a **Page Rule** for administration pages or login pages, to reduce brute-force attempts:
 
@@ -77,7 +78,7 @@ You can increase this setting from the Advanced Security page for your domain or
 3. Mark the setting as **High**.
 4. Select **Provision Resource**.
 
-### Decrease the Security Level for non-sensitive paths or APIs to reduce false positives
+### Decrease the security level for non-sensitive paths or APIs to reduce false positives
 {:#decrease-security-level-non-sensitive-paths-reduce-false-positives}
 This setting can be decreased for general pages and API traffic:
 
@@ -86,9 +87,9 @@ This setting can be decreased for general pages and API traffic:
 3. Turn Security Level to **Low** or **Essentially off**.
 4. Select **Provision Resource**.
 
-### What do Security Level settings mean?
+### What do security level settings mean?
 {:#what-do-security-level-settings-mean}
-Our Security Level settings are aligned with threat scores that certain IP addresses acquire from malicious behavior on our network. A threat score above 10 is considered high.
+Our security level settings are aligned with threat scores that certain IP addresses acquire from malicious behavior on our network. A threat score above 10 is considered high.
 
 * **HIGH**: Threat scores greater than 0 are challenged.
 * **MEDIUM**: Threat scores greater than 14 are challenged.
@@ -97,9 +98,9 @@ Our Security Level settings are aligned with threat scores that certain IP addre
 * **OFF**: *Enterprise only*
 * **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** may affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
 
-We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for {{site.data.keyword.cis_short_notm}} Setup document](/docs/cis?topic=cis-best-practices-for-cis-setup)
+We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for {{site.data.keyword.cis_short_notm}} setup document](/docs/cis?topic=cis-best-practices-for-cis-setup)
 
-## Best practice 3: Activate your Web Application Firewall (WAF) safely
+## Best practice 3: activate your Web Application Firewall (WAF) safely
 {:#best-practice-activate-waf-safely}
 Your WAF is available in the **Security** section. We will walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before turning it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified.
 
@@ -112,7 +113,7 @@ The WAF contains a default rule set which includes rules to stop the most common
 
 For more information about the WAF, please see the [WAF Concepts document](/docs/cis?topic=cis-waf-q-and-a)
 
-## Best practice 4: Configure your TLS settings
+## Best practice 4: configure your TLS settings
 {:#best-practice-configure-tls-settings}
 IBM {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
 
@@ -122,7 +123,7 @@ TLS offers four modes of operation:
 * **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between {{site.data.keyword.cis_short_notm}} and your origin server(s).
 * **End-to-end CA signed**: TLS encrypts all traffic; you must use a CA-signed certificate.
 
-For more detail about your TLS options, please refer to [this document](/docs/cis?topic=cis-tls-options).
+Refer to [TLS options](/docs/cis?topic=cis-cis-tls-options) for more details.
 
 IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}.
 
@@ -168,4 +169,4 @@ The priority by which the certificates are displayed at our edge is:
 
 ### Minimum TLS version
 {:#security-minimum-tls-version}
-See [Minimum TLS version](/docs/cis?topic=cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.
+See [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.
