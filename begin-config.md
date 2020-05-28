@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-03-14"
+  years: 2018, 2020
+lastupdated: "2020-05-21"
 
 keywords: global load balancer configuration, glb configuration
 
@@ -10,7 +10,7 @@ subcollection: cis
 
 ---
 
-{{:shortdesc: .shortdesc}
+{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
@@ -30,21 +30,12 @@ subcollection: cis
 
 Start configuring your Global Load Balancer.
 
-1. Under the **Reliability** section, select **Global Load Balancer**.
+1. Navigate to the **Reliability** section to begin working with Global Load Balancers.
+2. Scroll to the **Health Checks** section and click **Create health check** to define a custom health check.
 
-    ![IMAGE](images/reliability6.png)
-
-2. Scroll down to the Health Checks section.
-
-   This configuration is optional. If you do not define any custom health checks, the system will use “/” as your default health check path.
+   This configuration is optional. If you do not define any custom health checks, the system will use `/` as your default health check path.
    {:note}
 
-3. Click the **Create health check** button to define a custom health check.   
-
-   Provide the path you wish to conduct your health checks on. You may use either HTTP or HTTPS protocols for your health checks.
-
-4. Under **Advanced options**, you can customize other parameters, such as the health check interval, the number of retries, the request method and response body, under Advanced options.
-
-   ![IMAGE](images/reliability7.png)
-
-5. Click **Provision Resource** to complete your health check configuration.
+3. Provide the path you wish to conduct your health checks on. You may use either HTTP or HTTPS protocols for your health checks.
+4. When you expand the **Advanced options** menu, you can customize other parameters, such as the health check interval, the number of retries, the request method and response body.
+5. Click **Create** to complete your health check configuration.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-03-14"
+  years: 2018, 2020
+lastupdated: "2020-05-04"
 
 keywords: range application, tls encryption, ddos protection, global tcp proxy
 
@@ -79,6 +79,14 @@ Your application is now visible in a tile with the following properties:
     * Delete the application
 
 When a Range application is created, it is assigned a unique IPv4 and IPv6 address. These IP addresses are not static and may be subject to change. You can determine the assigned IP address by using DNS. The DNS name will always return the IP addressed assigned to the application.     
+
+### Range limitations
+{: #range-limitations}
+
+You can create only 10 Range applications with unique origins. Each Range application with a unique origin must have a unique IP address allocated, and IP addresses are a limited resource. If you need more than 10, open a Support ticket. Support tickets to add more Range applications require a review of the use case, and the process can take a few days.
+
+You can create more than 10 applications if they reuse an existing origin, but use different ports.
+{:tip}
 
 ### View Metrics
 {:#range-view-metrics}

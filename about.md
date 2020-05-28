@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-06-21"
+  years: 2018, 2020
+lastupdated: "2020-05-12"
 
 keywords: Caching, IBM Cloud Internet Services, Web Application Firewall
 
@@ -33,10 +33,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-IBM {{site.data.keyword.cis_short_notm}} gets you going quickly by establishing defaults for you, which you can change easily using the API or UI. Here are some commonly changed parameters:
-
- * **DNS settings**: you can use IBM {{site.data.keyword.cis_short_notm}} to host your DNS or you can create CNAME records.
- * **Crypto settings (TLS)**: the default is `flexible` mode, which encrypts the connection between your host and the IBM {{site.data.keyword.cis_short_notm}} edge server, but does not encrypt the communication between the IBM {{site.data.keyword.cis_short_notm}} edge server and origin server.
+IBM {{site.data.keyword.cis_short_notm}} gets you going quickly by establishing defaults for you, which you can change easily using the API or UI. 
 
 ## Web Application Firewall (WAF)
 {:#about-waf}
@@ -75,4 +72,4 @@ Caching is a way to store your static web content closest to your site visitors,
 
 Encrypt communication to and from your website using Transport Layer Security (TLS). It may take up to 24 hours after the site becomes active for your new certificates to be issued.
 
-You can find more information about TLS in our [FAQs](/docs/cis?topic=cis-faq).
+You can find more details about TLS in [TLS options](/docs/cis?topic=cis-cis-tls-options).

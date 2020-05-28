@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-03-14"
+  years: 2018, 2020
+lastupdated: "2020-05-21"
 
 keywords: IBM Cloud Internet Services, setup flow
 
@@ -31,12 +31,11 @@ subcollection: cis
 To create a CIS instance, perform the following procedure:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}/){: new_window} and log into your account.
-2. Click **Catalog** at the top right, and from the  **Infrastructure** section select **Network**. Then click **Internet Services**.
+1. Click **Catalog** in the top navigation menu, and from the **Services** section, check the **Networking** category. Then click the **Internet Services** tile.
+1. Choose which plan you want from the list.
+1. Specify the name for your service instance, and identify the resource group you’d like to place this service in. The default resource group is `default`. Review the plan summary and click **Create**.
 
-   ![IMAGE](images/reliability0.png)
+## What happens next
+{: #create-next}
+A setup flow appears on the Overview page for a quick review of the service.
 
-3. Specify the name for your service instance, and identify the resource group you’d like to place this service in. The default resource group is `default`. Review the plan summary and click **Create**.
-
-The system will take you to a setup flow on the Overview page for a quick review of the service.
-
-![IMAGE](images/reliability2.png)

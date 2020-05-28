@@ -39,7 +39,6 @@ Cloud Internet Services (CIS)
     rate-limiting.md
     multi-domain.md
     range.md
-    helpful-tools.md
 
     {: .topicgroup}
     Working with Global Load Balancers
@@ -91,20 +90,22 @@ Cloud Internet Services (CIS)
     {: .topicgroup}
     Guided instructions: Using subdomains
         start-with-subdomain.md
-    
+
     {: .topicgroup}
     Enhancing security for CIS
         iam.md
+        architecture-workload-isolation.md
         at_events.md
-        {: .navgroup-end}
+    {: .navgroup-end}
 
     {: .navgroup id="reference"}
     hipaa-advisory.md
     plan-comparison.md
+    responsibilities.md    
     api-resource.md
-    responsibilities.md
     /cis-cli-plugin/cis-cli-plugin-cis-cli
     whitelisted-ips.md
+    helpful-tools.md
     external-resources.md
     {: .navgroup-end}
 

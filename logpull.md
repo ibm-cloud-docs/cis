@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-04-22"
 
 keywords: log pull, logpull, time-based, rayID
 
@@ -31,6 +31,42 @@ subcollection: cis
 
 IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a [CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#log). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
 {: shortdesc}
+
+## Log retention
+{:#log-retention}
+
+Edge logs are not retained by default. Before you can pull logs using the logpull CLI, you must enable log retention. You can check the current setting, and turn log retention on or off, using the CLI.
+
+### Check the current setting 
+{:#check-current-setting}
+
+To check whether log retention is currently turned on or off, use the `log-retention` CLI: 
+
+**Request**
+
+```
+ibmcloud cis log-retention DNS_DOMAIN_ID
+```
+
+**Response**
+
+```
+Flag   off
+```
+
+### Toggle the log retention setting
+{:#toggle-log-retention}
+
+Turn the setting on or off using the `log-retention-update` CLI.
+
+**Required Parameters**
+Set a flag to indicate whether log retention is turned on or off. If this parameter is omitted, log retention is turned off by default. 
+
+**Request**
+
+```
+ibmcloud cis log-retention-update DNS_DOMAIN_ID --flag on
+```
 
 
 ## Use Cases

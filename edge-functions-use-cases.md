@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-06-18"
+  years: 2018, 2020
+lastupdated: "2020-05-06"
 
 keywords: edge function use cases, CIS
 
@@ -33,7 +33,8 @@ THIS SOFTWARE IS PROVIDED BY IBM “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTI
 ## A/B Testing
 {: #ab-testing}
 You can create a CIS Edge Function to control A/B tests.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -87,11 +88,13 @@ async function fetchAndApply(request) {
 }
 
 ```
+{:codeblock}
 
 ## Adding a response header
 {: #add-response-header}
 To modify the response headers, you’ll first need to make a copy of the response in order to make it mutable. Then you can use the Headers interface to add, change, or remove headers.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
@@ -109,11 +112,13 @@ async function handleRequest(request) {
   return response;
 }
 ```
+{:codeblock}
 
 ## Aggregating multiple requests
 {: #aggregate-multiple-requests}
 Here, we make multiple requests to different API endpoints, aggregate the responses and send it back as a single response.
-```
+
+```sh
 addEventListener('fetch', event => {
     event.respondWith(fetchAndApply(event.request))
 })
@@ -149,6 +154,7 @@ async function fetchAndApply(request) {
     return new Response(JSON.stringify(combined), responseInit)
 }
 ```
+{:codeblock}
 
 ## Conditional routing
 {: #conditional-routing}
@@ -157,7 +163,7 @@ The easiest way to deliver different content based on the device being used is t
 ### Device Type
 {: #conditional-routing-device-type}
 
-```
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -175,10 +181,12 @@ async function fetchAndApply(request) {
   return fetch(request.url + uaSuffix, request)
 }
 ```
+{:codeblock}
+
 ### Custom Headers
 {: #conditional-routing-custom-headers}
 
-```
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -198,11 +206,13 @@ async function fetchAndApply(request) {
   return fetch(request.url + suffix, request)
 }
 ```
+{:codeblock}
 
 ## Hot-link protection
 {: #hot-link-protection}
 You can use CIS Edge Functions to protect your hot-links on your web properties.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -240,6 +250,7 @@ async function fetchAndApply(request) {
   return response
 }
 ```
+{:codeblock}
 
 ## Originless responses
 {: #originless-responses}
@@ -249,7 +260,8 @@ You can return responses directly from the edge. No need to hit your origin.
 {: #originless-responses-ignore-post-put-http-requests}
 
 Ignore POST and PUT HTTP requests. This snippet allows all other requests to pass through to the origin.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -263,11 +275,14 @@ async function fetchAndApply(request) {
   return fetch(request)
 }
 ```
+{:codeblock}
+
 ### Deny A Spider Or Crawler
 {: #originless-responses-deny-spider-crawler}
 
 Protect your origin from unwanted spiders or crawlers. In this case, if the user-agent is “annoying-robot”, the edge function returns the response instead of sending the request to the origin.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -281,11 +296,14 @@ async function fetchAndApply(request) {
   return fetch(request)
 }
 ```
+{:codeblock}
+
 ### Prevent A Specific IP From Connecting
 {: #originless-responses-prevent-specific-ip-connection}
 
 Blacklist IP addresses. This snippet of code prevents a specific IP, in this case ‘225.0.0.1’ from connecting to the origin.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -299,11 +317,13 @@ async function fetchAndApply(request) {
   return fetch(request)
 }
 ```
+{:codeblock}
 
 ## Post requests
 {: #post-requests}
 Reading content from an HTTP POST request
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -323,8 +343,11 @@ async function fetchAndApply(request) {
   }
 }
 ```
+{:codeblock}
+
 Creating an HTTP POST request from a edge function
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -348,11 +371,13 @@ async function fetchAndApply(request) {
   return response
 }
 ```
+{:codeblock}
 
 ## Setting a cookie
 {: #setting-cookies}
 You can set cookies using CIS Edge Functions.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(fetchAndApply(event.request))
 })
@@ -369,6 +394,7 @@ async function fetchAndApply(request) {
   return response
 }
 ```
+{:codeblock}
 
 ## Signed requests
 {: #signed-requests}
@@ -383,7 +409,8 @@ Note that the authenticity of the expiration timestamp is covered by the HMAC, s
 This example verifies the HMAC for any request URL whose pathname starts with `/verify/`.
 
 For debugging convenience, this edge function returns 403 if the URL or HMAC is invalid, or if the URL has expired. You may wish to return 404 in an actual implementation.
-```
+
+```sh
 addEventListener('fetch', event => {
   event.respondWith(verifyAndFetch(event.request))
 })
@@ -459,13 +486,16 @@ function byteStringToUint8Array(byteString) {
   return ui
 }
 ```
+{:codeblock}
+
 ### Generating Signed Requests
 {: #signed-requests-generate}
 
 Typically, the signed request would be delivered to the user in some out-of-band way, such as email, or actually generated by the user themselves if they also possess the symmetric key. We can, of course, also generate the signed requests in a edge function.
 
 For any request URL beginning with `/generate/`, we’ll replace `/generate/` with `/verify/`, sign the resulting path with its timestamp, and return the full, signed URL via the response body.
-```
+
+```sh
 addEventListener('fetch', event => {
   const url = new URL(event.request.url)
   const prefix = "/generate/"
@@ -511,14 +541,14 @@ async function generateSignedUrl(url) {
   return new Response(url)
 }
 ```
+{:codeblock}
 
 ## Streaming responses
 {: #streaming-responses}
 An edge function script doesn’t need to prepare its entire response body before delivering a Response to `event.respondWith()`. Using a TransformStream, it is possible to stream a response body after sending the response’s front matter (i.e., HTTP status line and headers). This allows us to minimize:
 
-* The visitor’s time-to-first-byte.
-
-* The amount of buffering that must be done in the edge function script.
+  * The visitor’s time-to-first-byte.
+  * The amount of buffering that must be done in the edge function script.
 
 Minimizing buffering is especially important if you must process or transform response bodies that are larger than the edge function’s memory limit. In these cases, streaming is the only feasible implementation strategy.
 
@@ -528,8 +558,9 @@ The CIS Edge Function service already streams by default wherever possible. You 
 ### Streaming Pass-Through
 {: #streaming-responses-pass-through}
 
-Here’s a minimal pass-through example to get started:
-```
+Here’s a minimal pass-through example to get started.
+
+```sh
 addEventListener("fetch", event => {
   event.respondWith(fetchAndStream(event.request))
 })
@@ -563,19 +594,20 @@ async function streamBody(readable, writable) {
   await writer.close()
 }
 ```
-There are some important details to note:
+{:codeblock}
 
-* Although `streamBody()` is an asynchronous function, we do not `await` it, so that it does not block forward progress of the calling `fetchAndStream()` function. It will continue to run asynchronously for as long as it has an outstanding `reader.read()` or `writer.write()` operation.
+Some important details to note:
 
+* Although `streamBody()` is an asynchronous function, we do not want to call `await` on it, so that it does not block forward progress of the calling `fetchAndStream()` function. It will continue to run asynchronously for as long as it has an outstanding `reader.read()` or `writer.write()` operation.
 * Backpressure: We `await` the read operation before calling the write operation. Likewise, we `await` the write operation before calling the next read operation. Following this pattern propagates backpressure to the origin.
-
 * Completion: We call `writer.close()` at the end, which signals to the Edge Function runtime that we’re completely done writing this response body. Once called, `streamBody()` will terminate — if this is undesirable, pass its returned promise to `FetchEvent.waitUntil()`. If your script never calls `writer.close()`, the body will appear truncated to the runtime, though it may continue to function as intended.
 
 ### Aggregate And Stream Multiple Requests
 {: #streaming-responses-aggregate-and-stream-multiple-requests}
 
 This is similar to our Aggregating Multiple Requests recipe, but this time we’ll start writing our response as soon as we’ve verified that every subrequest succeeded — no need to wait for the actual response bodies.
-```
+
+```sh
 addEventListener('fetch', event => {
     event.respondWith(fetchAndApply(event.request))
 })
@@ -642,8 +674,77 @@ async function manualPipeTo(reader, writer) {
   }
 }
 ```
+{:codeblock}
+
 Again, there are couple important details to note:
 
 * The runtime expects to receive TypedArrays on the readable side of the TransformStream. Therefore, we never pass a string to `writer.write()`, only Uint8Arrays. If you need to write a string, use a TextEncoder.
-
 * `manualPipeTo()` is so-named because `ReadableStream.pipeTo()` is not yet implemented in CIS Edge Functions, as of this writing. When it becomes available, it will be the more idiomatic and optimal way to pump bytes from a ReadableStream to a WritableStream.
+
+## Custom load balancer with edge functions
+{: #custom-load-balancer-edge-functions}
+
+Load balancing helps you maintain the scalability and reliability of websites you host. You can use edge functions to create custom load balancers designed to address your specific needs.
+
+```sh
+const US_HOSTS = [
+  "0.us.example.com",
+  "1.us.example.com",
+  "2.us.example.com"
+];
+
+const IN_HOSTS = [
+  "0.in.example.com",
+  "1.in.example.com",
+  "2.in.example.com"
+];
+
+var COUNTRIES_MAP = {
+  IN: IN_HOSTS,
+  PK: IN_HOSTS,
+  BD: IN_HOSTS,
+  SL: IN_HOSTS,
+  NL: IN_HOSTS
+}
+addEventListener('fetch', event => {
+  var url = new URL(event.request.url);
+
+  var countryCode = event.request.headers.get('CF-IPCountry');
+  var hostnames = US_HOSTS;
+  if (COUNTRIES_MAP[countryCode]) {
+    hostnames = COUNTRIES_MAP[countryCode];
+  }
+  // Randomly pick the next host 
+  var primary = hostnames[getRandomInt(hostnames.length)];
+
+  var primaryUrl = new URL(event.request.url);
+  primaryUrl.hostname = hostnames[primary];
+
+  // Fallback if there is no response within timeout
+  var timeoutId = setTimeout(function() {
+    var backup;
+    do {
+        // Naive solution to pick a backup host
+        backup = getRandomInt(hostnames.length);
+    } while(backup === primary);
+
+    var backupUrl = new URL(event.request.url);
+    backupUrl.hostname = hostnames[backup];
+
+    event.respondWith(fetch(backupUrl));
+  }, 2000 /* 2 seconds */);
+
+  fetch(primaryUrl)
+    .then(function(response) {
+        clearTimeout(timeoutId);
+        event.respondWith(response);
+    });  
+});
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+```
+{:codeblock}
+
+

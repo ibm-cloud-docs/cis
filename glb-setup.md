@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-13"
+  years: 2018, 2020
+lastupdated: "2020-05-11"
 
 keywords: health checks, origin pools, load balancers, IBM CIS
 
@@ -76,6 +76,9 @@ Refer to the [Quick Start Guide](/docs/cis?topic=cis-global-load-balancer-quick-
 
 IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering-enterprise-plans-only){:external}.  
 {:note}
+
+{{site.data.keyword.cis_short_notm}} does not support load balancer pools that use a private IP address or a record that resolves to a private IP address.
+{:tip}
 
 ### Edit/Delete
 {:#edit-delete-load-balancer}
