@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-10-11"
+  years: 2018, 2020
+lastupdated: "2020-06-05"
 
 keywords: IBM CIS connection, CIS network connection, Origin web server, troubleshooting
 
