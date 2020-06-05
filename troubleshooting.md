@@ -35,7 +35,7 @@ subcollection: cis
 {: help}
 {: support}
 
-{{site.data.keyword.cis_full_}} ({{site.data.keyword.cis_short_notm}}) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
 
 To know whether data has passed through {{site.data.keyword.cis_short_notm}}, locate the `Ray ID` which will be present on every packet.
 
