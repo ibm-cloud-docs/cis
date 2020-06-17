@@ -29,7 +29,7 @@ subcollection: cis
 # Logpull
 {:#logpull}
 
-IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a [CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#log). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
+IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a [CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
 {: shortdesc}
 
 ## Log retention
@@ -78,7 +78,7 @@ ibmcloud cis log-retention-update DNS_DOMAIN_ID --flag on
 If a user receives an error message after executing a command, they can use the RayID provided in the response header to get the logs related to the command.
 
 If you have a RAY_ID with `-XXX` on the end, be sure to remove it. For example, `12ab34cdef567gh8-XXX` becomes `12ab34cdef567gh8`.
-{.note}
+{:note}
 
 **Request**
 

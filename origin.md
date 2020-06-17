@@ -52,7 +52,7 @@ The private key will only be available immediately after ordering a certificate 
 {:#cis-origin-certificates-installing-apache-httpd}
 1. Order an origin certificate.
 1. Copy the private key and origin certificate in PEM format into separate files to the directory on your server where you keep key and certificate files.
-1. Locate your Apache configuration file. Typically the filenames are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file may vary, especially if you use a special interface to manage your server. Refer to Apache's [DistrosDefaultLayout](https://wiki.apache.org/httpd/DistrosDefaultLayout) for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on linux.
+1. Locate your Apache configuration file. Typically the filenames are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file may vary, especially if you use a special interface to manage your server. Refer to Apache's [DistrosDefaultLayout](https://cwiki.apache.org/confluence/display/HTTPD/DistrosDefaultLayout){:external} for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on linux.
     ```
     grep -i -r "SSLCertificateFile" /etc/httpd/
     ```
