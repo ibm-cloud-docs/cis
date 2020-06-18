@@ -26,7 +26,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Logpull
+# Logpull service
 {:#logpull}
 
 IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a [CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
@@ -37,7 +37,7 @@ IBM customers can access the Logpull service on Enterprise accounts. This servic
 
 Edge logs are not retained by default. Before you can pull logs using the logpull CLI, you must enable log retention. You can check the current setting, and turn log retention on or off, using the CLI.
 
-### Check the current setting 
+### Checking the current setting 
 {:#check-current-setting}
 
 To check whether log retention is currently turned on or off, use the `log-retention` CLI: 
@@ -54,12 +54,12 @@ ibmcloud cis log-retention DNS_DOMAIN_ID
 Flag   off
 ```
 
-### Toggle the log retention setting
+### Toggling the log retention setting
 {:#toggle-log-retention}
 
 Turn the setting on or off using the `log-retention-update` CLI.
 
-**Required Parameters**
+**Required parameters**
 Set a flag to indicate whether log retention is turned on or off. If this parameter is omitted, log retention is turned off by default. 
 
 **Request**
@@ -69,7 +69,7 @@ ibmcloud cis log-retention-update DNS_DOMAIN_ID --flag on
 ```
 
 
-## Use Cases
+## Logpull use cases
 {:#logpull-usecases}
 
 ### Based on RayID
@@ -108,7 +108,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --ray-id RAY_ID
 If a user receives an error message after executing a command but does not know the RayID of the response, they can instead use a time duration. They receive all logs for the given zone during the window around when the error occurred, and can search among the results.
 
 
-**Required Parameters**
+**Required parameters**
 
 Start and End time as a unix timestamp (in seconds or nanoseconds) or an absolute timestamp that conforms to RFC 3339, with a time duration of a minute or an hour.
 
@@ -212,7 +212,7 @@ Currently available fields (as of Dec 2018):
 "ZoneID": "int; internal zone ID"
 ```
 
-### Example
+### Logpull example
 {:#logpull-usecases-example}
 The following is an example `logpull` call and examples of specific types responses.
 

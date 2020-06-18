@@ -24,7 +24,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Manage your {{site.data.keyword.cis_full_notm}} deployment for optimal reliability
+# Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability
 {:#manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability}
 
 To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and you can set up Global Load Balancers. For additional reliability, you can use our Page Rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your {{site.data.keyword.cis_short_notm}} deployment optimally reliable.
@@ -87,7 +87,7 @@ To enable **Serve Stale Content**, follow these steps:
  * Select Provision Resource.
 
 ### Limitations of Serve Stale Content
-{limitations-serve-stale-content}
+{:#limitations-serve-stale-content}
 
  * **Serve Stale Content** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site are viewable when your origin server goes down.
 
@@ -183,7 +183,7 @@ any        0s;
 
 To ensure that your content is always available, create a Page Rule with the **Forwarding URL** setting used, in case your site is unavailable.
 
-When you enable a **Forwarding URL**, all of your other settings are disabled becuase you are sending all of your traffic to another URL.
+When you enable a **Forwarding URL**, all of your other settings are disabled because you are sending all of your traffic to another URL.
 {:note}
 
 ### How to set up a Forwarding URL

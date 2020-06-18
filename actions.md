@@ -24,7 +24,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# Actions
+# Firewall rule actions
 {: #actions}
 
 Actions are the mechanisms for responding to requests that match the criteria you define in a firewall rule.

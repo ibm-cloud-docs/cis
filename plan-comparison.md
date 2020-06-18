@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-06-12"
 
 keywords: Plan Comparison, Cloud Internet Services, Free Trial, enterprise
 
@@ -25,13 +25,13 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Plan Comparison
+# Plan comparison
 {: #cis-plan-comparison}
 
 {{site.data.keyword.cis_full}} offers several plans to choose from: Free Trial, Standard, and Enterprise variations.
 {: shortdesc}
 
-The Free Trial Plan is the same as the Standard Plan, but it expires after 30 days.
+The Free Trial Plan is the same as the Standard Plan, but it expires after 30 days. Only one free trail is available per account.
 {: note}
 
 The following table compares each offering to help you choose the one that's right for you.
@@ -39,7 +39,7 @@ The following table compares each offering to help you choose the one that's rig
 Scroll to the right to view the rest of the table!
 {: tip}
 
-|         | Standard | Enterprise Package or Usage | Enterprise GLB | Enterprise Security|  
+|         | Standard<br>(30 day no-cost <br>trial available) | Enterprise Package or Usage | Enterprise GLB | Enterprise Security|  
 | :------- | :--------- | :------------ | :--------- | :--------- |
 |**Time**|Monthly Billing |Monthly Billing|Monthly Billing|Monthly Billing|
 |**Domain**|1|Up to 1000, but recommend no more than 20|2|3|
@@ -66,19 +66,19 @@ Scroll to the right to view the rest of the table!
 
 The following table describes the key differences among the available plans.
 
-| Feature | CIS Enterprise <br> (Usage & Package <br>plans available)| CIS GLB| CIS Security| CIS Standard<br> (30 day no-cost <br>trial available)|
-| :-------: | :---------: | :----------: | :---------: | :---------: |
-|Enterprise Logs|Yes|Yes|Yes|No|
-|Enterprise Analytics|Yes|Yes|Yes|No|
-|Included Domains|10|2|3|1|
-|Edge Functions|Unlimited|No|No|1|
-|Protected Traffic|5 TB|5 TB|10 TB|5 TB|
-|Custom WAF Rules| Yes|No| Yes|No|
-|CIS Range<br>(HTTP(S) & TCP <br>Protection|1 TB |No |0.1 TB| No|
-|Mutual TLS <br>Authentication|Yes|No|No|No|
-|Role Based<br> Access Control|Yes|Yes|Yes|Yes|
-|Rate Limiting| Yes| No| No|No|
-|Smart Routing| Yes| No| No|No|
-|GLB Origin Limit| Unlimited|18|0|6|
-|GLB Lowest Health<br> Check Interval|5s|5s|No|60s|
-|Page Rules<br> (Caching/Security)|100|No|No|50|
+| Feature |Standard<br> (30 day no-cost <br>trial available)|Enterprise <br> (Usage & Package <br>plans available)| Enterprise GLB| Enterprise Security|
+| :------ | :---------: | :----------: | :---------: | :---------: |
+|**Enterprise Logs**|No|Yes|Yes|Yes|
+|**Enterprise Analytics**|No|Yes|Yes|Yes|
+|**Included Domains**|1|10|2|3|
+|**Edge Functions**|1|Unlimited|0|0|
+|**Protected Traffic**|5 TB|5 TB|5 TB|10 TB|
+|**Custom WAF Rules**|No|Yes|No|Yes|
+|**Range<br>(HTTP(S) & TCP <br>Protection**|None |1 TB |None|0.1 TB|
+|**Mutual TLS <br>Authentication**|No|Yes|No|No|
+|**Role Based<br> Access Control**|Yes|Yes|Yes|Yes|
+|**Rate Limiting**|No|Yes|No|No|
+|**Smart Routing**|No|Yes|No|No|
+|**GLB Origin Limit**|6|Unlimited|0|6|
+|**GLB Lowest Health<br> Check Interval**|60s|5s|5s|Not available|
+|**Page Rules<br> (Caching/Security)**|50|100|0|0|

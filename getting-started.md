@@ -69,7 +69,7 @@ There are several plans to choose from:
 * **Enterprise GLB**
 * **Enterprise Security**
 * **Standard Plan**
-* **Free Trial**.
+* **Free Trial**
 
 The **Free Trial** expires after 30 days, at which point you can upgrade to the **Standard Plan** or an **Enterprise Plan**. A single **Standard** instance can manage one domain. You can create as many **Standard** service instances as you want within a single account, each managing a single domain. The **Enterprise Plans** allow you to manage multiple domains in a single service instance. 
 
@@ -84,7 +84,7 @@ You'll see the first screen of the {{site.data.keyword.cis_short_notm}} applicat
 
 Select **Let's get started** from the welcome page to begin setting up {{site.data.keyword.cis_short_notm}}.
 
-### Step 2. Add and configure your domain.
+### Step 2. Add and configure your domain
 {:#add-configure-your-domain}
 
 Next, begin protecting and improving the performance of your web service by entering your domain or a subdomain.
@@ -97,7 +97,7 @@ The Overview screen shows your domain in `Pending` status and remains `Pending` 
 You cannot delete the {{site.data.keyword.cis_short_notm}} instance after you add a domain. To delete the instance, delete the domain from the instance first.
 {:tip}
 
-### Step 3. Set up your DNS records (optional).
+### Step 3. Set up your DNS records (optional)
 {:#setup-your-dns-records}
 
 Before transitioning the traffic for your domain to {{site.data.keyword.cis_short_notm}}, it is recommended that you import or re-create your DNS records in {{site.data.keyword.cis_short_notm}}. You can choose to skip this step, but if your DNS records are not configured properly in {{site.data.keyword.cis_short_notm}}, it might leave parts of your website inaccessible.
@@ -106,7 +106,7 @@ Import records by uploading your exported records from your current DNS or manua
 
 When you are finished, or to skip this step, select **Next step**.
 
-### Step 4. Configure your name servers with the registrar or existing DNS provider.
+### Step 4. Configure your name servers with the registrar or existing DNS provider
 {:#configure-your-name-servers-with-the-registrar-or-existing-dns-provider}
 
 To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){:external}. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS Records](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare){:external}, written by our partners at Cloudflare, for detailed instructions by provider.
@@ -116,12 +116,12 @@ After you configure your registrar or DNS provider, it can take up to 24 hours f
 Your domain must move to `Active` state within 60 days or your domain and any configuration data is removed.
 {:important}
 
-### Step 5. Ensure that {{site.data.keyword.cis_short_notm}} is resolving the domain information for your application, hostname, or website.
+### Step 5. Ensure that {{site.data.keyword.cis_short_notm}} is resolving the domain information for your application, hostname, or website
 {:#ensure-cis-is-resolving-domain-info}
 
 To proceed, select **Reliability > DNS**. Be sure to add the appropriate _DNS Records_. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} cannot resolve the domain information for your internet-facing applications.
 
-### Step 6. In the meantime, you can begin managing other {{site.data.keyword.cis_short_notm}} functions and features.
+### Step 6. In the meantime, you can begin managing other {{site.data.keyword.cis_short_notm}} functions and features
 {:#manage-other-cis-functions}
 
 For information about managing other functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-manage-your-cis-deployment#manage-your-cis-deployment).

@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Understanding your responsibilities when using {{site.data.keyword.cis_full_notm}}
+# Understanding your responsibilities when using {{site.data.keyword.cis_short_notm}}
 {: #responsibilities-cis}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.cis_full}}. For a high-level view of the service types in {{site.data.keyword.cloud}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).

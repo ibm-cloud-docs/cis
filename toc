@@ -1,24 +1,28 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" category="network,security" audience="service" href="/docs/cis?topic=cis-getting-started" console-page="/catalog/services/internet-services" product-page="https://www.ibm.com/cloud/cloud-internet-services" path="cis"}
+{: .toc subcollection="cis" category="network_edge" audience="service" href="/docs/cis?topic=cis-getting-started" console-page="/catalog/services/internet-services" product-page="https://www.ibm.com/cloud/cloud-internet-services" path="cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
     getting-started.md
     about.md
-    cis-video.md
-    security-features.md
-    reliability-features.md
-    performance-features.md
-    ssl-options.md
-    dns-concepts.md
-    ddos-concept.md
-    waf-concept.md
-    glb.md
-    cache.md
-    best-practices.md
-    [What are computer networking solutions?](https://www.ibm.com/cloud/learn/networking-a-complete-guide#toc-computer-n-9C7jokVu)
+
+    {: .topicgroup}
+    Using best practices
+        best-practices.md
+        managing-for-security.md
+        managing-for-reliability.md
+        managing-for-performance.md
+
+    {: .topicgroup}
+    Concepts
+        dns-concepts.md
+        ddos-concept.md
+        glb.md
+        waf-concept.md
+        routing.md
+        cache.md
 
     {: .topicgroup}
     Tutorials
@@ -26,71 +30,50 @@ Cloud Internet Services (CIS)
         /tutorials/solution-tutorials-highly-available-and-scalable-web-application
         /tutorials/solution-tutorials-multi-region-webapp
         /tutorials/solution-tutorials-multi-region-serverless
+
+    [What are computer networking solutions?](https://www.ibm.com/cloud/learn/networking-a-complete-guide#toc-computer-n-9C7jokVu)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    how-to.md
-    dns.md
-    managing-for-security.md
-    managing-for-reliability.md
-    managing-for-performance.md
-    origin.md
-    routing.md
-    rate-limiting.md
+    how-to.md     
+    origin.md    
+    start-with-subdomain.md   
     multi-domain.md
+    ssl-options.md        
+    dns.md
+    rate-limiting.md
     range.md
 
     {: .topicgroup}
-    Working with Global Load Balancers
-        glb-quick-setup.md
-        glb-setup.md
-
-    {: .topicgroup}
-    Guided instructions: Improving application reliability and scalability with Global Load Balancing
-        application-reliability.md
-        create-cis.md
-        input-domain.md
-        begin-config.md
-        identify-app-resources.md
-        define-global-lb.md
-        cloudant-and-cis.md
-
-    {: .topicgroup}
-    Working with Edge Functions
-        edge-functions.md
-        edge-functions-use-cases.md
-
-    {: .topicgroup}
-    Working with Logs
-        logpull.md
-        logpush.md
-
-    {: .topicgroup}
-    Working with page rules
-        using-page-rules.md
-        caching-with-page-rules.md
-        resolve-override-cos.md
-        custom-page.md
-
-    {: .topicgroup}
-    Guided instructions: Web Application Firewalls
+    Working with WAFs
         waf-custom-rules.md
         waf-rule-set.md
         waf-cis-ruleset.md
         waf-owasp-ruleset.md
 
     {: .topicgroup}
-    Guided instructions: Firewall rules
+    Working with firewall rules
         firewall-rules.md
-        create-edit-delete.md
         actions.md
         fields-and-expressions.md
         order-and-priority.md
 
+     glb-setup.md   
+    
     {: .topicgroup}
-    Guided instructions: Using subdomains
-        start-with-subdomain.md
+    Working with page rules
+        using-page-rules.md
+        caching-with-page-rules.md
+        resolve-override-cos.md
+        custom-page.md
+        
+    edge-functions.md
 
+     {: .topicgroup}
+    Working with logs
+        logpull.md
+        logpush.md
+     
     {: .topicgroup}
     Enhancing security for CIS
         iam.md
@@ -99,14 +82,19 @@ Cloud Internet Services (CIS)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    hipaa-advisory.md
-    plan-comparison.md
-    responsibilities.md    
-    api-resource.md
     /cis-cli-plugin/cis-cli-plugin-cis-cli
+    api-resource.md
+    
+    {:topicgroup}
+    CIS use cases
+        cloudant-and-cis.md
+        edge-functions-use-cases.md
+        
+    responsibilities.md      
+    plan-comparison.md
     whitelisted-ips.md
     helpful-tools.md
-    external-resources.md
+    hipaa-advisory.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

@@ -25,9 +25,9 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Manage your {{site.data.keyword.cis_full_notm}} for optimal security
+# Managing {{site.data.keyword.cis_short_notm}} for optimal security
 {:#manage-your-ibm-cis-for-optimal-security}
-The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}})security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
+The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
 {: shortdesc}
 
 **Recommendations and best practices:**
@@ -36,7 +36,7 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}})securit
 * Configure your Security Level selectively
 * Activate your Web Application Firewall (WAF) safely
 
-## Best practice 1: secure your origin IP addresses
+## Best practice 1: Secure your origin IP addresses
 {:#best-practice-secure-origin-ip-address}
 
 When a subdomain is proxied using {{site.data.keyword.cis_short_notm}}, all traffic is protected because we actively respond with IP addresses specific to {{site.data.keyword.cis_short_notm}} (for example, all of your clients connect to {{site.data.keyword.cis_short_notm}} proxies first, and your origin IP addresses are obscured).
@@ -65,7 +65,7 @@ Any records that cannot be proxied through {{site.data.keyword.cis_short_notm}},
 {:#use-separate-ipranges-for-traffic}
 Some customers use separate IP ranges for HTTP and non-HTTP traffic, thereby allowing them to proxy all records pointing to their HTTP IP range, and to obscure all non-HTTP traffic with a different IP subnet.
 
-## Best practice 2: configure your security level selectively
+## Best practice 2: Configure your security level selectively
 {:#best-practice-configure-security-level-selectively}
 Your **Security Level** establishes the sensitivity of our **IP Reputation Database**. To prevent negative interactions or false positives, configure your **Security Level** by domain to heighten security where necessary, and to decrease it where appropriate.
 
@@ -113,7 +113,7 @@ The WAF contains a default rule set which includes rules to stop the most common
 
 For more information about the WAF, please see the [WAF Concepts document](/docs/cis?topic=cis-waf-q-and-a)
 
-## Best practice 4: configure your TLS settings
+## Best practice 4: Configure your TLS settings
 {:#best-practice-configure-tls-settings}
 IBM {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
 

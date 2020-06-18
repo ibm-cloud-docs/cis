@@ -21,13 +21,14 @@ subcollection: cis
 {:important: .important}
 {:deprecated: .deprecated}
 {:external: target="_blank" .external}
+{:table: .aria-labeledby="caption"}
 {:generic: data-hd-programlang="generic"}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 
-# Troubleshooting your {{site.data.keyword.cis_full_notm}} network connection
+# Troubleshooting your {{site.data.keyword.cis_short_notm}} network connection
 {:#troubleshooting-your-cis-network-connection}
 
 ## How do I know if my data is passing through my {{site.data.keyword.cis_full_notm}} connection?

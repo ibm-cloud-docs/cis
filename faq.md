@@ -29,7 +29,7 @@ subcollection: cis
 
 
 
-# FAQs
+# FAQs for {{site.data.keyword.cis_full_notm}}
 {:#faq}
 
 Have a question about {{site.data.keyword.cis_full}}? Review frequently asked questions, which provide answers to provisioning concerns, application access, and other common inquiries.

@@ -23,7 +23,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Priority
+# Priority option
 {: #priority}
 
 By default, the action you specify in a rule determines the evaluation sequence for your entire ruleset. To learn more, see [Actions](/docs/cis?topic=cis-actions).

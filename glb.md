@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Global Load Balancer (GLB) concepts
+# Global load balancer concepts
 {:#global-load-balancer-glb-concepts}
 
 This document contains some concepts and definitions related to the Global Load Balancer (GLB) and how it affects your {{site.data.keyword.cis_full}} deployment.
@@ -63,7 +63,7 @@ In this example, {{site.data.keyword.cis_short_notm}}:
 Notice that the global load balancer does not terminate the TCP connection.
 {:note}
 
-Setting a DNS element or GLB to "proxy" changes the behavior.
+Setting a DNS element or GLB to proxy changes the behavior.
 If, for example, you turn on proxy and **Security > TLS > Mode** to something besides `Off`, the {{site.data.keyword.cis_short_notm}} now terminates the TCP connection and establishes a second connection between {{site.data.keyword.cis_short_notm}} and the originator.
 
 In this example, {{site.data.keyword.cis_short_notm}}:
@@ -119,26 +119,11 @@ When all pools are disabled, the fallback pool is not available.
 {:#cis-health-check}
 
 A health check helps gain insight into the availability of pools so that traffic can be routed to the healthy ones. These checks periodically send HTTP, HTTPS, or TCP requests and monitor the responses. They can be configured with a customized port, interval, timeout, status code, and more. As soon as a pool is marked unhealthy, traffic is intelligently rerouted to another available pool.
+
 Be aware that your logs have references to Cloudflare because of IBM's partnership with Cloudflare to power {{site.data.keyword.cis_short_notm}}.
 {:note}
 
 ### Health check events
 {:#health-check-events}
 
-Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of Health Check Events. You can filter by date, health of the pool or origin, pool name, and origin name by selecting the filter parameters from the list menus. Columns within the table are sortable by clicking on the column name.
-![Health Check Events table](images/health-check-events-table.png)
-
-Individual rows within the table expand with more information about the entry. If the pool is healthy, only the **Pool Details** tile is visible. When the row has an origin that is critical, or a pool that is degraded, the **Affected Origin Details** tile also appears.
-
-![Health Check Events details](images/health-check-events-details.png)
-
-#### Pool details:
-* Pool Name - Name of the pool
-* Healthy Origins - Ratio of health origins/total origins in a pool
-* Healthy Threshold - Number of origins that need to be healthy in order to consider the pool healthy
-* Healthy Origins - Names of the health origins
-* Critical Origins - Names of the unhealthy origins
-
-#### Affected origin details:
-* Origin Name - Name of the origin
-* Origin Address - Address of the origin
+Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description. 

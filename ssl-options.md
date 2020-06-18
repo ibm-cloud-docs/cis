@@ -25,31 +25,28 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# TLS options
+# Setting Transport Layer Security (TLS) options
 {:#cis-tls-options}
 
 The TLS options let you control whether visitors can browse your website over a secure connection, and when they do, how {{site.data.keyword.cis_full}} will connect to your origin server.
 {: shortdesc}
 
-## Automatic HTTPS rewrite
-{:#automatic-https-rewrite}
-
-Automatic HTTPS rewrites help fix mixed content by changing "http" to "https" for all resources or links on your web site that can be served with HTTPS. This setting is located in the **Advanced** security configuration page.
 
 ## TLS encryption modes
 {:#tls-encryption-modes}
 
+Set the TLS mode by selecting one of the following options from the Mode list.
+
 These options are listed in the order from the least secure (Off) to the most secure (End-to-End CA signed).
- * Off (not recommended)
- * Client-to-Edge (edge to origin not encrypted, self-signed certificates are not supported)
- * End-to-End flexible (edge to origin certificates can be self-signed)
- * End-to-End CA signed (default and recommended)
- * HTTPS only origin pull (Enterprise only)
+ * [Off](#tls-encryption-modes-off) (not recommended)
+ * [Client-to-Edge](#tls-encryption-modes-client-to-edge) (edge to origin not encrypted, self-signed certificates are not supported)
+ * [End-to-End flexible](#tls-encryption-modes-end-to-end-flexible) (edge to origin certificates can be self-signed)
+ * [End-to-End CA signed](#tls-encryption-modes-end-to-end-ca-signed) (default and recommended)
+ * [HTTPS only origin pull](#tls-encryption-modes-origin-only-pull) (Enterprise only)
 
 ### Off
 {:#tls-encryption-modes-off}
 No secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, and no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. Visitors can only view your website over HTTP, and any visitor attempting to connect using HTTPS will receive an `HTTP 301 Redirect` to the plain HTTP version of your website.
-
 
 ![Diagram of TLS Off](images/off.png "Diagram of TLS Off"){: caption="Figure 1. A diagram of TLS Off" caption-side="bottom"}
 
@@ -74,13 +71,48 @@ Default and recommended. A secure connection between the visitor and {{site.data
 
 ![Diagram of End to end CA signed TLS](images/end-to-end-ca-signed.png "Diagram of End to end CA signed TLS"){: caption="Figure 4. A diagram of End to end CA signed TLS" caption-side="bottom"}
 
-
 ### HTTPS Only Origin Pull
 {:#tls-encryption-modes-origin-only-pull}
 
 *Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between {{site.data.keyword.cis_short_notm}} and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
 
-## Minimum TLS version
+## TLS 1.3
+{: #tls-1-3}
+
+Use the latest version of the TLS protocol for improved security and performance by switching from `Disabled` to `Enabled` or `Enabled+ORTT` in the list.
+
+## Traffic encryption - Minimum TLS version
 {:#minimum-tls-version}
 
-This sets the minimum TLS version for traffic trying to connect to your site. By default this is set to 1.2. Higher TLS versions provide additional security, but might not be supported by all browsers. This could result in some customers being unable to connect to your site.
+Set the minimum TLS version for traffic trying to connect to your site by selecting one of the versions from the list.
+
+By default this is set to `1.2`. Higher TLS versions provide additional security, but might not be supported by all browsers. This could result in some customers being unable to connect to your site.
+
+## Cipher suites
+{: #cipher-suites}
+
+|OpenSSL Name| 	TLS 1.0 |	TLS 1.1 |	TLS 1.2 |	TLS 1.3|
+|:--------|:---:|:---:|:---:|:---|
+|ECDHE-ECDSA-AES128-GCM-SHA256 |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-ECDSA-CHACHA20-POLY1305 |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-RSA-AES128-GCM-SHA256   |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-RSA-CHACHA20-POLY1305   |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-ECDSA-AES128-SHA256     |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-ECDSA-AES128-SHA        |![Available](../../icons/checkmark-icon.svg)|![Available](../../icons/checkmark-icon.svg)|	![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-RSA-AES128-SHA256       |||![Available](../../icons/checkmark-icon.svg) ||
+|ECDHE-RSA-AES128-SHA          |![Available](../../icons/checkmark-icon.svg)|![Available](../../icons/checkmark-icon.svg)|	![Available](../../icons/checkmark-icon.svg)||
+|AES128-GCM-SHA256             |||![Available](../../icons/checkmark-icon.svg)||
+|AES128-SHA256                 |||![Available](../../icons/checkmark-icon.svg)||
+|AES128-SHA 	                 |![Available](../../icons/checkmark-icon.svg)|![Available](../../icons/checkmark-icon.svg)|	![Available](../../icons/checkmark-icon.svg) ||
+|ECDHE-ECDSA-AES256-GCM-SHA384 |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-ECDSA-AES256-SHA384     |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-RSA-AES256-GCM-SHA384   |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-RSA-AES256-SHA384       |||![Available](../../icons/checkmark-icon.svg)||
+|ECDHE-RSA-AES256-SHA          |![Available](../../icons/checkmark-icon.svg)|![Available](../../icons/checkmark-icon.svg)|	![Available](../../icons/checkmark-icon.svg)||
+|AES256-GCM-SHA384             |||![Available](../../icons/checkmark-icon.svg)||
+|AES256-SHA256 	               |||![Available](../../icons/checkmark-icon.svg)||
+|AES256-SHA 	                 |![Available](../../icons/checkmark-icon.svg)|![Available](../../icons/checkmark-icon.svg)|	![Available](../../icons/checkmark-icon.svg)||
+|DES-CBC3-SHA                  |![Available](../../icons/checkmark-icon.svg)||||
+|AEAD-AES128-GCM-SHA256        ||||![Available](../../icons/checkmark-icon.svg)|
+|AEAD-AES256-GCM-SHA384        ||||![Available](../../icons/checkmark-icon.svg)|
+|AEAD-CHACHA20-POLY1305-SHA256 ||||![Available](../../icons/checkmark-icon.svg)|

@@ -27,13 +27,13 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Logpush
+# Logpush service
 {:#logpush}
 
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and range requests for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
-The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull). Unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) buckets. You’re free to choose the method that’s most convenient.
+The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). Unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) buckets. You’re free to choose the method that’s most convenient.
 
 Range logs are not included in HTTP(s) logs, and require a separate job. Jobs can be pushed to the same {{site.data.keyword.cos_short}} bucket, but must have a different path.
 {:tip}

@@ -27,7 +27,7 @@ subcollection: cis
 
 
 
-# Learning about {{site.data.keyword.cis_full_notm}} architecture and workload isolation
+# Learning about {{site.data.keyword.cis_short_notm}} architecture and workload isolation
 {: #compute-isolation}
 
 Review the following sample architecture for {{site.data.keyword.cis_full}}, and learn more about different isolation levels so that you can choose the solution that best meets the requirements of the workloads that you want to run in the cloud.

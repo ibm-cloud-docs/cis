@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Manage your {{site.data.keyword.cis_full_notm}} deployment for best performance
+# Managing your {{site.data.keyword.cis_short_notm}} deployment for best performance
 {:#manage-your-cis-deployment-for-best-performance}
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) can provide the fastest experience for your customers because it optimizes your images, and it stores your web content as near as possible to your end-users. Your content is loaded from proxied edge servers (which reduces latency).

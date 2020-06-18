@@ -89,8 +89,8 @@ The following information acknowledges some of the limitations, and some suggest
 ## Page rules
 {:#known-limitations-pagerules}
 
-   * Updating page rules settings using the CIS plugin for IBM Cloud CLI may result in an error if the page rule ID is not included in the JSON string or JSON file for the update. To work around this, submit the update using a complete JSON configuration file for the page rule, including the ID.
-   * Removing page rule settings using the CIS UI may not remove the setting, even though the UI reports a successful update. To work around this problem, use the CIS plugin for IBM Cloud CLI to remove the setting and include the page rule ID in the JSON update document:
+   * Updating page rules settings using the CIS plugin for IBM Cloud CLI might result in an error if the page rule ID is not included in the JSON string or JSON file for the update. To work around this, submit the update using a complete JSON configuration file for the page rule, including the ID.
+   * Removing page rule settings using the CIS UI might not remove the setting, even though the UI reports a successful update. To work around this problem, use the CIS plugin for IBM Cloud CLI to remove the setting and include the page rule ID in the JSON update document:
 
      ```
      $> ibmcloud cis page-rule-update <domain-id> <rule-id> -j <file>
@@ -98,3 +98,9 @@ The following information acknowledges some of the limitations, and some suggest
      {:pre}
 
      The JSON file should include the complete page rule configuration, including ID, with the necessary updates.
+
+## Edge functions
+{:#known-limitations-edge-functions}
+
+   * Before changing your CIS instance from an Enterprise plan to a Standard plan, you must remove all edge functions actions and edge functions triggers first. Any edge functions actions and triggers brought from an Enterprise plan to a Standard plan are not editable, which might cause damage to the normal datapath behavior on your domain. After your plan downgrade is complete, you can recreate the edge functions actions and triggers in the new plan.
+   

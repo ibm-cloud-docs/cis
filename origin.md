@@ -25,10 +25,10 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Origin certificates
+# Managing origin certificates
 {:#cis-origin-certificates}
 
-Origin Certificates are free TLS certificates issued by {{site.data.keyword.cis_full}} that encrypt traffic between your origin server and your users. Order free TLS certificates to install on your origin server.
+Origin certificates are free TLS certificates issued by {{site.data.keyword.cis_full}} that encrypt traffic between your origin server and your users. Order free TLS certificates to install on your origin server.
 {: shortdesc}
 
 {{site.data.keyword.cis_short_notm}} Origin Certificates are only valid for use in CIS.

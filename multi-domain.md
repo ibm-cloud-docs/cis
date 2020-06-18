@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Multi-domain support
+# Adding domains to your CIS instance
 {:#multi-domain-support}
 
 {{site.data.keyword.cis_full}} supports multiple domains with the Enterprise Package and Enterprise Usage plans.

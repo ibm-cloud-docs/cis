@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Setting up your Domain Name System (DNS) for {{site.data.keyword.cis_full_notm}}
+# Setting up your Domain Name System (DNS) for {{site.data.keyword.cis_short_notm}}
 {:#set-up-your-dns-for-cis}
 
 Read some specific instructions about how to configure your {{site.data.keyword.cis_full}} DNS records, including how to configure Secure DNS.
@@ -34,7 +34,7 @@ Read some specific instructions about how to configure your {{site.data.keyword.
 ## Secure DNS
 {:#secure-dns}
 
-**DNSSec** is a technology to digitally "sign" DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, www.icann.org).
+**DNSSec** is a technology to digitally sign DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, www.icann.org).
 
 ## Configuring and managing your secure DNS
 {:#configuring-and-managing-your-secure-dns}

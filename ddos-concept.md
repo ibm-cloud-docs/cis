@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Distributed Denial of Service (DDoS) attack concepts
+# Dealing with Distributed Denial of Service (DDoS) attacks
 {:#distributed-denial-of-service-ddos-attack-concepts}
 
 DDoS attacks are among the most common types of internet attacks that your website or host can encounter.
@@ -36,14 +36,14 @@ DDoS attacks are among the most common types of internet attacks that your websi
 A distributed denial of service (DDoS) attack is a malicious attempt to disrupt normal traffic of a server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of internet traffic. DDoS attacks achieve effectiveness by utilizing many compromised computer systems as sources of attack traffic. Exploited machines can include computers and other networked resources such as IoT devices. From a high level, a DDoS attack is like a traffic jam clogging up a highway, preventing regular traffic from arriving at its desired destination.
 {: shortdesc}
 
-## How does a DDoS attack work?
+## How DDoS attacks work
 {:#how-does-a-ddos-attack-work}
 
 An attacker gains control of a network of online machines to carry out a DDoS attack. Computers and other machines (such as IoT devices) are infected with malware, turning each one into a bot (or zombie). The attacker controls the group of bots, which is called a _botnet_.
 
 After establishing a botnet, the attacker directs the machines by sending updated instructions to each bot using remote control. A targeted IP address may receive requests from a multitude of bots, causing the targeted server or network to overflow capacity. This creates a denial-of-service to normal traffic. Because each bot is a legitimate Internet device, separating the attack traffic from normal traffic can be difficult.
 
-## What are common types of DDoS attacks?
+## Common types of DDoS attacks
 {:#what-are-common-types-of-ddos-attacks}
 
 DDoS attack vectors target varying components of a network connection. While nearly all DDoS attacks involve overwhelming a target device or network with traffic, attacks can be divided into three categories. An attacker may use one or multiple attack vectors, and may even cycle through these attack vectors based on countermeasures taken by the target.

@@ -27,7 +27,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# API specs
+# {{site.data.keyword.cis_short_notm}} API reference
 {:#api-specs}
 
 Here's how to view the {{site.data.keyword.cis_full}} API specifications:

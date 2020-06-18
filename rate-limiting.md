@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-03-14"
+  years: 2018, 2020
+lastupdated: "2020-06-08"
 
 keywords: Bypass, header responses, brute-force login attempts
 
@@ -25,15 +25,15 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Rate limiting
+# Configuring rate limiting
 {:#cis-rate-limiting}
 
-Rate Limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
+Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
 {: shortdesc}
 
 Select the type of rate limiting rule, either a **Custom rule** or **Protect login**
 
-## Create a custom rate limiting rule
+## Creating a custom rate limiting rule
 {:#create-a-custom-rate-limiting-rule}
 
 Enter a rule name that helps you remember what the rule does. This is an optional field.
@@ -51,7 +51,7 @@ If you have more than one header under **HTTP response header**, an _AND_ boolea
 
 Under **Origin response code**, type the valid numerical value of each HTTP response code to match.  To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
 
-### Configure response
+### Configuring the response
 {:#rate-limiting-configure-response}
 
 Select from the actions listed, and specify the timeout period. In this case, the timeout refers to the ban period that the action takes place. A 60 second timeout means the action is applied for 60 seconds.
@@ -67,12 +67,12 @@ Select from the actions listed, and specify the timeout period. In this case, th
 
 Specify the response type when a rule's threshold is exceeded.
 
-### Bypass
+### Bypassing URLs
 {:#rate-limiting-bypass}
 
 Bypass lets you create the equivalent of a whitelist or exception for a set of URLs.  No actions trigger for those URLs, even if the Rate Limiting rule is matched.
 
-## Protect login
+## Protecting login
 {:#rate-limiting-protect-login}
 
 Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes will be blocked for 15 minutes.

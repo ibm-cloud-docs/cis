@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-06-25"
+  years: 2018, 2020
+lastupdated: "2020-06-10"
 
 keywords: IBM Cloud Internet Services, reliable IBM Cloud Internet Services, Global Load Balancing
 
@@ -34,15 +34,16 @@ subcollection: cis
 
 ![reliability-graphic.png](images/reliability-graphic.png)
 
-Here’s a quick feature overview:
-
 ## Reliability features
 {:#cis-reliability-features}
 
- * Global load balancing
- * Proxy and non-proxy options for load balancing
- * Origin pools and health monitors
- * DNS management
+ * Global load balancing: The GLB service distributes your traffic across multiple servers with a combination of origin pools, health checks, and a load balancer.
+   * Proxy and non-proxy options for load balancing
+   * Origin pools and health checks
+   * Global anycast network: The available health check regions are based on [the Cloudflare Global Anycast Network](https://www.cloudflare.com/network/){:external}.
+ * DNS management: Manage your DNS records, control proxying, and enable DNS Security.
+   * DNS Security cryptographically signs a zone to ensure that the DNS records provided to the user are the same as the DNS records published on the DNS server.
+
 
 ### Summary
 {:#cis-reliability-features-summary}

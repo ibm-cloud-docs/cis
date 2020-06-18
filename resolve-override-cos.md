@@ -25,16 +25,16 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Resolving override with COS
+# Resolving overrides with Cloud Object Storage (COS)
 {: #resolve-override-cos}
 
-This section offers use cases in resolving overrides with Cloud Object Storage.
+This section offers use cases in resolving overrides with Cloud Object Storage (COS).
 {: shortdesc}
 
 ## Use cases
 {: #cos-use-cases}
 
-Make the request matching the page rule resolve to a Cloud Object Storage (COS) bucket resource.
+Make the request matching the page rule resolve to a COS bucket resource.
 
 
 ## Prerequisites

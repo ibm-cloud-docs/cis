@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Managing your {{site.data.keyword.cis_full_notm}} deployment
+# Managing your {{site.data.keyword.cis_short_notm}} deployment
 {:#manage-your-cis-deployment}
 
 You'll begin by using the Overview screen as your working base of operations. It shows all of the current parameters for your deployment.

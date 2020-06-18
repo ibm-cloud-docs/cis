@@ -26,7 +26,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# OWASP Rule Set for WAF
+# OWASP rule set for WAF
 {:#owasp-rule-set-for-waf}
 
 The OWASP Rule Set contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL Injection, Cross-Site Scripting, and Locale File Inclusion, among others. {{site.data.keyword.cis_full}} provides but does not curate these rules.

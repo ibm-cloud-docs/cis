@@ -24,7 +24,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# {{site.data.keyword.cis_full_notm}} whitelisted IP addresses
+# {{site.data.keyword.cis_short_notm}} whitelisted IP addresses
 {:#cis-whitelisted-ip-addresses}
 
 The following API lists all IP addresses used by the CIS proxy. The CIS proxy uses only addresses from this list, for both client-to-proxy and proxy-to-origin communication.

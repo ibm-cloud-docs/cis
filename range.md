@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Range
+# Protecting TCP traffic (Range feature)
 {:#cis-range}
 
 The Range feature brings DDoS protection, load balancing, and content acceleration to any TCP-based protocol.
@@ -73,7 +73,7 @@ Your application is now visible in a tile with the following properties:
   * Origin & port
   * Connections from the past hour (polled every minute)
   * Throughput from the past hour (polled every minute)
-  * Overflow menu (Top right corner) allows the following
+  * Overflow menu (top right corner) allows the following
     * Edit the application
     * View metrics for the specified application
     * Delete the application
@@ -109,10 +109,10 @@ After creating a few apps, the **Security > Range** page will be populated with 
 
 
 The application tile also contains an overflow menu in the top corner (3 dots). The overflow menu provides users the option to:
-* edit the application
-* view metrics for the specified application
-  * this takes the user to **Metrics > Range** page, which displays the metrics for only that application
-* delete the application
+* Edit the application
+* View metrics for the specified application
+  * This takes the user to **Metrics > Range** page, which displays the metrics for only that application
+* Delete the application
 
 
 ## API usage examples

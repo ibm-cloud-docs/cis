@@ -26,7 +26,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# IAM and CIS
+# Managing access for {{site.data.keyword.cis_short_notm}}
 {:#iam-and-cis}
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) leverages IAM to perform authorization and Authentication.

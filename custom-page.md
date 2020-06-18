@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Custom page
+# Customizing error pages
 {: #custom-page}
 
 Cloud Internet Services (CIS) has a wide range of error codes that allow us to differentiate specific problems. By default, these error pages mention Cloudflare; however, you can customize and brand these error pages. Having custom error pages allows to provide a consistent experience for your users, even in the event of a page load error.
