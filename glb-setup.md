@@ -29,8 +29,8 @@ subcollection: cis
 # Working with global load balancers
 {:#set-up-and-configure-your-load-balancers}
 
- {{site.data.keyword.cis_full}} provides global load balancing as a service.
- {: shortdesc}
+{{site.data.keyword.cis_full}} provides global load balancing as a service.
+{: shortdesc}
 
 ## Global load balancer dashboard
 {:#glb-dashboard}
@@ -71,7 +71,6 @@ Refer to the [Quick setup](#global-load-balancer-quick-setup) if you already kno
    * **Default origin pools**: List of healthy pools. You can add pools here.
    * **Configure geo routes**: Expand this section if you want to add geo routing to your pools. Click **Add route**, select a region, and click **Add** to define which pools receive load balancing based on the origin of the request.
 
-
 IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see [Load Balancing: Geographic Regions](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering-enterprise-plans-only){:external}.  
 {:note}
 
@@ -80,33 +79,33 @@ IBM's geographic regions differ from Cloudflare's regions. For details about the
 
 ### Edit/Delete
 {:#edit-delete-load-balancer}
+
 To edit or delete a load balancer or one of its components click the horizontal overflow menu button ![overflow icon](/images/horizontal-overflow-icon.png) located on the far right side of each row.
 
 The following options are provided for each list.
 
 * Health Check
-    * **View health check**: This option shows a short summary of the health check, with a link that takes you to the edit flow.
-    * **Edit health check**: This option redirects the user to the edit flow.
-    * **Delete health check**: This option brings up the confirmation dialog box for the deletion flow.
+  * **View health check**: This option shows a short summary of the health check, with a link that takes you to the edit flow.
+  * **Edit health check**: This option redirects the user to the edit flow.
+  * **Delete health check**: This option brings up the confirmation dialog box for the deletion flow.
 
 * Origin Pools
-    * **View pool details**: This option brings up a modal dialog box with information about the pool.
-    * **Edit pool**: This option redirects the user to the edit flow.
-    * **Delete pool**: This option brings up the confirmation dialog box for the deletion flow.
+  * **View pool details**: This option brings up a modal dialog box with information about the pool.
+  * **Edit pool**: This option redirects the user to the edit flow.
+  * **Delete pool**: This option brings up the confirmation dialog box for the deletion flow.
 
 * Load Balancers
-    * **Edit load balancer**: Redirects to the edit flow.
-    * **Delete load balancer**: Brings up the confirmation dialog box for the deletion flow.
+  * **Edit load balancer**: Redirects to the edit flow.
+  * **Delete load balancer**: Brings up the confirmation dialog box for the deletion flow.
 
 ## Adding a health check
 {:#add-a-health-check}
 
 Health checks are optional attachments for origin pools. They use a custom repeating interval to probe for a specific response body, or for a status code, to monitor the pool's health. Once created, health checks can be added to a new or an existing origin pool. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of Health Check Events. You can filter by date, health of the pool or origin, pool name, and origin name by selecting the filter parameters from the list menus. Columns within the table are sortable by clicking on the column name.
 
-
 Health check fields:
  * **Monitor type**: The protocol to use for the health check (defaults to HTTP)
- * **Path**: The endpoint path against which to perform the health check (defaults to /).
+ * **Path**: The endpoint path against which to perform the health check (defaults to `/`).
  * **Port**: Click the arrow buttons to increase or decrease the port number.
  * **Description**: Health check description.
  
@@ -120,7 +119,6 @@ Expand the **Advanced options** section to see more settings.
  
 Expand the **Configure request headers** section to add and configure HTTP request headers to send in the health check. 
 It is recommended you set a Host header by default. The `User-Agent` header cannot be overridden.
-
 
 ## Adding a pool
 {:#add-a-pool}
@@ -140,7 +138,6 @@ Additional optional fields:
  * **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
  * **Enabled**: Whether to enable (the default) this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any (default to true).
  
-
 ## Adding a global load balancer
 {:#add-a-load-balancer}
 
@@ -165,7 +162,7 @@ Optionally, the following fields can be configured:
 You can directly create pools and health checks from the **Create Load Balancer** menu option. Navigate to **Reliability > Global Load Balancer > Create load balancer > Add pool**, and select the option to **Create New** from the Origin pool list.
 {: shortdesc}
 
-Input a pool name, [origins](#x2210603){:term}, and select a [health check](#x4571658){:term}. You can create a new health check here by choosing **Create New** in the **Health Check** list menu, and entering the information to create the health check.
+Input a pool name, [origins](#x2210603){:term}, and select a health check. You can create a new health check here by choosing **Create New** in the **Health Check** list menu, and entering the information to create the health check.
    
 ## Demo: Configuring a global load balancer
 {:#improving-application-reliability-and-scalability-with-global-load-balancing-from-ibm-cloud-internet-services}
