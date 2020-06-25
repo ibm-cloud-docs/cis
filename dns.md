@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-24"
 
 keywords: IBM CIS DNS records, parts of the DS record, Type
 
@@ -30,18 +30,6 @@ subcollection: cis
 
 Read some specific instructions about how to configure your {{site.data.keyword.cis_full}} DNS records, including how to configure Secure DNS.
 {: shortdesc}
-
-## Secure DNS
-{:#secure-dns}
-
-**DNSSec** is a technology to digitally sign DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, www.icann.org).
-
-## Configuring and managing your secure DNS
-{:#configuring-and-managing-your-secure-dns}
-
-DNSSec adds a layer of authentication to the internet's DNS infrastructure, which otherwise is not secure. Secure DNS guarantees that visitors are directed to **your** web server when they type your domain name into a web browser. All you need to do is enable DNSSec in your DNS page from your IBM {{site.data.keyword.cis_short_notm}} account and add the DS record to your registrar.
-
-You can select **View DS records** to open a dialog box that explains how to add the DS record to your registrar. You must copy parts of the DS record and paste them into your registrar’s dashboard. Every registrar is different, and your registrar may only require you to enter information for some of the available fields.
 
 ## Adding DNS records
 {:#adding-dns-records}
@@ -193,3 +181,15 @@ By default, a total of 3500 DNS records are allowed (imported and created on {{s
 {:#export-dns-records}
 
 Use `Export records` to create a backup of your zone file, or export it to use with another DNS provider. When this menu option is clicked, the records are downloaded to the location specified by your browser settings (typically the Downloads folder). To select another folder location, change your browser's settings to prompt you for a location with each download.
+
+## Secure DNS
+{:#secure-dns}
+
+**DNSSec** is a technology to digitally sign DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, www.icann.org).
+
+## Configuring and managing your secure DNS
+{:#configuring-and-managing-your-secure-dns}
+
+DNSSec adds a layer of authentication to the internet's DNS infrastructure, which otherwise is not secure. Secure DNS guarantees that visitors are directed to **your** web server when they type your domain name into a web browser. All you need to do is enable DNSSec in your DNS page from your IBM {{site.data.keyword.cis_short_notm}} account and add the DS record to your registrar.
+
+You can select **View DS records** to open a dialog box that explains how to add the DS record to your registrar. You must copy parts of the DS record and paste them into your registrar’s dashboard. Every registrar is different, and your registrar may only require you to enter information for some of the available fields.

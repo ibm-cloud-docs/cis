@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-03-14"
+  years: 2018, 2020
+lastupdated: "2020-06-24"
 
 keywords: Helpful tools, whois, IPv4
 
@@ -28,17 +28,17 @@ subcollection: cis
 # Helpful tools for managing your CIS deployment
 {:#helpful-tools-for-managing-your-cis-deployment}
 
-Some public-domain unix system administration tools exist that can help you manage your IBM CIS deployment.
+Some public-domain Unix system administration tools can help you manage your {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) deployment.
 {: shortdesc}
 
 ## Sysadmin tools
 {:#cis-sysadmin-tools}
 
- * whois (domain identification tool)
- * dig (DNS tool)
- * curl (HTTP and HTTPS tool)
- * netcat (IP and port tool)
- * traceroute (network tool)
+ * `whois` (domain identification tool)
+ * `dig` (DNS tool)
+ * `cURL` (HTTP and HTTPS tool)
+ * `netcat` (IP and port tool)
+ * `traceroute` (network tool)
 
 ## Commercial tools for external and remote testing
 {:#commercial-tools-for-external-and-remote-testing}
@@ -51,13 +51,12 @@ Some public-domain unix system administration tools exist that can help you mana
 ## Tools for looking at logs and history
 {:#tools-for-looking-at-logs-and-history}
 
- * HTTP Archive files (HAR files)
-
+HTTP Archive files (HAR files)
 
 ### Using `whois`
 {:#using-whois}
 
-`whois` is a unix system command line tool you can use to look up registrar information for a given domain name or IP address, for example, the domain’s given authoritative servers or the owner of a particular IP address.
+`whois` is a Unix system command line tool you can use to look up registrar information for a given domain name or IP address. For example, the domain’s given authoritative servers or the owner of a particular IP address.
 
 Examples:
 
@@ -68,9 +67,9 @@ Examples:
 ### Using `dig`
 {:#using-dig}
 
-`dig` is a unix command line tool that can perform DNS queries and check DNS records for a specific domain. It is similar to `nslookup`.
+`dig` is a Unix command line tool that can perform DNS queries and check DNS records for a specific domain. It is similar to `nslookup`.
 
-The schema of this command is : dig <recordtype. <domainname> <options>
+The schema of this command is `dig <record_type> <domainname> <options>`
 
 **Examples:**
 
@@ -87,7 +86,7 @@ The schema of this command is : dig <recordtype. <domainname> <options>
 ### Using `cURL`
 {:#using-curl}
 
-`cURL` is a unix command line tool that lets you transmit data using URL syntax. It’s commonly used to make HTTP requests or compare server responses.
+`cURL` is a Unix command line tool that lets you transmit data using the URL syntax. It’s commonly used to make HTTP requests or compare server responses.
 
 The schema for this command is: `curl -option1 -option2 http://example.com/url`
 
@@ -104,7 +103,7 @@ The schema for this command is: `curl -option1 -option2 http://example.com/url`
 ### Using `mtr` and `traceroute`
 {:#using-mtr-and-traceroute}
 
-MTR and `traceroute` are unix command one tools that let you measure performance or latency along a specific network path to a specified host or destination server.
+`mtr` and `traceroute` are Unix command line tools that let you measure performance or latency along a specific network path to a specified host or destination server.
 
 **Examples:**
 
@@ -122,7 +121,7 @@ MTR and `traceroute` are unix command one tools that let you measure performance
 | -4 | Forces the use of IPv4 |
 | -6 | Forces the use of IPv6 |
 
-### Generating a HAR file
+### Generating an HAR file
 {:#generating-a-har-file}
 
-A HAR file is a recording of HTTP requests from a web browser. Browsers such as Chrome have a Developer Tools section that can help you set up to make a HAR file.
+An HAR file is a recording of HTTP requests from a web browser. Browsers, such as Chrome, have a Developer Tools section that can help you get set up to make HAR files.

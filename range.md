@@ -53,7 +53,7 @@ Follow these steps to add an application.
 1. Enter the application name in the first input field. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
 1. Enter the edge port in the next input field. We'll listen for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin. (Proxying is supported on all ports except port 21.)
 1. In the Origin section, enter the origin IP and Port of your TCP application. You may also select an existing Load Balancer
-1. Enable IP Firewall. When enabled, firewall rules with a "block" or "whitelist" action are enforced for this application. Country or ASN-based rules are not yet supported.
+1. Enable IP Firewall. When enabled, firewall rules with a "block" or "allowlist" action are enforced for this application. Country or ASN-based rules are not yet supported.
 1. Enable Proxy Protocol if you have a proxy in-line that supports PROXY Protocol v1. This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting should remain disabled. 
 1. Click **Provision**
 

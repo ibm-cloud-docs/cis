@@ -32,7 +32,7 @@ THIS SOFTWARE IS PROVIDED BY IBM “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTI
 
 ## A/B Testing
 {: #ab-testing}
-You can create a CIS Edge Function to control A/B tests.
+You can create a CIS Edge function to control A/B tests.
 
 ```sh
 addEventListener('fetch', event => {
@@ -210,7 +210,7 @@ async function fetchAndApply(request) {
 
 ## Hot-link protection
 {: #hot-link-protection}
-You can use CIS Edge Functions to protect your hot-links on your web properties.
+You can use CIS Edge functions to protect your hot-links on your web properties.
 
 ```sh
 addEventListener('fetch', event => {
@@ -254,9 +254,9 @@ async function fetchAndApply(request) {
 
 ## Originless responses
 {: #originless-responses}
-You can return responses directly from the edge. No need to hit your origin.
+You can return responses directly from the Edge. No need to hit your origin.
 
-### Ignore POST And PUT HTTP Requests
+### Ignore POST and PUT HTTP requests
 {: #originless-responses-ignore-post-put-http-requests}
 
 Ignore POST and PUT HTTP requests. This snippet allows all other requests to pass through to the origin.
@@ -277,10 +277,10 @@ async function fetchAndApply(request) {
 ```
 {:codeblock}
 
-### Deny A Spider Or Crawler
+### Deny a spider or crawler
 {: #originless-responses-deny-spider-crawler}
 
-Protect your origin from unwanted spiders or crawlers. In this case, if the user-agent is “annoying-robot”, the edge function returns the response instead of sending the request to the origin.
+Protect your origin from unwanted spiders or crawlers. In this case, if the user-agent is “annoying-robot”, the Edge function returns the response instead of sending the request to the origin.
 
 ```sh
 addEventListener('fetch', event => {
@@ -298,7 +298,7 @@ async function fetchAndApply(request) {
 ```
 {:codeblock}
 
-### Prevent A Specific IP From Connecting
+### Prevent a specific IP from connecting
 {: #originless-responses-prevent-specific-ip-connection}
 
 Blacklist IP addresses. This snippet of code prevents a specific IP, in this case ‘225.0.0.1’ from connecting to the origin.
@@ -321,7 +321,7 @@ async function fetchAndApply(request) {
 
 ## Post requests
 {: #post-requests}
-Reading content from an HTTP POST request
+Reading content from an HTTP POST request:
 
 ```sh
 addEventListener('fetch', event => {
@@ -345,7 +345,7 @@ async function fetchAndApply(request) {
 ```
 {:codeblock}
 
-Creating an HTTP POST request from a edge function
+Creating an HTTP POST request from a Edge function:
 
 ```sh
 addEventListener('fetch', event => {
@@ -375,7 +375,7 @@ async function fetchAndApply(request) {
 
 ## Setting a cookie
 {: #setting-cookies}
-You can set cookies using CIS Edge Functions.
+You can set cookies using CIS Edge functions.
 
 ```sh
 addEventListener('fetch', event => {
@@ -398,17 +398,18 @@ async function fetchAndApply(request) {
 
 ## Signed requests
 {: #signed-requests}
-A common URL authentication method known as request signing can be implemented in a edge function with the help of the Web Crypto API.
+A common URL authentication method known as request signing can be implemented in an Edge function with the help of the Web Crypto API.
 
-In the example presented here, we’ll authenticate the path of a URL, along with an accompanying expiration timestamp, using a Hash-based Message Authentication Code (HMAC) with a SHA-256 digest algorithm. For a user agent to successfully fetch an authenticated resource, they’ll need to provide the correct path, expiration timestamp, and HMAC via query parameters — if any of those three are tampered with, the request will fail.
+In the example presented here, we’ll authenticate the path of a URL along with an accompanying expiration timestamp, using a Hash-based Message Authentication Code (HMAC) with a SHA-256 digest algorithm. For a user agent to successfully fetch an authenticated resource, they’ll need to provide the correct path, expiration timestamp, and HMAC using query parameters — if any of those three are tampered with, the request will fail.
 
-Note that the authenticity of the expiration timestamp is covered by the HMAC, so we can rely on the user-provided timestamp being correct if the HMAC is correct, and thus know when the URL expires. Moreover, the user can also determine whether a URL in their possession has expired or not.
+Note that the authenticity of the expiration timestamp is covered by the HMAC, so we can rely on the user-provided timestamp being correct if the HMAC is correct, and thus know when the URL expires. Moreover, you can also determine whether a URL in their possession has expired or not.
 
 ### Verifying Signed Requests
 {: #signed-requests-verify}
+
 This example verifies the HMAC for any request URL whose pathname starts with `/verify/`.
 
-For debugging convenience, this edge function returns 403 if the URL or HMAC is invalid, or if the URL has expired. You may wish to return 404 in an actual implementation.
+For debugging convenience, this Edge function returns 403 if the URL or HMAC is invalid, or if the URL has expired. You may wish to return 404 in an actual implementation.
 
 ```sh
 addEventListener('fetch', event => {
@@ -488,12 +489,12 @@ function byteStringToUint8Array(byteString) {
 ```
 {:codeblock}
 
-### Generating Signed Requests
+### Generating signed requests
 {: #signed-requests-generate}
 
-Typically, the signed request would be delivered to the user in some out-of-band way, such as email, or actually generated by the user themselves if they also possess the symmetric key. We can, of course, also generate the signed requests in a edge function.
+Typically, signed requests are delivered to you in some out-of-band way, such as email, or actually generated by you yourself if you have the symmetric key. We can, of course, also generate the signed requests in an Edge function.
 
-For any request URL beginning with `/generate/`, we’ll replace `/generate/` with `/verify/`, sign the resulting path with its timestamp, and return the full, signed URL via the response body.
+For any request URL beginning with `/generate/`, we’ll replace `/generate/` with `/verify/`, sign the resulting path with its timestamp, and return the full, signed URL using the response body.
 
 ```sh
 addEventListener('fetch', event => {
@@ -545,17 +546,18 @@ async function generateSignedUrl(url) {
 
 ## Streaming responses
 {: #streaming-responses}
-An edge function script doesn’t need to prepare its entire response body before delivering a Response to `event.respondWith()`. Using a TransformStream, it is possible to stream a response body after sending the response’s front matter (i.e., HTTP status line and headers). This allows us to minimize:
+
+An Edge function script doesn’t need to prepare its entire response body before delivering a Response to `event.respondWith()`. Using a TransformStream, it is possible to stream a response body after sending the response’s front matter (for example, HTTP status line and headers). This allows us to minimize:
 
   * The visitor’s time-to-first-byte.
-  * The amount of buffering that must be done in the edge function script.
+  * The amount of buffering that must be done in the Edge function script.
 
-Minimizing buffering is especially important if you must process or transform response bodies that are larger than the edge function’s memory limit. In these cases, streaming is the only feasible implementation strategy.
+Minimizing buffering is especially important if you must process or transform response bodies that are larger than the Edge function’s memory limit. In these cases, streaming is the only feasible implementation strategy.
 
-The CIS Edge Function service already streams by default wherever possible. You only need to use these APIs if you wish to modify the response body in some way, while maintaining streaming behavior. If your edge function script only passes subrequest responses back to the client verbatim, without reading their bodies, then its body handling is already optimal, and there is no need for the techniques described here.
+The CIS Edge Function service already streams by default wherever possible. You only need to use these APIs if you wish to modify the response body in some way, while maintaining streaming behavior. If your Edge function script only passes subrequest responses back to the client verbatim, without reading their bodies, then its body handling is already optimal, and there is no need for the techniques described here.
 {:note}
 
-### Streaming Pass-Through
+### Streaming pass-through
 {: #streaming-responses-pass-through}
 
 Here’s a minimal pass-through example to get started.
@@ -600,12 +602,12 @@ Some important details to note:
 
 * Although `streamBody()` is an asynchronous function, we do not want to call `await` on it, so that it does not block forward progress of the calling `fetchAndStream()` function. It will continue to run asynchronously for as long as it has an outstanding `reader.read()` or `writer.write()` operation.
 * Backpressure: We `await` the read operation before calling the write operation. Likewise, we `await` the write operation before calling the next read operation. Following this pattern propagates backpressure to the origin.
-* Completion: We call `writer.close()` at the end, which signals to the Edge Function runtime that we’re completely done writing this response body. Once called, `streamBody()` will terminate — if this is undesirable, pass its returned promise to `FetchEvent.waitUntil()`. If your script never calls `writer.close()`, the body will appear truncated to the runtime, though it may continue to function as intended.
+* Completion: We call `writer.close()` at the end, which signals to the Edge function runtime that we’re done writing this response body. Once called, `streamBody()` will terminate — if this is undesirable, pass its returned promise to `FetchEvent.waitUntil()`. If your script never calls `writer.close()`, the body will appear truncated to the runtime, though it may continue to function as intended.
 
-### Aggregate And Stream Multiple Requests
+### Aggregate and stream multiple requests
 {: #streaming-responses-aggregate-and-stream-multiple-requests}
 
-This is similar to our Aggregating Multiple Requests recipe, but this time we’ll start writing our response as soon as we’ve verified that every subrequest succeeded — no need to wait for the actual response bodies.
+This is similar to our aggregating multiple requests recipe, but this time we’ll start writing our response as soon as we’ve verified that every subrequest succeeded — no need to wait for the actual response bodies.
 
 ```sh
 addEventListener('fetch', event => {
@@ -676,15 +678,15 @@ async function manualPipeTo(reader, writer) {
 ```
 {:codeblock}
 
-Again, there are couple important details to note:
+Again, there are a couple of important details to note:
 
 * The runtime expects to receive TypedArrays on the readable side of the TransformStream. Therefore, we never pass a string to `writer.write()`, only Uint8Arrays. If you need to write a string, use a TextEncoder.
-* `manualPipeTo()` is so-named because `ReadableStream.pipeTo()` is not yet implemented in CIS Edge Functions, as of this writing. When it becomes available, it will be the more idiomatic and optimal way to pump bytes from a ReadableStream to a WritableStream.
+* `manualPipeTo()` is so-named because `ReadableStream.pipeTo()` is not yet implemented in CIS Edge functions, as of this writing. When it becomes available, it will be the more idiomatic and optimal way to move bytes from a ReadableStream to a WritableStream.
 
-## Custom load balancer with edge functions
+## Custom load balancer with Edge functions
 {: #custom-load-balancer-edge-functions}
 
-Load balancing helps you maintain the scalability and reliability of websites you host. You can use edge functions to create custom load balancers designed to address your specific needs.
+Load balancing helps you maintain the scalability and reliability of websites you host. You can use Edge functions to create custom load balancers designed to address your specific needs.
 
 ```sh
 const US_HOSTS = [

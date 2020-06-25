@@ -75,15 +75,16 @@ Cloud Internet Services (CIS)
         logpush.md
      
     {: .topicgroup}
-    Enhancing security for CIS
+    Enhancing security
         iam.md
         architecture-workload-isolation.md
+        data-security.md
         at_events.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     /cis-cli-plugin/cis-cli-plugin-cis-cli
-    api-resource.md
+    [CIS API reference](https://{DomainName}/apidocs/cis)
     
     {:topicgroup}
     CIS use cases
@@ -92,7 +93,7 @@ Cloud Internet Services (CIS)
         
     responsibilities.md      
     plan-comparison.md
-    whitelisted-ips.md
+    allowlisted-ips.md
     helpful-tools.md
     hipaa-advisory.md
     {: .navgroup-end}

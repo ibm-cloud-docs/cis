@@ -28,7 +28,7 @@ subcollection: cis
 # Known limitations
 {:#known-limitations}
 
-The following information acknowledges some of the limitations, and some suggested courses of action to make your experience better.
+The following information describes some limitations when working with {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), as well as some suggested courses of action to improve your experience.
 {: shortdesc}
 
  * We recommend using Chrome.
@@ -37,7 +37,7 @@ The following information acknowledges some of the limitations, and some suggest
 
  * For this service, we support subdomain delegation only using NS records from another provider. CNAME delegation is not supported.
 
- * A, AAAA, and CNAME wildcard records (*) cannot be proxied.
+ * A, AAAA, and CNAME wildcard records ("*") cannot be proxied.
 
  * When you delete a dedicated certificate, it may reappear in the list for a short time before the deletion is complete.
 
@@ -48,7 +48,7 @@ The following information acknowledges some of the limitations, and some suggest
 ## Global load balancer
 {:#known-limitations-glb}
 
- * Cloud Internet Services allows you to use the character `_` in load balancer hostnames, however, Kubernetes clusters cannot use `_`.
+ * Cloud Internet Services allows you to use the character `_` in load balancer hostnames. However, Kubernetes clusters cannot use `_`.
 
  * The Standard plan permits a maximum of 5 load balancers, pools, and health checks. Each pool can have a total of 6 origins, but only 6 unique origins are permitted throughout each CIS instance.
 
@@ -56,7 +56,7 @@ The following information acknowledges some of the limitations, and some suggest
 
 * If you filter Health check events by `Pool Health`, `Degraded` pools are included because they technically are healthy, but may contain 1 or more critical origins.
 
-* When adding the request header name for a health check, use `Host`. Using lower-case `host` for a health check fails.
+* When adding the request header name for a health check, use `Host`, capitalized. Using a lower-case `host` for a health check fails.
 
 ## DNS
 {:#known-limitations-dns}
@@ -102,5 +102,5 @@ The following information acknowledges some of the limitations, and some suggest
 ## Edge functions
 {:#known-limitations-edge-functions}
 
-   * Before changing your CIS instance from an Enterprise plan to a Standard plan, you must remove all edge functions actions and edge functions triggers first. Any edge functions actions and triggers brought from an Enterprise plan to a Standard plan are not editable, which might cause damage to the normal datapath behavior on your domain. After your plan downgrade is complete, you can recreate the edge functions actions and triggers in the new plan.
-   
+Before changing your CIS instance from an Enterprise plan to a Standard plan, you must remove all edge function actions and triggers first. Any edge function actions and triggers brought from an Enterprise plan to a Standard plan are not editable, which might cause damage to the normal datapath behavior on your domain. After your plan downgrade is complete, you can recreate the edge functions actions and triggers in the new plan.
+  

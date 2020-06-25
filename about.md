@@ -33,7 +33,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-IBM {{site.data.keyword.cis_short_notm}} gets you going quickly by establishing defaults for you, which you can change easily using the API or UI. 
+IBM {{site.data.keyword.cis_short_notm}} gets you going quickly by establishing defaults for you, which you can change easily using the API or UI.
 
 
 ## Security features
@@ -69,7 +69,7 @@ WAF is implemented through two rule sets: [OWASP](/docs/cis?topic=cis-owasp-rule
 {:#cis-ip-rules}
 
 The IP Rules allow you to control access for specific IP addresses, IP ranges, specific countries, specific ASNs, and certain CIDR blocks. Available actions on incoming requests are:
-  * Whitelist
+  * Allowlist
   * Block
   * Challenge (Captcha)
   * JavaScript Challenge (IUAM challenge)
@@ -86,7 +86,7 @@ This tool is useful for blocking any User-Agent strings that you deem suspicious
 #### Domain Lockdown
 {:#cis-domain-lockdown}
 
-Domain Lockdown allows you whitelist-specific IP addresses and IP ranges such that all other IPs are blacklisted. Domain Lockdown supports the following items.
+Domain Lockdown allows you allowlist-specific IP addresses and IP ranges such that all other IPs are blacklisted. Domain Lockdown supports the following items.
   * Specific subdomains. For example, you can allow IP `1.2.3.4` access to the domain `foo.example.com` and allow IP `5.6.7.8` access to domain `bar.example.com`, without necessarily allowing the reverse.
   * Specific URLs. For example, you can allow IP `1.2.3.4` access to directory `example.com/foo/*` and allow IP `5.6.7.8`  access to directory `example.com/bar/*`, but not necessarily allow the reverse.
 

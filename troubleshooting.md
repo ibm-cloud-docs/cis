@@ -102,7 +102,7 @@ Select one of the following root certificates to download and install.
 
 To see whether a route goes through your {{site.data.keyword.cis_short_notm}} pathway, you can perform a `dig` in a Terminal window for Mac or Linux or use `nslookup` in the Windows command prompt for Windows.
 
-If the packet has a CF-Ray value, then it has travelled through {{site.data.keyword.cis_short_notm}}.
+If the packet has a CF-Ray value, then it has traveled through {{site.data.keyword.cis_short_notm}}.
 
 The `traceroute` command shows the entire path that an IP request has taken.
 
@@ -120,16 +120,16 @@ Also, please allow up to 15 minutes for one of our partner Certificates Authorit
 {: help}
 {: support}
 
- * **Step 1:** Turn on "Defense Mode" from your dashboard
- * **Step 2:** Set your DNS records for maximum security
- * **Step 3:** Do not rate-limit or throttle requests from {{site.data.keyword.cis_short_notm}}
+ * **Step 1:** Turn on "Defense Mode" from your dashboard.
+ * **Step 2:** Set your DNS records for maximum security.
+ * **Step 3:** Do not rate-limit or throttle requests from {{site.data.keyword.cis_short_notm}}.
 
 During "Defense Mode", each new visitor is met with a "Captcha" security challenge, which they must pass before being given a cookie for unchallenged access. That way, botnet traffic is blocked until the "Defense Mode" is turned off. Visitors that do not meet the security challenge are added to the (bad) IP Reputation database.
 
 ## Other problems you might encounter
 {:#troubleshooting-cis-other-problems}
 
-Here are some common error messages that you or your support team might see:
+Here are some common error messages you or your support team might see:
 
 | Error Code    | Reason |
 | ------------- | ------------- |
@@ -144,7 +144,7 @@ Here are some common error messages that you or your support team might see:
 {: help}
 {: support}
 
-If you’re not seeing traffic, and you’re using a CNAME, make sure that there is a redirect in place, so the traffic is not being routed to the root domain. Remember that some DNS propagations can take up to 48 hours to complete.
+If you’re not seeing traffic, and you’re using a CNAME, make sure that there are no redirects in place that are routing the traffic to the root domain. Remember that some DNS propagations can take up to 48 hours to complete.
 
 ### Website offline
 {:#troubleshooting-cis-website-offline}
@@ -158,16 +158,16 @@ Here is what you might see: `IBM CIS cannot connect to the origin server (error 
 
 What you can do:
 
-* Verify that the {{site.data.keyword.cis_short_notm}} IP addresses are whitelisted..
+* Verify that the {{site.data.keyword.cis_short_notm}} IP addresses are allowlisted.
 * Make sure that {{site.data.keyword.cis_short_notm}} IPs are not being rate-limited.
-* Here is the list of [IPs to whitelist](/docs/cis?topic=cis-cis-whitelisted-ip-addresses)
+* Review the list of [IPs to allowlist](/docs/cis?topic=cis-cis-allowlisted-ip-addresses).
 
 ### 502 error “The dreaded 502”
 {:#troubleshooting-cis-502-error}
 {: help}
 {: support}
 
-This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable, for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. Run a trace route.
+This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable; for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. It is recommended that you run a trace route.
 
 Here is what you might see: `Error 502 - bad gateway error`
 

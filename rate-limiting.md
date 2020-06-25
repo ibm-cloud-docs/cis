@@ -70,7 +70,7 @@ Specify the response type when a rule's threshold is exceeded.
 ### Bypassing URLs
 {:#rate-limiting-bypass}
 
-Bypass lets you create the equivalent of a whitelist or exception for a set of URLs.  No actions trigger for those URLs, even if the Rate Limiting rule is matched.
+Bypass lets you create the equivalent of a allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the Rate Limiting rule is matched.
 
 ## Protecting login
 {:#rate-limiting-protect-login}

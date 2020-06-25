@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-07"
+  years: 2018, 2020
+lastupdated: "2020-06-23"
 
 keywords: configuration domain, Free Trial plan, CIS instance
 
@@ -32,7 +32,7 @@ subcollection: cis
 # FAQs for {{site.data.keyword.cis_full_notm}}
 {:#faq}
 
-Have a question about {{site.data.keyword.cis_full}}? Review frequently asked questions, which provide answers to provisioning concerns, application access, and other common inquiries.
+Have a question about {{site.data.keyword.cis_full}}? Review these frequently asked questions, which provide answers to provisioning concerns, application access, and other common inquiries.
 
 ## What happened to the Early Access Plan that used to be in the catalog?
 {:#cis-faq-early-access-plan}
@@ -50,7 +50,7 @@ The Free Trial plan, by design, allows only one zone per account. It is recommen
 {:#cis-faq-free-trial-instances}
 {: faq}
 
-You can have at most one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, or if you delete a free trial instance, or if the free trial expires, you will not be allowed to create another free trial instance. You can, however, create instances of other paid plan types (e.g., Standard), independent of any free trials you may have created.
+You can have, at most, one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, if you delete a free trial instance, or if the free trial expires, you will not be allowed to create another free trial instance. You can, however, create instances of other paid plan types (for example, Standard), independent of any free trials you may have created.
 
 ## I have a service instance that is subscribed to the Early Access Plan. Can I change it to a Free Trial?
 {:#cis-faq-early-access-to-free-trial-plan}
@@ -64,7 +64,7 @@ No. Early Access Plan can only be upgraded to a paid plan, which is the Standard
 
 No. Each account is entitled to only one free instance. Both the Early Access Plan and the Free Trial plan that replaced it count as free plans. This also means that you can have at most one Free Trial instance.
 
-## Can I downgrade from Standard to Free Trial?
+## Can I downgrade from Standard to the Free Trial?
 {:#cis-faq-downgrade-standard-to-free-plan}
 {: faq}
 
@@ -86,19 +86,27 @@ To delete a CIS instance, you must first delete all GLBs, pools, and health chec
 {:#cis-faq-user-authentication-issue}
 {: faq}
 
-It is possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: "platform access" and "service access". Platform access roles are required to create and manage service instances, but service access roles are required to perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.
+It's possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: 
+
+* Platform access
+* Service access
+
+You need platform access roles to create and manage service instances, while service access roles perform service-specific operations on service instances. In the console, these settings can be updated by selecting **Manage > Security > Identity and Access**.
 
 ## Why is my domain in Pending state? How do I activate it?
 {:#cis-faq-pending-domain}
 {: faq}
 
-When you add a domain to CIS, we give you a couple of name servers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the name servers correctly. Make sure you add both the name servers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the name servers have been configured as instructed. As soon as we are able to verify the name server change (this may take up to 24 hours), we activate your domain. You can submit a request to recheck name servers by clicking on **Recheck name servers** in the overview page.
+When you add a domain to CIS, we give you a couple of name servers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the name servers correctly. Make sure you add both the name servers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the name servers have been configured as instructed. As soon as we are able to verify the name server change (which may take up to 24 hours), we activate your domain. You can submit a request to recheck name servers by clicking on **Recheck name servers** in the overview page.
 
 ## Who is the registrar for my domain?
 {:#cis-faq-who-is-registrar}
 {: faq}
 
-Consult https://whois.icann.org/ for this information. **Note**: You must have the administrative privilege to edit your domain's configuration at the registrar to update or add the name servers provided for your domain when you add it to CIS. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the permission to update your domain's configuration at the registrar. Work with the owner of the domain in your organization to make the necessary changes.
+Consult https://whois.icann.org/ for this information. 
+
+You must have the administrator privilege to edit your domain's configuration at the registrar in order to update or add the name servers provided for your domain when you add it to CIS. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the permission to update your domain's configuration at the registrar. Work with the owner of the domain in your organization to make the necessary changes.
+{: note}
 
 ## I want to keep my current DNS provider for my domain (example.com). Can I delegate a subdomain (subdomain.example.com) from my current DNS provider to CIS?
 {:#cis-faq-keep-current-dns-provider}
@@ -110,7 +118,7 @@ Yes. The process is similar to adding a domain, but instead of the registrar, yo
 {:#cis-faq-what-is-tls}
 {: faq}
 
-TLS is a standard security protocol for establishing encrypted links between a web server and a browser in an online communication. A TLS certificate is necessary to create a TLS connection with a website, and comprises of the domain name, the name of the company, and additional data such as company address, city, state, and country. The certificate also shows the expiration date, and details of the issuing Certificate Authority (CA).
+TLS is a standard security protocol for establishing encrypted links between a web server and a browser in an online communication. A TLS certificate is necessary to create a TLS connection with a website and comprises the domain name, the name of the company, and additional data, such as company address, city, state, and country. The certificate also shows the expiration date and details of the issuing Certificate Authority (CA).
 
 ## How Does TLS Work?
 {:#cis-faq-how-does-tls-work}
@@ -118,7 +126,7 @@ TLS is a standard security protocol for establishing encrypted links between a w
 
 When a browser initiates a connection with a TLS secured website, it first retrieves the site's TLS Certificate to check whether the certificate is still valid. It verifies that the CA is one that the browser trusts, and that the certificate is being used by the website for which it has been issued. If any of these checks fail, you'll get a warning indicating that the website is not secured by a valid certificate.
 
-When a TLS certificate is installed on a web server, it enables a secure connection between the web server and the browser that connects to it. The website's URL is prefixed with "https" instead of "http" and a padlock is shown on the address bar. If the website uses an extended validation (EV) certificate, the browser may also show a green address bar.
+When a TLS certificate is installed on a web server, it enables a secure connection between the web server and the browser that connects to it. The website's URL is prefixed with "HTTPS" instead of "HTTP" and a padlock is shown on the address bar. If the website uses an extended validation (EV) certificate, the browser may also show a green address bar.
 
 ## Why do I see a privacy warning?
 {:#cis-faq-privacy-warning}
@@ -132,13 +140,13 @@ Also, please allow up to 15 minutes for one of our partner Certificates Authorit
 {:#cis-faq-invalid-ssl-cert-error}
 {: faq}
 
-If you see "Error 526, Invalid SSL Certificate" when visiting your site, it might mean your origin certificate is invalid. When the CIS proxy is enabled, a valid CA-signed certificate is required at the origin in the default SSL mode, which is "End-to-end CA Signed". Note that the default setting for the SSL mode was previously "End-to-end Flexible", which ignores the validity of certificate presented by the origin. The new default is applied only to domains added afresh. If your domain was added when the default SSL mode was End-to-end Flexible, that setting is not overwritten. You may change the mode to a less strict mode, but it is not recommended for production environments.
+If you see "Error 526, Invalid SSL Certificate" when visiting your site, it might mean your origin certificate is invalid. When the CIS proxy is enabled, a valid CA-signed certificate is required at the origin in the default SSL mode, which is "End-to-end CA Signed". Note that the default setting for the SSL mode was previously "End-to-end Flexible", which ignores the validity of certificates presented by the origin. The new default is applied only to newly added domains. If your domain was added when the default SSL mode was End-to-end Flexible, that setting is not overwritten. You can change the mode to a less strict mode, but that is not recommended for production environments.
 
 ## What is DDoS?
 {:#cis-faq-what-is-ddos}
 {: faq}
 
-A distributed denial-of-service (DDoS) attack is an attempt to make an online service unavailable by overwhelming it with traffic from multiple sources. In a DDoS attack, multiple compromised computer systems attack a target such as a server, website, or other network resource, and which affects users of the targeted resource.
+A distributed denial-of-service (DDoS) attack is an attempt to make an online service unavailable by overwhelming it with traffic from multiple sources. In a DDoS attack, multiple compromised computer systems attack a target such as a server, website, or other network resource, affecting users of the targeted resource.
 
 The flood of incoming messages, connection requests, or malformed packets to the target system forces it to slow down or even crash and shut down, thereby denying service to legitimate users or systems. DDoS attacks have been carried out by diverse threat actors, ranging from individual criminal hackers to organized crime rings and government agencies.
 
@@ -154,28 +162,28 @@ The flood of incoming messages, connection requests, or malformed packets to the
 
 **Step 3:** Do not rate-limit or throttle requests from IBM CIS, we need the bandwidth to assist you with your situation.
 
-**Step 4:** Block specific countries and visitors if necessary.
+**Step 4:** Block specific countries and visitors, if necessary.
 
 ## I got a 522 error, what do I do now?
 {:#cis-faq-522-error}
 {: faq}
 
-A 522 error indicates we weren't able to establish a connection with your origin server (that is, your host). After about 15 seconds of failing to connect, we close the connection and display a 522 error page.
+A 522 error indicates we weren't able to establish a connection with your origin server (that is, your host). After about 15 seconds of connection failure, we close the connection and display a 522 error page.
 
 This issue usually is caused by firewall or security software that accidentally blocks our IP addresses. Because CIS acts as a reverse proxy, connections to your site will appear to come from a range of CIS IPs. This behavior can cause certain firewalls to block these connections, which prevents us from serving content to your site visitors properly.
 
-To fix this issue, ask your host to whitelist all of the CIS IP ranges, which are listed [here](/docs/cis?topic=cis-cis-whitelisted-ip-addresses).
+To fix this issue, ask your host to allowlist all of the CIS IP ranges, listed [here](/docs/cis?topic=cis-cis-allowlisted-ip-addresses).
 
-All of these IPs must be whitelisted to avoid 522 errors. It's also worth checking to see if any IPs in these ranges are blocked.
+All of these IPs must be allowlisted to avoid 522 errors. It's also worth checking to see if any IPs in these ranges are blocked.
 
 522 errors can also be caused by network connectivity issues, so confirm that your server and network is generally healthy and not overloaded.
 
 If after taking the above steps you still receive errors, contact IBM CIS support and confirm the following:
 
-* You've whitelisted our IP ranges
+* You've allowlisted our IP ranges
 * Your server/network is online and generally healthy
 
-If you contact our support team, please provide a ray ID from a recent 522 error. We can use this to determine which CIS data center you were hitting and run further tests.
+If you contact our support team, please provide a Ray ID from a recent 522 error. We can use this to determine which CIS data center you were hitting and run further tests.
 
 ## What is a proxied record and why do I need them?
 {:#cis-faq-proxied-record}
@@ -221,7 +229,7 @@ No, they can only be configured with HTTP/HTTPS.
 
 No, they can only be configured with HTTP/HTTPS.
 
-## Will disabling all of my origins in an origin pool disable the entire origin pool itself?
+## Will disabling all of my origins in an origin pool disable the entire pool itself?
 {:#cis-faq-disabling-origins-disable-origin-pool}
 {: faq}
 
