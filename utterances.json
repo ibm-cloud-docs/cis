@@ -206,5 +206,14 @@
       "error when saving Edge Functions Action",
       "Edge Functions Action gives 502 error",
       "502 Edge Functions Action error"
-    ]
+    ],
+	 "cis-faq-service-instance-id": [
+	 	"find my service instance ID",
+		"finding the service instance id",
+		"asistance with service instance id",
+		"what is my service instance id",
+		"where is the service instance id",
+		"service instance id for CIS",
+		"CIS service instance id" 
+	 ]
  }   

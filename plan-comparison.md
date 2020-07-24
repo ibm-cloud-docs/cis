@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-07-06"
 
 keywords: Plan Comparison, Cloud Internet Services, Free Trial, enterprise
 
@@ -36,15 +36,12 @@ The Free Trial Plan is the same as the Standard Plan, except that it expires aft
 
 The following table compares each offering to help you choose the one that's right for you.
 
-Scroll to the right to view the rest of the table!
-{: tip}
-
 |         | Standard<br>(30 day no-cost <br>trial available) | Enterprise Package or Usage | Enterprise GLB | Enterprise Security|  
 | :------- | :--------- | :------------ | :--------- | :--------- |
 |**Time**|Monthly Billing |Monthly Billing|Monthly Billing|Monthly Billing|
 |**Domain**|1|Up to 1000, but recommend no more than 20|2|3|
 |**DNS**|3500 records |Multiple Domains (3500 records per Domain) |Same as Enterprise |Same as Enterprise|
-|**GLB**|<ul><li>5 Pools</li><li>6 origin servers</li><li>5 Health checks</li><li>60s health checks</li><li>Geo Routing</li><li>Health checks from single region</li><li>60s minimum TTL for non-proxied GLBs</li></ul>|<ul><li>Up to 100 pools</li><li>100 origin servers</li><li>Up to 100 health checks</li><li>5s health checks</li><li>Smart Routing</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied GLBs</li></ul>|<ul><li>Up to 100 pools</li><li>18 origin servers</li><li>Up to 100 health checks</li><li>60s health checks</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied GLBs</li></ul>|Not available|
+|**Global load balancers**|<ul><li>5 Pools</li><li>6 origin servers</li><li>5 Health checks</li><li>60s health checks</li><li>Geo Routing</li><li>Health checks from single region</li><li>60s minimum TTL for non-proxied global load balancers</li></ul>|<ul><li>Up to 100 pools</li><li>100 origin servers</li><li>Up to 100 health checks</li><li>5s health checks</li><li>Smart Routing</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied global load balancers</li></ul>|<ul><li>Up to 100 pools</li><li>18 origin servers</li><li>Up to 100 health checks</li><li>60s health checks</li><li>Health checks from multiple regions</li><li>10s minimum TTL for non-proxied global load balancers</li></ul>|Not available|
 |**WAF**|Preconfigured rules|Preconfigured and custom rules|Not available|Same as Enterprise|
 |**DDoS**|On (with proxy) or Off (no proxy)|On (with proxy) or Off (no proxy)|Yes (proxy)|Yes|
 |**TLS**|<ul><li>1 universal wildcard</li><li>1 dedicated wildcard</li><li>1 Dedicated custom</li><li>1 Uploaded custom</li></ul>|<ul><li>1 Universal wildcard per domain; up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 dedicated wildcards with ability to request more</li><li>10 dedicated custom</li><li>1 Uploaded custom</li></ul>|<ul><li>1 universal wildcard per domain; up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 dedicated wildcards with ability to request more</li><li>2 dedicated custom</li><li>1 uploaded custom</li></ul>|<ul><li>1 universal wildcard per domain; up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 Dedicated wildcard with ability to request more</li><li>3 dedicated custom</li><li>1 uploaded custom</li></ul>|
@@ -79,6 +76,6 @@ The following table describes the key differences among the available plans.
 |**Role based<br> Access Control**|Yes|Yes|Yes|Yes|
 |**Rate limiting**|No|Yes|No|No|
 |**Smart routing**|No|Yes|No|No|
-|**GLB origin limit**|6|Unlimited|0|6|
-|**GLB lowest health<br> Check interval**|60s|5s|5s|Not available|
+|**Global load balancers origin limit**|6|Unlimited|0|6|
+|**Global load balancersLB lowest health<br> Check interval**|60s|5s|5s|Not available|
 |**Page rules<br> (Caching/Security)**|50|100|0|0|

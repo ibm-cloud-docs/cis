@@ -69,4 +69,4 @@ Query String Sort sorts the query strings _before_ they hit our cache, resulting
 ## Serving stale content
 {:#serve-stale-content-caching}
 
-**Serve stale content** keeps a limited version of the site online if the server goes down. Even if the content has expired, {{site.data.keyword.cis_short_notm}} will continue serving cached content to users when origin servers are offline.
+**Serve stale content** keeps a limited version of the site online if the server goes down. Even if the content has expired, {{site.data.keyword.cis_short_notm}} continues serving cached content to users when origin servers are offline.

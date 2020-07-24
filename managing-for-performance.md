@@ -42,7 +42,7 @@ With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performan
 {:#best-practice-cache-static-content}
 
   * Enable **Cache Everything** for static HTML web pages
-  * Use conservative **Time to Live (TTL)** for your content that changes occasionally
+  * Use conservative **Time-to-live (TTL)** for your content that changes occasionally
 
 ### Utilize conservative TTLs (Time-to-Lives) for content that changes occasionally
 {:#utilize-conservative-ttl}
@@ -56,7 +56,7 @@ If content rarely changes, you can set a conservative TTL to utilize our cache a
 
 * **MISS:** The asset was not yet in the cache or the TTL had expired (that is, it had reached the cache-control maximum age of 0).
 * **HIT:** The asset was delivered from the cache.
-* **EXPIRED:** This asset was delivered from cache, but the next request will require revalidation.
+* **EXPIRED:** This asset was delivered from cache, but the next request requires revalidation.
 * **REVALIDATED:** The asset was delivered from cache. The TTL was expired, but an `If-Modified-Since` request to the origin indicated that the asset had not changed. Therefore, the version in cache is considered valid again.
 
 ## Best practice 2: For event-driven content, use the API to purge your cache

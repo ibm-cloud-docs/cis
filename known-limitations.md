@@ -31,7 +31,7 @@ subcollection: cis
 The following information describes some limitations when working with {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), as well as some suggested courses of action to improve your experience.
 {: shortdesc}
 
- * We recommend using Chrome.
+ * It is recommended that you use Chrome.
 
  * The free trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed to add new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.
 
@@ -39,7 +39,7 @@ The following information describes some limitations when working with {{site.da
 
  * A, AAAA, and CNAME wildcard records ("*") cannot be proxied.
 
- * When you delete a dedicated certificate, it may reappear in the list for a short time before the deletion is complete.
+ * When you delete a dedicated certificate, it might reappear in the list for a short time before the deletion is complete.
 
  * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
 
@@ -54,7 +54,7 @@ The following information describes some limitations when working with {{site.da
 
 * Health check events for deleted pools and origins cannot be filtered, but they still appear in the table.
 
-* If you filter Health check events by `Pool Health`, `Degraded` pools are included because they technically are healthy, but may contain 1 or more critical origins.
+* If you filter Health check events by `Pool Health`, `Degraded` pools are included because they technically are healthy, but might contain 1 or more critical origins.
 
 * When adding the request header name for a health check, use `Host`, capitalized. Using a lower-case `host` for a health check fails.
 
@@ -103,4 +103,3 @@ The following information describes some limitations when working with {{site.da
 {:#known-limitations-edge-functions}
 
 Before changing your CIS instance from an Enterprise plan to a Standard plan, you must remove all edge function actions and triggers first. Any edge function actions and triggers brought from an Enterprise plan to a Standard plan are not editable, which might cause damage to the normal datapath behavior on your domain. After your plan downgrade is complete, you can recreate the edge functions actions and triggers in the new plan.
-  

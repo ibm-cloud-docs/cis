@@ -97,8 +97,8 @@ The following table shows the default WAF rule set, and their associated actions
 |Prevent fake BaiduBots from crawling|block
 |Prevent fake yandexbot from crawling|block
 |Block fake baidu user agents used in DoS attacks|block
-|Block attempts to obtain information that may disclose information about the origin server|block
-|Prevent access to extensions that may be used by text editors when saving/backup |block
+|Block attempts to obtain information that might disclose information about the origin server|block
+|Prevent access to extensions that could be used by text editors when saving/backup |block
 |Block attempts to access the apache status page /server-status|simulate
 |Drop probes from the Acunetix scanner|challenge
 |Drop Java probes from the Acunetix scanner|challenge

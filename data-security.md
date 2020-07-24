@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-18"
+lastupdated: "2020-07-06"
 
 keywords: data encryption in cis, data storage for cis, bring your own keys for dns services, BYOK for dns services, key management for dns services, key encryption for dns services, personal data in dns services, data deletion for dns services, data in dns services, data security in dns services
 
@@ -29,7 +29,7 @@ subcollection: cis
 # Securing your data in {{site.data.keyword.cis_short_notm}}
 {: #mng-data}
 
-To ensure that you can securely manage your data when you use {{site.data.keyword.cis_full}}, it is important to know exactly what data is stored and encrypted and how you can delete any stored personal data.
+To ensure that you can securely manage your data when you use {{site.data.keyword.cis_full}}, it is important to know exactly what data is stored and encrypted and how to delete any stored personal data.
 {: shortdesc}
 
 ## How your data is stored and encrypted in {{site.data.keyword.cis_short_notm}}

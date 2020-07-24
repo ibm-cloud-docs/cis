@@ -28,15 +28,15 @@ subcollection: cis
 # Routing concepts
 {:#cis-routing}
 
-Eliminate excess latency by analyzing and optimizing routing decisions across the global Internet using real-time network connections. Reduce Internet latency on average by 35% and connection errors by 27%.
+Eliminate excess latency by analyzing and optimizing routing decisions across the global internet using real-time network connections. Reduce internet latency on average by 35% and connection errors by 27%.
 {: shortdesc}
 
 ## Smart Routing
 {:#cis-smart-routing}
 
-Route connections across the Internet efficiently by avoiding packet loss, congestion, and outages.
+Route connections across the internet efficiently by avoiding packet loss, congestion, and outages.
 
-Smart Routing optimizes the paths your data takes across the Internet. Optimal paths are determined by analyzing latency and packet loss data collected from real-time network connections. Smart Routing uses this data to detect which transit providers are operating best between any two points on the planet.
+Smart Routing optimizes the paths your data takes across the internet. Optimal paths are determined by analyzing latency and packet loss data collected from real-time network connections. Smart Routing uses this data to detect which transit providers are operating best between any two points on the planet.
 
 The optimized route is different from the regular request path. It can take up to 24 hours to switch from the regular request path to the optimized route after you enable Smart Routing for your domain.
 {:note}
@@ -46,6 +46,6 @@ The optimized route is different from the regular request path. It can take up t
 
 Increase cache hit ratios using concentrated connections to reduce requests to customer origins.
 
-Tiered Caching reduces requests to customer origins and decreases the load on the origin server. Tiered Caching accomplishes this by first asking other PoPs if they have the requested data when a cache miss takes place. Customers will see a performance increase since distances between our PoPs are typically shorter than the distances between PoPs and origins. By taking advantage of the cached data, customers will benefit by seeing a decrease in the load on their origin server.
+Tiered Caching reduces requests to customer origins and decreases the load on the origin server. Tiered Caching accomplishes this by first asking other PoPs if they have the requested data when a cache miss takes place. Customers see a performance increase because distances between our PoPs are typically shorter than the distances between PoPs and origins. By taking advantage of the cached data, customers benefit because of a decrease in the load on their origin server.
 
 Tiered Caching also concentrates connections to origin servers so they come from a smaller number of PoPs. This allows fewer open connections going to the origin.

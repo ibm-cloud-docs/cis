@@ -58,4 +58,4 @@ IBM {{site.data.keyword.cis_short_notm}} supports a feature called "CNAME Flatte
 ## Proxying DNS records
 {:#dns-concepts-proxying-dns-records}
 
-IBM {{site.data.keyword.cis_short_notm}} supports the ability to toggle whether a record is proxied or not. When a record is proxied, it means that its traffic will run directly through {{site.data.keyword.cis_short_notm}}. Currently, records with types **A**, **AAAA**, or **CNAME** can be proxied.
+IBM {{site.data.keyword.cis_short_notm}} supports the ability to toggle whether a record is proxied or not. When a record is proxied, it means that its traffic runs directly through {{site.data.keyword.cis_short_notm}}. Currently, records with types **A**, **AAAA**, or **CNAME** can be proxied.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-07-06"
 
 keywords: IBM CIS, optimal security, Security Level
 
@@ -32,8 +32,8 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) securi
 
 **Recommendations and best practices:**
 
-* Secure origin IP addresses by proxying and increasing obfuscation
-* Configure your Security Level selectively
+* Secure your origin IP addresses by proxying and increasing obfuscation
+* Configure your security level selectively
 * Activate your Web Application Firewall (WAF) safely
 
 ## Best practice 1: Secure your origin IP addresses
@@ -41,10 +41,10 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) securi
 
 When a subdomain is proxied using {{site.data.keyword.cis_short_notm}}, all traffic is protected because we actively respond with IP addresses specific to {{site.data.keyword.cis_short_notm}} (for example, all of your clients connect to {{site.data.keyword.cis_short_notm}} proxies first, and your origin IP addresses are obscured).
 
-### Use {{site.data.keyword.cis_short_notm}} proxies for all DNS Records for HTTP(S) traffic from your origin
+### Use {{site.data.keyword.cis_short_notm}} proxies for all DNS records for HTTP(S) traffic from your origin
 {:#use-cis-proxies-for-dns-records}
 
-To improve the security of your origin IP address, all HTTP(S) traffic should be proxied.
+To improve the security of your origin IP address, you should proxy all HTTP(S) traffic.
 
 **See the difference yourself - Query a non-proxied and a proxied record:**
 
@@ -95,14 +95,14 @@ Our security level settings are aligned with threat scores that certain IP addre
 * **MEDIUM**: Threat scores greater than 14 are challenged.
 * **LOW**: Threat scores greater than 24 are challenged.
 * **ESSENTIALLY OFF**: Threat scores greater than 49 are challenged.
-* **OFF**: *Enterprise only*
-* **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** may affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
+* **OFF**: Enterprise only
+* **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** might affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
 
-We recommend that you review your Security level settings periodically, and you can find instructions in our [Best Practices for {{site.data.keyword.cis_short_notm}} setup document](/docs/cis?topic=cis-best-practices-for-cis-setup)
+It is recommended that you review your security-level settings periodically. You can find instructions in [Best practices for CIS setup](/docs/cis?topic=cis-best-practices-for-cis-setup).
 
-## Best practice 3: activate your Web Application Firewall (WAF) safely
+## Best practice 3: Activate your Web Application Firewall (WAF) safely
 {:#best-practice-activate-waf-safely}
-Your WAF is available in the **Security** section. We will walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before turning it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified.
+Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before turning it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified.
 
 The WAF protects you against the following types of attacks:
 * SQL injection attack
@@ -111,7 +111,7 @@ The WAF protects you against the following types of attacks:
 
 The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](/docs/cis?topic=cis-waf-default-ruleset) document for more details on the default rule set and the behavior of each rule.
 
-For more information about the WAF, please see the [WAF Concepts document](/docs/cis?topic=cis-waf-q-and-a)
+For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
 
 ## Best practice 4: Configure your TLS settings
 {:#best-practice-configure-tls-settings}
@@ -123,7 +123,7 @@ TLS offers four modes of operation:
 * **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between {{site.data.keyword.cis_short_notm}} and your origin server(s).
 * **End-to-end CA signed**: TLS encrypts all traffic; you must use a CA-signed certificate.
 
-Refer to [TLS options](/docs/cis?topic=cis-cis-tls-options) for more details.
+Refer to [TLS options](/docs/cis?topic=cis-cis-tls-options) for details.
 
 IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, or you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}.
 
@@ -151,12 +151,12 @@ The following are common errors seen when ordering dedicated certificates:
 * `Error while requesting from certificate service.`
 {:note}
 
-If you receive an error when ordering certificates refresh the page and try again.
+If you receive an error when ordering certificates, refresh the page and try again.
 
 ![dedicated-certificate](images/order-dedicated-certificate.png)
 
-### Utilize a provisioned certificate
-{:#utilize-provisioned-certificate}
+### Use a provisioned certificate
+{:#use-provisioned-certificate}
 IBM has partnered with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers. Manual verification could be required for setting up these certificates. Your support team can help you perform these additional steps.
 
 ### Certificate priority at our edge

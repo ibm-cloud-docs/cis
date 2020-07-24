@@ -75,6 +75,6 @@ Bypass lets you create the equivalent of a allowlist or exception for a set of U
 ## Protecting login
 {:#rate-limiting-protect-login}
 
-Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes will be blocked for 15 minutes.
+Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes are blocked for 15 minutes.
 
 Enter a name for the rule, and the login URL.

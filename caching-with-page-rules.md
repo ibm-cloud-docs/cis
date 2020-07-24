@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2020-07-06"
 
 keywords: Use Page Rules, standard cache levels, Custom Caching Sets
 
@@ -31,7 +31,7 @@ subcollection: cis
 Page rules give you the ability to take various actions based on the page's URL, such as creating redirects, fine-tuning caching behavior, or enabling and disabling services.
 {:shortdesc}
 
-A Page rule takes effect on a given URL pattern that matches the following format:
+A page rule takes effect on a given URL pattern that matches the following format:
 
 `<scheme>://<hostname><:port>/<path>`
 
@@ -44,25 +44,25 @@ The `scheme` and `port` components are optional. If the `scheme` component is om
 **Important things to remember with page rules:**
 
  * Only one page rule takes effect on any given request.
- * Page rules are given priority in an order from top to bottom. Once a URL matches a rule, only that rule is applied; that is, if a page rule has triggered already on a request, any subsequent rules that also match the URL pattern will not take effect.
- * As a general rule, we recommend ordering your rules from most specific to least specific.
- * Page rules can be disabled, in which case they will take no action but can still be seen in the list and edited. Setting the *Enabled* toggle to "Off" creates a page rule that is disabled initially.
+ * Page rules are given priority in an order from top to bottom. After a URL matches a rule, only that rule is applied; that is, if a page rule has triggered already on a request, any subsequent rules that also match the URL pattern do not take effect.
+ * As a general rule, it is recommended to order from most-specific to least-specific rules.
+ * Page rules can be disabled, in which case they take no action. However, you can still see the rules in the list and edit them. Setting the **Enabled** toggle to **Off** creates a page rule that is disabled initially.
+
 
 
 ## Forwarding (URL redirection)
 {:#forwarding-url-redirection}
 
-Redirects one URL to another using an HTTP 301 or 302 redirect. The contents of any section of a URL that a wildcard matches can be referenced using `$X` syntax. The `X` indicates the index of a glob in the pattern: `$1` is replaced with the first wildcard match,  `$2` with the second wildcard match, and so on.
+Redirect one URL to another using an HTTP 301 or 302 redirect. The contents of any section of a URL that a wildcard matches can be referenced using `$X` syntax. The `X` indicates the index of a glob in the pattern: `$1` is replaced with the first wildcard match,  `$2` with the second wildcard match, and so on.
 
 For example, suppose you set the following rule:
 
 ![image](images/url-redirection-example.png)
 
-Here, a request to `www.example.com/stuff/things` will be redirected to `http://example.com/stuff/things`.
+Here, a request to `www.example.com/stuff/things` is redirected to `http://example.com/stuff/things`.
 
-Be careful not to create a redirect in which the domain points to itself as a destination. This mistake can cause an infinite redirect error, and the affected URLs will not be able to resolve.
+Be careful not to create a redirect in which the domain points to itself as a destination. This mistake can cause an infinite redirect error, and the affected URLs do not resolve.
 {:note}
-
 
 ## Redirecting to HTTPS
 {:#redirecting-to-https}
@@ -71,13 +71,12 @@ If you want to redirect your visitors to use HTTPS, use the **Always Use HTTPS**
 
 ![image2](images/url-matching-patterns.png)
 
-
-## Custom caching
+## Setting custom caching
 {:#custom-caching}
 
-Sets caching behavior for any URL matching the page rule pattern, using any of our standard cache levels. Setting **Cache Level** to **Cache Everything** caches any content, even if it is not one of our default static file types. Setting **Cache Level** to the **Bypass** setting prevents caching on that URL.
+Set caching behavior for any URL matching the page rule pattern, using any of our standard cache levels. Setting **Cache Level** to **Cache Everything** caches any content, even if it is not one of our default static file types. Setting **Cache Level** to the **Bypass** setting prevents caching on that URL.
 
-When specifying cache level using page rules, you can set an **Edge Cache TTL**, which controls how long CIS will retain files in our cache.
+When specifying cache level using page rules, you can set an **Edge Cache TTL**, which controls how long CIS retains files in the cache.
 
 **Browser Cache TTL** controls how long resources cached by client browsers remain valid. If a browser requests a resource again and the TTL has not expired, the browser receives an `HTTP 304 (Not Modified)` response. You can set TTLs ranging from 30 minutes to 1 year.
 
@@ -91,6 +90,5 @@ The following example sets a page rule to cache everything found in the `/images
 
 This feature returns an HTTP status 503. When servers are online again, CIS seamlessly takes visitors to regular browsing.
 
-If the requested page is not in the cache, the visitor sees an error page that informs them the page they are requesting is offline.
-If a **Cache Everything** page rule is enabled with expiration times set lower than the caching frequency, the **Serve Stale Content** is purged in the corresponding interval.
+If the requested page is not in the cache, the visitor sees an error page that informs them the page they are requesting is offline. If a **Cache Everything** page rule is enabled with expiration times set lower than the caching frequency, the **Serve Stale Content** is purged in the corresponding interval.
 {:note}

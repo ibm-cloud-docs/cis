@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-07-23"
 
 keywords: log pull, logpull, time-based, rayID
 
@@ -26,56 +26,36 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Logpull service
+# Using the Logpull service
 {:#logpull}
 
-IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using a [CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
+IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using the [Logpush command](/docs/cis?topic=cis-cli-plugin-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
 {: shortdesc}
 
-## Log retention
+## Enabling log retention
 {:#log-retention}
 
-Edge logs are not retained by default. Before you can pull logs using the logpull CLI, you must enable log retention. You can check the current setting, and turn log retention on or off, using the CLI.
+Edge logs are not retained by default. Before you can pull logs using the Logpull CLI, you must enable log retention. To do so, you must check the current setting, then turn log retention on or off.
 
-### Checking the current setting 
-{:#check-current-setting}
-
-To check whether log retention is currently turned on or off, use the `log-retention` CLI: 
-
-**Request**
+1. To check whether log retention is currently turned off, use the `log-retention` CLI:
 
 ```
 ibmcloud cis log-retention DNS_DOMAIN_ID
 ```
 
-**Response**
-
-```
-Flag   off
-```
-
-### Toggling the log retention setting
-{:#toggle-log-retention}
-
-Turn the setting on or off using the `log-retention-update` CLI.
-
-**Required parameters**
-Set a flag to indicate whether log retention is turned on or off. If this parameter is omitted, log retention is turned off by default. 
-
-**Request**
+2. If the output shows that the flag is `off` (default), update the setting as follows.
 
 ```
 ibmcloud cis log-retention-update DNS_DOMAIN_ID --flag on
 ```
 
-
 ## Logpull use cases
 {:#logpull-usecases}
 
-### Based on RayID
+### Getting logs based on RayID
 {:#logpull-usecases-rayid}
 
-If a user receives an error message after executing a command, they can use the RayID provided in the response header to get the logs related to the command.
+If you receive an error message after running a command, you can use the RayID provided in the response header to get the logs related to the command.
 
 If you have a RAY_ID with `-XXX` on the end, be sure to remove it. For example, `12ab34cdef567gh8-XXX` becomes `12ab34cdef567gh8`.
 {:note}
@@ -102,21 +82,21 @@ ibmcloud cis logpull DNS_DOMAIN_ID --ray-id RAY_ID
 }
 ```
 
-### Based on time duration
+### Getting logs based on time duration
 {:#logpull-usecases-time-duration}
 
-If a user receives an error message after executing a command but does not know the RayID of the response, they can instead use a time duration. They receive all logs for the given zone during the window around when the error occurred, and can search among the results.
-
-
-**Required parameters**
-
-Start and End time as a unix timestamp (in seconds or nanoseconds) or an absolute timestamp that conforms to RFC 3339, with a time duration of a minute or an hour.
+If you receive an error message after running a command, but do not know the RayID of the response, you can use a time duration to get all logs for the time period when the error occurred.  
 
 **Request**
+
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00
 ```
+
+Where --start` and `--end` is entered as a UNIX timestamp (in seconds or nanoseconds), or as an absolute timestamp that conforms to RFC 3339, with a time duration of a minute or an hour.
+
 **Response**
+
 ```
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com","ClientRequestMethod":"GET","ClientRequestURI":"/assets/bootstrap-collapse.js","EdgeEndTimestamp":1545067628046000000,"EdgeResponseBytes":2205,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067628044000000,"RayID":"48ab19434891c7a7"}
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com","ClientRequestMethod":"GET","ClientRequestURI":"/assets/3d.gif","EdgeEndTimestamp":1545067627970000000,"EdgeResponseBytes":2538446,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067627951000000,"RayID":"48ab1942bf96c7a7"}
@@ -134,7 +114,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com,"ClientRequestMethod":"GET","ClientRequestURI":"/assets/bootstrap-responsive.css","EdgeEndTimestamp":1545067627951000000,"EdgeResponseBytes":4797,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067627948000000,"RayID":"48ab1942af86c7a7"}
 ```
 
-### Fields
+### Available fields
 {:#logpull-usecases-fields}
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields here:
@@ -145,7 +125,7 @@ If `fields` are not specified in the request, a limited set of default fields ar
 ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
 ```
 
-Fields are passed as a comma separated list. For example, to have "ZoneID" and "RayID", use:
+Fields are passed as a comma-separated list. For example, to have "ZoneID" and "RayID", use:
 
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneId,RayID
@@ -153,7 +133,8 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 
 **Field list**
 
-Currently available fields (as of Dec 2018):
+Available fields:
+
 ```
 "CacheCacheStatus": "string; unknown | miss | expired | updating | stale | hit | ignored | bypass | revalidated",
 "CacheResponseBytes": "int; number of bytes returned by the cache",
@@ -212,16 +193,19 @@ Currently available fields (as of Dec 2018):
 "ZoneID": "int; internal zone ID"
 ```
 
-### Logpull example
+## Logpull example
 {:#logpull-usecases-example}
-The following is an example `logpull` call and examples of specific types responses.
+
+The following is an example `logpull` call and examples of specific types of responses.
 
 **Request**
+
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ClientRequestURI,CEdgeResponseBytes,CParentRayID,CWorkerStatus,COriginResponseTime,CEdgeResponseStatus,CWorkerSubrequest,CClientRequestProtocol,CWAFRuleID,CEdgePathingOp,CClientSrcPort,CWorkerSubrequestCount,CEdgeRequestHost,CClientSSLCipher,CEdgePathingSrc,COriginResponseStatus,CClientIPClass,CWAFAction,CEdgeColoID,CClientCountry,CClientRequestHost,CWAFFlags,CClientASN,CEdgeServerIP,CCacheCacheStatus,CSecurityLevel,CClientRequestUserAgent,CCacheResponseBytes,CWAFMatchedVar,CEdgeStartTimestamp,CClientSSLProtocol,CEdgeEndTimestamp,CEdgeResponseContentType,CClientRequestBytes,CCacheResponseStatus,CWorkerCPUTime,CRayID,CClientRequestMethod,CClientIP,CClientRequestPath,COriginResponseHTTPExpires,CCacheTieredFill,CWAFRuleMessage,CEdgePathingStatus,CClientDeviceType,COriginSSLProtocol,CEdgeRateLimitAction,COriginIP,CEdgeRateLimitID,CZoneID,CEdgeResponseCompressionRatio,CClientRequestReferer,CWAFProfile,COriginResponseHTTPLastModified,COriginResponseBytes --timestamps=rfc3339'
 ```
 
 **Response with Status Code 200**
+
 ```
 {
 "CacheCacheStatus":"unknown",
@@ -283,6 +267,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 ```
 
 **Response with Status Code 404**
+
 ```
 {
 "CacheCacheStatus":"miss",
@@ -344,6 +329,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 ```
 
 **Request matched a WAF rule (SQLj attack)**
+
 ```
 {
 "CacheCacheStatus":"unknown",
@@ -466,6 +452,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 ```
 
 **Request was rate limited**
+
 ```
 {
 "CacheCacheStatus":"unknown",
@@ -526,7 +513,8 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 }
 ```
 
-**Origin Server is down (Error 521, Web Server is down)**
+**Origin server is down (Error 521, Web Server is down)**
+
 ```
 {
 "CacheCacheStatus":"miss",

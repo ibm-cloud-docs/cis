@@ -38,7 +38,7 @@ subcollection: cis
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) uses HTTP headers, which it can read, add, or modify. The header lets us trace how a request was routed, using a CF-Ray number. The CF-Ray number can be found by a `curl` command or with a Google Chrome plugin in called "Claire".
 
-To know whether data has passed through {{site.data.keyword.cis_short_notm}}, locate the `Ray ID` which will be present on every packet.
+To know whether data has passed through {{site.data.keyword.cis_short_notm}}, locate the `Ray ID` which is present on every packet.
 
 **Unix command line tools:**
 
@@ -111,9 +111,9 @@ The support team makes use of these commands to assist you.
 ## If you see a privacy warning
 {:#troubleshooting-cis-privacy-warning}
 
-The certificates issued by {{site.data.keyword.cis_short_notm}} cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) you will see a privacy warning in your browser, because these host names are not added to the SAN.
+The certificates issued by {{site.data.keyword.cis_short_notm}} cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) a privacy warning appears in your browser, because these host names are not added to the SAN.
 
-Also, please allow up to 15 minutes for one of our partner Certificates Authorities (CAs) to issue a new certificate. You’ll see a privacy warning in your browser if your new certificate has not yet been issued.
+Allow up to 15 minutes for one of our partner Certificates Authorities (CAs) to issue a new certificate. A privacy warning appears in your browser if your new certificate has not yet been issued.
 
 ## What do I do if I’m under a DDoS attack?
 {:#troubleshooting-cis-ddos-attack}
@@ -135,7 +135,7 @@ Here are some common error messages you or your support team might see:
 | ------------- | ------------- |
 | 1001  | DNS Resolution Error. Either the customer recently signed up and their DNS information has not yet propagated, or whomever is managing the DNS has a failure. |
 | 521  | Origin web server refused connection from {{site.data.keyword.cis_short_notm}}. Either the origin web server is not running, or something is blocking {{site.data.keyword.cis_short_notm}} IP addresses. |
-| 522  | Connection timeout to the origin server (30 second default). Either CIS may be rate-limited, the web server may be consuming all resources (shared server), or there may be network connectivity issues between the web server and {{site.data.keyword.cis_short_notm}}. |
+| 522  | Connection timeout to the origin server (30 second default). Either CIS might be rate-limited, the web server could be consuming all resources (shared server), or there might be network connectivity issues between the web server and {{site.data.keyword.cis_short_notm}}. |
 | 523  | Origin server is unreachable. Ensure that the origin IP address for the DNS record is the same as the one appearing in the {{site.data.keyword.cis_short_notm}} DNS Settings page. |
 | 524  | {{site.data.keyword.cis_short_notm}} could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
 
@@ -167,7 +167,7 @@ What you can do:
 {: help}
 {: support}
 
-This error is one of the most common ones you may see. It typically occurs when a portion of a network is unavailable; for example, at the start of a DDoS attack. A particular data center may be unavailable for a time. Traffic will be re-routed. It is recommended that you run a trace route.
+This error is one of the most common ones you might see. It typically occurs when a portion of a network is unavailable; for example, at the start of a DDoS attack. A particular data center might be unavailable for a time. Traffic is re-routed. It is recommended that you run a trace route.
 
 Here is what you might see: `Error 502 - bad gateway error`
 

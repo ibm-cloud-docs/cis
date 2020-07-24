@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-04-24"
+lastupdated: "2019-07-06"
 
 subcollection: cis
 
@@ -24,18 +24,19 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 
-# Firewall rule actions
+# Assigning firewall rule actions
 {: #actions}
 
 Actions are the mechanisms for responding to requests that match the criteria you define in a firewall rule.
+{: shortdesc}
 
-The following table describes the actions you can assign to your rules, and are listed in the default evaluation sequence applied by Firewall Rules when looking for a match.
+The following table describes the actions that you can assign to your rules. These actions are listed in the default evaluation sequence applied by firewall rules when looking for a match.
 {:shortdesc}
 
 | Action | Description |
 | ------- | :--------- |
-|_Log_|Logs matching requests on the CIS edge for access with Enterprise Logpush and Logpull. Recommended for testing rule effectiveness before committing to a more severe action. Available to Enterprise customers only.|
-|_Allow_|Allows matching requests to access the site, as long as no other CIS Firewall features block the request (such as IP Firewall or Access Rules)|
-|_Challenge (Captcha)_|Requires a user to pass a Google reCaptcha Challenge before proceeding. If successful, CIS accepts the matched request; otherwise, it is blocked.|
-|_JS Challenge_|Requires a user to pass a CIS Javascript Challenge before proceeding. If successful, CIS accepts the matched request; otherwise, it is blocked.|
-|_Block_|Blocks a matching request from accessing the site.|
+|Log|Logs matching requests on the CIS edge for access with Enterprise Logpush and Logpull. Recommended for testing rule effectiveness before committing to a more severe action. Available to Enterprise customers only.|
+|Allow|Allows matching requests to access the site, as long as no other CIS firewall features block the request, such as IP firewall or access rules.|
+|Challenge (Captcha)|Requires a user to pass a Google reCaptcha Challenge before proceeding. If successful, CIS accepts the matched request; otherwise, it is blocked.|
+|JS Challenge|Requires a user to pass a CIS JavaScript Challenge before proceeding. If successful, CIS accepts the matched request; otherwise, it is blocked.|
+|Block|Blocks a matching request from accessing the site.|

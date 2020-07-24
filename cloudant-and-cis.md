@@ -53,7 +53,7 @@ These instructions assume you have already added a domain to {{site.data.keyword
 {: #access-cloudant-through-cis-step3}
 
 * In the CIS dashboard, navigate to **Performance > Page rules**.
-* Create a page rule for the desired URL, for example, `https://cloudant.test.foo.com/*`.
+* Create a page rule for the URL you want, for example, `https://cloudant.test.foo.com/*`.
 * Select the Rule Behavior setting `Host Header Override`.
 * Set as the Cloudant database hostname, for example, `111-222-333-444-555-test.cloudant.com`.
 

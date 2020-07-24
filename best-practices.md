@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-10-31"
+  years: 2018, 2020
+lastupdated: "2020-07-06"
 
 keywords: Best practices, CIS setup
 
@@ -35,10 +35,10 @@ You can do these steps either before or after you change your DNS and activate o
 
 Here’s what you’ll need to set up:
 
- * Best practice 1: Restore the originating IPs of your customers
- * Best practice 2: Incorporate {{site.data.keyword.cis_short_notm}} IP addresses
- * Best practice 3: Make sure your security settings don't interfere with API traffic
- * Best practice 4: Configure your security settings as strictly as possible
+ * Restore the originating IPs of your customers
+ * Incorporate {{site.data.keyword.cis_short_notm}} IP addresses
+ * Make sure your security settings don't interfere with API traffic
+ * Configure your security settings as strictly as possible
 
 ## Best practice 1: Know how to restore the originating IPs of your customers
 {:#best-practice-know-how-to-restore-origininating-ip}
@@ -64,7 +64,7 @@ You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short
 ## Best practice 3: Review your security settings to make sure they don’t interfere with API traffic
 {:#best-practice-review-security-settings-interference}
 
-IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by removing connection overhead. However, the default security stance can interfere with many API calls. We recommend that you take a few actions to prevent interference with your API traffic once proxying is active.
+IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by removing connection overhead. However, the default security stance can interfere with many API calls. It is recommended that you take a few actions to prevent interference with your API traffic after proxying is active.
 
  * Turn security features off selectively, using the **Page Rules** features.
    * Create a Page Rule with the URL pattern of your API, such as `api.example.com`
@@ -90,12 +90,12 @@ IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by remo
 
 You can upload your public and private key when you create an Enterprise domain. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, IBM {{site.data.keyword.cis_short_notm}} won't track the certificate expiration dates.
 
-### Alternatively, utilize a certificate provisioned by CIS
-{:#strict-utilize-cert-cis-provisioned}
+### Alternatively, use a certificate provisioned by CIS
+{:#strict-use-cert-cis-provisioned}
 
 IBM {{site.data.keyword.cis_short_notm}} has partnered with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers, by default. Manual verification could be required for setting up these certificates, and your support team can help you perform these additional steps.
 
-### Change your TLS setting to **End-to-End CA Signed**
+### Change your TLS setting to End-to-End CA Signed
 {:#strict-change-tls-setting}
 
-Most of our Enterprise customers utilize the End-to-End CA Signed security setting. An **End-to-End CA Signed** setting requires a valid, CA-signed certificate installed on your web server. The certificate's expiration date must be in the future, and it must have a matching *hostname* or *Subject Alternative Name (SAN)*.
+Most of our Enterprise customers use the End-to-End CA Signed security setting. An **End-to-End CA Signed** setting requires a valid, CA-signed certificate installed on your web server. The certificate's expiration date must be in the future, and it must have a matching hostname or Subject Alternative Name (SAN).

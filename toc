@@ -26,10 +26,10 @@ Cloud Internet Services (CIS)
 
     {: .topicgroup}
     Tutorials
-        /tutorials/solution-tutorials-multi-region-k8s-cis
-        /tutorials/solution-tutorials-highly-available-and-scalable-web-application
-        /tutorials/solution-tutorials-multi-region-webapp
-        /tutorials/solution-tutorials-multi-region-serverless
+        /solution-tutorials/solution-tutorials-multi-region-k8s-cis
+        /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application
+        /solution-tutorials/solution-tutorials-multi-region-webapp
+        /solution-tutorials/solution-tutorials-multi-region-serverless
 
     [What are computer networking solutions?](https://www.ibm.com/cloud/learn/networking-a-complete-guide#toc-computer-n-9C7jokVu)
     {: .navgroup-end}
@@ -67,9 +67,12 @@ Cloud Internet Services (CIS)
         resolve-override-cos.md
         custom-page.md
         
-    edge-functions.md
+    {: .topicgroup}
+    Using edge functions
+        edge-functions.md
+        edge-functions-actions.md
 
-     {: .topicgroup}
+    {: .topicgroup}
     Working with logs
         logpull.md
         logpush.md

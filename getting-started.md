@@ -31,16 +31,15 @@ subcollection: cis
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-manage-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
 {:shortdesc}
 
- For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs. Thes features are detailed in the [About {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis) section.
+For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs. These features are detailed in the [About {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis) section.
 
 ## Before you begin
 {:#before-you-begin}
 
 Before you begin using {{site.data.keyword.cis_short_notm}}:
 
-* You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then, you can order your services through your IBM Cloud Account, or through the new [{{site.data.keyword.cis_full_notm}} console](https://{DomainName}/catalog/services/internet-services), depending on your preference.
+* You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then, you can order your services through the [{{site.data.keyword.cis_full_notm}} console](https://{DomainName}/catalog/services/internet-services).
 * If you need assistance in obtaining an account to use {{site.data.keyword.cis_short_notm}}, [contact your IBM Sales representative](https://{DomainName}/cloud/support) for more guidance on getting started.
-
 
 ## Process overview
 {:#process-overview}
@@ -50,7 +49,7 @@ You can start using {{site.data.keyword.cis_short_notm}} for your internet traff
  1. Open the {{site.data.keyword.cis_short_notm}} application from your IBM Cloud dashboard.
  2. Add the domain that you want to manage.
  3. Configure your DNS information with the name servers provided.
- 4. Continue getting started with {{site.data.keyword.cis_short_notm}}, by following a tutorial or by setting up other features.
+ 4. Continue getting started with {{site.data.keyword.cis_short_notm}} by following a tutorial, or by setting up other features.
 
 ### Step 1: Open the IBM {{site.data.keyword.cis_short_notm}} application
 {:#open-cis-application}
@@ -64,6 +63,7 @@ After the {{site.data.keyword.cis_short_notm}} application starts up, you'll see
 **Which plan do I choose?**
 
 There are several plans to choose from:
+
 * **Enterprise Usage**
 * **Enterprise Package**
 * **Enterprise GLB**
@@ -71,7 +71,7 @@ There are several plans to choose from:
 * **Standard Plan**
 * **Free Trial**
 
-The **Free Trial** expires after 30 days, at which point you can upgrade to the **Standard Plan** or an **Enterprise Plan**. A single **Standard** instance can manage one domain. You can create as many **Standard** service instances as you want within a single account, each managing a single domain. The **Enterprise Plans** allow you to manage multiple domains in a single service instance. 
+The **Free Trial** expires after 30 days, at which point you can upgrade to the **Standard Plan** or an **Enterprise Plan**. A single **Standard** instance can manage one domain. You can create as many **Standard** service instances as you want within a single account, each managing a single domain. The **Enterprise Plans** allow you to manage multiple domains in a single service instance.
 
 Select **Create** on the **Overview** screen to begin provisioning your account.
 
@@ -100,16 +100,18 @@ You cannot delete the {{site.data.keyword.cis_short_notm}} instance after you ad
 ### Step 3. Set up your DNS records (optional)
 {:#setup-your-dns-records}
 
-Before transitioning the traffic for your domain to {{site.data.keyword.cis_short_notm}}, it is recommended that you import or re-create your DNS records in {{site.data.keyword.cis_short_notm}}. You can choose to skip this step, but if your DNS records are not configured properly in {{site.data.keyword.cis_short_notm}}, it might leave parts of your website inaccessible.
+Before transitioning the traffic for your domain to {{site.data.keyword.cis_short_notm}}, it is recommended that you import or recreate your DNS records in {{site.data.keyword.cis_short_notm}}. You can choose to skip this step, but if your DNS records are not configured properly in {{site.data.keyword.cis_short_notm}}, it might leave parts of your website inaccessible.
 
-Import records by uploading your exported records from your current DNS or manually create your DNS records. To import records, select **Import records**.
+Import records by uploading your exported records from your current DNS, or manually create your DNS records. To import records, select **Import records**.
 
 When you are finished, or to skip this step, select **Next step**.
 
 ### Step 4. Configure your name servers with the registrar or existing DNS provider
 {:#configure-your-name-servers-with-the-registrar-or-existing-dns-provider}
 
-To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){:external}. If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS Records](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare){:external}, written by our partners at Cloudflare, for detailed instructions by provider.
+To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){:external}.
+
+If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS records in Cloudflare](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare){:external} for detailed instructions by provider.
 
 After you configure your registrar or DNS provider, it can take up to 24 hours for the changes to take effect. When we verify that the specified name servers were configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the name servers, you can click the **Recheck name servers** link in the `Overview` page to potentially accelerate the activation of your domain. You can submit this check only one time an hour.
 
@@ -119,9 +121,8 @@ Your domain must move to `Active` state within 60 days or your domain and any co
 ### Step 5. Ensure that {{site.data.keyword.cis_short_notm}} is resolving the domain information for your application, hostname, or website
 {:#ensure-cis-is-resolving-domain-info}
 
-To proceed, select **Reliability > DNS**. Be sure to add the appropriate _DNS Records_. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} cannot resolve the domain information for your internet-facing applications.
+To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} cannot resolve the domain information for your internet-facing applications.
 
-### Step 6. In the meantime, you can begin managing other {{site.data.keyword.cis_short_notm}} functions and features
-{:#manage-other-cis-functions}
+## Next steps
 
-For information about managing other functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-manage-your-cis-deployment#manage-your-cis-deployment).
+To begin managinag CIS functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-manage-your-cis-deployment#manage-your-cis-deployment).

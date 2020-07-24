@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2020-07-06"
 
 keywords: Access Group Writer role, CIS instance, IAM
 
@@ -27,303 +27,26 @@ subcollection: cis
 
 
 # Managing access for {{site.data.keyword.cis_short_notm}}
-{:#iam-and-cis}
+{:#iam-and-cis} 
 
-{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) leverages IAM to perform authorization and Authentication.
-{: shortdesc}
+Access to {{site.data.keyword.cis_full}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Every user that accesses the ({{site.data.keyword.cis_short_notm}}) service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.cloud_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
 
-If you do not wish to add anyone to your {{site.data.keyword.cis_short_notm}} instance, you may disregard this page.
-{:note}
+Policies enable access to be granted at different levels. Some of the options include the following:
 
-Restrict access by three {{site.data.keyword.cis_short_notm}} Functional Scopes, based on the navigation tree:
-* reliability - such as DNS, GLB
-* security - such as Certificate, IP Firewall rules and rate limiting
-* performance - such as Page rules, caching and routing
+* Access across all instances of the service in your account
+* Access to an individual service instance in your account   
 
-This section walks through how to provide fine-grained access control of your instance.
+After you define the scope of the access policy, you assign a role, which determines the user's level of access. Review the following table that outlines what actions each role allows within the ({{site.data.keyword.cis_short_notm}}) service.
 
-## Roles
-{:#iam-and-cis-roles}
+The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service and create or delete instances.
 
-Use the following three roles to leverage IAM
-* Reader - Able to get information about instance and domain
-* Writer - Able to make changes to the existing configuration
-* Manager - Able to create or delete instances, domains, configuration
+For more information about IAM roles, see [Getting Started with IAM](/docs/vpc?topic=vpc-iam-getting-started).
 
-## Access groups and users
-{:#iam-and-cis-access-groups-users}
+| Platform management role | Description of actions |
+|--------------------------|--------------------------|
+| Manager | Create and delete instances, domains, and configurations. |
+| Writer | Change existing configurations. |
+| Reader | View information about instances and domains. | 
+{: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
-A policy can be assigned to a User directly or to an Access Group.
-We recommend assigning it to an access group to minimize the number of policies created and to reduce the effort of managing these policies.
-
-## Cache
-{:#iam-and-cis-cache}
-
-We cache the authorization results and use the cache to make a decision when the same request arrives again. After the cache reaches its time to live ( 10 min), it expires.
-
-## Best practices
-{:#iam-and-cis-best-practices}
-
-1. Instead of modifying a policy, delete the existing policy and then create a new one.
-
-## Scenarios
-{:#iam-and-cis-scenarios}
-
-This section walks through the different examples of access policies created through {{site.data.keyword.cis_short_notm}}.
-
-### Domain level with `config` type
-{:#iam-and-cis-scenarios-domain-level}
-
-#### Access to single domain with `security config` on an access group
-##### Writer role
-
-Bob has a {{site.data.keyword.cis_short_notm}} instance, `cis-test-instance`, and two domains, `bob.com` and `bob-ibm.com`.
-Bob wants to provide all security engineers (sec-group) in the company access to the Writer role on only the **security configuration** of **`bob.com`**.
-
-These steps show how to create an IAM policy to make this scenario possible.
-
-After Bob logs into cis-test-instance, he:
-1. Clicks on **Account > Access** tab in the nav bar
-1. Selects the **access group** - **sec-group** you want to provide access
-1. Selects **`bob.com`**
-1. Selects **Writer** role
-1. Selects the **Security config** option
-1. Clicks **create policy**
-
-On the Manage Tab:
-The following policies are created for **sec-group**:
-
-```
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 4b23ec772965f672f96f05670e36827e
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 4b23ec772965f672f96f05670e36827e
-
-Service Instance
-    name: cis-test-instance  
-    id: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9
-Domain
-    name: bob.com
-    id: 4b23ec772965f672f96f05670e36827e
-Config Type
-    cfgType: security
-```
-
-Now sec-group has access to see only `bob.com`, and can modify values pertaining to security.
-
-##### Update from Writer to Manager role for an access group
-
-If Bob wants to update the role of sec-group from Writer to Manager, he needs to delete the existing policy.
-1. Go to **Manage IAM tab > Access groups > sec-group > access policies**
-1. Delete the following Policy
-  ```
-  Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 4b23ec772965f672f96f05670e36827e
-  ```
-
-Then, Bob has to create the new policy.
-1. Click on **Account > Access** tab in the nav bar
-1. Select the **access group** - **sec-group** you want to provide access
-1. Select **`bob.com`**
-1. Select **Manager** role
-1. Select the **Security config** option
-1. Click **create policy**
-
-```
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 4b23ec772965f672f96f05670e36827e
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 4b23ec772965f672f96f05670e36827e
-```
-
-If the existing policy (writer) is not deleted, then attempting to create policy for Manager fails.
-
-##### Update the configuration to include performance along with security
-
-If Bob wants to give Manager sec-group access to performance configuration on `bob.com` along with security, he:
-1. Clicks on **Account > Access** tab in the nav bar
-1. Selects the **access group** - **sec-group** you want to provide access
-1. Selects **`bob.com`**
-1. Selects **Manager** role
-1. Selects the **Performance config** option
-1. Clicks **create policy**
-
-```
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 4b23ec772965f672f96f05670e36827e
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 4b23ec772965f672f96f05670e36827e
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: performance, domainId: 4b23ec772965f672f96f05670e36827e
-
-```
-
-#### Access to all domains with `security config`
-
-If you want to provide security actions for `bob.com` and `bob-ibm.com` from the previous example, you must create a new policy by repeating the steps for each domain. The only difference is selecting the respective domain for each policy.
-
-1. Click on **Account > Access** tab in the nav bar
-1. Select the **access group** - **sec-group** you want to provide access
-1. Select **`bob.com`**
-1. Select **Manager** role
-1. Select the **Security config** option
-1. Click **create policy**
-
-```
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 4b23ec772965f672f96f05670e36827e
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 4b23ec772965f672f96f05670e36827e
-```
-
-1. Click on **Account > Access** tab in the nav bar
-1. Select the **access group** - **sec-group** you want to provide access
-1. Select **`bob-ibm.com`**
-1. Select **Manager** role
-1. Select the **Security config** option
-1. Click **create policy**
-
-```
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 7ad7341865246f5df482ad9f76aafb5a
-```
-
-
-
-#### Access to single domain with `security config` and `reliability config`
-
-Bob has a CIS instance cis-test-instance, and 2 domains, `bob.com` and `bob-ibm.com`.
-Bob wants to provide Tony access to Writer role for only the **security and reliability actions** of **`bob-ibm.com`**.
-
-After Bob logs into cis-test-instance, he:
-1. Clicks on **Account > Access** tab in the nav bar
-1. Selects **Tony** to whom he wants to provide access
-1. Selects **`bob-ibm.com`**
-1. Selects **Writer** role
-1. Selects the checkbox for **Security and reliability** option
-1. Clicks **create policy**
-
-This creates two policies on the backend for each config type.
-
-### Domain level with all config types
-{:#iam-and-cis-scenarios-domain-level-all-config-types}
-
-Bob wants to grant read/write/mange at a the domain level to Tony.
-
-#### Write
-After Bob logs into cis-test-instance, he:
-1. Clicks on **Account > Access** tab in the nav bar
-1. Selects **Tony** to whom he wants to provide access
-1. Selects **`bob.com`**
-1. Selects **Writer** role
-1. Check all boxes for {{site.data.keyword.cis_short_notm}} Functional Scope
-1. Clicks **create policy**
-
-```
-Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a, cfgType: security
-Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a, cfgType: performance
-Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a, cfgType: reliability
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-```
-
-#### Manager
-After Bob logs into cis-test-instance, he:
-1. Clicks on **Account > Access** tab in the nav bar
-1. Selects **Tony** to whom he wants to provide access
-1. Selects **`bob.com`**
-1. Selects **Manager** role
-1. Check all boxes for {{site.data.keyword.cis_short_notm}} Functional Scope
-1. Clicks **create policy**
-
-```
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a, cfgType: security
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a, cfgType: performance
-Manager	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a, cfgType: reliability
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-```
-
-#### Reader
-After Bob logs into cis-test-instance, they:
-1. Click on **Account > Access** tab in the nav bar
-1. Selects **Tony** to whom he wants to provide access
-1. Select **`bob.com`**
-1. Select **Reader** Role
-  1. All check boxes are pre-ticked to show that the user needs *min* read access to the whole domain, and cannot give partial access to a domain
-1. Click **create policy**
-
-
-```
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 7ad7341865246f5df482ad9f76aafb5a
-Viewer	Resource	Only service instance cis-test-instance of CIS 	
-```
-
-### Instance level - all your domains
-{:#iam-and-cis-scenarios-instance-level}
-
-This policy must be created and managed through the IAM manage page.
-
-Instance level access means that Bob can give Tony permission to Instance 1 out of the 10 instances present.
-Tony is able to view all the domains in this instance.
-
-If Bob wants to give Writer or Manager to access the following, he needs to give instance level access:
-* Load balancer - pools and healthchecks
-* Firewall access rules
-* Workers
-
-In the manage IAM page, create a writer/manger policy on the service instance cis-test-instance.
-
-```
-Manager	Resource	Only service instance cis-test-instance of CIS 	
-or
-Writer	Resource	Only service instance cis-test-instance of CIS 	
-```
-
-## Manage IAM policies
-{:#manage-iam-policies}
-
-{{site.data.keyword.cis_short_notm}} allows users to create IAM policies, but management must be done through the [IAM Page](
-https://{DomainName}/iam#/overview).
-
-## Note
-{:#iam-note}
-For every policy created on the Access page in the {{site.data.keyword.cis_short_notm}} instance, 2-3 policies will be created in turn.
-
-1. The service instance Platform viewer role allows the added user to view the instance on the dashboard.
-
-**Example**
-```
-Viewer	Resource	Only service instance cis-instance-instance of CIS 	
-```
-
-2. The domain level read access is the min requirement for fine grained access to work.
-
-**Example**
-```
-Reader	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, domainId: 4b23ec772965f672f96f05670e36827e
-```
-3. The policy you created with config type present.
-
-**Example**
-```
-Writer	Resource	serviceName: internet-svcs, serviceInstance: 8571763b-a0c2-40f4-af5e-e87f9b1e16b9, cfgType: security, domainId: 4b23ec772965f672f96f05670e36827e
-```
-
-**FAQ**
-1. How do I get my service instance ID?
-
-   Copy the CRN on the overview page
-   ```
-   crn:v1:test:public:internet-svcs:global:a/2c38d9a9913332006a27665dab3d26e8:836f33a5-d3e1-4bc6-876a-982a8668b1bb::
-   ```
-   The last part of the CRN is your service instance: `836f33a5-d3e1-4bc6-876a-982a8668b1bb`.
-
-   or
-
-   Click the row containing the {{site.data.keyword.cis_short_notm}} instance on the resource list main page and copy the GUID for the service instance ID.
-
-2. I deleted a policy but the user I gave the policy to can still perform that action!
-
-   {{site.data.keyword.cis_short_notm}} caches authorization results, and the TTL for the cache is 10 minutes.  
-
-   When IAM authorizes, it uses the access policies from the access group and the user's own policies before making a decision.
-
-3. What permissions are needed to provision {{site.data.keyword.cis_short_notm}}s?
-
-   If you are unable to create a resource and add it to a resource group, you're most likely dealing with an access issue. You must have at least the Viewer role on the resource group itself and at least the Editor role on the service in the account. You can contact the account administrator to verify your assigned access in the account. See [Managing access to resources](/docs/iam?topic=iam-iammanidaccser) for more information.
+For information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).

@@ -30,7 +30,7 @@ subcollection: cis
 
 THIS SOFTWARE IS PROVIDED BY IBM “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL IBM BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## A/B Testing
+## A/B testing
 {: #ab-testing}
 You can create a CIS Edge function to control A/B tests.
 
@@ -254,7 +254,7 @@ async function fetchAndApply(request) {
 
 ## Originless responses
 {: #originless-responses}
-You can return responses directly from the Edge. No need to hit your origin.
+You can return responses directly from the edge. No need to hit your origin.
 
 ### Ignore POST and PUT HTTP requests
 {: #originless-responses-ignore-post-put-http-requests}
@@ -301,7 +301,7 @@ async function fetchAndApply(request) {
 ### Prevent a specific IP from connecting
 {: #originless-responses-prevent-specific-ip-connection}
 
-Blacklist IP addresses. This snippet of code prevents a specific IP, in this case ‘225.0.0.1’ from connecting to the origin.
+Blocklist IP addresses. This snippet of code prevents a specific IP, in this case ‘225.0.0.1’ from connecting to the origin.
 
 ```sh
 addEventListener('fetch', event => {
@@ -345,7 +345,7 @@ async function fetchAndApply(request) {
 ```
 {:codeblock}
 
-Creating an HTTP POST request from a Edge function:
+Creating an HTTP POST request from an Edge function:
 
 ```sh
 addEventListener('fetch', event => {
@@ -354,7 +354,7 @@ addEventListener('fetch', event => {
 
 /**
  * Create a POST request with body 'key=world'
- * Here, we are assuming that example.com will acknowledge the POST request with body key=world
+ * Here, we are assuming that example.com acknowledges the POST request with body key=world
  */
 async function fetchAndApply(request) {
   let content = 'key=world'
@@ -400,7 +400,7 @@ async function fetchAndApply(request) {
 {: #signed-requests}
 A common URL authentication method known as request signing can be implemented in an Edge function with the help of the Web Crypto API.
 
-In the example presented here, we’ll authenticate the path of a URL along with an accompanying expiration timestamp, using a Hash-based Message Authentication Code (HMAC) with a SHA-256 digest algorithm. For a user agent to successfully fetch an authenticated resource, they’ll need to provide the correct path, expiration timestamp, and HMAC using query parameters — if any of those three are tampered with, the request will fail.
+In the example presented here, we’ll authenticate the path of a URL along with an accompanying expiration timestamp, using a Hash-based Message Authentication Code (HMAC) with a SHA-256 digest algorithm. For a user agent to successfully fetch an authenticated resource, they’ll need to provide the correct path, expiration timestamp, and HMAC using query parameters — if any of those three are tampered with, the request fails.
 
 Note that the authenticity of the expiration timestamp is covered by the HMAC, so we can rely on the user-provided timestamp being correct if the HMAC is correct, and thus know when the URL expires. Moreover, you can also determine whether a URL in their possession has expired or not.
 
@@ -409,7 +409,7 @@ Note that the authenticity of the expiration timestamp is covered by the HMAC, s
 
 This example verifies the HMAC for any request URL whose pathname starts with `/verify/`.
 
-For debugging convenience, this Edge function returns 403 if the URL or HMAC is invalid, or if the URL has expired. You may wish to return 404 in an actual implementation.
+For debugging convenience, this Edge function returns 403 if the URL or HMAC is invalid, or if the URL has expired. You might want to return 404 in an actual implementation.
 
 ```sh
 addEventListener('fetch', event => {
@@ -478,7 +478,7 @@ async function verifyAndFetch(request) {
 
 // Convert a ByteString (a string whose code units are all in the range
 // [0, 255]), to a Uint8Array. If you pass in a string with code units larger
-// than 255, their values will overflow!
+// than 255, their values overflow!
 function byteStringToUint8Array(byteString) {
   const ui = new Uint8Array(byteString.length)
   for (let i = 0; i < byteString.length; ++i) {
@@ -572,7 +572,7 @@ async function fetchAndStream(request) {
   let response = await fetch(request)
 
   // Create an identity TransformStream (a.k.a. a pipe).
-  // The readable side will become our new response body.
+  // The readable side becomes our new response body.
   let { readable, writable } = new TransformStream()
 
   // Start pumping the body. NOTE: No await!
@@ -600,9 +600,9 @@ async function streamBody(readable, writable) {
 
 Some important details to note:
 
-* Although `streamBody()` is an asynchronous function, we do not want to call `await` on it, so that it does not block forward progress of the calling `fetchAndStream()` function. It will continue to run asynchronously for as long as it has an outstanding `reader.read()` or `writer.write()` operation.
+* Although `streamBody()` is an asynchronous function, we do not want to call `await` on it, so that it does not block forward progress of the calling `fetchAndStream()` function. It continues to run asynchronously for as long as it has an outstanding `reader.read()` or `writer.write()` operation.
 * Backpressure: We `await` the read operation before calling the write operation. Likewise, we `await` the write operation before calling the next read operation. Following this pattern propagates backpressure to the origin.
-* Completion: We call `writer.close()` at the end, which signals to the Edge function runtime that we’re done writing this response body. Once called, `streamBody()` will terminate — if this is undesirable, pass its returned promise to `FetchEvent.waitUntil()`. If your script never calls `writer.close()`, the body will appear truncated to the runtime, though it may continue to function as intended.
+* Completion: We call `writer.close()` at the end, which signals to the Edge function runtime that we’re done writing this response body. After being called, `streamBody()` terminates — if this is undesirable, pass its returned promise to `FetchEvent.waitUntil()`. If your script never calls `writer.close()`, the body appears truncated to the runtime, though it might continue to function as intended.
 
 ### Aggregate and stream multiple requests
 {: #streaming-responses-aggregate-and-stream-multiple-requests}
@@ -659,21 +659,17 @@ async function streamJsonBodies(bodies, writable) {
   await writer.write(encoder.encode("[\n"))
 
   for (let i = 0; i < bodies.length; ++i) {
-    if (i > 0) await writer.write(encoder.encode(",\n"))
-    await manualPipeTo(bodies[i].getReader(), writer)
+    if (i > 0) {
+      await writer.write(encoder.encode(",\n"))
+    }
+    writer.releaseLock()
+    await bodies[i].pipeTo(writable, { preventClose: true })
+    writer = writable.getWriter()
   }
 
   await writer.write(encoder.encode("]"))
 
   await writer.close()
-}
-
-async function manualPipeTo(reader, writer) {
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    await writer.write(value)
-  }
 }
 ```
 {:codeblock}
@@ -681,7 +677,6 @@ async function manualPipeTo(reader, writer) {
 Again, there are a couple of important details to note:
 
 * The runtime expects to receive TypedArrays on the readable side of the TransformStream. Therefore, we never pass a string to `writer.write()`, only Uint8Arrays. If you need to write a string, use a TextEncoder.
-* `manualPipeTo()` is so-named because `ReadableStream.pipeTo()` is not yet implemented in CIS Edge functions, as of this writing. When it becomes available, it will be the more idiomatic and optimal way to move bytes from a ReadableStream to a WritableStream.
 
 ## Custom load balancer with Edge functions
 {: #custom-load-balancer-edge-functions}
@@ -716,7 +711,7 @@ addEventListener('fetch', event => {
   if (COUNTRIES_MAP[countryCode]) {
     hostnames = COUNTRIES_MAP[countryCode];
   }
-  // Randomly pick the next host 
+  // Randomly pick the next host
   var primary = hostnames[getRandomInt(hostnames.length)];
 
   var primaryUrl = new URL(event.request.url);
@@ -748,5 +743,3 @@ function getRandomInt(max) {
 }
 ```
 {:codeblock}
-
-

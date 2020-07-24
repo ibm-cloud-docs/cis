@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-06"
 
 keywords: configuration domain, Free Trial plan, CIS instance
 
@@ -38,7 +38,7 @@ Have a question about {{site.data.keyword.cis_full}}? Review these frequently as
 {:#cis-faq-early-access-plan}
 {: faq}
 
-The Early Access Plan was removed from the Catalog on May 31, 2018. It was replaced by the Standard paid plan, and a new 30-day Free Trial plan. If you have an instance of Early Access Plan, upgrade to the Standard plan right away to avoid data loss; you will not be allowed to create a Free Trial instance if you participated in the Early Access beta.
+The Early Access Plan was removed from the Catalog on May 31, 2018. It was replaced by the Standard paid plan, and a new 30-day Free Trial plan. You are not allowed to create a Free Trial instance if you participated in the Early Access beta.
 
 ## What do I get with a Free Trial Plan?
 {:#cis-faq-free-trial-plan}
@@ -50,7 +50,7 @@ The Free Trial plan, by design, allows only one zone per account. It is recommen
 {:#cis-faq-free-trial-instances}
 {: faq}
 
-You can have, at most, one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, if you delete a free trial instance, or if the free trial expires, you will not be allowed to create another free trial instance. You can, however, create instances of other paid plan types (for example, Standard), independent of any free trials you may have created.
+You can have, at most, one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, if you delete a free trial instance, or if the free trial expires, you are not allowed to create another free trial instance. You can, however, create instances of other paid plan types (for example, Standard), independent of any free trials you might have created.
 
 ## I have a service instance that is subscribed to the Early Access Plan. Can I change it to a Free Trial?
 {:#cis-faq-early-access-to-free-trial-plan}
@@ -58,7 +58,7 @@ You can have, at most, one Free Trial instance per account, for the lifetime of 
 
 No. Early Access Plan can only be upgraded to a paid plan, which is the Standard plan at this time.
 
-## I had an Early Access instance that I (may or may not have) deleted. Can I create a Free Trial instance now?
+## I had an Early Access instance that I (might or might not have) deleted. Can I create a Free Trial instance now?
 {:#cis-faq-early-access-and-free-trial-plan}
 {: faq}
 
@@ -74,19 +74,19 @@ No. This is not allowed.
 {:#cis-faq-free-trial-plan-expired}
 {: faq}
 
-To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, GLB, pools, and health checks are deleted automatically.
+To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, global load balancers, pools, and health checks are deleted automatically.
 
 ## How do I delete my CIS Instance?
 {:#{:#cis-faq-delete-instance}
 {: faq}
 
-To delete a CIS instance, you must first delete all GLBs, pools, and health checks. Then delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
+To delete a CIS instance, you must first delete all global load balancers, pools, and health checks. Then delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
 
 ## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
 {:#cis-faq-user-authentication-issue}
 {: faq}
 
-It's possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles: 
+It's possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles:
 
 * Platform access
 * Service access
@@ -97,13 +97,13 @@ You need platform access roles to create and manage service instances, while ser
 {:#cis-faq-pending-domain}
 {: faq}
 
-When you add a domain to CIS, we give you a couple of name servers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the name servers correctly. Make sure you add both the name servers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the name servers have been configured as instructed. As soon as we are able to verify the name server change (which may take up to 24 hours), we activate your domain. You can submit a request to recheck name servers by clicking on **Recheck name servers** in the overview page.
+When you add a domain to CIS, we give you a couple of name servers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the name servers correctly. Make sure you add both the name servers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the name servers have been configured as instructed. As soon as we are able to verify the name server change (which can take up to 24 hours), we activate your domain. You can submit a request to recheck name servers by clicking on **Recheck name servers** in the overview page.
 
 ## Who is the registrar for my domain?
 {:#cis-faq-who-is-registrar}
 {: faq}
 
-Consult https://whois.icann.org/ for this information. 
+Consult https://whois.icann.org/ for this information.
 
 You must have the administrator privilege to edit your domain's configuration at the registrar in order to update or add the name servers provided for your domain when you add it to CIS. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the permission to update your domain's configuration at the registrar. Work with the owner of the domain in your organization to make the necessary changes.
 {: note}
@@ -126,15 +126,15 @@ TLS is a standard security protocol for establishing encrypted links between a w
 
 When a browser initiates a connection with a TLS secured website, it first retrieves the site's TLS Certificate to check whether the certificate is still valid. It verifies that the CA is one that the browser trusts, and that the certificate is being used by the website for which it has been issued. If any of these checks fail, you'll get a warning indicating that the website is not secured by a valid certificate.
 
-When a TLS certificate is installed on a web server, it enables a secure connection between the web server and the browser that connects to it. The website's URL is prefixed with "HTTPS" instead of "HTTP" and a padlock is shown on the address bar. If the website uses an extended validation (EV) certificate, the browser may also show a green address bar.
+When a TLS certificate is installed on a web server, it enables a secure connection between the web server and the browser that connects to it. The website's URL is prefixed with "HTTPS" instead of "HTTP" and a padlock is shown on the address bar. If the website uses an extended validation (EV) certificate, the browser might also show a green address bar.
 
 ## Why do I see a privacy warning?
 {:#cis-faq-privacy-warning}
 {: faq}
 
-The TLS certificates issued by IBM Cloud CIS cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) you will see a privacy warning in your browser, because these host names are not added to the SAN.
+The TLS certificates issued by IBM Cloud CIS cover the root domain (`example.com`) and one level of subdomain (`*.example.com`). If you’re trying to reach a second-level subdomain (`*.*.example.com`) a privacy warning appears in your browser, because these host names are not added to the SAN.
 
-Also, please allow up to 15 minutes for one of our partner Certificates Authorities (CAs) to issue a new certificate. You’ll see a privacy warning in your browser if your new certificate has not yet been issued.
+Allow up to 15 minutes for one of our partner Certificates Authorities (CAs) to issue a new certificate. A privacy warning appears in your browser if your new certificate has not yet been issued.
 
 ## Why do I see invalid SSL certificate error?
 {:#cis-faq-invalid-ssl-cert-error}
@@ -170,7 +170,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 
 A 522 error indicates we weren't able to establish a connection with your origin server (that is, your host). After about 15 seconds of connection failure, we close the connection and display a 522 error page.
 
-This issue usually is caused by firewall or security software that accidentally blocks our IP addresses. Because CIS acts as a reverse proxy, connections to your site will appear to come from a range of CIS IPs. This behavior can cause certain firewalls to block these connections, which prevents us from serving content to your site visitors properly.
+This issue usually is caused by firewall or security software that accidentally blocks our IP addresses. Because CIS acts as a reverse proxy, connections to your site appear to come from a range of CIS IPs. This behavior can cause certain firewalls to block these connections, which prevents us from serving content to your site visitors properly.
 
 To fix this issue, ask your host to allowlist all of the CIS IP ranges, listed [here](/docs/cis?topic=cis-cis-allowlisted-ip-addresses).
 
@@ -197,7 +197,7 @@ OrgName:        IBM
 ```
 {:pre}
 
-If you would rather bypass CIS on a domain (we will still resolve DNS), then non-proxying the record is a possible solution.
+If you would rather bypass CIS on a domain (we still resolve DNS), then non-proxying the record is a possible solution.
 
 ## I got a DNS Validation error: 1004; now what can I do?
 {:#cis-faq-dns-validation-error}
@@ -223,13 +223,13 @@ The default health check timeout for the Free Trial and Standard plans is 60 sec
 
 No, they can only be configured with HTTP/HTTPS.
 
-## Can GLB be configured for non-HTTP/HTTPS traffic?
+## Can global load balancers be configured for non-HTTP/HTTPS traffic?
 {:#cis-faq-glb-non-http-traffic}
 {: faq}
 
-No, they can only be configured with HTTP/HTTPS.
+No, global load balancers can only be configured with HTTP/HTTPS.
 
-## Will disabling all of my origins in an origin pool disable the entire pool itself?
+## Does disabling all of my origins in an origin pool disable the entire pool itself?
 {:#cis-faq-disabling-origins-disable-origin-pool}
 {: faq}
 
@@ -239,10 +239,22 @@ Yes, if the origin pool is being used in a load balancer, the traffic is routed 
 {:#cis-faq-kubernetes-ingress-error}
 {: faq}
 
-The hostname in a Kubernetes ingress must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. Using `_` in the load balancer name, though permitted, can cause an ingress error in Kubernetes clusters. We recommend that you not use `-` in the load balancer name to avoid issues with Kubernetes clusters.
+The hostname in a Kubernetes ingress must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. Using `_` in the load balancer name, though permitted, can cause an ingress error in Kubernetes clusters. It is recommended that you not use `-` in the load balancer name to avoid issues with Kubernetes clusters.
 
 ## I got a 502 error attempting to save an Edge Functions Action, what do I do?
 {:#cis-faq-502-error}
 {: faq}
 
 Contact [IBM support](/docs/cis?topic=cis-gettinghelp) and provide the script that you were attempting to save.
+
+## How do I find my service instance ID?
+{:#cis-faq-service-instance-id}
+
+To find your service instance ID, copy the CRN on the overview page. For example:
+
+```
+crn:v1:test:public:internet-svcs:global:a/2c38d9a9913332006a27665dab3d26e8:836f33a5-d3e1-4bc6-876a-982a8668b1bb::
+```
+The last part of the CRN is your service instance: `836f33a5-d3e1-4bc6-876a-982a8668b1bb`.
+
+Alternatively, you can click the row containing the {{site.data.keyword.cis_short_notm}} instance on the resource list main page and copy the GUID for the service instance ID.

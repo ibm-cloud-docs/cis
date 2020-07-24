@@ -31,7 +31,7 @@ The following API lists all IP addresses used by the CIS proxy. The CIS proxy us
 
 [https://api.cis.cloud.ibm.com/v1/ips](https://api.cis.cloud.ibm.com/v1/ips)
 
-Polling this API one time a week is sufficient to get the information you need to update your allowlists.
+Polling this API one time a week is sufficient to get the information you need to update your allowlists. 
 
 The IP addresses the CIS proxy uses for communication with the origins are not necessarily the same as the ones used for client-to-proxy communication, although all addresses are derived from the same list.
 {:note}
