@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2020-07-06"
+  years: 2018, 2020
+lastupdated: "2020-08-05"
 
 keywords: Access Group Writer role, CIS instance, IAM
 
@@ -49,4 +49,4 @@ For more information about IAM roles, see [Getting Started with IAM](/docs/vpc?t
 | Reader | View information about instances and domains. | 
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
-For information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
+For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources#assign-access-resources).
