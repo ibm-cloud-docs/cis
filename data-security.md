@@ -2,11 +2,12 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-07-19"
 
-keywords: data encryption in cis, data storage for cis, bring your own keys for dns services, BYOK for dns services, key management for dns services, key encryption for dns services, personal data in dns services, data deletion for dns services, data in dns services, data security in dns services
+keywords: data encryption in cis, data storage for cis, data deletion for cis, data in cis, data security in cis
 
 subcollection: cis
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -55,11 +56,17 @@ The {{site.data.keyword.cis_short_notm}} configuration data is deleted on reques
 ### Deleting {{site.data.keyword.cis_short_notm}} instances
 {: #service-delete}
 
-The {{site.data.keyword.cis_short_notm}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.cis_short_notm}} service description, which you can find in [{{site.data.keyword.cloud_notm}} Terms](/docs/overview?topic=overview-terms).
+The {{site.data.keyword.cis_short_notm}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.cis_short_notm}} service description, which you can find in [{{site.data.keyword.cloud_notm}} Terms](/docs/overview?topic=overview-terms). When a {{site.data.keyword.cis_short_notm}} instance is deleted by the UI, CLI, or API, the instance data is retained for seven days from deletion.
+
+Before deleting an instance, all the domains in the instance must be removed.
+{:note}
 
 Deleting the {{site.data.keyword.cis_short_notm}} instance removes all data.
 
 ### Restoring deleted data for {{site.data.keyword.cis_short_notm}}
 {: #data-restore}
 
-{{site.data.keyword.cis_short_notm}} cannot currently restore deleted data.
+{{site.data.keyword.cis_short_notm}} can currently restore the deleted instance. 
+After you delete an instance of {{site.data.keyword.cis_short_notm}}, you can restore the deleted service instance within the data retention period of seven days. After the seven-day period expires, the service instance is permanently deleted.
+
+To view which service instances are available for restoration, use the `ibmcloud resource reclamations` command. To restore a deleted service instance, use the `ibmcloud resource reclamation-restore` command.
