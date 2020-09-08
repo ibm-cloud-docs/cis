@@ -52,7 +52,7 @@ The Free Trial plan, by design, allows only one zone per account. It is recommen
 
 You can have, at most, one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, if you delete a free trial instance, or if the free trial expires, you are not allowed to create another free trial instance. You can, however, create instances of other paid plan types (for example, Standard), independent of any free trials you might have created.
 
-## I have a service instance that is subscribed to the Early Access Plan. Can I change it to a Free Trial?
+## I had an Early Access instance that I (may or may not have) deleted. Can I create a Free Trial instance now?
 {:#cis-faq-early-access-to-free-trial-plan}
 {: faq}
 
@@ -68,7 +68,7 @@ No. Each account is entitled to only one free instance. Both the Early Access Pl
 {:#cis-faq-downgrade-standard-to-free-plan}
 {: faq}
 
-No. This is not allowed.
+No. Downgrading from Standard to a Free Trial plan is not allowed.
 
 ## My Free Trial has expired. What are my options?
 {:#cis-faq-free-trial-plan-expired}
@@ -113,6 +113,12 @@ You must have the administrator privilege to edit your domain's configuration at
 {: faq}
 
 Yes. The process is similar to adding a domain, but instead of the registrar, you work with the DNS provider for the higher level domain. When you add a subdomain to CIS, you are given two name servers to configure, as usual. You configure a Name Server (NS) record for each of the two name servers as DNS records within your domain being managed by the other DNS provider. When we are able to verify that the required NS records have been added, we activate your subdomain. If you do not manage the higher level domain within your organization, you must work with the owner of the higher level domain to get the NS records added.
+
+## What are the defaults for DNS TTL?
+{:#cis-faq-dnsttl-defaults}
+
+The following are defaults for DNS time-to-live (TTL), in seconds.
+* For records such as A record, CNAME, and so on, the automatic TTL is 300s.
 
 ## What is TLS?
 {:#cis-faq-what-is-tls}
@@ -221,7 +227,7 @@ The default health check timeout for the Free Trial and Standard plans is 60 sec
 {:#cis-faq-health-check-non-http-traffic}
 {: faq}
 
-No, they can only be configured with HTTP/HTTPS.
+No, health checks can only be configured with HTTP/HTTPS.
 
 ## Can global load balancers be configured for non-HTTP/HTTPS traffic?
 {:#cis-faq-glb-non-http-traffic}
@@ -239,7 +245,7 @@ Yes, if the origin pool is being used in a load balancer, the traffic is routed 
 {:#cis-faq-kubernetes-ingress-error}
 {: faq}
 
-The hostname in a Kubernetes ingress must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character. Using `_` in the load balancer name, though permitted, can cause an ingress error in Kubernetes clusters. It is recommended that you not use `-` in the load balancer name to avoid issues with Kubernetes clusters.
+The hostname in a Kubernetes ingress must consist of lower case alphanumeric characters, `-` or `.`, and must start and end with an alphanumeric character. Using `_` in the load balancer name, though permitted, can cause an ingress error in Kubernetes clusters. We recommend that you not use `-` in the load balancer name to avoid issues with Kubernetes clusters.
 
 ## I got a 502 error attempting to save an Edge Functions Action, what do I do?
 {:#cis-faq-502-error}

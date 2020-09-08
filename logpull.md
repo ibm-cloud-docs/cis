@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-07-23"
 
-keywords: log pull, logpull, time-based, rayID
+keywords: log pull, logpull, 
 
 subcollection: cis
 
@@ -42,12 +42,14 @@ Edge logs are not retained by default. Before you can pull logs using the Logpul
 ```
 ibmcloud cis log-retention DNS_DOMAIN_ID
 ```
+{:pre}
 
 2. If the output shows that the flag is `off` (default), update the setting as follows.
 
 ```
 ibmcloud cis log-retention-update DNS_DOMAIN_ID --flag on
 ```
+{:pre}
 
 ## Logpull use cases
 {:#logpull-usecases}
@@ -65,6 +67,7 @@ If you have a RAY_ID with `-XXX` on the end, be sure to remove it. For example, 
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --ray-id RAY_ID
 ```
+{:pre}
 
 **Response**
 
@@ -81,6 +84,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --ray-id RAY_ID
     "RayID": "48b371889c489b2c"
 }
 ```
+{:codeblock}
 
 ### Getting logs based on time duration
 {:#logpull-usecases-time-duration}
@@ -92,6 +96,7 @@ If you receive an error message after running a command, but do not know the Ray
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00
 ```
+{:pre}
 
 Where --start` and `--end` is entered as a UNIX timestamp (in seconds or nanoseconds), or as an absolute timestamp that conforms to RFC 3339, with a time duration of a minute or an hour.
 
@@ -113,6 +118,7 @@ Where --start` and `--end` is entered as a UNIX timestamp (in seconds or nanosec
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com","ClientRequestMethod":"GET","ClientRequestURI":"/assets/old_school.png","EdgeEndTimestamp":1545067627960000000,"EdgeResponseBytes":1466,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067627952000000,"RayID":"48ab1942bf92c7a7"}
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com,"ClientRequestMethod":"GET","ClientRequestURI":"/assets/bootstrap-responsive.css","EdgeEndTimestamp":1545067627951000000,"EdgeResponseBytes":4797,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067627948000000,"RayID":"48ab1942af86c7a7"}
 ```
+{:codeblock}
 
 ### Available fields
 {:#logpull-usecases-fields}
@@ -124,12 +130,14 @@ If `fields` are not specified in the request, a limited set of default fields ar
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
 ```
+{:pre}
 
 Fields are passed as a comma-separated list. For example, to have "ZoneID" and "RayID", use:
 
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneId,RayID
 ```
+{:pre}
 
 **Field list**
 
@@ -192,6 +200,7 @@ Available fields:
 "WorkerSubrequestCount": "int; number of subrequests issued by a worker when handling this request",
 "ZoneID": "int; internal zone ID"
 ```
+{:codeblock}
 
 ## Logpull example
 {:#logpull-usecases-example}
@@ -203,6 +212,7 @@ The following is an example `logpull` call and examples of specific types of res
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ClientRequestURI,CEdgeResponseBytes,CParentRayID,CWorkerStatus,COriginResponseTime,CEdgeResponseStatus,CWorkerSubrequest,CClientRequestProtocol,CWAFRuleID,CEdgePathingOp,CClientSrcPort,CWorkerSubrequestCount,CEdgeRequestHost,CClientSSLCipher,CEdgePathingSrc,COriginResponseStatus,CClientIPClass,CWAFAction,CEdgeColoID,CClientCountry,CClientRequestHost,CWAFFlags,CClientASN,CEdgeServerIP,CCacheCacheStatus,CSecurityLevel,CClientRequestUserAgent,CCacheResponseBytes,CWAFMatchedVar,CEdgeStartTimestamp,CClientSSLProtocol,CEdgeEndTimestamp,CEdgeResponseContentType,CClientRequestBytes,CCacheResponseStatus,CWorkerCPUTime,CRayID,CClientRequestMethod,CClientIP,CClientRequestPath,COriginResponseHTTPExpires,CCacheTieredFill,CWAFRuleMessage,CEdgePathingStatus,CClientDeviceType,COriginSSLProtocol,CEdgeRateLimitAction,COriginIP,CEdgeRateLimitID,CZoneID,CEdgeResponseCompressionRatio,CClientRequestReferer,CWAFProfile,COriginResponseHTTPLastModified,COriginResponseBytes --timestamps=rfc3339'
 ```
+{:codeblock}
 
 **Response with Status Code 200**
 
@@ -265,6 +275,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 "ZoneID":******
 }
 ```
+{:codeblock}
 
 **Response with Status Code 404**
 
@@ -327,6 +338,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 "ZoneID":******
 }
 ```
+{:codeblock}
 
 **Request matched a WAF rule (SQLj attack)**
 
@@ -389,6 +401,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 "ZoneID":******
 }
 ```
+{:codeblock}
 
 **Request matched a firewall rule**
 ```
@@ -450,6 +463,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 "ZoneID":******
 }
 ```
+{:codeblock}
 
 **Request was rate limited**
 
@@ -512,6 +526,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 "ZoneID":******
 }
 ```
+{:codeblock}
 
 **Origin server is down (Error 521, Web Server is down)**
 
@@ -574,3 +589,4 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 "ZoneID":******
 }
 ```
+{:codeblock}

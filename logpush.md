@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-08-07"
 
 
 keywords: log push, logpush, time-based
@@ -43,11 +43,11 @@ Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log
 ## Setting up Logpush using the console
 {:#logpush-setup-ui}
 
-**Prerequisite**: Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
+**Prerequisite**: Before you create a Logpush job, you must have an [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
 
 Follow these steps to add an application.
 
-You can create only one log push for a bucket in an Cloud Object Storage instance. This means that you can have two log pushes at a  time, one with HTTP/HTTP, and another with Range (both using different buckets).
+You can configure one log push job for each {{site.data.keyword.cos_short}} object (also known as a destination). This means that you can have two log pushes at a time going to the same bucket, but to different objects. For example, one with HTTP and another with Range, both referring to different objects in same bucket.
 {:note}
 
 1. Navigate to **Account** in your {{site.data.keyword.cis_short_notm}} instance and select the **Logs** tab.

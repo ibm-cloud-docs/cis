@@ -35,6 +35,4 @@ When using the forum to ask a question, tag your question so that it is seen by 
 
 * If you have technical questions about {{site.data.keyword.cis_short_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=cis+ibm-cloud){:external} and tag your question with "ibm-cloud" and "cis".
 
-See [Getting help](/docs/get-support?topic=get-support-getting-customer-support) for more details about using the forum.
-
-For information about opening an IBM Support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+See [Using the Support Center](/docs/get-support?topic=get-support-using-avatar) for more details about opening an IBM Support case, or about support levels and case severities.

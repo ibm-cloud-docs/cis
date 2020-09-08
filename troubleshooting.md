@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-06-05"
 
-keywords: IBM CIS connection, CIS network connection, Origin web server, troubleshooting
+keywords: troubleshooting
 
 subcollection: cis
 
@@ -180,5 +180,5 @@ What happened:
 
 What you can do:
 
-* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a case to [IBM Support](/docs/get-support?topic=get-support-getting-customer-support).
+* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a case to [IBM Support](/docs/get-support?topic=get-support-using-avatar).
 * Temporarily toggle your DNS Records to off (No proxy).

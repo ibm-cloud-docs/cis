@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-08-05"
 
 keywords: Overview page, page rules, Service Mode
 
@@ -108,6 +108,9 @@ You also can enable or disable your page rules from the table displayed in the P
  {:#security-settings-overview}
 
 By default, DDoS protection is enabled for any DNS records or load balancers with proxy on.
+
+**Only** proxied records result in traffic being routed through {{site.data.keyword.cis_short_notm}} cloud edge for edge processing.
+{:note}
 
 Security settings are:
 

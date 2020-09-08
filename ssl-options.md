@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-11"
+lastupdated: "2020-08-19"
 
-keywords: TLS Options, secure connection, Automatic HTTPS
+keywords: TLS Options, TLS, transport layer security
 
 subcollection: cis
 
@@ -25,7 +25,7 @@ subcollection: cis
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Setting Transport Layer Security options
+# Setting Transport Layer Security (TLS) options
 {:#cis-tls-options}
 
 The Transport Layer Security (TLS) options let you control whether visitors can browse your website over a secure connection, and when they do, how {{site.data.keyword.cis_full}} connects to your origin server.
@@ -88,6 +88,8 @@ By default, this is set to `1.2`. Higher TLS versions provide additional securit
 
 ## Cipher suites
 {: #cipher-suites}
+
+The following ciphers are supported at the cloud edge. You can restrict the ciphers used for your domain using the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cli-plugin-cis-cli#domain-settings).
 
 |OpenSSL Name| 	TLS 1.0 |	TLS 1.1 |	TLS 1.2 |	TLS 1.3|
 |:--------|:---:|:---:|:---:|:---|

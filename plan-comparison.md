@@ -50,8 +50,8 @@ The following table compares each offering to help you choose the one that's rig
 |**Rate Limiting**|No|Yes|Not available|Not available|
 |**IP Firewall**|<ul><li>Challenge</li><li>Block (Not available to `Country` filter)</li><li>JS challenge</li><li>Allowlist</li></ul>|<ul><li>Challenge</li><li>Block</li><li>JS challenge</li><li>Allowlist</li></ul>|Not available|Same as Enterprise|
 |**Caching**|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 seconds|Not available|Same as Enterprise|
-|**Range**|No|Yes<br>Total of 10 TB<br>5 TB HTTPS<br>5 TB range|No|Same as Enterprise|
-|**Edge Functions**|1 action<br/>(must be named after domain)|Unlimited actions|Not available|Not available|
+|**Range**|No|Yes<br>Up to 10 applications<br>Total of 10 TB<br>5 TB HTTPS<br>5 TB range|No|Same as Enterprise|
+|**Edge Functions**|1 action<br/>(must be named after domain)<br>1M Edge Function requests|Unlimited actions|Not available|Not available|
 |**Firewall Rules**|<ul><li>100 active rules</li><li>Does not support _Log_ action</li><li>Does not support _matches_ operator</li></ul>|<ul><li>1000 active rules</li><li>Supports all actions</li><li>Supports all operators</li></ul>|No|Same as Enterprise|
 |**Routing**|No|Yes|No|No |
 |**Origin Certificates**|Yes|Yes|Yes| Yes|
@@ -72,7 +72,7 @@ The following table describes the key differences among the available plans.
 |**Protected traffic**|5 TB|5 TB|5 TB|10 TB|
 |**Custom WAF rules**|No|Yes|No|Yes|
 |**Range<br>(HTTP(S) & TCP <br>Protection**|None |1 TB |None|0.1 TB|
-|**Mutual TLS <br>Authentication**|No|Yes|No|No|
+|**Mutual TLS <br>Authentication**|No|Yes|No|Yes|
 |**Role based<br> Access Control**|Yes|Yes|Yes|Yes|
 |**Rate limiting**|No|Yes|No|No|
 |**Smart routing**|No|Yes|No|No|
