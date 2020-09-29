@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-06-05"
 
-keywords: troubleshooting
+keywords: 
 
 subcollection: cis
 
@@ -92,8 +92,8 @@ If you are using the RSA version of the Cloudflare origin root CA, it expires on
 
 Select one of the following root certificates to download and install.
 
-  * [RSA version certificate.](https://public.dhe.ibm.com/cloud/bluemix/network/cis/origin_ca_rsa_root.pem) The previous version expires on 2019-11-14T01:43:50Z.  
-  * [ECC version certificate.](https://public.dhe.ibm.com/cloud/bluemix/network/cis/origin_ca_ecc_root.pem) The previous version expires on 2021-02-22T00:24:00Z.
+  * [RSA version certificate.](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_rsa_root.pem) The previous version expires on 2019-11-14T01:43:50Z.  
+  * [ECC version certificate.](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_ecc_root.pem) The previous version expires on 2021-02-22T00:24:00Z.
 
 ## How do I trace a route?
 {:#how-do-i-trace-a-route}
