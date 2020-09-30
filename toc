@@ -51,6 +51,7 @@ Cloud Internet Services (CIS)
         waf-rule-set.md
         waf-cis-ruleset.md
         waf-owasp-ruleset.md
+        security-events.md
 
     {: .topicgroup}
     Working with firewall rules
@@ -71,7 +72,7 @@ Cloud Internet Services (CIS)
     {: .topicgroup}
     Using edge functions
         edge-functions.md
-        edge-functions-actions.md
+        edge-function-actions.md
 
     {: .topicgroup}
     Working with logs
@@ -84,6 +85,7 @@ Cloud Internet Services (CIS)
         architecture-workload-isolation.md
         data-security.md
         at_events.md
+        at_iam.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
