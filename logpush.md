@@ -2,10 +2,10 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-08-07"
+lastupdated: "2020-09-30"
 
 
-keywords: log push, logpush, time-based
+keywords: 
 
 subcollection: cis
 
@@ -68,6 +68,7 @@ You can configure one log push job for each {{site.data.keyword.cos_short}} obje
 **Prerequisite**: Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
 
 To create a Logpush job for a specific domain and enable the job, run the following command:
+
 ```
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name JOB_NAME --fields all --enable true
 ```
@@ -99,10 +100,13 @@ A domain can only have one Logpush job. Use the command line to interactively ad
    * Download the file from your {{site.data.keyword.cos_short}} bucket and open it.
    * Copy and paste the challenge token in the command prompt to address the ownership challenge.
 
-A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 5 minutes.
+A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or every 100,000 records, whichever comes first. More than one file might be pushed per 30-second period or per 100,000 records. 
+
+Logpush jobs created prior to September 2020 might continue pushing every 5 minutes. Any modification to one of these older jobs triggers an update to the push frequency.
+{:note}
 
 You can use the token `{DATE}` in the bucket path to make the Logpush job push request logs in daily folders in the bucket path. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
-{:note}
+{:tip}
 
 ## Available Fields
 {:logpush-fields}
