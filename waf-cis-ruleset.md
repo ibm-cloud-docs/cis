@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-10-19"
 
 keywords: CIS Rule Set, WAF settings, WAF CIS Rules
 
@@ -29,13 +29,11 @@ subcollection: cis
 # WAF actions and {{site.data.keyword.cis_short_notm}} rule set
 {:#waf-settings}
 
-
 ## WAF actions
 {:#waf-actions}
 
 The following table shows the actions that Web Application Firewalls (WAFs) can take.
 {: shortdesc}
-
 
 |Action| Definition|
 |---|---|
@@ -43,6 +41,9 @@ The following table shows the actions that Web Application Firewalls (WAFs) can 
 |**Simulate** | To test for false positives, set the WAF to **Simulate** mode, which records the response to possible attacks without challenging or blocking.|
 |**Challenge** | A challenge page asks visitors to submit a CAPTCHA to continue to your website.|
 |**Threshold** (or sensitivity setting) | Set rules to trigger more or less, depending on sensitivity.|
+
+In Enterprise plans, you have the flexibility to turn on or off individual WAF rules for a particular URI in a domain, instead of the whole domain or subdomain. For more information, see the [waf-override-create](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli#create-waf-override) command.
+{: note}
 
 ## {{site.data.keyword.cis_short_notm}} rule sets
 {:#cis-ruleset-for-waf}
@@ -78,3 +79,5 @@ The {{site.data.keyword.cis_short_notm}} rule set lets you perform the following
    * **Challenge** displays a challenge (CAPTCHA) page that must be completed before the request in question is allowed access.
 
 You might notice that the names of the rules don't reveal exactly how they work and that they are mostly a general summary of their function. This is deliberate. For security purposes, CIS does not reveal the code (or other exact information) used to filter traffic. This prevents malicious actors from reverse engineering it to bypass our defenses.
+
+
