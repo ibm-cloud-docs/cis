@@ -4,16 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-07-14"
 
-keywords: Use Page Rules, Page Rule
-
-subcollection: cis
----
-
-copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-14"
-
-keywords: Use Page Rules, Page Rule
+keywords:
 
 subcollection: cis
 
