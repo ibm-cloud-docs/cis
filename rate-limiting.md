@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-10-07"
 
-keywords: Bypass, header responses, brute-force login attempts
+keywords: 
 
 subcollection: cis
 
@@ -38,7 +38,11 @@ Select the type of rate limiting rule, either a **Custom rule** or **Protect log
 
 Enter a rule name that helps you remember what the rule does. This is an optional field.
 
-**Traffic matching criteria** uses the AND operation. Enter a URL that you are rate limiting, and then when requests from the **Same IP exceeds** your specified number of **Requests per second**, the rule specified is triggered.
+In the **Traffic matching criteria** section, enter the following information. 
+1. Select the criteria type.
+1. Enter the URL that you are rate limiting.
+1. Select the number of requests to allow before triggering rate limiting.
+1. Select the time period (in seconds) over which the requests can occur before triggering rate limiting.
 
 The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria.
 

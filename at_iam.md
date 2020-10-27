@@ -420,3 +420,5 @@ List of IAM actions and Activity Tracker actions by API method.
 |Get ciphers settings.| `GET /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.read` | `internet-svcs.ciphers-setting.read`|
 |Update ciphers settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.update` | `internet-svcs.ciphers-setting.update`|
 {: caption="Table 21. Domain settings" caption-side="top"}
+
+

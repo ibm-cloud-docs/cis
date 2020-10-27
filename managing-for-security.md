@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-07-06"
 
-keywords: IBM CIS, optimal security, Security Level
+keywords: 
 
 subcollection: cis
 
@@ -27,6 +27,7 @@ subcollection: cis
 
 # Managing {{site.data.keyword.cis_short_notm}} for optimal security
 {:#manage-your-ibm-cis-for-optimal-security}
+
 The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
 {: shortdesc}
 
@@ -59,14 +60,17 @@ $ dig proxied.theburritobot.com +short
 
 ### Obscure non-proxied origin records with non-standard names
 {:#obsure-non-proxied-origin-records-with-non-standard-names}
+
 Any records that cannot be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
 ### Use separate IP ranges for HTTP and non-HTTP traffic if possible
 {:#use-separate-ipranges-for-traffic}
+
 Some customers use separate IP ranges for HTTP and non-HTTP traffic, thereby allowing them to proxy all records pointing to their HTTP IP range, and to obscure all non-HTTP traffic with a different IP subnet.
 
 ## Best practice 2: Configure your security level selectively
 {:#best-practice-configure-security-level-selectively}
+
 Your **Security Level** establishes the sensitivity of our **IP Reputation Database**. To prevent negative interactions or false positives, configure your **Security Level** by domain to heighten security where necessary, and to decrease it where appropriate.
 
 ### Increase the security level for sensitive areas to 'High'
@@ -89,6 +93,7 @@ This setting can be decreased for general pages and API traffic:
 
 ### What do security level settings mean?
 {:#what-do-security-level-settings-mean}
+
 Our security level settings are aligned with threat scores that certain IP addresses acquire from malicious behavior on our network. A threat score above 10 is considered high.
 
 * **HIGH**: Threat scores greater than 0 are challenged.
@@ -102,7 +107,8 @@ It is recommended that you review your security-level settings periodically. You
 
 ## Best practice 3: Activate your Web Application Firewall (WAF) safely
 {:#best-practice-activate-waf-safely}
-Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before turning it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified.
+
+Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before turning it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified. For more information, see [Using Security events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 
 The WAF protects you against the following types of attacks:
 * SQL injection attack

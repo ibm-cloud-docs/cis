@@ -47,8 +47,6 @@ Cloud Internet Services (CIS)
 
     {: .topicgroup}
     Working with WAFs
-        waf-custom-rules.md
-        waf-rule-set.md
         waf-cis-ruleset.md
         waf-owasp-ruleset.md
         security-events.md
@@ -60,7 +58,11 @@ Cloud Internet Services (CIS)
         fields-and-expressions.md
         order-and-priority.md
 
-     glb-setup.md   
+    {: .topicgroup}
+    Working with global load balancers
+        glb-basics.md
+        glb-setup.md
+        glb-advanced.md
     
     {: .topicgroup}
     Working with page rules
@@ -78,6 +80,13 @@ Cloud Internet Services (CIS)
     Working with logs
         logpull.md
         logpush.md
+        log-fields.md
+        
+    {: .topicgroup}
+    Working with metrics
+        graphql.md
+        graphql-edge-func.md
+        graphql-firewall.md
      
     {: .topicgroup}
     Enhancing security

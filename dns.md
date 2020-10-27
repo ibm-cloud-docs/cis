@@ -94,12 +94,12 @@ To add this record type, a valid value must exist in the **Name** field and a va
 
 To add this record type, a valid value must exist in the **Name** field. If you need more specific information, select the **Configure LOC options** button. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-![Create LOC Type record](images/dns/create-loc-type-record-1.png)
+![Create LOC Type record](images/create-loc-type-record-1.png)
 
    Required Fields: Name
    Optional Fields: LOC options (click **Configure LOC options** to configure)
 
-![Create LOC Type record](images/dns/create-loc-type-record-2.png)
+![Create LOC Type record](images/create-loc-type-record-2.png)
 
 ### CAA Type record
 {:#caa-type-record}
@@ -149,7 +149,7 @@ To add this record type, valid values must exist in the **Name** and **Name Serv
 
 In each record row, you can click the **Edit record** option from the menu, which opens a dialog box that you can use to update the record.
 
-![Edit DNS record](images/dns/edit-dns-record.png)
+![Edit DNS record](images/edit-dns-record.png)
 
 After you are finished making your changes, select **Update record** to save them, or **Cancel** to abort the changes.
 
@@ -158,7 +158,7 @@ After you are finished making your changes, select **Update record** to save the
 
 In each record row, you can select the **Delete record** option from the menu, which opens a dialog box to confirm the delete process.
 
-![Delete DNS record](images/dns/delete-record.png)
+![Delete DNS record](images/delete-record.png)
 
 You can select the **Delete** button to confirm your delete action. Select **Cancel** if you don't want to delete.
 
@@ -168,7 +168,8 @@ You can select the **Delete** button to confirm your delete action. Select **Can
 
 DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.wikipedia.org/wiki/Zone_file){:external}.
 Click the overflow menu and select to import or export records.
-![DNS Records Option](images/dns/import-export-records.png)
+
+![DNS Records Option](images/import-export-records.png)
 
 **Import records** - By default, a total of 3500 DNS records are allowed (imported and created on {{site.data.keyword.cis_short_notm}}). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After importing, you are shown a summary with the number of records successfully added and the number that failed, along with the reason why each record failed.
 

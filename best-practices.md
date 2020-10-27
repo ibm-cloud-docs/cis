@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-07-06"
 
-keywords: Best practices, CIS setup
+keywords: 
 
 subcollection: cis
 
