@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-07-06"
 
-keywords: Plan Comparison, Cloud Internet Services, Free Trial, enterprise
+keywords: 
 
 subcollection: cis
 
@@ -31,7 +31,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} offers several plans to choose from: Free Trial, Standard, and Enterprise variations.
 {: shortdesc}
 
-The Free Trial Plan is the same as the Standard Plan, except that it expires after 30 days. Only one free trail is available per account.
+The Free Trial Plan is the same as the Standard Plan, except that it expires after 30 days. Only one free trial is available per account.
 {: note}
 
 The following table compares each offering to help you choose the one that's right for you.
