@@ -60,9 +60,17 @@ Cloud Internet Services (CIS)
 
     {: .topicgroup}
     Working with global load balancers
-        glb-basics.md
         glb-setup.md
-        glb-advanced.md
+
+        {: .topicgroup}
+        Global load balancer features
+            glb-dns-records.md
+            glb-origin-pools.md
+            glb-health-checks.md
+            glb-traffic-steering.md
+            glb-proxy-modes.md
+            glb-session-affinity.md
+    
     
     {: .topicgroup}
     Working with page rules
