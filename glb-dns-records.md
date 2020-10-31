@@ -55,5 +55,5 @@ Ensure that HTTP keep-alive connections are enabled on your origin. {{site.data.
 ## Session cookies
 {: #session-cookies}
 
-Configure [Session Affinity](/docs/cis?topic=cis-#session-affinity) to parse HTTP requests by cookie header when you use HTTP cookies to track and bind user sessions to a specific server. Doing so directs each request to the correct application server even when HTTP requests share a TCP connection due to keep-alive.
+Configure [Session Affinity](/docs/cis?topic=cis-session-affinity) to parse HTTP requests by cookie header when you use HTTP cookies to track and bind user sessions to a specific server. Doing so directs each request to the correct application server even when HTTP requests share a TCP connection due to keep-alive.
 
