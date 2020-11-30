@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-11-18"
 
-keywords: IBM CIS DNS records, parts of the DS record, Type
+keywords:
 
 subcollection: cis
 
@@ -143,6 +143,14 @@ To add this record type, valid values must exist in the **Name** and **Name Serv
 
    Required Fields: Name, Name Server
    Optional Field: TTL (default value is `Automatic`)
+   
+### PTR type record
+{:#ptr-type-record}
+
+The PTR record option shown in the DNS Records list menu is not for adding PTR records for Reverse DNS resolution. The purpose is adding a PTR Record to the Forward DNS resolution for the domain. PTR in Forward DNS is allowed under the [DNS specification]( https://tools.ietf.org/html/rfc1035#section-3.3.12){:external}.
+{:note}
+
+PTR records primarily prevent emails from going to spam folders. Because CIS doesn't support email traffic by default, you must set the PTR record to the location of your email server. Contact your email provider for assistance.
 
 ## Updating DNS records
 {:#updating-dns-records}
@@ -178,7 +186,7 @@ Click the overflow menu and select to import or export records.
 ## Configuring and managing your secure DNS
 {:#configuring-and-managing-your-secure-dns}
 
-**DNSSec** is a technology to digitally sign DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, www.icann.org).
+**DNSSec** is a technology to digitally sign DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, `www.icann.org`).
 
 DNSSec adds a layer of authentication to the internet's DNS infrastructure, which otherwise is not secure. Secure DNS guarantees that visitors are directed to **your** web server when they type your domain name into a web browser. All you need to do is enable DNSSec in your DNS page from your IBM {{site.data.keyword.cis_short_notm}} account and add the DS record to your registrar.
 

@@ -35,9 +35,9 @@ Cloud Internet Services (CIS)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    how-to.md     
-    origin.md    
-    start-with-subdomain.md   
+    how-to.md
+    origin.md
+    start-with-subdomain.md
     multi-domain.md
     ssl-options.md
     mtls.md
@@ -70,15 +70,15 @@ Cloud Internet Services (CIS)
             glb-traffic-steering.md
             glb-proxy-modes.md
             glb-session-affinity.md
-    
-    
+
+
     {: .topicgroup}
     Working with page rules
         using-page-rules.md
         caching-with-page-rules.md
         resolve-override-cos.md
         custom-page.md
-        
+
     {: .topicgroup}
     Using edge functions
         edge-functions.md
@@ -89,13 +89,13 @@ Cloud Internet Services (CIS)
         logpull.md
         logpush.md
         log-fields.md
-        
+
     {: .topicgroup}
     Working with metrics
         graphql.md
         graphql-edge-func.md
         graphql-firewall.md
-     
+
     {: .topicgroup}
     Enhancing security
         iam.md
@@ -103,18 +103,19 @@ Cloud Internet Services (CIS)
         data-security.md
         at_events.md
         at_iam.md
+        manage-scc.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     /cis-cli-plugin/cis-cli-plugin-cis-cli
     [CIS API reference](https://{DomainName}/apidocs/cis)
-    
+
     {:topicgroup}
     CIS use cases
         cloudant-and-cis.md
         edge-functions-use-cases.md
-        
-    responsibilities.md      
+
+    responsibilities.md
     plan-comparison.md
     allowlisted-ips.md
     helpful-tools.md
