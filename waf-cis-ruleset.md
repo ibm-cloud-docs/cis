@@ -73,8 +73,7 @@ Select any of the specific rule sets to see further details about each of the ru
 The {{site.data.keyword.cis_short_notm}} rule set lets you perform the following actions on each rule:
 
    * **Disable** turns off the rule.
-   * **Simulate** logs the event, and does not block or challenge the visitor. You can still decide to set to **Block** or        
-   * **Challenge** after reviewing your logs.
+   * **Simulate** logs the event, and does not block or challenge the visitor. You can still decide to set to **Block** or **Challenge** after reviewing your logs.
    * **Block** blocks the request entirely, with no option to bypass it for that request.
    * **Challenge** displays a challenge (CAPTCHA) page that must be completed before the request in question is allowed access.
 
