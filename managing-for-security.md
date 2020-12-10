@@ -115,7 +115,7 @@ The WAF protects you against the following types of attacks:
 * Cross-site scripting
 * Cross-site forgery
 
-The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See the [WAF default rule set](/docs/cis?topic=cis-waf-default-ruleset) document for more details on the default rule set and the behavior of each rule.
+The WAF contains a default rule set which includes rules to stop the most common attacks. At this time, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rule sets. See [WAF actions and {{site.data.keyword.cis_short_notm}} rule set](/docs/cis?topic=cis-waf-settings#waf-settings) document for more details on the rule set and the behavior of each rule.
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
 

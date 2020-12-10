@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-07-23"
 
-keywords: edge functions, CIS,
+keywords:
 
 subcollection: cis
 
@@ -163,7 +163,6 @@ fetch(event.request, { cf: { scrapeShield: false } })
 Invalid or incorrectly-named settings in the `cf` object are silently ignored. Be careful to test that you are getting the behavior you want.
 {:note}
 
-
 ## Edge function use cases
 {: #edge-functions-use-cases-examples}
 
@@ -180,3 +179,7 @@ These examples are for demonstration purposes only, and not intended for use in 
 * [Setting a cookie](/docs/cis?topic=cis-edge-functions-use-cases#setting-cookies)
 * [Signed requests](/docs/cis?topic=cis-edge-functions-use-cases#signed-requests)
 * [Streaming responses](/docs/cis?topic=cis-edge-functions-use-cases#streaming-responses)
+* [Custom load balancer with Edge functions](/docs/cis?topic=cis-edge-functions-use-cases#custom-load-balancer-edge-functions)
+* [Caching using fetch](/docs/cis?topic=cis-edge-functions-use-cases#caching-using-fetch)
+* [Cache API](/docs/cis?topic=cis-edge-functions-use-cases#cache-api)
+

@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-05-06"
 
-keywords: edge function use cases, CIS
+keywords:
 
 subcollection: cis
 
@@ -160,7 +160,7 @@ async function fetchAndApply(request) {
 {: #conditional-routing}
 The easiest way to deliver different content based on the device being used is to rewrite the URL of the request based on the condition you care about. For example:
 
-### Device Type
+### Device type
 {: #conditional-routing-device-type}
 
 ```sh
@@ -183,7 +183,7 @@ async function fetchAndApply(request) {
 ```
 {:codeblock}
 
-### Custom Headers
+### Custom headers
 {: #conditional-routing-custom-headers}
 
 ```sh
@@ -404,7 +404,7 @@ In the example presented here, we’ll authenticate the path of a URL along with
 
 Note that the authenticity of the expiration timestamp is covered by the HMAC, so we can rely on the user-provided timestamp being correct if the HMAC is correct, and thus know when the URL expires. Moreover, you can also determine whether a URL in their possession has expired or not.
 
-### Verifying Signed Requests
+### Verifying signed requests
 {: #signed-requests-verify}
 
 This example verifies the HMAC for any request URL whose pathname starts with `/verify/`.
@@ -741,5 +741,212 @@ addEventListener('fetch', event => {
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+```
+{:codeblock}
+
+## Caching using fetch
+{:#caching-using-fetch}
+
+Determine how to cache a resource by setting TTLs, custom cache keys, and cache headers in a fetch request.
+
+```sh
+async function handleRequest(request) {  
+  const url = new URL(request.url)
+  
+  // Only use the path for the cache key, removing query strings  
+  // and always store using HTTPS, for example, https://www.example.com/file-uri-here  
+  const someCustomKey = `https://${url.hostname}${url.pathname}`
+  
+  let response = await fetch(request, {    
+    cf: {      
+      // Always cache this fetch regardless of content type      
+      // for a max of 5 seconds before revalidating the resource      
+      cacheTtl: 5,      
+      cacheEverything: true,      
+      //Enterprise only feature, see Cache API for other plans      
+      cacheKey: someCustomKey,    
+      },  
+    })  
+    // Reconstruct the Response object to make its headers mutable.  
+    response = new Response(response.body, response)
+    
+    //Set cache control headers to cache on browser for 25 minutes  
+    response.headers.set("Cache-Control", "max-age=1500")  
+    return response
+}
+
+addEventListener("fetch", event => {
+  return event.respondWith(handleRequest(event.request))
+})
+```
+{:codeblock}
+
+​
+### Caching HTML resources
+{:#caching-html-resources}
+
+```sh
+// Force CIS to cache an asset
+fetch(event.request, { cf: { cacheEverything: true } })
+```
+{:codeblock}
+
+Setting the cache level to Cache Everything overrides the default "cacheability" of the asset. For TTL, {{site.data.keyword.cis_short_notm}} still relies on headers set by the origin.
+​
+### Custom cache keys
+{:#custom-cache-keys}
+
+This feature is available only to enterprise customers.
+{:note}
+
+A request's cache key is what determines if two requests are "the same" for caching purposes. If a request has the same cache key as some previous request, then we can serve the same cached response for both.
+
+```sh
+// Set cache key for this request to "some-string".
+fetch(event.request, { cf: { cacheKey: "some-string" } })
+```
+{:codeblock}
+
+Normally, {{site.data.keyword.cis_short_notm}} computes the cache key for a request based on the request's URL, but you might want different URLs to be treated as if they were the same for caching purposes. For example, if your web site content is hosted from both Amazon S3 and Google Cloud Storage - you have the same content in both places, and you use a Worker to randomly balance between the two. However, you don't want to end up caching two copies of your content. You could utilize custom cache keys to cache based on the original request URL rather than the subrequest URL:
+
+```sh
+addEventListener("fetch", (event) => {
+  let url = new URL(event.request.url)  
+  if (Math.random() < 0.5) {    
+    url.hostname = "example.s3.amazonaws.com"  
+  }  
+  else {    
+    url.hostname = "example.storage.googleapis.com"  
+  }
+
+  let request = new Request(url, event.request)  
+  event.respondWith(    
+    fetch(request, {      
+      cf: { cacheKey: event.request.url },    
+    })  
+  )
+})
+```
+{:codeblock}
+
+Remember, edge functions operating on behalf of different zones cannot affect each other's cache. You can only override cache keys when making requests within your own zone (in the previous example `event.request.url` was the key stored), or requests to hosts that are not on {{site.data.keyword.cis_short_notm}}. When making a request to another {{site.data.keyword.cis_short_notm}} zone (for example, belonging to a different {{site.data.keyword.cis_short_notm}} customer), that zone fully controls how its own content is cached within {{site.data.keyword.cis_short_notm}}; you cannot override it.
+​
+### Override based on origin response code
+{:#override-origin-response-code}
+
+This feature is available only to enterprise customers.
+{:note}
+
+```sh
+// Force response to be cached for 86400 seconds for 200 status
+// codes, 1 second for 404, and do not cache 500 errors.
+fetch(request, {  
+  cf: { cacheTtlByStatus: { "200-299": 86400, 404: 1, "500-599": 0 } },
+})
+```
+{:codeblock}
+
+This option is a version of the `cacheTtl` feature which chooses a TTL based on the response's status code and does not automatically set `cacheEverything: true`. If the response to this request has a status code that matches, {{site.data.keyword.cis_short_notm}} caches for the instructed time, and override cache directives sent by the origin.
+​
+#### TTL interpretation
+{:#ttl-interpretation}
+
+The following TTL values are interpreted by {{site.data.keyword.cis_short_notm}}:
+- Positive values: Indicate in seconds how long {{site.data.keyword.cis_short_notm}} should cache the asset for.
+- `0`: The asset is cached but expires immediately (revalidate from origin every time).
+- `-1` or any negative value: Instructs {{site.data.keyword.cis_short_notm}} not to cache at all.
+
+## Cache API
+{:#cache-api}
+
+Cache using the {{site.data.keyword.cis_short_notm}} Cache API. This example can also cache POST requests.
+
+```js
+const someOtherHostname = "my.herokuapp.com"
+
+async function handleRequest(event) {
+  const request = event.request
+  const cacheUrl = new URL(request.url)
+
+  // Hostname for a different zone
+  cacheUrl.hostname = someOtherHostname
+
+  const cacheKey = new Request(cacheUrl.toString(), request)
+  const cache = caches.default
+
+  // Get this request from this zone's cache
+  let response = await cache.match(cacheKey)
+
+  if (!response) {
+    //If not in cache, get it from origin
+    response = await fetch(request)
+
+    // Must use Response constructor to inherit all of response's fields
+    response = new Response(response.body, response)
+
+    // Cache API respects Cache-Control headers. Setting max-age to 10
+    // will limit the response to be in cache for 10 seconds max
+    response.headers.append("Cache-Control", "max-age=10")
+
+    // Store the fetched response as cacheKey
+    // Use waitUntil so computational expensive tasks don"t delay the response
+    event.waitUntil(cache.put(cacheKey, response.clone()))
+  }
+  return response
+}
+
+async function sha256(message) {
+  // encode as UTF-8
+  const msgBuffer = new TextEncoder().encode(message)
+
+  // hash the message
+  const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer)
+
+  // convert ArrayBuffer to Array
+  const hashArray = Array.from(new Uint8Array(hashBuffer))
+
+  // convert bytes to hex string
+  const hashHex = hashArray.map(b => ("00" + b.toString(16)).slice(-2)).join("")
+  return hashHex
+}
+
+async function handlePostRequest(event) {
+  const request = event.request
+  const body = await request.clone().text()
+  const hash = await sha256(body)
+  const cacheUrl = new URL(request.url)
+
+  // Store the URL in cache by prepending the body's hash
+  cacheUrl.pathname = "/posts" + cacheUrl.pathname + hash
+
+  // Convert to a GET to be able to cache
+  const cacheKey = new Request(cacheUrl.toString(), {
+    headers: request.headers,
+    method: "GET",
+  })
+
+  const cache = caches.default
+
+  //Find the cache key in the cache
+  let response = await cache.match(cacheKey)
+
+  // Otherwise, fetch response to POST request from origin
+  if (!response) {
+    response = await fetch(request)
+    event.waitUntil(cache.put(cacheKey, response.clone()))
+  }
+  return response
+}
+
+addEventListener("fetch", event => {
+  try {
+    const request = event.request
+    if (request.method.toUpperCase() === "POST")
+      return event.respondWith(handlePostRequest(event))
+    return event.respondWith(handleRequest(event))
+  } catch (e) {
+    return event.respondWith(new Response("Error thrown " + e.message))
+  }
+})
 ```
 {:codeblock}

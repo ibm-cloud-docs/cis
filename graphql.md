@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-12-03"
 
 keywords: graphql
 
@@ -155,11 +155,11 @@ The following datasets are available.
 
 |Dataset | Node|
 |--- | --- |
-|Browser Insights | `browserPerf1mGroups` |
+|Browser Insights | `browserInsightsAdaptiveGroups` |
 |Firewall Activity Log | `firewallEventsAdaptive` `firewallEventsAdaptiveByTimeGroups` |
 |Firewall Analytics | `firewallEventsAdaptiveGroups` |
 |Health Check Analytics | `healthCheckEvents` `healthCheckEventsGroups` |
-|HTTP Requests | `httpRequests1mGroups` `httpRequests1hGroups` `httpRequests1dGroups` `httpRequests1mByColoGroups` `httpRequests1dByColoGroups` |
+|HTTP Requests | `httpRequests1mGroups` `httpRequests1hGroups` `httpRequests1dGroups` `httpRequestsAdaptiveGroups` |
 |Image Resizing Analytics | `imageResizingRequests1mGroups` |
 |Load Balancing Analytics | `loadBalancingRequests` `loadBalancingRequestsGroups` |
 |SYN Attacks (DoS Analytics) | `synAvgPps1mGroups` |
@@ -204,16 +204,14 @@ The limits for retaining historical data are defined in the following table.
 
 |Data node | Enterprise|
 |--- | --- |
-|`browserPerf1mGroups` | 30 days|
+|`browserInsightsAdaptiveGroups` | 30 days|
 |`firewallEventsAdaptiveByTimeGroups` | 30 days|
 |`firewallEventsAdaptiveGroups` | 30 days|
-|`firewallRulePreviewGroups` | 30 days|
 |`healthCheckEventsGroups` | 90 days|
 |`healthCheckEvents` | 90 days|
-|`httpRequests1dByColoGroups` | 365 days|
+|`httpRequestsAdaptiveGroups` | 30 days|
 |`httpRequests1dGroups` | 365 days|
 |`httpRequests1hGroups` | 90 days|
-|`httpRequests1mByColoGroups` | 7 days|
 |`httpRequests1mGroups` | 7 days|
 |`loadBalancingRequestsGroups` | 30 days|
 |`loadBalancingRequests` | 30 days|
@@ -239,7 +237,7 @@ Field | Description
   viewer {
     zones(filter: { zoneTag: $zoneTag }) {
       settings {
-        browserPerf1mGroups {
+        browserInsightsAdaptiveGroups {
           maxDuration
           maxNumberOfFields
           maxPageSize
@@ -262,7 +260,7 @@ Field | Description
       "zones": [
         {
           "settings": {
-            "browserPerf1mGroups": {
+            "browserInsightsAdaptiveGroups": {
               "enabled": true,
               "maxDuration": 2592000,
               "maxNumberOfFields": 30,

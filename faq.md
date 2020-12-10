@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-06"
+lastupdated: "2020-12-03"
 
-keywords: configuration domain, Free Trial plan, CIS instance
+keywords:
 
 subcollection: cis
 
@@ -34,12 +34,6 @@ subcollection: cis
 
 Have a question about {{site.data.keyword.cis_full}}? Review these frequently asked questions, which provide answers to provisioning concerns, application access, and other common inquiries.
 
-## What happened to the Early Access Plan that used to be in the catalog?
-{:#cis-faq-early-access-plan}
-{: faq}
-
-The Early Access Plan was removed from the Catalog on May 31, 2018. It was replaced by the Standard paid plan, and a new 30-day Free Trial plan. You are not allowed to create a Free Trial instance if you participated in the Early Access beta.
-
 ## What do I get with a Free Trial Plan?
 {:#cis-faq-free-trial-plan}
 {: faq}
@@ -51,18 +45,6 @@ The Free Trial plan, by design, allows only one zone per account. It is recommen
 {: faq}
 
 You can have, at most, one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, if you delete a free trial instance, or if the free trial expires, you are not allowed to create another free trial instance. You can, however, create instances of other paid plan types (for example, Standard), independent of any free trials you might have created.
-
-## I had an Early Access instance that I (may or may not have) deleted. Can I create a Free Trial instance now?
-{:#cis-faq-early-access-to-free-trial-plan}
-{: faq}
-
-No. Early Access Plan can only be upgraded to a paid plan, which is the Standard plan at this time.
-
-## I had an Early Access instance that I (might or might not have) deleted. Can I create a Free Trial instance now?
-{:#cis-faq-early-access-and-free-trial-plan}
-{: faq}
-
-No. Each account is entitled to only one free instance. Both the Early Access Plan and the Free Trial plan that replaced it count as free plans. This also means that you can have at most one Free Trial instance.
 
 ## Can I downgrade from Standard to the Free Trial?
 {:#cis-faq-downgrade-standard-to-free-plan}
@@ -255,12 +237,30 @@ Contact [IBM support](/docs/cis?topic=cis-gettinghelp) and provide the script th
 
 ## How do I find my service instance ID?
 {:#cis-faq-service-instance-id}
+{:faq}
 
 To find your service instance ID, copy the CRN on the overview page. For example:
 
 ```
 crn:v1:test:public:internet-svcs:global:a/2c38d9a9913332006a27665dab3d26e8:836f33a5-d3e1-4bc6-876a-982a8668b1bb::
 ```
+{:pre}
+
 The last part of the CRN is your service instance: `836f33a5-d3e1-4bc6-876a-982a8668b1bb`.
 
 Alternatively, you can click the row containing the {{site.data.keyword.cis_short_notm}} instance on the resource list main page and copy the GUID for the service instance ID.
+
+## Does {{site.data.keyword.cis_short_notm}} compress resources?
+{:#cis-compress-resources}
+{:faq}
+
+Yes, {{site.data.keyword.cis_short_notm}} applies "gzip" and "brotli" compression to some types of content. {{site.data.keyword.cis_short_notm}} also compresses items based on the browser's UserAgent to speed up page loading time.
+
+If you're already using gzip {{site.data.keyword.cis_short_notm}} honors your gzip settings as long as you're passing the details in a header from your web server for the files.
+
+{{site.data.keyword.cis_short_notm}} only supports the content type "gzip" towards your origin server and can also only deliver content either gzip-compressed, brotli-compressed, or not compressed.
+
+{{site.data.keyword.cis_short_notm}}'s reverse proxy is also able to convert between compressed formats and uncompressed formats, meaning that it can pull content from a customer's origin server via gzip and serve it to clients uncompressed (or vice versa). This is done independently of caching.
+
+The Accept-Encoding header is not respected and is removed.
+{:note}
