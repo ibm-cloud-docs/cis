@@ -41,6 +41,9 @@ Before you begin using {{site.data.keyword.cis_short_notm}}:
 * You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then, you can order your services through the [{{site.data.keyword.cis_full_notm}} console](https://{DomainName}/catalog/services/internet-services).
 * If you need assistance in obtaining an account to use {{site.data.keyword.cis_short_notm}}, [contact your IBM Sales representative](https://{DomainName}/cloud/support) for more guidance on getting started.
 
+It is recommended that you use the Chrome browser for {{site.data.keyword.cis_short_notm}}.
+{:tip}
+
 ## Process overview
 {:#process-overview}
 
