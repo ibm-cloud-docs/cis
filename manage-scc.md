@@ -33,7 +33,7 @@ subcollection: cis
 
 <!--Add the following sections as your service onboards to the Security and Compliance Center. You might have only monitoring or you might also have configuration enforcement. Also, if you only have one of the options, be sure to remove the bulleted list and write the following section as a sentence.-->
 
-With the {{site.data.keyword.compliance_short}}, you can monitor for controls and goals that pertain to {{site.data.keyword.cis_short_notm}} .
+With the {{site.data.keyword.compliance_short}}, you can monitor for controls and goals that pertain to {{site.data.keyword.cis_short_notm}}.
 
 ## Monitoring security and compliance posture with {{site.data.keyword.cis_short_notm}}
 {: #monitor-cis}
@@ -43,7 +43,7 @@ As a security or compliance focal, you can use the {{site.data.keyword.cis_short
 All of the goals for {{site.data.keyword.cis_short_notm}} are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile but can also be mapped to other profiles.
 {: note}
 
-To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic-security-compliance-getting-started)
+To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic-security-compliance-getting-started).
 
 ### Available goals for {{site.data.keyword.cis_short_notm}}
 {: #cis-available-goals}
