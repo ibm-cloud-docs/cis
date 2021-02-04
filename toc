@@ -120,6 +120,7 @@ Cloud Internet Services (CIS)
     allowlisted-ips.md
     helpful-tools.md
     hipaa-advisory.md
+    [Terraform](https://cloud.ibm.com/docs/terraform?topic=terraform-getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
