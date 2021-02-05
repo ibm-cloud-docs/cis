@@ -23,6 +23,7 @@ Cloud Internet Services (CIS)
         waf-concept.md
         routing.md
         cache.md
+        http-concepts.md
 
     {: .topicgroup}
     Tutorials
@@ -126,6 +127,17 @@ Cloud Internet Services (CIS)
     {: .navgroup id="help"}
     faq.md
     known-limitations.md
-    troubleshooting.md
+
+    {:topicgroup}
+    Troubleshooting CIS
+        ts-network-connection.md
+        ts-root-cert.md
+        ts-offline.md
+        ts-privacy-warn.md
+        ts-ddos.md
+        ts-no-traffic.md
+        ts-false-pos-neg.md
+        troubleshooting.md
+
     getting-help.md
     {: .navgroup-end}
