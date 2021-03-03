@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-08-05"
 
-keywords: IBM Cloud Internet Services, CIS Activity Tracker events
+keywords: CIS Activity Tracker events
 
 subcollection: cis
 
@@ -45,11 +45,12 @@ The following table lists the actions that are related to DNS domains and genera
 
 |Action|Description|
 |---|--|  
-|internet-svcs.zones.create| |Create a DNS domain.|
-|internet-svcs.zones.update| |Update a DNS domain.|
-|internet-svcs.zones.delete| |Delete a DNS domain.|
-|internet-svcs.zones-activation-check.update|Perform activation check for a DNS domain.|
-|internet-svcs.dnssec.update| |Enable or disable DNSSEC for a DNS domain.|
+|internet-svcs.zones.create|Create a DNS domain.|
+|internet-svcs.zones.update|Update a DNS domain.|
+|internet-svcs.zones.delete|Delete a DNS domain.|
+|internet-svcs.zones-activation-check.update| Perform activation check for a DNS domain.|
+|internet-svcs.dnssec.update|Enable or disable DNSSEC for a DNS domain.|
+{: caption="Table 1. Actions that generate DNS domain events" caption-side="top"}
 
 ## List of events: DNS records
 {: #events_dns_record}
@@ -62,6 +63,7 @@ The following table lists the actions that are related to DNS records and genera
 |internet-svcs.dns-records.update|Update a DNS record.|
 |internet-svcs.dns-records.delete|Delete a DNS record.|
 |internet-svcs.dns-records-bulk.create|Import DNS records from zone file.|
+{: caption="Table 2. Actions that generate DNS record events" caption-side="top"}
 
 ## List of events: Load balancers
 {: #events_load_balancers}
@@ -79,6 +81,7 @@ The following table lists the actions that are related to load balancers and gen
 |internet-svcs.load-balancer-pools.create|Create a global load balancer pool.|
 |internet-svcs.load-balancer-pools.update|Update a global load balancer pool.|
 |internet-svcs.load-balancer-pools.delete|Delete a global load balancer pool.|
+{: caption="Table 3. Actions that generate load balancer events" caption-side="top"}
 
 ## List of events: Purging the cache
 {: #events_cache}
@@ -91,6 +94,7 @@ The following table lists the actions that are related to purging the cache and 
 |internet-svcs.purge-cache-by-urls.update|Purge cached assets by URLs from edge server.|
 |internet-svcs.purge-cache-by-cache-tags.update|Purge cached assets by cache tags from edge server.|
 |internet-svcs.purge-cache-by-hosts.update|Purge cached assets by hostnames from edge server.|
+{: caption="Table 4. Actions that generate cache purge events" caption-side="top"}
 
 ## List of events: Page rules
 {: #events_page_rules}
@@ -102,6 +106,7 @@ The following table lists the actions that are related to page rules and generat
 |internet-svcs.pagerules.create|Create a page rule.|
 |internet-svcs.pagerules.update|Update a page rule.|
 |internet-svcs.pagerules.delete|Delete a page rule.|
+{: caption="Table 5. Actions that generate page rule events" caption-side="top"}
 
 
 ## List of events: Firewalls
@@ -129,6 +134,7 @@ The following table lists the actions that are related to firewalls and generate
 |internet-svcs.domain-lockdown-rules.create|Create domain lockdown rule.|
 |internet-svcs.domain-lockdown-rules.update|Update domain lockdown rule.|
 |internet-svcs.domain-lockdown-rules.delete|Delete domain lockdown rule.|
+{: caption="Table 6. Actions that generate firewall events" caption-side="top"}
 
 ## List of events: Rate limiting
 {: #events_rate_limiting}
@@ -140,6 +146,7 @@ The following table lists the actions that are related to rate limiting and gene
 |internet-svcs.rate-limits.create|Create rate limiting rule.|
 |internet-svcs.rate-limits.update|Update rate limiting rule.|
 |internet-svcs.rate-limits.delete|Delete rate limiting rule.|
+{: caption="Table 7. Actions that generate rate limiting events" caption-side="top"}
 
 ## List of events: Routing
 {: #events_routing}
@@ -150,6 +157,7 @@ The following table lists the actions that are related to routing and generate a
 |---|--|  
 |internet-svcs.smart-routing.update|Enable or disable smart routing.|
 |internet-svcs.tiered-caching.update|Enable or disable tiered caching.|
+{: caption="Table 8. Actions that generate routing events" caption-side="top"}
 
 ## List of events: Certificate packs
 {: #events_certificate_packs}
@@ -160,6 +168,7 @@ The following table lists the actions that are related to certificate packs and 
 |---|--|  
 |internet-svcs.certificate-packs.create|Order a dedicated wildcard or custom certificate.|
 |internet-svcs.certificate-packs.delete|Delete a dedicated wildcard or custom certificate.|
+{: caption="Table 9. Actions that generate certificate pack events" caption-side="top"}
 
 ## List of events: Custom certificates
 {: #events_custom_certificate}
@@ -171,6 +180,7 @@ The following table lists the actions that are related to custom certificates an
 |internet-svcs.custom-certificates.create|Upload a custom certificate.|
 |internet-svcs.custom-certificates.update|Update a custom certificate.|
 |internet-svcs.custom-certificates.delete|Delete a custom certificate.|
+{: caption="Table 10. Actions that generate custom certificate events" caption-side="top"}
 
 ## List of events: Origin certificates
 {: #events_origin_certificate}
@@ -181,6 +191,7 @@ The following table lists the actions that are related to origin certificates an
 |---|--|  
 |internet-svcs.origin-certificates.create|Create an origin certificate.|
 |internet-svcs.origin-certificates.delete|Revoke an origin certificate.|
+{: caption="Table 11. Actions that generate origin certificate events" caption-side="top"}
 
 ## List of events: Edge Functions
 {: #events_edge_functions}
@@ -195,6 +206,8 @@ The following table lists the actions that are related to edge functions and gen
 |internet-svcs.edge-functions-routes.create|Create an edge functions route.|
 |internet-svcs.edge-functions-routes.update|Update an edge functions route.|
 |internet-svcs.edge-functions-routes.delete|Delete an edge functions route.|
+{: caption="Table 12. Actions that generate edge functions events" caption-side="top"}
+
 
 ## List of events: Range Applications
 {: #events_range_apps}
@@ -206,6 +219,8 @@ The following table lists the actions that are related to range applications and
 |internet-svcs.range-apps.create|Create a range application.|
 |internet-svcs.range-apps.update|Update a range application.|
 |internet-svcs.range-apps.delete|Delete a range application.|
+{: caption="Table 13. Actions that generate range events" caption-side="top"}
+
 
 ## List of events: Logpush
 {: #events_logpush}
@@ -219,6 +234,8 @@ The following table lists the actions that are related to Logpush and generate a
 |internet-svcs.logpush-jobs.create|Create a logpush job.|
 |internet-svcs.logpush-jobs.update|Update a logpush job.|
 |internet-svcs.logpush-jobs.delete|Delete a logpush job.|
+{: caption="Table 14. Actions that generate logpush events" caption-side="top"}
+
 
 ## List of events: Custom error pages
 {: #events_custom_error_pages}
@@ -229,6 +246,8 @@ The following table lists the actions that are related to custom error pages and
 |---|--|  
 |internet-svcs.custom-pages.create|Create a custom error page.|
 |internet-svcs.custom-pages.update|Update a custom error page.|
+{: caption="Table 15. Actions that generate custom error page events" caption-side="top"}
+
 
 ## List of events: Settings
 {: #events_settings}
@@ -263,6 +282,8 @@ The following table lists the actions that are related to configuring settings a
 |internet-svcs.http2-setting.update|Enable or disable HTTP2 for the domain.|
 |internet-svcs.max-upload-setting.update|Change the amount of data visitors can upload to the website in a single request.|
 |internet-svcs.origin-error-page-pass-thru-setting.update|Enable or disable the proxy of 502 and 504 error pages returned from origin server.|
+{: caption="Table 16. Actions that generate settings events" caption-side="top"}
+
 
 
 ## Viewing events
