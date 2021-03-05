@@ -49,7 +49,6 @@ Cloud Internet Services (CIS)
     {: .topicgroup}
     Working with WAFs
         waf-cis-ruleset.md
-        waf-owasp-ruleset.md
         security-events.md
 
     {: .topicgroup}
@@ -78,7 +77,8 @@ Cloud Internet Services (CIS)
         using-page-rules.md
         caching-with-page-rules.md
         resolve-override-cos.md
-        custom-page.md
+        
+    custom-page.md
 
     {: .topicgroup}
     Using edge functions
