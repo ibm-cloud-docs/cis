@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-23"
+  years: 2020, 2021
+lastupdated: "2021-03-16"
 
 keywords:
 
@@ -51,3 +51,18 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 * Ensure at the domain-level that Web Application Firewall is enabled via {{site.data.keyword.cis_short_notm}}
 * Ensure at the domain-level that traffic encryption is set at least to TLS 1.2 via {{site.data.keyword.cis_short_notm}}
 * Ensure at the domain-level that the TLS mode is set to End-End CA signed via {{site.data.keyword.cis_short_notm}} 
+
+## Governing {{site.data.keyword.cis_short_notm}} resource configuration
+{: #govern-cis}
+
+As a security or compliance focal, you can use the {{site.data.keyword.compliance_short}} to define configuration rules for the instances of {{site.data.keyword.cis_short_notm}} that you create.
+
+[Config rules](#x3084914){: term} are used to enforce the configuration standards that you want to implement across your accounts. To learn more about the about the data that you can use to create a rule for {{site.data.keyword.cis_short_notm}}, review the following table.
+
+| Resource kind | Property | Operator | Value | Description |
+|---------------|----------|---------------|-------|-------------|
+| *zone* | *tls_mode* | *string_equals*  | *on*<br/>*off* | A string indicating whether the WAF is turned on or off. |
+| *zone* | *waf_enabled* | *string_equals* | *off*<br/>*flexible*<br/>*full*<br/>*strict*<br/>*origin_pull* | A string indicating the TLS mode for encryption. |
+{: caption="Table 1. Rule properties for {{site.data.keyword.cis_short_notm}}" caption-side="top"}
+
+To learn more about config rules, check out [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-rule).
