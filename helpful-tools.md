@@ -84,7 +84,7 @@ The schema of this command is `dig <record_type> <domainname> <options>`
 `dig example.com @ns.example.com`
 
 ### Using `cURL`
-{:#using-curl}
+{:#use-curl}
 
 `cURL` is a Unix command line tool that lets you transmit data using the URL syntax. It’s commonly used to make HTTP requests or compare server responses.
 
