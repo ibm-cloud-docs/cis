@@ -47,5 +47,5 @@ If you are using an expired version of the Cloudflare origin root CA, you must t
 Select one of the following root certificates to download and install.
 {:tsResolve}
 
-  * [RSA version certificate](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_rsa_root.pem) 
-  * [ECC version certificate](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_ecc_root.pem) 
+  * [RSA version certificate.](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_rsa_root.pem) 
+  * [ECC version certificate.](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_ecc_root.pem) The previous version expires on 2021-02-22T00:24:00Z.
