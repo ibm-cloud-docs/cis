@@ -187,12 +187,12 @@ Control how {{site.data.keyword.cis_short_notm}} manages your cached assets.
 
 Fine-tune your cache behavior and create content optimization.
 
-###Routing
+### Routing
 {:routing-features}
 
 Eliminate excess latency by analyzing and optimizing routing decisions across the global internet using real-time network connections.
 
-###Advanced performance
+### Advanced performance
 {:advanced-performance}
 
 Apply Brotli compression and restrict upload sizes in the advanced performance section.
