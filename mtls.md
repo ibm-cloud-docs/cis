@@ -72,7 +72,7 @@ To set up mTLS authentication in the IBM Cloud Internet Services UI for a partic
    ```
    {: pre}
    
-   Without a client certificate in the request, a “403 forbidden” response displays and the site cannot be accessed.
+   Without a client certificate in the request, a "403 forbidden" response displays and the site cannot be accessed.
 1. Add your client certificate information to the request:
 
    ```bash
@@ -87,7 +87,7 @@ To set up mTLS authentication in the IBM Cloud Internet Services UI for a partic
 
 Follow this validation workflow when you enable this Access policy:
 1. All requests to the origin are evaluated for a valid client certificate.
-   The client device sends the client “hello”. The access application responds with “hello” and a request for the client certificate.
+   The client device sends the client "hello". The access application responds with "hello" and a request for the client certificate.
 1. The client returns a valid certificate.
 1. Client authentication handshake is completed against the root certificate authority.
 1. For chains, there is a check for expired certificates.
