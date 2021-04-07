@@ -46,7 +46,7 @@ The following table compares each offering to help you choose the one that's rig
 |**DDoS**|On (with proxy) or Off (no proxy)|On (with proxy) or Off (no proxy)|Yes (proxy)|Yes|
 |**TLS**|<ul><li>1 universal wildcard per domain</li><li>1 dedicated wildcard per domain</li><li>1 Dedicated custom per domain</li><li>1 Uploaded custom per domain</li></ul>|<ul><li>1 Universal wildcard per domain; up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 dedicated wildcards per domain, with ability to request more</li><li>10 dedicated custom per domain</li><li>1 Uploaded custom per domain</li></ul>|<ul><li>1 universal wildcard per domain; up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 dedicated wildcards per domain, with ability to request more</li><li>2 dedicated custom per domain</li><li>1 uploaded custom per domain</li></ul>|<ul><li>1 universal wildcard per domain; up to 10 free certificates per {{site.data.keyword.cis_short_notm}} instance</li> <li>2 Dedicated wildcard per domain, with ability to request more</li><li>3 dedicated custom per domain</li><li>1 uploaded custom per domain</li></ul>|
 |**Logpull/Logpush**|No|Yes|Yes|Yes|
-|**Page Rules**|50 page rules|<ul><li>100 page rules</li><li>Additional settings for fine-grained control</li></ul>|Not available |Same as Enterprise|
+|**Page Rules**|50 page rules per domain|<ul><li>100 page rules per domain</li><li>Additional settings for fine-grained control</li></ul>|Not available |Same as Enterprise|
 |**Rate Limiting**|No|Yes|Not available|Not available|
 |**IP Firewall**|<ul><li>Challenge</li><li>Block (Not available to `Country` filter)</li><li>JS challenge</li><li>Allowlist</li></ul>|<ul><li>Challenge</li><li>Block</li><li>JS challenge</li><li>Allowlist</li></ul>|Not available|Same as Enterprise|
 |**Caching**|Browser cache minimum TTL 30 minutes|Browser cache minimum TTL 30 seconds|Not available|Same as Enterprise|
@@ -77,5 +77,5 @@ The following table describes the key differences among the available plans.
 |**Rate limiting**|No|Yes|No|No|
 |**Smart routing**|No|Yes|No|No|
 |**Global load balancers origin limit**|6|100|18|6|
-|**Global load balancersLB lowest health<br> Check interval**|60s|5s|5s|Not available|
-|**Page rules<br> (Caching/Security)**|50|100|0|0|
+|**Global load balancers lowest health<br> Check interval**|60s|5s|5s|Not available|
+|**Page rules<br> (Caching/Security)**|50|100|0|100|
