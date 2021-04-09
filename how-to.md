@@ -63,7 +63,7 @@ To return to normal operation, click **Deactivate mode** in the notification ban
 ## Configuring and managing your DNS
 {:#configure-and-manage-your-dns}
 
-Go to your DNS page and add a record (most likely an A record). Type in the information about your DNS record and then click **Add record** to implement your changes.
+Go to the **Reliability** section, click the **DNS** tab and add a record. Type in the information about your DNS record and then click **Add record** to implement your changes.
 
 After creating your records, consider turning on the `Proxy` setting. Most of the features of {{site.data.keyword.cis_short_notm}} require that the internet traffic to your site flow through {{site.data.keyword.cis_short_notm}} infrastructure. In other words, it only applies to proxied records and load balancers. To really reap the benefit of {{site.data.keyword.cis_short_notm}}, make sure that your DNS records and load balancers have the proxy setting enabled.
 
