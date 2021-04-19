@@ -57,7 +57,7 @@ You can configure one log push job for each {{site.data.keyword.cos_short}} obje
 1. Select a bucket from the Bucket list menu.
 1. Optionally, enter a bucket path.
 1. Select the checkbox if you want to organize logs into daily subfolders.
-1. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with writer role.
+1. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with `Object Writer` role.
 1. Click the **Send ownership verification** button.
 1. Download the object you received in your bucket, paste the token in the text area, then click **Verify ownership**.
 1. Select the log fields that you want included in the log push, then click **Save**.
