@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-09-30"
+  years: 2018, 2021
+lastupdated: "2021-04-23"
 
 
 keywords: 
@@ -30,13 +30,12 @@ subcollection: cis
 # Using the Logpush service
 {:#logpush}
 
-{{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and range requests for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
+{{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
-The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) buckets. You’re free to choose the method that’s most convenient.
+The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) buckets. You’re free to choose the method that’s most convenient. You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before using Logpush.
 
-Range logs are not included in HTTP(s) logs and require a separate job. These jobs can be pushed to the same {{site.data.keyword.cos_short}} bucket, but must have a different path.
-{:tip}
+Range and firewall event logs are not included in HTTP(s) logs and require separate jobs. These jobs can be pushed to the same {{site.data.keyword.cos_short}} bucket, but must have a different path.
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
 
@@ -44,6 +43,9 @@ Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log
 {:#logpush-setup-ui}
 
 **Prerequisite**: Before you create a Logpush job, you must have an [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
+
+It is recommended that you set up an allowlist that ensures only [{{site.data.keyword.cis_short_notm}} IPs](/docs/cis?topic=cis-cis-allowlisted-ip-addresses) can push objects into the {{site.data.keyword.cos_short}} bucket. For more information on configuring an IP allowlist in {{site.data.keyword.cos_short}}, see [Setting a firewall](/docs/cloud-object-storage?topic=cloud-object-storage-setting-a-firewall).
+{:tip}
 
 Follow these steps to add an application.
 
