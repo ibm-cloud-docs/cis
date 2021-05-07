@@ -43,6 +43,7 @@ Cloud Internet Services (CIS)
     dns.md
     rate-limiting.md
     range.md
+    private-endpoint.md
     
     {: .topicgroup}
     Working with TLS
@@ -74,7 +75,6 @@ Cloud Internet Services (CIS)
             glb-traffic-steering.md
             glb-proxy-modes.md
             glb-session-affinity.md
-
 
     {: .topicgroup}
     Working with page rules
