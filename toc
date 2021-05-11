@@ -24,6 +24,7 @@ Cloud Internet Services (CIS)
         routing.md
         cache.md
         http-concepts.md
+        compression-concepts.md
 
     {: .topicgroup}
     Tutorials
