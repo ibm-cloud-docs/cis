@@ -131,7 +131,7 @@ To upload a client certificate in {{site.data.keyword.cis_short_notm}}:
     `$ request_body=$(< <(cat <<EOF { "certificate": "$MYCERT", "private_key": "$MYKEY" } } EOF ))`
 
 1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#upload-authenticated-origin-pull-certificate) 
-1. Enable authenticated origin pull on specified hostname through the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#authenticated-origin-pull#update-authenticated-origin-pull-setting). Link the client certificate to the specific hostname
+1. Enable authenticated origin pull on specified hostname through the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#update-authenticated-origin-pull-setting). Link the client certificate to the specific hostname
  
 ## Replacing a client certificate without downtime
 {: #replace-client-cert}
