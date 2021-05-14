@@ -92,7 +92,7 @@ To enable authenticated origin pull globally on a zone:
    `$ request_body=$(< <(cat <<EOF { "certificate": "$MYCERT", "private_key": "$MYKEY" } } EOF ))`
 
 1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#upload-authenticated-origin-pull-certificate) 
-1. Enable authenticated origin pull via [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#authenticated-origin-pull#update-authenticated-origin-pull-setting)
+1. Enable authenticated origin pull via [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#update-authenticated-origin-pull-setting)
 
 ## Per-hostname authenticated origin pull using customer certificates
 {: #per-host-zone-auth-org-pull}
