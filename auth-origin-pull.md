@@ -58,7 +58,7 @@ To enable authenticated origin pull globally on a zone:
   1. Install the certificate at the origin web server to authenticate all connections
   1. Configure {{site.data.keyword.cis_short_notm}} with **[End-to-End flexible](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible)**
   1. Configure the origin web server to accept client certificates
-  1. Enable authenticated origin pull via [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#authenticated-origin-pull#update-authenticated-origin-pull-setting)
+  1. Enable authenticated origin pull via [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#update-authenticated-origin-pull-setting)
 
 ## Zone-level authenticated origin pull using customer certificates
 {: #cust-cert-zone-auth-org-pull}
