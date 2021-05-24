@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2021-04-02"
+lastupdated: "2021-05-20"
 
 keywords:
 
@@ -38,7 +38,7 @@ With the {{site.data.keyword.compliance_short}}, you can monitor for controls an
 ## Monitoring security and compliance posture with {{site.data.keyword.cis_short_notm}}
 {: #monitor-cis}
 
-As a security or compliance focal, you can use the {{site.data.keyword.cis_short_notm}} [goals](x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](x2034950){: term}, you can identity potential issues as they arise.
+As a security or compliance focal, you can use the {{site.data.keyword.cis_short_notm}} [goals](x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](x2034950){: term}, you can identify potential issues as they arise.
 
 All of the goals for {{site.data.keyword.cis_short_notm}} are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile but can also be mapped to other profiles.
 {: note}
@@ -48,9 +48,10 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 ### Available goals for {{site.data.keyword.cis_short_notm}}
 {: #cis-available-goals}
 
-* Ensure at the domain-level that Web Application Firewall is enabled via {{site.data.keyword.cis_short_notm}}
-* Ensure at the domain-level that traffic encryption is set at least to TLS 1.2 via {{site.data.keyword.cis_short_notm}}
-* Ensure at the domain-level that the TLS mode is set to End-End CA signed via {{site.data.keyword.cis_short_notm}} 
+* Check whether {{site.data.keyword.cis_short}} has Web Application Firewall enabled
+* Check whether {{site.data.keyword.cis_short}} has TLS v1.2 set for all inbound traffic
+* Check whether {{site.data.keyword.cis_short}} has DDoS protection enabled
+* Check whether {{site.data.keyword.cis_short}} has TLS mode set to End-to-End CA signed
 
 
 ## Governing {{site.data.keyword.cis_short_notm}} resource configuration
