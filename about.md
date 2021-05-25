@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-06-25"
+  years: 2018, 2021
+lastupdated: "2021-05-11"
 
-keywords: Caching, IBM Cloud Internet Services, Web Application Firewall
+keywords:
 
 subcollection: cis
 
@@ -34,6 +34,13 @@ subcollection: cis
 {:shortdesc}
 
 IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishing defaults for you, which you can change easily using the UI or API.
+
+## Clock synchronization
+{: #clock-sync}
+
+ISO 27001 requires that clocks of all relevant information processing systems within an organization or security domain must be synchronized with a single reference time source. {{site.data.keyword.cis_short_notm}} synchronizes the systems with a Network Time Protocol (NTP) server to ensure that all time-based activities occur synchronously everywhere on the network.
+
+IBM {{site.data.keyword.cis_short_notm}} uses an internal NTP server `servertime.service.softlayer.com`.
 
 ## Security features
 {:#cis-security-features}
