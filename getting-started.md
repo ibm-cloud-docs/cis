@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-02-20"
 
-keywords: IBM Cloud Internet Services, IBM CIS application, Authoritative DNS servers, CIS
+keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
 subcollection: cis
 
@@ -50,9 +50,10 @@ It is recommended that you use the Chrome browser for {{site.data.keyword.cis_sh
 You can start using {{site.data.keyword.cis_short_notm}} for your internet traffic with just a few steps.
 
  1. Open the {{site.data.keyword.cis_short_notm}} application from your IBM Cloud dashboard.
- 2. Add the domain that you want to manage.
- 3. Configure your DNS information with the name servers provided.
- 4. Continue getting started with {{site.data.keyword.cis_short_notm}} by following a tutorial, or by setting up other features.
+ 1. Add the domain that you want to manage.
+ 1. Set up your DNS records (optional).
+ 1. Configure your DNS information with the name servers provided.
+ 1. Continue getting started with {{site.data.keyword.cis_short_notm}} by following a tutorial, or by setting up other features.
 
 ### Step 1: Open the IBM {{site.data.keyword.cis_short_notm}} application
 {:#open-cis-application}
@@ -112,11 +113,11 @@ When you are finished, or to skip this step, select **Next step**.
 ### Step 4. Configure your name servers with the registrar or existing DNS provider
 {:#configure-your-name-servers-with-the-registrar-or-existing-dns-provider}
 
-To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, configure your registrar or domain name provider to use the name servers listed. If you're delegating a domain (something like `example.com`), configure the listed name servers in your domain's settings, where they are managed by your registrar (for example, on the registrar's web portal). If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){:external}.
+To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, you must delegate your domain to {{site.data.keyword.cis_short_notm}}. To delegate a domain, create an NS record with the name servers provided by {{site.data.keyword.cis_short_notm}} at your domain's registrar or existing DNS provider. If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){:external}.
 
 If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS records in Cloudflare](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare){:external} for detailed instructions by provider.
 
-After you configure your registrar or DNS provider, it can take up to 24 hours for the changes to take effect. When we verify that the specified name servers were configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. After configuring the name servers, you can click the **Recheck name servers** link in the `Overview` page to potentially accelerate the activation of your domain. You can submit this check only one time an hour.
+After you configure your registrar or DNS provider, it can take up to 24 hours for the changes to take effect. When we verify that the specified name servers were configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. 
 
 Your domain must move to `Active` state within 60 days or your domain and any configuration data is removed.
 {:important}
@@ -128,4 +129,4 @@ To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS rec
 
 ## Next steps
 
-To begin managinag CIS functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-manage-your-cis-deployment#manage-your-cis-deployment).
+To begin managinag {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-manage-your-cis-deployment#manage-your-cis-deployment).
