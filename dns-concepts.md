@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-06-25"
+  years: 2018, 2021
+lastupdated: "2021-06-29"
 
-keywords: domain name system, DNS servers, match domain names, DNS Concepts
+keywords:
 
 subcollection: cis
 
@@ -55,7 +55,38 @@ A **custom domain name server** allows you to utilize the DNS provider's servers
 
 IBM {{site.data.keyword.cis_short_notm}} supports a feature called "CNAME Flattening." Using this method, root records can overcome the IETF RFC restriction that if a root record is a CNAME, it cannot have any other records for that domain. {{site.data.keyword.cis_short_notm}} Authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records such as MX records to be added to the domain, even though the root record is a CNAME.
 
-## Proxying DNS records
+## Proxying DNS records and global load balancers
 {:#dns-concepts-proxying-dns-records}
 
-IBM {{site.data.keyword.cis_short_notm}} supports the ability to toggle whether a record is proxied or not. When a record is proxied, it means that its traffic runs directly through {{site.data.keyword.cis_short_notm}}. Currently, records with types **A**, **AAAA**, or **CNAME** can be proxied.
+IBM {{site.data.keyword.cis_short_notm}} supports proxying for global load balancers and DNS records. When a record or load balancer is proxied, it means that its traffic runs directly through {{site.data.keyword.cis_short_notm}}. 
+
+Currently, DNS records of type **A**, **AAAA**, or **CNAME** can be proxied.
+{:note}
+
+### Setting proxy modes
+{: #dns-proxy-modes}
+
+Load balancers and DNS records support both DNS-only and HTTP proxy modes. You can have HTTP proxy and DNS-only domains in the same {{site.data.keyword.cis_short_notm}} instance, but the traffic routing behavior differs as follows:
+
+  * Traffic for records that are proxied flows through {{site.data.keyword.cis_short_notm}}.
+  * Traffic for records that are non-proxied (DNS-only mode) flows directly from the client to the origin. 
+  
+### HTTP proxy mode
+{: #dns-http-proxy-mode}
+
+In HTTP proxy mode, {{site.data.keyword.cis_short_notm}} announces IBM IP addresses externally, but protects (mask) your origin server IP addresses. The announced IP address records have an automatic TTL. 
+
+Using HTTP proxy mode offers the following benefits:
+
+* Traffic flows through {{site.data.keyword.cis_short_notm}} where all the security, performance, and reliability features such as firewall rules, caching, and so on, are applied.
+* The "automatic" TTL (five minutes) reduces the number of authoritative queries made against {{site.data.keyword.cis_short_notm}}. 
+
+### DNS-only mode
+{: #dns-dns-only-mode}
+
+In DNS-only mode, records are resolved to the origin IP and you can customize the TTL for your records. For global load balancers, {{site.data.keyword.cis_short_notm}} serves the addresses of the healthy origin servers directly, but relies on DNS resolvers respecting the short TTL to re-query the {{site.data.keyword.cis_short_notm}} DNS for an updated list of healthy addresses.
+
+In DNS-only mode, none of the {{site.data.keyword.cis_short_notm}} security, performance, and reliability features is applied.
+{:important}
+
+

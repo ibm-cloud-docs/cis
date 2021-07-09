@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cis" category="network_edge" audience="service" href="/docs/cis?topic=cis-getting-started" console-page="/catalog/services/internet-services" product-page="https://www.ibm.com/cloud/cloud-internet-services" path="cis"}
+{: .toc subcollection="cis" category="network_edge" audience="service" href="/docs/cis" console-page="/catalog/services/internet-services" product-page="https://www.ibm.com/cloud/cloud-internet-services" path="cis"}
 Cloud Internet Services (CIS)
 
     {: .navgroup id="learn"}
@@ -126,7 +126,7 @@ Cloud Internet Services (CIS)
     allowlisted-ips.md
     helpful-tools.md
     hipaa-advisory.md
-    [Terraform](https://cloud.ibm.com/docs/terraform?topic=terraform-getting-started)
+    [Terraform](https://{DomainName}/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
