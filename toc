@@ -45,7 +45,7 @@ Cloud Internet Services (CIS)
     rate-limiting.md
     range.md
     private-endpoint.md
-    
+
     {: .topicgroup}
     Working with TLS
         ssl-options.md
@@ -82,7 +82,7 @@ Cloud Internet Services (CIS)
         using-page-rules.md
         caching-with-page-rules.md
         resolve-override-cos.md
-        
+
     custom-page.md
 
     {: .topicgroup}
@@ -113,8 +113,9 @@ Cloud Internet Services (CIS)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    /cis-cli-plugin/cis-cli-plugin-cis-cli
     [CIS API reference](https://{DomainName}/apidocs/cis)
+    /cis-cli-plugin/cis-cli-plugin-cis-cli
+    [Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis)
 
     {:topicgroup}
     CIS use cases
@@ -126,7 +127,6 @@ Cloud Internet Services (CIS)
     allowlisted-ips.md
     helpful-tools.md
     hipaa-advisory.md
-    [Terraform](https://{DomainName}/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
