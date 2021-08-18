@@ -28,18 +28,18 @@ subcollection: cis
 # Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
 
-{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-manage-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-managing-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-managing-your-cis-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-managing-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
 {:shortdesc}
 
-For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs. These features are detailed in the [About {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis) section.
+For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs. These features are detailed in the [About {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services) section.
 
 ## Before you begin
 {:#before-you-begin}
 
 Before you begin using {{site.data.keyword.cis_short_notm}}:
 
-* You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). Then, you can order your services through the [{{site.data.keyword.cis_full_notm}} console](https://{DomainName}/catalog/services/internet-services).
-* If you need assistance in obtaining an account to use {{site.data.keyword.cis_short_notm}}, [contact your IBM Sales representative](https://{DomainName}/cloud/support) for more guidance on getting started.
+* You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). 
+* Then, you can order your services through the [{{site.data.keyword.cis_full_notm}} console](https://{DomainName}/catalog/services/internet-services).
 
 It is recommended that you use the Chrome browser for {{site.data.keyword.cis_short_notm}}.
 {:tip}
@@ -49,11 +49,11 @@ It is recommended that you use the Chrome browser for {{site.data.keyword.cis_sh
 
 You can start using {{site.data.keyword.cis_short_notm}} for your internet traffic with just a few steps.
 
- 1. Open the {{site.data.keyword.cis_short_notm}} application from your IBM Cloud dashboard.
- 1. Add the domain that you want to manage.
- 1. Set up your DNS records (optional).
- 1. Configure your DNS information with the name servers provided.
- 1. Continue getting started with {{site.data.keyword.cis_short_notm}} by following a tutorial, or by setting up other features.
+1. Open the {{site.data.keyword.cis_short_notm}} application from your IBM Cloud dashboard.
+1. Add the domain that you want to manage.
+1. Set up your DNS records (optional).
+1. Configure your DNS information with the name servers provided.
+1. Continue getting started with {{site.data.keyword.cis_short_notm}} by following a tutorial, or by setting up other features.
 
 ### Step 1: Open the IBM {{site.data.keyword.cis_short_notm}} application
 {:#open-cis-application}
@@ -129,4 +129,4 @@ To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS rec
 
 ## Next steps
 
-To begin managinag {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-manage-your-cis-deployment#manage-your-cis-deployment).
+To begin managinag {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-managing-your-cis-deployment).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-06"
+  years: 2018, 2021
+lastupdated: "2021-07-20"
 
 keywords: 
 
@@ -31,12 +31,15 @@ subcollection: cis
 {{site.data.keyword.cis_full}} offers several plans to choose from: Free Trial, Standard, and Enterprise variations.
 {: shortdesc}
 
-The Free Trial Plan is the same as the Standard Plan, except that it expires after 30 days. Only one free trial is available per account.
+The Free Trial plan is the same as the Standard Plan, except that it expires after 30 days. Only one free trial is available per account.
 {: note}
 
-The following table compares each offering to help you choose the one that's right for you.
+The numbers in these tables are quotas or resource limits for the associated feature. Features are pay-as-you-go, except for Free Trial and Standard plans.
+{:tip}
 
-|         | Standard<br>(30 day no-cost <br>trial available) | Enterprise Package or Usage | Enterprise GLB | Enterprise Security|  
+The following table compares each offering to help you choose the one that's right for you. Enterprise usage and package plans are available with different pricing models.
+
+|         | Standard<br>(30 day no-cost <br>trial available) | Enterprise<br>Package or Usage<br>(different pricing models) | Enterprise GLB | Enterprise Security|  
 | :------- | :--------- | :------------ | :--------- | :--------- |
 |**Time**|Monthly Billing |Monthly Billing|Monthly Billing|Monthly Billing|
 |**Domain**|1|Up to 1000, but recommend no more than 20|2|3|
@@ -61,7 +64,7 @@ The following table compares each offering to help you choose the one that's rig
 ## Key plan differences
 {: #key-plan-differences}
 
-The following table describes the key differences among the available plans.
+The following table describes the key differences among the available plans. Enterprise usage and package plans are available with different pricing models.
 
 | Feature |Standard<br> (30 day no-cost <br>trial available)|Enterprise <br> (Usage and Package <br>plans available)| Enterprise GLB| Enterprise security|
 | :------ | :---------: | :----------: | :---------: | :---------: |

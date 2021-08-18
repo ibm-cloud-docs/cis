@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-11-18"
+  years: 2018, 2021
+lastupdated: "2021-08-04"
 
 keywords:
 
@@ -119,6 +119,9 @@ To add this record type, valid values must exist in the **Name**, **Service Name
 
 ### SPF Type record
 {:#spf-type-record}
+
+Support for SPF records (deprecated in RFC 7208) is ending in February, 2022. After this date, you can no longer create SPF type records in {{site.data.keyword.cis_short_notm}}. Use TXT records instead.
+{: deprecated}
 
 To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
