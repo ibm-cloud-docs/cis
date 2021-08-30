@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020
-lastupdated: "2021-05-20"
+lastupdated: "2021-08-30"
 
-keywords:
+keywords: security and compliance for CIS, CIS compliance, CIS security, security for CIS, Compliance for CIS
 
 subcollection: cis
 
@@ -67,4 +67,4 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 | *zone* | *waf_enabled* | *string_equals* | *on*<br/>*off* | A string indicating whether the WAF is turned on or off. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.cis_short_notm}}" caption-side="top"}
 
-To learn more about config rules, check out [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-rule).
+To learn more about constructing config rules, check out [Formatting rules and templates](/docs/security-compliance?topic=security-compliance-formatting-rules-templates).

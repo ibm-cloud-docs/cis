@@ -90,7 +90,7 @@ Consult https://whois.icann.org/ for this information.
 You must have the administrator privilege to edit your domain's configuration at the registrar in order to update or add the name servers provided for your domain when you add it to CIS. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the permission to update your domain's configuration at the registrar. Work with the owner of the domain in your organization to make the necessary changes.
 {: note}
 
-## I want to keep my current DNS provider for my domain (example.com). Can I delegate a subdomain (subdomain.example.com) from my current DNS provider to CIS?
+## I want to keep my current DNS provider for my domain (`example.com`). Can I delegate a subdomain (`subdomain.example.com`) from my current DNS provider to CIS?
 {:#cis-faq-keep-current-dns-provider}
 {: faq}
 

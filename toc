@@ -25,6 +25,7 @@ Cloud Internet Services (CIS)
         cache.md
         http-concepts.md
         compression-concepts.md
+        domain-lifecycle.md
 
     {: .topicgroup}
     Tutorials
