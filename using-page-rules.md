@@ -27,13 +27,13 @@ subcollection: cis
 
 
 # Using page rules
-{:#use-page-rules}
+{: #use-page-rules}
 
 A page rule specifies settings and values that you can apply to a specific URL pattern that references your domain. Page rules help you manage security, performance, and reliability based on each individual URL in your site. The following table describes the page rules that are available to customers, the behaviors they produce, and any special considerations you should keep in mind before you use them.
 {: shortdesc}
 
 ## Security
-{:#page-rules-security}
+{: #page-rules-security}
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
@@ -52,7 +52,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**True Client IP Header**|{{site.data.keyword.cis_short_notm}} sends the user's IP address in the `True-Client-IP` header.  |Enterprise only |
 
 ## Reliability
-{:#page-rules-reliability}
+{: #page-rules-reliability}
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
@@ -64,7 +64,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**Origin Error Page Pass-through**|Disables {{site.data.keyword.cis_short_notm}} error pages that would trigger for issues that are sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only |
 
 ## Performance
-{:#page-rules-performance}
+{: #page-rules-performance}
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
@@ -83,17 +83,17 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**Script Load Optimization**|Improves paint times by asynchronously loading your JavaScripts, including third-party scripts so that they do not block rendering the content of your pages. | |
 
 ## Page rule URL patterns
-{:#page-rule-url-patterns}
+{: #page-rule-url-patterns}
 
 A page rule takes effect on a specific URL pattern, matching the following format:
 
 `<scheme>://<hostname><:port>/<path>`
-{:pre}
+{: pre}
 
 An example that uses each component would be:
 
 `https://www.example.com:80/image.png`
-{:pre}
+{: pre}
 
 The *scheme* and *port* components are optional. If the scheme is omitted, it covers both `http://` and `https://` protocols. If the port is not specified, then the rule matches all ports. You can perform basic wildcard matches by using an asterisk (&asterisk;) symbol in your rule pattern, allowing it to match a series of similar patterns rather than just one.
 

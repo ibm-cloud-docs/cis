@@ -27,7 +27,7 @@ subcollection: cis
 
 
 # Managing access for {{site.data.keyword.cis_short_notm}}
-{:#iam-and-cis} 
+{: #iam-and-cis} 
 
 Access to {{site.data.keyword.cis_full}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Every user that accesses the ({{site.data.keyword.cis_short_notm}}) service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.cloud_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles.
 

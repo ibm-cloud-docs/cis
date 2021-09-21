@@ -35,7 +35,7 @@ The Free Trial plan is the same as the Standard Plan, except that it expires aft
 {: note}
 
 The numbers in these tables are quotas or resource limits for the associated feature. Features are pay-as-you-go, except for Free Trial and Standard plans.
-{:tip}
+{: tip}
 
 The following table compares each offering to help you choose the one that's right for you. Enterprise usage and package plans are available with different pricing models.
 

@@ -31,7 +31,7 @@
       "community": "https://community.ibm.com/community/user/publiccloud/home"
     },
     "section_updates": {
-      "view_more": "https://www.ibm.com/cloud/cloud-internet-services",
+      "view_more": "/docs/cis?topic=cis-release-notes",
       "tiles": [
         {
           "date": "11 May 2021",

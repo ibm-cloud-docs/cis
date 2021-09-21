@@ -26,13 +26,13 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Caching concepts
-{:#caching-concepts}
+{: #caching-concepts}
 
 This document contains some concepts and definitions related to caching and how it affects your {{site.data.keyword.cis_full}} deployment.
-{:shortdesc}
+{: shortdesc}
 
 ## What is caching?
-{:#what-is-caching}
+{: #what-is-caching}
 
 Caching is the process of storing files on our edge servers, which we do for the purpose of improving the response time when serving those files to customers. By storing the files closer to the customers, we can decrease the time it takes for the data to stream across the network, which commonly is called the **latency**.
 
@@ -41,17 +41,17 @@ Cached files have a specified expiration time, **Time-to-live (TTL)** after whic
 A deeper explanation of the cache settings and your caching options is located in the [Caching and Page Rules](/docs/cis?topic=cis-use-page-rules-with-caching) section.
 
 ### Cached content
-{:#what-content-is-cached}
+{: #what-content-is-cached}
 
 By default, we cache **static files**, which include many types of image and text files (non-HTML files). This only includes files from your websites and not third party resources from social networking sites, etc. Also, we currently do not cache by MIME type.
 
 ### Caching HTML
-{:#how-do-i-cache-html}
+{: #how-do-i-cache-html}
 
 We do not cache HTML files by default because we do not consider them to be static; however, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files [using the Page Rules feature](/docs/cis?topic=cis-use-page-rules).
 
 ## Default caching behavior
-{:#default-cache-behavior}
+{: #default-cache-behavior}
 
 {{site.data.keyword.cis_short_notm}} caches static content depending on where your visitors come from, which {{site.data.keyword.cis_short_notm}} data center your visitors reach, and how often visitors request a resource at the specific data center.
 
@@ -83,10 +83,10 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 - Adjust caching level, cache TTL, and more via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#cache)
 
 The maximum file size {{site.data.keyword.cis_short_notm}} caches is 512MB for Trial and Standard customers and 5GB for Enterprise customers. Enterprise customers can open a Support case to request caching of larger files. 
-{:tip}
+{: tip}
 
 ## File extensions cached by default
-{:#default-file-extensions}
+{: #default-file-extensions}
 
 {{site.data.keyword.cis_short_notm}} uses file extensions to cache content. The following file extensions are cached automatically:
 - bmp
@@ -145,7 +145,7 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 
 
 ## Using query string sorting
-{:#query-string-sorting}
+{: #query-string-sorting}
 
 **Enterprise Only** {{site.data.keyword.cis_short_notm}} treats URLs that have query strings in different orders as separate files in the cache. This means that if one user requests:
 
@@ -160,6 +160,6 @@ And another user requests:
 Query String Sort sorts the query strings _before_ they hit our cache, resulting in a higher cache hit rate. Enable Query String Sort using the toggle in the **Caching** page.
 
 ## Serving stale content
-{:#serve-stale-content-caching}
+{: #serve-stale-content-caching}
 
 **Serve stale content** keeps a limited version of the site online if the server goes down. Even if the content has expired, {{site.data.keyword.cis_short_notm}} continues serving cached content to users when origin servers are offline.

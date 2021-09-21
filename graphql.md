@@ -29,26 +29,26 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Setting up GraphQL
-{:#graphql}
+{: #graphql}
 
 GraphQL is a query language for APIs. You can run queries on a single `/graphql` endpoint. GraphiQL uses a built-in introspection system to expose information through the schema.
-{:shortdesc}
+{: shortdesc}
 
 GraphQL analytics API endpoint is only available for Enterprise-level plans.
-{:important}
+{: important}
 
 ## Prerequisites
-{:#graphql-prereqs}
+{: #graphql-prereqs}
 
 You must have the following permissions to proceed:
 - You must have Viewer permission either at the instance level or zone level. 
 - You must have Reader permission at the zone level.
 
 ### GraphiQL tool
-{:#graphiql-tool}
+{: #graphiql-tool}
 
 Using GraphiQL, you can explore the schema and test queries for the GraphQL endpoint.
-1. [Download and install GraphiQL](https://www.electronjs.org/apps/graphiql){:external}.
+1. [Download and install GraphiQL](https://www.electronjs.org/apps/graphiql){: external}.
 1. Open the GraphiQL application and enter the HTTP headers that you want to authorize.
 1. Enter the correct endpoint in the **GraphQl Endpoint** field. Use `https://api.cis.cloud.ibm.com/v1/<crn>/zones/<zoneid>/graphql`.
 
@@ -92,7 +92,7 @@ query {
        }
      }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Querying basics
 {: #querying-basics}
@@ -108,7 +108,7 @@ viewer {
       }
 }
 ```
-{:codeblock}
+{: codeblock}
 
 The initial node of the user running the query is `viewer`. A viewer is able to access one or more domains (zones). Each zone contains different datasets, such as firewall events for a zone.
 
@@ -128,7 +128,7 @@ type ExampleGroup {
     }
 }
 ```
-{:codeblock}
+{: codeblock}
 
 This example shows a valid group:
 
@@ -145,11 +145,11 @@ This example shows a valid group:
     }
   }
 ```
-{:codeblock}
+{: codeblock}
 
 
 ## Datasets
-{:#graphql-datasets}
+{: #graphql-datasets}
 
 The following datasets are available.
 
@@ -167,7 +167,7 @@ The following datasets are available.
 
 
 ## Errors
-{:#graphql-errors}
+{: #graphql-errors}
 
 The GraphQL Analytics API is a RESTful API based on HTTPS requests and JSON responses and returns familiar HTTP status codes (for example, `404`, `500`, `504`). In conformity to the GraphQL specification, a `200` response can contain an error, which is in contrast to the common REST approach. 
 
@@ -194,11 +194,11 @@ The following code is an example error response:
   ]
 }
 ```
-{:screen}
+{: screen}
 
 
 ## Limits
-{:graphql-limits}
+{: #graphql-limits}
 
 The limits for retaining historical data are defined in the following table.
 
@@ -218,7 +218,7 @@ The limits for retaining historical data are defined in the following table.
 |`synAvgPps1mGroups` | 7 days|
 
 ### Query settings for account limits
-{:#query-settings-account-limits}
+{: #query-settings-account-limits}
 
 To obtain specific information regarding limits for a data node, use the `settings` node.
 
@@ -249,7 +249,7 @@ Field | Description
   }
 }
 ```
-{:codeblock}
+{: codeblock}
 
 **Response**
 
@@ -275,7 +275,7 @@ Field | Description
   "errors": null
 }
 ```
-{:screen}
+{: screen}
 
 ### Query limits
 {:#query-limits}
@@ -293,7 +293,7 @@ Queries must explicitly specify the upper bounds of records to return using the 
 You can sort the order of query result elements using the `orderBy` argument. By default, results are sorted by the primary key of the dataset (table). If you specify another field to sort on, the primary key is included in the sorting key to keep consistent results for pagination. 
 
 Ordering within nested structures is not supported.
-{:note}
+{: note}
 
 ### Sorting examples
 {:#sorting-examples}
@@ -305,7 +305,7 @@ firewallEventsAdaptive (orderBy: [clientCountryName_ASC]) {
     clientCountryName
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Raw data sorting using multiple fields:
 
@@ -315,7 +315,7 @@ firewallEventsAdaptive (orderBy: [clientCountryName_ASC, datetime_DESC]) {
     datetime
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Group sorting by aggregation function:
 
@@ -330,7 +330,7 @@ httpRequests1hGroups (orderBy: [sum_bytes_DESC]){
     }
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Pagination
 {:#pagination}
@@ -357,7 +357,7 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC]
     clientCountryName
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Specifying a sort order by date returns less specific results than specifying a sort order by both date and country.
 
@@ -377,7 +377,7 @@ Specifying a sort order by date returns less specific results than specifying a 
   ]
 }
 ```
-{:screen}
+{: screen}
 
 ### Query for the next page using filter
 {: query-next-page-filter}
@@ -390,7 +390,7 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC]
     clientCountryName
 }
 ```
-{:codeblock}
+{: codeblock}
 
 **Response**
 
@@ -408,7 +408,7 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC]
   ]
 }
 ```
-{:screen}
+{: screen}
 
 ### Query the previous page
 {: #query-previous-page}
@@ -421,7 +421,7 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_DESC, clientCountryName_DES
   clientCountryName
 }
 ```
-{:codeblock}
+{: codeblock}
 
 **Response**
 
@@ -439,17 +439,17 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_DESC, clientCountryName_DES
   ]
 }
 ```
-{:screen}
+{: screen}
 
 ## Filtering
-{:#filtering}
+{: #filtering}
 
 Filters constrain queries to a particular account or set of zones (domains), requests by date, or a specific query agent. Without filters, performance might degrade, and results might include unimportant data. 
 
 ### Structure
 {: #structure}
 
-The GraphQL filter is represented by the [GraphQL Input Object](http://spec.graphql.org/June2018/#sec-Input-Objects){:external}.
+The GraphQL filter is represented by the [GraphQL Input Object](http://spec.graphql.org/June2018/#sec-Input-Objects){: external}.
 
 Filters can be used as an argument on the following resources:
 * Zones (Domains)
@@ -466,7 +466,7 @@ zones(filter: {zoneTag: "your domain (zone) ID"}) {
     ...
 }
 ```
-{:codeblock}
+{: codeblock}
 
 The zone filter must conform to the following grammar:
 
@@ -476,7 +476,7 @@ filter
     { zoneTag_gt: t }
     { zoneTag_in: [t, ...] }
 ```
-{:codeblock}
+{: codeblock}
 
 Compound filters (comma-separated, `AND`, `OR`) are not supported.
 Zones always sort alphanumerically.
@@ -495,7 +495,7 @@ accounts(filter: {accountTag: $accountTag}) {
     ...
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ### Operators
 Operator support varies, depending on the node type and node name. The following operators are supported for all types:
@@ -524,7 +524,7 @@ General example:
   )
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Filter a specific node:
 
@@ -533,7 +533,7 @@ httpRequests1hGroups(filter: {datetime: "2020-01-01 10:00:00"}) {
     ...
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Filter on multiple fields:
 
@@ -542,7 +542,7 @@ httpRequests1hGroups(filter: {datetime_gt: "2018-01-01 10:00:00", datetime_lt: "
     ...
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Filter using `OR` operator:
 
@@ -553,4 +553,4 @@ httpRequests1hGroups(filter: {
     ...
 }
 ```
-{:codeblock}
+{: codeblock}

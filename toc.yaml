@@ -1,0 +1,172 @@
+#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
+---
+toc:
+  properties:
+    subcollection: cis
+    version: 2
+    category: network_edge
+    audience: service
+    href: /docs/cis
+    console-page: /catalog/services/internet-services
+    product-page: https://www.ibm.com/cloud/cloud-internet-services
+    path: cis
+    label: Cloud Internet Services (CIS)
+
+#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
+  entries: 
+    - navgroup: 
+        id: learn
+        topics:
+        - getting-started.md
+        - about.md
+        - topicgroup:
+            label: Using best practices
+            topics:
+            - best-practices.md
+            - managing-for-security.md
+            - managing-for-reliability.md
+            - managing-for-performance.md
+        - topicgroup:
+            label: Concepts
+            topics:
+            - dns-concepts.md
+            - ddos-concept.md
+            - glb.md
+            - waf-concept.md
+            - routing.md
+            - cache.md
+            - http-concepts.md
+            - compression-concepts.md
+            - domain-lifecycle.md
+
+    - navgroup:
+        id: tutorial
+        topics:
+        - topicgroup:
+            label: Solution tutorials
+            topics:
+            - /solution-tutorials/solution-tutorials-multi-region-k8s-cis
+            - /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application
+            - /solution-tutorials/solution-tutorials-multi-region-webapp
+            - /solution-tutorials/solution-tutorials-multi-region-serverless
+        - link:
+            label: What are computer networking solutions
+            href: https://www.ibm.com/cloud/learn/networking-a-complete-guide#toc-computer-n-9C7jokVu
+
+    - navgroup:
+        id: howto
+        topics:
+        - how-to.md
+        - origin.md
+        - start-with-subdomain.md
+        - multi-domain.md
+        - dns.md
+        - secondary-dns.md
+        - rate-limiting.md
+        - range.md
+        - private-endpoint.md
+        - topicgroup:
+            label: Working with TLS
+            topics:
+            - ssl-options.md
+            - mtls.md
+            - auth-origin-pull.md
+        - topicgroup:
+            label: Working with WAFs
+            topics:
+            - waf-cis-ruleset.md
+            - security-events.md
+        - topicgroup:
+            label: Working with firewall rules
+            topics:
+            - firewall-rules.md
+            - actions.md
+            - fields-and-expressions.md
+            - order-and-priority.md
+        - topicgroup:
+            label: Working with global load balancers
+            topics: 
+            - glb-setup.md
+            - topicgroup:
+                label: Global load balancer features
+                topics:
+                - glb-dns-records.md
+                - glb-origin-pools.md
+                - glb-health-checks.md
+                - glb-traffic-steering.md
+                - glb-proxy-modes.md
+                - glb-session-affinity.md
+        - topicgroup:
+            label: Working with page rules
+            topics:
+            - using-page-rules.md
+            - caching-with-page-rules.md
+            - resolve-override-cos.md
+        - custom-page.md
+        - topicgroup:
+            label: Using edge functions
+            topics:
+            - edge-functions.md
+            - edge-function-actions.md
+        - topicgroup:
+            label: Working with logs
+            topics:
+            - logpull.md
+            - logpush.md
+            - log-fields.md
+        - topicgroup:
+            label: Working with metrics
+            topics:
+            - graphql.md
+            - graphql-edge-func.md
+            - graphql-firewall.md
+        - topicgroup:
+            label: Enhancing security
+            topics:
+            - iam.md
+            - architecture-workload-isolation.md
+            - data-security.md
+            - at_events.md
+            - at_iam.md
+            - manage-scc.md
+        - terraform.md
+
+    - navgroup:
+        id: reference
+        topics:
+        - link:
+            label: CIS API
+            href: https://{DomainName}/apidocs/cis
+        - /cis-cli-plugin/cis-cli-plugin-cis-cli
+        - link:
+            label: Terraform
+            href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis
+        - topicgroup:
+            label: CIS use cases
+            topics:
+            - cloudant-and-cis.md
+            - edge-functions-use-cases.md
+        - responsibilities.md
+        - plan-comparison.md
+        - allowlisted-ips.md
+        - helpful-tools.md
+        - hipaa-advisory.md
+
+    - navgroup:
+        id: help
+        topics:
+        - faq.md
+        - known-limitations.md
+        - topicgroup:
+            label: Troubleshooting CIS
+            topics:
+            - ts-network-connection.md
+            - ts-root-cert.md
+            - ts-offline.md
+            - ts-privacy-warn.md
+            - ts-ddos.md
+            - ts-no-traffic.md
+            - ts-false-pos-neg.md
+            - troubleshooting.md
+        - getting-help.md
+        - release-notes.md

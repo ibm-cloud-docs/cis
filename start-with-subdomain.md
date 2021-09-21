@@ -54,6 +54,6 @@ Follow these steps to practice using {{site.data.keyword.cis_short_notm}} with a
 14.	{{site.data.keyword.cis_short_notm}} begins to check NS configuration for the subdomain and might be in a **Pending State**.
 
     Any typos in this section produce a "silent" failure. If your subdomain is in the pending state for more than 30 minutes, there might be an error.
-    {:note}
+    {: note}
 
 Upon successful subdomain Name Server / NS record confirmation, the {{site.data.keyword.cis_short_notm}} instance reports **Active**. Customers are now ready to start configuring the service and routing traffic to their services.

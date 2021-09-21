@@ -45,7 +45,7 @@ CIS errors
 * Errors related to `Serve Stale Content`
 
 500, 501, 503, and 505 responses do not trigger custom error pages to avoid breaking specific API endpoints and other web applications. Custom error pages should be reserved for cases where the origin server cannot return a response for the request (520-526 errors).
-{:note}
+{: note}
 
 ## Custom error template
 {: #custom-error-template}
@@ -84,7 +84,7 @@ Some types of custom error pages must include one of these tokens anywhere withi
 Each tag has a unique class that you can use to style individual error codes. It is possible to use CSS to stylize the tags in the div/span/section since they all have class IDs.
 
 Each page (challenge, 5xx errors) has a different ID, so use the preview option to get the proper ID.
-{:tip}
+{: tip}
 
 ## Publishing error pages
 {: #publishing-error-pages}
@@ -99,7 +99,7 @@ When you publish, the custom error page is requested once by us, then cached on 
 You can update an error page by re-publishing it.
 
 If CIS cannot load your site, or you have blocked the US in the CIS firewall, publishing and previewing the error page does not work.
-{:note}
+{: note}
 
 ## Troubleshooting error pages
 

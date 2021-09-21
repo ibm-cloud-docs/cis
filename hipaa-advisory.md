@@ -26,10 +26,10 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # HIPAA advisory
-{:#hipaa-advisory}
+{: #hipaa-advisory}
 
 Use of caching (CDN) for regulated data (for example, PHI, ITAR) is **prohibited**. All regulated data flows that use {{site.data.keyword.cis_full}} must be set to **not cache**.
-{:important}
+{: important}
 {: shortdesc}
 
 There are multiple ways to disable content caching by the CIS CDN.

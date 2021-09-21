@@ -62,7 +62,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.ci
 {: shortdesc}
 
 ### Critical dependencies
-{:#ibmcloud-critical-dependencies}
+{: #ibmcloud-critical-dependencies}
 
 The following dependencies of {{site.data.keyword.cis_full_notm}}  are considered critical. Any loss of connectivity or service of one of these dependencies results in a functional impact to the customer on {{site.data.keyword.cis_full_notm}}.
 
@@ -79,7 +79,7 @@ The following dependencies of {{site.data.keyword.cis_full_notm}}  are considere
 | {{site.data.keyword.cos_short}} (COS) | Used to store edge logs for a customer's data path traffic. YOu can also use this service to store operational logs of {{site.data.keyword.cis_full_notm}} itself. |
 
 ### Other dependencies
-{:#ibmcloud-other-dependencies}
+{: #ibmcloud-other-dependencies}
 
 | Service name | Description |
 | ------------ | -----------------------|
@@ -95,14 +95,14 @@ Review the list of third-party services that {{site.data.keyword.containerlong_n
 {: shortdesc}
 
 ### Critical dependencies
-{:#3rd-critical-dependencies}
+{: #3rd-critical-dependencies}
 
 | Service name |	Description |
 | ------------ | -----------------------|
 | Cloudflare | Cloudflare is the third party provider for all data path services that are offered by {{site.data.keyword.cis_full_notm}}, such as WAF, DDoS protection, and global load balancing. |
 
 ### Other dependencies
-{:#3rd-other-dependencies}
+{: #3rd-other-dependencies}
 
 | Service name | Description |
 | ------------ | -----------------------|

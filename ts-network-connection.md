@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-11-16"
+  years: 2018, 2021
+lastupdated: "2021-09-13"
 
 keywords: 
 
@@ -34,14 +34,14 @@ subcollection: cis
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
 # Troubleshooting your {{site.data.keyword.cis_short_notm}} network connection
-{:#troubleshooting-your-cis-network-connection}
+{: #troubleshoot-your-cis-network-connection}
 
 Use the following methods to gather information that can help you to troubleshoot your network connection. 
-{:shortdesc}
+{: shortdesc}
 
 
 ## Determine if your data is passing through your {{site.data.keyword.cis_full_notm}} connection
-{:#is-data-passing-through-cis-connection}
+{: #is-data-passing-through-cis-connection}
 {: help}
 {: support}
 
@@ -59,10 +59,10 @@ To know whether data has passed through {{site.data.keyword.cis_short_notm}}, lo
 For example, the terminal command `curl -svo /dev/null YOUR_URL_HERE. -L` results in the following:
 
 `CF-RAY: 1ca349b6c1300da3-SJC`
-{:screen}
+{: screen}
 
 ## Perform a traceroute?
-{:#trace-route}
+{: #trace-route}
 {: help}
 {: support}
 
@@ -81,17 +81,17 @@ The Support team makes use of these commands to assist you.
 The CF-RAY header is added to help trace a request to a website through the network. Use it when working with Support to help troubleshoot any related issues with connectivity. You can reveal this "Ray ID" in your logs by making some edits to configuration files in Apache and nginx.
 
 ### Apache
-{:#troubleshooting-cis-apache}
+{: #troubleshooting-cis-apache}
 
 ```
 LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %{CF-Ray}i" cf_custom
 
 CustomLog log/access_log cf_custom
 ```
-{:pre}
+{: pre}
 
 ### NGINX
-{:#troubleshooting-cis-nginx}
+{: #troubleshooting-cis-nginx}
 
 ```
 log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
@@ -101,4 +101,4 @@ log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
 
 access_log  /var/log/nginx/access.log cf_custom;
 ```
-{:pre}
+{: pre}

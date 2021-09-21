@@ -27,7 +27,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Accessing log fields
-{:#log-fields}
+{: #log-fields}
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields using the following request.
 
@@ -36,22 +36,22 @@ If `fields` are not specified in the request, a limited set of default fields ar
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
 ```
-{:pre}
+{: pre}
 
 Fields are passed as a comma-separated list. For example, to have "ZoneID" and "RayID", use:
 
 ```
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneId,RayID
 ```
-{:pre}
+{: pre}
 
 ## Available Fields
-{:#available-fields}
+{: #available-fields}
 
 The following tables describe the fields available by log category.
 
 ### HTTP requests
-{:#http-requests}
+{: #http-requests}
 
 This table contains the fields available for HTTP requests.
 
@@ -122,7 +122,7 @@ This table contains the fields available for HTTP requests.
 
 
 ### Range requests
-{:#range-requests}
+{: #range-requests}
 
 The following table contains the fields available for Range requests.
 
@@ -162,7 +162,7 @@ The following table contains the fields available for Range requests.
 {: caption="Table 2. Range events" caption-side="top"}
 
 ### Firewall events
-{:#firewall-events}
+{: #firewall-events}
 
 |Field|Value|Type|
 |-----|-----|----|

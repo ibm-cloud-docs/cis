@@ -26,23 +26,23 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Routing concepts
-{:#cis-routing}
+{: #cis-routing}
 
 Eliminate excess latency by analyzing and optimizing routing decisions across the global internet using real-time network connections. Reduce internet latency on average by 35% and connection errors by 27%.
 {: shortdesc}
 
 ## Smart Routing
-{:#cis-smart-routing}
+{: #cis-smart-routing}
 
 Route connections across the internet efficiently by avoiding packet loss, congestion, and outages.
 
 Smart Routing optimizes the paths your data takes across the internet. Optimal paths are determined by analyzing latency and packet loss data collected from real-time network connections. Smart Routing uses this data to detect which transit providers are operating best between any two points on the planet.
 
 The optimized route is different from the regular request path. It can take up to 24 hours to switch from the regular request path to the optimized route after you enable Smart Routing for your domain.
-{:note}
+{: note}
 
 ## Tiered Caching
-{:#cis-tiered-caching}
+{: #cis-tiered-caching}
 
 Increase cache hit ratios using concentrated connections to reduce requests to customer origins.
 

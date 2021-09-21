@@ -25,20 +25,20 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Using the {{site.data.keyword.cis_full_notm}} Security Events capability
-{:#using-the-cis-security-events-capability}
+{: #using-the-cis-security-events-capability}
 
 Reviewing Security Events gives you insight into your web traffic and into any potentially malicious activity against your website. Reviewing Security Events also helps you optimize your WAF configuration.
 {: shortdesc}
 
 
 ## The {{site.data.keyword.cis_short_notm}} Security Events Table
-{:#cis-security-events-table}
+{: #cis-security-events-table}
 
 The Security Events Table shows you detailed information about web requests that are blocked by the WAF. Each entry shows one blocked request.
 * **Triggered rule** indicates which rule blocked the request. Any of the following actions is available:
-  * **Block** : A hard block.
-  * **Challenge**: A CAPTCHA page that humans can bypass.
-  * **Simulate**: A request that is allowed through normally, but is logged.
+    * **Block**: A hard block.
+    * **Challenge**: A CAPTCHA page that humans can bypass.
+    * **Simulate**: A request that is allowed through normally, but is logged.
 
 Sometimes the triggered rule is not identified. In this case the UI shows a `-` instead of the rule ID.
 * **IP Address**: Shows the source IP address of the web request.
@@ -48,7 +48,7 @@ Sometimes the triggered rule is not identified. In this case the UI shows a `-` 
 
 
 ## {{site.data.keyword.cis_short_notm}} Security Events Details
-{:#cis-security-events-details}
+{: #cis-security-events-details}
 
 When viewing Security Events, you can click the arrow on an event to expand the details for that event.
 One section of your screen shows the event details, along with the Ray-Id. The other section shows request details such as Header, URI, Protocol, the type of firewall that blocked the request, and User Agent.
@@ -58,6 +58,6 @@ Suppose, for example, you see that the triggered rule for an event has an ID of 
 This means that all requests blocked by OWASP show on your Security Events as blocked by `981176`. Expand the event details and view the **Event Triggers** section to see the individual OWASP rules that matched to increase the request’s threat score.
 
 ## What do I do if valid traffic is blocked?
-{:#what-do-i-do-if-valid-traffic-is-blocked}
+{: #what-do-i-do-if-valid-traffic-is-blocked}
 
 Expand each event to see event details. The **Event Triggers** section displays all the individual OWASP rules that matched for OWASP rule-triggered events. Decide whether this traffic looks normal for your website, or if it was appropriately blocked. If you decide that this block is a false positive, you can go back to your WAF configuration and disable individual OWASP rules until this request no longer exceeds your sensitivity threshold.

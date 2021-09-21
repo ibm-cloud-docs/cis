@@ -30,15 +30,15 @@ subcollection: cis
 
 
 # Querying firewall events with GraphQL
-{:#graphql-firewall-events-example}
+{: #graphql-firewall-events-example}
 
 This example uses the GraphQL Analytics API to query for firewall events over a specified time period.
-{:shortdesc}
+{: shortdesc}
 
 The following API call requests Firewall Events over a one-hour period, and outputs the requested fields. Be sure to replace `CIS_DOMAIN_ID` with your domain ID and API token, and adjust the `datetime_geg` and `datetime_leq` values to meet your needs.
 
 ## The API call
-{:#api-call}
+{: #api-call}
 
 ```
 PAYLOAD='{ "query":
@@ -79,7 +79,7 @@ curl \
   --data "$(echo $PAYLOAD)" \
   https://api.cis.cloud.ibm.com/v1/<crn>/zones/<zoneid>/graphql
 ```
-{:codeblock}
+{: codeblock}
 
 The results are returned in JSON, so piping the output to jq makes them easier to read. For example:
 
@@ -213,4 +213,4 @@ curl \
   "errors": null
 }
 ```
-{:screen}
+{: screen}

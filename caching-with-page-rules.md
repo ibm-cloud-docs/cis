@@ -26,10 +26,10 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Using page rules with caching
-{:#use-page-rules-with-caching}
+{: #use-page-rules-with-caching}
 
 Page rules give you the ability to take various actions based on the page's URL, such as creating redirects, fine-tuning caching behavior, or enabling and disabling services.
-{:shortdesc}
+{: shortdesc}
 
 A page rule takes effect on a given URL pattern that matches the following format:
 
@@ -51,7 +51,7 @@ The `scheme` and `port` components are optional. If the `scheme` component is om
 
 
 ## Forwarding (URL redirection)
-{:#forwarding-url-redirection}
+{: #forwarding-url-redirection}
 
 Redirect one URL to another using an HTTP 301 or 302 redirect. The contents of any section of a URL that a wildcard matches can be referenced using `$X` syntax. The `X` indicates the index of a glob in the pattern: `$1` is replaced with the first wildcard match,  `$2` with the second wildcard match, and so on.
 
@@ -62,17 +62,17 @@ For example, suppose you set the following rule:
 Here, a request to `www.example.com/stuff/things` is redirected to `http://example.com/stuff/things`.
 
 Be careful not to create a redirect in which the domain points to itself as a destination. This mistake can cause an infinite redirect error, and the affected URLs do not resolve.
-{:note}
+{: note}
 
 ## Redirecting to HTTPS
-{:#redirecting-to-https}
+{: #redirecting-to-https}
 
 If you want to redirect your visitors to use HTTPS, use the **Always Use HTTPS** setting instead:
 
 ![image2](images/url-matching-patterns.png)
 
 ## Setting custom caching
-{:#custom-caching}
+{: #custom-caching}
 
 Set caching behavior for any URL matching the page rule pattern, using any of our standard cache levels. Setting **Cache Level** to **Cache Everything** caches any content, even if it is not one of our default static file types. Setting **Cache Level** to the **Bypass** setting prevents caching on that URL.
 
@@ -91,4 +91,4 @@ The following example sets a page rule to cache everything found in the `/images
 This feature returns an HTTP status 503. When servers are online again, CIS seamlessly takes visitors to regular browsing.
 
 If the requested page is not in the cache, the visitor sees an error page that informs them the page they are requesting is offline. If a **Cache Everything** page rule is enabled with expiration times set lower than the caching frequency, the **Serve Stale Content** is purged in the corresponding interval.
-{:note}
+{: note}

@@ -103,7 +103,7 @@ In addition to the properties on the standard `Request` object, you can use a `r
 ```
 {: codeblock}
 
-If you are using [https://cloudflareworkers.com](https://cloudflareworkers.com){:external} to write and test your scripts, the `request.cf` content is not available in preview mode. You must be in production to run that content.
+If you are using [https://cloudflareworkers.com](https://cloudflareworkers.com){: external} to write and test your scripts, the `request.cf` content is not available in preview mode. You must be in production to run that content.
 {: note}
 
 These properties contain special information from an incoming request to help with your app's logic. All plans have access to:

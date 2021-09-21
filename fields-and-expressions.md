@@ -27,7 +27,7 @@ subcollection: cis
 {: #fields-and-expressions}
 
 Along with actions, fields and expressions are the building blocks of firewall rules. These two elements work together when defining the criteria to use when a firewall rule is matched.
-{:shortdesc}
+{: shortdesc}
 
 ## Fields
 
@@ -55,7 +55,7 @@ Each field value can be sourced from different places, such as:
 |http.x_forwarded_for|String|_The full X-Forwarded-For HTTP header_ |
 |ip.src|IP address|93.155.208.22|The client TCP IP address, which can be adjusted to reflect the real client IP of the original client as applicable (for example, using HTTP headers like X-Forwarded-For or X-Real-IP)|
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
-|ip.geoip.country|String|GB|The [2-letter country code](https://support.cloudflare.com/hc/en-us/articles/217074967#1QrbtSK5NSL7A0FOWD2bbZ){:external}|
+|ip.geoip.country|String|GB|The [2-letter country code](https://support.cloudflare.com/hc/en-us/articles/217074967#1QrbtSK5NSL7A0FOWD2bbZ){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
 
 These standard fields follow the naming convention of the Wireshark display field reference. However, some subtle variations might exist in the preceding example values.
@@ -87,7 +87,7 @@ An expression returns true or false based on a match against incoming traffic. F
 ```
 http.host eq "www.example.com" and ip.src in 92.182.212.0/24
 ```
-{:screen}
+{: screen}
 
 In this example, two single expressions comprise a compound expression. Think of each single expression as a condition. Each condition is evaluated individually before applying and logic to determine the final result of the compound expression.
 
@@ -163,21 +163,21 @@ To alter the order of precedence, you can group expressions with parentheses. Us
 ```
 ssl and http.request.uri.path eq /login or http.request.uri.path eq /oauth
 ```
-{:screen}
+{: screen}
 
 Applying explicit grouping:
 
 ```
 (ssl and http.request.uri.path eq /login) or http.request.uri.path eq /oauth
 ```
-{:screen}
+{: screen}
 
 Giving precedence to or with parentheses:
 
 ```
 ssl and (http.request.uri.path eq /login or http.request.uri.path eq /oauth)
 ```
-{:screen}
+{: screen}
 
 Note that while `not` is used for grouping, it can be used to negate a single comparison. For example, `not ip.src eq 93.184.216.0` is equivalent to `not (ip.src eq 93.184.216.0)`.
 
@@ -186,7 +186,7 @@ Finally, you can also negate grouped expressions:
 ```
 not (http.request.method eq "POST" and http.request.uri.path eq "/login")
 ```
-{:screen}
+{: screen}
 
 ### Deviations from Wireshark display filters
 

@@ -31,8 +31,8 @@ subcollection: cis
 
 Load balancers support DNS-only and HTTP proxy modes. You can have HTTP Proxy and DNS-Only domains in the same load balancer region, but the traffic routing behavior differs as follows:
 
-  * Traffic for domains using HTTP Proxy mode is routed based on the data center associated with the user making the request.
-  * Traffic for domains using DNS-Only mode is routed based on the data center associated with the user’s recursive resolver (DNS recursor).
+* Traffic for domains using HTTP Proxy mode is routed based on the data center associated with the user making the request.
+* Traffic for domains using DNS-Only mode is routed based on the data center associated with the user’s recursive resolver (DNS recursor).
 
 ## HTTP Proxy mode
 {: #http-proxy-mode}
@@ -48,4 +48,3 @@ Setting the load balancer to HTTP Proxy mode offers the following benefits:
 {: #dns-only-mode}
 
 In DNS-Only mode, you can configure load balancers to set a TTL from 30 seconds to 10 minutes. {{site.data.keyword.cis_short_notm}} serves the addresses of the healthy origin servers directly, but relies on DNS resolvers respecting the short TTL to re-query the {{site.data.keyword.cis_short_notm}} DNS for an updated list of healthy addresses.
-

@@ -30,7 +30,7 @@ subcollection: cis
 {: #access-cloudant-through-cis}
 
 Follow these steps to access your Cloudant database through {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}).
-{:shortdesc}
+{: shortdesc}
 
 ## Before you begin
 {: #access-cloudant-through-cis-begin}

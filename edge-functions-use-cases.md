@@ -26,12 +26,13 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Edge functions use cases
-{:#edge-functions-use-cases}
+{: #edge-functions-use-cases}
 
 THIS SOFTWARE IS PROVIDED BY IBM “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL IBM BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## A/B testing
 {: #ab-testing}
+
 You can create a CIS Edge function to control A/B tests.
 
 ```sh
@@ -88,10 +89,11 @@ async function fetchAndApply(request) {
 }
 
 ```
-{:codeblock}
+{: codeblock}
 
 ## Adding a response header
 {: #add-response-header}
+
 To modify the response headers, you’ll first need to make a copy of the response in order to make it mutable. Then you can use the Headers interface to add, change, or remove headers.
 
 ```sh
@@ -112,10 +114,11 @@ async function handleRequest(request) {
   return response;
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Aggregating multiple requests
 {: #aggregate-multiple-requests}
+
 Here, we make multiple requests to different API endpoints, aggregate the responses and send it back as a single response.
 
 ```sh
@@ -154,10 +157,11 @@ async function fetchAndApply(request) {
     return new Response(JSON.stringify(combined), responseInit)
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Conditional routing
 {: #conditional-routing}
+
 The easiest way to deliver different content based on the device being used is to rewrite the URL of the request based on the condition you care about. For example:
 
 ### Device type
@@ -181,7 +185,7 @@ async function fetchAndApply(request) {
   return fetch(request.url + uaSuffix, request)
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ### Custom headers
 {: #conditional-routing-custom-headers}
@@ -206,10 +210,11 @@ async function fetchAndApply(request) {
   return fetch(request.url + suffix, request)
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Hot-link protection
 {: #hot-link-protection}
+
 You can use CIS Edge functions to protect your hot-links on your web properties.
 
 ```sh
@@ -250,10 +255,11 @@ async function fetchAndApply(request) {
   return response
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Originless responses
 {: #originless-responses}
+
 You can return responses directly from the edge. No need to hit your origin.
 
 ### Ignore POST and PUT HTTP requests
@@ -275,7 +281,7 @@ async function fetchAndApply(request) {
   return fetch(request)
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ### Deny a spider or crawler
 {: #originless-responses-deny-spider-crawler}
@@ -296,7 +302,7 @@ async function fetchAndApply(request) {
   return fetch(request)
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ### Prevent a specific IP from connecting
 {: #originless-responses-prevent-specific-ip-connection}
@@ -317,10 +323,11 @@ async function fetchAndApply(request) {
   return fetch(request)
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Post requests
 {: #post-requests}
+
 Reading content from an HTTP POST request:
 
 ```sh
@@ -343,7 +350,7 @@ async function fetchAndApply(request) {
   }
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Creating an HTTP POST request from an Edge function:
 
@@ -371,10 +378,11 @@ async function fetchAndApply(request) {
   return response
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Setting a cookie
 {: #setting-cookies}
+
 You can set cookies using CIS Edge functions.
 
 ```sh
@@ -394,10 +402,11 @@ async function fetchAndApply(request) {
   return response
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Signed requests
 {: #signed-requests}
+
 A common URL authentication method known as request signing can be implemented in an Edge function with the help of the Web Crypto API.
 
 In the example presented here, we’ll authenticate the path of a URL along with an accompanying expiration timestamp, using a Hash-based Message Authentication Code (HMAC) with a SHA-256 digest algorithm. For a user agent to successfully fetch an authenticated resource, they’ll need to provide the correct path, expiration timestamp, and HMAC using query parameters — if any of those three are tampered with, the request fails.
@@ -487,7 +496,7 @@ function byteStringToUint8Array(byteString) {
   return ui
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ### Generating signed requests
 {: #signed-requests-generate}
@@ -542,20 +551,20 @@ async function generateSignedUrl(url) {
   return new Response(url)
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Streaming responses
 {: #streaming-responses}
 
 An Edge function script doesn’t need to prepare its entire response body before delivering a Response to `event.respondWith()`. Using a TransformStream, it is possible to stream a response body after sending the response’s front matter (for example, HTTP status line and headers). This allows us to minimize:
 
-  * The visitor’s time-to-first-byte.
-  * The amount of buffering that must be done in the Edge function script.
+* The visitor’s time-to-first-byte.
+* The amount of buffering that must be done in the Edge function script.
 
 Minimizing buffering is especially important if you must process or transform response bodies that are larger than the Edge function’s memory limit. In these cases, streaming is the only feasible implementation strategy.
 
 The CIS Edge Function service already streams by default wherever possible. You only need to use these APIs if you wish to modify the response body in some way, while maintaining streaming behavior. If your Edge function script only passes subrequest responses back to the client verbatim, without reading their bodies, then its body handling is already optimal, and there is no need for the techniques described here.
-{:note}
+{: note}
 
 ### Streaming pass-through
 {: #streaming-responses-pass-through}
@@ -596,7 +605,7 @@ async function streamBody(readable, writable) {
   await writer.close()
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Some important details to note:
 
@@ -672,7 +681,7 @@ async function streamJsonBodies(bodies, writable) {
   await writer.close()
 }
 ```
-{:codeblock}
+{: codeblock}
 
 Again, there are a couple of important details to note:
 
@@ -742,10 +751,10 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 ```
-{:codeblock}
+{: codeblock}
 
 ## Caching using fetch
-{:#caching-using-fetch}
+{: #caching-using-fetch}
 
 Determine how to cache a resource by setting TTLs, custom cache keys, and cache headers in a fetch request.
 
@@ -779,25 +788,24 @@ addEventListener("fetch", event => {
   return event.respondWith(handleRequest(event.request))
 })
 ```
-{:codeblock}
+{: codeblock}
 
-​
 ### Caching HTML resources
-{:#caching-html-resources}
+{: #caching-html-resources}
 
 ```sh
 // Force CIS to cache an asset
 fetch(event.request, { cf: { cacheEverything: true } })
 ```
-{:codeblock}
+{: codeblock}
 
 Setting the cache level to Cache Everything overrides the default "cacheability" of the asset. For TTL, {{site.data.keyword.cis_short_notm}} still relies on headers set by the origin.
-​
+
 ### Custom cache keys
-{:#custom-cache-keys}
+{: #custom-cache-keys}
 
 This feature is available only to enterprise customers.
-{:note}
+{: note}
 
 A request's cache key is what determines if two requests are "the same" for caching purposes. If a request has the same cache key as some previous request, then we can serve the same cached response for both.
 
@@ -805,7 +813,7 @@ A request's cache key is what determines if two requests are "the same" for cach
 // Set cache key for this request to "some-string".
 fetch(event.request, { cf: { cacheKey: "some-string" } })
 ```
-{:codeblock}
+{: codeblock}
 
 Normally, {{site.data.keyword.cis_short_notm}} computes the cache key for a request based on the request's URL, but you might want different URLs to be treated as if they were the same for caching purposes. For example, if your web site content is hosted from both Amazon S3 and Google Cloud Storage - you have the same content in both places, and you use a Worker to randomly balance between the two. However, you don't want to end up caching two copies of your content. You could utilize custom cache keys to cache based on the original request URL rather than the subrequest URL:
 
@@ -827,15 +835,15 @@ addEventListener("fetch", (event) => {
   )
 })
 ```
-{:codeblock}
+{: codeblock}
 
 Remember, edge functions operating on behalf of different zones cannot affect each other's cache. You can only override cache keys when making requests within your own zone (in the previous example `event.request.url` was the key stored), or requests to hosts that are not on {{site.data.keyword.cis_short_notm}}. When making a request to another {{site.data.keyword.cis_short_notm}} zone (for example, belonging to a different {{site.data.keyword.cis_short_notm}} customer), that zone fully controls how its own content is cached within {{site.data.keyword.cis_short_notm}}; you cannot override it.
-​
+
 ### Override based on origin response code
-{:#override-origin-response-code}
+{: #override-origin-response-code}
 
 This feature is available only to enterprise customers.
-{:note}
+{: note}
 
 ```sh
 // Force response to be cached for 86400 seconds for 200 status
@@ -844,12 +852,12 @@ fetch(request, {
   cf: { cacheTtlByStatus: { "200-299": 86400, 404: 1, "500-599": 0 } },
 })
 ```
-{:codeblock}
+{: codeblock}
 
 This option is a version of the `cacheTtl` feature which chooses a TTL based on the response's status code and does not automatically set `cacheEverything: true`. If the response to this request has a status code that matches, {{site.data.keyword.cis_short_notm}} caches for the instructed time, and override cache directives sent by the origin.
-​
+
 #### TTL interpretation
-{:#ttl-interpretation}
+{: #ttl-interpretation}
 
 The following TTL values are interpreted by {{site.data.keyword.cis_short_notm}}:
 - Positive values: Indicate in seconds how long {{site.data.keyword.cis_short_notm}} should cache the asset for.
@@ -857,7 +865,7 @@ The following TTL values are interpreted by {{site.data.keyword.cis_short_notm}}
 - `-1` or any negative value: Instructs {{site.data.keyword.cis_short_notm}} not to cache at all.
 
 ## Cache API
-{:#cache-api}
+{: #cache-api}
 
 Cache using the {{site.data.keyword.cis_short_notm}} Cache API. This example can also cache POST requests.
 
@@ -949,4 +957,4 @@ addEventListener("fetch", event => {
   }
 })
 ```
-{:codeblock}
+{: codeblock}

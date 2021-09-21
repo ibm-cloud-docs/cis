@@ -27,10 +27,10 @@ subcollection: cis
 
 
 # Setting up origin pools
-{:#glb-features-pools}
+{: #glb-features-pools}
 
 An origin pool is a group of origin servers that traffic is intelligently routed to when attached to a global load balancer. 
-{:shortdesc}
+{: shortdesc}
 
 The minimum number of available origin servers for the pool to be marked healthy is configurable by the user along with which specific health check to use. The origin pool can be associated with a specific region or it can be made available to all regions.
 
@@ -43,7 +43,7 @@ A {{site.data.keyword.cis_short_notm}} load balancer pool represents a group of 
 * Geo steering directs traffic to pools based on the client’s region or point of presence. If there is no geo steering configuration for a region or pool, the load balancer uses pool order to determine failover priority.
 
 ## Distribution of traffic within a pool
-{:#distribution-of-traffic-within-a-pool}
+{: #distribution-of-traffic-within-a-pool}
 
 By default, all traffic is distributed evenly among the origins in the pool using round-robin protocol. This is also true for non-proxied global load balancers.
 
@@ -65,9 +65,9 @@ For example, an origin pool is setup with 3 origins that have the following weig
 * Finally, the weight for origin-B is changed to `0`. The pool no longer receives traffic until origin-A returns to a healthy status or the weights for origin-C and origin-B are set to a non-zero value.
 
 ## Fallback pool
-{:#fallback-pool}
+{: #fallback-pool}
 
 The origin pool with the lowest priority (the largest number) is the designated "fallback pool." When all pools for a region are down, traffic is routed to the fallback pool, regardless of its health.
 
 When all pools are disabled, the fallback pool is not available.
-{:note}
+{: note}

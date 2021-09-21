@@ -30,7 +30,7 @@ subcollection: cis
 {: #actions}
 
 Firewall rule actions tell {{site.data.keyword.cis_short_notm}} how to respond to requests that match the criteria you define. The following table describes the actions that you can assign to your rules. 
-{:shortdesc}
+{: shortdesc}
 
 The priority column shows what precedence the action receives. If a request matches two different rules that have the same priority, precedence determines the action to take.
 

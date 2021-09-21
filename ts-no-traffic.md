@@ -34,18 +34,18 @@ subcollection: cis
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
 # Why am I not seeing any network traffic?
-{:#troubleshooting-cis-network-traffic}
+{: #troubleshooting-cis-network-traffic}
 {: help}
 {: support}
 
 You don't see any network traffic.
-{:tsSymptoms}
+{: tsSymptoms}
 
 There might be a redirect that is routing the traffic to the root domain.
-{:tsCauses}
+{: tsCauses}
 
 If you’re not seeing traffic, and you’re using a CNAME, make sure that there are no redirects in place that are routing the traffic to the root domain. 
-{:tsResolve}
+{: tsResolve}
 
 
 Remember that some DNS propagations can take up to 48 hours to complete.

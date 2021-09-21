@@ -31,7 +31,7 @@ subcollection: cis
 {: #mtls-features}
 
 Mutual Transport Layer Security (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It is only available for customers at the Enterprise or Security plan level.
-{:shortdesc}
+{: shortdesc}
 
 When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches the application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds. 
 
@@ -48,7 +48,7 @@ To obtain authorization, you must submit an IBM Support case. After mTLS is turn
 1. Click **Enable** to enable the feature. 
 
 After mTLS is enabled, it cannot be disabled. 
-{:tip}
+{: tip}
 
 To set up mTLS authentication in the IBM Cloud Internet Services UI for a particular endpoint: 
 1. In the Root certificates table, click **Add** to define a new root certificate. 
@@ -57,12 +57,12 @@ To set up mTLS authentication in the IBM Cloud Internet Services UI for a partic
 1. Click **Save**.
 
    If your zone is using an intermediate certificate in addition to the root certificate, upload the entire chain.
-   {:note}
+   {: note}
    
 1. In the MTLS access policies table, create a new access application that enforces mTLS authentication. The application must be built with a hostname that was associated in the certificate upload modal. The policy section is pre-set to enforce a decision of `non_identity`, and an `include` rule to match any valid certificate.
 
 ## Testing using curl
-{:#test-curl}
+{: #test-curl}
 
 1. Test for the site using mTLS by attempting to curl the site without a client certificate.
    This curl command example is for the site example.com that has an Access policy set for `https://auth.example.com`:
@@ -83,7 +83,7 @@ To set up mTLS authentication in the IBM Cloud Internet Services UI for a partic
    When the authentication process completes successfully, a CF_Authorization Set-Cookie header returns in the response.
 
 ## Validating mutual TLS
-{:#validating-mtls}
+{: #validating-mtls}
 
 Follow this validation workflow when you enable this Access policy:
 1. All requests to the origin are evaluated for a valid client certificate.

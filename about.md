@@ -28,10 +28,10 @@ subcollection: cis
 
 
 # About {{site.data.keyword.cis_full_notm}}
-{:#about-ibm-cloud-internet-services-cis}
+{: #about-ibm-cloud-internet-services-cis}
 
 {{site.data.keyword.cis_full}}, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on {{site.data.keyword.cloud_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishing defaults for you, which you can change easily using the UI or API.
 
@@ -43,7 +43,7 @@ ISO 27001 requires that clocks of all relevant information processing systems wi
 IBM {{site.data.keyword.cis_short_notm}} uses an internal NTP server `servertime.service.softlayer.com`.
 
 ## Security features
-{:#cis-security-features}
+{: #cis-security-features}
 
 Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or a [global load balancer](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use the security features. This allows traffic to flow through our servers and you can monitor the data.
 
@@ -62,38 +62,38 @@ Manage the TLS certificates encrypting traffic between your origin server and yo
 Use rate limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
 
 ### Web Application Firewall (WAF)
-{:#cis-web-application-firewall}
+{: #cis-web-application-firewall}
 
 WAF is implemented through two rule sets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf) and [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
 
 ### IP firewall
-{:#cis-ip-firewall}
+{: #cis-ip-firewall}
 
 {{site.data.keyword.cis_full_notm}} offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs. This section details the tools that are available.
 
 #### IP rules
-{:#cis-ip-rules}
+{: #cis-ip-rules}
 
 IP rules allow you to control access for specific IP addresses, IP ranges, specific countries, specific ASNs, and certain CIDR blocks. Available actions on incoming requests are:
-  * Allowlist
-  * Block
-  * Challenge (Captcha)
-  * JavaScript challenge (IUAM challenge)
+* Allowlist
+* Block
+* Challenge (Captcha)
+* JavaScript challenge (IUAM challenge)
 
 For example, if you notice that a particular IP is causing malicious requests, you can block that user by IP address.
 
 IP rules apply to TCP, HTTP, and HTTPS [Range](/docs/cis?topic=cis-cis-range) apps, because IP rules are applied to Open System Interconnection (OSI) Layer 3 and Layer 4.
-{:note}
+{: note}
 
 #### User-agent blocking rules
-{:#user-agent-blocking-rules}
+{: #user-agent-blocking-rules}
 
 User-agent blocking rules allow you to act on any user-agent string you select. This capability works like domain lockdown, except that the block examines the incoming user-agent string instead of the IP. You can choose how to handle a matching request with the same list of actions that you established in the IP rules (block, challenge, and JS challenge). User-agent blocking applies to your entire zone. You cannot specify subdomains in the same manner as you can with a domain lockdown.
 
 This tool is useful for blocking any user-agent strings that you deem suspicious.
 
 #### Domain lockdown
-{:#cis-domain-lockdown}
+{: #cis-domain-lockdown}
 
 Domain lockdown allows you allowlist-specific IP addresses and IP ranges, such that all other IPs are blocklisted. Domain lockdown supports the following items.
 
@@ -107,7 +107,7 @@ This capability is useful when you need more granularity in your access rules be
 Create rules that examine incoming HTTP traffic against a set of filters to block, challenge, log, or allow matching requests.
 
 In general, firewall rules are designed for properties exposed in OSI Layer-7 (HTTP), such as request headers and body content characteristics. Therefore, firewall rules apply to HTTP/HTTPS [Range](/docs/cis?topic=cis-cis-range) apps.
-{:note}
+{: note}
 
 ### Events
 {: #events-feature}
@@ -132,14 +132,14 @@ Advanced security settings include the following features, which you can change,
 * **True client IP header** - Sends the end user's IP address in the True-Client-IP header.
 
 ### Security standards and platform
-{:#security-standards-and-platform}
+{: #security-standards-and-platform}
 
  * TLS (SHA2 and SHA1)
  * IPv6
  * HTTP/2 and SPDY
 
 ### Network attacks and mitigation
-{:#network-attacks-and-mitigation}
+{: #network-attacks-and-mitigation}
 
 Generally, attacks fall into two categories:
 
@@ -149,57 +149,57 @@ Generally, attacks fall into two categories:
 | Automatically blocked at our edge | {{site.data.keyword.cis_short_notm}} handles these with Defense Mode, WAF, and security-level settings. |
 
 ### Unlimited DDoS mitigation
-{:#cis-unlimited-ddos-mitigation}
+{: #cis-unlimited-ddos-mitigation}
 
 DDoS mitigation is typically an expensive service that can grow in cost when under attack. Unlimited DDoS mitigation is included with {{site.data.keyword.cis_short_notm}} at no additional cost.
 
 ## Reliability features
-{:#cis-reliability-features}
+{: #cis-reliability-features}
 
 ![reliability-graphic.png](images/reliability-graphic.png)
 
 ### Global load balancing features
-{:about-glb-features}
+{: about-glb-features}
 
 The global load balancing service distributes your traffic across multiple servers with a combination of origin pools, health checks, and a load balancer. Global load balancing features the following:
    * Proxy and non-proxy options for load balancing
    * Origin pools and health checks
 
 #### Global anycast network
-{:global-anycast-network}
+{: global-anycast-network}
 
-The available health check regions are based on the [Cloudflare Global Anycast Network](https://www.cloudflare.com/network/){:external}.
+The available health check regions are based on the [Cloudflare Global Anycast Network](https://www.cloudflare.com/network/){: external}.
 
 
 ### DNS features
-{:about-dns-features}
+{: about-dns-features}
 
 DNS within {{site.data.keyword.cis_short_notm}} has the following features:
    * DNS management - Manage your DNS records, control proxying, and enable DNS security.
    * DNSSEC: DNS security cryptographically signs a zone to ensure that the DNS records provided to the user are the same as the DNS records published on the DNS server.
 
 ## Performance features
-{:#cis-performance-features}
+{: #cis-performance-features}
 
 ![performance-graphic.png](images/performance-graphic.png)
 
 
 ### Caching
-{:caching-features}
+{: caching-features}
 
 Control how {{site.data.keyword.cis_short_notm}} manages your cached assets.
 
 ### Page rules
-{:page-rule-features}
+{: page-rule-features}
 
 Fine-tune your cache behavior and create content optimization.
 
 ### Routing
-{:routing-features}
+{: routing-features}
 
 Eliminate excess latency by analyzing and optimizing routing decisions across the global internet using real-time network connections.
 
 ### Advanced performance
-{:advanced-performance}
+{: advanced-performance}
 
 Apply Brotli compression and restrict upload sizes in the advanced performance section.

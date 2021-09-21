@@ -45,7 +45,7 @@ Domain state transitions:
 1. (Standard) A Standard plan level instance can be deleted immediately. 
 1. The name server configuration of a domain is monitored. A change to the configuration of the authoritative name server at the DNS provider or registrar marks the domain `moved`. This can be the result of an update to the name servers if the domain is moved to a different {{site.data.keyword.cis_short_notm}} instance, or it can be a sign of a bad name server configuration.
 
-   A `moved` domain might stop serving traffic, and could potentially be deleted. If your domain is in `moved` state and you believe this is in error, please [contact IBM Support](/docs/cis?topic=cis-gettinghelp).
+   A `moved` domain might stop serving traffic, and could potentially be deleted. If your domain is in `moved` state and you believe this is in error, [contact IBM Support](/docs/cis?topic=cis-gettinghelp).
    {: important}
 
 1. `Moved` domains could potentially be deleted automatically, or by the user.

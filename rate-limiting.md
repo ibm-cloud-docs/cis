@@ -26,7 +26,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Configuring rate limiting
-{:#cis-rate-limiting}
+{: #cis-rate-limiting}
 
 Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
 {: shortdesc}
@@ -34,7 +34,7 @@ Rate limiting (Enterprise plan only) protects against denial-of-service attacks,
 Select the type of rate limiting rule, either a **Custom rule** or **Protect login**
 
 ## Creating a custom rate limiting rule
-{:#create-a-custom-rate-limiting-rule}
+{: #create-a-custom-rate-limiting-rule}
 
 Enter a rule name that helps you remember what the rule does. This is an optional field.
 
@@ -51,12 +51,12 @@ Select a value form the **Method** list menu (ANY is the default).
 Update **HTTP response header**.  You can also **Add response header** to include headers returned by your origin web server.
 
 If you have more than one header under **HTTP response header**, an _AND_ boolean logic applies.  To exclude a header from being matched, use the _Not Equal_ option. Also, each header must be an exact match. However, case sensitivity doesn't apply.
-{:note}
+{: note}
 
 Under **Origin response code**, type the valid numerical value of each HTTP response code to match.  To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
 
 ### Configuring the response
-{:#rate-limiting-configure-response}
+{: #rate-limiting-configure-response}
 
 Select from the actions listed, and specify the timeout period. In this case, the timeout refers to the ban period that the action takes place. A 60 second timeout means the action is applied for 60 seconds.
 
@@ -72,12 +72,12 @@ Select from the actions listed, and specify the timeout period. In this case, th
 Specify the response type when a rule's threshold is exceeded.
 
 ### Bypassing URLs
-{:#rate-limiting-bypass}
+{: #rate-limiting-bypass}
 
 Bypass lets you create the equivalent of a allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the Rate Limiting rule is matched.
 
 ## Protecting login
-{:#rate-limiting-protect-login}
+{: #rate-limiting-protect-login}
 
 Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes are blocked for 15 minutes.
 

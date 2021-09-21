@@ -29,15 +29,15 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Querying Edge Functions metrics with GraphQL
-{:#graphql-edge-func}
+{: #graphql-edge-func}
 
 This example uses the GraphQL Analytics API to query for Edge Functions Metrics over a specified time period. You can query up to one week of data for dates up to three months ago.
-{:shortdesc}
+{: shortdesc}
 
 The following API call requests an Edge Functions script's metrics over a one day period, and outputs the requested fields. Adjust the `datetimeStart`, `datetimeEnd`, `accountTag`, and `scriptName` variables as needed.
 
 ## The API call
-{:#api-call-edge-func}
+{: #api-call-edge-func}
 
 ```
 PAYLOAD='{ "query":
@@ -82,7 +82,7 @@ curl \
   --data "$(echo $PAYLOAD)" \
   https://api.cis.cloud.ibm.com/v1/<crn>/zones/<zoneid>/graphql
 ```
-{:codeblock}
+{: codeblock}
 
 The results are returned in JSON (as requested), so piping the output to jq makes them easier to read. For example:
 
@@ -155,4 +155,4 @@ curl \
   "errors": null
 }
 ```
-{:screen}
+{: screen}

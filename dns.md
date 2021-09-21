@@ -26,20 +26,20 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Setting up your Domain Name System for {{site.data.keyword.cis_short_notm}}
-{:#set-up-your-dns-for-cis}
+{: #set-up-your-dns-for-cis}
 
 Read some specific instructions about how to configure your {{site.data.keyword.cis_full}} Domain Name System (DNS) records, including how to configure Secure DNS.
 {: shortdesc}
 
 ## Adding DNS records
-{:#adding-dns-records}
+{: #adding-dns-records}
 
 You can use the **Type** list menu to select the type of record you want to create. Each DNS record type has a Name and Time-To-Live (TTL) associated with it.
 
 Whatever is entered into the Name field has the domain name appended to it unless the domain name is manually appended in the field already (for example, if `www` or `www.example.com` is typed into the field, the API handles both as `www.example.com`). If the exact domain name is typed into the name field, then it won't be appended on itself (for example, `example.com` is handled as `example.com`). However, the list of DNS records only shows the names without the domain name added, so `www.example.com` is shown as `www` and `example.com` is shown as `example.com`. The TTL has a default value of `Automatic`, but can be changed by the user. A proxied DNS record always has a TTL of `Automatic`, so a newly proxied record adopts this configuration during this change.
 
 ### A Type record
-{:#a-type-record}
+{: #a-type-record}
 
 To add this record type, valid values must exist in the **Name** and **IPv4 Address** fields. A **TTL** also can be specified from the list menu, with a default value of `Automatic`.
 
@@ -47,7 +47,7 @@ To add this record type, valid values must exist in the **Name** and **IPv4 Addr
    Optional Field: TTL (default value is `Automatic`)
 
 ### AAAA Type record
-{:#aaaa-type-record}
+{: #aaaa-type-record}
 
 To add this record type, valid values must exist in the **Name** and **IPv6 Address** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
@@ -55,7 +55,7 @@ To add this record type, valid values must exist in the **Name** and **IPv6 Addr
    Optional Field: TTL (default value is `Automatic`)
 
 ### CNAME Type record
-{:#cname-type-record}
+{: #cname-type-record}
 
 To add this record type, a valid value must exist in the **Name** field and a fully qualified domain name must be in the **Domain Name** (FQDN) field. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
@@ -63,7 +63,7 @@ To add this record type, a valid value must exist in the **Name** field and a fu
    Optional Field: TTL (default value is `Automatic`)
 
 Enterprise plans are able to CNAME another domain as long as that domain is configured within {{site.data.keyword.cis_short_notm}}.
-{:note}
+{: note}
 
 ```
 Ex.
@@ -73,16 +73,16 @@ Configured CIS Domains:
 
 test.example.com -CNAME-> test.different.com
 ```
-{:pre}
+{: pre}
 
 The CNAME flattening feature is enabled by default, and cannot be turned off.
-{:note}
+{: note}
 
 {{site.data.keyword.cis_short_notm}} does not support Cloudflare's CNAME setup. The only way to activate your domain in {{site.data.keyword.cis_short_notm}} is to delegate your NS Records management to {{site.data.keyword.cis_short_notm}}.
-{:important}
+{: important}
 
 ### MX Type record
-{:#mx-type-record}
+{: #mx-type-record}
 
 To add this record type, a valid value must exist in the **Name** field and a valid address must exist in the **Mail Server** field. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
@@ -90,7 +90,7 @@ To add this record type, a valid value must exist in the **Name** field and a va
    Optional Fields: TTL (default value is `Automatic`), Priority (default value is 1)
 
 ### LOC Type record
-{:#loc-type-record}
+{: #loc-type-record}
 
 To add this record type, a valid value must exist in the **Name** field. If you need more specific information, select the **Configure LOC options** button. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
@@ -102,7 +102,7 @@ To add this record type, a valid value must exist in the **Name** field. If you 
 ![Create LOC Type record](images/create-loc-type-record-2.png)
 
 ### CAA Type record
-{:#caa-type-record}
+{: #caa-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Value** fields. The Value field correlates to the value of the **Tag** list field, which defaults to "Send violation reports to URL". A **TTL** can also can be specified from the list, with the default value of `Automatic`.
 
@@ -110,7 +110,7 @@ To add this record type, valid values must exist in the **Name** and **Value** f
    Optional Fields: TTL (default value is `Automatic`), Tag (default is to send violation reports to URL)
 
 ### SRV Type record
-{:#srv-type-record}
+{: #srv-type-record}
 
 To add this record type, valid values must exist in the **Name**, **Service Name** and **Target** fields. Use the list menu to select a **protocol**, which defaults to the UDP protocol. Additionally, you can specify **Priority**, **Weight** and **Port**. These three fields default to a value of 1. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
@@ -118,7 +118,7 @@ To add this record type, valid values must exist in the **Name**, **Service Name
    Optional Fields: TTL (default value is `Automatic`), Protocol (defaulted to UDP), Priority (defaulted to 1), Weight (defaulted to 1), Port (defaulted to 1)
 
 ### SPF Type record
-{:#spf-type-record}
+{: #spf-type-record}
 
 Support for SPF records (deprecated in RFC 7208) is ending in February, 2022. After this date, you can no longer create SPF type records in {{site.data.keyword.cis_short_notm}}. Use TXT records instead.
 {: deprecated}
@@ -129,7 +129,7 @@ To add this record type, valid values must exist in the **Name** and **Content**
    Optional Field: TTL (default value is `Automatic`)
 
 ### TXT Type record
-{:#txt-type-record}
+{: #txt-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
@@ -137,10 +137,10 @@ To add this record type, valid values must exist in the **Name** and **Content**
    Optional Field: TTL (default value is `Automatic`)
 
 The first time you order a dedicated certificate Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process happens again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
-{:note}
+{: note}
 
 ### NS Type record
-{:#ns-type-record}
+{: #ns-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Name Server** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
@@ -148,15 +148,15 @@ To add this record type, valid values must exist in the **Name** and **Name Serv
    Optional Field: TTL (default value is `Automatic`)
    
 ### PTR type record
-{:#ptr-type-record}
+{: #ptr-type-record}
 
-The PTR record option shown in the DNS Records list menu is not for adding PTR records for Reverse DNS resolution. The purpose is adding a PTR Record to the Forward DNS resolution for the domain. PTR in Forward DNS is allowed under the [DNS specification]( https://tools.ietf.org/html/rfc1035#section-3.3.12){:external}.
-{:note}
+The PTR record option shown in the DNS Records list menu is not for adding PTR records for Reverse DNS resolution. The purpose is adding a PTR Record to the Forward DNS resolution for the domain. PTR in Forward DNS is allowed under the [DNS specification]( https://tools.ietf.org/html/rfc1035#section-3.3.12){: external}.
+{: note}
 
 PTR records primarily prevent emails from going to spam folders. Because CIS doesn't support email traffic by default, you must set the PTR record to the location of your email server. Contact your email provider for assistance.
 
 ## Updating DNS records
-{:#updating-dns-records}
+{: #updating-dns-records}
 
 In each record row, you can click the **Edit record** option from the menu, which opens a dialog box that you can use to update the record.
 
@@ -165,7 +165,7 @@ In each record row, you can click the **Edit record** option from the menu, whic
 After you are finished making your changes, select **Update record** to save them, or **Cancel** to abort the changes.
 
 ## Deleting DNS records
-{:#deleting-dns-records}
+{: #deleting-dns-records}
 
 In each record row, you can select the **Delete record** option from the menu, which opens a dialog box to confirm the delete process.
 
@@ -175,9 +175,9 @@ You can select the **Delete** button to confirm your delete action. Select **Can
 
 
 ## Importing and exporting DNS records
-{:#import-export-records}
+{: #import-export-records}
 
-DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.wikipedia.org/wiki/Zone_file){:external}.
+DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.wikipedia.org/wiki/Zone_file){: external}.
 Click the overflow menu and select to import or export records.
 
 ![DNS Records Option](images/import-export-records.png)
@@ -187,7 +187,7 @@ Click the overflow menu and select to import or export records.
 **Export records** - Use `Export records` to create a backup of your zone file, or export it to use with another DNS provider. When this menu option is clicked, the records are downloaded to the location specified by your browser settings (typically the Downloads folder). To select another folder location, change your browser's settings to prompt you for a location with each download.
 
 ## Configuring and managing your secure DNS
-{:#configuring-and-managing-your-secure-dns}
+{: #configuring-and-managing-your-secure-dns}
 
 **DNSSec** is a technology to digitally sign DNS data so you can be assured it is valid. To eliminate vulnerability from the internet, DNSSec must be deployed at each step in the lookup, from root zone to final domain name (for example, `www.icann.org`).
 

@@ -30,7 +30,7 @@ subcollection: cis
 {: #existing-dns-records}
 
 A {{site.data.keyword.cis_full}} load balancer is identified by the DNS hostname whose traffic you want to balance (for example, `www.example.com`). The load balancer defines which origin server pools to use, the order in which they are used, and how to geographically distribute traffic among pools.
-{:shortdesc}
+{: shortdesc}
 
 When you create a load balancer on {{site.data.keyword.cis_short_notm}}, you can do one of the following:
 

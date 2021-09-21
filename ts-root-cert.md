@@ -37,15 +37,15 @@ subcollection: cis
 {: #update-origin-root-ca}
 
 Your origin root certificate has expired, or will soon expire,
-{:tsSymptoms}
+{: tsSymptoms}
 
 Some origin web servers (such as IIS and cPanel) validate origin root CA certificates and require you to upload one.
 If you are using an expired version of the Cloudflare origin root CA, you must take the following actions to avoid site disruptions.
-{:tsCauses}
+{: tsCauses}
 
 
 Select one of the following root certificates to download and install.
-{:tsResolve}
+{: tsResolve}
 
-  * [RSA version certificate](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_rsa_root.pem) 
-  * [ECC version certificate](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_ecc_root.pem) 
+* [RSA version certificate](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_rsa_root.pem) 
+* [ECC version certificate](https://cloud.ibm.com/media/docs/downloads/cis/origin_ca_ecc_root.pem) 

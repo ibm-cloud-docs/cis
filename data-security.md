@@ -59,7 +59,7 @@ The {{site.data.keyword.cis_short_notm}} configuration data is deleted on reques
 The {{site.data.keyword.cis_short_notm}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.cis_short_notm}} service description, which you can find in [{{site.data.keyword.cloud_notm}} Terms](/docs/overview?topic=overview-terms). When a {{site.data.keyword.cis_short_notm}} instance is deleted by the UI, CLI, or API, the instance data is retained for seven days from deletion.
 
 Before deleting an instance, all the domains in the instance must be removed.
-{:note}
+{: note}
 
 Deleting the {{site.data.keyword.cis_short_notm}} instance removes all data.
 

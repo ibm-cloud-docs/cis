@@ -25,7 +25,7 @@ subcollection: cis
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability
-{:#manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability}
+{: #manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability}
 
 To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and global load balancers. For additional reliability, you can use our page rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your {{site.data.keyword.cis_short_notm}} deployment optimally reliable.
 {: shortdesc}
@@ -42,7 +42,7 @@ Notice that the {{site.data.keyword.cis_short_notm}} interface is organized into
 
 
 ## Setting up DNS
-{:#setting-up-dns}
+{: #setting-up-dns}
 
 To get started setting up your DNS configuration, select **DNS** from the navigation menu.
 
@@ -50,14 +50,14 @@ For detailed information about setting up and managing your DNS for reliability,
 
 
 ## Setting up global load balancers
-{:#setting-up-glb}
+{: #setting-up-glb}
 
 To get started setting up your global load balancers, select **Global Load Balancers** from the navigation menu.
 
 For detailed information about setting up and managing your global load balancers, see [Global load balancer concepts](/docs/cis?topic=cis-global-load-balancer-glb-concepts).
 
 ## Using page rules to increase reliability
-{:#using-page-rules-to-increase-reliability}
+{: #using-page-rules-to-increase-reliability}
 
 Here are some recommended page rule settings to give your site maximum reliability:
 
@@ -66,7 +66,7 @@ Here are some recommended page rule settings to give your site maximum reliabili
  * Forwarding URL
 
 ## Serve Stale Content
-{:#serve-stale-content}
+{: #serve-stale-content}
 
 You can use the **Serve Stale Content** page rule setting to keep a limited version of your site online if your server goes down.
 
@@ -75,7 +75,7 @@ With **Serve Stale Content**, when your server goes down, {{site.data.keyword.ci
 If {{site.data.keyword.cis_short_notm}} does not have the requested page in its cache, your visitor sees an error page letting them know that the website page they are requesting is offline.
 
 ### Seting up Serve Stale Content
-{:#setting-up-serve-stale-content}
+{: #setting-up-serve-stale-content}
 
 To enable **Serve Stale Content**, follow these steps:
 
@@ -85,7 +85,7 @@ To enable **Serve Stale Content**, follow these steps:
 4. Select **Provision Resource**.
 
 ### Serve Stale Content limitations
-{:#limitations-serve-stale-content}
+{: #limitations-serve-stale-content}
 
  * **Serve Stale Content** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site are viewable when your origin server goes down.
 
@@ -98,7 +98,7 @@ To enable **Serve Stale Content**, follow these steps:
  * **Serve Stale Content** does not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency, because the "Edge Cache Expire TTL" causes the **Serve Stale Content** cache to be purged in the corresponding interval.
 
 ## Origin Cache Control
-{:#origin-cache-control}
+{: #origin-cache-control}
 
 You can use the **Origin Cache Control** Page Rule setting to determine what content is cached from your origin and how often the content is updated, which has an effect on reliability and on performance. By default, if no settings are changed and no headers that prevent caching are sent from your origin server, {{site.data.keyword.cis_short_notm}} caches all static content with certain extensions. These types of content include images, CSS, and JavaScript. This caching is primarily for performance reasons.
 
@@ -107,7 +107,7 @@ To set up **Origin Cache Control** use page rules to turn on specific headers th
 Setting **Origin Cache Control** invokes caching rules that seek to adhere closely to internet best practices and RFCs, primarily with respect to revalidation. For example, the {{site.data.keyword.cis_short_notm}} default behavior with `max-age=0` is not to cache at all, whereas setting **Origin Cache Control** caches, but it always revalidates.
 
 ### Setting up Origin Cache Control
-{:#setting-up-origin-cache-control}
+{: #setting-up-origin-cache-control}
 
 To enable **Origin Cache Control**, follow these steps:
 
@@ -117,7 +117,7 @@ To enable **Origin Cache Control**, follow these steps:
 4. Select **Provision Resource**.
 
 ### Page Rule precedence
-{:#page-rule-precedence}
+{: #page-rule-precedence}
 
 Two specific page rules take precedence for caching overall:
 
@@ -128,7 +128,7 @@ Two specific page rules take precedence for caching overall:
 If no page rule is set, we use the `Standard` caching mode, which is based the extension of the resource. We cache static resources only.
 
 ### Origin cache-control headers
-{:#origin-cache-control-headers}
+{: #origin-cache-control-headers}
 
 The second way to alter what {{site.data.keyword.cis_short_notm}} caches is through caching headers sent from the origin. {{site.data.keyword.cis_short_notm}} respects these settings, but you can override them by specifying an **Edge Cache TTL** page rule setting. Here are the headers we consider when deciding what resources to cache from your origin:
 
@@ -137,27 +137,27 @@ The second way to alter what {{site.data.keyword.cis_short_notm}} caches is thro
  * If the **Cache-Control** header is set to `public` and the `max-age` is greater than 0, or if the `Expires` headers are set any time in the future, the resource is cached.
 
 According to RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If both are seen and they do not agree, `max-age` wins.
-{:note}
+{: note}
 
 ### Using the `s-maxage` header
-{:#using-the-s-maxage-header}
+{: #using-the-s-maxage-header}
 
 The third way to control caching behavior and browser caching behavior together is by using the **`s-maxage`** Cache-Control header.
 
 Normally we respect the `max-age` directive:
 
 `Cache-Control: max-age=1000`
-{:pre}
+{: pre}
 
 But if you want to specify a cache timeout that's different from the browser, we can use `s-maxage`. Here's an example that tells {{site.data.keyword.cis_short_notm}} to cache the object for 200 seconds and the browser to cache the object for 60 seconds.
 
 `Cache-Control: s-maxage=200, max-age=60`
-{:pre}
+{: pre}
 
 Basically `s-maxage` is intended to be followed ONLY by reverse proxies (so the browser should ignore it) whilst on the other hand we ({{site.data.keyword.cis_short_notm}}) give priority to `s-maxage` if it is present. We respect whichever value is higher: the browser cache setting or the `max-age` header.
 
 ### Summary on cache control headers and page rules for reliability
-{:#summary-cache-control-headers-page-rules}
+{: #summary-cache-control-headers-page-rules}
 
 To sum up, here are some main areas to consider for reliability with regard to caching:
 
@@ -172,7 +172,7 @@ To sum up, here are some main areas to consider for reliability with regard to c
 404        5m;
 any        0s;
 ```
-{:pre}
+{: pre}
 
  * To cache more, create a Page Rule with **Cache Level** set to `Cache everything` on the URL (if your web server returns a 404 when requesting this URL, this result is cached for 5m only).
 
@@ -180,15 +180,15 @@ any        0s;
 
 
 ## Forwarding URL
-{:#forwarding-url}
+{: #forwarding-url}
 
 To ensure that your content is always available, create page rule with the **Forwarding URL** setting used, in case your site is unavailable.
 
 When you enable a **Forwarding URL**, all of your other settings are disabled because you are sending all of your traffic to another URL.
-{:note}
+{: note}
 
 ### Setting up a forwarding URL
-{:#setting-up-forwarding-url}
+{: #setting-up-forwarding-url}
 
 To enable **Forwarding URL**, follow these steps:
 
@@ -199,15 +199,15 @@ To enable **Forwarding URL**, follow these steps:
 5. Select **Provision Resource**.
 
 ### Forwarding URL examples
-{:#forwarding-examples}
+{: #forwarding-examples}
 
 Imagine that you want to make it easy for anyone coming to reach a URL such as:
 
 `*www.example.com/+`
-{:pre}
+{: pre}
 
 `*example.com/+`
-{:pre}
+{: pre}
 
 This pattern matches:
 
@@ -218,7 +218,7 @@ https://www.example.com/+
 https://blog.example.com/+
 https://www.blog.example.com/+
 ```
-{:pre}
+{: pre}
 
 It does not match:
 
@@ -226,59 +226,59 @@ It does not match:
 http://www.example.com/blog/+  [extra directory before the +]
 http://www.example.com+  [no trailing slash]
 ```
-{:pre}
+{: pre}
 
 After you've created the pattern that matches what you want, add the **Forwarding URL** setting and select the forwarding type and enter the destination URL. For example:
 
 `https://plus.google.com/yourid`
-{:pre}
+{: pre}
 
 Select **Provision Resource**. Within a few seconds any requests that match the pattern are forwarded to the new URL with the specified redirect.
 
 ### Advanced forwarding options
-{:#advanced-forwarding-options}
+{: #advanced-forwarding-options}
 
 If you use a basic redirect, such as forwarding the root domain to `www.yourdomain.com`, you lose anything else in the URL. For example, you could set up the pattern:
 
 `example.com`
-{:pre}
+{: pre}
 
 And have it forward to:
 
 `http://www.example.com`
-{:pre}
+{: pre}
 
 But then if someone entered:
 
 `example.com/some-particular-page.html`
-{:pre}
+{: pre}
 
 Then they are redirected to:
 
 `www.example.com`
-{:pre}
+{: pre}
 
 instead of:
 
 `www.example.com/some-particular-page.html`
-{:pre}
+{: pre}
 
 The solution is to use variables. Each wildcard corresponds to a variable that can be referenced in the forwarding address. The variables are represented by a `$` followed by a number. To refer to the first wildcard you'd use `$1`, to refer to the second wildcard you'd use `$2`, and so on. To fix the forwarding from the root to `www` in the previous example, use the same pattern:
 
 `example.com/*`
-{:pre}
+{: pre}
 
 Then set up the following URL for traffic to forward to:
 
 `http://www.example.com/$1`
-{:pre}
+{: pre}
 
 In this case, if someone went to:
 
 `example.com/some-particular-page.html`
-{:pre}
+{: pre}
 
 They are redirected to:
 
 `http://www.example.com/some-particular-page.html`
-{:pre}
+{: pre}

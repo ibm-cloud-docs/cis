@@ -27,10 +27,10 @@ subcollection: cis
 
 
 # Setting session affinity
-{:#session-affinity}
+{: #session-affinity}
 
 Loading a website usually requires fetching multiple assets from a web server. {{site.data.keyword.cis_short_notm}} session affinity minimizes redundant network requests by automatically directing requests from the same client to the same origin web server. 
-{:shortdesc}
+{: shortdesc}
 
 {{site.data.keyword.cis_short_notm}} sets a cookie on the initial response to the client. Using the cookie in subsequent client requests ensures those requests are sent to the same origin, unless the origin is unavailable.
 
