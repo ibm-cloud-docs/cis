@@ -32,7 +32,7 @@ subcollection: cis
 <!--{{site.data.keyword.cloud}} private endpoints enable you to connect to supported {{site.data.keyword.cloud_notm}} services by using IP addresses of your choosing.-->
 
 <!--## Using the CLI-->
-<!----> {: #cli-private-endpoint}
+<!-- {: #cli-private-endpoint}-->
 
 <!--After creating an endpoint gateway for {{site.data.keyword.cis_short_notm}}, follow these steps:-->
 
@@ -41,17 +41,17 @@ subcollection: cis
 <!--   ```sh-->
 <!--   ibmcloud update-->
 <!--   ```-->
-<!--   --> {: pre}
+<!--{: pre}   --> 
    
 <!--1. Update the {{site.data.keyword.cis_short_notm}} CLI plug-in:-->
 
 <!--   ```sh-->
 <!--   ibmcloud plugin update cis-cli-->
 <!--   ```-->
-<!--   --> {: pre}
+<!--    {: pre}-->
 
 <!--## Using the API-->
-<!----> {: #vpe-setup-api}
+<!-- {: #vpe-setup-api}-->
  
 Use the service endpoint's FQDN `api.private.cis.cloud.ibm.com` in the URL to access the service. For example:
 
