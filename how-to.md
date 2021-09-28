@@ -34,7 +34,7 @@ You'll begin by using the Overview screen as your working base of operations. It
 Once you've set up your DNS and configured it, you are ready to go!
 
 ## Using the Overview screen
-{: #using-the-overview-screen}
+{: #using-overview-screen}
 
 Using the Overview screen, you can see the status of all your selections. Each setting links to the section of the user interface where the setting is configured. To modify any selection, you can navigate by clicking the link for the setting. For example, to change the load balancer configuration or add a new load balancer, click the `Load Balancer` field.
 
@@ -76,6 +76,7 @@ Next, you can set up caching. You have the option of three types of caching, ava
  * **Query string independent**: Delivers the same resource to everyone independent of the query string.
    The **Ignore Query String** setting applies only to static file extensions. This setting removes the query string when generating the cache key, so that a request for `style.css?something` is normalized to `style.css` when serving from the cache.
    {: note}
+
  * **Query string dependent**: Delivers a different resource each time the query string changes.
 
 ## Purge cache
@@ -104,8 +105,8 @@ Notice that when certain rules are enabled, other options become grayed out, if 
 
 You also can enable or disable your page rules from the table displayed in the Page Rules screen. See [Using page rules](/docs/cis?topic=cis-use-page-rules) for details.
 
- ## Security settings
- {: #security-settings-overview}
+## Security settings
+{: #security-settings-overview}
 
 By default, DDoS protection is enabled for any DNS records or load balancers with proxy on.
 

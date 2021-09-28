@@ -51,14 +51,17 @@ Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-
 
 ### TLS
 {: #tls-feature}
+
 Protect your site and control your Transport Layer Security (TLS) settings. Manage the certificates used to secure traffic to your site.
 
 ### Origin
 {: #origin-feature}
+
 Manage the TLS certificates encrypting traffic between your origin server and your users.
 
 ### Rate limiting
 {: #rate-limiting-feature}
+
 Use rate limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
 
 ### Web Application Firewall (WAF)
@@ -104,6 +107,7 @@ This capability is useful when you need more granularity in your access rules be
 
 ### Firewall rules
 {: #firewall-rules-feature}
+
 Create rules that examine incoming HTTP traffic against a set of filters to block, challenge, log, or allow matching requests.
 
 In general, firewall rules are designed for properties exposed in OSI Layer-7 (HTTP), such as request headers and body content characteristics. Therefore, firewall rules apply to HTTP/HTTPS [Range](/docs/cis?topic=cis-cis-range) apps.
@@ -111,14 +115,17 @@ In general, firewall rules are designed for properties exposed in OSI Layer-7 (H
 
 ### Events
 {: #events-feature}
+
 View events that are triggered by an active web application firewall rule. For each event, you can change the triggered action based on the requesting IP address, or the requesting region as a whole.
 
 ### Range
 {: #range-feature}
+
 Extend the power of {{site.data.keyword.cis_short_notm}} DDoS, TLS and IP firewall to your web servers and your TCP-based services using Range applications, keeping them online and secure.
 
 ### Advanced security
 {: #advanced-security-feature}
+
 Advanced security settings include the following features, which you can change, enable, or disable.
 
 * **Browser integrity check** - The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks or challenges visitors that do not have a user agent, or who add a non-standard user agent. This tactic is commonly used by abuse bots, crawlers, or APIs.
@@ -134,9 +141,9 @@ Advanced security settings include the following features, which you can change,
 ### Security standards and platform
 {: #security-standards-and-platform}
 
- * TLS (SHA2 and SHA1)
- * IPv6
- * HTTP/2 and SPDY
+* TLS (SHA2 and SHA1)
+* IPv6
+* HTTP/2 and SPDY
 
 ### Network attacks and mitigation
 {: #network-attacks-and-mitigation}
@@ -162,8 +169,8 @@ DDoS mitigation is typically an expensive service that can grow in cost when und
 {: about-glb-features}
 
 The global load balancing service distributes your traffic across multiple servers with a combination of origin pools, health checks, and a load balancer. Global load balancing features the following:
-   * Proxy and non-proxy options for load balancing
-   * Origin pools and health checks
+* Proxy and non-proxy options for load balancing
+* Origin pools and health checks
 
 #### Global anycast network
 {: global-anycast-network}
@@ -175,8 +182,8 @@ The available health check regions are based on the [Cloudflare Global Anycast N
 {: about-dns-features}
 
 DNS within {{site.data.keyword.cis_short_notm}} has the following features:
-   * DNS management - Manage your DNS records, control proxying, and enable DNS security.
-   * DNSSEC: DNS security cryptographically signs a zone to ensure that the DNS records provided to the user are the same as the DNS records published on the DNS server.
+* DNS management - Manage your DNS records, control proxying, and enable DNS security.
+* DNSSEC: DNS security cryptographically signs a zone to ensure that the DNS records provided to the user are the same as the DNS records published on the DNS server.
 
 ## Performance features
 {: #cis-performance-features}

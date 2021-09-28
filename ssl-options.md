@@ -48,6 +48,7 @@ These options are listed in the order from the least secure (Off) to the most se
 
 ### Off
 {: #tls-encryption-modes-off}
+
 No secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, and no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. Visitors can only view your website over HTTP, and any visitor attempting to connect using HTTPS receives an `HTTP 301 Redirect` to the plain HTTP version of your website.
 
 ![Diagram of TLS Off](images/off.png "Diagram of TLS Off"){: caption="Figure 1. A diagram of TLS Off" caption-side="bottom"}
@@ -91,27 +92,27 @@ By default, this is set to `1.2`. Higher TLS versions provide additional securit
 
 The following ciphers are supported at the cloud edge. You can restrict the ciphers used for your domain using the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cli-plugin-cis-cli#domain-settings).
 
-|OpenSSL Name| 	TLS 1.0 |	TLS 1.1 |	TLS 1.2 |	TLS 1.3|
+|OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3|
 |:--------|:---:|:---:|:---:|:---|
 |ECDHE-ECDSA-AES128-GCM-SHA256 |||![Available](../icons/checkmark-icon.svg)||
 |ECDHE-ECDSA-CHACHA20-POLY1305 |||![Available](../icons/checkmark-icon.svg)||
 |ECDHE-RSA-AES128-GCM-SHA256   |||![Available](../icons/checkmark-icon.svg)||
 |ECDHE-RSA-CHACHA20-POLY1305   |||![Available](../icons/checkmark-icon.svg)||
 |ECDHE-ECDSA-AES128-SHA256     |||![Available](../icons/checkmark-icon.svg)||
-|ECDHE-ECDSA-AES128-SHA        |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|	![Available](../icons/checkmark-icon.svg)||
+|ECDHE-ECDSA-AES128-SHA        |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)||
 |ECDHE-RSA-AES128-SHA256       |||![Available](../icons/checkmark-icon.svg) ||
-|ECDHE-RSA-AES128-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|	![Available](../icons/checkmark-icon.svg)||
+|ECDHE-RSA-AES128-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)||
 |AES128-GCM-SHA256             |||![Available](../icons/checkmark-icon.svg)||
 |AES128-SHA256                 |||![Available](../icons/checkmark-icon.svg)||
-|AES128-SHA 	                 |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|	![Available](../icons/checkmark-icon.svg) ||
+|AES128-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg) ||
 |ECDHE-ECDSA-AES256-GCM-SHA384 |||![Available](../icons/checkmark-icon.svg)||
 |ECDHE-ECDSA-AES256-SHA384     |||![Available](../icons/checkmark-icon.svg)||
 |ECDHE-RSA-AES256-GCM-SHA384   |||![Available](../icons/checkmark-icon.svg)||
 |ECDHE-RSA-AES256-SHA384       |||![Available](../icons/checkmark-icon.svg)||
-|ECDHE-RSA-AES256-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|	![Available](../icons/checkmark-icon.svg)||
+|ECDHE-RSA-AES256-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)||
 |AES256-GCM-SHA384             |||![Available](../icons/checkmark-icon.svg)||
-|AES256-SHA256 	               |||![Available](../icons/checkmark-icon.svg)||
-|AES256-SHA 	                 |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|	![Available](../icons/checkmark-icon.svg)||
+|AES256-SHA256                 |||![Available](../icons/checkmark-icon.svg)||
+|AES256-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)||
 |DES-CBC3-SHA                  |![Available](../icons/checkmark-icon.svg)||||
 |AEAD-AES128-GCM-SHA256        ||||![Available](../icons/checkmark-icon.svg)|
 |AEAD-AES256-GCM-SHA384        ||||![Available](../icons/checkmark-icon.svg)|
@@ -124,20 +125,20 @@ The following ciphers are supported at the cloud edge. You can restrict the ciph
 The following ciphers are supported at the origin. You can restrict the ciphers used for your domain using the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cli-plugin-cis-cli#domain-settings).
 
 
-|OpenSSL Name| 	TLS 1.0 |	TLS 1.1 |	TLS 1.2 |	TLS 1.3|
+|OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3|
 |:--------|:---:|:---:|:---:|:---|
-| AEAD-AES128-GCM-SHA256 <sup>*</sup> ||||	![Available](../icons/checkmark-icon.svg) |
-| AEAD-AES256-GCM-SHA384 <sup>*</sup> ||||	![Available](../icons/checkmark-icon.svg) |
+| AEAD-AES128-GCM-SHA256 <sup>*</sup> |||| ![Available](../icons/checkmark-icon.svg) |
+| AEAD-AES256-GCM-SHA384 <sup>*</sup> ||||![Available](../icons/checkmark-icon.svg) |
 | AEAD-CHACHA20-POLY1305-SHA256 <sup>*</sup> |||| ![Available](../icons/checkmark-icon.svg) |
-| ECDHE-ECDSA-AES128-GCM-SHA256 |	||	![Available](../icons/checkmark-icon.svg) ||
+| ECDHE-ECDSA-AES128-GCM-SHA256 |||![Available](../icons/checkmark-icon.svg) ||
 | ECDHE-RSA-AES128-GCM-SHA256 |||![Available](../icons/checkmark-icon.svg) ||
-| ECDHE-RSA-AES128-SHA |	![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) ||
-| AES128-GCM-SHA256 |	|	|![Available](../icons/checkmark-icon.svg) ||
-| AES128-SHA |	![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) ||
-| ECDHE-ECDSA-AES256-GCM-SHA384 |	|	|	![Available](../icons/checkmark-icon.svg) ||
-| ECDHE-RSA-AES256-SHA384 |	|	|![Available](../icons/checkmark-icon.svg) |	|
-| AES256-SHA |	![Available](../icons/checkmark-icon.svg) |	![Available](../icons/checkmark-icon.svg) |	![Available](../icons/checkmark-icon.svg) |	|
-| DES-CBC3-SHA |	![Available](../icons/checkmark-icon.svg) ||||
+| ECDHE-RSA-AES128-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) ||
+| AES128-GCM-SHA256 |||![Available](../icons/checkmark-icon.svg) ||
+| AES128-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) ||
+| ECDHE-ECDSA-AES256-GCM-SHA384 |||![Available](../icons/checkmark-icon.svg) ||
+| ECDHE-RSA-AES256-SHA384 |||![Available](../icons/checkmark-icon.svg) ||
+| AES256-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) ||
+| DES-CBC3-SHA |![Available](../icons/checkmark-icon.svg) ||||
 {: caption="Table 2. Origin cipher suites" caption-side="top"}
 
 

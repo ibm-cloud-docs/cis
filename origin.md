@@ -51,14 +51,19 @@ The private key is only available immediately after ordering a certificate if th
 
 ### Apache HTTPD
 {: #cis-origin-certificates-installing-apache-httpd}
+
 1. Order an origin certificate.
 1. Copy the private key and origin certificate in PEM format into separate files to the directory on your server where you keep key and certificate files.
 1. Locate your Apache configuration file. Typically, the filenames are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file might vary, especially if you use a special interface to manage your server. Refer to Apache's [DistrosDefaultLayout](https://cwiki.apache.org/confluence/display/HTTPD/DistrosDefaultLayout){: external} for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on linux.
+
     ```
     grep -i -r "SSLCertificateFile" /etc/httpd/
     ```
-1. Locate the <VirtualHost> block to configure. Optionally, copy the existing non-secure virtual host for your site to be available via HTTP and HTTPS, because each type of connection requires a virtual host.
-1. Configure the <VirtualHost> block for SSL. The following example represents a simple configuration for SSL. Use the filenames for your certificate and private key. `SSLCertificateFile` is your origin CA certificate filename and `SSLCertificateKeyFile` is your origin CA private key filename.
+    {: pre}
+
+1. Locate the `<VirtualHost>` block to configure. Optionally, copy the existing non-secure virtual host for your site to be available via HTTP and HTTPS, because each type of connection requires a virtual host.
+1. Configure the `<VirtualHost>` block for SSL. The following example represents a simple configuration for SSL. Use the filenames for your certificate and private key. `SSLCertificateFile` is your origin CA certificate filename and `SSLCertificateKeyFile` is your origin CA private key filename.
+
     ```
     <VirtualHost 192.168.0.1:443>
       DocumentRoot             /var/www/html2
@@ -68,24 +73,33 @@ The private key is only available immediately after ordering a certificate if th
       SSLCertificateKeyFile    /path/to/your_private.key
     </VirtualHost>
     ```
+    {: codeblock}
+
 1. Test your configuration. Before restarting Apache, verify there are no errors in your configuration files. Run the following command to test your configuration.
+
     ```
     apachectl configtest
     ```
+    {: pre}
+
 1. Restart Apache. Run the following commands to restart Apache with SSL support.
+
     ```
     apachectl stop
     apachectl start
     ```
+    {: pre}
 
 If SSL support does not load with `apache start`, run the command `apachectl startssl`. If Apache only starts with SSL support using `apachectl startssl`, it is recommended to adjust the Apache startup configuration to include SSL support in the command `apachectl start`. Otherwise, in the event of a server reboot you could be required to manually restart Apache using `apachectl startssl`. This typically involves removing the `<IfDefine SSL>` and `</IfDefine SSL>` tags that enclose your configuation.
 {: note}
 
 ### NGINX
 {: #cis-origin-certificates-installing-nginx}
+
 1. Order an origin certificate.
 1. Copy the private key and origin certificate in PEM format into separate files to the directory on your server where you keep key and certificate files.
 1. Update your NGINX virtual hosts file. Edit the NGINX virtual host file for your website. The following example represents a server block for SSL support. Enable the `ssl` parameter on listening sockets in the server block for your site to be available via HTTP and HTTPS.
+
     ```
     server {
       listen    80;
@@ -100,11 +114,15 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
       }
     }
     ```
+    {: codeblock}
+
 1. Restart NGINX. Run one of the following commands to restart NGINX.
+
     ```
     sudo /etc/init.d/nginx restart
     sudo systemctl restart nginx
     ```
+    {: pre}
 
 ### Apache Tomcat
 {: #cis-origin-certificates-installing-apache-tomcat}
@@ -116,9 +134,12 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
     {: note}
 
 1. Install the certificate. Run the following command to install the SSL Certificate file to your keystore.
+
     ```
     keytool -import -trustcacerts -alias server -file cert.p7b -keystore your_site_name.jks
     ```
+    {: pre}
+
     A confirmation message appears: **"Certificate reply was installed in keystore."** Enter **y** or **yes** if asked to trust the certificate. Your keystore file (your_site_name.jks) is now ready to use on your Tomcat Server.
 
 1. Configure your SSL connector. Configure an SSL connector for Tomcat to be able to accept secure connections.
@@ -127,6 +148,7 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
     1. Remove any comment tags (`<!--` and `-->`) that might be surrounding the connector.
     1. Update the correct keystore filename and password in your connector configuration.
     The following example represents a configured SSL Connector block.
+
     ```
     <Connector port="443" maxHttpHeaderSize="8192" maxThreads="150"
     minSpareThreads="25" maxSpareThreads="75" enableLookups="false"
@@ -135,8 +157,11 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
     keyAlias="server" keystoreFile="/home/user_name/your_site_name.jks"
     keystorePass="your_keystore_password" />
     ```
+    {: codeblock}
+
     If your Tomcat version is prior to Tomcat 7, change `keystorePass` to `keypass`.
     {: note}
+
 1. Save your server.xml file.
 1. Restart Tomcat.
 
@@ -152,12 +177,15 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 1. Enter a friendly name for the certificate. The friendly name identifies the certificate.
 1. Select **OK** to finish the certificate installation to your server.
 1. Bind the certificate to your website. Select your website by expanding **Sites** under your server's name in the menu under **Connections** in the IIS Manager. Select **Bindings** under **Edit Site** from the Actions menu. Select **Add** from the Site Bindings window and submit the following information.
+
     ```
     Type              https
     IP Address        All Unassigned
     Port              443
     SSL Certificate   your_cert_friendly_name
     ```
+    {: codeblock}
+
 1. Your website is now configured to accept secure connections.
 
 ### Microsoft Internet Information Services (IIS) 8.0 and 8.5
@@ -172,12 +200,15 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 1. Enter a friendly name for the certificate. The friendly name identifies the certificate.
 1. Select **OK** to finish the certificate installation to your server.
 1. Bind the certificate to your website. Select your website by expanding **Sites** under your server's name in the menu under **Connections** in the IIS Manager. Select **Bindings** under **Edit Site** from the Actions menu. Select **Add** from the Site Bindings window and submit the following information.
+
     ```
     Type              https
     IP Address        All Unassigned
     Port              443
     SSL Certificate   your_cert_friendly_name
     ```
+    {: codeblock}
+    
 1. Optionally, configure your SSL certificate to use Server Name Indication (SNI) if you have multiple sites using SSL bound to the same IP address.  Select the **Require Server Name Indication** box.
 1. Your website is now configured to accept secure connections.
 

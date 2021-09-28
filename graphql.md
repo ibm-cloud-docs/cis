@@ -278,7 +278,7 @@ Field | Description
 {: screen}
 
 ### Query limits
-{:#query-limits}
+{: #query-limits}
 
 The volume of data that a query can return is limited, and there are user limits on daily data volume. The following limits apply in addition to general rate limits enforced by the API:
 * A zone-scoped query can include up to 10 zones.
@@ -288,7 +288,7 @@ The volume of data that a query can return is limited, and there are user limits
 Queries must explicitly specify the upper bounds of records to return using the `limit` argument. 
 
 ## Sorting
-{:#sorting}
+{: #sorting}
 
 You can sort the order of query result elements using the `orderBy` argument. By default, results are sorted by the primary key of the dataset (table). If you specify another field to sort on, the primary key is included in the sorting key to keep consistent results for pagination. 
 
@@ -296,7 +296,7 @@ Ordering within nested structures is not supported.
 {: note}
 
 ### Sorting examples
-{:#sorting-examples}
+{: #sorting-examples}
 
 Raw data sorting:
 
@@ -333,7 +333,7 @@ httpRequests1hGroups (orderBy: [sum_bytes_DESC]){
 {: codeblock}
 
 ## Pagination
-{:#pagination}
+{: #pagination}
 
 Pagination, breaking up query results into smaller parts, can be done using `limit`, `orderBy`, and filtering paramters. The GraphQL Analytics API does not support cursors for pagination. 
 * `limit` (integer) defines how many records to return.
@@ -380,7 +380,7 @@ Specifying a sort order by date returns less specific results than specifying a 
 {: screen}
 
 ### Query for the next page using filter
-{: query-next-page-filter}
+{: #query-next-page-filter}
 
 To get the next _n_ results, specify a filter to exclude the last result from the previous query. Using the previous example, you can append the greater-than operator (`_gt`) to the `clientCountryName` field and the greater-or-equal operator  to the `datetime` field. By making a specific order, you can get the most complete results. 
 
@@ -487,6 +487,7 @@ Zones always sort alphanumerically.
 Table filters require that you query at least one node. The `AND` operator can be used to create and combine multi-node filters.
 
 ### Accounts filter
+{: #accounts-filter}
 
 Account level filtering is supported, and there is a required filter parameter. For example:
 
@@ -498,6 +499,8 @@ accounts(filter: {accountTag: $accountTag}) {
 {: codeblock}
 
 ### Operators
+{: #operators}
+
 Operator support varies, depending on the node type and node name. The following operators are supported for all types:
 
 |Operator | Comparison|
@@ -510,7 +513,7 @@ Operator support varies, depending on the node type and node name. The following
 |`in` | in|
 
 ### Examples
-{:#graphql-examples}
+{: #graphql-examples}
 
 General example:
 

@@ -75,6 +75,7 @@ Your **Security Level** establishes the sensitivity of our **IP Reputation Datab
 
 ### Increase the security level for sensitive areas to 'High'
 {: #increase-security-level-for-sensitive-areas}
+
 You can increase this setting from the Advanced Security page for your domain or by adding a **Page Rule** for administration pages or login pages, to reduce brute-force attempts:
 
 1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/wp-login`).
@@ -84,6 +85,7 @@ You can increase this setting from the Advanced Security page for your domain or
 
 ### Decrease the security level for non-sensitive paths or APIs to reduce false positives
 {: #decrease-security-level-non-sensitive-paths-reduce-false-positives}
+
 This setting can be decreased for general pages and API traffic:
 
 1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/api/*`).
@@ -121,6 +123,7 @@ For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?to
 
 ## Best practice 4: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
+
 IBM {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
 
 TLS offers four modes of operation:
@@ -135,12 +138,14 @@ IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, 
 
 ### Upload custom certificates
 {: #upload-custom-certs}
+
 You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date.
 
 ![custom-certificate](images/upload-custom-certificate.png)
 
 ### Order dedicated certificates
 {: #order-dedicated-certs}
+
 {{site.data.keyword.cis_short_notm}} makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** button and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
 
  * SHA-2/ECDSA signed certificate using P-256 key,
@@ -163,10 +168,12 @@ If you receive an error when ordering certificates, refresh the page and try aga
 
 ### Use a provisioned certificate
 {: #use-provisioned-certificate}
+
 IBM has partnered with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers. Manual verification could be required for setting up these certificates. Your support team can help you perform these additional steps.
 
 ### Certificate priority at our edge
 {: #certificate-prioirity-at-our-edge}
+
 The priority by which the certificates are displayed at our edge is:
 1. Uploaded custom
 2. Dedicated custom
@@ -175,4 +182,5 @@ The priority by which the certificates are displayed at our edge is:
 
 ### Minimum TLS version
 {: #security-minimum-tls-version}
+
 See [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.

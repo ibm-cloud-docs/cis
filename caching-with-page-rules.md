@@ -43,10 +43,10 @@ The `scheme` and `port` components are optional. If the `scheme` component is om
 
 **Important things to remember with page rules:**
 
- * Only one page rule takes effect on any given request.
- * Page rules are given priority in an order from top to bottom. After a URL matches a rule, only that rule is applied; that is, if a page rule has triggered already on a request, any subsequent rules that also match the URL pattern do not take effect.
- * As a general rule, it is recommended to order from most-specific to least-specific rules.
- * Page rules can be disabled, in which case they take no action. However, you can still see the rules in the list and edit them. Setting the **Enabled** toggle to **Off** creates a page rule that is disabled initially.
+* Only one page rule takes effect on any given request.
+* Page rules are given priority in an order from top to bottom. After a URL matches a rule, only that rule is applied; that is, if a page rule has triggered already on a request, any subsequent rules that also match the URL pattern do not take effect.
+* As a general rule, it is recommended to order from most-specific to least-specific rules.
+* Page rules can be disabled, in which case they take no action. However, you can still see the rules in the list and edit them. Setting the **Enabled** toggle to **Off** creates a page rule that is disabled initially.
 
 
 

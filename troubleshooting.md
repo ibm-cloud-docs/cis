@@ -41,7 +41,7 @@ Here are some common error messages you or your support team might see:
 | 523  | Origin server is unreachable. Ensure that the origin IP address for the DNS record is the same as the one appearing in the {{site.data.keyword.cis_short_notm}} DNS Settings page. |
 | 524  | {{site.data.keyword.cis_short_notm}} could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
 
-### 502 error “The dreaded 502”
+## 502 error “The dreaded 502”
 {: #troubleshooting-cis-502-error}
 {: help}
 {: support}

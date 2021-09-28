@@ -129,4 +129,4 @@ To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS rec
 
 ## Next steps
 
-To begin managinag {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-managing-your-cis-deployment).
+To begin managing {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-managing-your-cis-deployment).

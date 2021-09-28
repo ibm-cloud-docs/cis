@@ -37,8 +37,8 @@ The global load-balancing capabilities available with {{site.data.keyword.cis_fu
 On your dashboard, you'll see three lists that show the [load balancers](#x2788902){: term}, origin pools, and [health checks](#x4571658){: term}. The lists display the new or updated global load balancer, or one of its components after you've provisioned or updated it. Initially, the lists are empty, and before you create a load balancer you must take a few actions.
 
 {{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address, but there are limitations:
- - you cannot use proxy services or health checks.
- - you can only use DNS-based load balancing. 
+- you cannot use proxy services or health checks.
+- you can only use DNS-based load balancing. 
 {: important}
 
 Refer to the [Quick setup](#global-load-balancer-quick-setup) if you already know what to do!
@@ -120,19 +120,19 @@ Input a pool name, [origins](#x2210603){: term}, and select a health check. You 
 Health checks are optional attachments for origin pools. They use a custom repeating interval to probe for a specific response body, or for a status code, to monitor the pool's health. After you create a health check, you can add it to a new or existing origin pool. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of health check events. You can filter by date, health of the pool or origin, pool name, and origin name.
 
 Health check fields:
- * **Monitor type**: The protocol to use for the health check (defaults to HTTP).
- * **Path**: The endpoint path against which to perform the health check (defaults to `/`).
- * **Port**: Click the arrow buttons to increase or decrease the port number.
- * **Description**: Health check description.
+* **Monitor type**: The protocol to use for the health check (defaults to HTTP).
+* **Path**: The endpoint path against which to perform the health check (defaults to `/`).
+* **Port**: Click the arrow buttons to increase or decrease the port number.
+* **Description**: Health check description.
 
 Expand the **Advanced options** section to see more settings.
 
- * **Test interval**: The interval (in seconds) between each health check. Shorter intervals can improve failover time, but increase load on the origins as checks come from multiple locations (defaults to 60).
- * **Method**: The HTTP method to use for the health check (defaults to GET).
- * **Timeout**: The time (in seconds) before marking the health check as failed (defaults to 5).
- * **Number of retries**: The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately (defaults to 2).
- * **Expected Response Code**: The expected HTTP response code or code range of the health check. This value must be between 200-299 with wildcards denoted by an 'x'.
- * **Response Body**: A case-insensitive sub-string to match against in the response body. If this string is not found, the origin is marked as unhealthy.
+* **Test interval**: The interval (in seconds) between each health check. Shorter intervals can improve failover time, but increase load on the origins as checks come from multiple locations (defaults to 60).
+* **Method**: The HTTP method to use for the health check (defaults to GET).
+* **Timeout**: The time (in seconds) before marking the health check as failed (defaults to 5).
+* **Number of retries**: The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately (defaults to 2).
+* **Expected Response Code**: The expected HTTP response code or code range of the health check. This value must be between 200-299 with wildcards denoted by an 'x'.
+* **Response Body**: A case-insensitive sub-string to match against in the response body. If this string is not found, the origin is marked as unhealthy.
 
 Expand the **Configure request headers** section to add and configure HTTP request headers to send in the health check.
 It is recommended that you set a Host header by default. The `User-Agent` header cannot be overridden.
@@ -143,19 +143,19 @@ It is recommended that you set a Host header by default. The `User-Agent` header
 At least one pool is required for each provisioned load balancer. Pools group your origins for the load balancer to use.
 
 When creating a pool, two fields are required:
- * **Name**: A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
- * **Origins**: The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
+* **Name**: A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+* **Origins**: The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
 
 Additional optional fields:
- * **Health Check**: The health check to use for checking origins within this pool. (defaults to no health check)
- * **Healthy Origin Threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and fails over to the next available pool. (defaults to 1)
- * **Health check region**: Region from which the health check performs monitoring.
+* **Health Check**: The health check to use for checking origins within this pool. (defaults to no health check)
+* **Healthy Origin Threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and fails over to the next available pool. (defaults to 1)
+* **Health check region**: Region from which the health check performs monitoring.
 
    IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering#geo-steering){: external}.  
    {: note}
 
- * **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
- * **Enabled**: Whether to enable (the default) this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any (default to true).
+* **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
+* **Enabled**: Whether to enable (the default) this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any (default to true).
 
 ### Adding a global load balancer
 {: #add-a-load-balancer}
@@ -164,14 +164,14 @@ Load balancers help to distribute your proxied traffic across multiple origin po
 {: shortdesc}
 
 When creating a load balancer, the required fields are:
- * **Balancer hostname**: The DNS hostname to associate with your load balancer. If this hostname already exists as a DNS record in IBM's DNS, the load balancer takes precedence and the DNS record is not used.
- * **Default origin pools**: A list of pool IDs. The list is ordered by their failover priority. Pools defined here are used by default, or when region pools are not configured for a given region.
+* **Balancer hostname**: The DNS hostname to associate with your load balancer. If this hostname already exists as a DNS record in IBM's DNS, the load balancer takes precedence and the DNS record is not used.
+* **Default origin pools**: A list of pool IDs. The list is ordered by their failover priority. Pools defined here are used by default, or when region pools are not configured for a given region.
 
 Optionally, you can configure the following fields:
- * **Proxy**: Route traffic through IBM's performance and metrics service.
- * **Session Affinity**: Always route through the same performance and metrics instance. This option is available only if proxy is enabled.
- * **TTL**: Time-to-live (TTL) of the DNS entry for the IP address returned by this load balancer. This option applies only to unproxied load balancer; otherwise, it defaults to `Automatic`.
- * **Geo routes**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined fall back to using the default pools.
+* **Proxy**: Route traffic through IBM's performance and metrics service.
+* **Session Affinity**: Always route through the same performance and metrics instance. This option is available only if proxy is enabled.
+* **TTL**: Time-to-live (TTL) of the DNS entry for the IP address returned by this load balancer. This option applies only to unproxied load balancer; otherwise, it defaults to `Automatic`.
+* **Geo routes**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined fall back to using the default pools.
 
    IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering#geo-steering){: external}.  
    {: note}

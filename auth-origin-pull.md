@@ -166,6 +166,7 @@ Use **End-to-End flexible** and update the origin web server SSL configuration u
 1. Download the authenticated origin pull certificate [(`origin-pull-ca.pem`)](https://cloud.ibm.com/media/docs/downloads/cis/origin-pull-ca.pem) 
 2. Store the certificate in a file on your origin web server, for example in `/path/to/origin-pull-ca.pem`
 3. Add the following lines to the SSL configuration for your origin web server:
+
     ```
     SSLVerifyClient require
     SSLVerifyDepth 1
@@ -181,6 +182,7 @@ Use **End-to-End flexible** and update the origin web server SSL configuration u
 1. Download the authenticated origin pull certificate [(`origin-pull-ca.pem`)](https://cloud.ibm.com/media/docs/downloads/cis/origin-pull-ca.pem) 
 2. Store the certificate in a file on your origin web server, for example in `/etc/nginx/certs/cloudflare.crt`
 3. Add the following lines to the SSL configuration for your origin web server:
+
     ```
     ssl_client_certificate /etc/nginx/certs/cloudflare.crt;
     ssl_verify_client on;
