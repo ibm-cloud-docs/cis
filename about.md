@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-10-05"
 
 keywords:
 
@@ -177,13 +177,24 @@ The global load balancing service distributes your traffic across multiple serve
 
 The available health check regions are based on the [Cloudflare Global Anycast Network](https://www.cloudflare.com/network/){: external}.
 
-
 ### DNS features
 {: about-dns-features}
 
 DNS within {{site.data.keyword.cis_short_notm}} has the following features:
 * DNS management - Manage your DNS records, control proxying, and enable DNS security.
 * DNSSEC: DNS security cryptographically signs a zone to ensure that the DNS records provided to the user are the same as the DNS records published on the DNS server.
+
+### gRPC protocol support
+{: #grpc}
+
+The gRPC protocol builds efficient APIs with smaller payloads, which reduces bandwidth requirements, decreases latency, and increases the implementation time. {{site.data.keyword.cis_short_notm}} supports gRPC protocol for any proxied gRPC endpoints. To enable or disable gRPC support, navigate to the **Reliability** section, select the **Advanced** tab, and toggle the gRPC switch. 
+
+The following requirements must be met before using gRPC:
+
+* The gRPC endpoint must listen on port 443
+* The gRPC endpoint must support TLS and HTTP/2
+* HTTP/2 must be advertised over Application-Layer Protocol Negotiation (ALPN)
+* The content-type header of gRPC requests must use `application/grpc` or `application/grpc+<message type>`
 
 ## Performance features
 {: #cis-performance-features}
