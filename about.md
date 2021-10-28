@@ -64,6 +64,13 @@ Manage the TLS certificates encrypting traffic between your origin server and yo
 
 Use rate limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
 
+### Traffic scrubbing
+{: #traffic-scrubbing}
+
+59 Tbps network capacity — 20X bigger than the largest recorded DDoS attack.
+
+No scrubbing centers — mitigate DDoS attacks closest to the source.
+
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
 
@@ -155,10 +162,35 @@ Generally, attacks fall into two categories:
 |These attacks consist of a flood of traffic at ISO Layer 3 (the network layer), such as ICMP floods), or at Layer 4 (the transport layer), such as TCP SYN floods or reflected UDP floods). |These are attacks that send malicious ISO Layer-7 requests (the application layer), such as GET floods.  |
 | Automatically blocked at our edge | {{site.data.keyword.cis_short_notm}} handles these with Defense Mode, WAF, and security-level settings. |
 
+
+### On-demand anti-DDoS
+{: #cis-on-demand-anti-ddos}
+
+IBM Cloud Internet Services (CIS) ingests traffic by returning a CIS IP address on the DNS lookup for a domain instead of the actual record for the origin server’s IP address. This allows CIS to ingest, single pass inspect, and re-encrypt data before sending it to the origin server destination. However, CIS can also act in DNS only mode and return the actual DNS record without obfuscating the IP which also disables DDoS and the other functions of CIS. To enable CIS protections, simply switch the “proxy” slider next to each DNS record to on. To disable protections, switch to off.
+
+
 ### Unlimited DDoS mitigation
 {: #cis-unlimited-ddos-mitigation}
 
 DDoS mitigation is typically an expensive service that can grow in cost when under attack. Unlimited DDoS mitigation is included with {{site.data.keyword.cis_short_notm}} at no additional cost.
+
+
+### Mitigate Layer 7 attacks (configuration) 
+{: #cis-mitigate-layer7-attacks}
+
+While DDoS is enabled by default in CIS, users can further configure L7 security by adding Rate Limiting, Firewall Rules, and configuring WAF ruleset sensitivity and response behavior to customize L7 mitigation of both volumetric and non-volumetric attacks.
+
+### Mitigate non volumetric attacks
+{: #cis-mitigate-non-volumetric-attacks}
+
+The CIS WAF contains rulesets to mitigate non-volumetric including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](https://cloud.ibm.com/docs/cis?topic=cis-waf-q-and-a#what-types-of-attacks-can-waf-prevent).
+
+
+### Cost protection
+{: #cis-cost-protection}
+
+CIS does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the CIS network onto the origin destination incur charges or usage. By only passing along good requests that the origin needs to respond to, CIS also helps keep egress bandwidth charges from your origin under control. All CIS plans offer unlimited and unmetered mitigation of DDoS attacks. Customers are not charged for attack traffic ever, period. There’s no penalty for spikes due to attack traffic, requiring no chargeback by the customer.
+
 
 ## Reliability features
 {: #cis-reliability-features}
