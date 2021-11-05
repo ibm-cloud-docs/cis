@@ -56,7 +56,7 @@ The private key is only available immediately after ordering a certificate if th
 1. Copy the private key and origin certificate in PEM format into separate files to the directory on your server where you keep key and certificate files.
 1. Locate your Apache configuration file. Typically, the filenames are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file might vary, especially if you use a special interface to manage your server. Refer to Apache's [DistrosDefaultLayout](https://cwiki.apache.org/confluence/display/HTTPD/DistrosDefaultLayout){: external} for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on linux.
 
-    ```
+    ```sh
     grep -i -r "SSLCertificateFile" /etc/httpd/
     ```
     {: pre}
@@ -64,7 +64,7 @@ The private key is only available immediately after ordering a certificate if th
 1. Locate the `<VirtualHost>` block to configure. Optionally, copy the existing non-secure virtual host for your site to be available via HTTP and HTTPS, because each type of connection requires a virtual host.
 1. Configure the `<VirtualHost>` block for SSL. The following example represents a simple configuration for SSL. Use the filenames for your certificate and private key. `SSLCertificateFile` is your origin CA certificate filename and `SSLCertificateKeyFile` is your origin CA private key filename.
 
-    ```
+    ```sh
     <VirtualHost 192.168.0.1:443>
       DocumentRoot             /var/www/html2
       ServerName               www.mydomain.com
@@ -77,14 +77,14 @@ The private key is only available immediately after ordering a certificate if th
 
 1. Test your configuration. Before restarting Apache, verify there are no errors in your configuration files. Run the following command to test your configuration.
 
-    ```
+    ```sh
     apachectl configtest
     ```
     {: pre}
 
 1. Restart Apache. Run the following commands to restart Apache with SSL support.
 
-    ```
+    ```sh
     apachectl stop
     apachectl start
     ```
@@ -100,7 +100,7 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 1. Copy the private key and origin certificate in PEM format into separate files to the directory on your server where you keep key and certificate files.
 1. Update your NGINX virtual hosts file. Edit the NGINX virtual host file for your website. The following example represents a server block for SSL support. Enable the `ssl` parameter on listening sockets in the server block for your site to be available via HTTP and HTTPS.
 
-    ```
+    ```sh
     server {
       listen    80;
       listen    443;
@@ -118,7 +118,7 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 
 1. Restart NGINX. Run one of the following commands to restart NGINX.
 
-    ```
+    ```sh
     sudo /etc/init.d/nginx restart
     sudo systemctl restart nginx
     ```
@@ -135,7 +135,7 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 
 1. Install the certificate. Run the following command to install the SSL Certificate file to your keystore.
 
-    ```
+    ```sh
     keytool -import -trustcacerts -alias server -file cert.p7b -keystore your_site_name.jks
     ```
     {: pre}
@@ -147,9 +147,10 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
     1. Identify the connector to use to secure the new keystore. A connector with port 443 or 8443 is typically used.
     1. Remove any comment tags (`<!--` and `-->`) that might be surrounding the connector.
     1. Update the correct keystore filename and password in your connector configuration.
+    
     The following example represents a configured SSL Connector block.
 
-    ```
+    ```sh
     <Connector port="443" maxHttpHeaderSize="8192" maxThreads="150"
     minSpareThreads="25" maxSpareThreads="75" enableLookups="false"
     disableUploadTimeout="true" acceptCount="100" scheme="https"
@@ -178,7 +179,7 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 1. Select **OK** to finish the certificate installation to your server.
 1. Bind the certificate to your website. Select your website by expanding **Sites** under your server's name in the menu under **Connections** in the IIS Manager. Select **Bindings** under **Edit Site** from the Actions menu. Select **Add** from the Site Bindings window and submit the following information.
 
-    ```
+    ```sh
     Type              https
     IP Address        All Unassigned
     Port              443
@@ -201,7 +202,7 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 1. Select **OK** to finish the certificate installation to your server.
 1. Bind the certificate to your website. Select your website by expanding **Sites** under your server's name in the menu under **Connections** in the IIS Manager. Select **Bindings** under **Edit Site** from the Actions menu. Select **Add** from the Site Bindings window and submit the following information.
 
-    ```
+    ```sh
     Type              https
     IP Address        All Unassigned
     Port              443

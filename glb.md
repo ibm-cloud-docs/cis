@@ -51,7 +51,7 @@ When a global load balancer is created, a DNS record is automatically added for 
 
 For example, an origin pool is created with two origins identifying IP addresses `169.61.244.18` and `169.61.244.19`. If a global load balancer is created with the name **`glbcust.ibmmo.com`** using the origin pool, then a client on the internet can execute the command:
 
-```
+```sh
 $ ping glbcust.ibmmo.com
 PING glbcust.ibmmo.com (169.61.244.18): 56 data bytes
 ```

@@ -314,7 +314,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Get mTLS policies | `GET /v1/{crn}/zones/{domain_id}/access/apps/{app_id}/policies` | `internet-svcs.security.read` | `internet-svcs.access-policies.read` |
 | Create a mTLS policy | `POST /v1/{crn}/zones/{domain_id}/access/apps/{app_id}/policies` | `internet-svcs.security.manage` | `internet-svcs.access-policies.create` |
 | Update a mTLS policy | `PUT /v1/{crn}/zones/{domain_id}/access/apps/{app_id}/policies/{policy_id}` | `internet-svcs.security.update` | `internet-svcs.access-policies.update` |
-| Delete a mTLS policy | ` DELETE /v1/{crn}/zones/{domain_id}/access/apps/{app_id}` | `internet-svcs.security.manage` | `internet-svcs.access-policies.delete` |
+| Delete a mTLS policy | `DELETE /v1/{crn}/zones/{domain_id}/access/apps/{app_id}` | `internet-svcs.security.manage` | `internet-svcs.access-policies.delete` |
 {: caption="Table 19. Mutual TLS" caption-side="top"} 
 
 
@@ -341,7 +341,7 @@ List of IAM actions and Activity Tracker actions by API method.
 
 | Action                                    | Method            | IAM ACTION   |  AT ACTION |
 |-------------------------------------------|-------------------|--------------|------------|
-| Get CNAME flattening settings. | ` GET /v1/{crn}/zones/{domain_id}/setting/cname_flattening` | `internet-svcs.reliability.read` | `internet-svcs.cname-flattening-setting.read` |
+| Get CNAME flattening settings. | `GET /v1/{crn}/zones/{domain_id}/setting/cname_flattening` | `internet-svcs.reliability.read` | `internet-svcs.cname-flattening-setting.read` |
 |Update CNAME flattening settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/cname_flattening` | `internet-svcs.reliability.update` | `internet-svcs.cname-flattening-setting.update`|
 |Get cache level settings. | `GET /v1/{crn}/zones/{domain_id}/setting/cache_level` | `internet-svcs.performance.read` | `internet-svcs.cache-level-setting.read`|
 |Update cache level settings. | `PUT /v1/{crn}/zones/{domain_id}/setting/cache_level` | `internet-svcs.performance.update` | `internet-svcs.cache-level-setting.update` |
@@ -420,5 +420,3 @@ List of IAM actions and Activity Tracker actions by API method.
 |Get ciphers settings.| `GET /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.read` | `internet-svcs.ciphers-setting.read`|
 |Update ciphers settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.update` | `internet-svcs.ciphers-setting.update`|
 {: caption="Table 21. Domain settings" caption-side="top"}
-
-

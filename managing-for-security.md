@@ -49,7 +49,7 @@ To improve the security of your origin IP address, you should proxy all HTTP(S) 
 
 **See the difference yourself - Query a non-proxied and a proxied record:**
 
-```
+```sh
 $ dig nonproxied.theburritobot.com +short
 1.2.3.4 (The origin IP address)
 
@@ -141,16 +141,16 @@ IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, 
 
 You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date.
 
-![custom-certificate](images/upload-custom-certificate.png)
+![custom-certificate](images/upload-custom-certificate.png "Upload custom certificate"){: caption="Figure 1. Upload certificate screen" caption-side="bottom"}
 
 ### Order dedicated certificates
 {: #order-dedicated-certs}
 
 {{site.data.keyword.cis_short_notm}} makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** button and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
 
- * SHA-2/ECDSA signed certificate using P-256 key,
- * SHA-2/RSA signed certificate using RSA 2048-bit key, and
- * SHA-1/RSA signed certificate using RSA 2048-bit key.
+* SHA-2/ECDSA signed certificate using P-256 key,
+* SHA-2/RSA signed certificate using RSA 2048-bit key, and
+* SHA-1/RSA signed certificate using RSA 2048-bit key.
 
 {{site.data.keyword.cis_short_notm}} can issue for all TLDs except for `.cu`, `.iq`, `.ir`, `.kp`, `.sd`, `.ss`, and `.ye`. {{site.data.keyword.cis_short_notm}} manages the expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete. For example, you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterwards you _must_ delete the original dedicated custom certificate.
 
@@ -164,7 +164,7 @@ The following are common errors seen when ordering dedicated certificates:
 
 If you receive an error when ordering certificates, refresh the page and try again.
 
-![dedicated-certificate](images/order-dedicated-certificate.png)
+![dedicated-certificate](images/order-dedicated-certificate.png "Add certificate screen"){: caption="Figure 2. Add certificate screen" caption-side="bottom"}
 
 ### Use a provisioned certificate
 {: #use-provisioned-certificate}

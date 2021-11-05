@@ -120,6 +120,7 @@ toc:
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
+        - notifications.md
         - topicgroup:
             label: Enhancing security
             topics:

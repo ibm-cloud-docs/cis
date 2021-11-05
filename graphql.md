@@ -64,7 +64,7 @@ Start building your query in the query pane. Use the **Document Explorer** to ex
 
 Paste the following test snippet into the query pane and observe the response in the response pane, adjusting the `datetime` to meet your needs.
 
-```
+```sh
 query { 
    viewer { 
       zones(filter: {zoneTag: "<your domain ID>"}) { 
@@ -99,7 +99,7 @@ query {
 
 GraphQL structures data as a graph. To get the data you need, you can explore the edges of the graph. This is an example query format:
 
-```
+```sh
 viewer {
       zones(filter:...) {
          requests(filter:...) {
@@ -114,7 +114,7 @@ The initial node of the user running the query is `viewer`. A viewer is able to 
 
 Nodes that represent aggregated data include the `groups` suffix, for example, `firewallEventsAdaptiveGroups`. Each group follows a specific structure, shown in the following example. 
 
-```
+```sh
 type ExampleGroup {
     count # No subfields, it is just the group size.
     sum {
@@ -132,7 +132,7 @@ type ExampleGroup {
 
 This example shows a valid group:
 
-```
+```sh
   httpRequests1mGroups {
     sum {
       bytes
@@ -164,6 +164,7 @@ The following datasets are available.
 |Load Balancing Analytics | `loadBalancingRequests` `loadBalancingRequestsGroups` |
 |SYN Attacks (DoS Analytics) | `synAvgPps1mGroups` |
 |Edge Functions Metrics | `workersInvocationsAdaptive` |
+{: caption="Table 1. Available datasets" caption-side="bottom"}
 
 
 ## Errors
@@ -175,7 +176,7 @@ All responses contain an errors array, which is null if there are no errors. Non
 
 The following code is an example error response:
 
-```
+```sh
 {
   "data": null,
   "errors": [
@@ -216,23 +217,25 @@ The limits for retaining historical data are defined in the following table.
 |`loadBalancingRequestsGroups` | 30 days|
 |`loadBalancingRequests` | 30 days|
 |`synAvgPps1mGroups` | 7 days|
+{: caption="Table 2. Historical data limits" caption-side="bottom"}
 
 ### Query settings for account limits
 {: #query-settings-account-limits}
 
 To obtain specific information regarding limits for a data node, use the `settings` node.
 
-Field | Description
---- | --- 
-`enabled` | Returns `true` if the data set (node) is available for the current plan.
-`maxDuration` | Defines the maximum time period (in seconds) that can be requested in one query (varies by data node).
-`maxNumberOfFields` | Defines the maximum number of fields that can be requested in one query (varies by data node).
-`maxPageSize` | Defines the maximum number of records that can be returned in one query (varies by data node).
-`notOlderThan` | Limits how far back in the record a query can search (in seconds, varies by data node and plan).
+|Field | Description|
+|--- | ---|
+|`enabled` | Returns `true` if the data set (node) is available for the current plan.|
+|`maxDuration` | Defines the maximum time period (in seconds) that can be requested in one query (varies by data node).|
+|`maxNumberOfFields` | Defines the maximum number of fields that can be requested in one query (varies by data node).|
+|`maxPageSize` | Defines the maximum number of records that can be returned in one query (varies by data node).|
+|`notOlderThan` | Limits how far back in the record a query can search (in seconds, varies by data node and plan).|
+{: caption="Table 3. Settings node fields" caption-side="bottom"}
 
-**Example query**
+The following is an example query:
 
-```
+```sh
 {
   viewer {
     zones(filter: { zoneTag: $zoneTag }) {
@@ -251,9 +254,9 @@ Field | Description
 ```
 {: codeblock}
 
-**Response**
+The query response follows:
 
-```
+```sh
 {
   "data": {
     "viewer": {
@@ -300,7 +303,7 @@ Ordering within nested structures is not supported.
 
 Raw data sorting:
 
-```
+```sh
 firewallEventsAdaptive (orderBy: [clientCountryName_ASC]) {
     clientCountryName
 }
@@ -309,7 +312,7 @@ firewallEventsAdaptive (orderBy: [clientCountryName_ASC]) {
 
 Raw data sorting using multiple fields:
 
-```
+```sh
 firewallEventsAdaptive (orderBy: [clientCountryName_ASC, datetime_DESC]) {
     clientCountryName
     datetime
@@ -319,7 +322,7 @@ firewallEventsAdaptive (orderBy: [clientCountryName_ASC, datetime_DESC]) {
 
 Group sorting by aggregation function:
 
-```
+```sh
 httpRequests1hGroups (orderBy: [sum_bytes_DESC]){
     sum {
         bytes
@@ -351,7 +354,7 @@ The following examples assume that `date` and `clientCountryName` relationships 
 
 To limit results, add the `limit` parameter. For example, query the first two records.
 
-```
+```sh
 firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC]) {
     datetime
     clientCountryName
@@ -361,9 +364,9 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC]
 
 Specifying a sort order by date returns less specific results than specifying a sort order by both date and country.
 
-**Response**
+The query response follows:
 
-```
+```sh
 {
   "firewallEventsAdaptive" : [
     {
@@ -384,7 +387,7 @@ Specifying a sort order by date returns less specific results than specifying a 
 
 To get the next _n_ results, specify a filter to exclude the last result from the previous query. Using the previous example, you can append the greater-than operator (`_gt`) to the `clientCountryName` field and the greater-or-equal operator  to the `datetime` field. By making a specific order, you can get the most complete results. 
 
-```
+```sh
 firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC], filter: {date_geq: "2018-11-12T00:00:00Z", clientCounterName_gt: "US"}) {
     date
     clientCountryName
@@ -392,9 +395,9 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC]
 ```
 {: codeblock}
 
-**Response**
+The query response follows:
 
-```
+```sh
 {
   "firewallEventsAdaptive" : [
     {
@@ -415,7 +418,7 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC]
 
 To get the previous _n_ results, reverse the filters and sort order.
 
-```
+```sh
 firewallEventsAdaptive (limit: 2, orderBy: [datetime_DESC, clientCountryName_DESC, filter: {date_leq: "2018-11-12T00:00:00Z", clientCountryName_lt: "UY"}]) {
   datetime
   clientCountryName
@@ -423,9 +426,9 @@ firewallEventsAdaptive (limit: 2, orderBy: [datetime_DESC, clientCountryName_DES
 ```
 {: codeblock}
 
-**Response**
+The query response follows:
 
-```
+```sh
 {
   "firewallEventsAdaptive" : [
     {
@@ -461,7 +464,7 @@ Filters can be used as an argument on the following resources:
 
 The zone filter allows querying zone-related data by zone (domain) ID (`zoneTag`).
 
-```
+```sh
 zones(filter: {zoneTag: "your domain (zone) ID"}) {
     ...
 }
@@ -470,7 +473,7 @@ zones(filter: {zoneTag: "your domain (zone) ID"}) {
 
 The zone filter must conform to the following grammar:
 
-```
+```sh
 filter
     { zoneTag: t }
     { zoneTag_gt: t }
@@ -491,7 +494,7 @@ Table filters require that you query at least one node. The `AND` operator can b
 
 Account level filtering is supported, and there is a required filter parameter. For example:
 
-```
+```sh
 accounts(filter: {accountTag: $accountTag}) {
     ...
 }
@@ -511,13 +514,14 @@ Operator support varies, depending on the node type and node name. The following
 |`leq` | less or equal to|
 |`neq` | not equal|
 |`in` | in|
+{: caption="Table 4. Supported operators" caption-side="bottom"}
 
 ### Examples
 {: #graphql-examples}
 
 General example:
 
-```
+```sh
 {
   myQuery(
     filter: {
@@ -531,7 +535,7 @@ General example:
 
 Filter a specific node:
 
-```
+```sh
 httpRequests1hGroups(filter: {datetime: "2020-01-01 10:00:00"}) {
     ...
 }
@@ -540,7 +544,7 @@ httpRequests1hGroups(filter: {datetime: "2020-01-01 10:00:00"}) {
 
 Filter on multiple fields:
 
-```
+```sh
 httpRequests1hGroups(filter: {datetime_gt: "2018-01-01 10:00:00", datetime_lt: "2018-01-01 11:00:00"}) {
     ...
 }
@@ -549,7 +553,7 @@ httpRequests1hGroups(filter: {datetime_gt: "2018-01-01 10:00:00", datetime_lt: "
 
 Filter using `OR` operator:
 
-```
+```sh
 httpRequests1hGroups(filter: {
     datetime: "2020-01-01 10:00:00",
     OR:[{clientCountryName: "US"}, {clientCountryName: "UK"}]) {

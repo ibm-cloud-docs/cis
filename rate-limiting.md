@@ -63,13 +63,12 @@ Select from the actions listed, and specify the timeout period. In this case, th
 |Action| Description|
 |------|------------|
 |Block | Issues a 429 error when the threshold is exceeded|
-|Challenge | User must pass a Google reCaptcha Challenge before proceeding. If successful, we accept the request. Otherwise, the request gets blocked.| 	
-|JS Challenge |	User must pass a Javascript Challenge before proceeding. If successful, we accept the request. Otherwise, the request gets blocked.
+|Challenge | User must pass a Google reCaptcha Challenge before proceeding. If successful, we accept the request. Otherwise, the request gets blocked.|
+|JS Challenge | User must pass a Javascript Challenge before proceeding. If successful, we accept the request. Otherwise, the request gets blocked.
 |Simulate| You can use this option to test your rule before applying any of the other options in your live environment.
+{: caption="Table 1. Actions for rate limiting" caption-side="bottom"}
 
-**Advanced response**
-
-Specify the response type when a rule's threshold is exceeded.
+In the **Advanced response** section, specify the response type when a rule's threshold is exceeded.
 
 ### Bypassing URLs
 {: #rate-limiting-bypass}

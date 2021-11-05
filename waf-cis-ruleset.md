@@ -52,17 +52,27 @@ In Enterprise plans, you have the flexibility to turn on or off individual WAF r
 Select **View {{site.data.keyword.cis_short_notm}} Rules** to reveal the rule sets of this package. Rule sets are as follows:
 
 * **Drupal** - Enable this rule set only if the Drupal CMS is used for this domain. 
-* **Flash**<sup>1</sup> - Enable this rule set only if Adobe Flash content is used for this domain.  
-* **Joomla**<sup>1</sup> - Enable this rule set only if the Joomla CMS is used for this domain.  
-* **Magento**<sup>1</sup> - Enable this rule set only if the Magento CMS is used for this domain. 
+* **Flash**[^A] - Enable this rule set only if Adobe Flash content is used for this domain.  
+* **Joomla**[^B] - Enable this rule set only if the Joomla CMS is used for this domain.  
+* **Magento**[^C] - Enable this rule set only if the Magento CMS is used for this domain. 
 * **Miscellaneous** - Contains rules to deal with known malicious traffic, or patch flaws in specific web applications.
-* **PHP**<sup>1</sup> - Enable this rule set if PHP is used for this domain.  
-* **Plone**<sup>1</sup> - Enable this rule set only if the Plone CMS is used for this domain.  
+* **PHP**[^D] - Enable this rule set if PHP is used for this domain.  
+* **Plone**[^E] - Enable this rule set only if the Plone CMS is used for this domain.  
 * **Specials** - Contains a number of rules that were created to deal with specific attack types.
-* **WHMCS**<sup>1</sup> - Enable this rule set only if WHMCS is used for this domain.  
+* **WHMCS**[^F] - Enable this rule set only if WHMCS is used for this domain.  
 * **Wordpress** - Enable this rule set only if the WordPress CMS is used for this domain. 
 
-<sup>1</sup> This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
+[^A]: This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
+
+[^B]: This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
+
+[^C]: This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
+
+[^D]: This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
+
+[^E]: This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
+
+[^F]: This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
 
 **Specials** contains a number of rules appropriate for virtually all applications and websites on the internet. This rule set is the core of the security that our WAF offers, with rules that target common attacks like SQLi, XSS, and LFI. It is recommended that you always enable Specials.
 {: tip}

@@ -60,21 +60,21 @@ Before you begin, make sure that you have the [required access](/docs/cis?topic=
 
 3. Initialize the Terraform CLI.
 
-   ```
+   ```terraform
    terraform init
    ```
    {: pre}
 
 4. Create a Terraform execution plan. The Terraform execution plan summarizes all the actions that need to be run to create the {{site.data.keyword.cis_short_notm}} instance in your account.
 
-   ```
+   ```terraform
    terraform plan
    ```
    {: pre}
 
 5. Create the {{site.data.keyword.cis_short_notm}} instance and IAM access policy in {{site.data.keyword.cloud_notm}}.
 
-   ```
+   ```terraform
    terraform apply
    ```
    {: pre}

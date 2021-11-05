@@ -57,7 +57,7 @@ Redirect one URL to another using an HTTP 301 or 302 redirect. The contents of a
 
 For example, suppose you set the following rule:
 
-![image](images/url-redirection-example.png)
+![image](images/url-redirection-example.png "Image describing forwarding rule"){: caption="Figure 1. Forwarding rule" caption-side="bottom}
 
 Here, a request to `www.example.com/stuff/things` is redirected to `http://example.com/stuff/things`.
 
@@ -69,7 +69,7 @@ Be careful not to create a redirect in which the domain points to itself as a de
 
 If you want to redirect your visitors to use HTTPS, use the **Always Use HTTPS** setting instead:
 
-![image2](images/url-matching-patterns.png)
+![image2](images/url-matching-patterns.png "Image describing Always Use HTTPS rule"){: caption="Figure 2. Always Use HTTPS" caption-side="bottom}
 
 ## Setting custom caching
 {: #custom-caching}
@@ -84,7 +84,7 @@ Not all default caching behaviors are strictly RFC-compliant. Setting **Origin C
 
 The following example sets a page rule to cache everything found in the `/images` folder. Cached resources expire in 30 minutes in the user's browser, and they expire after one day in the IBM CIS data centers:
 
-![image3](images/url-example.png)
+![image3](images/url-example.png "Image describing caching images folder"){: caption="Figure 3. Cache everything in `/images`" caption-side="bottom}
 
 **Serve Stale Content** serves pages from our cache, even when your server goes down. Visitors see a limited version of your site, with a message that they are in offline browsing mode.
 

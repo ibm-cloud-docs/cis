@@ -52,10 +52,11 @@ The following information describes some limitations when working with {{site.da
 {: #known-limitations-dns}
 
 * Exporting DNS records includes Cloudflare CNAME records that should be hidden. These records begin with `_` and usually have a second record with  the same name but the `_` is removed.
-    ```
+
+    ```sh
     Ex.
-    _cf.generate.yourdomain.com 0	IN	CNAME address.alias.com
-    cf.generate.yourdomain.com 0	IN	CNAME address2.alias.com
+    _cf.generate.yourdomain.com 0   IN  CNAME address.alias.com
+    cf.generate.yourdomain.com 0    IN  CNAME address2.alias.com
     ```
     {: pre}
 
@@ -66,7 +67,7 @@ The following information describes some limitations when working with {{site.da
     CAA `<flags>` `<tag>` `<value>`
     {: note}
 
-    ```
+    ```sh
     Ex.
     Original CAA record
     caa.yourdomain.com. 1 IN CAA 0 issue "letsencrypt.org"
@@ -84,7 +85,7 @@ The following information describes some limitations when working with {{site.da
 * Updating page rules settings using the CIS plugin for IBM Cloud CLI might result in an error if the page rule ID is not included in the JSON string or JSON file for the update. To work around this, submit the update using a complete JSON configuration file for the page rule, including the ID.
 * Removing page rule settings using the CIS UI might not remove the setting, even though the UI reports a successful update. To work around this problem, use the CIS plugin for IBM Cloud CLI to remove the setting and include the page rule ID in the JSON update document:
 
-    ```
+    ```sh
     $> ibmcloud cis page-rule-update <domain-id> <rule-id> -j <file>
     ```
     {: pre}

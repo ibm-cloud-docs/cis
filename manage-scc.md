@@ -31,8 +31,6 @@ subcollection: cis
 {{site.data.keyword.cis_full}} is integrated with the {{site.data.keyword.compliance_short}} to help you manage security and compliance for your organization.
 {: shortdesc}
 
-<!--Add the following sections as your service onboards to the Security and Compliance Center. You might have only monitoring or you might also have configuration enforcement. Also, if you only have one of the options, be sure to remove the bulleted list and write the following section as a sentence.-->
-
 With the {{site.data.keyword.compliance_short}}, you can monitor for controls and goals that pertain to {{site.data.keyword.cis_short_notm}}.
 
 ## Monitoring security and compliance posture with {{site.data.keyword.cis_short_notm}}
@@ -63,8 +61,8 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource kind | Property | Operator | Value | Description |
 |---------------|----------|---------------|-------|-------------|
-| *zone* | *tls_mode* | *string_equals*  | *off*<br/>*flexible*<br/>*full*<br/>*strict*<br/>*origin_pull*  | A string indicating the TLS mode for encryption. |
-| *zone* | *waf_enabled* | *string_equals* | *on*<br/>*off* | A string indicating whether the WAF is turned on or off. |
+| *zone* | *tls_mode* | *string_equals*  | *off*  \n *flexible*  \n *full*  \n *strict*  \n *origin_pull*  | A string indicating the TLS mode for encryption. |
+| *zone* | *waf_enabled* | *string_equals* | *on*  \n *off* | A string indicating whether the WAF is turned on or off. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.cis_short_notm}}" caption-side="top"}
 
 To learn more about constructing config rules, check out [Formatting rules and templates](/docs/security-compliance?topic=security-compliance-formatting-rules-templates).

@@ -60,11 +60,13 @@ You can start using {{site.data.keyword.cis_short_notm}} for your internet traff
 
 Open the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/). Then, select the **Networking** category in the navigation pane. Click the **Internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
 
-**The Overview screen**
+#### The Overview screen
+{: #the-overview-screen}
 
 After the {{site.data.keyword.cis_short_notm}} application starts up, you'll see the {{site.data.keyword.cis_short_notm}} **Overview** screen, and you'll find the tabs for **Security**, **Reliability**, and **Performance**.
 
-**Which plan do I choose?**
+#### Which plan do I choose?
+{: #which-plan}
 
 There are several plans to choose from:
 
@@ -82,7 +84,8 @@ Select **Create** on the **Overview** screen to begin provisioning your account.
 The **Free Trial** is limited to one instance per account.
 {: note}
 
-**Begin provisioning**
+#### Begin provisioning
+{: #begin-provisioning}
 
 You'll see the first screen of the {{site.data.keyword.cis_short_notm}} application, where you select **Add Domain** to begin.
 
@@ -128,5 +131,6 @@ Your domain must move to `Active` state within 60 days or your domain and any co
 To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} cannot resolve the domain information for your internet-facing applications.
 
 ## Next steps
+{: #get-started-next-steps}
 
 To begin managing {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-managing-your-cis-deployment).

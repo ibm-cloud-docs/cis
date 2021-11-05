@@ -74,6 +74,7 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 |302, 303     |20m; |
 |404, 410     |3m;  |
 |403          |1m;  |
+{: caption="Table 1. Default cache response codes" caption-side="left"}
 
 
 {{site.data.keyword.cis_short_notm}} provides several cache customization options:
@@ -128,6 +129,7 @@ The maximum file size {{site.data.keyword.cis_short_notm}} caches is 512MB for T
 {{site.data.keyword.cis_short_notm}} does not cache by MIME type, and doesn't cache HTML by default. {{site.data.keyword.cis_short_notm}} does cache a website's `robots.txt`. You can cache additional content by creating page rules.
 
 ## Understanding {{site.data.keyword.cis_short_notm}} cache responses
+{: #understanding-cis-cache-responses}
 
 The output of the `CF-Cache-Status` header shows whether a resource is cached.
 
@@ -141,6 +143,7 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 |REVALIDATED|The resource is served from cache but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
 |UPDATING|The resource was served from cache but is expired. The resource is currently being updated by the origin web server. UPDATING is typically seen only for very popular cached resources.|
 |DYNAMIC|The resource was not cached by default and your current {{site.data.keyword.cis_short_notm}} caching configuration doesn't instruct {{site.data.keyword.cis_short_notm}} to cache the resource.  Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
+{: caption="Table 2. Cache response codes and definitions" caption-side="left"}
 
 
 

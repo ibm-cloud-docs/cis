@@ -32,9 +32,9 @@ To achieve optimal reliability for your {{site.data.keyword.cis_full}} deploymen
 
 Generally, our recommended best practices are these:
 
- * Set up your DNS to take advantage of {{site.data.keyword.cis_short_notm}} proxy servers and other features.
- * Use one or more global load balancers to distribute your site traffic evenly.
- * Set up appropriate page rules to manage your caching and other options.
+* Set up your DNS to take advantage of {{site.data.keyword.cis_short_notm}} proxy servers and other features.
+* Use one or more global load balancers to distribute your site traffic evenly.
+* Set up appropriate page rules to manage your caching and other options.
 
 Each of these items provides certain functionality you can use to create a more reliable {{site.data.keyword.cis_short_notm}} deployment.
 
@@ -61,9 +61,9 @@ For detailed information about setting up and managing your global load balancer
 
 Here are some recommended page rule settings to give your site maximum reliability:
 
- * Serve Stale Content
- * Origin Cache Control
- * Forwarding URL
+* Serve Stale Content
+* Origin Cache Control
+* Forwarding URL
 
 ## Serve Stale Content
 {: #serve-stale-content}
@@ -87,15 +87,15 @@ To enable **Serve Stale Content**, follow these steps:
 ### Serve Stale Content limitations
 {: #limitations-serve-stale-content}
 
- * **Serve Stale Content** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site are viewable when your origin server goes down.
+* **Serve Stale Content** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site are viewable when your origin server goes down.
 
- * Recently added sites don't have a large cache of their site available, which means that **Serve Stale Content** might not work if you only added the site a few days ago.
+* Recently added sites don't have a large cache of their site available, which means that **Serve Stale Content** might not work if you only added the site a few days ago.
 
- * {{site.data.keyword.cis_short_notm}} does not show private content or handle form submission (POSTs) if your server is down. Visitors are shown an `error on checkout` page or `items require a login to view`.
+* {{site.data.keyword.cis_short_notm}} does not show private content or handle form submission (POSTs) if your server is down. Visitors are shown an `error on checkout` page or `items require a login to view`.
 
- * To trigger **Serve Stale Content**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Serve Stale Content also works when we encounter issues contacting your origin (Errors 521 & 523), timeouts (522 & 524), SSL errors (525 & 526) or an unknown error (520). **Serve Stale Content** is not triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
+* To trigger **Serve Stale Content**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Serve Stale Content also works when we encounter issues contacting your origin (Errors 521 & 523), timeouts (522 & 524), SSL errors (525 & 526) or an unknown error (520). **Serve Stale Content** is not triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
 
- * **Serve Stale Content** does not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency, because the "Edge Cache Expire TTL" causes the **Serve Stale Content** cache to be purged in the corresponding interval.
+* **Serve Stale Content** does not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency, because the "Edge Cache Expire TTL" causes the **Serve Stale Content** cache to be purged in the corresponding interval.
 
 ## Origin Cache Control
 {: #origin-cache-control}
@@ -121,9 +121,9 @@ To enable **Origin Cache Control**, follow these steps:
 
 Two specific page rules take precedence for caching overall:
 
- * If a page rule has **Cache Level** set to `Bypass`, the resources that match that page rule are not cached. {{site.data.keyword.cis_short_notm}} still acts as a proxy, and our other performance features remain active. However, your content is fetched from your origin server directly, instead of served from our cache.
+* If a page rule has **Cache Level** set to `Bypass`, the resources that match that page rule are not cached. {{site.data.keyword.cis_short_notm}} still acts as a proxy, and our other performance features remain active. However, your content is fetched from your origin server directly, instead of served from our cache.
 
- * If a page rule has **Cache Level** set to `Cache everything`, resources that match the page rule are cached. **Using this page rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.**
+* If a page rule has **Cache Level** set to `Cache everything`, resources that match the page rule are cached. **Using this page rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.**
 
 If no page rule is set, we use the `Standard` caching mode, which is based the extension of the resource. We cache static resources only.
 
@@ -132,9 +132,9 @@ If no page rule is set, we use the `Standard` caching mode, which is based the e
 
 The second way to alter what {{site.data.keyword.cis_short_notm}} caches is through caching headers sent from the origin. {{site.data.keyword.cis_short_notm}} respects these settings, but you can override them by specifying an **Edge Cache TTL** page rule setting. Here are the headers we consider when deciding what resources to cache from your origin:
 
- * If the **Cache-Control** header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then {{site.data.keyword.cis_short_notm}} does not cache the resource. Note that sensitive material should not be cached, so you might consider using one of these headers in that case.
+* If the **Cache-Control** header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then {{site.data.keyword.cis_short_notm}} does not cache the resource. Note that sensitive material should not be cached, so you might consider using one of these headers in that case.
 
- * If the **Cache-Control** header is set to `public` and the `max-age` is greater than 0, or if the `Expires` headers are set any time in the future, the resource is cached.
+* If the **Cache-Control** header is set to `public` and the `max-age` is greater than 0, or if the `Expires` headers are set any time in the future, the resource is cached.
 
 According to RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If both are seen and they do not agree, `max-age` wins.
 {: note}
@@ -161,11 +161,11 @@ Basically `s-maxage` is intended to be followed ONLY by reverse proxies (so the 
 
 To sum up, here are some main areas to consider for reliability with regard to caching:
 
- * Check your origin's caching headers to make sure there are no overriding headers for cacheable resources (`Cache-Control` and `Expires`).
+* Check your origin's caching headers to make sure there are no overriding headers for cacheable resources (`Cache-Control` and `Expires`).
 
- * {{site.data.keyword.cis_short_notm}} always caches static content by default, with the following TTL depending on the return code:
+* {{site.data.keyword.cis_short_notm}} always caches static content by default, with the following TTL depending on the return code:
 
-```
+```sh
 200 301    120m;
 302 303    20m;
 403        5m; for reliability
@@ -174,9 +174,9 @@ any        0s;
 ```
 {: pre}
 
- * To cache more, create a Page Rule with **Cache Level** set to `Cache everything` on the URL (if your web server returns a 404 when requesting this URL, this result is cached for 5m only).
+* To cache more, create a Page Rule with **Cache Level** set to `Cache everything` on the URL (if your web server returns a 404 when requesting this URL, this result is cached for 5m only).
 
- * To avoid caching on a URL, create a page rule with **Cache Level** set to `Bypass`.
+* To avoid caching on a URL, create a page rule with **Cache Level** set to `Bypass`.
 
 
 ## Forwarding URL
@@ -211,7 +211,7 @@ Imagine that you want to make it easy for anyone coming to reach a URL such as:
 
 This pattern matches:
 
-```
+```sh
 http://example.com/+
 http://www.example.com/+
 https://www.example.com/+
@@ -222,7 +222,7 @@ https://www.blog.example.com/+
 
 It does not match:
 
-```
+```sh
 http://www.example.com/blog/+  [extra directory before the +]
 http://www.example.com+  [no trailing slash]
 ```

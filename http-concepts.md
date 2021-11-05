@@ -61,20 +61,20 @@ To use Chrome to connect to your website over HTTP/3, first download and install
 After Chrome starts, type your domain in the address bar. Check the protocol version using the **Network** tab in Chrome’s Developer Tools. If `http2+quic/99` doesn’t appear in the **Protocol** column when connecting to your domain, try reloading the page.
 
 ### Using cURL
-{: use-curl}
+{: #use-curl}
 
 The cURL command-line tool supports HTTP/3.  [Download the latest version](https://github.com/curl/curl){: external} and follow [the instructions to enable HTTP/3 support](https://github.com/curl/curl/blob/master/docs/HTTP3.md#quiche-version){: external}.
 
 For macOS, use Homebrew to install cURL with HTTP/3 support:
 
-```
+```sh
 brew install --HEAD -s https://raw.githubusercontent.com/cloudflare/homebrew-cloudflare/master/curl.rb
 ```
 {: pre}
 
 Then, perform an HTTP/3 cURL with the `--http3` command-line flag:
 
-```
+```sh
 ./curl -I https://blog.cloudflare.com/ --http3
 ```
 {: pre}

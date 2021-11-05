@@ -50,9 +50,9 @@ DDoS attack vectors target varying components of a network connection. While nea
 
 Common types are:
 
- * Application layer attacks (Layer 7)
- * Protocol attacks (Layer 3 and Layer 4)
- * Volumetric attacks (amplification attacks)
+* Application layer attacks (Layer 7)
+* Protocol attacks (Layer 3 and Layer 4)
+* Volumetric attacks (amplification attacks)
 
 ### Application layer attacks
 {: #application-layer-attacks}

@@ -39,7 +39,7 @@ The following API call requests an Edge Functions script's metrics over a one da
 ## The API call
 {: #api-call-edge-func}
 
-```
+```sh
 PAYLOAD='{ "query":
   "query GetEdgeFunctionsAnalytics($accountTag: string, $datetimeStart: string, $datetimeEnd: string, $scriptName: string) {
       viewer {
@@ -86,7 +86,7 @@ curl \
 
 The results are returned in JSON (as requested), so piping the output to jq makes them easier to read. For example:
 
-```
+```sh
 curl \
   -X POST \
   -H "Content-Type: application/json" \

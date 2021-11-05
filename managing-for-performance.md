@@ -35,8 +35,8 @@ With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performan
 
 **Recommended and best practices:**
 
- * Cache as much of your static and semi-static web content as possible
- * For event-driven content, purge your cache using the API
+* Cache as much of your static and semi-static web content as possible
+* For event-driven content, purge your cache using the API
 
 ## Best practice 1: Cache as much static and semi-static content as possible
 {: #best-practice-cache-static-content}

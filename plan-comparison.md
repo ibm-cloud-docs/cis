@@ -58,6 +58,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Firewall rules**|* 100 active rules  \n * Does not support _Log_ action  \n * Does not support _matches_ operator|* 1000 active rules  \n * Supports all actions  \n * Supports all operators|No|Same as Enterprise|
 |**Routing**|No|Yes|No|No |
 |**Origin certificates**|Yes|Yes|Yes| Yes|
+{: caption="Table 1. CIS plan comparison" caption-side="bottom"}
 
 
 
@@ -81,3 +82,4 @@ The following table describes the key differences among the available plans. Ent
 |**Global load balancers origin limit**|6|100|18|6|
 |**Global load balancers lowest health  \n Check interval**|60s|5s|5s|Not available|
 |**Page rules  \n (Caching/Security)**|50|100|0|100|
+{: caption="Table 1. Key plan differences" caption-side="bottom"}

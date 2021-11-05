@@ -138,9 +138,9 @@ There are two ways you can designate an origin in a Range app.
 1. Origin IP - use parameter `origin_direct`
 2. Load balancer - use parameters `origin_dns` and `origin_port`
 
-**Request:**
+For the origin IP request:
 
-```
+```sh
 curl -X POST \
   https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps \
   -H 'X-Auth-User-Token: <token>' \
@@ -149,9 +149,9 @@ curl -X POST \
 ```
 {: codeblock}
 
-**Response:**
+The response follows:
 
-```
+```sh
 {
     "result": {
         "id": "4f70c3d4f20576b79135b898295e8093",
@@ -175,9 +175,9 @@ curl -X POST \
 ```
 {: codeblock}
 
-**Request:**
+For a load balancer request:
 
-```
+```sh
 curl -X POST \
   https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps \
   -H 'X-Auth-User-Token: <token>' \
@@ -185,9 +185,9 @@ curl -X POST \
 ```
 {: codeblock}
 
-**Response:**
+The response follows:
 
-```
+```sh
 {
     "result": {
         "id": "4f70c3d4f20576b79135b898295e8093",
@@ -223,17 +223,17 @@ curl -X POST \
 ### Listing all Range apps
 {: #range-list-all-apps}
 
-**Request:**
+Use the following request to list all Range apps:
 
-```
+```sh
 curl -X GET \
   https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps
 ```
 {: pre}
 
-**Response:**
+The response follows:
 
-```
+```sh
 {
     "result": [
         {
@@ -261,19 +261,19 @@ curl -X GET \
 ### Listing a specfic Range app
 {: #range-list-a-specific-range-app}
 
-**Request:**
+Use the following request to list a specific Range app:
 
-```
+```sh
 curl -X GET \
   https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps/4f70c3d4f20546b79135b898295e8093
 ```
 {: pre}
 
-**Response:**
+The response follows:
 
 * App using the Origin IP
 
-    ```
+    ```sh
     {
         "result": {
             "id": "4f70c3d4f20546b79135b898295e8093",
@@ -299,7 +299,7 @@ curl -X GET \
 
 * App using a load balancer
 
-    ```
+    ```sh
     {
         "result": {
             "id": "555359036e7f4acc82d69b916f62caba",

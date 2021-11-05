@@ -72,12 +72,12 @@ After creating your records, consider turning on the `Proxy` setting. Most of th
 
 Next, you can set up caching. You have the option of three types of caching, available from the caching screen list menu.
 
- * **No query string**: Only delivers resources from cache when there is no query string.
- * **Query string independent**: Delivers the same resource to everyone independent of the query string.
+* **No query string**: Only delivers resources from cache when there is no query string.
+* **Query string independent**: Delivers the same resource to everyone independent of the query string.
    The **Ignore Query String** setting applies only to static file extensions. This setting removes the query string when generating the cache key, so that a request for `style.css?something` is normalized to `style.css` when serving from the cache.
    {: note}
 
- * **Query string dependent**: Delivers a different resource each time the query string changes.
+* **Query string dependent**: Delivers a different resource each time the query string changes.
 
 ## Purge cache
 {: #purge-cache-overview}
@@ -85,14 +85,14 @@ Next, you can set up caching. You have the option of three types of caching, ava
 You can purge your cache to prepare for updates at any time by entering the URL into the purge cache field. You can purge a single file or multiple files (up to 30 at a time).
 
 ## Browser expiration
- {: #browser-expiration}
+{: #browser-expiration}
 
 You can use the list menu to select the time of browser expiration that you require; for example, 8 hours, or 1 day.
 
 Enterprise only: You can also instruct {{site.data.keyword.cis_short_notm}} not to override browser cache control by setting this to **Respect Existing Headers**.
 
 ## Using Development mode
- {: #using-development-mode}
+{: #using-development-mode}
 
 **Development mode** is intended for use when major updates or new file uploads are required, or any time you do not want the end users to work from the cache at all, but to retrieve files directly from the origin servers. To begin using **Development Mode**, toggle the switch to `Enabled` position. To stop using **Development Mode**, toggle the switch to `Disabled` position. **Development mode** expires automatically after 3 hours.
 
@@ -116,11 +116,8 @@ By default, DDoS protection is enabled for any DNS records or load balancers wit
 Security settings are:
 
 * Turn on WAF using the toggle on the **Web Application Firewall** page. When you toggle the rules on or off, the changes are applied immediately.
-
 * **Enterprise only** - The **Rate limiting** page allows you to configure rate limiting rules to avoid noisy-neighbor problems and ward off DDoS.
-
 * On the **IP Firewall** page, you can configure access rules based on IP, country code, or ASN. You can also configure rules to block user agents. The domain lockdown section of this page allows you to limit access to your domain to certain IP addresses.
-
 * You can review firewall-related events on the **Events** page.
 
 ## Certificates

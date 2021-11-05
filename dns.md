@@ -65,7 +65,7 @@ To add this record type, a valid value must exist in the **Name** field and a fu
 Enterprise plans are able to CNAME another domain as long as that domain is configured within {{site.data.keyword.cis_short_notm}}.
 {: note}
 
-```
+```sh
 Ex.
 Configured CIS Domains:
   - example.com
@@ -94,12 +94,12 @@ To add this record type, a valid value must exist in the **Name** field and a va
 
 To add this record type, a valid value must exist in the **Name** field. If you need more specific information, select the **Configure LOC options** button. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-![Create LOC Type record](images/create-loc-type-record-1.png)
+![Create LOC Type record](images/create-loc-type-record-1.png "Add LOC type record"){: caption="Figure 1. Adding LOC type records" caption-side="bottom}
 
    Required Fields: Name
    Optional Fields: LOC options (click **Configure LOC options** to configure)
 
-![Create LOC Type record](images/create-loc-type-record-2.png)
+![Create LOC Type record](images/create-loc-type-record-2.png "Required fields"){: caption="Figure 2. Required fields for LOC type records" caption-side="bottom}
 
 ### CAA Type record
 {: #caa-type-record}
@@ -160,7 +160,7 @@ PTR records primarily prevent emails from going to spam folders. Because CIS doe
 
 In each record row, you can click the **Edit record** option from the menu, which opens a dialog box that you can use to update the record.
 
-![Edit DNS record](images/edit-dns-record.png)
+![Edit DNS record](images/edit-dns-record.png "Edit record"){: caption="Figure 3. Edit record" caption-side="bottom}
 
 After you are finished making your changes, select **Update record** to save them, or **Cancel** to abort the changes.
 
@@ -169,7 +169,7 @@ After you are finished making your changes, select **Update record** to save the
 
 In each record row, you can select the **Delete record** option from the menu, which opens a dialog box to confirm the delete process.
 
-![Delete DNS record](images/delete-record.png)
+![Delete DNS record](images/delete-record.png "Delete record"){: caption="Figure 4. Delete record" caption-side="bottom}
 
 You can select the **Delete** button to confirm your delete action. Select **Cancel** if you don't want to delete.
 
@@ -180,7 +180,7 @@ You can select the **Delete** button to confirm your delete action. Select **Can
 DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.wikipedia.org/wiki/Zone_file){: external}.
 Click the overflow menu and select to import or export records.
 
-![DNS Records Option](images/import-export-records.png)
+![DNS Records Option](images/import-export-records.png "Export records"){: caption="Figure 5. Export records" caption-side="bottom}
 
 **Import records** - By default, a total of 3500 DNS records are allowed (imported and created on {{site.data.keyword.cis_short_notm}}). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After importing, you are shown a summary with the number of records successfully added and the number that failed, along with the reason why each record failed.
 
@@ -193,4 +193,4 @@ Click the overflow menu and select to import or export records.
 
 DNSSec adds a layer of authentication to the internet's DNS infrastructure, which otherwise is not secure. Secure DNS guarantees that visitors are directed to **your** web server when they type your domain name into a web browser. All you need to do is enable DNSSec in your DNS page from your IBM {{site.data.keyword.cis_short_notm}} account and add the DS record to your registrar.
 
-You can select **View DS records** to open a dialog box that explains how to add the DS record to your registrar. You must copy parts of the DS record and paste them into your registrar’s dashboard. Every registrar is different, and your registrar might only require you to enter information for some of the available fields.
+You can select **View DS records** to display the information needed to add the DS record to your registrar. You must copy parts of the DS record and paste them into your registrar’s dashboard. Every registrar is different, and your registrar might only require you to enter information for some of the available fields.

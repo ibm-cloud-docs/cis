@@ -33,13 +33,14 @@ subcollection: cis
 
 Here are some common error messages you or your support team might see:
 
-| Error Code    | Reason |
+| Error Code | Reason |
 | ------------- | ------------- |
-| 1001  | DNS Resolution Error. Either the customer recently signed up and their DNS information has not yet propagated, or whomever is managing the DNS has a failure. |
-| 521  | Origin web server refused connection from {{site.data.keyword.cis_short_notm}}. Either the origin web server is not running, or something is blocking {{site.data.keyword.cis_short_notm}} IP addresses. |
-| 522  | Connection timeout to the origin server (30 second default). Either CIS might be rate-limited, the web server could be consuming all resources (shared server), or there might be network connectivity issues between the web server and {{site.data.keyword.cis_short_notm}}. |
-| 523  | Origin server is unreachable. Ensure that the origin IP address for the DNS record is the same as the one appearing in the {{site.data.keyword.cis_short_notm}} DNS Settings page. |
-| 524  | {{site.data.keyword.cis_short_notm}} could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
+| 1001 | DNS Resolution Error. Either the customer recently signed up and their DNS information has not yet propagated, or whomever is managing the DNS has a failure. |
+| 521 | Origin web server refused connection from {{site.data.keyword.cis_short_notm}}. Either the origin web server is not running, or something is blocking {{site.data.keyword.cis_short_notm}} IP addresses. |
+| 522 | Connection timeout to the origin server (30 second default). Either CIS might be rate-limited, the web server could be consuming all resources (shared server), or there might be network connectivity issues between the web server and {{site.data.keyword.cis_short_notm}}. |
+| 523 | Origin server is unreachable. Ensure that the origin IP address for the DNS record is the same as the one appearing in the {{site.data.keyword.cis_short_notm}} DNS Settings page. |
+| 524 | {{site.data.keyword.cis_short_notm}} could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
+{: caption="Table 1. Error codes" caption-side="bottom"}
 
 ## 502 error “The dreaded 502”
 {: #troubleshooting-cis-502-error}

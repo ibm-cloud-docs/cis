@@ -18,6 +18,7 @@ subcollection: cis
 {:note: .note}
 {:important: .important}
 {:deprecated: .deprecated}
+{:table: .aria-labeledby="caption"}
 {:external: target="_blank" .external}
 {:generic: data-hd-programlang="generic"}
 {:download: .download}
@@ -30,6 +31,7 @@ Along with actions, fields and expressions are the building blocks of firewall r
 {: shortdesc}
 
 ## Fields
+{: #fields}
 
 When CIS receives an HTTP request, it is examined and a table of fields is produced to match against. This field table exists for as long as the current request is being processed. Think of it as a table that holds the request properties to be matched against expressions.
 
@@ -40,12 +42,13 @@ Each field value can be sourced from different places, such as:
 * Computer values, resulting from a lookup, computation, or other intelligence – for example, a `cf.threat_score` calculated dynamically by a machine learning process that inspects related primitive and derived values.
 
 ### Available fields
+{: #available-fields}
 
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
 |http.cookie|String|session=A12345;-background=light|Entire cookie as a string|
-|http.cookie|String|`www.example.com`|The host name used in the full request URI|
-|http.referer|String|_HTTP referer header_||
+|http.cookie|String| `www.example.com` | The host name used in the full request URI|
+|http.referer|String|_HTTP referer header_| |
 |http.request.full_uri|String|`https://www.example.com/articles/index?section=539061&expand=comments`|The full URI as received by the web server (does not include _#fragment_ which is not sent to web servers)|
 |http.request.method|String|POST|The HTTP method, in upper case|
 |http.request.uri|String|/articles/index?section=539061&expand=comments|The absolute URI of the request|
@@ -57,6 +60,7 @@ Each field value can be sourced from different places, such as:
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
 |ip.geoip.country|String|GB|The [2-letter country code](https://support.cloudflare.com/hc/en-us/articles/217074967#1QrbtSK5NSL7A0FOWD2bbZ){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
+{: caption="Table 1. Available fields" caption-side="bottom"}
 
 These standard fields follow the naming convention of the Wireshark display field reference. However, some subtle variations might exist in the preceding example values.
 {: note}
@@ -67,8 +71,10 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 | ------- | :--------- | :------------ | :--------- |
 |cf.client.bot|Boolean|true|This field indicates whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
 |cf.threat_score|Number|A 0-100 value|This field represents a risk score, 0 indicates low risk as determined by Cloudflare. Values above 10 can represent spammers or bots, and values above 40 point to bad actors on the internet. It is rare to see values above 60, so tune your firewall rules to challenge those above 10, and to block those above 50.|
+{: caption="Table 2. Available Cloudflare fields" caption-side="bottom"}
 
 ## Functions
+{: #functions}
 
 The firewall rules language has a number of functions to convert fields.
 
@@ -79,12 +85,14 @@ These are not currently supported in the CIS UI Visual Expression Builder.
 | ------- | :--------- | :------------ | :--------- | :--------- |
 |lower|String|String|lower(http.host) == `"www.example.com"`|Converts a string field to lowercase. Only uppercase ASCII bytes are being converted, every other bytes are left as-is.|
 |upper|String|String|upper(http.host) == `"www.example.com"`|Converts a string field to uppercase. Only lowercase ASCII bytes are being converted, every other bytes are left as-is.|
+{: caption="Table 3. Firewall rules functions" caption-side="bottom"}
 
 ## Expressions
+{: #expressions}
 
 An expression returns true or false based on a match against incoming traffic. For example:
 
-```
+```sh
 http.host eq "www.example.com" and ip.src in 92.182.212.0/24
 ```
 {: screen}
@@ -100,6 +108,7 @@ Looking at the first single expression, you can see that it contains:
 Not all conditions have the same structure. Additional examples using different structures are discussed in the next section.
 
 ### Comparison operators
+{: #comparison-operators}
 
 The following comparison operators are available for use in expressions:
 
@@ -111,11 +120,12 @@ The following comparison operators are available for use in expressions:
 |le|<=|Less than or equal to|
 |gt|>|Great than|
 |ge|>=|Greater than or equal to|
-|contains||Exactly contains|
+|contains| |Exactly contains|
 |matches|~|[Re2](https://github.com/google/re2/wiki/Syntax) inspired regular expression|
-|in||Value appears in a set of values. Supports ranges using the ".." notation. |
+|in| |Value appears in a set of values. Supports ranges using the ".." notation. |
 |not|!|See Boolean comparison|
 |bitwise_and|&|Compare bit field value|
+{: caption="Table 4. Comparison operators for expressions" caption-side="bottom"}
 
 Currently the CIS UI Visual Expression Builder only supports English operators.
 {: note}
@@ -124,30 +134,34 @@ An expression might contain a mix of English and C-like operators. For example, 
 
 Certain comparison operators apply to specific fields based on type. The following matrix provides examples of which operators are available for various field types:
 
-| English| C-like| String|IP Address|Number|
+| English| C-like| String| IP Address| Number|
 | ------- | :--------- | :------------ | :--------- | :--------- |
 |eq|==|http.request.uri.path eq "/articles/2008/"|ip.src eq 93.184.216.0|cf.threat_score eq 10|
 |ne|!=|http.request.uri.path ne "/articles/2010/"|ip.src ne 93.184.216.0|cf.threat_score ne 60|
-|lt|<|http.request.uri.path lt "/articles/2009/"||cf.threat_score lt 10|
-|le|<=|http.request.uri.path le "/articles/2008/"||cf.threat_score le 20|
-|gt|>|http.request.uri.path gt "/articles/2006/"||cf.threat_score gt 25|
-|ge|>=|Greater than or equal to||cf.threat_score ge 60|
-|contains||http.request.uri.path contains "/articles/"|||
-|matches|~|http.request.uri.path ~ "^/articles/200[7-8]/$"|||
-|in||http.request.method in { "HEAD" "GET" }|ip.src in { 93.184.216.0 93.184.216.1 }|cf.threat_score in {0 2 10}|
+|lt|<|http.request.uri.path lt "/articles/2009/"| |cf.threat_score lt 10|
+|le|<=|http.request.uri.path le "/articles/2008/"| |cf.threat_score le 20|
+|gt|>|http.request.uri.path gt "/articles/2006/"| |cf.threat_score gt 25|
+|ge|>=|Greater than or equal to| |cf.threat_score ge 60|
+|contains| |http.request.uri.path contains "/articles/"| | |
+|matches|~|http.request.uri.path ~ "^/articles/200[7-8]/$"| | |
+|in| |http.request.method in { "HEAD" "GET" }|ip.src in { 93.184.216.0 93.184.216.1 }|cf.threat_score in {0 2 10}|
+{: caption="Table 5. Comparison operators for fields" caption-side="bottom"}
 
 The evaluation of expressions using string values is case-sensitive. As such, a firewall rule might require you to define more than one test condition. Enterprise customers can use a regular expression with the matches operator to capture multiple variations with a single expression.
 {: important}
 
 ### Boolean comparison
+{: #boolean-comparison}
 
 For fields of boolean type (for example, `ssl`) the field appears by itself in the expression when evaluating for a true condition. For a false condition, the **not** operator applies.
 
 | True| False|
 | ------- | :--------- |
 |ssl|not ssl|
+{: caption="Table 6. Boolean comparison" caption-side="bottom"}
 
 ## Compound expressions
+{: #compound-expressions}
 
 You can create compound expressions by grouping two or more single expressions using logical operators.
 
@@ -157,24 +171,25 @@ You can create compound expressions by grouping two or more single expressions u
 |and|&&|Logical AND|http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24|2|
 |xor|^^|Logical XOR|http.host eq `"www.example.com"` xor ip.src in 93.184.216.0/24|3|
 |or|&verbar;&verbar;|Logical OR|http.host eq `"www.example.com"` or ip.src in 93.184.216.0/24|4|
+{: caption="Table 7. Compound expressions" caption-side="bottom"}
 
 To alter the order of precedence, you can group expressions with parentheses. Using no parentheses, expressions are implicitly grouped based on standard precedence:
 
-```
+```sh
 ssl and http.request.uri.path eq /login or http.request.uri.path eq /oauth
 ```
 {: screen}
 
 Applying explicit grouping:
 
-```
+```sh
 (ssl and http.request.uri.path eq /login) or http.request.uri.path eq /oauth
 ```
 {: screen}
 
 Giving precedence to or with parentheses:
 
-```
+```sh
 ssl and (http.request.uri.path eq /login or http.request.uri.path eq /oauth)
 ```
 {: screen}
@@ -183,12 +198,13 @@ Note that while `not` is used for grouping, it can be used to negate a single co
 
 Finally, you can also negate grouped expressions:
 
-```
+```sh
 not (http.request.method eq "POST" and http.request.uri.path eq "/login")
 ```
 {: screen}
 
 ### Deviations from Wireshark display filters
+{: #deviations}
 
 Firewall rules expressions are inspired by Wireshark display filters. However, the implementation deviates in the following ways:
 

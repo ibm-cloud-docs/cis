@@ -39,14 +39,14 @@ Edge logs are not retained by default. Before you can pull logs using the Logpul
 
 1. To check whether log retention is currently turned off, use the `log-retention` CLI:
 
-```
+```sh
 ibmcloud cis log-retention DNS_DOMAIN_ID
 ```
 {: pre}
 
-2. If the output shows that the flag is `off` (default), update the setting as follows.
+1. If the output shows that the flag is `off` (default), update the setting as follows.
 
-```
+```sh
 ibmcloud cis log-retention-update DNS_DOMAIN_ID --flag on
 ```
 {: pre}
@@ -62,16 +62,16 @@ If you receive an error message after running a command, you can use the RayID p
 If you have a RAY_ID with `-XXX` on the end, be sure to remove it. For example, `12ab34cdef567gh8-XXX` becomes `12ab34cdef567gh8`.
 {: note}
 
-**Request**
+Use the following command for the request:
 
-```
+```sh
 ibmcloud cis logpull DNS_DOMAIN_ID --ray-id RAY_ID
 ```
 {: pre}
 
-**Response**
+The response follows:
 
-```
+```sh
 {
     "ClientIP": "68.278.11.89",
     "ClientRequestHost": "testing.logpull.com",
@@ -91,18 +91,18 @@ ibmcloud cis logpull DNS_DOMAIN_ID --ray-id RAY_ID
 
 If you receive an error message after running a command, but do not know the RayID of the response, you can use a time duration to get all logs for the time period when the error occurred.  
 
-**Request**
+Use the following command for the request:
 
-```
+```sh
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00
 ```
 {: pre}
 
 Where --start` and `--end` is entered as a UNIX timestamp (in seconds or nanoseconds), or as an absolute timestamp that conforms to RFC 3339, with a time duration of a minute or an hour.
 
-**Response**
+The response follows:
 
-```
+```sh
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com","ClientRequestMethod":"GET","ClientRequestURI":"/assets/bootstrap-collapse.js","EdgeEndTimestamp":1545067628046000000,"EdgeResponseBytes":2205,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067628044000000,"RayID":"48ab19434891c7a7"}
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com","ClientRequestMethod":"GET","ClientRequestURI":"/assets/3d.gif","EdgeEndTimestamp":1545067627970000000,"EdgeResponseBytes":2538446,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067627951000000,"RayID":"48ab1942bf96c7a7"}
 {"ClientIP":"2620:1f7:8c5::1f:949e:c04d","ClientRequestHost":"test.logpull.load.com","ClientRequestMethod":"GET","ClientRequestURI":"/assets/logo.gif","EdgeEndTimestamp":1545067628051000000,"EdgeResponseBytes":82257,"EdgeResponseStatus":200,"EdgeStartTimestamp":1545067628048000000,"RayID":"48ab194348a0c7a7"}
@@ -125,25 +125,24 @@ Where --start` and `--end` is entered as a UNIX timestamp (in seconds or nanosec
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields here:
 
-**Request**
-
-```
+```sh
 ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
 ```
 {: pre}
 
 Fields are passed as a comma-separated list. For example, to have "ZoneID" and "RayID", use:
 
-```
+```sh
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneId,RayID
 ```
 {: pre}
 
-**Field list**
+#### Field list
+{: #field-list}
 
 Available fields:
 
-```
+```sh
 "CacheCacheStatus": "string; unknown | miss | expired | updating | stale | hit | ignored | bypass | revalidated",
 "CacheResponseBytes": "int; number of bytes returned by the cache",
 "CacheResponseStatus": "int; HTTP status code returned by the cache to the edge: all requests (including non-cacheable ones) go through the cache: also see CacheStatus field",
@@ -207,386 +206,387 @@ Available fields:
 
 The following is an example `logpull` call and examples of specific types of responses.
 
-**Request**
+* **Request**
 
-```
-ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ClientRequestURI,CEdgeResponseBytes,CParentRayID,CWorkerStatus,COriginResponseTime,CEdgeResponseStatus,CWorkerSubrequest,CClientRequestProtocol,CWAFRuleID,CEdgePathingOp,CClientSrcPort,CWorkerSubrequestCount,CEdgeRequestHost,CClientSSLCipher,CEdgePathingSrc,COriginResponseStatus,CClientIPClass,CWAFAction,CEdgeColoID,CClientCountry,CClientRequestHost,CWAFFlags,CClientASN,CEdgeServerIP,CCacheCacheStatus,CSecurityLevel,CClientRequestUserAgent,CCacheResponseBytes,CWAFMatchedVar,CEdgeStartTimestamp,CClientSSLProtocol,CEdgeEndTimestamp,CEdgeResponseContentType,CClientRequestBytes,CCacheResponseStatus,CWorkerCPUTime,CRayID,CClientRequestMethod,CClientIP,CClientRequestPath,COriginResponseHTTPExpires,CCacheTieredFill,CWAFRuleMessage,CEdgePathingStatus,CClientDeviceType,COriginSSLProtocol,CEdgeRateLimitAction,COriginIP,CEdgeRateLimitID,CZoneID,CEdgeResponseCompressionRatio,CClientRequestReferer,CWAFProfile,COriginResponseHTTPLastModified,COriginResponseBytes --timestamps=rfc3339'
-```
-{: codeblock}
+    ```sh
+    ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ClientRequestURI,CEdgeResponseBytes,CParentRayID,CWorkerStatus,    COriginResponseTime,CEdgeResponseStatus,CWorkerSubrequest,CClientRequestProtocol,CWAFRuleID,CEdgePathingOp,CClientSrcPort,CWorkerSubrequestCount,CEdgeRequestHost,    CClientSSLCipher,CEdgePathingSrc,COriginResponseStatus,CClientIPClass,CWAFAction,CEdgeColoID,CClientCountry,CClientRequestHost,CWAFFlags,CClientASN,CEdgeServerIP,    CCacheCacheStatus,CSecurityLevel,CClientRequestUserAgent,CCacheResponseBytes,CWAFMatchedVar,CEdgeStartTimestamp,CClientSSLProtocol,CEdgeEndTimestamp,CEdgeResponseContentType,    CClientRequestBytes,CCacheResponseStatus,CWorkerCPUTime,CRayID,CClientRequestMethod,CClientIP,CClientRequestPath,COriginResponseHTTPExpires,CCacheTieredFill,CWAFRuleMessage,    CEdgePathingStatus,CClientDeviceType,COriginSSLProtocol,CEdgeRateLimitAction,COriginIP,CEdgeRateLimitID,CZoneID,CEdgeResponseCompressionRatio,CClientRequestReferer,CWAFProfile,    COriginResponseHTTPLastModified,COriginResponseBytes --timestamps=rfc3339'
+    ```
+    {: codeblock}
 
-**Response with Status Code 200**
+* **Response with Status Code 200**
 
-```
-{
-"CacheCacheStatus":"unknown",
-"CacheResponseBytes":396,
-"CacheResponseStatus":200,
-"CacheTieredFill":false,
-"ClientASN":56046,
-"ClientCountry":"cn",
-"ClientDeviceType":"desktop",
-"ClientIP":"1.1.1.1",
-"ClientIPClass":"noRecord",
-"ClientRequestBytes":400,
-"ClientRequestHost":"foo.com",
-"ClientRequestMethod":"GET",
-"ClientRequestPath":"/",
-"ClientRequestProtocol":"HTTP/1.1",
-"ClientRequestReferer":"",
-"ClientRequestURI":"/",
-"ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
-"ClientSSLCipher":"NONE",
-"ClientSSLProtocol":"none",
-"ClientSrcPort":4532,
-"EdgeColoID":134,
-"EdgeEndTimestamp":"2019-01-03T01:54:11Z",
-"EdgePathingOp":"wl",
-"EdgePathingSrc":"macro",
-"EdgePathingStatus":"nr",
-"EdgeRateLimitAction":"",
-"EdgeRateLimitID":0,
-"EdgeRequestHost":"foo.com",
-"EdgeResponseBytes":808,
-"EdgeResponseCompressionRatio":1.57,
-"EdgeResponseContentType":"text/html",
-"EdgeResponseStatus":200,
-"EdgeServerIP":"172.69.98.106",
-"EdgeStartTimestamp":"2019-01-03T01:54:11Z",
-"OriginIP":"2.2.2.2",
-"OriginResponseBytes":0,
-"OriginResponseHTTPExpires":"",
-"OriginResponseHTTPLastModified":"Tue, 31 Jan 2017 15:01:11 UTC",
-"OriginResponseStatus":200,
-"OriginResponseTime":7000000,
-"OriginSSLProtocol":"unknown",
-"ParentRayID":"00",
-"RayID":"4931d60516c0b0b0",
-"SecurityLevel":"med",
-"WAFAction":"unknown",
-"WAFFlags":"0",
-"WAFMatchedVar":"",
-"WAFProfile":"unknown",
-"WAFRuleID":"",
-"WAFRuleMessage":"",
-"WorkerCPUTime":0,
-"WorkerStatus":"unknown",
-"WorkerSubrequest":false,
-"WorkerSubrequestCount":0,
-"ZoneID":******
-}
-```
-{: codeblock}
+    ```sh
+    {
+    "CacheCacheStatus":"unknown",
+    "CacheResponseBytes":396,
+    "CacheResponseStatus":200,
+    "CacheTieredFill":false,
+    "ClientASN":56046,
+    "ClientCountry":"cn",
+    "ClientDeviceType":"desktop",
+    "ClientIP":"1.1.1.1",
+    "ClientIPClass":"noRecord",
+    "ClientRequestBytes":400,
+    "ClientRequestHost":"foo.com",
+    "ClientRequestMethod":"GET",
+    "ClientRequestPath":"/",
+    "ClientRequestProtocol":"HTTP/1.1",
+    "ClientRequestReferer":"",
+    "ClientRequestURI":"/",
+    "ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+    "ClientSSLCipher":"NONE",
+    "ClientSSLProtocol":"none",
+    "ClientSrcPort":4532,
+    "EdgeColoID":134,
+    "EdgeEndTimestamp":"2019-01-03T01:54:11Z",
+    "EdgePathingOp":"wl",
+    "EdgePathingSrc":"macro",
+    "EdgePathingStatus":"nr",
+    "EdgeRateLimitAction":"",
+    "EdgeRateLimitID":0,
+    "EdgeRequestHost":"foo.com",
+    "EdgeResponseBytes":808,
+    "EdgeResponseCompressionRatio":1.57,
+    "EdgeResponseContentType":"text/html",
+    "EdgeResponseStatus":200,
+    "EdgeServerIP":"172.69.98.106",
+    "EdgeStartTimestamp":"2019-01-03T01:54:11Z",
+    "OriginIP":"2.2.2.2",
+    "OriginResponseBytes":0,
+    "OriginResponseHTTPExpires":"",
+    "OriginResponseHTTPLastModified":"Tue, 31 Jan 2017 15:01:11 UTC",
+    "OriginResponseStatus":200,
+    "OriginResponseTime":7000000,
+    "OriginSSLProtocol":"unknown",
+    "ParentRayID":"00",
+    "RayID":"4931d60516c0b0b0",
+    "SecurityLevel":"med",
+    "WAFAction":"unknown",
+    "WAFFlags":"0",
+    "WAFMatchedVar":"",
+    "WAFProfile":"unknown",
+    "WAFRuleID":"",
+    "WAFRuleMessage":"",
+    "WorkerCPUTime":0,
+    "WorkerStatus":"unknown",
+    "WorkerSubrequest":false,
+    "WorkerSubrequestCount":0,
+    "ZoneID":******
+    }
+    ```
+    {: codeblock}
 
-**Response with Status Code 404**
+* **Response with Status Code 404**
 
-```
-{
-"CacheCacheStatus":"miss",
-"CacheResponseBytes":209,
-"CacheResponseStatus":404,
-"CacheTieredFill":false,
-"ClientASN":56046,
-"ClientCountry":"cn",
-"ClientDeviceType":"desktop",
-"ClientIP":"1.1.1.1",
-"ClientIPClass":"noRecord",
-"ClientRequestBytes":433,
-"ClientRequestHost":"foo.com",
-"ClientRequestMethod":"GET",
-"ClientRequestPath":"/favicon.ico",
-"ClientRequestProtocol":"HTTP/1.1",
-"ClientRequestReferer":"foo.com/",
-"ClientRequestURI":"/favicon.ico",
-"ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
-"ClientSSLCipher":"NONE",
-"ClientSSLProtocol":"none",
-"ClientSrcPort":4532,
-"EdgeColoID":134,
-"EdgeEndTimestamp":"2019-01-03T01:54:12Z",
-"EdgePathingOp":"wl",
-"EdgePathingSrc":"macro",
-"EdgePathingStatus":"nr",
-"EdgeRateLimitAction":"",
-"EdgeRateLimitID":0,
-"EdgeRequestHost":"foo.com",
-"EdgeResponseBytes":556,
-"EdgeResponseCompressionRatio":2.87,
-"EdgeResponseContentType":"text/html",
-"EdgeResponseStatus":404,
-"EdgeServerIP":"172.69.98.148",
-"EdgeStartTimestamp":"2019-01-03T01:54:12Z",
-"OriginIP":"2.2.2.2",
-"OriginResponseBytes":0,
-"OriginResponseHTTPExpires":"",
-"OriginResponseHTTPLastModified":"",
-"OriginResponseStatus":404,
-"OriginResponseTime":7000000,
-"OriginSSLProtocol":"unknown",
-"ParentRayID":"00",
-"RayID":"4931d60a16c8b0b0",
-"SecurityLevel":"med",
-"WAFAction":"unknown",
-"WAFFlags":"0",
-"WAFMatchedVar":"",
-"WAFProfile":"unknown",
-"WAFRuleID":"",
-"WAFRuleMessage":"",
-"WorkerCPUTime":0,
-"WorkerStatus":"unknown",
-"WorkerSubrequest":false,
-"WorkerSubrequestCount":0,
-"ZoneID":******
-}
-```
-{: codeblock}
+    ```sh
+    {
+    "CacheCacheStatus":"miss",
+    "CacheResponseBytes":209,
+    "CacheResponseStatus":404,
+    "CacheTieredFill":false,
+    "ClientASN":56046,
+    "ClientCountry":"cn",
+    "ClientDeviceType":"desktop",
+    "ClientIP":"1.1.1.1",
+    "ClientIPClass":"noRecord",
+    "ClientRequestBytes":433,
+    "ClientRequestHost":"foo.com",
+    "ClientRequestMethod":"GET",
+    "ClientRequestPath":"/favicon.ico",
+    "ClientRequestProtocol":"HTTP/1.1",
+    "ClientRequestReferer":"foo.com/",
+    "ClientRequestURI":"/favicon.ico",
+    "ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+    "ClientSSLCipher":"NONE",
+    "ClientSSLProtocol":"none",
+    "ClientSrcPort":4532,
+    "EdgeColoID":134,
+    "EdgeEndTimestamp":"2019-01-03T01:54:12Z",
+    "EdgePathingOp":"wl",
+    "EdgePathingSrc":"macro",
+    "EdgePathingStatus":"nr",
+    "EdgeRateLimitAction":"",
+    "EdgeRateLimitID":0,
+    "EdgeRequestHost":"foo.com",
+    "EdgeResponseBytes":556,
+    "EdgeResponseCompressionRatio":2.87,
+    "EdgeResponseContentType":"text/html",
+    "EdgeResponseStatus":404,
+    "EdgeServerIP":"172.69.98.148",
+    "EdgeStartTimestamp":"2019-01-03T01:54:12Z",
+    "OriginIP":"2.2.2.2",
+    "OriginResponseBytes":0,
+    "OriginResponseHTTPExpires":"",
+    "OriginResponseHTTPLastModified":"",
+    "OriginResponseStatus":404,
+    "OriginResponseTime":7000000,
+    "OriginSSLProtocol":"unknown",
+    "ParentRayID":"00",
+    "RayID":"4931d60a16c8b0b0",
+    "SecurityLevel":"med",
+    "WAFAction":"unknown",
+    "WAFFlags":"0",
+    "WAFMatchedVar":"",
+    "WAFProfile":"unknown",
+    "WAFRuleID":"",
+    "WAFRuleMessage":"",
+    "WorkerCPUTime":0,
+    "WorkerStatus":"unknown",
+    "WorkerSubrequest":false,
+    "WorkerSubrequestCount":0,
+    "ZoneID":******
+    }
+    ```
+    {: codeblock}
 
-**Request matched a WAF rule (SQLj attack)**
+* **Request matched a WAF rule (SQLj attack)**
 
-```
-{
-"CacheCacheStatus":"unknown",
-"CacheResponseBytes":0,
-"CacheResponseStatus":0,
-"CacheTieredFill":false,
-"ClientASN":56046,
-"ClientCountry":"cn",
-"ClientDeviceType":"desktop",
-"ClientIP":"1.1.1.1",
-"ClientIPClass":"noRecord",
-"ClientRequestBytes":501,
-"ClientRequestHost":"foo.com",
-"ClientRequestMethod":"GET",
-"ClientRequestPath":"/login.php",
-"ClientRequestProtocol":"HTTP/1.1",
-"ClientRequestReferer":"",
-"ClientRequestURI":"/login.php?username=asdf&password=asdf",
-"ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:60.0) Gecko/20100101 Firefox/60.0",
-"ClientSSLCipher":"NONE",
-"ClientSSLProtocol":"none",
-"ClientSrcPort":48718,
-"EdgeColoID":134,
-"EdgeEndTimestamp":"2019-01-04T02:22:26Z",
-"EdgePathingOp":"wl",
-"EdgePathingSrc":"macro",
-"EdgePathingStatus":"nr",
-"EdgeRateLimitAction":"",
-"EdgeRateLimitID":0,
-"EdgeRequestHost":"",
-"EdgeResponseBytes":1849,
-"EdgeResponseCompressionRatio":2.82,
-"EdgeResponseContentType":"text/html",
-"EdgeResponseStatus":403,
-"EdgeServerIP":"",
-"EdgeStartTimestamp":"2019-01-04T02:22:26Z",
-"OriginIP":"",
-"OriginResponseBytes":0,
-"OriginResponseHTTPExpires":"",
-"OriginResponseHTTPLastModified":"",
-"OriginResponseStatus":0,
-"OriginResponseTime":0,
-"OriginSSLProtocol":"unknown",
-"ParentRayID":"00",
-"RayID":"493a3cc9463eb0d4",
-"SecurityLevel":"med",
-"WAFAction":"drop",
-"WAFFlags":"0",
-"WAFMatchedVar":"ARGS:USERNAME",
-"WAFProfile":"off",
-"WAFRuleID":"100008",
-"WAFRuleMessage":"SQLi probing",
-"WorkerCPUTime":0,
-"WorkerStatus":"unknown",
-"WorkerSubrequest":false,
-"WorkerSubrequestCount":0,
-"ZoneID":******
-}
-```
-{: codeblock}
+    ```sh
+    {
+    "CacheCacheStatus":"unknown",
+    "CacheResponseBytes":0,
+    "CacheResponseStatus":0,
+    "CacheTieredFill":false,
+    "ClientASN":56046,
+    "ClientCountry":"cn",
+    "ClientDeviceType":"desktop",
+    "ClientIP":"1.1.1.1",
+    "ClientIPClass":"noRecord",
+    "ClientRequestBytes":501,
+    "ClientRequestHost":"foo.com",
+    "ClientRequestMethod":"GET",
+    "ClientRequestPath":"/login.php",
+    "ClientRequestProtocol":"HTTP/1.1",
+    "ClientRequestReferer":"",
+    "ClientRequestURI":"/login.php?username=asdf&password=asdf",
+    "ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:60.0) Gecko/20100101 Firefox/60.0",
+    "ClientSSLCipher":"NONE",
+    "ClientSSLProtocol":"none",
+    "ClientSrcPort":48718,
+    "EdgeColoID":134,
+    "EdgeEndTimestamp":"2019-01-04T02:22:26Z",
+    "EdgePathingOp":"wl",
+    "EdgePathingSrc":"macro",
+    "EdgePathingStatus":"nr",
+    "EdgeRateLimitAction":"",
+    "EdgeRateLimitID":0,
+    "EdgeRequestHost":"",
+    "EdgeResponseBytes":1849,
+    "EdgeResponseCompressionRatio":2.82,
+    "EdgeResponseContentType":"text/html",
+    "EdgeResponseStatus":403,
+    "EdgeServerIP":"",
+    "EdgeStartTimestamp":"2019-01-04T02:22:26Z",
+    "OriginIP":"",
+    "OriginResponseBytes":0,
+    "OriginResponseHTTPExpires":"",
+    "OriginResponseHTTPLastModified":"",
+    "OriginResponseStatus":0,
+    "OriginResponseTime":0,
+    "OriginSSLProtocol":"unknown",
+    "ParentRayID":"00",
+    "RayID":"493a3cc9463eb0d4",
+    "SecurityLevel":"med",
+    "WAFAction":"drop",
+    "WAFFlags":"0",
+    "WAFMatchedVar":"ARGS:USERNAME",
+    "WAFProfile":"off",
+    "WAFRuleID":"100008",
+    "WAFRuleMessage":"SQLi probing",
+    "WorkerCPUTime":0,
+    "WorkerStatus":"unknown",
+    "WorkerSubrequest":false,
+    "WorkerSubrequestCount":0,
+    "ZoneID":******
+    }
+    ```
+    {: codeblock}
 
-**Request matched a firewall rule**
-```
-{
-"CacheCacheStatus":"unknown",
-"CacheResponseBytes":0,
-"CacheResponseStatus":0,
-"CacheTieredFill":false,
-"ClientASN":36351,
-"ClientCountry":"us",
-"ClientDeviceType":"desktop",
-"ClientIP":"1.1.1.1",
-"ClientIPClass":"noRecord",
-"ClientRequestBytes":90,
-"ClientRequestHost":"foo.com",
-"ClientRequestMethod":"GET",
-"ClientRequestPath":"/",
-"ClientRequestProtocol":"HTTP/1.1",
-"ClientRequestReferer":"",
-"ClientRequestURI":"/",
-"ClientRequestUserAgent":"curl/7.47.0",
-"ClientSSLCipher":"NONE",
-"ClientSSLProtocol":"none",
-"ClientSrcPort":57260,
-"EdgeColoID":26,
-"EdgeEndTimestamp":"2019-01-03T08:48:42Z",
-"EdgePathingOp":"ban",
-"EdgePathingSrc":"user",
-"EdgePathingStatus":"ip",
-"EdgeRateLimitAction":"",
-"EdgeRateLimitID":0,
-"EdgeRequestHost":"",
-"EdgeResponseBytes":3556,
-"EdgeResponseCompressionRatio":0,
-"EdgeResponseContentType":"text/html",
-"EdgeResponseStatus":403,
-"EdgeServerIP":"",
-"EdgeStartTimestamp":"2019-01-03T08:48:42Z",
-"OriginIP":"",
-"OriginResponseBytes":0,
-"OriginResponseHTTPExpires":"",
-"OriginResponseHTTPLastModified":"",
-"OriginResponseStatus":0,
-"OriginResponseTime":0,
-"OriginSSLProtocol":"unknown",
-"ParentRayID":"00",
-"RayID":"493a6341d02565e7",
-"SecurityLevel":"med",
-"WAFAction":"unknown",
-"WAFFlags":"0",
-"WAFMatchedVar":"",
-"WAFProfile":"unknown",
-"WAFRuleID":"",
-"WAFRuleMessage":"",
-"WorkerCPUTime":0,
-"WorkerStatus":"unknown",
-"WorkerSubrequest":false,
-"WorkerSubrequestCount":0,
-"ZoneID":******
-}
-```
-{: codeblock}
+* **Request matched a firewall rule**
 
-**Request was rate limited**
+    ```sh
+    {
+    "CacheCacheStatus":"unknown",
+    "CacheResponseBytes":0,
+    "CacheResponseStatus":0,
+    "CacheTieredFill":false,
+    "ClientASN":36351,
+    "ClientCountry":"us",
+    "ClientDeviceType":"desktop",
+    "ClientIP":"1.1.1.1",
+    "ClientIPClass":"noRecord",
+    "ClientRequestBytes":90,
+    "ClientRequestHost":"foo.com",
+    "ClientRequestMethod":"GET",
+    "ClientRequestPath":"/",
+    "ClientRequestProtocol":"HTTP/1.1",
+    "ClientRequestReferer":"",
+    "ClientRequestURI":"/",
+    "ClientRequestUserAgent":"curl/7.47.0",
+    "ClientSSLCipher":"NONE",
+    "ClientSSLProtocol":"none",
+    "ClientSrcPort":57260,
+    "EdgeColoID":26,
+    "EdgeEndTimestamp":"2019-01-03T08:48:42Z",
+    "EdgePathingOp":"ban",
+    "EdgePathingSrc":"user",
+    "EdgePathingStatus":"ip",
+    "EdgeRateLimitAction":"",
+    "EdgeRateLimitID":0,
+    "EdgeRequestHost":"",
+    "EdgeResponseBytes":3556,
+    "EdgeResponseCompressionRatio":0,
+    "EdgeResponseContentType":"text/html",
+    "EdgeResponseStatus":403,
+    "EdgeServerIP":"",
+    "EdgeStartTimestamp":"2019-01-03T08:48:42Z",
+    "OriginIP":"",
+    "OriginResponseBytes":0,
+    "OriginResponseHTTPExpires":"",
+    "OriginResponseHTTPLastModified":"",
+    "OriginResponseStatus":0,
+    "OriginResponseTime":0,
+    "OriginSSLProtocol":"unknown",
+    "ParentRayID":"00",
+    "RayID":"493a6341d02565e7",
+    "SecurityLevel":"med",
+    "WAFAction":"unknown",
+    "WAFFlags":"0",
+    "WAFMatchedVar":"",
+    "WAFProfile":"unknown",
+    "WAFRuleID":"",
+    "WAFRuleMessage":"",
+    "WorkerCPUTime":0,
+    "WorkerStatus":"unknown",
+    "WorkerSubrequest":false,
+    "WorkerSubrequestCount":0,
+    "ZoneID":******
+    }
+    ```
+    {: codeblock}
 
-```
-{
-"CacheCacheStatus":"unknown",
-"CacheResponseBytes":0,
-"CacheResponseStatus":0,
-"CacheTieredFill":false,
-"ClientASN":36351,
-"ClientCountry":"us",
-"ClientDeviceType":"desktop",
-"ClientIP":"1.1.1.1",
-"ClientIPClass":"noRecord",
-"ClientRequestBytes":90,
-"ClientRequestHost":"foo.com",
-"ClientRequestMethod":"GET",
-"ClientRequestPath":"/",
-"ClientRequestProtocol":"HTTP/1.1",
-"ClientRequestReferer":"",
-"ClientRequestURI":"/",
-"ClientRequestUserAgent":"curl/7.47.0",
-"ClientSSLCipher":"NONE",
-"ClientSSLProtocol":"none",
-"ClientSrcPort":33186,
-"EdgeColoID":26,
-"EdgeEndTimestamp":"2019-01-03T08:59:55Z",
-"EdgePathingOp":"ban",
-"EdgePathingSrc":"user",
-"EdgePathingStatus":"rateLimit",
-"EdgeRateLimitAction":"ban",
-"EdgeRateLimitID":1307134,
-"EdgeRequestHost":"",
-"EdgeResponseBytes":3559,
-"EdgeResponseCompressionRatio":0,
-"EdgeResponseContentType":"text/html",
-"EdgeResponseStatus":429,
-"EdgeServerIP":"",
-"EdgeStartTimestamp":"2019-01-03T08:59:55Z",
-"OriginIP":"",
-"OriginResponseBytes":0,
-"OriginResponseHTTPExpires":"",
-"OriginResponseHTTPLastModified":"",
-"OriginResponseStatus":0,
-"OriginResponseTime":0,
-"OriginSSLProtocol":"unknown",
-"ParentRayID":"00",
-"RayID":"493a73ad468419b6",
-"SecurityLevel":"med",
-"WAFAction":"unknown",
-"WAFFlags":"0",
-"WAFMatchedVar":"",
-"WAFProfile":"unknown",
-"WAFRuleID":"",
-"WAFRuleMessage":"",
-"WorkerCPUTime":0,
-"WorkerStatus":"unknown",
-"WorkerSubrequest":false,
-"WorkerSubrequestCount":0,
-"ZoneID":******
-}
-```
-{: codeblock}
+* **Request was rate limited**
 
-**Origin server is down (Error 521, Web Server is down)**
+    ```sh
+    {
+    "CacheCacheStatus":"unknown",
+    "CacheResponseBytes":0,
+    "CacheResponseStatus":0,
+    "CacheTieredFill":false,
+    "ClientASN":36351,
+    "ClientCountry":"us",
+    "ClientDeviceType":"desktop",
+    "ClientIP":"1.1.1.1",
+    "ClientIPClass":"noRecord",
+    "ClientRequestBytes":90,
+    "ClientRequestHost":"foo.com",
+    "ClientRequestMethod":"GET",
+    "ClientRequestPath":"/",
+    "ClientRequestProtocol":"HTTP/1.1",
+    "ClientRequestReferer":"",
+    "ClientRequestURI":"/",
+    "ClientRequestUserAgent":"curl/7.47.0",
+    "ClientSSLCipher":"NONE",
+    "ClientSSLProtocol":"none",
+    "ClientSrcPort":33186,
+    "EdgeColoID":26,
+    "EdgeEndTimestamp":"2019-01-03T08:59:55Z",
+    "EdgePathingOp":"ban",
+    "EdgePathingSrc":"user",
+    "EdgePathingStatus":"rateLimit",
+    "EdgeRateLimitAction":"ban",
+    "EdgeRateLimitID":1307134,
+    "EdgeRequestHost":"",
+    "EdgeResponseBytes":3559,
+    "EdgeResponseCompressionRatio":0,
+    "EdgeResponseContentType":"text/html",
+    "EdgeResponseStatus":429,
+    "EdgeServerIP":"",
+    "EdgeStartTimestamp":"2019-01-03T08:59:55Z",
+    "OriginIP":"",
+    "OriginResponseBytes":0,
+    "OriginResponseHTTPExpires":"",
+    "OriginResponseHTTPLastModified":"",
+    "OriginResponseStatus":0,
+    "OriginResponseTime":0,
+    "OriginSSLProtocol":"unknown",
+    "ParentRayID":"00",
+    "RayID":"493a73ad468419b6",
+    "SecurityLevel":"med",
+    "WAFAction":"unknown",
+    "WAFFlags":"0",
+    "WAFMatchedVar":"",
+    "WAFProfile":"unknown",
+    "WAFRuleID":"",
+    "WAFRuleMessage":"",
+    "WorkerCPUTime":0,
+    "WorkerStatus":"unknown",
+    "WorkerSubrequest":false,
+    "WorkerSubrequestCount":0,
+    "ZoneID":******
+    }
+    ```
+    {: codeblock}
 
-```
-{
-"CacheCacheStatus":"miss",
-"CacheResponseBytes":177,
-"CacheResponseStatus":521,
-"CacheTieredFill":false,
-"ClientASN":56046,
-"ClientCountry":"cn",
-"ClientDeviceType":"desktop",
-"ClientIP":"1.1.1.1",
-"ClientIPClass":"noRecord",
-"ClientRequestBytes":1082,
-"ClientRequestHost":"foo.com",
-"ClientRequestMethod":"GET",
-"ClientRequestPath":"/favicon.ico",
-"ClientRequestProtocol":"HTTP/2",
-"ClientRequestReferer":"",
-"ClientRequestURI":"/favicon.ico",
-"ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:60.0) Gecko/20100101 Firefox/60.0",
-"ClientSSLCipher":"AEAD-AES128-GCM-SHA256",
-"ClientSSLProtocol":"TLSv1.3",
-"ClientSrcPort":3060,
-"EdgeColoID":134,
-"EdgeEndTimestamp":"2019-01-03T06:33:55Z",
-"EdgePathingOp":"wl",
-"EdgePathingSrc":"macro",
-"EdgePathingStatus":"nr",
-"EdgeRateLimitAction":"",
-"EdgeRateLimitID":0,
-"EdgeRequestHost":"foo.com",
-"EdgeResponseBytes":5177,
-"EdgeResponseCompressionRatio":0,
-"EdgeResponseContentType":"text/html",
-"EdgeResponseStatus":521,
-"EdgeServerIP":"172.69.98.148",
-"EdgeStartTimestamp":"2019-01-03T06:33:55Z",
-"OriginIP":"2.2.2.2",
-"OriginResponseBytes":0,
-"OriginResponseHTTPExpires":"",
-"OriginResponseHTTPLastModified":"",
-"OriginResponseStatus":0,
-"OriginResponseTime":3000000,
-"OriginSSLProtocol":"unknown",
-"ParentRayID":"00",
-"RayID":"49336fc9397ab080",
-"SecurityLevel":"med",
-"WAFAction":"unknown",
-"WAFFlags":"0",
-"WAFMatchedVar":"",
-"WAFProfile":"unknown",
-"WAFRuleID":"",
-"WAFRuleMessage":"",
-"WorkerCPUTime":0,
-"WorkerStatus":"unknown",
-"WorkerSubrequest":false,
-"WorkerSubrequestCount":0,
-"ZoneID":******
-}
-```
-{: codeblock}
+* **Origin server is down (Error 521, Web Server is down)**
+
+    ```sh
+    {
+    "CacheCacheStatus":"miss",
+    "CacheResponseBytes":177,
+    "CacheResponseStatus":521,
+    "CacheTieredFill":false,
+    "ClientASN":56046,
+    "ClientCountry":"cn",
+    "ClientDeviceType":"desktop",
+    "ClientIP":"1.1.1.1",
+    "ClientIPClass":"noRecord",
+    "ClientRequestBytes":1082,
+    "ClientRequestHost":"foo.com",
+    "ClientRequestMethod":"GET",
+    "ClientRequestPath":"/favicon.ico",
+    "ClientRequestProtocol":"HTTP/2",
+    "ClientRequestReferer":"",
+    "ClientRequestURI":"/favicon.ico",
+    "ClientRequestUserAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:60.0) Gecko/20100101 Firefox/60.0",
+    "ClientSSLCipher":"AEAD-AES128-GCM-SHA256",
+    "ClientSSLProtocol":"TLSv1.3",
+    "ClientSrcPort":3060,
+    "EdgeColoID":134,
+    "EdgeEndTimestamp":"2019-01-03T06:33:55Z",
+    "EdgePathingOp":"wl",
+    "EdgePathingSrc":"macro",
+    "EdgePathingStatus":"nr",
+    "EdgeRateLimitAction":"",
+    "EdgeRateLimitID":0,
+    "EdgeRequestHost":"foo.com",
+    "EdgeResponseBytes":5177,
+    "EdgeResponseCompressionRatio":0,
+    "EdgeResponseContentType":"text/html",
+    "EdgeResponseStatus":521,
+    "EdgeServerIP":"172.69.98.148",
+    "EdgeStartTimestamp":"2019-01-03T06:33:55Z",
+    "OriginIP":"2.2.2.2",
+    "OriginResponseBytes":0,
+    "OriginResponseHTTPExpires":"",
+    "OriginResponseHTTPLastModified":"",
+    "OriginResponseStatus":0,
+    "OriginResponseTime":3000000,
+    "OriginSSLProtocol":"unknown",
+    "ParentRayID":"00",
+    "RayID":"49336fc9397ab080",
+    "SecurityLevel":"med",
+    "WAFAction":"unknown",
+    "WAFFlags":"0",
+    "WAFMatchedVar":"",
+    "WAFProfile":"unknown",
+    "WAFRuleID":"",
+    "WAFRuleMessage":"",
+    "WorkerCPUTime":0,
+    "WorkerStatus":"unknown",
+    "WorkerSubrequest":false,
+    "WorkerSubrequestCount":0,
+    "ZoneID":******
+    }
+    ```
+    {: codeblock}

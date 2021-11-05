@@ -31,16 +31,15 @@ subcollection: cis
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields using the following request.
 
-**Request**
 
-```
+```sh
 ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
 ```
 {: pre}
 
 Fields are passed as a comma-separated list. For example, to have "ZoneID" and "RayID", use:
 
-```
+```sh
 ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneId,RayID
 ```
 {: pre}

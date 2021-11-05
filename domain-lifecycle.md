@@ -34,9 +34,9 @@ Domains configured in {{site.data.keyword.cis_short_notm}} begin in `pending` st
 
 The following diagram shows a sample domain lifecycle, with labels that correspond to the list of domain state transitions.
 
-![Diagram of domain lifecycle](images/domain-lifecycle-lt.png "Diagram of domain lifecycle")
+![Diagram of domain lifecycle](images/domain-lifecycle-lt.png "Diagram of domain lifecycle"){: caption="Figure 1. Domain lifecycle" caption-side="bottom"}
 
-Domain state transitions: 
+Domain state transitions:
 
 1. Adding a domain to a {{site.data.keyword.cis_short_notm}} instance puts the domain in `pending` state. Authoritative name servers are assigned but have not yet been configured at the DNS provider or registrar.
 1. Configuring name server records for the authoritative name servers of the domain at the DNS provider or registrar activates the domain. 

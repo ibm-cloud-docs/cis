@@ -34,19 +34,19 @@ Some public-domain Unix system administration tools can help you manage your {{s
 ## Sysadmin tools
 {: #cis-sysadmin-tools}
 
- * `whois` (domain identification tool)
- * `dig` (DNS tool)
- * `cURL` (HTTP and HTTPS tool)
- * `netcat` (IP and port tool)
- * `traceroute` (network tool)
+* `whois` (domain identification tool)
+* `dig` (DNS tool)
+* `cURL` (HTTP and HTTPS tool)
+* `netcat` (IP and port tool)
+* `traceroute` (network tool)
 
 ## Commercial tools for external and remote testing
 {: #commercial-tools-for-external-and-remote-testing}
 
- * GTMetrix (http)
- * Web page test (http)
- * WhatsMyDNS (DNS tool)
- * G Suite Toolbox (DNS and HTTP)
+* GTMetrix (http)
+* Web page test (http)
+* WhatsMyDNS (DNS tool)
+* G Suite Toolbox (DNS and HTTP)
 
 ## Tools for looking at logs and history
 {: #tools-for-looking-at-logs-and-history}
@@ -71,17 +71,13 @@ Examples:
 
 The schema of this command is `dig <record_type> <domainname> <options>`
 
-**Examples:**
+For example:
 
-`dig example.com`
-
-`dig my.example.com`
-
-`dig example.com +trace`
-
-`dig NS example.com`
-
-`dig example.com @ns.example.com`
+- `dig example.com`
+- `dig my.example.com`
+- `dig example.com +trace`
+- `dig NS example.com`
+- `dig example.com @ns.example.com`
 
 ### Using `cURL`
 {: #use-curl}
@@ -90,29 +86,24 @@ The schema of this command is `dig <record_type> <domainname> <options>`
 
 The schema for this command is: `curl -option1 -option2 http://example.com/url`
 
-**Examples:**
+For example:
 
-`curl -svo /dev/null http://www.example.com`
-
-`curl -svo /dev/null -A “USER_AGENT_STRING” http://www.example.com`
-
-`curl -svo /dev/null -H “host: www.example.com” http://ORIGIN_IP`
-
-`curl -svo /dev/null -H https://www.example.com --resolve www.example.com:443:ORIGIN_IP`
+- `curl -svo /dev/null http://www.example.com`
+- `curl -svo /dev/null -A “USER_AGENT_STRING” http://www.example.com`
+- `curl -svo /dev/null -H “host: www.example.com” http://ORIGIN_IP`
+- `curl -svo /dev/null -H https://www.example.com --resolve www.example.com:443:ORIGIN_IP`
 
 ### Using `mtr` and `traceroute`
 {: #using-mtr-and-traceroute}
 
 `mtr` and `traceroute` are Unix command line tools that let you measure performance or latency along a specific network path to a specified host or destination server.
 
-**Examples:**
+For example:
 
-`mtr -rwc 20 example.com -T -4`
-`mtr -rwc 20 8.8.8.8 -T -6`
-
-`traceroute example.com -T -4`
-
-`traceroute 8.8.8.8 -T -6`
+- `mtr -rwc 20 example.com -T -4`
+- `mtr -rwc 20 8.8.8.8 -T -6`
+- `traceroute example.com -T -4`
+- `traceroute 8.8.8.8 -T -6`
 
 | Option | Definition |
 |---------|-----------|
@@ -120,6 +111,7 @@ The schema for this command is: `curl -option1 -option2 http://example.com/url`
 | -T | Forces a TCP traceroute (normally ICMP) |
 | -4 | Forces the use of IPv4 |
 | -6 | Forces the use of IPv6 |
+{: caption="Table 1. Command options" caption-side="bottom"}
 
 ### Generating an HAR file
 {: #generating-a-har-file}

@@ -40,7 +40,7 @@ The following API call requests Firewall Events over a one-hour period, and outp
 ## The API call
 {: #api-call}
 
-```
+```sh
 PAYLOAD='{ "query":
   "query ListFirewallEvents($zoneTag: string, $filter: FirewallEventsAdaptiveFilter_InputObject) {
       viewer {
@@ -83,7 +83,7 @@ curl \
 
 The results are returned in JSON, so piping the output to jq makes them easier to read. For example:
 
-```
+```sh
 curl \
   -X POST \
   -H "Content-Type: application/json" \

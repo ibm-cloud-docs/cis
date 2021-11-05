@@ -52,7 +52,7 @@ CIS errors
 
 The following example is a basic custom error template. When creating your custom error templates, note that the maximum page size is 1.5 MB and the page cannot be blank. Additionally, all external resources are inlined using base64 encoding, making them approximately 50% larger when published.
 
-```
+```sh
 <html>
 <head></head>
 <body>
@@ -60,6 +60,7 @@ The following example is a basic custom error template. When creating your custo
 </body>
 </html>
 ```
+{: codeblock}
 
 ## Available custom error tokens
 {: #available-custom-error-tokens}
@@ -68,15 +69,16 @@ Some types of custom error pages must include one of these tokens anywhere withi
 
 |Page Type |Token |
 |------|------|
-|All pages |	::CLIENT_IP::|
-|All pages | 	::RAY_ID::|
-|Basic Security (CAPTCHA Challenge) |	::CAPTCHA_BOX::|
-|WAF (CAPTCHA Challenge) |	::CAPTCHA_BOX::|
-|Country Challenge (CAPTCHA Challenge) |	::CAPTCHA_BOX::|
-|Defense Mode (Interstitial Page) |	::IM_UNDER_ATTACK_BOX::|
-|5XX Errors 	|::CLOUDFLARE_ERROR_500S_BOX::|
-|1XXX Errors 	|::CLOUDFLARE_ERROR_1000S_BOX::|
-|Serve Stale Content |	::ALWAYS_ONLINE_NO_COPY_BOX::|
+|All pages | ::CLIENT_IP::|
+|All pages | ::RAY_ID::|
+|Basic Security (CAPTCHA Challenge) | ::CAPTCHA_BOX::|
+|WAF (CAPTCHA Challenge) | ::CAPTCHA_BOX::|
+|Country Challenge (CAPTCHA Challenge) | ::CAPTCHA_BOX::|
+|Defense Mode (Interstitial Page) | ::IM_UNDER_ATTACK_BOX::|
+|5XX Errors |::CLOUDFLARE_ERROR_500S_BOX::|
+|1XXX Errors |::CLOUDFLARE_ERROR_1000S_BOX::|
+|Serve Stale Content | ::ALWAYS_ONLINE_NO_COPY_BOX::|
+{: caption="Table 1. Page types and their tokens" caption-side="left"}
 
 ## Styling error codes
 {: #styling-error-pages}
@@ -102,6 +104,7 @@ If CIS cannot load your site, or you have blocked the US in the CIS firewall, pu
 {: note}
 
 ## Troubleshooting error pages
+{: #troubleshooting-error-pages}
 
 *  If you encounter errors while attempting to preview or publish your custom error page, run it through a HTML validator and ensure that it is error free.
 *  Make sure that the minimum page size is greater than 0. You must add content to your page.

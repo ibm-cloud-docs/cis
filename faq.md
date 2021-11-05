@@ -27,8 +27,6 @@ subcollection: cis
 {:faq: data-hd-content-type='faq'}
 {:support: data-reuse='support'}
 
-
-
 # FAQs for {{site.data.keyword.cis_full_notm}}
 {: #faq}
 
@@ -59,7 +57,7 @@ No. Downgrading from Standard to a Free Trial plan is not allowed.
 To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, global load balancers, pools, and health checks are deleted automatically.
 
 ## How do I delete my CIS Instance?
-{:#{: #cis-faq-delete-instance}
+{: #cis-faq-delete-instance}
 {: faq}
 
 To delete a CIS instance, you must first delete all global load balancers, pools, and health checks. Then delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
@@ -144,7 +142,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 
 **Step 1:** Turn on “Defense mode" in the **Overview** screen.
 
-![Defense Mode](images/defense-mode.png)
+![Defense Mode](images/defense-mode.png "Defense mode"){: caption="Figure 1. Defense mode" caption-side="bottom}
 
 **Step 2:** Set your DNS records for maximum security.
 
@@ -179,7 +177,7 @@ If you contact our support team, please provide a Ray ID from a recent 522 error
 
 Proxied records are records that proxy their traffic through IBM CIS. Only proxied records receive CIS benefits, such as IP masking, where a CIS IP is substituted for your origin IP to protect it:
 
-```
+```sh
 $ whois 104.28.22.57 | grep OrgName
 OrgName:        IBM
 ```
@@ -241,7 +239,7 @@ Contact [IBM support](/docs/cis?topic=cis-gettinghelp) and provide the script th
 
 To find your service instance ID, copy the CRN on the overview page. For example:
 
-```
+```sh
 crn:v1:test:public:internet-svcs:global:a/2c38d9a9913332006a27665dab3d26e8:836f33a5-d3e1-4bc6-876a-982a8668b1bb::
 ```
 {: pre}

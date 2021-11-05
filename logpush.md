@@ -71,7 +71,7 @@ You can configure one log push job for each {{site.data.keyword.cos_short}} obje
 
 To create a Logpush job for a specific domain and enable the job, run the following command:
 
-```
+```sh
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name JOB_NAME --fields all --enable true
 ```
 {: pre}
@@ -99,8 +99,8 @@ Where:
 
 A domain can only have one Logpush job. Use the command line to interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge. When a challenge token is written to a file in the given {{site.data.keyword.cos_short}} bucket, you must:
 
-   * Download the file from your {{site.data.keyword.cos_short}} bucket and open it.
-   * Copy and paste the challenge token in the command prompt to address the ownership challenge.
+* Download the file from your {{site.data.keyword.cos_short}} bucket and open it.
+* Copy and paste the challenge token in the command prompt to address the ownership challenge.
 
 A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or every 100,000 records, whichever comes first. More than one file might be pushed per 30-second period or per 100,000 records. 
 

@@ -52,9 +52,9 @@ To know whether data has passed through {{site.data.keyword.cis_short_notm}}, lo
 ### Unix command line tools
 {: #unix-cli-tools}
 
- * curl for HTTP: `$ curl -vso /dev/null http://example.com`
- * dig for DNS: `$ dig www.example.com`
- * traceroute for network: `$ traceroute example.com`
+* curl for HTTP: `$ curl -vso /dev/null http://example.com`
+* dig for DNS: `$ dig www.example.com`
+* traceroute for network: `$ traceroute example.com`
 
 For example, the terminal command `curl -svo /dev/null YOUR_URL_HERE. -L` results in the following:
 
@@ -83,7 +83,7 @@ The CF-RAY header is added to help trace a request to a website through the netw
 ### Apache
 {: #troubleshooting-cis-apache}
 
-```
+```sh
 LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %{CF-Ray}i" cf_custom
 
 CustomLog log/access_log cf_custom
@@ -93,7 +93,7 @@ CustomLog log/access_log cf_custom
 ### NGINX
 {: #troubleshooting-cis-nginx}
 
-```
+```sh
 log_format cf_custom '$remote_addr - $remote_user [$time_local]  '
                     '"$request" $status $body_bytes_sent '
                     '"$http_referer" "$http_user_agent" '

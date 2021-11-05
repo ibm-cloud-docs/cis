@@ -35,8 +35,8 @@ Mutual Transport Layer Security (mTLS) authentication ensures that traffic is bo
 
 When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches the application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds. 
 
-![Diagram of mTLS handshake](images/mtls-handshake.png "Diagram of mTLS handshake")
- 
+![Diagram of mTLS handshake](images/mtls-handshake.png "Diagram of mTLS handshake"){: caption="Figure 1. Diagram of an mTLS handshake" caption-side="bottom"
+
 ## Configuring mutual TLS
 {: #configure-mtls}
 
@@ -44,16 +44,16 @@ Mutual TLS is not enabled by default. It is an additional service that requires 
 
 To obtain authorization, you must submit an IBM Support case. After mTLS is turned on for your account, take the following steps to enable it.
 1. Navigate to the **Security** page in the CIS UI.
-1. Select the **Mutual TLS** tab. 
-1. Click **Enable** to enable the feature. 
+1. Select the **Mutual TLS** tab.
+1. Click **Enable** to enable the feature.
 
-After mTLS is enabled, it cannot be disabled. 
+After mTLS is enabled, it cannot be disabled.
 {: tip}
 
 To set up mTLS authentication in the IBM Cloud Internet Services UI for a particular endpoint: 
 1. In the Root certificates table, click **Add** to define a new root certificate. 
-1. Paste the certificate content into the content field, provide a name for the Root CA, and add one or more fully qualified domain names (FQDN) of the endpoints that you want to use this certificate. 
-   These FQDNs are the hostnames that are used for the resources being protected by the application policy. You must associate the Root CA with the FQDN that the application being protected uses. 
+1. Paste the certificate content into the content field, provide a name for the Root CA, and add one or more fully qualified domain names (FQDN) of the endpoints that you want to use this certificate.
+   These FQDNs are the hostnames that are used for the resources being protected by the application policy. You must associate the Root CA with the FQDN that the application being protected uses.
 1. Click **Save**.
 
    If your zone is using an intermediate certificate in addition to the root certificate, upload the entire chain.
@@ -94,4 +94,3 @@ Follow this validation workflow when you enable this Access policy:
    Chain verification is applicable to certificate validation.
 1. When the client certificate is trusted by the root certificate, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed.
    If a request has no valid client certificate, `403 Forbidden` returns in the response.
-

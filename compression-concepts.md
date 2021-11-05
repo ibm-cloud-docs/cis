@@ -42,13 +42,13 @@ The Accept-Encoding header is not respected and is removed.
 {: note}
 
 ## What gets compressed
-{: what-gets-compressed}
+{: #what-gets-compressed}
 
 In addition to {{site.data.keyword.cis_short_notm}}'s serving stale content and minification of CSS, JS, and HTML to speed up your site, {{site.data.keyword.cis_short_notm}} also provides `gzip` and `brotli` compression to help site owners. 
 
 {{site.data.keyword.cis_short_notm}} returns `gzip` or `brotli` encoded responses to compatible clients and browsers for the following content-types:
 
-```
+```sh
 text/html
 text/richtext
 text/plain
@@ -150,7 +150,7 @@ WebP is a modern image format providing superior lossless and lossy compression 
 
 Image size optimization creates and caches a WebP version of the image and delivers it to the browser if the Accept header from the browser includes WebP and the compressed image is significantly smaller than the lossy or lossless compression.
 
-```
+```sh
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
 ```
 {: pre}
@@ -167,7 +167,7 @@ Activate image size optimization using a [page rule](/docs/cis?topic=cis-use-pag
 
 Image size optimization adds the following headers to image requests that are compressed:
 
-```
+```sh
 cf-bgj: imgq:85  
 
 cf-polished: qual=85, origFmt=jpeg, origSize=95005  

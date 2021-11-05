@@ -97,7 +97,7 @@ All properties of an incoming `Request` object (`event.request`) are read-only. 
 
 In addition to the properties on the standard `Request` object, you can use a `request.cf` object to control how features are applied as well as other custom information provided by Cloudflare. For example,
 
-```
+```sh
   if (request.cf.asn == 64512) {
     return new Response('Block the ASN 64512 response')
   }
