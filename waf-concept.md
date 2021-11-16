@@ -55,6 +55,6 @@ The value of a WAF comes from the speed and ease with which its policy modificat
 
 The {{site.data.keyword.cis_full}} WAF is an easy way to set up, manage, and customize security rules to protect your web applications from common web threats. See the following list for key features:
 
-* **Easy setup**: The {{site.data.keyword.cis_short_notm}} WAF is part of our overall service, which takes just a few minutes to set up. After you redirect your DNS to us, you can switch on the WAF and set up the rules you need.
+* **Easy setup** - The {{site.data.keyword.cis_short_notm}} WAF is part of our overall service, which takes just a few minutes to set up. After you redirect your DNS to us, you can switch on the WAF and set up the rules you need.
 
-* **Detailed reporting** See greater detail in the reporting, for example, threats blocked by rule/rule group.
+* **Detailed reporting** - See greater detail in the reporting, for example, threats blocked by rule/rule group.

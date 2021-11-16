@@ -50,7 +50,7 @@ To improve the security of your origin IP address, you should proxy all HTTP(S) 
 **See the difference yourself - Query a non-proxied and a proxied record:**
 
 ```sh
-$ dig nonproxied.theburritobot.com +short
+dig nonproxied.theburritobot.com +short
 1.2.3.4 (The origin IP address)
 
 $ dig proxied.theburritobot.com +short

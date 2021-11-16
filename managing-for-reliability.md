@@ -165,14 +165,14 @@ To sum up, here are some main areas to consider for reliability with regard to c
 
 * {{site.data.keyword.cis_short_notm}} always caches static content by default, with the following TTL depending on the return code:
 
-```sh
-200 301    120m;
-302 303    20m;
-403        5m; for reliability
-404        5m;
-any        0s;
-```
-{: pre}
+   ```sh
+   200 301    120m;
+   302 303    20m;
+   403        5m; for reliability
+   404        5m;
+   any        0s;
+   ```
+   {: pre}
 
 * To cache more, create a Page Rule with **Cache Level** set to `Cache everything` on the URL (if your web server returns a 404 when requesting this URL, this result is cached for 5m only).
 

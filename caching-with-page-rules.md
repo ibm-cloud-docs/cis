@@ -48,8 +48,6 @@ The `scheme` and `port` components are optional. If the `scheme` component is om
 * As a general rule, it is recommended to order from most-specific to least-specific rules.
 * Page rules can be disabled, in which case they take no action. However, you can still see the rules in the list and edit them. Setting the **Enabled** toggle to **Off** creates a page rule that is disabled initially.
 
-
-
 ## Forwarding (URL redirection)
 {: #forwarding-url-redirection}
 
@@ -84,7 +82,7 @@ Not all default caching behaviors are strictly RFC-compliant. Setting **Origin C
 
 The following example sets a page rule to cache everything found in the `/images` folder. Cached resources expire in 30 minutes in the user's browser, and they expire after one day in the IBM CIS data centers:
 
-![image3](images/url-example.png "Image describing caching images folder"){: caption="Figure 3. Cache everything in `/images`" caption-side="bottom}
+![image3](images/url-example.png "Image describing caching images folder"){: caption="Figure 3. Cache everything in /images" caption-side="bottom}
 
 **Serve Stale Content** serves pages from our cache, even when your server goes down. Visitors see a limited version of your site, with a message that they are in offline browsing mode.
 

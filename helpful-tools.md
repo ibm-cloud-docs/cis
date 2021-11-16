@@ -43,8 +43,8 @@ Some public-domain Unix system administration tools can help you manage your {{s
 ## Commercial tools for external and remote testing
 {: #commercial-tools-for-external-and-remote-testing}
 
-* GTMetrix (http)
-* Web page test (http)
+* GTMetrix (HTTP)
+* Web page test (HTTP)
 * WhatsMyDNS (DNS tool)
 * G Suite Toolbox (DNS and HTTP)
 
@@ -56,7 +56,7 @@ HTTP Archive files (HAR files)
 ### Using `whois`
 {: #using-whois}
 
-`whois` is a Unix system command line tool you can use to look up registrar information for a given domain name or IP address. For example, the domain’s given authoritative servers or the owner of a particular IP address.
+`whois` is a UNIX system command line tool you can use to look up registrar information for a given domain name or IP address. For example, the domain’s given authoritative servers or the owner of a particular IP address.
 
 Examples:
 
