@@ -31,7 +31,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-managing-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-managing-your-cis-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-managing-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
 {: shortdesc}
 
-For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs. These features are detailed in the [About {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services) section.
+For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs. These features are detailed in the [About {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis) section.
 
 ## Before you begin
 {: #before-you-begin}
