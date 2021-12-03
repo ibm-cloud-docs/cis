@@ -9,20 +9,8 @@ keywords:
 subcollection: cis
 
 ---
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Using the {{site.data.keyword.cis_full_notm}} Security Events capability
 {: #using-the-cis-security-events-capability}

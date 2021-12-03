@@ -10,20 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing security and compliance with {{site.data.keyword.cis_short_notm}}
 {: #manage-security-compliance}
@@ -63,6 +50,6 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 |---------------|----------|---------------|-------|-------------|
 | *zone* | *tls_mode* | *string_equals*  | *off*  \n *flexible*  \n *full*  \n *strict*  \n *origin_pull*  | A string indicating the TLS mode for encryption. |
 | *zone* | *waf_enabled* | *string_equals* | *on*  \n *off* | A string indicating whether the WAF is turned on or off. |
-{: caption="Table 1. Rule properties for {{site.data.keyword.cis_short_notm}}" caption-side="top"}
+{: caption="Table 1. Rule properties for {{site.data.keyword.cis_short_notm}}" caption-side="bottom"}
 
 To learn more about constructing config rules, check out [Formatting rules and templates](/docs/security-compliance?topic=security-compliance-formatting-rules-templates).

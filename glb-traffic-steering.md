@@ -10,21 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Optimizing traffic steering
 {: #traffic-steering}
@@ -57,7 +43,7 @@ If you are terminating TCP at a cloud provider edge location, the calculated lat
 
 The following diagram shows how {{site.data.keyword.cis_short_notm}} routes traffic to the pool with the lowest EWMA among three regions: Eastern North America, Europe, and Australia. In this case, the ENAM pool is selected, because it has the lowest RTT.
 
-![Figure showing traffic steering](images/cis-traffic-steering.svg "Figure showing traffic steering"){: caption="Figure 1. Traffic steering in {{site.data.keyword.cis_short_notm}}" caption-side="top"}
+![Figure showing traffic steering](images/cis-traffic-steering.svg "Figure showing traffic steering"){: caption="Figure 1. Traffic steering in {{site.data.keyword.cis_short_notm}}" caption-side="bottom"}
 
 ## Geo Steering
 {: #geo-steering}

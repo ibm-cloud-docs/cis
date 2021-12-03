@@ -10,20 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Caching concepts
 {: #caching-concepts}
@@ -74,7 +61,7 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 |302, 303     |20m; |
 |404, 410     |3m;  |
 |403          |1m;  |
-{: caption="Table 1. Default cache response codes" caption-side="left"}
+{: caption="Table 1. Default cache response codes" caption-side="bottom"}
 
 
 {{site.data.keyword.cis_short_notm}} provides several cache customization options:
@@ -143,7 +130,7 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 |REVALIDATED|The resource is served from cache but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
 |UPDATING|The resource was served from cache but is expired. The resource is currently being updated by the origin web server. UPDATING is typically seen only for very popular cached resources.|
 |DYNAMIC|The resource was not cached by default and your current {{site.data.keyword.cis_short_notm}} caching configuration doesn't instruct {{site.data.keyword.cis_short_notm}} to cache the resource.  Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
-{: caption="Table 2. Cache response codes and definitions" caption-side="left"}
+{: caption="Table 2. Cache response codes and definitions" caption-side="bottom"}
 
 
 

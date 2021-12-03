@@ -10,20 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Setting Transport Layer Security (TLS) options
 {: #cis-tls-options}
@@ -117,7 +104,7 @@ The following ciphers are supported at the cloud edge. You can restrict the ciph
 |AEAD-AES128-GCM-SHA256        | | | |![Available](../icons/checkmark-icon.svg)|
 |AEAD-AES256-GCM-SHA384        | | | |![Available](../icons/checkmark-icon.svg)|
 |AEAD-CHACHA20-POLY1305-SHA256 | | | |![Available](../icons/checkmark-icon.svg)|
-{: caption="Table 1. Edge cipher suites" caption-side="top"}
+{: caption="Table 1. Edge cipher suites" caption-side="bottom"}
 
 ## Origin cipher suites
 {: #origin-cipher-suites}
@@ -139,7 +126,7 @@ The following ciphers are supported at the origin. You can restrict the ciphers 
 | ECDHE-RSA-AES256-SHA384 | | |![Available](../icons/checkmark-icon.svg) | |
 | AES256-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | |
 | DES-CBC3-SHA |![Available](../icons/checkmark-icon.svg) | | | |
-{: caption="Table 2. Origin cipher suites" caption-side="top"}
+{: caption="Table 2. Origin cipher suites" caption-side="bottom"}
 
 
 

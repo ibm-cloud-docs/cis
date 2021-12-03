@@ -10,21 +10,7 @@ subcollection: cis
 
 ---
 
-
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Accessing log fields
 {: #log-fields}
@@ -117,7 +103,7 @@ This table contains the fields available for HTTP requests.
 |WorkerSubrequest|Whether or not this request was a worker subrequest|bool|
 |WorkerSubrequestCount|Number of subrequests issued by a worker when handling this request|int|
 |ZoneID|Internal zone ID|int|
-{: caption="Table 1. HTTP events" caption-side="top"}
+{: caption="Table 1. HTTP events" caption-side="bottom"}
 
 
 ### Range requests
@@ -158,7 +144,7 @@ The following table contains the fields available for Range requests.
 |ProxyProtocol|Which form of proxy protocol is applied to the given connection; `off` `v1` `v2` `simple`|string|
 |Status|A code indicating reason for connection closure|int|
 |Timestamp|Timestamp at which the event took place|string|
-{: caption="Table 2. Range events" caption-side="top"}
+{: caption="Table 2. Range events" caption-side="bottom"}
 
 ### Firewall events
 {: #firewall-events}
@@ -193,4 +179,4 @@ The following table contains the fields available for Range requests.
 |RayID|The RayID of the request|string|
 |RuleID|The Cloudflare security product-specific RuleID triggered by this request|string|
 |Source|The Cloudflare security product triggered by this request|string|
-{: caption="Table 3. Firewall events" caption-side="top"}
+{: caption="Table 3. Firewall events" caption-side="bottom"}

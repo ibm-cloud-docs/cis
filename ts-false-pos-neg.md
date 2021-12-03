@@ -10,18 +10,7 @@ subcollection: cis
 
 ---
 
-{:tsSymptoms: .tsSymptoms}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:support: data-reuse='support'}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-{:deprecated: .deprecated}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # How do I troubleshoot false positives and false negatives in WAF?
 {: #waf-false-pos-neg}

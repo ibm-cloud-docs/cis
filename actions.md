@@ -10,21 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Assigning firewall rule actions
 {: #actions}
@@ -42,4 +28,4 @@ The priority column shows what precedence the action receives. If a request matc
 |Challenge (Captcha)|Requires a user to pass a Google reCaptcha Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|4|
 |JS Challenge|Requires a user to pass a {{site.data.keyword.cis_short_notm}} JavaScript Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|5|
 |Block|Blocks a matching request from accessing the site.|6|
-{: caption="Table 1. Firewall rule actions and priority" caption-side="top"}
+{: caption="Table 1. Firewall rule actions and priority" caption-side="bottom"}

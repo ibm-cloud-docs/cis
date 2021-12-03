@@ -10,21 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # WAF actions and rule sets
 {: #waf-settings}
@@ -41,7 +27,7 @@ The following table shows the actions that Web Application Firewalls (WAFs) can 
 |**Simulate** | To test for false positives, set the WAF to **Simulate** mode, which records the response to possible attacks without challenging or blocking.|
 |**Challenge** | A challenge page asks visitors to submit a CAPTCHA to continue to your website.|
 |**Threshold** (or sensitivity setting) | Set rules to trigger more or less, depending on sensitivity.|
-{: caption="Table 1. WAF actions" caption-side="top"}
+{: caption="Table 1. WAF actions" caption-side="bottom"}
 
 In Enterprise plans, you have the flexibility to turn on or off individual WAF rules for a particular URI in a domain, instead of the whole domain or subdomain. For more information, see the [waf-override-create](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli#create-waf-override) command.
 {: note}
@@ -123,7 +109,7 @@ The sensitivity score required to trigger the WAF for a specific Sensitivity is 
 |**Low**   |  60 and higher|
 |**Medium**|  40 and higher|
 |**High**  |  25 and higher|
-{: caption="Table 2. Sensitivity and triggers" caption-side="top"}
+{: caption="Table 2. Sensitivity and triggers" caption-side="bottom"}
 
 The OWASP ModSecurity Core rule set takes the following actions:
 
@@ -132,7 +118,7 @@ The OWASP ModSecurity Core rule set takes the following actions:
 |**Block**|The request is discarded.|
 |**Challenge**|The visitor receives a CAPTCHA challenge page.|
 |**Simulate**|The request is allowed through but is logged in the Events log.|
-{: caption="Table 3. OWASP ModSecurity Core Rule Set" caption-side="top"}
+{: caption="Table 3. OWASP ModSecurity Core Rule Set" caption-side="bottom"}
 
 For Ajax requests, the following scores are applied instead:
 
@@ -141,7 +127,7 @@ For Ajax requests, the following scores are applied instead:
 |**Low**   | 120 and higher|
 |**Medium**|  80 and higher|
 |**High**  |  65 and higher|
-{: caption="Table 4. Ajax request sensitivity and triggers" caption-side="top"}
+{: caption="Table 4. Ajax request sensitivity and triggers" caption-side="bottom"}
 
 Review the (Security) Events log to see the final score as well as the individual triggered rules.
 

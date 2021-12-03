@@ -10,21 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing access for {{site.data.keyword.cis_short_notm}}
 {: #iam-and-cis} 
@@ -50,6 +36,6 @@ For more information about IAM roles, see [Getting Started with IAM](/docs/vpc?t
 | Reader | View information about instances and domains. |
 | Service Configuration Reader | Read services configuration for Governance management. |
 | Writer | Change existing configurations. |
-{: caption="Table 1. IAM user roles and actions" caption-side="top"}
+{: caption="Table 1. IAM user roles and actions" caption-side="bottom"}
 
 For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources#assign-access-resources).

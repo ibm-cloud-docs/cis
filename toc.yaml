@@ -38,7 +38,8 @@ toc:
             - http-concepts.md
             - compression-concepts.md
             - domain-lifecycle.md
-
+        - release-notes.md
+        
     - navgroup:
         id: tutorial
         topics:
@@ -61,7 +62,6 @@ toc:
         - start-with-subdomain.md
         - multi-domain.md
         - dns.md
-        - secondary-dns.md
         - rate-limiting.md
         - range.md
         - private-endpoint.md
@@ -170,4 +170,3 @@ toc:
             - ts-false-pos-neg.md
             - troubleshooting.md
         - getting-help.md
-        - release-notes.md

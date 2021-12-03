@@ -10,21 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"} 
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic”}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Compression and optimization concepts
 {: #compression-concepts}
@@ -195,7 +181,7 @@ The following table lists common Cf-Polished statuses and how to troubleshoot th
 |cannot_optimize or internal_error|The input image is corrupted or incomplete at the origin server. |Upload a new version of the image to the origin server.|
 |format_not_supported|The input image format is not supported (for example, BMP, TIFF) and/or the origin server is using additional optimization software that is not compatible with Polish.|Try converting the input image to a web-compatible format (for example, PNG, JPEG) and/or disabling additional optimization software at the origin server.|
 |vary_header_present|The origin web server has sent a Vary header with a value other than accept-encoding.|If the origin web server is attempting to support WebP, disable WebP at the origin web server and let Polish perform the WebP conversion.|
-{: caption="Table 1. Common Cf-Polished statuses" caption-side="top"}
+{: caption="Table 1. Common Cf-Polished statuses" caption-side="bottom"}
 
 Image size optimization still works when the accept-encoding is not the only header listed within the `Vary` header.
 {: note} 

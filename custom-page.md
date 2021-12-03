@@ -10,20 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Customizing error pages
 {: #custom-page}
@@ -78,7 +65,7 @@ Some types of custom error pages must include one of these tokens anywhere withi
 |5XX Errors |::CLOUDFLARE_ERROR_500S_BOX::|
 |1XXX Errors |::CLOUDFLARE_ERROR_1000S_BOX::|
 |Serve Stale Content | ::ALWAYS_ONLINE_NO_COPY_BOX::|
-{: caption="Table 1. Page types and their tokens" caption-side="left"}
+{: caption="Table 1. Page types and their tokens" caption-side="bottom"}
 
 ## Styling error codes
 {: #styling-error-pages}

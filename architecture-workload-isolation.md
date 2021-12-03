@@ -10,22 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Learning about {{site.data.keyword.cis_short_notm}} architecture and workload isolation
 {: #compute-isolation}
@@ -77,7 +62,7 @@ The following dependencies of {{site.data.keyword.cis_full_notm}}  are considere
 | {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.cis_full_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward auditable events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by the user. For more information, see [Auditing events for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-at_events#at_events). This service is also use by {{site.data.keyword.cis_full_notm}} to store auditable events. |
 | Identity and Access Management (IAM) | {{site.data.keyword.cis_full_notm}} authenticates requests and determines authorization for all user actions based on platform and service access roles and policies in IAM. To learn more, see [Managing access for CIS](/docs/cis?topic=cis-iam-and-cis#iam-and-cis). |
 | {{site.data.keyword.cos_short}} (COS) | Used to store edge logs for a customer's data path traffic. YOu can also use this service to store operational logs of {{site.data.keyword.cis_full_notm}} itself. |
-{: caption="Table 1. Critical dependencies" caption-side="left"}
+{: caption="Table 1. Critical dependencies" caption-side="bottom"}
 
 ### Other dependencies
 {: #ibmcloud-other-dependencies}
@@ -87,7 +72,7 @@ The following dependencies of {{site.data.keyword.cis_full_notm}}  are considere
 | {{site.data.keyword.cloudcerts_short}} | Used to store the TLS certificates for {{site.data.keyword.cis_full_notm}}. |
 | {{site.data.keyword.registrylong_notm}} | Used to store the images that {{site.data.keyword.cis_full_notm}} uses to run the service. |
 | {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.cis_full_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. The service team uses these metrics to identify capacity and performance issues of the service and monitor the operational health of the service.|
-{: caption="Table 2. Other dependencies" caption-side="left"}
+{: caption="Table 2. Other dependencies" caption-side="bottom"}
 
 
 ## Dependencies to third-party services
@@ -102,7 +87,7 @@ Review the list of third-party services that {{site.data.keyword.containerlong_n
 | Service name | Description |
 | ------------ | -----------------------|
 | Cloudflare | Cloudflare is the third party provider for all data path services that are offered by {{site.data.keyword.cis_full_notm}}, such as WAF, DDoS protection, and global load balancing. |
-{: caption="Table 3. Critical third party dependencies" caption-side="left"}
+{: caption="Table 3. Critical third party dependencies" caption-side="bottom"}
 
 ### Other dependencies
 {: #3rd-other-dependencies}
@@ -110,4 +95,4 @@ Review the list of third-party services that {{site.data.keyword.containerlong_n
 | Service name | Description |
 | ------------ | -----------------------|
 | PagerDuty | PagerDuty is used to notify on-call engineers of emergency and non-emergency issues that are related to operating {{site.data.keyword.cis_full_notm}} or its support.|
-{: caption="Table 4. Other third party dependencies" caption-side="left"}
+{: caption="Table 4. Other third party dependencies" caption-side="bottom"}

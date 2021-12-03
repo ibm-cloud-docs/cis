@@ -10,22 +10,7 @@ subcollection: cis
 
 ---
 
-
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # About {{site.data.keyword.cis_full_notm}}
 {: #about-ibm-cloud-internet-services-cis}
@@ -161,7 +146,7 @@ Generally, attacks fall into two categories:
 |------------------------------|-----------------|
 |These attacks consist of a flood of traffic at ISO Layer 3 (the network layer), such as ICMP floods), or at Layer 4 (the transport layer), such as TCP SYN floods or reflected UDP floods). |These are attacks that send malicious ISO Layer-7 requests (the application layer), such as GET floods.  |
 | Automatically blocked at our edge | {{site.data.keyword.cis_short_notm}} handles these with Defense Mode, WAF, and security-level settings. |
-{: caption="Table 1. Types of network attacks" caption-side="left"}
+{: caption="Table 1. Types of network attacks" caption-side="bottom"}
 
 ### On-demand anti-DDoS
 {: #cis-on-demand-anti-ddos}

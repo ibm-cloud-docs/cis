@@ -10,20 +10,7 @@ subcollection: cis
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:external: target="_blank" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
@@ -39,7 +26,7 @@ For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its fea
 Before you begin using {{site.data.keyword.cis_short_notm}}:
 
 * You'll need an [IBMid](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776). 
-* Then, you can order your services through the [{{site.data.keyword.cis_full_notm}} console](https://{DomainName}/catalog/services/internet-services).
+* Then, you can order your services through the [{{site.data.keyword.cis_full_notm}} console](/catalog/services/internet-services).
 
 It is recommended that you use the Chrome browser for {{site.data.keyword.cis_short_notm}}.
 {: tip}
@@ -58,7 +45,7 @@ You can start using {{site.data.keyword.cis_short_notm}} for your internet traff
 ### Step 1: Open the IBM {{site.data.keyword.cis_short_notm}} application
 {: #open-cis-application}
 
-Open the [{{site.data.keyword.cloud_notm}} catalog](https://{DomainName}/catalog/). Then, select the **Networking** category in the navigation pane. Click the **Internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
+Open the [{{site.data.keyword.cloud_notm}} catalog](/catalog). Then, select the **Networking** category in the navigation pane. Click the **Internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
 
 #### The Overview screen
 {: #the-overview-screen}
