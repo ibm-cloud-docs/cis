@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-10-31"
+  years: 2018, 2022
+lastupdated: "2022-02-15"
 
-keywords: Page Rule Use, Cache-Tag Purge, web content, CIS
+keywords:
 
 subcollection: cis
 
@@ -46,32 +46,52 @@ If content rarely changes, you can set a conservative TTL to utilize our cache a
 * **EXPIRED:** This asset was delivered from cache, but the next request requires revalidation.
 * **REVALIDATED:** The asset was delivered from cache. The TTL was expired, but an `If-Modified-Since` request to the origin indicated that the asset had not changed. Therefore, the version in cache is considered valid again.
 
-## Best practice 2: For event-driven content, use the API to purge your cache
+## Best practice 2: For event-driven content, purge your cache
 {: #best-practice-api-purge-cache}
 
-For example, every time a new post is added to your blog, you could easily purge the {{site.data.keyword.cis_short_notm}} cache using an API command. It is common to see event-driven content, and we make it easy to guarantee that no stale content is reaching your users. The  commands to purge the cache immediately across our entire global network are listed next. You can use our caching application or you can use the API.
+For example, every time a new post is added to your blog, you could easily purge the {{site.data.keyword.cis_short_notm}} cache. It is common to see event-driven content, and {{site.data.keyword.cis_short_notm}} makes it easy to guarantee that no stale content is reaching your users. The commands to purge the cache immediately across the entire global network are:
 
-* Purge the cache by using a Cache-Tag
-* Purge the cache globally
-* Purge the cache by Page Rule
-* Use advanced caching features
+* Purge all files
+* Purge by prefixes (Enterprise only)
+* Purge by hostnames (Enterprise only)
+* Purge by tags (Enterprise only)
+* Purge by URLs
 
-### Purge the cache by Cache-Tag
-{: #purge-cache-by-cache-tag}
-
-Cache-Tags let you define buckets of content that you wish to purge. It is an excellent way to combine objects that are commonly changed together. So an HTML blog post, for example, and all of its image content could be tagged together. Mobile-only content also could be bundled using cache-tags, so that you can purge everything when you push a new update to your mobile domain.
-
-### Purge the cache globally
+### Purge all files
 {: #purge-cache-globally}
 
-You also have the option to force our entire cache to revalidate. You can reset all of the objects stored in our cache so that every request is routed to the origin server.
+You have the option to force the entire cache to revalidate. You can reset all of the objects stored in the cache so that every request is routed to the origin server.
 
-### Purge the cache by Page Rule
-{: #purge-cache-by-page-rule}
+### Purge by prefixes (Enterprise only)
+{: #purge-cache-prefix}
 
-Page Rules let you purge the entire cache based upon a regular expression. You can utilize a pre-defined Page Rule and re-validate all hits against that Page Rule. You can create up to 50 Page Rules per page.
+Enterprise plan users can purge the cache by URL prefix or path separators in the URL. For example, valid purge requests for a URL such as `https://www.example.com/foo/bar/baz/qux.jpg` include:
+
+* `www.example.com/`
+* `www.example.com/foo/`
+* `www.example.com/foo/bar/`
+* `www.example.com/foo/bar/baz/`
+* `www.example.com/foo/bar/baz/qux.jpg`
+
+Purging by prefix is useful when you want to purge everything within a directory, or increase control over cached objects in a particular path. It can also simplify the number of purge calls made.
+
+### Purge by hostnames (Enterprise only)
+{: #purge-cache-hostnames}
+
+Purging by hostname is similar to purging by prefixes. Use a list of hostnames to purge the cache of any assets associated with those hostnames. 
+
+### Purge by tags (Enterprise only)
+{: #purge-cache-by-cache-tag}
+
+Tags let you define buckets of content that you wish to purge. It is an excellent way to combine objects that are commonly changed together. An HTML blog post, for example, and all of its image content could be tagged together. Mobile-only content also could be bundled using cache-tags, so that you can purge everything when you push a new update to your mobile domain.
+
+### Purge by URLs
+{: #purge-by-urls}
+
+With purge by URL, cached resources are immediately removed from the stored assets in your Content Delivery Network (CDN) across all data centers. New requests for the purged asset receive the latest version from your origin web server and add it back to your CDN cache within the specific data center that served the request.
 
 ### Use advanced caching features
 {: #use-advanced-caching-features}
 
-**Bypass Cache on Cookie:** Configured in a Page Rule, this feature allows you to serve a cached object unless a cookie of a specific name exists. For example, you can serve a cached version of the homepage unless you find a `SessionID` cookie indicating that the customer is logged in, and therefore should be presented with personalized content.
+**Bypass Cache on Cookie:** Configured in a page rule, this feature allows you to serve a cached object unless a cookie of a specific name exists. For example, you can serve a cached version of the homepage unless you find a `SessionID` cookie indicating that the customer is logged in, and therefore should be presented with personalized content.
+

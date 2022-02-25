@@ -19,12 +19,12 @@ The following information describes some limitations when working with {{site.da
 {: shortdesc}
 
 * It is recommended that you use Chrome.
-* The free trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed toadd new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to thesame resource instance. You'll encounter an error if you attempt to do so.
+* The free trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed to add new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.
 * For this service, we support subdomain delegation only using NS records from another provider. CNAME delegation is not supported.
 * A, AAAA, and CNAME wildcard records ("*") cannot be proxied.
 * When you delete a dedicated certificate, it might reappear in the list for a short time before the deletion is complete.
 * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
-* IP rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgradeto the Enterprise plan or place rules on your server to fully block.
+* IP rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
 
 ## Global load balancer
 {: #known-limitations-glb}

@@ -77,7 +77,7 @@ The private key is only available immediately after ordering a certificate if th
     ```
     {: pre}
 
-If SSL support does not load with `apache start`, run the command `apachectl startssl`. If Apache only starts with SSL support using `apachectl startssl`, it is recommended to adjust the Apache startup configuration to include SSL support in the command `apachectl start`. Otherwise, in the event of a server reboot you could be required to manually restart Apache using `apachectl startssl`. This typically involves removing the `<IfDefine SSL>` and `</IfDefine SSL>` tags that enclose your configuation.
+If SSL support does not load with `apache start`, run the command `apachectl startssl`. If Apache only starts with SSL support using `apachectl startssl`, it is recommended to adjust the Apache startup configuration to include SSL support in the command `apachectl start`. Otherwise, in the event of a server reboot you could be required to manually restart Apache using `apachectl startssl`. This typically involves removing the `<IfDefine SSL>` and `</IfDefine SSL>` tags that enclose your configuration.
 {: note}
 
 ### NGINX

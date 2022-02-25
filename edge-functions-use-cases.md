@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-05-06"
+  years: 2018, 2022
+lastupdated: "2022-02-23"
 
 keywords:
 
@@ -15,7 +15,11 @@ subcollection: cis
 # Edge functions use cases
 {: #edge-functions-use-cases}
 
-THIS SOFTWARE IS PROVIDED BY IBM “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL IBM BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+The following use cases are provided solely as examples, and are not intended for exact duplication in your environment.
+{: shortdesc}
+
+Exercise caution when testing any of the following code, because it might cause a disruption in service.
+{: important}
 
 ## A/B testing
 {: #ab-testing}

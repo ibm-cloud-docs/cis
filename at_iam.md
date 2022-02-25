@@ -318,7 +318,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |Create a certificate used for origin TLS client authentication at domain level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth.create` |
 |Delete a certificate used for origin TLS client authentication used at domain level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth.delete` |
 |Get origin TLS client authentication settings used at domain level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings|internet-svcs.security.read|internet-svcs.origin-tls-client-auth-settings.read` |
-|Update origin TLS cleint authentication settings used at domain level.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-settings.update` |
+|Update origin TLS client authentication settings used at domain level.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-settings.update` |
 |Get origin TLS client authentication settings used for the given hostname.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/{hostname}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostnames.read`|
 |Update origin TLS client authentication settings for a hostname.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-hostnames.update`|
 |Get origin TLS client authentication certificates used at hostname level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostname-certificates.read` |
@@ -365,14 +365,14 @@ List of IAM actions and Activity Tracker actions by API method.
 |Update always use HTTPS settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/always_use_https` | `internet-svcs.security.update` | `internet-svcs.always-use-https-setting.update`|
 |Get true client IP header settings.| `GET /v1/{crn}/zones/{domain_id}/setting/true_client_ip_header` | `internet-svcs.zones.read` | `internet-svcs.true-client-ip-header-setting.read`|
 |Update true client IP header settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/true_client_ip_header` | `internet-svcs.zones.update` | `internet-svcs.true-client-ip-header-setting.update`|
-|Get image size optimziation settings.| `GET /v1/{crn}/zones/{domain_id}/setting/image_size_optimization` | `internet-svcs.performance.read` | `internet-svcs.image-size-optimization-setting.read`|
+|Get image size optimization settings.| `GET /v1/{crn}/zones/{domain_id}/setting/image_size_optimization` | `internet-svcs.performance.read` | `internet-svcs.image-size-optimization-setting.read`|
 |Update image size optimization settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/image_size_optimization` | `internet-svcs.performance.update` | `internet-svcs.image-size-optimization-setting.update`|
 |Get script load optimization settings.| `GET /v1/{crn}/zones/{domain_id}/setting/script_load_optimization` | `internet-svcs.performance.read` | `internet-svcs.script-load-optimization-setting.read`|
 |Update script load optimization settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/script_load_optimization` | `internet-svcs.performance.update` | `internet-svcs.script-load-optimization-setting.update`|
 |Get image load optimization settings.| `GET /v1/{crn}/zones/{domain_id}/setting/image_load_optimization` | `internet-svcs.performance.read` | `internet-svcs.image-load-optimization-setting.read`|
 |Update image load optimization settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/image_load_optimization` | `internet-svcs.performance.update` | `internet-svcs.image-load-optimization-setting.update`|
 |Get minification settings.| `GET /v1/{crn}/zones/{domain_id}/setting/minify` | `internet-svcs.performance.read` | `internet-svcs.minify-setting.read`|
-|Upate minification settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/minify` | `internet-svcs.performance.update` | `internet-svcs.minify-setting.update`|
+|Update minification settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/minify` | `internet-svcs.performance.update` | `internet-svcs.minify-setting.update`|
 |Get minimum TLS version settings.| `GET /v1/{crn}/zones/{domain_id}/setting/min_tls_version` | `internet-svcs.security.read` | `internet-svcs.min-tls-version-setting.read`|
 |Update minimum TLS version settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/min_tls_version` | `internet-svcs.security.update` | `internet-svcs.min-tls-version-setting.update`|
 |Get IP geolocation settings.| `GET /v1/{crn}/zones/{domain_id}/setting/ip_geolocation` | `internet-svcs.zones.read` | `internet-svcs.ip-geolocation-setting.read`|

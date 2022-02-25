@@ -46,7 +46,7 @@ $ dig proxied.theburritobot.com +short
 {: pre}
 
 ### Obscure non-proxied origin records with non-standard names
-{: #obsure-non-proxied-origin-records-with-non-standard-names}
+{: #obscure-non-proxied-origin-records-with-non-standard-names}
 
 Any records that cannot be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
@@ -159,7 +159,7 @@ If you receive an error when ordering certificates, refresh the page and try aga
 IBM has partnered with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers. Manual verification could be required for setting up these certificates. Your support team can help you perform these additional steps.
 
 ### Certificate priority at our edge
-{: #certificate-prioirity-at-our-edge}
+{: #certificate-priority-at-our-edge}
 
 The priority by which the certificates are displayed at our edge is:
 1. Uploaded custom

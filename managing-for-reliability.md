@@ -62,7 +62,7 @@ With **Serve Stale Content**, when your server goes down, {{site.data.keyword.ci
 
 If {{site.data.keyword.cis_short_notm}} does not have the requested page in its cache, your visitor sees an error page letting them know that the website page they are requesting is offline.
 
-### Seting up Serve Stale Content
+### Setting up Serve Stale Content
 {: #setting-up-serve-stale-content}
 
 To enable **Serve Stale Content**, follow these steps:

@@ -24,7 +24,7 @@ When CIS receives an HTTP request, it is examined and a table of fields is produ
 Each field value can be sourced from different places, such as:
 
 * Primitive properties, obtained directly from the traffic – for example, `http.request.uri.path`.
-* Derived values, resulting from a transformation, composition, or basic operation – for example, makeing the value of `http.request.uri.path` all lowercase and available as a field of another field.
+* Derived values, resulting from a transformation, composition, or basic operation – for example, making the value of `http.request.uri.path` all lowercase and available as a field of another field.
 * Computer values, resulting from a lookup, computation, or other intelligence – for example, a `cf.threat_score` calculated dynamically by a machine learning process that inspects related primitive and derived values.
 
 ### Available fields

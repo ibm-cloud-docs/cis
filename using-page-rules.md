@@ -90,7 +90,7 @@ Here are three important things to remember with page rules:
 
 * Only one page rule takes effect on any given request.
 * Page rules are given priority in order from top to bottom.
-* After a URL matches a rule, only that rule is applied; that is, if a page rule was already triggered on a request, any subsequent rules that also match the URL pattern do not take effect. Generally, it is recommended to order your rules from _most specific_ to _least specific_.
+* After a URL matches a rule, only that rule is applied; that is, if a page rule was already triggered on a request, any subsequent rules that also match the URL pattern do not take effect. Generally, it is recommended to order your rules from *most specific* to *least specific*.
 
 Page rules can be disabled, in which case they take no action. You can still see them in the list and edit them. Setting the **Enabled** toggle to **Off** creates a page rule that initially is disabled.
 

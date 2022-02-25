@@ -28,7 +28,7 @@ Here’s what you’ll need to set up:
 * Configure your security settings as strictly as possible
 
 ## Best practice 1: Know how to restore the originating IPs of your customers
-{: #best-practice-know-how-to-restore-origininating-ip}
+{: #best-practice-know-how-to-restore-originating-ip}
 
 As a reverse proxy, we provide the origination IP in these headers:
 
@@ -69,7 +69,7 @@ IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by remo
 The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks visitors that do not have a user agent, or who add a non-standard user agent (this tactic is commonly used by abuse bots, crawlers, or APIs).
 
 ## Best practice 4: Configure your security settings as strictly as possible
-{: #best-practice-configure-stict-security-settings}
+{: #best-practice-configure-strict-security-settings}
 
 {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
 

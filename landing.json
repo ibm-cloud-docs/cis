@@ -35,7 +35,7 @@
       "tiles": [
         {
           "date": "11 May 2021",
-          "title": "Add clock syncronization content",
+          "title": "Add clock synchronization content",
           "description": "Added information regarding the time servers used for clock sync."
         }
       ]

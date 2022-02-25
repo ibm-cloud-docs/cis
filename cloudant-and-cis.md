@@ -26,7 +26,7 @@ These instructions assume you have already added a domain to {{site.data.keyword
 ## Step 1: Add your CIS domain to the Cross-Origin Resource Sharing (CORS)
 {: #access-cloudant-through-cis-step1}
 
-* Navigate to your Cloudant database and open the **Acccount > CORS** page.
+* Navigate to your Cloudant database and open the **Account > CORS** page.
 * Add your CIS domain to the origin domains input field. For example, `https://cloudant.test.foo.com`.
 
 ## Step 2. Configure CIS to point to your Cloudant database

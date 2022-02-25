@@ -322,7 +322,7 @@ httpRequests1hGroups (orderBy: [sum_bytes_DESC]){
 ## Pagination
 {: #pagination}
 
-Pagination, breaking up query results into smaller parts, can be done using `limit`, `orderBy`, and filtering paramters. The GraphQL Analytics API does not support cursors for pagination. 
+Pagination, breaking up query results into smaller parts, can be done using `limit`, `orderBy`, and filtering parameters. The GraphQL Analytics API does not support cursors for pagination. 
 * `limit` (integer) defines how many records to return.
 * `orderBy` (string) defines the sort order for the data. 
 

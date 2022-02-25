@@ -64,7 +64,7 @@ Default and recommended. A secure connection between the visitor and {{site.data
 ### HTTPS Only Origin Pull
 {: #tls-encryption-modes-origin-only-pull}
 
-*Enterprise only.* This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between {{site.data.keyword.cis_short_notm}} and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
+**Enterprise only.** This mode has the same certificate requirements as End-to-End CA Signed and also upgrades all connections between {{site.data.keyword.cis_short_notm}} and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
 
 
 ## Traffic encryption - Minimum TLS version

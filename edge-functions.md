@@ -40,7 +40,7 @@ Here, we discuss the Cloudflare runtime APIs for CIS Edge functions. The Edge fu
 {: shortdesc}
 
 ### Constructor syntax
-{: #contstructor-syntax}
+{: #constructor-syntax}
 
 ```javascript
 new Request(input [, init])

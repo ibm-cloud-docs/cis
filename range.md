@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-06"
+  years: 2018, 2022
+lastupdated: "2022-02-15"
 
 keywords: range application, tls encryption, ddos protection, global tcp proxy
 
@@ -26,37 +26,39 @@ Range can be used to:
 * Integrate with CIS IP firewall, which allows you to block or challenge IP addresses, or entire IP ranges, from reaching your TCP services.
 * Configure load balancers with TCP health checks, failover, and steering policies to dictate where traffic flows.
 
-## Getting started with Range
-{: #getting-started-with-range}
-
-Range is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
+Range is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.  
 {: note}
 
-### Adding an application
+## Range limitations
+{: #range-limitations}
+
+You can create a maximum of 10 Range applications with unique origins. Each Range application with a unique origin must have a unique IP address allocated, and IP addresses are a limited resource. If you need more than 10 Range applications, open an IBM Support case. Support cases to add more Range applications require a review of the use case, and the process can take a few days.
+
+You can create more than 10 applications if they reuse an existing origin, but use different ports.
+{: tip}
+
+For TCP Range apps, only IP rules apply. This is because IP rules are applied to OSI Layer 3 and Layer 4. However HTTP(S) Range apps work with both firewall rules and IP rules. In general, firewall rules are designed for properties exposed in OSI Layer 7 (HTTP), such as request headers and body content characteristics.
+
+## Adding an application using the console
 {: #range-add-an-application}
+{: ui}
 
 Follow these steps to add an application.
 
+In the console, UDP applications must be enabled through a Support case. After the functionality is enabled, you can create a UDP application through the CLI or API.
+{: tip}
+
 1. Navigate to **Security > Range**.
-1. Click **Add application**.
+1. Click **Create**.
 1. Enter the application name in the first input field. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
-1. Enter the edge port in the next input field. We'll listen for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin. (Proxying is supported on all ports except port 21.)
+1. Enter the edge port in the next input field. {{site.data.keyword.cis_short_notm}} listens for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin.
+   You can enter a port range (for example: `8080-8090`), but the origin must have the same quantity of ports specified in a consecutive range.
 1. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer.
-1. Enable IP firewall. When enabled, firewall rules with a "block" or "allowlist" action are enforced for this application.
-1. Enable PROXY Protocol if you have a proxy in-line that supports PROXY Protocol v1. This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains disabled. 
-1. Click **Provision**.
+1. Enable IP firewall (optional). When enabled, firewall rules with a "block" or "allowlist" action are enforced for this application.
+1. Enable [PROXY Protocol](/docs/cis?topic=cis-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains disabled. 
+1. Click **Create**.
 
-Proxy protocol prepends every connection with a header reporting the client IP address and port. A Proxy Protocol header has the format: 
-
-PROXY_STRING + single space + INET_PROTOCOL + single space + CLIENT_IP + single space + PROXY_IP + single space + CLIENT_PORT + single space + PROXY_PORT + "\r\n"
-
-* Here's an example PROXY Protocol line for an IPv4 address:
-    `PROXY TCP4 192.0.2.0 192.0.2.255 42300 443\r\n`
-    
-* Here's an example PROXY Protocol line for an IPv6 address:
-    `PROXY TCP6 2001:db8:: 2001:db8:ffff:ffff:ffff:ffff:ffff:ffff 42300 443\r\n`
-
-Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per app.
+Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
 {: note}
 
 Your application is now visible in a tile with the following properties:
@@ -72,16 +74,6 @@ Your application is now visible in a tile with the following properties:
     * Delete the application
 
 When a Range application is created, it is assigned a unique IPv4 and IPv6 address. These IP addresses are not static and might be subject to change. You can determine the assigned IP address by using DNS. The DNS name always returns the IP addressed assigned to the application.     
-
-### Range limitations
-{: #range-limitations}
-
-You can create a maximum of 10 Range applications with unique origins. Each Range application with a unique origin must have a unique IP address allocated, and IP addresses are a limited resource. If you need more than 10 Range applications, open an IBM Support ticket. Support tickets to add more Range applications require a review of the use case, and the process can take a few days.
-
-You can create more than 10 applications if they reuse an existing origin, but use different ports.
-{: tip}
-
-For TCP Range apps, only IP rules apply. This is because IP rules are applied to OSI Layer 3 and Layer 4. However HTTP(S) Range apps work with both firewall rules and IP rules. In general, firewall rules are designed for properties exposed in OSI Layer 7 (HTTP), such as request headers and body content characteristics.
 
 ### Viewing metrics
 {: #range-view-metrics}
@@ -114,6 +106,7 @@ The application tile also contains an overflow menu in the top corner. The overf
 
 ## API usage examples
 {: #range-api-usage-examples}
+{: api}
 
 These are examples to create and list applications using Range.
 
@@ -245,7 +238,7 @@ The response follows:
 }
 ```
 
-### Listing a specfic Range app
+### Listing a specific Range app
 {: #range-list-a-specific-range-app}
 
 Use the following request to list a specific Range app:
