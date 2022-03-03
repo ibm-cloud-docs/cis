@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-09-28"
+  years: 2018, 2022
+lastupdated: "2022-03-01"
 
 keywords: 
 
@@ -28,7 +28,7 @@ The following table compares each offering to help you choose the one that's rig
 
 | | Standard  \n (30 day no-cost  \n trial available) | Enterprise  \n Package or Usage  \n (different pricing models) | Enterprise GLB | Enterprise Security|  
 | :------- | :--------- | :------------ | :--------- | :--------- |
-|**Time**|Monthly billing |Monthly billing|Monthly billing|Monthly billing|
+|**Billing interval**|Monthly billing |Monthly billing|Monthly billing|Monthly billing|
 |**Domain**|1|Up to 1000, but recommend no more than 20|2|3|
 |**DNS**|3500 records |Multiple domains (3500 records per Domain) |Same as Enterprise |Same as Enterprise|
 |**Global load balancers**|* 5 Pools  \n * 6 origin servers  \n * 5 Health checks  \n * 60s health checks  \n * Geo Routing  \n * Health checks from single region  \n * 60s minimum TTL for non-proxied global load balancers |* Up to 100 pools  \n * 100 origin servers  \n * Up to 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for non-proxied global load balancers|* Up to 100 pools  \n * 18 origin server  \n * Up to 100 health checks  \n * 60s health checks  \n * Health checks from multiple regions  \n * 10s minimum TTL for non-proxied global load balancers|Not available|
@@ -60,13 +60,13 @@ The following table describes the key differences among the available plans. Ent
 |**Enterprise analytics**|No|Yes|Yes|Yes|
 |**Included domains**|1|10|2|3|
 |**Edge functions**|1|Unlimited|0|0|
-|**Protected traffic**|5 TB|5 TB|5 TB|10 TB|
-|**Range  \n (HTTP(S) & TCP   \n protection**|None |1 TB |None|0.1 TB|
-|**Mutual TLS  \n authentication**|No|Yes|No|Yes|
-|**Role based  \n access control**|Yes|Yes|Yes|Yes|
+|**Protected traffic**   \n (does not include traffic that is related to an attack)|5 TB|5 TB|5 TB|10 TB|
+|**Range  \n (HTTP(S) & TCP protection)**|None |1 TB |None|0.1 TB|
+|**Mutual TLS authentication**|No|Yes|No|Yes|
+|**Role based access control**|Yes|Yes|Yes|Yes|
 |**Rate limiting**|No|Yes|No|No|
 |**Smart routing**|No|Yes|No|No|
-|**Global load balancers origin limit**|6|100|18|6|
-|**Global load balancers lowest health  \n Check interval**|60s|5s|5s|Not available|
+|**Global load balancers  \n  origin limit**|6|100|18|6|
+|**Global load balancers  \n  lowest health check interval**|60s|5s|5s|Not available|
 |**Page rules  \n (Caching/Security)**|50|100|0|100|
-{: caption="Table 1. Key plan differences" caption-side="bottom"}
+{: caption="Table 2. Key plan differences" caption-side="bottom"}

@@ -34,6 +34,11 @@
       "view_more": "/docs/cis?topic=cis-release-notes",
       "tiles": [
         {
+          "date": "2 March 2022",
+          "title": "Add security alerts API.",
+          "description": "Added API for creating and configuring security alerts."
+        },
+        {
           "date": "11 May 2021",
           "title": "Add clock synchronization content",
           "description": "Added information regarding the time servers used for clock sync."
