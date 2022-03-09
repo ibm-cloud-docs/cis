@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-09"
 
 keywords:
 
@@ -26,7 +26,7 @@ Alerts are available only to Enterprise plans.
 
 {{site.data.keyword.cis_short_notm}} offers three alert types:
 
-* **DDoS attack layer 7** alerts are intended for WAF and CDN customers who want to receive a notification when an attack is mitigated.
+* **DDoS attack layer 7 alerts** are intended for WAF and CDN customers who want to receive a notification when an attack is mitigated.
 
    No action is necessary if you receive a DDoS attack layer 7 alert. Each alert includes a short description, the time the attack was detected and mitigated, the attack type, its maximum rate of attack, and the target.
 
@@ -38,9 +38,8 @@ Alerts are available only to Enterprise plans.
     * **WAF alerts** look for spikes across all services that generate log entries in firewall events. The mean time to detection is two hours.
     * **Advanced WAF alerts**. You can select the services to monitor, and each selected service is monitored separately. The mean time to detection is five minutes.
 
-
 ## Creating an email alert using the API
-{: #create-email-notification}
+{: #create-email-notification-api}
 {: api}
 
 To create an email alert, take the following steps:
@@ -213,8 +212,8 @@ You can monitor the following services:
 |Data loss prevention|`dlp`|
 {: caption="Table 1. Services that can be monitored by Advanced WAF alerts" caption-side="bottom"}
 
-## Creating a webhook alerts using the API
-{: #configuring-webhooks}
+## Creating webhook alerts using the API
+{: #configuring-webhooks-api}
 
 Creating a webhook alert is a two step process.
 
@@ -254,8 +253,8 @@ Creating a webhook alert is a two step process.
     ```
     {: codeblock}
 
-## Editing alerts
-{: #edit-notification}
+## Editing alerts using the API
+{: #edit-notification-api}
 
 To edit an email alert, run the following command:
 
@@ -282,8 +281,8 @@ curl -X PUT \
 ```
 {: codeblock}
 
-## Deleting alerts
-{: #delete-notification}
+## Deleting alerts using the API
+{: #delete-notification-api}
 
 To delete an email alert, run the following command:
 

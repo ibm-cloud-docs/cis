@@ -17,11 +17,15 @@ subcollection: cis
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
+## 8 March 2022
+{: #8-march-2022}
+
+Added Log Analysis instance support to the API and CLI for creating and configuring Logpush jobs.
+
 ## 2 March 2022
 {: #2-march-2022}
 
 Added API for creating and configuring security alerts.
-
 
 ## 5 November 2021
 {: #5-november-2021}

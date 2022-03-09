@@ -34,6 +34,11 @@
       "view_more": "/docs/cis?topic=cis-release-notes",
       "tiles": [
         {
+          "date": "8 March 2022",
+          "title": "Add Log Analysis integration to logpush API and CLI.",
+          "description": "Added Log Analysis instance support to the API and CLI for creating and configuring Logpush jobs."
+        },
+        {
           "date": "2 March 2022",
           "title": "Add security alerts API.",
           "description": "Added API for creating and configuring security alerts."
