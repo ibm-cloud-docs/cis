@@ -3,6 +3,7 @@
 toc:
   properties:
     subcollection: cis
+    service-name: internet-svcs
     version: 2
     category: network_edge
     audience: service
