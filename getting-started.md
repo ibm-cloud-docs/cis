@@ -15,7 +15,7 @@ subcollection: cis
 # Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
 
-{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-managing-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-managing-your-cis-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-managing-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-manage-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
 {: shortdesc}
 
 For each capability, {{site.data.keyword.cis_short_notm}} helps you tune its features to suit your specific needs. These features are detailed in the [About {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis) section.
@@ -105,7 +105,7 @@ When you are finished, or to skip this step, select **Next step**.
 
 To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, you must delegate your domain to {{site.data.keyword.cis_short_notm}}. To delegate a domain, create an NS record with the name servers provided by {{site.data.keyword.cis_short_notm}} at your domain's registrar or existing DNS provider. If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){: external}.
 
-If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS records in Cloudflare](https://support.cloudflare.com/hc/en-us/articles/360019093151-Managing-DNS-records-in-Cloudflare){: external} for detailed instructions by provider.
+If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS records in Cloudflare](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/){: external} for detailed instructions by provider.
 
 After you configure your registrar or DNS provider, it can take up to 24 hours for the changes to take effect. When we verify that the specified name servers were configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`. 
 
@@ -120,4 +120,4 @@ To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS rec
 ## Next steps
 {: #get-started-next-steps}
 
-To begin managing {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-managing-your-cis-deployment).
+To begin managing {{site.data.keyword.cis_short_notm}} functions and features, see [Managing your IBM Cloud Internet Services deployment](/docs/cis?topic=cis-manage-your-cis-deployment).
