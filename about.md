@@ -59,7 +59,7 @@ When a DDoS attack occurs, {{site.data.keyword.cis_short_notm}} doesn't use scru
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
 
-WAF is implemented through two rule sets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf) and [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
+WAF is implemented through two rule sets: [OWASP](/docs/cis?topic=cis-waf-settings#owasp-rule-set-for-waf) and [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-waf-settings#cis-ruleset-for-waf).
 
 ### IP firewall
 {: #cis-ip-firewall}
