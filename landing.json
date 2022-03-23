@@ -34,6 +34,11 @@
       "view_more": "/docs/cis?topic=cis-release-notes",
       "tiles": [
         {
+          "date": "23 March 2022",
+          "title": "Update Logpush UI and include support for Log Analysis. Add UI support for alerting.",
+          "description": "Added Log Analysis instance support to the UI for creating and configuring Logpush jobs. Added UI support for creating and managing alerts."
+        },
+        {
           "date": "8 March 2022",
           "title": "Add Log Analysis integration to logpush API and CLI.",
           "description": "Added Log Analysis instance support to the API and CLI for creating and configuring Logpush jobs."
@@ -42,11 +47,6 @@
           "date": "2 March 2022",
           "title": "Add security alerts API.",
           "description": "Added API for creating and configuring security alerts."
-        },
-        {
-          "date": "11 May 2021",
-          "title": "Add clock synchronization content",
-          "description": "Added information regarding the time servers used for clock sync."
         }
       ]
     }

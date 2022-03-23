@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-23"
 
 keywords:
 subcollection: cis
@@ -16,6 +16,11 @@ subcollection: cis
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
+## 23 March 2022
+{: #23-march-2022}
+
+Added UI support for creating and managing alert policies. Updated Logpush UI, and included IBM Log Analysis instance support.
 
 ## 8 March 2022
 {: #8-march-2022}

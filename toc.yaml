@@ -14,8 +14,8 @@ toc:
     label: Cloud Internet Services (CIS)
 
 #  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
-  entries: 
-    - navgroup: 
+  entries:
+    - navgroup:
         id: learn
         topics:
         - getting-started.md
@@ -40,7 +40,7 @@ toc:
             - compression-concepts.md
             - domain-lifecycle.md
         - release-notes.md
-        
+
     - navgroup:
         id: tutorial
         topics:
@@ -86,7 +86,7 @@ toc:
             - order-and-priority.md
         - topicgroup:
             label: Working with global load balancers
-            topics: 
+            topics:
             - glb-setup.md
             - topicgroup:
                 label: Global load balancer features
@@ -121,7 +121,11 @@ toc:
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
-        - notifications.md
+        - topicgroup:
+            label: Working with alerts
+            topics:
+            - alerts.md
+            - configuring-webhooks.md
         - topicgroup:
             label: Enhancing security
             topics:

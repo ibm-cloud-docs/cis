@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-15"
 
 
 keywords: 
@@ -34,7 +34,32 @@ Before you create a Logpush job, you must have an [{{site.data.keyword.loganalys
 {: #logpush-setup-ui}
 {: ui}
 
-You can use Cloud Object Storage buckets as destinations for logpush jobs.
+You can use either Log Analysis instances or Cloud Object Storage buckets as destinations for logpush jobs.
+
+### Creating Logpush with Log Analysis
+{: #logpush-loganalysis-ui}
+
+To configure a logpush job using Log Analysis, follow these steps.
+
+1. Select the service.
+    * Choose IBM Log Analysis
+    * Select the dataset type
+    * Enter an description
+    * Click "Next"
+1. Configure the destination.
+    * Select the Log Analysis instance from the list menu
+    * Enter the region your Log Analysis instance is in
+    * Enter the Ingress key
+    * Click "Next
+1. Select the log fields that you want included in the log push.
+    * Verify that the logpush details are correct
+    * Select the logpush settings from the Timestamp and Frequency list menus
+    * Choose whether to enable the logpush job using the Enabled switch
+    * Select the log fields to include in the logpush job
+    * Click **Connect destination**.
+
+### Creating Logpush with COS
+{: #logpush-cos-ui}
 
 It is recommended that you set up an allowlist that ensures only [{{site.data.keyword.cis_short_notm}} IPs](/docs/cis?topic=cis-cis-allowlisted-ip-addresses) can push objects into the {{site.data.keyword.cos_short}} bucket. For more information on configuring an IP allowlist in {{site.data.keyword.cos_short}}, see [Setting a firewall](/docs/cloud-object-storage?topic=cloud-object-storage-setting-a-firewall).
 {: tip}
@@ -44,17 +69,29 @@ Follow these steps to add an application.
 You can configure one logpush job for each {{site.data.keyword.cos_short}} object (also known as a destination). This means that you can have two log pushes at a time going to the same bucket, but to different objects. For example, one with HTTP and another with Range, both referring to different objects in same bucket.
 {: note}
 
-1. Navigate to **Account** in your {{site.data.keyword.cis_short_notm}} instance and select the **Logs** tab.
-1. In the **Log push** section, select the **HTTP/HTTPS** or **Range** tab.
-1. Click **Create**.
-1. Select a Cloud Object Storage instance from the list menu.
-1. Select a bucket from the Bucket list menu.
-1. Optionally, enter a bucket path.
-1. Select the checkbox if you want to organize logs into daily subfolders.
-1. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with `Object Writer` role.
-1. Click the **Send ownership verification** button.
-1. Download the object you received in your bucket, paste the token in the text area, then click **Verify ownership**.
-1. Select the log fields that you want included in the log push, then click **Save**.
+1. Select the service.
+    * Choose Cloud Object Storage
+    * Select the dataset type
+    * Enter an description
+    * Copy the user ID to add to your COS bucket. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with `Object Writer` role.
+    * Click "Next"
+1. Configure your destination.
+    * Select a Cloud Object Storage instance from the list menu
+    * Select a bucket from the Bucket name list menu
+    * Enter a bucket region, if applicable
+    * Optionally, enter a bucket path
+    * Select the checkbox if you want to organize logs into daily subfolders
+    * Click "Next"
+1. Verify ownership.
+    * Download the object you received in your bucket, and paste the token in the Ownership token text area
+    * You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect
+    * Click "Next"
+1. Select the log fields that you want included in the log push.
+    * Verify that the logpush details are correct
+    * Select the logpush settings from the Timestamp and Frequency list menus
+    * Choose whether to enable the logpush job using the Enabled switch
+    * Select the log fields to include in the logpush job
+    * Click **Create service**.
 
 ## Setting up Logpush using the CLI
 {: #logpush-setup-cli}
