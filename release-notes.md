@@ -18,27 +18,40 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 ## 23 March 2022
-{: #23-march-2022}
+{: #cis-mar2322}
+{: release-note}
 
-Added UI support for creating and managing alert policies. Updated Logpush UI, and included IBM Log Analysis instance support.
+Alert policies
+:   Added UI support for creating and managing alert policies. 
+
+Logpush workflow updates
+:   Updated Logpush UI, and included IBM Log Analysis instance support.
 
 ## 8 March 2022
-{: #8-march-2022}
+{: #cis-mar0822}
+{: release-note}
 
-Added Log Analysis instance support to the API and CLI for creating and configuring Logpush jobs.
+Log Analysis integration with Logpush
+:   Added Log Analysis instance support to the API and CLI for creating and configuring Logpush jobs.
 
 ## 2 March 2022
-{: #2-march-2022}
+{: #cis-mar0222}
+{: release-note}
 
-Added API for creating and configuring security alerts.
+New security alerts API
+:   Added API for creating and configuring security alerts.
 
 ## 5 November 2021
-{: #5-november-2021}
+{: #cis-nov0521}
+{: release-note}
 
-Added API for creating and configuring notifications.
+New API for notifications
+:   Added API for creating and configuring notifications.
 
 ## 11 May 2021
-{: #11-may-2021}
+{: #cis-may1121}
+{: release-note}
 
-Add service clock synchronization information.
+Service clock synchronization
+:   Add service clock synchronization information.
 
