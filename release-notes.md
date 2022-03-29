@@ -5,7 +5,10 @@ copyright:
 lastupdated: "2022-03-23"
 
 keywords:
+
 subcollection: cis
+
+content-type: release-note
 
 ---
 
