@@ -56,6 +56,8 @@ Use rate limiting rules to protect your site or API from malicious traffic by bl
 
 When a DDoS attack occurs, {{site.data.keyword.cis_short_notm}} doesn't use scrubbing centers; the activity is analyzed on the edge, which helps to mitigate DDoS attacks closest to the source.
 
+Traffic that is identified as being "dirty" or part of an attack is not included in the billing. Customers are being billed for **protected traffic** which consists of clean traffic forwarded to the origin and responses returned from the edge to the client. 
+
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
 
