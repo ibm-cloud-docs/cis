@@ -54,14 +54,14 @@ The following table compares each offering to help you choose the one that's rig
 
 The following table describes the key differences among the available plans. Enterprise Usage and Package plans are available with different pricing models.
 
-| Feature |Standard  \n  (30 day no-cost  \n trial available)|Enterprise Usage|Enterprise Package| Enterprise GLB| Enterprise Security|
+| Feature |Standard  \n  (30 day no-cost  \n trial available)|Enterprise Package|Enterprise Usage| Enterprise GLB| Enterprise Security|
 | :------ | :---------: | :----------: | :---------: | :---------: | :---------: |
 |**Enterprise logs**|No|Yes|Yes|Yes|Yes|
 |**Enterprise analytics**|No|Yes|Yes|Yes |Yes|
 |**Included domains**|1|10|0|2 |3|
 |**Edge functions**|1|Unlimited|Unlimited| 0 |0|
 |**Protected traffic**   \n (does not include traffic that is related to an attack)|5 TB|5 TB|0 |5 TB |10 TB|
-|**Range  \n (HTTP(S) & TCP protection)**|None |1 TB |0|None |0.1 TB|
+|**Range  \n (HTTP(S) & TCP protection)**|None |5 TB |0|None |0.1 TB|
 |**Mutual TLS authentication**|No|Yes|Yes |No |Yes|
 |**Role based access control**|Yes|Yes|Yes|Yes |Yes|
 |**Rate limiting**|No|Yes|Yes|No |No|
