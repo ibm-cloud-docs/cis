@@ -43,32 +43,38 @@ For TCP Range apps, only IP rules apply. This is because IP rules are applied to
 {: #range-add-an-application}
 {: ui}
 
-Follow these steps to add an application.
+Follow these steps to add an application using the UI.
 
 In the console, UDP applications must be enabled through a Support case. After the functionality is enabled, you can create a UDP application through the CLI or API.
 {: tip}
 
 1. Navigate to **Security > Range**.
 1. Click **Create**.
-1. Enter the application name in the first input field. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
-1. Enter the edge port in the next input field. {{site.data.keyword.cis_short_notm}} listens for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin.
+1. Select a type of application from the list menu. You can choose TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft. 
+1. Enter the application name. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
+1. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin.
    You can enter a port range (for example: `8080-8090`), but the origin must have the same quantity of ports specified in a consecutive range.
-1. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer.
+1. Select the edge IP connectivity.
+1. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer and its port.
 1. Enable IP firewall (optional). When enabled, firewall rules with a "block" or "allowlist" action are enforced for this application.
-1. Enable [PROXY Protocol](/docs/cis?topic=cis-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains disabled. 
+1. Enable edge TLS termination (optional). When enabled, select the type of TLS termination you want to use from the list menu.
+1. Select a [PROXY Protocol](/docs/cis?topic=cis-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
 1. Click **Create**.
 
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
 {: note}
 
-Your application is now visible in a tile with the following properties:
+Your application is now visible in a tile or table view with the following properties: 
 
 * Application name
+* Application type
 * Edge port
-* Origin & port
+* TLS edge termination
+* Proxy protocol
+* Origin
 * Connections from the past hour (polled every minute)
 * Throughput from the past hour (polled every minute)
-* Overflow menu (top right corner) allows the following:
+* The overflow menu (top right corner) has the following options:
     * Edit the application
     * View metrics for the specified application
     * Delete the application
@@ -93,7 +99,7 @@ After creating a few apps, the **Security > Range** page is populated with appli
 
 * Application name
 * Edge port
-* Origin & port
+* Origin and port
 * Connections from the past hour (polled every minute)
 * Throughput from the past hour (polled every minute)
 
