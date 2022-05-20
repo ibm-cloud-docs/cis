@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using the {{site.data.keyword.cis_full_notm}} Security Events capability
+# Using the {{site.data.keyword.cis_short_notm}} Security Events capability
 {: #using-the-cis-security-events-capability}
 
 Reviewing Security Events gives you insight into your web traffic and into any potentially malicious activity against your website. Reviewing Security Events also helps you optimize your WAF configuration.

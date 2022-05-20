@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-10"
+  years: 2018, 2022
+lastupdated: "2022-04-12"
 
 keywords:
 
@@ -143,5 +143,3 @@ With a High Sensitivity, large file uploads trigger the WAF.
 
 The Activity log displays Rule ID 981176 when a request is blocked by OWASP. Also, some OWASP rules listed in the Activity log do not appear in the list of rules under Package: OWASP ModSecurity Core Rule Set because disabling those rules is not recommended.
 {: important}
-
-Custom rules are deprecated. Use [Firewall rules](/docs/cis?topic=cis-firewall-rules#firewall-rules) instead.
