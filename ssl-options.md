@@ -18,7 +18,7 @@ subcollection: cis
 The Transport Layer Security (TLS) options let you control whether visitors can browse your website over a secure connection, and when they do, how {{site.data.keyword.cis_full}} connects to your origin server.
 {: shortdesc}
 
-Use the latest version of the TLS protocol (TLS 1.3) for improved security and performance by switching from `Disabled` to `Enabled` or `Enabled+ORTT` in the list.
+Use the latest version of the TLS protocol (TLS 1.3) for improved security and performance by switching from `Off` to `On`.
 {: tip}
 
 ## TLS encryption modes
