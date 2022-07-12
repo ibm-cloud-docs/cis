@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-06"
+  years: 2018, 2022
+lastupdated: "2022-07-11"
 
 keywords: 
 
@@ -30,7 +30,7 @@ Here’s what you’ll need to set up:
 ## Best practice 1: Know how to restore the originating IPs of your customers
 {: #best-practice-know-how-to-restore-originating-ip}
 
-As a reverse proxy, we provide the origination IP in these headers:
+As a reverse proxy, CIS provides the origination IP in these headers:
 
 * `CF-Connecting-IP`
 * `X-Forwarded-For`
@@ -71,7 +71,7 @@ The browser integrity check looks for HTTP headers that are commonly abused by s
 ## Best practice 4: Configure your security settings as strictly as possible
 {: #best-practice-configure-strict-security-settings}
 
-{{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
+{{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy the TLS connection is terminated at Cloudflare and a new TLS connection is opened to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
 
 ### Upload a custom certificate
 {: #strict-upload-custom-cert}
