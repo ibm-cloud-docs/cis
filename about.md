@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-10-05"
+  years: 2018, 2021, 2022
+lastupdated: "2022-07-15"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # About {{site.data.keyword.cis_full_notm}}
 {: #about-ibm-cloud-internet-services-cis}
 
-{{site.data.keyword.cis_full}}, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.cis_full}}, powered by Cloudflare, provides a fast, highly performant, reliable, and secure Internet service for customers running their business on {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishing defaults for you, which you can change easily using the UI or API.
@@ -52,7 +52,7 @@ Use rate limiting rules to protect your site or API from malicious traffic by bl
 ### Traffic scrubbing
 {: #traffic-scrubbing}
 
-{{site.data.keyword.cis_short_notm}} offers 59 Tbps of network capacity — 20 times bigger than the largest recorded DDoS attack.
+{{site.data.keyword.cis_short_notm}} offers 142 Tbps of global network edge capacity — around 40 times bigger than the largest recorded DDoS attack.
 
 When a DDoS attack occurs, {{site.data.keyword.cis_short_notm}} doesn't use scrubbing centers; the activity is analyzed on the edge, which helps to mitigate DDoS attacks closest to the source.
 
@@ -136,8 +136,8 @@ Advanced security settings include the following features, which you can change,
 {: #security-standards-and-platform}
 
 * TLS (SHA2 and SHA1)
-* IPv6
-* HTTP/2 and SPDY
+* IPv4 and IPv6
+* HTTP/2 and HTTP/3
 
 ### Network attacks and mitigation
 {: #network-attacks-and-mitigation}
@@ -237,7 +237,7 @@ Fine-tune your cache behavior and create content optimization.
 ### Routing
 {: #routing-features}
 
-Eliminate excess latency by analyzing and optimizing routing decisions across the global internet using real-time network connections.
+Eliminate excess latency by analyzing and optimizing routing decisions across the global Internet using real-time network connections.
 
 ### Advanced performance
 {: #advanced-performance}
