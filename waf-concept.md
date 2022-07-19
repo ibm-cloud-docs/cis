@@ -15,7 +15,7 @@ subcollection: cis
 # Web Application Firewall concepts
 {: #waf-q-and-a}
 
-The Web Application Firewall (WAF) protects against ISO Layer-7 attacks, which can be some of the most tricky. This document gives some details.
+The Web Application Firewall (WAF) protects against OSI Layer-7 attacks, which can be some of the most tricky. This document gives some details.
 {: shortdesc}
 
 ## What is a Web Application Firewall?
