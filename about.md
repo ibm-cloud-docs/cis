@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-10-05"
+  years: 2018, 2022
+lastupdated: "2022-07-19"
 
 keywords:
 
@@ -52,11 +52,11 @@ Use rate limiting rules to protect your site or API from malicious traffic by bl
 ### Traffic scrubbing
 {: #traffic-scrubbing}
 
-{{site.data.keyword.cis_short_notm}} offers 59 Tbps of network capacity — 20 times bigger than the largest recorded DDoS attack.
+{{site.data.keyword.cis_short_notm}} offers 142 Tbps of global network edge capacity — 40 times bigger than the largest recorded DDoS attack.
 
 When a DDoS attack occurs, {{site.data.keyword.cis_short_notm}} doesn't use scrubbing centers; the activity is analyzed on the edge, which helps to mitigate DDoS attacks closest to the source.
 
-Traffic that is identified as being "dirty" or part of an attack is not included in the billing. Customers are being billed for **protected traffic** which consists of clean traffic forwarded to the origin and responses returned from the edge to the client. 
+Traffic that is identified as being "dirty" or part of an attack is not included in the billing. Customers are being billed for **protected traffic** which consists of clean traffic forwarded to the origin and responses returned from the edge to the client.
 
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
@@ -136,8 +136,8 @@ Advanced security settings include the following features, which you can change,
 {: #security-standards-and-platform}
 
 * TLS (SHA2 and SHA1)
-* IPv6
-* HTTP/2 and SPDY
+* IPv4 and IPv6
+* HTTP/2
 
 ### Network attacks and mitigation
 {: #network-attacks-and-mitigation}
@@ -160,13 +160,13 @@ Generally, attacks fall into two categories:
 
 DDoS mitigation is typically an expensive service that can grow in cost when under attack. Unlimited DDoS mitigation is included with {{site.data.keyword.cis_short_notm}} at no additional cost.
 
-### Mitigate Layer 7 attacks (configuration) 
+### Mitigate Layer 7 attacks (configuration)
 {: #cis-mitigate-layer7-attacks}
 
 Though DDoS is enabled by default in {{site.data.keyword.cis_short_notm}}, you can further configure Layer 7 security by:
 
-* Configuring WAF ruleset sensitivity and response behavior, and by 
-* Adding rate limiting 
+* Configuring WAF ruleset sensitivity and response behavior
+* Adding rate limiting
 * Adding firewall rules
 
 Use these features to customize Layer 7 mitigation of both volumetric and non-volumetric attacks.
@@ -179,7 +179,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ### Cost protection
 {: #cis-cost-protection}
 
-{{site.data.keyword.cis_short_notm}} does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the {{site.data.keyword.cis_short_notm}} network to the origin destination incur charges or usage. 
+{{site.data.keyword.cis_short_notm}} does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the {{site.data.keyword.cis_short_notm}} network to the origin destination incur charges or usage.
 
 {{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic. There’s no penalty for spikes due to attack traffic, so there's no chargeback by the customer.
 
@@ -210,7 +210,7 @@ DNS within {{site.data.keyword.cis_short_notm}} has the following features:
 ### gRPC protocol support
 {: #grpc}
 
-The gRPC protocol builds efficient APIs with smaller payloads, which reduces bandwidth requirements, decreases latency, and increases the implementation time. {{site.data.keyword.cis_short_notm}} supports gRPC protocol for any proxied gRPC endpoints. To enable or disable gRPC support, navigate to the **Reliability** section, select the **Advanced** tab, and toggle the gRPC switch. 
+The gRPC protocol builds efficient APIs with smaller payloads, which reduces bandwidth requirements, decreases latency, and increases the implementation time. {{site.data.keyword.cis_short_notm}} supports gRPC protocol for any proxied gRPC endpoints. To enable or disable gRPC support, navigate to the **Reliability** section, select the **Advanced** tab, and toggle the gRPC switch.
 
 The following requirements must be met before using gRPC:
 
