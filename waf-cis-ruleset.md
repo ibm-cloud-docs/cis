@@ -84,7 +84,7 @@ The OWASP rule set for WAF contains generic attack detection rules. The OWASP ru
 OWASP is an industry standard that provides a good security baseline. For more information, see:
 
 * [OWASP on Github](https://github.com/SpiderLabs/owasp-modsecurity-crs){: external}
-* [OWASP.org](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project){: external}
+* [OWASP.org](https://owasp.org/www-project-modsecurity-core-rule-set/){: external}
 
 ### Managing OWASP
 {: #managing-owasp}
