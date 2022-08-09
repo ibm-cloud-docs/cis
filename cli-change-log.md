@@ -19,20 +19,29 @@ subcollection: cis
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
 
-## 09 Augest 2022
-{: #cis-au0922}
+## Version 1.14.5
+{: #cis-1145}
 
-* Fix edge function trigger
-* Fix cross account resource access
-* Add ppc64le binary release
-* Page rule action remove always online
+* Fix edge functions trigger.
+* Fix cross account resource access.
+* Add ppc64le binary release.
+* Page rule action remove always online.
 
-## 23 March 2022
-{: #cis-mar2322}
+## Version 1.14.4
+{: #cis-1144}
 
-Updated Logpush to include IBM Log Analysis instance support.
+* Add customer cert type
+* Add domain security level setting
+* Deprecate edge trigger disable option
+* Support onion routing
 
-## 8 March 2022
-{: #cis-mar0822}
+## Version 1.14.3
+{: #cis-1143}
 
-Added Log Analysis instance support to the CLI for creating and configuring Logpush jobs.
+* Add session affinity attributes
+
+## Version 1.14.2
+{: #cis-1142}
+
+* Added Log Analysis instance support to the CLI for creating and configuring Logpush jobs.
+* Allow short aliases name `cis` for plugin install/upgrade/delete
