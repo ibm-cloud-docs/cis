@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-08-09"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -19,6 +19,13 @@ subcollection: cis
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
 
+## 09 Augest 2022
+{: #cis-au0922}
+
+* Fix edge function trigger
+* Fix cross account resource access
+* Add ppc64le binary release
+* Page rule action remove always online
 
 ## 23 March 2022
 {: #cis-mar2322}
