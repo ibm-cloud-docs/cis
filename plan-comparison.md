@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-07-27"
 
 keywords: 
 
@@ -45,6 +45,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Firewall rules**|* 100 active rules  \n * Does not support _Log_ action  \n * Does not support _matches_ operator|* 1000 active rules  \n * Supports all actions  \n * Supports all operators|* 1000 active rules  \n * Supports all actions  \n * Supports all operators|No |Same as Enterprise|
 |**Routing**|No|Yes|No| |No |
 |**Origin certificates**|Yes|Yes|Yes|Yes| Yes|
+|**Alerts**|No|Yes|Yes|Yes |Yes |
 {: caption="Table 1. CIS plan comparison" caption-side="bottom"}
 
 

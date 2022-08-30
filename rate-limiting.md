@@ -30,6 +30,8 @@ In the **Traffic matching criteria** section, enter the following information.
 1. Enter the URL that you are rate limiting.
 1. Select the number of requests to allow before triggering rate limiting.
 1. Select the time period (in seconds) over which the requests can occur before triggering rate limiting.
+    Range is from 10 to 86,400 seconds.
+    {: note}
 
 The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria.
 

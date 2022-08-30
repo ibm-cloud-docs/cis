@@ -14,8 +14,8 @@ toc:
     label: Cloud Internet Services (CIS)
 
 #  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
-  entries:
-    - navgroup:
+  entries: 
+    - navgroup: 
         id: learn
         topics:
         - getting-started.md
@@ -40,7 +40,7 @@ toc:
             - compression-concepts.md
             - domain-lifecycle.md
         - release-notes.md
-
+        
     - navgroup:
         id: tutorial
         topics:
@@ -126,6 +126,7 @@ toc:
             topics:
             - alerts.md
             - configuring-webhooks.md
+            - notifications.md
         - topicgroup:
             label: Enhancing security
             topics:
@@ -178,4 +179,5 @@ toc:
             - ts-no-traffic.md
             - ts-false-pos-neg.md
             - troubleshooting.md
+            - ts-execution-order.md
         - getting-help.md

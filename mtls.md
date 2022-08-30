@@ -29,7 +29,7 @@ Mutual TLS is not enabled by default. It is an additional service that requires 
 
 To obtain authorization, you must submit an IBM Support case. 
 
-![Request authorization and enable mTLS](images/enable-mtls.png "Enable mTLS tile") {: caption="Figure 2. Request authorization and enable mTLS" caption-side="bottom"}
+![Request authorization and enable mTLS](images/enable-mtls.png "Enable mTLS tile"){: caption="Figure 2. Request authorization and enable mTLS" caption-side="bottom"}
 
 
 After mTLS is turned on for your account, take the following steps to enable it.
