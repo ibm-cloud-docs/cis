@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-08-26"
 
 
 keywords: 
@@ -50,7 +50,7 @@ To configure a logpush job using Log Analysis, follow these steps.
     * Select the Log Analysis instance from the list menu
     * Enter the region your Log Analysis instance is in
     * Enter the Ingress key
-    * Click "Next
+    * Click "Next"
 1. Select the log fields that you want included in the log push.
     * Verify that the logpush details are correct
     * Select the logpush settings from the Timestamp and Frequency list menus
@@ -111,7 +111,10 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination https://logs.us-sout
 
 Where:
 
-* **--destination** specifies the path to the Log Analysis instance.
+* **--destination** specifies the path to the Log Analysis instance. 
+    The hostname is the domain name in CIS for which you are sending log data. You can find it by running `imbcloud cis domains -i <instance-name>`. The URL must match the region of your Log Analysis instance (for example, `https://logs.{LOGDNA_REGION}.logging.cloud.ibm.com/logs/ingest?hostname={DOMAIN_NAME}&apikey={LOGDNA_INGESTION_KEY}`). For more information, see [Log Analysis regions](/docs/log-analysis?topic=log-analysis-regions).
+    {: note}
+
 * **--name** specifies the Logpush job name.
 * **--fields** specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
 * **--enable** is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).

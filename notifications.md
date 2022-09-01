@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-08-30"
 
 keywords:
 
@@ -12,31 +12,140 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Configuring alerts
-{: #configuring-notifications}
+# Creating alerts by type
+{: #create-alerts-by-type}
 
-{{site.data.keyword.cis_full}} has alerts that you can configure through the API to warn you when events occur. Use email or webhooks to receive alerts.
+{{site.data.keyword.cis_full}} has alerts that you can configure to warn you when events occur. Use email or webhooks to receive alerts.
 {: shortdesc}
 
 Alerts are available only to Enterprise plans.
 {: note}
 
-## Types of alerts
-{: #notification-types}
+For more information about each type of alert, see [Types of alerts](/docs/cis?topic=cis-configuring-policies&interface=ui#notification-types). 
 
-{{site.data.keyword.cis_short_notm}} offers three alert types:
+## Creating an email alert using the UI
+{: #ui-create-email-notification}
+{: ui}
 
-* **DDoS attack layer 7 alerts** are intended for WAF and CDN customers who want to receive a notification when an attack is mitigated.
+You can create email alerts for each alert type by using the UI. For more information about creating email alerts using the console, see [Configuring alert policies](/docs/cis?topic=cis-configuring-policies&interface=ui#ui-configure-alert-policies).
 
-   No action is necessary if you receive a DDoS attack layer 7 alert. Each alert includes a short description, the time the attack was detected and mitigated, the attack type, its maximum rate of attack, and the target.
+## Creating an email alert using the CLI
+{: #cli-create-email-notification}
+{: cli}
 
-* **Pool toggle alerts** tell you when the pool is enabled or disabled manually.
+You can create email alerts for each alert type by using the CLI. 
 
-   No action is necessary if you receive a pool toggle alert. Each alert includes the state the pool was toggled to, the time it occurred, and which user made the change.
-   
-* **Security alerts** include WAF alerts and Advanced WAF alerts. 
-    * **WAF alerts** look for spikes across all services that generate log entries in firewall events. The mean time to detection is two hours.
-    * **Advanced WAF alerts**. You can select the services to monitor, and each selected service is monitored separately. The mean time to detection is five minutes.
+### DDoS attack layer 7 command
+{: #cli-ddos-attack-alert-cmd}
+
+Create an alert policy for DDoS attack layer 7 by running the following command:
+
+```sh
+ibmcloud cis alert-policy ddos-attack-l7-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+Where:
+
+* **--name** is the name of the alert policy.
+* **--description** is the description for the alert policy.
+* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether or not the alert policy is enabled.
+* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--output** specifies the output format; only JSON is supported.
+
+### Pool toggle alert command
+{: #cli-pool-toggle-alert-cmd}
+
+Create an alert policy for pool toogle alerts.
+
+```sh
+ibmcloud cis alert-policy pool-toggle-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --pools POOLS --trigger-condition (enabled | disabled | either) [--include-future-pools (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+Where:
+
+* **--name** is the name of the alert policy.
+* **--description** is the description for the alert policy.
+* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether or not the alert policy is enabled.
+* **--pools** is the IDs of origin pool, if set to all, the all pool IDs will be used.
+* **--trigger-condition** is the condition of pool toggle status.
+* **--include-future-pools** sets whether or not include the future pools.
+* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--output** specifies the output format; only JSON is supported.
+
+
+### WAF alert command and Advanced WAF alert command
+{: #cli-waf-alert-command}
+
+Create an alert policy about spikes in firewall events. Firewall events alerts use a z-score calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score is above 3.5 (the threshold). You will not receive duplicate alerts within the same two-hour time frame.
+
+```sh
+ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --domains DOMAINS [--services SERVICES] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+Where:
+
+* **--name** is the name of the alert policy.
+* **--description** is the description for the alert policy.
+* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether or not the alert policy is enabled.
+* **--domains** are the domain IDs for the alert policy. For example: `--domains domainID1,domainID2`
+* **--services** (Advanced WAF) specifies which services the alert monitors. Valid values: "country-access-rules", "waf", "firewall-rules", "ratelimit", "securitylevel", "ip-access-rules", "browser-integrity-check", "ua-rules", "lockdowns", "iprange-access-rules", "asn-access-rules", "Managed-firewall".
+* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--output** specifies the output format; only JSON is supported.
+
+### Universal SSL alert command
+{: #cli-universal-ssl-alert-cmd}
+
+Create an alert policy for certificate events.
+
+```sh
+ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated) --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+Where:
+
+* **--type** is the type of the certificate.
+* **--name** is the name of the alert policy.
+* **--description** is the description for the alert policy.
+* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether or not the alert policy is enabled.
+* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--output** specifies the output format; only JSON is supported.
+
+### Load balancing health check alert command
+{: #cli-lb-health-check-alert-cmd}
+
+Create an alert policy for changes in health status for global load balancer, pools, and origins.
+
+```sh
+ibmcloud cis alert-policy glb-healthcheck-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --pools POOLS [--include-future-pools (true | false)] [--health-status-trigger (healthy | unhealthy | either)] [--event-source-trigger (pool | origin | either)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+Where:
+
+* **--name** is the name of the alert policy.
+* **--description** is the description for the alert policy.
+* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether or not the alert policy is enabled.
+* **--pools** are the IDs of origin pool. If set to `all`, all the pool IDs are used.
+* **--include-future-pools** sets whether or not include the future pools (default "false").
+* **--health-status-trigger** is the trigger condition to fire the notification. Valid values: "healthy", "unhealthy", "either" (default "either").
+* **--event-source-trigger** is the event source of trigger to fire the notification. Valid values: "pool", "origin", "either" (default "either").
+* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--output** specifies the output format; only JSON is supported.
+
 
 ## Creating an email alert using the API
 {: #create-email-notification-api}
@@ -49,7 +158,7 @@ To create an email alert, take the following steps:
 3. Using that token, run one of the following commands:
 
 ### DDoS attack layer 7 command
-{: #ddos-attack-alert-cmd}
+{: #api-config-ddos-attack-alert-cmd}
 
 ```sh
 curl -X POST \
@@ -65,19 +174,19 @@ Where:
 - **-d** is the array of attributes required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
     
 ### Pool toggle alert command
-{: #pool-toggle-alert-cmd}
+{: #api-config-pool-toggle-alert-cmd}
 
 ```sh
 curl -X POST \
   https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
   -H 'content-type: application/json' \
   -H 'x-auth-user-token: Bearer xxxxxx' \
-  -d '{"name":"Example Policy","enabled":true,"alert_type":"g6_pool_toggle_alert","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]},
+  -d '{"name":"Example Policy","enabled":true,"alert_type":"load_balancing_pool_enablement_alert","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]},
        “filters”: {
        “enabled”: [
          “false”,
@@ -87,8 +196,6 @@ curl -X POST \
          “6e67c08e3bae7eb398101d08def8a68a”,
          “df2d9d70fcb194ea60d2e58397cb35a6”
        ]
-       },
-       "conditions": {
        }}'
 ```
 {: codeblock}
@@ -98,14 +205,13 @@ Where:
 - **-d** is the array of attributes required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
     - **filter** is the list of all enablement statuses and pool IDs for the pool toggle alert.
-    - **conditions** describe for all pools whether the pool is being enabled, disabled, or both. Content is generated automatically if the field is empty.
     
 ### WAF alert command
-{: #waf-alert-command}
+{: #api-config-waf-alert-command}
 
 To configure a WAF alert, use the following command:
 
@@ -141,12 +247,12 @@ Where:
     - **name** is the name of the alert.
     - **description** (optional) is the description of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **filters** is the list of all zones for the WAF alert.
    
 ### Advanced WAF alert command
-{: #advanced-waf-command}
+{: #api-config-advanced-waf-command}
 
 To configure an Advanced WAF alert, use the following command:
 
@@ -186,7 +292,7 @@ Where:
     - **name** is the name of the alert.
     - **description** (optional) is the description of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **filters** is the list of all services to monitor for security events and zones for the Advanced WAF alert.
     
@@ -212,10 +318,71 @@ You can monitor the following services:
 |Data loss prevention|`dlp`|
 {: caption="Table 1. Services that can be monitored by Advanced WAF alerts" caption-side="bottom"}
 
+### Universal SSL alert command
+{: #api-universal-ssl-alert-cmd}
+
+To configure a Universal SSL alert, use the following command:
+
+```sh
+curl -X POST \
+  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+  -H 'content-type: application/json' \
+  -H 'x-auth-user-token: Bearer xxxxxx' \
+  -d '{"name":"Example Policy","enabled":true,"alert_type":"universal_ssl_event_type","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]}}'
+```
+{: codeblock}
+
+Where:
+
+- **-d** is the array of attributes required to create the alert.
+    - **name** is the name of the alert.
+    - **enabled** is the state of the alert (one of `true`, `false`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
+    - **mechanisms** is at least one of `email`, `webhooks`.
+    - **description** (optional) is the description of the alert.
+
+### Load balancing health check alert command
+{: #api-lb-health-check-alert-cmd}
+
+To configure a load balancing health check alert, use the following command:
+
+```sh
+curl -X POST \
+  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+  -H 'content-type: application/json' \
+  -H 'x-auth-user-token: Bearer xxxxxx' \
+  -d '{"name":"Example Policy","enabled":true,"alert_type":"load_balancing_health_alert","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]},
+       “filters”: {
+       “event_source”: [
+         “pool”,
+         “origin”
+       ],
+       “new_health”: [
+         “Healthy”,
+         “Unhealthy”
+       ],
+       “pool_id”: [
+         “6e67c08e3bae7eb398101d08def8a68a”,
+         “df2d9d70fcb194ea60d2e58397cb35a6”
+       ]
+       }}'
+```
+{: codeblock}
+
+Where:
+
+- **-d** is the array of attributes required to create the alert.
+    - **name** is the name of the alert.
+    - **enabled** is the state of the alert (one of `true`, `false`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
+    - **mechanisms** is at least one of `email`, `webhooks`.
+    - **description** (optional) is the description of the alert.
+    - **filter** is the list of all sources, pools, health status for the load balancing health alert.    
+
 ## Creating webhook alerts using the API
 {: #configuring-webhooks-api}
 
-Creating a webhook alert is a two step process.
+Creating a webhook alert is a two-step process.
 
 1. Send the following request to create a webhook:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-08-24"
 
 keywords:
 
@@ -26,7 +26,7 @@ Alerts are available only to Enterprise plans.
 ## Types of alerts
 {: #notification-types}
 
-{{site.data.keyword.cis_short_notm}} offers three alert types:
+{{site.data.keyword.cis_short_notm}} offers the following alert types:
 
 * **DDoS attack layer 7 alerts** are intended for WAF and CDN customers who want to receive a notification when an attack is mitigated.
 
@@ -39,6 +39,12 @@ Alerts are available only to Enterprise plans.
 * **Security alerts** include WAF alerts and Advanced WAF alerts. 
     * **WAF alerts** look for spikes across all services that generate log entries in firewall events. The mean time to detection is two hours.
     * **Advanced WAF alerts**. You can select the services to monitor, and each selected service is monitored separately. The mean time to detection is five minutes.
+
+* **Certificate alerts** include alerts that your Universal SSL and Dedicated/Advanced certificates need to be renewed.
+    * **Universal SSL** certificates are automatically refreshed and no user action is required. 
+    * **Dedicated/Advanced** receive notification for validation, issuance renewal, and expiration of Dedicated/Advanced certificates.
+
+* **Load-balancing health check alerts** are sent when there is a change in the health status of a load-balancing health check.
 
 ## Configuring alert policies using the console
 {: #ui-configure-alert-policies}
@@ -56,6 +62,9 @@ To configure alert policies using the console, navigate to your **Account** page
     * Security events alert, which alerts you within two hours after detecting a spike in all security events.
     * Advanced security events alert, which alerts you within five minutes after detecting a spike in security events with optional service filter.
     * HTTP DDoS attack alert, which detects and mitigates an HTTP DDoS attack against one of your domains.
+    * Universal SSL alert, which alerts you when Universal certificates are automatically refreshed.
+    * Dedicated/Advanced alerts, which alerts you when dedicated certificates are expired, and when they are renewed.
+    * Load balancing health check alerts, which alerts you when the health status changes for a pool health check, or pool origin.
 1. Enter a name for your alerting policy, and optionally enter a description.
 1. Choose an alerting method. You can select a webhook, enter an email address to send alerts to, or both. Only one notification is required to complete configuration.
     * Enter an email address to which {{site.data.keyword.cis_short}} sends alerts. Click the `+` to add the address to the alert. Repeat for all email addresses.
@@ -320,7 +329,7 @@ Where:
 - **-d** is the array of attributes required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
     
@@ -332,7 +341,7 @@ curl -X POST \
   https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
   -H 'content-type: application/json' \
   -H 'x-auth-user-token: Bearer xxxxxx' \
-  -d '{"name":"Example Policy","enabled":true,"alert_type":"g6_pool_toggle_alert","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]},
+  -d '{"name":"Example Policy","enabled":true,"alert_type":"load_balancing_pool_enablement_alert","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]},
        “filters”: {
        “enabled”: [
          “false”,
@@ -353,7 +362,7 @@ Where:
 - **-d** is the array of attributes required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
     - **filter** is the list of all enablement statuses and pool IDs for the pool toggle alert.
@@ -396,7 +405,7 @@ Where:
     - **name** is the name of the alert.
     - **description** (optional) is the description of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **filters** is the list of all zones for the WAF alert.
    
@@ -441,7 +450,7 @@ Where:
     - **name** is the name of the alert.
     - **description** (optional) is the description of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `g6_pool_toggle_alert`, `clickhouse_alert_fw_anomaly`, or `clickhouse_alert_fw_ent_anomaly`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **filters** is the list of all services to monitor for security events and zones for the Advanced WAF alert.
     
