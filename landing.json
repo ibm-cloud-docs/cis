@@ -20,8 +20,8 @@
       },
       {
         "title": "Plan comparison",
-        "description": "Compare available plans available for CIS.",
-        "href": "IBM Cloud Internet Services offers several plans to choose from: Free Trial, Standard, and Enterprise variations."
+        "description": "Compare available plans for CIS.",
+        "href": "/docs/cis?topic=cis-cis-plan-comparison"
       }
     ],
     "section_learn": {
