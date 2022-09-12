@@ -12,10 +12,10 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Enabling private endpoints for API
+# Enabling private endpoints for {{site.data.keyword.cis_short_notm}}
 {: #private-endpoint-for-cis}
 
-<!--{{site.data.keyword.cloud}} private endpoints enable you to connect to supported {{site.data.keyword.cloud_notm}} services by using IP addresses of your choosing.-->
+{{site.data.keyword.cloud}} private endpoints enable you to connect to supported {{site.data.keyword.cloud_notm}} services by using IP addresses of your choosing.
 
 <!--## Using the CLI-->
 <!-- {: #cli-private-endpoint}-->
@@ -36,8 +36,9 @@ subcollection: cis
 <!--   ```-->
 <!--    {: pre}-->
 
-<!--## Using the API-->
-<!-- {: #vpe-setup-api}-->
+## Using the API
+{: #vpe-setup-api}
+{: api}
  
 Use the service endpoint's FQDN `api.private.cis.cloud.ibm.com` in the URL to access the service. For example:
 
@@ -45,4 +46,3 @@ Use the service endpoint's FQDN `api.private.cis.cloud.ibm.com` in the URL to ac
 curl https://api.private.cis.cloud.ibm.com/v1/:crn/zones -H 'content-type: application/json' -H 'accept: application/json' -H 'x-auth-user-token: Bearer xxxxxx'
 ```
 {: pre}
-

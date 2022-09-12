@@ -63,6 +63,7 @@ toc:
         - start-with-subdomain.md
         - multi-domain.md
         - dns.md
+        - cname-setup.md
         - rate-limiting.md
         - range.md
         - private-endpoint.md

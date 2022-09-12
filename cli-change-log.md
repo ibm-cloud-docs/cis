@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-10-09"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -19,10 +19,18 @@ subcollection: cis
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
 
+## Version 1.14.8
+{: #cli-1148}
+
+Version 1.14.8 of the CLI was released on 10 September 2022.
+:   Add new alert policies.
+:   Enable Domain cname stetup.
+:   Extend rate limit threshold range.
+
 ## Version 1.14.5
 {: #cli-1145}
 
-Version 1.14.5 of the CLI was released on 23 March 2022.
+Version 1.14.5 of the CLI was released on 09 Augest 2022.
 :   Fix edge functions trigger.
 :   Fix cross account resource access.
 :   Add ppc64le binary release.
