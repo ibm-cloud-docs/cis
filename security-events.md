@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-03-14"
+  years: 2018, 2022
+lastupdated: "2022-09-16"
 
 keywords: 
 
@@ -49,3 +49,9 @@ This means that all requests blocked by OWASP show on your Security Events as bl
 {: #what-do-i-do-if-valid-traffic-is-blocked}
 
 Expand each event to see event details. The **Event Triggers** section displays all the individual OWASP rules that matched for OWASP rule-triggered events. Decide whether this traffic looks normal for your website, or if it was appropriately blocked. If you decide that this block is a false positive, you can go back to your WAF configuration and disable individual OWASP rules until this request no longer exceeds your sensitivity threshold.
+
+## Security event retention policy
+{: #retention-policy}
+
+Enterprise plans retain security events for 90 days. Standard plans retain security events for 30 days. 
+
