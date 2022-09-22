@@ -25,7 +25,9 @@ IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishin
 
 ISO 27001 requires that clocks of all relevant information processing systems within an organization or security domain must be synchronized with a single reference time source. {{site.data.keyword.cis_short_notm}} synchronizes the systems with a Network Time Protocol (NTP) server to ensure that all time-based activities occur synchronously everywhere on the network.
 
-IBM {{site.data.keyword.cis_short_notm}} uses an internal NTP server `servertime.service.softlayer.com`.
+IBM {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers:
+* `time.adn.networklayer.com/`
+* `time.service.networklayer.com`
 
 ## Security features
 {: #cis-security-features}
