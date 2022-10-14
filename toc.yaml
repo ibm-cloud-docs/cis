@@ -181,4 +181,5 @@ toc:
             - ts-false-pos-neg.md
             - troubleshooting.md
             - ts-execution-order.md
+            - ts-create-har.md
         - getting-help.md
