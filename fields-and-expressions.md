@@ -44,7 +44,7 @@ Each field value can be sourced from different places, such as:
 |http.x_forwarded_for|String|_The full X-Forwarded-For HTTP header_ |
 |ip.src|IP address|93.155.208.22|The client TCP IP address, which can be adjusted to reflect the real client IP of the original client as applicable (for example, using HTTP headers like X-Forwarded-For or X-Real-IP)|
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
-|ip.geoip.country|String|GB|The [2-letter country code](https://support.cloudflare.com/hc/en-us/articles/217074967#1QrbtSK5NSL7A0FOWD2bbZ){: external}|
+|ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/#search/code/){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
 {: caption="Table 1. Available fields" caption-side="bottom"}
 

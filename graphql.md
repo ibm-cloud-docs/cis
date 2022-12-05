@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-03"
+  years: 2020, 2022
+lastupdated: "2022-11-18"
 
 keywords: graphql
 
@@ -25,18 +25,18 @@ GraphQL analytics API endpoint is only available for Enterprise-level plans.
 {: #graphql-prereqs}
 
 You must have the following permissions to proceed:
-- You must have Viewer permission either at the instance level or zone level. 
+- You must have Viewer permission either at the instance level or zone level.
 - You must have Reader permission at the zone level.
 
 ### GraphiQL tool
 {: #graphiql-tool}
 
 Using GraphiQL, you can explore the schema and test queries for the GraphQL endpoint.
-1. [Download and install GraphiQL](https://www.electronjs.org/apps/graphiql){: external}.
+1. [Download and install GraphiQL](https://github.com/graphql/graphiql){: external}.
 1. Open the GraphiQL application and enter the HTTP headers that you want to authorize.
 1. Enter the correct endpoint in the **GraphQl Endpoint** field. Use `https://api.cis.cloud.ibm.com/v1/<crn>/zones/<zoneid>/graphql`.
 
-The window is divided into a query pane and a response pane. You can define the query variables, which are interpolated into the query in the query pane. 
+The window is divided into a query pane and a response pane. You can define the query variables, which are interpolated into the query in the query pane.
 
 To build a query, follow these steps.
 
