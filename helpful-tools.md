@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-06-24"
+  years: 2018, 2022
+lastupdated: "2022-12-06"
 
-keywords: Helpful tools, whois, IPv4
+keywords: Helpful tools, whois, IPv4, HAR
 
 subcollection: cis
 
@@ -103,4 +103,4 @@ For example:
 ### Generating an HAR file
 {: #generating-a-har-file}
 
-An HAR file is a recording of HTTP requests from a web browser. Browsers, such as Chrome, have a Developer Tools section that can help you get set up to make HAR files.
+An HAR file is a recording of HTTP requests from a web browser. Browsers, such as Chrome, have a Developer Tools section that can help you get set up to make HAR files. For more information on how to create a HAR file, see [How do I generate a HAR file?](/docs/cis?topic=cis-generate-har-files) in the troubleshooting section.

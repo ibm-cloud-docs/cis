@@ -4,7 +4,7 @@ copyright:
   years: 2022
 lastupdated: "2022-10-13"
 
-keywords:
+keywords: HAR files, HAR, HTTP Archive
 
 subcollection: cis
 
@@ -58,6 +58,7 @@ Use the following sections to generate HAR files in Firefox, Chrome, or Safari b
 - Navigate to **Develop > Show Web Inspector**.
     This menu option is not available until you browse somewhere beyond Safari's starting page. The Web Inspector opens as a docked panel at the bottom of Safari.
     {: note}
+
 - Click the **Network** tab.
 - Refresh the {{site.data.keyword.cis_short_notm}} page that you are on or go through the steps to reproduce the problem you've been experiencing while Safari is recording activity.
 - After you have reproduced the issue, Control + click on the resource that you want to capture the HAR file for, and click **"Export HAR"**.
