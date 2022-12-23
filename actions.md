@@ -22,9 +22,9 @@ The priority column shows what precedence the action receives. If a request matc
 
 | Action | Description |Priority|
 | ------- | :--------- |:------:|
-|Log|Logs matching requests on the {{site.data.keyword.cis_short_notm}} edge for access with Enterprise Logpush and Logpull. Recommended for testing rule effectiveness before committing to a more severe action. Available to Enterprise customers only.|1|
-|Bypass|Allows dynamic disabling of security features for a request. Exempts matching requests from evaluation, based on a user-defined list containing one or more of the following features: `Browser Integrity Check`, `Domain Lockdown`, `Hotlink Protection`, `Rate Limiting`, `Security Level`, `User Agent Block`, `WAF Managed Rules`.  Matching requests are still subject to evaluation within Firewall Rules, based on order of execution.|2|
-|Allow|Allows matching requests to access the site, as long as no other {{site.data.keyword.cis_short_notm}} firewall features block the request, such as IP firewall or access rules.|3|
+|Log|Logs matching requests on the {{site.data.keyword.cis_short_notm}} edge for access with Enterprise Logpush and Logpull. Recommended for testing rule effectiveness you commit to a more severe action. Available to Enterprise customers only.|1|
+|Bypass|Allows dynamic disabling of security features for a request. Exempts matching requests from evaluation, based on a user-defined list that contains one or more of the following features: `Browser Integrity Check`, `Domain Lockdown`, `Hotlink Protection`, `Rate Limiting`, `Security Level`, `User Agent Block`, `WAF Managed Rules`. Matching requests are still subject to evaluation within Firewall Rules, based on order of execution.|2|
+|Allow|Allows matching requests to access the site, on condition that no other {{site.data.keyword.cis_short_notm}} firewall features block the request, such as IP firewall or access rules.|3|
 |Challenge (Captcha)|Requires a user to pass a Google reCaptcha Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|4|
 |JS Challenge|Requires a user to pass a {{site.data.keyword.cis_short_notm}} JavaScript Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|5|
 |Block|Blocks a matching request from accessing the site.|6|

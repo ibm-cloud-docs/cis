@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-10-09"
+lastupdated: "2022-10-27"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -19,10 +19,18 @@ subcollection: cis
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
 
+## Version 1.14.9
+{: #cli-1149}
+
+Version 1.14.9 of the CLI was released on 27 October 2022.
+:   Add authenticated origin pull list.
+:   Enhance certificates order.
+:   Add probe_zone option for glb monitor.
+
 ## Version 1.14.8
 {: #cli-1148}
 
-Version 1.14.8 of the CLI was released on 10 September 2022.
+Version 1.14.8 of the CLI was released on 26 Augest 2022.
 :   Add new alert policies.
 :   Enable Domain cname stetup.
 :   Extend rate limit threshold range.

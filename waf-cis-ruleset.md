@@ -60,21 +60,21 @@ Select **View {{site.data.keyword.cis_short_notm}} Rules** to reveal the rule se
 
 [^F]: This rule set contains additional rules that complement the technology-specific protections provided by similar rules in the OWASP rule set.
 
-**Specials** contains a number of rules appropriate for virtually all applications and websites on the internet. This rule set is the core of the security that our WAF offers, with rules that target common attacks like SQLi, XSS, and LFI. It is recommended that you always enable Specials.
+The **Specials** rule set contains a number of rules appropriate for virtually all applications and websites on the internet. This rule set is the core of the security that our WAF offers, with rules that target common attacks like SQLi, XSS, and LFI. It is recommended that you always enable Specials.
 {: tip}
 
-Only enable the rule sets that correspond to your technology stack. For instance, if you use Wordpress, but no other technologies, enable only the Specials and Wordpress rule sets. Avoid enabling rule sets that are not relevant to your tech stack.
+Enable only the rule sets that correspond to your technology stack. For instance, if you use Wordpress, but no other technologies, enable only the Specials and Wordpress rule sets. Avoid enabling rule sets that are not relevant to your tech stack.
 
 Select any of the specific rule sets to see further details about each of the rules included.
 
-The {{site.data.keyword.cis_short_notm}} rule set lets you perform the following actions on each rule:
+Use the {{site.data.keyword.cis_short_notm}} rule set to perform the following actions on each rule:
 
 * **Disable** turns off the rule.
-* **Simulate** logs the event, and does not block or challenge the visitor. You can still decide to set to **Block** or  **Challenge** after reviewing your logs.
+* **Simulate** logs the event, and does not block or challenge the visitor. You can still decide to set to **Block** or **Challenge** after you review the logs.
 * **Block** blocks the request entirely, with no option to bypass it for that request.
 * **Challenge** displays a challenge (CAPTCHA) page that must be completed before the request in question is allowed access.
 
-You might notice that the names of the rules don't reveal exactly how they work and that they are mostly a general summary of their function. This is deliberate. For security purposes, CIS does not reveal the code (or other exact information) used to filter traffic. This prevents malicious actors from reverse engineering it to bypass our defenses.
+You might notice that the names of the rules don't reveal exactly how they work and that they are mostly a general summary of their function. This is deliberate. For security purposes, CIS does not reveal the code (or other exact information) used to filter traffic. Doing so prevents malicious actors from reverse engineering it to bypass our defenses.
 
 ## OWASP rule set
 {: #owasp-rule-set-for-waf}
@@ -83,7 +83,7 @@ The OWASP rule set for WAF contains generic attack detection rules. The OWASP ru
 
 OWASP is an industry standard that provides a good security baseline. For more information, see:
 
-* [OWASP on Github](https://github.com/SpiderLabs/owasp-modsecurity-crs){: external}
+* [OWASP on GitHub](https://github.com/SpiderLabs/owasp-modsecurity-crs){: external}
 * [OWASP.org](https://owasp.org/www-project-modsecurity-core-rule-set/){: external}
 
 ### Managing OWASP
@@ -95,12 +95,12 @@ A request can trigger a set of OWASP rules that have a high to low severity scor
 
 It is recommended that you set OWASP sensitivity to `low` initially, then review for false positives before increasing the sensitivity. If you set it to `high`, check the logs on {{site.data.keyword.cis_short_notm}}, and fine-tune the OWASP rule set to work for your application.
 
-Keep in mind that OWASP rules can only be toggled on or off, unlike rules in the {{site.data.keyword.cis_short_notm}} rule sets, which can be set to **Disable**, **Simulate**, **Challenge**, or **Block**.
+Keep in mind that you can only toggle OWASP rules on or off, unlike rules in the {{site.data.keyword.cis_short_notm}} rule sets, which can be set to **Disable**, **Simulate**, **Challenge**, or **Block**.
 
 ### Understanding the OWASP package
 {: #understanding-owasp-package}
 
-The OWASP ModSecurity Core Rule Set assigns a score to each request based on how many OWASP rules trigger. Some OWASP rules have a higher sensitivity score than others. After OWASP evaluates a request, {{site.data.keyword.cis_short_notm}} compares the final score to the Sensitivity configured for the domain.  If the score exceeds the Sensitivity, the request is actioned based on the Action configured within Package: 
+The OWASP ModSecurity Core Rule Set assigns a score to each request based on how many OWASP rules trigger. Some OWASP rules have a higher sensitivity score than others. After OWASP evaluates a request, {{site.data.keyword.cis_short_notm}} compares the final score to the Sensitivity configured for the domain. If the score exceeds the Sensitivity, the request is handled based on the Action that is configured within Package: 
 
 The sensitivity score required to trigger the WAF for a specific Sensitivity is as follows:
 

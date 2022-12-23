@@ -27,7 +27,7 @@ In the control plane, you can configure your zone and the services that are appl
 
 All configuration requests eventually reach the multitenant {{site.data.keyword.cis_short}} control plane on {{site.data.keyword.cloud}} as API calls to an SSL-secured API endpoint. The control plane interacts with the platform IAM service to authenticate the user and authorize the action. The original request targets the customer's {{site.data.keyword.cis_short}} instance. Each {{site.data.keyword.cis_short}} instance is uniquely mapped to an anonymized subaccount in Cloudflare's system. The request is converted to a Cloudflare API request that targets the subaccount and is delivered via HTTPS to the Cloudflare API endpoint. Zones and domains from different customers are isolated and maintained in separate subaccounts within the {{site.data.keyword.cis_short}} account at Cloudflare. Access to the account at Cloudflare is strictly controlled and limited. Access to the {{site.data.keyword.cis_short}} control plane infrastructure is also strictly controlled and limited to essential maintenance personnel only.
 
-Data that is stored at Cloudflare is encrypted except when it is required to be publicly accessible, for example, in the case of DNS records, the control plane is completely separate from the data plane.
+Data that is stored at Cloudflare is encrypted except when it is required to be publicly accessible, for example, in the case of DNS records, the control plane is separate from the data plane.
 
 The data plane for your site is handled exclusively by Cloudflare. All proxied traffic is resolved to an IP address owned by Cloudflare and routed through Cloudflare's Anycast network to the nearest data center capable of processing the request. The request is processed by Cloudflare based on the zone's configuration. After all configured services (such as firewall rules, WAF rules, rate limits, global load balancing, and so on) are applied, Cloudflare replies to the request from its cache, or by requesting the necessary resources from the website's origin, which is controlled by the customer.
 
@@ -94,5 +94,5 @@ Review the list of third-party services that {{site.data.keyword.containerlong_n
 
 | Service name | Description |
 | ------------ | -----------------------|
-| PagerDuty | PagerDuty is used to notify on-call engineers of emergency and non-emergency issues that are related to operating {{site.data.keyword.cis_full_notm}} or its support.|
+| PagerDuty | PagerDuty is used to notify on-call support of emergency and non-emergency issues that are related to operating {{site.data.keyword.cis_full_notm}} or its support.|
 {: caption="Table 4. Other third party dependencies" caption-side="bottom"}

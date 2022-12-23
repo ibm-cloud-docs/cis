@@ -85,12 +85,12 @@ This setting can be decreased for general pages and API traffic:
 
 Our security level settings are aligned with threat scores that certain IP addresses acquire from malicious behavior on our network. A threat score above 10 is considered high.
 
-* **HIGH**: Threat scores greater than 0 are challenged.
-* **MEDIUM**: Threat scores greater than 14 are challenged.
-* **LOW**: Threat scores greater than 24 are challenged.
-* **ESSENTIALLY OFF**: Threat scores greater than 49 are challenged.
-* **OFF**: Enterprise only
-* **UNDER ATTACK**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. **UNDER ATTACK** might affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
+* **High**: Threat scores greater than 0 are challenged.
+* **Medium**: Threat scores greater than 14 are challenged.
+* **Low**: Threat scores greater than 24 are challenged.
+* **Essentially off**: Threat scores greater than 49 are challenged.
+* **Off**: Enterprise only
+* **Defense mode**: Should only be used when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure it is a legitimate visitor trying to access your website. Defense mode might affect some actions on your domain, such as using an API. You are able to set a custom security level for your API or any other part of your domain by creating a page rule for that section.
 
 It is recommended that you review your security-level settings periodically. You can find instructions in [Best practices for CIS setup](/docs/cis?topic=cis-best-practices-for-cis-setup).
 

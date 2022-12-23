@@ -119,9 +119,9 @@ List of IAM actions and Activity Tracker actions by API method.
 | Update an IP firewall rule | `PATCH /v1/{crn}/zones/{domain_id}/firewall/access_rules/rules/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.ip-firewall-rules.update` |
 | Delete an IP firewall rule | `DELETE /v1/{crn}/zones/{domain_id}/firewall/access_rules/rules/{rule_id}` | `internet-svcs.security.manage` | `internet-svcs.ip-firewall-rules.delete` |
 | Get user-agent blocking rules | `GET /v1/{crn}/zones/{domain_id}/firewall/ua_rules` | `internet-svcs.security.read` | `internet-svcs.ua-rules.read` |
-| Create an user-agent blocking rule | `POST /v1/{crn}/zones/{domain_id}/firewall/ua_rules` | `internet-svcs.security.manage` | `internet-svcs.ua-rules.create` |
-| Update an user-agent blocking rule | `PUT /v1/{crn}/zones/{domain_id}/firewall/ua_rules/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.ua-rules.update` |
-| Delete an user-agent blocking rule | `DELETE /v1/{crn}/zones/{domain_id}/firewall/ua_rules/{rule_id}` | `internet-svcs.security.manage` | `internet-svcs.ua-rules.delete` |
+| Create a user-agent blocking rule | `POST /v1/{crn}/zones/{domain_id}/firewall/ua_rules` | `internet-svcs.security.manage` | `internet-svcs.ua-rules.create` |
+| Update a user-agent blocking rule | `PUT /v1/{crn}/zones/{domain_id}/firewall/ua_rules/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.ua-rules.update` |
+| Delete a user-agent blocking rule | `DELETE /v1/{crn}/zones/{domain_id}/firewall/ua_rules/{rule_id}` | `internet-svcs.security.manage` | `internet-svcs.ua-rules.delete` |
 | Get domain lockdown rules | `GET /v1/{crn}/zones/{domain_id}/firewall/lockdowns` | `internet-svcs.security.read` | `internet-svcs.domain-lockdown-rules.read` |
 | Create a domain lockdown rule | `POST /v1/{crn}/zones/{domain_id}/firewall/lockdowns` | `internet-svcs.security.manage` | `internet-svcs.domain-lockdown-rules.create` |
 | Update a domain lockdown rule | `PUT /v1/{crn}/zones/{domain_id}/firewall/lockdowns/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.domain-lockdown-rules.update` |
@@ -319,7 +319,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |Delete a certificate used for origin TLS client authentication used at domain level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth.delete` |
 |Get origin TLS client authentication settings used at domain level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings|internet-svcs.security.read|internet-svcs.origin-tls-client-auth-settings.read` |
 |Update origin TLS client authentication settings used at domain level.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-settings.update` |
-|Get origin TLS client authentication settings used for the given hostname.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/{hostname}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostnames.read`|
+|Get origin TLS client authentication settings used for the hostname.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/{hostname}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostnames.read`|
 |Update origin TLS client authentication settings for a hostname.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-hostnames.update`|
 |Get origin TLS client authentication certificates used at hostname level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostname-certificates.read` |
 |Create origin TLS client authentication certificate used at hostname level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.create` |
@@ -378,7 +378,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |Get IP geolocation settings.| `GET /v1/{crn}/zones/{domain_id}/setting/ip_geolocation` | `internet-svcs.zones.read` | `internet-svcs.ip-geolocation-setting.read`|
 |Update IP geolocation settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/ip_geolocation` | `internet-svcs.zones.update` | `internet-svcs.ip-geolocation-setting.update`|
 |Get server side exclude settings.| `GET /v1/{crn}/zones/{domain_id}/setting/server_side_exclude` | `internet-svcs.security.read` | `internet-svcs.server-side-exclude-setting.read`|
-|Update server side exclude settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/server_side_exclude` | `internet-svcs.security.update` | `internet-svcs.server-side-exclude-setting.update`|
+|Update server-side exclude settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/server_side_exclude` | `internet-svcs.security.update` | `internet-svcs.server-side-exclude-setting.update`|
 |Get security header settings.| `GET /v1/{crn}/zones/{domain_id}/setting/security_header` | `internet-svcs.security.read` | `internet-svcs.security-header-setting.read`|
 |Update security header settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/security_header` | `internet-svcs.security.update` | `internet-svcs.security-header-setting.update`|
 |Get mobile redirect settings.| `GET /v1/{crn}/zones/{domain_id}/setting/mobile_redirect` | `internet-svcs.performance.read` | `internet-svcs.mobile-redirect-setting.read`|

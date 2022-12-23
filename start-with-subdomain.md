@@ -29,19 +29,19 @@ Follow these steps to practice using {{site.data.keyword.cis_short_notm}} with a
 5. Make note the **New NS records** for entry into the GoDaddy DNS Management system.
 6. Log in to GoDaddy domain Registrar.
 7. Navigate to the DNS Management page for the candidate {{site.data.keyword.cis_short_notm}} domain. {{site.data.keyword.cloud}} must be updated through the API.
-8. Click **ADD** to create a NS Host record for each Name Server entry provided from {{site.data.keyword.cis_short_notm}}
-9. Setup a DNS record with the supplied {{site.data.keyword.cis_short_notm}} NS Records
+8. Click **ADD** to create an NS Host record for each name server entry provided from {{site.data.keyword.cis_short_notm}}.
+9. Set up a DNS record with the supplied {{site.data.keyword.cis_short_notm}} NS Records
     * Type **Nameserver**
-    * Host **subdomain** (this is name of the subdomain, for example, `subdomain.example.com`)
+    * Host **subdomain** (the name of the subdomain, for example, `subdomain.example.com`)
     * Points to `ns004.name.cloud.ibm.com`
     * TTL ½ hour
-10. The DNS Management page should now reflect the two additional NS records for the subdomain,
-11. Navigate back to the {{site.data.keyword.cis_full_notm}} instance,
-12. After the NS Records have DNS propagated, it is reflected in the DNS tools and you are ready to proceed.
-13. With completed NS propagation click **Check name servers**.
-14. {{site.data.keyword.cis_short_notm}} begins to check NS configuration for the subdomain and might be in a **Pending State**.
+10. The DNS Management page now reflects the two new NS records for the subdomain.
+11. Go back to the {{site.data.keyword.cis_full_notm}} instance.
+12. After the NS Records are DNS propagated, it is reflected in the DNS tools, and you are ready to proceed.
+13. With completed NS propagation, click **Check name servers**.
+14. {{site.data.keyword.cis_short_notm}} starts checking NS configuration for the subdomain and might be in a **Pending State**.
 
-    Any typos in this section produce a "silent" failure. If your subdomain is in the pending state for more than 30 minutes, there might be an error.
+    Any typographical errors in can produce a "silent" failure. If your subdomain is in the pending state for more than 30 minutes, you might have an error.
     {: note}
 
-Upon successful subdomain Name Server / NS record confirmation, the {{site.data.keyword.cis_short_notm}} instance reports **Active**. Customers are now ready to start configuring the service and routing traffic to their services.
+Upon successful subdomain name server and NS record confirmation, the {{site.data.keyword.cis_short_notm}} instance reports **Active**. Customers are now ready to start configuring the service and routing traffic to their services.

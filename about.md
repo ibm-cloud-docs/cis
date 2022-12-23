@@ -18,7 +18,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}}, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishing defaults for you, which you can change easily using the UI or API.
+IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishing defaults for you, which you can change easily by using the UI or API.
 
 ## Clock synchronization
 {: #clock-sync}
@@ -32,7 +32,7 @@ IBM {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers
 ## Security features
 {: #cis-security-features}
 
-Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or a [global load balancer](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use the security features. This allows traffic to flow through our servers and you can monitor the data.
+Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or a [global load balancer](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use the security features. The proxy allows traffic to flow through our servers and you can monitor the data.
 
 ![security-graphic.png](images/security-graphic.png "Image describing security features"){: caption="Figure 1. Security features" caption-side="bottom}
 
@@ -44,7 +44,7 @@ Protect your site and control your Transport Layer Security (TLS) settings. Mana
 ### Origin
 {: #origin-feature}
 
-Manage the TLS certificates encrypting traffic between your origin server and your users.
+Manage the TLS certificates that encrypt traffic between your origin server and your users.
 
 ### Rate limiting
 {: #rate-limiting-feature}
@@ -54,11 +54,11 @@ Use rate limiting rules to protect your site or API from malicious traffic by bl
 ### Traffic scrubbing
 {: #traffic-scrubbing}
 
-{{site.data.keyword.cis_short_notm}} offers 142 Tbps of global network edge capacity — 40 times bigger than the largest recorded DDoS attack.
+{{site.data.keyword.cis_short_notm}} offers 142 Tbps of global network edge capacity, which is 40 times bigger than the largest recorded DDoS attack.
 
 When a DDoS attack occurs, {{site.data.keyword.cis_short_notm}} doesn't use scrubbing centers; the activity is analyzed on the edge, which helps to mitigate DDoS attacks closest to the source.
 
-Traffic that is identified as being "dirty" or part of an attack is not included in the billing. Customers are being billed for **protected traffic** which consists of clean traffic forwarded to the origin and responses returned from the edge to the client.
+Traffic that is identified as being "dirty" or part of an attack is not included in the billing. Customers are being billed for **protected traffic**, which consists of clean traffic that is forwarded to the origin and responses that are returned from the edge to the client.
 
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
@@ -68,16 +68,16 @@ WAF is implemented through two rule sets: [OWASP](/docs/cis?topic=cis-waf-settin
 ### IP firewall
 {: #cis-ip-firewall}
 
-{{site.data.keyword.cis_full_notm}} offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs. This section details the tools that are available.
+{{site.data.keyword.cis_full_notm}} offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs.
 
 #### IP rules
 {: #cis-ip-rules}
 
-IP rules allow you to control access for specific IP addresses, IP ranges, specific countries, specific ASNs, and certain CIDR blocks. Available actions on incoming requests are:
+With IP rules you can control access for specific IP addresses, IP ranges, specific countries, specific ASNs, and certain CIDR blocks. Available actions on incoming requests are:
 * Allowlist
 * Block
 * Challenge (Captcha)
-* JavaScript challenge (IUAM challenge)
+* JavaScript challenge (Defense mode)
 
 For example, if you notice that a particular IP is causing malicious requests, you can block that user by IP address.
 
@@ -87,17 +87,17 @@ IP rules apply to TCP, HTTP, and HTTPS [Range](/docs/cis?topic=cis-cis-range) ap
 #### User-agent blocking rules
 {: #user-agent-blocking-rules}
 
-User-agent blocking rules allow you to act on any user-agent string you select. This capability works like domain lockdown, except that the block examines the incoming user-agent string instead of the IP. You can choose how to handle a matching request with the same list of actions that you established in the IP rules (block, challenge, and JS challenge). User-agent blocking applies to your entire zone. You cannot specify subdomains in the same manner as you can with a domain lockdown.
+With User-agent blocking rules, you can act on any user-agent string you select. This capability works like domain lockdown, except that the block examines the incoming user-agent string instead of the IP. You can choose how to handle a matching request with the same list of actions that you established in the IP rules (block, challenge, and JS challenge). User-agent blocking applies to your entire zone. You cannot specify subdomains in the same manner as you can with a domain lockdown.
 
 This tool is useful for blocking any user-agent strings that you deem suspicious.
 
 #### Domain lockdown
 {: #cis-domain-lockdown}
 
-Domain lockdown allows you allowlist-specific IP addresses and IP ranges, such that all other IPs are blocklisted. Domain lockdown supports the following items.
+By using Domain lockdown, you can allowlist specific IP addresses and IP ranges, such that all other IPs are blocklisted. Domain lockdown supports the following items.
 
 * Specific subdomains - For example, you can allow IP `1.2.3.4` access to the domain `foo.example.com` and allow IP `5.6.7.8` access to domain `bar.example.com`, without allowing the reverse.
-* Specific URLs - For example, you can allow IP `1.2.3.4` access to directory `example.com/foo/*` and allow IP `5.6.7.8`  access to directory `example.com/bar/*`, but not allow the reverse.
+* Specific URLs - For example, you can allow IP `1.2.3.4` access to directory `example.com/foo/*` and allow IP `5.6.7.8` access to directory `example.com/bar/*`, but not allow the reverse.
 
 This capability is useful when you need more granularity in your access rules because, with IP rules, you can either apply the block to all subdomains of the current domain, or all domains on your account. You cannot specify URIs.
 
@@ -106,7 +106,7 @@ This capability is useful when you need more granularity in your access rules be
 
 Create rules that examine incoming HTTP traffic against a set of filters to block, challenge, log, or allow matching requests.
 
-In general, firewall rules are designed for properties exposed in OSI Layer-7 (HTTP), such as request headers and body content characteristics. Therefore, firewall rules apply to HTTP/HTTPS [Range](/docs/cis?topic=cis-cis-range) apps.
+In general, firewall rules are designed for properties that are exposed in OSI Layer-7 (HTTP), such as request headers and body content characteristics. Therefore, firewall rules apply to HTTP/HTTPS [Range](/docs/cis?topic=cis-cis-range) apps.
 {: note}
 
 ### Events
@@ -117,22 +117,22 @@ View events that are triggered by an active web application firewall rule. For e
 ### Range
 {: #range-feature}
 
-Extend the power of {{site.data.keyword.cis_short_notm}} DDoS, TLS and IP firewall to your web servers and your TCP-based services using Range applications, keeping them online and secure.
+Extend the power of {{site.data.keyword.cis_short_notm}} DDoS, TLS, and IP firewall to your web servers and your TCP-based services by using Range applications, keeping them online and secure.
 
 ### Advanced security
 {: #advanced-security-feature}
 
 Advanced security settings include the following features, which you can change, enable, or disable.
 
-* **Browser integrity check** - The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks or challenges visitors that do not have a user agent, or who add a non-standard user agent. This tactic is commonly used by abuse bots, crawlers, or APIs.
-* **Challenge passage** - Controls how long a visitor that passed a challenge (or JavaScript challenge) gains access to your site before being challenged again. This is based on the visitor's IP and, therefore, does not apply to challenges presented by WAF rules because they are based on an action that the user performs on your site.
+* **Browser integrity check** - The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks or challenges visitors that do not have a user agent, or who add a nonstandard user agent. This tactic is commonly used by abuse bots, crawlers, or APIs.
+* **Challenge passage** - Controls how long a visitor that passed a challenge (or JavaScript challenge) gains access to your site before they are challenged again. This challenge is based on the visitor's IP, and therefore does not apply to challenges presented by WAF rules because they are based on an action that the user performs on your site.
 * **Security level** - Sets the security level of your website to determine which visitors receive a challenge page.
 * **Always use HTTPS** - Redirects all visitors to the HTTPS version.
 * **Email obfuscation** - Prevents spam from harvesters and bots that try to access email addresses on your pages.
 * **Automatic HTTPS rewrites** - Helps fix mixed content by changing `http` to `https` for all resources (or links) on your website that can be served with HTTPS.
-* **Opportunistic encryption** - Allows browsers to benefit from the improved performance of HTTP/2 by letting them know that your site is available over an encrypted connection.
+* **Opportunistic encryption** - Allows browsers to benefit from the improved performance of HTTP/2 by informing them that your site is available over an encrypted connection.
 * **Universal SSL** - Activates universal SSL certificates from your zone to the edge.
-* **True client IP header** - Sends the end user's IP address in the True-Client-IP header.
+* **True client IP header** - Sends the user's IP address in the True-Client-IP header.
 
 ### Security standards and platform
 {: #security-standards-and-platform}
@@ -148,8 +148,8 @@ Generally, attacks fall into two categories:
 
 | Layer-3 or Layer-4 attacks | Layer-7 attacks |
 |------------------------------|-----------------|
-|These attacks consist of a flood of traffic at ISO Layer 3 (the network layer), such as ICMP floods), or at Layer 4 (the transport layer), such as TCP SYN floods or reflected UDP floods). |These are attacks that send malicious ISO Layer-7 requests (the application layer), such as GET floods.  |
-| Automatically blocked at our edge | {{site.data.keyword.cis_short_notm}} handles these with Defense Mode, WAF, and security-level settings. |
+|These attacks consist of a flood of traffic at ISO Layer 3 (the network layer), such as ICMP floods, or at Layer 4 (the transport layer), such as TCP SYN floods or reflected UDP floods. |These attacks send malicious ISO Layer-7 requests (the application layer), such as GET floods.|
+| Automatically blocked at {{site.data.keyword.cis_short_notm}} edge | {{site.data.keyword.cis_short_notm}} handles these attacks with Defense mode, WAF, and security-level settings. |
 {: caption="Table 1. Types of network attacks" caption-side="bottom"}
 
 ### On-demand anti-DDoS
@@ -193,7 +193,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ### Global load balancing features
 {: #about-glb-features}
 
-The global load balancing service distributes your traffic across multiple servers with a combination of origin pools, health checks, and a load balancer. Global load balancing features the following:
+The global load balancing service distributes your traffic across multiple servers with a combination of origin pools, health checks, and a load balancer. Global load balancing has the following features:
 * Proxy and non-proxy options for load balancing
 * Origin pools and health checks
 
@@ -207,14 +207,14 @@ The available health check regions are based on the [Cloudflare Global Anycast N
 
 DNS within {{site.data.keyword.cis_short_notm}} has the following features:
 * DNS management - Manage your DNS records, control proxying, and enable DNS security.
-* DNSSEC: DNS security cryptographically signs a zone to ensure that the DNS records provided to the user are the same as the DNS records published on the DNS server.
+* DNSSEC - DNS security cryptographically signs a zone to ensure that the DNS records provided to the user are the same as the DNS records published on the DNS server.
 
 ### gRPC protocol support
 {: #grpc}
 
 The gRPC protocol builds efficient APIs with smaller payloads, which reduces bandwidth requirements, decreases latency, and increases the implementation time. {{site.data.keyword.cis_short_notm}} supports gRPC protocol for any proxied gRPC endpoints. To enable or disable gRPC support, navigate to the **Reliability** section, select the **Advanced** tab, and toggle the gRPC switch.
 
-The following requirements must be met before using gRPC:
+The following requirements must be met before you use gRPC:
 
 * The gRPC endpoint must listen on port 443
 * The gRPC endpoint must support TLS and HTTP/2

@@ -20,7 +20,7 @@ As a security officer, auditor, or manager, you can use the Activity Tracker ser
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [getting started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
-Names for auditing events changed on July 1, 2020. The change replaced all underscore (`_`) characters in the names with dash (`-`) characters.
+Names for auditing events changed on 1 July 2020. The change replaced all underscore (`_`) characters in the names with dash (`-`) characters.
 {: important}
 
 ## List of events: DNS domains
@@ -29,7 +29,7 @@ Names for auditing events changed on July 1, 2020. The change replaced all under
 The following table lists the actions that are related to DNS domains and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.zones.create`|Create a DNS domain.|
 |`internet-svcs.zones.update`|Update a DNS domain.|
 |`internet-svcs.zones.delete`|Delete a DNS domain.|
@@ -43,7 +43,7 @@ The following table lists the actions that are related to DNS domains and genera
 The following table lists the actions that are related to DNS records and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|  
 |`internet-svcs.dns-records.create`|Create a DNS record.|
 |`internet-svcs.dns-records.update`|Update a DNS record.|
 |`internet-svcs.dns-records.delete`|Delete a DNS record.|
@@ -56,13 +56,13 @@ The following table lists the actions that are related to DNS records and genera
 The following table lists the actions that are related to load balancers and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.load-balancers.create`|Create a global load balancer.|
 |`internet-svcs.load-balancers.update`|Update a global load balancer.|
 |`internet-svcs.load-balancers.delete`|Delete a global load balancer.|
-|`internet-svcs.load-balancer-monitors.create`|Create a global load balancer healthcheck.|
-|`internet-svcs.load-balancer-monitors.update`|Update a global load balancer healthcheck.|
-|`internet-svcs.load-balancer-monitors.delete`|Delete a global load balancer healthcheck.|
+|`internet-svcs.load-balancer-monitors.create`|Create a global load balancer health check.|
+|`internet-svcs.load-balancer-monitors.update`|Update a global load balancer health check.|
+|`internet-svcs.load-balancer-monitors.delete`|Delete a global load balancer health check.|
 |`internet-svcs.load-balancer-pools.create`|Create a global load balancer pool.|
 |`internet-svcs.load-balancer-pools.update`|Update a global load balancer pool.|
 |`internet-svcs.load-balancer-pools.delete`|Delete a global load balancer pool.|
@@ -74,7 +74,7 @@ The following table lists the actions that are related to load balancers and gen
 The following table lists the actions that are related to purging the cache and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.purge-cache-all.update`|Purge all cached assets of a domain from edge server.|
 |`internet-svcs.purge-cache-by-urls.update`|Purge cached assets by URLs from edge server.|
 |`internet-svcs.purge-cache-by-cache-tags.update`|Purge cached assets by cache tags from edge server.|
@@ -87,7 +87,7 @@ The following table lists the actions that are related to purging the cache and 
 The following table lists the actions that are related to page rules and generate an event:
 
 |Action|Description|
-|---|---|
+|-|-|
 |`internet-svcs.pagerules.create`|Create a page rule.|
 |`internet-svcs.pagerules.update`|Update a page rule.|
 |`internet-svcs.pagerules.delete`|Delete a page rule.|
@@ -100,7 +100,7 @@ The following table lists the actions that are related to page rules and generat
 The following table lists the actions that are related to firewalls and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.waf-groups.update`|Enable or disable a group of WAF rule sets.|
 |`internet-svcs.waf-rules.update`|Enable or disable a WAF rule.|
 |`internet-svcs.ip-firewall-rules.create`|Create IP firewall rule at domain level or instance level.|
@@ -127,7 +127,7 @@ The following table lists the actions that are related to firewalls and generate
 The following table lists the actions that are related to rate limiting and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.rate-limits.create`|Create rate limiting rule.|
 |`internet-svcs.rate-limits.update`|Update rate limiting rule.|
 |`internet-svcs.rate-limits.delete`|Delete rate limiting rule.|
@@ -139,7 +139,7 @@ The following table lists the actions that are related to rate limiting and gene
 The following table lists the actions that are related to routing and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.smart-routing.update`|Enable or disable smart routing.|
 |`internet-svcs.tiered-caching.update`|Enable or disable tiered caching.|
 {: caption="Table 8. Actions that generate routing events" caption-side="bottom"}
@@ -150,7 +150,7 @@ The following table lists the actions that are related to routing and generate a
 The following table lists the actions that are related to certificate packs and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.certificate-packs.create`|Order a dedicated wildcard or custom certificate.|
 |`internet-svcs.certificate-packs.delete`|Delete a dedicated wildcard or custom certificate.|
 {: caption="Table 9. Actions that generate certificate pack events" caption-side="bottom"}
@@ -161,7 +161,7 @@ The following table lists the actions that are related to certificate packs and 
 The following table lists the actions that are related to custom certificates and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.custom-certificates.create`|Upload a custom certificate.|
 |`internet-svcs.custom-certificates.update`|Update a custom certificate.|
 |`internet-svcs.custom-certificates.delete`|Delete a custom certificate.|
@@ -173,7 +173,7 @@ The following table lists the actions that are related to custom certificates an
 The following table lists the actions that are related to origin certificates and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.origin-certificates.create`|Create an origin certificate.|
 |`internet-svcs.origin-certificates.delete`|Revoke an origin certificate.|
 {: caption="Table 11. Actions that generate origin certificate events" caption-side="bottom"}
@@ -184,7 +184,7 @@ The following table lists the actions that are related to origin certificates an
 The following table lists the actions that are related to edge functions and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.edge-functions-scripts.create`|Create an edge functions script.|
 |`internet-svcs.edge-functions-scripts.update`|Update a new version of edge functions script.|
 |`internet-svcs.edge-functions-scripts.delete`|Delete an edge functions script.|
@@ -200,7 +200,7 @@ The following table lists the actions that are related to edge functions and gen
 The following table lists the actions that are related to range applications and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.range-apps.create`|Create a range application.|
 |`internet-svcs.range-apps.update`|Update a range application.|
 |`internet-svcs.range-apps.delete`|Delete a range application.|
@@ -213,7 +213,7 @@ The following table lists the actions that are related to range applications and
 The following table lists the actions that are related to Logpush and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.logpush-ownership.create`|Initiate logpush ownership challenge.|
 |`internet-svcs.logpush-ownership-validate.create`|Validate logpush ownership challenge.|
 |`internet-svcs.logpush-jobs.create`|Create a logpush job.|
@@ -228,7 +228,7 @@ The following table lists the actions that are related to Logpush and generate a
 The following table lists the actions that are related to custom error pages and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.custom-pages.create`|Create a custom error page.|
 |`internet-svcs.custom-pages.update`|Update a custom error page.|
 {: caption="Table 15. Actions that generate custom error page events" caption-side="bottom"}
@@ -240,7 +240,7 @@ The following table lists the actions that are related to custom error pages and
 The following table lists the actions that are related to configuring settings and generate an event:
 
 |Action|Description|
-|---|--|  
+|-|-|
 |`internet-svcs.cache-level-setting.update`|Change caching level.|
 |`internet-svcs.browser-cache-ttl-setting.update`|Change browser cache TTL.|
 |`internet-svcs.development-mode-setting.update`|Enable or disable development mode.|
@@ -256,17 +256,17 @@ The following table lists the actions that are related to configuring settings a
 |`internet-svcs.opportunistic-encryption-setting.update`|Enable or disable opportunistic encryption.|
 |`internet-svcs.browser-check-setting.update`|Enable or disable browser integrity check.|
 |`internet-svcs.challenge-ttl-setting.update`|Update challenge TTL.|
-|`internet-svcs.always-use-https-setting.update`|Enable or disable always use HTTPS.|
+|`internet-svcs.always-use-https-setting.update`|Enable or disable `Always Use HTTPS`.|
 |`internet-svcs.true-client-ip-header-setting.update`|Enable or disable True client IP header.|
 |`internet-svcs.image-size-optimization-setting.update`|Enable or disable image size optimization.|
 |`internet-svcs.script-load-optimization-setting.update`|Enable or disable script load optimization.|
 |`internet-svcs.image-load-optimization-setting.update`|Enable or disable image load optimization.|
-|`internet-svcs.minify-setting.update`|Enable or disable minification for HTML, CSS or JavaScript files.|
+|`internet-svcs.minify-setting.update`|Enable or disable minification for HTML, CSS, or JavaScript files.|
 |`internet-svcs.min-tls-version-setting.update`|Change minimum TLS version.|
 |`internet-svcs.ip-geolocation-setting.update`|Enable or disable IP geolocation header.|
 |`internet-svcs.http2-setting.update`|Enable or disable HTTP2 for the domain.|
-|`internet-svcs.max-upload-setting.update`|Change the amount of data visitors can upload to the website in a single request.|
-|`internet-svcs.origin-error-page-pass-thru-setting.update`|Enable or disable the proxy of 502 and 504 error pages returned from origin server.|
+|`internet-svcs.max-upload-setting.update`|Change the amount of data that visitors can upload to the website in a single request.|
+|`internet-svcs.origin-error-page-pass-thru-setting.update`|Enable or disable the proxy of 502 and 504 error pages that are returned from origin server.|
 {: caption="Table 16. Actions that generate settings events" caption-side="bottom"}
 
 

@@ -43,7 +43,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Range**|No|Yes  \n Up to 10 applications  \n Total of 10 TB  \n 5 TB HTTPS  \n 5 TB Range|Yes  \n Up to 10 applications  \n Total of 10 TB  \n 5 TB HTTPS  \n 5 TB Range|No |Same as Enterprise|
 |**Edge functions**|1 action  \n (must be named after domain)  \n 1M Edge function requests|Unlimited actions|Unlimited actions|Not available |Not available|
 |**Firewall rules**|* 100 active rules  \n * Does not support _Log_ action  \n * Does not support _matches_ operator|* 1000 active rules  \n * Supports all actions  \n * Supports all operators|* 1000 active rules  \n * Supports all actions  \n * Supports all operators|No |Same as Enterprise|
-|**Routing**|No|Yes|No| |No |
+|**Routing**|No|Yes|Yes|No|No|
 |**Origin certificates**|Yes|Yes|Yes|Yes| Yes|
 |**Alerts**|No|Yes|Yes|Yes |Yes |
 {: caption="Table 1. CIS plan comparison" caption-side="bottom"}
