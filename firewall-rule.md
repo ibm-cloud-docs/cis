@@ -4,6 +4,8 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-07-06"
 
+keywords:
+
 subcollection: cis
 
 ---
@@ -11,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Creating, editing, and deleting firewall rules
-{: #firewall-rules}
+{: #about-firewall-rules}
 
 {{site.data.keyword.cis_full}} firewall rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
 {: shortdesc}
@@ -26,7 +28,7 @@ Before getting started, it's a good idea to become familiar with [Using fields, 
 ## Creating a firewall rule
 {: #create-firewall-rule}
 
-To configure a basic firewall rule, follow these steps:
+Take the following steps to configure a basic firewall rule:
 
 1. Navigate to **Security > Firewall Rules**.
 2. Click **Create Firewall Rule**.
@@ -50,7 +52,7 @@ To configure a basic firewall rule, follow these steps:
 ## Editing a firewall rule
 {: #edit-firewall-rule}
 
-To edit an existing rule, follow these steps:
+Take the following steps to edit an existing rule:
 
 1. Navigate to **Security > Firewall Rules**.
 1. In the Firewall Rules table, locate the rule you want to modify, then click the overflow menu on the right of the row.
@@ -66,7 +68,7 @@ To pause or activate any rule in the list of existing rules, click the **Enabled
 ## Deleting a firewall rule
 {: #delete-firewall-rule}
 
-To delete an existing rule, follow these steps:
+Take the following steps to delete an existing rule:
 
 1. Navigate to **Security > Firewall Rules**.
 1. In the Firewall Rules table, locate the rule to modify and click the overflow menu on the right of the row.

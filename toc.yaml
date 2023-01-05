@@ -80,7 +80,7 @@ toc:
         - topicgroup:
             label: Working with firewall rules
             topics:
-            - firewall-rules.md
+            - firewall-rule.md
             - actions.md
             - fields-and-expressions.md
             - order-and-priority.md
