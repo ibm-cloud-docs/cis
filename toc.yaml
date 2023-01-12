@@ -64,7 +64,11 @@ toc:
         - dns.md
         - cname-setup.md
         - rate-limiting.md
-        - range.md
+        - topicgroup:
+            label: Working with Range applications
+            topics:
+            - range.md
+            - proxy-protocol.md
         - private-endpoint.md
         - topicgroup:
             label: Working with TLS
