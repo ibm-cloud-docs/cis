@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-07-23"
 
-keywords: log pull, logpull, 
+keywords: log pull, logpull
 
 subcollection: cis
 
