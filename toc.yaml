@@ -47,9 +47,9 @@ toc:
         - topicgroup:
             label: Solution tutorials
             topics:
-            - /solution-tutorials/solution-tutorials-multi-region-k8s-cis
-            - /solution-tutorials/solution-tutorials-highly-available-and-scalable-web-application
-            - /codeengine/codeengine-deploy-multiple-regions
+            - include: ../solution-tutorials/multi-region-k8s-cis.md
+            - include: ../solution-tutorials/highly-available-and-scalable-web-application.md
+            - include: ../codeengine/deploy-multiple-regions.md
         - link:
             label: What are computer networking solutions
             href: https://www.ibm.com/cloud/learn/networking-a-complete-guide#toc-computer-n-9C7jokVu
