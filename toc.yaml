@@ -185,4 +185,5 @@ toc:
             - troubleshooting.md
             - ts-execution-order.md
             - ts-create-har.md
+            - ts-domain-moved.md
         - getting-help.md
