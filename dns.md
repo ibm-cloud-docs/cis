@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-08-04"
+  years: 2018, 2023
+lastupdated: "2023-02-14"
 
 keywords:
 
@@ -24,6 +24,9 @@ Read some specific instructions about how to configure your {{site.data.keyword.
 You can use the **Type** list menu to select the type of record you want to create. Each DNS record type has a Name and Time-To-Live (TTL) associated with it.
 
 Whatever is entered into the Name field has the domain name appended to it unless the domain name is manually appended in the field already (for example, if `www` or `www.example.com` is typed into the field, the API handles both as `www.example.com`). If the exact domain name is typed into the name field, then it won't be appended on itself (for example, `example.com` is handled as `example.com`). However, the list of DNS records only shows the names without the domain name added, so `www.example.com` is shown as `www` and `example.com` is shown as `example.com`. The TTL has a default value of `Automatic`, but can be changed by the user. A proxied DNS record always has a TTL of `Automatic`, so a newly proxied record adopts this configuration during this change.
+
+For records such as A record, CNAME, and so on, the automatic TTL is 300s.
+{: tip}
 
 ### A Type record
 {: #a-type-record}
@@ -50,7 +53,7 @@ To add this record type, a valid value must exist in the **Name** field and a fu
    Optional Field: TTL (default value is `Automatic`)
 
 Enterprise plans are able to CNAME another domain as long as that domain is configured within {{site.data.keyword.cis_short_notm}}.
-{: note}
+{: tip}
 
 ```sh
 Ex.
