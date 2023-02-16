@@ -77,7 +77,7 @@ By default, this is set to `1.2`. Higher TLS versions provide additional securit
 ## Edge cipher suites
 {: #edge-cipher-suites}
 
-The following ciphers are supported at the cloud edge. You can restrict the ciphers used for your domain using the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cli-plugin-cis-cli#domain-settings).
+The following ciphers are supported at the cloud edge. You can restrict the ciphers used for your domain using the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cis-cli#domain-settings).
 
 |OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3|
 |:--------|:---:|:---:|:---:|:---|
@@ -109,7 +109,7 @@ The following ciphers are supported at the cloud edge. You can restrict the ciph
 ## Origin cipher suites
 {: #origin-cipher-suites}
 
-The following ciphers are supported at the origin. You can restrict the ciphers used for your domain using the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cli-plugin-cis-cli#domain-settings).
+The following ciphers are supported at the origin. You can restrict the ciphers used for your domain using the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cis-cli#domain-settings).
 
 
 |OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3|
