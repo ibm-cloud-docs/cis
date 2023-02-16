@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  
-  years: 2022
+
+  years: 2022, 2023
 
 lastupdated: "2023-01-06"
 
@@ -15,7 +15,7 @@ keywords:
 # Enabling Proxy protocol
 {: #enable-proxy-protocol}
 
-{{site.data.keyword.cis_full_notm}} intercepts packets before forwarding them to your server, so that if you look up a client IP, you see {{site.data.keyword.cis_short_notm}}'s IP rather than the true client IP. However, some services you run might require you to know the true client IP. In those cases, you can use a proxy protocol for {{site.data.keyword.cis_short_notm}} to pass the client IP to your service. 
+{{site.data.keyword.cis_full_notm}} intercepts packets before forwarding them to your server, so that if you look up a client IP, you see {{site.data.keyword.cis_short_notm}}'s IP rather than the true client IP. However, some services you run might require you to know the true client IP. In those cases, you can use a proxy protocol for {{site.data.keyword.cis_short_notm}} to pass the client IP to your service.
 {: shortdesc}
 
 Sending proxy information along is dependent on whether TCP or UDP is used. For TCP, Range supports adding Proxy Protocol v1, which is the human readable-version supported by Amazon ELB and NGINX. For UDP applications, {{site.data.keyword.cis_short_notm}} has developed a custom proxy protocol called Simple Proxy Protocol.
@@ -38,7 +38,7 @@ When TCP applications are configured to use proxy protocol v1, {{site.data.keywo
 
 The proxy protocol prepends every connection with a header reporting the client IP address and port. A proxy protocol plain-text header has the following format:
 
-```
+```sh
 PROXY_STRING + single space + INET_PROTOCOL + single space + CLIENT_IP + single space + PROXY_IP + single space + CLIENT_PORT + single space + PROXY_PORT + "\r\n"
 ```
 {: codeblock}
