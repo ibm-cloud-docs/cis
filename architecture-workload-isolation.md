@@ -33,7 +33,7 @@ The data plane for your site is handled exclusively by Cloudflare. All proxied t
 
 Non-proxied requests go directly from the client to the requested resource's origin. In this case, only DNS resolution is done by Cloudflare. The request data flows through the public internet.
 
-![Architecture image](images/cis-architecture.png "CIS Architecture overview"){: caption="Figure 1. {{site.data.keyword.cis_short}} Architecture overview" caption-side="bottom"}
+![Architecture image](images/cis-architecture.svg "CIS Architecture overview"){: caption="Figure 1. {{site.data.keyword.cis_short}} Architecture overview" caption-side="bottom"}
 
 ## {{site.data.keyword.cis_short_notm}} workload isolation and deployment model
 {: #workload-isolation}

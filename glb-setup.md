@@ -165,4 +165,4 @@ Optionally, you can configure the following fields:
 ### Editing or deleting a global load balancer
 {: #edit-delete-load-balancer}
 
-To edit or delete a load balancer, or one of its components, click the overflow menu ![overflow icon](/images/horizontal-overflow-icon.png) located on the right of the row, and select the action you want to take from the list.
+To edit or delete a load balancer, or one of its components, click the overflow menu ![overflow icon](/images/horizontal-overflow-icon.svg) located on the right of the row, and select the action you want to take from the list.

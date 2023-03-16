@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-03"
+  years: 2018, 2023
+lastupdated: "2023-03-01"
 
 keywords:
 
@@ -41,11 +41,14 @@ No. Downgrading from Standard to a Free Trial plan is not allowed.
 
 To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, global load balancers, pools, and health checks are deleted automatically.
 
-## How do I delete my CIS Instance?
+## How do I delete my CIS instance?
 {: #cis-faq-delete-instance}
 {: faq}
 
 To delete a CIS instance, you must first delete all global load balancers, pools, and health checks. Then delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
+
+If you are moving your domain to a different provider, be sure to migrate your DNS records and other configuration information to the new provider before activating the domain there. Activating the domain before migrating from CIS can cause your domain to changed to a [`Moved` state](/docs/cis?topic=cis-domain-moved-status).
+{: important}
 
 ## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
 {: #cis-faq-user-authentication-issue}
@@ -127,7 +130,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 
 **Step 1:** Turn on “Defense mode" in the **Overview** screen.
 
-![Defense Mode](images/defense-mode.png "Defense mode"){: caption="Figure 1. Defense mode" caption-side="bottom}
+![Defense Mode](images/defense-mode.svg "Defense mode"){: caption="Figure 1. Defense mode" caption-side="bottom}
 
 **Step 2:** Set your DNS records for maximum security.
 

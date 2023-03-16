@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-02-20"
+  years: 2018, 2023
+lastupdated: "2023-03-16"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -61,14 +61,18 @@ There are several plans to choose from:
 * **Enterprise Package**
 * **Enterprise GLB**
 * **Enterprise Security**
-* **Standard Plan**
-* **Free Trial**
+* **Standard** (Deprecated as of 30 April 2023)
+* **Standard Next** (Replaces deprecated Standard plan)
+* **No-cost Trial**
 
-The **Free Trial** expires after 30 days, at which point you can upgrade to the **Standard Plan** or an **Enterprise Plan**. A single **Standard** instance can manage one domain. You can create as many **Standard** service instances as you want within a single account, each managing a single domain. The **Enterprise Plans** allow you to manage multiple domains in a single service instance.
+The **No-cost Trial** expires after 30 days, at which point you can upgrade to a plan that best suits your needs. A single Standard or Standard Next instance can manage one domain. You can create as many Standard or Standard Next service instances as you want within a single account, each managing a single domain. The **Enterprise Plans** allow you to manage multiple domains in a single service instance.
+
+Before creating a **Standard** plan, remember that this plan is deprecated and will eventually reach end-of-support.
+{: important}
 
 Select **Create** on the **Overview** screen to begin provisioning your account.
 
-The **Free Trial** is limited to one instance per account.
+The **No-cost Trial** is limited to one instance per account.
 {: note}
 
 #### Begin provisioning

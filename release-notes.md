@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-03-23"
+  years: 2021, 2023
+lastupdated: "2023-03-16"
 
 keywords:
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
+## 16 March 2023
+{: #cis-mar1623}
+{: release-note}
+
+Standard Next plan released
+:   Released the new Standard Next plan, which will replace the current Standard plan. 
 
 ## 23 March 2022
 {: #cis-mar2322}

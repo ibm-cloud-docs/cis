@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022
-lastupdated: "2022-10-27"
+  years:  2023
+lastupdated: "2023-03-16"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -18,6 +18,18 @@ subcollection: cis
 
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
+
+## Version 1.14.11
+{: #cli-11411}
+
+Version 1.14.11 of the CLI was released on 16 March 2023.
+:   Add URL normalization for domain setting.
+:   Add certificate authority options.
+:   Add universal CA options.
+:   Add binary M1 and s390x support.
+:   Fix origin certificate list issue.
+:   Upgrade go dependency package versions.
+:   Unhide standard plan for 45 days.
 
 ## Version 1.14.9
 {: #cli-1149}

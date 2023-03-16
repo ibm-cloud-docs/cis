@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-06"
+  years: 2018, 2023
+lastupdated: "2023-03-08"
 
 keywords: 
 
@@ -126,9 +126,10 @@ IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, 
 ### Upload custom certificates
 {: #upload-custom-certs}
 
-You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date.
+You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). 
 
-![custom-certificate](images/upload-custom-certificate.png "Upload custom certificate"){: caption="Figure 1. Upload certificate screen" caption-side="bottom"}
+Remember that you are responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date.
+{: important}
 
 ### Order dedicated certificates
 {: #order-dedicated-certs}
@@ -151,7 +152,7 @@ The following are common errors seen when ordering dedicated certificates:
 
 If you receive an error when ordering certificates, refresh the page and try again.
 
-![dedicated-certificate](images/order-dedicated-certificate.png "Add certificate screen"){: caption="Figure 2. Add certificate screen" caption-side="bottom"}
+![dedicated-certificate](images/order-dedicated-certificate.svg "Add certificate screen"){: caption="Figure 1. Add certificate screen" caption-side="bottom"}
 
 ### Use a provisioned certificate
 {: #use-provisioned-certificate}

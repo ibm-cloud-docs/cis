@@ -20,7 +20,7 @@ Domains configured in {{site.data.keyword.cis_short_notm}} begin in `pending` st
 
 The following diagram shows a sample domain lifecycle, with labels that correspond to the list of domain state transitions.
 
-![Diagram of domain lifecycle](images/domain-lifecycle-lt.png "Diagram of domain lifecycle"){: caption="Figure 1. Domain lifecycle" caption-side="bottom"}
+![Diagram of domain lifecycle](images/domain-lifecycle-lt.svg "Diagram of domain lifecycle"){: caption="Figure 1. Domain lifecycle" caption-side="bottom"}
 
 Domain state transitions:
 

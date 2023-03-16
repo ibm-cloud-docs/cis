@@ -34,7 +34,7 @@ IBM {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers
 
 Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or a [global load balancer](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use the security features. The proxy allows traffic to flow through our servers and you can monitor the data.
 
-![security-graphic.png](images/security-graphic.png "Image describing security features"){: caption="Figure 1. Security features" caption-side="bottom}
+![security graphic](images/security-graphic.svg "Image describing security features"){: caption="Figure 1. Security features" caption-side="bottom}
 
 ### TLS
 {: #tls-feature}
@@ -188,7 +188,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ## Reliability features
 {: #cis-reliability-features}
 
-![reliability-graphic.png](images/reliability-graphic.png "Image describing reliability features"){: caption="Figure 2. Reliability features" caption-side="bottom"}
+![reliability graphic](images/reliability-graphic.svg "Image describing reliability features"){: caption="Figure 2. Reliability features" caption-side="bottom"}
 
 ### Global load balancing features
 {: #about-glb-features}
@@ -224,7 +224,7 @@ The following requirements must be met before you use gRPC:
 ## Performance features
 {: #cis-performance-features}
 
-![performance-graphic.png](images/performance-graphic.png "Image describing performance features"){: caption="Figure 3. Performance features" caption-side="bottom}
+![performance graphic](images/performance-graphic.svg "Image describing performance features"){: caption="Figure 3. Performance features" caption-side="bottom}
 
 ### Caching
 {: #caching-features}
