@@ -43,7 +43,7 @@ If you are terminating TCP at a cloud provider edge location, the calculated lat
 
 The following diagram shows how {{site.data.keyword.cis_short_notm}} routes traffic to the pool with the lowest EWMA among three regions: Eastern North America, Europe, and Australia. In this case, the ENAM pool is selected, because it has the lowest RTT.
 
-![Figure showing traffic steering](images/cis-traffic-steering.svg "Figure showing traffic steering"){: caption="Figure 1. Traffic steering in {{site.data.keyword.cis_short_notm}}" caption-side="bottom"}
+![Figure showing traffic steering](images/cis-traffic-steering.png "Figure showing traffic steering"){: caption="Figure 1. Traffic steering in {{site.data.keyword.cis_short_notm}}" caption-side="bottom"}
 
 ## Geo Steering
 {: #geo-steering}

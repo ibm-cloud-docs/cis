@@ -25,7 +25,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Standard Next plan released
-:   Released the new Standard Next plan, which will replace the current Standard plan. 
+:   Released the new [Standard Next plan](/docs/cis?topic=cis-transitioning-next-plan), which will replace the current Standard plan. 
 
 ## 23 March 2022
 {: #cis-mar2322}

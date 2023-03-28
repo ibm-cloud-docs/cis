@@ -130,7 +130,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 
 **Step 1:** Turn on “Defense mode" in the **Overview** screen.
 
-![Defense Mode](images/defense-mode.svg "Defense mode"){: caption="Figure 1. Defense mode" caption-side="bottom}
+![Defense Mode](images/defense-mode.png "Defense mode"){: caption="Figure 1. Defense mode" caption-side="bottom}
 
 **Step 2:** Set your DNS records for maximum security.
 

@@ -152,7 +152,7 @@ The following are common errors seen when ordering dedicated certificates:
 
 If you receive an error when ordering certificates, refresh the page and try again.
 
-![dedicated-certificate](images/order-dedicated-certificate.svg "Add certificate screen"){: caption="Figure 1. Add certificate screen" caption-side="bottom"}
+![dedicated-certificate](images/order-dedicated-certificate.png "Add certificate screen"){: caption="Figure 1. Add certificate screen" caption-side="bottom"}
 
 ### Use a provisioned certificate
 {: #use-provisioned-certificate}

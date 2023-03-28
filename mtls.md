@@ -20,7 +20,7 @@ Mutual Transport Layer Security (mTLS) authentication ensures that traffic is bo
 
 When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches the application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds. 
 
-![Diagram of mTLS handshake](images/mtls-handshake.svg "Diagram of mTLS handshake"){: caption="Figure 1. Diagram of an mTLS handshake" caption-side="bottom"}
+![Diagram of mTLS handshake](images/mtls-handshake.png "Diagram of mTLS handshake"){: caption="Figure 1. Diagram of an mTLS handshake" caption-side="bottom"}
 
 ## Configuring mutual TLS
 {: #configure-mtls}
@@ -29,7 +29,7 @@ Mutual TLS is not enabled by default. It is an additional service that requires 
 
 To obtain authorization, you must submit an IBM Support case. 
 
-![Request authorization and enable mTLS](images/enable-mtls.svg "Enable mTLS tile"){: caption="Figure 2. Request authorization and enable mTLS" caption-side="bottom"}
+![Request authorization and enable mTLS](images/enable-mtls.png "Enable mTLS tile"){: caption="Figure 2. Request authorization and enable mTLS" caption-side="bottom"}
 
 
 After mTLS is turned on for your account, take the following steps to enable it.

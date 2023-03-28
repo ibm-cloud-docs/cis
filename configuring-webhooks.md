@@ -43,7 +43,7 @@ To edit a webhook using the console, click the pencil icon next to the name of t
 ### Deleting a webhook using the console
 {: #delete-webhooks-ui}
 
-To delete a webhook using the console, click the overflow menu ![overflow icon](/images/horizontal-overflow-icon.svg) of the webhook you want to delete, and select **Delete**. Select **Delete** in the confirmation box to confirm, or **Cancel** to close the confirmation box without completing the delete operation.
+To delete a webhook using the console, click the overflow menu ![overflow icon](/images/horizontal-overflow-icon.png) of the webhook you want to delete, and select **Delete**. Select **Delete** in the confirmation box to confirm, or **Cancel** to close the confirmation box without completing the delete operation.
 
 
 ## Configuring webhooks using the CLI
