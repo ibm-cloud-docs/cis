@@ -76,36 +76,32 @@ The CNAME flattening feature is enabled by default, and cannot be turned off.
 
 To add this record type, a valid value must exist in the **Name** field and a valid address must exist in the **Mail Server** field. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-   Required Fields: Name, Mail Server
-   Optional Fields: TTL (default value is `Automatic`), Priority (default value is 1)
+* Required Fields: Name, Mail Server
+* Optional Fields: TTL (default value is `Automatic`), Priority (default value is 1)
 
 ### LOC Type record
 {: #loc-type-record}
 
 To add this record type, a valid value must exist in the **Name** field. If you need more specific information, select the **Configure LOC options** button. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-![Create LOC Type record](images/create-loc-type-record-1.png "Add LOC type record"){: caption="Figure 1. Adding LOC type records" caption-side="bottom}
-
-   Required Fields: Name
-   Optional Fields: LOC options (click **Configure LOC options** to configure)
-
-![Create LOC Type record](images/create-loc-type-record-2.png "Required fields"){: caption="Figure 2. Required fields for LOC type records" caption-side="bottom}
+* Required Fields: Name
+* Optional Fields: LOC options (click **Configure LOC options** to configure)
 
 ### CAA Type record
 {: #caa-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Value** fields. The Value field correlates to the value of the **Tag** list field, which defaults to "Send violation reports to URL". A **TTL** can also can be specified from the list, with the default value of `Automatic`.
 
-   Required Fields: Name, Value (associated to tag)
-   Optional Fields: TTL (default value is `Automatic`), Tag (default is to send violation reports to URL)
+* Required Fields: Name, Value (associated to tag)
+* Optional Fields: TTL (default value is `Automatic`), Tag (default is to send violation reports to URL)
 
 ### SRV Type record
 {: #srv-type-record}
 
 To add this record type, valid values must exist in the **Name**, **Service Name** and **Target** fields. Use the list menu to select a **protocol**, which defaults to the UDP protocol. Additionally, you can specify **Priority**, **Weight** and **Port**. These three fields default to a value of 1. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-   Required Fields: Name, Service Name, Target
-   Optional Fields: TTL (default value is `Automatic`), Protocol (defaulted to UDP), Priority (defaulted to 1), Weight (defaulted to 1), Port (defaulted to 1)
+* Required Fields: Name, Service Name, Target
+* Optional Fields: TTL (default value is `Automatic`), Protocol (defaulted to UDP), Priority (defaulted to 1), Weight (defaulted to 1), Port (defaulted to 1)
 
 ### SPF Type record
 {: #spf-type-record}
@@ -115,16 +111,16 @@ Support for SPF records (deprecated in RFC 7208) is ending in February, 2022. Af
 
 To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-   Required Fields: Name, Content
-   Optional Field: TTL (default value is `Automatic`)
+* Required Fields: Name, Content
+* Optional Field: TTL (default value is `Automatic`)
 
 ### TXT Type record
 {: #txt-type-record}
 
 To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-   Required Fields: Name, Content
-   Optional Field: TTL (default value is `Automatic`)
+* Required Fields: Name, Content
+* Optional Field: TTL (default value is `Automatic`)
 
 The first time you order a dedicated certificate Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process happens again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
 {: note}
@@ -134,8 +130,8 @@ The first time you order a dedicated certificate Domain Control Validation (DCV)
 
 To add this record type, valid values must exist in the **Name** and **Name Server** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
 
-   Required Fields: Name, Name Server
-   Optional Field: TTL (default value is `Automatic`)
+* Required Fields: Name, Name Server
+* Optional Field: TTL (default value is `Automatic`)
    
 ### PTR type record
 {: #ptr-type-record}
@@ -150,8 +146,6 @@ PTR records primarily prevent emails from going to spam folders. Because CIS doe
 
 In each record row, you can click the **Edit record** option from the menu, which opens a dialog box that you can use to update the record.
 
-![Edit DNS record](images/edit-dns-record.png "Edit record"){: caption="Figure 3. Edit record" caption-side="bottom}
-
 After you are finished making your changes, select **Update record** to save them, or **Cancel** to abort the changes.
 
 ## Deleting DNS records
@@ -159,18 +153,13 @@ After you are finished making your changes, select **Update record** to save the
 
 In each record row, you can select the **Delete record** option from the menu, which opens a dialog box to confirm the delete process.
 
-![Delete DNS record](images/delete-record.png "Delete record"){: caption="Figure 4. Delete record" caption-side="bottom}
-
 You can select the **Delete** button to confirm your delete action. Select **Cancel** if you don't want to delete.
-
 
 ## Importing and exporting DNS records
 {: #import-export-records}
 
 DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.wikipedia.org/wiki/Zone_file){: external}.
 Click the overflow menu and select to import or export records.
-
-![DNS Records Option](images/import-export-records.png "Export records"){: caption="Figure 5. Export records" caption-side="bottom}
 
 **Import records** - By default, a total of 3500 DNS records are allowed (imported and created on {{site.data.keyword.cis_short_notm}}). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After importing, you are shown a summary with the number of records successfully added and the number that failed, along with the reason why each record failed.
 

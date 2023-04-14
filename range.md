@@ -21,7 +21,7 @@ Range is a global TCP proxy running on {{site.data.keyword.cis_full}} (Cloudflar
 
 Range can be used to:
 * Protect your TCP ports and protocols from Layer-3 and Layer-4 DDoS attacks.
-* Protect your HTTP(S) Range app with Layer-7 [firewall rules](/docs/cis?topic=cis-firewall-rules).
+* Protect your HTTP(S) Range app with Layer-7 [firewall rules](/docs/cis?topic=cis-about-firewall-rules).
 * Reduce the ability of attackers to snoop and steal sensitive data by enabling TLS encryption.
 * Integrate with CIS IP firewall, which allows you to block or challenge IP addresses, or entire IP ranges, from reaching your TCP services.
 * Configure load balancers with TCP health checks, failover, and steering policies to dictate where traffic flows.
@@ -58,7 +58,7 @@ In the console, UDP applications must be enabled through a Support case. After t
 1. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer and its port.
 1. Enable IP firewall (optional). When enabled, firewall rules with a "block" or "allowlist" action are enforced for this application.
 1. Enable edge TLS termination (optional). When enabled, select the type of TLS termination you want to use from the list menu.
-1. Select a [PROXY Protocol](/docs/cis?topic=cis-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
+1. Select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
 1. Click **Create**.
 
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
