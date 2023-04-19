@@ -31,7 +31,7 @@ Refer to the [Quick setup](#global-load-balancer-quick-setup) if you already kno
 
 In this step-by-step demo, learn how to configure a setup similar to the following diagram.
 
-![Global load balancer](images/cis-glb.png "Diagram showing the global load balancer"){: caption="Figure 1. Diagram of global load balancer example" caption-side="bottom"}
+![Global load balancer](images/cis-glb1.svg "Diagram showing the global load balancer"){: caption="Figure 1. Diagram of global load balancer example" caption-side="bottom"}
 
 In this example, the application resources are deployed in two data center locations, one in US West and the other in US East. Users might be accessing this application from all over the world.
 
