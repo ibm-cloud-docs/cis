@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 831 621">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #7d7c7c;
+      }
+
+      .cls-7 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-8 {
+        letter-spacing: .01em;
+      }
+
+      .cls-9 {
+        fill: #eb6200;
+      }
+
+      .cls-9, .cls-10, .cls-5, .cls-11, .cls-12 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-9, .cls-10, .cls-11, .cls-12 {
+        stroke-width: 2px;
+      }
+
+      .cls-9, .cls-12 {
+        stroke: #eb6200;
+      }
+
+      .cls-10 {
+        fill: #24a148;
+      }
+
+      .cls-10, .cls-11 {
+        stroke: #24a148;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-15 {
+        letter-spacing: 0em;
+      }
+
+      .cls-16 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        stroke: #000;
+      }
+
+      .cls-11, .cls-12 {
+        fill: none;
+      }
+
+      .cls-12 {
+        stroke-dasharray: 0 0 6 6;
+      }
+
+      .cls-17 {
+        letter-spacing: 0em;
+      }
+
+      .cls-18 {
+        fill: #878d96;
+        stroke: #878d96;
+      }
+
+      .cls-19 {
+        fill: #1192e8;
+        stroke: #1192e8;
+      }
+
+      .cls-20 {
+        fill: #dae8fc;
+        stroke: #6c8ebf;
+      }
+
+      .cls-21 {
+        fill: #d5e8d4;
+        stroke: #82b366;
+      }
+
+      .cls-22 {
+        fill: #f5f5f5;
+        stroke: #666;
+      }
+
+      .cls-23 {
+        letter-spacing: 0em;
+      }
+
+      .cls-24 {
+        font-family: IBMPlexSans, 'IBM Plex Sans';
+        font-size: 12px;
+      }
+    </style>
+  </defs>
+  <g id="Shapes">
+    <g>
+      <path class="cls-5" d="m145.5,163c-84,0-105,72.5-37.8,87-67.2,31.9,8.4,101.5,63,72.5,37.8,58,163.8,58,205.8,0,84,0,84-58,31.5-87,52.5-58-31.5-116-105-87-52.5-43.5-136.5-43.5-157.5,14.5Z" pointer-events="all"/>
+      <rect class="cls-22" x="190.5" y="70.5" width="160" height="330" pointer-events="all"/>
+      <circle class="cls-20" cx="685.5" cy="145.5" r="145" pointer-events="all"/>
+      <circle class="cls-21" cx="685.5" cy="475.5" r="145" pointer-events="all"/>
+      <rect class="cls-18" x=".5" y="150.5" width="48" height="48" rx="8" ry="8" pointer-events="all"/>
+      <path class="cls-4" d="m30.75,179.5h-12.5c-.69,0-1.25-.56-1.25-1.25v-8.75c0-.69.56-1.25,1.25-1.25h12.5c.69,0,1.25.56,1.25,1.25v8.75c0,.69-.56,1.25-1.25,1.25Zm-12.5-10v8.75h12.5v-8.75h-12.5Z" pointer-events="all"/>
+      <rect class="cls-4" x="15.75" y="180.75" width="17.5" height="1.25" pointer-events="all"/>
+      <rect class="cls-18" x=".5" y="310.5" width="48" height="48" rx="8" ry="8" pointer-events="all"/>
+      <path class="cls-4" d="m30.75,339.5h-12.5c-.69,0-1.25-.56-1.25-1.25v-8.75c0-.69.56-1.25,1.25-1.25h12.5c.69,0,1.25.56,1.25,1.25v8.75c0,.69-.56,1.25-1.25,1.25Zm-12.5-10v8.75h12.5v-8.75h-12.5Z" pointer-events="all"/>
+      <rect class="cls-4" x="15.75" y="340.75" width="17.5" height="1.25" pointer-events="all"/>
+      <rect class="cls-19" x="230.5" y="250.5" width="48" height="48" rx="8" ry="8" pointer-events="all"/>
+      <rect class="cls-4" x="247" y="280.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="253.25" y="280.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="259.5" y="280.75" width="2.5" height="2.5" pointer-events="all"/>
+      <path class="cls-4" d="m260.13,274.5h-5v-2.5h-1.25v2.5h-5c-.7,0-1.25.56-1.25,1.25v3.75h1.25v-3.75h5v3.75h1.25v-3.75h5v3.75h1.25v-3.75c-.01-.69-.56-1.25-1.25-1.25Z" pointer-events="all"/>
+      <path class="cls-4" d="m254.5,270.75c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5,2.5,1.12,2.5,2.5-1.12,2.5-2.5,2.5Zm0-3.75c-.69,0-1.25.56-1.25,1.25s.56,1.25,1.25,1.25,1.25-.56,1.25-1.25-.56-1.25-1.25-1.25Z" pointer-events="all"/>
+      <rect class="cls-19" x="590.5" y="110.5" width="48" height="48" pointer-events="all"/>
+      <path class="cls-4" d="m620.13,134.5h-5v-3.75h-1.25v3.75h-5c-.7,0-1.25.56-1.25,1.25v3.75h1.25v-3.75h5v3.75h1.25v-3.75h5v3.75h1.25v-3.75c-.01-.69-.56-1.25-1.25-1.25Z" pointer-events="all"/>
+      <rect class="cls-4" x="607" y="140.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="613.25" y="140.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="619.5" y="140.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="611.38" y="127.63" width="6.25" height="1.25" pointer-events="all"/>
+      <rect class="cls-19" x="590.5" y="450.5" width="48" height="48" pointer-events="all"/>
+      <path class="cls-4" d="m620.13,474.5h-5v-3.75h-1.25v3.75h-5c-.7,0-1.25.56-1.25,1.25v3.75h1.25v-3.75h5v3.75h1.25v-3.75h5v3.75h1.25v-3.75c-.01-.69-.56-1.25-1.25-1.25Z" pointer-events="all"/>
+      <rect class="cls-4" x="607" y="480.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="613.25" y="480.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="619.5" y="480.75" width="2.5" height="2.5" pointer-events="all"/>
+      <rect class="cls-4" x="611.38" y="467.63" width="6.25" height="1.25" pointer-events="all"/>
+      <rect class="cls-19" x="246.5" y="42.5" width="48" height="48" pointer-events="all"/>
+      <path class="cls-4" d="m277.87,62.75c-.59-2.92-3.17-5.02-6.16-5-2.98.02-5.54,2.15-6.1,5.08-2.39.42-4.06,2.61-3.84,5.02.21,2.42,2.24,4.28,4.67,4.28h.94v-1.25h-.94c-1.86,0-3.38-1.47-3.44-3.32-.07-1.86,1.35-3.43,3.2-3.55l.52-.03.06-.52c.26-2.4,2.2-4.28,4.61-4.45,2.41-.17,4.59,1.4,5.2,3.74h1.28Z" pointer-events="all"/>
+      <path class="cls-4" d="m277.38,71.5c-.45,0-.87.16-1.21.45l-2.56-1.54c0-.05.02-.1.02-.16s-.02-.11-.02-.16l2.56-1.54c.34.29.76.45,1.21.45.79.01,1.51-.49,1.78-1.24.28-.75.05-1.59-.57-2.1-.61-.51-1.48-.58-2.17-.17-.68.41-1.04,1.2-.88,1.99l-2.45,1.46c-.53-.54-1.34-.71-2.05-.43-.71.29-1.17.98-1.17,1.74s.46,1.45,1.17,1.74c.71.28,1.52.11,2.05-.43l2.45,1.47c-.15.77.2,1.56.88,1.96.69.4,1.54.33,2.15-.17.61-.51.84-1.34.57-2.08-.27-.75-.97-1.24-1.76-1.24Zm0-5c.34,0,.62.28.62.63s-.28.62-.62.62-.63-.28-.63-.62.28-.63.63-.63Zm-5.63,4.38c-.35,0-.62-.28-.62-.63s.27-.62.62-.62.63.27.63.62c-.01.35-.28.62-.63.63Zm5.63,3.12c-.35,0-.63-.28-.63-.62s.28-.63.63-.63.62.28.62.63-.28.62-.62.62Z" pointer-events="all"/>
+      <path class="cls-6" d="m724.01,105.5c-2.33,0-3.51-1.84-3.51-3.3v-56.4c0-1.78,1.38-3.3,3.27-3.3h39.92c1.33,0,3.31,1.06,3.31,3.39v56.17c0,1.98-1.51,3.44-3.37,3.44h-39.62Z" pointer-events="all"/>
+      <path d="m767,99.34v2.72c0,1.98-1.51,3.44-3.37,3.44h-39.62c-2.33,0-3.51-1.84-3.51-3.3v-2.74c0,1.63,1.33,3.23,3.34,3.23h39.68c1.76,0,3.48-1.33,3.48-3.35Z" pointer-events="all"/>
+      <path class="cls-4" d="m759.68,55.04h-31.98v-3.69h31.98v3.69Zm0,6.46h-31.98v-3.71h31.98v3.71Zm0,6.44h-31.98v-3.69h31.98v3.69Z" pointer-events="all"/>
+      <path class="cls-6" d="m724.01,206c-2.33,0-3.51-1.84-3.51-3.3v-56.4c0-1.78,1.38-3.3,3.27-3.3h39.92c1.33,0,3.31,1.06,3.31,3.39v56.17c0,1.98-1.51,3.44-3.37,3.44h-39.62Z" pointer-events="all"/>
+      <path d="m767,199.84v2.72c0,1.98-1.51,3.44-3.37,3.44h-39.62c-2.33,0-3.51-1.84-3.51-3.3v-2.74c0,1.63,1.33,3.23,3.34,3.23h39.68c1.76,0,3.48-1.33,3.48-3.35Z" pointer-events="all"/>
+      <path class="cls-4" d="m759.68,155.54h-31.98v-3.69h31.98v3.69Zm0,6.46h-31.98v-3.71h31.98v3.71Zm0,6.44h-31.98v-3.69h31.98v3.69Z" pointer-events="all"/>
+      <path class="cls-6" d="m724.01,443.5c-2.33,0-3.51-1.84-3.51-3.3v-56.4c0-1.78,1.38-3.3,3.27-3.3h39.92c1.33,0,3.31,1.06,3.31,3.39v56.17c0,1.98-1.51,3.44-3.37,3.44h-39.62Z" pointer-events="all"/>
+      <path d="m767,437.34v2.72c0,1.98-1.51,3.44-3.37,3.44h-39.62c-2.33,0-3.51-1.84-3.51-3.3v-2.74c0,1.63,1.33,3.23,3.34,3.23h39.68c1.76,0,3.48-1.33,3.48-3.35Z" pointer-events="all"/>
+      <path class="cls-4" d="m759.68,393.04h-31.98v-3.69h31.98v3.69Zm0,6.46h-31.98v-3.71h31.98v3.71Zm0,6.44h-31.98v-3.69h31.98v3.69Z" pointer-events="all"/>
+      <path class="cls-6" d="m724.01,543.5c-2.33,0-3.51-1.84-3.51-3.3v-56.4c0-1.78,1.38-3.3,3.27-3.3h39.92c1.33,0,3.31,1.06,3.31,3.39v56.17c0,1.98-1.51,3.44-3.37,3.44h-39.62Z" pointer-events="all"/>
+      <path d="m767,537.34v2.72c0,1.98-1.51,3.44-3.37,3.44h-39.62c-2.33,0-3.51-1.84-3.51-3.3v-2.74c0,1.63,1.33,3.23,3.34,3.23h39.68c1.76,0,3.48-1.33,3.48-3.35Z" pointer-events="all"/>
+      <path class="cls-4" d="m759.68,493.04h-31.98v-3.69h31.98v3.69Zm0,6.46h-31.98v-3.71h31.98v3.71Zm0,6.44h-31.98v-3.69h31.98v3.69Z" pointer-events="all"/>
+      <path class="cls-11" d="m48.5,174.5l531.78-48.23" pointer-events="stroke"/>
+      <path class="cls-10" d="m586.26,125.73l-7.61,4.7,1.63-4.16-2.35-3.81,8.33,3.27Z" pointer-events="all"/>
+      <path class="cls-11" d="m48.5,344.48l534.05,143.86" pointer-events="stroke"/>
+      <path class="cls-10" d="m588.34,489.9l-8.76,1.78,2.97-3.34-.89-4.38,6.68,5.94Z" pointer-events="all"/>
+      <path class="cls-12" d="m48.5,187.05l534.7,279.65" pointer-events="stroke"/>
+      <path class="cls-9" d="m588.52,469.48l-8.94-.16,3.62-2.62.08-4.47,5.24,7.25Z" pointer-events="all"/>
+      <path class="cls-12" d="m48.5,328.5l534.19-178.38" pointer-events="stroke"/>
+      <path class="cls-9" d="m588.38,148.22l-6.32,6.32.63-4.42-3.17-3.16,8.86,1.26Z" pointer-events="all"/>
+    </g>
+  </g>
+  <g id="Text">
+    <text class="cls-24" transform="translate(190.5 31.24)"><tspan x="0" y="0">IBM Cloud In</tspan><tspan class="cls-17" x="70.87" y="0">t</tspan><tspan x="75.04" y="0">ernet Se</tspan><tspan class="cls-8" x="120.03" y="0">r</tspan><tspan x="124.56" y="0">vi</tspan><tspan class="cls-14" x="133.46" y="0">c</tspan><tspan class="cls-13" x="139.43" y="0">es</tspan></text>
+    <text class="cls-24" transform="translate(7.14 262.19)"><tspan x="0" y="0">Clients</tspan></text>
+    <text class="cls-24" transform="translate(230.5 218.12)"><tspan x="0" y="0">Global load </tspan><tspan x="0" y="14.4">balancing</tspan></text>
+    <text class="cls-24" transform="translate(579.58 90.5)"><tspan class="cls-1" x="0" y="0">L</tspan><tspan class="cls-16" x="5.89" y="0">oad balan</tspan><tspan class="cls-14" x="58.67" y="0">c</tspan><tspan x="64.63" y="0">er</tspan></text>
+    <text class="cls-24" transform="translate(577.93 437.34)"><tspan class="cls-1" x="0" y="0">L</tspan><tspan class="cls-16" x="5.89" y="0">oad balan</tspan><tspan class="cls-14" x="58.67" y="0">c</tspan><tspan x="64.63" y="0">er</tspan></text>
+    <text class="cls-24" transform="translate(627.04 596.44)"><tspan x="0" y="0">Ea</tspan><tspan class="cls-23" x="13.4" y="0">s</tspan><tspan x="19.16" y="0">t </tspan><tspan class="cls-14" x="26.21" y="0">c</tspan><tspan x="32.17" y="0">oa</tspan><tspan class="cls-23" x="45.3" y="0">s</tspan><tspan x="51.06" y="0">t </tspan><tspan class="cls-2" x="58.1" y="0">r</tspan><tspan class="cls-16" x="62.45" y="0">esou</tspan><tspan class="cls-2" x="88.42" y="0">r</tspan><tspan class="cls-14" x="92.76" y="0">c</tspan><tspan x="98.72" y="0">es</tspan></text>
+    <text class="cls-24" transform="translate(628.16 268.25)"><tspan class="cls-7" x="0" y="0">W</tspan><tspan x="10.51" y="0">e</tspan><tspan class="cls-15" x="17.1" y="0">s</tspan><tspan x="22.86" y="0">t </tspan><tspan class="cls-14" x="29.9" y="0">c</tspan><tspan x="35.87" y="0">oa</tspan><tspan class="cls-23" x="49" y="0">s</tspan><tspan x="54.76" y="0">t </tspan><tspan class="cls-2" x="61.8" y="0">r</tspan><tspan x="66.14" y="0">esou</tspan><tspan class="cls-2" x="92.11" y="0">r</tspan><tspan class="cls-3" x="96.46" y="0">c</tspan><tspan x="102.42" y="0">es</tspan></text>
+  </g>
+</svg>
