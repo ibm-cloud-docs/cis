@@ -267,6 +267,7 @@ The following table lists the actions that are related to configuring settings a
 |`internet-svcs.http2-setting.update`|Enable or disable HTTP2 for the domain.|
 |`internet-svcs.max-upload-setting.update`|Change the amount of data that visitors can upload to the website in a single request.|
 |`internet-svcs.origin-error-page-pass-thru-setting.update`|Enable or disable the proxy of 502 and 504 error pages that are returned from origin server.|
+|`internet-svcs.bot-management.update`|Change Bot Management settings.|
 {: caption="Table 16. Actions that generate settings events" caption-side="bottom"}
 
 

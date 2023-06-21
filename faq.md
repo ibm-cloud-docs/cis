@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-06-01"
 
 keywords:
 
@@ -40,6 +40,12 @@ No. Downgrading from Standard to a Free Trial plan is not allowed.
 {: faq}
 
 To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, global load balancers, pools, and health checks are deleted automatically.
+
+## What happened to Enterprise Package plans?
+{: #enterprise-package-expiration}
+{: faq}
+
+Starting on 21 June 2023, you can no longer configure the Enterprise package plan. The functionality of this plan was split across various tiers and are now available in Enterprise Essential, Enterprise Advanced, and Enterprise Premier plans. See [Transition to Enterprise](/docs/cis?topic=cis-transitioning-next-plan).
 
 ## How do I delete my CIS instance?
 {: #cis-faq-delete-instance}

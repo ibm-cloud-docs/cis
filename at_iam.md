@@ -410,3 +410,16 @@ List of IAM actions and Activity Tracker actions by API method.
 |Get ciphers settings.| `GET /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.read` | `internet-svcs.ciphers-setting.read`|
 |Update ciphers settings.| `PUT /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.update` | `internet-svcs.ciphers-setting.update`|
 {: caption="Table 21. Domain settings" caption-side="bottom"}
+
+
+## Bot Management
+{: #at_iam_CIS_bot-management}
+
+| Action                                    | Method            | IAM ACTION   |  AT ACTION |
+|-------------------------------------------|-------------------|--------------|------------|
+|Get Bot Management settings.| `GET /v1/{crn}/zones/{domain_id}/bot_management}` | `internet-svcs.reliability.read` | `internet-svcs.bot-management.read`|
+|Update Bot Management settings.| `PUT /v1/{crn}/zones/{domain_id}/bot_management}` | `internet-svcs.reliability.update` | `internet-svcs.bot-management.update`|
+|Get Bot Analytics Score Source.| `GET /v1/{crn}/zones/{domain_id}/bot_analytics/score_source}` | `internet-svcs.security.read` | `internet-svcs.bot-analytics.read`|
+|Get Bot Analytics Timeseries.| `GET /v1/{crn}/zones/{domain_id}/bot_analytics/timeseries}` | `internet-svcs.security.read` | `internet-svcs.bot-analytics.read`|
+|Get Bot Analytics Top Attributes.| `GET /v1/{crn}/zones/{domain_id}/bot_analytics/top_ns}` | `internet-svcs.security.read` | `internet-svcs.bot-analytics.read`|
+{: caption="Table 22. Bot Management" caption-side="bottom"}

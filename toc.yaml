@@ -132,6 +132,12 @@ toc:
             - configuring-webhooks.md
             - notifications.md
         - topicgroup:
+            label: Working with Bot management
+            topics:
+            - about-bots.md
+            - machine-learning-model.md
+            - javascript-detections.md
+        - topicgroup:
             label: Enhancing security
             topics:
             - iam.md
@@ -163,7 +169,7 @@ toc:
             - edge-functions-use-cases.md
         - responsibilities.md
         - plan-comparison.md
-        - transition-standard-next.md
+        - transition-plans.md
         - allowlisted-ips.md
         - helpful-tools.md
         - hipaa-advisory.md
@@ -185,6 +191,8 @@ toc:
             - ts-false-pos-neg.md
             - troubleshooting.md
             - ts-execution-order.md
+            - ts-html-5xx-errors.md
+            - ts-html-1xxx-errors.md
             - ts-create-har.md
             - ts-domain-moved.md
         - getting-help.md
