@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-23"
 
 keywords:
 
@@ -62,7 +62,7 @@ To migrate from your current Standard plan to a Standard Next plan, take the fol
 ## Transitioning to Enterprise Tier plans
 {: #transitioning-enterprise-plans}
 
-Starting 21 June 2023, the {{site.data.keyword.cis_full}} current Enterprise plans will no longer be available for new instances. Any instance that is created on or after this date will use the new Enterprise Tier plans.
+Starting 11 August 2023, the {{site.data.keyword.cis_short_notm}} current Enterprise Package, Enterprise GLB, and Enterprise Security plans will no longer be available for new instances. Any instance that is created on or after this date will use the new Enterprise Tier plans.
 {: shortdesc}
 
 By moving to a more metered model, the base cost of the Enterprise Tier plans are smaller than the original Enterprise plans. The following table shows what features are available in the Enterprise Tier plans.
