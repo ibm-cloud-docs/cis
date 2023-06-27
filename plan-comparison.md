@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-27"
 
 keywords:
 
@@ -42,7 +42,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Firewall rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
 |**Smart routing**|No|Yes|Yes|Yes|Yes|
 |**Alerts**|No|Yes|Yes|Yes|Yes|
-|**Advanced rate limiting**|No|No|Yes|Yes|No|
+|**Advanced rate limiting**|No|No|Yes|Yes|Yes|
 |**Bot management**|No|No|No|Yes|No|
 {: caption="Table 1. CIS plan comparison" caption-side="bottom"}
 
