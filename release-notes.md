@@ -25,14 +25,14 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Enterprise Tier plans released
-:   Released the new [Enterprise Tier plans](/docs/cis?topic=cis-transitioning-plans), which will replace the current Enterprise Package, Enterprise GLB, and Enterprise Security plans.
+:   Released the new [Enterprise Tier plans](/docs/cis?topic=cis-transition-plans), which will replace the current Enterprise Package, Enterprise GLB, and Enterprise Security plans.
 
 ## 16 March 2023
 {: #cis-mar1623}
 {: release-note}
 
 Standard Next plan released
-:   Released the new [Standard Next plan](/docs/cis?topic=cis-transitioning-plans), which will replace the current Standard plan.
+:   Released the new [Standard Next plan](/docs/cis?topic=cis-transition-plans), which will replace the current Standard plan.
 
 ## 23 March 2022
 {: #cis-mar2322}
