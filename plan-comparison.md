@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-06-30"
 
 keywords:
 
@@ -52,6 +52,6 @@ The following table compares each offering to help you choose the one that's rig
 The following plans are scheduled for deprecation or deprecated.
 
 * The Standard plan reached the end of marketing on 30 April 2023. End of support is not yet determined.
-* Enterprise Package, Enterprise GLB, and Enterprise Security plans will reach the end of marketing on 31 July, 2023. End of support is not yet determined.
+* Enterprise Package, Enterprise GLB, and Enterprise Security plans will reach the end of marketing on 31 August, 2023. End of support is not yet determined.
 
 For more information about changing to a new plan if you are currently on a deprecated plan, see [Transitioning to updated plans](/docs/cis?topic=cis-transition-plans).
