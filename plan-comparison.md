@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-07-26"
 
 keywords:
 
@@ -30,7 +30,7 @@ The following table compares each offering to help you choose the one that's rig
 | :------- | :------- | :--------- | :------------ | :--------- | :--------- |
 |**Domain**|1|1|2|2|Up to 1000, but recommend no more than 20|
 |**DNS**|250 records|3500 records|3500 records|3500 records|3500 records|
-|**Global load balancers**|* 3 pools \n * 3 origin servers \n * 5 Health checks \n * 60s health checks \n * Geo Routing \n * Health checks from single region \n * 60s minimum TTL for non-proxied global load balancers |* 20 pools  \n (additional pools available for charge)  \n * 20 origin servers \n * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for non-proxied global load balancers |* 20 pools  \n (additional pools available for charge) \n * 20 origin servers \n  * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for non-proxied global load balancers|* 20 pools  \n (additional pools available for charge)  \n * 20 origin servers  \n * 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for non-proxied global load balancers|* Up to 100 pools \n * 100 origin servers \n * Up to 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for non-proxied global load balancers|
+|**Global load balancers**|* 3 pools \n * 3 origin servers \n * 5 Health checks \n * 60s health checks \n * Geo Routing \n * Health checks from single region \n * 60s minimum TTL for non-proxied global load balancers |* 20 pools  \n * 20 origin servers \n (additional origins available for charge) \n * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for non-proxied global load balancers |* 20 pools  \n * 20 origin servers  \n (additional origins available for charge) \n  * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for non-proxied global load balancers|* 20 pools  \n * 20 origin servers  \n (additional origins available for charge)  \n * 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for non-proxied global load balancers|* Up to 100 pools \n * 100 origin servers \n * Up to 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for non-proxied global load balancers|
 |**WAF**|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|
 |**Custom certificate**|1 uploaded custom certificate per domain|25 included custom certificates  \n Additional certificates can be added at a monthly rate|25 included custom certificates  \n Additional certificates can be added at a monthly rate|25 included custom certificates  \n Additional certificates can be added at a monthly rate|1 uploaded custom certificate per domain|
 |**Page rules**|50 page rules per domain|* 100 page rules per domain \n * Additional settings for fine-grained control|* 100 page rules per domain \n * Additional settings for fine-grained control|* 100 page rules per domain \n * Additional settings for fine-grained control|* 100 page rules per domain \n * Additional settings for fine-grained control|
@@ -42,7 +42,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Firewall rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
 |**Smart routing**|No|Yes|Yes|Yes|Yes|
 |**Alerts**|No|Yes|Yes|Yes|Yes|
-|**Advanced rate limiting**|No|No|Yes|Yes|Yes|
+|**Rate limiting**|No|No|Yes|Yes|Yes|
 |**Bot management**|No|No|No|Yes|No|
 {: caption="Table 1. CIS plan comparison" caption-side="bottom"}
 
