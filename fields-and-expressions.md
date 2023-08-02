@@ -33,7 +33,7 @@ Each field value can be sourced from different places, such as:
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
 |http.cookie|String|session=A12345;-background=light|Entire cookie as a string|
-|http.cookie|String| `www.example.com` | The host name used in the full request URI|
+|http.hostname|String| `www.example.com` | The host name used in the full request URI|
 |http.referer|String|_HTTP referer header_| |
 |http.request.full_uri|String|`https://www.example.com/articles/index?section=539061&expand=comments`|The full URI as received by the web server (does not include _#fragment_ which is not sent to web servers)|
 |http.request.method|String|POST|The HTTP method, in upper case|
