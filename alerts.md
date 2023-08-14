@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-08-24"
+  years: 2021, 2023
+lastupdated: "2023-08-10"
 
 keywords:
 
@@ -65,6 +65,7 @@ To configure alert policies by using the console, navigate to your **Account** p
     * Universal SSL alert, which alerts you when Universal certificates are automatically refreshed.
     * Dedicated/Advanced alerts, which alert you when dedicated certificates are expired, and when they are renewed.
     * Load-balancing health check alerts, which alerts you when the health status changes for a pool health check, or pool origin.
+    * Web metrics report, which is a weekly report that helps identify changes in your application's traffic and performance over time.
 1. Enter a name for your alerting policy, and optionally enter a description.
 1. Choose an alerting method. You can select a webhook, enter an email address to send alerts to, or both. Only one notification is required to complete configuration.
     * Enter an email address to which {{site.data.keyword.cis_short}} sends alerts. Click the `+` to add the address to the alert. Repeat for all email addresses.
@@ -329,7 +330,7 @@ Where:
 - **-d** is the array of attributes that are required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
-    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
+    - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, `load_balancing_health_alert`, or `web_analytics_metrics_update`).
     - **mechanisms** are at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
     
