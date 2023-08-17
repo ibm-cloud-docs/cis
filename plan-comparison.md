@@ -38,7 +38,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Caching**|Basic caching options|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Advanced caching options|
 |**Range**|No|No|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs|
 |**Edge functions**|1 action \n (must be named after domain) \n 1M Edge function requests|Unlimited actions|Unlimited actions|Unlimited actions|Unlimited actions|
-|**Protected traffic**   \n (does not include traffic that is related to an attack)  \n Overage charges can occur|0.5 TB |5 TB|5 TB|5 TB |5 TB|
+|**Included protected traffic**   \n (does not include traffic that is related to an attack)  \n Overage charges can occur|0.5 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
 |**Firewall rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
 |**Smart routing**|No|Yes|Yes|Yes|Yes|
 |**Alerts**|No|Yes|Yes|Yes|Yes|
