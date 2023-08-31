@@ -37,7 +37,7 @@ Before you begin, make sure that you have the [required access](/docs/cis?topic=
 
    resource "ibm_cis" "cis_instance" {
      name              = "test"
-     plan              = "standard"
+     plan              = "standard-next"
      resource_group_id = data.ibm_resource_group.group.id
      tags              = ["tag1", "tag2"]
      location          = "global"
