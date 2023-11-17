@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-02-15"
+  years: 2018, 2023
+lastupdated: "2023-11-17"
 
 keywords: range application, tls encryption, ddos protection, global tcp proxy
 
@@ -26,7 +26,7 @@ Range can be used to:
 * Integrate with CIS IP firewall, which allows you to block or challenge IP addresses, or entire IP ranges, from reaching your TCP services.
 * Configure load balancers with TCP health checks, failover, and steering policies to dictate where traffic flows.
 
-Range is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.  
+Range is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
 {: note}
 
 ## Range limitations
@@ -44,9 +44,6 @@ For TCP Range apps, only IP rules apply. This is because IP rules are applied to
 {: ui}
 
 Follow these steps to add an application using the UI.
-
-In the console, UDP applications must be enabled through a Support case. After the functionality is enabled, you can create a UDP application through the CLI or API.
-{: tip}
 
 1. Navigate to **Security > Range**.
 1. Click **Create**.
@@ -79,7 +76,7 @@ Your application is now visible in a tile or table view with the following prope
     * View metrics for the specified application
     * Delete the application
 
-When a Range application is created, it is assigned a unique IPv4 and IPv6 address. These IP addresses are not static and might be subject to change. You can determine the assigned IP address by using DNS. The DNS name always returns the IP addressed assigned to the application.     
+When a Range application is created, it is assigned a unique IPv4 and IPv6 address. These IP addresses are not static and might be subject to change. You can determine the assigned IP address by using DNS. The DNS name always returns the IP addressed assigned to the application.
 
 ### Viewing metrics
 {: #range-view-metrics}
