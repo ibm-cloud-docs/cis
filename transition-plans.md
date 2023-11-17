@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-11-17"
 
 keywords:
 
@@ -30,7 +30,7 @@ By moving to a more metered model, the base cost of the Standard Next plan is sm
 
 |Feature|Standard|Standard Next|Overage|
 |--------|-------------|-----|----|
-|Domain|1|1|Each additional domain incurs a fee|
+|Domain|1 included  \n More available for monthly cost per domain|1 included  \n More available for monthly cost per domain|Each additional domain incurs a fee|
 |Protected traffic  \n (TB)|5|0.5|Traffic over the limit (per TB) incurs a fee|
 |Range traffic|No|No|Not applicable|
 |DNS queries  \n (million per domain)| 10|1|Fees assessed per additional million queries|
@@ -69,7 +69,7 @@ By moving to a more metered model, the base cost of the Enterprise Tier plans ar
 
 |Features|Enterprise Essential|Enterprise Advanced|Enterprise Premier|
 |:-------|:-------------------|:------------------|:-----------------|
-|Included domains|1|2|2|
+|Included domains|1 included  \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|
 |Included DNS records|3500|3500|3500|
 |Protected traffic included (DDoS, CDN, DNS, WAF, GLB)|5 TB|5 TB|5 TB|
 |Requests included (CDN, WAF, GLB) in millions|150|150|150|
