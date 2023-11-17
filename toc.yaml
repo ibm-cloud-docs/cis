@@ -195,4 +195,5 @@ toc:
             - ts-html-1xxx-errors.md
             - ts-create-har.md
             - ts-domain-moved.md
+            - ts-delete-cis-instance.md
         - getting-help.md
