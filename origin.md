@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-06"
+  years: 2018, 2024
+lastupdated: "2024-01-02"
 
 keywords:
 
@@ -199,6 +199,11 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
     
 1. Optionally, configure your SSL certificate to use Server Name Indication (SNI) if you have multiple sites using SSL bound to the same IP address.  Select the **Require Server Name Indication** box.
 1. Your website is now configured to accept secure connections.
+
+### Certificate chains
+{: #certificate-chains}
+
+In some cases, origin web servers require the upload of the certificate chain. Use these links to download either an [ECC](https://developers.cloudflare.com/ssl/static/origin_ca_ecc_root.pem){: external} or an [RSA](https://developers.cloudflare.com/ssl/static/origin_ca_rsa_root.pem){: external} version, and then upload the certificate chain to your origin web server.
 
 ## Revoking an origin certificate
 {: #cis-origin-certificates-revoke}
