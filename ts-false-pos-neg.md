@@ -8,6 +8,8 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
@@ -33,7 +35,7 @@ To test for false positives, set the WAF to Simulate mode, to record the respons
 If you encounter a false positive, there are several potential resolutions:
 {: tsResolve}
 
-- Add the client’s IP addresses to the IP Access Rules allowlist: If the browser or client visits from the same IP addresses, allowing is recommended.  
+- Add the client’s IP addresses to the IP Access Rules allowlist: If the browser or client visits from the same IP addresses, allowing is recommended.
 - Disable the corresponding WAF rules. Doing so stops blocking or challenging false positives, but reduces overall site security. A request blocked by WAF Rule ID 981176 refers to OWASP rules. Decrease OWASP sensitivity to resolve the issue.
 - Bypass the WAF with a Firewall Rule: Create a Firewall Rule with the bypass action to deactivate the WAF for a specific combination of parameters. For example, bypass the WAF for a specific URL and a specific IP address or user agent.
 - Disable WAF for traffic to a URL (not recommended).  Disabling WAF using page rules lowers security on the particular URL endpoint.
@@ -53,8 +55,8 @@ To reduce false negatives, use the following checklist:
 
 - Is Web Application Firewall `On` in the Firewall app under Managed Rules?
 - Is Web Application Firewall `Off` using page rules?
-- Not all WAF rules are enabled by default, so review individual WAF rule default actions.  For example, CIS allows requests with empty user agents by default. 
-  
+- Not all WAF rules are enabled by default, so review individual WAF rule default actions.  For example, CIS allows requests with empty user agents by default.
+
 To block requests with an empty user agent, change the WAF rule Mode to `Block`.
 
 - Are DNS records that serve HTTP traffic proxied through CIS?

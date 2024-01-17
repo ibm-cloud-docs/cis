@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Why is my domain still in `Moved` status?
 {: #domain-moved-status}
+{: troubleshoot}
 
 You have a domain that should be `Active`, but is still in the `Moved` status.
 {: tsSymptoms}

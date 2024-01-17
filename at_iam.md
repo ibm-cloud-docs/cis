@@ -6,7 +6,7 @@ lastupdated: "2020-09-29"
 
 keywords: IBM Cloud, observability
 
-subcollection: observability
+subcollection: cis
 
 ---
 

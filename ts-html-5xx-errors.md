@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting 500 class errors
 {: #html-5xx-errors}
+{: troubleshoot}
 
 Diagnose and resolve 500 class errors for CIS proxied sites using the following sections.
 {: shortdesc}
@@ -103,7 +106,7 @@ Check your origin web server error logs for crashes and look for these common ca
 
 * Origin web server application crashes
 * CIS IPs not allowed at your origin
-* Headers exceeding 32 KB (typically due to too many cookies)
+* Headers exceeding 16 KB (typically due to too many cookies)
 * An empty response from the origin web server that lacks an HTTP status code or response body
 * Missing response headers or origin web server not returning proper HTTP error responses
 

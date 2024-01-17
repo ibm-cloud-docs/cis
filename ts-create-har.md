@@ -8,12 +8,15 @@ keywords: HAR files, HAR, HTTP Archive
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # How do I generate a HAR file?
 {: #generate-har-files}
+{: troubleshoot}
 
 When troubleshooting {{site.data.keyword.cis_full_notm}}, it can be helpful to generate an HTTP Archive (HAR) file. The HAR file is a record of all web browser requests including the request and response headers, the body content, and the page load time.
 {: shortdesc}

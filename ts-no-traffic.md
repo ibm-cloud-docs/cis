@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Why am I not seeing any network traffic?
 {: #troubleshooting-cis-network-traffic}
+{: troubleshoot}
 {: help}
 {: support}
 

@@ -60,7 +60,7 @@ Load balancers and DNS records support both DNS-only and HTTP proxy modes. You c
 ### HTTP proxy mode
 {: #dns-http-proxy-mode}
 
-In HTTP proxy mode, {{site.data.keyword.cis_short_notm}} announces IBM IP addresses externally, but protects (mask) your origin server IP addresses. The announced IP address records have an automatic TTL. 
+In HTTP proxy mode, {{site.data.keyword.cis_short_notm}} announces IBM IP addresses externally, but protects (masks) your origin server IP addresses. The announced IP address records have an automatic TTL.
 
 Using HTTP proxy mode offers the following benefits:
 

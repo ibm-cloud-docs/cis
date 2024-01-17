@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting 1000 class errors
 {: #html-1xxx-errors}
+{: troubleshoot}
 
 The following error codes appear in the HTML body of 530 error messages. For more information, see [Error 530](/docs/cis?topic=cis-html-5xx-errors#530-error).
 {: shortdesc}

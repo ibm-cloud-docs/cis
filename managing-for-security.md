@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-03-08"
+  years: 2018, 2024
+lastupdated: "2024-01-17"
 
 keywords: 
 
@@ -126,7 +126,7 @@ IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, 
 ### Upload custom certificates
 {: #upload-custom-certs}
 
-You can upload your custom certificate by clicking **Add Certificate** button and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). 
+You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). {{site.data.keyword.cis_short_notm}} does not support certificate pinning through ordered or Universal certificates. If you wish to use certificate pinning, it is recommended that you upload and maintain your own custom certificate.
 
 Remember that you are responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date.
 {: important}
@@ -134,7 +134,7 @@ Remember that you are responsible for managing your certificate if you upload a 
 ### Order dedicated certificates
 {: #order-dedicated-certs}
 
-{{site.data.keyword.cis_short_notm}} makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** button and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
+{{site.data.keyword.cis_short_notm}} makes managing your certificates easy by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The type of certificates are:
 
 * SHA-2/ECDSA signed certificate using P-256 key,
 * SHA-2/RSA signed certificate using RSA 2048-bit key, and

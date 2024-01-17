@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # What do I do if I use the Cloudflare Origin root certificate, and it's expiring?
 {: #update-origin-root-ca}
+{: troubleshoot}
 
 Your origin root certificate has expired, or will soon expire,
 {: tsSymptoms}

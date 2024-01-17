@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # What do I do if I’m under a DDoS attack?
 {: #troubleshooting-cis-ddos-attack}
+{: troubleshoot}
 {: help}
 {: support}
 

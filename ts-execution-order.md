@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Why is my rule not working?
 {: #order-of-execution}
+{: troubleshoot}
 
 You have a rule that should execute, but it isn't working.
 {: tsSymptoms}

@@ -23,7 +23,7 @@ Load balancers support DNS-only and HTTP proxy modes. You can have HTTP Proxy an
 ## HTTP Proxy mode
 {: #http-proxy-mode}
 
-In HTTP Proxy mode, load balancers have an automatic TTL. {{site.data.keyword.cis_short_notm}} announces IBM IP addresses externally, but protects (mask) your origin server IP addresses. Any changes to your load balancer propagate within seconds inside {{site.data.keyword.cis_short_notm}}, including any failover events.
+In HTTP Proxy mode, load balancers have an automatic TTL. {{site.data.keyword.cis_short_notm}} announces IBM IP addresses externally, but protects (masks) your origin server IP addresses. When proxied through {{site.data.keyword.cis_short_notm}}, origin IP addresses should be public. Any changes to your load balancer propagate within seconds inside {{site.data.keyword.cis_short_notm}}, including any failover events.
 
 Setting the load balancer to HTTP Proxy mode offers the following benefits:
 

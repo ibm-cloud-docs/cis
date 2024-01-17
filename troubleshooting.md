@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting {{site.data.keyword.cis_short_notm}} error codes
 {: #troubleshooting-cis-error-codes}
+{: troubleshoot}
 
 Here are some common error messages you or your support team might see:
 

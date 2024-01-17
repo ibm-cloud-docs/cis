@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting your {{site.data.keyword.cis_short_notm}} network connection
 {: #troubleshoot-your-cis-network-connection}
+{: troubleshoot}
 
 Use the following methods to gather information that can help you to troubleshoot your network connection. 
 {: shortdesc}

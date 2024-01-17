@@ -103,17 +103,6 @@ To add this record type, valid values must exist in the **Name**, **Service Name
 * Required Fields: Name, Service Name, Target
 * Optional Fields: TTL (default value is `Automatic`), Protocol (defaulted to UDP), Priority (defaulted to 1), Weight (defaulted to 1), Port (defaulted to 1)
 
-### SPF Type record
-{: #spf-type-record}
-
-Support for SPF records (deprecated in RFC 7208) is ending in February, 2022. After this date, you can no longer create SPF type records in {{site.data.keyword.cis_short_notm}}. Use TXT records instead.
-{: deprecated}
-
-To add this record type, valid values must exist in the **Name** and **Content** fields. A **TTL** also can be specified from the list menu, with the default value of `Automatic`.
-
-* Required Fields: Name, Content
-* Optional Field: TTL (default value is `Automatic`)
-
 ### TXT Type record
 {: #txt-type-record}
 
@@ -136,7 +125,7 @@ To add this record type, valid values must exist in the **Name** and **Name Serv
 ### PTR type record
 {: #ptr-type-record}
 
-The PTR record option shown in the DNS Records list menu is not for adding PTR records for Reverse DNS resolution. The purpose is adding a PTR Record to the Forward DNS resolution for the domain. PTR in Forward DNS is allowed under the [DNS specification]( https://tools.ietf.org/html/rfc1035#section-3.3.12){: external}.
+The PTR record option shown in the DNS Records list menu is not for adding PTR records for Reverse DNS resolution. The purpose is adding a PTR Record to the Forward DNS resolution for the domain. PTR in Forward DNS is allowed under the [DNS specification](https://tools.ietf.org/html/rfc1035#section-3.3.12){: external}.
 {: note}
 
 PTR records primarily prevent emails from going to spam folders. Because CIS doesn't support email traffic by default, you must set the PTR record to the location of your email server. Contact your email provider for assistance.

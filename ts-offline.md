@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Why is my website offline?
 {: #troubleshooting-cis-website-offline}
+{: troubleshoot}
 
 Here is what you might see: `IBM CIS cannot connect to the origin server (error 521, 522, 523)`.
 

@@ -8,12 +8,15 @@ keywords:
 
 subcollection: cis
 
+content-type: troubleshoot
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Why do I see a privacy warning?
 {: #troubleshooting-cis-privacy-warning}
+{: troubleshoot}
 
 The certificates issued by {{site.data.keyword.cis_short_notm}} cover the root domain (`example.com`) and one level of subdomain (`*.example.com`).
 {: shortdesc}

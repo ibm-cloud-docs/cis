@@ -4,7 +4,7 @@
     "introduction": "IBM Cloud Internet Services, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on IBM Cloud.",
     "section_devtools": {
       "api": "/apidocs/cis", 
-      "cli": "/docs/cis?topic=cis-cli-plugin-cis-cli", 
+      "cli": "/docs/cis?topic=cis-cis-cli", 
       "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis"
     },
     "section_recommended": [
@@ -16,7 +16,7 @@
       {
         "title": "Getting CIS running with a new subdomain",
         "description": "Practice using CIS with a subdomain or CNAME.",
-        "href": "/docs/cis?topic=cis-getting-cis-running-with-a-new-subdomain"
+        "href": "/docs/cis?topic=cis-get-started-new-subdomain"
       },
       {
         "title": "Plan comparison",
@@ -41,6 +41,7 @@
         {
           "date": "16 March 2023",
           "title": "Standard Next plan released",
+          "description": "Released the new [Standard Next plan](/docs/cis?topic=cis-transition-plans), which will replace the current Standard plan."
         },
         {
           "date": "23 March 2022",
