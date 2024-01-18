@@ -107,7 +107,7 @@ When you are finished, or to skip this step, select **Next step**.
 ### Step 4. Configure your name servers with the registrar or existing DNS provider
 {: #configure-your-name-servers-with-the-registrar-or-existing-dns-provider}
 
-To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, you must delegate your domain to {{site.data.keyword.cis_short_notm}}. To delegate a domain, create an NS record with the name servers provided by {{site.data.keyword.cis_short_notm}} at your domain's registrar or existing DNS provider. If you are unsure of who the registrar is for your domain, you can look it up at [whois.icann.org](https://whois.icann.org/){: external}.
+To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, you must delegate your domain to {{site.data.keyword.cis_short_notm}}. To delegate a domain, create an NS record with the name servers provided by {{site.data.keyword.cis_short_notm}} at your domain's registrar or existing DNS provider. If you are unsure of who the registrar is for your domain, you can look it up at [lookup.icann.org](https://lookup.icann.org/en){: external}.
 
 If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS records in Cloudflare](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/){: external} for detailed instructions by provider.
 

@@ -9,7 +9,7 @@ toc:
     audience: service
     href: /docs/cis
     console-page: /catalog/services/internet-services
-    product-page: https://www.ibm.com/cloud/cloud-internet-services
+    product-page: https://www.ibm.com/products/cloud-internet-services
     path: cis
     label: Cloud Internet Services (CIS)
 
@@ -52,7 +52,7 @@ toc:
             - include: ../codeengine/deploy-multiple-regions.md
         - link:
             label: What are computer networking solutions
-            href: https://www.ibm.com/cloud/learn/networking-a-complete-guide#toc-computer-n-9C7jokVu
+            href: https://www.ibm.com/topics/networking#toc-computer-n-9C7jokVu
 
     - navgroup:
         id: howto

@@ -78,7 +78,7 @@ Each page (challenge, 5xx errors) has a different ID, so use the preview option 
 ## Publishing error pages
 {: #publishing-error-pages}
 
-After you're done customizing your error pages, it's time to publish them to our edge. This is done through the [Custom Page CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#custom-page).
+After you're done customizing your error pages, it's time to publish them to our edge. This is done through the [Custom Page CLI](/docs/cis?topic=cis-cis-cli#custom-pages).
 
 When you publish, the custom error page is requested once by us, then cached on the cloud's edge.
 

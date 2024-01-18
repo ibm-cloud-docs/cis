@@ -125,7 +125,7 @@ To add this record type, valid values must exist in the **Name** and **Name Serv
 ### PTR type record
 {: #ptr-type-record}
 
-The PTR record option shown in the DNS Records list menu is not for adding PTR records for Reverse DNS resolution. The purpose is adding a PTR Record to the Forward DNS resolution for the domain. PTR in Forward DNS is allowed under the [DNS specification](https://tools.ietf.org/html/rfc1035#section-3.3.12){: external}.
+The PTR record option shown in the DNS Records list menu is not for adding PTR records for Reverse DNS resolution. The purpose is adding a PTR Record to the Forward DNS resolution for the domain. PTR in Forward DNS is allowed under the [DNS specification](https://datatracker.ietf.org/doc/html/rfc1035#section-3.3.12){: external}.
 {: note}
 
 PTR records primarily prevent emails from going to spam folders. Because CIS doesn't support email traffic by default, you must set the PTR record to the location of your email server. Contact your email provider for assistance.

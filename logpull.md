@@ -15,7 +15,7 @@ subcollection: cis
 # Using the Logpull service
 {: #logpull}
 
-IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using the [Logpull command](/docs/cis?topic=cis-cli-plugin-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
+IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using the [Logpull command](/docs/cis?topic=cis-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
 {: shortdesc}
 
 ## Enabling log retention

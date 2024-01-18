@@ -42,9 +42,9 @@ Download the certificate and store the file on your origin web server, for examp
 To enable authenticated origin, pull globally on a zone:
 
 1. Install the certificate at the origin web server to authenticate all connections
-1. Configure {{site.data.keyword.cis_short_notm}} with **[End-to-End flexible](/docs/cistopic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible)**
+1. Configure {{site.data.keyword.cis_short_notm}} with **[End-to-End flexible](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible)**
 1. Configure the origin web server to accept client certificates
-1. Enable authenticated origin pull by using the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#update-authenticated-origin-pull-setting)
+1. Enable authenticated origin pull by using the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#update-authenticated-origin-pull-setting)
 
 ## Zone-level authenticated origin pull with customer certificates
 {: #cust-cert-zone-auth-org-pull}
@@ -77,8 +77,8 @@ To enable authenticated origin, pull globally on a zone:
 
    `$ request_body=$(< <(cat <<EOF { "certificate": "$MYCERT", "private_key": "$MYKEY" } } EOF ))`
 
-1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#upload-authenticated-origin-pull-certificate) 
-1. Enable authenticated origin pull via [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#update-authenticated-origin-pull-setting)
+1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#upload-authenticated-origin-pull-certificate) 
+1. Enable authenticated origin pull via [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#update-authenticated-origin-pull-setting)
 
 ## Per-hostname authenticated origin pull using customer certificates
 {: #per-host-zone-auth-org-pull}
@@ -116,8 +116,8 @@ To upload a client certificate in {{site.data.keyword.cis_short_notm}}:
 
     `$ request_body=$(< <(cat <<EOF { "certificate": "$MYCERT", "private_key": "$MYKEY" } } EOF ))`
 
-1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#upload-authenticated-origin-pull-certificate) 
-1. Enable authenticated origin pull on specified hostname through the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cli-plugin-cis-cli#update-authenticated-origin-pull-setting). Link the client certificate to the specific hostname
+1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#upload-authenticated-origin-pull-certificate) 
+1. Enable authenticated origin pull on specified hostname through the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#update-authenticated-origin-pull-setting). Link the client certificate to the specific hostname
 
 ## Replacing a client certificate without downtime
 {: #replace-client-cert}

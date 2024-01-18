@@ -21,7 +21,7 @@ The following use case makes the request matching the page rule resolve to a COS
 ## Prerequisites
 {: #cos-prerequisites}
 
-The following steps assume you have an existing COS instance and bucket with public access. For information on public access see [Allowing public access](/docs/cloud-object-storage?topic=cloud-object-storage-iam-public-access).
+The following steps assume you have an existing COS instance and bucket with public access. For information on public access see [Allowing public access](/docs/cloud-object-storage?topic=cloud-object-storage-allowing-public-access).
 
 ## Proxy DNS entries are required for domains that are to be matched by the page rule
 {: #proxy-dns-entry}

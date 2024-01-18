@@ -149,7 +149,7 @@ To ensure WebP is not served from cache to a browser lacking WebP support, disab
 ### Verify image size optimization is active
 {: #verify-polish}
 
-Activate image size optimization using a [page rule](/docs/cis?topic=cis-use-page-rules#page-rules-performance) or [CLI domain settings](/docs/cis?topic=cis-cli-plugin-cis-cli#domain-settings).
+Activate image size optimization using a [page rule](/docs/cis?topic=cis-use-page-rules#page-rules-performance) or [CLI domain settings](/docs/cis?topic=cis-cis-cli#domain-settings).
 
 Image size optimization adds the following headers to image requests that are compressed:
 

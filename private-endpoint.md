@@ -40,7 +40,7 @@ To connect to {{site.data.keyword.cis_short_notm}} by using a private network co
 
 Before you target a private endpoint for {{site.data.keyword.cis_short_notm}}:
 
-1. Ensure that your {{site.data.keyword.cloud_notm}} infrastructure account is enabled for [virtual routing and forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf){: external}.
+1. Ensure that your {{site.data.keyword.cloud_notm}} infrastructure account is enabled for [virtual routing and forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf){: external}.
 
     When you enable VRF, a separate routing table is created for your account, and connections to and from your account's resources are routed separately
     on the {{site.data.keyword.cloud_notm}} network. To learn more about VRF technology, see [Virtual routing and forwarding on {{site.data.keyword.cloud_notm}}](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
