@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2022-01-19"
+lastupdated: "2024-01-19"
 
 keywords: HAR files, HAR, HTTP Archive
 
