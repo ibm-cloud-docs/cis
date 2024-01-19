@@ -15,37 +15,37 @@ subcollection: cis
 # Caching concepts
 {: #caching-concepts}
 
-This document contains some concepts and definitions related to caching and how it affects your {{site.data.keyword.cis_full}} deployment.
+This document contains some concepts and definitions that are related to caching and how it affects your {{site.data.keyword.cis_full}} deployment.
 {: shortdesc}
 
 ## What is caching?
 {: #what-is-caching}
 
-Caching is the process of storing files on our edge servers, which we do for the purpose of improving the response time when serving those files to customers. By storing the files closer to the customers, we can decrease the time it takes for the data to stream across the network, which commonly is called the **latency**.
+Caching is the process of storing files on the edge servers, which is done to improve the response time to serve those files to customers. By storing the files closer to the customers, you can decrease the time that it takes for the data to stream across the network, which commonly is called the _latency_.
 
-Cached files have a specified expiration time, **Time-to-live (TTL)** after which they are purged from the cache. It also is possible to purge files from the cache manually. After files are removed from the cache, {{site.data.keyword.cis_short_notm}} goes back to your origin server to reload your files and update the cache with the latest versions.
+Cached files have a specified expiration time, called Time-to-live (TTL), after which they are purged from the cache. It is also possible to purge files from the cache manually. After files are removed from the cache, {{site.data.keyword.cis_short_notm}} goes back to your origin server to reload your files and update the cache with the latest versions.
 
 A deeper explanation of the cache settings and your caching options is located in the [Caching and Page Rules](/docs/cis?topic=cis-use-page-rules-with-caching) section.
 
 ### Cached content
 {: #what-content-is-cached}
 
-By default, we cache **static files**, which include many types of image and text files (non-HTML files). This only includes files from your websites and not third party resources from social networking sites, etc. Also, we currently do not cache by MIME type.
+By default, {{site.data.keyword.cis_short_notm}} caches static files, which include many types of image and text files (non-HTML files). The cache includes only files from your websites and not third-party resources from social networking sites, for instance. Also, {{site.data.keyword.cis_short_notm}} currently does not cache by MIME type.
 
 ### Caching HTML
 {: #how-do-i-cache-html}
 
-We do not cache HTML files by default because we do not consider them to be static; however, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files [using the Page Rules feature](/docs/cis?topic=cis-use-page-rules).
+{{site.data.keyword.cis_short_notm}} does not cache HTML files by default because they are not considered to be static. However, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files by [using the Page Rules feature](/docs/cis?topic=cis-use-page-rules).
 
 ## Default caching behavior
 {: #default-cache-behavior}
 
 {{site.data.keyword.cis_short_notm}} caches static content depending on where your visitors come from, which {{site.data.keyword.cis_short_notm}} data center your visitors reach, and how often visitors request a resource at the specific data center.
 
-{{site.data.keyword.cis_short_notm}} only caches a resource within the {{site.data.keyword.cis_short_notm}} data center that serves the request and doesn’t cache:
+{{site.data.keyword.cis_short_notm}} caches only resources within the {{site.data.keyword.cis_short_notm}} data center that serves the request and doesn’t cache the following:
 
-- off-site or third-party resources (for example, Facebook and Flickr)
-- content hosted on unproxied DNS records
+- Off-site or third-party resources (for example, Facebook and Flickr)
+- Content that is hosted on unproxied DNS records
 
 By default, {{site.data.keyword.cis_short_notm}} respects the origin web server’s cache headers in the following manner unless overridden by an edge cache TTL page rule:
 
@@ -57,10 +57,10 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 
 |Response code|TTL  |
 |-------------|-----|
-|200, 206, 301|120m;|
-|302, 303     |20m; |
-|404, 410     |3m;  |
-|403          |1m;  |
+|200, 206, 301|120 m|
+|302, 303     |20 m |
+|404, 410     |3 m  |
+|403          |1 m  |
 {: caption="Table 1. Default cache response codes" caption-side="bottom"}
 
 
@@ -70,48 +70,48 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 - Customize caching with {{site.data.keyword.cis_short_notm}} [edge functions](/docs/cis?topic=cis-edge-functions-use-cases#caching-using-fetch) or the [API](/docs/cis?topic=cis-edge-functions-use-cases#cache-api)
 - Adjust caching level, cache TTL, and more via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#cache)
 
-The maximum file size {{site.data.keyword.cis_short_notm}} caches is 512MB for Trial and Standard customers and 5GB for Enterprise customers. Enterprise customers can open a Support case to request caching of larger files. 
+The maximum file size {{site.data.keyword.cis_short_notm}} caches is 512 MB for Trial and Standard customers and 5 GB for Enterprise customers. Enterprise customers can open a Support case to request caching of larger files. 
 {: tip}
 
 ## File extensions cached by default
 {: #default-file-extensions}
 
 {{site.data.keyword.cis_short_notm}} uses file extensions to cache content. The following file extensions are cached automatically:
-- bmp
-- class
-- css
-- csv
-- doc
-- docx
-- ejs
-- eot
-- eps
-- gif
-- ico
-- jar
-- jpg
-- js
-- mid
-- midi
-- otf
-- pdf
-- pict
-- pls
-- png
-- ppt
-- pptx
-- ps
-- svg
-- svgz
-- swf
-- tif
-- tiff
-- ttf
-- webp
-- woff
-- woff2
-- xls
-- xlsx
+- `bmp`
+- `class`
+- `css`
+- `csv`
+- `doc`
+- `docx`
+- `ejs`
+- `eot`
+- `eps`
+- `gif`
+- `ico`
+- `jar`
+- `jpg`
+- `js`
+- `mid`
+- `midi`
+- `otf`
+- `pdf`
+- `pict`
+- `pls`
+- `png`
+- `ppt`
+- `pptx`
+- `ps`
+- `svg`
+- `svgz`
+- `swf`
+- `tif`
+- `tiff`
+- `ttf`
+- `webp`
+- `woff`
+- `woff2`
+- `xls`
+- `xlsx`
 
 {{site.data.keyword.cis_short_notm}} does not cache by MIME type, and doesn't cache HTML by default. {{site.data.keyword.cis_short_notm}} does cache a website's `robots.txt`. You can cache additional content by creating page rules.
 
@@ -147,9 +147,9 @@ And another user requests:
 
 {{site.data.keyword.cis_short_notm}} goes back to the origin, even though we have the file in our cache.
 
-Query String Sort sorts the query strings _before_ they hit our cache, resulting in a higher cache hit rate. Enable Query String Sort using the toggle in the **Caching** page.
+Query String Sort sorts the query strings _before_ they hit our cache, resulting in a higher cache hit rate. Enable Query String Sort by using the toggle in the **Caching** page.
 
 ## Serving stale content
 {: #serve-stale-content-caching}
 
-**Serve stale content** keeps a limited version of the site online if the server goes down. Even if the content has expired, {{site.data.keyword.cis_short_notm}} continues serving cached content to users when origin servers are offline.
+**Serve stale content** keeps a limited version of the site online if the server goes down. Even if the content expires, {{site.data.keyword.cis_short_notm}} continues serving cached content to users when origin servers are offline.
