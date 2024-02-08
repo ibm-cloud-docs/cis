@@ -149,7 +149,6 @@ toc:
             - data-security.md
             - at_events.md
             - at_iam.md
-            - manage-scc.md
         - terraform.md
 
     - navgroup:
