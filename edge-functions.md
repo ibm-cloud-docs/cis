@@ -131,7 +131,7 @@ All plans can set these features on outbound requests.
     For security reasons, the hostname set in `resolveOverride` must be proxied on the same {{site.data.keyword.cis_short_notm}} zone of the incoming request. Otherwise, the   setting is ignored. CNAME hosts are allowed, so to resolve to a host under a different domain or a DNS only domain first declare a CNAME record within your own zone’s DNS   mapping to the external hostname, set proxy on {{site.data.keyword.cis_short_notm}}, then set resolveOverride to point to that CNAME record.
     {: note}
 
-**Enterprise only:**
+[Enterprise only]{: tag-purple}
 
 - `cacheKey`: A request's cache key is what determines if two requests are "the same" for caching purposes. If a request has the same cache key as some previous request, then we can serve the same cached response for both (for example, `'some-key'`).
 - `cacheTtlByStatus`: This option is a version of the `cacheTtl` feature which chooses a TTL based on the response's status code. If the response to this request has a status code that matches, {{site.data.keyword.cis_short_notm}} caches for the instructed time, and overrides cache instructions sent by the origin (for example, `{ "200-299": 86400, 404: 1, "500-599": 0 }`).
