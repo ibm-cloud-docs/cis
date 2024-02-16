@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-08-10"
+  years: 2021, 2024
+lastupdated: "2024-01-24"
 
 keywords:
 
@@ -32,40 +32,48 @@ Alerts are available only to Enterprise plans.
 
    No action is necessary if you receive a DDoS attack layer 7 alert. Each alert includes a short description, the time the attack was detected and mitigated, the attack type, its maximum rate of attack, and the target.
 
+* **Certificate alerts** include alerts that pertain to TLS certificates. The following alert types specify the renewal aspect you need.
+    * **Dedicated/Advanced** receive notification for validation, issuance renewal, and expiration of Dedicated/Advanced certificates.
+    * **Universal SSL** certificates are automatically refreshed and no user action is required.
+    * **Mutual TLS** alert you when the mTLS certificate is expiring.
+* **Logpush job alerts** notifies when a Logpush job fails. Any impacted job destinations are included in the alert.
+* **Web metrics report** is a weekly summary with reports from your account's web metrics.
+* **Cloudflare maintenance report** shows scheduled, changed, or canceled Cloudflare maintenance windows.
+* **Cloudflare incident report** shows ongoing Cloudflare incidents.
+* **Security alerts** include WAF alerts and Advanced WAF alerts.
+    * **WAF alerts** look for spikes across all services that generate log entries in firewall events. The mean time to detection is 2 hours.
+    * **Advanced WAF alerts**. You can select the services to monitor, and each selected service is monitored separately. The mean time to detection is 5 minutes.
+* **Load balancing health check alerts** are sent when a change occurs in the health status of a load balancing health check.
 * **Pool toggle alerts** notify when the pool is enabled or disabled manually.
 
    No action is necessary if you receive a pool toggle alert. Each alert includes the state that the pool was toggled to, the time it occurred, and which user made the change.
 
-* **Security alerts** include WAF alerts and Advanced WAF alerts.
-    * **WAF alerts** look for spikes across all services that generate log entries in firewall events. The mean time to detection is 2 hours.
-    * **Advanced WAF alerts**. You can select the services to monitor, and each selected service is monitored separately. The mean time to detection is 5 minutes.
 
-* **Certificate alerts** include alerts that your Universal SSL and Dedicated/Advanced certificates need to be renewed.
-    * **Universal SSL** certificates are automatically refreshed and no user action is required.
-    * **Dedicated/Advanced** receive notification for validation, issuance renewal, and expiration of Dedicated/Advanced certificates.
-
-* **Load-balancing health check alerts** are sent when a change occurs in the health status of a load-balancing health check.
-
-## Configuring alert policies by using the console
+## Configuring alert policies in the UI
 {: #ui-configure-alert-policies}
 {: ui}
 
-Use the console to create, update, and delete alerting policies.
+Use the UI to create, update, and delete alerting policies.
 
-To configure alert policies by using the console, navigate to your **Account** page and select the **Alerts** tab. In the Alerts section, select the **Alerting policies** tab.
+To configure alert policies in the UI, navigate to your **Account** page and select the **Alerts** tab. In the Alerts section, select the **Alerting policies** tab.
 
-### Creating a security alert policy by using the console
+### Creating a security alert policy in the UI
 {: #ui-create-alert}
 
 1. Click **Create**.
 1. Select the type of alert policy that you want to create:
+    * HTTP DDoS attack alert, which detects and mitigates an HTTP DDoS attack against one of your domains.
+    * Dedicated/Advanced alerts, which alert you when dedicated certificates are expired, and when they are renewed.
+    * Universal SSL alert, which alerts you when Universal certificates are automatically refreshed.
+    * Mutual TLS alert, which alerts you when a Mutual TLS certificate is expiring.
+    * Logpush job alert, which alerts you when any configured Logpush job fails.
+    * Web metrics report, which is a weekly report that helps identify changes in your application's traffic and performance over time.
+    * Cloudflare maintenance report, which reports on scheduled, changed or canceled Cloudflare maintenance windows.
+    * Cloudflare incident report, which reports on ongoing Cloudflare incidents.
     * Security events alert, which alerts you within 2 hours of detecting a spike in all security events.
     * Advanced security events alert, which alerts you within 5 minutes of detecting a spike in security events with optional service filter.
-    * HTTP DDoS attack alert, which detects and mitigates an HTTP DDoS attack against one of your domains.
-    * Universal SSL alert, which alerts you when Universal certificates are automatically refreshed.
-    * Dedicated/Advanced alerts, which alert you when dedicated certificates are expired, and when they are renewed.
-    * Load-balancing health check alerts, which alerts you when the health status changes for a pool health check, or pool origin.
-    * Web metrics report, which is a weekly report that helps identify changes in your application's traffic and performance over time.
+    * Load balancing health check alerts, which alerts you when the health status changes for a pool health check, or pool origin.
+    * Pool enablement alert, which are alert based on the pool's enabled or disabled toggle status.
 1. Enter a name for your alerting policy, and optionally enter a description.
 1. Choose an alerting method. You can select a webhook, enter an email address to send alerts to, or both. Only one notification is required to complete configuration.
     * Enter an email address to which {{site.data.keyword.cis_short}} sends alerts. Click the `+` to add the address to the alert. Repeat for all email addresses.
@@ -74,10 +82,10 @@ To configure alert policies by using the console, navigate to your **Account** p
 
 By default, alert policies are enabled when created. You can disable alerts that you created by switching the toggle in the **Enabled** column.
 
-### Creating an advanced security alert policy by using the console
+### Creating an advanced security alert policy in the UI
 {: #ui-create-advanced-security-alert}
 
-To create an advanced security alert by using the console, take the following steps:
+To create an advanced security alert in the UI, take the following steps:
 
 1. Click **Create**.
 1. Select Advanced security events alert.
@@ -90,35 +98,35 @@ To create an advanced security alert by using the console, take the following st
 1. Select which services the alert policy monitors.
 1. Click **Create**.
 
-### Editing an alert policy by using the console
+### Editing an alert policy in the UI
 {: #ui-edit-alert}
 
 To edit an alert policy:
-1. Click the overflow menu of the alert in the **Alerts** section and select **Edit**. 
-1. Make the changes that you want to the name and description, add or delete email addresses, and add, remove, or edit webhooks. 
+1. Click the overflow menu of the alert in the **Alerts** section and select **Edit**.
+1. Make the changes that you want to the name and description, add or delete email addresses, and add, remove, or edit webhooks.
 1. Click **Edit** to save your changes.
 
-### Deleting an alert policy by using the console
+### Deleting an alert policy in the UI
 {: #ui-delete-alert}
 
 To delete an alert policy:
 
-1. Click the overflow menu of the alert in the **Alerts** section and select **Delete**. 
+1. Click the overflow menu of the alert in the **Alerts** section and select **Delete**.
 1. Click **Delete** in the confirmation message.
 
 You can delete only alerts that you created.
 {: note}
 
-## Configuring alert policies by using the CLI
+## Configuring alert policies from the CLI
 {: #cli-configure-alert}
 {: cli}
 
-Configure alert policies by using the CLI.
+Configure alert policies from the CLI.
 
-### Listing all alert policies by using the CLI
+### Listing all alert policies from the CLI
 {: #cli-list-alerts}
 
-To list all alert policies by using the CLI, run the following command:
+To list all alert policies from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy list [-i, --instance INSTANCE] [--output FORMAT]
@@ -130,10 +138,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Getting the details of an alert policy by using the CLI
+### Getting the details of an alert policy from the CLI
 {: #cli-get-details-alert}
 
-To get the details of an alert policy by using the CLI, run the following command:
+To get the details of an alert policy from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy get POLICY_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -146,10 +154,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Creating a DDoS Attack Alert by using the CLI
+### Creating a DDoS Attack Alert from the CLI
 {: #cli-create-ddos-alert}
 
-To create a DDoS attack alert policy by using the CLI, run the following command:
+To create a DDoS attack alert policy from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy ddos-attack-l7-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -166,10 +174,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Creating a pool toggle alert by using the CLI
+### Creating a pool toggle alert from the CLI
 {: #cli-create-pool-toggle-alert}
 
-To create a pool toggle alert by using the CLI, run the following command:
+To create a pool toggle alert from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy pool-toggle-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --pools POOLS --trigger-condition (enabled | disabled | either) [--include-future-pools (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -189,10 +197,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Creating a security alert by using the CLI
+### Creating a security alert from the CLI
 {: #cli-create-security-alert}
 
-To create a security alert by using the CLI, run the following command:
+To create a security alert from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --domains DOMAINS [--services SERVICES] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -214,10 +222,10 @@ Where:
 Security alerts and advanced security alerts use the same command. When you create an advanced security events alert command in the CLI, specify the services for the alert. If you do not specify the services for the alert, the mean detection time changes from 5 minutes to 2 hours.
 {: important}
 
-### Updating a DDoS Attack Alert Policy by using the CLI
+### Updating a DDoS Attack Alert Policy from the CLI
 {: #cli-update-ddos-alert}
 
-To update a DDoS attack alert policy by using the CLI, run the following command:
+To update a DDoS attack alert policy from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy ddos-attack-l7-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -235,10 +243,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Updating a pool toggle alert policy by using the CLI
+### Updating a pool toggle alert policy from the CLI
 {: #cli-update-pool-toggle-alert}
 
-To update a pool toggle alert policy by using the CLI, run the following command:
+To update a pool toggle alert policy from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy pool-toggle-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--pools POOLS] [--trigger-condition (enabled | disabled | either)] [--include-future-pools (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -258,10 +266,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Updating a security alert policy by using the CLI
+### Updating a security alert policy from the CLI
 {: #cli-update-security-alert}
 
-To update a security alert policy by using the CLI, run the following command:
+To update a security alert policy from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy firewall-events-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--domains DOMAINS] [--services SERVICES] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -280,10 +288,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Deleting an alert policy by using the CLI
+### Deleting an alert policy from the CLI
 {: #cli-delete-alert}
 
-To delete an alert policy by using the CLI, run the following command:
+To delete an alert policy from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-policy delete POLICY_ID [-i, --instance INSTANCE] [-f, --force]
@@ -296,7 +304,7 @@ Where:
 * **-f, --force** attempts to delete alert policy without prompting for confirmation.
 * **-i, --instance value** is the instance name or ID.
 
-## Creating an alert policy by using the API
+## Creating an alert policy with the API
 {: #api-create-email-notification}
 {: api}
 
@@ -477,7 +485,7 @@ You can monitor the following services:
 |Data loss prevention|`dlp`|
 {: caption="Table 1. Services that can be monitored by Advanced WAF alerts" caption-side="bottom"}
 
-### Editing alert policies by using the API
+### Editing alert policies with the API
 {: #api-edit-alert}
 
 To edit an email alert, run the following command:
@@ -494,7 +502,7 @@ curl -X PUT \
 The **conditions** field is required, even though it might be empty.
 {: tip}
 
-### Deleting alert policies by using the API
+### Deleting alert policies with the API
 {: #api-delete-alert}
 
 To delete an email alert, run the following command:
