@@ -15,11 +15,10 @@ subcollection: cis
 # Customizing error pages
 {: #custom-page}
 
-Cloud Internet Services (CIS) has a wide range of error codes that allow us to differentiate specific problems. By default, these error pages mention Cloudflare; however, you can customize and brand these error pages. Having custom error pages 
-allows you to provide a consistent experience for your users, even in the event of a page load error.
+{{site.data.keyword.cis_short_full}} ({{site.data.keyword.cis_short_notm}}) has a wide range of error codes that allow us to differentiate specific problems. By default, these error pages mention Cloudflare; however, you can customize and brand these error pages. Custom error pages help you to provide a consistent experience for your users, even if a page load error occurs.
 {: shortdesc}
 
-There are two groups of customizable error pages:
+Customizable error pages come in two groups:
 
 Challenges
 * Basic security
@@ -29,15 +28,15 @@ Challenges
 CIS errors
 * 502, 504, and CF 52X errors
 * 10XX errors
-* Errors related to `Serve Stale Content`
+* Errors that are related to `Serve Stale Content`
 
-500, 501, 503, and 505 responses do not trigger custom error pages to avoid breaking specific API endpoints and other web applications. Custom error pages should be reserved for cases where the origin server cannot return a response for the request (520-526 errors).
+500, 501, 503, and 505 responses do not trigger custom error pages to avoid breaking specific API endpoints and other web applications. Reserve custom error pages for cases where the origin server cannot return a response for the request (520-526 errors).
 {: note}
 
 ## Custom error template
 {: #custom-error-template}
 
-The following example is a basic custom error template. When creating your custom error templates, note that the maximum page size is 1.5 MB and the page cannot be blank. Additionally, all external resources are inlined using base64 encoding, making them approximately 50% larger when published.
+The following example is a basic custom error template. When you are creating your custom error templates, the maximum page size is 1.5 MB, and the page cannot be blank. Additionally, all external resources are inlined with Base64 encoding, making them approximately 50% larger when published.
 
 ```sh
 <html>
@@ -52,7 +51,7 @@ The following example is a basic custom error template. When creating your custo
 ## Available custom error tokens
 {: #available-custom-error-tokens}
 
-Some types of custom error pages must include one of these tokens anywhere within the HTML of the custom error page. Only one page-specific token can be present per error page, so if you want to customize every error, you must create one custom error page for each error containing the respective token.
+Some types of custom error pages must include one of these tokens anywhere within the HTML of the custom error page. Only one page-specific token can be present per error page, so if you want to customize every error, you must create one custom error page for each error that contains the respective token.
 
 |Page Type |Token |
 |------|------|
@@ -78,16 +77,16 @@ Each page (challenge, 5xx errors) has a different ID, so use the preview option 
 ## Publishing error pages
 {: #publishing-error-pages}
 
-After you're done customizing your error pages, it's time to publish them to our edge. This is done through the [Custom Page CLI](/docs/cis?topic=cis-cis-cli#custom-pages).
+After you're done customizing your error pages, it's time to publish them to our edge. Publication is done through the [Custom Page CLI](/docs/cis?topic=cis-cis-cli#custom-pages).
 
 When you publish, the custom error page is requested once by us, then cached on the cloud's edge.
 
 ## Updating error pages
 {: #updating-error-pages}
 
-You can update an error page by re-publishing it.
+You can update an error page by republishing it.
 
-If CIS cannot load your site, or you have blocked the US in the CIS firewall, publishing and previewing the error page does not work.
+If {{site.data.keyword.cis_short_notm}} cannot load your site, or you blocked the US in the {{site.data.keyword.cis_short_notm}} firewall, publishing and previewing the error page does not work.
 {: note}
 
 ## Troubleshooting error pages

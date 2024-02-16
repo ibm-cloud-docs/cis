@@ -19,9 +19,9 @@ The following table shows the recommended setup configurations for a child zone 
 
 
 |Parent domain setup |Recommended child subdomain setup|
-|--|--|
-|Parent domain on {{site.data.keyword.cis_short_notm}} via a Full setup |Full setup only|
-|Parent domain on {{site.data.keyword.cis_short_notm}} via a CNAME setup |CNAME setup only|
+|:--|:--|
+|Parent domain on {{site.data.keyword.cis_short_notm}} through a Full setup |Full setup only|
+|Parent domain on {{site.data.keyword.cis_short_notm}} through a CNAME setup |CNAME setup only|
 |The parent domain is not on {{site.data.keyword.cis_short_notm}} |Can choose Full or CNAME setup|
 {: caption="Table 1. Parent and child domain setup" caption-side="bottom"}
 
@@ -30,8 +30,8 @@ The following table shows the recommended setup configurations for a child zone 
 
 To set up a CNAME, take the following steps.
 
-1. Create the `partial` type zone using the {{site.data.keyword.cis_short_notm}} API or CLI.
-    * Create `partial` type zone via {{site.data.keyword.cis_short_notm}} API:
+1. Create the `partial` type zone by using the {{site.data.keyword.cis_short_notm}} API or CLI.
+    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} API:
         POST `https://{{api}}/v1/{{crn}}/zones`
 
         ```sh
@@ -43,7 +43,7 @@ To set up a CNAME, take the following steps.
         ```
         {: codeblock}
 
-    * Create `partial` type zone via {{site.data.keyword.cis_short_notm}} CLI:
+    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} CLI:
 
         ```sh
             ibmcloud cis domain-add ibmnetworkdemo.com --type partial --output JSON

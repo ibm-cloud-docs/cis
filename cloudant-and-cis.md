@@ -21,7 +21,7 @@ Follow these steps to access your Cloudant database through {{site.data.keyword.
 ## Before you begin
 {: #access-cloudant-through-cis-begin}
 
-These instructions assume you have already added a domain to {{site.data.keyword.cis_short_notm}} as outlined in the [Getting started](/docs/cis?topic=cis-getting-started#getting-started) page.
+These instructions assume that you already added a domain to {{site.data.keyword.cis_short_notm}} as outlined in the [Getting started](/docs/cis?topic=cis-getting-started#getting-started) page.
 
 ## Step 1: Add your CIS domain to the Cross-Origin Resource Sharing (CORS)
 {: #access-cloudant-through-cis-step1}
@@ -39,7 +39,7 @@ These instructions assume you have already added a domain to {{site.data.keyword
 {: #access-cloudant-through-cis-step3}
 
 * In the CIS dashboard, navigate to **Performance > Page rules**.
-* Create a page rule for the URL you want, for example, `https://cloudant.test.foo.com/*`.
+* Create a page rule for the URL that you want, for example, `https://cloudant.test.foo.com/*`.
 * Select the Rule Behavior setting `Host Header Override`.
 * Set as the Cloudant database hostname, for example, `111-222-333-444-555-test.cloudant.com`.
 

@@ -46,17 +46,17 @@ For TCP Range apps, only IP rules apply. This is because IP rules are applied to
 Follow these steps to add an application using the UI.
 
 1. Navigate to **Security > Range**.
-1. Click **Create**.
-1. Select a type of application from the list menu. You can choose TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft. 
-1. Enter the application name. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
-1. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin.
+2. Click **Create**.
+3. Select a type of application from the list menu. You can choose TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft. 
+4. Enter the application name. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
+5. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin.
    You can enter a port range (for example: `8080-8090`), but the origin must have the same quantity of ports specified in a consecutive range.
-1. Select the edge IP connectivity.
-1. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer and its port.
-1. Enable IP firewall (optional). When enabled, firewall rules with a "block" or "allowlist" action are enforced for this application.
-1. Enable edge TLS termination (optional). When enabled, select the type of TLS termination you want to use from the list menu.
-1. Select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
-1. Click **Create**.
+6. Select the edge IP connectivity.
+7. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer and its port.
+8. Enable IP firewall (optional). When enabled, IP access rules with a "block" or "allowlist" action are enforced for the application.
+9. Enable edge TLS termination (optional). When enabled, select the type of TLS termination you want to use from the list menu.
+10. Select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
+11. Click **Create**.
 
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
 {: note}

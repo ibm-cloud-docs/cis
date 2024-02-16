@@ -18,18 +18,18 @@ subcollection: cis
 Actions are written in JavaScript and require an event listener to respond to a trigger event. Actions do not effect your traffic unless used by a trigger. 
 {: shortdesc}
 
-* **Standard plans** Have a maximum of one action. The action is assigned a name that is the same as your domain. You can replace your action by uploading another file, or update your action using the code editor. Uploading another file removes the existing action.
-* **Enterprise plans** Can upload an unlimited number of scripts. These can be given unique names.
+* **Standard plans** Have a maximum of one action. The action is assigned a name that is the same as your domain. You can replace your action by uploading another file, or update your action by using the code editor. Uploading another file removes the existing action.
+* **Enterprise plans** Can upload an unlimited number of scripts. These scripts can be given unique names.
 
-* **Create action** Select **Create** to add an action using the code editor. After adding your Javascript code, select **Save** to create your action.
+* **Create action** Select **Create** to add an action by using the code editor. After you add your JavaScript code, select **Save** to create your action.
     * **Standard plans** The name is not editable and is set to the name of your domain.
     * **Enterprise plans** Enter a name for your action.
 
-* **Upload actions** Use the **Upload** button to upload a Javascript file.
+* **Upload actions** Use the **Upload** button to upload a JavaScript file.
     * **Standard plans** The action name is set to the name of your domain.
     * **Enterprise plans** The name of the action is the name of the file.
   
-    Uploading or creating an action with the same name as an existing action causes the existing action to be overwritten. Rename the action   file before uploading, or enter a unique name in the text input during creation to avoid this behavior.
+    Uploading or creating an action with the same name as an existing action causes the existing action to be overwritten. Rename the action file before you upload, or enter a unique name in the text input during creation to avoid this behavior.
     {: note}
 
 * **Editing actions** Selecting an action opens the action in the editor for modification. Whenever you save your changes, the action uploads to the Cloud edge. After updating, select **Save**. If the action is in use, the changes take effect immediately.
@@ -46,7 +46,7 @@ Triggers (routes) determine domain traffic routing to the actions. Triggers asso
 You must add a domain to add triggers. You can add triggers without having actions.
 
 * **Adding triggers** Go to the **Triggers** tab and click **Add trigger**. Enter a URL pattern and select an action from the list of existing actions.
-    * For an action, you can also select **Avoid Edge Functions**. This allows the trigger's path to remain active, but avoid using any Edge function actions. For example, there is an action called `my-function` and a trigger with the path `gamma.cistest-load.com/*`. If the path `gamma.cistest-load.com/data` should not use the action `my-function`, create another trigger with the path `gamma.cistest-load.com/data` and the option **Avoid Edge Functions**. This allows the path `gamma.cistest-load.com/data` to remain active without using the action `my-function`.
+    * For an action, you can also select **Avoid Edge Functions**. This allows the trigger's path to remain active, but avoid using any Edge function actions. For example, the action called `my-function` and a trigger with the path `gamma.cistest-load.com/*`. If the path `gamma.cistest-load.com/data` should not use the action `my-function`, create another trigger with the path `gamma.cistest-load.com/data` and the option **Avoid Edge Functions**. This allows the path `gamma.cistest-load.com/data` to remain active without using the action `my-function`.
 
 * **Editing triggers** Update a trigger using the menu option in the table row for a selected trigger. After updating select **Save**.
 * **Deleting triggers** Delete a trigger using the menu option in the table row for a selected trigger. This action cannot be undone.

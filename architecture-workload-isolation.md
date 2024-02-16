@@ -23,11 +23,11 @@ Review the following sample architecture for {{site.data.keyword.cis_full}}, and
 
 {{site.data.keyword.cis_short}} is a public, global, multitenant service offered in partnership with Cloudflare. It offers DNS name resolution, global load balancing, and security and CDN services, for zones or domains delegated to this service.
 
-In the control plane, you can configure your zone and the services that are applied to traffic to your site via UI, CLI, or API. All access authorization and authentication to your zone or domain is managed through Identity and Access Management (IAM) access policies.
+In the control plane, you can configure your zone and the services that are applied to traffic to your site through the UI, CLI, or API. All access authorization and authentication to your zone or domain is managed through Identity and Access Management (IAM) access policies.
 
 All configuration requests eventually reach the multitenant {{site.data.keyword.cis_short}} control plane on {{site.data.keyword.cloud}} as API calls to an SSL-secured API endpoint. The control plane interacts with the platform IAM service to authenticate the user and authorize the action. The original request targets the customer's {{site.data.keyword.cis_short}} instance. Each {{site.data.keyword.cis_short}} instance is uniquely mapped to an anonymized subaccount in Cloudflare's system. The request is converted to a Cloudflare API request that targets the subaccount and is delivered via HTTPS to the Cloudflare API endpoint. Zones and domains from different customers are isolated and maintained in separate subaccounts within the {{site.data.keyword.cis_short}} account at Cloudflare. Access to the account at Cloudflare is strictly controlled and limited. Access to the {{site.data.keyword.cis_short}} control plane infrastructure is also strictly controlled and limited to essential maintenance personnel only.
 
-Data that is stored at Cloudflare is encrypted except when it is required to be publicly accessible, for example, in the case of DNS records, the control plane is separate from the data plane.
+Data that is stored at Cloudflare is encrypted except when it is required to be publicly accessible. For example, in the case of DNS records, the control plane is separate from the data plane.
 
 The data plane for your site is handled exclusively by Cloudflare. All proxied traffic is resolved to an IP address owned by Cloudflare and routed through Cloudflare's Anycast network to the nearest data center capable of processing the request. The request is processed by Cloudflare based on the zone's configuration. After all configured services (such as firewall rules, WAF rules, rate limits, global load balancing, and so on) are applied, Cloudflare replies to the request from its cache, or by requesting the necessary resources from the website's origin, which is controlled by the customer.
 
@@ -49,7 +49,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.ci
 ### Critical dependencies
 {: #ibmcloud-critical-dependencies}
 
-The following dependencies of {{site.data.keyword.cis_full_notm}}  are considered critical. Any loss of connectivity or service of one of these dependencies results in a functional impact to the customer on {{site.data.keyword.cis_full_notm}}.
+The following dependencies of {{site.data.keyword.cis_full_notm}} are considered critical. Any loss of connectivity or service of one of these dependencies results in a functional impact to the customer on {{site.data.keyword.cis_full_notm}}.
 
 | Service name | Description |
 | ------------ | -----------------------|

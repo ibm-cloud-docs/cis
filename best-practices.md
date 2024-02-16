@@ -15,16 +15,16 @@ subcollection: cis
 # Best practices for {{site.data.keyword.cis_short_notm}} setup
 {: #best-practices-for-cis-setup}
 
-Because {{site.data.keyword.cis_full}} is positioned at the edge of your network, you’ll need to take a few steps to guarantee a smooth integration with your {{site.data.keyword.cis_short_notm}} services. Here are some recommended best practices for integrating {{site.data.keyword.cis_short_notm}} with your origin servers.
+Because {{site.data.keyword.cis_full}} is positioned at the edge of your network, you’ll need to take a few steps to guarantee a smooth integration with your {{site.data.keyword.cis_short_notm}} services. Consider these recommended best practices for integrating {{site.data.keyword.cis_short_notm}} with your origin servers.
 {: shortdesc}
 
 You can do these steps either before or after you change your DNS and activate our proxy service. These recommendations allow {{site.data.keyword.cis_short_notm}} to connect to your origin servers properly. They’ll help you prevent any issues with API or HTTPS traffic, and help your logs capture the correct IP addresses of your customers, rather than the protective {{site.data.keyword.cis_short_notm}} IP addresses.
 
-Here’s what you’ll need to set up:
+Here’s what you need to set up:
 
 * Restore the originating IPs of your customers
 * Incorporate {{site.data.keyword.cis_short_notm}} IP addresses
-* Make sure your security settings don't interfere with API traffic
+* Make sure that your security settings don't interfere with API traffic
 * Configure your security settings as strictly as possible
 
 ## Best practice 1: Know how to restore the originating IPs of your customers
@@ -36,12 +36,12 @@ As a reverse proxy, CIS provides the origination IP in these headers:
 * `X-Forwarded-For`
 * `True-Client-IP` (optional)
 
-You can restore user IP addresses using a variety of tools, for infrastructures such as Apache, Windows IIS, and NGINX.
+You can restore user IP addresses by using various tools for infrastructures such as Apache, Windows IIS, and NGINX.
 
 ## Best practice 2: Incorporate {{site.data.keyword.cis_short_notm}} IP addresses to make integration smoother
 {: #best-practice-incorporate-cis-ip-addresses}
 
-Here are the two steps to take:
+Take the following two steps:
 
 * Remove any rate limiting of {{site.data.keyword.cis_short_notm}} IP addresses
 * Set up your ACLs to allow only {{site.data.keyword.cis_short_notm}} IP addresses and other trusted parties
@@ -53,7 +53,7 @@ You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short
 
 IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by removing connection overhead. However, the default security stance can interfere with many API calls. It is recommended that you take a few actions to prevent interference with your API traffic after proxying is active.
 
-* Turn security features off selectively, using the **Page Rules** features.
+* Turn your security features off selectively by using the **Page Rules** features.
     * Create a Page Rule with the URL pattern of your API, such as `api.example.com`
     * Add the following rule behaviors:
         * Select **Security Level** to **Essentially off**
@@ -71,17 +71,17 @@ The browser integrity check looks for HTTP headers that are commonly abused by s
 ## Best practice 4: Configure your security settings as strictly as possible
 {: #best-practice-configure-strict-security-settings}
 
-{{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy the TLS connection is terminated at Cloudflare and a new TLS connection is opened to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, you can use a wildcard certificate provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
+{{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, the TLS connection is terminated at Cloudflare and a new TLS connection is opened to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, use a wildcard certificate that is provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
 
 ### Upload a custom certificate
 {: #strict-upload-custom-cert}
 
-You can upload your public and private key when you create an Enterprise domain. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you'll be responsible for managing your certificate if you upload a custom certificate. For example, IBM {{site.data.keyword.cis_short_notm}} won't track the certificate expiration dates.
+You can upload your public and private keys when you create an Enterprise domain. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). Remember that you are responsible for managing your certificate if you upload a custom certificate. For example, IBM {{site.data.keyword.cis_short_notm}} doesn't track the certificate expiration dates.
 
 ### Alternatively, use a certificate provisioned by CIS
 {: #strict-use-cert-cis-provisioned}
 
-IBM {{site.data.keyword.cis_short_notm}} has partnered with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers, by default. Manual verification could be required for setting up these certificates, and your support team can help you perform these additional steps.
+IBM {{site.data.keyword.cis_short_notm}} works with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers, by default. Manual verification might be required for setting up these certificates, and your support team can help you perform these additional steps.
 
 ### Change your TLS setting to End-to-End CA Signed
 {: #strict-change-tls-setting}

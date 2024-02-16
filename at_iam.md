@@ -302,16 +302,16 @@ List of IAM actions and Activity Tracker actions by API method.
 
 | Action                                    | Method            | IAM ACTION   |  AT ACTION |
 |-------------------------------------------|-------------------|--------------|------------|
-|List the certificates used for origin TLS client authentication at the domain level. | `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth`|`internet-svcs.security.read`|`internet-svcs.origin-tls-client-auth.read`|
-|Create a certificate used for origin TLS client authentication at the domain level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth.create` |
-|Delete a certificate used for origin TLS client authentication used at the domain level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth.delete` |
-|Get the origin TLS client authentication settings used at the domain level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings|internet-svcs.security.read|internet-svcs.origin-tls-client-auth-settings.read` |
-|Update the origin TLS client authentication settings used at the domain level.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-settings.update` |
-|Get the origin TLS client authentication settings used for the hostname.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/{hostname}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostnames.read`|
+|List the certificates that are used for origin TLS client authentication at the domain level. | `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth`|`internet-svcs.security.read`|`internet-svcs.origin-tls-client-auth.read`|
+|Create a certificate that is used for origin TLS client authentication at the domain level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth.create` |
+|Delete a certificate that is used for origin TLS client authentication that is used at the domain level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth.delete` |
+|Get the origin TLS client authentication settings that are used at the domain level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings|internet-svcs.security.read|internet-svcs.origin-tls-client-auth-settings.read` |
+|Update the origin TLS client authentication settings that are used at the domain level.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/settings` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-settings.update` |
+|Get the origin TLS client authentication settings that are used for the hostname.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/{hostname}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostnames.read`|
 |Update the origin TLS client authentication settings for a hostname.| `PUT /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames` | `internet-svcs.security.update` | `internet-svcs.origin-tls-client-auth-hostnames.update`|
 |Get the origin TLS client authentication certificates used at the hostname level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostname-certificates.read` |
-|Create an origin TLS client authentication certificate used at hostname level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.create` |
-|Delete an origin TLS client authentication certificate used at hostname level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.delete` |
+|Create an origin TLS client authentication certificate used at the hostname level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.create` |
+|Delete an origin TLS client authentication certificate used at the hostname level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.delete` |
 {: caption="Table 20. Edge Functions" caption-side="bottom"} 
 
 ## Domain settings

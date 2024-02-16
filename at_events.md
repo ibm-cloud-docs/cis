@@ -33,7 +33,7 @@ The following table lists the actions that are related to DNS domains and genera
 |`internet-svcs.zones.create`|Create a DNS domain.|
 |`internet-svcs.zones.update`|Update a DNS domain.|
 |`internet-svcs.zones.delete`|Delete a DNS domain.|
-|`internet-svcs.zones-activation-check.update`| Perform activation check for a DNS domain.|
+|`internet-svcs.zones-activation-check.update`|Run activation check for a DNS domain.|
 |`internet-svcs.dnssec.update`|Enable or disable DNSSEC for a DNS domain.|
 {: caption="Table 1. Actions that generate DNS domain events" caption-side="bottom"}
 
@@ -43,7 +43,7 @@ The following table lists the actions that are related to DNS domains and genera
 The following table lists the actions that are related to DNS records and generate an event:
 
 |Action|Description|
-|-|-|  
+|-|-|
 |`internet-svcs.dns-records.create`|Create a DNS record.|
 |`internet-svcs.dns-records.update`|Update a DNS record.|
 |`internet-svcs.dns-records.delete`|Delete a DNS record.|
@@ -103,22 +103,22 @@ The following table lists the actions that are related to firewalls and generate
 |-|-|
 |`internet-svcs.waf-groups.update`|Enable or disable a group of WAF rule sets.|
 |`internet-svcs.waf-rules.update`|Enable or disable a WAF rule.|
-|`internet-svcs.ip-firewall-rules.create`|Create IP firewall rule at domain level or instance level.|
-|`internet-svcs.ip-firewall-rules.update`|Update IP firewall rule at domain level or instance level.|
-|`internet-svcs.ip-firewall-rules.delete`|Delete IP firewall rule at domain level or instance level.|
+|`internet-svcs.ip-firewall-rules.create`|Create an IP firewall rule at the domain level or instance level.|
+|`internet-svcs.ip-firewall-rules.update`|Update an IP firewall rule at the domain level or instance level.|
+|`internet-svcs.ip-firewall-rules.delete`|Delete an IP firewall rule at the domain level or instance level.|
 |`internet-svcs.filters.create`|Create filters.|
 |`internet-svcs.filters.update`|Update filters.|
 |`internet-svcs.filters.delete`|Delete filters.|
 |`internet-svcs.filters-validate-expr.create`|Validate a filter expression.|
-|`internet-svcs.firewall-rules.create`|Create filter based firewall rule.|
-|`internet-svcs.firewall-rules.update`|Update filter based firewall rule.|
-|`internet-svcs.firewall-rules.delete`|Delete filter based firewall rule.|
-|`internet-svcs.ua-rules.create`|Create user agent blocking rule.|
-|`internet-svcs.ua-rules.update`|Update user agent blocking rule.|
-|`internet-svcs.ua-rules.delete`|Delete user agent blocking rule.|
-|`internet-svcs.domain-lockdown-rules.create`|Create domain lockdown rule.|
-|`internet-svcs.domain-lockdown-rules.update`|Update domain lockdown rule.|
-|`internet-svcs.domain-lockdown-rules.delete`|Delete domain lockdown rule.|
+|`internet-svcs.firewall-rules.create`|Create a filter-based firewall rule.|
+|`internet-svcs.firewall-rules.update`|Update a filter-based firewall rule.|
+|`internet-svcs.firewall-rules.delete`|Delete a filter-based firewall rule.|
+|`internet-svcs.ua-rules.create`|Create a user agent blocking rule.|
+|`internet-svcs.ua-rules.update`|Update a user agent blocking rule.|
+|`internet-svcs.ua-rules.delete`|Delete a user agent blocking rule.|
+|`internet-svcs.domain-lockdown-rules.create`|Create a domain lockdown rule.|
+|`internet-svcs.domain-lockdown-rules.update`|Update a domain lockdown rule.|
+|`internet-svcs.domain-lockdown-rules.delete`|Delete a domain lockdown rule.|
 {: caption="Table 6. Actions that generate firewall events" caption-side="bottom"}
 
 ## List of events: Rate limiting
@@ -128,10 +128,10 @@ The following table lists the actions that are related to rate limiting and gene
 
 |Action|Description|
 |-|-|
-|`internet-svcs.rate-limits.create`|Create rate limiting rule.|
-|`internet-svcs.rate-limits.update`|Update rate limiting rule.|
-|`internet-svcs.rate-limits.delete`|Delete rate limiting rule.|
-{: caption="Table 7. Actions that generate rate limiting events" caption-side="bottom"}
+|`internet-svcs.rate-limits.create`|Create a rate limiting rule.|
+|`internet-svcs.rate-limits.update`|Update a rate limiting rule.|
+|`internet-svcs.rate-limits.delete`|Delete a rate limiting rule.|
+{: caption="Table 7. Actions that generate a rate limiting events" caption-side="bottom"}
 
 ## List of events: Routing
 {: #events_routing}

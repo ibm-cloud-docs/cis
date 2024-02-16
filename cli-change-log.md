@@ -29,7 +29,7 @@ Version 1.14.11 of the CLI was released on 16 March 2023.
 :   Add binary M1 and s390x support.
 :   Fix origin certificate list issue.
 :   Upgrade go dependency package versions.
-:   Unhide standard plan for 45 days.
+:   Unhide the standard plan for 45 days.
 
 ## Version 1.14.9
 {: #cli-1149}
@@ -37,23 +37,23 @@ Version 1.14.11 of the CLI was released on 16 March 2023.
 Version 1.14.9 of the CLI was released on 27 October 2022.
 :   Add authenticated origin pull list.
 :   Enhance certificates order.
-:   Add probe_zone option for glb monitor.
+:   Add `probe_zone` option for the GLB monitor.
 
 ## Version 1.14.8
 {: #cli-1148}
 
-Version 1.14.8 of the CLI was released on 26 Augest 2022.
+Version 1.14.8 of the CLI was released on 26 August 2022.
 :   Add new alert policies.
-:   Enable Domain cname stetup.
+:   Enable Domain CNAME setup.
 :   Extend rate limit threshold range.
 
 ## Version 1.14.5
 {: #cli-1145}
 
-Version 1.14.5 of the CLI was released on 09 Augest 2022.
+Version 1.14.5 of the CLI was released on 09 August 2022.
 :   Fix edge functions trigger.
 :   Fix cross account resource access.
-:   Add ppc64le binary release.
+:   Add `ppc64le` binary release.
 :   Page rule action remove always online.
 
 ## Version 1.14.4

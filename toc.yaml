@@ -60,9 +60,8 @@ toc:
         - topicgroup:
             label: Managing certificates
             topics:
-              - edge-certificates
-              - origin.md
-        - origin.md
+            - edge-certificates.md
+            - origin.md
         - start-with-subdomain.md
         - multi-domain.md
         - dns.md

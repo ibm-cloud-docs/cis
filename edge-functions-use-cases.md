@@ -18,7 +18,7 @@ subcollection: cis
 The following use cases are provided solely as examples, and are not intended for exact duplication in your environment.
 {: shortdesc}
 
-Exercise caution when testing any of the following code, because it might cause a disruption in service.
+Exercise caution when you test any of the following code because it might cause a disruption in service.
 {: important}
 
 ## A/B testing
@@ -85,7 +85,7 @@ async function fetchAndApply(request) {
 ## Adding a response header
 {: #add-response-header}
 
-To modify the response headers, you’ll first need to make a copy of the response in order to make it mutable. Then you can use the Headers interface to add, change, or remove headers.
+To modify the response headers, first make a copy of the response so that you can make it mutable. Then, you can use the Headers interface to add, change, or remove headers.
 
 ```sh
 addEventListener('fetch', event => {
@@ -110,7 +110,7 @@ async function handleRequest(request) {
 ## Aggregating multiple requests
 {: #aggregate-multiple-requests}
 
-Here, we make multiple requests to different API endpoints, aggregate the responses and send it back as a single response.
+This example makes multiple requests to different API endpoints, aggregates the responses, and sends it back as a single response.
 
 ```sh
 addEventListener('fetch', event => {
@@ -153,7 +153,7 @@ async function fetchAndApply(request) {
 ## Conditional routing
 {: #conditional-routing}
 
-The easiest way to deliver different content based on the device being used is to rewrite the URL of the request based on the condition you care about. For example:
+The easiest way to deliver different content based on which device is being used is to rewrite the URL of the request based on the condition you care about. See the following examples.
 
 ### Device type
 {: #conditional-routing-device-type}
@@ -251,7 +251,7 @@ async function fetchAndApply(request) {
 ## Originless responses
 {: #originless-responses}
 
-You can return responses directly from the edge. No need to hit your origin.
+You can return responses directly from the edge. No need to send a request to your origin.
 
 ### Ignore POST and PUT HTTP requests
 {: #originless-responses-ignore-post-put-http-requests}
@@ -298,7 +298,7 @@ async function fetchAndApply(request) {
 ### Prevent a specific IP from connecting
 {: #originless-responses-prevent-specific-ip-connection}
 
-Blocklist IP addresses. This snippet of code prevents a specific IP, in this case ‘225.0.0.1’ from connecting to the origin.
+Blocklist IP addresses. This snippet of code prevents a specific IP (in this case `225.0.0.1`) from connecting to the origin.
 
 ```sh
 addEventListener('fetch', event => {
@@ -374,7 +374,7 @@ async function fetchAndApply(request) {
 ## Setting a cookie
 {: #setting-cookies}
 
-You can set cookies using CIS Edge functions.
+You can set cookies by using CIS Edge functions.
 
 ```sh
 addEventListener('fetch', event => {
@@ -400,16 +400,16 @@ async function fetchAndApply(request) {
 
 A common URL authentication method known as request signing can be implemented in an Edge function with the help of the Web Crypto API.
 
-In the example presented here, we’ll authenticate the path of a URL along with an accompanying expiration timestamp, using a Hash-based Message Authentication Code (HMAC) with a SHA-256 digest algorithm. For a user agent to successfully fetch an authenticated resource, they’ll need to provide the correct path, expiration timestamp, and HMAC using query parameters — if any of those three are tampered with, the request fails.
+In the example presented here, CIS authenticates the path of a URL along with an accompanying expiration timestamp by using a Hash-based Message Authentication Code (HMAC) with an SHA-256 digest algorithm. To successfully fetch an authenticated resource, the user agent needs to provide the correct path, expiration timestamp, and HMAC by using query parameters. If any of these three parameters are tampered with, the request fails.
 
-Note that the authenticity of the expiration timestamp is covered by the HMAC, so we can rely on the user-provided timestamp being correct if the HMAC is correct, and thus know when the URL expires. Moreover, you can also determine whether a URL in their possession has expired or not.
+The authenticity of the expiration timestamp is covered by the HMAC, which means that you can rely on the user-provided timestamp to be correct if the HMAC is correct, and when the URL expires. You can also determine whether a URL in their possession is expired.
 
 ### Verifying signed requests
 {: #signed-requests-verify}
 
-This example verifies the HMAC for any request URL whose pathname starts with `/verify/`.
+This example verifies the HMAC for any request URL where the path name starts with `/verify/`.
 
-For debugging convenience, this Edge function returns 403 if the URL or HMAC is invalid, or if the URL has expired. You might want to return 404 in an actual implementation.
+For debugging convenience, this Edge function returns a 403 message if the URL or HMAC is invalid, or if the URL is expired. You might want to return 404 in an actual implementation.
 
 ```sh
 addEventListener('fetch', event => {
@@ -492,9 +492,9 @@ function byteStringToUint8Array(byteString) {
 ### Generating signed requests
 {: #signed-requests-generate}
 
-Typically, signed requests are delivered to you in some out-of-band way, such as email, or actually generated by you yourself if you have the symmetric key. We can, of course, also generate the signed requests in an Edge function.
+Typically, signed requests are delivered to you in some out-of-band way, such as an email, or you generated one by yourself if you have the symmetric key. You can also generate the signed requests in an Edge function.
 
-For any request URL beginning with `/generate/`, we’ll replace `/generate/` with `/verify/`, sign the resulting path with its timestamp, and return the full, signed URL using the response body.
+For any request URL that begins with `/generate/`, CIS replaces `/generate/` with `/verify/`, signs the resulting path with its timestamp, and returns the full, signed URL in the response body.
 
 ```sh
 addEventListener('fetch', event => {
@@ -547,20 +547,17 @@ async function generateSignedUrl(url) {
 ## Streaming responses
 {: #streaming-responses}
 
-An Edge function script doesn’t need to prepare its entire response body before delivering a Response to `event.respondWith()`. Using a TransformStream, it is possible to stream a response body after sending the response’s front matter (for example, HTTP status line and headers). This allows us to minimize:
-
-* The visitor’s time-to-first-byte.
-* The amount of buffering that must be done in the Edge function script.
+An Edge function script doesn’t need to prepare its entire response body before it delivers a Response to `event.respondWith()`. By using a TransformStream, you can stream a response body after you send the response’s front matter (for example, HTTP status line and headers). This streamlining helps CIS to minimize the visitor’s time-to-first-byte and the amount of buffering that must be done in the Edge function script.
 
 Minimizing buffering is especially important if you must process or transform response bodies that are larger than the Edge function’s memory limit. In these cases, streaming is the only feasible implementation strategy.
 
-The CIS Edge Function service already streams by default wherever possible. You only need to use these APIs if you wish to modify the response body in some way, while maintaining streaming behavior. If your Edge function script only passes subrequest responses back to the client verbatim, without reading their bodies, then its body handling is already optimal, and there is no need for the techniques described here.
+The CIS Edge Function service already streams by default wherever possible. These APIs are only needed if you want to modify the response body in some way, while you maintain the streaming behavior. If your Edge function script passes subrequest responses back to the client verbatim, without reading their bodies, then the body handling is already optimal.
 {: note}
 
 ### Streaming pass-through
 {: #streaming-responses-pass-through}
 
-Here’s a minimal pass-through example to get started.
+Get started with the following minimal pass-through example.
 
 ```sh
 addEventListener("fetch", event => {
@@ -600,14 +597,14 @@ async function streamBody(readable, writable) {
 
 Some important details to note:
 
-* Although `streamBody()` is an asynchronous function, we do not want to call `await` on it, so that it does not block forward progress of the calling `fetchAndStream()` function. It continues to run asynchronously for as long as it has an outstanding `reader.read()` or `writer.write()` operation.
-* Backpressure: We `await` the read operation before calling the write operation. Likewise, we `await` the write operation before calling the next read operation. Following this pattern propagates backpressure to the origin.
-* Completion: We call `writer.close()` at the end, which signals to the Edge function runtime that we’re done writing this response body. After being called, `streamBody()` terminates — if this is undesirable, pass its returned promise to `FetchEvent.waitUntil()`. If your script never calls `writer.close()`, the body appears truncated to the runtime, though it might continue to function as intended.
+* Although `streamBody()` is an asynchronous function, you do not want to call `await` on it so that it does not block the progress of calling `fetchAndStream()` function. The function continues to run asynchronously for the period in which it has an outstanding `reader.read()` or `writer.write()` operation.
+* Backpressure: `await` the read operation before you call the write operation. Likewise, `await` the write operation before you call the next read operation. Following this pattern propagates backpressure to the origin.
+* Completion: call `writer.close()` at the end, which signals to the Edge function runtime that you're done writing this response body. After being called, `streamBody()` terminates — if this behavior is undesirable, pass its returned promise to `FetchEvent.waitUntil()`. If your script never calls `writer.close()`, the body appears truncated to the runtime, though it might continue to function as intended.
 
 ### Aggregate and stream multiple requests
 {: #streaming-responses-aggregate-and-stream-multiple-requests}
 
-This is similar to our aggregating multiple requests recipe, but this time we’ll start writing our response as soon as we’ve verified that every subrequest succeeded — no need to wait for the actual response bodies.
+This use case is similar to the aggregating multiple requests recipe, but this time you start writing the response as soon as you verify that every subrequest succeeded — no need to wait for the response bodies.
 
 ```sh
 addEventListener('fetch', event => {
@@ -674,14 +671,13 @@ async function streamJsonBodies(bodies, writable) {
 ```
 {: codeblock}
 
-Again, there are a couple of important details to note:
-
-* The runtime expects to receive TypedArrays on the readable side of the TransformStream. Therefore, we never pass a string to `writer.write()`, only Uint8Arrays. If you need to write a string, use a TextEncoder.
+The runtime expects to receive TypedArrays on the readable side of the TransformStream. Therefore, you never pass a string to `writer.write()`, only Uint 8Arrays. If you need to write a string, use a TextEncoder.
+{: note}
 
 ## Custom load balancer with Edge functions
 {: #custom-load-balancer-edge-functions}
 
-Load balancing helps you maintain the scalability and reliability of websites you host. You can use Edge functions to create custom load balancers designed to address your specific needs.
+Load balancing helps you maintain the scalability and reliability of the websites you host. You can use Edge functions to create custom load balancers that are designed to address your specific needs.
 
 ```sh
 const US_HOSTS = [
@@ -750,28 +746,28 @@ function getRandomInt(max) {
 Determine how to cache a resource by setting TTLs, custom cache keys, and cache headers in a fetch request.
 
 ```sh
-async function handleRequest(request) {  
+async function handleRequest(request) {
   const url = new URL(request.url)
-  
-  // Only use the path for the cache key, removing query strings  
-  // and always store using HTTPS, for example, https://www.example.com/file-uri-here  
+
+  // Only use the path for the cache key, removing query strings
+  // and always store using HTTPS, for example, https://www.example.com/file-uri-here
   const someCustomKey = `https://${url.hostname}${url.pathname}`
-  
-  let response = await fetch(request, {    
-    cf: {      
-      // Always cache this fetch regardless of content type      
-      // for a max of 5 seconds before revalidating the resource      
-      cacheTtl: 5,      
-      cacheEverything: true,      
-      //Enterprise only feature, see Cache API for other plans      
-      cacheKey: someCustomKey,    
-      },  
-    })  
-    // Reconstruct the Response object to make its headers mutable.  
+
+  let response = await fetch(request, {
+    cf: {
+      // Always cache this fetch regardless of content type
+      // for a max of 5 seconds before revalidating the resource
+      cacheTtl: 5,
+      cacheEverything: true,
+      //Enterprise only feature, see Cache API for other plans
+      cacheKey: someCustomKey,
+      },
+    })
+    // Reconstruct the Response object to make its headers mutable.
     response = new Response(response.body, response)
-    
-    //Set cache control headers to cache on browser for 25 minutes  
-    response.headers.set("Cache-Control", "max-age=1500")  
+
+    //Set cache control headers to cache on browser for 25 minutes
+    response.headers.set("Cache-Control", "max-age=1500")
     return response
 }
 
@@ -798,7 +794,7 @@ Setting the cache level to Cache Everything overrides the default "cacheability"
 This feature is available only to enterprise customers.
 {: note}
 
-A request's cache key is what determines if two requests are "the same" for caching purposes. If a request has the same cache key as some previous request, then we can serve the same cached response for both.
+A request's cache key is what determines whether two requests are "the same" for caching purposes. If a request has the same cache key as some previous request, then we can serve the same cached response for both.
 
 ```sh
 // Set cache key for this request to "some-string".
@@ -806,34 +802,34 @@ fetch(event.request, { cf: { cacheKey: "some-string" } })
 ```
 {: codeblock}
 
-Normally, {{site.data.keyword.cis_short_notm}} computes the cache key for a request based on the request's URL, but you might want different URLs to be treated as if they were the same for caching purposes. For example, if your web site content is hosted from both Amazon S3 and Google Cloud Storage - you have the same content in both places, and you use a Worker to randomly balance between the two. However, you don't want to end up caching two copies of your content. You could utilize custom cache keys to cache based on the original request URL rather than the subrequest URL:
+{{site.data.keyword.cis_short_notm}} computes the cache key for a request based on the request's URL, but you might want different URLs to be treated as if they were the same for caching purposes. For example, if your website content is hosted from both Amazon S3 and Google Cloud Storage (you have the same content in both places), and you then use an edge function to randomly balance between the two. However, you don't want to cache two copies of your content. You can use custom cache keys to cache based on the original request URL rather than the subrequest URL.
 
 ```sh
 addEventListener("fetch", (event) => {
-  let url = new URL(event.request.url)  
-  if (Math.random() < 0.5) {    
-    url.hostname = "example.s3.amazonaws.com"  
-  }  
-  else {    
-    url.hostname = "example.storage.googleapis.com"  
+  let url = new URL(event.request.url)
+  if (Math.random() < 0.5) {
+    url.hostname = "example.s3.amazonaws.com"
+  }
+  else {
+    url.hostname = "example.storage.googleapis.com"
   }
 
-  let request = new Request(url, event.request)  
-  event.respondWith(    
-    fetch(request, {      
-      cf: { cacheKey: event.request.url },    
-    })  
+  let request = new Request(url, event.request)
+  event.respondWith(
+    fetch(request, {
+      cf: { cacheKey: event.request.url },
+    })
   )
 })
 ```
 {: codeblock}
 
-Remember, edge functions operating on behalf of different zones cannot affect each other's cache. You can only override cache keys when making requests within your own zone (in the previous example `event.request.url` was the key stored), or requests to hosts that are not on {{site.data.keyword.cis_short_notm}}. When making a request to another {{site.data.keyword.cis_short_notm}} zone (for example, belonging to a different {{site.data.keyword.cis_short_notm}} customer), that zone fully controls how its own content is cached within {{site.data.keyword.cis_short_notm}}; you cannot override it.
+Remember, edge functions that operate on behalf of different zones cannot affect each other's cache. You can override cache keys only when you make requests within your own zone (in the previous example `event.request.url` was the key stored), or requests to hosts that are not on {{site.data.keyword.cis_short_notm}}. When you make a request to another {{site.data.keyword.cis_short_notm}} zone (for example, a zone that belongs to a different {{site.data.keyword.cis_short_notm}} customer), that zone fully controls how its own content is cached within {{site.data.keyword.cis_short_notm}}; you cannot override it.
 
 ### Override based on origin response code
 {: #override-origin-response-code}
 
-This feature is available only to enterprise customers.
+This feature is available only to Enterprise customers.
 {: note}
 
 ```sh
@@ -850,7 +846,7 @@ This option is a version of the `cacheTtl` feature which chooses a TTL based on 
 #### TTL interpretation
 {: #ttl-interpretation}
 
-The following TTL values are interpreted by {{site.data.keyword.cis_short_notm}}:
+The following TTL values are interpreted by {{site.data.keyword.cis_short_notm}}.
 - Positive values: Indicate in seconds how long {{site.data.keyword.cis_short_notm}} should cache the asset for.
 - `0`: The asset is cached but expires immediately (revalidate from origin every time).
 - `-1` or any negative value: Instructs {{site.data.keyword.cis_short_notm}} not to cache at all.
@@ -858,7 +854,7 @@ The following TTL values are interpreted by {{site.data.keyword.cis_short_notm}}
 ## Cache API
 {: #cache-api}
 
-Cache using the {{site.data.keyword.cis_short_notm}} Cache API. This example can also cache POST requests.
+Cache by using the {{site.data.keyword.cis_short_notm}} Cache API. This example can also cache POST requests.
 
 ```js
 const someOtherHostname = "my.herokuapp.com"

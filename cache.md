@@ -40,16 +40,16 @@ By default, {{site.data.keyword.cis_short_notm}} caches static files, which incl
 ## Default caching behavior
 {: #default-cache-behavior}
 
-{{site.data.keyword.cis_short_notm}} caches static content depending on where your visitors come from, which {{site.data.keyword.cis_short_notm}} data center your visitors reach, and how often visitors request a resource at the specific data center.
+{{site.data.keyword.cis_short_notm}} caches static content based on where your visitors come from, which {{site.data.keyword.cis_short_notm}} data center your visitors reach, and how often visitors request a resource at the specific data center.
 
-{{site.data.keyword.cis_short_notm}} caches only resources within the {{site.data.keyword.cis_short_notm}} data center that serves the request and doesn’t cache the following:
+{{site.data.keyword.cis_short_notm}} caches only resources within the {{site.data.keyword.cis_short_notm}} data center that serves the request and doesn’t cache the following resources:
 
 - Off-site or third-party resources (for example, Facebook and Flickr)
 - Content that is hosted on unproxied DNS records
 
 By default, {{site.data.keyword.cis_short_notm}} respects the origin web server’s cache headers in the following manner unless overridden by an edge cache TTL page rule:
 
-- If the `cache-control` header is set to `private`, `no-store`, `no-cache`, or `max-age=0`, or if there is a cookie in the response, then {{site.data.keyword.cis_short_notm}} does not cache the resource.
+- If the `cache-control` header is set to `private`, `no-store`, `no-cache`, or `max-age=0`, or if a cookie is in the response, then {{site.data.keyword.cis_short_notm}} does not cache the resource.
 - Otherwise, if `cache-control` is set to `public` and the `max-age` is greater than 0, or if the `expires` header is a date in the future, {{site.data.keyword.cis_short_notm}} caches the resource.
 - If both `max-age` and an `expires` header are set, `max-age` is used.
 
@@ -66,11 +66,11 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 
 {{site.data.keyword.cis_short_notm}} provides several cache customization options:
 
-- Specify caching behavior for individual URLs via {{site.data.keyword.cis_short_notm}} page rules
+- Specify caching behavior for individual URLs by using {{site.data.keyword.cis_short_notm}} page rules
 - Customize caching with {{site.data.keyword.cis_short_notm}} [edge functions](/docs/cis?topic=cis-edge-functions-use-cases#caching-using-fetch) or the [API](/docs/cis?topic=cis-edge-functions-use-cases#cache-api)
-- Adjust caching level, cache TTL, and more via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#cache)
+- Adjust caching level, cache TTL, and more through the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#cache)
 
-The maximum file size {{site.data.keyword.cis_short_notm}} caches is 512 MB for Trial and Standard customers and 5 GB for Enterprise customers. Enterprise customers can open a Support case to request caching of larger files. 
+The maximum file size that {{site.data.keyword.cis_short_notm}} caches is 512 MB for Trial and Standard Next customers and 5 GB for Enterprise customers. Enterprise customers can open a Support case to request caching of larger files. 
 {: tip}
 
 ## File extensions cached by default
@@ -113,7 +113,7 @@ The maximum file size {{site.data.keyword.cis_short_notm}} caches is 512 MB for 
 - `xls`
 - `xlsx`
 
-{{site.data.keyword.cis_short_notm}} does not cache by MIME type, and doesn't cache HTML by default. {{site.data.keyword.cis_short_notm}} does cache a website's `robots.txt`. You can cache additional content by creating page rules.
+{{site.data.keyword.cis_short_notm}} does not cache by MIME type, and doesn't cache HTML by default. {{site.data.keyword.cis_short_notm}} does cache a website's `robots.txt`. You can cache more content by creating page rules.
 
 ## Understanding {{site.data.keyword.cis_short_notm}} cache responses
 {: #understanding-cis-cache-responses}
@@ -124,12 +124,12 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 |---------------|------------|
 |HIT|The resource was found in the {{site.data.keyword.cis_short_notm}} cache.|
 |MISS|The resource was not found in the {{site.data.keyword.cis_short_notm}} cache and was served from the origin web server.|
-|EXPIRED|The resource was found in cache but has since expired and was served from the origin web server.
+|EXPIRED|The resource was found the cache but has since expired and was served from the origin web server.
 |STALE|The resource was served from cache but is expired. {{site.data.keyword.cis_short_notm}} couldn’t contact the origin to retrieve the updated resource.|
-|BYPASS|The origin server instructed {{site.data.keyword.cis_short_notm}} to bypass cache via a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. BYPASS is returned when enabling origin cache-control. {{site.data.keyword.cis_short_notm}} also sets BYPASS when your origin web server sends cookies in the response header.|
+|BYPASS|The origin server instructed {{site.data.keyword.cis_short_notm}} to bypass cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. BYPASS is returned when you enable origin cache-control. {{site.data.keyword.cis_short_notm}} also sets BYPASS when your origin web server sends cookies in the response header.|
 |REVALIDATED|The resource is served from cache but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
-|UPDATING|The resource was served from cache but is expired. The resource is currently being updated by the origin web server. UPDATING is typically seen only for very popular cached resources.|
-|DYNAMIC|The resource was not cached by default and your current {{site.data.keyword.cis_short_notm}} caching configuration doesn't instruct {{site.data.keyword.cis_short_notm}} to cache the resource.  Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
+|UPDATING|The resource was served from cache but is expired. The resource is being updated by the origin web server. UPDATING is typically seen only for popular cached resources.|
+|DYNAMIC|The resource was not cached by default and your current {{site.data.keyword.cis_short_notm}} caching configuration doesn't instruct {{site.data.keyword.cis_short_notm}} to cache the resource. Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
 {: caption="Table 2. Cache response codes and definitions" caption-side="bottom"}
 
 
