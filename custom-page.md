@@ -15,7 +15,7 @@ subcollection: cis
 # Customizing error pages
 {: #custom-page}
 
-{{site.data.keyword.cis_short_full}} ({{site.data.keyword.cis_short_notm}}) has a wide range of error codes that allow us to differentiate specific problems. By default, these error pages mention Cloudflare; however, you can customize and brand these error pages. Custom error pages help you to provide a consistent experience for your users, even if a page load error occurs.
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) has a wide range of error codes that allow us to differentiate specific problems. By default, these error pages mention Cloudflare; however, you can customize and brand these error pages. Custom error pages help you to provide a consistent experience for your users, even if a page load error occurs.
 {: shortdesc}
 
 Customizable error pages come in two groups:

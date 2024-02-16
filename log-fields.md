@@ -31,7 +31,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 {: pre}
 
 ## Available Fields
-{: #available-fields}
+{: #logpull-available-fields}
 
 The following tables describe the fields available by log category.
 
