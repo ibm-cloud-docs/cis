@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-07-19"
+  years: 2018, 2024
+lastupdated: "2024-03-05"
 
 keywords:
 
@@ -54,7 +54,7 @@ Use rate limiting rules to protect your site or API from malicious traffic by bl
 ### Traffic scrubbing
 {: #traffic-scrubbing}
 
-{{site.data.keyword.cis_short_notm}} offers 192 Tbps of global network edge capacity and can mitigate DDoS attacks that have extremely high packet and HTTP request rates.
+{{site.data.keyword.cis_short_notm}} offers 248 Tbps of global network edge capacity and can mitigate DDoS attacks that have extremely high packet and HTTP request rates.
 
 When a DDoS attack occurs, {{site.data.keyword.cis_short_notm}} doesn't use scrubbing centers; the activity is analyzed on the edge, which helps to mitigate DDoS attacks closest to the source.
 

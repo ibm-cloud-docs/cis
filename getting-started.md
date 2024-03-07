@@ -65,10 +65,7 @@ There are several plans to choose from:
 * **Standard Next** (Replaces deprecated Standard plan)
 * **No-cost Trial**
 
-The **No-cost Trial** expires after 30 days, at which point you can upgrade to a plan that best suits your needs. A single Standard or Standard Next instance can manage one domain. You can create as many Standard or Standard Next service instances as you want within a single account, each managing a single domain. The **Enterprise Plans** allow you to manage multiple domains in a single service instance.
-
-Before creating a **Standard** plan, remember that this plan is deprecated and will eventually reach end-of-support.
-{: important}
+The **No-cost Trial** expires after 30 days, at which point you can upgrade to a plan that best suits your needs. The trial plan instance will have the same features available as a **Standard Next** plan instance would. Both the **Standard Next** and **Enterprise Plans** (except for **Enterprise Usage** plan) have a single domain included, but will allow you to onboard multiple domains under a single service instance for a cost.
 
 Select **Create** on the **Overview** screen to begin provisioning your account.
 
