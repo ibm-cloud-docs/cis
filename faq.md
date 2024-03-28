@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-06-23"
+  years: 2018, 2024
+lastupdated: "2024-03-28"
 
 keywords:
 
@@ -256,3 +256,31 @@ If you're already using gzip {{site.data.keyword.cis_short_notm}} honors your gz
 
 The Accept-Encoding header is not respected and is removed.
 {: note}
+
+## How many requests can I make to the {{site.data.keyword.cis_short_notm}} API?
+{: #request-limit-api}
+{: faq}
+
+The global rate limit for the {{site.data.keyword.cis_short_notm}} API is 1200 requests per five minutes per user, and applies cumulatively regardless of whether the request is made through the UI, CLI, Terraform, or API.
+
+## In what order are my configurations handled for incoming traffic at the edge?
+{: #order-incoming-traffic}
+{: faq}
+
+{{site.data.keyword.cis_short_notm}} handles incoming traffic in the following order.
+
+1. DDoS
+1. URL Rewrites
+1. Page Rules
+1. IP Firewall
+1. WAF / Firewall Rules
+1. Edge Functions
+1. Load Balancer
+
+For more detailed information about how your traffic is processed, see [Traffic sequencing](/docs/cis?topic=cis-traffic-sequencing).
+
+## Can I use {{site.data.keyword.cis_short_notm}} with private IPs?
+{: #can-i-use-private-ips}
+{: faq}
+
+Private IPs (RFC1918) can be reached with DNS lookup through the non-proxied {{site.data.keyword.cis_short_notm}} setup. However, you can't access most of {{site.data.keyword.cis_short_notm}}'s advanced features such as CDN and WAF with this setup. For private IPs, {{site.data.keyword.cis_short_notm}} handles Name-to-Address translation only. Connectivity to the private network is the responsibility of the customer.
