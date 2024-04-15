@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-11-17"
+  years: 2023, 2024
+lastupdated: "2024-02-15"
 
-keywords:
+keywords: plans, enterprise essential, enterprise advanced, enterprise premier, standard next
 
 subcollection: cis
 
@@ -43,7 +43,7 @@ By moving to a more metered model, the base cost of the Standard Next plan is sm
 |GLB origin servers|6|3|Not applicable|
 |Smart routing|No|No|Not applicable|
 |Rate limiting|No|No|Not applicable|
-|Logpush/Logpull|No|No|Not applicable|
+|Logging|No|No|Not applicable|
 |Page rules per domain|50|50|Not applicable|
 |Firewall rules|100|100|Not applicable|
 {: caption="Table 1. Comparison of CIS Standard and Standard Next plans" caption-side="bottom"}
@@ -76,7 +76,8 @@ By moving to a more metered model, the base cost of the Enterprise Tier plans ar
 |Custom uploaded certificates|25|25|25|
 |GLB: Origins, pools, GLB included|20|20|20|
 |Range (Layer 3/4) | No | Yes | Yes |
-|Advanced rate limiting| No | Yes | Yes |
+|Logging| Yes | Yes | Yes |
+|Rate limiting| Yes | Yes | Yes |
 |Advanced WAF| No | Yes | Yes |
 |Bot management| No | No | Yes |
 {: caption="Table 2. Comparison of CIS Enterprise Tier plans" caption-side="bottom"}
