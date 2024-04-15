@@ -33,6 +33,7 @@ toc:
             - ddos-concept.md
             - glb.md
             - waf-concept.md
+            - traffic-sequencing.md
             - routing.md
             - cache.md
             - http-concepts.md
