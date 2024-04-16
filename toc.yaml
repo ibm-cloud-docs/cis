@@ -80,6 +80,7 @@ toc:
             - ssl-options.md
             - mtls.md
             - auth-origin-pull.md
+            - cipher-suites.md
         - topicgroup:
             label: Working with WAFs
             topics:
