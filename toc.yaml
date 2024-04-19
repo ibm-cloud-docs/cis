@@ -93,6 +93,7 @@ toc:
             - actions.md
             - fields-and-expressions.md
             - order-and-priority.md
+            - url-normalization.md
         - topicgroup:
             label: Working with global load balancers
             topics:
