@@ -57,7 +57,7 @@ Attempting to directly access DNS records used for {{site.data.keyword.cis_short
 
 Disable **Always Online** if using Custom Hostnames (SSL for SaaS).
 
-## Error 1002: DNS points to Prohibited IP
+## Error 1002: DNS points to prohibited IP
 {: #1002-error-dns}
 
 Common causes for 1002 errors when a DNS points to a prohibited IP address are:
@@ -97,7 +97,7 @@ If you own the website:
 2. Log in to your {{site.data.keyword.cis_short_notm}} account
 3. Update the A records in the {{site.data.keyword.cis_short_notm}} DNS to the IP address confirmed by your hosting provider
 
-## Error 1003 Access Denied: Direct IP Access Not Allowed
+## Error 1003 Access denied: Direct IP access not allowed
 {: #1003-error}
 
 The most common cause of 1003 errors is when a client or browser directly accesses a {{site.data.keyword.cis_short_notm}} IP address.
@@ -107,7 +107,7 @@ The most common cause of 1003 errors is when a client or browser directly access
 
 Browse to the website domain name in your URL instead of the {{site.data.keyword.cis_short_notm}} IP address.
 
-## Error 1004: Host Not Configured to Serve Web Traffic
+## Error 1004: Host not configured to serve web traffic
 {: #1004-error}
 
 Common causes of 1004 errors are:
@@ -120,7 +120,7 @@ Common causes of 1004 errors are:
 
 If the issue persists beyond 5 minutes, contact {{site.data.keyword.cis_short_notm}} support.
 
-## Errors 1006, 1007, 1008 or 1106 Access Denied: Your IP address has been banned
+## Errors 1006, 1007, 1008 or 1106 Access denied: Your IP address has been banned
 {: #1006-7-8-errors}
 
 Common causes for errors 1006, 1007, and 1008 errors are:
@@ -133,7 +133,7 @@ Common causes for errors 1006, 1007, and 1008 errors are:
 
 Request the website owner to investigate their {{site.data.keyword.cis_short_notm}} security settings or allow your client IP address. Because the website owner blocked your request, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
 
-## Errors 1009 Access Denied: Country or region banned
+## Errors 1009 Access denied: Country or region banned
 {: #1009-error}
 
 A common cause of 1009 errors is when the owner of the website (for example, `example.com`) has banned the country or region your IP address in from accessing the website.
@@ -155,7 +155,7 @@ Notify the website owner of the blocking. If you cannot determine how to contact
 
 Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
 
-## Error 1011: Access Denied (Hotlinking Denied)
+## Error 1011: Access denied (Hotlinking denied)
 {: #1011-error}
 
 A common cause of 1011 errors is when a request is made for a resource that uses {{site.data.keyword.cis_short_notm}} hotlink protection.
@@ -167,7 +167,7 @@ Notify the website owner of the blocking. If you cannot determine how to contact
 
 Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
 
-## Error 1012: Access Denied
+## Error 1012: Access denied
 {: #1012-error}
 
 A common cause of 1012 errors is when a website owner forbids access based on malicious activity detected from the visitor’s computer or network (`ip_address`). The most likely cause is a virus or malware infection on the visitor’s computer.
@@ -196,7 +196,7 @@ Test for an SNI mismatch via an online tool such as SSL Shopper.
 
 Provide {{site.data.keyword.cis_short_notm}} Support a HAR file captured while duplicating the error.
 
-## Error 1014: CNAME Cross-User Banned
+## Error 1014: CNAME cross-user banned
 {: #1014-error}
 
 By default, {{site.data.keyword.cis_short_notm}} prohibits a DNS CNAME record between domains in different {{site.data.keyword.cis_short_notm}} accounts. CNAME records are permitted within a domain (`www.example.com` CNAME to `api.example.com`) and across zones within the same user account (`www.example.com` CNAME to `www.example.net`).
@@ -220,10 +220,10 @@ Unable to purge is another 1015 error code relating to {{site.data.keyword.cis_s
 * If you are the site owner, review {{site.data.keyword.cis_short_notm}} Rate Limiting thresholds and adjust your Rate Limiting configuration.
 * If your Rate Limiting blocks requests in a short time period (for instance, 1 second) try increasing the time period to 10 seconds.
 
-For guidance on when you expect a new Edge function to exceed rate limits, see [Working wiht Edge functions](/docs/cis?topic=cis-working-with-edge-functions).
+For guidance on when you expect a new Edge function to exceed rate limits, see [Working with Edge functions](/docs/cis?topic=cis-working-with-edge-functions).
 
 ## Error 1016: Origin DNS error
-{: #1056-error}
+{: #1016-error}
 
 Error 1016 occurs when {{site.data.keyword.cis_short_notm}} cannot resolve the origin web server’s IP address.
 
