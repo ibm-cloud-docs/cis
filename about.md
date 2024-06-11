@@ -167,7 +167,7 @@ DDoS mitigation is typically an expensive service that can grow in cost when und
 
 Though DDoS is enabled by default in {{site.data.keyword.cis_short_notm}}, you can further configure Layer 7 security by:
 
-* Configuring WAF ruleset sensitivity and response behavior
+* Configuring WAF rule set sensitivity and response behavior
 * Adding rate limiting
 * Adding firewall rules
 
@@ -176,7 +176,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ### Mitigate non volumetric attacks
 {: #cis-mitigate-non-volumetric-attacks}
 
-{{site.data.keyword.cis_short_notm}} WAF contains rulesets to mitigate non-volumetric attacks, including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](/docs/cis?topic=cis-waf-q-and-a#what-types-of-attacks-can-waf-prevent).
+{{site.data.keyword.cis_short_notm}} WAF contains rule sets to mitigate non-volumetric attacks, including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](/docs/cis?topic=cis-waf-q-and-a#what-types-of-attacks-can-waf-prevent).
 
 ### Cost protection
 {: #cis-cost-protection}

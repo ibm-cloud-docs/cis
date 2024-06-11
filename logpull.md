@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-23"
+  years: 2018, 2024
+lastupdated: "2024-04-30"
 
 keywords: log pull, logpull
 
@@ -15,13 +15,13 @@ subcollection: cis
 # Using the Logpull service
 {: #logpull}
 
-IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using the [Logpull command](/docs/cis?topic=cis-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server.
+IBM customers can access the Logpull service on Enterprise accounts. This service allows users to consume request logs over HTTP using the [Logpull command](/docs/cis?topic=cis-cis-cli#logpull-section). These logs contain data related to the connecting client, the request path through the network, and the response from the origin web server. Users can query for logs starting from 1 minute in the past (relative to the actual time that you make the query).
 {: shortdesc}
 
 ## Enabling log retention
 {: #log-retention}
 
-Edge logs are not retained by default. Before you can pull logs using the Logpull CLI, you must enable log retention. To do so, you must check the current setting, then turn log retention on or off.
+Edge logs are not retained by default. Before you can pull logs using the Logpull CLI, you must enable log retention. To do so, you must check the current setting, then turn log retention on or off. When enabled, logs are retained for 7 days. If retention is turned off, previously saved logs will be available until the retention period expires.
 
 1. To check whether log retention is currently turned off, use the `log-retention` CLI:
 
@@ -576,3 +576,16 @@ The following is an example `logpull` call and examples of specific types of res
     }
     ```
     {: codeblock}
+
+## Limitations
+{: #logpull-limitations}
+
+The following usage restrictions apply when using the Logpull feature.
+
+* **Rate limits:** Exceeding these limit results in a `429` error response:
+  * 15 requests per minute per zone
+  * 180 requests per minute per user
+* **Time range:** The maximum difference between the start and end parameters can be 1 hour.
+* **Response size:** The maximum response size is 10 GiB per request, which is equivalent to around 15 M records when about 55 fields are selected. More records can be retrieved when fewer fields are selected because the per-record size is smaller.
+* **Timeout:** The response will fail with a terminated connection after 10 minutes.
+* **Stream timeout:** The request will be terminated with a `408` error response if the connection is idle for 30 seconds. This timeout usually means that the request is too exhaustive (frequent timeouts - more than 12 per hour). Stream timeouts will result in subsequent queries getting blocked with a status code `429` for 1 hour. To avoid the timeout, try requesting records by using fewer number of fields, or try with smaller start and end parameters.

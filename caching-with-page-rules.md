@@ -80,7 +80,7 @@ The following example sets a page rule to cache everything found in the `/images
 |Cache level|Cache everything|
 |Browser Cache TTL|30 minutes|
 |Edge Cache TTL|1 day|
-{: caption="Table 1. Rule behavior settings to cache everything in `/images`" caption-side="bottom"}
+{: caption="Table 1. Rule behavior settings to cache everything in /images" caption-side="bottom"}
 
 **Serve Stale Content** serves pages from our cache, even when your server goes down. Visitors see a limited version of your site, with a message that they are in offline browsing mode.
 

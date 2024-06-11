@@ -21,25 +21,25 @@ Have a question about {{site.data.keyword.cis_full}}? Review these frequently as
 {: #cis-faq-free-trial-plan}
 {: faq}
 
-The Free Trial plan, by design, allows only one zone per account. It is recommended that only one instance be created per account and the zone name be verified. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during the Free Trial Plan.
+The Free Trial plan, by design, allows only one zone per account. It is recommended that you create only one instance per account and that you verify the zone name. It is critical that the zone name be verified before it is added. If a zone is deleted, another zone or the same zone cannot be added during the Free Trial Plan.
 
 ## How many Free Trial instances can I have?
 {: #cis-faq-free-trial-instances}
 {: faq}
 
-You can have, at most, one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, if you delete a free trial instance, or if the free trial expires, you are not allowed to create another free trial instance. You can, however, create instances of other paid plan types (for example, Standard), independent of any free trials you might have created.
+You can have, at most, one Free Trial instance per account, for the lifetime of the account. If you already have a free trial instance, if you delete a free trial instance, or if the free trial expires, you are not allowed to create another free trial instance. However, you can create instances of other paid plan types, independent of any free trials you might have created.
 
-## Can I downgrade from Standard to the Free Trial?
+## Can I downgrade from Standard Next to the Free Trial?
 {: #cis-faq-downgrade-standard-to-free-plan}
 {: faq}
 
-No. Downgrading from Standard to a Free Trial plan is not allowed.
+No. Downgrading from Standard Next to a Free Trial plan is not allowed.
 
-## My Free Trial has expired. What are my options?
+## My Free Trial expired. What are my options?
 {: #cis-faq-free-trial-plan-expired}
 {: faq}
 
-To avoid any data loss you must upgrade from Free Trial to Standard prior to the expiration date. After that, we only support upgrading the Plan or Deleting the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, global load balancers, pools, and health checks are deleted automatically.
+To avoid any data loss, you must upgrade from Free Trial to Standard before the expiration date. After that expiration, you can only upgrade the plan or delete the CIS instance. If the instance is not deleted or upgraded after 45 days (from the initiation of the instance) the configuration domain, global load balancers, pools, and health checks are deleted automatically.
 
 ## What happened to Enterprise Package plans?
 {: #enterprise-package-expiration}
@@ -51,16 +51,16 @@ Starting on 11 August 2023, you can no longer configure the Enterprise Package p
 {: #cis-faq-delete-instance}
 {: faq}
 
-To delete a CIS instance, you must first delete all global load balancers, pools, and health checks. Then delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
+To delete a CIS instance, you must first delete all global load balancers, pools, and health checks. Then, delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
 
-If you are moving your domain to a different provider, be sure to migrate your DNS records and other configuration information to the new provider before activating the domain there. Activating the domain before migrating from CIS can cause your domain to changed to a [`Moved` state](/docs/cis?topic=cis-domain-moved-status).
+If you are moving your domain to a different provider, be sure to migrate your DNS records and other configuration information to the new provider before you activate the domain there. Activating the domain before you migrate from CIS can cause your domain to change to a [`Moved` state](/docs/cis?topic=cis-domain-moved-status).
 {: important}
 
-## I added a user to my account and gave that user permission to manage Internet Services instance(s). Why is that user facing authentication issues?
+## I added a user to my account and gave that user permission to manage Internet Services instances. Why does that user have authentication issues?
 {: #cis-faq-user-authentication-issue}
 {: faq}
 
-It's possible that you did not assign "service access roles" to the user. Note that there are two separate sets of roles:
+It's possible that you did not assign "service access roles" to the user. Note the two separate sets of roles:
 
 * Platform access
 * Service access
@@ -71,7 +71,7 @@ You need platform access roles to create and manage service instances, while ser
 {: #cis-faq-pending-domain}
 {: faq}
 
-When you add a domain to CIS, we give you a couple of name servers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the name servers correctly. Make sure you add both the name servers to your registrar or DNS provider. We periodically scan the public DNS system to check whether the name servers have been configured as instructed. As soon as we are able to verify the name server change (which can take up to 24 hours), we activate your domain. You can submit a request to recheck name servers by clicking on **Recheck name servers** in the overview page.
+When you add a domain to CIS, you are given some name servers to configure at your registrar (or at your DNS provider, if you are adding a subdomain). The domain or subdomain remains in pending state until you configure the name servers correctly. Make sure you add both the name servers to your registrar or DNS provider. CIS periodically scans the public DNS system to check whether the name servers were configured as instructed. As soon as CIS can verify the name server change (which can take up to 24 hours), your domain is activated. You can submit a request to recheck name servers by clicking **Recheck name servers** in the overview page.
 
 ## Who is the registrar for my domain?
 {: #cis-faq-who-is-registrar}
@@ -79,20 +79,20 @@ When you add a domain to CIS, we give you a couple of name servers to configure 
 
 Consult https://whois.icann.org/ for this information.
 
-You must have the administrator privilege to edit your domain's configuration at the registrar in order to update or add the name servers provided for your domain when you add it to CIS. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the permission to update your domain's configuration at the registrar. Work with the owner of the domain in your organization to make the necessary changes.
+To add your domain to CIS, you must have administrator privilege to edit the domain's configuration at the registrar to update or add the name servers for your domain. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the administrator privilege. Work with the owner of the domain in your organization to make the necessary changes.
 {: note}
 
 ## I want to keep my current DNS provider for my domain (`example.com`). Can I delegate a subdomain (`subdomain.example.com`) from my current DNS provider to CIS?
 {: #cis-faq-keep-current-dns-provider}
 {: faq}
 
-Yes. The process is similar to adding a domain, but instead of the registrar, you work with the DNS provider for the higher level domain. When you add a subdomain to CIS, you are given two name servers to configure, as usual. You configure a Name Server (NS) record for each of the two name servers as DNS records within your domain being managed by the other DNS provider. When we are able to verify that the required NS records have been added, we activate your subdomain. If you do not manage the higher level domain within your organization, you must work with the owner of the higher level domain to get the NS records added.
+Yes. The process is similar to adding a domain, but instead of the registrar, you work with the DNS provider for the higher-level domain. When you add a subdomain to CIS, you are given two name servers to configure, as usual. You configure a name server (NS) record for each of the two name servers as DNS records within your domain that is being managed by the other DNS provider. When CIS is able to verify that the required NS records have been added, CIS activates your subdomain. If you do not manage the higher level domain within your organization, you must work with the owner of the higher-level domain to get the NS records added.
 
 ## What are the defaults for DNS TTL?
 {: #cis-faq-dnsttl-defaults}
 
 The following are defaults for DNS time-to-live (TTL), in seconds.
-* For records such as A record, CNAME, and so on, the automatic TTL is 300s.
+* For records such as A records and CNAMEs, the automatic TTL is 300s.
 
 ## What is TLS?
 {: #cis-faq-what-is-tls}

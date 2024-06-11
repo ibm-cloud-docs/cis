@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-12-05"
+  years: 2024
+lastupdated: "2024-02-22"
 
 keywords:
 
@@ -29,17 +29,10 @@ Check to confirm that the rule you are expecting to execute is not getting dropp
 
 The following list shows the execution order from our partner, Cloudflare. Evaluate where your rule lands in the order of execution and adjust the rule as needed.
 
-1. L7 DDoS mitigation
-1. URL rewrites
-1. Page rules
-1. Origin rules
-1. Cache rules
-1. Configuration rules
-1. Redirect rules
-1. IP Firewall (Access Rules)
-1. Bots
-1. Web Application Firewall (including CIS Rule set, OWASP, and Custom rules)
-1. Header modification
-1. Cloudflare Access
+1. DDoS
+1. URL Rewrites
+1. Page Rules
+1. IP Firewall
+1. WAF / Firewall Rules
 1. Edge Functions
-1. Load balancing
+1. Load Balancer

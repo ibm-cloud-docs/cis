@@ -21,7 +21,7 @@ subcollection: cis
 Alerts are available only to Enterprise plans.
 {: note}
 
-For more information about each type of alert, see [Types of alerts](/docs/cis?topic=cis-configuring-policies&interface=ui#notification-types). 
+For more information about each type of alert, see [Types of alerts](/docs/cis?topic=cis-configuring-policies&interface=ui#notification-types).
 
 ## Creating an email alert using the UI
 {: #ui-create-email-notification}
@@ -49,16 +49,16 @@ Where:
 
 * **--name** is the name of the alert policy.
 * **--description** is the description for the alert policy.
-* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
-* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
-* **--enabled** sets whether or not the alert policy is enabled.
-* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--emails** is the email addresses for dispatching an alert notification. For example, `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example, `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether the alert policy is enabled.
+* **-i, --instance** is the instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 * **--output** specifies the output format; only JSON is supported.
 
 ### Pool toggle alert command
 {: #cli-pool-toggle-alert-cmd}
 
-Create an alert policy for pool toogle alerts.
+Create an alert policy for pool toggle alerts.
 
 ```sh
 ibmcloud cis alert-policy pool-toggle-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --pools POOLS --trigger-condition (enabled | disabled | either) [--include-future-pools (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -69,13 +69,13 @@ Where:
 
 * **--name** is the name of the alert policy.
 * **--description** is the description for the alert policy.
-* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
-* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
-* **--enabled** sets whether or not the alert policy is enabled.
-* **--pools** is the IDs of origin pool, if set to all, the all pool IDs will be used.
+* **--emails** is the email addresses for dispatching an alert notification. For example, `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example, `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether the alert policy is enabled.
+* **--pools** is the IDs of origin pool, if set to all, the all pool IDs is used.
 * **--trigger-condition** is the condition of pool toggle status.
-* **--include-future-pools** sets whether or not include the future pools.
-* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--include-future-pools** sets whether include the future pools.
+* **-i, --instance** is the instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 * **--output** specifies the output format; only JSON is supported.
 
 
@@ -93,12 +93,12 @@ Where:
 
 * **--name** is the name of the alert policy.
 * **--description** is the description for the alert policy.
-* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
-* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
-* **--enabled** sets whether or not the alert policy is enabled.
-* **--domains** are the domain IDs for the alert policy. For example: `--domains domainID1,domainID2`
+* **--emails** is the email addresses for dispatching an alert notification. For example, `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example, `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether the alert policy is enabled.
+* **--domains** are the domain IDs for the alert policy. For example, `--domains domainID1,domainID2`
 * **--services** (Advanced WAF) specifies which services the alert monitors. Valid values: "country-access-rules", "waf", "firewall-rules", "ratelimit", "securitylevel", "ip-access-rules", "browser-integrity-check", "ua-rules", "lockdowns", "iprange-access-rules", "asn-access-rules", "Managed-firewall".
-* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **-i, --instance** is the instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 * **--output** specifies the output format; only JSON is supported.
 
 ### Universal SSL alert command
@@ -116,10 +116,10 @@ Where:
 * **--type** is the type of the certificate.
 * **--name** is the name of the alert policy.
 * **--description** is the description for the alert policy.
-* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
-* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
-* **--enabled** sets whether or not the alert policy is enabled.
-* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **--emails** is the email addresses for dispatching an alert notification. For example, `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example, `--webhook webhookID1,webhookID2`
+* **--enabled** sets whether the alert policy is enabled.
+* **-i, --instance** is the instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 * **--output** specifies the output format; only JSON is supported.
 
 ### Load balancing health check alert command
@@ -136,14 +136,14 @@ Where:
 
 * **--name** is the name of the alert policy.
 * **--description** is the description for the alert policy.
-* **--emails** is the email addresses for dispatching an alert notification. For example: `--emails test1@cn.ibm.com,test2@cn.ibm.com`
-* **--webhooks** is the webhook ID that for dispatching an alert notification. For example: `--webhook webhookID1,webhookID2`
-* **--enabled** sets whether or not the alert policy is enabled.
+* **--emails** is the email addresses for dispatching an alert notification. For example, `--emails test1@cn.ibm.com,test2@cn.ibm.com`
+* **--webhooks** is the webhook ID that for dispatching an alert notification. For example, `--webhook webhookID1,webhookID2`.
+* **--enabled** sets whether the alert policy is enabled.
 * **--pools** are the IDs of origin pool. If set to `all`, all the pool IDs are used.
-* **--include-future-pools** sets whether or not include the future pools (default "false").
+* **--include-future-pools** sets whether include the future pools (default "false").
 * **--health-status-trigger** is the trigger condition to fire the notification. Valid values: "healthy", "unhealthy", "either" (default "either").
 * **--event-source-trigger** is the event source of trigger to fire the notification. Valid values: "pool", "origin", "either" (default "either").
-* **-i, --instance** is the instance name or ID. If not set, the context instance specified by ibmcloud cis instance-set INSTANCE is used.
+* **-i, --instance** is the instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 * **--output** specifies the output format; only JSON is supported.
 
 
@@ -171,7 +171,7 @@ curl -X POST \
 
 Where:
 
-- **-d** is the array of attributes required to create the alert.
+- **-d** is the array of attributes that are required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
@@ -202,7 +202,7 @@ curl -X POST \
 
 Where:
 
-- **-d** is the array of attributes required to create the alert.
+- **-d** is the array of attributes that are required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
@@ -243,7 +243,7 @@ curl -X POST \
 
 Where:
 
-- **-d** is the array of attributes required to create the alert.
+- **-d** is the array of attributes that are required to create the alert.
     - **name** is the name of the alert.
     - **description** (optional) is the description of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
@@ -288,7 +288,7 @@ curl -X POST \
 
 Where:
 
-- **-d** is the array of attributes required to create the alert.
+- **-d** is the array of attributes that are required to create the alert.
     - **name** is the name of the alert.
     - **description** (optional) is the description of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
@@ -334,7 +334,7 @@ curl -X POST \
 
 Where:
 
-- **-d** is the array of attributes required to create the alert.
+- **-d** is the array of attributes that are required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
@@ -371,7 +371,7 @@ curl -X POST \
 
 Where:
 
-- **-d** is the array of attributes required to create the alert.
+- **-d** is the array of attributes that are required to create the alert.
     - **name** is the name of the alert.
     - **enabled** is the state of the alert (one of `true`, `false`).
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
@@ -381,6 +381,7 @@ Where:
 
 ## Creating webhook alerts using the API
 {: #configuring-webhooks-api}
+{: api}
 
 Creating a webhook alert is a two-step process.
 
@@ -422,6 +423,7 @@ Creating a webhook alert is a two-step process.
 
 ## Editing alerts using the API
 {: #edit-notification-api}
+{: api}
 
 To edit an email alert, run the following command:
 
@@ -450,6 +452,7 @@ curl -X PUT \
 
 ## Deleting alerts using the API
 {: #delete-notification-api}
+{: api}
 
 To delete an email alert, run the following command:
 
