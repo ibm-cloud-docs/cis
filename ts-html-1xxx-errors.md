@@ -220,7 +220,7 @@ Unable to purge is another 1015 error code relating to {{site.data.keyword.cis_s
 * If you are the site owner, review {{site.data.keyword.cis_short_notm}} Rate Limiting thresholds and adjust your Rate Limiting configuration.
 * If your Rate Limiting blocks requests in a short time period (for instance, 1 second) try increasing the time period to 10 seconds.
 
-For guidance on when you expect a new Edge function to exceed rate limits, see [Working with Edge functions](/docs/cis?topic=cis-working-with-edge-functions).
+For guidance on when you expect a new Edge function to exceed rate limits, see [Working wiht Edge functions](/docs/cis?topic=cis-working-with-edge-functions).
 
 ## Error 1016: Origin DNS error
 {: #1016-error}

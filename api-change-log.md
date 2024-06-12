@@ -1,0 +1,37 @@
+---
+
+copyright:
+  years:  2024
+lastupdated: "2024-05-08"
+
+keywords: change log for cloud internet services API, updates to CIS API
+
+subcollection: cis
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
+# {{site.data.keyword.cis_short_notm}} API change log
+{: #api-change-log}
+
+In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/apidocs/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+
+## 12 June 2024
+{: #12-jun-2024}
+
+The [Managed rules feature](/docs/cis?topic=cis-managed-rules-overview) has been added to the {{site.data.keyword.cis_short_notm}} API. See [Zone rulesets](/apidocs/cis#get-zone-rulesets) for the available options.
+
+## 30 May 2023
+{: #30-may-2023}
+
+The [zone hold](/apidocs/cis#get-zone-hold) feature has been added to the {{site.data.keyword.cis_short_notm}} API.
+
+## 30 November 2022
+{: #30-nov-2022}
+
+The [Create rate limit](/apidocs/cis#create-zone-rate-limits) API updated the `period` parameter to change the time during which to count traffic.
+
+- The minimum time in seconds changed from `1` to `10`
+- The maximum time in seconds changed from `3600` to `86400`
+

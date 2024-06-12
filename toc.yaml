@@ -80,12 +80,29 @@ toc:
             - ssl-options.md
             - mtls.md
             - auth-origin-pull.md
-            - cipher-suites.md
+            - cipher-suites.md<staging>
+            - keyless-ssl.md</staging>
         - topicgroup:
-            label: Working with WAFs
+            label: Working with WAF
             topics:
+            - waf-managed-rules.md
             - waf-cis-ruleset.md
             - security-events.md
+        - topicgroup:
+            label: Working with rule sets
+            topics:
+            - about-rule-sets.md
+            - about-managed-rules.md
+            - deploy-rule-sets.md
+            - override-rule-sets.md
+            - handling-false-positives-managed-rules.md
+            - topicgroup:
+                label: Available rulesets
+                topics:
+                - cis-ruleset.md
+                - owasp-rule-set-for-waf.md
+                - exposed-credentials-check-ruleset.md
+            - terraform-generating-configuration.md
         - topicgroup:
             label: Working with firewall rules
             topics:
@@ -125,6 +142,7 @@ toc:
             - logpull.md
             - logpush.md
             - log-fields.md
+            - instant-logs.md
         - topicgroup:
             label: Working with metrics
             topics:
@@ -156,9 +174,13 @@ toc:
     - navgroup:
         id: reference
         topics:
-        - link:
-            label: CIS API
-            href: https://{DomainName}/apidocs/cis
+        - topicgroup:
+            label: API reference
+            topics:
+            - link:
+                label: CIS API
+                href: https://{DomainName}/apidocs/cis
+            - api-change-log.md
         - topicgroup:
             label: CLI reference
             topics:
@@ -195,7 +217,8 @@ toc:
             - ts-no-traffic.md
             - ts-false-pos-neg.md
             - troubleshooting.md
-            - ts-execution-order.md
+            - ts-execution-order.md<staging>
+            - ts-html-4xx-errors.md</staging>
             - ts-html-5xx-errors.md
             - ts-html-1xxx-errors.md
             - ts-create-har.md

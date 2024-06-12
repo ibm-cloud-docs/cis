@@ -99,11 +99,11 @@ List of IAM actions and Activity Tracker actions by API method.
 
 | Action                                    | Method            | IAM ACTION   |  AT ACTION |
 |-------------------------------------------|-------------------|--------------|------------|
-| Get the WAF packages | `GET /v1/{crn}/zones/{domain_id}/firewall/waf/packages` | `internet-svcs.security.read` | `internet-svcs.waf-packages.read` |
+| [Deprecated]{: tag-red}Get the WAF packages | `GET /v1/{crn}/zones/{domain_id}/firewall/waf/packages` | `internet-svcs.security.read` | `internet-svcs.waf-packages.read` |
 | Change the sensitivity and action mode of a WAF package | `PATCH /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}` | `internet-svcs.security.update` | `internet-svcs.waf-packages.update` |
-| Get the WAF groups | `GET /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/groups` | `internet-svcs.security.read` | `internet-svcs.waf-groups.read` |
+| [Deprecated]{: tag-red}Get the WAF groups | `GET /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/groups` | `internet-svcs.security.read` | `internet-svcs.waf-groups.read` |
 | Enable or disable a WAF group | `PATCH /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/groups/{group_id}` | `internet-svcs.security.update` | `internet-svcs.waf-groups.update` |
-| Get the WAF rules | `GET /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/rules` | `internet-svcs.security.read` | `internet-svcs.waf-rules.read` |
+| [Deprecated]{: tag-red}Get the WAF rules | `GET /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/rules` | `internet-svcs.security.read` | `internet-svcs.waf-rules.read` |
 | Change the action mode of a WAF rule | `PATCH /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/rules/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.waf-rules.update` |
 {: caption="Table 6. WAF" caption-side="bottom"} 
 

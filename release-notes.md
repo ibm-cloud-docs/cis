@@ -20,6 +20,13 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
+## 12 June 2024
+{: #cis-jun1224}
+{: release-note}
+
+Managed Rules in WAF
+:   Released the new [Managed rules](/docs/cis?topic=cis-managed-rules), which will replace the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules), while Standard Next plans are automatically migrated.
+
 ## 21 June 2023
 {: #cis-jun2123}
 {: release-note}
