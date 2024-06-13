@@ -22,7 +22,7 @@ The CIS web application firewall (WAF) capabilities are moving under the Ruleset
 After you complete the migration, any automation that uses APIs, CLIs, or Terraform that are related to WAF will stop working and must be updated to use the new managed rulesets.
 {: important}
 
-New domains created after June 2024 use the new Ruleset Engine and do not need to be migrated.
+Instances created after June 2024 use the new Ruleset Engine and do not need to be migrated.
 {: tip}
 
 To migrate your instance to managed rules, take the following steps:

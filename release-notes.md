@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-03-16"
+  years: 2021, 2024
+lastupdated: "2024-06-12"
 
 keywords:
 
@@ -25,7 +25,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Managed Rules in WAF
-:   Released the new [Managed rules](/docs/cis?topic=cis-managed-rules), which will replace the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules), while Standard Next plans are automatically migrated.
+:   Released the new [Managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which will replace the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
 
 ## 21 June 2023
 {: #cis-jun2123}
