@@ -12,7 +12,6 @@ toc:
     product-page: https://www.ibm.com/products/cloud-internet-services
     path: cis
     label: Cloud Internet Services (CIS)
-
   entries:
     - navgroup:
         id: learn
@@ -40,7 +39,6 @@ toc:
             - compression-concepts.md
             - domain-lifecycle.md
         - release-notes.md
-
     - navgroup:
         id: tutorial
         topics:
@@ -53,7 +51,6 @@ toc:
         - link:
             label: What are computer networking solutions
             href: https://www.ibm.com/topics/networking#toc-computer-n-9C7jokVu
-
     - navgroup:
         id: howto
         topics:
@@ -80,8 +77,7 @@ toc:
             - ssl-options.md
             - mtls.md
             - auth-origin-pull.md
-            - cipher-suites.md<staging>
-            - keyless-ssl.md</staging>
+            - cipher-suites.md
         - topicgroup:
             label: Working with WAF
             topics:
@@ -170,7 +166,6 @@ toc:
             - at_events.md
             - at_iam.md
         - terraform.md
-
     - navgroup:
         id: reference
         topics:
@@ -200,7 +195,6 @@ toc:
         - allowlisted-ips.md
         - helpful-tools.md
         - hipaa-advisory.md
-
     - navgroup:
         id: help
         topics:
@@ -217,8 +211,7 @@ toc:
             - ts-no-traffic.md
             - ts-false-pos-neg.md
             - troubleshooting.md
-            - ts-execution-order.md<staging>
-            - ts-html-4xx-errors.md</staging>
+            - ts-execution-order.md
             - ts-html-5xx-errors.md
             - ts-html-1xxx-errors.md
             - ts-create-har.md
