@@ -132,9 +132,9 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
 1. Configure your SSL connector. Configure an SSL connector for Tomcat to be able to accept secure connections.
     1. Open the Tomcat server.xml file in a text editor. The server.xml file is typically located in the conf folder of your Tomcat's home directory.
     1. Identify the connector to use to secure the new keystore. A connector with port 443 or 8443 is typically used.
-    1. Remove any comment tags (`<!--` and `-->`) that might be surrounding the connector.
+    1. Remove any comment tags that might be surrounding the connector.
     1. Update the correct keystore filename and password in your connector configuration.
-    
+
     The following example represents a configured SSL Connector block.
 
     ```sh
