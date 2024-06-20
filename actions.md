@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-09-02"
+  years: 2019, 2024
+lastupdated: "2024-06-20"
 
 keywords: firewall rule actions
 
@@ -33,6 +33,6 @@ The following table describes the actions that you can assign to your rules. The
 |Bypass|* Firewall rules|Allows dynamic disabling of security features for a request. Exempts matching requests from evaluation, based on a user-defined list that contains one or more of the following features: `Browser Integrity Check`, `Domain Lockdown`, `Hotlink Protection`, `Rate Limiting`, `Security Level`, `User Agent Block`, `WAF Managed Rules`. Matching requests are still subject to evaluation within Firewall Rules, based on order of execution.|2|
 |Allow|* Firewall rules  \n * IP firewall|Allows matching requests to access the site, on condition that no other {{site.data.keyword.cis_short_notm}} firewall features block the request, such as IP firewall or access rules.|3|
 |Challenge (Captcha)|* Firewall rules  \n * IP firewall  \n * User agent rules|Requires a user to pass a Google reCaptcha Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|4|
-|JS Challenge|* Firewall rules  \n * IP firewall  \n * User agent rules|JS Challenge|Requires a user to pass a {{site.data.keyword.cis_short_notm}} JavaScript Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|5|
+|JS Challenge|* Firewall rules  \n * IP firewall  \n * User agent rules|Requires a user to pass a {{site.data.keyword.cis_short_notm}} JavaScript Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|5|
 |Block|* Firewall rules  \n * IP firewall  \n * User agent rules|Blocks a matching request from accessing the site.|6|
 {: caption="Table 1. Firewall rule actions and priority" caption-side="bottom"}
