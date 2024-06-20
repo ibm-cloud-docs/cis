@@ -92,3 +92,8 @@ To migrate from your current Enterprise Package, Enterprise GLB, and Enterprise 
 1. Select desired Enterprise Tier plan
 1. Check the box to acknowledge the terms and conditions
 1. Click **Create** and follow any prompts that might block this plan change
+
+### All plans comparison
+{: #all-plans-comparison}
+
+For an overview of all currently available plans, see [Plan comparison](/docs/cis?topic=cis-cis-plan-comparison).
