@@ -47,6 +47,13 @@ The following table compares each offering to help you choose the one that's rig
 |**Bot management**|No|No|No|Yes|No|
 {: caption="Table 1. CIS plan comparison" caption-side="bottom"}
 
+## Additional details
+{: #additional-details}
+
+* Traffic is protected when it is traffic through proxied CIS components, metered as traffic from the edge to the origin
+* HTTP request made on proxied resources (for example, DNS records and load balancers) count toward your protected traffic
+* When traffic is not proxied, it will only consume DNS queries during hostname resolution
+
 ## Deprecated plans
 {: #deprecated-plans}
 
