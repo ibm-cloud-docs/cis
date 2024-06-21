@@ -44,7 +44,7 @@ toc:
             label: Solution tutorials
             topics:
             - include: ../solution-tutorials/multi-region-k8s-cis.md
-            - include: ../solution-tutorials/highly-available-and-scalable-web-application.md
+            - include: ../solution-tutorials/vpc-multi-region.md
             - include: ../codeengine/deploy-multiple-regions.md
         - link:
             label: What are computer networking solutions

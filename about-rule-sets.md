@@ -89,12 +89,12 @@ The `kind` field of a phase entry point ruleset has one of the following values:
 
 See [Deploying rule sets](/docs/cis?topic=cis-deploying-rule-sets) for detailed instructions on using entry point rulesets to deploy rulesets.
 
-See [Overriding rule sets](/docs/cis?topic=cis-overriding-rule-sets) for detailed instructions on using entry point rulesets to override rulesets.
+See [Overriding rule sets](/docs/cis?topic=cis-override-rule-sets) for detailed instructions on using entry point rulesets to override rulesets.
 
 
 ## Related links
 {: #rule-sets-related-links}
 
-* [{{site.data.keyword.cis_short_notm}} ruleset](/docs/cis?topic=cis-waf-settings#cis-ruleset-for-waf)
-* [OWASP ruleset](/docs/cis?topic=cis-waf-settings#owasp-rule-set-for-waf)
-* [Exposed credentials check](/docs/cis?topic=cis-waf-settings#exposed-credentials-check-ruleset)
+* [{{site.data.keyword.cis_short_notm}} ruleset](/docs/cis?topic=cis-cis-rule-sets)
+* [OWASP ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf)
+* [Exposed credentials check](/docs/cis?topic=cis-exposed-credentials-check-ruleset)

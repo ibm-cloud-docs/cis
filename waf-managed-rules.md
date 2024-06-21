@@ -94,4 +94,4 @@ You can contact IBM Cloud support for help with the following errors:
 ## Related links
 {: #managed-rules-related-links}
 
-To learn more about the available rule sets, see [About rule sets](/docs/cis?topic=cis-waf-settings).
+To learn more about the available rule sets, see [About rule sets](/docs/cis?topic=cis-about-rule-sets).
