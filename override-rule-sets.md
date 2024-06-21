@@ -196,7 +196,7 @@ Where:
 * **`-d`** is the object of attributes that are required to create the rule set.
     * **`description`** defines your own summary of what a rule set is accomplishing.
     * **`rules`** is the array of rules to deploy with the rule set.
-      * **`action`** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-rules-actions) for a description of available actions.
+      * **`action`** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-waf-actions) for a description of available actions.
       * **`action_parameters`** is the object for defining what the action operates on.
         * **`id`** is the ID of the ruleset to execute. This ID is retrieved from the list zone rulesets operation.
         * **`overrides`** is the object of overrides to set upon the selected rule set.

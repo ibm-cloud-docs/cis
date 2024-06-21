@@ -111,9 +111,9 @@ curl -X PUT \
 Where:
 - **$RULESET_PHASE** is the rule set phase that will be deployed. Use `http_request_firewall_managed` to deploy managed WAF rule sets.
 - **-d** is the object of attributes that are required to create the rule set.
-  - **rules** is the array of rules to deploy with the rule set. For example:
-    - **action** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-rules-actions) for a description of actions that can be used.
-    - **action_parameters** is the object for defining what the action should operate on.
-      - **id** is the ID of the ruleset to execute. This ID is retrieved from the `list zone rulesets` operation.
-    - **expression** is the condition under which the rule will run. Using `true` means that this rule will always run.
-    - **description** defines the summary of what your rule is accomplishing.
+   - **rules** is the array of rules to deploy with the rule set. For example:
+     - **action** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-waf-actions) for a description of actions that can be used.
+     - **action_parameters** is the object for defining what the action should operate on.
+       - **id** is the ID of the ruleset to execute. This ID is retrieved from the `list zone rulesets` operation.
+   - **expression** is the condition under which the rule will run. Using `true` means that this rule will always run.
+   - **description** defines the summary of what your rule is accomplishing.
