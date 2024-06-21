@@ -21,7 +21,7 @@ When working with {{site.data.keyword.cis_short_notm}}, it can sometimes be diff
 1. [IP Firewall](/docs/cis?topic=cis-actions)
 1. WAF / Firewall Rules The general traffic sequence for CIS Firewall features is:
     1. [Firewall Rules](/docs/cis?topic=cis-about-firewall-rules)
-    1. [WAF](docs/cis?topic=cis-waf-actions)
+    1. [WAF](/docs/cis?topic=cis-waf-actions)
     1. [Rate Limiting](/docs/cis?topic=cis-cis-rate-limiting)
 
     Based on the actions and priority settings of the rules, steps in the firewall sequence can be bypassed. For example, a firewall rule with an early priority that allows certain traffic is processed first, and then skips over the rest of the rules in the sequence.
