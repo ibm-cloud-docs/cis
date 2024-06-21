@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #html-1xxx-errors}
 {: troubleshoot}
 
-The following error codes appear in the HTML body of 530 error messages. For more information, see [Error 530](/docs/cis?topic=cis-html-5xx-errors#530-error).
+1000 class errors will appear in the HTML body of the response. HTTP 409, 530, 403, and 429 errors are the HTTP error codes returned in the HTTP status header of a response.
 {: shortdesc}
 
 ## Error 1000: DNS points to prohibited IP
