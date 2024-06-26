@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-06-26"
 
 keywords: 
 
@@ -18,7 +18,7 @@ subcollection: cis
 The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
 {: shortdesc}
 
-**Recommendations and best practices:**
+[Recommendations and best practices](: tag-blue)
 
 * Secure your origin IP addresses by proxying and increasing obfuscation
 * Configure your security level selectively
@@ -27,7 +27,7 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) securi
 ## Best practice 1: Secure your origin IP addresses
 {: #best-practice-secure-origin-ip-address}
 
-When a subdomain is proxied using {{site.data.keyword.cis_short_notm}}, all traffic is protected because we actively respond with IP addresses specific to {{site.data.keyword.cis_short_notm}} (for example, all of your clients connect to {{site.data.keyword.cis_short_notm}} proxies first, and your origin IP addresses are obscured).
+When a subdomain is proxied using {{site.data.keyword.cis_short_notm}}, all traffic is protected because {{site.data.keyword.cis_short_notm}} actively responds with IP addresses specific to {{site.data.keyword.cis_short_notm}} (for example, all of your clients connect to {{site.data.keyword.cis_short_notm}} proxies first, and your origin IP addresses are obscured).
 
 ### Use {{site.data.keyword.cis_short_notm}} proxies for all DNS records for HTTP(S) traffic from your origin
 {: #use-cis-proxies-for-dns-records}
@@ -117,7 +117,8 @@ TLS offers four modes of operation:
 * **Off**: TLS is disabled in this mode, it is not recommended.
 * **Client-to-edge**: TLS encrypts traffic from {{site.data.keyword.cis_short_notm}} to your clients, but not from {{site.data.keyword.cis_short_notm}} to your origin server(s).
 * **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between {{site.data.keyword.cis_short_notm}} and your origin server(s).
-* **End-to-end CA signed**: TLS encrypts all traffic; you must use a CA-signed certificate.
+* **End-to-end CA signed**: (Recommended) TLS encrypts all traffic; you must use a CA-signed certificate.
+* **Authenticated origin pull**: (Enterprise only) TLS client certificate presented for authentication on origin pull. For more information see [Authenticated origin pull](/docs/cis?topic=cis-authenticated-origin-pull).
 
 Refer to [TLS options](/docs/cis?topic=cis-cis-tls-options) for details.
 
@@ -170,3 +171,5 @@ The priority by which the certificates are displayed at our edge is:
 {: #security-minimum-tls-version}
 
 See [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.
+
+
