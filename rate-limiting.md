@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-10-07"
+  years: 2018, 2024
+lastupdated: "2024-06-27"
 
 keywords: 
 
@@ -25,7 +25,7 @@ Select the type of rate limiting rule, either a **Custom rule** or **Protect log
 
 Enter a rule name that helps you remember what the rule does. This is an optional field.
 
-In the **Traffic matching criteria** section, enter the following information. 
+In the **Traffic matching criteria** section, enter the following information.
 1. Select the criteria type.
 1. Enter the URL that you are rate limiting.
 1. Select the number of requests to allow before triggering rate limiting.
@@ -35,14 +35,14 @@ In the **Traffic matching criteria** section, enter the following information.
 
 The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria.
 
-Select a value form the **Method** list menu (ANY is the default).  
+Select a value form the **Method** list menu (ANY is the default).
 
-Update **HTTP response header**.  You can also **Add response header** to include headers returned by your origin web server.
+Update **HTTP response header**. You can also **Add response header** to include headers returned by your origin web server.
 
-If you have more than one header under **HTTP response header**, an _AND_ boolean logic applies.  To exclude a header from being matched, use the _Not Equal_ option. Also, each header must be an exact match. However, case sensitivity doesn't apply.
+If you have more than one header under **HTTP response header**, an _AND_ boolean logic applies. To exclude a header from being matched, use the _Not Equal_ option. Also, each header must be an exact match. However, case sensitivity doesn't apply.
 {: note}
 
-Under **Origin response code**, type the valid numerical value of each HTTP response code to match.  To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
+Under **Origin response code**, type the valid numerical value of each HTTP response code to match. To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
 
 ### Configuring the response
 {: #rate-limiting-configure-response}
@@ -52,8 +52,8 @@ Select from the actions listed, and specify the timeout period. In this case, th
 |Action| Description|
 |------|------------|
 |Block | Issues a 429 error when the threshold is exceeded|
-|Challenge | User must pass a Google reCaptcha Challenge before proceeding. If successful, we accept the request. Otherwise, the request gets blocked.|
-|JS Challenge | User must pass a Javascript Challenge before proceeding. If successful, we accept the request. Otherwise, the request gets blocked.
+|Challenge | User must pass a Google reCaptcha Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.|
+|JS Challenge | User must pass a Javascript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.
 |Simulate| You can use this option to test your rule before applying any of the other options in your live environment.
 {: caption="Table 1. Actions for rate limiting" caption-side="bottom"}
 
