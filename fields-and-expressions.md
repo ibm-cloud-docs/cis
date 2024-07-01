@@ -104,8 +104,8 @@ The following comparison operators are available for use in expressions:
 |ne|!=|Not equal|
 |lt|<|Less than|
 |le|<=|Less than or equal to|
-|gt|\>|Greater than|
-|ge|\>=|Greater than or equal to|
+|gt|&gt;>|Greater than|
+|ge|&gt;>=|Greater than or equal to|
 |contains| |Exactly contains|
 |matches|~|[Re2](https://github.com/google/re2/wiki/Syntax) inspired regular expression|
 |in| |Value appears in a set of values. Supports ranges using the ".." notation. |
@@ -126,8 +126,8 @@ Certain comparison operators apply to specific fields based on type. The followi
 |ne|!=|http.request.uri.path ne "/articles/2010/"|ip.src ne 93.184.216.0|cf.threat_score ne 60|
 |lt|<|http.request.uri.path lt "/articles/2009/"| |cf.threat_score lt 10|
 |le|<=|http.request.uri.path le "/articles/2008/"| |cf.threat_score le 20|
-|gt|\>|http.request.uri.path gt "/articles/2006/"| |cf.threat_score gt 25|
-|ge|\>=|Greater than or equal to| |cf.threat_score ge 60|
+|gt|&gt;|http.request.uri.path gt "/articles/2006/"| |cf.threat_score gt 25|
+|ge|&gt;=|Greater than or equal to| |cf.threat_score ge 60|
 |contains| |http.request.uri.path contains "/articles/"| | |
 |matches|~|http.request.uri.path ~ "^/articles/200[7-8]/$"| | |
 |in| |http.request.method in { "HEAD" "GET" }|ip.src in { 93.184.216.0 93.184.216.1 }|cf.threat_score in {0 2 10}|
