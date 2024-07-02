@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-01-25"
+  years: 2018, 2024
+lastupdated: "2024-07-02"
 
-keywords: CIS Activity Tracker events
+keywords: CIS activity tracker events
 
 subcollection: cis
 
@@ -12,21 +12,149 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Auditing events for {{site.data.keyword.cis_short_notm}}
-{: #at_events}
+# Activity tracking events for {{site.data.keyword.cis_short_notm}}
+{: #new-at_events}
 
-As a security officer, auditor, or manager, you can use the Activity Tracker service to track how users and applications interact with the {{site.data.keyword.cis_short_notm}} service in {{site.data.keyword.cloud}}.
+{{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.cis_full_notm}}, generate activity tracking events.
 {: shortdesc}
 
-{{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [getting started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
+Activity tracking events report on activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use the events to investigate abnormal activity and critical actions and to comply with regulatory audit requirements.
 
-Names for auditing events changed on 1 July 2020. The change replaced all underscore (`_`) characters in the names with dash (`-`) characters.
+You can use {{site.data.keyword.atracker_full_notm}}, a platform service, to route auditing events in your account to destinations of your choice by configuring targets and routes that define where activity tracking events are sent. For more information, see [About {{site.data.keyword.atracker_full_notm}}](/docs/atracker?topic=atracker-about).
+
+You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+
+
+
+As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 {: important}
 
-## List of events: DNS domains
-{: #events_dns_domain}
+## Locations where activity tracking events are generated
+{: #at-locations}
 
-The following table lists the actions that are related to DNS domains and generate an event:
+| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
+|---------------------|-------------------------|-------------------|----------------------|
+| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are generated in Americas locations" caption-side="top"}
+{: #at-gen-table-1}
+{: tab-title="Americas"}
+{: tab-group="at-gen"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
+|---------------------|------------------|------------------|--------------------|
+| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are generated in Asia Pacific locations" caption-side="top"}
+{: #at-gen-table-2}
+{: tab-title="Asia Pacific"}
+{: tab-group="at-gen"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
+|---------------------------------------------------------------|---------------------|------------------|
+| [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are generated in Europe locations" caption-side="top"}
+{: #at-gen-table-3}
+{: tab-title="Europe"}
+{: tab-group="at-gen"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+## Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search
+{: #at-legacy-locations}
+
+
+
+{{site.data.keyword.cis_short_notm}} sends activity tracking events to {{site.data.keyword.at_full_notm}} hosted event search in the regions that are indicated in the following table.
+
+| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
+|---------------------|-------------------------|-------------------|----------------------|
+| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
+{: #at-table-1}
+{: tab-title="Americas"}
+{: tab-group="at"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
+|---------------------|------------------|------------------|--------------------|
+| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
+{: #at-table-2}
+{: tab-title="Asia Pacific"}
+{: tab-group="at"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
+|---------------------------------------------------------------|---------------------|------------------|
+| [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
+{: #at-table-3}
+{: tab-title="Europe"}
+{: tab-group="at"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+## Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}
+{: #atracker-locations}
+
+
+
+{{site.data.keyword.cis_short_notm}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following table.
+
+| Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
+|---------------------|-------------------------|-------------------|----------------------|
+| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
+{: #atracker-table-1}
+{: tab-title="Americas"}
+{: tab-group="atracker"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Tokyo (`jp-tok`)    | Sydney (`au-syd`) |  Osaka (`jp-osa`) | Chennai (`in-che`) |
+|---------------------|------------------|------------------|--------------------|
+| [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
+{: #atracker-table-2}
+{: tab-title="Asia Pacific"}
+{: tab-group="atracker"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Frankfurt (`eu-de`)  | London (`eu-gb`) | Madrid (`eu-es`) |
+|---------------------------------------------------------------|---------------------|------------------|
+| [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
+{: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
+{: #atracker-table-3}
+{: tab-title="Europe"}
+{: tab-group="atracker"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+
+
+
+## Viewing activity tracking events for {{site.data.keyword.cis_short_notm}}
+{: #at-viewing}
+
+
+
+You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
+
+### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
+{: #log-launch-standalone}
+
+
+
+For information on launching the {{site.data.keyword.logs_full_notm}} UI, see [Launching the UI in the {{site.data.keyword.logs_full_notm}} documentation.](/docs/cloud-logs?topic=cloud-logs-instance-launch)
+
+## Events for DNS domains
+{: #at_actions_dns-domains}
 
 |Action|Description|
 |-|-|
@@ -35,10 +163,10 @@ The following table lists the actions that are related to DNS domains and genera
 |`internet-svcs.zones.delete`|Delete a DNS domain.|
 |`internet-svcs.zones-activation-check.update`|Run activation check for a DNS domain.|
 |`internet-svcs.dnssec.update`|Enable or disable DNSSEC for a DNS domain.|
-{: caption="Table 1. Actions that generate DNS domain events" caption-side="bottom"}
+{: caption="Actions that generate DNS domain events" caption-side="bottom"}
 
-## List of events: DNS records
-{: #events_dns_record}
+## Events for DNS records
+{: #at_actions_dns-records}
 
 The following table lists the actions that are related to DNS records and generate an event:
 
@@ -48,10 +176,10 @@ The following table lists the actions that are related to DNS records and genera
 |`internet-svcs.dns-records.update`|Update a DNS record.|
 |`internet-svcs.dns-records.delete`|Delete a DNS record.|
 |`internet-svcs.dns-records-bulk.create`|Import DNS records from zone file.|
-{: caption="Table 2. Actions that generate DNS record events" caption-side="bottom"}
+{: caption="Actions that generate DNS record events" caption-side="bottom"}
 
-## List of events: Load balancers
-{: #events_load_balancers}
+## Events for load balancers
+{: #at_actions_load-balancers}
 
 The following table lists the actions that are related to load balancers and generate an event:
 
@@ -68,8 +196,8 @@ The following table lists the actions that are related to load balancers and gen
 |`internet-svcs.load-balancer-pools.delete`|Delete a global load balancer pool.|
 {: caption="Table 3. Actions that generate load balancer events" caption-side="bottom"}
 
-## List of events: Purging the cache
-{: #events_cache}
+## Events for purging the cache
+{: #at_actions_purge-cache}
 
 The following table lists the actions that are related to purging the cache and generate an event:
 
@@ -79,10 +207,11 @@ The following table lists the actions that are related to purging the cache and 
 |`internet-svcs.purge-cache-by-urls.update`|Purge cached assets by URLs from edge server.|
 |`internet-svcs.purge-cache-by-cache-tags.update`|Purge cached assets by cache tags from edge server.|
 |`internet-svcs.purge-cache-by-hosts.update`|Purge cached assets by hostnames from edge server.|
-{: caption="Table 4. Actions that generate cache purge events" caption-side="bottom"}
+{: caption="Actions that generate cache purge events" caption-side="bottom"}
 
-## List of events: Page rules
-{: #events_page_rules}
+
+## Events for page rules
+{: #at_actions_page-rules}
 
 The following table lists the actions that are related to page rules and generate an event:
 
@@ -91,11 +220,10 @@ The following table lists the actions that are related to page rules and generat
 |`internet-svcs.pagerules.create`|Create a page rule.|
 |`internet-svcs.pagerules.update`|Update a page rule.|
 |`internet-svcs.pagerules.delete`|Delete a page rule.|
-{: caption="Table 5. Actions that generate page rule events" caption-side="bottom"}
+{: caption="Actions that generate page rule events" caption-side="bottom"}
 
-
-## List of events: Firewalls
-{: #events_firewalls}
+## Events for firewalls
+{: #at_actions_firewalls}
 
 The following table lists the actions that are related to firewalls and generate an event:
 
@@ -119,10 +247,10 @@ The following table lists the actions that are related to firewalls and generate
 |`internet-svcs.domain-lockdown-rules.create`|Create a domain lockdown rule.|
 |`internet-svcs.domain-lockdown-rules.update`|Update a domain lockdown rule.|
 |`internet-svcs.domain-lockdown-rules.delete`|Delete a domain lockdown rule.|
-{: caption="Table 6. Actions that generate firewall events" caption-side="bottom"}
+{: caption="Actions that generate firewall events" caption-side="bottom"}
 
-## List of events: Rate limiting
-{: #events_rate_limiting}
+## Events for rate limiting
+{: #at_actions_rate-limiting}
 
 The following table lists the actions that are related to rate limiting and generate an event:
 
@@ -131,10 +259,10 @@ The following table lists the actions that are related to rate limiting and gene
 |`internet-svcs.rate-limits.create`|Create a rate limiting rule.|
 |`internet-svcs.rate-limits.update`|Update a rate limiting rule.|
 |`internet-svcs.rate-limits.delete`|Delete a rate limiting rule.|
-{: caption="Table 7. Actions that generate a rate limiting events" caption-side="bottom"}
+{: caption="Actions that generate a rate limiting events" caption-side="bottom"}
 
-## List of events: Routing
-{: #events_routing}
+## Events for routing
+{: #at_actions_routing}
 
 The following table lists the actions that are related to routing and generate an event:
 
@@ -142,10 +270,10 @@ The following table lists the actions that are related to routing and generate a
 |-|-|
 |`internet-svcs.smart-routing.update`|Enable or disable smart routing.|
 |`internet-svcs.tiered-caching.update`|Enable or disable tiered caching.|
-{: caption="Table 8. Actions that generate routing events" caption-side="bottom"}
+{: caption="Actions that generate routing events" caption-side="bottom"}
 
-## List of events: Certificate packs
-{: #events_certificate_packs}
+## Events for certificate packs
+{: #at_actions_certificate-packs}
 
 The following table lists the actions that are related to certificate packs and generate an event:
 
@@ -153,10 +281,10 @@ The following table lists the actions that are related to certificate packs and 
 |-|-|
 |`internet-svcs.certificate-packs.create`|Order a dedicated wildcard or custom certificate.|
 |`internet-svcs.certificate-packs.delete`|Delete a dedicated wildcard or custom certificate.|
-{: caption="Table 9. Actions that generate certificate pack events" caption-side="bottom"}
+{: caption="Actions that generate certificate pack events" caption-side="bottom"}
 
-## List of events: Custom certificates
-{: #events_custom_certificate}
+## Events for custom certificates
+{: #at_actions_custom-certificates}
 
 The following table lists the actions that are related to custom certificates and generate an event:
 
@@ -165,10 +293,10 @@ The following table lists the actions that are related to custom certificates an
 |`internet-svcs.custom-certificates.create`|Upload a custom certificate.|
 |`internet-svcs.custom-certificates.update`|Update a custom certificate.|
 |`internet-svcs.custom-certificates.delete`|Delete a custom certificate.|
-{: caption="Table 10. Actions that generate custom certificate events" caption-side="bottom"}
+{: caption="Actions that generate custom certificate events" caption-side="bottom"}
 
-## List of events: Origin certificates
-{: #events_origin_certificate}
+## Events for origin certificates
+{: #at_actions_origin-certificates}
 
 The following table lists the actions that are related to origin certificates and generate an event:
 
@@ -176,10 +304,10 @@ The following table lists the actions that are related to origin certificates an
 |-|-|
 |`internet-svcs.origin-certificates.create`|Create an origin certificate.|
 |`internet-svcs.origin-certificates.delete`|Revoke an origin certificate.|
-{: caption="Table 11. Actions that generate origin certificate events" caption-side="bottom"}
+{: caption="Actions that generate origin certificate events" caption-side="bottom"}
 
-## List of events: Edge functions
-{: #events_edge_functions}
+## Events for edge functions
+{: #at_actions_edge-functions}
 
 The following table lists the actions that are related to edge functions and generate an event:
 
@@ -191,11 +319,10 @@ The following table lists the actions that are related to edge functions and gen
 |`internet-svcs.edge-functions-routes.create`|Create an edge functions route.|
 |`internet-svcs.edge-functions-routes.update`|Update an edge functions route.|
 |`internet-svcs.edge-functions-routes.delete`|Delete an edge functions route.|
-{: caption="Table 12. Actions that generate edge functions events" caption-side="bottom"}
+{: caption="Actions that generate edge functions events" caption-side="bottom"}
 
-
-## List of events: Range applications
-{: #events_range_apps}
+## Events for range applications
+{: #at_actions_range-applications}
 
 The following table lists the actions that are related to range applications and generate an event:
 
@@ -204,11 +331,10 @@ The following table lists the actions that are related to range applications and
 |`internet-svcs.range-apps.create`|Create a range application.|
 |`internet-svcs.range-apps.update`|Update a range application.|
 |`internet-svcs.range-apps.delete`|Delete a range application.|
-{: caption="Table 13. Actions that generate range events" caption-side="bottom"}
+{: caption="Actions that generate range events" caption-side="bottom"}
 
-
-## List of events: Logpush
-{: #events_logpush}
+## Events for logpush
+{: #at_actions_logpush}
 
 The following table lists the actions that are related to Logpush and generate an event:
 
@@ -219,11 +345,10 @@ The following table lists the actions that are related to Logpush and generate a
 |`internet-svcs.logpush-jobs.create`|Create a logpush job.|
 |`internet-svcs.logpush-jobs.update`|Update a logpush job.|
 |`internet-svcs.logpush-jobs.delete`|Delete a logpush job.|
-{: caption="Table 14. Actions that generate logpush events" caption-side="bottom"}
+{: caption="Actions that generate logpush events" caption-side="bottom"}
 
-
-## List of events: Custom error pages
-{: #events_custom_error_pages}
+## Events for custom error pages
+{: #at_actions_custom-error-pages}
 
 The following table lists the actions that are related to custom error pages and generate an event:
 
@@ -231,11 +356,10 @@ The following table lists the actions that are related to custom error pages and
 |-|-|
 |`internet-svcs.custom-pages.create`|Create a custom error page.|
 |`internet-svcs.custom-pages.update`|Update a custom error page.|
-{: caption="Table 15. Actions that generate custom error page events" caption-side="bottom"}
+{: caption="Actions that generate custom error page events" caption-side="bottom"}
 
-
-## List of events: Settings
-{: #events_settings}
+## Events for settings
+{: #at_actions_settings}
 
 The following table lists the actions that are related to configuring settings and generate an event:
 
@@ -268,19 +392,19 @@ The following table lists the actions that are related to configuring settings a
 |`internet-svcs.max-upload-setting.update`|Change the amount of data that visitors can upload to the website in a single request.|
 |`internet-svcs.origin-error-page-pass-thru-setting.update`|Enable or disable the proxy of 502 and 504 error pages that are returned from origin server.|
 |`internet-svcs.bot-management.update`|Change Bot Management settings.|
-{: caption="Table 16. Actions that generate settings events" caption-side="bottom"}
-
-
-## Viewing events
-{: #ui}
-
-Currently, events are available in the **Frankfurt** region. 
-
-{{site.data.keyword.at_full_notm}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launching the web UI through the IBM Cloud UI](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui).
+{: caption="Actions that generate settings events" caption-side="bottom"}
 
 ## Additional information
 {: #info}
 
-When you monitor {{site.data.keyword.at_full_notm}} events that are generated by the {{site.data.keyword.cis_full_notm}}, and you identify an API request for which you need additional information, check the `requestData` field in the event. 
+When you monitor {{site.data.keyword.at_full_notm}} events that are generated by the {{site.data.keyword.cis_full_notm}}, and you identify an API request for which you need additional information, check the `requestData` field in the event.
 
-Open a Support case and include the value of the field **requestId** that is available in requestData.
+Open a Support case and include the value of the field **requestId** that is available in `requestData`.
+
+## Analyzing {{site.data.keyword.cis_short_notm}} activity tracking events
+{: #at_events_iam_analyze}
+
+For more information about calling auditing events with the API, see the Auditing section of each method in the [{{site.data.keyword.cis_short_notm}} API documentation](https://test.cloud.ibm.com/apidocs/cis).
+
+
+

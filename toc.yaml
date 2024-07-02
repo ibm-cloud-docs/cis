@@ -161,6 +161,9 @@ toc:
             - iam.md
             - architecture-workload-isolation.md
             - data-security.md
+        - topicgroup:
+            label: Observability
+            topics:
             - at_events.md
             - at_iam.md
         - terraform.md
