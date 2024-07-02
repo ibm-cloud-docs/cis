@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Activity tracking events for {{site.data.keyword.cis_short_notm}}
-{: #new-at_events}
+{: #at_events}
 
 {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.cis_full_notm}}, generate activity tracking events.
 {: shortdesc}
@@ -404,7 +404,7 @@ Open a Support case and include the value of the field **requestId** that is ava
 ## Analyzing {{site.data.keyword.cis_short_notm}} activity tracking events
 {: #at_events_iam_analyze}
 
-For more information about calling auditing events with the API, see the Auditing section of each method in the [{{site.data.keyword.cis_short_notm}} API documentation](https://test.cloud.ibm.com/apidocs/cis).
+For more information about calling auditing events with the API, see the Auditing section of each method in the [{{site.data.keyword.cis_short_notm}} API documentation](/apidocs/cis).
 
 
 
