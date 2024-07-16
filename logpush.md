@@ -1,11 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-08-26"
+  years: 2018, 2024
+lastupdated: "2024-07-16"
 
-
-keywords: 
+keywords:
 
 subcollection: cis
 
@@ -19,7 +18,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
-The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to a {{site.data.keyword.loganalysislong_notm}} instance, or a {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) bucket. You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before using Logpush.
+The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to an {{site.data.keyword.loganalysislong_notm}} instance, or an {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) bucket. You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before using Logpush.
 
 Range and firewall event logs are not included in HTTP(s) logs and require separate jobs. These jobs can be pushed to the same {{site.data.keyword.cos_short}} bucket, but must have a different path.
 
@@ -93,6 +92,8 @@ You can configure one logpush job for each {{site.data.keyword.cos_short}} objec
     * Select the log fields to include in the logpush job
     * Click **Create service**.
 
+
+
 ## Setting up Logpush using the CLI
 {: #logpush-setup-cli}
 {: cli}
@@ -111,7 +112,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination https://logs.us-sout
 
 Where:
 
-* **--destination** specifies the path to the Log Analysis instance. 
+* **--destination** specifies the path to the Log Analysis instance.
     The hostname is the domain name in CIS for which you are sending log data. You can find it by running `imbcloud cis domains -i <instance-name>`. The URL must match the region of your Log Analysis instance (for example, `https://logs.{LOGDNA_REGION}.logging.cloud.ibm.com/logs/ingest?hostname={DOMAIN_NAME}&apikey={LOGDNA_INGESTION_KEY}`). For more information, see [Log Analysis regions](/docs/log-analysis?topic=log-analysis-regions).
     {: note}
 
@@ -157,7 +158,7 @@ A domain can only have one Logpush job. Use the command line to interactively ad
 * Download the file from your {{site.data.keyword.cos_short}} bucket and open it.
 * Copy and paste the challenge token in the command prompt to address the ownership challenge.
 
-A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or every 100,000 records, whichever comes first. More than one file might be pushed per 30-second period or per 100,000 records. 
+A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or every 100,000 records, whichever comes first. More than one file might be pushed per 30-second period or per 100,000 records.
 
 Logpush jobs created prior to September 2020 might continue pushing every 5 minutes. Any modification to one of these older jobs triggers an update to the push frequency.
 {: note}
