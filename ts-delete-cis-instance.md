@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-08-24"
+  years: 2023, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -21,10 +21,10 @@ When you want to delete an instance of {{site.data.keyword.cis_short_notm}}, som
 You attempted to delete your {{site.data.keyword.cis_short_notm}} instance, but it failed.
 {: tsSymptoms}
 
-Instances that have domains attached can't be deleted. 
+Instances that have domains attached can't be deleted.
 {: tsCauses}
 
-If any global load balancers are attached, they can also cause the delete operation to fail. 
+If any global load balancers are attached, they can also cause the delete operation to fail.
 
 Before deleting an instance, all of the domains in the instance must be removed.
 {: Resolve}

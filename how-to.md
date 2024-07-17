@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-03-08"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -110,7 +110,7 @@ Security settings are:
 ## Certificates
 {: #certificates-overview}
 
-When you configure a domain, IBM {{site.data.keyword.cis_short_notm}} automatically deploys a universal certificate for that domain. Thus, you don't need to do anything to have certificate-based protection in that domain. If you want, you can upload your own self-managed certificate. You'll need a separate certificate for each domain, and you'll see an error message if the certificate you are uploading does not match your domain. You can also order custom certificates on this page. 
+When you configure a domain, IBM {{site.data.keyword.cis_short_notm}} automatically deploys a universal certificate for that domain. Thus, you don't need to do anything to have certificate-based protection in that domain. If you want, you can upload your own self-managed certificate. You'll need a separate certificate for each domain, and you'll see an error message if the certificate you are uploading does not match your domain. You can also order custom certificates on this page.
 
 If you want to upload your own certificate, you must ensure that you replace expiring certificates before they expire, otherwise your visitors might not be able to connect. Enterprise plan users can set up an expiration notice using the [Alerts feature](/docs/cis?topic=cis-configuring-policies&interface=ui).
 {: important}

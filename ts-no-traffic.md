@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-02-05"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
-keywords: 
+keywords:
 
 subcollection: cis
 
@@ -26,7 +26,7 @@ You don't see any network traffic.
 There might be a redirect that is routing the traffic to the root domain.
 {: tsCauses}
 
-If you’re not seeing traffic, and you’re using a CNAME, make sure that there are no redirects in place that are routing the traffic to the root domain. 
+If you’re not seeing traffic, and you’re using a CNAME, make sure that there are no redirects in place that are routing the traffic to the root domain.
 {: tsResolve}
 
 

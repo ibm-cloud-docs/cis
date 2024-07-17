@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-07-17"
 
 keywords: log pull, logpull
 
@@ -75,7 +75,7 @@ The response follows:
 ### Getting logs based on time duration
 {: #logpull-usecases-time-duration}
 
-If you receive an error message after running a command, but do not know the RayID of the response, you can use a time duration to get all logs for the time period when the error occurred.  
+If you receive an error message after running a command, but do not know the RayID of the response, you can use a time duration to get all logs for the time period when the error occurred.
 
 Use the following command for the request:
 

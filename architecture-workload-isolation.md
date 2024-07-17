@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-07-06"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords: public isolation for cloud internet services, compute isolation for cloud internet services, cis architecture, workload isolation in cis
 
@@ -43,7 +43,7 @@ Non-proxied requests go directly from the client to the requested resource's ori
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
 {: #dependencies-ibmcloud}
 
-Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.cis_full}} connects to or uses. 
+Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.cis_full}} connects to or uses.
 {: shortdesc}
 
 ### Critical dependencies
@@ -78,7 +78,7 @@ The following dependencies of {{site.data.keyword.cis_full_notm}} are considered
 ## Dependencies to third-party services
 {: #dependencies-3rd-party}
 
-Review the list of third-party services that {{site.data.keyword.containerlong_notm}} connects to over the public network. 
+Review the list of third-party services that {{site.data.keyword.containerlong_notm}} connects to over the public network.
 {: shortdesc}
 
 ### Critical dependencies

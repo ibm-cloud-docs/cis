@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -36,7 +36,7 @@ Phases exist at the instance level and at the zone level. For the same phase, ru
 
 Each phase has, at most, one entry point rule set at the instance and zone level.
 
-Currently, only phases at the zone level are available. This page will be updated as instance and zone level phases become available in subsequent releases. 
+Currently, only phases at the zone level are available. This page will be updated as instance and zone level phases become available in subsequent releases.
 
 ### Phase list
 {: #phase-list}

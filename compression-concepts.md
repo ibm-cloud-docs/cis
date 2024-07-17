@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-05-04"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -30,7 +30,7 @@ The Accept-Encoding header is not respected and is removed.
 ## What gets compressed
 {: #what-gets-compressed}
 
-In addition to {{site.data.keyword.cis_short_notm}}'s serving stale content and minification of CSS, JS, and HTML to speed up your site, {{site.data.keyword.cis_short_notm}} also provides `gzip` and `brotli` compression to help site owners. 
+In addition to {{site.data.keyword.cis_short_notm}}'s serving stale content and minification of CSS, JS, and HTML to speed up your site, {{site.data.keyword.cis_short_notm}} also provides `gzip` and `brotli` compression to help site owners.
 
 {{site.data.keyword.cis_short_notm}} returns `gzip` or `brotli` encoded responses to compatible clients and browsers for the following content-types:
 
@@ -54,8 +54,8 @@ application/x-httpd-cgi
 text/xml
 application/xml
 application/xml+rss
-application/vnd.api+json 
-application/x-protobuf 
+application/vnd.api+json
+application/x-protobuf
 application/json
 multipart/bag
 multipart/mixed
@@ -77,8 +77,8 @@ application/eot
 application/font
 application/font-sfnt
 application/wasm
-application/javascript-binast 
-application/manifest+json 
+application/javascript-binast
+application/manifest+json
 application/ld+json
 ```
 {: codeblock}
@@ -89,8 +89,8 @@ If you do not want a particular response from your origin to be encoded, you can
 {: #enable-brotli-compression}
 
 1. Log in to your {{site.data.keyword.cis_short_notm}} account.
-1. Choose the appropriate domain. 
-1. Click the Performance tab. 
+1. Choose the appropriate domain.
+1. Click the Performance tab.
 1. Click the Advanced tab.
 1. Toggle the Brotli switch to On.
 
@@ -143,7 +143,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0
 
 Currently, WebP is only supported in Firefox, Google Chrome, and Opera browsers.
 
-To ensure WebP is not served from cache to a browser that lacks WebP support, disable WebP at your origin web server when you use image size optimization. 
+To ensure WebP is not served from cache to a browser that lacks WebP support, disable WebP at your origin web server when you use image size optimization.
 {: important}
 
 ### Verify that image size optimization is active
@@ -154,9 +154,9 @@ Activate image size optimization by using a [page rule](/docs/cis?topic=cis-use-
 Image size optimization adds the following headers to image requests that are compressed:
 
 ```sh
-cf-bgj: imgq:85  
+cf-bgj: imgq:85
 
-cf-polished: qual=85, origFmt=jpeg, origSize=95005  
+cf-polished: qual=85, origFmt=jpeg, origSize=95005
 
 cf-cache-status: HIT
 ```
@@ -182,5 +182,5 @@ The following table lists common Cf-Polished statuses and how to troubleshoot th
 {: caption="Table 1. Common Cf-Polished statuses" caption-side="bottom"}
 
 Image size optimization still works when the accept-encoding is not the only header that is listed within the `Vary` header.
-{: note} 
+{: note}
 

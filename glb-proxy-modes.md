@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-10-30"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -28,7 +28,7 @@ In HTTP Proxy mode, load balancers have an automatic TTL. {{site.data.keyword.ci
 Setting the load balancer to HTTP Proxy mode offers the following benefits:
 
 * Failover is faster, because external DNS caches that don't respect short DNS TTLs do not impact failover performance.
-* The "automatic" TTL (five minutes) reduces the number of authoritative queries made against {{site.data.keyword.cis_short_notm}} without impacting failover performance. 
+* The "automatic" TTL (five minutes) reduces the number of authoritative queries made against {{site.data.keyword.cis_short_notm}} without impacting failover performance.
 
 ## DNS-Only mode
 {: #dns-only-mode}

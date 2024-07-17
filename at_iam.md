@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-09-29"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords: IBM Cloud, observability
 
@@ -26,7 +26,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Action                                    | Method            | IAM ACTION   |  AT ACTION |
 |-------------------------------------------|-------------------|--------------|------------|
 | Get an overview | `GET /v2/{crn}/zones/{domain_id}/overview` | `internet-svcs.zones.read` | `internet-svcs.overview.read` |
-{: caption="Table 1. Overview" caption-side="bottom"} 
+{: caption="Table 1. Overview" caption-side="bottom"}
 
 
 
@@ -42,7 +42,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Run an activation check on a domain | `PUT /v1/{crn}/zones/{domain_id}/activation_check` | `internet-svcs.reliability.update` | `internet-svcs.zones-activation-check.update` |
 | Get the DNSSEC configuration | `GET /v1/{crn}/zones/{domain_id}/dnssec` | `internet-svcs.reliability.read` | `internet-svcs.dnssec.read` |
 | Enable or disable DNSSEC | `PATCH /v1/{crn}/zones/{domain_id}/dnssec` | `internet-svcs.reliability.update` | `internet-svcs.dnssec.update` |
-{: caption="Table 2. DNS Domains" caption-side="bottom"} 
+{: caption="Table 2. DNS Domains" caption-side="bottom"}
 
 
 ## DNS Records
@@ -56,7 +56,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Delete a DNS record | `DELETE /v1/{crn}/zones/{domain_id}/dns_records/{record_id}` | `internet-svcs.reliability.manage` | `internet-svcs.dns-records.delete` |
 | Import the DNS records from zone file | `GET /v1/{crn}/zones/{domain_id}/dns_records_bulk` | `internet-svcs.reliability.read` | `internet-svcs.dns-records-bulk.read` |
 | Export the DNS records to a zone file | `POST /v1/{crn}/zones/{domain_id}/dns_records_bulk` | `internet-svcs.reliability.manage` | `internet-svcs.dns-records-bulk.create` |
-{: caption="Table 3. DNS Records" caption-side="bottom"} 
+{: caption="Table 3. DNS Records" caption-side="bottom"}
 
 
 
@@ -78,7 +78,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Update a load balancer pool | `PUT /v1/{crn}/load_balancers/pools/{pool_id}` | `internet-svcs.zones.update` | `internet-svcs.load-balancer-pools.update` |
 | Delete a load balancer pool | `DELETE /v1/{crn}/load_balancers/pools/{pool_id}` | `internet-svcs.zones.manage` | `internet-svcs.load-balancer-pools.delete` |
 | Get the load balancer events | `GET /v1/{crn}/load_balancers/events` | `internet-svcs.zones.read` | `internet-svcs.load-balancer-events.read` |
-{: caption="Table 4. GLB" caption-side="bottom"} 
+{: caption="Table 4. GLB" caption-side="bottom"}
 
 
 ## Metrics
@@ -90,7 +90,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Get the HTTP requests analytics | `GET /v1/{crn}/zones/{domain_id}/analytics/http_requests` | `internet-svcs.reliability.read` | `internet-svcs.http-requests-analytics.read` |
 | Get the HTTP requests analytics by colocations | `GET /v1/{crn}/zones/{domain_id}/analytics/colos` | `internet-svcs.reliability.read` | `internet-svcs.colos-analytics.read` |
 | Get the DNS analytics | `GET /v1/{crn}/zones/{domain_id}/dns_analytics/report` | `internet-svcs.reliability.read` | `internet-svcs.dns-analytics.read` |
-{: caption="Table 5. Metrics" caption-side="bottom"} 
+{: caption="Table 5. Metrics" caption-side="bottom"}
 
 
 
@@ -105,7 +105,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Enable or disable a WAF group | `PATCH /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/groups/{group_id}` | `internet-svcs.security.update` | `internet-svcs.waf-groups.update` |
 | [Deprecated]{: tag-red}Get the WAF rules | `GET /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/rules` | `internet-svcs.security.read` | `internet-svcs.waf-rules.read` |
 | Change the action mode of a WAF rule | `PATCH /v1/{crn}/zones/{domain_id}/firewall/waf/packages/{package_id}/rules/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.waf-rules.update` |
-{: caption="Table 6. WAF" caption-side="bottom"} 
+{: caption="Table 6. WAF" caption-side="bottom"}
 
 
 
@@ -126,7 +126,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Create a domain lockdown rule | `POST /v1/{crn}/zones/{domain_id}/firewall/lockdowns` | `internet-svcs.security.manage` | `internet-svcs.domain-lockdown-rules.create` |
 | Update a domain lockdown rule | `PUT /v1/{crn}/zones/{domain_id}/firewall/lockdowns/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.domain-lockdown-rules.update` |
 | Delete a domain lockdown rule | `DELETE /v1/{crn}/zones/{domain_id}/firewall/lockdowns/{rule_id}` | `internet-svcs.security.manage` | `internet-svcs.domain-lockdown-rules.delete` |
-{: caption="Table 7. IP Firewall" caption-side="bottom"} 
+{: caption="Table 7. IP Firewall" caption-side="bottom"}
 
 ## Firewall Rules
 {: #at_iam_CIS_fw}
@@ -142,7 +142,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Update a filter | `PATCH /v1/{crn}/zones/{domain_id}/filters/{filter_id}` | `internet-svcs.security.update` | `internet-svcs.filters.update` |
 | Delete a filter | `DELETE /v1/{crn}/zones/{domain_id}/filters/{filter_id}` | `internet-svcs.security.manage` | `internet-svcs.filters.delete` |
 | Validate the expression of a filter. | `POST /v1/{crn}/zones/{domain_id}/filters/validate-expr` | `internet-svcs.security.manage` | `internet-svcs.filters-validate-expr.create` |
-{: caption="Table 8. Firewall Rules" caption-side="bottom"} 
+{: caption="Table 8. Firewall Rules" caption-side="bottom"}
 
 
 ## Security Events
@@ -152,7 +152,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |-------------------------------------------|-------------------|--------------|------------|
 | Get the security events | `GET /v1/{crn}/zones/{domain_id}/security/events` | `internet-svcs.security.read` | `internet-svcs.security-events.read` |
 | Get the firewall events (Deprecated) | `GET /v1/{crn}/zones/{domain_id}/analytics/firewall_events  [DEPRECATED]` | `internet-svcs.security.read` | `internet-svcs.firewall-events-analytics.read` |
-{: caption="Table 9. Security Events" caption-side="bottom"} 
+{: caption="Table 9. Security Events" caption-side="bottom"}
 
 
 ## Rate Limiting
@@ -165,7 +165,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Update a rate limiting rule | `PUT /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.update` | `internet-svcs.rate-limits.update` |
 | Delete a rate limiting rule | `DELETE /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.manage` | `internet-svcs.rate-limits.delete` |
 | Get the rate limiting analytics | `GET /v1/{crn}/zones/{domain_id}/rate_limit_analytics` | `internet-svcs.security.read` | `internet-svcs.rate-limit-analytics.read` |
-{: caption="Table 10. Rate Limiting" caption-side="bottom"} 
+{: caption="Table 10. Rate Limiting" caption-side="bottom"}
 
 
 ## Caching
@@ -177,7 +177,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Purge the cached assets by URLs from edge server | `PUT /v1/{crn}/zones/{domain_id}/purge_cache/purge_by_urls` | `internet-svcs.performance.update` | `internet-svcs.purge-cache-by-urls.update` |
 | Purge the cached assets by cache tags from edge server | `PUT /v1/{crn}/zones/{domain_id}/purge_cache/purge_by_cache_tags` | `internet-svcs.performance.update` | `internet-svcs.purge-cache-by-cache-tags.update` |
 | Purge the cached assets by hostnames from edge server | `PUT /v1/{crn}/zones/{domain_id}/purge_cache/purge_by_hosts` | `internet-svcs.performance.update` | `internet-svcs.purge-cache-by-hosts.update` |
-{: caption="Table 11. Caching" caption-side="bottom"} 
+{: caption="Table 11. Caching" caption-side="bottom"}
 
 ## Routing
 {: #at_iam_CIS_Routing}
@@ -188,7 +188,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Enable or disable smart routing | `PATCH /v1/{crn}/zones/{domain_id}/routing/smart_routing` | `internet-svcs.performance.update` | `internet-svcs.smart-routing.update` |
 | Get the tiered caching configurations | `GET /v1/{crn}/zones/{domain_id}/routing/tiered_caching` | `internet-svcs.performance.read` | `internet-svcs.tiered-caching.read` |
 | Enable or disable tiered caching | `PATCH /v1/{crn}/zones/{domain_id}/routing/tiered_caching` | `internet-svcs.performance.update` | `internet-svcs.tiered-caching.update` |
-{: caption="Table 12. Routing" caption-side="bottom"} 
+{: caption="Table 12. Routing" caption-side="bottom"}
 
 
 ## Page Rules
@@ -201,7 +201,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Create a page rule | `POST /v1/{crn}/zones/{domain_id}/pagerules` | `internet-svcs.performance.manage` | `internet-svcs.pagerules.create` |
 | Update a page rule | `PUT /v1/{crn}/zones/{domain_id}/pagerules/{rule_id}` | `internet-svcs.performance.update` | `internet-svcs.pagerules.update` |
 | Delete a page rule | `DELETE /v1/{crn}/zones/{domain_id}/pagerules/{rule_id}` | `internet-svcs.performance.manage` | `internet-svcs.pagerules.delete` |
-{: caption="Table 13. Page Rules" caption-side="bottom"} 
+{: caption="Table 13. Page Rules" caption-side="bottom"}
 
 
 
@@ -223,7 +223,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Get an origin certificate issued by CIS | `GET /v1/{crn}/zones/{domain_id}/origin_certificates` | `internet-svcs.security.read` | `internet-svcs.origin-certificates.read` |
 | Create an origin certificate issued by CIS | `POST /v1/{crn}/zones/{domain_id}/origin_certificates` | `internet-svcs.security.manage` | `internet-svcs.origin-certificates.create` |
 | Revoke an origin certificate issued by CIS | `DELETE /v1/{crn}/zones/{domain_id}/origin_certificates/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-certificates.delete` |
-{: caption="Table 14. TLS" caption-side="bottom"} 
+{: caption="Table 14. TLS" caption-side="bottom"}
 
 
 
@@ -241,7 +241,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Create an edge function route | `POST /v1/{crn}/zones/{domain_id}/workers/routes` | `internet-svcs.performance.manage` | `internet-svcs.edge-functions-routes.create` |
 | Update an edge function route | `PUT /v1/{crn}/zones/{domain_id}/workers/routes/{route_id}` | `internet-svcs.performance.update` | `internet-svcs.edge-functions-routes.update` |
 | Delete an edge function route | `DELETE /v1/{crn}/zones/{domain_id}/workers/routes/{route_id}` | `internet-svcs.performance.manage` | `internet-svcs.edge-functions-routes.delete` |
-{: caption="Table 15. Edge Functions" caption-side="bottom"} 
+{: caption="Table 15. Edge Functions" caption-side="bottom"}
 
 ## Range
 {: #at_iam_range}
@@ -253,7 +253,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Update a range app | `PUT /v1/{crn}/zones/{domain_id}/range/apps/{app_id}` | `internet-svcs.security.update` | `internet-svcs.range-apps.update` |
 | Delete a range app | `DELETE /v1/{crn}/zones/{domain_id}/range/apps/{app_id}` | `internet-svcs.security.manage` | `internet-svcs.range-apps.delete` |
 | Get the analytics of range apps | `GET /v1/{crn}/zones/{domain_id}/range/analytics/events/summary` </br>`GET /v1/{crn}/zones/{domain_id}/range/analytics/events/bytime` | `internet-svcs.security.read` |`internet-svcs.range-analytics.read` |
-{: caption="Table 16. Range" caption-side="bottom"} 
+{: caption="Table 16. Range" caption-side="bottom"}
 
 ## Logpush
 {: #at_iam_Logpush}
@@ -267,7 +267,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Delete a logpush job | `DELETE /v1/{crn}/zones/{domain_id}/logpush/jobs/{job_id}` | `internet-svcs.zones.manage` | `internet-svcs.logpush-jobs.delete` |
 | Initiate the logpush ownership challenge | `POST /v1/{crn}/zones/{domain_id}/logpush/ownership` | `internet-svcs.zones.manage` | `internet-svcs.logpush-ownership.create` |
 | Validate the logpush ownership challenge token | `POST /v1/{crn}/zones/{domain_id}/logpush/ownership/validate` | `internet-svcs.zones.manage` | `internet-svcs.logpush-ownership-validate.create` |
-{: caption="Table 17. Logpush" caption-side="bottom"} 
+{: caption="Table 17. Logpush" caption-side="bottom"}
 
 ## Custom Pages
 {: #at_iam_edge-Custom-Pages}
@@ -276,7 +276,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |-------------------------------------------|-------------------|--------------|------------|
 | Get the custom error pages | `GET /v1/{crn}/zones/{domain_id}/custom_pages` | `internet-svcs.zones.read` | `internet-svcs.custom-pages.read` |
 | Update the custom error page | `PUT /v1/{crn}/zones/{domain_id}/custom_pages/{page_id}` | `internet-svcs.zones.update` | `internet-svcs.custom-pages.update` |
-{: caption="Table 18. Custom Pages" caption-side="bottom"} 
+{: caption="Table 18. Custom Pages" caption-side="bottom"}
 
 ## Mutual TLS
 {: #at_iam_tls}
@@ -295,7 +295,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Create a mTLS policy | `POST /v1/{crn}/zones/{domain_id}/access/apps/{app_id}/policies` | `internet-svcs.security.manage` | `internet-svcs.access-policies.create` |
 | Update a mTLS policy | `PUT /v1/{crn}/zones/{domain_id}/access/apps/{app_id}/policies/{policy_id}` | `internet-svcs.security.update` | `internet-svcs.access-policies.update` |
 | Delete a mTLS policy | `DELETE /v1/{crn}/zones/{domain_id}/access/apps/{app_id}` | `internet-svcs.security.manage` | `internet-svcs.access-policies.delete` |
-{: caption="Table 19. Mutual TLS" caption-side="bottom"} 
+{: caption="Table 19. Mutual TLS" caption-side="bottom"}
 
 ## Origin TLS Client Authentication
 {: #at_iam_tls-client-auth}
@@ -312,7 +312,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |Get the origin TLS client authentication certificates used at the hostname level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostname-certificates.read` |
 |Create an origin TLS client authentication certificate used at the hostname level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.create` |
 |Delete an origin TLS client authentication certificate used at the hostname level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.delete` |
-{: caption="Table 20. Edge Functions" caption-side="bottom"} 
+{: caption="Table 20. Edge Functions" caption-side="bottom"}
 
 ## Domain settings
 {: #at_iam_CIS_domain-settings}

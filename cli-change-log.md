@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-07-17"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -118,7 +118,7 @@ Version 1.15.2 of the CLI was released on Jun 6, 2023.
 :   Support Image Resizing.
 :   Fix bugs of alerts.
 
-## Version 1.15.0 
+## Version 1.15.0
 {: #cli-1150}
 
 Version 1.15.0 of the CLI was released on Apr 24, 2023.

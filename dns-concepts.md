@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-06-29"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -44,7 +44,7 @@ IBM {{site.data.keyword.cis_short_notm}} supports a the "CNAME Flattening" featu
 ## Proxying DNS records and global load balancers
 {: #dns-concepts-proxying-dns-records}
 
-IBM {{site.data.keyword.cis_short_notm}} supports proxying for global load balancers and DNS records. When a record or load balancer is proxied, it means that its traffic runs directly through {{site.data.keyword.cis_short_notm}}. 
+IBM {{site.data.keyword.cis_short_notm}} supports proxying for global load balancers and DNS records. When a record or load balancer is proxied, it means that its traffic runs directly through {{site.data.keyword.cis_short_notm}}.
 
 Currently, DNS records of type **A**, **AAAA**, or **CNAME** can be proxied.
 {: note}
@@ -55,7 +55,7 @@ Currently, DNS records of type **A**, **AAAA**, or **CNAME** can be proxied.
 Load balancers and DNS records support both DNS-only and HTTP proxy modes. You can have HTTP proxy and DNS-only domains in the same {{site.data.keyword.cis_short_notm}} instance, but the traffic routing behavior differs as follows:
 
 * Traffic for records that are proxied flows through {{site.data.keyword.cis_short_notm}}.
-* Traffic for records that are nonproxied (DNS-only mode) flows directly from the client to the origin. 
+* Traffic for records that are nonproxied (DNS-only mode) flows directly from the client to the origin.
 
 ### HTTP proxy mode
 {: #dns-http-proxy-mode}
@@ -65,7 +65,7 @@ In HTTP proxy mode, {{site.data.keyword.cis_short_notm}} announces IBM IP addres
 Using HTTP proxy mode offers the following benefits:
 
 * Traffic flows through {{site.data.keyword.cis_short_notm}} where all the security, performance, and reliability features such as firewall rules and caching, are applied.
-* The "automatic" TTL (five minutes) reduces the number of authoritative queries that are made against {{site.data.keyword.cis_short_notm}}. 
+* The "automatic" TTL (five minutes) reduces the number of authoritative queries that are made against {{site.data.keyword.cis_short_notm}}.
 
 ### DNS-only mode
 {: #dns-dns-only-mode}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-07-23"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords: edge functions, CIS,
 
@@ -28,7 +28,7 @@ Actions are written in JavaScript and require an event listener to respond to a 
 * **Upload actions** Use the **Upload** button to upload a JavaScript file.
     * **Standard plans** The action name is set to the name of your domain.
     * **Enterprise plans** The name of the action is the name of the file.
-  
+
     Uploading or creating an action with the same name as an existing action causes the existing action to be overwritten. Rename the action file before you upload, or enter a unique name in the text input during creation to avoid this behavior.
     {: note}
 

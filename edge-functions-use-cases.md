@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-02-23"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -731,7 +731,7 @@ addEventListener('fetch', event => {
     .then(function(response) {
         clearTimeout(timeoutId);
         event.respondWith(response);
-    });  
+    });
 });
 
 function getRandomInt(max) {
@@ -835,7 +835,7 @@ This feature is available only to Enterprise customers.
 ```sh
 // Force response to be cached for 86400 seconds for 200 status
 // codes, 1 second for 404, and do not cache 500 errors.
-fetch(request, {  
+fetch(request, {
   cf: { cacheTtlByStatus: { "200-299": 86400, 404: 1, "500-599": 0 } },
 })
 ```

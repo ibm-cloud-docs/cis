@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-05-09"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -163,7 +163,7 @@ A common cause of 1011 errors is when a request is made for a resource that uses
 ### Resolution
 {: #1011-resolution}
 
-Notify the website owner of the blocking. If you cannot determine how to contact the website owner, lookup contact information for the domain via the Whois database.  
+Notify the website owner of the blocking. If you cannot determine how to contact the website owner, lookup contact information for the domain via the Whois database.
 
 Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
 
@@ -232,7 +232,7 @@ Common causes for Error 1016 are:
 * A missing DNS A record that mentions origin IP address.
 * A CNAME record in the {{site.data.keyword.cis_short_notm}} DNS points to an unresolvable external domain.
 * The origin host names (CNAMEs) in your {{site.data.keyword.cis_short_notm}} Load Balancer default, region, and fallback pools are unresolvable. Use a fallback pool configured with an origin IP as a backup in case all other pools are unavailable.
-* When creating a Range app with a CNAME origin, you need first to create a CNAME on the {{site.data.keyword.cis_short_notm}} DNS side that points to the origin. 
+* When creating a Range app with a CNAME origin, you need first to create a CNAME on the {{site.data.keyword.cis_short_notm}} DNS side that points to the origin.
 
 ### Resolution
 {: #1016-resolution}
@@ -293,7 +293,7 @@ If you are the website owner:
 
 Common causes of an error 1023 are:
 
-* If the owner just signed up for {{site.data.keyword.cis_short_notm}} it can take a few minutes for the website's information to be distributed to our global network. 
+* If the owner just signed up for {{site.data.keyword.cis_short_notm}} it can take a few minutes for the website's information to be distributed to our global network.
 * Something is wrong with the site's configuration. Usually, this happens when accounts have been signed up with a partner organization (for example, a hosting provider) and the provider's DNS fails.
 
 Error 1023 is returned via a HTTP 409 response code.

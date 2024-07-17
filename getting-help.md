@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-02-28"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords: support ticket, IBM Cloud development teams support case
 
@@ -35,7 +35,7 @@ Provide the following details:
 1. Provide your CRN:
     * In the UI, go to the **Overview** page
     * In the CLI, run `ibmcloud resource service-instances --long`
-2. Provide your Domain name or ID. 
+2. Provide your Domain name or ID.
 3. Depending on the issue the following information might also be helpful:
     * Account ID: Log into https://cloud.ibm.com and go to **View Profile > Billing**
     * Instance ID: Run the CLI command `ibmcloud resource service-instances --long`

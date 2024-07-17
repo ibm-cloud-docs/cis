@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-06-08"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -70,7 +70,7 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 - Customize caching with {{site.data.keyword.cis_short_notm}} [edge functions](/docs/cis?topic=cis-edge-functions-use-cases#caching-using-fetch) or the [API](/docs/cis?topic=cis-edge-functions-use-cases#cache-api)
 - Adjust caching level, cache TTL, and more through the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#cache)
 
-The maximum file size that {{site.data.keyword.cis_short_notm}} caches is 512 MB for Trial and Standard Next customers and 5 GB for Enterprise customers. Enterprise customers can open a Support case to request caching of larger files. 
+The maximum file size that {{site.data.keyword.cis_short_notm}} caches is 512 MB for Trial and Standard Next customers and 5 GB for Enterprise customers. Enterprise customers can open a Support case to request caching of larger files.
 {: tip}
 
 ## File extensions cached by default

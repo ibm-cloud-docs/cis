@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-
-lastupdated: "2023-02-02"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
 keywords: isolation for cis, service endpoints for cis, private network for cis, network isolation in cis, non-public routes for cis, private connection for cis, private connectivity for cis
 

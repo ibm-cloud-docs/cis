@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-23"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
-keywords: 
+keywords:
 
 subcollection: cis
 
@@ -24,7 +24,7 @@ On your dashboard, you'll see three lists that show the [load balancers](#x27889
 
 {{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address, but there are limitations:
 - you cannot use proxy services or health checks.
-- you can only use DNS-based load balancing. 
+- you can only use DNS-based load balancing.
 {: important}
 
 Refer to the [Quick setup](#global-load-balancer-quick-setup) if you already know what to do!
@@ -63,7 +63,7 @@ Identify your application's resources, such as origin pools and health check mec
    If your application servers are sitting behind a local load balancer, such as an {{site.data.keyword.cloud_notm}} load balancer, then add your load balancer’s FQDN or virtual IP as your origin instead of adding your individual servers.
    {: note}
 
-3. Click **Create** to complete the creation of your origin pool.  
+3. Click **Create** to complete the creation of your origin pool.
 
    The origin pool initially appears as **Unhealthy**. This state changes to **Healthy** after a successful health check by the system. You might need to refresh your browser to see the state change.
 
@@ -78,7 +78,7 @@ Identify your application's resources, such as origin pools and health check mec
 Define your global load balancer configuration by specifying a hostname, adding and adjusting your origin pools, and defining additional rules to control how traffic is served to clients.
 {: shortdesc}
 
-1. Click **Create load balancer**.  
+1. Click **Create load balancer**.
 2. Specify the hostname for your domain, and adjust the TTL value if wanted (the default is 60 seconds) and use **Add Pool** to add your origin pools.
 
    Hostnames that are combined with domain names form fully-qualified domain names (FQDN) for your application. Your users connect to your application using this FQDN.
@@ -137,7 +137,7 @@ Additional optional fields:
 * **Healthy Origin Threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and fails over to the next available pool. (defaults to 1)
 * **Health check region**: Region from which the health check performs monitoring.
 
-   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.  
+   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
    {: note}
 
 * **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
@@ -159,7 +159,7 @@ Optionally, you can configure the following fields:
 * **TTL**: Time-to-live (TTL) of the DNS entry for the IP address returned by this load balancer. This option applies only to unproxied load balancer; otherwise, it defaults to `Automatic`.
 * **Geo routes**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined fall back to using the default pools.
 
-   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering){: external}.  
+   IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering){: external}.
    {: note}
 
 ### Editing or deleting a global load balancer

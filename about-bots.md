@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-06-07"
+  years: 2023, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -104,4 +104,4 @@ Cloudflare Bot Management uses the following detection mechanisms, each producin
 * Heuristics engine: Detects bots by screening requests through a set of simple rules that capture bots based on certain attibutes of the requests made.
 * Behavioral analysis: Detects bots that have never been seen, calculating and analyzing normal visitor behavior over an extended period of time.
 * Verified bots: A way to avoid accidental blocks of useful bots using several validators and a bots directory of unique good bot identities.
-* JS fingerprinting: A challenge-response system with challenge injected into the webpage on Cloudflare’s edge and rendered in the background for validation. 
+* JS fingerprinting: A challenge-response system with challenge injected into the webpage on Cloudflare’s edge and rendered in the background for validation.

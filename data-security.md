@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-07-19"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords: data encryption in cis, data storage for cis, data deletion for cis, data in cis, data security in cis
 
@@ -51,7 +51,7 @@ Deleting the {{site.data.keyword.cis_short_notm}} instance removes all data.
 ### Restoring deleted data for {{site.data.keyword.cis_short_notm}}
 {: #data-restore}
 
-{{site.data.keyword.cis_short_notm}} can currently restore the deleted instance. 
+{{site.data.keyword.cis_short_notm}} can currently restore the deleted instance.
 After you delete an instance of {{site.data.keyword.cis_short_notm}}, you can restore the deleted service instance within the data retention period of seven days. After the seven-day period expires, the service instance is permanently deleted.
 
 To view which service instances are available for restoration, use the `ibmcloud resource reclamations` command. To restore a deleted service instance, use the `ibmcloud resource reclamation-restore` command.

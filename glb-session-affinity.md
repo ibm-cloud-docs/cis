@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-04-12"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Setting session affinity
 {: #session-affinity}
 
-Loading a website usually requires fetching multiple assets from a web server. {{site.data.keyword.cis_short_notm}} session affinity minimizes redundant network requests by automatically directing requests from the same client to the same origin web server. 
+Loading a website usually requires fetching multiple assets from a web server. {{site.data.keyword.cis_short_notm}} session affinity minimizes redundant network requests by automatically directing requests from the same client to the same origin web server.
 {: shortdesc}
 
 {{site.data.keyword.cis_short_notm}} sets a cookie on the initial response to the client. Using the cookie in subsequent client requests ensures those requests are sent to the same origin, unless the origin is unavailable.
@@ -37,13 +37,13 @@ When you create a global load balancer using the CLI, take the following steps t
 1. Log in to your IBM Cloud account
 2. Create a global load balancer
 3. Set the following variables:
-    * Session affinity: Valid values are `cookie`, `none`. 
-    * Session Affinity TTL: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.   
-    * Session Affinity Attributes are cookie attributes for session affinity cookie.   
-        * Samesite: Valid values are `Auto`, `None`, `Lax`, `Strict`.  
+    * Session affinity: Valid values are `cookie`, `none`.
+    * Session Affinity TTL: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
+    * Session Affinity Attributes are cookie attributes for session affinity cookie.
+        * Samesite: Valid values are `Auto`, `None`, `Lax`, `Strict`.
         * Secure: Valid values are `Auto`, `Always`, `Never`.
-        * Drain Duration (optional): Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer. 
-  
+        * Drain Duration (optional): Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer.
+
 
 For example:
 
@@ -89,7 +89,7 @@ When you create a global load balancer using the API, take the following steps t
     * `session_affinity_attributes` which include:
         * `samesite` configures the SameSite attribute on the affinity cookie. Valid values are `Auto`, `Lax`, `None`, `Strict`; default `Auto`
         * `secure` configures the Secure attribute on the session affinity cookie. Valid values are `Auto`, `Always`, `Never` ; default `Auto`
-        * `drain_duration` is the value of the drain duration, in seconds. 
+        * `drain_duration` is the value of the drain duration, in seconds.
 1. When all variables are initiated, create the global load balancer with session affinity:
 
 ```sh

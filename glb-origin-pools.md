@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-10-30"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Setting up origin pools
 {: #glb-features-pools}
 
-An origin pool is a group of origin servers that traffic is intelligently routed to when attached to a global load balancer. 
+An origin pool is a group of origin servers that traffic is intelligently routed to when attached to a global load balancer.
 {: shortdesc}
 
 The minimum number of available origin servers for the pool to be marked healthy is configurable by the user along with which specific health check to use. The origin pool can be associated with a specific region or it can be made available to all regions.

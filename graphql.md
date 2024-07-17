@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-18"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords: graphql
 
@@ -49,30 +49,30 @@ Start building your query in the query pane. Use the **Document Explorer** to ex
 Paste the following test snippet into the query pane and observe the response in the response pane, adjusting the `datetime` to meet your needs.
 
 ```sh
-query { 
-   viewer { 
-      zones(filter: {zoneTag: "<your domain ID>"}) { 
-         httpRequests1hGroups(limit: 5, filter: { datetime_gt: "2020-08-30T04:00:00Z", datetime_lt: "2020-08-31T06:00:00Z"}) { 
-            sum { 
-              countryMap { 
-                bytes 
-                clientCountryName 
-              } 
-            } 
-            dimensions { 
-              date 
-              datetime 
-             } 
-          } 
-         firewallEventsAdaptiveGroups(limit: 10, filter: { datetime_gt: "2020-08-30T04:00:00Z", datetime_lt: "2020-08-31T06:00:00Z"}) { 
-               count 
-               dimensions { 
-                  clientCountryName 
-                  clientAsn 
+query {
+   viewer {
+      zones(filter: {zoneTag: "<your domain ID>"}) {
+         httpRequests1hGroups(limit: 5, filter: { datetime_gt: "2020-08-30T04:00:00Z", datetime_lt: "2020-08-31T06:00:00Z"}) {
+            sum {
+              countryMap {
+                bytes
+                clientCountryName
+              }
+            }
+            dimensions {
+              date
+              datetime
+             }
+          }
+         firewallEventsAdaptiveGroups(limit: 10, filter: { datetime_gt: "2020-08-30T04:00:00Z", datetime_lt: "2020-08-31T06:00:00Z"}) {
+               count
+               dimensions {
+                  clientCountryName
+                  clientAsn
                   datetimeHour
-               } 
-             } 
-          } 
+               }
+             }
+          }
        }
      }
 ```
@@ -96,7 +96,7 @@ viewer {
 
 The initial node of the user running the query is `viewer`. A viewer is able to access one or more domains (zones). Each zone contains different datasets, such as firewall events for a zone.
 
-Nodes that represent aggregated data include the `groups` suffix, for example, `firewallEventsAdaptiveGroups`. Each group follows a specific structure, shown in the following example. 
+Nodes that represent aggregated data include the `groups` suffix, for example, `firewallEventsAdaptiveGroups`. Each group follows a specific structure, shown in the following example.
 
 ```sh
 type ExampleGroup {
@@ -154,9 +154,9 @@ The following datasets are available.
 ## Errors
 {: #graphql-errors}
 
-The GraphQL Analytics API is a RESTful API based on HTTPS requests and JSON responses and returns familiar HTTP status codes (for example, `404`, `500`, `504`). In conformity to the GraphQL specification, a `200` response can contain an error, which is in contrast to the common REST approach. 
+The GraphQL Analytics API is a RESTful API based on HTTPS requests and JSON responses and returns familiar HTTP status codes (for example, `404`, `500`, `504`). In conformity to the GraphQL specification, a `200` response can contain an error, which is in contrast to the common REST approach.
 
-All responses contain an errors array, which is null if there are no errors. Non-null errors contain `message`, `path`, and `timestamp`. 
+All responses contain an errors array, which is null if there are no errors. Non-null errors contain `message`, `path`, and `timestamp`.
 
 The following code is an example error response:
 
@@ -270,14 +270,14 @@ The query response follows:
 The volume of data that a query can return is limited, and there are user limits on daily data volume. The following limits apply in addition to general rate limits enforced by the API:
 * A zone-scoped query can include up to 10 zones.
 * Queries can request up to 30 fields as indicated by `maxNumberOfFields` in `settings`.
-* Responses can return up to 10,000 records. This limit is indicated by `maxPageSize` in `settings`. 
+* Responses can return up to 10,000 records. This limit is indicated by `maxPageSize` in `settings`.
 
-Queries must explicitly specify the upper bounds of records to return using the `limit` argument. 
+Queries must explicitly specify the upper bounds of records to return using the `limit` argument.
 
 ## Sorting
 {: #sorting}
 
-You can sort the order of query result elements using the `orderBy` argument. By default, results are sorted by the primary key of the dataset (table). If you specify another field to sort on, the primary key is included in the sorting key to keep consistent results for pagination. 
+You can sort the order of query result elements using the `orderBy` argument. By default, results are sorted by the primary key of the dataset (table). If you specify another field to sort on, the primary key is included in the sorting key to keep consistent results for pagination.
 
 Ordering within nested structures is not supported.
 {: note}
@@ -311,7 +311,7 @@ httpRequests1hGroups (orderBy: [sum_bytes_DESC]){
     sum {
         bytes
         requests
-    }    
+    }
     dimensions {
         datetime
     }
@@ -322,9 +322,9 @@ httpRequests1hGroups (orderBy: [sum_bytes_DESC]){
 ## Pagination
 {: #pagination}
 
-Pagination, breaking up query results into smaller parts, can be done using `limit`, `orderBy`, and filtering parameters. The GraphQL Analytics API does not support cursors for pagination. 
+Pagination, breaking up query results into smaller parts, can be done using `limit`, `orderBy`, and filtering parameters. The GraphQL Analytics API does not support cursors for pagination.
 * `limit` (integer) defines how many records to return.
-* `orderBy` (string) defines the sort order for the data. 
+* `orderBy` (string) defines the sort order for the data.
 
 
 ### Query pages without cursors
@@ -369,7 +369,7 @@ The query response follows:
 ### Query for the next page using filter
 {: #query-next-page-filter}
 
-To get the next _n_ results, specify a filter to exclude the last result from the previous query. Using the previous example, you can append the greater-than operator (`_gt`) to the `clientCountryName` field and the greater-or-equal operator  to the `datetime` field. By making a specific order, you can get the most complete results. 
+To get the next _n_ results, specify a filter to exclude the last result from the previous query. Using the previous example, you can append the greater-than operator (`_gt`) to the `clientCountryName` field and the greater-or-equal operator  to the `datetime` field. By making a specific order, you can get the most complete results.
 
 ```sh
 firewallEventsAdaptive (limit: 2, orderBy: [datetime_ASC, clientCountryName_ASC], filter: {date_geq: "2018-11-12T00:00:00Z", clientCounterName_gt: "US"}) {
@@ -431,7 +431,7 @@ The query response follows:
 ## Filtering
 {: #filtering}
 
-Filters constrain queries to a particular account or set of zones (domains), requests by date, or a specific query agent. Without filters, performance might degrade, and results might include unimportant data. 
+Filters constrain queries to a particular account or set of zones (domains), requests by date, or a specific query agent. Without filters, performance might degrade, and results might include unimportant data.
 
 ### Structure
 {: #structure}

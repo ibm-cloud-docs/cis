@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-04-02"
-  
+  years: 2021, 2024
+lastupdated: "2024-07-17"
+
 keywords:
 
 subcollection: cis
@@ -27,7 +27,7 @@ Authenticated origin pull is configured by using one of the following options:
 
 Client certificates are not deleted from {{site.data.keyword.cis_short_notm}} upon expiration unless a delete or replace request is sent to the {{site.data.keyword.cis_short_notm}} API. However, requests are dropped at your origin if your origin accepts only a valid client certificate.
 
-Authenticated Origin Pull does not work in **SSL mode Off (not secure)** or **Client-to-Edge**.  
+Authenticated Origin Pull does not work in **SSL mode Off (not secure)** or **Client-to-Edge**.
 
 ## Zone-level authenticated origin pull with {{site.data.keyword.cis_short_notm}} certificates
 {: #cis-cert-zone-auth-org-pull}
@@ -77,7 +77,7 @@ To enable authenticated origin, pull globally on a zone:
 
    `$ request_body=$(< <(cat <<EOF { "certificate": "$MYCERT", "private_key": "$MYKEY" } } EOF ))`
 
-1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#upload-authenticated-origin-pull-certificate) 
+1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#upload-authenticated-origin-pull-certificate)
 1. Enable authenticated origin pull via [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#update-authenticated-origin-pull-setting)
 
 ## Per-hostname authenticated origin pull using customer certificates
@@ -107,7 +107,7 @@ To upload a client certificate in {{site.data.keyword.cis_short_notm}}:
 
     ```sh
     MYCERT="$(cat app_example_com.pem|perl -pe 's/\r?\n/\\n/'|sed -e 's/..$//')" $ MYKEY="$(cat app_example_com.key|perl -pe 's/\r?\n/\\n/'|sed -e's/..$//')"
-     
+
     echo $MYCERT -----BEGIN CERTIFICATE-----\nMIIFJDCCBAygAwIBAgIQD0ifmj/Yi5NP/2gdUySbfzANBgkqhkiG9w0BAQsFADBN\nMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMScwJQYDVQQDEx5E...SzSHfXp5lnu/3V08I72q1QNzOCgY1XeL4GKVcj4or6cT6tX6oJH7ePPmfrBfqI/O\nOeH8gMJ+FuwtXYEPa4hBf38M5eU5xWG7\n-----END CERTIFICATE-----\n
     ```
     {: codeblock}
@@ -116,7 +116,7 @@ To upload a client certificate in {{site.data.keyword.cis_short_notm}}:
 
     `$ request_body=$(< <(cat <<EOF { "certificate": "$MYCERT", "private_key": "$MYKEY" } } EOF ))`
 
-1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#upload-authenticated-origin-pull-certificate) 
+1. Upload the client certificate and private key via the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#upload-authenticated-origin-pull-certificate)
 1. Enable authenticated origin pull on specified hostname through the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#update-authenticated-origin-pull-setting). Link the client certificate to the specific hostname
 
 ## Replacing a client certificate without downtime
@@ -124,7 +124,7 @@ To upload a client certificate in {{site.data.keyword.cis_short_notm}}:
 
 For hostname:
 
-1. Upload the new certificate  
+1. Upload the new certificate
 1. Link the new certificate ID and hostname and enabled values
 
 For global:
@@ -147,9 +147,9 @@ Use the following instructions for configuring TLS authenticated origin pulls fo
 ### Setting up Apache
 {: #apache-setup}
 
-Use **End-to-End flexible** and update the origin web server SSL configuration using the following steps. 
+Use **End-to-End flexible** and update the origin web server SSL configuration using the following steps.
 
-1. Download the authenticated origin pull certificate [(`origin-pull-ca.pem`)](https://cloud.ibm.com/media/docs/downloads/cis/origin-pull-ca.pem) 
+1. Download the authenticated origin pull certificate [(`origin-pull-ca.pem`)](https://cloud.ibm.com/media/docs/downloads/cis/origin-pull-ca.pem)
 2. Store the certificate in a file on your origin web server, for example in `/path/to/origin-pull-ca.pem`
 3. Add the following lines to the SSL configuration for your origin web server:
 
@@ -163,9 +163,9 @@ Use **End-to-End flexible** and update the origin web server SSL configuration u
 ### Setting up NGINX
 {: #nginx-setup}
 
-Use **End-to-End flexible** and update the origin web server SSL configuration using the following steps. 
+Use **End-to-End flexible** and update the origin web server SSL configuration using the following steps.
 
-1. Download the authenticated origin pull certificate [(`origin-pull-ca.pem`)](https://cloud.ibm.com/media/docs/downloads/cis/origin-pull-ca.pem) 
+1. Download the authenticated origin pull certificate [(`origin-pull-ca.pem`)](https://cloud.ibm.com/media/docs/downloads/cis/origin-pull-ca.pem)
 2. Store the certificate in a file on your origin web server, for example in `/etc/nginx/certs/cloudflare.crt`
 3. Add the following lines to the SSL configuration for your origin web server:
 

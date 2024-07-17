@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-03-14"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords: health checks, Free Trial plan, dedicated certificate, known issues
 
@@ -58,7 +58,7 @@ The following information describes some limitations when working with {{site.da
     Ex.
     Original CAA record
     caa.yourdomain.com. 1 IN CAA 0 issue "letsencrypt.org"
- 
+
     Exported CAA record
     caa.yourdomain.com. 1 IN CAA 0 6973737565 "6c657473656e63727970742e6f7267"
     ```
