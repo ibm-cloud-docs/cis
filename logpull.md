@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-18"
 
 keywords: log pull, logpull
 
@@ -583,8 +583,8 @@ The following is an example `logpull` call and examples of specific types of res
 The following usage restrictions apply when using the Logpull feature.
 
 * **Rate limits:** Exceeding these limit results in a `429` error response:
-  * 15 requests per minute per zone
-  * 180 requests per minute per user
+    * 15 requests per minute per zone
+    * 180 requests per minute per user
 * **Time range:** The maximum difference between the start and end parameters can be 1 hour.
 * **Response size:** The maximum response size is 10 GiB per request, which is equivalent to around 15 M records when about 55 fields are selected. More records can be retrieved when fewer fields are selected because the per-record size is smaller.
 * **Timeout:** The response will fail with a terminated connection after 10 minutes.
