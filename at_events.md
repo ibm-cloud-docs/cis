@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-02"
+lastupdated: "2024-07-18"
 
 keywords: CIS activity tracker events
 
@@ -147,7 +147,7 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
-{: #log-launch-standalone}
+{: #at-log-launch-standalone}
 
 
 
