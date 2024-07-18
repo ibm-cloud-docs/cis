@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-18"
 
 keywords: instant logs, logs
 
@@ -42,7 +42,7 @@ To create an Instant Logs Job from the CLI, send a POST request to the Instant L
         - `EdgeResponseStatus`
         - `SecurityActions`
         - `SecurityRuleIDs`
-  - **Operators:** The following table shows the name and behavior of each operator.
+    - **Operators:** The following table shows the name and behavior of each operator.
 
 | Name | Operator |
 | -- | -- |
