@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-01-24"
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -341,7 +341,7 @@ Where:
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, `load_balancing_health_alert`, or `web_analytics_metrics_update`).
     - **mechanisms** are at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
-    
+
 #### Pool toggle alert command
 {: #api-pool-toggle-alert-cmd}
 
@@ -376,7 +376,7 @@ Where:
     - **description** (optional) is the description of the alert.
     - **filter** is the list of all enablement statuses and pool IDs for the pool toggle alert.
     - **conditions** describe for all pools whether the pool is being enabled, disabled, or both. Content is generated automatically if the field is empty.
-    
+
 #### Security (WAF) alert command
 {: #api-waf-alert-command}
 
@@ -417,7 +417,7 @@ Where:
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** are at least one of `email`, `webhooks`.
     - **filters** are the list of all zones for the WAF alert.
-   
+
 #### Advanced security (WAF) alert command
 {: #api-advanced-waf-command}
 
@@ -462,7 +462,7 @@ Where:
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** are at least one of `email`, `webhooks`.
     - **filters** are the list of all services to monitor for security events and zones for the Advanced WAF alert.
-    
+
 You can monitor the following services:
 
 |Services|Log value|

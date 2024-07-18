@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-25"
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -33,7 +33,7 @@ Advanced certificates are ordered directly through {{site.data.keyword.cis_short
 ## Certificate validity and renewal periods for Universal and Advanced certificates
 {: #cert-validity-renewal-periods}
 
-Universal certificates are always valid for 90 days and are renewed automatically 30 days before expiration.  
+Universal certificates are always valid for 90 days and are renewed automatically 30 days before expiration.
 
 By using Advanced certificates, you can select the validity and auto-renewal dates as shown in the following table.
 

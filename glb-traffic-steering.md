@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-10-30"
+  years: 2020, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Optimizing traffic steering
 {: #traffic-steering}
 
-Load balancing provides several traffic steering modes, which allow customers to optimize how load balancers route traffic. 
+Load balancing provides several traffic steering modes, which allow customers to optimize how load balancers route traffic.
 {: shortdesc}
 
 You can configure traffic steering from the load balancing dashboard, in the **Edit Load Balancer** panel. You can also configure traffic steering via the {{site.data.keyword.cis_short_notm}} API. Available steering options include standard failover (steering disabled), dynamic steering, and geo steering.

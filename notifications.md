@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-08-30"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -33,7 +33,7 @@ You can create email alerts for each alert type by using the UI. For more inform
 {: #cli-create-email-notification}
 {: cli}
 
-You can create email alerts for each alert type by using the CLI. 
+You can create email alerts for each alert type by using the CLI.
 
 ### DDoS attack layer 7 command
 {: #cli-ddos-attack-alert-cmd}
@@ -177,7 +177,7 @@ Where:
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
-    
+
 ### Pool toggle alert command
 {: #api-config-pool-toggle-alert-cmd}
 
@@ -209,7 +209,7 @@ Where:
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
     - **filter** is the list of all enablement statuses and pool IDs for the pool toggle alert.
-    
+
 ### WAF alert command
 {: #api-config-waf-alert-command}
 
@@ -250,7 +250,7 @@ Where:
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **filters** is the list of all zones for the WAF alert.
-   
+
 ### Advanced WAF alert command
 {: #api-config-advanced-waf-command}
 
@@ -295,7 +295,7 @@ Where:
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **filters** is the list of all services to monitor for security events and zones for the Advanced WAF alert.
-    
+
 You can monitor the following services:
 
 |Services|Log value|
@@ -377,7 +377,7 @@ Where:
     - **alert_type** is the type of the alert (one of `dos_attack_l7`, `load_balancing_pool_enablement_alert`, `clickhouse_alert_fw_anomaly`, `clickhouse_alert_fw_ent_anomaly`, `dedicated_ssl_certificate_event_type`, `universal_ssl_event_type`, or `load_balancing_health_alert`).
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
-    - **filter** is the list of all sources, pools, health status for the load balancing health alert.    
+    - **filter** is the list of all sources, pools, health status for the load balancing health alert.
 
 ## Creating webhook alerts using the API
 {: #configuring-webhooks-api}
@@ -397,7 +397,7 @@ Creating a webhook alert is a two-step process.
     {: codeblock}
 
     The following response is returned:
-    
+
     ```sh
     {
         "result": {

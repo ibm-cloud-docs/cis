@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -26,7 +26,7 @@ Use the following workflow to deploy a managed ruleset to a phase at the zone le
 1. Get your zone ID.
 1. Run the **List zone** rulesets operation to obtain the available rulesets.
 1. Find the ruleset ID of the managed ruleset you wish to deploy.
-1. Identify the phase where you want to deploy the managed ruleset. Ensure that the managed ruleset belongs to the same phase where you want to deploy it. 
+1. Identify the phase where you want to deploy the managed ruleset. Ensure that the managed ruleset belongs to the same phase where you want to deploy it.
 1. Add a rule to the zone-level phase entry point ruleset that executes the managed ruleset.
 
 ## Deploying rule sets from the CLI
@@ -50,7 +50,7 @@ Where:
 * **DNS_DOMAIN_ID** is the ID of the domain.
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
-  
+
 ### Updating deployed rule set from the CLI
 {: #cli-update-entry-point-rule-set}
 

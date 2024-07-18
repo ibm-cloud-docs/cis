@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-05-08"
+lastupdated: "2024-07-17"
 
-keywords: 
+keywords:
 
 subcollection: cis
 
@@ -53,5 +53,5 @@ Expand each event to see event details. The **Event Triggers** section displays 
 ## Security event retention policy
 {: #retention-policy}
 
-Enterprise plans retain security events for 90 days. Standard plans retain security events for 30 days. 
+Enterprise plans retain security events for 90 days. Standard plans retain security events for 30 days.
 

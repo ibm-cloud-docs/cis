@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-09"
+  years: 2023, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -30,9 +30,9 @@ You have a domain that should be `Active`, but is still in the `Moved` status.
 To resolve the condition where your domain remains in `Moved` status longer than expected, take the following troubleshooting steps.
 {: tsResolve}
 
-- Check your DNS registrar and ensure that the NS records match with the NS records given by {{site.data.keyword.cis_short_notm}}. 
+- Check your DNS registrar and ensure that the NS records match with the NS records given by {{site.data.keyword.cis_short_notm}}.
     - Find the NS records in the **CIS name servers** section of the **DNS** tab in the **Reliability** page. For more information, see [Step 4. Configure your name servers with the registrar or existing DNS provider](/docs/cis?topic=cis-getting-started#configure-your-name-servers-with-the-registrar-or-existing-dns-provider).
-- Run the activation check API again. You can use the [API endpoint](/apidocs/cis#zone-activation-check) first to initiate the recheck. 
+- Run the activation check API again. You can use the [API endpoint](/apidocs/cis#zone-activation-check) first to initiate the recheck.
     - As long as the NS values for the domain are pointed in the correct direction by a dig, and the reactivation check is done by using the API, the domain should go from `Moved` status to `Active`.
 - Remove and replace any previous NS records with the {{site.data.keyword.cis_short_notm}}-provided records in your DNS registrar.
 

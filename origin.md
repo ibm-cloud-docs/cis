@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -196,7 +196,7 @@ If SSL support does not load with `apache start`, run the command `apachectl sta
     SSL Certificate   your_cert_friendly_name
     ```
     {: codeblock}
-    
+
 1. Optionally, configure your SSL certificate to use Server Name Indication (SNI) if you have multiple sites that use SSL bound to the same IP address.  Select the **Require Server Name Indication** box.
 1. Your website is now configured to accept secure connections.
 

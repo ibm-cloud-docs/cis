@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-07-17"
 
 keywords: firewall rule actions
 
@@ -15,15 +15,15 @@ subcollection: cis
 # Assigning firewall rule actions
 {: #actions}
 
-Firewall rule actions tell {{site.data.keyword.cis_short_notm}} how to respond to requests that match the criteria you define. 
+Firewall rule actions tell {{site.data.keyword.cis_short_notm}} how to respond to requests that match the criteria you define.
 {: shortdesc}
 
-For lightweight firewall rules, go to **Security > IP firewall**, which contains IP rules, User Agent rules, and Domain Lockdown rules. Firewall rules are based on IP address, IP address range, Autonomous System Number (ASN), or country/region. 
+For lightweight firewall rules, go to **Security > IP firewall**, which contains IP rules, User Agent rules, and Domain Lockdown rules. Firewall rules are based on IP address, IP address range, Autonomous System Number (ASN), or country/region.
 
 Domain lockdown rules specify a list of IP addresses, CIDR ranges, or networks that can access a domain, subdomain, or URL. Anything not on the list is blocked.
 {: tip}
 
-For more robust firewall rules, go to **Security > Firewall rules**, where you can create rules that examine incoming HTTP traffic against a set of filters to block, challenge, log, or allow matching requests. 
+For more robust firewall rules, go to **Security > Firewall rules**, where you can create rules that examine incoming HTTP traffic against a set of filters to block, challenge, log, or allow matching requests.
 
 The following table describes the actions that you can assign to your rules. The priority column shows what precedence the action receives. If a request matches two different rules that have the same priority, precedence determines the action to take.
 

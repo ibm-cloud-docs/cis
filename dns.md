@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-02-14"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -121,7 +121,7 @@ To add this record type, valid values must exist in the **Name** and **Name Serv
 
 * Required Fields: Name, Name Server
 * Optional Field: TTL (default value is `Automatic`)
-   
+
 ### PTR type record
 {: #ptr-type-record}
 

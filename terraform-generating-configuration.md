@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-05-06"
+  years: 2024, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -101,7 +101,7 @@ To generate a configuration with Terraform, perform the following procedure:
     Plan: 1 to import, 0 to add, 0 to change, 0 to destroy.
     ╷
     │ Warning: Config generation is experimental
-    │ 
+    │
     │ Generating configuration during import is currently experimental, and the generated configuration format may change in future versions.
     ╵
 
@@ -118,7 +118,7 @@ To generate a configuration with Terraform, perform the following procedure:
 1. Apply the configuration:
 
     ```txt
-    $ terraform apply                                 
+    $ terraform apply
     ibm_cis_ruleset.test: Preparing import... [id=dcdec3fe0cbe41edac08619503da8de5:601b728b86e630c744c81740f72570c3:crn:v1:staging:public:internet-svcs-ci:global:a/01652b251c3ae2787110a995d8db0135:1a9174b6-0106-417a-844b-c8eb43a72f63::]
     ibm_cis_ruleset.test: Refreshing state... [id=dcdec3fe0cbe41edac08619503da8de5:601b728b86e630c744c81740f72570c3:crn:v1:staging:public:internet-svcs-ci:global:a/01652b251c3ae2787110a995d8db0135:1a9174b6-0106-417a-844b-c8eb43a72f63::]
 

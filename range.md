@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-11-17"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords: range application, tls encryption, ddos protection, global tcp proxy
 
@@ -47,7 +47,7 @@ Follow these steps to add an application using the UI.
 
 1. Navigate to **Security > Range**.
 2. Click **Create**.
-3. Select a type of application from the list menu. You can choose TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft. 
+3. Select a type of application from the list menu. You can choose TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft.
 4. Enter the application name. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
 5. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin.
    You can enter a port range (for example: `8080-8090`), but the origin must have the same quantity of ports specified in a consecutive range.
@@ -61,7 +61,7 @@ Follow these steps to add an application using the UI.
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
 {: note}
 
-Your application is now visible in a tile or table view with the following properties: 
+Your application is now visible in a tile or table view with the following properties:
 
 * Application name
 * Application type

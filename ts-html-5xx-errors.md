@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-16"
+  years: 2021, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -219,7 +219,7 @@ Check your origin web server error logs to eliminate these common causes at your
 - No SNI support
 - The cipher suites accepted by Cloudflare do not match the cipher suites supported by the origin web server
 
-If 525 errors occur intermittently, review the origin web server error logs to determine the cause. Configure Apache to log `mod_ssl` errors. You might be able to get SSL errors in your NginX standard error log, but might need an increased log level. 
+If 525 errors occur intermittently, review the origin web server error logs to determine the cause. Configure Apache to log `mod_ssl` errors. You might be able to get SSL errors in your NginX standard error log, but might need an increased log level.
 
 ## Error 526: invalid SSL certificate
 {: #526-error}

@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-09-13"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
-keywords: 
+keywords:
 
 subcollection: cis
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #troubleshoot-your-cis-network-connection}
 {: troubleshoot}
 
-Use the following methods to gather information that can help you to troubleshoot your network connection. 
+Use the following methods to gather information that can help you to troubleshoot your network connection.
 {: shortdesc}
 
 

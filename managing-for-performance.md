@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-02-15"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -78,7 +78,7 @@ Purging by prefix is useful when you want to purge everything within a directory
 ### Purge by hostnames (Enterprise only)
 {: #purge-cache-hostnames}
 
-Purging by hostname is similar to purging by prefixes. Use a list of hostnames to purge the cache of any assets associated with those hostnames. 
+Purging by hostname is similar to purging by prefixes. Use a list of hostnames to purge the cache of any assets associated with those hostnames.
 
 ### Purge by tags (Enterprise only)
 {: #purge-cache-by-cache-tag}

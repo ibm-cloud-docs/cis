@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2022
-lastupdated: "2022-09-10"
+  years: 2022, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # CIS DNS zone CNAME (partial) setup
 {: #cname-setup}
 
-The following table shows the recommended setup configurations for a child zone (subdomain). 
+The following table shows the recommended setup configurations for a child zone (subdomain).
 
 
 |Parent domain setup |Recommended child subdomain setup|
@@ -83,7 +83,7 @@ To set up a CNAME, take the following steps.
     ```
     {: codeblock}
 
-1. Add the record `cloudflare-verify` to the parent DNS zone indicated by the `verification-key` (in this example, `ibmnetworkdemo.com`). 
+1. Add the record `cloudflare-verify` to the parent DNS zone indicated by the `verification-key` (in this example, `ibmnetworkdemo.com`).
 
     ```sh
     txt cloudflare-verify.ibmnetworkdemo.com  476754457-428595283

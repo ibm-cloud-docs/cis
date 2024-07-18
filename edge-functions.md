@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-07-23"
+  years: 2018, 2024
+lastupdated: "2024-07-17"
 
 keywords:
 
@@ -59,7 +59,7 @@ new Request(input [, init])
         - `body`: Any text to add to the request.
             Requests using the `GET` or `HEAD` methods cannot have a body.
             {: note}
-            
+
         - `redirect`: The mode respected when the request is fetched.
             The default for requests generated from the incoming `fetchEvent` from the event handler is `manual`. Default for newly constructed Requests (in other words, `new     Request  (url)` ) is `follow`. Valid options:
             - `follow`: If a redirect response is returned to the fetch, another fetch is fired based on the `Location` header in the response until a non-redirect code is     returned.  For example, `await fetch(..)` could never return a `301` redirect.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-07"
+lastupdated: "2024-07-17"
 
 keywords: instant logs, logs
 
@@ -69,4 +69,4 @@ Currently, the only dataset available is HTTP requests. The list of datasets mig
 When the following conditions in the Instant Logs feature are met, the logs stream stops automatically.
 - When there is only one active Instant Logs session per domain.
 - When the maximum session time is 60 minutes.
-- When the connection closes or is not listened to for more than five minutes. 
+- When the connection closes or is not listened to for more than five minutes.
