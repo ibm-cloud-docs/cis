@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-25"
 
 keywords:
 
@@ -40,12 +40,34 @@ By using Advanced certificates, you can select the validity and auto-renewal dat
 |Certificate validity period|Auto renewal period|Details|
 |------|-------|-----|
 |3 months|30 days|Certificate is renewed 30 days before expiration|
-|1 month|7 days|Certificate is renewed 7 days before expiration - Not supported by Let’s Encrypt|
-|2 weeks|3 days|Certificate is renewed 7 days before expiration - Not supported by Let’s Encrypt|
+|1 month|7 days|Certificate is renewed 7 days before expiration|
+|2 weeks|3 days|Certificate is renewed 7 days before expiration|
 {: caption="Table 1. {{site.data.keyword.cis_short_notm}} certificate validity periods" caption-side="bottom"}
 
 Renewal periods are automated on the back end, and are not customizable.
 {: note}
+
+## Certificate Authorities
+{: #certificate-authorities}
+
+For publicly trusted certificates, Cloudflare partners with different certificate authorities (CAs). The following CAs are available for selection in {{site.data.keyword.cis_short_notm}}:
+
+- Let's Encrypt
+  - Supports validity periods of 90 days
+  - DCV tokens are valid for 7 days
+  - [Compatibility documentation](https://letsencrypt.org/docs/certificate-compatibility/)
+- Google Trust Services
+  - Supports validity periods of 14, 30, and 90 days
+  - DCV tokens are valid for 14 days
+  - [Compatibility documentation](https://pki.goog/faq/)
+- [DigiCert]{: tag-deprecated}
+  - Supports validity periods of 14, 30, and 90 days
+  - DCV tokens are valid for 30 days
+  - [Compatibility documentation](https://www.digicert.com/faq/public-trust-and-certificates/are-digicert-tls-ssl-certificates-compatible-with-my-browser)
+- Sectigo
+  - Used only for backup certificates when {{site.data.keyword.cis_short_notm}} is providing authoritative DNS for your domain
+  - Supports validity periods of 90 days
+  - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt)
 
 ## Custom certificates
 {: #custom-certificate-type}
@@ -58,6 +80,21 @@ Unlike Universal or advanced certificates, {{site.data.keyword.cis_short_notm}} 
 {: #failure-to-renew-replace}
 
 For certificates managed by {{site.data.keyword.cis_short_notm}}, renewal attempts begin at the auto renewal period and continue until 24 hours before the expiration. If a certificate fails to renew and another valid certificate exists for the hostname, {{site.data.keyword.cis_short_notm}} deploys the valid certificate within these last 24 hours.
+
+## CAA records
+{: #caa-records}
+
+A [Certificate Authority Authorization (CAA) DNS record](https://cloud.ibm.com/docs/cis?topic=cis-set-up-your-dns-for-cis#caa-type-record) specifies which certificate authorities (CAs) are allowed to issue certificates for a domain. This record reduces the chance of unauthorized certificate issuance and promotes standardization across your organization.
+
+The following table lists the CAA record content for each CA:
+
+|Certificate authority|CAA record content|
+|---|---|
+|Let’s Encrypt|`letsencrypt.org`|
+|Google Trust Services|`pki.goog; cansignhttpexchanges=yes`|
+|DigiCert|`digicert.com; cansignhttpexchanges=yes`|
+|Sectigo|`sectigo.com`|
+{: caption="Table 2. CAA record content for each CA" caption-side="bottom"}
 
 ## Limitations
 {: #edge-certificate-limitations}
