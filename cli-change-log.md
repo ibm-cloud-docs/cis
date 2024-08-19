@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-08-19"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -18,6 +18,16 @@ subcollection: cis
 
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
+
+## Version 1.16.3
+{: #cli-1163}
+
+Version 1.16.3 of the CLI was released on July 19, 2024.
+:   Fix CVE certifi.
+:   Add `replace_insecure_js` domain setting.
+:   Fix managed rules and advanced rate limiting rules bugs.
+:   CLI GVT translation.
+:   Update the dependency `requests` to v2.32.3.
 
 ## Version 1.16.2
 {: #cli-1162}

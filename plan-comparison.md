@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2023
-lastupdated: "2023-11-16"
+  years: 2018, 2024
+lastupdated: "2024-08-19"
 
 keywords:
 
@@ -29,6 +29,8 @@ The following table compares each offering to help you choose the one that's rig
 | |Standard Next|Enterprise Essentials|Enterprise Advanced|Enterprise Premier|Enterprise Usage|
 | :------- | :------- | :--------- | :------------ | :--------- | :--------- |
 |**Domain**|1 included  \n More available for monthly cost per domain|1 included  \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|Up to 1000, but recommend no more than 20|
+|**Included protected traffic**   \n (does not include traffic that is related to an attack)  \n Overage charges can occur|0.5 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
+|**Included requests and queries**  \n Overage charges can occur|5 M requests \n 1 M queries|150 requests and queries combined|150 requests and queries combined|150 requests and queries combined|Not applicable  \n (usage based)|
 |**DNS**|250 records|3500 records|3500 records|3500 records|3500 records|
 |**Global load balancers**|* 3 pools \n * 3 origin servers \n * 5 Health checks \n * 60s health checks \n * Geo Routing \n * Health checks from single region \n * 60s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers \n (more origins available for charge) \n * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers  \n (more origins available for charge) \n  * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|* 20 pools  \n * 20 origin servers  \n (more origins available for charge)  \n * 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for nonproxied global load balancers|* Up to 100 pools \n * 100 origin servers \n * Up to 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|
 |**WAF**|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|
@@ -38,7 +40,6 @@ The following table compares each offering to help you choose the one that's rig
 |**Caching**|Basic caching options|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Advanced caching options|
 |**Range**|No|No|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs|
 |**Edge functions**|1 action \n (must be named after domain) \n 1 M Edge function requests|Unlimited actions|Unlimited actions|Unlimited actions|Unlimited actions|
-|**Included protected traffic**   \n (does not include traffic that is related to an attack)  \n Overage charges can occur|0.5 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
 |**Firewall rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
 |**Smart routing**|No|Yes|Yes|Yes|Yes|
 |**Logging**|No|Yes|Yes|Yes|Yes|
