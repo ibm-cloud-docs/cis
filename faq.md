@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-08-19"
 
 keywords:
 
@@ -82,14 +82,22 @@ Consult https://whois.icann.org/ for this information.
 To add your domain to CIS, you must have administrator privilege to edit the domain's configuration at the registrar to update or add the name servers for your domain. If you don't know who the registrar is for the domain you're trying to add to CIS, it is unlikely you have the administrator privilege. Work with the owner of the domain in your organization to make the necessary changes.
 {: note}
 
-## I want to keep my current DNS provider for my domain (`example.com`). Can I delegate a subdomain (`subdomain.example.com`) from my current DNS provider to CIS?
+## I want to keep my current DNS provider for my domain (`example.com`). Can I delegate a subdomain (`subdomain.example.com`) from my current DNS provider to {{site.data.keyword.cis_short_notm}}?
 {: #cis-faq-keep-current-dns-provider}
 {: faq}
 
-Yes. The process is similar to adding a domain, but instead of the registrar, you work with the DNS provider for the higher-level domain. When you add a subdomain to CIS, you are given two name servers to configure, as usual. You configure a name server (NS) record for each of the two name servers as DNS records within your domain that is being managed by the other DNS provider. When CIS is able to verify that the required NS records have been added, CIS activates your subdomain. If you do not manage the higher level domain within your organization, you must work with the owner of the higher-level domain to get the NS records added.
+Yes. The process is similar to adding a domain, but instead of the registrar, you work with the DNS provider for the higher-level domain. When you add a subdomain to {{site.data.keyword.cis_short_notm}}, you are given two name servers to configure, as usual. You configure a name server (NS) record for each of the two name servers as DNS records within your domain that is being managed by the other DNS provider. When {{site.data.keyword.cis_short_notm}} is able to verify that the required NS records have been added, {{site.data.keyword.cis_short_notm}} activates your subdomain. If you do not manage the higher-level domain within your organization, you must work with the owner of the higher-level domain to get the NS records added.
+
+## I want onboard my domain to {{site.data.keyword.cis_short_notm}} while still maintaining its current primary and authoritative DNS provider. Is this possible?
+{: #cis-faq-cname-setup}
+{: faq}
+
+Yes. {{site.data.keyword.cis_short_notm}} supports a [CNAME (partial)](/docs/cis?topic=cis-cname-setup) configuration. This option allows you to proxy only individual domains through {{site.data.keyword.cis_short_notm}}’s global network in the scenario where you cannot change your authoritative DNS provider. Once you are on a partial setup, the actual resolution of your records to {{site.data.keyword.cis_short_notm}} depends on CNAME records added at your authoritative DNS provider. Keep in mind that CIS resolves DNS records differently in a partial setup.
+
 
 ## What are the defaults for DNS TTL?
 {: #cis-faq-dnsttl-defaults}
+{: faq}
 
 The following are defaults for DNS time-to-live (TTL), in seconds.
 * For records such as A records and CNAMEs, the automatic TTL is 300s.

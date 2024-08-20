@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-25"
+lastupdated: "2024-08-19"
 
 keywords:
 
@@ -53,21 +53,21 @@ Renewal periods are automated on the back end, and are not customizable.
 For publicly trusted certificates, Cloudflare partners with different certificate authorities (CAs). The following CAs are available for selection in {{site.data.keyword.cis_short_notm}}:
 
 - Let's Encrypt
-  - Supports validity periods of 90 days
-  - DCV tokens are valid for 7 days
-  - [Compatibility documentation](https://letsencrypt.org/docs/certificate-compatibility/)
+   - Supports validity periods of 90 days
+   - DCV tokens are valid for 7 days
+   - [Compatibility documentation](https://letsencrypt.org/docs/certificate-compatibility/)
 - Google Trust Services
-  - Supports validity periods of 14, 30, and 90 days
-  - DCV tokens are valid for 14 days
-  - [Compatibility documentation](https://pki.goog/faq/)
-- [DigiCert]{: tag-deprecated}
-  - Supports validity periods of 14, 30, and 90 days
-  - DCV tokens are valid for 30 days
-  - [Compatibility documentation](https://www.digicert.com/faq/public-trust-and-certificates/are-digicert-tls-ssl-certificates-compatible-with-my-browser)
+   - Supports validity periods of 14, 30, and 90 days
+   - DCV tokens are valid for 14 days
+   - [Compatibility documentation](https://pki.goog/faq/)
+- DigiCert [deprecated]{: tag-deprecated}
+   - Supports validity periods of 14, 30, and 90 days
+   - DCV tokens are valid for 30 days
+   - [Compatibility documentation](https://www.digicert.com/faq/public-trust-and-certificates/are-digicert-tls-ssl-certificates-compatible-with-my-browser)
 - Sectigo
-  - Used only for backup certificates when {{site.data.keyword.cis_short_notm}} is providing authoritative DNS for your domain
-  - Supports validity periods of 90 days
-  - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt)
+   - Used only for backup certificates when {{site.data.keyword.cis_short_notm}} is providing authoritative DNS for your domain
+   - Supports validity periods of 90 days
+   - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt)
 
 ## Custom certificates
 {: #custom-certificate-type}

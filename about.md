@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-03-05"
+lastupdated: "2024-08-19"
 
 keywords:
 
@@ -63,7 +63,7 @@ Traffic that is identified as being "dirty" or part of an attack is not included
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
 
-WAF is implemented through two rule sets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf) and [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-cis-rule-sets).
+WAF is implemented through multiple rule sets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf), [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-cis-rule-sets), and [Exposed Credentials Check](/docs/cis?topic=cis-exposed-credentials-check-ruleset).
 
 ### IP firewall
 {: #cis-ip-firewall}
