@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-08-20"
 
 keywords:
 
@@ -36,9 +36,9 @@ To migrate your instance to managed rules, take the following steps:
 1. In the **Managed rule sets** section, you can add or configure rule sets that are not yet added.
    * Click **Add** on the rule set you want to add, then toggle the switch from **Disabled** to **Enabled** on the new rule.
    * Click **Configure** on the rule set you want to configure before migrating. In the **Configure deployment** side panel, you can accept all incoming requests or update the scope of execution with the customized filters you make in the expression builder. Then, click **Save**.
-1. Click **Review the security events** to allow Enterprise users to monitor both WAFs functioning side by side with the new managed rules viewed in logging mode.
-1. Click **Deploy**.
-1. Complete the WAF migration by clicking **Migrate** (this step cannot be undone), or cancel to continue editing. This transition does not incur any downtime.
+1. Click **Deploy** in the side panel to continue.
+1. (Enterprise only) Review the security events in the **Security > Events** tab, and select **Ready to update** when you feel the events are correct.
+1. Select **Turn off previous version** to finalize the migration (this step cannot be undone), or cancel to continue editing. This transition does not incur any downtime.
 
 ## Editing rule sets
 {: #edit-rulesets}
