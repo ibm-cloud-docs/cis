@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-21"
 
 keywords:
 
@@ -39,9 +39,9 @@ By using Advanced certificates, you can select the validity and auto-renewal dat
 
 |Certificate validity period|Auto renewal period|Details|
 |------|-------|-----|
-|3 months|30 days|Certificate is renewed 30 days before expiration|
-|1 month|7 days|Certificate is renewed 7 days before expiration|
-|2 weeks|3 days|Certificate is renewed 7 days before expiration|
+|3 months|30 days| |
+|1 month|7 days|Not supported by Let's Encrypt|
+|2 weeks|3 days|Not supported by Let's Encrypt|
 {: caption="Table 1. {{site.data.keyword.cis_short_notm}} certificate validity periods" caption-side="bottom"}
 
 Renewal periods are automated on the back end, and are not customizable.
