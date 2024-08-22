@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-08-22"
 
 keywords:
 
@@ -12,8 +12,10 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# CIS DNS zone CNAME (partial) setup
+# {{site.data.keyword.cis_short_notm}} DNS zone CNAME (partial) setup
 {: #cname-setup}
+
+
 
 The following table shows the recommended setup configurations for a child zone (subdomain).
 
@@ -31,7 +33,8 @@ The following table shows the recommended setup configurations for a child zone 
 To set up a CNAME, take the following steps.
 
 1. Create the `partial` type zone by using the {{site.data.keyword.cis_short_notm}} API or CLI.
-    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} API:
+    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} API
+
         POST `https://{{api}}/v1/{{crn}}/zones`
 
         ```sh
@@ -99,18 +102,23 @@ To verify your CNAME setup, take the following steps.
 
 1. Add an A record in {{site.data.keyword.cis_short_notm}} and enable proxy:
 
-    `www.ibmnetworkdemo.com   A      169.48.151.44   true      1`
+    ```sh
+    www.ibmnetworkdemo.com   A      169.48.151.44   true      1
+    ```
     {: pre}
 
 1. Add the CNAME record in the authoritative DNS:
 
-    `www.ibmnetworkdemo.com  www.ibmnetworkdemo.com.cdn.cloudflare.net`
+    ```sh
+    www.ibmnetworkdemo.com  www.ibmnetworkdemo.com.cdn.cloudflare.net
+    ```
     {: pre}
 
-    ```sh
+    The response should look like the following example.
+
+    ```dig
     check::
        dig www.ibmnetworkdemo.com a
-
 
     ; <<>> DiG 9.10.6 <<>> www.ibmnetworkdemo.com a
     ;; global options: +cmd
@@ -118,16 +126,14 @@ To verify your CNAME setup, take the following steps.
     ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13528
     ;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
 
-
     ;; OPT PSEUDOSECTION:
     ; EDNS: version: 0, flags:; udp: 512
     ;; QUESTION SECTION:
     ;www.ibmnetworkdemo.com.                IN        A
-
 
     ;; ANSWER SECTION:
     www.ibmnetworkdemo.com.        899        IN        CNAME        www.ibmnetworkdemo.com.cdn.cloudflare.net.
     www.ibmnetworkdemo.com.cdn.cloudflare.net. 299 IN A 104.18.8.216
     www.ibmnetworkdemo.com.cdn.cloudflare.net. 299 IN A 104.18.9.216
     ```
-    {: codeblock}
+    {: screen}
