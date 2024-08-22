@@ -46,7 +46,7 @@ To set up a CNAME, take the following steps.
         ```
         {: codeblock}
 
-    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} CLI:
+    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} CLI
 
         ```sh
             ibmcloud cis domain-add ibmnetworkdemo.com --type partial --output JSON
@@ -116,7 +116,7 @@ To verify your CNAME setup, take the following steps.
 
     The response should look like the following example.
 
-    ```dig
+    ```text
     check::
        dig www.ibmnetworkdemo.com a
 
@@ -136,4 +136,4 @@ To verify your CNAME setup, take the following steps.
     www.ibmnetworkdemo.com.cdn.cloudflare.net. 299 IN A 104.18.8.216
     www.ibmnetworkdemo.com.cdn.cloudflare.net. 299 IN A 104.18.9.216
     ```
-    {: screen}
+    {: codeblock}
