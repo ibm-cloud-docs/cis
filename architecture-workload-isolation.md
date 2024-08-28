@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-08-28"
 
 keywords: public isolation for cloud internet services, compute isolation for cloud internet services, cis architecture, workload isolation in cis
 
@@ -61,7 +61,7 @@ The following dependencies of {{site.data.keyword.cis_full_notm}} are considered
 | {{site.data.keyword.la_full_notm}} | {{site.data.keyword.cis_full_notm}} sends service logs to {{site.data.keyword.la_full_notm}}. The service team uses these logs for analysis to identify issues and malicious activity.  |
 | {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.cis_full_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward auditable events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by the user. For more information, see [Auditing events for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-at_events#at_events). This service is also use by {{site.data.keyword.cis_full_notm}} to store auditable events. |
 | Identity and Access Management (IAM) | {{site.data.keyword.cis_full_notm}} authenticates requests and determines authorization for all user actions based on platform and service access roles and policies in IAM. To learn more, see [Managing access for CIS](/docs/cis?topic=cis-iam-and-cis#iam-and-cis). |
-| {{site.data.keyword.cos_short}} (COS) | Used to store edge logs for a customer's data path traffic. YOu can also use this service to store operational logs of {{site.data.keyword.cis_full_notm}} itself. |
+| {{site.data.keyword.cos_short}} (COS) | Used to store edge logs for a customer's data path traffic. You can also use this service to store operational logs of {{site.data.keyword.cis_full_notm}} itself. |
 {: caption="Table 1. Critical dependencies" caption-side="bottom"}
 
 ### Other dependencies
