@@ -58,7 +58,10 @@ toc:
             topics:
             - edge-certificates.md
             - origin.md
-        - start-with-subdomain.md
+        - topicgroup:
+            label: CNAME (partial) configuration
+            topics:
+            - start-with-subdomain.md
         - multi-domain.md
         - dns.md
         - cname-setup.md
