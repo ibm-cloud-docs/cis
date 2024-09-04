@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-09-04"
 
 keywords:
 
@@ -36,16 +36,19 @@ Phases exist at the instance level and at the zone level. For the same phase, ru
 
 Each phase has, at most, one entry point rule set at the instance and zone level.
 
-Currently, only phases at the zone level are available. This page will be updated as instance and zone level phases become available in subsequent releases.
+Currently, only phases at the zone level are available. This page is updated as instance and zone level phases become available in subsequent releases.
 
 ### Phase list
 {: #phase-list}
 
-The following table lists the phases that are available.
+The following table lists the phases that are available within the Ruleset Engine APIs.
 
 |Phase name|Description|
 |----------|-----------|
-|`http_request_firewall_managed`| Web Application Firewall (WAF)|
+| `http_request_firewall_managed`| Web Application Firewall (WAF)|
+| `http_request_firewall_custom` | Firewall rules |
+| `http_ratelimit` | Rate limiting rules |
+| `ddos_l7` | HTTP DDoS Attack Protection rules |
 {: caption="Table 1. Available phases" caption-side="bottom"}
 
 ## Rules language
