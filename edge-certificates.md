@@ -96,8 +96,6 @@ The following table lists the CAA record content for each CA:
 |Sectigo|`sectigo.com`|
 {: caption="Table 2. CAA record content for each CA" caption-side="bottom"}
 
-
-
 ## Limitations
 {: #edge-certificate-limitations}
 
