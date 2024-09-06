@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-09-06"
 
 keywords: isolation for cis, service endpoints for cis, private network for cis, network isolation in cis, non-public routes for cis, private connection for cis, private connectivity for cis
 
@@ -15,10 +15,10 @@ subcollection: cis
 # Using service endpoints to privately connect to {{site.data.keyword.cis_short_notm}}
 {: #service-endpoints}
 
-To ensure that you have enhanced control and security over your data when you use {{site.data.keyword.cis_full}}, you have the option of using private routes to {{site.data.keyword.cloud}} service endpoints. Private routes are not accessible or reachable over the internet. By using the {{site.data.keyword.cloud_notm}} private service endpoints feature, you can protect your data from threats from the public network and logically extend your private network.
+To help ensure that you have enhanced control and security over your data when you use {{site.data.keyword.cis_full}}, you can use private routes to {{site.data.keyword.cloud}} service endpoints. Private routes are not accessible or reachable over the internet. By using the {{site.data.keyword.cloud_notm}} private service endpoints feature, you can protect your data from threats from the public network and logically extend your private network.
 {: shortdesc}
 
-When using the {{site.data.keyword.cis_short_notm}} private endpoint, any DNS records or global load balancers can be reached on the public network.
+When you use the {{site.data.keyword.cis_short_notm}} private endpoint, any DNS records or global load balancers can be reached on the public network.
 {: note}
 
 ## Before you begin
@@ -31,7 +31,7 @@ To learn more about private connections on {{site.data.keyword.cloud_notm}}, see
 ## Setting up service endpoints for {{site.data.keyword.cis_short_notm}}
 {: #endpoint-setup}
 
-To connect to {{site.data.keyword.cis_short_notm}} by using a private network connection, you must use the {{site.data.keyword.cis_short_notm}} API or the [{{site.data.keyword.cis_short_notm}} CLI plug-in](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli#private-endpoint-support). This capability is not available from the {{site.data.keyword.cis_short_notm}} UI.
+These service endpoints are only for managing the configuration of an instance with the API or CLI, the control plane. Using the IBM Cloud private service endpoints feature does not affect the data plane, and the public endpoints remain available. For information on the control plane and data plane, see [Learning about CIS architecture and workload isolation](/docs/cis?topic=cis-compute-isolation).
 {: note}
 
 ## Targeting private endpoints
@@ -39,16 +39,16 @@ To connect to {{site.data.keyword.cis_short_notm}} by using a private network co
 
 Before you target a private endpoint for {{site.data.keyword.cis_short_notm}}:
 
-1. Ensure that your {{site.data.keyword.cloud_notm}} infrastructure account is enabled for [virtual routing and forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf){: external}.
+1. Make sure that your {{site.data.keyword.cloud_notm}} infrastructure account is enabled for [virtual routing and forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf){: external}.
 
     When you enable VRF, a separate routing table is created for your account, and connections to and from your account's resources are routed separately
     on the {{site.data.keyword.cloud_notm}} network. To learn more about VRF technology, see [Virtual routing and forwarding on {{site.data.keyword.cloud_notm}}](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
 
-    Enabling VRF permanently alters networking for your account. Be sure that you understand the impact to your account and resources. After you enable
+    Enabling VRF permanently alters the networking for your account. Be sure that you understand the impact to your account and resources. After you enable
     VRF, it cannot be disabled.
     {: important}
 
-2. Ensure that your {{site.data.keyword.cloud_notm}} infrastructure account is enabled for [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint){: external}.
+2. Make sure that your {{site.data.keyword.cloud_notm}} infrastructure account is enabled for [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint){: external}.
 
     After you enable VRF and service endpoints for your account, all existing and future {{site.data.keyword.cis_short_notm}} resources and instances become available from both the public and private endpoints.
     {: note}
@@ -60,7 +60,7 @@ Before you target a private endpoint for {{site.data.keyword.cis_short_notm}}:
 ### Step 1. Configure the {{site.data.keyword.cloud_notm}} private network on your virtual server
 {: #configure-private-network}
 
-Prepare your virtual server instance or test machine by configuring your routing table for the {{site.data.keyword.cloud_notm}} private network.
+Prepare your virtual server instance or test server by configuring your routing table for the {{site.data.keyword.cloud_notm}} private network.
 
 1. To route traffic to the {{site.data.keyword.cloud_notm}} private network, run the following command on your virtual server instance:
 
@@ -84,18 +84,18 @@ Prepare your virtual server instance or test machine by configuring your routing
 After you configure your virtual server instance to accept {{site.data.keyword.cloud_notm}} private network traffic, you can target the private endpoint for
 {{site.data.keyword.cis_short_notm}} by using the {{site.data.keyword.cis_short_notm}} API or {{site.data.keyword.cis_short_notm}} CLI plug-in.
 
-1. In a terminal window, log in to {{site.data.keyword.cloud_notm}}.
+1. Log in to the {{site.data.keyword.cloud_notm}} console.
 
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-    If the login fails, run the `ibmcloud login --sso` command to try again. The `--sso` parameter is required when you log in with a federated ID. If this
-    option is used, go to the link listed in the CLI output to generate a one-time passcode.
+    If the login fails, run the `ibmcloud login --sso` command to try again. The `--sso` parameter is required when you log in with a federated ID. If you use this
+    option, go to the link listed in the CLI output to generate a one-time passcode.
     {: note}
 
-2. Optional: Ensure that your account is enabled for VRF and service endpoints.
+2. Optional: Make sure that your account is enabled for VRF and service endpoints.
 
     ```sh
     ibmcloud account show
@@ -124,7 +124,7 @@ After you configure your virtual server instance to accept {{site.data.keyword.c
 
 Test your private network connection by using the [{{site.data.keyword.cis_short_notm}} CLI plug-in](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli).
 
-1. Log into a {{site.data.keyword.cis_short_notm}} private endpoint instance.
+1. Log in to a {{site.data.keyword.cis_short_notm}} private endpoint instance.
 
     ```sh
     ibmcloud login -a private.cloud.ibm.com
@@ -135,7 +135,7 @@ Test your private network connection by using the [{{site.data.keyword.cis_short
 {: #vpe-setup-api}
 {: api}
 
-Use the service endpoint's FQDN `api.private.cis.cloud.ibm.com` in the URL to access the service. For example:
+Use the service endpoint's FQDN `api.private.cis.cloud.ibm.com` in the URL to access the service, as shown in the following example.
 
 ```sh
 curl https://api.private.cis.cloud.ibm.com/v1/:crn/zones -H 'content-type: application/json' -H 'accept: application/json' -H 'x-auth-user-token: Bearer xxxxxx'

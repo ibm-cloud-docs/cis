@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-21"
+lastupdated: "2024-09-06"
 
 keywords:
 
@@ -95,6 +95,8 @@ The following table lists the CAA record content for each CA:
 |DigiCert|`digicert.com; cansignhttpexchanges=yes`|
 |Sectigo|`sectigo.com`|
 {: caption="Table 2. CAA record content for each CA" caption-side="bottom"}
+
+
 
 ## Limitations
 {: #edge-certificate-limitations}
