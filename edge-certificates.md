@@ -21,7 +21,7 @@ subcollection: cis
 ## Universal certificates
 {: #universal-certificate-type}
 
-By default, {{site.data.keyword.cis_short_notm}} issues free, unshared, publicly trusted SSL certificates to all domains added on {{site.data.keyword.cis_short_notm}}. For these Universal certificates, {{site.data.keyword.cis_short_notm}} controls the validity periods and certificate authorities (CAs), making sure that renewals always occur. Universal certificates issued by Let’s Encrypt or Google Trust Services have a 90 day validity period.
+By default, {{site.data.keyword.cis_short_notm}} issues free, unshared, publicly trusted SSL certificates to all domains added on {{site.data.keyword.cis_short_notm}}. For these Universal certificates, {{site.data.keyword.cis_short_notm}} controls the validity periods and certificate authorities (CAs), making sure that renewals always occur. Universal certificates that are issued by Let's Encrypt or Google Trust Services have a 90-day validity period.
 
 ## Advanced certificates
 {: #advanced-certificate-type}
@@ -47,7 +47,7 @@ By using Advanced certificates, you can select the validity and auto-renewal dat
 Renewal periods are automated on the back end, and are not customizable.
 {: note}
 
-## Certificate Authorities
+## Certificate authorities
 {: #certificate-authorities}
 
 For publicly trusted certificates, Cloudflare partners with different certificate authorities (CAs). The following CAs are available for selection in {{site.data.keyword.cis_short_notm}}:
@@ -90,7 +90,7 @@ The following table lists the CAA record content for each CA:
 
 |Certificate authority|CAA record content|
 |---|---|
-|Let’s Encrypt|`letsencrypt.org`|
+|Let's Encrypt|`letsencrypt.org`|
 |Google Trust Services|`pki.goog; cansignhttpexchanges=yes`|
 |DigiCert|`digicert.com; cansignhttpexchanges=yes`|
 |Sectigo|`sectigo.com`|
@@ -101,5 +101,5 @@ The following table lists the CAA record content for each CA:
 
 * **Certificate pinning:** Certificate pinning is not supported natively in {{site.data.keyword.cis_short_notm}}. If you want to use certificate pinning, you must use custom certificates.
 * **Full setup:** Universal SSL certificates only support SSL for the root or first-level subdomains such as `example.com` and `www.example.com`. To enable SSL support on second, third, and fourth-level subdomains such as `dev.www.example.com` or `app3.dev.www.example.com` use either an advanced certificate or a custom certificate.
-* **CNAME (partial) setup:** On a CNAME setup zone, each subdomain has its own Universal SSL certificate and does not require additional features or purchases.
+* **CNAME (partial) setup:** On a CNAME setup zone, each subdomain has its own Universal SSL certificate and does not require extra features or purchases.
 * **Range:** Universal SSL is not compatible with {{site.data.keyword.cis_short_notm}} Range application. If you are trying to use Range, use either an advanced certificate or a custom certificate.
