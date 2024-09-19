@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-19"
 
 keywords:
 
@@ -43,12 +43,12 @@ Currently, only phases at the zone level are available. This page is updated as 
 
 The following table lists the phases that are available within the Ruleset Engine APIs.
 
-|Phase name|Description|
-|----------|-----------|
-| `http_request_firewall_managed`| Web Application Firewall (WAF)|
-| `http_request_firewall_custom` | Firewall rules |
-| `http_ratelimit` | Rate limiting rules |
-| `ddos_l7` | HTTP DDoS Attack Protection rules |
+|Phase name|Description|Supported interfaces|
+|----------|-----------|-------------------|
+| `http_request_firewall_managed`| Web Application Firewall (WAF)| API, CLI, UI |
+| `http_request_firewall_custom` | Firewall rules | API |
+| `http_ratelimit` | Rate limiting rules | API, CLI |
+| `ddos_l7` | HTTP DDoS Attack Protection rules | API |
 {: caption="Table 1. Available phases" caption-side="bottom"}
 
 ## Rules language
