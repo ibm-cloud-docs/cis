@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-06"
+  years: 2018, 2024
+lastupdated: "2024-09-19"
 
 keywords: Page Rules, web content, IBM CIS deployment
 
@@ -47,41 +47,38 @@ For detailed information about setting up and managing your global load balancer
 ## Using page rules to increase reliability
 {: #using-page-rules-to-increase-reliability}
 
-Here are some recommended page rule settings to give your site maximum reliability:
+The following list shows some recommended page rule settings to give your site maximum reliability.
 
-* Serve Stale Content
 * Origin Cache Control
 * Forwarding URL
 
 ## Serve Stale Content
 {: #serve-stale-content}
 
-You can use the **Serve Stale Content** page rule setting to keep a limited version of your site online if your server goes down.
+You can use the **Serve Stale Content** setting to keep a limited version of your site online if your server goes down.
 
-With **Serve Stale Content**, when your server goes down, {{site.data.keyword.cis_short_notm}} serves pages from our cache, so your visitors still see some of the pages they are trying to visit. Your visitors see a message at the top of the page telling them that they are in offline browsing mode. Serve Stale Content returns an HTTP status 503, however, 503 is also used by many other web applications. When your server comes back online, {{site.data.keyword.cis_short_notm}} bumps users back to regular browsing seamlessly.
+With **Serve Stale Content**, when your server goes down, {{site.data.keyword.cis_short_notm}} serves pages from the cache, so your visitors still see some of the pages they are trying to visit. Your visitors see a message at the top of the page telling them that they are in offline browsing mode. Serve Stale Content returns an HTTP status 503, however, 503 is also used by many other web applications. When your server comes back online, {{site.data.keyword.cis_short_notm}} bumps users back to regular browsing seamlessly.
 
 If {{site.data.keyword.cis_short_notm}} does not have the requested page in its cache, your visitor sees an error page letting them know that the website page they are requesting is offline.
 
 ### Setting up Serve Stale Content
 {: #setting-up-serve-stale-content}
 
-To enable **Serve Stale Content**, follow these steps:
+To enable **Serve Stale Content**, take the following steps.
 
-1. Use the navigation menu to select **Page Rules** under **Performance**.
-2. Create a page rule with the URL pattern of your domain.
-3. Add the **Serve Stale Content** setting with the toggle on.
-4. Select **Provision Resource**.
+1. Use the navigation menu to go to **Performance > Caching**.
+2. Toggle the **Serve Stale Content**.
 
 ### Serve Stale Content limitations
 {: #limitations-serve-stale-content}
 
-* **Serve Stale Content** caches the first 10 links from your root HTML, then just the first links from each of those pages, and finally the first links from each of those subsequent pages. This means that only some pages on your site are viewable when your origin server goes down.
+* **Serve Stale Content** integrates with the Internet Archive. {{site.data.keyword.cis_short_notm}} crawls the most popular URLs that have a `200` HTTP status from the past 5 hours. This means that only some pages on your site are viewable when your origin server goes down.
 
-* Recently added sites don't have a large cache of their site available, which means that **Serve Stale Content** might not work if you only added the site a few days ago.
+* Sites that were added recently don't have a large cache of their site available. This means that **Serve Stale Content** might not work if you added the site only a few days ago.
 
 * {{site.data.keyword.cis_short_notm}} does not show private content or handle form submission (POSTs) if your server is down. Visitors are shown an `error on checkout` page or `items require a login to view`.
 
-* To trigger **Serve Stale Content**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Serve Stale Content also works when we encounter issues contacting your origin (Errors 521 & 523), timeouts (522 & 524), SSL errors (525 & 526) or an unknown error (520). **Serve Stale Content** is not triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
+* To trigger **Serve Stale Content**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Serve Stale Content also works when {{site.data.keyword.cis_short_notm}} encounters issues contacting your origin (Errors 521 and 523), timeouts (522 and 524), SSL errors (525 and 526) or an unknown error (520). **Serve Stale Content** is not triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
 
 * **Serve Stale Content** does not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency, because the "Edge Cache Expire TTL" causes the **Serve Stale Content** cache to be purged in the corresponding interval.
 
@@ -97,7 +94,7 @@ Setting **Origin Cache Control** invokes caching rules that seek to adhere close
 ### Setting up Origin Cache Control
 {: #setting-up-origin-cache-control}
 
-To enable **Origin Cache Control**, follow these steps:
+Take the following steps to enable **Origin Cache Control**.
 
 1. Use the navigation menu to select **Page Rules** under **Performance**.
 2. Create a page rule with the URL pattern that references your domain.
@@ -107,18 +104,18 @@ To enable **Origin Cache Control**, follow these steps:
 ### Page Rule precedence
 {: #page-rule-precedence}
 
-Two specific page rules take precedence for caching overall:
+These specific page rules take precedence for caching overall.
 
 * If a page rule has **Cache Level** set to `Bypass`, the resources that match that page rule are not cached. {{site.data.keyword.cis_short_notm}} still acts as a proxy, and our other performance features remain active. However, your content is fetched from your origin server directly, instead of served from our cache.
 
-* If a page rule has **Cache Level** set to `Cache everything`, resources that match the page rule are cached. **Using this page rule setting is the only way to tell us to cache resources beyond what we consider static, including HTML.**
+* If a page rule has **Cache Level** set to `Cache everything`, resources that match the page rule are cached. **Using this page rule setting is the only way to tell {{site.data.keyword.cis_short_notm}} to cache resources beyond what {{site.data.keyword.cis_short_notm}} considers static, including HTML.**
 
-If no page rule is set, we use the `Standard` caching mode, which is based the extension of the resource. We cache static resources only.
+If no page rule is set, {{site.data.keyword.cis_short_notm}} uses the `Standard` caching mode, which is based the extension of the resource. {{site.data.keyword.cis_short_notm}} caches static resources only.
 
 ### Origin cache-control headers
 {: #origin-cache-control-headers}
 
-The second way to alter what {{site.data.keyword.cis_short_notm}} caches is through caching headers sent from the origin. {{site.data.keyword.cis_short_notm}} respects these settings, but you can override them by specifying an **Edge Cache TTL** page rule setting. Here are the headers we consider when deciding what resources to cache from your origin:
+The second way to alter what {{site.data.keyword.cis_short_notm}} caches is through caching headers sent from the origin. {{site.data.keyword.cis_short_notm}} respects these settings, but you can override them by specifying an **Edge Cache TTL** page rule setting. Here are the headers {{site.data.keyword.cis_short_notm}} considers when deciding what resources to cache from your origin:
 
 * If the **Cache-Control** header is set to `private`, `no-store`, `no-cache`,  or `max-age=0`, or if there is a cookie in the response, then {{site.data.keyword.cis_short_notm}} does not cache the resource. Note that sensitive material should not be cached, so you might consider using one of these headers in that case.
 
@@ -132,17 +129,17 @@ According to RFC rules, `Cache-Control: max-age` trumps `Expires` headers. If bo
 
 The third way to control caching behavior and browser caching behavior together is by using the **`s-maxage`** Cache-Control header.
 
-Normally we respect the `max-age` directive:
+Normally {{site.data.keyword.cis_short_notm}} respects the `max-age` directive.
 
 `Cache-Control: max-age=1000`
 {: pre}
 
-But if you want to specify a cache timeout that's different from the browser, we can use `s-maxage`. Here's an example that tells {{site.data.keyword.cis_short_notm}} to cache the object for 200 seconds and the browser to cache the object for 60 seconds.
+But if you want to specify a cache timeout that's different from the browser, {{site.data.keyword.cis_short_notm}} can use `s-maxage`. The following example tells {{site.data.keyword.cis_short_notm}} to cache the object for 200 seconds and the browser to cache the object for 60 seconds.
 
 `Cache-Control: s-maxage=200, max-age=60`
 {: pre}
 
-Basically `s-maxage` is intended to be followed ONLY by reverse proxies (so the browser should ignore it) whilst on the other hand we ({{site.data.keyword.cis_short_notm}}) give priority to `s-maxage` if it is present. We respect whichever value is higher: the browser cache setting or the `max-age` header.
+Basically, `s-maxage` is intended to be followed ONLY by reverse proxies (so the browser should ignore it) while ({{site.data.keyword.cis_short_notm}}) gives priority to `s-maxage` if it is present. {{site.data.keyword.cis_short_notm}} respects whichever value is higher: the browser cache setting or the `max-age` header.
 
 ### Summary on cache control headers and page rules for reliability
 {: #summary-cache-control-headers-page-rules}
