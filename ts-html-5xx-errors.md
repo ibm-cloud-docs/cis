@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-09-24"
 
 keywords:
 
@@ -94,22 +94,24 @@ There are two possible causes discernible by error message:
 ## Error 520: web server returns an unknown error
 {: #520-error}
 
-Error 520 occurs when the origin server returns an empty, unknown, or unexpected response to CIS.
+Error 520 occurs when the origin server returns an empty, unknown, or unexpected response to {{site.data.keyword.cis_short_notm}}.
 
 ### Error 520 resolution
 {: #520-resolution}
 
-A quick workaround while further investigating 520 errors is to either disable proxying the DNS record in CIS or temporarily pause CIS.
+A quick workaround while further investigating 520 errors is to either disabling the proxy of the DNS record or temporarily pause {{site.data.keyword.cis_short_notm}}.
 
 Check your origin web server error logs for crashes and look for these common causes:
 
 * Origin web server application crashes
-* CIS IPs not allowed at your origin
+* {{site.data.keyword.cis_short_notm}} IPs not allowed at your origin
 * Headers exceeding 16 KB (typically due to too many cookies)
 * An empty response from the origin web server that lacks an HTTP status code or response body
 * Missing response headers or origin web server not returning proper HTTP error responses
 
 520 errors are prevalent with certain PHP applications that crash the origin web server.
+
+If HTTP/2 is enabled at your origin web server, make sure that HTTP/2 is correctly configured. A 520 error is returned if the origin web server accepts the HTTP/2 connection but then doesn’t respect or support the protocol. The maximum origin HTTP version can be set under the Advanced tab of the Reliability page in the UI.
 
 If 520 errors continue to occur, provide the following information to Support:
 
