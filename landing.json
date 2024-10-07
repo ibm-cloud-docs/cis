@@ -1,17 +1,15 @@
 {
+    "version": 2,
     "title": "Cloud Internet Services docs",
-    "lastupdated": "2024-06-12",
     "introduction": "IBM Cloud Internet Services, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on IBM Cloud.",
-    "section_devtools": {
-      "api": "/apidocs/cis",
-      "cli": "/docs/cis?topic=cis-cis-cli",
-      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis"
-    },
-    "section_recommended": [
+    "product-page": "https://www.ibm.com/products/cloud-internet-services",
+    "console-page": "/catalog/services/internet-services",
+    "section_topics": {
+        "links":[
       {
-        "title": "Learn about CIS features",
+        "title": "Getting started with IBM Cloud Internet Services",
         "description": "Read about the features included in Cloud Internet Services.",
-        "href": "/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis"
+        "href": "/docs/cis?topic=cis-getting-started"
       },
       {
         "title": "Getting CIS running with a new subdomain",
@@ -31,23 +29,7 @@
       "community": "https://community.ibm.com/community/user/cloud/home"
     },
     "section_updates": {
-      "view_more": "/docs/cis?topic=cis-release-notes",
-      "tiles": [
-        {
-          "date": "12 June 2024",
-          "title": "Managed Rules in WAF",
-          "description": "Released the new Managed Rules, which replaces the current WAF. Enterprise plans will have a migration plan, while Standard Next plans are automatically migrated."
-        },
-        {
-          "date": "21 June 2023",
-          "title": "Enterprise Tier plans released",
-          "description": "Released the new [Enterprise Tier plans](/docs/cis?topic=cis-transition-plans#transitioning-enterprise-plans), which will replace the current Enterprise Package, Enterprise GLB, and Enterprise Security plans."
-        },
-        {
-          "date": "16 March 2023",
-          "title": "Standard Next plan released",
-          "description": "Released the new [Standard Next plan](/docs/cis?topic=cis-transition-plans), which will replace the current Standard plan."
-        }
-      ]
+      "view_more": "/docs/cis?topic=cis-release-notes"
     }
   }
+}
