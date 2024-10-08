@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-10-08"
 
 keywords: isolation for cis, service endpoints for cis, private network for cis, network isolation in cis, non-public routes for cis, private connection for cis, private connectivity for cis
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Using service endpoints to privately connect to {{site.data.keyword.cis_short_notm}}
 {: #service-endpoints}
 
-To help ensure that you have enhanced control and security over your data when you use {{site.data.keyword.cis_full}}, you can use private routes to {{site.data.keyword.cloud}} service endpoints. Private routes are not accessible or reachable over the internet. By using the {{site.data.keyword.cloud_notm}} private service endpoints feature, you can protect your data from threats from the public network and logically extend your private network.
+To help ensure that you have enhanced control and security over your configuration when you use {{site.data.keyword.cis_full}}, you can use private routes to {{site.data.keyword.cloud}} service endpoints. Private routes are not accessible or reachable over the internet. By using the {{site.data.keyword.cloud_notm}} private service endpoints feature, you can protect your configuration from threats from the public network and logically extend your private network.
 {: shortdesc}
 
 When you use the {{site.data.keyword.cis_short_notm}} private endpoint, any DNS records or global load balancers can be reached on the public network.
