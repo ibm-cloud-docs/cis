@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-02-14"
+  years: 2019, 2024
+lastupdated: "2024-10-09"
 
 subcollection: cis
 
@@ -46,7 +46,7 @@ Each field value can be sourced from different places, such as:
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
 |ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/#search/code/){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
-{: caption="Table 1. Available fields" caption-side="bottom"}
+{: caption="Available fields" caption-side="bottom"}
 
 These standard fields follow the naming convention of the Wireshark display field reference. However, some subtle variations might exist in the preceding example values.
 {: note}
@@ -57,7 +57,7 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 | ------- | :--------- | :------------ | :--------- |
 |cf.client.bot|Boolean|true|This field indicates whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
 |cf.threat_score|Number|A 0-100 value|This field represents a risk score, 0 indicates low risk as determined by Cloudflare. Values above 10 can represent spammers or bots, and values above 40 point to bad actors on the internet. It is rare to see values above 60, so tune your firewall rules to challenge those above 10, and to block those above 50.|
-{: caption="Table 2. Available Cloudflare fields" caption-side="bottom"}
+{: caption="Available Cloudflare fields" caption-side="bottom"}
 
 ## Functions
 {: #functions}
@@ -71,7 +71,7 @@ These are not currently supported in the CIS UI Visual Expression Builder.
 | ------- | :--------- | :------------ | :--------- | :--------- |
 |lower|String|String|lower(http.host) == `"www.example.com"`|Converts a string field to lowercase. Only uppercase ASCII bytes are being converted, every other bytes are left as-is.|
 |upper|String|String|upper(http.host) == `"www.example.com"`|Converts a string field to uppercase. Only lowercase ASCII bytes are being converted, every other bytes are left as-is.|
-{: caption="Table 3. Firewall rules functions" caption-side="bottom"}
+{: caption="Firewall rules functions" caption-side="bottom"}
 
 ## Expressions
 {: #expressions}
@@ -111,7 +111,7 @@ The following comparison operators are available for use in expressions:
 |in| |Value appears in a set of values. Supports ranges using the ".." notation. |
 |not|!|See Boolean comparison|
 |bitwise_and|&|Compare bit field value|
-{: caption="Table 4. Comparison operators for expressions" caption-side="bottom"}
+{: caption="Comparison operators for expressions" caption-side="bottom"}
 
 Currently the CIS UI Visual Expression Builder only supports English operators.
 {: note}
@@ -131,7 +131,7 @@ Certain comparison operators apply to specific fields based on type. The followi
 |contains| |http.request.uri.path contains "/articles/"| | |
 |matches|~|http.request.uri.path ~ "^/articles/200[7-8]/$"| | |
 |in| |http.request.method in { "HEAD" "GET" }|ip.src in { 93.184.216.0 93.184.216.1 }|cf.threat_score in {0 2 10}|
-{: caption="Table 5. Comparison operators for fields" caption-side="bottom"}
+{: caption="Comparison operators for fields" caption-side="bottom"}
 
 The evaluation of expressions using string values is case-sensitive. As such, a firewall rule might require you to define more than one test condition. Enterprise customers can use a regular expression with the matches operator to capture multiple variations with a single expression.
 {: important}
@@ -144,7 +144,7 @@ For fields of boolean type (for example, `ssl`) the field appears by itself in t
 | True| False|
 | ------- | :--------- |
 |ssl|not ssl|
-{: caption="Table 6. Boolean comparison" caption-side="bottom"}
+{: caption="Boolean comparison" caption-side="bottom"}
 
 ## Compound expressions
 {: #compound-expressions}
@@ -157,7 +157,7 @@ You can create compound expressions by grouping two or more single expressions u
 |and|&&|Logical AND|http.host eq `"www.example.com"` and ip.src in 93.184.216.0/24|2|
 |xor|^^|Logical XOR|http.host eq `"www.example.com"` xor ip.src in 93.184.216.0/24|3|
 |or|&verbar;&verbar;|Logical OR|http.host eq `"www.example.com"` or ip.src in 93.184.216.0/24|4|
-{: caption="Table 7. Compound expressions" caption-side="bottom"}
+{: caption="Compound expressions" caption-side="bottom"}
 
 To alter the order of precedence, you can group expressions with parentheses. Using no parentheses, expressions are implicitly grouped based on standard precedence:
 

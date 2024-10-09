@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-10-09"
 
 keywords: managed rules, rulesets, waf
 
@@ -48,4 +48,4 @@ These managed rulesets are regularly updated. You can adjust the behavior of spe
 |CIS managed ruleset | This ruleset provides fast and effective protection for all of your applications. The ruleset is updated frequently to cover new vulnerabilities and reduce false positives. |`efb7b8c949ac4650a09736fc376e9aee` |
 |OWASP core ruleset |The Open Web Application Security Project, or OWASP ModSecurity Core Rule Set. CIS routinely monitors for updates from OWASP from the official code repository.|`4814384a9e5d4991b9815dcfc25d2f1f` |
 |Exposed credentials check | Deploy an automated credentials check on your end-user authentication endpoints. For any credential pair, the CIS WAF performs a lookup against a public database of stolen credentials.|`c2e184081120413c86c3ab7e14069605` |
-{: caption="Table 1. Available rulesets and Ruleset IDs" caption-side="bottom"}
+{: caption="Available rulesets and Ruleset IDs" caption-side="bottom"}

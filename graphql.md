@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords: graphql
 
@@ -148,7 +148,7 @@ The following datasets are available.
 |Load Balancing Analytics | `loadBalancingRequests` `loadBalancingRequestsGroups` |
 |SYN Attacks (DoS Analytics) | `synAvgPps1mGroups` |
 |Edge Functions Metrics | `workersInvocationsAdaptive` |
-{: caption="Table 1. Available datasets" caption-side="bottom"}
+{: caption="Available datasets" caption-side="bottom"}
 
 
 ## Errors
@@ -201,7 +201,7 @@ The limits for retaining historical data are defined in the following table.
 |`loadBalancingRequestsGroups` | 30 days|
 |`loadBalancingRequests` | 30 days|
 |`synAvgPps1mGroups` | 7 days|
-{: caption="Table 2. Historical data limits" caption-side="bottom"}
+{: caption="Historical data limits" caption-side="bottom"}
 
 ### Query settings for account limits
 {: #query-settings-account-limits}
@@ -215,7 +215,7 @@ To obtain specific information regarding limits for a data node, use the `settin
 |`maxNumberOfFields` | Defines the maximum number of fields that can be requested in one query (varies by data node).|
 |`maxPageSize` | Defines the maximum number of records that can be returned in one query (varies by data node).|
 |`notOlderThan` | Limits how far back in the record a query can search (in seconds, varies by data node and plan).|
-{: caption="Table 3. Settings node fields" caption-side="bottom"}
+{: caption="Settings node fields" caption-side="bottom"}
 
 The following is an example query:
 
@@ -498,7 +498,7 @@ Operator support varies, depending on the node type and node name. The following
 |`leq` | less or equal to|
 |`neq` | not equal|
 |`in` | in|
-{: caption="Table 4. Supported operators" caption-side="bottom"}
+{: caption="Supported operators" caption-side="bottom"}
 
 ### Examples
 {: #graphql-examples}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords: firewall rule actions
 
@@ -35,4 +35,4 @@ The following table describes the actions that you can assign to your rules. The
 |Challenge (Captcha)|* Firewall rules  \n * IP firewall  \n * User agent rules|Requires a user to pass a Google reCaptcha Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|4|
 |JS Challenge|* Firewall rules  \n * IP firewall  \n * User agent rules|Requires a user to pass a {{site.data.keyword.cis_short_notm}} JavaScript Challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|5|
 |Block|* Firewall rules  \n * IP firewall  \n * User agent rules|Blocks a matching request from accessing the site.|6|
-{: caption="Table 1. Firewall rule actions and priority" caption-side="bottom"}
+{: caption="Firewall rule actions and priority" caption-side="bottom"}

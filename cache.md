@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -61,7 +61,7 @@ By default, {{site.data.keyword.cis_short_notm}} caches certain HTTP response co
 |302, 303     |20 m |
 |404, 410     |3 m  |
 |403          |1 m  |
-{: caption="Table 1. Default cache response codes" caption-side="bottom"}
+{: caption="Default cache response codes" caption-side="bottom"}
 
 
 {{site.data.keyword.cis_short_notm}} provides several cache customization options:
@@ -130,7 +130,7 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 |REVALIDATED|The resource is served from cache but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
 |UPDATING|The resource was served from cache but is expired. The resource is being updated by the origin web server. UPDATING is typically seen only for popular cached resources.|
 |DYNAMIC|The resource was not cached by default and your current {{site.data.keyword.cis_short_notm}} caching configuration doesn't instruct {{site.data.keyword.cis_short_notm}} to cache the resource. Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
-{: caption="Table 2. Cache response codes and definitions" caption-side="bottom"}
+{: caption="Cache response codes and definitions" caption-side="bottom"}
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-06-27"
+lastupdated: "2024-10-09"
 
 keywords: 
 
@@ -55,7 +55,7 @@ Select from the actions listed, and specify the timeout period. In this case, th
 |Challenge | User must pass a Google reCaptcha Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.|
 |JS Challenge | User must pass a Javascript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.
 |Simulate| You can use this option to test your rule before applying any of the other options in your live environment.
-{: caption="Table 1. Actions for rate limiting" caption-side="bottom"}
+{: caption="Actions for rate limiting" caption-side="bottom"}
 
 In the **Advanced response** section, specify the response type when a rule's threshold is exceeded.
 

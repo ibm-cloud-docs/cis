@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-07-14"
+  years: 2018, 2024
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -36,7 +36,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**Cache Deception Armor**|Toggles cache deception armor on or off. Cache deception armor protects from web cache deception attacks while still allowing static assets to be cached. This setting checks that the URL's extension matches the returned content type. |
 |**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables all other setting configurations for the rule because {{site.data.keyword.cis_short_notm}} forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against page rules. |
 |**True Client IP Header**|{{site.data.keyword.cis_short_notm}} sends the user's IP address in the `True-Client-IP` header. |Enterprise only |
-{: caption="Table 1. Security rules" caption-side="bottom"}
+{: caption="Security rules" caption-side="bottom"}
 
 ## Reliability
 {: #page-rules-reliability}
@@ -49,7 +49,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**Host Header Override**|Replaces the host header for the URI matching the page rule to the value specified. This is commonly used for content that is hosted in an S3 bucket.|
 |**Disable Apps**|Turns off all {{site.data.keyword.cis_short_notm}} apps. | Enterprise only |
 |**Origin Error Page Pass-through**|Disables {{site.data.keyword.cis_short_notm}} error pages that would trigger for issues that are sent from the origin server, and instead displays the error pages set at the origin. |Enterprise only |
-{: caption="Table 2. Reliability rules" caption-side="bottom"}
+{: caption="Reliability rules" caption-side="bottom"}
 
 ## Performance
 {: #page-rules-performance}
@@ -69,7 +69,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**Sort Query String**|Treats files with the same query strings as the same file in cache, regardless of the order of the query strings. |Enterprise only |
 |**Response Buffering**|Enables or disables buffering of responses from the origin server. By default, {{site.data.keyword.cis_short_notm}} sends packets to the client as we receive them. Enabling **Response Buffering** means that {{site.data.keyword.cis_short_notm}} waits until it has the entire file before forwarding it to the user. |Enterprise only |
 |**Script Load Optimization**|Improves paint times by asynchronously loading your JavaScripts, including third-party scripts so that they do not block rendering the content of your pages. | |
-{: caption="Table 3. Performance rules" caption-side="bottom"}
+{: caption="Performance rules" caption-side="bottom"}
 
 ## Page rule URL patterns
 {: #page-rule-url-patterns}

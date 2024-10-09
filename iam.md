@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-05-15"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -38,6 +38,6 @@ For more information about IAM roles, see [IBM Cloud IAM roles](/docs/account?to
 | Reader | View information about instances and domains. |
 | Service Configuration Reader | Read services configuration for Governance management. |
 | Writer | Change existing configurations. |
-{: caption="Table 1. IAM user roles and actions" caption-side="bottom"}
+{: caption="IAM user roles and actions" caption-side="bottom"}
 
 For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources#assign-access-resources).

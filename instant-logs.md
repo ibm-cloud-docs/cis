@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-10-09"
 
 keywords: instant logs, logs
 
@@ -56,7 +56,7 @@ To create an Instant Logs Job from the CLI, send a POST request to the Instant L
 | Ends with | `endsWith` |
 | Contains | `contains` |
 | Is in | `In` |
-{: caption="Table 1. Operator names and behaviors" caption-side="bottom"}
+{: caption="Operator names and behaviors" caption-side="bottom"}
 
 ## Datasets
 {: #instant-logs-datasets}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-07-06"
+  years: 2019, 2024
+lastupdated: "2024-10-09"
 
 keywords: Custom error page, Cloud Internet Services, Custom page
 
@@ -64,7 +64,7 @@ Some types of custom error pages must include one of these tokens anywhere withi
 |5XX Errors |::CLOUDFLARE_ERROR_500S_BOX::|
 |1XXX Errors |::CLOUDFLARE_ERROR_1000S_BOX::|
 |Serve Stale Content | ::ALWAYS_ONLINE_NO_COPY_BOX::|
-{: caption="Table 1. Page types and their tokens" caption-side="bottom"}
+{: caption="Page types and their tokens" caption-side="bottom"}
 
 ## Styling error codes
 {: #styling-error-pages}

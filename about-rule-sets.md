@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -49,7 +49,7 @@ The following table lists the phases that are available within the Ruleset Engin
 | `http_request_firewall_custom` | Firewall rules | API |
 | `http_ratelimit` | Rate limiting rules | API, CLI |
 | `ddos_l7` | HTTP DDoS Attack Protection rules | API |
-{: caption="Table 1. Available phases" caption-side="bottom"}
+{: caption="Available phases" caption-side="bottom"}
 
 ## Rules language
 {: #rules-language}
@@ -73,7 +73,7 @@ The following table lists the actions available in the Rules language:
 |Log|`log`|Records matching requests in the {{site.data.keyword.cis_short_notm}} logs.  \n Only available on Enterprise plans.  \n Recommended for validating rules before committing to a more severe action.|No|
 |Execute|`execute`|Executes the rules in the ruleset specified in the rule configuration. You can specify a managed ruleset or a custom ruleset to execute.  \n In the {{site.data.keyword.cis_short_notm}} UI, this action is not listed in action selection dropdowns.|No|
 |Rewrite|`rewrite`|Adjusts the URI path, query string, and/or HTTP headers of requests and responses, according to the rule configuration.  \n Only available in:  \n * Transform Rules, in phases `http_request_transform`, `http_request_late_transform`, and `http_response_headers_transform`. In the {{site.data.keyword.cis_short_notm}} UI, this action is not listed in action selection dropdowns. To use this action, create a Transform rule.  \n * WAF custom rules checking for exposed credentials, in the `http_request_firewall_custom` phase at the instance level. In the {{site.data.keyword.cis_short_notm}} UI, this action is called Exposed-Credential-Check Header.|No|
-{: caption="Table 2. Available actions" caption-side="bottom"}
+{: caption="Available actions" caption-side="bottom"}
 
 ## Entry point ruleset
 {: #entry-point-ruleset}

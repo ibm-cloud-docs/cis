@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -112,7 +112,7 @@ Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed 
 |WorkerSubrequest|Whether or not this request was a worker subrequest|bool|
 |WorkerSubrequestCount|Number of subrequests issued by a worker when handling this request|int|
 |ZoneID|Internal zone ID|int|
-{: caption="Table 1. HTTP events" caption-side="bottom"}
+{: caption="HTTP events" caption-side="bottom"}
 
 "Security rule" refers to one of these rule types: WAF managed rule, WAF custom rule, or WAF rate limiting rule.
 {: note}
@@ -155,7 +155,7 @@ The following table contains the fields available for Range requests.
 |ProxyProtocol|Which form of proxy protocol is applied to the given connection; `off` `v1` `v2` `simple`|string|
 |Status|A code indicating reason for connection closure|int|
 |Timestamp|Timestamp at which the event took place|string|
-{: caption="Table 2. Range events" caption-side="bottom"}
+{: caption="Range events" caption-side="bottom"}
 
 ### Firewall events
 {: #firewall-events}
@@ -192,7 +192,7 @@ The following table contains the fields available for Range requests.
 |Ref| The user-defined identifier for the rule triggered by the request| string|
 |RuleID|The Cloudflare security product-specific RuleID triggered by this request|string|
 |Source|The Cloudflare security product triggered by this request|string|
-{: caption="Table 3. Firewall events" caption-side="bottom"}
+{: caption="Firewall events" caption-side="bottom"}
 
 ### DNS logs
 {: #dns-logs}
@@ -208,4 +208,4 @@ The following table contains the fields available for Range requests.
 |ResponseCode|Integer value of response code|int|
 |SourceIP|IP address of the client (IPv4 or IPv6)|string|
 |Timestamp|Timestamp at which the query occurred|int or string|
-{: caption="Table 4. DNS logs" caption-side="bottom"}
+{: caption="DNS logs" caption-side="bottom"}

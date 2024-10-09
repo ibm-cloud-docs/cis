@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -46,7 +46,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Alerts**|No|Yes|Yes|Yes|Yes|
 |**Rate limiting**|No|No|Yes|Yes|Yes|
 |**Bot management**|No|No|No|Yes|No|
-{: caption="Table 1. CIS plan comparison" caption-side="bottom"}
+{: caption="CIS plan comparison" caption-side="bottom"}
 
 ## Additional details
 {: #additional-details}

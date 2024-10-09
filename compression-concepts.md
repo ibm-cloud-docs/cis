@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -179,8 +179,7 @@ The following table lists common Cf-Polished statuses and how to troubleshoot th
 |cannot_optimize or internal_error|The input image is corrupted or incomplete at the origin server. |Upload a new version of the image to the origin server.|
 |format_not_supported|The input image format is not supported (for example, BMP, TIFF) and/or the origin server is using extra optimization software that is not compatible with Polish.|Try converting the input image to a web-compatible format (for example, PNG, JPEG) and/or disabling any extra optimization software at the origin server.|
 |vary_header_present|The origin web server sent a Vary header with a value other than accept-encoding.|If the origin web server is attempting to support WebP, disable WebP at the origin web server and let Polish perform the WebP conversion.|
-{: caption="Table 1. Common Cf-Polished statuses" caption-side="bottom"}
+{: caption="Common Cf-Polished statuses" caption-side="bottom"}
 
 Image size optimization still works when the accept-encoding is not the only header that is listed within the `Vary` header.
 {: note}
-

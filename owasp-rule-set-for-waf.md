@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-03"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -45,7 +45,7 @@ The OWASP ModSecurity Core Rule Set assigns a score to each request based on how
 |**PL 2** | Provides additional rules that detect more attacks, but the additional rules might also trigger new false alarms over legitimate HTTP requests.|
 |**PL 3** | Provides more rules for certain specialized attacks. The risk of false alarms increases.|
 |**PL 4** | Provides rules that are so aggressive they detect almost every possible attack. This paranoia level flags a lot of legitimate traffic as malicious.|
-{: caption="Table 1. Paranoia levels" caption-side="bottom"}
+{: caption="Paranoia levels" caption-side="bottom"}
 
 ### OWASP v2.x
 {: #owasp-v2x}
@@ -63,7 +63,7 @@ The sensitivity score required to trigger the WAF for a specific sensitivity is 
 |**Low**   |  60 and higher|
 |**Medium**|  40 and higher|
 |**High**  |  25 and higher|
-{: caption="Table 2. Sensitivity and triggers" caption-side="bottom"}
+{: caption="Sensitivity and triggers" caption-side="bottom"}
 
 With a high sensitivity, large file uploads trigger the WAF. (2.x only)
 {: tip}
@@ -75,7 +75,7 @@ For Ajax requests, the following scores are applied instead:
 |**Low**   | 120 and higher|
 |**Medium**|  80 and higher|
 |**High**  |  65 and higher|
-{: caption="Table 3. Ajax request sensitivity and triggers" caption-side="bottom"}
+{: caption="Ajax request sensitivity and triggers" caption-side="bottom"}
 
 Review the (security) events log to see the final score, as well as the individual triggered rules.
 

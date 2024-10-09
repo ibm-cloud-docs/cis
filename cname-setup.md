@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -25,7 +25,7 @@ The following table shows the recommended setup configurations for a child zone 
 |Parent domain on {{site.data.keyword.cis_short_notm}} through a Full setup |Full setup only|
 |Parent domain on {{site.data.keyword.cis_short_notm}} through a CNAME setup |CNAME setup only|
 |The parent domain is not on {{site.data.keyword.cis_short_notm}} |Can choose Full or CNAME setup|
-{: caption="Table 1. Parent and child domain setup" caption-side="bottom"}
+{: caption="Parent and child domain setup" caption-side="bottom"}
 
 ## Setting up a CNAME zone
 {: #cname-step-one}
