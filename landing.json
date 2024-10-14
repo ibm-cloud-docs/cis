@@ -24,12 +24,6 @@
         "href": "/docs/cis?topic=cis-cis-plan-comparison"
       }
     ],
-    "section_learn": {
-      "developer": "https://developer.ibm.com/depmodels/cloud/",
-      "architecture": "https://www.ibm.com/architectures/hybrid",
-      "training": "https://www.ibm.com/training/cloud",
-      "community": "https://community.ibm.com/community/user/cloud/home"
-    },
     "section_devtools": {
       "api": "/apidocs/cis",
       "cli": "/docs/cis?topic=cis-cis-cli",
