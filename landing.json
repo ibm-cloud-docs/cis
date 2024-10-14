@@ -34,13 +34,11 @@
       "tiles": [
         {
           "date": "12 June 2024",
-          "title": "Managed Rules in WAF",
-          "description": "Released the new Managed rules feature, which will replace the current WAF. Enterprise plans will have a Migration to managed rules that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step."
+          "title": "Managed Rules in WAF"
         },
         {
           "date": "21 June 2024",
-          "title": "Enterprise Tier plans released",
-          "description":"Released the new Enterprise Tier plans, which will replace the current Enterprise Package, Enterprise GLB, and Enterprise Security plans."
+          "title": "Enterprise Tier plans released"
         }
       ]
     }
