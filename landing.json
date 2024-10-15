@@ -24,7 +24,7 @@
       "href": "/docs/cis?topic=cis-cis-plan-comparison"
     }
   ],
-  "section_devtools":     {
+  "section_devtools": {
     "api": "/apidocs/cis",
     "cli": "/docs/cis?topic=cis-cis-cli",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis"
