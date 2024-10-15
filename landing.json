@@ -2,8 +2,8 @@
   "version": 2,
   "title": "Cloud Internet Services",
   "introduction": "IBM Cloud Internet Services, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on IBM Cloud.",
-  "product-page": "https://www.ibm.com/products/cloud-internet-services",
-  "console-page": "/catalog/services/internet-services",
+  "product_page": "https://www.ibm.com/products/cloud-internet-services",
+  "console_page": "/catalog/services/internet-services",
   "section_topics": {
       "links":[
     {
@@ -20,7 +20,6 @@
     },
     {
       "title": "Plan comparison",
-      "description": "Compare available plans for CIS.",
       "href": "/docs/cis?topic=cis-cis-plan-comparison"
     }
   ],
