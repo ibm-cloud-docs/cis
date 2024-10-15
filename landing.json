@@ -30,16 +30,6 @@
   },
   "section_updates": {
     "view_more": "/docs/cis?topic=cis-release-notes",
-    "tiles": [
-        {
-          "date": "12 June 2024",
-          "title": "Managed Rules in WAF"
-        },
-        {
-          "date": "21 June 2024",
-          "title": "Enterprise Tier plans released"
-        }
-      ]
     }
   }
 }
