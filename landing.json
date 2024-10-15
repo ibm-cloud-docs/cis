@@ -1,34 +1,34 @@
 {
-    "version": 2,
-    "title": "Cloud Internet Services",
-    "introduction": "IBM Cloud Internet Services, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on IBM Cloud.",
-    "product-page": "https://www.ibm.com/products/cloud-internet-services",
-    "console-page": "/catalog/services/internet-services",
-    "section_topics": {
-        "links":[
-      {
-        "title": "Getting started with IBM Cloud Internet Services",
-        "href": "/docs/cis?topic=cis-getting-started"
-      },
-      {
-        "title": "Getting CIS running with a new subdomain",
-        "href": "/docs/cis?topic=cis-get-started-new-subdomain"
-      },
-      {
-        "title": "About IBM Cloud Internet Services",
-        "href": "/docs/cis?topic=cis-about-ibm-cloud-internet-services-cisn"
-      },
-      {
-        "title": "Plan comparison",
-        "description": "Compare available plans for CIS.",
-        "href": "/docs/cis?topic=cis-cis-plan-comparison"
-      }
-    ],
-    "section_devtools": {
-      "api": "/apidocs/cis",
-      "cli": "/docs/cis?topic=cis-cis-cli",
-      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis"
+  "version": 2,
+  "title": "Cloud Internet Services",
+  "introduction": "IBM Cloud Internet Services, powered by Cloudflare, provides a fast, highly performant, reliable, and secure internet service for customers running their business on IBM Cloud.",
+  "product-page": "https://www.ibm.com/products/cloud-internet-services",
+  "console-page": "/catalog/services/internet-services",
+  "section_topics": {
+      "links":[
+    {
+      "title": "Getting started with IBM Cloud Internet Services",
+      "href": "/docs/cis?topic=cis-getting-started"
     },
+    {
+      "title": "Getting CIS running with a new subdomain",
+      "href": "/docs/cis?topic=cis-get-started-new-subdomain"
+    },
+    {
+      "title": "About IBM Cloud Internet Services",
+      "href": "/docs/cis?topic=cis-about-ibm-cloud-internet-services-cisn"
+    },
+    {
+      "title": "Plan comparison",
+      "description": "Compare available plans for CIS.",
+      "href": "/docs/cis?topic=cis-cis-plan-comparison"
+    }
+  ],
+  "section_devtools":     {
+    "api": "/apidocs/cis",
+    "cli": "/docs/cis?topic=cis-cis-cli",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis"
+  },
     "section_updates": {
       "view_more": "/docs/cis?topic=cis-release-notes",
       "tiles": [
