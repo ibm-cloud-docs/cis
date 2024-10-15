@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -20,7 +20,7 @@ Mutual Transport Layer Security (mTLS) authentication ensures that traffic is bo
 
 When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches the application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds.
 
-![Diagram of mTLS handshake](images/mtls-handshake.png "Diagram of mTLS handshake"){: caption="Figure 1. Diagram of an mTLS handshake" caption-side="bottom"}
+![Diagram of mTLS handshake](images/mtls-handshake.png "Diagram of mTLS handshake"){: caption="Diagram of an mTLS handshake" caption-side="bottom"}
 
 ## Configuring mutual TLS
 {: #configure-mtls}

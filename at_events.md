@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-10-09"
 
 keywords: CIS activity tracker events
 
@@ -194,7 +194,7 @@ The following table lists the actions that are related to load balancers and gen
 |`internet-svcs.load-balancer-pools.create`|Create a global load balancer pool.|
 |`internet-svcs.load-balancer-pools.update`|Update a global load balancer pool.|
 |`internet-svcs.load-balancer-pools.delete`|Delete a global load balancer pool.|
-{: caption="Table 3. Actions that generate load balancer events" caption-side="bottom"}
+{: caption="Actions that generate load balancer events" caption-side="bottom"}
 
 ## Events for purging the cache
 {: #at_actions_purge-cache}
@@ -405,6 +405,3 @@ Open a Support case and include the value of the field **requestId** that is ava
 {: #at_events_iam_analyze}
 
 For more information about calling auditing events with the API, see the Auditing section of each method in the [{{site.data.keyword.cis_short_notm}} API documentation](/apidocs/cis).
-
-
-

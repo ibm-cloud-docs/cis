@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -316,7 +316,7 @@ You can monitor the following services:
 |Custom firewall|`firewallCustom`|
 |Managed firewall|`firewallManaged`|
 |Data loss prevention|`dlp`|
-{: caption="Table 1. Services that can be monitored by Advanced WAF alerts" caption-side="bottom"}
+{: caption="Services that can be monitored by Advanced WAF alerts" caption-side="bottom"}
 
 ### Universal SSL alert command
 {: #api-universal-ssl-alert-cmd}

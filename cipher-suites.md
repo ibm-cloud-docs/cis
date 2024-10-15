@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -48,7 +48,7 @@ The following ciphers are supported at the cloud edge. You can restrict the ciph
 |AEAD-AES128-GCM-SHA256        | | | |![Available](../icons/checkmark-icon.svg)|
 |AEAD-AES256-GCM-SHA384        | | | |![Available](../icons/checkmark-icon.svg)|
 |AEAD-CHACHA20-POLY1305-SHA256 | | | |![Available](../icons/checkmark-icon.svg)|
-{: caption="Table 1. Edge cipher suites" caption-side="bottom"}
+{: caption="Edge cipher suites" caption-side="bottom"}
 
 ## Origin cipher suites
 {: #origin-cipher-suites}
@@ -69,7 +69,7 @@ The following ciphers are supported at the origin. You can restrict the ciphers 
 | ECDHE-RSA-AES256-SHA384 | | |![Available](../icons/checkmark-icon.svg) | |
 | AES256-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | |
 | DES-CBC3-SHA |![Available](../icons/checkmark-icon.svg) | | | |
-{: caption="Table 2. Origin cipher suites" caption-side="bottom"}
+{: caption="Origin cipher suites" caption-side="bottom"}
 
 [^A]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and cannot be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites cannot be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
 

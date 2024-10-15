@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -27,7 +27,7 @@ Here are some common error messages you or your support team might see:
 | 522 | Connection timeout to the origin server (30 second default). Either CIS might be rate-limited, the web server could be consuming all resources (shared server), or there might be network connectivity issues between the web server and {{site.data.keyword.cis_short_notm}}. |
 | 523 | Origin server is unreachable. Ensure that the origin IP address for the DNS record is the same as the one appearing in the {{site.data.keyword.cis_short_notm}} DNS Settings page. |
 | 524 | {{site.data.keyword.cis_short_notm}} could make a TCP connection but did not receive a response from the web server. A long-running application or database query is interfering. |
-{: caption="Table 1. Error codes" caption-side="bottom"}
+{: caption="Error codes" caption-side="bottom"}
 
 ## 502 error “The dreaded 502”
 {: #troubleshooting-cis-502-error}

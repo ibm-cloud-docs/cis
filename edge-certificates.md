@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -42,7 +42,7 @@ By using Advanced certificates, you can select the validity and auto-renewal dat
 |3 months|30 days| |
 |1 month|7 days|Not supported by Let's Encrypt|
 |2 weeks|3 days|Not supported by Let's Encrypt|
-{: caption="Table 1. {{site.data.keyword.cis_short_notm}} certificate validity periods" caption-side="bottom"}
+{: caption="{{site.data.keyword.cis_short_notm}} certificate validity periods" caption-side="bottom"}
 
 Renewal periods are automated on the back end, and are not customizable.
 {: note}
@@ -94,7 +94,7 @@ The following table lists the CAA record content for each CA:
 |Google Trust Services|`pki.goog; cansignhttpexchanges=yes`|
 |DigiCert|`digicert.com; cansignhttpexchanges=yes`|
 |Sectigo|`sectigo.com`|
-{: caption="Table 2. CAA record content for each CA" caption-side="bottom"}
+{: caption="CAA record content for each CA" caption-side="bottom"}
 
 ## Limitations
 {: #edge-certificate-limitations}

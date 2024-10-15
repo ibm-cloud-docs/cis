@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-10-09"
 
 keywords:
 
@@ -34,7 +34,7 @@ IBM {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers
 
 Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or a [global load balancer](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use the security features. The proxy allows traffic to flow through our servers and you can monitor the data.
 
-![security graphic](images/security-graphic.png "Image describing security features"){: caption="Figure 1. Security features" caption-side="bottom}
+![security graphic](images/security-graphic.png "Image describing security features"){: caption="Security features" caption-side="bottom}
 
 ### TLS
 {: #tls-feature}
@@ -150,7 +150,7 @@ Generally, attacks fall into two categories:
 |------------------------------|-----------------|
 |These attacks consist of a flood of traffic at ISO Layer 3 (the network layer), such as ICMP floods, or at Layer 4 (the transport layer), such as TCP SYN floods or reflected UDP floods. |These attacks send malicious ISO Layer-7 requests (the application layer), such as GET floods.|
 | Automatically blocked at {{site.data.keyword.cis_short_notm}} edge | {{site.data.keyword.cis_short_notm}} handles these attacks with Defense mode, WAF, and security-level settings. |
-{: caption="Table 1. Types of network attacks" caption-side="bottom"}
+{: caption="Types of network attacks" caption-side="bottom"}
 
 ### On-demand anti-DDoS
 {: #cis-on-demand-anti-ddos}
@@ -188,7 +188,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ## Reliability features
 {: #cis-reliability-features}
 
-![reliability graphic](images/reliability-graphic.png "Image describing reliability features"){: caption="Figure 2. Reliability features" caption-side="bottom"}
+![reliability graphic](images/reliability-graphic.png "Image describing reliability features"){: caption="Reliability features" caption-side="bottom"}
 
 ### Global load balancing features
 {: #about-glb-features}
@@ -224,7 +224,7 @@ The following requirements must be met before you use gRPC:
 ## Performance features
 {: #cis-performance-features}
 
-![performance graphic](images/performance-graphic.png "Image describing performance features"){: caption="Figure 3. Performance features" caption-side="bottom}
+![performance graphic](images/performance-graphic.png "Image describing performance features"){: caption="Performance features" caption-side="bottom}
 
 ### Caching
 {: #caching-features}

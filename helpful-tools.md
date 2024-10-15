@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-12-06"
+  years: 2018, 2024
+lastupdated: "2024-10-09"
 
 keywords: Helpful tools, whois, IPv4, HAR
 
@@ -98,7 +98,7 @@ For example:
 | -T | Forces a TCP traceroute (normally ICMP) |
 | -4 | Forces the use of IPv4 |
 | -6 | Forces the use of IPv6 |
-{: caption="Table 1. Command options" caption-side="bottom"}
+{: caption="Command options" caption-side="bottom"}
 
 ### Generating an HAR file
 {: #generating-a-har-file}
