@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-17"
 
 keywords: health checks, Free Trial plan, dedicated certificate, known issues
 
@@ -25,6 +25,7 @@ The following information describes some limitations when working with {{site.da
 * When you delete a dedicated certificate, it might reappear in the list for a short time before the deletion is complete.
 * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
 * IP rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
+
 
 ## Global load balancer
 {: #known-limitations-glb}
