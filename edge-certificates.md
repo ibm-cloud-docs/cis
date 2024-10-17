@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-17"
 
 keywords:
 
@@ -22,6 +22,9 @@ subcollection: cis
 {: #universal-certificate-type}
 
 By default, {{site.data.keyword.cis_short_notm}} issues free, unshared, publicly trusted SSL certificates to all domains added on {{site.data.keyword.cis_short_notm}}. For these Universal certificates, {{site.data.keyword.cis_short_notm}} controls the validity periods and certificate authorities (CAs), making sure that renewals always occur. Universal certificates that are issued by Let's Encrypt or Google Trust Services have a 90-day validity period.
+
+CIS can change the CA of Universal certificates without prior notice, and will not notify you of these changes. If you prefer to select your own issuing certificate authority, order an advanced certificate.
+{: attention}
 
 ## Advanced certificates
 {: #advanced-certificate-type}
@@ -46,6 +49,15 @@ By using Advanced certificates, you can select the validity and auto-renewal dat
 
 Renewal periods are automated on the back end, and are not customizable.
 {: note}
+
+## Backup certificates
+{: #backup-certificates}
+
+If CIS is providing authoritative DNS for your domain, CIS will issue a backup Universal SSL certificate for every standard Universal certificate issued.
+
+Backup certificates are wrapped with a different private key and issued from a different Certificate Authority — either Google Trust Services, Let’s Encrypt, Sectigo, or SSL.com — than your domain’s primary Universal SSL certificate.
+
+These backup certificates are not normally deployed, but they will be deployed automatically by CIS in the event of a certificate revocation or key compromise.
 
 ## Certificate authorities
 {: #certificate-authorities}
@@ -96,10 +108,8 @@ The following table lists the CAA record content for each CA:
 |Sectigo|`sectigo.com`|
 {: caption="CAA record content for each CA" caption-side="bottom"}
 
-## Limitations
-{: #edge-certificate-limitations}
+## Related links
+{: #related-links-certificates}
 
-* **Certificate pinning:** Certificate pinning is not supported natively in {{site.data.keyword.cis_short_notm}}. If you want to use certificate pinning, you must use custom certificates.
-* **Full setup:** Universal SSL certificates only support SSL for the root or first-level subdomains such as `example.com` and `www.example.com`. To enable SSL support on second, third, and fourth-level subdomains such as `dev.www.example.com` or `app3.dev.www.example.com` use either an advanced certificate or a custom certificate.
-* **CNAME (partial) setup:** On a CNAME setup zone, each subdomain has its own Universal SSL certificate and does not require extra features or purchases.
-* **Range:** Universal SSL is not compatible with {{site.data.keyword.cis_short_notm}} Range application. If you are trying to use Range, use either an advanced certificate or a custom certificate.
+* [Known limitations for certificates](/docs/cis?topic=cis-known-limitations#known-limitations-certificates)
+* [Introducing: Backup Certificates](https://blog.cloudflare.com/introducing-backup-certificates/){: external}
