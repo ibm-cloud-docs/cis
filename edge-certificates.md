@@ -23,6 +23,8 @@ subcollection: cis
 
 By default, {{site.data.keyword.cis_short_notm}} issues free, unshared, publicly trusted SSL certificates to all domains added on {{site.data.keyword.cis_short_notm}}. For these Universal certificates, {{site.data.keyword.cis_short_notm}} controls the validity periods and certificate authorities (CAs), making sure that renewals always occur. Universal certificates that are issued by Let's Encrypt or Google Trust Services have a 90-day validity period.
 
+CIS can change the CA of Universal certificates without prior notice, and will not notify you of these changes. If you prefer to select your own issuing certificate authority, order an advanced certificate.
+{: attention}
 
 ## Advanced certificates
 {: #advanced-certificate-type}
@@ -48,6 +50,14 @@ By using Advanced certificates, you can select the validity and auto-renewal dat
 Renewal periods are automated on the back end, and are not customizable.
 {: note}
 
+## Backup certificates
+{: #backup-certificates}
+
+If CIS is providing authoritative DNS for your domain, CIS will issue a backup Universal SSL certificate for every standard Universal certificate issued.
+
+Backup certificates are wrapped with a different private key and issued from a different Certificate Authority — either Google Trust Services, Let’s Encrypt, Sectigo, or SSL.com — than your domain’s primary Universal SSL certificate.
+
+These backup certificates are not normally deployed, but they will be deployed automatically by CIS in the event of a certificate revocation or key compromise.
 
 ## Certificate authorities
 {: #certificate-authorities}
@@ -97,3 +107,9 @@ The following table lists the CAA record content for each CA:
 |DigiCert|`digicert.com; cansignhttpexchanges=yes`|
 |Sectigo|`sectigo.com`|
 {: caption="CAA record content for each CA" caption-side="bottom"}
+
+## Related links
+{: #related-links-certificates}
+
+* [Known limitations for certificates](/docs/cis?topic=cis-known-limitations#known-limitations-certificates)
+* [Introducing: Backup Certificates](https://blog.cloudflare.com/introducing-backup-certificates/){: external}

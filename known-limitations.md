@@ -26,6 +26,14 @@ The following information describes some limitations when working with {{site.da
 * To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
 * IP rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
 
+## Certificates
+{: #known-limitations-certificates}
+
+* **Universal CA:** CIS can change the CA of Universal certificates without prior notice, and will not notify you of these changes. If you prefer to select your own issuing certificate authority, order an advanced certificate.
+* **Certificate pinning:** Certificate pinning is not supported natively in {{site.data.keyword.cis_short_notm}}. If you want to use certificate pinning, you must use custom certificates.
+* **Full setup:** Universal SSL certificates only support SSL for the root or first-level subdomains such as `example.com` and `www.example.com`. To enable SSL support on second, third, and fourth-level subdomains such as `dev.www.example.com` or `app3.dev.www.example.com` use either an advanced certificate or a custom certificate.
+* **CNAME (partial) setup:** On a CNAME setup zone, each subdomain has its own Universal SSL certificate and does not require extra features or purchases.
+* **Range:** Universal SSL is not compatible with an {{site.data.keyword.cis_short_notm}} Range application. If you are trying to use Range, use either an advanced certificate or a custom certificate.
 
 ## Global load balancer
 {: #known-limitations-glb}
