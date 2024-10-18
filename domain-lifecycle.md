@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-18"
 
 keywords:
 
@@ -41,7 +41,7 @@ Domain state transitions:
 
 You may encounter any of the following domain lifecycle states:
 
-- **Pending**: The zone has been added to a {{site.data.keyword.cis_short_notm}} instance, and the DNS configuration is being verified at the DNS provider or registrar to activate the domain. After confirmation that the correct nameservers (or CNAME validation records) have been configured the domain is transitioned to active. The domain remains pending otherwise.
+- **Pending**: The zone has been added to a {{site.data.keyword.cis_short_notm}} instance, and the DNS configuration is being verified at the DNS provider or registrar to activate the domain. After confirmation that the correct name servers (or CNAME validation records) have been configured the domain is transitioned to active. The domain remains pending otherwise.
 - **Active**: The DNS configuration has been verified and the domain is actively serving traffic, taking advantage of the Cloudflare products. 
 - **Moved**: The zone was active, but DNS validation detected that the domain is no longer configured for the assigned authoritative name servers only, for a number of repeated checks. There is an implication that the DNS could be pointed back, but this state is the start of a zone deprovision. The domain stays in a `moved` state for 7 days, or indefinitely if there is an active subscription on the zone. If the same domain becomes `active` or `pending` in a different account, this domain will no longer serve traffic because `pending` or `active` zones take precedence.
 - **Deletion pending**: (Enterprise only) The customer initiated the deletion of this domain from the {{site.data.keyword.cis_short_notm}} instance. Enterprise domains can take up to 24 hours to be completely removed.

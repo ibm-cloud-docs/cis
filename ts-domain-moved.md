@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-18"
 
 keywords:
 
@@ -21,10 +21,10 @@ content-type: troubleshoot
 You have a domain that should be `Active`, but is still in the `Moved` status.
 {: tsSymptoms}
 
-{{site.data.keyword.cis_short_notm}} becomes the authoritative DNS provider for your domain when your domain points to {{site.data.keyword.cis_short_notm}} nameservers. During the setup process {{site.data.keyword.cis_short_notm}} detects the nameservers and activates the domain.
+{{site.data.keyword.cis_short_notm}} becomes the authoritative DNS provider for your domain when your domain points to {{site.data.keyword.cis_short_notm}} name servers. During the setup process {{site.data.keyword.cis_short_notm}} detects the name servers and activates the domain.
 {: tsCauses}
 
-- If the nameservers no longer point to {{site.data.keyword.cis_short_notm}}, the system automatically mark your domain as `Moved` after 7 days. An email to inform you of this status change is sent to the email address on file. A domain in `Moved` status remains in the system for an additional 7 days before it is permanently deleted.
+- If the name servers no longer point to {{site.data.keyword.cis_short_notm}}, the system automatically mark your domain as `Moved` after 7 days. An email to inform you of this status change is sent to the email address on file. A domain in `Moved` status remains in the system for an additional 7 days before it is permanently deleted.
 - Conflicting NS records can cause a domain to change to `Moved` status.
 
 To resolve the condition where your domain remains in `Moved` status longer than expected, take the following troubleshooting steps.
