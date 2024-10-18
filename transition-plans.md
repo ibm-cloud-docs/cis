@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-18"
 
 keywords: plans, enterprise essential, enterprise advanced, enterprise premier, standard next
 
@@ -77,7 +77,7 @@ By moving to a more metered model, the base cost of the Enterprise Tier plans ar
 |GLB: Origins, pools, GLB included|20|20|20|
 |Range (Layer 3/4) | No | Yes | Yes |
 |Logging| Yes | Yes | Yes |
-|Rate limiting| Yes | Yes | Yes |
+|Rate limiting| No | Yes | Yes |
 |Advanced WAF| No | Yes | Yes |
 |Bot management| No | No | Yes |
 {: caption="Comparison of CIS Enterprise Tier plans" caption-side="bottom"}
