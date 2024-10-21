@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-10-21"
 
 keywords:
 
@@ -37,6 +37,7 @@ You can use either Log Analysis instances or Cloud Object Storage buckets as des
 
 ### Creating Logpush with Log Analysis
 {: #logpush-loganalysis-ui}
+
 
 To configure a logpush job using Log Analysis, follow these steps.
 
@@ -222,4 +223,3 @@ To create a logpush job using the API, take the following steps:
          }
       ```
       {: codeblock}
-
