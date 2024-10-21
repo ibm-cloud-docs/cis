@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-10-21"
 
 keywords:
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
+## 21 October 2024
+{: #cis-oct2124}
+{: release-note}
+
+Enhanced security
+: Released support for [SSL.com as a Certificate Authority](/docs/cis?topic=cis-managing-edge-certs#certificate-authorities), offering you more trusted SSL certificate options.
 
 ## 12 June 2024
 {: #cis-jun1224}
@@ -78,4 +85,3 @@ New API for notifications
 
 Service clock synchronization
 :   Add service clock synchronization information.
-

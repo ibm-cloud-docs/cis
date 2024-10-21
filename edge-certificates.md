@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-21"
 
 keywords:
 
@@ -67,26 +67,31 @@ For publicly trusted certificates, Cloudflare partners with different certificat
 - Let's Encrypt
    - Supports validity periods of 90 days
    - DCV tokens are valid for 7 days
-   - [Compatibility documentation](https://letsencrypt.org/docs/certificate-compatibility/)
+   - [Compatibility documentation](https://letsencrypt.org/docs/certificate-compatibility/){: external}
 - Google Trust Services
    - Supports validity periods of 14, 30, and 90 days
    - DCV tokens are valid for 14 days
-   - [Compatibility documentation](https://pki.goog/faq/)
+   - [Compatibility documentation](https://pki.goog/faq/){: external}
+- SSL.com
+   - Supports validity periods of 14, 30, and 90 days
+      - 1-year validity period is available to Enterprise customers
+   - DCV tokens are valid for 14 days
+   - [Compatibility documentation](https://www.ssl.com/browser_compatibility/){: external}
 - DigiCert [deprecated]{: tag-deprecated}
    - Supports validity periods of 14, 30, and 90 days
    - DCV tokens are valid for 30 days
-   - [Compatibility documentation](https://www.digicert.com/faq/public-trust-and-certificates/are-digicert-tls-ssl-certificates-compatible-with-my-browser)
+   - [Compatibility documentation](https://www.digicert.com/faq/public-trust-and-certificates/are-digicert-tls-ssl-certificates-compatible-with-my-browser){: external}
 - Sectigo
    - Used only for backup certificates when {{site.data.keyword.cis_short_notm}} is providing authoritative DNS for your domain
    - Supports validity periods of 90 days
-   - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt)
+   - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt){: external}
 
 ## Custom certificates
 {: #custom-certificate-type}
 
 Custom certificates are for customers who want to use their own SSL certificates. You upload these certificates to {{site.data.keyword.cis_short_notm}}.
 
-Unlike Universal or advanced certificates, {{site.data.keyword.cis_short_notm}} does not manage the issuance or renewal for custom certificates. You are responsible for uploading, updating, and tracking the expiration dates of your custom certificates.
+Unlike Universal or Advanced certificates, {{site.data.keyword.cis_short_notm}} does not manage the issuance or renewal for custom certificates. You are responsible for uploading, updating, and tracking the expiration dates of your custom certificates.
 
 ## Failure to renew and certificate replacement
 {: #failure-to-renew-replace}
@@ -96,7 +101,7 @@ For certificates managed by {{site.data.keyword.cis_short_notm}}, renewal attemp
 ## CAA records
 {: #caa-records}
 
-A [Certificate Authority Authorization (CAA) DNS record](https://cloud.ibm.com/docs/cis?topic=cis-set-up-your-dns-for-cis#caa-type-record) specifies which certificate authorities (CAs) are allowed to issue certificates for a domain. This record reduces the chance of unauthorized certificate issuance and promotes standardization across your organization.
+A [Certificate Authority Authorization (CAA) DNS record](/docs/cis?topic=cis-set-up-your-dns-for-cis#caa-type-record) specifies which certificate authorities (CAs) are allowed to issue certificates for a domain. This record reduces the chance of unauthorized certificate issuance and promotes standardization across your organization.
 
 The following table lists the CAA record content for each CA:
 
@@ -104,9 +109,57 @@ The following table lists the CAA record content for each CA:
 |---|---|
 |Let's Encrypt|`letsencrypt.org`|
 |Google Trust Services|`pki.goog; cansignhttpexchanges=yes`|
+|SSL.com|`ssl.com`|
 |DigiCert|`digicert.com; cansignhttpexchanges=yes`|
 |Sectigo|`sectigo.com`|
 {: caption="CAA record content for each CA" caption-side="bottom"}
+
+## Certificate statuses
+{: #certificate-statuses}
+
+Each certificate status describes where in the issuance process you are, and can vary depending on the type of certificate.
+
+### New certificate statuses
+{: #new-cert-status}
+
+When you order a new certificate, whether it's an edge certificate or a certificate that is used for a custom hostname, its status moves through various stages as it progresses to the global network.
+
+1. **Initializing**
+1. **Pending Validation**
+1. **Pending Issuance**
+1. **Pending Deployment**
+1. **Active**
+
+After you issue a certificate, it moves to **Pending Validation**, and changes to **Active** after the validation is completed. If you see any errors, you might need to take more actions to validate the certificate.
+
+If you deactivate a certificate, it moves to **Deactivating** and then **Inactive** status.
+
+### Custom certificate statuses
+{: #custom-cert-status}
+
+When you use a custom certificate and your zone status is **Pending** or **Moved**, your certificate might have a status of **Holding Deployment**.
+
+When your zone becomes active, your custom certificate deploys automatically and changes to an **Active** status. However, if your zone is already active when you upload a custom certificate, you do not see this status.
+
+### Staging certificate statuses
+{: #staging-cert-status}
+
+When you create certificates in your staging environment, those staging certificates have their own set of statuses.
+
+* **Staging deployment**: Similar to Pending Deployment, but for staging certificates.
+* **Staging active**: Similar to Active, but for staging certificates.
+* **Deactivating**: Your staging certificate is in the process of becoming Inactive.
+* **Inactive**: Your staging certificate is not at the edge, but you can deploy it if needed.
+
+### Client certificate statuses
+{: #client-cert-status}
+
+When you use client certificates, those client certificates have their own set of statuses:
+
+* **Active**: The client certificate is active.
+* **Revoked**: The client certificate is revoked.
+* **Pending Reactivation**: The client certificate was revoked, but is being restored.
+* **Pending Revocation**: The client certificate was active, but is being revoked.
 
 ## Related links
 {: #related-links-certificates}
