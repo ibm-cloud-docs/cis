@@ -20,6 +20,12 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
+## 21 October 2024
+{: #cis-oct2124}
+{: release-note}
+
+Enhanced security
+: Released support for [SSL.com as a Certificate Authority](/docs/cis?topic=cis-managing-edge-certs#certificate-authorities), offering you more trusted SSL certificate options.
 
 ## 12 June 2024
 {: #cis-jun1224}
