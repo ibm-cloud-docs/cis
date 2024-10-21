@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-21"
 
 keywords:
 
@@ -67,26 +67,26 @@ For publicly trusted certificates, Cloudflare partners with different certificat
 - Let's Encrypt
    - Supports validity periods of 90 days
    - DCV tokens are valid for 7 days
-   - [Compatibility documentation](https://letsencrypt.org/docs/certificate-compatibility/)
+   - [Compatibility documentation](https://letsencrypt.org/docs/certificate-compatibility/){: external}
 - Google Trust Services
    - Supports validity periods of 14, 30, and 90 days
    - DCV tokens are valid for 14 days
-   - [Compatibility documentation](https://pki.goog/faq/)
+   - [Compatibility documentation](https://pki.goog/faq/){: external}
 - DigiCert [deprecated]{: tag-deprecated}
    - Supports validity periods of 14, 30, and 90 days
    - DCV tokens are valid for 30 days
-   - [Compatibility documentation](https://www.digicert.com/faq/public-trust-and-certificates/are-digicert-tls-ssl-certificates-compatible-with-my-browser)
+   - [Compatibility documentation](https://www.digicert.com/faq/public-trust-and-certificates/are-digicert-tls-ssl-certificates-compatible-with-my-browser){: external}
 - Sectigo
    - Used only for backup certificates when {{site.data.keyword.cis_short_notm}} is providing authoritative DNS for your domain
    - Supports validity periods of 90 days
-   - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt)
+   - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt){: external}
 
 ## Custom certificates
 {: #custom-certificate-type}
 
 Custom certificates are for customers who want to use their own SSL certificates. You upload these certificates to {{site.data.keyword.cis_short_notm}}.
 
-Unlike Universal or advanced certificates, {{site.data.keyword.cis_short_notm}} does not manage the issuance or renewal for custom certificates. You are responsible for uploading, updating, and tracking the expiration dates of your custom certificates.
+Unlike Universal or Advanced certificates, {{site.data.keyword.cis_short_notm}} does not manage the issuance or renewal for custom certificates. You are responsible for uploading, updating, and tracking the expiration dates of your custom certificates.
 
 ## Failure to renew and certificate replacement
 {: #failure-to-renew-replace}
@@ -96,7 +96,7 @@ For certificates managed by {{site.data.keyword.cis_short_notm}}, renewal attemp
 ## CAA records
 {: #caa-records}
 
-A [Certificate Authority Authorization (CAA) DNS record](https://cloud.ibm.com/docs/cis?topic=cis-set-up-your-dns-for-cis#caa-type-record) specifies which certificate authorities (CAs) are allowed to issue certificates for a domain. This record reduces the chance of unauthorized certificate issuance and promotes standardization across your organization.
+A [Certificate Authority Authorization (CAA) DNS record](/docs/cis?topic=cis-set-up-your-dns-for-cis#caa-type-record) specifies which certificate authorities (CAs) are allowed to issue certificates for a domain. This record reduces the chance of unauthorized certificate issuance and promotes standardization across your organization.
 
 The following table lists the CAA record content for each CA:
 
