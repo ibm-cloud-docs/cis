@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-10-21"
 
 keywords:
 
@@ -19,6 +19,7 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
 
 ## 12 June 2024
 {: #cis-jun1224}
@@ -78,4 +79,3 @@ New API for notifications
 
 Service clock synchronization
 :   Add service clock synchronization information.
-
