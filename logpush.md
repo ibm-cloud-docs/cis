@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-21"
+lastupdated: "2024-10-22"
 
 keywords:
 
@@ -34,6 +34,9 @@ Before you create a Logpush job, you must have an [{{site.data.keyword.loganalys
 {: ui}
 
 You can use either Log Analysis instances or Cloud Object Storage buckets as destinations for logpush jobs.
+
+The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. [IBM Cloud Logs](/docs/cloud-logs) support is coming soon. Until then, users can migrate jobs to Cloud Object Storage (COS).
+{: deprecated}
 
 ### Creating Logpush with Log Analysis
 {: #logpush-loganalysis-ui}
