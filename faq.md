@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-22"
 
 keywords:
 
@@ -46,15 +46,6 @@ To avoid any data loss, you must upgrade from Free Trial to Standard before the 
 {: faq}
 
 Starting on 11 August 2023, you can no longer configure the Enterprise Package plan. The functionality of this plan was split across various tiers and are now available in Enterprise Essential, Enterprise Advanced, and Enterprise Premier plans. See [Transition updated plans](/docs/cis?topic=cis-transition-plans).
-
-## How do I delete my CIS instance?
-{: #cis-faq-delete-instance}
-{: faq}
-
-To delete a CIS instance, you must first delete all global load balancers, pools, and health checks. Then, delete the associated domain (zone). Go to the **Overview** page and click the trash can icon next to the domain name located in the **Service Details** section to start the deletion process.
-
-If you are moving your domain to a different provider, be sure to migrate your DNS records and other configuration information to the new provider before you activate the domain there. Activating the domain before you migrate from CIS can cause your domain to change to a [`Moved` state](/docs/cis?topic=cis-domain-moved-status).
-{: important}
 
 ## I added a user to my account and gave that user permission to manage Internet Services instances. Why does that user have authentication issues?
 {: #cis-faq-user-authentication-issue}
