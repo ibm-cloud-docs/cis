@@ -55,7 +55,7 @@ You can configure one Logpush job for each {{site.data.keyword.cos_short}} objec
     * Enter a description.
     * Copy the user ID to add to your Cloud Object Storage bucket. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with `Object Writer` role.
     * Click **Next**.
-    
+
 1. Configure your destination:
     * Select a Cloud Object Storage instance from the menu.
     * Select a bucket from the Bucket name menu.
@@ -63,10 +63,10 @@ You can configure one Logpush job for each {{site.data.keyword.cos_short}} objec
     * Optionally, enter a bucket path.
     * Select the checkbox if you want to organize logs into daily subfolders.
     * Click **Next**.
- 
+
 1. Verify ownership:
     * Download the object that you received in your bucket, and paste the token in the Ownership token text area.
- 
+
       You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
       {: note}
       .
@@ -139,17 +139,17 @@ To create a Logpush job using the API, follow these steps:
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
-    * `crn`: the full url-encoded CRN of the service instance.
-    * `zone_id`: the domain ID.
-    *  **request body**: information to create the Logpush job body (`logpush_job_cos_req`).
-        * For COS, `cos`: information to identify the Cloud Object Storage bucket where the data is pushed.
+    * `crn`: The full url-encoded CRN of the service instance.
+    * `zone_id`: The domain ID.
+    *  **request body**: Information to create the Logpush job body (`logpush_job_cos_req`).
+        * For COS, `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed.
         * `name`: The name of the Logpush job.
         * `enabled`: Whether the job is enabled. One of `true`, `false`.
         * `logpull_options`: The configuration string. For example, `timestamps=rfc3339&timestamps=rfc3339`
         * `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `firewall_events`.
         * `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
 
-1. When all variables are initiated, create the Logpush job: 
+1. When all variables are initiated, create the Logpush job:
 
       ```sh
          {
