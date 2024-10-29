@@ -145,7 +145,6 @@ toc:
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
-            - cis-daily-volume.md
         - topicgroup:
             label: Working with alerts
             topics:
