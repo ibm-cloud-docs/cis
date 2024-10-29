@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-29"
 
 keywords:
 
@@ -140,7 +140,6 @@ Additional optional fields:
    IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
    {: note}
 
-* **Notification Email**: The email address that should receive health status notifications. This address can be an individual mailbox or a mailing list.
 * **Enabled**: Whether to enable (the default) this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any (default to true).
 
 ### Adding a global load balancer
