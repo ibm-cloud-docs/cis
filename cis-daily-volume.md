@@ -26,6 +26,7 @@ curl "https://api.cloudflare.com/client/v4/zones/{zone_id}/logs/received?start=2
 --header "X-Auth-Key: <API_KEY>" \
 > sample.log
 ```
+{: pre}
 
 ```ssh
 wc -l sample.log
