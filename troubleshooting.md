@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-29"
 
 keywords:
 
@@ -47,5 +47,5 @@ What happened:
 
 What you can do:
 
-* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a case to [IBM Support](/docs/get-support?topic=get-support-using-avatar).
+* Send the results from `www.YOUR_DOMAIN.com/cdn-cgi/trace` in a case to [IBM Support](/docs/account?topic=account-using-avatar).
 * Temporarily toggle your DNS Records to off (No proxy).
