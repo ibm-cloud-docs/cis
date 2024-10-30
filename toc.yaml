@@ -139,6 +139,9 @@ toc:
             - logpush.md
             - log-fields.md
             - instant-logs.md
+        - topicgroup:
+            label: Working with metrics
+            topics:
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
