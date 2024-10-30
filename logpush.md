@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-23"
+lastupdated: "2024-10-30"
 
 keywords:
 
@@ -69,7 +69,7 @@ You can configure one Logpush job for each {{site.data.keyword.cos_short}} objec
 
       You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
       {: note}
-      .
+
     * Click **Next**.
 
 1. Select the log fields that you want included in the log push:
