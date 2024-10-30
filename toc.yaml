@@ -142,6 +142,7 @@ toc:
         - topicgroup:
             label: Working with metrics
             topics:
+            - query-basics.md
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
@@ -215,6 +216,7 @@ toc:
             - ts-false-pos-neg.md
             - troubleshooting.md
             - ts-execution-order.md
+            - ts-html-4xx-errors.md
             - ts-html-5xx-errors.md
             - ts-html-1xxx-errors.md
             - ts-create-har.md
