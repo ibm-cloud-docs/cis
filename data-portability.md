@@ -17,7 +17,7 @@ subcollection: repo-name
 # Understanding data portability for CIS
 {: #data-portability}
 
-[See comments in the source file on Github]{: tag-red}
+[See comments in the source file]{: tag-red}
 
 [Guidance here](https://test.cloud.ibm.com/docs/writing?topic=writing-data-portability-content-guidance)
 
@@ -75,6 +75,3 @@ CIS doesn't support the export of the following data format and schema of the ex
 {: #data-portability-ownership}
 
 All exported data is classified as customer content. Apply the full customer ownership and licensing rights, as stated in the [IBM Cloud Service Agreement](https://www.ibm.com/terms/?id=Z126-6304_WS){: external}.
-
-
-
