@@ -142,6 +142,7 @@ toc:
         - topicgroup:
             label: Working with metrics
             topics:
+            - query-basics.md
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
@@ -198,6 +199,7 @@ toc:
         - allowlisted-ips.md
         - helpful-tools.md
         - hipaa-advisory.md
+        - data-portability.md
     - navgroup:
         id: help
         topics:
