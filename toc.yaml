@@ -144,7 +144,6 @@ toc:
         - topicgroup:
             label: Working with metrics
             topics:
-            - query-basics.md
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
