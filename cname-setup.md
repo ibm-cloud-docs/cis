@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-31"
 
 keywords:
 
@@ -15,10 +15,11 @@ subcollection: cis
 # {{site.data.keyword.cis_short_notm}} DNS zone CNAME (partial) setup
 {: #cname-setup}
 
+[Please review intro only]{: tag-red}
+
 
 
 The following table shows the recommended setup configurations for a child zone (subdomain).
-
 
 |Parent domain setup |Recommended child subdomain setup|
 |:--|:--|
