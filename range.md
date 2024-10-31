@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-10-30"
 
 keywords: range application, tls encryption, ddos protection, global tcp proxy
 
@@ -53,9 +53,9 @@ Follow these steps to add an application using the UI.
    You can enter a port range (for example: `8080-8090`), but the origin must have the same quantity of ports specified in a consecutive range.
 6. Select the edge IP connectivity.
 7. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer and its port.
-8. Enable IP firewall (optional). When enabled, IP access rules with a "block" or "allowlist" action are enforced for the application.
+8. Enable an IP firewall (optional). When enabled, IP access rules with a "block" or "allowlist" action are enforced for the application.
 9. Enable edge TLS termination (optional). When enabled, select the type of TLS termination you want to use from the list menu.
-10. Select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy in-line that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
+10. Select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy inline that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
 11. Click **Create**.
 
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
@@ -71,7 +71,7 @@ Your application is now visible in a tile or table view with the following prope
 * Origin
 * Connections from the past hour (polled every minute)
 * Throughput from the past hour (polled every minute)
-* The overflow menu (top right corner) has the following options:
+* The Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") (upper right corner) has the following options:
     * Edit the application
     * View metrics for the specified application
     * Delete the application
@@ -89,22 +89,24 @@ The graphs show metrics for up to 10 applications.
 
 To toggle application metrics, use the Chart key or click the **Select applications** button. To change the Metrics data time frame, use the list menu.
 
-## Range AppTiles
+## Viewing Range application
 {: #range-apptiles}
 
-After creating a few apps, the **Security > Range** page is populated with applications tiles. The application tiles contain the following information:
+After creating Range applications, the **Security > Range** page is populated with tiles (or an option to switch to a table view if preferred) containing the following information:
 
 * Application name
+* Proxy protocol
 * Edge port
 * Origin and port
 * Connections from the past hour (polled every minute)
 * Throughput from the past hour (polled every minute)
+* TLS edge termination (for relevant applications)
 
-The application tile also contains an overflow menu in the top corner. The overflow menu provides users the option to:
+The applications list also contains an Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") that allows users to perform the following tasks:
 
 * Edit the application
 * View metrics for the specified application
-    * This takes the user to **Metrics > Range** page, which displays the metrics for only that application.
+    * This takes the user to the **Metrics > Range** page, which displays the metrics for only that application.
 * Delete the application
 
 ## API usage examples
@@ -116,7 +118,7 @@ These are examples to create and list applications using Range.
 ### Creating a Range app
 {: #create-range-app}
 
-There are two ways you can designate an origin in a Range app.
+There are two ways that you can designate an origin in a Range app.
 
 1. Origin IP - use parameter `origin_direct`
 2. Load balancer - use parameters `origin_dns` and `origin_port`
