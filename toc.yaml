@@ -134,6 +134,15 @@ toc:
             topics:
             - edge-functions.md
             - edge-function-actions.md
+            - topicgroup:
+                label: Edge functions examples
+                topics:
+                - altering-headers.md
+                - redirect-country-code.md
+                - modify-response-props.md
+                - link:
+                    label: Configuring a Custom Domain for Your IBM Cloud Code Engine Application
+                    href: https://www.ibm.com/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application/
         - topicgroup:
             label: Working with logs
             topics:
