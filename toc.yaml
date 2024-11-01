@@ -60,8 +60,6 @@ toc:
             label: CNAME (partial) configuration
             topics:
             - start-with-subdomain.md
-            - cname-dns-resolution.md
-            - convert-partial-full.md
         - multi-domain.md
         - dns.md
         - cname-setup.md
@@ -199,7 +197,6 @@ toc:
         - allowlisted-ips.md
         - helpful-tools.md
         - hipaa-advisory.md
-        - data-portability.md
     - navgroup:
         id: help
         topics:
