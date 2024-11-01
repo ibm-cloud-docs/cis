@@ -26,7 +26,6 @@ toc:
             label: Concepts
             topics:
             - dns-concepts.md
-            - ddos-concept.md
             - glb.md
             - waf-concept.md
             - traffic-sequencing.md
