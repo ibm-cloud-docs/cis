@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-31"
+lastupdated: "2024-11-01"
 
 keywords:
 
@@ -34,7 +34,7 @@ The following table shows the recommended setup configurations for a child zone 
 To set up a CNAME, take the following steps.
 
 1. Create the `partial` type zone by using the {{site.data.keyword.cis_short_notm}} API or CLI.
-    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} API
+    * To create the `partial` type zone with {{site.data.keyword.cis_short_notm}} API:
 
         POST `https://{{api}}/v1/{{crn}}/zones`
 
@@ -47,7 +47,7 @@ To set up a CNAME, take the following steps.
         ```
         {: codeblock}
 
-    * Create `partial` type zone with {{site.data.keyword.cis_short_notm}} CLI
+    * To create the `partial` type zone with {{site.data.keyword.cis_short_notm}} CLI:
 
         ```sh
             ibmcloud cis domain-add ibmnetworkdemo.com --type partial --output JSON
@@ -87,14 +87,14 @@ To set up a CNAME, take the following steps.
     ```
     {: codeblock}
 
-1. Add the record `cloudflare-verify` to the parent DNS zone indicated by the `verification-key` (in this example, `ibmnetworkdemo.com`).
+1. Add the record `cloudflare-verify` to the parent DNS zone indicated by the `verification-key` (in this example, `ibmnetworkdemo.com`):
 
     ```sh
     txt cloudflare-verify.ibmnetworkdemo.com  476754457-428595283
     ```
     {: pre}
 
-1. After {{site.data.keyword.cis_short_notm}} verifies the record, the zone will be activated. This process might take several hours.
+1. After {{site.data.keyword.cis_short_notm}} verifies the record, the zone is activated. This process might take several hours.
 
 ## Verify the CNAME
 {: #verification}
@@ -115,7 +115,7 @@ To verify your CNAME setup, take the following steps.
     ```
     {: pre}
 
-    The response should look like the following example.
+    The response appears similar to the following example:
 
     ```text
     check::
