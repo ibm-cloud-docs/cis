@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-11-06"
 
 keywords:
 
@@ -28,7 +28,7 @@ Instances created after June 2024 use the new Ruleset Engine and do not need to 
 To migrate your instance to managed rules, take the following steps:
 
 1. Navigate to the **Security** section.
-1. Select the **WAF** tab. If the CIS instance has not been upgraded, a message is displayed to **Update to the new WAF**.
+1. Select the **WAF** tab. If the CIS instance has not been upgraded, you receive the message to **Update to the new WAF**.
 1. Click **Review configuration**.
 1. In the **Review configuration** panel, the rule sets are listed in the order in which they are applied.
 1. Enable or disable the rule sets by using the switches in the **Status** column.
@@ -66,13 +66,15 @@ To add your own exceptions, take the following steps.
 {: #managed-rules-faqs}
 
 What if I don't migrate?
-:   At the end of the deprecation window (date TBD from Cloudflare), Cloudflare will migrate all users from the previous WAF to the Managed Rules feature. From that date forward, you must use the Ruleset Engine APIs to make WAF and Managed Rules configurations.
+:   Users who don’t manually migrate are automatically migrated to the Managed Rules on 12 June 2025, with no expected impact to their current WAF policies or security. From this date forward, you must use the Ruleset Engine APIs to make WAF and Managed Rules configurations.
+ 
+    Rules and configuration might be slightly different than before, because the new Managed Rules added more robust OWASP security coverage. This ruleset is updated from OWASP v2.x to OWASP v3.x.
 
 What will happen to the previous WAF APIs?
-:   After deprecation, the previous WAF APIs will generate an error when called and return a message that indicates that you need to switch to the managed rules feature.
+:   After deprecation, the previous WAF APIs will not be available and generate an error, returning a message that indicates to switch to the Managed Rules feature.
 
 How can I confirm that the migration is complete?
-:   Run the Migration Status API check. You can also check to see whether the UI shows the wizard on the WAF page. If the wizard appears, you need to migrate.
+:   Run the Migration Status API check. You can also check to see whether the UI shows the wizard on the WAF page. If the wizard appears, you must migrate.
 
 Can I revert to the previous WAF?
 :   No. Migration to managed rulesets is final and cannot be undone.
