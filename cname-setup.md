@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-11-01"
+lastupdated: "2024-11-06"
 
 keywords:
 
@@ -14,8 +14,6 @@ subcollection: cis
 
 # {{site.data.keyword.cis_short_notm}} DNS zone CNAME (partial) setup
 {: #cname-setup}
-
-[Please review intro only]{: tag-red}
 
 
 
