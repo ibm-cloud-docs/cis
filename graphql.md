@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-11-01"
 
 keywords: graphql
 
@@ -135,7 +135,7 @@ This example shows a valid group:
 ## Datasets
 {: #graphql-datasets}
 
-The following datasets are available.
+The following is a list of commonly used datasets that are available. For more information on datasets, you can use the [GraphQL introspection mechanism](https://graphql.org/learn/introspection/){: external}.
 
 |Dataset | Node|
 |--- | --- |
@@ -148,8 +148,7 @@ The following datasets are available.
 |Load Balancing Analytics | `loadBalancingRequests` `loadBalancingRequestsGroups` |
 |SYN Attacks (DoS Analytics) | `synAvgPps1mGroups` |
 |Edge Functions Metrics | `workersInvocationsAdaptive` |
-{: caption="Available datasets" caption-side="bottom"}
-
+{: caption="Commonly used GraphQL datasets" caption-side="bottom"}
 
 ## Errors
 {: #graphql-errors}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-22"
+lastupdated: "2024-11-04"
 
 keywords:
 
@@ -84,7 +84,6 @@ Yes. The process is similar to adding a domain, but instead of the registrar, yo
 {: faq}
 
 Yes. {{site.data.keyword.cis_short_notm}} supports a [CNAME (partial)](/docs/cis?topic=cis-cname-setup) configuration. This option allows you to proxy only individual domains through {{site.data.keyword.cis_short_notm}}’s global network in the scenario where you cannot change your authoritative DNS provider. Once you are on a partial setup, the actual resolution of your records to {{site.data.keyword.cis_short_notm}} depends on CNAME records added at your authoritative DNS provider. Keep in mind that CIS resolves DNS records differently in a partial setup.
-
 
 ## What are the defaults for DNS TTL?
 {: #cis-faq-dnsttl-defaults}

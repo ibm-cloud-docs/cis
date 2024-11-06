@@ -26,13 +26,13 @@ toc:
             label: Concepts
             topics:
             - dns-concepts.md
-            - ddos-concept.md
             - glb.md
             - waf-concept.md
             - traffic-sequencing.md
             - routing.md
             - cache.md
             - http-concepts.md
+            - tcp-concepts.md
             - compression-concepts.md
             - domain-lifecycle.md
         - release-notes.md
@@ -168,6 +168,7 @@ toc:
             topics:
             - at_events.md
             - at_iam.md
+        - cis-delete.md
         - terraform.md
     - navgroup:
         id: reference
