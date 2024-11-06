@@ -15,7 +15,7 @@ subcollection: cis
 # TCP concepts
 {: #tcp-concepts}
 
-Transmission Control Protocol (TCP) connections are established between clients and servers when accessing CIS-protected resources. When users request a website using CIS, their requests pass through the CIS infrastructure, enabling DDoS protection, CDN services, and enhanced security.
+Transmission Control Protocol (TCP) connections are established between clients and servers when accessing CIS-protected resources. When users request a website using CIS, their requests pass through the CIS infrastructure, enabling DDoS protection and enhanced security.
 {: shortdesc}
 
 ## How CIS connects users to the origin server
