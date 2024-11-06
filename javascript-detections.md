@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-20"
+  years: 2023, 2024
+lastupdated: "2024-11-06"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # JavaScript detections
 {: #javascript-detections}
 
-{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) bot features include JavaScript detections. A small amount of JavaScript is injected into client devices using [Google’s Picasso fingerprinting technique](https://research.google/pubs/picasso-lightweight-device-class-fingerprinting-for-web-clients//){: external}. Picasso results are factored into bot scores and help {{site.data.keyword.cis_short_notm}} classify traffic as automated or human. `BotScoreSrc: Not Computed` and a score of `0` are relevant to Picasso JavaScript Fingerprinting requests. These requests are exempt from being blocked by any firewall rules.
+{{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) bot features include JavaScript detections. A small amount of JavaScript is injected into client devices using [Google’s Picasso fingerprinting technique](https://research.google/pubs/picasso-lightweight-device-class-fingerprinting-for-web-clients/){: external}. Picasso results are factored into bot scores and help {{site.data.keyword.cis_short_notm}} classify traffic as automated or human. `BotScoreSrc: Not Computed` and a score of `0` are relevant to Picasso JavaScript Fingerprinting requests. These requests are exempt from being blocked by any firewall rules.
 
 This detection technique gathers general data about the machines reaching {{site.data.keyword.cis_short_notm}}. For example, if a particular user is accessing {{site.data.keyword.cis_short_notm}} via Google Chrome on a MacBook Pro, because there are millions of people using Google Chrome on a MacBook Pro, {{site.data.keyword.cis_short_notm}} cannot identify specific individuals. {{site.data.keyword.cis_short_notm}} also takes steps to anonymize and phase out data for added privacy.
 
