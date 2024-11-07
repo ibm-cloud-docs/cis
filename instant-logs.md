@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-11-07"
 
 keywords: instant logs, logs
 
@@ -57,6 +57,88 @@ To create an Instant Logs Job from the CLI, send a POST request to the Instant L
 | Contains | `contains` |
 | Is in | `In` |
 {: caption="Operator names and behaviors" caption-side="bottom"}
+
+
+## Creating an Instant Logs job
+{: #create-instant-logs-job}
+
+Create a session by sending a POST request to the Instant Logs job endpoint with the following parameters:
+
+* **Fields** - List any field available in the [HTTP requests dataset](/docs/cis?topic=cis-log-fields#logpull-available-fields).
+* **Sample** - The sample parameter is the sample rate of the records set by the client: `"sample": 1` is 100% of records `"sample":` 10 is 10% and so on.
+
+   Instant Logs has a maximum data rate supported. For high volume domains, we sample server side as indicated in the "sampleInterval" parameter returned in the logs.
+   {: note}
+
+* **Filters** - Use filters to drill down into specific events. Filters consist of three parts: key, operator and value.
+
+All supported operators can be found in the Filters page.
+
+Here are three examples of filters:
+
+* Filter when client IP country is not Canada:
+
+   `"filter": "{\"where\":{\"and\":[{\"key\":\"ClientCountry\",\"operator\":\"neq\",\"value\":\"ca\"}]}}"`
+   {: pre}
+
+* Filter when the status code returned from CIS is either 200 or 201:
+
+   `"filter": "{\"where\":{\"and\":[{\"key\":\"EdgeResponseStatus\",\"operator\":\"in\",\"value\":\"200,201\"}]}}"`
+   {: pre}
+
+*  Filter when the request path contains "/static" and the request hostname is "example.com":
+
+   `"filter": "{\"where\":{\"and\":[{\"key\":\"ClientRequestPath\",\"operator\":\"contains\",\"value\":\"/static\"}, {\"where\":{\"and\":[{\"key\":\"ClientRequestHost\",\"operator\":\"eq\",\"value\":\"example.com\"}]}}"`
+   {: pre}
+
+Here is an example request using cURL:
+
+```sh
+curl https://api.cloudflare.com/client/v4/zones/{zone_id}/logpush/edge/jobs \
+--header "X-Auth-Email: <EMAIL>" \
+--header "X-Auth-Key: <API_KEY>" \
+--header "Content-Type: application/json" \
+--data '{
+  "fields": "ClientIP,ClientRequestHost,ClientRequestMethod,ClientRequestURI,EdgeEndTimestamp,EdgeResponseBytes,EdgeResponseStatus,EdgeStartTimestamp,RayID",
+  "sample": 100,
+  "filter": "",
+  "kind": "instant-logs"
+}'
+```
+{: codeblock}
+
+Response:
+
+The response includes a new field named **destination_conf**. The value of this field is your unique WebSocket address that receives messages from Cloudflare’s global network.
+
+```sh
+{
+  "errors": [],
+  "messages": [],
+  "result": {
+    "id": <JOB_ID>,
+    "fields": "ClientIP,ClientRequestHost,ClientRequestMethod,ClientRequestURI,EdgeEndTimestamp,EdgeResponseBytes,EdgeResponseStatus,EdgeStartTimestamp,RayID",
+    "sample": 100,
+    "filter": "",
+    "destination_conf": "wss://logs.cloudflare.com/instant-logs/ws/sessions/<SESSION_ID>",
+    "kind": "instant-logs"
+  },
+  "success": true
+}
+```
+{: codeblock}
+
+## Connecting to WebSocket
+{: #connect-websocket}
+
+Using a CLI utility, you can connect to the WebSocket and start immediately receiving logs.
+
+`websocat wss://logs.cloudflare.com/instant-logs/ws/sessions/<SESSION_ID>`
+{: pre}
+
+Response:
+
+After you are connected to the websocket, you will receive messages of line-delimited JSON.
 
 ## Datasets
 {: #instant-logs-datasets}

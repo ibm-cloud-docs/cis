@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-09"
+  years: 2020, 2024
+lastupdated: "2024-11-07"
 
 keywords:
 
@@ -46,7 +46,7 @@ To use Chrome to connect to your website over HTTP/3, first download and install
 
 After Chrome starts, type your domain in the address bar. Check the protocol version using the **Network** tab in Chrome’s Developer Tools. If `http2+quic/99` doesn’t appear in the **Protocol** column when connecting to your domain, try reloading the page.
 
-### Using cURL
+### using cURL
 {: #using-curl}
 
 The cURL command-line tool supports HTTP/3.  [Download the latest version](https://github.com/curl/curl){: external} and follow [the instructions to enable HTTP/3 support](https://github.com/curl/curl/blob/master/docs/HTTP3.md#quiche-version){: external}.

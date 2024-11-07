@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-11-07"
 
 keywords:
 
@@ -48,7 +48,7 @@ To set up mTLS authentication in the IBM Cloud Internet Services UI for a partic
 
 1. In the MTLS access policies table, create a new access application that enforces mTLS authentication. The application must be built with a hostname that was associated in the certificate upload modal. The policy section is pre-set to enforce a decision of `non_identity`, and an `include` rule to match any valid certificate.
 
-## Testing using curl
+## Testing using cURL
 {: #test-curl}
 
 1. Test for the site using mTLS by attempting to curl the site without a client certificate.
