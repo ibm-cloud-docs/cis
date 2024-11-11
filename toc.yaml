@@ -100,9 +100,6 @@ toc:
                 - owasp-rule-set-for-waf.md
                 - exposed-credentials-check-ruleset.md
             - terraform-generating-configuration.md
-        - topicgroup:
-            label: Working with firewall rules
-            topics:
             - firewall-rule.md
             - actions.md
             - fields-and-expressions.md
