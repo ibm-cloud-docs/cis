@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-11-08"
 
 keywords:
 
@@ -45,8 +45,7 @@ Common causes for 1001 errors are:
 * A web request was sent to a {{site.data.keyword.cis_short_notm}} IP address for a non-existent {{site.data.keyword.cis_short_notm}} domain.
 * An external domain that is not on using {{site.data.keyword.cis_short_notm}} has a CNAME record to a domain active on {{site.data.keyword.cis_short_notm}}
 * The target of the DNS CNAME record does not resolve.
-* A CNAME record in your {{site.data.keyword.cis_short_notm}} DNS requires resolution via a DNS provider that is currently offline.
-* Serve Stale Content is enabled for a Custom Hostname (SSL for SaaS) domain.
+* A CNAME record in your {{site.data.keyword.cis_short_notm}} DNS requires resolution via a DNS provider that is currently offline. 
 
 ### Resolution
 {: #1001-resolution}
@@ -54,9 +53,7 @@ Common causes for 1001 errors are:
 A non-{{site.data.keyword.cis_short_notm}} domain cannot CNAME to a {{site.data.keyword.cis_short_notm}} domain unless the non-{{site.data.keyword.cis_short_notm}} domain is added to a {{site.data.keyword.cis_short_notm}} account.
 
 Attempting to directly access DNS records used for {{site.data.keyword.cis_short_notm}} CNAME setups also causes error 1001.
-
-Disable **Always Online** if using Custom Hostnames (SSL for SaaS).
-
+ 
 ## Error 1002: DNS points to prohibited IP
 {: #1002-error-dns}
 
