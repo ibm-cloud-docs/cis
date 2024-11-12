@@ -100,6 +100,9 @@ toc:
                 - owasp-rule-set-for-waf.md
                 - exposed-credentials-check-ruleset.md
             - terraform-generating-configuration.md
+        - topicgroup:
+            label: Working with firewall rules
+            topics:
             - firewall-rule.md
             - actions.md
             - fields-and-expressions.md
@@ -200,6 +203,11 @@ toc:
             topics:
             - cloudant-and-cis.md
             - edge-functions-use-cases.md
+        - topicgroup:
+            label: High availability and disaster recovery
+            topics:
+            - ha.md
+            - bc-dr.md
         - responsibilities.md
         - plan-comparison.md
         - transition-plans.md
