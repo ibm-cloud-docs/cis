@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-11-13"
 
 keywords:
 
@@ -34,16 +34,25 @@ All sessions default to 23 hours unless a custom session TTL is specified (in se
 
 When you create a global load balancer using the CLI, take the following steps to set the session affinity:
 
-1. Log in to your IBM Cloud account
-2. Create a global load balancer
-3. Set the following variables:
-    * Session affinity: Valid values are `cookie`, `none`.
-    * Session Affinity TTL: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
-    * Session Affinity Attributes are cookie attributes for session affinity cookie.
-        * Samesite: Valid values are `Auto`, `None`, `Lax`, `Strict`.
-        * Secure: Valid values are `Auto`, `Always`, `Never`.
-        * Drain Duration (optional): Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer.
+1. Log in to your IBM Cloud account.
+1. Create a global load balancer.
+1. Set the following variables:
+   * Session affinity: Valid values are `cookie`, `none`.
+   * Session Affinity TTL: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
+   * Session affinity attributes are cookie attributes for a session affinity cookie.
+      * SameSite: Configures the SameSite attribute on the session affinity cookie. Valid values are:
+         *  `Auto`: (default) If **Always Use HTTPS** is enabled, session affinity cookies use `Lax` mode; if disabled, cookies use `None` mode.
+         *  `None`: Cookies are sent with all requests.
+         *  `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
+         *  `Strict`: Cookies are created by the first party (the visited domain).
+      * Secure: Configures the Secure attribute on the session affinity cookie. Valid values are:
+         *  `Auto`: (default) If **Always Use HTTPS** is enabled, session affinity cookies use `Secure` in the SameSite attribute; if disabled, cookies don't use `Secure`.
+         *  `Always`: `Secure` is always set, meaning the cookie is only sent over HTTPS connections.
+         *  `Never`: `Secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
+      * Drain Duration (optional): Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
 
+If you require a specific SameSite configuration in your session affinity cookies, CIS recommends that you provide values for `samesite `and `secure` different from `Auto`, instead of relying on the default behavior. This way, the value of the SameSite cookie attribute does not change due to configuration changes (namely **Always Use HTTPS**).
+{: note}
 
 For example:
 
@@ -79,6 +88,16 @@ ibmcloud cis glb-update fc72db47cee8290eaef292cda6e1619a 12b68758126546e0d129c7b
 ## Setting session affinity using the API
 {: #api-set-session-affinity}
 {: api}
+
+Session affinity is a property of global load balancers, which you can set with the following endpoints:
+
+* [Create a load balancer](/apidocs/cis#create-load-balancer)
+* [Edit a load balancer](https://cloud.ibm.com/apidocs/cis#edit-load-balancer)
+
+Customize the behavior of session affinity by using the `session_affinity`, `session_affinity_ttl`, and `session_affinity_attributes` parameters.
+
+To enable session affinity by HTTP header, set the `session_affinity` value to `header` and add your
+HTTP header names to `session_affinity_attributes.headers`.
 
 When you create a global load balancer using the API, take the following steps to set the session affinity:
 
@@ -124,3 +143,20 @@ curl -X POST   https://api.cis.cloud.ibm.com/v1/:crn/zones/:zone_id/load_balance
 }'
 ```
 {: codeblock}
+
+If you set `samesite` to `None` in your API request, you cannot set `secure` to `Never`.
+{: note}
+
+## Zero-Downtime Failover
+{: #zero-downtime-failover}
+
+Zero-Downtime Failover automatically sends traffic to endpoints within a pool during transient network issues. This helps reduce errors shown to your users when issues occur in between active health monitors.
+
+You can enable one of three options:
+
+* **None**: No failover will take place and errors might show to your users.
+* **Temporary**: Traffic will be sent to other endpoints until the originally pinned endpoint is available.
+* **Sticky**: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
+
+Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
+{: note}
