@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-13"
 
 keywords:
 
@@ -33,7 +33,7 @@ CIS provides mechanisms to protect your data and restore service functions. Busi
 | Disaster recovery objective | Target value |
 |---|---|
 |  RPO | Failover happens almost instantly (within seconds) if internal, as it switches to another cluster. However, if Cloudflare experiences downtime or issues, data will be unavailable until they are back online, as CIS is a stateless service. |
-|  RTO |  Recovery time for CIS is approximately 1 hour per cluster, including verification and other processes, with a best-case recovery time of 3 hours, or up to 4 hours if padding time is added. |
+|  RTO |  Recovery time for CIS is approximately 1 hour per cluster, including verification and other processes. |
 {: caption="Table 1. RPO and RTO for CIS" caption-side="bottom"}
 
 ## Locations
