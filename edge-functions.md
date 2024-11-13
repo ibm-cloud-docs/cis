@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-11-13"
 
 keywords:
 
@@ -128,7 +128,8 @@ All plans can set these features on outbound requests.
 - `mirage`: Image optimization to enable/disable Cloudflare mirage. When you specify this option, the value should always be `false` (for example, `false`).
 - `cacheTtl`: This option forces {{site.data.keyword.cis_short_notm}} to cache the response for this request, regardless of what headers are seen on the response. This is equivalent to setting two page rules: "Edge Cache TTL" and "Cache Level" (to "Cache Everything"; for example,`300`).
 - `resolveOverride`: Redirects the request to an alternate origin server. You can use this to implement load balancing across several origins (for example,`us-east.example.com`).
-    For security reasons, the hostname set in `resolveOverride` must be proxied on the same {{site.data.keyword.cis_short_notm}} zone of the incoming request. Otherwise, the   setting is ignored. CNAME hosts are allowed, so to resolve to a host under a different domain or a DNS only domain first declare a CNAME record within your own zone’s DNS   mapping to the external hostname, set proxy on {{site.data.keyword.cis_short_notm}}, then set resolveOverride to point to that CNAME record.
+
+    For security reasons, the hostname set in `resolveOverride` must be proxied on the same {{site.data.keyword.cis_short_notm}} zone of the incoming request. Otherwise, the setting is ignored. CNAME hosts are allowed, so to resolve to a host under a different domain or a DNS only domain first declare a CNAME record within your own zone’s DNS mapping to the external hostname, set proxy on {{site.data.keyword.cis_short_notm}}, then set resolveOverride to point to that CNAME record.
     {: note}
 
 [Enterprise only]{: tag-purple}
