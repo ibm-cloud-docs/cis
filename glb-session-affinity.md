@@ -48,9 +48,9 @@ When you create a global load balancer using the CLI, take the following steps t
       *  `Strict`: Cookies are created by the first party (the visited domain).
 
       `secure`: Valid values are:
-      *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `Secure` in the SameSite attribute; if disabled, cookies don't use `Secure`.
-      *  `Always`: `Secure` is always set, meaning the cookie is only sent over HTTPS connections.
-      *  `Never`: `Secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
+      *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `secure` in the `samesite` attribute; if disabled, cookies don't use `secure`.
+      *  `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
+      *  `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
 
       `drain-duration` (optional): Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
 
