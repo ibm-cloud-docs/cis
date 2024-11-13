@@ -38,15 +38,15 @@ When you create a global load balancer using the CLI, take the following steps t
 1. Create a global load balancer.
 1. Set the following variables:
    * Session affinity: Valid values are `cookie`, `none`.
-   * Session Affinity TTL: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
+   * Session Affinity TTL: Time, in seconds, until this load balancer's session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
    * Session affinity attributes are cookie attributes for a session affinity cookie.
       * SameSite: Configures the SameSite attribute on the session affinity cookie. Valid values are:
-         *  `Auto`: (default) If **Always Use HTTPS** is enabled, session affinity cookies use `Lax` mode; if disabled, cookies use `None` mode.
+         *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `Lax` mode; if disabled, cookies use `None` mode.
          *  `None`: Cookies are sent with all requests.
          *  `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
          *  `Strict`: Cookies are created by the first party (the visited domain).
       * Secure: Configures the Secure attribute on the session affinity cookie. Valid values are:
-         *  `Auto`: (default) If **Always Use HTTPS** is enabled, session affinity cookies use `Secure` in the SameSite attribute; if disabled, cookies don't use `Secure`.
+         *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `Secure` in the SameSite attribute; if disabled, cookies don't use `Secure`.
          *  `Always`: `Secure` is always set, meaning the cookie is only sent over HTTPS connections.
          *  `Never`: `Secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
       * Drain Duration (optional): Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
