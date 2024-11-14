@@ -40,6 +40,7 @@ When you create a global load balancer using the CLI, take the following steps t
 
 `session_affinity`
 :   Valid values are `cookie`, `none`.
+
 `ttl`
 :   Time, in seconds, until this load balancer's session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
 
