@@ -40,10 +40,8 @@ When you create a global load balancer using the CLI, take the following steps t
 
 `session_affinity`
 :   Valid values are `cookie`, `none`.
-
 `ttl`
 :   Time, in seconds, until this load balancer's session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
-
 `session_affinity_attributes`
 :   Cookie attributes for a session affinity cookie.
 
@@ -53,13 +51,11 @@ When you create a global load balancer using the CLI, take the following steps t
       *  `None`: Cookies are sent with all requests.
       *  `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
       *  `Strict`: Cookies are created by the first party (the visited domain).
-
    `secure`
    :   Valid values are:
       *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `secure` in the `samesite` attribute; if disabled, cookies don't use `secure`.
       *  `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
       *  `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
-
    `drain-duration`
    :  Optional. Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
 
