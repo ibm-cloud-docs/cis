@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-13"
+lastupdated: "2024-11-14"
 
 keywords:
 
@@ -36,23 +36,32 @@ When you create a global load balancer using the CLI, take the following steps t
 
 1. Log in to your IBM Cloud account.
 1. Create a global load balancer.
-1. Set the following variables:
-   * `session_affinity`: Valid values are `cookie`, `none`.
-   * `ttl`: Time, in seconds, until this load balancer's session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
-   * `session_affinity_attributes`: Cookie attributes for a session affinity cookie.
+1. Set the following CLI variables:
 
-      * `samesite`: Valid values are:
-         * `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `Lax` mode; if disabled, cookies use `None` mode.
-         *  `None`: Cookies are sent with all requests.
-         *  `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
-         *  `Strict`: Cookies are created by the first party (the visited domain).
+`session_affinity`
+:   Valid values are `cookie`, `none`.
 
-      * `secure`: Valid values are:
-         *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `secure` in the `samesite` attribute; if disabled, cookies don't use `secure`.
-         *  `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
-         *  `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
+`ttl`
+:   Time, in seconds, until this load balancer's session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
 
-      * `drain-duration` (optional): Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
+`session_affinity_attributes`
+:   Cookie attributes for a session affinity cookie.
+
+   `samesite`
+   :   Valid values are:
+      * `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `Lax` mode; if disabled, cookies use `None` mode.
+      *  `None`: Cookies are sent with all requests.
+      *  `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
+      *  `Strict`: Cookies are created by the first party (the visited domain).
+
+   `secure`
+   :   Valid values are:
+      *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `secure` in the `samesite` attribute; if disabled, cookies don't use `secure`.
+      *  `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
+      *  `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
+
+   `drain-duration`
+   :  Optional. Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
 
 If you require a specific SameSite configuration in your session affinity cookies, CIS recommends that you provide values for `samesite `and `secure` different from `Auto`, instead of relying on the default behavior. This way, the value of the SameSite cookie attribute does not change due to configuration changes (namely **Always Use HTTPS**).
 {: note}
