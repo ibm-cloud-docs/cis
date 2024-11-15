@@ -26,7 +26,7 @@ When enabled, {{site.data.keyword.cis_short_notm}} session affinity does the fol
 * Subsequent requests by the same client are forwarded to that origin for the duration of the cookie and as long as the origin server remains healthy.
 * If the cookie expires or the origin server is unhealthy, {{site.data.keyword.cis_short_notm}} sets a new cookie encoding the appropriate failover origin.
 
-All sessions default to 23 hours unless a custom session TTL is specified (in seconds) between 30 minutes and 7 days. A session affinity cookie is required to honor the TTL. The session cookie is secure when `Always Use HTTPS` is enabled. Additionally, `HttpOnly` is always enabled for the cookie to prevent cross-site scripting attacks.
+All sessions default to 23 hours unless a custom session TTL is specified (in seconds) between 30 minutes and 7 days. A session affinity cookie is required to honor the TTL. The session cookie is secure when [`Always Use HTTPS`](/docs/cis?topic=cis-use-page-rules#page-rules-security) is enabled. Additionally, `HttpOnly` is always enabled for the cookie to prevent cross-site scripting attacks.
 
 ## Setting session affinity using the CLI
 {: #cli-set-session-affinity}
@@ -41,27 +41,32 @@ When you create a global load balancer using the CLI, take the following steps t
 If you require a specific SameSite configuration in your session affinity cookies, CIS recommends that you provide values for `samesite `and `secure` different from `Auto`, instead of relying on the default behavior. This way, the value of the SameSite cookie attribute does not change due to configuration changes (namely **Always Use HTTPS**).
 {: note}
 
-`session_affinity`
-:   Valid values are `cookie`, `none`.
+`session_affinity`: Valid values are `cookie`, `none`.
 
-`ttl`
-:   Time, in seconds, until this load balancer's session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
+`ttl`: Time, in seconds, until this load balancer's session affinity cookie expires after being created. Valid values between `1800`, `604800`. Default is `82800`.
 
-`session_affinity_attributes`
-:   Cookie attributes for a session affinity cookie.
+`session_affinity_attributes`: Cookie attributes for a session affinity cookie.
 
    `samesite`
    :   Valid values are:
       * `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `Lax` mode; if disabled, cookies use `None` mode.
-      *  `None`: Cookies are sent with all requests.
-      *  `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
-      *  `Strict`: Cookies are created by the first party (the visited domain).
+      * `None`: Cookies are sent with all requests.
+      * `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
+      * `Strict`: Cookies are created by the first party (the visited domain).
+      * `zero_failover` (optional): Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:      
+         * `none`: No failover takes place and errors might show to your users.
+         * `temporary`: Traffic is sent to other endpoints until the originally pinned endpoint is available.
+         * `sticky`: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
+
+         Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
+         {: note}
       
    `secure`
    :   Valid values are:
-      *  `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `secure` in the `samesite` attribute; if disabled, cookies don't use `secure`.
-      *  `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
-      *  `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
+      * `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `secure` in the `samesite` attribute; if disabled, cookies don't use `secure`.
+      * `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
+      * `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
+      
       
    `drain_duration`
    :  Optional. Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
@@ -104,7 +109,7 @@ ibmcloud cis glb-update fc72db47cee8290eaef292cda6e1619a 12b68758126546e0d129c7b
 Session affinity is a property of global load balancers, which you can set with the following endpoints:
 
 * [Create a load balancer](/apidocs/cis#create-load-balancer)
-* [Edit a load balancer](https://cloud.ibm.com/apidocs/cis#edit-load-balancer)
+* [Edit a load balancer](/apidocs/cis#edit-load-balancer)
 
 Customize the behavior of session affinity by using the `session_affinity`, `session_affinity_ttl`, and `session_affinity_attributes` parameters.
 
@@ -157,18 +162,4 @@ curl -X POST   https://api.cis.cloud.ibm.com/v1/:crn/zones/:zone_id/load_balance
 {: codeblock}
 
 If you set `samesite` to `None` in your API request, you cannot set `secure` to `Never`.
-{: note}
-
-## Zero-Downtime Failover
-{: #zero-downtime-failover}
-
-Zero-Downtime Failover automatically sends traffic to endpoints within a pool during transient network issues. This helps reduce errors shown to your users when issues occur in between active health monitors.
-
-You can enable one of three options:
-
-* **None**: No failover will take place and errors might show to your users.
-* **Temporary**: Traffic will be sent to other endpoints until the originally pinned endpoint is available.
-* **Sticky**: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
-
-Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
-{: note}
+{: note} 
