@@ -63,7 +63,7 @@ If you require a specific SameSite configuration in your session affinity cookie
       *  `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
       *  `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
       
-   `drain-duration`
+   `drain_duration`
    :  Optional. Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
 
 For example:
