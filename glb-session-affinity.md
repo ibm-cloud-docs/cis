@@ -53,23 +53,23 @@ If you require a specific SameSite configuration in your session affinity cookie
       * `None`: Cookies are sent with all requests.
       * `Lax`: Cookies are sent only to the apex domain (such as `example.com`).
       * `Strict`: Cookies are created by the first party (the visited domain).
-      * `zero_failover` (optional): Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:      
-         * `none`: No failover takes place and errors might show to your users.
-         * `temporary`: Traffic is sent to other endpoints until the originally pinned endpoint is available.
-         * `sticky`: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
 
-         Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
-         {: note}
-      
    `secure`
    :   Valid values are:
       * `Auto` (default): If **Always Use HTTPS** is enabled, session affinity cookies use `secure` in the `samesite` attribute; if disabled, cookies don't use `secure`.
       * `Always`: `secure` is always set, meaning the cookie is only sent over HTTPS connections.
       * `Never`: `secure` is never set, allowing cookies to be sent over both HTTPS and HTTP connections.
-      
-      
+
    `drain_duration`
    :  Optional. Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
+
+   `zero_downtime_failover` (optional): Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:
+      * `none`: No failover takes place and errors might show to your users.
+      * `temporary`: Traffic is sent to other endpoints until the originally pinned endpoint is available.
+      * `sticky`: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
+
+       Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
+      {: note}
 
 For example:
 
@@ -162,4 +162,4 @@ curl -X POST   https://api.cis.cloud.ibm.com/v1/:crn/zones/:zone_id/load_balance
 {: codeblock}
 
 If you set `samesite` to `None` in your API request, you cannot set `secure` to `Never`.
-{: note} 
+{: note}
