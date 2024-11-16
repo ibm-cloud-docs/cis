@@ -65,7 +65,7 @@ If you require a specific SameSite configuration in your session affinity cookie
 
    `zero_downtime_failover`  
    :  Optional. Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:   
-      * `none`: No failover takes place and errors might show to your users.
+      * `none` (default): No failover takes place and errors might show to your users.
       * `temporary`: Traffic is sent to other endpoints until the originally pinned endpoint is available.
       * `sticky`: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
 
