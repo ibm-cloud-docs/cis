@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-15"
+lastupdated: "2024-11-16"
 
 keywords:
 
@@ -63,7 +63,8 @@ If you require a specific SameSite configuration in your session affinity cookie
    `drain_duration`
    :  Optional. Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
 
-   `zero_downtime_failover` (optional): Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:
+   `zero_downtime_failover`  
+   :  Optional. Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:   
       * `none`: No failover takes place and errors might show to your users.
       * `temporary`: Traffic is sent to other endpoints until the originally pinned endpoint is available.
       * `sticky`: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
