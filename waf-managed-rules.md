@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-06"
+lastupdated: "2024-11-14"
 
 keywords:
 
@@ -66,7 +66,7 @@ To add your own exceptions, take the following steps.
 {: #managed-rules-faqs}
 
 What if I don't migrate?
-:   Users who don’t manually migrate are automatically migrated to the Managed Rules on 12 June 2025, with no expected impact to their current WAF policies or security. From this date forward, you must use the Ruleset Engine APIs to make WAF and Managed Rules configurations.
+:   Users who don’t manually migrate are automatically migrated to the Managed Rules on 12 June 2025, with no expected impact to their current WAF policies or security. From this date forward, you must use the [Ruleset Engine API](/apidocs/cis#get-zone-rulesets) to make WAF and Managed Rules configurations.
  
     Rules and configuration might be slightly different than before, because the new Managed Rules added more robust OWASP security coverage. This ruleset is updated from OWASP v2.x to OWASP v3.x.
 

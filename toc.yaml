@@ -203,6 +203,11 @@ toc:
             topics:
             - cloudant-and-cis.md
             - edge-functions-use-cases.md
+        - topicgroup:
+            label: High availability and disaster recovery
+            topics:
+            - ha.md
+            - bc-dr.md
         - responsibilities.md
         - plan-comparison.md
         - transition-plans.md

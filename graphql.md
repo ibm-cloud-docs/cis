@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-01"
+lastupdated: "2024-11-12"
 
 keywords: graphql
 
@@ -79,7 +79,7 @@ query {
 {: codeblock}
 
 ## Querying basics
-{: #querying-basics}
+{: #graphql-querying-basics}
 
 GraphQL structures data as a graph. To get the data you need, you can explore the edges of the graph. This is an example query format:
 

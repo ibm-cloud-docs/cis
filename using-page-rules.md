@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-11-15"
 
 keywords:
 
@@ -23,6 +23,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
+|**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables all other setting configurations for the rule because {{site.data.keyword.cis_short_notm}} forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against page rules. |
 |**Browser Integrity Check**|Looks for common HTTP headers that are abused by spammers, and denies access to your page. It also blocks visitors that do not have a user agent, or add a non-standard user agent (also commonly used by abuse bots, crawlers, or APIs). | |
 |**Disable Security**|Disables the following features: **Email Obfuscation**, **Server Side Excludes** and **WAF** (Web Application Firewall).|If a rule is set to disable security, and another rule is set to enable the WAF, the WAF rule takes precedence regardless of the order in which they appear.|
 |**Email Obfuscation**|Toggles email obfuscation feature on or off. When the email obfuscation feature is turned on, email addresses on your web page are obfuscated (hidden) from bots, but visible to humans. There are no visible changes to your website for visitors. | |
@@ -34,7 +35,6 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**Automatic HTTPS Rewrites**|Toggles automatic HTTPS rewrites on or off. Automatic HTTPS rewrites safely rewrite HTML source links from HTTP to HTTPS. | |
 |**Opportunistic Encryption**|Toggles opportunistic encryption on or off. Opportunistic encryption allows clients to use traditionally insecure protocols over secure channels. | |
 |**Cache Deception Armor**|Toggles cache deception armor on or off. Cache deception armor protects from web cache deception attacks while still allowing static assets to be cached. This setting checks that the URL's extension matches the returned content type. |
-|**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables all other setting configurations for the rule because {{site.data.keyword.cis_short_notm}} forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against page rules. |
 |**True Client IP Header**|{{site.data.keyword.cis_short_notm}} sends the user's IP address in the `True-Client-IP` header. |Enterprise only |
 {: caption="Security rules" caption-side="bottom"}
 
