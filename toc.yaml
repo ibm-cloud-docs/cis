@@ -155,6 +155,11 @@ toc:
             - graphql.md
             - graphql-edge-func.md
             - graphql-firewall.md
+            - query-basics.md
+            - compose-query-graphiql.md
+            - cis-daily-volume.md
+            - query-http-events.md
+            - view-firewall-groups.md
         - topicgroup:
             label: Working with alerts
             topics:
