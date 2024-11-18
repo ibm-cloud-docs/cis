@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-16"
+lastupdated: "2024-11-18"
 
 keywords:
 
@@ -63,8 +63,8 @@ If you require a specific SameSite configuration in your session affinity cookie
    `drain_duration`
    :  Optional. Time, in seconds, where the origin will drain active sessions. After the time elapses, all existing sessions are ended, This field is only used when session affinity is enabled on the load balancer.
 
-   `zero_downtime_failover`  
-   :  Optional. Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:   
+   `zero_downtime_failover`
+   :  Optional. Automatically sends traffic to endpoints within a pool during transient network issues. Value values are:
       * `none` (default): No failover takes place and errors might show to your users.
       * `temporary`: Traffic is sent to other endpoints until the originally pinned endpoint is available.
       * `sticky`: The session affinity cookie is updated and subsequent requests are sent to the new endpoint moving forward as needed.
@@ -124,9 +124,14 @@ When you create a global load balancer using the API, take the following steps t
     * `session_affinity`, which specifies the type of session affinity the load balancer uses, unless specified as "none" or "default". Valid values are none, `cookie`, `ip_cookie`.
     * `session_affinity_ttl`, which is the time-to-live of the session affinity.
     * `session_affinity_attributes` which include:
-        * `samesite` configures the SameSite attribute on the affinity cookie. Valid values are `Auto`, `Lax`, `None`, `Strict`; default `Auto`
-        * `secure` configures the Secure attribute on the session affinity cookie. Valid values are `Auto`, `Always`, `Never` ; default `Auto`
+        * `samesite` configures the SameSite attribute on the affinity cookie. Valid values are `Auto`, `Lax`, `None`, `Strict`; default `Auto`.
+        * `secure` configures the Secure attribute on the session affinity cookie. Valid values are `Auto`, `Always`, `Never` ; default `Auto`.
         * `drain_duration` is the value of the drain duration, in seconds.
+        * `zero_downtime_failover` (optional) automatically sends traffic to endpoints within a pool during transient network issues. Value values are `temporary`, and `sticky`; default `none`.
+
+           Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
+          {: note}
+
 1. When all variables are initiated, create the global load balancer with session affinity:
 
 ```sh
