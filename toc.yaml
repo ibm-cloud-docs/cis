@@ -213,6 +213,7 @@ toc:
             topics:
             - ha.md
             - bc-dr.md
+        - data-portability.md
         - responsibilities.md
         - plan-comparison.md
         - transition-plans.md
