@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-11-18"
 
 keywords:
 
@@ -17,8 +17,6 @@ subcollection: cis
 
 The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
 {: shortdesc}
-
-[Recommendations and best practices]{: tag-blue}
 
 * Secure your origin IP addresses by proxying and increasing obfuscation
 * Configure your security level selectively
