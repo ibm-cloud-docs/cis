@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-20"
 
 keywords: instant logs, logs
 
@@ -69,9 +69,7 @@ Create a session by sending a POST request to the Instant Logs job endpoint with
    Instant Logs has a maximum data rate supported. For high volume domains, we sample server side as indicated in the "sampleInterval" parameter returned in the logs.
    {: note}
 
-* **Filters** - Use filters to drill down into specific events. Filters consist of three parts: key, operator and value.
-
-All supported operators can be found in the Filters page.
+* **Filters** - Use filters to drill down into specific events. Filters consist of three parts: key, operator and value. For information about supported operators, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 Here are three examples of filters:
 
