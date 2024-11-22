@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-20"
+lastupdated: "2024-11-22"
 
 keywords: instant logs, logs
 
@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Using the Instant Logs feature
-{: #instant-logs}
+{: #instant-logs-feature}
 
 Enterprise accounts can use the Instant Logs feature to access a live stream of the traffic for their domain from the API or CLI. By watching the data in real time, you can investigate an attack, troubleshoot, debug, or test changes that are made to your network. Instant Logs is lightweight and does not require any extra setup.
 {: shortdesc}
