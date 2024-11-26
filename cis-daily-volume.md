@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-18"
+lastupdated: "2024-11-26"
 
 keywords: graphql
 
@@ -23,8 +23,14 @@ You can configure a Logpush job to analyze a single log to get the average amoun
 ```sh
 $ echo -n '{"ClientIP":"123.45.67.89","ClientRequestHost":"example.cis.com","ClientRequestMethod":"GET","ClientRequestURI":"/shark/sl-12345","EdgeEndTimestamp":1724947703387000000,"EdgeResponseBytes":495,"EdgeResponseStatus":200,"EdgeStartTimestamp":1724947703256000000,"RayID":"ffadcca953ea3908"}' | \
 wc -c
-286
 ```
 {: codeblock}
 
-The log is 286 bytes in size. If the domain receives 100 KB requests daily, then the daily log volume calculation would be about 28.6 MB (286 bytes multiplied by 10,0000 requests is 28.6 MB).
+The output indicates the log file is 286 bytes in size:
+
+```
+286
+```
+{: screen}
+
+If the domain receives 100 KB requests daily, then the daily log volume calculation would be about 28.6 MB (286 bytes multiplied by 10,0000 requests is 28.6 MB).
