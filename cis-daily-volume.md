@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-26"
+lastupdated: "2024-12-01"
 
 keywords: graphql
 
@@ -21,7 +21,7 @@ To estimate your daily log volume, you can look at the relevant count of metrics
 You can configure a Logpush job to analyze a single log to get the average amount of data per log. To do so, make a GraphQL query with an HTTP dataset (such as `httpRequestsAdaptiveGroups`). Then, multiply the average data per log by the average number of requests per day to get the number of requests per day. For example:
 
 ```sh
-$ echo -n '{"ClientIP":"123.45.67.89","ClientRequestHost":"example.cis.com","ClientRequestMethod":"GET","ClientRequestURI":"/shark/sl-12345","EdgeEndTimestamp":1724947703387000000,"EdgeResponseBytes":495,"EdgeResponseStatus":200,"EdgeStartTimestamp":1724947703256000000,"RayID":"ffadcca953ea3908"}' | \
+echo -n '{"ClientIP":"123.45.67.89","ClientRequestHost":"example.cis.com","ClientRequestMethod":"GET","ClientRequestURI":"/shark/sl-12345","EdgeEndTimestamp":1724947703387000000,"EdgeResponseBytes":495,"EdgeResponseStatus":200,"EdgeStartTimestamp":1724947703256000000,"RayID":"ffadcca953ea3908"}' | \
 wc -c
 ```
 {: codeblock}
