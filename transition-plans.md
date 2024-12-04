@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-18"
+lastupdated: "2024-12-04"
 
 keywords: plans, enterprise essential, enterprise advanced, enterprise premier, standard next
 
@@ -48,7 +48,7 @@ By moving to a more metered model, the base cost of the Standard Next plan is sm
 |Firewall rules|100|100|Not applicable|
 {: caption="Comparison of CIS Standard and Standard Next plans" caption-side="bottom"}
 
-### Migration to Standard Next plans
+### Migrating to Standard Next plans
 {: #migration-to-standard-next}
 
 To migrate from your current Standard plan to a Standard Next plan, take the following steps.
@@ -82,7 +82,7 @@ By moving to a more metered model, the base cost of the Enterprise Tier plans ar
 |Bot management| No | No | Yes |
 {: caption="Comparison of CIS Enterprise Tier plans" caption-side="bottom"}
 
-### Migration to Enterprise Tiers plans
+### Migrating to Enterprise Tiers plans
 {: #migration-to-enterprise-tiers}
 
 To migrate from your current Enterprise Package, Enterprise GLB, and Enterprise Security plans, take the following steps.
