@@ -28,7 +28,6 @@ toc:
             - dns-concepts.md
             - glb.md
             - waf-concept.md
-            - ddos-concept.md
             - traffic-sequencing.md
             - routing.md
             - cache.md
