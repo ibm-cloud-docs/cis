@@ -231,7 +231,6 @@ toc:
             - ts-root-cert.md
             - ts-offline.md
             - ts-privacy-warn.md
-            - ts-ddos.md
             - ts-no-traffic.md
             - ts-false-pos-neg.md
             - troubleshooting.md
