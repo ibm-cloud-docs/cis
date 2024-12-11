@@ -117,9 +117,7 @@ Where:
 :   Sets the format in which response timestamps are returned. Valid values are `unix`, `unixnano`, and `rfc3339` (default).
 
  `--dataset`
-:   Is the category of logs that you want to receive. Valid values are `range_events` and `http_requests` (default).
-
-   You cannot change this value after the job is created.
+:   Is the category of logs that you want to receive. Valid values are `range_events` and `http_requests` (default). You cannot change this value after the job is created.
 
  `-i` or `--instance`
 :   Is the instance name. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
