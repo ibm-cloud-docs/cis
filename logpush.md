@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using the Logpush service
+# Managing Logpush jobs
 {: #logpush}
 
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
@@ -45,34 +45,34 @@ Follow these steps to add an application.
 **Prerequisite**: Before you create a Logpush job, you must have an [{{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket. 
 
 1. Select the service:
-    * Choose Cloud Object Storage.
-    * Select the dataset type.
-    * Enter a description.
-    * Copy the user ID to add to your Cloud Object Storage bucket. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with `Object Writer` role.
-    * Click **Next**.
+   1. Choose Cloud Object Storage.
+   1. Select the dataset type.
+   1. Enter a description.
+   1. Copy the user ID to add to your Cloud Object Storage bucket. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with `Object Writer` role.
+   1. Click **Next**.
 
 1. Configure your destination:
-    * Select a Cloud Object Storage instance from the menu.
-    * Select a bucket from the Bucket name menu.
-    * Enter a bucket region, if applicable.
-    * Optionally, enter a bucket path.
-    * Select the checkbox if you want to organize logs into daily subfolders.
-    * Click **Next**.
+   1. Select a Cloud Object Storage instance from the menu.
+   1. Select a bucket from the Bucket name menu.
+   1. Enter a bucket region, if applicable.
+   1. Optionally, enter a bucket path.
+   1. Select the checkbox if you want to organize logs into daily subfolders.
+   1. Click **Next**.
 
 1. Verify ownership:
-    * Download the object that you received in your bucket, and paste the token in the Ownership token text area.
+   1. Download the object that you received in your bucket, and paste the token in the Ownership token text area.
 
       You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
       {: note}
 
-    * Click **Next**.
+   1. Click **Next**.
 
 1. Select the log fields that you want included in the log push:
-    * Verify that the Logpush details are correct.
-    * Select the Logpush settings from the Timestamp and Frequency menus.
-    * Choose whether to enable the Logpush job using the Enabled switch.
-    * Select the log fields to include in the Logpush job.
-    * Click **Create service**.
+   1. Verify that the Logpush details are correct.
+   1. Select the Logpush settings from the Timestamp and Frequency menus.
+   1. Choose whether to enable the Logpush job using the Enabled switch.
+   1. Select the log fields to include in the Logpush job.
+   1. Click **Create service**.
 
 ## Creating a Logpush job from the CLI
 {: #logpush-setup-cli}
@@ -146,6 +146,8 @@ Use Cloud Object Storage API to create a Logpush job.
 {: api}
 
 To create a Logpush job using the API, follow these steps:
+
+**Prerequisite**: Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
