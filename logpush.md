@@ -100,24 +100,34 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name J
 
 Where:
 
-* **--destination** specifies the path to the {{site.data.keyword.cos_short}} bucket.
+`--destination`
+:   Specifies the path to the {{site.data.keyword.cos_short}} bucket.
 
    It follows the syntax: `cos://<bucket_path>?region=xxx&instance-id=xxxx`, where `bucket_path` is the bucket name followed by an optional path-like structure, `region` and {{site.data.keyword.cos_short}} `instance-id` are the {{site.data.keyword.cos_short}} bucket region and instance ID, which are required arguments.
 
    For example, `cos://mybucket/cislog?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`.
 
-* **--name** specifies the Logpush job name.
-* **--enable** is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).
-* **--fields** specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
+`--name`
+:   Specifies the Logpush job name.
+
+`--enable`
+:   Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).
+  
+`--fields`
+:   Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
 
    Use command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
+ 
+ `--timestamps`
+:   Sets the format in which response timestamps are returned. Valid values are `unix`, `unixnano`, and `rfc3339` (default).
 
-* **--timestamps** sets the format in which response timestamps are returned. Valid values are `unix`, `unixnano`, and `rfc3339` (default).
-* **--dataset** is the category of logs that you want to receive. Valid values are `range_events` and `http_requests` (default).
+ `--dataset`
+:   Is the category of logs that you want to receive. Valid values are `range_events` and `http_requests` (default).
 
    You cannot change this value after the job is created.
 
-* **-i** or **--instance** is the instance name. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+ `-i` or `--instance`
+:   Is the instance name. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 A domain can have only one Logpush job. Use the command line to interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge. When a challenge token is written to a file in the given {{site.data.keyword.cos_short}} bucket, you must:
 
