@@ -37,15 +37,12 @@ Use Cloud Object Storage buckets as destinations for Logpush jobs.
 {: #logpush-cos-ui}
 {: ui}
 
-**Prerequisite**: Before you create a Logpush job, you must have an [{{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket. 
-
 It is recommended that you set up an allowlist that ensures only [{{site.data.keyword.cis_short_notm}} IPs](/docs/cis?topic=cis-cis-allowlisted-ip-addresses) can push objects into the {{site.data.keyword.cos_short}} bucket. For more information on configuring an IP allowlist in {{site.data.keyword.cos_short}}, see [Setting a firewall](/docs/cloud-object-storage?topic=cloud-object-storage-setting-a-firewall).
 {: tip}
 
 Follow these steps to add an application.
 
-You can configure one Logpush job for each {{site.data.keyword.cos_short}} object (also known as a destination). This means that you can have two log pushes at a time going to the same bucket, but to different objects. For example, one with HTTP and another with Range, both referring to different objects in the same bucket.
-{: note}
+**Prerequisite**: Before you create a Logpush job, you must have an [{{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket. 
 
 1. Select the service:
     * Choose Cloud Object Storage.
@@ -183,6 +180,7 @@ To create a Logpush job using the API, follow these steps:
          }
       ```
       {: codeblock}
+
 
 ## Related link
 {: #related-link-logpush}
