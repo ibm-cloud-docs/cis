@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-30"
+lastupdated: "2024-12-11"
 
 keywords:
 
@@ -24,22 +24,20 @@ Range and firewall event logs are not included in HTTP(s) logs and require separ
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
 
-## Before you begin
-{: #logpush-prerequisites}
-
 The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to Cloud Object Storage.
 {: deprecated}
 
-Before you create a Logpush job, you must have an [{{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
-
-## Setting up Logpush using the console
+## Creating a Logpush job in the UI
 {: #logpush-setup-ui}
 {: ui}
 
 Use Cloud Object Storage buckets as destinations for Logpush jobs.
-
-### Creating Logpush with Cloud Object Storage
+    
+### Creating a Logpush job with Cloud Object Storage in the UI
 {: #logpush-cos-ui}
+{: ui}
+
+**Prerequisite**: Before you create a Logpush job, you must have an [{{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket. 
 
 It is recommended that you set up an allowlist that ensures only [{{site.data.keyword.cis_short_notm}} IPs](/docs/cis?topic=cis-cis-allowlisted-ip-addresses) can push objects into the {{site.data.keyword.cos_short}} bucket. For more information on configuring an IP allowlist in {{site.data.keyword.cos_short}}, see [Setting a firewall](/docs/cloud-object-storage?topic=cloud-object-storage-setting-a-firewall).
 {: tip}
@@ -81,14 +79,17 @@ You can configure one Logpush job for each {{site.data.keyword.cos_short}} objec
 
 
 
-## Setting up Logpush using the CLI
+## Creating a Logpush job from the CLI
 {: #logpush-setup-cli}
 {: cli}
 
-**Prerequisite**: Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
+Use Cloud Object Storage CLI to create a Logpush job.
 
-### Creating Logpush with Cloud Object Storage CLI
+### Creating a Logpush job with Cloud Object Storage from the CLI
 {: #logpush-cos-cli}
+{: cli}
+
+**Prerequisite**: Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
 
 To create a Logpush job for a specific domain and enable the job using Cloud Object Storage, run the following command:
 
@@ -131,8 +132,14 @@ Logpush jobs created before September 2020 might continue pushing every 5 minute
 You can use the token `{DATE}` in the bucket path to make the Logpush job push request logs in daily folders in the bucket path. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
 {: tip}
 
-## Setting up Logpush using the API
+## Creating a Logpush job with the API
 {: #logpush-setup-api}
+{: api}
+
+Use Cloud Object Storage API to create a Logpush job.
+
+### Creating a Logpush job with Cloud Object Storage API
+{: #logpush-setup-cos-api}
 {: api}
 
 To create a Logpush job using the API, follow these steps:
@@ -168,3 +175,8 @@ To create a Logpush job using the API, follow these steps:
          }
       ```
       {: codeblock}
+
+## Related link
+{: #related-link-logpush}
+
+[Managing user API keys](/docs/account?topic=account-userapikey&interface=ui)
