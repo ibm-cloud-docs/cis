@@ -77,8 +77,6 @@ You can configure one Logpush job for each {{site.data.keyword.cos_short}} objec
     * Select the log fields to include in the Logpush job.
     * Click **Create service**.
 
-
-
 ## Creating a Logpush job from the CLI
 {: #logpush-setup-cli}
 {: cli}
