@@ -54,7 +54,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
    `--request body`
    :   Information to create the Logpush job body (`logpush_job_ibmcl_req`).  
 
-   `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. Fields within the `ibmcl` object are as follows:
+      `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. Fields within the `ibmcl` object are as follows:
 
        * `instance_id`- ID of the Cloud Logs instance. 
        * `region`- Region of the Cloud Logs instance (for example, `us-south`).
@@ -63,11 +63,11 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
        You must grant IAM **Sender** permissions to the API key to request authorization to send logs to an IBM Cloud Logs instance.
        {: important}
 
-   `name`: The name of the Logpush job.
-   `enabled`: Whether the job is enabled. One of `true`, `false`.
-   `logpull_options`: The configuration string. For example, `timestamps=rfc3339&timestamps=rfc3339`.
-   `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `firewall_events`.
-   `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
+      `name`: The name of the Logpush job.
+      `enabled`: Whether the job is enabled. One of `true`, `false`.
+      `logpull_options`: The configuration string. For example, `timestamps=rfc3339&timestamps=rfc3339`.
+      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `firewall_events`.
+      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
 
 1. When all variables are initiated, create the Logpush job:
 
