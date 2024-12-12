@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-12-11"
+lastupdated: "2024-12-12"
 
 keywords:
 
@@ -20,7 +20,7 @@ subcollection: cis
 
 The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to an {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) bucket. You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before using Logpush.
 
-Range and firewall event logs are not included in HTTP(s) logs and require separate jobs. These jobs can be pushed to the same {{site.data.keyword.cos_short}} bucket, but must have a different path. [Cloud Logs?]{: tag-purple}
+Range and firewall event logs are not included in HTTP(s) logs and require separate jobs. These jobs can be pushed to the same {{site.data.keyword.cos_short}} bucket, but must have a different path. 
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
 
@@ -125,7 +125,7 @@ A domain can have only one Logpush job. Use the command line to interactively ad
 
 A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or every 100,000 records, whichever comes first. More than one file might be pushed per 30-second period or per 100,000 records.
 
-Logpush jobs created before September 2020 might continue pushing every 5 minutes. Any modification to one of these older jobs triggers an update to the push frequency. [Still needed?]{: tag-purple}
+Logpush jobs created before September 2020 might continue pushing every 5 minutes. Any modification to one of these older jobs triggers an update to the push frequency. 
 {: note}
 
 You can use the token `{DATE}` in the bucket path to make the Logpush job push request logs in daily folders in the bucket path. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
@@ -191,9 +191,3 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
          }
       ```
       {: codeblock}
-
-
-## Related link
-{: #related-link-logpush}
-
-[Managing user API keys](/docs/account?topic=account-userapikey&interface=ui)
