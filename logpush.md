@@ -21,9 +21,12 @@ The IBM Log Analysis service is deprecated and will no longer be supported as of
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
-The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to IBM Cloud Logs or an {{site.data.keyword.cos_full}} bucket. You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
+The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to IBM Cloud Logs or a Cloud Object Storage bucket. 
 
-Range and firewall event logs are not included in HTTP(s) logs and require separate jobs. These jobs can be pushed to the same destination. However, using Cloud Object Storage, you must use a different path.  
+You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
+{: note}
+
+Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used.
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
 
@@ -31,7 +34,7 @@ Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log
 {: #logpush-setup-api}
 {: api}
 
-Use the [Create a logpush job](/apidocs/cis#create-logpush-job-v2) API to create a Logpush job when you use IBM Cloud Logs or Cloud Object Storage.
+Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create a Logpush job when using IBM Cloud Logs or Cloud Object Storage.
 
 ### Creating a Logpush job with the API using IBM Cloud Logs
 {: #logpush-setup-cloud-logs-api}
@@ -53,17 +56,18 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
        For IBM Cloud Logs:
 
-      `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. Fields within the `ibmcl` object are:
+       `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. 
 
-      * `instance_id`: ID of the Cloud Logs instance. 
+       Fields within the `ibmcl` object are as follows:
 
-      * `region`: Region of the Cloud Logs instance (for example, `us-south`).
+         `instance_id`: ID of the Cloud Logs instance. 
 
-      * `api_key`: An API key for the account where the Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. If the API key has an expiration date,
-      *  it can be rotated by using the [Update a logpush job](/apidocs/cis#update-logpush-job-v2) API. During the rotation process, the previous key remains active as a backup for one hour.
+         `region`: Region of the Cloud Logs instance (for example, `us-south`).
+
+         `api_key`: An API key for the account where the Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. If the API key has an expiration date, it can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. During the rotation process, the previous key remains active as a backup for one hour.
          
-         You must grant IAM `Sender` permissions to the API key that you use to request authorization to send logs to an IBM Cloud Logs instance.
-         {: important}
+            You must grant IAM **Sender** permissions to the API key to request authorization to send logs to an IBM Cloud Logs instance.
+            {: important}
 
       `name`: The name of the Logpush job.
 
@@ -101,7 +105,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
 To create a Logpush job with Cloud Object Storage, follow these steps:
 
-Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
+Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the Cloud Object Storage bucket.
 {: important}
 
 1. Set up your API environment with the correct variables.
