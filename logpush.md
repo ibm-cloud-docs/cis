@@ -15,17 +15,17 @@ subcollection: cis
 # Managing Logpush jobs
 {: #logpush}
 
+The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to Cloud Object Storage.
+{: deprecated}
+
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
-The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to an {{site.data.keyword.cos_full}} ({{site.data.keyword.cos_short}}) bucket. You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before using Logpush.
+The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to  an {{site.data.keyword.cos_full}} bucket. You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before using Logpush.
 
-Range and firewall event logs are not included in HTTP(s) logs and require separate jobs. These jobs can be pushed to the same {{site.data.keyword.cos_short}} bucket, but must have a different path. 
+Range and firewall event logs are not included in HTTP(s) logs and require separate jobs. These jobs can be pushed to the same destination. However, using Cloud Object Storage, you must use a different path.  
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
-
-The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to Cloud Object Storage.
-{: deprecated}
 
 ## Creating a Logpush job in the UI
 {: #logpush-setup-ui}
