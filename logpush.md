@@ -153,7 +153,7 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
    :   The full url-encoded CRN of the service instance.
 
    `--zone_id`
-      The domain ID.
+  :   The domain ID.
 
    `--request body`
    :   Information to create the Logpush job body (`logpush_job_cos_req`). 
