@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-11-06"
+lastupdated: "2024-12-04"
 
 keywords:
 
@@ -15,7 +15,12 @@ subcollection: cis
 # {{site.data.keyword.cis_short_notm}} DNS zone CNAME (partial) setup
 {: #cname-setup}
 
+A partial or CNAME setup allows you to use reverse proxy while you maintain your primary and authoritative DNS provider. 
+{: shortdesc}
 
+This configuration is useful when you can't change your authoritative DNS provider and want to proxy only individual subdomains through the global network. 
+
+After you complete a partial setup, the actual resolution of your records to {{site.data.keyword.cis_short_notm}} depends on the CNAME records added at your authoritative DNS provider. Check your authoritative DNS provider to learn which records are pointing to `{your-hostname}.cdn.cloudflare.net`.
 
 The following table shows the recommended setup configurations for a child zone (subdomain).
 

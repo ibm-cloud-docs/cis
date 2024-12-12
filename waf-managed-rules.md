@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-14"
+lastupdated: "2024-12-04"
 
 keywords:
 
@@ -12,8 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-# Migration to managed rules
+# Migrating to managed rules
 {: #migrating-to-managed-rules}
 
 The CIS web application firewall (WAF) capabilities are moving under the Rulesets Engine feature. This change requires a manual migration and it is recommended that you use the CIS UI migration wizard. To do so, you need to review the configuration, as well as review security events before finishing the update.
@@ -67,7 +66,7 @@ To add your own exceptions, take the following steps.
 
 What if I don't migrate?
 :   Users who don’t manually migrate are automatically migrated to the Managed Rules on 12 June 2025, with no expected impact to their current WAF policies or security. From this date forward, you must use the [Ruleset Engine API](/apidocs/cis#get-zone-rulesets) to make WAF and Managed Rules configurations.
- 
+
     Rules and configuration might be slightly different than before, because the new Managed Rules added more robust OWASP security coverage. This ruleset is updated from OWASP v2.x to OWASP v3.x.
 
 What will happen to the previous WAF APIs?

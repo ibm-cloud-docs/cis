@@ -28,7 +28,6 @@ toc:
             - dns-concepts.md
             - glb.md
             - waf-concept.md
-            - ddos-concept.md
             - traffic-sequencing.md
             - routing.md
             - cache.md
@@ -149,6 +148,7 @@ toc:
             - logpush.md
             - log-fields.md
             - instant-logs.md
+            - cis-daily-volume.md
         - topicgroup:
             label: Working with metrics
             topics:
@@ -157,7 +157,6 @@ toc:
             - graphql-firewall.md
             - query-basics.md
             - compose-query-graphiql.md
-            - cis-daily-volume.md
             - query-http-events.md
             - view-firewall-groups.md
         - topicgroup:
@@ -232,7 +231,6 @@ toc:
             - ts-root-cert.md
             - ts-offline.md
             - ts-privacy-warn.md
-            - ts-ddos.md
             - ts-no-traffic.md
             - ts-false-pos-neg.md
             - troubleshooting.md

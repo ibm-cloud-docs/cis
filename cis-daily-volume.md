@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-12-01"
+lastupdated: "2024-12-12"
 
 keywords: graphql
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Estimating daily volume
+# Estimating daily log volume
 {: #volume-estimate}
 
 To estimate your daily log volume, you can look at the relevant count of metrics for your logged datasets and fields.
