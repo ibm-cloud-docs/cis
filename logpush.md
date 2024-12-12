@@ -159,4 +159,4 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
 ## Related link
 {: #related-link-logpush}
 
-[Managing user API keys](/docs/account?topic=account-userapikey&interface=ui)
+[Managing user API keys]([/docs/account?topic=account-userapikey&interface=api)
