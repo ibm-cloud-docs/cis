@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-12-12"
 
 keywords:
 
@@ -14,6 +14,7 @@ subcollection: cis
 
 # Creating, editing, and deleting firewall rules
 {: #about-firewall-rules}
+
 
 
 {{site.data.keyword.cis_full}} firewall rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
