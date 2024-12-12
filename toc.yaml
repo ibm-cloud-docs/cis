@@ -148,6 +148,7 @@ toc:
             - logpush.md
             - log-fields.md
             - instant-logs.md
+            - cis-daily-volume.md
         - topicgroup:
             label: Working with metrics
             topics:
@@ -156,7 +157,6 @@ toc:
             - graphql-firewall.md
             - query-basics.md
             - compose-query-graphiql.md
-            - cis-daily-volume.md
             - query-http-events.md
             - view-firewall-groups.md
         - topicgroup:
