@@ -56,7 +56,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
       `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. Fields within the `ibmcl` object are as follows:
 
-       * `instance_id`- ID of the Cloud Logs instance. 
+       * `instance_id`- ID of the Cloud Logs instance.   
        * `region`- Region of the Cloud Logs instance (for example, `us-south`).
        * `api_key`- An API key for the account where the Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. If the API key has an expiration date, it can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. During the rotation process, the previous key remains active as a backup for one hour.
          
@@ -64,9 +64,13 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
        {: important}
 
       `name`: The name of the Logpush job.
+   
       `enabled`: Whether the job is enabled. One of `true`, `false`.
+   
       `logpull_options`: The configuration string. For example, `timestamps=rfc3339&timestamps=rfc3339`.
+   
       `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `firewall_events`.
+   
       `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
 
 1. When all variables are initiated, create the Logpush job:
@@ -111,10 +115,15 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
    :   Information to create the Logpush job body (`logpush_job_cos_req`).  
 
       `cos`- Information to identify the Cloud Object Storage bucket where the data is pushed.
+   
       `name`- The name of the Logpush job.
+   
       `enabled`- Whether the job is enabled. One of `true`, `false`.
+   
       `logpull_options`- The configuration string. For example, `timestamps=rfc3339&timestamps=rfc3339`.
+   
       `dataset`- The dataset that is pulled. One of `http_requests`, `range_events`, `firewall_events`.
+   
       `frequency`- The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
 
 1. When all variables are initiated, create the Logpush job:
