@@ -38,7 +38,6 @@ Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create
 
 ### Creating a Logpush job with the API using IBM Cloud Logs
 {: #logpush-setup-cloud-logs-api}
-{: api}
 
 When creating a Logpush job, you cannot configure the fields or time format for the job (`logpull_options`). In addition, alerts will not be generated for alerting policies related to Logpush failures.
 {: note}
@@ -70,7 +69,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
    
       `enabled`: Whether the job is enabled. One of `true`, `false`.
       
-      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `firewall_events`.
+      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
    
       `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
 
@@ -93,7 +92,6 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
 ### Creating a Logpush job with Cloud Object Storage API
 {: #logpush-setup-cos-api}
-{: api}
 
 To create a Logpush job with Cloud Object Storage, follow these steps:
 
