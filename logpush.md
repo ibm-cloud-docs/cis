@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-12-12"
+lastupdated: "2024-12-16"
 
 keywords:
 
@@ -40,6 +40,9 @@ Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create
 {: #logpush-setup-cloud-logs-api}
 {: api}
 
+When creating a Logpush job, you cannot configure the fields or time format for the job (`logpull_options`). In addition, alerts will not be generated for alerting policies related to Logpush failures.
+{: note}
+
 To create a Logpush job with IBM Cloud Logs, follow these steps: 
 
 1. Set up your API environment with the correct variables.
@@ -58,7 +61,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
        * `instance_id`- ID of the Cloud Logs instance.   
        * `region`- Region of the Cloud Logs instance (for example, `us-south`).
-       * `api_key`- An API key for the account where the Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. If the API key has an expiration date, it can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. During the rotation process, the previous key remains active as a backup for one hour.
+       * `api_key`- An API key for the account where the Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. If the API key has an expiration date, it can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. During the rotation process, the previous key remains active as a backup for 30 minutes.
          
        You must grant IAM **Sender** permissions to the API key to request authorization to send logs to an IBM Cloud Logs instance.
        {: important}
@@ -66,30 +69,25 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
       `name`: The name of the Logpush job.
    
       `enabled`: Whether the job is enabled. One of `true`, `false`.
-   
-      `logpull_options`: The configuration string. For example, `timestamps=rfc3339&timestamps=rfc3339`.
-   
+      
       `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `firewall_events`.
    
       `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
 
 1. When all variables are initiated, create the Logpush job:
 
-      ```sh
-         {
+      ```json
+      {
          "ibmcl": { 
              "instance_id": "f8k3309c-585c-4a42-955d-76239cccf8k3", 
              "region": "us-south",
-        	 	 "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
+             "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
          },
-         {
-         "dataset": "firewall_events",
-         "enabled": false,
+         "dataset": "http_requests",
+         "enabled": true,
          "name": "CIS-Firewall",
          "frequency": "low",
-         "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
-         "ownership_challenge": "xxxxxxx"
-         }
+      }
       ```
       {: codeblock} 
 
@@ -128,22 +126,21 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
 
 1. When all variables are initiated, create the Logpush job:
 
-      ```sh
-         {
+      ```json
+      {
          "cos": {
              "bucket_name": "example_bucket",
              "path": "temp/",
              "id": "cos_instance_id",
              "region": "us-east"
          },
-         {
          "dataset": "firewall_events",
          "enabled": false,
          "name": "CIS-Firewall-COS",
          "frequency": "low",
          "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
          "ownership_challenge": "xxxxxxx"
-         }
+      }
       ```
       {: codeblock}
 
