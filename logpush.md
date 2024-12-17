@@ -34,33 +34,8 @@ Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log
 {: #logpush-setup-ui}
 {: ui}
 
-Use IBM Cloud Logs or Cloud Object Storage buckets as destinations for Logpush jobs.
+Use Cloud Object Storage buckets as destinations for Logpush jobs.
 
-### Creating a Logpush job in the UI with IBM Cloud Logs 
-{: #logpush-cloud-logs-ui}
-
-Follow these steps to create a Logpush job with IBM Cloud Logs: 
-
-**Prerequisite**:  
-XXXX _Need to note what level of access is needed for the key._
-
-1. Select the service:
-   1. Choose **IBM Cloud Logs**.
-   1. Select the dataset type.
-   1. Enter a description.
-   1. ADD DETAILS HERE. Then, click **Next**. 
-
-1. Configure your destination:
-   1. Configure the job for ICL
-   1. _Include warning about users needing to update the Logpush job's API key in accordance to its validity period. Then, click **Next**._
-
-1. Select the log fields that you want included in the log push:
-   1. Verify that the Logpush details are correct.
-   1. Select the Logpush settings from the Timestamp and Frequency menus.
-   1. Choose whether to enable the Logpush job by using the Enabled switch.
-   1. Select the log fields to include in the Logpush job.
-   1. Click **Create service**.
-    
 ### Creating a Logpush job in the UI with Cloud Object Storage 
 {: #logpush-cos-ui}
 
@@ -164,10 +139,10 @@ You can use the token `{DATE}` in the bucket path to make the Logpush job push r
 
 Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create a Logpush job when using IBM Cloud Logs or Cloud Object Storage.
 
-### Creating a Logpush job with the API using IBM Cloud Logs
+### Creating a Logpush job to send logs to IBM Cloud Logs
 {: #logpush-setup-cloud-logs-api}
 
-When creating a Logpush job, you cannot configure the fields or time format for the job (`logpull_options`). In addition, alerts will not be generated for alerting policies related to Logpush failures.
+When creating a Logpush job, you cannot configure the fields or time format for the job (`logpull_options`). If the logpull options are set the logpush will not work.
 {: note}
 
 To create a Logpush job with IBM Cloud Logs, follow these steps: 
@@ -188,9 +163,9 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
        * `instance_id`- ID of the Cloud Logs instance.   
        * `region`- Region of the Cloud Logs instance (for example, `us-south`).
-       * `api_key`- An API key for the account where the Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. If the API key has an expiration date, it can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. During the rotation process, the previous key remains active as a backup for 30 minutes.
+       * `api_key`- An API key for the account where the Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
          
-       You must grant IAM **Sender** permissions to the API key to request authorization to send logs to an IBM Cloud Logs instance.
+       The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
        {: important}
 
       `name`: The name of the Logpush job.
@@ -221,7 +196,7 @@ curl -x POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
 ```
 {: pre}
 
-### Creating a Logpush job with Cloud Object Storage API
+### Creating a Logpush job to send logs to Cloud Object Storage
 {: #logpush-setup-cos-api}
 
 To create a Logpush job with Cloud Object Storage, follow these steps:
