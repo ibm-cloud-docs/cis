@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-12-17"
 
 keywords:
 
@@ -38,28 +38,28 @@ These options are listed in the order from the least secure (Off) to the most se
 
 No secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, and no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. Visitors can only view your website over HTTP, and any visitor attempting to connect using HTTPS receives an `HTTP 301 Redirect` to the plain HTTP version of your website.
 
-![Diagram of TLS Off](images/off.png "Diagram of TLS Off"){: caption="A diagram of TLS Off" caption-side="bottom"}
+![Diagram of TLS Off](images/off.svg "Diagram of TLS Off"){: caption="A diagram of TLS Off" caption-side="bottom"}
 
 ### Client-to-Edge
 {: #tls-encryption-modes-client-to-edge}
 
 A secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, but no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. You don't need to have a TLS certificate on your web server, but your visitors still see the site as being HTTPS-enabled. This option is not recommended if you have any sensitive information on your website. This setting only works for port 443->80. It should only be used as a last resort if you are not able to set up TLS on your own web server. It is _less secure_ than any other option (even "Off"), and could cause you trouble when you decide to switch away from it.
 
-![Diagram of Client to edge TLS](images/client-to-edge.png "Diagram of Client to edge TLS"){: caption="A diagram of Client to edge TLS" caption-side="bottom"}
+![Diagram of Client to edge TLS](images/client-to-edge.svg "Diagram of Client to edge TLS"){: caption="A diagram of Client to edge TLS" caption-side="bottom"}
 
 ### End-to-End flexible
 {: #tls-encryption-modes-end-to-end-flexible}
 
 A secure connection between your visitor and {{site.data.keyword.cis_short_notm}}, and secure connection (but not authenticated) between {{site.data.keyword.cis_short_notm}} and your web server. You must have your server configured to answer HTTPS connections, with a self-signed certificate at least. The authenticity of the certificate is not verified: from {{site.data.keyword.cis_short_notm}}’s point of view (when we connect to your origin webserver), it’s the equivalent of bypassing this error message. As long as the address of your origin webserver is correct in your DNS settings, you know that we’re connecting to your webserver, and not someone else’s.
 
-![Diagram of End to end flexible TLS](images/end-to-end-flexible.png "Diagram of End to end flexible TLS"){: caption="A diagram of End to end flexible TLS" caption-side="bottom"}
+![Diagram of End to end flexible TLS](images/end-to-end-flexible.svg "Diagram of End to end flexible TLS"){: caption="A diagram of End to end flexible TLS" caption-side="bottom"}
 
 ### End-to-End CA signed
 {: #tls-encryption-modes-end-to-end-ca-signed}
 
 Default and recommended. A secure connection between the visitor and {{site.data.keyword.cis_short_notm}}, and secure and authenticated connection between {{site.data.keyword.cis_short_notm}} and your web server. You must have your server configured to answer HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority, have an expiration date in the future, and respond for the request domain name (hostname). It is recommended that you keep using this TLS mode for best security practices, unless you understand the potential security threats of changing to one of the less strict modes.
 
-![Diagram of End to end CA signed TLS](images/end-to-end-ca-signed.png "Diagram of End to end CA signed TLS"){: caption="A diagram of End to end CA signed TLS" caption-side="bottom"}
+![Diagram of End to end CA signed TLS](images/end-to-end-ca-signed.svg "Diagram of End to end CA signed TLS"){: caption="A diagram of End to end CA signed TLS" caption-side="bottom"}
 
 ### HTTPS Only Origin Pull
 {: #tls-encryption-modes-origin-only-pull}
