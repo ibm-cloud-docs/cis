@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-12-18"
 
 keywords:
 
@@ -36,7 +36,7 @@ Alerts are available only to Enterprise plans.
     * **Dedicated/Advanced** receive notification for validation, issuance renewal, and expiration of Dedicated/Advanced certificates.
     * **Universal SSL** certificates are automatically refreshed and no user action is required.
     * **Mutual TLS** alert you when the mTLS certificate is expiring.
-* **Logpush job alerts** notifies when a Logpush job fails. Any impacted job destinations are included in the alert.
+* **Logpush job alerts** alerts when the job is disabled due to consistent failures, not when a failure occurs the first time. Any impacted job destinations are included in the alert.    
 * **Web metrics report** is a weekly summary with reports from your account's web metrics.
 * **Cloudflare maintenance report** shows scheduled, changed, or canceled Cloudflare maintenance windows.
 * **Cloudflare incident report** shows ongoing Cloudflare incidents.
