@@ -29,8 +29,7 @@ You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) befor
 Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used.
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
-
-## Creating a Logpush job in the UI with Cloud Object Storage
+## Creating a Logpush job in the UI with Cloud Object Storage 
 {: #logpush-cos-ui}
 {: ui}
 
@@ -66,8 +65,7 @@ to write request logs into the {{site.data.keyword.cos_short}} bucket.
    1. Select the Logpush settings from the Timestamp and Frequency menus.
    1. Choose whether to enable the Logpush job by using the Enabled switch.
    1. Select the log fields to include in the Logpush job, then click **Create service**.
-
-## Creating a Logpush job from the CLI with Cloud Object Storage
+## Creating a Logpush job from the CLI with Cloud Object Storage 
 {: #logpush-cos-cli}
 {: cli}
 
