@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-12-17"
+lastupdated: "2024-12-18"
 
 keywords:
 
@@ -29,109 +29,6 @@ You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) befor
 Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used.
 
 Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
-
-## Creating a Logpush job in the UI
-{: #logpush-setup-ui}
-{: ui}
-
-Use Cloud Object Storage buckets as destinations for Logpush jobs.
-
-### Creating a Logpush job in the UI with Cloud Object Storage 
-{: #logpush-cos-ui}
-
-Follow these steps to create a Logpush job with Cloud Object Storage:
-
-It is recommended that you set up an allowlist that ensures only [{{site.data.keyword.cis_short_notm}} IPs](/docs/cis?topic=cis-cis-allowlisted-ip-addresses) can push objects into the {{site.data.keyword.cos_short}} bucket. For more information on configuring an IP allowlist in {{site.data.keyword.cos_short}}, see [Setting a firewall](/docs/cloud-object-storage?topic=cloud-object-storage-setting-a-firewall). 
-{: tip}
-
-Before you create a Logpush job, you must have an [{{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) instance with a bucket that has **write access** that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} 
-to write request logs into the {{site.data.keyword.cos_short}} bucket. 
-{: important}
-
-1. Select the service:
-   1. Choose **Cloud Object Storage**.
-   1. Select the dataset type.
-   1. Enter a description.
-   1. Copy the user ID to add to your Cloud Object Storage bucket. Add a policy in your **Cloud Object Storage Instance** bucket with `cislogp@us.ibm.com` as a user with `Object Writer` role. Then, click **Next**.
-
-1. Configure your destination:
-   1. Select a Cloud Object Storage instance from the menu.
-   1. Select a bucket from the Bucket name menu.
-   1. Enter a bucket region, if applicable.
-   1. Optionally, enter a bucket path.
-   1. Select if you want to organize logs into daily subfolders, then click **Next**.
-
-1. To verify ownership, download the object that you received in your bucket, and paste the token in the Ownership token text area. Then, click **Next**.
-
-   You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
-   {: note} 
-
-1. Select the log fields that you want included in the log push:
-   1. Verify that the Logpush details are correct.
-   1. Select the Logpush settings from the Timestamp and Frequency menus.
-   1. Choose whether to enable the Logpush job by using the Enabled switch.
-   1. Select the log fields to include in the Logpush job, then click **Create service**.
-
-## Creating a Logpush job from the CLI
-{: #logpush-setup-cli}
-{: cli}
-
-Use IBM Cloud Logs or Cloud Object Storage CLI to create a Logpush job. 
-  
-### Creating a Logpush job from the CLI with IBM Cloud Logs
-{: #logpush-cloud-logs-cli} 
- 
-### Creating a Logpush job from the CLI with Cloud Object Storage 
-{: #logpush-cos-cli}
-
-Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
-{: important}
-
-To create a Logpush job for a specific domain and enable the job by using Cloud Object Storage, run the following command:
-
-```sh
-ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name JOB_NAME --fields all --enable true
-```
-{: pre}
-
-Where:
-
-`--destination`
-:   Specifies the path to the {{site.data.keyword.cos_short}} bucket.
-
-   It follows the syntax: `cos://<bucket_path>?region=xxx&instance-id=xxxx`, where `bucket_path` is the bucket name followed by an optional path-like structure, `region` and {{site.data.keyword.cos_short}} `instance-id` are the {{site.data.keyword.cos_short}} bucket region and instance ID, which are required arguments.
-
-   For example, `cos://mybucket/cislog?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`.
-
-`--name`
-:   Specifies the Logpush job name.
-
-`--enable`
-:   Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).
-  
-`--fields`
-:   Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
-
-   Use this command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
- 
- `--timestamps`
-:   Sets the format in which response timestamps are returned. Valid values are `unix`, `unixnano`, and `rfc3339` (default).
-
- `--dataset`
-:   Is the category of logs that you want to receive. Valid values are `range_events` and `http_requests` (default). You cannot change this value after the job is created.
-
- `-i` or `--instance`
-:   Is the instance name. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
-
-A domain can have only one Logpush job. Use the command line to interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge. When a challenge token is written to a file in the given {{site.data.keyword.cos_short}} bucket, you must:
-
-* Download the file from your {{site.data.keyword.cos_short}} bucket and open it.
-* Copy and paste the challenge token in the command prompt to address the ownership challenge.
-
-A Logpush job is created successfully after {{site.data.keyword.cis_short_notm}} validates the ownership challenge. The Logpush job pushes request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or every 100,000 records, whichever comes first. More than one file might be pushed per 30-second period or per 100,000 records.
-
-You can use the token `{DATE}` in the bucket path to make the Logpush job push request logs in daily folders in the bucket path. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
-{: tip}
 
 ## Creating a Logpush job with the API
 {: #logpush-setup-api}
