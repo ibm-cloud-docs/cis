@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-18"
+lastupdated: "2024-12-12"
 
 keywords: CIS
 
@@ -57,23 +57,24 @@ CIS supports the following data format and schema of the exported data, configur
 
 * Export in JSON format only
 
-   Example CLI using the [ibmcloud cis glbs](/docs/cis?topic=cis-cis-cli#list-glb) command:
+   * Example CLI using the [ibmcloud cis glbs](/docs/cis?topic=cis-cis-cli#list-glb) command:
 
    ```sh
    ibmcloud cis glbs DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
- * Example API request using the [list-all-load-balancers](/apidocs/cis#list-all-load-balancers) API:
+   * Example API request using the [list-all-load-balancers](/apidocs/cis#list-all-load-balancers) API:
 
-   ```curl
-   curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/zones/:zone_id/load_balancers \
-   -H 'content-type: application/json' \
-   -H 'x-auth-user-token: Bearer xxxxxx'
-   ```
-   {: codeblock}
+      ```curl
+      curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/zones/:zone_id/load_balancers \
+      -H 'content-type: application/json' \
+      -H 'x-auth-user-token: Bearer xxxxxx'
+      ```
+      {: codeblock}
 
 CIS doesn't support the export of other data formats and other schema of the exported data, configuration, and application, including the following:
+
 * Exporting [zone files](https://en.wikipedia.org/wiki/Zone_file){: external}
 
 ## Data ownership

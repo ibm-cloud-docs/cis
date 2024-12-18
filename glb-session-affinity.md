@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-11-18"
+lastupdated: "2024-12-12"
 
 keywords:
 
@@ -38,7 +38,7 @@ When you create a global load balancer using the CLI, take the following steps t
 1. Create a global load balancer.
 1. Set the following CLI variables:
 
-If you require a specific SameSite configuration in your session affinity cookies, CIS recommends that you provide values for `samesite `and `secure` different from `Auto`, instead of relying on the default behavior. This way, the value of the SameSite cookie attribute does not change due to configuration changes (namely **Always Use HTTPS**).
+If you require a specific SameSite configuration in your session affinity cookies, CIS recommends that you provide values for `samesite` and `secure` different from `Auto`, instead of relying on the default behavior. This way, the value of the SameSite cookie attribute does not change due to configuration changes (namely **Always Use HTTPS**).
 {: note}
 
 `session_affinity`: Valid values are `cookie`, `none`.

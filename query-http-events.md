@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-11-18"
+lastupdated: "2024-12-12"
 
 keywords:
 
@@ -183,8 +183,9 @@ You can use the GraphQL Analytics API to query the top 10 consuming URLs from a 
 * Pass the zone ID (`zoneTag`) as a parameter `ARG=$1`.
 * To calculate the current date and the date from 30 days ago, use `gdate` on Mac:
 
-  * `CURRENTDATE=$(gdate -u +'%FT%TZ')`
-  * `OLDDATE=$(gdate -d '-30 days' -u +'%FT%TZ')`.
+   * `CURRENTDATE=$(gdate -u +'%FT%TZ')`
+   * `OLDDATE=$(gdate -d '-30 days' -u +'%FT%TZ')`.
+   
 * For specific dates within the last 30 days, set `CURRENTDATE` and `OLDDATE` variables in the format `"YYYY-MM-DDTHH:MM:SSZ"`.
 
 ### API call

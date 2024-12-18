@@ -28,7 +28,7 @@ wc -c
 
 The output indicates the log file is 286 bytes in size:
 
-```
+```text
 286
 ```
 {: screen}
