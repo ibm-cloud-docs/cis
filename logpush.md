@@ -15,7 +15,7 @@ subcollection: cis
 # Managing Logpush jobs
 {: #logpush}
 
-The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs or Cloud Object Storage.
+The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to Cloud Object Storage or IBM Cloud Logs (currently, API only).
 {: deprecated}
 
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
