@@ -17,8 +17,8 @@ subcollection: cis
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/apidocs/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
 
-## 17 December 2024
-{: #17-dec-2024}
+## 16 December 2024
+{: #16-dec-2024}
 
 CIS Enterprise-level plans can now configure the [Logpush jobs](/docs/cis?topic=cis-logpush&interface=api) to push request logs to IBM Cloud Logs using the API. For more information, see [Create a Logpush job](/apidocs/cis#create-logpush-job-v2).
 
