@@ -239,6 +239,6 @@ curl -x POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
 
 ## Related link
 {: #related-link-logpush}
-{ : api}
+{: api}
 
 [Managing user API keys](/docs/account?topic=account-userapikey&interface=api)
