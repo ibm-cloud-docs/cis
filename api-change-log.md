@@ -20,7 +20,7 @@ In this change log, you can learn about the latest changes, improvements, and up
 ## 17 December 2024
 {: #17-dec-2024}
 
-CIS Enterprise-level plans can use [Logpush](/docs/cis?topic=cis-logpush&interface=api) for detailed edge logs of HTTP, DNS, and Range traffic, as well as firewall events. Logpush allows you to push request logs to IBM Cloud Logs or a Cloud Object Storage bucket. For more information, see [Create a Logpush job](/apidocs/cis#create-logpush-job-v2).
+CIS Enterprise-level plans can now configure the [Logpush jobs](/docs/cis?topic=cis-logpush&interface=api) to push request logs to IBM Cloud Logs using the API. For more information, see [Create a Logpush job](/apidocs/cis#create-logpush-job-v2).
 
 ## 12 June 2024
 {: #12-jun-2024}
