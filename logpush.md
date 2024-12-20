@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2024
-lastupdated: "2024-12-18"
+lastupdated: "2024-12-20"
 
 keywords:
 
@@ -164,7 +164,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 1. When all variables are initiated, create the Logpush job:
 
 ```sh
-curl -x POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
 --header "Content-Type: application/json" \
 --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
 --data '{
@@ -216,7 +216,7 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
 1. When all variables are initiated, create the Logpush job:
 
 ```sh
-curl -x POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
 --header "Content-Type: application/json" \
 --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
 --data '{
