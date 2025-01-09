@@ -79,6 +79,13 @@ toc:
             - auth-origin-pull.md
             - cipher-suites.md
         - topicgroup:
+            label: Working with DDoS protection
+            topics:
+            - ddos-concept.md
+            - preventing-ddos-attacks.md
+            - ddos-responding.md
+            - ddos-defense-mode.md
+        - topicgroup:
             label: Working with WAF
             topics:
             - waf-managed-rules.md
