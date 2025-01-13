@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-12-20"
+  years: 2018, 2025
+lastupdated: "2025-01-13"
 
 keywords:
 
@@ -176,7 +176,7 @@ curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
    "dataset": "http_requests",
    "enabled": true,
    "name": "CIS-Edge-Requests",
-   "frequency": "low",
+   "frequency": "low"
 }'
 ```
 {: pre}
