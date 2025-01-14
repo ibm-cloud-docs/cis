@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 keywords:
 
@@ -18,7 +18,7 @@ subcollection: cis
 The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to Cloud Object Storage or IBM Cloud Logs (currently, API only).
 {: deprecated}
 
-{{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
+{{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP, DNS, and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
 The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to IBM Cloud Logs or a Cloud Object Storage bucket. 
@@ -28,7 +28,7 @@ You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) befor
 
 Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used.
 
-Logpush uses HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
+Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
 ## Creating a Logpush job in the UI with Cloud Object Storage 
 {: #logpush-cos-ui}
 {: ui}
