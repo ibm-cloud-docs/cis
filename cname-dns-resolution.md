@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2024
+  years: 2024, 2025
 lastupdated: "2025-01-14"
 
 keywords:
@@ -21,7 +21,7 @@ In a partial (CNAME) configuration, {{site.data.keyword.cis_short_notm}} handles
 
 When you create a new DNS record in a partial zone, {{site.data.keyword.cis_short_notm}} automatically checks whether any of your CNAME records point to existing A, AAAA, or CNAME records within the same zone.
 
-For example, CIS would show a warning if you have the following records in your partial zone:
+For example, CIS shows a warning if you have the following records in your partial zone:
 
 ```text
 sub1.partialzone.com   CNAME   sub2.partialzone.com
@@ -33,11 +33,11 @@ Because {{site.data.keyword.cis_short_notm}} contains both the CNAME and its tar
 
 This can cause issues if you already have DNS records for `sub2.partialzone.com` at your authoritative DNS provider. These records might point to `192.0.2.4`, another IP address, or another domain. However, because {{site.data.keyword.cis_short_notm}} contains the initial record and the target, it never queries your authoritative DNS provider for the record for `sub2.partialzone.com`.
 
-![Path without authoritative dns](images/dns-resolution1.svg "DNS request path no authoritative dns"){: caption="Path a request takes without passing through an authoritative DNS" caption-side="bottom"}
+![Path without authoritative DNS](images/dns-resolution1.svg "DNS request path no authoritative dns"){: caption="Path a request takes without passing through an authoritative DNS" caption-side="bottom"}
 
 If you don't have the target of the CNAME record within your partial zone this DNS resolution happens differently.
 
-![Path with authoritative dns](images/dns-resolution2.svg "DNS request path with authoritative dns"){: caption="Path a request takes passing through an authoritative DNS" caption-side="bottom"}
+![Path with authoritative DNS](images/dns-resolution2.svg "DNS request path with authoritative dns"){: caption="Path a request takes passing through an authoritative DNS" caption-side="bottom"}
 
 ## Records pointing to a partial zone within the same account
 {: #records-partial-zone-same-account}
