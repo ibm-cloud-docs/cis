@@ -127,9 +127,6 @@ Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create
 ### Creating a Logpush job to send logs to IBM Cloud Logs
 {: #logpush-setup-cloud-logs-api}
 
-When creating a Logpush job, you cannot configure the fields or time format for the job (`logpull_options`). If the logpull options are set the logpush will not work.
-{: note}
-
 To create a Logpush job with IBM Cloud Logs, follow these steps: 
 
 1. Set up your API environment with the correct variables.
@@ -156,7 +153,9 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
       `name`: The name of the Logpush job.
    
       `enabled`: Whether the job is enabled. One of `true`, `false`.
-      
+
+      `logpull_options`- The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
+
       `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
    
       `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
@@ -175,6 +174,7 @@ curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
    },
    "dataset": "http_requests",
    "enabled": true,
+   "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
    "name": "CIS-Edge-Requests",
    "frequency": "low"
 }'
