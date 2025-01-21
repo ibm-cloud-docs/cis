@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-01-16"
 
 keywords:
 
@@ -26,7 +26,7 @@ The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-log
 You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
 {: note}
 
-Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used.
+Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used. 
 
 Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion.
 ## Creating a Logpush job in the UI with Cloud Object Storage 
