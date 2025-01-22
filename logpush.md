@@ -77,10 +77,11 @@ To create a Logpush job in the UI, follow these steps:
  
 To create a Logpush job from the CLI, follow these steps:
 
-IBM Cloud Object Storage only: Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
+Before you create a Logpush job using IBM Cloud Object Storage, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
 {: important}
 
-Syntax:
+### Command syntax
+{: #create-logpush-job-syntax}
 
 ```sh
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --name JOB_NAME [--enable true|false] [--fields FIELD1,FIELD2,FIELD3|all] [--timestamps FORMAT] [--dataset DATASET] [--frequency FREQUENCY] [--cve-2021-44228 true|false] [-i, --instance INSTANCE] [--output FORMAT]
@@ -94,26 +95,32 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name J
 ```
 {: pre}
 
-Where:
+### Command options
+{: #command-options-create-logpush-job}
 
 `--destination`
-:   Specifies the path to the destination: IBM Cloud Logs, IBM Cloud Object Storage, Log Analysis (logDNS), and a general path.
+:   Specifies the path to the destination:
 
-   Syntax for a LogDNA path - `https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}`
-
-   For example, `https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx`
-                                
-   Syntax for an IBM Cloud Object Storage path - `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
-
-   For example, `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd`
-
-   Syntax for an IBM Cloud Log path - `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>`
+   * Log Analysis (LogDNA) path:
    
-   For example, `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK`
+      ```sh
+      https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}`
+      ```
+      {: pre}
 
-   Syntax for a general path - `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>`
+      For example, `https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx`
+                                
+   * IBM Cloud Object Storage path - `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
 
-   For example, `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` 
+      For example, `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd`
+
+   * IBM Cloud Log path - `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>`
+   
+      For example, `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK`
+
+   * General path - `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>`
+
+      For example, `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` 
 
 `--name`
 :   Specifies the Logpush job name.
@@ -156,11 +163,11 @@ You can use the token `{DATE}` in the bucket path to make the Logpush job push r
 
 * IBM Cloud Logs:
 
-   `ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key= tUygM_HyAllUXI9iEFUfpzsLOUAbz5jDuZip91BqEW_e --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63`
+   `ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key= tUygM_HyAllUXI9iEFUfpzsLOUAbz5jDuZip91BqEW_e --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63` 
 
 * IBM Cloud Object Storage:
 
-   `ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON`   
+   `ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON`
 
 * General:
 
