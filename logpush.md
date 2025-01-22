@@ -21,10 +21,10 @@ The IBM Log Analysis (LogDNA) service is deprecated and will no longer be suppor
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP, DNS, and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
-The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to IBM Cloud Logs or an IBM Cloud Object Storage bucket. 
+The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to IBM Cloud Logs or an IBM Cloud Object Storage bucket.
 
 You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
-{: note}
+{: attention}
 
 Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used. 
 
@@ -45,8 +45,6 @@ To create a Logpush job in the UI, follow these steps:
    1. Enter a description and name.
   
 1. Configure your destination: 
-
-   Choose the fields for your destination:
 
    * IBM Cloud Logs - Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).
 
@@ -99,26 +97,41 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name J
 {: #command-options-create-logpush-job}
 
 `--destination`
-:   Specifies the path to the destination:
+:   Specifies the path to the destination.
 
    * Log Analysis (LogDNA) path:
    
       ```sh
-      https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}`
+      https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
       ```
       {: pre}
 
       For example, `https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx`
                                 
-   * IBM Cloud Object Storage path - `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
-
+   * IBM Cloud Object Storage path:
+   
+      ```sh
+      cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
+      ```
+      {: pre}
+   
       For example, `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd`
 
-   * IBM Cloud Log path - `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>`
+   * IBM Cloud Log path:
+   
+      ```sh
+      ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
+      ```
+      {: pre}
    
       For example, `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK`
 
-   * General path - `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>`
+   * General path:
+   
+      ```sh
+      https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>
+      ```
+      {: pre}
 
       For example, `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` 
 
@@ -148,7 +161,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name J
  `--output`
  :   Specify the output format, only JSON is supported.
 
-A domain can have only one Logpush job. Use the command line to interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge. When a challenge token is written to a file in the given {{site.data.keyword.cos_short}} bucket, you must:
+COS ONLY?  A domain can have only one Logpush job. Use the command line to interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge. When a challenge token is written to a file in the given {{site.data.keyword.cos_short}} bucket, you must:
 
 * Download the file from your {{site.data.keyword.cos_short}} bucket and open it.
 * Copy and paste the challenge token in the command prompt to address the ownership challenge.
