@@ -51,7 +51,7 @@ To create a Logpush job in the UI, follow these steps:
       For an IBM Cloud Logs service, the user or the service ID must be granted the **Sender** IAM role.
       {: important}
 
-   * IBM Cloud Object Storage - Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, orgalize logs into daily folders (_optional_).  
+   * IBM Cloud Object Storage - Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, organize logs into daily folders (_optional_).  
 
       Destination values for IBM Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
 
