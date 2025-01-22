@@ -15,7 +15,7 @@ subcollection: cis
 # Managing Logpush jobs
 {: #logpush}
 
-The IBM Log Analysis (LogDNA) service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs, IBM Cloud Object Storage, and Splunk.
+The IBM Log Analysis (LogDNA) service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs, IBM Cloud Object Storage, and Splunk (UI only).
 {: deprecated}
 
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP, DNS, and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
@@ -95,6 +95,8 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination BUCKET_PATH --name J
 
 ### Command options
 {: #command-options-create-logpush-job}
+
+Command options are as follows:
 
 `--destination`
 :   Specifies the path to the destination.
@@ -201,7 +203,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 1. Store the following values in variables to be used in the API command:
 
    `CRN`
-   :   The full url-encoded CRN of the service instance.
+   :   The full URL-encoded Cloud Resource Name (CRN) of the service instance.
 
    `ZONE_ID`
    :   The domain ID.
@@ -218,15 +220,15 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
        The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
        {: important}
 
-      `name`: The name of the Logpush job.
+      `name` - The name of the Logpush job.
    
-      `enabled`: Whether the job is enabled. One of `true`, `false`.
+      `enabled` - Whether the job is enabled. One of `true`, `false`.
 
       `logpull_options`- The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
 
-      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
+      `dataset` - The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
    
-      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
+      `frequency` - The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
 
 1. When all variables are initiated, create the Logpush job:
 
@@ -261,7 +263,7 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
 1. Store the following values in variables to be used in the API command:
 
    `CRN`
-   :   The full url-encoded CRN of the service instance.
+   :   The full URL-encoded Cloud Resource Name (CRN) of the service instance.
 
    `ZONE_ID`
    :   The domain ID.
