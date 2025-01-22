@@ -48,21 +48,21 @@ To create a Logpush job in the UI, follow these steps:
 
    Choose the fields for your destination:
 
-   * IBM Cloud Logs: Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).
+   * IBM Cloud Logs - Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).
 
       For an IBM Cloud Logs service, the user or the service ID must be granted the **Sender** IAM role.
       {: important}
 
-   * IBM Cloud Object Storage: Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_Optional_). Then, orgalize logs into daily folders (_Optional_).  
+   * IBM Cloud Object Storage - Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, orgalize logs into daily folders (_optional_).  
 
       Destination values for IBM Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
 
-   * IBM Log Analysis: Enter LogDNA instance information (ID and region) and the ingestion key.
-   * Splunk: Enter the Splunk endpoint, channel ID, and authentication token. You can opt to use insecure verification; however, this is not recommended. 
+   * IBM Log Analysis - Enter LogDNA instance information (ID and region) and the ingestion key.
+   * Splunk - Enter the Splunk endpoint, channel ID, and authentication token. You can opt to use insecure verification; however, this is not recommended. 
 
-  1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket, and paste the token in the Ownership token text area. Then, click **Next**.
+1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket, and paste the token in the Ownership token text area. Then, click **Next**.
 
-      You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
+   You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
 
 1. Select the log fields that you want to include in the log push:
    1. Verify that the Logpush details are correct.
@@ -99,21 +99,21 @@ Where:
 `--destination`
 :   Specifies the path to the destination: IBM Cloud Logs, IBM Cloud Object Storage, Log Analysis (logDNS), and a general path.
 
-   * Syntax for a LogDNA path: `https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}`
+   Syntax for a LogDNA path - `https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}`
 
-   Example: `https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx`
+   For example, `https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx`
                                 
-   * Syntax for an IBM Cloud Object Storage path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
+   Syntax for an IBM Cloud Object Storage path - `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
 
-   Example: `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd`
+   For example, `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd`
 
-   * Syntax for an IBM Cloud Log path: `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>`
+   Syntax for an IBM Cloud Log path - `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>`
    
-   Example: `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK`
+   For example, `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK`
 
-   * Syntax for a general path: `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>`
+   Syntax for a general path - `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>`
 
-   Example: `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` 
+   For example, `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` 
 
 `--name`
 :   Specifies the Logpush job name.
