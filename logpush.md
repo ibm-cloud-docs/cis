@@ -15,20 +15,21 @@ subcollection: cis
 # Managing Logpush jobs
 {: #logpush}
 
-The IBM Log Analysis (LogDNA) service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs, IBM Cloud Object Storage, and Splunk (UI only).
+The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs, IBM Cloud Object Storage, and Splunk.
 {: deprecated}
 
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP, DNS, and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
 
-The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush provides the option to push the request logs to IBM Cloud Logs or an IBM Cloud Object Storage bucket.
+## Before you begin
+{: #before-you-begin-logpush}
 
-You must [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
-{: attention}
+Before you create a Logpush job, review the following information and satisfy any prerequisites:
 
-Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, a different path must be used. 
-
-Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, so the log data is encrypted while in motion. 
+* [Enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
+* The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an IBM Cloud Object Storage bucket.
+* Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, you'll need to specify a different path.
+* Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, ensuring the log data is encrypted while in motion. 
 
 ## Creating a Logpush job in the UI
 {: #logpush-setup-ui}
@@ -46,14 +47,16 @@ To create a Logpush job in the UI, follow these steps:
   
 1. Configure your destination: 
 
-   * IBM Cloud Logs - Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).
+   IBM Cloud Logs
+   :   Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).
 
-      For an IBM Cloud Logs service, the user or the service ID must be granted the **Sender** IAM role.
-      {: important}
+       For an IBM Cloud Logs service, the user or the service ID must be granted the **Sender** IAM role.
+       {: important}
 
-   * IBM Cloud Object Storage - Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, organize logs into daily folders (_optional_).  
+   IBM Cloud Object Storage
+   :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, organize logs into daily folders (_optional_).  
 
-      Destination values for IBM Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
+       Destination values for IBM Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
 
    * IBM Log Analysis - Enter LogDNA instance information (ID and region) and the ingestion key.
    * Splunk - Enter the Splunk endpoint, channel ID, and authentication token. You can opt to use insecure verification; however, this is not recommended. 
