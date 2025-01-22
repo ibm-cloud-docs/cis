@@ -27,6 +27,7 @@ The IBM Log Analysis service is deprecated and will no longer be supported as of
 Before you create a Logpush job, review the following information and satisfy any prerequisites:
 
 * [Enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
+* Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations: IBM Cloud Logs, IBM Cloud Object Storage, IBM Log Analysis, and Splunk. 
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an IBM Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, you'll need to specify a different path.
 * Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, ensuring the log data is encrypted while in motion. 
@@ -35,9 +36,6 @@ Before you create a Logpush job, review the following information and satisfy an
 {: #logpush-setup-ui}
 {: ui}
 
-Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations: IBM Cloud Logs, IBM Cloud Object Storage, IBM Log Analysis, and Splunk. 
-{: note}
- 
 To create a Logpush job in the UI, follow these steps:
 
 1. Select the service: 
@@ -58,8 +56,11 @@ To create a Logpush job in the UI, follow these steps:
 
        Destination values for IBM Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
 
-   * IBM Log Analysis - Enter LogDNA instance information (ID and region) and the ingestion key.
-   * Splunk - Enter the Splunk endpoint, channel ID, and authentication token. You can opt to use insecure verification; however, this is not recommended. 
+   IBM Log Analysis (deprecated)
+   :   Enter LogDNA instance information (ID and region) and the ingestion key.
+
+   Splunk
+   :   Enter the Splunk endpoint, channel ID, and authentication token. You can opt to use insecure verification; however, this is not recommended. 
 
 1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket, and paste the token in the Ownership token text area. Then, click **Next**.
 
