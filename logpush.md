@@ -108,20 +108,6 @@ Where:
 
 `--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
 
-   * IBM Cloud Logs
-
-      ```sh
-      ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
-      ```
-      {: pre}
-   
-      For example:
-      
-      ```sh
-      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
-      ```
-      {: pre}
-      
 `--name`: Specifies the Logpush job name.
 
 `--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
