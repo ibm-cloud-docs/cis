@@ -68,7 +68,7 @@ To create a Logpush job in the UI, follow these steps:
    IBM Log Analysis (deprecated)
    :   Enter LogDNA instance information (ID and region) and the ingestion key.
 
-    Custom HTTP Destination
+    Custom HTTP Destination  
    :   Enter your HTTP endpoint.
 
        To avoid errors, make sure that the file uploaded to validate the destination accepts a gzipped test.txt.gz file with content as {"content":"test"} compressed.
@@ -108,6 +108,20 @@ Where:
 
 `--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
 
+* IBM Cloud Logs
+
+   ```sh
+   ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
+   ```
+   {: pre}
+   
+   For example:
+      
+   ```sh
+      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
+   ```
+   {: pre}
+
 `--name`: Specifies the Logpush job name.
 
 `--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
@@ -125,7 +139,7 @@ For additional command options, see [`ibmcloud cis logpush-job-create`](/docs/ci
 After creating a Logpush job to send logs to Cloud Object Storage, you must validate ownership. To do so, interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge as follows:
 
 ```sh
-COMMAND NEEDED
+COMMAND NEEDED - ARJUN
 ```
 {: pre} 
 
@@ -138,16 +152,14 @@ After the ownership challenge is validated by {{site.data.keyword.cis_short_notm
 
 You can also use the `{DATE} `token in the bucket path to organize Logpush logs into daily folders. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
 {: tip}
-
-A domain can have only one Logpush job. (WHERE DOES THIS BELONG?) 
-  
-### Command examples
-{: #logpush-job-create-examples}
+ 
+### Command 
+{: #logpush-job-create-}
 
 * IBM Cloud Logs
 
    ```sh
-   ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key= tUygM_HyAllUXI9iEFUfpzsLOUAbz5jDuZip91BqEW_e --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+   ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=xxxxxxxx --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
    ```
    {: pre}
 
@@ -172,10 +184,10 @@ A domain can have only one Logpush job. (WHERE DOES THIS BELONG?)
    ```
    {: pre}
 
-* Generic destination
+* Custom HTTP 
 
    ```sh
-   ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.kmschr.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+   ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.example.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
    ```
    {: pre}
 
