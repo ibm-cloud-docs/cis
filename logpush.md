@@ -182,15 +182,31 @@ You can use the token `{DATE}` in the bucket path to make the Logpush job push r
 
 * IBM Cloud Logs:
 
-   `ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key= tUygM_HyAllUXI9iEFUfpzsLOUAbz5jDuZip91BqEW_e --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63` 
+   ```
+   ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key= tUygM_HyAllUXI9iEFUfpzsLOUAbz5jDuZip91BqEW_e --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+   ```
+   {: pre}
 
 * IBM Cloud Object Storage:
 
-   `ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON`
+   ```sh
+  ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
+   ```
+   {: pre}
+
+* Splunk:
+
+   ```sh
+   NEED EXAMPLE
+   ```
+   {: pre}
 
 * General:
 
-   `ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.kmschr.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63`
+   ```
+   ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.kmschr.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+   ```
+   {: pre}
 
 ## Creating a Logpush job with the API
 {: #logpush-setup-api}
