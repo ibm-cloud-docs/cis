@@ -15,7 +15,7 @@ subcollection: cis
 # Managing Logpush jobs
 {: #logpush}
 
-The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs, IBM Cloud Object Storage, and Splunk.
+The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs, Cloud Object Storage, IBM QRadar, and Splunk.
 {: deprecated}
 
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP, DNS, and Range requests, and firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
@@ -27,11 +27,11 @@ The IBM Log Analysis service is deprecated and will no longer be supported as of
 Before you create a Logpush job, review the following information and satisfy any prerequisites:
 
 * [Enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
-* Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations: IBM Cloud Logs, IBM Cloud Object Storage, IBM Log Analysis, and Splunk. 
-* The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an IBM Cloud Object Storage bucket.
+* Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations: IBM Cloud Logs, Cloud Object Storage, IBM QRadar, Splunk, and IBM Log Analysis (deprecated). 
+* The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, you'll need to specify a different path.
 * Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, ensuring the log data is encrypted while in motion.
-* When using IBM Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
+* When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
 
 ## Creating a Logpush job in the UI
 {: #logpush-setup-ui}
@@ -57,7 +57,7 @@ To create a Logpush job in the UI, follow these steps:
    Cloud Object Storage
    :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, organize logs into daily folders (_optional_).  
 
-       Destination values for IBM Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
+       Destination values for Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
 
    IBM QRader
    :   Enter the QRader URL, then select a log source port. 
@@ -94,7 +94,7 @@ To create a Logpush job in the UI, follow these steps:
  
 To create a Logpush job from the CLI, follow these steps:
 
-Before you create a Logpush job using IBM Cloud Object Storage, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
+Before you create a Logpush job using Cloud Object Storage, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
 {: important}
 
 To create a Logpush job for a specific domain and enable the job, run the following command:
@@ -122,7 +122,7 @@ Where:
       ```
       {: pre}
 
-   * IBM Cloud Object Storage:
+   * Cloud Object Storage:
    
       ```sh
       cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
@@ -133,6 +133,33 @@ Where:
 
       ```sh
       cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
+      ```
+      {: pre}
+
+   * IBM QRadar: 
+      ```sh
+      NEED SYNTAX
+      ```
+      {: pre}
+
+      For example:
+      
+      ```sh
+     NEED EXAMPLE
+      ```
+      {: pre}
+     
+   * Splunk:
+
+      ```sh
+      NEED SYNTAX
+      ```
+      {: pre}
+
+      For example:
+      
+      ```sh
+      NEED EXAMPLE
       ```
       {: pre}
 
@@ -147,20 +174,6 @@ Where:
       
       ```sh
       https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
-      ```
-      {: pre}
-
-   * Splunk:
-
-      ```sh
-      NEED SYNTAX
-      ```
-      {: pre}
-
-      For example:
-      
-      ```sh
-      NEED EXAMPLE
       ```
       {: pre}
 
@@ -188,10 +201,10 @@ Where:
 For additional command options, see [`ibmcloud cis logpush-job-create`](/docs/cis?topic=cis-cis-cli&interface=api#logpush-job-create) in the CIS command reference.
 {: note}
 
-### Verifying ownership when using IBM Cloud Object Storage
+### Cloud Object Storage: Verifying ownership
 {: #next-step-cloud-object-storage}
 
-After creating a Logpush job to send logs to IBM Cloud Object Storage, you must validate ownership. To do so, interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge as follows:
+After creating a Logpush job to send logs to Cloud Object Storage, you must validate ownership. To do so, interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge as follows:
 
 ```sh
 COMMAND NEEDED
@@ -220,10 +233,17 @@ A domain can have only one Logpush job. (WHERE DOES THIS BELONG?)
    ```
    {: pre}
 
-* IBM Cloud Object Storage:
+* Cloud Object Storage:
 
    ```sh
   ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
+   ```
+   {: pre}
+  
+* IBM QRadar:
+
+   ```sh
+   NEED EXAMPLE
    ```
    {: pre}
 
