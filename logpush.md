@@ -31,7 +31,7 @@ Before you create a Logpush job, review the following information and satisfy an
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an IBM Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, you'll need to specify a different path.
 * Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, ensuring the log data is encrypted while in motion.
-* When using IBM Cloud Object Storage, remember that you must verify ownership after creating a Logpush job. See the additional step for more details.
+* When using IBM Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
 
 ## Creating a Logpush job in the UI
 {: #logpush-setup-ui}
@@ -39,40 +39,54 @@ Before you create a Logpush job, review the following information and satisfy an
 
 To create a Logpush job in the UI, follow these steps:
 
-1. Select the service: 
-   1. Choose the services from the available options.
-   1. Select the dataset type.
-   1. Enter a description and name.
-  
-1. Configure your destination: 
+1. Select **Account** > **Logs**, then click **Create**. 
 
-   IBM Cloud Logs
-   :   Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).
+1. Select service: 
+   1. Select the wanted service type from the available options.
+   1. Select the dataset type.
+   1. Enter a description and name (_optional_), then select **Next**.
+  
+1. Configure destination: 
+
+   IBM Cloud Logs: 
+   :   Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).  
 
        For an IBM Cloud Logs service, the user or the service ID must be granted the **Sender** IAM role.
        {: important}
 
-   IBM Cloud Object Storage
+   Cloud Object Storage
    :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, organize logs into daily folders (_optional_).  
 
        Destination values for IBM Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
 
-   IBM Log Analysis (deprecated)
-   :   Enter LogDNA instance information (ID and region) and the ingestion key.
+   IBM QRader
+   :   Enter the QRader URL, then select a log source port. 
 
    Splunk
    :   Enter the Splunk endpoint, channel ID, and authentication token. You can opt to use insecure verification; however, this is not recommended. 
 
+   IBM Log Analysis (deprecated)
+   :   Enter LogDNA instance information (ID and region) and the ingestion key.
+
+    Custom HTTP Destination
+   :   Enter your HTTP endpoint.
+
+       To avoid errors, make sure that the file uploaded to validate the destination accepts a gzipped test.txt.gz file with content as {"content":"test"} compressed.
+       {: note}
+   
 1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket, and paste the token in the Ownership token text area. Then, click **Next**.
 
    You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
 
-1. Select the log fields that you want to include in the log push:
+1. Select log fields: 
    1. Verify that the Logpush details are correct.
-   1. Select the Logpush settings from the Timestamp and Frequency menus.
-   1. Choose whether to enable the Logpush job by using the **Enable** switch.
+   1. Select the Logpush settings from the Timestamp format and Frequency menus.
+   1. Choose whether to enable the Logpush job by switching the **Enablment** switch to **On**.
    1. Select the log fields to include in the Logpush job.
-   1. Click **Create service**. 
+
+      Use the switches to **Select all fields** or **Expand all fields**.  You can also revert back to default settings.
+      {: tip}
+   1. Click **Done**. 
 
 ## Creating a Logpush job from the CLI
 {: #logpush-setup-cli}
@@ -92,8 +106,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination PATH --name JOB_NAME
 
 Where:
 
-`--destination`
-:   Specifies the path to the destination. Paths for supported destinations are as follows:
+`--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
                                 
    * IBM Cloud Logs:
    
@@ -102,7 +115,12 @@ Where:
       ```
       {: pre}
    
-      For example, `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK`
+      For example:
+      
+      ```sh
+      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
+      ```
+      {: pre}
 
    * IBM Cloud Object Storage:
    
@@ -111,7 +129,12 @@ Where:
       ```
       {: pre}
    
-      For example, `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd`
+      For example:
+
+      ```sh
+      cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
+      ```
+      {: pre}
 
    * Log Analysis:
    
@@ -120,7 +143,12 @@ Where:
       ```
       {: pre}
 
-      For example, `https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx`
+      For example:
+      
+      ```sh
+      https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
+      ```
+      {: pre}
 
    * Splunk:
 
@@ -129,7 +157,12 @@ Where:
       ```
       {: pre}
 
-      For example, `NEED EXAMPLE`
+      For example:
+      
+      ```sh
+      NEED EXAMPLE
+      ```
+      {: pre}
 
    * Generic:
    
@@ -138,18 +171,19 @@ Where:
       ```
       {: pre}
 
-      For example, `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` 
+      For example:
+      ```sh
+      https://logs.example.com?header_Authorization=a64Vxxxxx5Aq
+      ```
+      {: pre}
 
-`--name`
-:   Specifies the Logpush job name.
+`--name`: Specifies the Logpush job name.
 
-`--fields`
-:   Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
+`--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
 
    Use this command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
 
-`--enable`
-:   Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).
+`--enable`: Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).
 
 For additional command options, see [`ibmcloud cis logpush-job-create`](/docs/cis?topic=cis-cis-cli&interface=api#logpush-job-create) in the CIS command reference.
 {: note}
@@ -174,8 +208,7 @@ After the ownership challenge is validated by {{site.data.keyword.cis_short_notm
 You can also use the `{DATE} `token in the bucket path to organize Logpush logs into daily folders. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
 {: tip}
 
-A domain can have only one Logpush job. (WHERE DOES THIS COME INTO PLAY?)
-{: important}
+A domain can have only one Logpush job. (WHERE DOES THIS BELONG?) 
   
 ### Command examples
 {: #logpush-job-create-examples}
