@@ -86,7 +86,7 @@ To create a Logpush job in the UI, follow these steps:
 
       Use the switches to **Select all fields** or **Expand all fields**.  You can also revert back to default settings.
       {: tip}
-   1. Click **Done**. 
+   1. Click **Done** to create your Logpush job.
 
 ## Creating a Logpush job from the CLI
 {: #logpush-setup-cli}
@@ -275,23 +275,20 @@ Log fields can be specified in the `logpull_options` of a Logpush Job to customi
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
 
-   `CRN`
-   :   The full url-encoded CRN of the service instance.
+   `CRN`: The full URL-encoded CRN of the service instance.
 
-   `ZONE_ID`
-   :   The domain ID.
+   `ZONE_ID`: The domain ID.
 
-   `DATASET`
-   :   The Logpush dataset being inspected. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
+   `DATASET`: The Logpush dataset being inspected. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
 
 1. When all variables are initiated, create the Logpush job:
 
-```sh
-curl -X GET https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/datas/$DATASET/fields \
---header "Content-Type: application/json" \
---header "X-Auth-User-Token: Bearer $IAM_TOKEN"'
-```
-{: pre}
+   ```sh
+   curl -X GET https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/datas/$DATASET/fields \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN"'
+   ```
+   {: pre}
 
 ### Creating a Logpush job to send logs to IBM Cloud Logs
 {: #logpush-setup-cloud-logs-api}
@@ -301,54 +298,51 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
 
-   `CRN`
-   :   The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
 
-   `ZONE_ID`
-   :   The domain ID.
+   `ZONE_ID`: The domain ID.
 
-   `--request body`
-   :   Information to create the Logpush job body (`logpush_job_ibmcl_req`).  
+   `--request body`: Information to create the Logpush job body (`logpush_job_ibmcl_req`).  
 
       `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. Fields within the `ibmcl` object are as follows:
 
-       * `instance_id`- ID of the IBM Cloud Logs instance.   
-       * `region`- Region of the IBM Cloud Logs instance (for example, `us-south`).
-       * `api_key`- An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
+       * `instance_id`: ID of the IBM Cloud Logs instance.   
+       * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`).
+       * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
          
        The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
        {: important}
 
-      `name` - The name of the Logpush job.
+      `name`: The name of the Logpush job.
    
-      `enabled` - Whether the job is enabled. One of `true`, `false`.
+      `enabled`: Whether the job is enabled. One of `true`, `false`.
 
-      `logpull_options`- The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
+      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
 
-      `dataset` - The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
+      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
    
-      `frequency` - The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
+      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
 
 1. When all variables are initiated, create the Logpush job:
 
-```sh
-curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
---header "Content-Type: application/json" \
---header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
---data '{
-   "ibmcl": { 
-         "instance_id": "f8k3309c-585c-4a42-955d-76239cccf8k3", 
-         "region": "us-south",
-         "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
-   },
-   "dataset": "http_requests",
-   "enabled": true,
-   "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
-   "name": "CIS-Edge-Requests",
-   "frequency": "low"
-}'
-```
-{: pre}
+   ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+   --data '{
+      "ibmcl": { 
+            "instance_id": "f8k3309c-585c-4a42-955d-76239cccf8k3", 
+            "region": "us-south",
+            "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
+      },
+      "dataset": "http_requests",
+      "enabled": true,
+      "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
+      "name": "CIS-Edge-Requests",
+      "frequency": "low"
+   }'
+   ```
+   {: pre}
 
 ### Creating a Logpush job to send logs to Cloud Object Storage
 {: #logpush-setup-cos-api}
@@ -361,51 +355,96 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
 
-   `CRN`
-   :   The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
 
-   `ZONE_ID`
-   :   The domain ID.
+   `ZONE_ID`: The domain ID.
 
-   `--request body`
-   :   Information to create the Logpush job body (`logpush_job_cos_req`).  
+   `--request body`: Information to create the Logpush job body (`logpush_job_cos_req`).  
 
-      `cos`- Information to identify the Cloud Object Storage bucket where the data is pushed.
+      `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed.
    
-      `name`- The name of the Logpush job.
+      `name`: The name of the Logpush job.
    
-      `enabled`- Whether the job is enabled. One of `true`, `false`.
+      `enabled`: Whether the job is enabled. One of `true`, `false`.
    
-      `logpull_options`- The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
+      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
    
-      `dataset`- The dataset that is pulled. One of `http_requests`, `dns_logs`, `range_events`, `firewall_events`.
+      `dataset`: The dataset that is pulled. One of `http_requests`, `dns_logs`, `range_events`, `firewall_events`.
    
-      `frequency`- The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
+      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
 
 1. When all variables are initiated, create the Logpush job:
 
-```sh
-curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
---header "Content-Type: application/json" \
---header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
---data '{
-   "cos": {
-         "bucket_name": "example_bucket",
-         "path": "temp/",
-         "id": "cos_instance_id",
-         "region": "us-east"
-   },
-   "dataset": "firewall_events",
-   "enabled": false,
-   "name": "CIS-Firewall-COS",
-   "frequency": "low",
-   "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
-   "ownership_challenge": "xxxxxxx"
-}'
-```
-{: pre}
+   ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+   --data '{
+      "cos": {
+            "bucket_name": "example_bucket",
+            "path": "temp/",
+            "id": "cos_instance_id",
+            "region": "us-east"
+      },
+      "dataset": "firewall_events",
+      "enabled": false,
+      "name": "CIS-Firewall-COS",
+      "frequency": "low",
+      "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
+      "ownership_challenge": "xxxxxxx"
+   }'
+   ```
+   {: pre}
 
-### Enabling Logpush to Splunk
+### Creating a Logpush job to send logs to QRadar
+{: #enabling-logpush-qradar}
+
+{{site.data.keyword.cis_short_notm}} checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Receiver log source.
+
+The following example shows how to send Firewall events to QRadar.
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded CRN of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `--request body`: Information to create the Logpush job body (`logpush_job_qradar_req`). 
+
+      `qradar`: Information to identify the QRadar HTTP Receiever where the data is pushed.
+   
+      `name`: The name of the Logpush job.
+   
+      `enabled`: Whether the job is enabled. One of `true`, `false`.
+   
+      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
+   
+      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
+   
+      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
+
+1. When all variables are initiated, create the Logpush job:
+
+   ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+   --data '{
+      "qradar": { 
+         "url": "https://example.qradar.ibmcloud.com",
+         "port": 8088
+      },
+      "dataset": "firewall_events",
+      "enabled": false,
+      "name": "CIS-Firewall-QRadar",
+      "frequency": "low",
+      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
+   }' 
+   ```
+   {: pre} 
+
+### Creating a Logpush job to send logs to Splunk
 {: #enabling-logpush-splunk}
 {{site.data.keyword.cis_short_notm}} checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector.
 
@@ -414,57 +453,54 @@ The following example shows how to send HTTP events to Splunk.
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
 
-   `CRN`
-   :   The full URL-encoded CRN of the service instance.
+   `CRN`: The full URL-encoded CRN of the service instance.
 
-   `ZONE_ID`
-   :   The domain ID.
+   `ZONE_ID`: The domain ID.
 
-   `--request body`
-   :   Information to create the Logpush job body (`logpush_job_splunk_req`).  
+   `--request body`: Information to create the Logpush job body (`logpush_job_splunk_req`).  
 
-      `splunk`- Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
+      `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
 
-       * `endpoint_url`- URL of the Splunk HEC.
-       * `channel_id`- A random GUID to uniquely identify the log push.
-       * `skip_verify`- Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate.
-       * `source_type` - The Splunk source type (for example: `cloudflare:json`).
-       * `auth_token` - The Splunk authorization token.
+       * `endpoint_url`: URL of the Splunk HEC.
+       * `channel_id`: A random GUID to uniquely identify the log push.
+       * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate.
+       * `source_type`: The Splunk source type (for example: `cloudflare:json`).
+       * `auth_token`: The Splunk authorization token.
 
-      `name`- The name of the Logpush job.
+      `name`: The name of the Logpush job.
 
-      `enabled`- Whether the job is enabled. One of `true`, `false`.
+      `enabled`: Whether the job is enabled. One of `true`, `false`.
 
-      `logpull_options`- The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
+      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
 
-      `dataset`- The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
+      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
 
-      `frequency`- The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
+      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
 
 1. When all variables are initiated, create the Logpush job:
 
-```sh
-curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
---header "Content-Type: application/json" \
---header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
---data '{
-   "splunk": {
-      "endpoint_url": "example.splunkcloud.com:8088/services/collector/raw",
-      "channel_id": "def3c136-7a01-4655-b17f-8e25a780ef2c",
-      "skip_verify": false,
-      "source_type": "cloudflare:json",
-      "auth_token": "Splunk fake3585-0f38-4d62-8b43-c4b78584fake"
-   },
-   "dataset": "http_requests",
-   "enabled": true,
-   "name": "CIS-Splunk-Logpush",
-   "frequency": "high",
-   "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
-}'
-```
-{: pre}
+   ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+   --data '{
+      "splunk": {
+         "endpoint_url": "example.splunkcloud.com:8088/services/collector/raw",
+         "channel_id": "def3c136-7a01-4655-b17f-8e25a780ef2c",
+         "skip_verify": false,
+         "source_type": "cloudflare:json",
+         "auth_token": "Splunk fake3585-0f38-4d62-8b43-c4b78584fake"
+      },
+      "dataset": "http_requests",
+      "enabled": true,
+      "name": "CIS-Splunk-Logpush",
+      "frequency": "high",
+      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
+   }'
+   ```
+   {: pre}
 
-### Enabling Logpush to a generic destination
+### Creating a Logpush job to send logs to a generic destination
 {: #enabling-logpush-generic}
 
 If your destination is not explicitly supported by {{site.data.keyword.cis_short_notm}}, it may still be accessible by Logpush via a generic destination. This includes your own custom HTTP log servers.
@@ -477,45 +513,41 @@ The following example shows how to send HTTP events to a custom HTTP log destina
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
 
-   `CRN`
-   :   The full URL-encoded CRN of the service instance.
+   `CRN`: The full URL-encoded CRN of the service instance.
 
-   `ZONE_ID`
-   :   The domain ID.
+   `ZONE_ID`: The domain ID.
 
-   `--request body`
-   :   Information to create the Logpush job body (`logpush_job_splunk_req`).  
+   `--request body`: Information to create the Logpush job body (`logpush_job_splunk_req`).  
 
-      `destination_conf`- Information to configure the generic destination where the data is pushed. Headers may be specified to be used by Logpush with query parameters prefixed by `header_` (for example: `header_Authorization=XXXX`)
+      `destination_conf`: Information to configure the generic destination where the data is pushed. Headers may be specified to be used by Logpush with query parameters prefixed by `header_` (for example: `header_Authorization=XXXX`)
 
-      `name`- The name of the Logpush job.
+      `name`: The name of the Logpush job.
 
-      `enabled`- Whether the job is enabled. One of `true`, `false`.
+      `enabled`: Whether the job is enabled. One of `true`, `false`.
 
-      `logpull_options`- The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
+      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
 
-      `dataset`- The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
+      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
 
-      `frequency`- The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
+      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
 
 1. When all variables are initiated, create the Logpush job:
 
-```sh
-curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
---header "Content-Type: application/json" \
---header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
---data '{
-   "destination_conf": "https://logs.example.com?header_Authorization=a64VuywesDu5Aq",
-   "dataset": "http_requests",
-   "enabled": true,
-   "name": "CIS-Custom-Logpush",
-   "frequency": "high",
-   "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
-}'
-```
-{: pre}
-
-
+   ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+   --data '{
+      "destination_conf": "https://logs.example.com?header_Authorization=a64VuywesDu5Aq",
+      "dataset": "http_requests",
+      "enabled": true,
+      "name": "CIS-Custom-Logpush",
+      "frequency": "high",
+      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
+   }'
+   ```
+   {: pre} 
+    
 ### Related link
 {: #related-link-logpush}
 {: api}
