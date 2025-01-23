@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-22"
+lastupdated: "2025-01-23"
 
 keywords:
 
@@ -447,7 +447,7 @@ curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
 {: pre}
 
 
-## Related link
+### Related link
 {: #related-link-logpush}
 {: api}
 
