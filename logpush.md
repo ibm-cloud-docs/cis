@@ -109,7 +109,8 @@ Where:
 `--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
 
    IBM Cloud Logs
-   :   ```sh
+   :   
+       ```sh
        ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
        ```
        {: pre}
@@ -122,7 +123,8 @@ Where:
        {: pre}
 
    Cloud Object Storage
-   :   ```sh
+   :   
+       ```sh
        cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
        ```
        {: pre}
@@ -134,59 +136,60 @@ Where:
        ```
        {: pre}
 
-   * IBM QRadar
-      ```sh
-      NEED SYNTAX
-      ```
-      {: pre}
+   IBM QRadar
+   :   
+       ```sh
+       NEED SYNTAX
+       ```
+       {: pre}
 
-      For example:
+       For example:
       
-      ```sh
-     NEED EXAMPLE
-      ```
+       ```sh
+       NEED EXAMPLE
+       ```
       {: pre}
      
-   * Splunk
+   Splunk
+   :   
+       ```sh
+       NEED SYNTAX
+       ```
+       {: pre}
 
-      ```sh
-      NEED SYNTAX
-      ```
-      {: pre}
-
-      For example:
+       For example:
       
-      ```sh
-      NEED EXAMPLE
-      ```
+       ```sh
+       NEED EXAMPLE
+       ```
       {: pre}
 
-   * Log Analysis
-   
-      ```sh
-      https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
-      ```
-      {: pre}
+   Log Analysis
+   :   
+       ```sh      
+       https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
+       ```
+       {: pre}
 
-      For example:
+       For example:
       
-      ```sh
-      https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
-      ```
-      {: pre}
+       ```sh
+       https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
+       ```
+       {: pre}
 
-   * Generic destination
-   
-      ```sh
-      https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>
-      ```
-      {: pre}
+   Generic destination
+   :   
+       ```sh    
+       https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>
+       ```
+       {: pre}
 
-      For example:
-      ```sh
-      https://logs.example.com?header_Authorization=a64Vxxxxx5Aq
-      ```
-      {: pre}
+       For example:
+       ```sh
+       https://logs.example.com?header_Authorization=a64Vxxxxx5Aq
+       ```
+       {: pre}
 
 `--name`: Specifies the Logpush job name.
 
