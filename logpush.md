@@ -48,7 +48,7 @@ To create a Logpush job in the UI, follow these steps:
   
 1. Configure destination: 
 
-   IBM Cloud Logs: 
+   IBM Cloud Logs
    :   Enter the IBM Cloud Logs instance ID, instance region, and API key (managed by user).  
 
        For an IBM Cloud Logs service, the user or the service ID must be granted the **Sender** IAM role.
@@ -107,36 +107,34 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination PATH --name JOB_NAME
 Where:
 
 `--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
-                                
-   * IBM Cloud Logs:
+
+   IBM Cloud Logs
+   :   ```sh
+       ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
+       ```
+       {: pre}
    
-      ```sh
-      ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
-      ```
-      {: pre}
-   
-      For example:
+       For example:
       
-      ```sh
-      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
-      ```
-      {: pre}
+       ```sh
+       ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
+       ```
+       {: pre}
 
-   * Cloud Object Storage:
+   Cloud Object Storage
+   :   ```sh
+       cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
+       ```
+       {: pre}
    
-      ```sh
-      cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
-      ```
-      {: pre}
-   
-      For example:
+       For example:
 
-      ```sh
-      cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
-      ```
-      {: pre}
+       ```sh
+       cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
+       ```
+       {: pre}
 
-   * IBM QRadar: 
+   * IBM QRadar
       ```sh
       NEED SYNTAX
       ```
@@ -149,7 +147,7 @@ Where:
       ```
       {: pre}
      
-   * Splunk:
+   * Splunk
 
       ```sh
       NEED SYNTAX
@@ -163,7 +161,7 @@ Where:
       ```
       {: pre}
 
-   * Log Analysis:
+   * Log Analysis
    
       ```sh
       https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
@@ -177,7 +175,7 @@ Where:
       ```
       {: pre}
 
-   * Generic:
+   * Generic destination
    
       ```sh
       https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>
@@ -226,35 +224,35 @@ A domain can have only one Logpush job. (WHERE DOES THIS BELONG?)
 ### Command examples
 {: #logpush-job-create-examples}
 
-* IBM Cloud Logs:
+* IBM Cloud Logs
 
    ```sh
    ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key= tUygM_HyAllUXI9iEFUfpzsLOUAbz5jDuZip91BqEW_e --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
    ```
    {: pre}
 
-* Cloud Object Storage:
+* Cloud Object Storage
 
    ```sh
   ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
    ```
    {: pre}
   
-* IBM QRadar:
+* IBM QRadar
 
    ```sh
    NEED EXAMPLE
    ```
    {: pre}
 
-* Splunk:
+* Splunk
 
    ```sh
    NEED EXAMPLE
    ```
    {: pre}
 
-* Generic:
+* Generic destination
 
    ```sh
    ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.kmschr.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
@@ -505,7 +503,7 @@ The following example shows how to send HTTP events to Splunk.
 
 If your destination is not explicitly supported by {{site.data.keyword.cis_short_notm}}, it may still be accessible by Logpush via a generic destination. This includes your own custom HTTP log servers.
 
-Notice: To avoid errors, make sure that the destination can accept a gzipped file upload test.txt.gz with content as {"content":"tests"} compressed.
+Notice: To avoid errors, make sure that the destination can accept a gzipped file upload test.txt.gz with content as `{"content":"tests"}` compressed.
 {: important}
 
 The following example shows how to send HTTP events to a custom HTTP log destination.
