@@ -115,47 +115,47 @@ Where:
       ```
       {: pre}
 
-* Cloud Object Storage
+   * Cloud Object Storage
  
-   ```sh
-   cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
-   ```
-   {: pre}
+      ```sh
+      cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
+      ```
+      {: pre}
    
-   For example:
+      For example:
 
-   ```sh
-   cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
-   ```
-   {: pre}  
+      ```sh
+      cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
+      ```
+      {: pre}  
 
-* Splunk 
+   * Splunk 
 
-   ```sh
-   NEED SYNTAX
-   ```
-   {: pre}
+      ```sh
+      NEED SYNTAX
+      ```
+      {: pre}
 
-   For example:
+      For example:
       
-   ```sh
-   NEED EXAMPLE
-   ```
-  {: pre}
+      ```sh
+      NEED EXAMPLE
+      ```
+     {: pre}
 
-* Log Analysis 
+   * Log Analysis 
 
-   ```sh      
-   https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
-   ```
-   {: pre}
+      ```sh      
+      https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
+      ```
+      {: pre}
 
-   For example:
+      For example:
       
-   ```sh
-   https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
-   ```
-   {: pre}
+      ```sh
+      https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
+      ```
+      {: pre}
 
 `--name`: Specifies the Logpush job name.
 
