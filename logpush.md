@@ -100,19 +100,19 @@ Where:
 
 `--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
 
-* IBM Cloud Logs
+   * IBM Cloud Logs
 
-   ```sh
-   ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
-   ```
-   {: pre}
+      ```sh
+      ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
+      ```
+      {: pre}
    
-   For example:
+      For example:
       
-   ```sh
-   ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
-   ```
-   {: pre}
+      ```sh
+      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
+      ```
+      {: pre}
 
 * Cloud Object Storage
  
