@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-24"
 
 keywords:
 
@@ -44,7 +44,7 @@ To create a Logpush job in the UI, follow these steps:
 1. Select service: 
    1. Select the wanted service type from the available options.
    1. Select the dataset type.
-   1. Enter a description and name (_optional_), then select **Next**.
+   1. Optional: Enter a description and name, then select **Next**.
   
 1. Configure destination: 
 
@@ -55,7 +55,7 @@ To create a Logpush job in the UI, follow these steps:
        {: important}
 
    Cloud Object Storage
-   :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (_optional_). Then, organize logs into daily folders (_optional_).  
+   :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (optional). Then, organize logs into daily folders (optional).  
 
        Destination values for Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
 
@@ -114,6 +114,49 @@ Where:
    ```
    {: pre}
 
+* Cloud Object Storage
+ 
+   ```sh
+   cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
+   ```
+   {: pre}
+   
+   For example:
+
+   ```sh
+   cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
+   ```
+   {: pre}
+     
+* Splunk 
+
+   ```sh
+   NEED SYNTAX
+   ```
+   {: pre}
+
+   For example:
+      
+   ```sh
+   NEED EXAMPLE
+   ```
+  {: pre}
+
+* Log Analysis 
+
+   ```sh      
+   https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
+   ```
+   {: pre}
+
+   For example:
+      
+   ```sh
+   https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
+   ```
+   {: pre}
+
+
 `--name`: Specifies the Logpush job name.
 
 `--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
@@ -145,7 +188,7 @@ After the ownership challenge is validated by {{site.data.keyword.cis_short_notm
 You can also use the `{DATE} `token in the bucket path to organize Logpush logs into daily folders. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
 {: tip}
  
-### Command 
+### Command examples
 {: #logpush-job-create}
 
 * IBM Cloud Logs
