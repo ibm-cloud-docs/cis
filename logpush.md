@@ -257,9 +257,9 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
       `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. Fields within the `ibmcl` object are as follows:
 
-       * `instance_id`: ID of the IBM Cloud Logs instance.   
-       * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`).
-       * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
+         * `instance_id`: ID of the IBM Cloud Logs instance.   
+         * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`).
+         * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
          
        The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
        {: important}
@@ -364,11 +364,11 @@ The following example shows how to send HTTP events to Splunk.
 
       `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
 
-       * `endpoint_url`: URL of the Splunk HEC.
-       * `channel_id`: A random GUID to uniquely identify the log push.
-       * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate.
-       * `source_type`: The Splunk source type (for example: `cloudflare:json`).
-       * `auth_token`: The Splunk authorization token.
+         * `endpoint_url`: URL of the Splunk HEC.
+         * `channel_id`: A random GUID to uniquely identify the log push.
+         * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate.
+         * `source_type`: The Splunk source type (for example: `cloudflare:json`).
+         * `auth_token`: The Splunk authorization token.
 
       `name`: The name of the Logpush job.
 
