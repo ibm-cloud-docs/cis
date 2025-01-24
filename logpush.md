@@ -100,20 +100,60 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination PATH --name JOB_NAME
 Where:
 
 `--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
-
-   * IBM Cloud Logs
-
-      ```sh
-      ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
-      ```
-      {: pre}
-   
-      For example:
+  
+| IBM Cloud Logs | 
+|---------------------|
+| ```sh
+  ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
+  ```
+  {: pre} \n For example: \n
       
-      ```sh
-      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
-      ```
-      {: pre}
+  ```sh
+  ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
+  ```
+  {: pre} |
+{: caption="IBM Cloud Logs path" caption-side="bottom"}
+{: #cli-table-11}
+{: tab-title="IBM Cloud Logs"}
+{: tab-group="pla"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Cloud Object Storage | 
+|---------------------|
+| ```sh
+  cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
+  ```
+  {: pre} \n For example: \n
+
+  ```sh
+  cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
+  ```
+  {: pre} |  
+{: caption="Cloud Object Storage path" caption-side="bottom"}
+{: #cli-table-22}
+{: tab-title="Cloud Object Storage"}
+{: tab-group="pla"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Splunk | 
+|---------------------|
+| ```sh
+  ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
+  ```
+  {: pre} \n For example: \n
+      
+  ```sh
+  ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
+  ```
+  {: pre} |
+{: caption="Splunk path" caption-side="bottom"}
+{: #cli-table-44}
+{: tab-title="Splunk"}
+{: tab-group="pla"}
+{: class="simple-tab-table"}
+{: row-headers}   
 
    * Cloud Object Storage
  
@@ -180,7 +220,7 @@ You can also use the `{DATE}` token in the bucket path to organize Logpush logs 
 CLI examples for the supported destinations:
 
    IBM Cloud Logs
-   :   Example:
+   :   
 
        ```sh
        ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=xxxxxxxx --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
@@ -188,7 +228,7 @@ CLI examples for the supported destinations:
        {: pre}
 
    Cloud Object Storage
-   :   Example:
+   :   
 
        ```sh
        ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
@@ -196,7 +236,7 @@ CLI examples for the supported destinations:
        {: pre}
 
    Splunk
-   :   Example:
+   :   
 
        ```sh
        NEED EXAMPLE
@@ -255,35 +295,35 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    `--request body`: Information to create the Logpush job body (`logpush_job_DESTINATION_req`) where `DESTINATION` is one of the following values:
    
-| IBM Cloud Logs | 
-|---------------------|
-| `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. |
-{: caption="IBM Cloud Logs destination" caption-side="bottom"}
-{: #pl-table-1}
-{: tab-title="IBM Cloud Logs"}
-{: tab-group="pl"}
-{: class="simple-tab-table"}
-{: row-headers}
+   | IBM Cloud Logs | 
+   |---------------------|
+   | `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. |
+   {: caption="IBM Cloud Logs destination" caption-side="bottom"}
+   {: #pl-table-1}
+   {: tab-title="IBM Cloud Logs"}
+   {: tab-group="pl"}
+   {: class="simple-tab-table"}
+   {: row-headers}
 
-| Cloud Object Storage | 
-|---------------------|
-| `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. |
-{: caption="Cloud Object Storage destination" caption-side="bottom"}
-{: #pl-table-2}
-{: tab-title="Cloud Object Storage"}
-{: tab-group="pl"}
-{: class="simple-tab-table"}
-{: row-headers}
+   | Cloud Object Storage | 
+   |---------------------|
+   | `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. |
+   {: caption="Cloud Object Storage destination" caption-side="bottom"}
+   {: #pl-table-2}
+   {: tab-title="Cloud Object Storage"}
+   {: tab-group="pl"}
+   {: class="simple-tab-table"}
+   {: row-headers}
 
-| Splunk | 
-|---------------------|
-| `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are: \n * `endpoint_url`: URL of the Splunk HEC. \n * `channel_id`: A random GUID to uniquely identify the log push. \n * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate. \n * `source_type`: The Splunk source type (for example: `cloudflare:json`). \n * `auth_token`: The Splunk authorization token. |
-{: caption="Splunk destination" caption-side="bottom"}
-{: #pl-table-4}
-{: tab-title="Splunk"}
-{: tab-group="pl"}
-{: class="simple-tab-table"}
-{: row-headers}
+   | Splunk | 
+   |---------------------|
+   | `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are: \n * `endpoint_url`: URL of the Splunk HEC. \n * `channel_id`: A random GUID to uniquely identify the log push. \n * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate. \n * `source_type`: The Splunk source type (for example: `cloudflare:json`). \n * `auth_token`: The Splunk authorization token. |
+   {: caption="Splunk destination" caption-side="bottom"}
+   {: #pl-table-4}
+   {: tab-title="Splunk"}
+   {: tab-group="pl"}
+   {: class="simple-tab-table"}
+   {: row-headers}
 
    `name`: The name of the Logpush job.
    
