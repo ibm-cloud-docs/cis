@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2025
+lastupdated: "2025-01-24"
 
 keywords: IBM Cloud, observability
 
@@ -42,7 +42,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Run an activation check on a domain | `PUT /v1/{crn}/zones/{domain_id}/activation_check` | `internet-svcs.reliability.update` | `internet-svcs.zones-activation-check.update` |
 | Get the DNSSEC configuration | `GET /v1/{crn}/zones/{domain_id}/dnssec` | `internet-svcs.reliability.read` | `internet-svcs.dnssec.read` |
 | Enable or disable DNSSEC | `PATCH /v1/{crn}/zones/{domain_id}/dnssec` | `internet-svcs.reliability.update` | `internet-svcs.dnssec.update` |
-{: caption="DNS Domains" caption-side="bottom"}
+{: caption="DNS domains" caption-side="bottom"}
 
 
 ## DNS Records
@@ -56,7 +56,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Delete a DNS record | `DELETE /v1/{crn}/zones/{domain_id}/dns_records/{record_id}` | `internet-svcs.reliability.manage` | `internet-svcs.dns-records.delete` |
 | Import the DNS records from zone file | `GET /v1/{crn}/zones/{domain_id}/dns_records_bulk` | `internet-svcs.reliability.read` | `internet-svcs.dns-records-bulk.read` |
 | Export the DNS records to a zone file | `POST /v1/{crn}/zones/{domain_id}/dns_records_bulk` | `internet-svcs.reliability.manage` | `internet-svcs.dns-records-bulk.create` |
-{: caption="DNS Records" caption-side="bottom"}
+{: caption="DNS records" caption-side="bottom"}
 
 
 
@@ -126,7 +126,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Create a domain lockdown rule | `POST /v1/{crn}/zones/{domain_id}/firewall/lockdowns` | `internet-svcs.security.manage` | `internet-svcs.domain-lockdown-rules.create` |
 | Update a domain lockdown rule | `PUT /v1/{crn}/zones/{domain_id}/firewall/lockdowns/{rule_id}` | `internet-svcs.security.update` | `internet-svcs.domain-lockdown-rules.update` |
 | Delete a domain lockdown rule | `DELETE /v1/{crn}/zones/{domain_id}/firewall/lockdowns/{rule_id}` | `internet-svcs.security.manage` | `internet-svcs.domain-lockdown-rules.delete` |
-{: caption="IP Firewall" caption-side="bottom"}
+{: caption="IP firewall" caption-side="bottom"}
 
 ## Firewall Rules
 {: #at_iam_CIS_fw}
@@ -142,7 +142,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Update a filter | `PATCH /v1/{crn}/zones/{domain_id}/filters/{filter_id}` | `internet-svcs.security.update` | `internet-svcs.filters.update` |
 | Delete a filter | `DELETE /v1/{crn}/zones/{domain_id}/filters/{filter_id}` | `internet-svcs.security.manage` | `internet-svcs.filters.delete` |
 | Validate the expression of a filter. | `POST /v1/{crn}/zones/{domain_id}/filters/validate-expr` | `internet-svcs.security.manage` | `internet-svcs.filters-validate-expr.create` |
-{: caption="Firewall Rules" caption-side="bottom"}
+{: caption="Firewall rules" caption-side="bottom"}
 
 
 ## Security Events
@@ -152,7 +152,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |-------------------------------------------|-------------------|--------------|------------|
 | Get the security events | `GET /v1/{crn}/zones/{domain_id}/security/events` | `internet-svcs.security.read` | `internet-svcs.security-events.read` |
 | Get the firewall events (Deprecated) | `GET /v1/{crn}/zones/{domain_id}/analytics/firewall_events  [DEPRECATED]` | `internet-svcs.security.read` | `internet-svcs.firewall-events-analytics.read` |
-{: caption="Security Events" caption-side="bottom"}
+{: caption="Security events" caption-side="bottom"}
 
 
 ## Rate Limiting
@@ -165,7 +165,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Update a rate limiting rule | `PUT /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.update` | `internet-svcs.rate-limits.update` |
 | Delete a rate limiting rule | `DELETE /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.manage` | `internet-svcs.rate-limits.delete` |
 | Get the rate limiting analytics | `GET /v1/{crn}/zones/{domain_id}/rate_limit_analytics` | `internet-svcs.security.read` | `internet-svcs.rate-limit-analytics.read` |
-{: caption="Rate Limiting" caption-side="bottom"}
+{: caption="Rate limiting" caption-side="bottom"}
 
 
 ## Caching
@@ -201,7 +201,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Create a page rule | `POST /v1/{crn}/zones/{domain_id}/pagerules` | `internet-svcs.performance.manage` | `internet-svcs.pagerules.create` |
 | Update a page rule | `PUT /v1/{crn}/zones/{domain_id}/pagerules/{rule_id}` | `internet-svcs.performance.update` | `internet-svcs.pagerules.update` |
 | Delete a page rule | `DELETE /v1/{crn}/zones/{domain_id}/pagerules/{rule_id}` | `internet-svcs.performance.manage` | `internet-svcs.pagerules.delete` |
-{: caption="Page Rules" caption-side="bottom"}
+{: caption="Page rules" caption-side="bottom"}
 
 
 
@@ -241,7 +241,7 @@ List of IAM actions and Activity Tracker actions by API method.
 | Create an edge function route | `POST /v1/{crn}/zones/{domain_id}/workers/routes` | `internet-svcs.performance.manage` | `internet-svcs.edge-functions-routes.create` |
 | Update an edge function route | `PUT /v1/{crn}/zones/{domain_id}/workers/routes/{route_id}` | `internet-svcs.performance.update` | `internet-svcs.edge-functions-routes.update` |
 | Delete an edge function route | `DELETE /v1/{crn}/zones/{domain_id}/workers/routes/{route_id}` | `internet-svcs.performance.manage` | `internet-svcs.edge-functions-routes.delete` |
-{: caption="Edge Functions" caption-side="bottom"}
+{: caption="Edge functions" caption-side="bottom"}
 
 ## Range
 {: #at_iam_range}
@@ -260,13 +260,13 @@ List of IAM actions and Activity Tracker actions by API method.
 
 | Action                                    | Method            | IAM ACTION   |  AT ACTION |
 |-------------------------------------------|-------------------|--------------|------------|
-| Get the logpush fields | `GET /v1/{crn}/zones/{domain_id}/logpush/datasets/{dataset}/fields` | `internet-svcs.zones.read` | `internet-svcs.logpush-fields.read` |
-| Get the logpush jobs | `GET /v1/{crn}/zones/{domain_id}/logpush/jobs`| `internet-svcs.zones.read` | `internet-svcs.logpush-jobs.read` |
-| Create a logpush job | `POST /v1/{crn}/zones/{domain_id}/logpush/jobs` | `internet-svcs.zones.manage` | `internet-svcs.logpush-jobs.create` |
-| Update a logpush job | `PUT /v1/{crn}/zones/{domain_id}/logpush/jobs/{job_id}` | `internet-svcs.zones.update` | `internet-svcs.logpush-jobs.update` |
-| Delete a logpush job | `DELETE /v1/{crn}/zones/{domain_id}/logpush/jobs/{job_id}` | `internet-svcs.zones.manage` | `internet-svcs.logpush-jobs.delete` |
-| Initiate the logpush ownership challenge | `POST /v1/{crn}/zones/{domain_id}/logpush/ownership` | `internet-svcs.zones.manage` | `internet-svcs.logpush-ownership.create` |
-| Validate the logpush ownership challenge token | `POST /v1/{crn}/zones/{domain_id}/logpush/ownership/validate` | `internet-svcs.zones.manage` | `internet-svcs.logpush-ownership-validate.create` |
+| Get the Logpush fields | `GET /v1/{crn}/zones/{domain_id}/logpush/datasets/{dataset}/fields` | `internet-svcs.zones.read` | `internet-svcs.logpush-fields.read` |
+| Get the Logpush jobs | `GET /v1/{crn}/zones/{domain_id}/logpush/jobs`| `internet-svcs.zones.read` | `internet-svcs.logpush-jobs.read` |
+| Create a Logpush job | `POST /v1/{crn}/zones/{domain_id}/logpush/jobs` | `internet-svcs.zones.manage` | `internet-svcs.logpush-jobs.create` |
+| Update a Logpush job | `PUT /v1/{crn}/zones/{domain_id}/logpush/jobs/{job_id}` | `internet-svcs.zones.update` | `internet-svcs.logpush-jobs.update` |
+| Delete a Logpush job | `DELETE /v1/{crn}/zones/{domain_id}/logpush/jobs/{job_id}` | `internet-svcs.zones.manage` | `internet-svcs.logpush-jobs.delete` |
+| Initiate the Logpush ownership challenge | `POST /v1/{crn}/zones/{domain_id}/logpush/ownership` | `internet-svcs.zones.manage` | `internet-svcs.logpush-ownership.create` |
+| Validate the Logpush ownership challenge token | `POST /v1/{crn}/zones/{domain_id}/logpush/ownership/validate` | `internet-svcs.zones.manage` | `internet-svcs.logpush-ownership-validate.create` |
 {: caption="Logpush" caption-side="bottom"}
 
 ## Custom Pages
@@ -276,7 +276,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |-------------------------------------------|-------------------|--------------|------------|
 | Get the custom error pages | `GET /v1/{crn}/zones/{domain_id}/custom_pages` | `internet-svcs.zones.read` | `internet-svcs.custom-pages.read` |
 | Update the custom error page | `PUT /v1/{crn}/zones/{domain_id}/custom_pages/{page_id}` | `internet-svcs.zones.update` | `internet-svcs.custom-pages.update` |
-{: caption="Custom Pages" caption-side="bottom"}
+{: caption="Custom pages" caption-side="bottom"}
 
 ## Mutual TLS
 {: #at_iam_tls}
@@ -312,7 +312,7 @@ List of IAM actions and Activity Tracker actions by API method.
 |Get the origin TLS client authentication certificates used at the hostname level.| `GET /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.read` | `internet-svcs.origin-tls-client-auth-hostname-certificates.read` |
 |Create an origin TLS client authentication certificate used at the hostname level.| `POST /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.create` |
 |Delete an origin TLS client authentication certificate used at the hostname level.| `DELETE /v1/{crn}/zones/{domain_id}/origin_tls_client_auth/hostnames/certificates/{cert_id}` | `internet-svcs.security.manage` | `internet-svcs.origin-tls-client-auth-hostname-certificates.delete` |
-{: caption="Edge Functions" caption-side="bottom"}
+{: caption="Edge functions" caption-side="bottom"}
 
 ## Domain settings
 {: #at_iam_CIS_domain-settings}
@@ -409,4 +409,4 @@ List of IAM actions and Activity Tracker actions by API method.
 |Get the Bot Analytics Score Source.| `GET /v1/{crn}/zones/{domain_id}/bot_analytics/score_source}` | `internet-svcs.security.read` | `internet-svcs.bot-analytics.read`|
 |Get the Bot Analytics Timeseries.| `GET /v1/{crn}/zones/{domain_id}/bot_analytics/timeseries}` | `internet-svcs.security.read` | `internet-svcs.bot-analytics.read`|
 |Get the Bot Analytics Top Attributes.| `GET /v1/{crn}/zones/{domain_id}/bot_analytics/top_ns}` | `internet-svcs.security.read` | `internet-svcs.bot-analytics.read`|
-{: caption="Bot Management" caption-side="bottom"}
+{: caption="Bot management" caption-side="bottom"}

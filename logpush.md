@@ -189,34 +189,45 @@ You can also use the `{DATE}` token in the bucket path to organize Logpush logs 
 {: tip}
  
 ### Command examples
-{: #logpush-job-create}
+{: #logpush-job-create-examples}
 
-* IBM Cloud Logs
+CLI examples for supported destinations are as follows:
 
-   ```sh
-   ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=xxxxxxxx --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
-   ```
-   {: pre}
+**IBM Cloud Logs**
 
-* Cloud Object Storage
+```sh
+ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=xxxxxxxx --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+```
+{: pre}
 
-   ```sh
-  ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
-   ```
-   {: pre}
+**Cloud Object Storage**
 
-* Splunk
+```sh
+ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
+```
+{: pre}
 
-   ```sh
-   NEED EXAMPLE
-   ```
-   {: pre}
+**Splunk**
+
+```sh
+NEED EXAMPLE
+```
+{: pre}
 
 ## Creating a Logpush job with the API
 {: #logpush-setup-api}
 {: api}
 
-Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create a Logpush job when using IBM Cloud Logs or IBM Cloud Object Storage.
+Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create a Logpush job when using IBM Cloud Logs, Cloud Object Storage, or Splunk.
+
+Keep in mind:
+
+* If using Cloud Object Storage, you must have an IBM Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.
+* When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk). 
+* If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
+
+   To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
+   {: important} 
 
 ### Getting the available log fields for a dataset with the API
 {: #logpush-setup-fields-api}
@@ -241,10 +252,10 @@ Log fields can be specified in the `logpull_options` of a Logpush Job to customi
    ```
    {: pre}
 
-### Creating a Logpush job to send logs to IBM Cloud Logs
-{: #logpush-setup-cloud-logs-api}
+### Creating a Logpush job to send logs to your destination 
+{: #logpush-setup-api}
 
-To create a Logpush job with IBM Cloud Logs, follow these steps: 
+To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storage, or Splunk), follow these steps: 
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
@@ -253,28 +264,39 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
 
    `ZONE_ID`: The domain ID.
 
-   `--request body`: Information to create the Logpush job body (`logpush_job_ibmcl_req`).  
+   `--request body`: Information to create the Logpush job body (`logpush_job_<destination>_req`) where `destination` is one of the following:
 
-      `ibmcl`: Information to identify the IBM Cloud Log instance where the data is pushed. Fields within the `ibmcl` object are as follows:
+   * `ibmcl` (IBM Cloud Logs): Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are as follows:
 
-         * `instance_id`: ID of the IBM Cloud Logs instance.   
-         * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`).
-         * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
+      * `instance_id`: ID of the IBM Cloud Logs instance.   
+      * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`).
+      * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
          
-       The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
-       {: important}
+      The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
+      {: important}
 
-      `name`: The name of the Logpush job.
+   * `cos` (Cloud Object Storage): Information to identify the Cloud Object Storage bucket where the data is pushed.
+   * `splunk` (Splunk): Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
+
+      * `endpoint_url`: URL of the Splunk HEC.
+      * `channel_id`: A random GUID to uniquely identify the log push.
+      * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate.
+      * `source_type`: The Splunk source type (for example: `cloudflare:json`).
+      * `auth_token`: The Splunk authorization token.
    
-      `enabled`: Whether the job is enabled. One of `true`, `false`.
-
-      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
-
-      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
+   `name`: The name of the Logpush job.
    
-      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`.
+   `enabled`: Whether the job is enabled. One of `true`, `false`.
+   
+   `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
+   
+   `dataset`: The dataset that is pulled. One of `http_requests`, `dns_logs`, `range_events`, `firewall_events`.
+   
+   `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`
 
 1. When all variables are initiated, create the Logpush job:
+ 
+   **IBM Cloud Logs**
 
    ```sh
    curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
@@ -295,36 +317,7 @@ To create a Logpush job with IBM Cloud Logs, follow these steps:
    ```
    {: pre}
 
-### Creating a Logpush job to send logs to Cloud Object Storage
-{: #logpush-setup-cos-api}
-
-To create a Logpush job with Cloud Object Storage, follow these steps:
-
-Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the Cloud Object Storage bucket.
-{: important}
-
-1. Set up your API environment with the correct variables.
-1. Store the following values in variables to be used in the API command:
-
-   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
-
-   `ZONE_ID`: The domain ID.
-
-   `--request body`: Information to create the Logpush job body (`logpush_job_cos_req`).  
-
-      `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed.
-   
-      `name`: The name of the Logpush job.
-   
-      `enabled`: Whether the job is enabled. One of `true`, `false`.
-   
-      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
-   
-      `dataset`: The dataset that is pulled. One of `http_requests`, `dns_logs`, `range_events`, `firewall_events`.
-   
-      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
-
-1. When all variables are initiated, create the Logpush job:
+   **Cloud Object Storage**
 
    ```sh
    curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
@@ -346,42 +339,8 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
    }'
    ```
    {: pre}
-
-### Creating a Logpush job to send logs to Splunk
-{: #enabling-logpush-splunk}
-
-{{site.data.keyword.cis_short_notm}} checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector.
-
-The following example shows how to send HTTP events to Splunk.
-
-1. Set up your API environment with the correct variables.
-1. Store the following values in variables to be used in the API command:
-
-   `CRN`: The full URL-encoded CRN of the service instance.
-
-   `ZONE_ID`: The domain ID.
-
-   `--request body`: Information to create the Logpush job body (`logpush_job_splunk_req`).  
-
-      `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
-
-         * `endpoint_url`: URL of the Splunk HEC.
-         * `channel_id`: A random GUID to uniquely identify the log push.
-         * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate.
-         * `source_type`: The Splunk source type (for example: `cloudflare:json`).
-         * `auth_token`: The Splunk authorization token.
-
-      `name`: The name of the Logpush job.
-
-      `enabled`: Whether the job is enabled. One of `true`, `false`.
-
-      `logpull_options`: The configuration string. For example, `fields=RayID,ZoneID&timestamps=rfc3339`.
-
-      `dataset`: The dataset that is pulled. One of `http_requests`, `range_events`, `dns_logs`, `firewall_events`.
-
-      `frequency`: The frequency at which CIS sends batches of logs to your destination. One of `high`, `low`. 
-
-1. When all variables are initiated, create the Logpush job:
+      
+   **Splunk**
 
    ```sh
    curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \

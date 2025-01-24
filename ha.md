@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-13"
+  years: 2024, 2025
+lastupdated: "2025-01-24"
 
 keywords:
 
@@ -20,7 +20,7 @@ subcollection: cis
 
 CIS is a globally available GA service, with public API endpoints accessible worldwide through a global load balancer across three multi-zone regions: Dallas (`us-south`), Washington, DC (`us-east`), and London (`eu-gb`). In the event of an outage in one region, the global load balancer automatically routes API traffic to the nearest available region. Data is replicated across these regions for optimized latency and high availability.
 
-See [How IBM Cloud ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-slas#slas).
+See [How IBM Cloud ensures high availability and disaster recovery](/docs/resiliency?topic=resiliency-ha-redundancy#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-slas#slas).
 
 ## Responsibilities
 {: #ha-responsibilities}
@@ -44,7 +44,7 @@ Service level objectives (SLOs) describe the design points that the {{site.data.
 |  Availability % | 99.999%  |
 {: caption="SLO for CIS" caption-side="bottom"}
 
-The SLO is not a warranty and {{site.data.keyword.IBM_notm}} will not issue credits for failure to meet an objective. Refer to the SLAs for commitments and credits that are issued for failure to meet any committed SLAs. For a summary of all SLOs, see [{{site.data.keyword.cloud_notm}} service level objectives](/docs/overview?topic=overview-slo).
+The SLO is not a warranty and {{site.data.keyword.IBM_notm}} will not issue credits for failure to meet an objective. Refer to the SLAs for commitments and credits that are issued for failure to meet any committed SLAs. For a summary of all SLOs, see [{{site.data.keyword.cloud_notm}} service level objectives](/docs/resiliency?topic=resiliency-slo).
 
 ## Locations
 {: #ha-locations}

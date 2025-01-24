@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2024
-lastupdated: "2024-08-19"
+  years:  2024, 2025
+lastupdated: "2025-01-24"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -89,7 +89,7 @@ Version 1.15.8 of the CLI was released on Jan 11, 2023.
 Version 1.15.7 of the CLI was released on Nov 8, 2023.
 :   Support ddos `L3/L4` alerting policy.
 :   Support mtls certificate expiration alerting policy.
-:   Failing logpush job disabled alerting policy.
+:   Failing Logpush job disabled alerting policy.
 :   Fix bot metrics issue.
 
 ## Version 1.15.6
