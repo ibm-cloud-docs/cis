@@ -177,6 +177,8 @@ You can also use the `{DATE}` token in the bucket path to organize Logpush logs 
 ### Command examples
 {: #logpush-job-create-examples}
 
+CLI examples for the supported destinations:
+
    IBM Cloud Logs
    :   Example:
 
@@ -185,19 +187,21 @@ You can also use the `{DATE}` token in the bucket path to organize Logpush logs 
        ```
        {: pre}
 
-**Cloud Object Storage**
+   Cloud Object Storage
+   :   Example:
 
-```sh
-ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
-```
-{: pre}
+       ```sh
+       ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
+       ```
+       {: pre}
 
-**Splunk**
+   Splunk
+   :   Example:
 
-```sh
-NEED EXAMPLE
-```
-{: pre}
+       ```sh
+       NEED EXAMPLE
+       ```
+       {: pre}
 
 ## Creating a Logpush job with the API
 {: #logpush-setup-api}
@@ -249,11 +253,11 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    `ZONE_ID`: The domain ID.
 
-   `--request body`: Information to create the Logpush job body (`logpush_job_<destination>_req`) where `destination` is one of the following:
+   `--request body`: Information to create the Logpush job body (`logpush_job_DESTINATION_req`) where `DESTINATION` is one of the following values:
    
 | IBM Cloud Logs | 
 |---------------------|
-| `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. |
+| `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. |
 {: caption="IBM Cloud Logs destination" caption-side="bottom"}
 {: #pl-table-1}
 {: tab-title="IBM Cloud Logs"}
@@ -271,16 +275,6 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 {: class="simple-tab-table"}
 {: row-headers}
 
-| IBM QRadar | 
-|---------------------|
-| `qradar`: Information to identify the QRadar HTTP Receiver where the data is pushed. |
-{: caption="`IBM QRadar destination" caption-side="bottom"}
-{: #pl-table-3}
-{: tab-title="IBM QRadar"}
-{: tab-group="pl"}
-{: class="simple-tab-table"}
-{: row-headers}
-
 | Splunk | 
 |---------------------|
 | `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are: \n * `endpoint_url`: URL of the Splunk HEC. \n * `channel_id`: A random GUID to uniquely identify the log push. \n * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate. \n * `source_type`: The Splunk source type (for example: `cloudflare:json`). \n * `auth_token`: The Splunk authorization token. |
@@ -291,34 +285,6 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 {: class="simple-tab-table"}
 {: row-headers}
 
-| Custom HTTP | 
-|---------------------|
-| `destination_conf`: Information to configure the Custom HTTP destination where the data is pushed. Headers can be specified to be used by Logpush with query parameters prefixed by `header_` (for example: `header_Authorization=XXXX`). |
-{: caption="`Custom HTTP destination" caption-side="bottom"}
-{: #pl-table-5}
-{: tab-title="Custom HTTP"}
-{: tab-group="pl"}
-{: class="simple-tab-table"}
-{: row-headers}
- 
-   * **IBM Cloud Logs** - `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are as follows:
-
-      * `instance_id`: ID of the IBM Cloud Logs instance.   
-      * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`).
-      * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API.
-         
-      The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
-      {: important}
-
-   * **Cloud Object Storage** - `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed.
-   * **Splunk** - `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
-
-      * `endpoint_url`: URL of the Splunk HEC.
-      * `channel_id`: A random GUID to uniquely identify the log push.
-      * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate.
-      * `source_type`: The Splunk source type (for example: `cloudflare:json`).
-      * `auth_token`: The Splunk authorization token.
-   
    `name`: The name of the Logpush job.
    
    `enabled`: Whether the job is enabled. One of `true`, `false`.
