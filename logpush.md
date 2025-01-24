@@ -78,6 +78,7 @@ To create a Logpush job in the UI, follow these steps:
 
       Use the switches to **Select all fields** or **Expand all fields**.  You can also revert back to default settings.
       {: tip}
+
    1. Click **Done** to create your Logpush job.
 
 ## Creating a Logpush job from the CLI
@@ -126,8 +127,8 @@ Where:
    ```sh
    cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
    ```
-   {: pre}
-     
+   {: pre}  
+
 * Splunk 
 
    ```sh
@@ -155,7 +156,6 @@ Where:
    https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
    ```
    {: pre}
-
 
 `--name`: Specifies the Logpush job name.
 
@@ -185,7 +185,7 @@ When a challenge token is written to a file in the specified {{site.data.keyword
 
 After the ownership challenge is validated by {{site.data.keyword.cis_short_notm}}, the Logpush job is created successfully. The job will then push request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or once 100,000 records are reached, whichever comes first. Note that multiple files might be pushed during a 30-second period or per 100,000 records.
 
-You can also use the `{DATE} `token in the bucket path to organize Logpush logs into daily folders. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
+You can also use the `{DATE}` token in the bucket path to organize Logpush logs into daily folders. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
 {: tip}
  
 ### Command examples
@@ -211,7 +211,6 @@ You can also use the `{DATE} `token in the bucket path to organize Logpush logs 
    NEED EXAMPLE
    ```
    {: pre}
-
 
 ## Creating a Logpush job with the API
 {: #logpush-setup-api}
@@ -403,7 +402,6 @@ The following example shows how to send HTTP events to Splunk.
    }'
    ```
    {: pre}
-
 
 ### Related link
 {: #related-link-logpush}
