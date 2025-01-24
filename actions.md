@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-10-09"
+  years: 2019, 2025
+lastupdated: "2025-01-24"
 
 keywords: firewall rule actions
 
@@ -14,6 +14,8 @@ subcollection: cis
 
 # Assigning firewall rule actions
 {: #actions}
+
+
 
 Firewall rule actions tell {{site.data.keyword.cis_short_notm}} how to respond to requests that match the criteria you define.
 {: shortdesc}

@@ -143,20 +143,6 @@ Where:
       ```
      {: pre}
 
-   * Log Analysis 
-
-      ```sh      
-      https://{LOGS_REGION_URL}?hostname={DOMAIN}&apikey={LOGDNA_INGRESS_KEY}
-      ```
-      {: pre}
-
-      For example:
-      
-      ```sh
-      https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx
-      ```
-      {: pre}
-
 `--name`: Specifies the Logpush job name.
 
 `--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
@@ -265,7 +251,48 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    `--request body`: Information to create the Logpush job body (`logpush_job_<destination>_req`) where `destination` is one of the following:
 
-   * `ibmcl` (IBM Cloud Logs): Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are as follows:
+   
+| IBM Cloud Logs | 
+|---------------------|
+| `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n Important: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. |
+{: caption="`ibmcl` destination (IBM Cloud Logs)" caption-side="top"}
+{: #pl-table-1}
+{: tab-title="IBM Cloud Logs"}
+{: tab-group="pl"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Cloud Object Storage | 
+|---------------------|
+| `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. |
+{: caption="`cos`(Cloud Object Storage)" caption-side="top"}
+{: #pl-table-2}
+{: tab-title="Cloud Object Storage"}
+{: tab-group="pl"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| IBM QRadar | 
+|---------------------|
+| `qradar`: Information to identify the QRadar HTTP Receiver where the data is pushed. |
+{: caption="`qradar`(IBM QRadar)" caption-side="top"}
+{: #pl-table-3}
+{: tab-title="IBM QRadar"}
+{: tab-group="pl"}
+{: class="simple-tab-table"}
+{: row-headers}
+
+| Splunk | 
+|---------------------|
+| `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are: \n * `endpoint_url`: URL of the Splunk HEC. \n * `channel_id`: A random GUID to uniquely identify the log push. \n * `skip_verify`: Boolean flag to skip validation of the HTTP Event Collector certificate. Only set this to `true` when the HEC is using a self-signed certificate. \n * `source_type`: The Splunk source type (for example: `cloudflare:json`). \n * `auth_token`: The Splunk authorization token. |
+{: caption="`splunk`(Splunk)" caption-side="top"}
+{: #pl-table-4}
+{: tab-title="Splunk"}
+{: tab-group="pl"}
+{: class="simple-tab-table"}
+{: row-headers}
+ 
+   * **IBM Cloud Logs** - `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are as follows:
 
       * `instance_id`: ID of the IBM Cloud Logs instance.   
       * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`).
@@ -274,8 +301,8 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
       The user or the service id must be granted the **Sender** IAM role on the Cloud Logs Service.
       {: important}
 
-   * `cos` (Cloud Object Storage): Information to identify the Cloud Object Storage bucket where the data is pushed.
-   * `splunk` (Splunk): Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
+   * **Cloud Object Storage** - `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed.
+   * **Splunk** - `splunk`: Information to identify the Splunk HTTP Event Collector (HEC) where the data is pushed. Fields within the `splunk` object are as follows:
 
       * `endpoint_url`: URL of the Splunk HEC.
       * `channel_id`: A random GUID to uniquely identify the log push.
