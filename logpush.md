@@ -349,6 +349,7 @@ Before you create a Logpush job, you must have an {{site.data.keyword.cos_full_n
 
 ### Creating a Logpush job to send logs to Splunk
 {: #enabling-logpush-splunk}
+
 {{site.data.keyword.cis_short_notm}} checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector.
 
 The following example shows how to send HTTP events to Splunk.
