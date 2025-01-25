@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-24"
+lastupdated: "2025-01-25"
 
 keywords:
 
@@ -103,15 +103,7 @@ Where:
   
 | IBM Cloud Logs | 
 |---------------------|
-| ```sh
-  ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
-  ```
-  {: pre} \n For example: \n
-      
-  ```sh
-  ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
-  ```
-  {: pre} |
+| `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
 {: caption="IBM Cloud Logs path" caption-side="bottom"}
 {: #cli-table-11}
 {: tab-title="IBM Cloud Logs"}
@@ -121,15 +113,7 @@ Where:
 
 | Cloud Object Storage | 
 |---------------------|
-| ```sh
-  cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
-  ```
-  {: pre} \n For example: \n
-
-  ```sh
-  cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
-  ```
-  {: pre} |  
+| `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>` \n For example: \n `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd` |  
 {: caption="Cloud Object Storage path" caption-side="bottom"}
 {: #cli-table-22}
 {: tab-title="Cloud Object Storage"}
@@ -139,21 +123,28 @@ Where:
 
 | Splunk | 
 |---------------------|
-| ```sh
-  ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
-  ```
-  {: pre} \n For example: \n
-      
-  ```sh
-  ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
-  ```
-  {: pre} |
+| `NEED EXAMPLES` \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
 {: caption="Splunk path" caption-side="bottom"}
 {: #cli-table-44}
 {: tab-title="Splunk"}
 {: tab-group="pla"}
 {: class="simple-tab-table"}
-{: row-headers}   
+{: row-headers}
+   
+
+   * IBM Cloud Logs
+
+      ```sh      
+      ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
+      ```
+      {: pre}
+   
+      For example:
+
+      ```sh
+      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
+      ```
+      {: pre}
 
    * Cloud Object Storage
  
@@ -167,7 +158,8 @@ Where:
       ```sh
       cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
       ```
-      {: pre}  
+      {: pre}
+        
 
    * Splunk 
 
