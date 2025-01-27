@@ -33,7 +33,7 @@ Before you create a Logpush job using the UI, review the following information a
    - IBM Log Analysis (deprecated)
 * Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
 * If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.{: cli}{: api}
-* The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or a Cloud Object Storage bucket.
+* The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to your destination.
 * Range and firewall event logs (DNS logs) are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path. 
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.  
 * When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk).
@@ -125,6 +125,16 @@ Where:
    {: caption="Cloud Object Storage path" caption-side="bottom"}
    {: #cli-table-22}
    {: tab-tite="Cloud Object Storage"}
+   {: tab-group="pla"}
+   {: class="simple-tab-table"}
+   {: row-headers} 
+
+   | IBM QRadar | 
+   |---------------------|
+   | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
+   {: caption="IBM QRadar path" caption-side="bottom"}
+   {: #cli-table-33}
+   {: tab-title="IBM QRadar"}
    {: tab-group="pla"}
    {: class="simple-tab-table"}
    {: row-headers}
