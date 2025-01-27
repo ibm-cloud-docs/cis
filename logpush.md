@@ -23,7 +23,6 @@ The IBM Log Analysis service is deprecated and will no longer be supported as of
 
 ## Before you begin
 {: #before-you-begin-logpush-ui}
-{: ui} 
 
 Before you create a Logpush job using the UI, review the following information and satisfy any prerequisites:
 
