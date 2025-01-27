@@ -138,7 +138,17 @@ Where:
         {: tab-title="Splunk"}
         {: tab-group="pla"}
         {: class="simple-tab-table"}
-        {: row-headers}
+        {: row-headers} 
+
+        | Custom HTTP | 
+        |---------------------|
+        | `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>` \n \n For example: \n `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` |
+        {: caption="Custom HTTP path" caption-side="bottom"}
+        {: #cli-table-55}
+        {: tab-title="Custom HTTP"}
+        {: tab-group="pla"}
+        {: class="simple-tab-table"}
+        {: row-headers} 
 
    `--name`
    :    Specifies the Logpush job name.
