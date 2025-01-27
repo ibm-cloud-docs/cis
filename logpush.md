@@ -107,7 +107,8 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination PATH --name JOB_NAME
 
 Where:
 
-`--destination`: Specifies the path to the destination. Paths for supported destinations are as follows:
+   `-destination`
+   :    Specifies the path to the destination. Paths for supported destinations are as follows: 
   
    | IBM Cloud Logs | 
    |---------------------|
@@ -140,13 +141,16 @@ Where:
    {: row-headers}
    
 
-`--name`: Specifies the Logpush job name.
+   `--name`
+   :    Specifies the Logpush job name.
 
-`--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
+   `--fields`
+   :    Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
+   
+        Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
 
-   Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
-
-`--enable`: Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).
+   `--enable`
+   :    Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).  
 
 ### Cloud Object Storage: Verifying ownership
 {: #next-step-cloud-object-storage}
