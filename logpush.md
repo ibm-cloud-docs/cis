@@ -34,7 +34,7 @@ Before you create a Logpush job using the UI, review the following information a
 * Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
 * If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.{: cli}{: api}
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or a Cloud Object Storage bucket.
-* Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path. 
+* Range and firewall event logs (DNS logs) are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path. 
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.  
 * When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk).{: api} 
 * If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.{: api}
@@ -137,26 +137,13 @@ Where:
      {: tab-title="Splunk"}
      {: tab-group="pla"}
      {: class="simple-tab-table"}
-     {: row-headers} 
+     {: row-headers}
 
-     | Custom HTTP | 
-     |---------------------|
-     | `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>` \n \n For example: \n `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` |
-     {: caption="Custom HTTP path" caption-side="bottom"}
-     {: #cli-table-55}
-     {: tab-title="Custom HTTP"}
-     {: tab-group="pla"}
-     {: class="simple-tab-table"}
-     {: row-headers} 
+   `--name`: Specifies the Logpush job name.
 
-   `--name`
-   :    Specifies the Logpush job name.
+   `--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields. Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
 
-   `--fields`
-   :    Specifies the list of log fields to be included in log files. Use commas to separate multiple fields. Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
-
-   `--enable`
-   :    Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).  
+   `--enable`: Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).  
 
 ### Cloud Object Storage: Verifying ownership
 {: #next-step-cloud-object-storage}
