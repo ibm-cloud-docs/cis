@@ -80,7 +80,6 @@ To create a Logpush job in the UI, follow these steps:
 1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket and paste the token in the Ownership token text area. Then, click **Next**.
 
    You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
-   {: tip}
 
 1. Select log fields: 
    1. Verify that the Logpush details are correct.
@@ -88,7 +87,7 @@ To create a Logpush job in the UI, follow these steps:
    1. Choose whether to enable the Logpush job by toggling the **Enablement** switch to **On**.
    1. Select the log fields to include in the Logpush job.
 
-      Use the switches to **Select all fields** or **Expand all fields**. You can also revert back to default settings.
+      You can use the switches to **Select all fields** or **Expand all fields**. You can also revert back to default settings.
       {: tip}
 
    1. Click **Done** to create your Logpush job.
