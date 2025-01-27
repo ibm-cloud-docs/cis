@@ -93,7 +93,7 @@ To create a Logpush job in the UI, follow these steps:
 Before you create a Logpush job, review the following information and satisfy any prerequisites:
 
 * [Enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush. 
-* Before you create a Logpush job using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the Cloud Object Storage bucket.
+* If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, you'll need to specify a different path.
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.
@@ -218,16 +218,16 @@ Use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create
 Before you create a Logpush job, review the following information and satisfy any prerequisites:
 
 * [Enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
+* If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, you'll need to specify a different path.
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.
-* When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure. 
-* If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.
 * When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk). 
 * If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
 
    To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
    {: important} 
+* When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure. 
 
 ### Getting the available log fields for a dataset with the API
 {: #logpush-setup-fields-api}
