@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-25"
+lastupdated: "2025-01-27"
 
 keywords:
 
@@ -30,7 +30,7 @@ Before you create a Logpush job, review the following information and satisfy an
 * Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations: IBM Cloud Logs, Cloud Object Storage, Splunk, and IBM Log Analysis (deprecated). 
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or an Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination, but when using Cloud Object Storage, you'll need to specify a different path.
-* Logpush uses publicly accessible HTTPS endpoints for {{site.data.keyword.cos_full_notm}}, ensuring the log data is encrypted while in motion.
+* Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.
 * When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
 
 ## Creating a Logpush job in the UI
@@ -87,7 +87,7 @@ To create a Logpush job in the UI, follow these steps:
  
 To create a Logpush job from the CLI, follow these steps:
 
-Before you create a Logpush job using Cloud Object Storage, you must have an {{site.data.keyword.cos_full_notm}} instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the {{site.data.keyword.cos_short}} bucket.
+Before you create a Logpush job using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to {{site.data.keyword.cloud}} account `cislogp@us.ibm.com`. This enables {{site.data.keyword.cis_short_notm}} to write request logs into the Cloud Object Storage bucket.
 {: important}
 
 To create a Logpush job for a specific domain and enable the job, run the following command:
@@ -123,7 +123,7 @@ Where:
 
    | Splunk | 
    |---------------------|
-   | `NEED EXAMPLES` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
+   | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
    {: caption="Splunk path" caption-side="bottom"}
    {: #cli-table-44}
    {: tab-title="Splunk"}
@@ -131,49 +131,6 @@ Where:
    {: class="simple-tab-table"}
    {: row-headers}
       
-
-   * IBM Cloud Logs
-
-      ```sh      
-      ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>
-      ```
-      {: pre}
-   
-      For example:
-
-      ```sh
-      ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK
-      ```
-      {: pre}
-
-   * Cloud Object Storage
- 
-      ```sh
-      cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>
-      ```
-      {: pre}
-   
-      For example:
-
-      ```sh
-      cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd
-      ```
-      {: pre}
-        
-
-   * Splunk 
-
-      ```sh
-      NEED SYNTAX
-      ```
-      {: pre}
-
-      For example:
-      
-      ```sh
-      NEED EXAMPLE
-      ```
-     {: pre}
 
 `--name`: Specifies the Logpush job name.
 
@@ -189,19 +146,19 @@ For additional command options, see [`ibmcloud cis logpush-job-create`](/docs/ci
 ### Cloud Object Storage: Verifying ownership
 {: #next-step-cloud-object-storage}
 
-After creating a Logpush job to send logs to Cloud Object Storage, you must validate ownership. To do so, interactively address the {{site.data.keyword.cos_short}} bucket ownership challenge as follows:
+After creating a Logpush job to send logs to Cloud Object Storage, you must validate ownership. To do so, interactively address the Cloud Object Storage bucket ownership challenge as follows:
 
 ```sh
 COMMAND NEEDED - ARJUN
 ```
 {: pre} 
 
-When a challenge token is written to a file in the specified {{site.data.keyword.cos_short}} bucket, follow these steps:
+When a challenge token is written to a file in the specified Cloud Object Storage bucket, follow these steps:
 
-* Download the file from your {{site.data.keyword.cos_short}} bucket and open it.
+* Download the file from your  Cloud Object Storage bucket and open it.
 * Copy the challenge token from the file and paste it into the command prompt to resolve the ownership challenge.
 
-After the ownership challenge is validated by {{site.data.keyword.cis_short_notm}}, the Logpush job is created successfully. The job will then push request logs to your {{site.data.keyword.cos_short}} bucket every 30 seconds or once 100,000 records are reached, whichever comes first. Note that multiple files might be pushed during a 30-second period or per 100,000 records.
+After the ownership challenge is validated by {{site.data.keyword.cis_short_notm}}, the Logpush job is created successfully. The job will then push request logs to your Cloud Object Storage bucket every 30 seconds or once 100,000 records are reached, whichever comes first. Note that multiple files might be pushed during a 30-second period or per 100,000 records.
 
 You can also use the `{DATE}` token in the bucket path to organize Logpush logs into daily folders. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
 {: tip}
@@ -299,7 +256,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    | Cloud Object Storage | 
    |---------------------|
-   | `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. |
+   | `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the COS instance. |
    {: caption="Cloud Object Storage destination" caption-side="bottom"}
    {: #pl-table-2}
    {: tab-title="Cloud Object Storage"}
