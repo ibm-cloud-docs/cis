@@ -50,7 +50,7 @@ To create a Logpush job in the UI, follow these steps:
    1. Select the service type you want from the available options.
    1. Select the dataset type.
    1. Optional: Enter a description and name.
-   2. Select **Next**.
+   1. Select **Next**.
   
 1. Configure destination: 
 
