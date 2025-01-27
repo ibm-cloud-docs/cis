@@ -32,13 +32,13 @@ Before you create a Logpush job using the UI, review the following information a
    - IBM Cloud Logs
    - Cloud Object Storage
    - Splunk
-   - IBM Log Analysis (deprecated). 
+   - IBM Log Analysis (deprecated)
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or a Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path.
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.
 * When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
 
-## Before you begin
+### Before you begin
 {: #before-you-begin-logpush-cli}
 {: cli} 
 
@@ -51,7 +51,7 @@ Before you create a Logpush job from the CLI, review the following information a
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.
 * When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure. 
 
-## Before you begin
+### Before you begin
 {: #before-you-begin-logpush-api}
 {: api} 
 
