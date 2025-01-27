@@ -26,13 +26,13 @@ The IBM Log Analysis service is deprecated and will no longer be supported as of
 
 Before you create a Logpush job using the UI, review the following information and satisfy any prerequisites:
 
-* Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
-* If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.{: cli}{: api}
 * Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations:{: ui}
    - IBM Cloud Logs
    - Cloud Object Storage
    - Splunk
    - IBM Log Analysis (deprecated)
+* Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
+* If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.{: cli}{: api}
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to IBM Cloud Logs or a Cloud Object Storage bucket.
 * Range and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path. 
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.  
@@ -110,44 +110,41 @@ Where:
    `-destination`
    :    Specifies the path to the destination. Paths for supported destinations are as follows: 
   
-   | IBM Cloud Logs | 
-   |---------------------|
-   | `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
-   {: caption="IBM Cloud Logs path" caption-side="bottom"}
-   {: #cli-table-11}
-   {: tab-title="IBM Cloud Logs"}
-   {: tab-group="pla"}
-   {: class="simple-tab-table"}
-   {: row-headers}
+        | IBM Cloud Logs | 
+        |---------------------|
+        | `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
+        {: caption="IBM Cloud Logs path" caption-side="bottom"}
+        {: #cli-table-11}
+        {: tab-title="IBM Cloud Logs"}
+        {: tab-group="pla"}
+        {: class="simple-tab-table"}
+        {: row-headers}
 
-   | Cloud Object Storage | 
-   |---------------------|
-   | `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>` \n \n For example: \n `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd` |  
-   {: caption="Cloud Object Storage path" caption-side="bottom"}
-   {: #cli-table-22}
-   {: tab-title="Cloud Object Storage"}
-   {: tab-group="pla"}
-   {: class="simple-tab-table"}
-   {: row-headers}
+        | Cloud Object Storage | 
+        |---------------------|
+        | `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>` \n \n For example: \n `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd` |  
+        {: caption="Cloud Object Storage path" caption-side="bottom"}
+        {: #cli-table-22}
+        {: tab-title="Cloud Object Storage"}
+        {: tab-group="pla"}
+        {: class="simple-tab-table"}
+        {: row-headers}
 
-   | Splunk | 
-   |---------------------|
-   | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
-   {: caption="Splunk path" caption-side="bottom"}
-   {: #cli-table-44}
-   {: tab-title="Splunk"}
-   {: tab-group="pla"}
-   {: class="simple-tab-table"}
-   {: row-headers}
-   
+        | Splunk | 
+        |---------------------|
+        | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
+        {: caption="Splunk path" caption-side="bottom"}
+        {: #cli-table-44}
+        {: tab-title="Splunk"}
+        {: tab-group="pla"}
+        {: class="simple-tab-table"}
+        {: row-headers}
 
    `--name`
    :    Specifies the Logpush job name.
 
    `--fields`
-   :    Specifies the list of log fields to be included in log files. Use commas to separate multiple fields.
-   
-        Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
+   :    Specifies the list of log fields to be included in log files. Use commas to separate multiple fields. Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
 
    `--enable`
    :    Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).  
