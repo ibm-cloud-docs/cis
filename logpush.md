@@ -99,6 +99,10 @@ Before you create a Logpush job, review the following information and satisfy an
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.
 * When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
    
+## Creating a Logpush job for a specific domain 
+{: #logpush-create-job-specific-domain-cli}
+{: cli}
+
 To create a Logpush job for a specific domain and enable the job, run the following command:
 
 ```sh
