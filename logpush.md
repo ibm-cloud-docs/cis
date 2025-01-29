@@ -75,7 +75,7 @@ To create a Logpush job in the UI, follow these steps:
 
    IBM Log Analysis 
    :   Be aware that IBM Log Analysis is deprecated and should not be used.
-       {: attention}
+       {: attention} 
 
 1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket and paste the token in the Ownership token text area. Then, click **Next**.
 
@@ -127,18 +127,7 @@ Where:
    {: tab-title="Cloud Object Storage"}
    {: tab-group="pla"}
    {: class="simple-tab-table"}
-   {: row-headers} 
-
-   | IBM QRadar | 
-   |---------------------|
-   | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
-   {: caption="IBM QRadar path" caption-side="bottom"}
-   {: #cli-table-33}
-   {: tab-title="IBM QRadar"}
-   {: tab-group="pla"}
-   {: class="simple-tab-table"}
-   {: row-headers} 
-
+   {: row-headers}
    | Splunk | 
    |---------------------|
    | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
@@ -147,89 +136,18 @@ Where:
    {: tab-title="Splunk"}
    {: tab-group="pla"}
    {: class="simple-tab-table"}
-   {: row-headers} 
-
-   | Custom HTTP | 
-   |---------------------|
-   | `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>` \n \n For example: \n `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` |
-   {: caption="Custom HTTP path" caption-side="bottom"}
-   {: #cli-table-55}
-   {: tab-title="Custom HTTP"}
-   {: tab-group="pla"}
-   {: class="simple-tab-table"}
    {: row-headers}
 
 `--name`: Specifies the Logpush job name.
 
 `--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields. Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
 
-`--enable`: Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).  
-
-### test
-{: #test}
-
-`-destination`
-:   Specifies the path to the destination. Paths for supported destinations are as follows:  
-  
-    | IBM Cloud Logs | 
-    |---------------------|
-    | `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
-    {: caption="IBM Cloud Logs path" caption-side="bottom"}
-    {: #cli-table-11}
-    {: tab-title="IBM Cloud Logs"}
-    {: tab-group="pla"}
-    {: class="simple-tab-table"}
-    {: row-headers}
-
-    | Cloud Object Storage | 
-    |---------------------|
-    | `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>` \n \n For example: \n `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd` |  
-    {: caption="Cloud Object Storage path" caption-side="bottom"}
-    {: #cli-table-22}
-    {: tab-title="Cloud Object Storage"}
-    {: tab-group="pla"}
-    {: class="simple-tab-table"}
-    {: row-headers} 
-
-    | IBM QRadar | 
-    |---------------------|
-    | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
-    {: caption="IBM QRadar path" caption-side="bottom"}
-    {: #cli-table-33}
-    {: tab-title="IBM QRadar"}
-    {: tab-group="pla"}
-    {: class="simple-tab-table"}
-    {: row-headers} 
-
-    | Splunk | 
-    |---------------------|
-    | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
-    {: caption="Splunk path" caption-side="bottom"}
-    {: #cli-table-44}
-    {: tab-title="Splunk"}
-    {: tab-group="pla"}
-    {: class="simple-tab-table"}
-    {: row-headers} 
-
-    | Custom HTTP | 
-    |---------------------|
-    | `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>` \n \n For example: \n `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` |
-    {: caption="Custom HTTP path" caption-side="bottom"}
-    {: #cli-table-55}
-    {: tab-title="Custom HTTP"}
-    {: tab-group="pla"}
-    {: class="simple-tab-table"}
-    {: row-headers} 
+`--enable`: Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default). 
 
 ### Cloud Object Storage: Verifying ownership
 {: #next-step-cloud-object-storage}
 
-After creating a Logpush job to send logs to Cloud Object Storage, you must validate ownership. To do so, interactively address the Cloud Object Storage bucket ownership challenge as follows:
-
-```sh
-COMMAND NEEDED - ARJUN
-```
-{: pre} 
+After creating a Logpush job to send logs to Cloud Object Storage, you must validate ownership. 
 
 When a challenge token is written to a file in the specified Cloud Object Storage bucket, follow these steps:
 
@@ -261,7 +179,7 @@ CLI examples for the supported destinations:
        ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
        ```
        {: pre}
-
+   
    Splunk
    :   Example
 
