@@ -37,10 +37,6 @@ Before you create a Logpush job using the UI, review the following information a
 * Range and firewall event logs (DNS logs) are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path. 
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.  
 * When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk).
-* If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
-
-   To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
-   {: important} 
 * When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure. 
 
 ## Creating a Logpush job in the UI
