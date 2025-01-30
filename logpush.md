@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 keywords:
 
@@ -128,15 +128,6 @@ Where:
    {: tab-group="pla"}
    {: class="simple-tab-table"}
    {: row-headers}
-   | Splunk | 
-   |---------------------|
-   | `NEED EXAMPLE` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
-   {: caption="Splunk path" caption-side="bottom"}
-   {: #cli-table-44}
-   {: tab-title="Splunk"}
-   {: tab-group="pla"}
-   {: class="simple-tab-table"}
-   {: row-headers}
 
 `--name`: Specifies the Logpush job name.
 
@@ -180,14 +171,6 @@ CLI examples for the supported destinations:
        ```
        {: pre}
    
-   Splunk
-   :   Example
-
-       ```sh
-       NEED EXAMPLE
-       ```
-       {: pre}
-
 ## Creating a Logpush job with the API
 {: #logpush-setup-api}
 {: api}
