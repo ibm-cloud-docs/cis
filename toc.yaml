@@ -47,7 +47,7 @@ toc:
             - include: ../codeengine/deploy-multiple-regions.md
         - link:
             label: What are computer networking solutions
-            href: https://www.ibm.com/topics/networking#toc-computer-n-9C7jokVu
+            href: https://www.ibm.com/think/topics/networking#toc-computer-n-9C7jokVu
     - navgroup:
         id: howto
         topics:
@@ -249,4 +249,5 @@ toc:
             - ts-create-har.md
             - ts-domain-moved.md
             - ts-delete-cis-instance.md
+            - ts-ddos.md
         - getting-help.md

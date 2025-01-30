@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2025
+lastupdated: "2025-01-24"
 
 keywords: CIS activity tracker events
 
@@ -333,18 +333,18 @@ The following table lists the actions that are related to range applications and
 |`internet-svcs.range-apps.delete`|Delete a range application.|
 {: caption="Actions that generate range events" caption-side="bottom"}
 
-## Events for logpush
+## Events for Logpush
 {: #at_actions_logpush}
 
 The following table lists the actions that are related to Logpush and generate an event:
 
 |Action|Description|
 |-|-|
-|`internet-svcs.logpush-ownership.create`|Initiate logpush ownership challenge.|
-|`internet-svcs.logpush-ownership-validate.create`|Validate logpush ownership challenge.|
-|`internet-svcs.logpush-jobs.create`|Create a logpush job.|
-|`internet-svcs.logpush-jobs.update`|Update a logpush job.|
-|`internet-svcs.logpush-jobs.delete`|Delete a logpush job.|
+|`internet-svcs.logpush-ownership.create`|Initiate Logpush ownership challenge.|
+|`internet-svcs.logpush-ownership-validate.create`|Validate Logpush ownership challenge.|
+|`internet-svcs.logpush-jobs.create`|Create a Logpush job.|
+|`internet-svcs.logpush-jobs.update`|Update a Logpush job.|
+|`internet-svcs.logpush-jobs.delete`|Delete a Logpush job.|
 {: caption="Actions that generate logpush events" caption-side="bottom"}
 
 ## Events for custom error pages
