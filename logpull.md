@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-08-19"
+  years: 2018, 2025
+lastupdated: "2025-02-04"
 
 keywords: log pull, logpull
 
@@ -116,10 +116,10 @@ ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
 ```
 {: pre}
 
-Fields are passed as a comma-separated list. For example, to have "ZoneID" and "RayID", use:
+Fields are passed as a comma-separated list. For example, to have "ZoneName" and "RayID", use:
 
 ```sh
-ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneId,RayID
+ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneName,RayID
 ```
 {: pre}
 
@@ -183,7 +183,7 @@ Available fields:
 "WorkerStatus": "string; status returned from worker daemon",
 "WorkerSubrequest": "bool; whether or not this request was a worker subrequest",
 "WorkerSubrequestCount": "int; number of subrequests issued by a worker when handling this request",
-"ZoneID": "int; internal zone ID"
+"ZoneName": "string; the human-readable name of the zone"
 ```
 {: codeblock}
 
@@ -195,7 +195,7 @@ The following is an example `logpull` call and examples of specific types of res
 * **Request**
 
     ```sh
-    ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ClientRequestURI,CEdgeResponseBytes,CParentRayID,CWorkerStatus,    COriginResponseTime,CEdgeResponseStatus,CWorkerSubrequest,CClientRequestProtocol,CWAFRuleID,CEdgePathingOp,CClientSrcPort,CWorkerSubrequestCount,CEdgeRequestHost,    CClientSSLCipher,CEdgePathingSrc,COriginResponseStatus,CClientIPClass,CWAFAction,CEdgeColoID,CClientCountry,CClientRequestHost,CWAFFlags,CClientASN,CEdgeServerIP,    CCacheCacheStatus,CSecurityLevel,CClientRequestUserAgent,CCacheResponseBytes,CWAFMatchedVar,CEdgeStartTimestamp,CClientSSLProtocol,CEdgeEndTimestamp,CEdgeResponseContentType,    CClientRequestBytes,CCacheResponseStatus,CWorkerCPUTime,CRayID,CClientRequestMethod,CClientIP,CClientRequestPath,COriginResponseHTTPExpires,CCacheTieredFill,CWAFRuleMessage,    CEdgePathingStatus,CClientDeviceType,COriginSSLProtocol,CEdgeRateLimitAction,COriginIP,CEdgeRateLimitID,CZoneID,CEdgeResponseCompressionRatio,CClientRequestReferer,CWAFProfile,    COriginResponseHTTPLastModified,COriginResponseBytes --timestamps=rfc3339'
+    ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ClientRequestURI,CEdgeResponseBytes,CParentRayID,CWorkerStatus,    COriginResponseTime,CEdgeResponseStatus,CWorkerSubrequest,CClientRequestProtocol,CWAFRuleID,CEdgePathingOp,CClientSrcPort,CWorkerSubrequestCount,CEdgeRequestHost,    CClientSSLCipher,CEdgePathingSrc,COriginResponseStatus,CClientIPClass,CWAFAction,CEdgeColoID,CClientCountry,CClientRequestHost,CWAFFlags,CClientASN,CEdgeServerIP,    CCacheCacheStatus,CSecurityLevel,CClientRequestUserAgent,CCacheResponseBytes,CWAFMatchedVar,CEdgeStartTimestamp,CClientSSLProtocol,CEdgeEndTimestamp,CEdgeResponseContentType,    CClientRequestBytes,CCacheResponseStatus,CWorkerCPUTime,CRayID,CClientRequestMethod,CClientIP,CClientRequestPath,COriginResponseHTTPExpires,CCacheTieredFill,CWAFRuleMessage,    CEdgePathingStatus,CClientDeviceType,COriginSSLProtocol,CEdgeRateLimitAction,COriginIP,CEdgeRateLimitID,ZoneName,CEdgeResponseCompressionRatio,CClientRequestReferer,CWAFProfile,    COriginResponseHTTPLastModified,COriginResponseBytes --timestamps=rfc3339'
     ```
     {: codeblock}
 
@@ -257,7 +257,7 @@ The following is an example `logpull` call and examples of specific types of res
     "WorkerStatus":"unknown",
     "WorkerSubrequest":false,
     "WorkerSubrequestCount":0,
-    "ZoneID":******
+    "ZoneName":"example.com"
     }
     ```
     {: codeblock}
@@ -320,7 +320,7 @@ The following is an example `logpull` call and examples of specific types of res
     "WorkerStatus":"unknown",
     "WorkerSubrequest":false,
     "WorkerSubrequestCount":0,
-    "ZoneID":******
+    "ZoneName":"example.com"
     }
     ```
     {: codeblock}
@@ -383,7 +383,7 @@ The following is an example `logpull` call and examples of specific types of res
     "WorkerStatus":"unknown",
     "WorkerSubrequest":false,
     "WorkerSubrequestCount":0,
-    "ZoneID":******
+    "ZoneName":"example.com"
     }
     ```
     {: codeblock}
@@ -446,7 +446,7 @@ The following is an example `logpull` call and examples of specific types of res
     "WorkerStatus":"unknown",
     "WorkerSubrequest":false,
     "WorkerSubrequestCount":0,
-    "ZoneID":******
+    "ZoneName":"example.com"
     }
     ```
     {: codeblock}
@@ -509,7 +509,7 @@ The following is an example `logpull` call and examples of specific types of res
     "WorkerStatus":"unknown",
     "WorkerSubrequest":false,
     "WorkerSubrequestCount":0,
-    "ZoneID":******
+    "ZoneName":"example.com"
     }
     ```
     {: codeblock}
@@ -572,7 +572,7 @@ The following is an example `logpull` call and examples of specific types of res
     "WorkerStatus":"unknown",
     "WorkerSubrequest":false,
     "WorkerSubrequestCount":0,
-    "ZoneID":******
+    "ZoneName":"example.com"
     }
     ```
     {: codeblock}

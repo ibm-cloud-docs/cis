@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-09"
+  years: 2024, 2025
+lastupdated: "2025-02-04"
 
 keywords: managed rules, rulesets, waf
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managed Rules overview
+# Managed rules overview
 {: #managed-rules-overview}
 
 You can use WAF managed rules to deploy pre-configured managed rulesets that provide immediate protection against the following threats:
