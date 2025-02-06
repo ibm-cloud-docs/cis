@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-02-06"
 
 keywords:
 
@@ -213,7 +213,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
    
    | IBM Cloud Logs | 
    |---------------------|
-   | `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. |
+   | `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. \n \n `ibmcl_names`: Optional field to customize the application and subsystem names used in IBM Cloud Logs. Fields within the `ibmcl_names` object are: \n * `application_name`: Custom application name for the job. \n * `subsystem_name`: Custom subsystem name for the job. |
    {: caption="IBM Cloud Logs destination" caption-side="bottom"}
    {: #pl-table-1}
    {: tab-title="IBM Cloud Logs"}
@@ -261,10 +261,14 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
    --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
    --data '{
       "ibmcl": { 
-            "instance_id": "f8k3309c-585c-4a42-955d-76239cccf8k3", 
-            "region": "us-south",
-            "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
+         "instance_id": "f8k3309c-585c-4a42-955d-76239cccf8k3", 
+         "region": "us-south",
+         "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
       },
+      "ibmcl_names": {
+         "application_name": "cis-edge-logs",
+         "subsystem_name": "stage-firewall-logs"
+      }
       "dataset": "http_requests",
       "enabled": true,
       "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
@@ -282,10 +286,10 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
    --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
    --data '{
       "cos": {
-            "bucket_name": "example_bucket",
-            "path": "temp/",
-            "id": "cos_instance_id",
-            "region": "us-east"
+         "bucket_name": "example_bucket",
+         "path": "temp/",
+         "id": "cos_instance_id",
+         "region": "us-east"
       },
       "dataset": "firewall_events",
       "enabled": false,
