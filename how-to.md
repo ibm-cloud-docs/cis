@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-19"
 
 keywords:
 
@@ -103,7 +103,7 @@ By default, DDoS protection is enabled for any DNS records or load balancers wit
 Security settings are:
 
 * Turn on WAF using the toggle on the **Web Application Firewall** page. When you toggle the rules on or off, the changes are applied immediately.
-* **Enterprise only** - The **Rate limiting** page allows you to configure rate limiting rules to avoid noisy-neighbor problems and ward off DDoS.
+* **Enterprise only** - The **Rate limiting** page allows you to configure rate-limiting rules to avoid noisy-neighbor problems and ward off DDoS.
 * On the **IP Firewall** page, you can configure access rules based on IP, country code, or ASN. You can also configure rules to block user agents. The domain lockdown section of this page allows you to limit access to your domain to certain IP addresses.
 * You can review firewall-related events on the **Events** page.
 

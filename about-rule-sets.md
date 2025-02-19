@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-09"
+  years: 2024, 2025
+lastupdated: "2025-02-19"
 
 keywords:
 
@@ -47,7 +47,7 @@ The following table lists the phases that are available within the Ruleset Engin
 |----------|-----------|-------------------|
 | `http_request_firewall_managed`| Web Application Firewall (WAF)| API, CLI, UI |
 | `http_request_firewall_custom` | Firewall rules | API |
-| `http_ratelimit` | Rate limiting rules | API, CLI |
+| `http_ratelimit` | Rate-limiting rules | API, CLI |
 | `ddos_l7` | HTTP DDoS Attack Protection rules | API |
 {: caption="Available phases" caption-side="bottom"}
 

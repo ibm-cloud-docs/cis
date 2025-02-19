@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2025
-lastupdated: "2025-01-24"
+lastupdated: "2025-02-19"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -25,15 +25,15 @@ In this change log, you can learn about the latest changes, improvements, and up
 Version 1.16.3 of the CLI was released on July 19, 2024.
 :   Fix CVE certifi.
 :   Add `replace_insecure_js` domain setting.
-:   Fix managed rules and advanced rate limiting rules bugs.
+:   Fix managed rules and advanced rate-limiting rule bugs.
 :   CLI GVT translation.
 :   Update the dependency `requests` to v2.32.3.
 
 ## Version 1.16.2
 {: #cli-1162}
 
-Version 1.16.2 of the CLI was released on Jun 13, 2024.
-:   Support Advanced rate limiting rules.
+Version 1.16.2 of the CLI was released on June 13, 2024.
+:   Support Advanced rate-limiting rules.
 :   Update the description of listing dns record per page.
 
 ## Version 1.16.1
@@ -123,7 +123,7 @@ Version 1.15.3 of the CLI was released on Jul 23, 2023.
 ## Version 1.15.2
 {: #cli-1152}
 
-Version 1.15.2 of the CLI was released on Jun 6, 2023.
+Version 1.15.2 of the CLI was released on June 6, 2023.
 :   Support Zone hold.
 :   Support Image Resizing.
 :   Fix bugs of alerts.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2025
+lastupdated: "2025-02-19"
 
 keywords:
 
@@ -49,7 +49,7 @@ Manage the TLS certificates that encrypt traffic between your origin server and 
 ### Rate limiting
 {: #rate-limiting-feature}
 
-Use rate limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
+Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
 
 ### Traffic scrubbing
 {: #traffic-scrubbing}
