@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-18"
+  years: 2018, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Viewing firewall event groups
 {: #view-firewall-groups}
 
-If you have a large amount of firewall events, you may want to view the overall count of events based on different groupings. This example shows looking at firewall events per country in 15 minute groupings.
+If you have a large amount of firewall events, you might want to view the overall count of events based on different groupings. This example shows looking at firewall events per country in 15 minute groupings.
 {: shortdesc}
 
 The API call looks like:

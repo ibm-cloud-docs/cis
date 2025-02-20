@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-12-04"
+  years: 2024, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -29,25 +29,25 @@ To migrate your instance to managed rules, take the following steps:
 1. Navigate to the **Security** section.
 1. Select the **WAF** tab. If the CIS instance has not been upgraded, you receive the message to **Update to the new WAF**.
 1. Click **Review configuration**.
-1. In the **Review configuration** panel, the rule sets are listed in the order in which they are applied.
-1. Enable or disable the rule sets by using the switches in the **Status** column.
-1. From the **Actions** menu beside each rule set, you can choose to edit or reorder the rule set, or delete it completely. These actions are considered overrides from the default.
-1. In the **Managed rule sets** section, you can add or configure rule sets that are not yet added.
-   * Click **Add** on the rule set you want to add, then toggle the switch from **Disabled** to **Enabled** on the new rule.
-   * Click **Configure** on the rule set you want to configure before migrating. In the **Configure deployment** side panel, you can accept all incoming requests or update the scope of execution with the customized filters you make in the expression builder. Then, click **Save**.
+1. In the **Review configuration** panel, the rulesets are listed in the order in which they are applied.
+1. Enable or disable the rulesets by using the switches in the **Status** column.
+1. From the **Actions** menu beside each  ruleset, you can choose to edit or reorder the  ruleset, or delete it completely. These actions are considered overrides from the default.
+1. In the **Managed rulesets** section, you can add or configure rulesets that are not yet added.
+   * Click **Add** on the ruleset you want to add, then toggle the switch from **Disabled** to **Enabled** on the new rule.
+   * Click **Configure** on the ruleset you want to configure before migrating. In the **Configure deployment** side panel, you can accept all incoming requests or update the scope of execution with the customized filters you make in the expression builder. Then, click **Save**.
 1. Click **Deploy** in the side panel to continue.
 1. (Enterprise only) Review the security events in the **Security > Events** tab, and select **Ready to update** when you feel the events are correct.
 1. Select **Turn off previous version** to finalize the migration (this step cannot be undone), or cancel to continue editing. This transition does not incur any downtime.
 
-## Editing rule sets
+## Editing rulesets
 {: #edit-rulesets}
 
 From the Action menu, you can select the following actions:
 
-* **Edit**: Opens a panel where you can change rule set actions and status, as well as perform a batch edit of rules within the rule set. Edits are considered overrides of the default rules.
-* **Delete**: Removes the rule set from the list.
-* **Move up**: Changes the order in which the rule sets are executed by moving one row higher in priority.
-* **Move to...**: Changes the priority order in which the rule sets are executed.
+* **Edit**: Opens a panel where you can change ruleset actions and status, as well as perform a batch edit of rules within the ruleset. Edits are considered overrides of the default rules.
+* **Delete**: Removes the ruleset from the list.
+* **Move up**: Changes the order in which the rulesets are executed by moving one row higher in priority.
+* **Move to...**: Changes the priority order in which the rulesets are executed.
 
 ## Adding an exception
 {: #add-exception}
@@ -58,7 +58,7 @@ To add your own exceptions, take the following steps.
 1. In the **Add exception** side panel, enter a name for your exception.
 1. Select options in the **When incoming requests match...** section, or use the expression builder to fine-tune the exception.
 1. If you want to log matching requests, move the switch to the **On** position.
-1. Select if you want the exception to skip all remaining rules, or skip specific rules from a managed rule set.
+1. Select if you want the exception to skip all remaining rules, or skip specific rules from a managed ruleset.
 1. Click **Save**.
 
 ## Managed rules FAQs
@@ -95,4 +95,4 @@ You can contact IBM Cloud support for help with the following errors:
 ## Related links
 {: #managed-rules-related-links}
 
-To learn more about the available rule sets, see [About rule sets](/docs/cis?topic=cis-about-rule-sets).
+To learn more about the available rulesets, see [About rulesets](/docs/cis?topic=cis-about-rule-sets).

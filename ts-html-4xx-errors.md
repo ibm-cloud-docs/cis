@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-30"
+  years: 2024, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -177,7 +177,7 @@ The client sent too many requests in the specified amount of time, according to 
 
 The global rate limit for the {{site.data.keyword.cis_short_notm}} API is 1200 requests per five minutes per user, and applies cumulatively regardless of whether the request is made through the dashboard, API key, or API token. If you exceed this limit, all API calls for the next five minutes are blocked, receiving an `HTTP 429` response.
 
-Some specific API calls have their own limits and are documented separately, such as Cache Purge APIs, GraphQL APIs, and Rule sets APIs.
+Some specific API calls have their own limits and are documented separately, such as Cache Purge APIs, GraphQL APIs, and rulesets APIs.
 
 [Resolution]{: tag-green} Enterprise customers can contact Support to raise the limit.
 

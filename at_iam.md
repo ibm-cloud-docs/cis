@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-02-20"
 
 keywords: IBM Cloud, observability
 
@@ -161,9 +161,9 @@ List of IAM actions and Activity Tracker actions by API method.
 | Action                                    | Method            | IAM ACTION   |  AT ACTION |
 |-------------------------------------------|-------------------|--------------|------------|
 | Get the rate-limiting rules | `GET /v1/{crn}/zones/{domain_id}/rate_limits` | `internet-svcs.security.read` | `internet-svcs.rate-limits.read` |
-| Create a rate limiting rule | `POST /v1/{crn}/zones/{domain_id}/rate_limits` | `internet-svcs.security.manage` | `internet-svcs.rate-limits.create` |
-| Update a rate limiting rule | `PUT /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.update` | `internet-svcs.rate-limits.update` |
-| Delete a rate limiting rule | `DELETE /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.manage` | `internet-svcs.rate-limits.delete` |
+| Create a rate-limiting rule | `POST /v1/{crn}/zones/{domain_id}/rate_limits` | `internet-svcs.security.manage` | `internet-svcs.rate-limits.create` |
+| Update a rate-limiting rule | `PUT /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.update` | `internet-svcs.rate-limits.update` |
+| Delete a rate-limiting rule | `DELETE /v1/{crn}/zones/{domain_id}/rate_limits/{ratelimit_id}` | `internet-svcs.security.manage` | `internet-svcs.rate-limits.delete` |
 | Get the rate limiting analytics | `GET /v1/{crn}/zones/{domain_id}/rate_limit_analytics` | `internet-svcs.security.read` | `internet-svcs.rate-limit-analytics.read` |
 {: caption="Rate limiting" caption-side="bottom"}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-05-03"
+  years: 2024, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Exposed Credentials Check rule set
 {: #exposed-credentials-check-ruleset}
 
-The Exposed Credentials Check rule set (part of Managed Rules) is a set of pre-configured rules for content management system applications that check against a public database of stolen credentials. When enabled in a rule, exposed credentials checking occurs when the rule expression evaluates to `true`.
+The Exposed Credentials Check ruleset (part of Managed Rules) is a set of pre-configured rules for content management system applications that check against a public database of stolen credentials. When enabled in a rule, exposed credentials checking occurs when the rule expression evaluates to `true`.
 
 The WAF checks the username and password pair in the request against a public database of known stolen credentials. When both the rule expression and the exposed credentials check are `true`, the rule match triggers the action that is configured in the rule.
 
@@ -28,6 +28,6 @@ The WAF can perform one of the following actions when it detects exposed credent
 * **Log:** (Enterprise only) Logs requests with exposed credentials in the logs. Logging is recommended for validating a rule before you commit to a more severe action.
 * **Interactive Challenge:** Presents an interactive challenge to the clients who are making HTTP requests with exposed credentials.
 
-The default action for the rules in the Exposed Credentials Check managed rule set is `Exposed-Credential-Check Header` (named `rewrite` in the API).
+The default action for the rules in the Exposed Credentials Check managed ruleset is `Exposed-Credential-Check Header` (named `rewrite` in the API).
 
 The best practice is to use only the `Exposed-Credential-Check Header` (`rewrite` in the API) and `Log` (`log`).

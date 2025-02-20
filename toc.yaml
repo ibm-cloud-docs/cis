@@ -93,10 +93,9 @@ toc:
             - waf-cis-ruleset.md
             - security-events.md
         - topicgroup:
-            label: Working with rule sets
+            label: Working with rulesets
             topics:
             - about-rule-sets.md
-            - about-managed-rules.md
             - deploy-rule-sets.md
             - override-rule-sets.md
             - handling-false-positives-managed-rules.md

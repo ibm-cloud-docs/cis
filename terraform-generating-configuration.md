@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-07-17"
+  years: 2024, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -102,7 +102,7 @@ To generate a configuration with Terraform, perform the following procedure:
     ╷
     │ Warning: Config generation is experimental
     │
-    │ Generating configuration during import is currently experimental, and the generated configuration format may change in future versions.
+    │ Generating configuration during import is currently experimental, and the generated configuration format might change in future versions.
     ╵
 
     ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
