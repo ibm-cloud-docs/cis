@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-07-17"
+  years: 2024, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -12,10 +12,10 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying rule sets
+# Deploying rulesets
 {: #deploying-rule-sets}
 
-You can deploy rule sets at the zone or instance level by using the CLI or API.
+You can deploy rulesets at the zone or instance level by using the CLI or API.
 {: shortdesc}
 
 ## Deployment workflow
@@ -29,16 +29,16 @@ Use the following workflow to deploy a managed ruleset to a phase at the zone le
 1. Identify the phase where you want to deploy the managed ruleset. Ensure that the managed ruleset belongs to the same phase where you want to deploy it.
 1. Add a rule to the zone-level phase entry point ruleset that executes the managed ruleset.
 
-## Deploying rule sets from the CLI
+## Deploying rulesets from the CLI
 {: #cli-deploy-rule-sets}
 {: cli}
 
-You can deploy rule sets from the CLI.
+You can deploy rulesets from the CLI.
 
-### Listing rule sets from the CLI
+### Listing rulesets from the CLI
 {: #cli-list-rule-sets}
 
-To list all zone rule sets from the CLI, run the following command:
+To list all zone rulesets from the CLI, run the following command:
 
 ```sh
 ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -51,10 +51,10 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
-### Updating deployed rule set from the CLI
+### Updating deployed ruleset from the CLI
 {: #cli-update-entry-point-rule-set}
 
-To update a rule set that has been deployed by using the CLI, run the following command:
+To update a ruleset that has been deployed by using the CLI, run the following command:
 
 ```sh
 ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--match EXPRESSION] [--enabled true|false] [--override-action ACTION] [--override-status STATUS] [--paranoia-level LEVEL] [--override-rules RULE] [-i, --instance INSTANCE] [--output FORMAT]
@@ -73,16 +73,16 @@ Where:
 * **--output value** specifies the output format; only JSON is supported.
 
 
-## Deploying rule sets with the API
+## Deploying rulesets with the API
 {: #api-deploy-rule-sets}
 {: api}
 
-You can deploy rule sets from the API.
+You can deploy rulesets from the API.
 
-### Listing rule sets from the API
+### Listing rulesets from the API
 {: #api-list-rule-sets}
 
-To list all zone rule sets from the API, run the following command:
+To list all zone rulesets from the API, run the following command:
 
 ```sh
 curl -X GET \
@@ -93,10 +93,10 @@ curl -X GET \
 ```
 {: codeblock}
 
-### Updating entry point rule set from the API
+### Updating entry point ruleset from the API
 {: #api-update-entry-point-rule-set}
 
-To update the entry point rule set from the API, run the following command:
+To update the entry point ruleset from the API, run the following command:
 
 ```sh
 curl -X PUT \
@@ -109,9 +109,9 @@ curl -X PUT \
 {: codeblock}
 
 Where:
-- **$RULESET_PHASE** is the rule set phase that will be deployed. Use `http_request_firewall_managed` to deploy managed WAF rule sets.
-- **-d** is the object of attributes that are required to create the rule set.
-   - **rules** is the array of rules to deploy with the rule set. For example:
+- **$RULESET_PHASE** is the ruleset phase that will be deployed. Use `http_request_firewall_managed` to deploy managed WAF rulesets.
+- **-d** is the object of attributes that are required to create the ruleset.
+   - **rules** is the array of rules to deploy with the ruleset. For example:
      - **action** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-waf-actions) for a description of actions that can be used.
      - **action_parameters** is the object for defining what the action should operate on.
        - **id** is the ID of the ruleset to execute. This ID is retrieved from the `list zone rulesets` operation.

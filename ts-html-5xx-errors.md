@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-09-24"
+  years: 2021, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -125,7 +125,7 @@ If 520 errors continue to occur, provide the following information to Support:
 ## Error 521: web server is down
 {: #521-error}
 
-Error 521 occurs when the origin web server refuses connections from the cloud edge. Security solutions at your origin may block legitimate connections from certain CIS IP addresses.
+Error 521 occurs when the origin web server refuses connections from the cloud edge. Security solutions at your origin might block legitimate connections from certain CIS IP addresses.
 
 The two most common causes of 521 errors are:
 

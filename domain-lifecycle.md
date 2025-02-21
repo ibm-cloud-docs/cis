@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-18"
+  years: 2021, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -39,7 +39,7 @@ Domain state transitions:
 ## Domain lifecycle states
 {: #domain-lifecycle-states}
 
-You may encounter any of the following domain lifecycle states:
+You might encounter any of the following domain lifecycle states:
 
 - **Pending**: The zone has been added to a {{site.data.keyword.cis_short_notm}} instance, and the DNS configuration is being verified at the DNS provider or registrar to activate the domain. After confirmation that the correct name servers (or CNAME validation records) have been configured the domain is transitioned to active. The domain remains pending otherwise.
 - **Active**: The DNS configuration has been verified and the domain is actively serving traffic, taking advantage of the Cloudflare products. 

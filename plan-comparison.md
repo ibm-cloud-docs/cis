@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -33,7 +33,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Included requests and queries**  \n Overage charges can occur|5 M requests \n 1 M queries|150 requests and queries combined|150 requests and queries combined|150 requests and queries combined|Not applicable  \n (usage based)|
 |**DNS**|250 records|3500 records|3500 records|3500 records|3500 records|
 |**Global load balancers**|* 3 pools \n * 3 origin servers \n * 5 Health checks \n * 60s health checks \n * Geo Routing \n * Health checks from single region \n * 60s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers \n (more origins available for charge) \n * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers  \n (more origins available for charge) \n  * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|* 20 pools  \n * 20 origin servers  \n (more origins available for charge)  \n * 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for nonproxied global load balancers|* Up to 100 pools \n * 100 origin servers \n * Up to 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|
-|**WAF**|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|OWASP and CIS rule set|
+|**WAF**|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|
 |**Custom certificate**|1 uploaded custom certificate per domain|25 included custom certificates  \n More certificates can be added at a monthly rate|25 included custom certificates  \n More certificates can be added at a monthly rate|25 included custom certificates  \n More certificates can be added at a monthly rate|1 uploaded custom certificate per domain|
 |**Page rules**|50 page rules per domain|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|
 |**IP firewall**|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * Block is not available to Country filter \n * 10 Domain lockdown rules \n * 250 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-24"
+lastupdated: "2025-02-20"
 
 keywords: CIS activity tracker events
 
@@ -229,7 +229,7 @@ The following table lists the actions that are related to firewalls and generate
 
 |Action|Description|
 |-|-|
-|`internet-svcs.waf-groups.update`|Enable or disable a group of WAF rule sets.|
+|`internet-svcs.waf-groups.update`|Enable or disable a group of WAF rulesets.|
 |`internet-svcs.waf-rules.update`|Enable or disable a WAF rule.|
 |`internet-svcs.ip-firewall-rules.create`|Create an IP firewall rule at the domain level or instance level.|
 |`internet-svcs.ip-firewall-rules.update`|Update an IP firewall rule at the domain level or instance level.|
@@ -256,9 +256,9 @@ The following table lists the actions that are related to rate limiting and gene
 
 |Action|Description|
 |-|-|
-|`internet-svcs.rate-limits.create`|Create a rate limiting rule.|
-|`internet-svcs.rate-limits.update`|Update a rate limiting rule.|
-|`internet-svcs.rate-limits.delete`|Delete a rate limiting rule.|
+|`internet-svcs.rate-limits.create`|Create a rate-limiting rule.|
+|`internet-svcs.rate-limits.update`|Update a rate-limiting rule.|
+|`internet-svcs.rate-limits.delete`|Delete a rate-limiting rule.|
 {: caption="Actions that generate a rate limiting events" caption-side="bottom"}
 
 ## Events for routing

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2025
+lastupdated: "2025-02-20"
 
 keywords: 
 
@@ -18,18 +18,20 @@ subcollection: cis
 Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
 {: shortdesc}
 
-Select the type of rate limiting rule, either a **Custom rule** or **Protect login**
+Select the type of rate-limiting rule, either a **Custom rule** or **Protect login**
 
-## Creating a custom rate limiting rule
+## Creating a custom rate-limiting rule
 {: #create-a-custom-rate-limiting-rule}
 
 Enter a rule name that helps you remember what the rule does. This is an optional field.
 
 In the **Traffic matching criteria** section, enter the following information.
+
 1. Select the criteria type.
 1. Enter the URL that you are rate limiting.
 1. Select the number of requests to allow before triggering rate limiting.
 1. Select the time period (in seconds) over which the requests can occur before triggering rate limiting.
+
     Range is from 10 to 86,400 seconds.
     {: note}
 
@@ -62,7 +64,7 @@ In the **Advanced response** section, specify the response type when a rule's th
 ### Bypassing URLs
 {: #rate-limiting-bypass}
 
-Bypass lets you create the equivalent of a allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the Rate Limiting rule is matched.
+Bypass lets you create the equivalent of a allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
 ## Protecting login
 {: #rate-limiting-protect-login}

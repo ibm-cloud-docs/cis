@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -18,10 +18,10 @@ subcollection: cis
 The following table shows the actions that Web Application Firewalls (WAFs) can take.
 {: shortdesc}
 
-|Action|Rule sets|Definition|
+|Action|rulesets|Definition|
 |---|---|----|
 |**Block** | All | Blocks an attack stops any action before it is posted to your website.|
-|**Skip**| Firewall rules |Skip the remaining rules in the current rule set.|
+|**Skip**| Firewall rules |Skip the remaining rules in the current ruleset.|
 |**Log** | All | To test for false positives, set the WAF to **Log** mode, which records the response to possible attacks without challenging or blocking.|
 |**Challenge** | All |* Manged challenge: Dynamically chooses the appropriate type of challenge based on the characteristics of the request.  \n * Interactive challenge: Solve a puzzle to proceed. \n * JavaScript challenge: A challenge page asks visitors to submit a CAPTCHA to continue to your website. |
 {: caption="WAF actions" caption-side="bottom"}

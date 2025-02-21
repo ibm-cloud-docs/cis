@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -41,7 +41,7 @@ Sometimes the triggered rule is not identified. In this case the UI shows a `-` 
 When viewing Security Events, you can click the arrow on an event to expand the details for that event.
 One section of your screen shows the event details, along with the Ray-Id. The other section shows request details such as Header, URI, Protocol, the type of firewall that blocked the request, and User Agent.
 
-Suppose, for example, you see that the triggered rule for an event has an ID of `981176`. This means that the block was caused by OWASP. When any rules in the OWASP rule set is matched, the “threat score” of the request increases. The **Paranoia level** setting (`P1` to `P4`) for your zone translates to a threshold. If the cumulative score of all the matched OWASP rules exceeds that threshold, rule `981176` is triggered and blocks the request.
+Suppose, for example, you see that the triggered rule for an event has an ID of `981176`. This means that the block was caused by OWASP. When any rules in the OWASP ruleset is matched, the “threat score” of the request increases. The **Paranoia level** setting (`P1` to `P4`) for your zone translates to a threshold. If the cumulative score of all the matched OWASP rules exceeds that threshold, rule `981176` is triggered and blocks the request.
 
 This means that all requests blocked by OWASP show on your Security Events as blocked by `981176`. Expand the event details and view the **Event Triggers** section to see the individual OWASP rules that matched to increase the request’s threat score.
 
@@ -54,4 +54,3 @@ Expand each event to see event details. The **Event Triggers** section displays 
 {: #retention-policy}
 
 Enterprise plans retain security events for 90 days. Standard plans retain security events for 30 days.
-

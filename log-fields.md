@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -114,7 +114,7 @@ Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed 
 |ZoneID|Internal zone ID|int|
 {: caption="HTTP events" caption-side="bottom"}
 
-"Security rule" refers to one of these rule types: WAF managed rule, WAF custom rule, or WAF rate limiting rule.
+"Security rule" refers to one of these rule types: WAF managed rule, WAF custom rule, or WAF rate-limiting rule.
 {: note}
 
 ### Range requests

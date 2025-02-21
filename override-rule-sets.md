@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-05-15"
+  years: 2024, 2025
+lastupdated: "2025-02-20"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overriding rule sets
+# Overriding rulesets
 {: #override-rule-sets}
 
 To customize the behavior of a managed ruleset, override the ruleset at deployment. When you override a ruleset, you specify changes to be executed in addition to the default configuration.
@@ -34,8 +34,8 @@ Ruleset overrides and tag overrides apply to both existing and future rules in t
 
 To apply an override for a managed ruleset, take the following steps.
 
-1. List the rule sets available by using the list rule sets operation.
-1. List the rules for that rule set by using the get rule set operation.
+1. List the rulesets available by using the list rulesets operation.
+1. List the rules for that ruleset by using the get ruleset operation.
 1. Call the update ruleset operation on your phase entry point.
 1. Specify the overrides in the `action_parameters` of the rule that executes your managed ruleset.
 
@@ -77,16 +77,16 @@ Some managed rulesets can have extra override requirements, or they might overri
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
 
 
-## Overriding rule sets from the CLI
+## Overriding rulesets from the CLI
 {: #cli-override-rule-sets}
 {: cli}
 
-You can override rule sets from the CLI.
+You can override rulesets from the CLI.
 
-### Listing rule sets from the CLI
+### Listing rulesets from the CLI
 {: #cli-override-list-rule-sets}
 
-To list all zone rule sets from the CLI, run the following command:
+To list all zone rulesets from the CLI, run the following command:
 
 ```sh
 ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -102,7 +102,7 @@ Where:
 ### Listing rules from the CLI
 {: #cli-override-list-rule-sets-rules}
 
-To list the rules under a zone rule set from the CLI, run the following command:
+To list the rules under a zone ruleset from the CLI, run the following command:
 
 ```sh
 ibmcloud cis managed-waf ruleset DNS_DOMAIN_ID RULESET_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -116,7 +116,7 @@ Where:
 * **`-i, --instance value`** is the instance name or ID.
 * **`--output value`** specifies the output format; only JSON is supported.
 
-### Overriding managed rule sets from the CLI
+### Overriding managed rulesets from the CLI
 {: #cli-override-entry-point-rule-set}
 
 To override a managed WAF ruleset from the CLI, run the following command:
@@ -138,16 +138,16 @@ Where:
 * **`--output value`** specifies the output format; only JSON is supported.
 
 
-## Overriding rule sets with the API
+## Overriding rulesets with the API
 {: #api-override-rule-sets}
 {: api}
 
-You can override rule sets from the API.
+You can override rulesets from the API.
 
-### Listing rule sets from the API
+### Listing rulesets from the API
 {: #api-override-list-rule-sets}
 
-To list all zone rule sets from the API, run the following command:
+To list all zone rulesets from the API, run the following command:
 
 ```sh
 curl -X GET \
@@ -161,7 +161,7 @@ curl -X GET \
 ### Listing rules from the API
 {: #api-override-list-rule-sets-rules}
 
-To list all rules for a specific rule set, run the following command:
+To list all rules for a specific  ruleset, run the following command:
 
 ```sh
 curl -X GET \
@@ -176,10 +176,10 @@ Where:
 
 * **`$RULESET_ID`** is the ID of the managed ruleset which the rules are listed for.
 
-### Overriding an entry point rule set from the API
+### Overriding an entry point ruleset from the API
 {: #api-override-entry-point-rule-set}
 
-To update the entry point rule set from the API with an override, run the following command:
+To update the entry point ruleset from the API with an override, run the following command:
 
 ```sh
 curl -X PUT \
@@ -192,14 +192,14 @@ curl -X PUT \
 {: codeblock}
 
 Where:
-* **`$RULESET_PHASE`** is the rule set phase that is deployed to. Use `http_request_firewall_managed` to override managed WAF rule sets.
-* **`-d`** is the object of attributes that are required to create the rule set.
-    * **`description`** defines your own summary of what a rule set is accomplishing.
-    * **`rules`** is the array of rules to deploy with the rule set.
+* **`$RULESET_PHASE`** is the ruleset phase that is deployed to. Use `http_request_firewall_managed` to override managed WAF rulesets.
+* **`-d`** is the object of attributes that are required to create the ruleset.
+    * **`description`** defines your own summary of what a ruleset is accomplishing.
+    * **`rules`** is the array of rules to deploy with the ruleset.
       * **`action`** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-waf-actions) for a description of available actions.
       * **`action_parameters`** is the object for defining what the action operates on.
         * **`id`** is the ID of the ruleset to execute. This ID is retrieved from the list zone rulesets operation.
-        * **`overrides`** is the object of overrides to set upon the selected rule set.
+        * **`overrides`** is the object of overrides to set upon the selected ruleset.
           * **`rules`** is the list of rules that are overridden with the selected properties.
             * **`id`** is the ID of the rule to override. This ID is retrieved from the list zone ruleset rules operation.
             * **`enabled`** overwrites even when the rule is enabled.
