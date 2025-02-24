@@ -115,8 +115,7 @@ toc:
             - waf-cis-ruleset.md  
         - topicgroup:
             label: Working with firewall rules
-            topics:                    
-            - migration-custom-rules.md
+            topics:
             - firewall-rule.md
             - actions.md
             - fields-and-expressions.md
