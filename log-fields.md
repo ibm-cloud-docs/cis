@@ -17,7 +17,6 @@ subcollection: cis
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields using the following request.
 
-
 ```sh
 ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --instance INSTANCE]
 ```
@@ -27,6 +26,7 @@ ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --i
 {: #log-datasets}
 
 These available datasets describe the fields available by log category:
+
 - HTTP/ HTTPS requests (`http_requests`)
 - Firewall events (`firewall_events`)
 - Range events (`range_events`)
