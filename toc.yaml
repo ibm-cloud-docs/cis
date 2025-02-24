@@ -111,7 +111,6 @@ toc:
             label: Working with WAF
             topics:
             - waf-managed-rules.md
-            - about-managed-rules.md
             - waf-cis-ruleset.md  
         - topicgroup:
             label: Working with firewall rules
