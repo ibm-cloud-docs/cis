@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -13,7 +13,6 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Overriding rulesets
-{: #override-rule-sets}
 
 To customize the behavior of a managed ruleset, override the ruleset at deployment. When you override a ruleset, you specify changes to be executed in addition to the default configuration.
 
