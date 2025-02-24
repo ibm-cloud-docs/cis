@@ -82,7 +82,7 @@ Review the (security) events log to see the final score, as well as the individu
 ## Managing OWASP packages
 {: #manage-owasp-package}
 
-The OWASP ModSecurity Core Ruleset contains several rules from the OWASP project. {{site.data.keyword.cis_short_notm}} does not write or curate OWASP rules. Click on a ruleset name under **Group** to reveal the rule descriptions. Unlike the {{site.data.keyword.cis_short_notm}} managed  ruleset, specific OWASP rules are either turned on or off.
+The OWASP ModSecurity Core Ruleset contains several rules from the OWASP project. {{site.data.keyword.cis_short_notm}} does not write or curate OWASP rules. Click a ruleset name under **Group** to reveal the rule descriptions. Unlike the {{site.data.keyword.cis_short_notm}} managed  ruleset, specific OWASP rules are either turned on or off.
 
 To manage OWASP thresholds, set the paranoia level in the **Package: OWASP ModSecurity Core Ruleset** section. Setting the paranoia level to `P1` disables the entire OWASP package, including all its rules. Determining the appropriate paranoia level depends on your business industry and operations. For instance, a P1 setting is appropriate for large file uploads.
 

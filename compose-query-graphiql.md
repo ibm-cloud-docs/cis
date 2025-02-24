@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-11-18"
+  years: 2023, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -21,7 +21,7 @@ You can use a GraphiQL client to compose and execute a GraphQL query.
 ## Setting up a query and choosing a dataset
 {: #set-up-query-dataset}
 
-Click on the editing pane of GraphiQL and add the following depicted base query, replacing `zone-id` with your Cloudflare zone ID:
+Click the editing pane of GraphiQL and add the following depicted base query, replacing `zone-id` with your Cloudflare zone ID:
 
 ![Adding a base query in the GraphiQL pane](images/graphiql-1base-query.png "Adding a base query in the GraphiQL pane"){: caption="Adding a base query in the GraphiQL pane" caption-side="bottom"}
 
