@@ -105,7 +105,7 @@ toc:
                 - exposed-credentials-check-ruleset.md   
         - topicgroup:
             label: Working with rate-limiting rules
-            topics:
+            topics:  
             - rate-limiting.md             
         - topicgroup:
             label: Working with WAF
