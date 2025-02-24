@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 subcollection: cis
 
@@ -12,6 +12,7 @@ subcollection: cis
 
 # Prioritizing options
 {: #priority}
+
 
 By default, the action you specify in a rule determines the evaluation sequence for your entire ruleset. However, you can set a **priority** option that allows you to force the evaluation sequence to occur before triggering a rule.
 {: shortdesc}
