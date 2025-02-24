@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Plan comparison
+# Comparing CIS plans
 {: #cis-plan-comparison}
 
 {{site.data.keyword.cis_full}} offers several plans to choose from: no-cost Trial, Standard Next, and Enterprise Tier variations.
