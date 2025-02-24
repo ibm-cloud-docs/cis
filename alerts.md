@@ -18,7 +18,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} has alerts that you can configure through the API to warn you when events occur.
 {: shortdesc}
 
-See [Configuring webhooks](/docs/cis?topic=cis-configuring-webhooks) for detailed instructions on using webhooks.
+See [Configuring webhooks](/docs/cis?topic=cis-configuring-webhooks) for instructions on using webhooks.
 
 Alerts are available only to Enterprise plans.
 {: note}

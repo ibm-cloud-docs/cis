@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-04"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -275,7 +275,7 @@ The global rate limit for the {{site.data.keyword.cis_short_notm}} API is 1200 r
 1. Edge Functions
 1. Load Balancer
 
-For more detailed information about how your traffic is processed, see [Traffic sequencing](/docs/cis?topic=cis-traffic-sequencing).
+For more information about how your traffic is processed, see [Traffic sequencing](/docs/cis?topic=cis-traffic-sequencing).
 
 ## Can I use {{site.data.keyword.cis_short_notm}} with private IPs?
 {: #can-i-use-private-ips}

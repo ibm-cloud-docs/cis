@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-29"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords: support ticket, IBM Cloud development teams support case
 
@@ -28,7 +28,7 @@ If you still can't resolve the problem, you can open a support case. For more in
 ## Providing support case details for {{site.data.keyword.cis_short_notm}}
 {: #support-case-details}
 
-To ensure that the support team has all of the details for investigating your issue to provide a timely resolution, you must provide detailed information about your issue. Review the following tips about the type of information to include in your support case for issues with {{site.data.keyword.cis_short_notm}}.
+To ensure that the support team has all of the details for investigating your issue to provide a timely resolution, you must provide information about your issue. Review the following tips about the type of information to include in your support case for issues with {{site.data.keyword.cis_short_notm}}.
 
 Provide the following details:
 
