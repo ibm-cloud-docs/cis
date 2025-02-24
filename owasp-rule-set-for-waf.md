@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# OWASP rule set
+# OWASP ruleset
 {: #owasp-rule-set-for-waf}
 
 The OWASP core ruleset for WAF contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL injection, cross-site scripting, and local file inclusion. {{site.data.keyword.cis_short_notm}} provides, but does not curate these rules.
