@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Exposed Credentials Check rule set
+# Exposed Credentials Check ruleset
 {: #exposed-credentials-check-ruleset}
 
 The Exposed Credentials Check ruleset (part of Managed Rules) is a set of pre-configured rules for content management system applications that check against a public database of stolen credentials. When enabled in a rule, exposed credentials checking occurs when the rule expression evaluates to `true`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# OWASP rule set
+# OWASP ruleset
 {: #owasp-rule-set-for-waf}
 
 The OWASP core ruleset for WAF contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL injection, cross-site scripting, and local file inclusion. {{site.data.keyword.cis_short_notm}} provides, but does not curate these rules.
@@ -37,7 +37,7 @@ The OWASP ModSecurity Core Rule Set assigns a score to each request based on how
 ### OWASP v3.x
 {: #owasp-v3x}
 
-[OWASP v3.x]{: tag-green} The paranoia level settings are part of the core ruleset. The paranoia level (PL) helps to define how aggressive the core ruleset is.
+The paranoia level settings are part of the core ruleset. The paranoia level (PL) helps to define how aggressive the core ruleset is.
 
 |Paranoia level|Description|
 |:---:|---|
@@ -50,7 +50,7 @@ The OWASP ModSecurity Core Rule Set assigns a score to each request based on how
 ### OWASP v2.x
 {: #owasp-v2x}
 
-[OWASP v2.x]{: tag-green} A request can trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, {{site.data.keyword.cis_short_notm}} compares it to the sensitivity threshold selected in the beginning, and then either blocks, challenges, or logs the request based on the option selected.
+A request can trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, {{site.data.keyword.cis_short_notm}} compares it to the sensitivity threshold selected in the beginning, and then either blocks, challenges, or logs the request based on the option selected.
 
 It is recommended that you set OWASP sensitivity to `low` initially, then review for false positives before increasing the sensitivity. If you set it to `high`, check the logs on {{site.data.keyword.cis_short_notm}}, and fine-tune the OWASP ruleset to work for your application.
 

@@ -35,6 +35,8 @@ toc:
             - tcp-concepts.md
             - compression-concepts.md
             - domain-lifecycle.md
+        - security-events.md        
+        - url-normalization.md
         - release-notes.md
     - navgroup:
         id: tutorial
@@ -64,8 +66,7 @@ toc:
             - cname-dns-resolution.md
         - multi-domain.md
         - dns.md
-        - cname-setup.md
-        - rate-limiting.md
+        - cname-setup.md 
         - topicgroup:
             label: Working with Range applications
             topics:
@@ -87,25 +88,30 @@ toc:
             - ddos-responding.md
             - ddos-defense-mode.md
         - topicgroup:
-            label: Working with WAF
-            topics:
-            - waf-managed-rules.md
-            - waf-cis-ruleset.md
-            - security-events.md
-        - topicgroup:
             label: Working with rulesets
             topics:
             - about-rule-sets.md
-            - deploy-rule-sets.md
-            - override-rule-sets.md
+        - topicgroup:
+            label: Working with managed rules
+            topics:
+            - deploy-rule-sets.md            
+            - override-rule-sets.md            
             - handling-false-positives-managed-rules.md
             - topicgroup:
-                label: Available rulesets
+                label: Available managed rulesets
                 topics:
                 - cis-ruleset.md
                 - owasp-rule-set-for-waf.md
-                - exposed-credentials-check-ruleset.md
-            - terraform-generating-configuration.md
+                - exposed-credentials-check-ruleset.md   
+        - topicgroup:
+            label: Working with rate-limiting rules
+            topics:
+            - rate-limiting.md             
+        - topicgroup:
+            label: Working with WAF
+            topics:
+            - waf-managed-rules.md
+            - waf-cis-ruleset.md  
         - topicgroup:
             label: Working with firewall rules
             topics:
@@ -113,7 +119,12 @@ toc:
             - actions.md
             - fields-and-expressions.md
             - order-and-priority.md
-            - url-normalization.md
+        - topicgroup:
+            label: Working with page rules
+            topics:
+            - using-page-rules.md
+            - caching-with-page-rules.md
+            - resolve-override-cos.md
         - topicgroup:
             label: Working with global load balancers
             topics:
@@ -127,12 +138,6 @@ toc:
                 - glb-traffic-steering.md
                 - glb-proxy-modes.md
                 - glb-session-affinity.md
-        - topicgroup:
-            label: Working with page rules
-            topics:
-            - using-page-rules.md
-            - caching-with-page-rules.md
-            - resolve-override-cos.md
         - custom-page.md
         - topicgroup:
             label: Using edge functions
@@ -190,7 +195,8 @@ toc:
             - at_events.md
             - at_iam.md
         - cis-delete.md
-        - terraform.md
+        - terraform.md        
+        - terraform-generating-configuration.md
     - navgroup:
         id: reference
         topics:

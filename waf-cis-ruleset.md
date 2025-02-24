@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -12,8 +12,9 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# WAF actions
+# WAF actions 
 {: #waf-actions}
+
 
 The following table shows the actions that Web Application Firewalls (WAFs) can take.
 {: shortdesc}

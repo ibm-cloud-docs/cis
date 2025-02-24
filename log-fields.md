@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -17,23 +17,25 @@ subcollection: cis
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields using the following request.
 
-
 ```sh
-ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
+ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --instance INSTANCE]
 ```
 {: pre}
 
-Fields are passed as a comma-separated list. For example, to have "ZoneID" and "RayID", use:
+### Datasets
+{: #log-datasets}
 
-```sh
-ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-01-02T01:00:00+00:00 --fields ZoneId,RayID
-```
-{: pre}
+These available datasets describe the fields available by log category:
+
+- HTTP/ HTTPS requests (`http_requests`)
+- Firewall events (`firewall_events`)
+- Range events (`range_events`)
+- DNS logs (`dns_logs`)
 
 ## Available Fields
 {: #logpull-available-fields}
 
-The following tables describe the fields available by log category.
+The following tables indicate the fields available by dataset. Log fields are subject to change, so it is recommended to use the [Available Log Fields API](/apidocs/cis#list-fields-for-dataset-v2) to pull the most up-to-date version of the available fields.
 
 ### HTTP requests
 {: #http-requests}
@@ -49,7 +51,7 @@ Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed 
 |BotScoreSrc|Underlying detection engine or source on where a Bot Score is calculated. Possible values are `Not Computed` `Heuristics` `Machine Learning` `Behavioral Analysis` `Verified Bot`|string|
 |CacheCacheStatus|`unknown` `miss` `expired` `updating` `stale` `hit` `ignored` `bypass` `revalidated`|string|
 |CacheResponseBytes|Number of bytes returned by the cache|int|
-|CacheResponseStatus|HTTP status code returned by the cache to the edge; all requests (including non-cacheable ones) go through the cache; also see CacheStatus field|int|
+|CacheResponseStatus [Deprecated]{: tag-deprecated}|HTTP status code returned by the cache to the edge; all requests (including non-cacheable ones) go through the cache; also see CacheStatus field|int|
 |CacheTieredFill|Tiered Cache was used to serve this request|bool|
 |ClientASN|Client AS number|int|
 |ClientCountry|Country of the client IP address|string|
@@ -111,7 +113,7 @@ Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed 
 |WorkerStatus|Status returned from worker daemon|string|
 |WorkerSubrequest|Whether or not this request was a worker subrequest|bool|
 |WorkerSubrequestCount|Number of subrequests issued by a worker when handling this request|int|
-|ZoneID|Internal zone ID|int|
+|ZoneName|The human-readable name of the zone|string|
 {: caption="HTTP events" caption-side="bottom"}
 
 "Security rule" refers to one of these rule types: WAF managed rule, WAF custom rule, or WAF rate-limiting rule.
