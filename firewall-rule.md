@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-12-12"
+  years: 2019, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -20,7 +20,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} firewall rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
 {: shortdesc}
 
-You can create many types of firewall rules. However, the number of active rules on your site is limited by your customer plan. See the [Plan comparison](/docs/cis?topic=cis-cis-plan-comparison) page for more information on entitlements.
+You can create many types of firewall rules. However, the number of active rules on your site is limited by your customer plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information on entitlements.
 
 The number of active rules per plan is fixed. You cannot purchase additional active rules at this time.
 
@@ -30,7 +30,7 @@ Before getting started, it's a good idea to become familiar with [Using fields, 
 ## Creating a firewall rule
 {: #create-firewall-rule}
 
-Take the following steps to configure a basic firewall rule:
+Follow these steps to configure a basic firewall rule:
 
 1. Navigate to **Security > Firewall Rules**.
 2. Click **Create Firewall Rule**.
@@ -54,10 +54,10 @@ Take the following steps to configure a basic firewall rule:
 ## Editing a firewall rule
 {: #edit-firewall-rule}
 
-Take the following steps to edit an existing rule:
+Follow these steps to edit an existing rule:
 
 1. Navigate to **Security > Firewall Rules**.
-1. In the Firewall Rules table, locate the rule you want to modify, then click the overflow menu on the right of the row.
+1. In the Firewall Rules table, locate the rule you want to modify, then click the Actions menu on the right of the row.
 1. Select **Edit**.
 1. Make your changes to the rule.
 1. To save your rule, choose the most appropriate option by clicking either:
@@ -70,9 +70,9 @@ To pause or activate any rule in the list of existing rules, click the **Enabled
 ## Deleting a firewall rule
 {: #delete-firewall-rule}
 
-Take the following steps to delete an existing rule:
+Follow these steps to delete an existing rule:
 
 1. Navigate to **Security > Firewall Rules**.
-1. In the Firewall Rules table, locate the rule to modify and click the overflow menu on the right of the row.
+1. In the Firewall Rules table, locate the rule to modify and click the Actions menu on the right of the row.
 1. Select **Delete**.
 1. Confirm the rule deletion.

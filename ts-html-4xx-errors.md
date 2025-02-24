@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -50,7 +50,7 @@ If you're seeing a 403 error without {{site.data.keyword.cis_short_notm}} brandi
 
 [Resolution]{: tag-green} If you're seeing a 403 response that contains {{site.data.keyword.cis_short_notm}} branding in the response body, this is the HTTP response code returned along with security features:
 
-* WAF vustom or managed rules with the challenge or block action
+* WAF custom or managed rules with the challenge or block action
 * Security level that is set to Medium by default
 * Most 1xxx {{site.data.keyword.cis_short_notm}} error codes
 * The Browser Integrity Check

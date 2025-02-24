@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-21"
+  years: 2021, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -31,7 +31,7 @@ Enhanced security
 {: #cis-jun1224}
 {: release-note}
 
-Managed Rules in WAF
+Managed Rules
 :   Released the new [Managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which will replace the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
 
 ## 21 June 2023

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-03-28"
+  years: 2024, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -36,7 +36,7 @@ Normalization type (default: RFC-3986)
 
 Normalize incoming URLs (default: On)
 :   Configures the URLs of all incoming traffic to {{site.data.keyword.cis_short_notm}}:
-    * When enabled, all incoming URLs are normalized before they pass to subsequent {{site.data.keyword.cis_short_notm}} features that can receive a URL as input, such as Page Rules, WAF custom rules, Workers, and Access.
+    * When enabled, all incoming URLs are normalized before they pass to subsequent {{site.data.keyword.cis_short_notm}} features that can receive a URL as input, such as Page Rules, custom rules, Workers, and Access.
     * When disabled, incoming URLs are not normalized before passing to subsequent {{site.data.keyword.cis_short_notm}} features.
 
 Normalize URLs to origin (default: Off)

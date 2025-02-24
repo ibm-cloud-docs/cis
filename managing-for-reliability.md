@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-09-19"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords: Page Rules, web content, IBM CIS deployment
 
@@ -94,7 +94,7 @@ Setting **Origin Cache Control** invokes caching rules that seek to adhere close
 ### Setting up Origin Cache Control
 {: #setting-up-origin-cache-control}
 
-Take the following steps to enable **Origin Cache Control**.
+Follow these steps to enable **Origin Cache Control**.
 
 1. Use the navigation menu to select **Page Rules** under **Performance**.
 2. Create a page rule with the URL pattern that references your domain.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-12-18"
+  years: 2021, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -102,7 +102,7 @@ To create an advanced security alert in the UI, take the following steps:
 {: #ui-edit-alert}
 
 To edit an alert policy:
-1. Click the overflow menu of the alert in the **Alerts** section and select **Edit**.
+1. Click the Actions menu of the alert in the **Alerts** section and select **Edit**.
 1. Make the changes that you want to the name and description, add or delete email addresses, and add, remove, or edit webhooks.
 1. Click **Edit** to save your changes.
 
@@ -111,7 +111,7 @@ To edit an alert policy:
 
 To delete an alert policy:
 
-1. Click the overflow menu of the alert in the **Alerts** section and select **Delete**.
+1. Click the Actions menu of the alert in the **Alerts** section and select **Delete**.
 1. Click **Delete** in the confirmation message.
 
 You can delete only alerts that you created.

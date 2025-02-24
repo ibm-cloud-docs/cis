@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2025-01-09"
+  years: 2024, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -18,7 +18,7 @@ subcollection: cis
 When your site is under a DDoS attack, you can switch on defense mode to quickly mitigate the attack.
 {: shortdesc}
 
-Take the following steps to set your entire domain in defense mode when you are under attack.
+Follow these steps to set your entire domain in defense mode when you are under attack.
 
 1. Turn on “Defense mode" from the **Overview** screen.
 1. Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}, because {{site.data.keyword.cis_short_notm}} needs the bandwidth to assist you with your situation.

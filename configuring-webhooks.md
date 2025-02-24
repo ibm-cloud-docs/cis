@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-07-17"
+  years: 2021, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -43,7 +43,7 @@ To edit a webhook in the UI, click the pencil icon next to the name of the webho
 ### Deleting a webhook in the UI
 {: #delete-webhooks-ui}
 
-To delete a webhook in the UI, click the overflow menu ![overflow icon](/images/horizontal-overflow-icon.png) of the webhook you want to delete, and select **Delete**. Select **Delete** in the confirmation box to confirm, or **Cancel** to close the confirmation box without completing the delete operation.
+To delete a webhook in the UI, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) of the webhook you want to delete, and select **Delete**. Select **Delete** in the confirmation box to confirm, or **Cancel** to close the confirmation box without completing the delete operation.
 
 
 ## Configuring webhooks from the CLI

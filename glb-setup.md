@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-29"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -164,4 +164,4 @@ Optionally, you can configure the following fields:
 ### Editing or deleting a global load balancer
 {: #edit-delete-load-balancer}
 
-To edit or delete a load balancer, or one of its components, click the overflow menu ![overflow icon](/images/horizontal-overflow-icon.png) located on the right of the row, and select the action you want to take from the list.
+To edit or delete a load balancer, or one of its components, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) located on the right of the row, and select the action you want to take from the list.
