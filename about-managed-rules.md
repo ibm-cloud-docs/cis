@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managed rules
+# About managed rules
 {: #managed-rules-overview}
 
 You can use WAF managed rules to deploy pre-configured managed rulesets that provide immediate protection against the following threats:
