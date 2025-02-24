@@ -15,7 +15,7 @@ subcollection: cis
 # About rulesets
 {: #about-rule-sets}
 
-You can use the {{site.data.keyword.cis_short_notm}} Ruleset engine to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
+You can use the {{site.data.keyword.cis_short_notm}} Ruleset Engine to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
 {: shortdesc}
 
 ## Main features
