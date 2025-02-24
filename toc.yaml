@@ -109,12 +109,14 @@ toc:
             - rate-limiting.md             
         - topicgroup:
             label: Working with WAF
-            topics:            
+            topics:
+            - waf-managed-rules.md
             - about-managed-rules.md
             - waf-cis-ruleset.md  
         - topicgroup:
             label: Working with firewall rules
-            topics: 
+            topics:                    
+            - migration-custom-rules.md
             - firewall-rule.md
             - actions.md
             - fields-and-expressions.md
