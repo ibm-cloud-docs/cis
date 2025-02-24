@@ -22,7 +22,7 @@ ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --i
 ```
 {: pre}
 
-### Datasets
+## Datasets
 {: #log-datasets}
 
 These available datasets describe the fields available by log category:
