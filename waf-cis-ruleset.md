@@ -16,7 +16,7 @@ subcollection: cis
 {: #waf-actions}
 
 
-
+ 
 The following table shows the actions that Web Application Firewalls (WAFs) can take.
 {: shortdesc}
 
