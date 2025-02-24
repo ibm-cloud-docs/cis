@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Known limitations
+# Known issues and limitations
 {: #known-limitations}
 
 The following information describes some limitations when working with {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), as well as some suggested courses of action to improve your experience.
