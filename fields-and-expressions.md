@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-10-09"
+  years: 2019, 2025
+lastupdated: "2025-02-24"
 
 subcollection: cis
 
@@ -12,6 +12,8 @@ subcollection: cis
 
 # Using fields, functions, and expressions
 {: #fields-and-expressions}
+
+
 
 Along with actions, fields and expressions are the building blocks of firewall rules. These two elements work together when defining the criteria to use when a firewall rule is matched.
 {: shortdesc}
