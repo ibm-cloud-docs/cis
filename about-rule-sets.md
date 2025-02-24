@@ -15,7 +15,7 @@ subcollection: cis
 # About rulesets
 {: #about-rule-sets}
 
-You can use the {{site.data.keyword.cis_short_notm}} ruleset engine to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
+You can use the {{site.data.keyword.cis_short_notm}} Ruleset engine to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
 {: shortdesc}
 
 ## Main features
@@ -25,7 +25,7 @@ The following features apply to rulesets:
 
 * **Powerful syntax**: Rule expressions use a powerful rules language similar to the [`wirefilter`](https://github.com/cloudflare/wirefilter){: external} syntax that allows you to create complex rules.
 * **High-performance rule evaluation**: Allows you to have many rules in {{site.data.keyword.cis_short_notm}} with minimal impact on performance.
-* **Engine powering {{site.data.keyword.cis_short_notm}}**: {{site.data.keyword.cis_short_notm}} will continue to build products on top of the ruleset engine, which means that you can use the same API methods for configuring different products with the same customization possibilities. The ruleset engine also supports the different phases of the request life cycle.
+* **Engine powering {{site.data.keyword.cis_short_notm}}**: {{site.data.keyword.cis_short_notm}} will continue to build products on top of the Ruleset Engine, which means that you can use the same API methods for configuring different products with the same customization possibilities. The Ruleset Engine also supports the different phases of the request life cycle.
 
 ## Phases
 {: #phases}
