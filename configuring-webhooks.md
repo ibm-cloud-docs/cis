@@ -32,8 +32,8 @@ To configure webhooks in the UI, navigate to your **Account** page and select th
 
 1. Click **Create**.
 1. Enter a name for your webhook.
-1. Enter the webhook URL. This URL cannot be updated; if you want to change it, you must delete and re-create the webhook.
-1. Enter the webhook secret. The secret cannot be updated; if you want to change it, you must delete and re-create the webhook.
+1. Enter the webhook URL. This URL can't be updated; if you want to change it, you must delete and re-create the webhook.
+1. Enter the webhook secret. The secret can't be updated; if you want to change it, you must delete and re-create the webhook.
 
 ### Editing a webhook in the UI
 {: #update-webhooks-ui}

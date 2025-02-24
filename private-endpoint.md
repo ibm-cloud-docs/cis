@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-08"
+  years: 2021, 2025
+lastupdated: "2025-02-24"
 
 keywords: isolation for cis, service endpoints for cis, private network for cis, network isolation in cis, non-public routes for cis, private connection for cis, private connectivity for cis
 
@@ -45,7 +45,7 @@ Before you target a private endpoint for {{site.data.keyword.cis_short_notm}}:
     on the {{site.data.keyword.cloud_notm}} network. To learn more about VRF technology, see [Virtual routing and forwarding on {{site.data.keyword.cloud_notm}}](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
 
     Enabling VRF permanently alters the networking for your account. Be sure that you understand the impact to your account and resources. After you enable
-    VRF, it cannot be disabled.
+    VRF, it can't be disabled.
     {: important}
 
 2. Make sure that your {{site.data.keyword.cloud_notm}} infrastructure account is enabled for [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint){: external}.

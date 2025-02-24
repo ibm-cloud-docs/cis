@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-17"
+  years: 2020, 2025
+lastupdated: "2025-02-24"
 
 keywords: edge functions, CIS,
 
@@ -34,14 +34,14 @@ Actions are written in JavaScript and require an event listener to respond to a 
 
 * **Editing actions** Selecting an action opens the action in the editor for modification. Whenever you save your changes, the action uploads to the Cloud edge. After updating, select **Save**. If the action is in use, the changes take effect immediately.
 
-* **Deleting actions** To delete an action, click the **Delete** icon in the **Actions** table. An action cannot be deleted while in use. To delete the action, remove it from the triggers first. The **Uses** column shows the number of triggers that are associated with this action. Delete cannot be undone.
+* **Deleting actions** To delete an action, click the **Delete** icon in the **Actions** table. An action can't be deleted while in use. To delete the action, remove it from the triggers first. The **Uses** column shows the number of triggers that are associated with this action. Delete can't be undone.
 
 * **Associated triggers** Add a trigger and associate it with an action.
 
 ## Working with triggers
 {: #triggers}
 
-Triggers (routes) determine domain traffic routing to the actions. Triggers associate certain URL patterns, based on a domain on the account, with a predefined action. The URL must contain the domain, but it can contain wildcards either as a prefix to the domain, or at the end of the path. If no path is given on the pattern, a `/` is added implicitly. The URL pattern cannot contain infix wildcards or query parameters. 
+Triggers (routes) determine domain traffic routing to the actions. Triggers associate certain URL patterns, based on a domain on the account, with a predefined action. The URL must contain the domain, but it can contain wildcards either as a prefix to the domain, or at the end of the path. If no path is given on the pattern, a `/` is added implicitly. The URL pattern can't contain infix wildcards or query parameters. 
 
 You must add a domain to add triggers. You can add triggers without having actions.
 
@@ -49,4 +49,4 @@ You must add a domain to add triggers. You can add triggers without having actio
     * For an action, you can also select **Avoid Edge Functions**. This allows the trigger's path to remain active, but avoid using any Edge function actions. For example, the action called `my-function` and a trigger with the path `gamma.cistest-load.com/*`. If the path `gamma.cistest-load.com/data` should not use the action `my-function`, create another trigger with the path `gamma.cistest-load.com/data` and the option **Avoid Edge Functions**. This allows the path `gamma.cistest-load.com/data` to remain active without using the action `my-function`.
 
 * **Editing triggers** Update a trigger using the menu option in the table row for a selected trigger. After updating select **Save**.
-* **Deleting triggers** Delete a trigger using the menu option in the table row for a selected trigger. This action cannot be undone.
+* **Deleting triggers** Delete a trigger using the menu option in the table row for a selected trigger. This action can't be undone.

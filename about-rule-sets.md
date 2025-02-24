@@ -30,7 +30,7 @@ The following features apply to rulesets:
 ## Phases
 {: #phases}
 
-A phase defines a stage in the life of a request where you can execute rulesets. Phases are defined by {{site.data.keyword.cis_short_notm}} and cannot be modified.
+A phase defines a stage in the life of a request where you can execute rulesets. Phases are defined by {{site.data.keyword.cis_short_notm}} and can't be modified.
 
 Phases exist at the instance level and at the zone level. For the same phase, rules defined at the instance level are evaluated before the rules defined at the zone level.
 
@@ -66,7 +66,7 @@ The following table lists the actions available in the Rules language:
 |Action|API value|Description|Stops rule evaluation?|
 |------|---------|-----------|----------------------|
 |Interactive challenge| `challenge`|Useful for ensuring that the visitor accessing the site is human, not automated.  \n The client that made the request must pass an interactive challenge. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|Yes|
-|JS Challenge|`js_challenge`| Useful for ensuring that bots and spam cannot access the requested resource; browsers, however, are free to satisfy the challenge automatically.  \n The client that made the request must pass a JavaScript challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|Yes|
+|JS Challenge|`js_challenge`| Useful for ensuring that bots and spam can't access the requested resource; browsers, however, are free to satisfy the challenge automatically.  \n The client that made the request must pass a JavaScript challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|Yes|
 |Managed challenge (recommended)|`managed_challenge`|Helps reduce the time spent solving CAPTCHAs across the Internet.  \n Depending on the characteristics of a request, {{site.data.keyword.cis_short_notm}} will dynamically choose the appropriate type of challenge from the following actions based on specific criteria:  \n * Show a non-interactive challenge page (similar to the current JS challenge).  \n * Show a custom interactive challenge (for example, clicking a button).|Yes|
 |Block|`block`|Matching requests are denied access to the site.|Yes|
 |Skip|`skip`|Allows user to dynamically skip one or more security features or products for a request.  \n Depending on the rule configuration, matching requests will skip the evaluation of one or more security features or products:  \n * Skip all remaining rules in the current ruleset  \n * Skip rulesets  \n * Skip rules of a ruleset  \n * Skip phases  \n * Skip specific security products that are not based on the ruleset engine   \n  \n The available skip options depend on the phase where you configure the rule.|No  \n (However, some rules might be skipped)|

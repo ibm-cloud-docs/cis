@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -87,7 +87,7 @@ IP rules apply to TCP, HTTP, and HTTPS [Range](/docs/cis?topic=cis-cis-range) ap
 #### User-agent blocking rules
 {: #user-agent-blocking-rules}
 
-With User-agent blocking rules, you can act on any user-agent string you select. This capability works like domain lockdown, except that the block examines the incoming user-agent string instead of the IP. You can choose how to handle a matching request with the same list of actions that you established in the IP rules (block, challenge, and JS challenge). User-agent blocking applies to your entire zone. You cannot specify subdomains in the same manner as you can with a domain lockdown.
+With User-agent blocking rules, you can act on any user-agent string you select. This capability works like domain lockdown, except that the block examines the incoming user-agent string instead of the IP. You can choose how to handle a matching request with the same list of actions that you established in the IP rules (block, challenge, and JS challenge). User-agent blocking applies to your entire zone. You can't specify subdomains in the same manner as you can with a domain lockdown.
 
 This tool is useful for blocking any user-agent strings that you deem suspicious.
 
@@ -99,7 +99,7 @@ By using Domain lockdown, you can allowlist specific IP addresses and IP ranges,
 * Specific subdomains - For example, you can allow IP `1.2.3.4` access to the domain `foo.example.com` and allow IP `5.6.7.8` access to domain `bar.example.com`, without allowing the reverse.
 * Specific URLs - For example, you can allow IP `1.2.3.4` access to directory `example.com/foo/*` and allow IP `5.6.7.8` access to directory `example.com/bar/*`, but not allow the reverse.
 
-This capability is useful when you need more granularity in your access rules because, with IP rules, you can either apply the block to all subdomains of the current domain, or all domains on your account. You cannot specify URIs.
+This capability is useful when you need more granularity in your access rules because, with IP rules, you can either apply the block to all subdomains of the current domain, or all domains on your account. You can't specify URIs.
 
 ### Firewall rules
 {: #firewall-rules-feature}

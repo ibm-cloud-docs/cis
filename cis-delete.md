@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-06"
+  years: 2024, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -38,7 +38,7 @@ To delete a CIS instance in the UI, follow these steps:
 
 1. Recommended: Delete all the Logpush jobs for that domain. To do so, go to the **Accounts** page, then scroll to the Logpush list on the Logs tab. Click **Delete** from the Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") on the right side of the Logpush name.
 
-   You cannot undo this action.
+   You can't undo this action.
    {: note}
 
 1. To start the deletion process, go to the **Overview** page and click **Delete** from the domain's Actions menu.
@@ -54,7 +54,7 @@ To delete a CIS instance from the CLI, follow these steps:
 
 1. Recommended: Delete all the Logpush jobs for that domain.
 
-   You cannot undo this action.
+   You can't undo this action.
    {: note}
 
 1. Enter the following command:

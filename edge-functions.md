@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-13"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -27,7 +27,7 @@ Edge functions are modeled on the [Service Worker API](https://developer.mozilla
 
 The Service Worker API allows you to intercept any request that is made to your site. After your JavaScript is handling the request, you can elect to make any number of subrequests to your site or others, and finally return a response to your visitor.
 
-Unlike standard service workers, Edge functions run on CIS edge servers, not in the user’s browser. That means you can trust that your code runs in a trusted environment where it cannot be bypassed by malicious clients. It also means that the user does not need to be using a modern browser that supports service workers – you can even intercept requests from API clients that aren't browsers.
+Unlike standard service workers, Edge functions run on CIS edge servers, not in the user’s browser. That means you can trust that your code runs in a trusted environment where it can't be bypassed by malicious clients. It also means that the user does not need to be using a modern browser that supports service workers – you can even intercept requests from API clients that aren't browsers.
 
 Internally, Edge functions use the same V8 JavaScript engine, which is used in the Chrome browser to run workers on our infrastructure. V8 dynamically compiles your JavaScript code into ultra-fast machine code, enhancing performance. This makes it possible for your code to run in microseconds, and for our edge server to run many thousands of scripts per second.
 
@@ -57,7 +57,7 @@ new Request(input [, init])
     - `method`: The request method, such as `GET` or `POST`
     - `headers`: A `Headers` object
         - `body`: Any text to add to the request.
-            Requests using the `GET` or `HEAD` methods cannot have a body.
+            Requests using the `GET` or `HEAD` methods can't have a body.
             {: note}
 
         - `redirect`: The mode respected when the request is fetched.
@@ -139,7 +139,7 @@ All plans can set these features on outbound requests.
     {{site.data.keyword.cis_short_notm}} still adheres to standard cache levels, so by default this overrides cache behavior for static files. If you wish to cache non-static   assets, you must set a Cache Level of Cache Everything using a Page Rule.
     {: note}
 
-An Edge functions script runs after {{site.data.keyword.cis_short_notm}} security features, but before everything else. Therefore, an Edge functions script cannot affect the operation of security features (since they are already finished), but it can affect other features, like Image Size Optimization, or how the response is cached at the edge.
+An Edge functions script runs after {{site.data.keyword.cis_short_notm}} security features, but before everything else. Therefore, an Edge functions script can't affect the operation of security features (since they are already finished), but it can affect other features, like Image Size Optimization, or how the response is cached at the edge.
 
 Updating the `cf` object is similar to modifying a request. You can add the `cf` object to a `Request` by passing a custom object to [`fetch`](/reference/apis/fetch/).
 

@@ -37,7 +37,7 @@ To migrate your instance to managed rules, take the following steps:
    * Click **Configure** on the ruleset you want to configure before migrating. In the **Configure deployment** side panel, you can accept all incoming requests or update the scope of execution with the customized filters you make in the expression builder. Then, click **Save**.
 1. Click **Deploy** in the side panel to continue.
 1. (Enterprise only) Review the security events in the **Security > Events** tab, and select **Ready to update** when you feel the events are correct.
-1. Select **Turn off previous version** to finalize the migration (this step cannot be undone), or cancel to continue editing. This transition does not incur any downtime.
+1. Select **Turn off previous version** to finalize the migration (this step can't be undone), or cancel to continue editing. This transition does not incur any downtime.
 
 ## Editing rulesets
 {: #edit-rulesets}
@@ -76,7 +76,7 @@ How can I confirm that the migration is complete?
 :   Run the Migration Status API check. You can also check to see whether the UI shows the wizard on the WAF page. If the wizard appears, you must migrate.
 
 Can I revert to the previous WAF?
-:   No. Migration to managed rulesets is final and cannot be undone.
+:   No. Migration to managed rulesets is final and can't be undone.
 
 Why can I no longer see the migration wizard?
 :   The wizard appears only when the previous WAF is enabled. If you don't see the wizard, you've likely already migrated.

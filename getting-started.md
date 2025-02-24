@@ -89,7 +89,7 @@ Specify DNS zones. You can configure the name servers for these domains or subdo
 
 The Overview screen shows your domain in `Pending` status and remains `Pending` until you complete configuring your name servers with the registrar or existing DNS provider, which is covered in Step 4.
 
-You cannot delete the {{site.data.keyword.cis_short_notm}} instance after you add a domain. To delete the instance, delete the domain from the instance first.
+You can't delete the {{site.data.keyword.cis_short_notm}} instance after you add a domain. To delete the instance, delete the domain from the instance first.
 {: tip}
 
 ### Step 3. Set up your DNS records (optional)
@@ -116,7 +116,7 @@ Your domain must move to `Active` state within 60 days or your domain and any co
 ### Step 5. Ensure that {{site.data.keyword.cis_short_notm}} is resolving the domain information for your application, hostname, or website
 {: #ensure-cis-is-resolving-domain-info}
 
-To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} cannot resolve the domain information for your internet-facing applications.
+To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} can't resolve the domain information for your internet-facing applications.
 
 ## Next steps
 {: #get-started-next-steps}

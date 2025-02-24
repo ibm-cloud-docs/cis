@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-09"
+  years: 2021, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -105,7 +105,7 @@ CSS and JavaScript minification operates on cached CSS and JS files only. After 
 ## Image size optimization compression
 {: #polish-compression}
 
-Image size optimization compresses resources that are cached in the {{site.data.keyword.cis_short_notm}} edge network by stripping metadata and applying lossy or lossless compression. Image size optimization accelerates image downloads by reducing image size. Image size optimization cannot optimize off-site resources.
+Image size optimization compresses resources that are cached in the {{site.data.keyword.cis_short_notm}} edge network by stripping metadata and applying lossy or lossless compression. Image size optimization accelerates image downloads by reducing image size. Image size optimization can't optimize off-site resources.
 
 Image size optimization compression is only available as a page rule in the UI. The domain level setting is available in the CLI.
 {: note}
@@ -176,7 +176,7 @@ The following table lists common Cf-Polished statuses and how to troubleshoot th
 |`input_too_large`| The input image is too large or complex to process and needs a lower resolution.| Use .png or .jpeg images that are less than 1,000 px and 10 MB.|
 |not_compressed or not_needed|The image was fully optimized at the origin server and no compression was applied.| |
 |webp_bigger|Polish attempted to convert to WebP, but the image was optimized at the origin server and/or was created with a low quality setting.|Because the WebP version doesn’t exist, the status is set on the JPEG/PNG version of the response.|
-|cannot_optimize or internal_error|The input image is corrupted or incomplete at the origin server. |Upload a new version of the image to the origin server.|
+|can't_optimize or internal_error|The input image is corrupted or incomplete at the origin server. |Upload a new version of the image to the origin server.|
 |format_not_supported|The input image format is not supported (for example, BMP, TIFF) and/or the origin server is using extra optimization software that is not compatible with Polish.|Try converting the input image to a web-compatible format (for example, PNG, JPEG) and/or disabling any extra optimization software at the origin server.|
 |vary_header_present|The origin web server sent a Vary header with a value other than accept-encoding.|If the origin web server is attempting to support WebP, disable WebP at the origin web server and let Polish perform the WebP conversion.|
 {: caption="Common Cf-Polished statuses" caption-side="bottom"}

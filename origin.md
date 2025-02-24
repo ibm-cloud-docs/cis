@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -208,4 +208,4 @@ In some cases, origin web servers require the upload of the certificate chain. U
 ## Revoking an origin certificate
 {: #cis-origin-certificates-revoke}
 
-Delete your {{site.data.keyword.cis_short_notm}} origin certificate. This process cannot be undone.
+Delete your {{site.data.keyword.cis_short_notm}} origin certificate. This process can't be undone.

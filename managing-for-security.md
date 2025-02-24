@@ -46,7 +46,7 @@ $ dig proxied.theburritobot.com +short
 ### Obscure non-proxied origin records with non-standard names
 {: #obscure-non-proxied-origin-records-with-non-standard-names}
 
-Any records that cannot be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
+Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that can't be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
 ### Use separate IP ranges for HTTP and non-HTTP traffic if possible
 {: #use-separate-ipranges-for-traffic}

@@ -158,7 +158,7 @@ Refusal from the server to process the format of the current payload. One way to
 ## Error 416: Range not satisfiable
 {: #416-error}
 
-The `416` error response code indicates that a server cannot serve the requested ranges. For example:
+The `416` error response code indicates that a server can't serve the requested ranges. For example:
 
 * `HTTP/1.1 416 Range Not Satisfiable`
 * `Content-Range: bytes */12777`

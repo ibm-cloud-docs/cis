@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-11-07"
+  years: 2020, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -34,7 +34,7 @@ After mTLS is turned on for your account, take the following steps to enable it.
 1. Select the **Mutual TLS** tab.
 1. Click **Enable** to enable the feature.
 
-After mTLS is enabled, it cannot be disabled.
+After mTLS is enabled, it can't be disabled.
 {: tip}
 
 To set up mTLS authentication in the IBM Cloud Internet Services UI for a particular endpoint:
@@ -59,7 +59,7 @@ To set up mTLS authentication in the IBM Cloud Internet Services UI for a partic
    ```
    {: pre}
 
-   Without a client certificate in the request, a "403 forbidden" response displays and the site cannot be accessed.
+   Without a client certificate in the request, a "403 forbidden" response displays and the site can't be accessed.
 1. Add your client certificate information to the request:
 
    ```bash

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-12"
+  years: 2020, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -167,5 +167,5 @@ curl -X POST   https://api.cis.cloud.ibm.com/v1/:crn/zones/:zone_id/load_balance
 ```
 {: codeblock}
 
-If you set `samesite` to `None` in your API request, you cannot set `secure` to `Never`.
+If you set `samesite` to `None` in your API request, you can't set `secure` to `Never`.
 {: note}

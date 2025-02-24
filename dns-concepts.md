@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -39,7 +39,7 @@ A **custom domain name server** allows you to use the DNS provider's servers wit
 ## Root record CNAME flattening
 {: #dns-concepts-root-record-cname-flattening}
 
-IBM {{site.data.keyword.cis_short_notm}} supports a the "CNAME Flattening" feature. With this method, root records can overcome the IETF RFC restriction that if a root record is a CNAME, it cannot have any other records for that domain. {{site.data.keyword.cis_short_notm}} Authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records such as MX records to be added to the domain, even though the root record is a CNAME.
+IBM {{site.data.keyword.cis_short_notm}} supports a the "CNAME Flattening" feature. With this method, root records can overcome the IETF RFC restriction that if a root record is a CNAME, it can't have any other records for that domain. {{site.data.keyword.cis_short_notm}} Authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records such as MX records to be added to the domain, even though the root record is a CNAME.
 
 ## Proxying DNS records and global load balancers
 {: #dns-concepts-proxying-dns-records}
@@ -74,5 +74,3 @@ In DNS-only mode, records are resolved to the origin IP and you can customize th
 
 In DNS-only mode, none of the {{site.data.keyword.cis_short_notm}} security, performance, and reliability features are applied.
 {: important}
-
-

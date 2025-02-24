@@ -22,7 +22,7 @@ subcollection: cis
 
 You can create many types of firewall rules. However, the number of active rules on your site is limited by your customer plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information on entitlements.
 
-The number of active rules per plan is fixed. You cannot purchase additional active rules at this time.
+The number of active rules per plan is fixed. You can't purchase additional active rules at this time.
 
 Before getting started, it's a good idea to become familiar with [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 {: important}

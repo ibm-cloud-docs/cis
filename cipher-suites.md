@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-09"
+  years: 2024, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -71,11 +71,11 @@ The following ciphers are supported at the origin. You can restrict the ciphers 
 | DES-CBC3-SHA |![Available](../icons/checkmark-icon.svg) | | | |
 {: caption="Origin cipher suites" caption-side="bottom"}
 
-[^A]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and cannot be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites cannot be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
+[^A]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and can't be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites can't be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
 
-[^B]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and cannot be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites cannot be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
+[^B]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and can't be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites can't be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
 
-[^C]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and cannot be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites cannot be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
+[^C]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and can't be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites can't be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
 
 ## Managing cipher suites from the CLI
 {: #cli-manage-cipher-suites}

@@ -65,7 +65,7 @@ test.example.com -CNAME-> test.different.com
 ```
 {: pre}
 
-The CNAME flattening feature is enabled by default, and cannot be turned off.
+The CNAME flattening feature is enabled by default, and can't be turned off.
 {: note}
 
 {{site.data.keyword.cis_short_notm}} does not support Cloudflare's CNAME setup. The only way to activate your domain in {{site.data.keyword.cis_short_notm}} is to delegate your NS Records management to {{site.data.keyword.cis_short_notm}}.

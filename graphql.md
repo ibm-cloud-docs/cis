@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-11-12"
+  years: 2020, 2025
+lastupdated: "2025-02-24"
 
 keywords: graphql
 
@@ -164,7 +164,7 @@ The following code is an example error response:
   "data": null,
   "errors": [
     {
-      "message": "cannot request data older than 2678400s",
+      "message": "can't request data older than 2678400s",
       "path": [
         "viewer",
         "zones",
