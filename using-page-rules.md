@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-11-15"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -31,7 +31,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 |**Security Level**|Controls how high a client threat score must be so that a client encounters a challenge page. Use this setting to present visitors with a **Defense Mode** challenge when they visit your site. | |
 |**Server Side Excludes**|Toggles server-side excludes on or off. Server-side excludes gives you the ability to hide sensitive content from suspicious visitors, but keep it visible to normal visitors. | SSE only works with HTML. |
 |**TLS**|Controls which TLS mode is used. | |
-|**WAF**|Toggles WAF rules on or off. | Individual WAF rules cannot be turned on or off using page rules.
+|**WAF**|Toggles WAF rules on or off. | Individual WAF rules can't be turned on or off using page rules.
 |**Automatic HTTPS Rewrites**|Toggles automatic HTTPS rewrites on or off. Automatic HTTPS rewrites safely rewrite HTML source links from HTTP to HTTPS. | |
 |**Opportunistic Encryption**|Toggles opportunistic encryption on or off. Opportunistic encryption allows clients to use traditionally insecure protocols over secure channels. | |
 |**Cache Deception Armor**|Toggles cache deception armor on or off. Cache deception armor protects from web cache deception attacks while still allowing static assets to be cached. This setting checks that the URL's extension matches the returned content type. |

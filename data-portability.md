@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-02-24"
 
 keywords: CIS
 
@@ -38,7 +38,7 @@ CIS provides the mechanisms to export your content that's uploaded, stored, and 
 
 You can use the CLI and API to export settings and configurations that are used to process the customer's content. For example, you can export global load balancers, DNS records, advanced settings in zones, and page and firewall rules.
 
-You cannot export custom certificates, advanced certificates, or universal certificates that Cloudflare manages for you.
+You can't export custom certificates, advanced certificates, or universal certificates that Cloudflare manages for you.
 
 ### Exporting CIS data with the CLI and API
 {: #cis-export-cli-api}

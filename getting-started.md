@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -89,7 +89,7 @@ Specify DNS zones. You can configure the name servers for these domains or subdo
 
 The Overview screen shows your domain in `Pending` status and remains `Pending` until you complete configuring your name servers with the registrar or existing DNS provider, which is covered in Step 4.
 
-You cannot delete the {{site.data.keyword.cis_short_notm}} instance after you add a domain. To delete the instance, delete the domain from the instance first.
+You can't delete the {{site.data.keyword.cis_short_notm}} instance after you add a domain. To delete the instance, delete the domain from the instance first.
 {: tip}
 
 ### Step 3. Set up your DNS records (optional)
@@ -106,7 +106,7 @@ When you are finished, or to skip this step, select **Next step**.
 
 To begin receiving the benefits of {{site.data.keyword.cis_short_notm}}, you must delegate your domain to {{site.data.keyword.cis_short_notm}}. To delegate a domain, create an NS record with the name servers provided by {{site.data.keyword.cis_short_notm}} at your domain's registrar or existing DNS provider. If you are unsure of who the registrar is for your domain, you can look it up at [lookup.icann.org](https://lookup.icann.org/en){: external}.
 
-If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS records in Cloudflare](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/){: external} for detailed instructions by provider.
+If you delegate a subdomain (for instance, `subdomain.example.com`) from another DNS provider, you must replace the existing name server (NS) records and replace them with a name server record for each of the name servers that are provided by {{site.data.keyword.cis_short_notm}}. See [Managing DNS records in Cloudflare](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/){: external} for instructions by provider.
 
 After you configure your registrar or DNS provider, it can take up to 24 hours for the changes to take effect. When we verify that the specified name servers were configured correctly for your domain or subdomain, the domain's status changes from `Pending` to `Active`.
 
@@ -116,7 +116,7 @@ Your domain must move to `Active` state within 60 days or your domain and any co
 ### Step 5. Ensure that {{site.data.keyword.cis_short_notm}} is resolving the domain information for your application, hostname, or website
 {: #ensure-cis-is-resolving-domain-info}
 
-To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} cannot resolve the domain information for your internet-facing applications.
+To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the **A Record** and any **AAAA** or **MX** entries that are populated. If you forget to add these records before the registrar's delegation is complete, {{site.data.keyword.cis_full_notm}} can't resolve the domain information for your internet-facing applications.
 
 ## Next steps
 {: #get-started-next-steps}

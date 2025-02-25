@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-07-17"
+  years: 2021, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #troubleshooting-cis-website-offline}
 {: troubleshoot}
 
-Here is what you might see: `IBM CIS cannot connect to the origin server (error 521, 522, 523)`.
+Here is what you might see: `IBM CIS can't connect to the origin server (error 521, 522, 523)`.
 
 **Website offline - no cached version**
 {: tsSymptoms}

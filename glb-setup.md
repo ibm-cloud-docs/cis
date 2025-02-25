@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-29"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -23,7 +23,7 @@ The global load-balancing capabilities available with {{site.data.keyword.cis_fu
 On your dashboard, you'll see three lists that show the [load balancers](#x2788902){: term}, origin pools, and [health checks](#x4571658){: term}. The lists display the new or updated global load balancer, or one of its components after you've provisioned or updated it. Initially, the lists are empty, and before you create a load balancer you must take a few actions.
 
 {{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address, but there are limitations:
-- you cannot use proxy services or health checks.
+- you can't use proxy services or health checks.
 - you can only use DNS-based load balancing.
 {: important}
 
@@ -121,7 +121,7 @@ Expand the **Advanced options** section to see more settings.
 * **Response Body**: A case-insensitive sub-string to match against in the response body. If this string is not found, the origin is marked as unhealthy.
 
 Expand the **Configure request headers** section to add and configure HTTP request headers to send in the health check.
-It is recommended that you set a Host header by default. The `User-Agent` header cannot be overridden.
+It is recommended that you set a Host header by default. The `User-Agent` header can't be overridden.
 
 ### Adding a pool
 {: #add-a-pool}
@@ -164,4 +164,4 @@ Optionally, you can configure the following fields:
 ### Editing or deleting a global load balancer
 {: #edit-delete-load-balancer}
 
-To edit or delete a load balancer, or one of its components, click the overflow menu ![overflow icon](/images/horizontal-overflow-icon.png) located on the right of the row, and select the action you want to take from the list.
+To edit or delete a load balancer, or one of its components, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) located on the right of the row, and select the action you want to take from the list.

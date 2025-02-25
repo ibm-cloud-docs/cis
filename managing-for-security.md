@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Managing {{site.data.keyword.cis_short_notm}} for optimal security
 {: #manage-your-ibm-cis-for-optimal-security}
 
-The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Take the following steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
+The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) security settings include safe defaults designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Follow these steps to be sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
 {: shortdesc}
 
 * Secure your origin IP addresses by proxying and increasing obfuscation
@@ -46,7 +46,7 @@ $ dig proxied.theburritobot.com +short
 ### Obscure non-proxied origin records with non-standard names
 {: #obscure-non-proxied-origin-records-with-non-standard-names}
 
-Any records that cannot be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that cannot be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
+Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that can't be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
 ### Use separate IP ranges for HTTP and non-HTTP traffic if possible
 {: #use-separate-ipranges-for-traffic}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-10-09"
+  years: 2019, 2025
+lastupdated: "2025-02-24"
 
 keywords: Custom error page, Cloud Internet Services, Custom page
 
@@ -30,13 +30,13 @@ CIS errors
 * 10XX errors
 * Errors that are related to `Serve Stale Content`
 
-500, 501, 503, and 505 responses do not trigger custom error pages to avoid breaking specific API endpoints and other web applications. Reserve custom error pages for cases where the origin server cannot return a response for the request (520-526 errors).
+500, 501, 503, and 505 responses do not trigger custom error pages to avoid breaking specific API endpoints and other web applications. Reserve custom error pages for cases where the origin server can't return a response for the request (520-526 errors).
 {: note}
 
 ## Custom error template
 {: #custom-error-template}
 
-The following example is a basic custom error template. When you are creating your custom error templates, the maximum page size is 1.5 MB, and the page cannot be blank. Additionally, all external resources are inlined with Base64 encoding, making them approximately 50% larger when published.
+The following example is a basic custom error template. When you are creating your custom error templates, the maximum page size is 1.5 MB, and the page can't be blank. Additionally, all external resources are inlined with Base64 encoding, making them approximately 50% larger when published.
 
 ```sh
 <html>
@@ -86,7 +86,7 @@ When you publish, the custom error page is requested once by us, then cached on 
 
 You can update an error page by republishing it.
 
-If {{site.data.keyword.cis_short_notm}} cannot load your site, or you blocked the US in the {{site.data.keyword.cis_short_notm}} firewall, publishing and previewing the error page does not work.
+If {{site.data.keyword.cis_short_notm}} can't load your site, or you blocked the US in the {{site.data.keyword.cis_short_notm}} firewall, publishing and previewing the error page does not work.
 {: note}
 
 ## Troubleshooting error pages
@@ -95,4 +95,4 @@ If {{site.data.keyword.cis_short_notm}} cannot load your site, or you blocked th
 *  If you encounter errors while attempting to preview or publish your custom error page, run it through a HTML validator and ensure that it is error free.
 *  Make sure that the minimum page size is greater than 0. You must add content to your page.
 *  Make sure that you are serving the custom error page with a 200 status code.
-*  If we cannot load your site, or you have blocked the US in the IP firewall, publishing and previewing the error page does not work.
+*  If we can't load your site, or you have blocked the US in the IP firewall, publishing and previewing the error page does not work.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-11-08"
+  years: 2021, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -50,7 +50,7 @@ Common causes for 1001 errors are:
 ### Resolution
 {: #1001-resolution}
 
-A non-{{site.data.keyword.cis_short_notm}} domain cannot CNAME to a {{site.data.keyword.cis_short_notm}} domain unless the non-{{site.data.keyword.cis_short_notm}} domain is added to a {{site.data.keyword.cis_short_notm}} account.
+A non-{{site.data.keyword.cis_short_notm}} domain can't CNAME to a {{site.data.keyword.cis_short_notm}} domain unless the non-{{site.data.keyword.cis_short_notm}} domain is added to a {{site.data.keyword.cis_short_notm}} account.
 
 Attempting to directly access DNS records used for {{site.data.keyword.cis_short_notm}} CNAME setups also causes error 1001.
  
@@ -128,7 +128,7 @@ Common causes for errors 1006, 1007, and 1008 errors are:
 ### Resolution
 {: #1006-resolution}
 
-Request the website owner to investigate their {{site.data.keyword.cis_short_notm}} security settings or allow your client IP address. Because the website owner blocked your request, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
+Request the website owner to investigate their {{site.data.keyword.cis_short_notm}} security settings or allow your client IP address. Because the website owner blocked your request, {{site.data.keyword.cis_short_notm}} support can't override a customer’s security settings.
 
 ## Errors 1009 Access denied: Country or region banned
 {: #1009-error}
@@ -148,9 +148,9 @@ A common cause of 1010 errors is when a website owner blocks your request based 
 ### Resolution
 {: #1010-resolution}
 
-Notify the website owner of the blocking. If you cannot determine how to contact the website owner, lookup contact information for the domain via the Whois database. Site owners disable Browser Integrity Check via the **Security Advanced** tab.
+Notify the website owner of the blocking. If you can't determine how to contact the website owner, lookup contact information for the domain via the Whois database. Site owners disable Browser Integrity Check via the **Security Advanced** tab.
 
-Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
+Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support can't override a customer’s security settings.
 
 ## Error 1011: Access denied (Hotlinking denied)
 {: #1011-error}
@@ -160,9 +160,9 @@ A common cause of 1011 errors is when a request is made for a resource that uses
 ### Resolution
 {: #1011-resolution}
 
-Notify the website owner of the blocking. If you cannot determine how to contact the website owner, lookup contact information for the domain via the Whois database.
+Notify the website owner of the blocking. If you can't determine how to contact the website owner, lookup contact information for the domain via the Whois database.
 
-Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
+Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support can't override a customer’s security settings.
 
 ## Error 1012: Access denied
 {: #1012-error}
@@ -172,9 +172,9 @@ A common cause of 1012 errors is when a website owner forbids access based on ma
 ### Resolution
 {: #1012-resolution}
 
-Update your antivirus software and run a full system scan. {{site.data.keyword.cis_short_notm}} cannot override the security settings the site owner has set for the domain. To request website access, contact the site owner to allow your IP address. If you cannot determine how to contact the website owner, look up contact information for the domain by using the Whois database.
+Update your antivirus software and run a full system scan. {{site.data.keyword.cis_short_notm}} can't override the security settings the site owner has set for the domain. To request website access, contact the site owner to allow your IP address. If you can't determine how to contact the website owner, look up contact information for the domain by using the Whois database.
 
-Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support cannot override a customer’s security settings.
+Because the website owner performed the blocking, {{site.data.keyword.cis_short_notm}} support can't override a customer’s security settings.
 
 ## Error 1013: HTTP hostname and TLS SNI hostname mismatch
 {: #1013-error}
@@ -222,7 +222,7 @@ For guidance on when you expect a new Edge function to exceed rate limits, see [
 ## Error 1016: Origin DNS error
 {: #1016-error}
 
-Error 1016 occurs when {{site.data.keyword.cis_short_notm}} cannot resolve the origin web server’s IP address.
+Error 1016 occurs when {{site.data.keyword.cis_short_notm}} can't resolve the origin web server’s IP address.
 
 Common causes for Error 1016 are:
 
@@ -359,7 +359,7 @@ Make sure that all the elements of your rewrite expression are defined. For exam
 ## Error 1040: Invalid request rewrite (header modification not allowed)
 {: #1040-error}
 
-A common cause of error 1040 is when you are trying to modify an HTTP header that HTTP Request Header Modification Rules cannot change.
+A common cause of error 1040 is when you are trying to modify an HTTP header that HTTP Request Header Modification Rules can't change.
 
 ### Resolution
 {: #1040-resolution}

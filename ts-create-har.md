@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-19"
+  years: 2022, 2025
+lastupdated: "2025-02-24"
 
 keywords: HAR files, HAR, HTTP Archive
 
@@ -46,11 +46,11 @@ Use the following sections to generate HAR files in Firefox, Chrome, or Safari b
 
 1. In Chrome, go to the page within {{site.data.keyword.cis_short_notm}} where you are experiencing trouble.
 1. Select the Chrome menu (three vertical dots) at the top-right of your browser window, then select **Tools > Developer Tools**.
-1. The Developer Tools open as a docked panel at the side or bottom of the browser window. Click on the **Network** tab.
+1. The Developer Tools open as a docked panel at the side or bottom of the browser window. Click the **Network** tab.
 1. Select the option **Preserve log**.
 1. The recording starts automatically, and a red "Record network log" icon appears at the top left of the Network tab. If not, click the black "Stop recording network log" icon, to start recording activity in your browser.
 1. Refresh the {{site.data.keyword.cis_short_notm}} page you are on or go through the steps to reproduce the problem you've been experiencing while Chrome is recording activity.
-1. After you have successfully reproduced the issue while recording, right click on any of the items within the Network tab and select **Save all as HAR with Content** to save a copy of the activity that you recorded.
+1. After you have successfully reproduced the issue while recording, right-click any of the items within the Network tab and select **Save all as HAR with Content** to save a copy of the activity that you recorded.
 1. Save the HAR file in a location you choose, and send the file to Support.
 
 ## How to generate a HAR file in Safari
@@ -64,7 +64,7 @@ Use the following sections to generate HAR files in Firefox, Chrome, or Safari b
 
 1. Click the **Network** tab.
 1. Refresh the {{site.data.keyword.cis_short_notm}} page that you are on or go through the steps to reproduce the problem you've been experiencing while Safari is recording activity.
-1. After you have reproduced the issue, Control + click on the resource that you want to capture the HAR file for, and click **"Export HAR"**.
+1. After you have reproduced the issue, Control + click the resource that you want to capture the HAR file for, and click **"Export HAR"**.
 1. Save the HAR file in a location you choose, and send the file to Support.
 
 ## How to generate a HAR file in Microsoft Edge

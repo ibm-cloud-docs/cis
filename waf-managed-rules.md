@@ -21,7 +21,7 @@ The CIS web application firewall (WAF) capabilities are moving under the Ruleset
 After you complete the migration, any automation that uses APIs, CLIs, or Terraform that are related to WAF will stop working and must be updated to use the new managed rulesets.
 {: important}
 
-Instances created after June 2024 use the new Ruleset Engine and do not need to be migrated.
+Instances created after June 2024 use the new Ruleset Engine and don't need to be migrated.
 {: tip}
 
 To migrate your instance to managed rules, take the following steps:
@@ -37,7 +37,7 @@ To migrate your instance to managed rules, take the following steps:
    * Click **Configure** on the ruleset you want to configure before migrating. In the **Configure deployment** side panel, you can accept all incoming requests or update the scope of execution with the customized filters you make in the expression builder. Then, click **Save**.
 1. Click **Deploy** in the side panel to continue.
 1. (Enterprise only) Review the security events in the **Security > Events** tab, and select **Ready to update** when you feel the events are correct.
-1. Select **Turn off previous version** to finalize the migration (this step cannot be undone), or cancel to continue editing. This transition does not incur any downtime.
+1. Select **Turn off previous version** to finalize the migration (this step can't be undone), or cancel to continue editing. This transition does not incur any downtime.
 
 ## Editing rulesets
 {: #edit-rulesets}
@@ -65,18 +65,18 @@ To add your own exceptions, take the following steps.
 {: #managed-rules-faqs}
 
 What if I don't migrate?
-:   Users who don’t manually migrate are automatically migrated to the Managed Rules on 12 June 2025, with no expected impact to their current WAF policies or security. From this date forward, you must use the [Ruleset Engine API](/apidocs/cis#get-zone-rulesets) to make WAF and Managed Rules configurations.
+:   Users who don’t manually migrate are automatically migrated to Managed Rules on 12 June 2025, with no expected impact to their current WAF policies or security. From this date forward, you must use the [Ruleset Engine API](/apidocs/cis#get-zone-rulesets) to make WAF and Managed Rules configurations.
 
     Rules and configuration might be slightly different than before, because the new Managed Rules added more robust OWASP security coverage. This ruleset is updated from OWASP v2.x to OWASP v3.x.
 
 What will happen to the previous WAF APIs?
-:   After deprecation, the previous WAF APIs will not be available and generate an error, returning a message that indicates to switch to the Managed Rules feature.
+:   After deprecation, the previous WAF APIs will not be available and will generate an error, returning a message that indicates to switch to the Managed Rules feature.
 
 How can I confirm that the migration is complete?
 :   Run the Migration Status API check. You can also check to see whether the UI shows the wizard on the WAF page. If the wizard appears, you must migrate.
 
 Can I revert to the previous WAF?
-:   No. Migration to managed rulesets is final and cannot be undone.
+:   No. Migration to managed rulesets is final and can't be undone.
 
 Why can I no longer see the migration wizard?
 :   The wizard appears only when the previous WAF is enabled. If you don't see the wizard, you've likely already migrated.

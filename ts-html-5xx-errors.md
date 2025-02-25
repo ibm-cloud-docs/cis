@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -227,7 +227,7 @@ If 525 errors occur intermittently, review the origin web server error logs to d
 {: #526-error}
 
 Error 526 occurs when the following two conditions are true:
-1. CIS cannot validate the TLS certificate at your origin web server
+1. CIS can't validate the TLS certificate at your origin web server
 1. Your TLS setting is **End-to-end CA Signed** or **HTTPS only origin pull**
 
 ### Error 526 resolution

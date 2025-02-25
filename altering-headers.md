@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-12-01"
+  years: 2023, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -18,7 +18,7 @@ subcollection: cis
 This example illustrates how to add, change, or delete headers sent in a request or returned in a response.
 {: shortdesc}
 
-You cannot modify the value of certain headers, such as `server`, `eh-cache-tag`, or `eh-cdn-cache-control`.
+You can't modify the value of certain headers, such as `server`, `eh-cache-tag`, or `eh-cdn-cache-control`.
 {: note}
 
 ```js

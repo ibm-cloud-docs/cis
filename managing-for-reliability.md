@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-09-19"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords: Page Rules, web content, IBM CIS deployment
 
@@ -34,7 +34,7 @@ Notice that the {{site.data.keyword.cis_short_notm}} interface is organized into
 
 To get started setting up your DNS configuration, select **DNS** from the navigation menu.
 
-For detailed information about setting up and managing your DNS for reliability, see [Setting up your Domain Name System for CIS](/docs/cis?topic=cis-set-up-your-dns-for-cis).
+For information about setting up and managing your DNS for reliability, see [Setting up your Domain Name System for CIS](/docs/cis?topic=cis-set-up-your-dns-for-cis).
 
 
 ## Setting up global load balancers
@@ -42,7 +42,7 @@ For detailed information about setting up and managing your DNS for reliability,
 
 To get started setting up your global load balancers, select **Global Load Balancers** from the navigation menu.
 
-For detailed information about setting up and managing your global load balancers, see [Global load balancer concepts](/docs/cis?topic=cis-global-load-balancer-glb-concepts).
+For information about setting up and managing your global load balancers, see [Global load balancer concepts](/docs/cis?topic=cis-global-load-balancer-glb-concepts).
 
 ## Using page rules to increase reliability
 {: #using-page-rules-to-increase-reliability}
@@ -94,7 +94,7 @@ Setting **Origin Cache Control** invokes caching rules that seek to adhere close
 ### Setting up Origin Cache Control
 {: #setting-up-origin-cache-control}
 
-Take the following steps to enable **Origin Cache Control**.
+Follow these steps to enable **Origin Cache Control**.
 
 1. Use the navigation menu to select **Page Rules** under **Performance**.
 2. Create a page rule with the URL pattern that references your domain.

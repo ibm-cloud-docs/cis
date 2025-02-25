@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-24"
 
 keywords:
 
@@ -824,7 +824,7 @@ addEventListener("fetch", (event) => {
 ```
 {: codeblock}
 
-Remember, edge functions that operate on behalf of different zones cannot affect each other's cache. You can override cache keys only when you make requests within your own zone (in the previous example `event.request.url` was the key stored), or requests to hosts that are not on {{site.data.keyword.cis_short_notm}}. When you make a request to another {{site.data.keyword.cis_short_notm}} zone (for example, a zone that belongs to a different {{site.data.keyword.cis_short_notm}} customer), that zone fully controls how its own content is cached within {{site.data.keyword.cis_short_notm}}; you cannot override it.
+Remember, edge functions that operate on behalf of different zones can't affect each other's cache. You can override cache keys only when you make requests within your own zone (in the previous example `event.request.url` was the key stored), or requests to hosts that are not on {{site.data.keyword.cis_short_notm}}. When you make a request to another {{site.data.keyword.cis_short_notm}} zone (for example, a zone that belongs to a different {{site.data.keyword.cis_short_notm}} customer), that zone fully controls how its own content is cached within {{site.data.keyword.cis_short_notm}}; you can't override it.
 
 ### Override based on origin response code
 {: #override-origin-response-code}

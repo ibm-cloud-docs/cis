@@ -21,8 +21,8 @@ OWASP is an industry standard that provides a good security baseline. For more i
 
 * [OWASP on GitHub](https://github.com/coreruleset/coreruleset){: external}
 * [OWASP.org](https://owasp.org/www-project-modsecurity-core-rule-set/){: external}
-* [OWASP Core Rule Set Documentation](https://coreruleset.org/docs/){: external}
-* [OWASP Core Rule Set Changelog](https://github.com/coreruleset/coreruleset/blob/main/CHANGES.md){: external}
+* [OWASP Core Ruleset Documentation](https://coreruleset.org/docs/){: external}
+* [OWASP Core Ruleset Changelog](https://github.com/coreruleset/coreruleset/blob/main/CHANGES.md){: external}
 
 ## Managing OWASP
 {: #managing-owasp}
@@ -32,7 +32,7 @@ Depending on your WAF handling in CIS, you might be on a different version of OW
 ## Understanding the OWASP package
 {: #understanding-owasp-package}
 
-The OWASP ModSecurity Core Rule Set assigns a score to each request based on how many OWASP rules trigger.
+The OWASP ModSecurity Core Ruleset assigns a score to each request based on how many OWASP rules trigger.
 
 ### OWASP v3.x
 {: #owasp-v3x}
@@ -82,9 +82,9 @@ Review the (security) events log to see the final score, as well as the individu
 ## Managing OWASP packages
 {: #manage-owasp-package}
 
-The OWASP ModSecurity Core Rule Set contains several rules from the OWASP project. {{site.data.keyword.cis_short_notm}} does not write or curate OWASP rules. Click on a ruleset name under **Group** to reveal the rule descriptions. Unlike the {{site.data.keyword.cis_short_notm}} managed  ruleset, specific OWASP rules are either turned on or off.
+The OWASP ModSecurity Core Ruleset contains several rules from the OWASP project. {{site.data.keyword.cis_short_notm}} does not write or curate OWASP rules. Click a ruleset name under **Group** to reveal the rule descriptions. Unlike the {{site.data.keyword.cis_short_notm}} managed  ruleset, specific OWASP rules are either turned on or off.
 
-To manage OWASP thresholds, set the paranoia level in the **Package: OWASP ModSecurity Core Rule Set** section. Setting the paranoia level to `P1` disables the entire OWASP package, including all its rules. Determining the appropriate paranoia level depends on your business industry and operations. For instance, a P1 setting is appropriate for large file uploads.
+To manage OWASP thresholds, set the paranoia level in the **Package: OWASP ModSecurity Core Ruleset** section. Setting the paranoia level to `P1` disables the entire OWASP package, including all its rules. Determining the appropriate paranoia level depends on your business industry and operations. For instance, a P1 setting is appropriate for large file uploads.
 
-The activity log displays rule ID 981176 when a request is blocked by OWASP. Also, some OWASP rules listed in the activity log do not appear in the list of rules under Package: OWASP ModSecurity Core Rule Set because disabling those rules is not recommended.
+The activity log displays rule ID 981176 when a request is blocked by OWASP. Also, some OWASP rules listed in the activity log do not appear in the list of rules under Package: OWASP ModSecurity Core Ruleset because disabling those rules is not recommended.
 {: important}
