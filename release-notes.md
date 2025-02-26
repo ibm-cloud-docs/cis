@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -25,7 +25,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Enhanced security
-: Released support for [SSL.com as a Certificate Authority](/docs/cis?topic=cis-managing-edge-certs#certificate-authorities), offering you more trusted SSL certificate options.
+:   Released support for [SSL.com as a Certificate Authority](/docs/cis?topic=cis-managing-edge-certs#certificate-authorities), offering you more trusted SSL certificate options.
 
 ## 12 June 2024
 {: #cis-jun1224}
