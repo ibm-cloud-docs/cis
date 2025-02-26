@@ -41,7 +41,7 @@ You can deploy managed rulesets from the CLI.
 ### Listing managed rulesets from the CLI
 {: #cli-list-rule-sets}
 
-To list all zone managed rulesets from the CLI, run the following command:
+To list all zone-managed rulesets from the CLI, run the following command:
 
 ```sh
 ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -85,7 +85,7 @@ You can deploy managed rulesets from the API.
 ### Listing managed rulesets from the API
 {: #api-list-rule-sets}
 
-To list all zone managed rulesets from the API, run the following command:
+To list all zone-managed rulesets from the API, run the following command:
 
 ```sh
 curl -X GET \
