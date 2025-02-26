@@ -129,7 +129,7 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--matc
 Where:
 
 * **`DNS_DOMAIN_ID`** is the ID of the domain.
-* **`--match value`** is the conditions that must be matched for the rule to run. See [fields and expressions](https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
+* **`--match value`** is the conditions that must be matched for the rule to run. See [Using fields, functions, and expressions](https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
 * **`--enabled value`** indicates whether the rule is active. Defaults to "true".
 * **`--override-action value`** is the ruleset action of any overrides. Valid values are "managed_challenge", "block", "js_challenge", "log", "challenge".
 * **`--paranoia-level value`** is the OWASP paranoia level. Valid values are "PL1", "PL2", "PL3", "PL4" and it's only available for `CIS OWASP Core Ruleset`.
