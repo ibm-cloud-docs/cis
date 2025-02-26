@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -12,13 +12,12 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overriding rulesets
+# Overriding managed rulesets
 {: #overriding-rulesets}
 
+To customize the behavior of a managed ruleset, override it at deployment. When you override a ruleset, you specify changes to be executed in addition to the default configuration.
 
-To customize the behavior of a managed ruleset, override the ruleset at deployment. When you override a ruleset, you specify changes to be executed in addition to the default configuration.
-
-You can override a ruleset at the following levels:
+You can override a managed ruleset at the following levels:
 
 * Ruleset overrides apply to all rules in the executed ruleset.
 * Tag overrides apply to all rules with a specific tag. For example, use a tag override to customize the CIS Managed Ruleset so all rules with the wordpress tag are set to Block. If multiple tags have overrides and if a rule has more than one of these tags, the tag overrides order determines the behavior. For rules tagged with multiple overridden tags, the last tag’s overrides apply.
@@ -78,13 +77,13 @@ Some managed rulesets can have extra override requirements, or they might overri
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
 
 
-## Overriding rulesets from the CLI
+## Overriding managed rulesets from the CLI
 {: #cli-override-rule-sets}
 {: cli}
 
 You can override rulesets from the CLI.
 
-### Listing rulesets from the CLI
+### Listing managed rulesets from the CLI
 {: #cli-override-list-rule-sets}
 
 To list all zone rulesets from the CLI, run the following command:
@@ -100,7 +99,7 @@ Where:
 * **`-i, --instance value`** is the instance name or ID.
 * **`--output value`** specifies the output format; only JSON is supported.
 
-### Listing rules from the CLI
+### Listing managed rulesets from the CLI
 {: #cli-override-list-rule-sets-rules}
 
 To list the rules under a zone ruleset from the CLI, run the following command:
@@ -139,13 +138,13 @@ Where:
 * **`--output value`** specifies the output format; only JSON is supported.
 
 
-## Overriding rulesets with the API
+## Overriding managed rulesets with the API
 {: #api-override-rule-sets}
 {: api}
 
 You can override rulesets from the API.
 
-### Listing rulesets from the API
+### Listing managed rulesets from the API
 {: #api-override-list-rule-sets}
 
 To list all zone rulesets from the API, run the following command:
@@ -159,7 +158,7 @@ curl -X GET \
 ```
 {: codeblock}
 
-### Listing rules from the API
+### Listing managed rulesets from the API
 {: #api-override-list-rule-sets-rules}
 
 To list all rules for a specific  ruleset, run the following command:
