@@ -90,6 +90,4 @@ The `kind` field of a phase entry point ruleset has one of the following values:
 * `root`: Used for a phase entry point ruleset at the instance level
 * `zone`: Used for a phase entry point ruleset at the zone level
 
-For WAF managed rules, see [Deploying rulesets](/docs/cis?topic=cis-deploying-rule-sets) for instructions on using entry point rulesets to deploy rulesets.
-
-For WAF managed rules, see [Overriding rulesets](/docs/cis?topic=cis-override-rule-sets) for instructions on using entry point rulesets to override rulesets.
+For instructions on deploying rulesets using entry point rulesets for WAF managed rules, refer to [Deploying rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entry point rulesets, see [Overriding rulesets](/docs/cis?topic=cis-override-rule-sets).
