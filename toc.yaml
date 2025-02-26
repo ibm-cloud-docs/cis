@@ -92,7 +92,7 @@ toc:
             topics:
             - about-rule-sets.md
         - topicgroup:
-            label: Working with managed rules
+            label: Working with WAF managed rules 
             topics:
             - deploy-rule-sets.md            
             - override-rule-sets.md            
@@ -114,6 +114,7 @@ toc:
             - waf-cis-ruleset.md  
         - topicgroup:
             label: Working with firewall rules
+            topics:
             topics:
             - firewall-rule.md
             - actions.md

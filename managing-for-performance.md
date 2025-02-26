@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-07-17"
+  years: 2018, 2025
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -83,7 +83,7 @@ Purging by hostname is similar to purging by prefixes. Use a list of hostnames t
 ### Purge by tags (Enterprise only)
 {: #purge-cache-by-cache-tag}
 
-Tags let you define buckets of content that you wish to purge. It is an excellent way to combine objects that are commonly changed together. An HTML blog post, for example, and all of its image content could be tagged together. Mobile-only content also could be bundled using cache-tags, so that you can purge everything when you push a new update to your mobile domain.
+Tags let you define buckets of content that you want to purge. It is an excellent way to combine objects that are commonly changed together. An HTML blog post, for example, and all of its image content could be tagged together. Mobile-only content also could be bundled using cache-tags, so that you can purge everything when you push a new update to your mobile domain.
 
 ### Purge by URLs
 {: #purge-by-urls}
@@ -94,4 +94,3 @@ With purge by URL, cached resources are immediately removed from the stored asse
 {: #use-advanced-caching-features}
 
 **Bypass Cache on Cookie:** Configured in a page rule, this feature allows you to serve a cached object unless a cookie of a specific name exists. For example, you can serve a cached version of the homepage unless you find a `SessionID` cookie indicating that the customer is logged in, and therefore should be presented with personalized content.
-

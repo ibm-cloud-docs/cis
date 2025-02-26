@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -136,7 +136,7 @@ All plans can set these features on outbound requests.
 
 - `cacheKey`: A request's cache key is what determines if two requests are "the same" for caching purposes. If a request has the same cache key as some previous request, then we can serve the same cached response for both (for example, `'some-key'`).
 - `cacheTtlByStatus`: This option is a version of the `cacheTtl` feature which chooses a TTL based on the response's status code. If the response to this request has a status code that matches, {{site.data.keyword.cis_short_notm}} caches for the instructed time, and overrides cache instructions sent by the origin (for example, `{ "200-299": 86400, 404: 1, "500-599": 0 }`).
-    {{site.data.keyword.cis_short_notm}} still adheres to standard cache levels, so by default this overrides cache behavior for static files. If you wish to cache non-static   assets, you must set a Cache Level of Cache Everything using a Page Rule.
+    {{site.data.keyword.cis_short_notm}} still adheres to standard cache levels, so by default this overrides cache behavior for static files. If you want to cache non-static   assets, you must set a Cache Level of Cache Everything using a Page Rule.
     {: note}
 
 An Edge functions script runs after {{site.data.keyword.cis_short_notm}} security features, but before everything else. Therefore, an Edge functions script can't affect the operation of security features (since they are already finished), but it can affect other features, like Image Size Optimization, or how the response is cached at the edge.

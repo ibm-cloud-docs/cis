@@ -99,7 +99,7 @@ Where:
 * **`-i, --instance value`** is the instance name or ID.
 * **`--output value`** specifies the output format; only JSON is supported.
 
-### Listing managed rulesets from the CLI
+### Listing rules under a zone ruleset from the CLI
 {: #cli-override-list-rule-sets-rules}
 
 To list the rules under a zone ruleset from the CLI, run the following command:

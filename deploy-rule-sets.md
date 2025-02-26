@@ -28,7 +28,7 @@ Use the following workflow to deploy a managed ruleset to a phase at the zone le
 
 1. Get your zone ID.
 1. Run the **List zone** rulesets operation to obtain the available rulesets.
-1. Find the ruleset ID of the managed ruleset you wish to deploy.
+1. Find the ruleset ID of the managed ruleset you want to deploy.
 1. Identify the phase where you want to deploy the managed ruleset. Ensure that the managed ruleset belongs to the same phase where you want to deploy it.
 1. Add a rule to the zone-level phase entry point ruleset that executes the managed ruleset.
 
