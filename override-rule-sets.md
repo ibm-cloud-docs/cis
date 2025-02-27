@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-02-27"
 
 keywords:
 
@@ -196,7 +196,7 @@ Where:
 * **`-d`** is the object of attributes that are required to create the ruleset.
     * **`description`** defines your own summary of what a ruleset is accomplishing.
     * **`rules`** is the array of rules to deploy with the ruleset.
-      * **`action`** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-waf-actions) for a description of available actions.
+      * **`action`** is the action for the rule to take. See [WAF ruleset actions](/docs/cis?topic=cis-waf-actions) for a description of available actions.
       * **`action_parameters`** is the object for defining what the action operates on.
         * **`id`** is the ID of the ruleset to execute. This ID is retrieved from the list zone rulesets operation.
         * **`overrides`** is the object of overrides to set upon the selected ruleset.
