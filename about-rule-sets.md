@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # About rulesets
 {: #about-rule-sets}
 
-You can use the {{site.data.keyword.cis_short_notm}} Ruleset Engine to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
+You can use the {{site.data.keyword.cis_short_notm}} Ruleset Engine language suite to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
 {: shortdesc}
 
 ## Main features
@@ -69,7 +69,7 @@ The following table lists the actions available in the Rules language:
 |JS Challenge|`js_challenge`| Useful for ensuring that bots and spam can't access the requested resource; browsers, however, are free to satisfy the challenge automatically.  \n The client that made the request must pass a JavaScript challenge before proceeding. If successful, {{site.data.keyword.cis_short_notm}} accepts the matched request; otherwise, it is blocked.|Yes|
 |Managed challenge (recommended)|`managed_challenge`|Helps reduce the time spent solving CAPTCHAs across the Internet.  \n Depending on the characteristics of a request, {{site.data.keyword.cis_short_notm}} will dynamically choose the appropriate type of challenge from the following actions based on specific criteria:  \n * Show a non-interactive challenge page (similar to the current JS challenge).  \n * Show a custom interactive challenge (for example, clicking a button).|Yes|
 |Block|`block`|Matching requests are denied access to the site.|Yes|
-|Skip|`skip`|Allows user to dynamically skip one or more security features or products for a request.  \n Depending on the rule configuration, matching requests will skip the evaluation of one or more security features or products:  \n * Skip all remaining rules in the current ruleset  \n * Skip rulesets  \n * Skip rules of a ruleset  \n * Skip phases  \n * Skip specific security products that are not based on the ruleset engine   \n  \n The available skip options depend on the phase where you configure the rule.|No  \n (However, some rules might be skipped)|
+|Skip|`skip`|Allows user to dynamically skip one or more security features or products for a request.  \n Depending on the rule configuration, matching requests will skip the evaluation of one or more security features or products:  \n * Skip all remaining rules in the current ruleset  \n * Skip rulesets  \n * Skip rules of a ruleset  \n * Skip phases  \n * Skip specific security products that are not based on the Ruleset Engine   \n  \n The available skip options depend on the phase where you configure the rule.|No  \n (However, some rules might be skipped)|
 |Log|`log`|Records matching requests in the {{site.data.keyword.cis_short_notm}} logs.  \n Only available on Enterprise plans.  \n Recommended for validating rules before committing to a more severe action.|No|
 |Execute|`execute`|Executes the rules in the ruleset specified in the rule configuration. You can specify a managed ruleset or a custom ruleset to execute.  \n In the {{site.data.keyword.cis_short_notm}} UI, this action is not listed in action selection dropdowns.|No|
 |Rewrite|`rewrite`|Adjusts the URI path, query string, and/or HTTP headers of requests and responses, according to the rule configuration.  \n Only available in:  \n * Transform Rules, in phases `http_request_transform`, `http_request_late_transform`, and `http_response_headers_transform`. In the {{site.data.keyword.cis_short_notm}} UI, this action is not listed in action selection dropdowns. To use this action, create a Transform rule.  \n * Custom rules checking for exposed credentials, in the `http_request_firewall_custom` phase at the instance level. In the {{site.data.keyword.cis_short_notm}} UI, this action is called Exposed-Credential-Check Header.|No|
@@ -90,6 +90,4 @@ The `kind` field of a phase entry point ruleset has one of the following values:
 * `root`: Used for a phase entry point ruleset at the instance level
 * `zone`: Used for a phase entry point ruleset at the zone level
 
-For WAF managed rules, see [Deploying rulesets](/docs/cis?topic=cis-deploying-rule-sets) for instructions on using entry point rulesets to deploy rulesets.
-
-For WAF managed rules, see [Overriding rulesets](/docs/cis?topic=cis-override-rule-sets) for instructions on using entry point rulesets to override rulesets.
+For instructions on deploying rulesets using entry point rulesets for WAF managed rules, refer to [Deploying managed rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entry point rulesets, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).

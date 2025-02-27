@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -125,7 +125,7 @@ IBM {{site.data.keyword.cis_short_notm}} allows you to use custom certificates, 
 ### Upload custom certificates
 {: #upload-custom-certs}
 
-You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). {{site.data.keyword.cis_short_notm}} does not support certificate pinning through ordered or Universal certificates. If you wish to use certificate pinning, it is recommended that you upload and maintain your own custom certificate.
+You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. If you upload your own certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). {{site.data.keyword.cis_short_notm}} does not support certificate pinning through ordered or Universal certificates. If you want to use certificate pinning, it is recommended that you upload and maintain your own custom certificate.
 
 Remember that you are responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} won't track the certificate expiration date.
 {: important}

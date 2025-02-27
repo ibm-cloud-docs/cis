@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-27"
 
 keywords:
 
@@ -12,13 +12,12 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overriding rulesets
+# Overriding managed rulesets
 {: #overriding-rulesets}
 
+To customize the behavior of a managed ruleset, override it at deployment. When you override a ruleset, you specify changes to be executed in addition to the default configuration.
 
-To customize the behavior of a managed ruleset, override the ruleset at deployment. When you override a ruleset, you specify changes to be executed in addition to the default configuration.
-
-You can override a ruleset at the following levels:
+You can override a managed ruleset at the following levels:
 
 * Ruleset overrides apply to all rules in the executed ruleset.
 * Tag overrides apply to all rules with a specific tag. For example, use a tag override to customize the CIS Managed Ruleset so all rules with the wordpress tag are set to Block. If multiple tags have overrides and if a rule has more than one of these tags, the tag overrides order determines the behavior. For rules tagged with multiple overridden tags, the last tag’s overrides apply.
@@ -78,13 +77,13 @@ Some managed rulesets can have extra override requirements, or they might overri
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
 
 
-## Overriding rulesets from the CLI
+## Overriding managed rulesets from the CLI
 {: #cli-override-rule-sets}
 {: cli}
 
 You can override rulesets from the CLI.
 
-### Listing rulesets from the CLI
+### Listing managed rulesets from the CLI
 {: #cli-override-list-rule-sets}
 
 To list all zone rulesets from the CLI, run the following command:
@@ -100,7 +99,7 @@ Where:
 * **`-i, --instance value`** is the instance name or ID.
 * **`--output value`** specifies the output format; only JSON is supported.
 
-### Listing rules from the CLI
+### Listing rules under a zone ruleset from the CLI
 {: #cli-override-list-rule-sets-rules}
 
 To list the rules under a zone ruleset from the CLI, run the following command:
@@ -130,7 +129,7 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--matc
 Where:
 
 * **`DNS_DOMAIN_ID`** is the ID of the domain.
-* **`--match value`** is the conditions that must be matched for the rule to run. See [fields and expressions](https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
+* **`--match value`** is the conditions that must be matched for the rule to run. See [Using fields, functions, and expressions](https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
 * **`--enabled value`** indicates whether the rule is active. Defaults to "true".
 * **`--override-action value`** is the ruleset action of any overrides. Valid values are "managed_challenge", "block", "js_challenge", "log", "challenge".
 * **`--paranoia-level value`** is the OWASP paranoia level. Valid values are "PL1", "PL2", "PL3", "PL4" and it's only available for `CIS OWASP Core Ruleset`.
@@ -139,14 +138,14 @@ Where:
 * **`--output value`** specifies the output format; only JSON is supported.
 
 
-## Overriding rulesets with the API
+## Overriding managed rulesets with the API
 {: #api-override-rule-sets}
 {: api}
 
 You can override rulesets from the API.
 
-### Listing rulesets from the API
-{: #api-override-list-rule-sets}
+### Listing zone rulesets from the API
+{: #api-override-list-zone-rule-sets}
 
 To list all zone rulesets from the API, run the following command:
 
@@ -159,10 +158,10 @@ curl -X GET \
 ```
 {: codeblock}
 
-### Listing rules from the API
+### Listing all rules for a ruleset from the API
 {: #api-override-list-rule-sets-rules}
 
-To list all rules for a specific  ruleset, run the following command:
+To list all rules for a specific ruleset, run the following command:
 
 ```sh
 curl -X GET \
@@ -197,7 +196,7 @@ Where:
 * **`-d`** is the object of attributes that are required to create the ruleset.
     * **`description`** defines your own summary of what a ruleset is accomplishing.
     * **`rules`** is the array of rules to deploy with the ruleset.
-      * **`action`** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-waf-actions) for a description of available actions.
+      * **`action`** is the action for the rule to take. See [WAF ruleset actions](/docs/cis?topic=cis-waf-actions) for a description of available actions.
       * **`action_parameters`** is the object for defining what the action operates on.
         * **`id`** is the ID of the ruleset to execute. This ID is retrieved from the list zone rulesets operation.
         * **`overrides`** is the object of overrides to set upon the selected ruleset.

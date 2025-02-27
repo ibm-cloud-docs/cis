@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -12,11 +12,14 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying rulesets
+# Deploying managed rulesets
 {: #deploying-rule-sets}
 
-You can deploy rulesets at the zone or instance level by using the CLI or API.
+You can deploy managed rulesets at the zone or instance level by using the CLI or API.
 {: shortdesc}
+
+You can always deploy a managed ruleset with customized behavior (changes executed in addition to the default configuration) by overriding it. For more information, refer to [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
+{: tip}
 
 ## Deployment workflow
 {: #deployment-workflow}
@@ -25,20 +28,20 @@ Use the following workflow to deploy a managed ruleset to a phase at the zone le
 
 1. Get your zone ID.
 1. Run the **List zone** rulesets operation to obtain the available rulesets.
-1. Find the ruleset ID of the managed ruleset you wish to deploy.
+1. Find the ruleset ID of the managed ruleset you want to deploy.
 1. Identify the phase where you want to deploy the managed ruleset. Ensure that the managed ruleset belongs to the same phase where you want to deploy it.
 1. Add a rule to the zone-level phase entry point ruleset that executes the managed ruleset.
 
-## Deploying rulesets from the CLI
+## Deploying managed rulesets from the CLI
 {: #cli-deploy-rule-sets}
 {: cli}
 
-You can deploy rulesets from the CLI.
+You can deploy managed rulesets from the CLI.
 
-### Listing rulesets from the CLI
+### Listing managed rulesets from the CLI
 {: #cli-list-rule-sets}
 
-To list all zone rulesets from the CLI, run the following command:
+To list all zone-managed rulesets from the CLI, run the following command:
 
 ```sh
 ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -54,7 +57,7 @@ Where:
 ### Updating deployed ruleset from the CLI
 {: #cli-update-entry-point-rule-set}
 
-To update a ruleset that has been deployed by using the CLI, run the following command:
+To update a managed ruleset that has been deployed by using the CLI, run the following command:
 
 ```sh
 ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--match EXPRESSION] [--enabled true|false] [--override-action ACTION] [--override-status STATUS] [--paranoia-level LEVEL] [--override-rules RULE] [-i, --instance INSTANCE] [--output FORMAT]
@@ -64,7 +67,7 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--matc
 Where:
 
 * **DNS_DOMAIN_ID** is the ID of the domain.
-* **--match value** is the conditions that must be matched for the rule to run. See [fields and expressions](https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
+* **--match value** is the conditions that must be matched for the rule to run. See [Using fields, functions, and expressions](https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
 * **--enabled value** indicates if the rule is active. The default is `true`.
 * **--overide-action value** is the ruleset action of any overrides. Valid values are `managed_challenge`, `block`, `js_challenge`, `log`, `challenge`.
 * **--paranoia-level value** is the OWASP paranoia level. Valid values are `PL1`, `PL2`, `PL3`, `PL4`. This is only available for the `CIS OWASP Core Ruleset`.
@@ -73,16 +76,16 @@ Where:
 * **--output value** specifies the output format; only JSON is supported.
 
 
-## Deploying rulesets with the API
+## Deploying managed rulesets with the API
 {: #api-deploy-rule-sets}
 {: api}
 
-You can deploy rulesets from the API.
+You can deploy managed rulesets from the API.
 
-### Listing rulesets from the API
+### Listing managed rulesets from the API
 {: #api-list-rule-sets}
 
-To list all zone rulesets from the API, run the following command:
+To list all zone-managed rulesets from the API, run the following command:
 
 ```sh
 curl -X GET \
