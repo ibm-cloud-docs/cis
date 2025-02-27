@@ -18,7 +18,7 @@ subcollection: cis
 You can deploy managed rulesets at the zone or instance level by using the CLI or API.
 {: shortdesc}
 
-You can always deploy a managed ruleset with customized behavior (changes executed in addition to the default configuration) by overriding it. For more information, refer to [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
+You can deploy a managed ruleset with customized behavior (changes executed in addition to the default configuration) by overriding it. For more information, refer to [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
 {: tip}
 
 ## Deployment workflow
