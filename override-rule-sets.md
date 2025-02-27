@@ -144,8 +144,8 @@ Where:
 
 You can override rulesets from the API.
 
-### Listing managed rulesets from the API
-{: #api-override-list-rule-sets}
+### Listing zone rulesets from the API
+{: #api-override-list-zone-rule-sets}
 
 To list all zone rulesets from the API, run the following command:
 
@@ -158,10 +158,10 @@ curl -X GET \
 ```
 {: codeblock}
 
-### Listing managed rulesets from the API
+### Listing all rules for a ruleset from the API
 {: #api-override-list-rule-sets-rules}
 
-To list all rules for a specific  ruleset, run the following command:
+To list all rules for a specific ruleset, run the following command:
 
 ```sh
 curl -X GET \
