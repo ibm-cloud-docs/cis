@@ -115,7 +115,6 @@ toc:
         - topicgroup:
             label: Working with firewall rules
             topics:
-            topics:
             - firewall-rule.md
             - actions.md
             - fields-and-expressions.md
