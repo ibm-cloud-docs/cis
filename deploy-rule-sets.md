@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-02-27"
 
 keywords:
 
@@ -74,7 +74,6 @@ Where:
 * **--override-rules value** is the rules options of the overrides. For example `--override-rules rule=RULE_ID,action=ACTION,enabled=STATUS`.
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
-
 
 ## Deploying managed rulesets with the API
 {: #api-deploy-rule-sets}
