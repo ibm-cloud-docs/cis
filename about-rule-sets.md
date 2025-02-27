@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-02-27"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # About rulesets
 {: #about-rule-sets}
 
-You can use the {{site.data.keyword.cis_short_notm}} Ruleset Engine language suite to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
+You can use the {{site.data.keyword.cis_short_notm}} Ruleset Engine feature suite to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
 {: shortdesc}
 
 ## Main features
