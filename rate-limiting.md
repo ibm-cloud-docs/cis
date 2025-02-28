@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-02-28"
 
 keywords: 
 
@@ -35,16 +35,16 @@ In the **Traffic matching criteria** section, enter the following information.
 1. Select the number of requests to allow before triggering rate limiting.
 1. Select the time period (in seconds) over which the requests can occur before triggering rate limiting.
 
-    Range is from 10 to 86,400 seconds.
+    The range is from 10 to 86,400 seconds.
     {: note}
 
 The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria.
 
 Select a value form the **Method** list menu (ANY is the default).
 
-Update **HTTP response header**. You can also **Add response header** to include headers returned by your origin web server.
+Update the **HTTP response header**. You can also **Add response header** to include headers returned by your origin web server.
 
-If you have more than one header under **HTTP response header**, an _AND_ boolean logic applies. To exclude a header from being matched, use the _Not Equal_ option. Also, each header must be an exact match. However, case sensitivity doesn't apply.
+If you have more than one header under the **HTTP response header**, an _AND_ Boolean logic applies. To exclude a header from being matched, use the _Not Equal_ option. Also, each header must be an exact match. However, case sensitivity doesn't apply.
 {: note}
 
 Under **Origin response code**, type the valid numerical value of each HTTP response code to match. To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
@@ -52,13 +52,13 @@ Under **Origin response code**, type the valid numerical value of each HTTP resp
 ### Configuring the response
 {: #rate-limiting-configure-response}
 
-Select from the actions listed, and specify the timeout period. In this case, the timeout refers to the ban period that the action takes place. A 60 second timeout means the action is applied for 60 seconds.
+Select from the actions listed, and specify the timeout period. In this case, the timeout refers to the ban period that the action takes place. A 60-second timeout means that the action is applied for 60 seconds.
 
 |Action| Description|
 |------|------------|
 |Block | Issues a 429 error when the threshold is exceeded|
 |Challenge | User must pass a Google reCaptcha Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.|
-|JS Challenge | User must pass a Javascript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.
+|JS Challenge | The user must pass a Javascript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.
 |Simulate| You can use this option to test your rule before applying any of the other options in your live environment.
 {: caption="Actions for rate limiting" caption-side="bottom"}
 
@@ -67,7 +67,7 @@ In the **Advanced response** section, specify the response type when a rule's th
 ### Bypassing URLs
 {: #rate-limiting-bypass}
 
-Bypass lets you create the equivalent of a allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the rate-limiting rule is matched.
+Bypass lets you create the equivalent of an allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
 ## Protecting login
 {: #rate-limiting-protect-login}

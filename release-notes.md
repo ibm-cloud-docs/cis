@@ -25,11 +25,11 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Ruleset Engine migration
-:   Two existing features are now part of the Ruleset Engine rules language, and have been updated to use the [Rulesets API](/apidocs/cis#get-instance-rulesets) (similar to WAF managed rules):
+:   Two existing features are now part of the Ruleset Engine rules language, and have been updated to use the [Rulesets API](/apidocs/cis#get-instance-rulesets) (similar to WAF-managed rules):
 
 :   Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 
-:   Rate-limiting rules: The new version of these rules allow you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
+:   Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
 
 ## 21 October 2024
 {: #cis-oct2124}
@@ -43,21 +43,21 @@ Enhanced security
 {: release-note}
 
 Managed Rules
-:   Released the new [Managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which will replace the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
+:   Released the new [managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which replaces the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
 
 ## 21 June 2023
 {: #cis-jun2123}
 {: release-note}
 
 Enterprise Tier plans released
-:   Released the new [Enterprise Tier plans](/docs/cis?topic=cis-transition-plans), which will replace the current Enterprise Package, Enterprise GLB, and Enterprise Security plans.
+:   Released the new [Enterprise Tier plans](/docs/cis?topic=cis-transition-plans), which replaces the current Enterprise Package, Enterprise GLB, and Enterprise Security plans.
 
 ## 16 March 2023
 {: #cis-mar1623}
 {: release-note}
 
 Standard Next plan released
-:   Released the new [Standard Next plan](/docs/cis?topic=cis-transition-plans), which will replace the current Standard plan.
+:   Released the new [Standard Next plan](/docs/cis?topic=cis-transition-plans), which replaces the current Standard plan.
 
 ## 23 March 2022
 {: #cis-mar2322}
