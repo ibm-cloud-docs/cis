@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2025
+  years: 2025
 lastupdated: "2025-02-28"
 
 keywords:
@@ -12,30 +12,30 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating, editing, and deleting firewall rules
-{: #about-firewall-rules}
+# Creating, editing, and deleting WAF custom rules
+{: #about--waf-custom-rules}
 
-Firewall rules have been deprecated. CIS has moved existing firewall rules to WAF custom rules. For more information on this change, see [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
-{: deprecated}
-
-{{site.data.keyword.cis_full}} firewall rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
+WAF custom rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
 {: shortdesc}
 
-You can create many types of firewall rules. However, the number of active rules on your site is limited by your customer plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information on entitlements.
+You can create many types of WAF custom rules. However, the number of active rules on your site is limited by your customer plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information on entitlements.
 
 The number of active rules per plan is fixed. You can't purchase additional active rules at this time.
 
-Before getting started, it's a good idea to become familiar with [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
+Before getting started, it's a good idea to review [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=cli).
 {: important}
 
-## Creating a firewall rule
-{: #create-firewall-rule}
+## Creating a custom rule
+{: #create-custom-rule}
 
-Follow these steps to configure a basic firewall rule:
+Follow these steps to configure a custom rule:
+
+WAF custom rules are configued using the existing Firewall rules page. Any legacy firewall rules previously created on your domain are automatically converted into WAF custom rules.
+{: note}
 
 1. Navigate to **Security > Firewall rules**.
 2. Click **Create**.
-3. Enter an optional description.
+3. Enter a rule name and optional description.
 4. Optionally, input a priority, if necessary. Note that a priority of zero is a null priority and is evaluated last.
 5. Use the UI builder in the **Incoming requests** section to add a condition.
     To build an expression with multiple conditions, click either:
@@ -44,7 +44,7 @@ Follow these steps to configure a basic firewall rule:
 
     You can see that as you build a condition, the Expression Preview shows the expression in plain text.
 
-    In the Expression preview, you can click to edit your expression manually instead of using the Visual Expression Builder, or switch between the two. However, depending on the complexity of a manually constructed expression, the Visual Expression Builder might be unable to render it.
+    In the Expression Preview, you can click to edit your expression manually instead of using the Visual Expression Builder, or switch between the two. However, depending on the complexity of a manually constructed expression, the Visual Expression Builder might be unable to render it.
     {: note}
 
 6. Pick an action from the **Response** list menu.
@@ -52,8 +52,8 @@ Follow these steps to configure a basic firewall rule:
     * **Save as draft** to save your rule, but leave it disabled.
     * **Save and deploy** to save your rule and activate it.
 
-## Editing a firewall rule
-{: #edit-firewall-rule}
+## Editing a custom rule
+{: #edit-custom-rule}
 
 Follow these steps to edit an existing rule:
 
@@ -68,8 +68,8 @@ Follow these steps to edit an existing rule:
 To pause or activate any rule in the list of existing rules, click the **Enabled** toggle.
 {: note}
 
-## Deleting a firewall rule
-{: #delete-firewall-rule}
+## Deleting a custom rule
+{: #delete-custom-rule}
 
 Follow these steps to delete an existing rule:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-28"
 
 subcollection: cis
 
@@ -13,7 +13,8 @@ subcollection: cis
 # Prioritizing options
 {: #priority}
 
-
+Firewall rules have been deprecated. CIS has moved existing firewall rules to WAF custom rules. For more information on this change, see [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
+{: deprecated}
 
 By default, the action you specify in a rule determines the evaluation sequence for your entire ruleset. However, you can set a **priority** option that allows you to force the evaluation sequence to occur before triggering a rule.
 {: shortdesc}

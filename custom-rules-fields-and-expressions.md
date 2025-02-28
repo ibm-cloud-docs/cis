@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2025
+  years: 2025
 lastupdated: "2025-02-28"
 
 subcollection: cis
@@ -11,16 +11,13 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Using fields, functions, and expressions
-{: #fields-and-expressions}
+{: #custom-rules-fields-and-expressions}
 
-Firewall rules have been deprecated. CIS has moved existing firewall rules to WAF custom rules. For more information on this change, see [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
-{: deprecated} 
-
-Along with actions, fields and expressions are the building blocks of firewall rules. These two elements work together when defining the criteria to use when a firewall rule is matched.
+Along with actions, fields and expressions are the building blocks of WAF custom rules. These two elements work together when defining the criteria to use when a custom rule is matched.
 {: shortdesc}
 
 ## Fields
-{: #fields}
+{: #custom-rule-fields}
 
 When CIS receives an HTTP request, it is examined and a table of fields is produced to match against. This field table exists for as long as the current request is being processed. Think of it as a table that holds the request properties to be matched against expressions.
 
@@ -31,7 +28,7 @@ Each field value can be sourced from different places, such as:
 * Computer values, resulting from a lookup, computation, or other intelligence – for example, a `cf.threat_score` calculated dynamically by a machine learning process that inspects related primitive and derived values.
 
 ### Available fields
-{: #available-fields}
+{: #custom-rule-available-fields}
 
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
@@ -59,13 +56,13 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
 |cf.client.bot|Boolean|true|This field indicates whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
-|cf.threat_score|Number|A 0-100 value|This field represents a risk score, 0 indicates low risk as determined by Cloudflare. Values above 10 can represent spammers or bots, and values above 40 point to bad actors on the internet. It is rare to see values above 60, so tune your firewall rules to challenge those above 10, and to block those above 50.|
+|cf.threat_score|Number|A 0-100 value|This field represents a risk score, 0 indicates low risk as determined by Cloudflare. Values above 10 can represent spammers or bots, and values above 40 point to bad actors on the internet. It is rare to see values above 60, so tune your WAF custom rules to challenge those above 10, and to block those above 50.|
 {: caption="Available Cloudflare fields" caption-side="bottom"}
 
 ## Functions
-{: #functions}
+{: #custom-rule-functions}
 
-The firewall rules language has a number of functions to convert fields.
+The custom rules language has a number of functions to convert fields.
 
 These are not currently supported in the CIS UI Visual Expression Builder.
 {: note}
@@ -74,10 +71,10 @@ These are not currently supported in the CIS UI Visual Expression Builder.
 | ------- | :--------- | :------------ | :--------- | :--------- |
 |lower|String|String|lower(http.host) == `"www.example.com"`|Converts a string field to lowercase. Only uppercase ASCII bytes are being converted, every other bytes are left as-is.|
 |upper|String|String|upper(http.host) == `"www.example.com"`|Converts a string field to uppercase. Only lowercase ASCII bytes are being converted, every other bytes are left as-is.|
-{: caption="Firewall rules functions" caption-side="bottom"}
+{: caption="Custom rules functions" caption-side="bottom"}
 
 ## Expressions
-{: #expressions}
+{: #custom-rule-expressions}
 
 An expression returns true or false based on a match against incoming traffic. For example:
 
@@ -97,7 +94,7 @@ Looking at the first single expression, you can see that it contains:
 Not all conditions have the same structure. Additional examples using different structures are discussed in the next section.
 
 ### Comparison operators
-{: #comparison-operators}
+{: #custom-rule-comparison-operators}
 
 The following comparison operators are available for use in expressions:
 
@@ -136,11 +133,11 @@ Certain comparison operators apply to specific fields based on type. The followi
 |in| |http.request.method in { "HEAD" "GET" }|ip.src in { 93.184.216.0 93.184.216.1 }|cf.threat_score in {0 2 10}|
 {: caption="Comparison operators for fields" caption-side="bottom"}
 
-The evaluation of expressions using string values is case-sensitive. As such, a firewall rule might require you to define more than one test condition. Enterprise customers can use a regular expression with the matches operator to capture multiple variations with a single expression.
+The evaluation of expressions using string values is case-sensitive. As such, a custom rule might require you to define more than one test condition. Enterprise customers can use a regular expression with the matches operator to capture multiple variations with a single expression.
 {: important}
 
 ### Boolean comparison
-{: #boolean-comparison}
+{: #custom-rule-boolean-comparison}
 
 For fields of boolean type (for example, `ssl`) the field appears by itself in the expression when evaluating for a true condition. For a false condition, the **not** operator applies.
 
@@ -150,7 +147,7 @@ For fields of boolean type (for example, `ssl`) the field appears by itself in t
 {: caption="Boolean comparison" caption-side="bottom"}
 
 ## Compound expressions
-{: #compound-expressions}
+{: #custom-rule-compound-expressions}
 
 You can create compound expressions by grouping two or more single expressions using logical operators.
 
@@ -193,11 +190,11 @@ not (http.request.method eq "POST" and http.request.uri.path eq "/login")
 {: screen}
 
 ### Deviations from Wireshark display filters
-{: #deviations}
+{: #custom-rule-deviations}
 
-Firewall rules expressions are inspired by Wireshark display filters. However, the implementation deviates in the following ways:
+Custom rule expressions are inspired by Wireshark display filters. However, the implementation deviates in the following ways:
 
 * For CIDR IP equality tests, Wireshark allows ranges in the format `ip.src == 1.2.3.0/24`, while CIS only supports equality tests using a single IP address. To compare a CIDR, use the `in` operator; for example, `ip.src in {1.2.3.0/24}`.
-* In Wireshark, `ssl` is a protocol field containing hundreds of other fields of various types that are available for comparison in multiple ways. However in Firewall Rules, `ssl` is a single boolean field used to determine if the connection from the client to CIS is encrypted.
+* In Wireshark, `ssl` is a protocol field containing hundreds of other fields of various types that are available for comparison in multiple ways. However in custom rules, `ssl` is a single boolean field used to determine if the connection from the client to CIS is encrypted.
 * The `slice` operator is not supported.
 * Not all functions are supported. Currently, `len()`, and `count()` are not supported.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-02-28"
 
 keywords:
 
@@ -15,7 +15,8 @@ subcollection: cis
 # WAF ruleset actions 
 {: #waf-actions}
 
-
+CIS WAF capabilities are moving to the [Ruleset Engine rules language](/docs/cis?topic=cis-cis-ruleset-engine). For more information on this change, see [Migrating to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules).
+{: note}
  
 The following table shows the actions that Web Application Firewalls (WAFs) can take.
 {: shortdesc}

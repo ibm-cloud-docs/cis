@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-01-24"
+lastupdated: "2025-02-28"
 
 keywords: firewall rule actions
 
@@ -15,7 +15,8 @@ subcollection: cis
 # Assigning firewall rule actions
 {: #actions}
 
-
+Firewall rules have been deprecated. CIS has moved existing firewall rules to WAF custom rules. For more information on this change, see [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
+{: deprecated}
 
 Firewall rule actions tell {{site.data.keyword.cis_short_notm}} how to respond to requests that match the criteria you define.
 {: shortdesc}
