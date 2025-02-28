@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-02-28"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # About rulesets
 {: #about-rule-sets}
 
-You can use the {{site.data.keyword.cis_short_notm}} Ruleset Engine language suite to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
+You can use the {{site.data.keyword.cis_short_notm}} Ruleset Engine feature suite to create and deploy rules and rulesets in {{site.data.keyword.cis_short_notm}} using the same basic syntax.
 {: shortdesc}
 
 ## Main features
@@ -90,4 +90,4 @@ The `kind` field of a phase entry point ruleset has one of the following values:
 * `root`: Used for a phase entry point ruleset at the instance level
 * `zone`: Used for a phase entry point ruleset at the zone level
 
-For instructions on deploying rulesets using entry point rulesets for WAF managed rules, refer to [Deploying managed rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entry point rulesets, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
+For instructions on deploying rulesets using entry point rulesets for WAF managed rules, see [Deploying managed rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entry point rulesets, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).

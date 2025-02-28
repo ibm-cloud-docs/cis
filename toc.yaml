@@ -91,9 +91,17 @@ toc:
             label: Working with rulesets
             topics:
             - about-rule-sets.md
+            - ruleset-engine-actions.md
+        - topicgroup:
+            label: Working with WAF custom rules
+            topics:
+            - custom-rules.md
+            - custom-rules-creating.md
+            - custom-rules-fields-and-expressions.md
         - topicgroup:
             label: Working with WAF managed rules 
             topics:
+            - about-managed-rules.md
             - deploy-rule-sets.md            
             - override-rule-sets.md            
             - handling-false-positives-managed-rules.md
@@ -105,16 +113,19 @@ toc:
                 - exposed-credentials-check-ruleset.md   
         - topicgroup:
             label: Working with rate-limiting rules
-            topics:  
-            - rate-limiting.md             
+            topics:
+            - migration-rate-limiting.md
+            - rate-limiting.md
+            - rate-limit-ruleset.md      
         - topicgroup:
-            label: Working with WAF
+            label: Working with legacy WAF
             topics:
             - waf-managed-rules.md
             - waf-cis-ruleset.md  
         - topicgroup:
-            label: Working with firewall rules
-            topics:
+            label: Working with legacy firewall rules
+            topics: 
+            - migration-custom-rules.md
             - firewall-rule.md
             - actions.md
             - fields-and-expressions.md
