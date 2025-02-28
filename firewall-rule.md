@@ -15,7 +15,7 @@ subcollection: cis
 # Creating, editing, and deleting firewall rules
 {: #about-firewall-rules}
 
-Firewall rules have been deprecated. CIS has moved existing firewall rules to WAF custom rules. For more information on this change, see [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
+Firewall rules are deprecated. CIS moved existing firewall rules to WAF custom rules. For more information on this change, see [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 {: deprecated}
 
 {{site.data.keyword.cis_full}} firewall rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
@@ -23,9 +23,9 @@ Firewall rules have been deprecated. CIS has moved existing firewall rules to WA
 
 You can create many types of firewall rules. However, the number of active rules on your site is limited by your customer plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information on entitlements.
 
-The number of active rules per plan is fixed. You can't purchase additional active rules at this time.
+The number of active rules per plan is fixed. Currently, you can't purchase more active rules.
 
-Before getting started, it's a good idea to become familiar with [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
+Before getting started, it's a good idea for you to become familiar with [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 {: important}
 
 ## Creating a firewall rule
@@ -36,11 +36,11 @@ Follow these steps to configure a basic firewall rule:
 1. Navigate to **Security > Firewall rules**.
 2. Click **Create**.
 3. Enter an optional description.
-4. Optionally, input a priority, if necessary. Note that a priority of zero is a null priority and is evaluated last.
+4. Optionally, input a priority, if necessary. A priority of zero is a null priority and is evaluated last.
 5. Use the UI builder in the **Incoming requests** section to add a condition.
     To build an expression with multiple conditions, click either:
-    * **And** - to evaluate conditions using _and_ logic
-    * **Or** - to evaluate conditions or groups of previously _and_'ed conditions using _or_ logic
+    * **And** - to evaluate conditions that use _and_ logic
+    * **Or** - to evaluate conditions or groups of previously _and_'ed conditions that use _or_ logic
 
     You can see that as you build a condition, the Expression Preview shows the expression in plain text.
 
@@ -58,7 +58,7 @@ Follow these steps to configure a basic firewall rule:
 Follow these steps to edit an existing rule:
 
 1. Navigate to **Security > Firewall rules**.
-1. In the firewall rules table, locate the rule you want to modify, then click the Actions menu on the right of the row.
+1. In the firewall rules table, locate the rule that you want to modify, then click the Actions menu on the right of the row.
 1. Select **Edit**.
 1. Make your changes to the rule.
 1. To save your rule, choose the most appropriate option by clicking either:

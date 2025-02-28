@@ -20,7 +20,7 @@ WAF custom rules offer power and flexibility by targeting HTTP traffic and apply
 
 You can create many types of WAF custom rules. However, the number of active rules on your site is limited by your customer plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information on entitlements.
 
-The number of active rules per plan is fixed. You can't purchase additional active rules at this time.
+The number of active rules per plan is fixed. Currently, you can't purchase more active rules.
 
 Before getting started, it's a good idea to review [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=cli).
 {: important}
@@ -30,17 +30,17 @@ Before getting started, it's a good idea to review [Using fields, functions, and
 
 Follow these steps to configure a custom rule:
 
-WAF custom rules are configued using the existing Firewall rules page. Any legacy firewall rules previously created on your domain are automatically converted into WAF custom rules.
+WAF custom rules are configured using the existing Firewall rules page. Any legacy firewall rules that were previously created on your domain are automatically converted into WAF custom rules.
 {: note}
 
 1. Navigate to **Security > Firewall rules**.
 2. Click **Create**.
-3. Enter a rule name and optional description.
-4. Optionally, input a priority, if necessary. Note that a priority of zero is a null priority and is evaluated last.
+3. Enter an optional description.
+4. Optionally, input a priority, if necessary. A priority of zero is a null priority and is evaluated last.
 5. Use the UI builder in the **Incoming requests** section to add a condition.
     To build an expression with multiple conditions, click either:
-    * **And** - to evaluate conditions using _and_ logic
-    * **Or** - to evaluate conditions or groups of previously _and_'ed conditions using _or_ logic
+    * **And** - to evaluate conditions that use _and_ logic
+    * **Or** - to evaluate conditions or groups of previously _and_'ed conditions that use _or_ logic
 
     You can see that as you build a condition, the Expression Preview shows the expression in plain text.
 
@@ -58,7 +58,7 @@ WAF custom rules are configued using the existing Firewall rules page. Any legac
 Follow these steps to edit an existing rule:
 
 1. Navigate to **Security > Firewall rules**.
-1. In the firewall rules table, locate the rule you want to modify, then click the Actions menu on the right of the row.
+1. In the firewall rules table, locate the rule that you want to modify, then click the Actions menu on the right of the row.
 1. Select **Edit**.
 1. Make your changes to the rule.
 1. To save your rule, choose the most appropriate option by clicking either:
