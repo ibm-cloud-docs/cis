@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-28"
 
 keywords:
 
@@ -32,9 +32,9 @@ Before getting started, it's a good idea to become familiar with [Using fields, 
 
 Follow these steps to configure a basic firewall rule:
 
-1. Navigate to **Security > Firewall Rules**.
-2. Click **Create Firewall Rule**.
-3. Enter a rule name and optional description.
+1. Navigate to **Security > Firewall rules**.
+2. Click **Create**.
+3. Enter an optional description.
 4. Optionally, input a priority, if necessary. Note that a priority of zero is a null priority and is evaluated last.
 5. Use the UI builder in the **Incoming requests** section to add a condition.
     To build an expression with multiple conditions, click either:
@@ -43,7 +43,7 @@ Follow these steps to configure a basic firewall rule:
 
     You can see that as you build a condition, the Expression Preview shows the expression in plain text.
 
-    In the Expression Preview, you can click to edit your expression manually instead of using the Visual Expression Builder, or switch between the two. However, depending on the complexity of a manually constructed expression, the Visual Expression Builder might be unable to render it.
+    In the Expression preview, you can click to edit your expression manually instead of using the Visual Expression Builder, or switch between the two. However, depending on the complexity of a manually constructed expression, the Visual Expression Builder might be unable to render it.
     {: note}
 
 6. Pick an action from the **Response** list menu.
@@ -56,8 +56,8 @@ Follow these steps to configure a basic firewall rule:
 
 Follow these steps to edit an existing rule:
 
-1. Navigate to **Security > Firewall Rules**.
-1. In the Firewall Rules table, locate the rule you want to modify, then click the Actions menu on the right of the row.
+1. Navigate to **Security > Firewall rules**.
+1. In the firewall rules table, locate the rule you want to modify, then click the Actions menu on the right of the row.
 1. Select **Edit**.
 1. Make your changes to the rule.
 1. To save your rule, choose the most appropriate option by clicking either:
@@ -72,7 +72,7 @@ To pause or activate any rule in the list of existing rules, click the **Enabled
 
 Follow these steps to delete an existing rule:
 
-1. Navigate to **Security > Firewall Rules**.
-1. In the Firewall Rules table, locate the rule to modify and click the Actions menu on the right of the row.
+1. Navigate to **Security > Firewall rules**.
+1. In the firewall rules table, locate the rule to modify and click the Actions menu on the right of the row.
 1. Select **Delete**.
 1. Confirm the rule deletion.
