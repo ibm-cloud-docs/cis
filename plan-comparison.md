@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-03"
 
 keywords:
 
@@ -41,6 +41,7 @@ The following table compares each offering to help you choose the one that's rig
 |**Range**|No|No|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs|
 |**Edge functions**|1 action \n (must be named after domain) \n 1 M Edge function requests|Unlimited actions|Unlimited actions|Unlimited actions|Unlimited actions|
 |**Firewall rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
+|**GraphQL**|No|Yes|Yes|Yes|Yes|
 |**Smart routing**|No|Yes|Yes|Yes|Yes|
 |**Logging**|No|Yes|Yes|Yes|Yes|
 |**Alerts**|No|Yes|Yes|Yes|Yes|
