@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-04"
 
 keywords:
 
@@ -22,9 +22,7 @@ The global load-balancing capabilities available with {{site.data.keyword.cis_fu
 
 On your dashboard, you'll see three lists that show the [load balancers](#x2788902){: term}, origin pools, and [health checks](#x4571658){: term}. The lists display the new or updated global load balancer, or one of its components after you've provisioned or updated it. Initially, the lists are empty, and before you create a load balancer you must take a few actions.
 
-{{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address, but there are limitations:
-- you can't use proxy services or health checks.
-- you can only use DNS-based load balancing.
+{{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address, but you can't use proxy services or health checks. Additionally, you can only use DNS-based load balancing.
 {: important}
 
 Refer to the [Quick setup](#global-load-balancer-quick-setup) if you already know what to do!
