@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-07-17"
+  years: 2021, 2025
+lastupdated: "2025-03-05"
 
 keywords:
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #update-origin-root-ca}
 {: troubleshoot}
 
-Your origin root certificate has expired, or will soon expire,
+Your origin root certificate has expired, or will soon expire.
 {: tsSymptoms}
 
 Some origin web servers (such as IIS and cPanel) validate origin root CA certificates and require you to upload one.
