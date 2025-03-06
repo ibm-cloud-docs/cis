@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-03-06"
 
 keywords:
 
@@ -36,7 +36,11 @@ Before you create a Logpush job using the UI, review the following information a
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to your destination.
 * DNS, Range, and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path. 
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.  
-* When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector.
+* When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk).
+* If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
+
+   To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
+   {: important}
    
 * When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure. 
 
@@ -72,7 +76,7 @@ To create a Logpush job in the UI, follow these steps:
 
    IBM Log Analysis 
    :   Be aware that IBM Log Analysis is deprecated and should not be used.
-       {: attention} 
+       {: attention}
 
 1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket and paste the token in the Ownership token text area. Then, click **Next**.
 
@@ -122,6 +126,16 @@ Where:
    {: caption="Cloud Object Storage path" caption-side="bottom"}
    {: #cli-table-22}
    {: tab-title="Cloud Object Storage"}
+   {: tab-group="pla"}
+   {: class="simple-tab-table"}
+   {: row-headers}
+
+   | Custom HTTP | 
+   |---------------------|
+   | `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>` \n \n For example: \n `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` |
+   {: caption="Custom HTTP path" caption-side="bottom"}
+   {: #cli-table-55}
+   {: tab-title="Custom HTTP"}
    {: tab-group="pla"}
    {: class="simple-tab-table"}
    {: row-headers}
@@ -239,7 +253,17 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
    {: tab-title="Splunk"}
    {: tab-group="pl"}
    {: class="simple-tab-table"}
-   {: row-headers}
+   {: row-headers} 
+
+   | Custom HTTP | 
+   |---------------------|
+   | `destination_conf`: Information to configure the Custom HTTP destination where the data is pushed. Headers can be specified to be used by Logpush with query parameters prefixed by `header_` (for example: `header_Authorization=XXXX`). |
+   {: caption="Custom HTTP destination" caption-side="bottom"}
+   {: #pl-table-5}
+   {: tab-title="Custom HTTP"}
+   {: tab-group="pl"}
+   {: class="simple-tab-table"}
+   {: row-headers} 
 
    `name`: The name of the Logpush job.
    
@@ -318,6 +342,23 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
       "dataset": "http_requests",
       "enabled": true,
       "name": "CIS-Splunk-Logpush",
+      "frequency": "high",
+      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
+   }'
+   ```
+   {: pre}
+
+   **Custom HTTP**
+
+   ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+   --data '{
+      "destination_conf": "https://logs.example.com?header_Authorization=a64VuywesDu5Aq",
+      "dataset": "http_requests",
+      "enabled": true,
+      "name": "CIS-Custom-Logpush",
       "frequency": "high",
       "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
    }'
