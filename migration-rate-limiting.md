@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-06"
 
 keywords:
 
@@ -23,7 +23,7 @@ The old and new implementation of rate-limiting rules have separate rules lists 
 
 For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
 
-Currently, the CIS dashboard shows only the legacy rate limiting rules. To re-create the legacy rules or create new ones, you can use the [Rulesets API](/apidocs/cis#get-instance-rulesets) with the `http_ratelimit` [phase](/docs/cis?topic=cis-about-rule-sets#phase-list) or the CIS CLI. The CIS dashboard will be updated in the future to reflect both types of rules. 
+Currently, the CIS dashboard shows only the legacy rate-limiting rules. To re-create the legacy rules or create new ones, you can use the [Rulesets API](/apidocs/cis#get-instance-rulesets) with the `http_ratelimit` [phase](/docs/cis?topic=cis-about-rule-sets#phase-list) or the CIS CLI. The CIS dashboard will be updated in the future to reflect both types of rules. 
 {: important}
 
 ## Main differences between versions
