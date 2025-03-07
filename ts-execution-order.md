@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-21"
+  years: 2024, 2025
+lastupdated: "2025-03-06"
 
 keywords:
 
@@ -27,15 +27,4 @@ The order of execution can sometimes disrupt the rules you have in place.
 Check to confirm that the rule you are expecting to execute is not getting dropped because another rule is executing before it.
 {: tsResolve}
 
-The following list shows the execution order from our partner, Cloudflare. Evaluate where your rule lands in the order of execution and adjust the rule as needed.
-  
-1. [DDoS](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts)
-1. [URL rewrites](/docs/cis?topic=cis-url-normalization)
-1. [Page Rules](/docs/cis?topic=cis-about-firewall-rules)
-1. [IP Firewall](/docs/cis?topic=cis-actions)
-1. WAF / Firewall Rules - The general traffic sequence for CIS Firewall features is:
-   1. [Firewall Rules](/docs/cis?topic=cis-about-firewall-rules)
-   1. [WAF](/docs/cis?topic=cis-waf-actions)
-   1. [Rate Limiting](/docs/cis?topic=cis-cis-rate-limiting) 
-1. [Edge Functions](/docs/cis?topic=cis-working-with-edge-functions)
-1. [Load Balancer](/docs/cis?topic=cis-configure-glb)
+Refer to [Traffic sequencing](/docs/cis?topic=cis-traffic-sequencing) to see the execution order from our partner, Cloudflare. This list will help you identify where your rule lands within the execution sequence, allowing you to make any necessary adjustments. 

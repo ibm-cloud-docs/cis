@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-06"
 
 keywords:
 
@@ -31,7 +31,7 @@ The main differences between firewall rules and WAF custom rules are as follows:
 * [New Skip action replacing both Allow and Bypass actions](/docs/cis?topic=cis-migrating-to-custom-rules#new-skip-action)
 * [Custom rules are evaluated in order](/docs/cis?topic=cis-migrating-to-custom-rules#custom-rules-evaluated-in-order)
 * [Logs and events](/docs/cis?topic=cis-migrating-to-custom-rules#logs-and-events)
-* [New API](/docs/cis?topic=cis-migrating-to-custom-rules#new-api)
+* [New API](/docs/cis?topic=cis-migrating-to-custom-rules#new-api) 
 
 ### Improved response for Block action
 {: #improved-response-block-action}
@@ -118,20 +118,3 @@ The preferred API for managing WAF custom rules is the [Rulesets API](/apidocs/c
 
 The Firewall Rules API and Filters API will still work until 2025-06-15. There will be a single list of rules for both firewall rules and custom rules, and this list contains WAF custom rules. Thanks to an internal conversion process, the Firewall Rules API, and Filters API return firewall rules/filters converted from these WAF custom rules.
 {: note}
- 
-## Relevant changes for dashboard users
-{: #relevant-changes-dashboard-users}
-
-The **Firewall rules tab** will continue to exist and function as expected. The main difference is the APIs used in the background.
-
-## Relevant changes for API users
-{: #relevant-changes-api-users}
-
-The [Firewall Rules API](/apidocs/cis#listallfirewallrules) and the associated [Filters API](/apidocs/cis#listallfilters) are now deprecated. These APIs will stop working on 15 June 2025. Migrate any automation based on the Firewall Rules API or Filters API to the [Rulesets API](https://cloud.ibm.com/apidocs/cis#get-zone-entrypoint-ruleset) before this date to prevent any issues. Rule IDs are different between firewall rules and custom rules, which might affect automated processes dealing with specific rule IDs.
-{: deprecated}
-
-Until the deprecation date, all three APIs are available (Firewall Rules API, Filters API, and Rulesets API). {{site.data.keyword.cis_short_notm}} will internally convert your [Firewall Rules API](/apidocs/cis#listallfirewallrules) and [Filters API](/apidocs/cis#listallfilters) calls into the corresponding Rulesets API calls. There will be a single list of rules for both firewall rules and WAF custom rules.
-
-Some new features of custom rules, like custom responses for blocked requests and the Skip action, are not supported in the legacy Firewall Rules API. To take advantage of these features, {{site.data.keyword.cis_short_notm}} recommends that you use the WAF custom rules page in the {{site.data.keyword.cis_short_notm}} dashboard or the Rulesets API.
-
-See [About WAF custom rules](/docs/cis?topic=cis-custom-rules-overview) for examples of managing WAF custom rules that use the Rulesets API.

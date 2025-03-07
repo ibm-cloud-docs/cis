@@ -182,6 +182,15 @@ CLI examples for the supported destinations:
        ```
        {: pre}
    
+
+   Custom HTTP
+   :   Example
+
+       ```sh
+       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.example.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+       ```
+       {: pre}
+       
 ## Creating a Logpush job with the API
 {: #logpush-setup-api}
 {: api}

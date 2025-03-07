@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-07"
 
 keywords:
 
@@ -12,10 +12,12 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs for {{site.data.keyword.cis_full_notm}}
+# FAQ for {{site.data.keyword.cis_full_notm}}
 {: #faq}
 
 Have a question about {{site.data.keyword.cis_full}}? Review these frequently asked questions, which provide answers to provisioning concerns, application access, and other common inquiries.
+
+If you have additional questions you'd like to see addressed here, open an issue by using the **Open doc issue** or **Edit topic** links at the end of this page.
 
 ## What do I get with a Free Trial Plan?
 {: #cis-faq-free-trial-plan}
