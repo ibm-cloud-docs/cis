@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-03-10"
 
 keywords:
 
@@ -78,6 +78,12 @@ To create a Logpush job in the UI, follow these steps:
    :   Be aware that IBM Log Analysis is deprecated and should not be used.
        {: attention}
 
+   Custom HTTP Destination
+   :   Enter your HTTP endpoint.
+
+       Make sure the endpoint is properly URL-encoded and any necessary request headers are added as URL parameters formatted as "header_*" (e.g. `header_Authorization`).
+       {: important}
+
 1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket and paste the token in the Ownership token text area. Then, click **Next**.
 
    You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
@@ -142,7 +148,7 @@ Where:
 
 `--name`: Specifies the Logpush job name.
 
-`--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields. Use the command `ibmcloud cis logpull DNS_DOMAIN_ID --available-fields` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
+`--fields`: Specifies the list of log fields to be included in log files. Use commas to separate multiple fields. Use the command `ibmcloud cis logpush-available-fields DNS_DOMAIN_ID --dataset DATASET` to get a comprehensive list of available log fields, or use `all` to include all available fields in the log files.
 
 `--enable`: Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default). 
 
