@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-07"
+lastupdated: "2025-03-13"
 
 keywords:
 
@@ -284,3 +284,8 @@ For more information about how your traffic is processed, see [Traffic sequencin
 {: faq}
 
 Private IPs (RFC1918) can be reached with DNS lookup through the non-proxied {{site.data.keyword.cis_short_notm}} setup. However, you can't access most of {{site.data.keyword.cis_short_notm}}'s advanced features such as CDN and WAF with this setup. For private IPs, {{site.data.keyword.cis_short_notm}} handles Name-to-Address translation only. Connectivity to the private network is the responsibility of the customer.
+
+## What port range does Cloudflare's network use for the edge traffic?
+{: #port-range-edge-traffic}
+
+When the proxy is enabled, traffic is routed through the Cloudflare network to the origin server. This traffic can originate from any port within the range of `1024-65535`. When configuring Network Access Control Lists (ACLs) for your environment, ensure that both ingress and egress traffic from this port range is allowed.
