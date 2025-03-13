@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-13"
 
 keywords: isolation for cis, service endpoints for cis, private network for cis, network isolation in cis, non-public routes for cis, private connection for cis, private connectivity for cis
 
@@ -122,7 +122,7 @@ After you configure your virtual server instance to accept {{site.data.keyword.c
 ### Step 3. Create a {{site.data.keyword.cis_short_notm}} resource on the private network
 {: #create-key-private-network}
 
-Test your private network connection by using the [{{site.data.keyword.cis_short_notm}} CLI plug-in](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli).
+Test your private network connection by using the [{{site.data.keyword.cis_short_notm}} CLI plug-in](/docs/cis?topic=cis-cis-cli).
 
 1. Log in to a {{site.data.keyword.cis_short_notm}} private endpoint instance.
 

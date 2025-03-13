@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-13"
 
 keywords:
 
@@ -28,5 +28,5 @@ The following table shows the actions that Web Application Firewalls (WAFs) can 
 |**Challenge** | All |* Manged challenge: Dynamically chooses the appropriate type of challenge based on the characteristics of the request. \n * Interactive challenge: Solve a puzzle to proceed. \n * JavaScript challenge: A challenge page asks visitors to submit a CAPTCHA to continue to your website. |
 {: caption="WAF actions" caption-side="bottom"}
 
-In Enterprise plans, you have the flexibility to turn on or off individual WAF rules for a particular URI in a domain, instead of the whole domain or subdomain. For more information, see the [waf-override-create](/docs/cis-cli-plugin?topic=cis-cli-plugin-cis-cli#create-waf-override) command.
+In Enterprise plans, you have the flexibility to turn on or off individual WAF rules for a particular URI in a domain, instead of the whole domain or subdomain. For more information, see the [waf-override-create](/docs/cis?topic=cis-cis-cli) command.
 {: note}
