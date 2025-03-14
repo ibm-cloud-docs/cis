@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-03-14"
 
 keywords:
 
@@ -50,29 +50,3 @@ In the new version of Rate Limiting, counting and mitigation expressions are sep
 {: #no-rules-per-plan}
 
 The new rate-limiting ruleset allows for up to 100 rules per domain on enabled Enterprise plans. For more information, see [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison).
-
-## Relevant changes in the dashboard
-{: #relevant-changes-in-dashboard}
-
-If you had access to the version of {{site.data.keyword.cis_short_notm}} Rate Limiting, you will find both rate-limiting products, old and new, in the {{site.data.keyword.cis_short_notm}} dashboard in **Security page > Rate limiting**. The version allows you to filter traffic for one URL. The new version allows you to combine different fields, similar to the functionality of WAF custom rules.
-
-## Relevant changes for API users
-{: #relevant-changes-for-api-users}
-
-The new rate-limiting rules are based on the [Ruleset Engine rules language](/docs/cis?topic=cis-cis-ruleset-engine). To configure rate-limiting rules with the API, you must use the [Rulesets API](/apidocs/cis#get-instance-rulesets){: external}. The Rulesets API is used on all recent {{site.data.keyword.cis_short_notm}} security products to provide a uniform user experience when interacting with the {{site.data.keyword.cis_short_notm}} API.
-
-The [previous Rate Limiting API](/apidocs/cis#list-all-zone-rate-limits) is now deprecated. You will not be able to perform any API calls after 15 June 2025.
-{: deprecated}
-
-## Migrating to the new rate-limiting rules
-{: #migrate-to-new-rate-limiting-rules}
-
-CIS recommends that you migrate your rules to the new system. Migration must be done manually. Since the new version of rate-limiting rules is more powerful and offers additional controls, customers are encouraged to reevaluate their rate-limiting logic considering all the capabilities of the new {{site.data.keyword.cis_short_notm}} rate-limiting rules.
-
-### Enterprise Advanced and Premier account customers
-{: #enterprise-adv-premier-customers}
-
-Enterprise contracts that included the previous version of {{site.data.keyword.cis_short_notm}} Rate Limiting were based on the good requests model, where customers were billed based on the predicted usage of the feature. If you were using the previous version of {{site.data.keyword.cis_short_notm}} Rate Limiting, you have access to both versions of the product with the same number of rules at no additional cost, and they will both apply to your incoming traffic (in this case, the new Rate Limiting runs first).
-
-Migrate your rules to the new system before 15 June 2025. After you delete all rules from the previous version of rate-limiting rules, the {{site.data.keyword.cis_short_notm}} dashboard shows only the new version.
-{: important}
