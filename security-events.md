@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-18"
 
 keywords:
 
@@ -54,3 +54,11 @@ Expand each event to see event details. The **Event Triggers** section displays 
 {: #retention-policy}
 
 Enterprise plans retain security events for 90 days. Standard plans retain security events for 30 days.
+
+## Known limitations
+{: #known-limiations}
+
+CIS Security Events currently has the following limitations:
+
+- Security Events uses [sampled data](/docs/cis?topic=cis-sampling). As a result, the dashboard may not display all events.
+- Security Events are pulled using GraphQL. As a result, it is subject to the [GraphQL query limits](docs/cis?topic=cis-graphql#query-limits).
