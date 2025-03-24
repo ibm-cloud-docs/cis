@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-24"
 
 keywords:
 
@@ -42,16 +42,12 @@ The following tables indicate the fields available by dataset. Log fields are su
 
 This table contains the fields available for HTTP requests.
 
-Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed from the dataset on 1 September, 2023.
-{: note}
-
 |Field|Value|Type|
 |-----|-----|----|
 |BotScore|Cloudflare Bot Score (available for Bot Management customers; please contact your account team to enable)|int|
 |BotScoreSrc|Underlying detection engine or source on where a Bot Score is calculated. Possible values are `Not Computed` `Heuristics` `Machine Learning` `Behavioral Analysis` `Verified Bot`|string|
 |CacheCacheStatus|`unknown` `miss` `expired` `updating` `stale` `hit` `ignored` `bypass` `revalidated`|string|
 |CacheResponseBytes|Number of bytes returned by the cache|int|
-|CacheResponseStatus [Deprecated]{: tag-deprecated}|HTTP status code returned by the cache to the edge; all requests (including non-cacheable ones) go through the cache; also see CacheStatus field|int|
 |CacheTieredFill|Tiered Cache was used to serve this request|bool|
 |ClientASN|Client AS number|int|
 |ClientCountry|Country of the client IP address|string|
@@ -76,8 +72,6 @@ Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed 
 |EdgePathingOp|Indicates what type of response was issued for this request (unknown = no specific action)|string|
 |EdgePathingSrc|Details how the request was classified based on security checks (unknown = no specific classification)|string|
 |EdgePathingStatus|Indicates what data was used to determine the handling of this request (unknown = no data)|string|
-|EdgeRateLimitAction [Deprecated]{: tag-deprecated}|The action taken by the blocking rule; empty if no action taken|string|
-|EdgeRateLimitID [Deprecated]{: tag-deprecated}|The internal rule ID of the rate-limiting rule that triggered a block (ban) or simulate action. 0 if no action taken|int|
 |EdgeRequestHost|Host header on the request from the edge to the origin|string|
 |EdgeResponseBytes|Number of bytes returned by the edge to the client|int|
 |EdgeResponseCompressionRatio|Edge response compression ratio|float|
@@ -85,9 +79,6 @@ Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed 
 |EdgeResponseStatus|HTTP status code returned by Cloudflare to the client|int|
 |EdgeServerIP|IP of the edge server making a request to the origin|string|
 |EdgeStartTimestamp|Timestamp at which the edge received request from the client|int or string|
-|FirewallMatchesActions [Deprecated]{: tag-deprecated}|Array of actions the Cloudflare firewall products performed on this request. The individual firewall products associated with this action be found in FirewallMatchesSources and their respective RuleIds can be found in FirewallMatchesRuleIDs. The length of the array is the same as FirewallMatchesRuleIDs and FirewallMatchesSources. Possible actions are `allow` `log` `simulate` `drop` `challenge` `jschallenge` `connectionClose` `challengeSolved` `challengeFailed` `challengeBypassed` `jschallengeSolved` `jschallengeFailed` `jschallengeBypassed` `bypass`|array of actions (strings)|
-|FirewallMatchesRuleIDs [Deprecated]{: tag-deprecated}|Array of RuleIDs of the firewall product that has matched the request. The firewall product associated with the RuleID can be found in FirewallMatchesSources. The length of the array is the same as FirewallMatchesActions and FirewallMatchesSources.|array of RuleIDs (strings)|
-|FirewallMatchesSources [Deprecated]{: tag-deprecated}|The firewall products that matched the request. The same product can appear multiple times, which indicates different rules or actions that were activated. The RuleIDs can be found in FirewallMatchesRuleIDs, the actions can be found in FirewallMatchesActions. The length of the array is the same as FirewallMatchesRuleIDs and FirewallMatchesActions. Possible sources are `asn` `country` `ip` `ipRange` `securityLevel` `zoneLockdown` `waf` `firewallRules` `uaBlock` `rateLimit` `bic` `hot`  `l7ddos` `sanitycheck` `protect`|array of product names (strings)|
 |OriginIP|IP of the origin server|string|
 |OriginResponseHTTPExpires|Value of the origin 'expires' header in RFC1123 format|string|
 |OriginResponseHTTPLastModified|Value of the origin 'last-modified' header in RFC1123 format|string|
@@ -98,17 +89,12 @@ Fields marked [Deprecated]{: tag-deprecated} are deprecated and will be removed 
 |RayID|ID of the request|string|
 |SecurityAction (replaces WAFAction)|Rule action of the security rule that triggered a terminating action, if any.| string|
 |SecurityActions (replaces FirewallMatchesActions)| Array of actions that Cloudflare security products performed on the request| string array
-|SecurityLevel [Deprecated]{: tag-deprecated}|The security level configured at the time of this request. This is used to determine the sensitivity of the IP Reputation system|string|
 |SecurityRuleID (replaces WAFRuleID)|Rule ID of the security rule that triggered a terminating action, if any.|string|
 |SecurityRuleIDs (replaces FirewallMatchesRuleIDs)|Rule ID of the security rule that triggered a terminating action, if any.|string array|
 |SecurityRuleDescription (replaces WAFRuleMessage)|Rule description of the security rule that triggered a terminating action, if any. | string|
 |SecuritySources (replaces FirewallMatchesSources)| Array of Cloudflare security products that matched the request| string array|
-|WAFAction [Deprecated]{: tag-deprecated}|Action taken by the WAF, if triggered|string|
 |WAFFlags|Additional configuration flags: `simulate (0x1)` `null`|string|
 |WAFMatchedVar|The full name of the most-recently matched variable|string|
-|WAFProfile [Deprecated]{: tag-deprecated}|`low` `med` `high`|string|
-|WAFRuleID [Deprecated]{: tag-deprecated}|ID of the applied WAF rule|string|
-|WAFRuleMessage [Deprecated]{: tag-deprecated}|Rule message associated with the triggered rule|string|
 |WorkerCPUTime|Amount of time in microseconds spent executing a worker, if any|int|
 |WorkerStatus|Status returned from worker daemon|string|
 |WorkerSubrequest|Whether or not this request was a worker subrequest|bool|
@@ -211,3 +197,7 @@ The following table contains the fields available for Range requests.
 |SourceIP|IP address of the client (IPv4 or IPv6)|string|
 |Timestamp|Timestamp at which the query occurred|int or string|
 {: caption="DNS logs" caption-side="bottom"}
+
+## Deprecated fields
+{: #deprecated}
+Log fields that are not shown in the [Available Log Fields API](/apidocs/cis#list-fields-for-dataset-v2) are considered deprecated. Deprecated log fields do remain available to prevent breaking existing jobs. However, these log fields may eventually become empty values if completely removed by Cloudflare. Customers are encouraged to migrate away from deprecated fields if they are using them.
