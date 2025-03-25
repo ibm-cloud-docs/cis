@@ -115,8 +115,11 @@ To create a custom rule from the CLI, follow these steps:
 
    Where:
 
-   * **--xx** is xxxx.
-   * **--xxx** is xxxx. 
+   `--xxx`
+   :   Description. Required. 
+
+   `--xxx`
+   :   Description. Required. 
 
 ### Updating a custom rule from the CLI
 {: #update-custom-rule-cli}
@@ -130,8 +133,11 @@ ibmcloud cis XXXX
 
 Where:
 
-* **--xx** is xxxx.
-* **--xxx** is xxxx. 
+   `--xxx`
+   :   Description. Required. 
+
+   `--xxx`
+   :   Description. Required. 
 
 ### Deleting a custom rule from the CLI
 {: #delete-custom-rule-cli}
@@ -145,8 +151,11 @@ ibmcloud cis XXXX
 
 Where:
 
-* **--xx** is xxxx.
-* **--xxx** is xxxx. 
+   `--xxx`
+   :   Description. Required. 
+
+   `--xxx`
+   :   Description. Required. 
 
 ### Command examples
 {: #command-examples-create-update-delete}
