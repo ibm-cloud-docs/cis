@@ -93,23 +93,47 @@ INTRODUCTION HERE
 ### Creating a custom rule from the CLI
 {: #create-custom-rule-cli}
 
-Follow these steps to create a custom rule in the CLI:
+Run the following command to create a custom rule in the CLI:
 
-XXX
+```sh
+ibmcloud cis XXXX
+```
+{: pre}
+
+Where:
+
+* **--xx** is xxxx.
+* **--xxx** is xxxx. 
 
 ### Updating a custom rule from the CLI
 {: #update-custom-rule-cli}
 
-Follow these steps to update an existing custom rule in the CLI:
+Run the following command to update a custom rule in the CLI:
 
-XXX
+```sh
+ibmcloud cis XXXX
+```
+{: pre}
+
+Where:
+
+* **--xx** is xxxx.
+* **--xxx** is xxxx. 
 
 ### Deleting a custom rule from the CLI
 {: #delete-custom-rule-cli}
 
-Follow these steps to delete an existing custom rule from the CLI:
+Run the following command to delete a custom rule in the CLI:
 
-XXX
+```sh
+ibmcloud cis XXXX
+```
+{: pre}
+
+Where:
+
+* **--xx** is xxxx.
+* **--xxx** is xxxx. 
 
 ## Working with WAF custom rules with the API
 {: #working-with-waf-custom-rules-api}
