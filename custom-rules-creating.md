@@ -25,6 +25,8 @@ The number of active rules per plan is fixed. Currently, you can't purchase more
 Before getting started, it's a good idea to review [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=cli).
 {: important}
 
+You can create, update, and delete a custom rule by using the UI, CLI, API, or Terraform. 
+
 ## Working with WAF custom rules in the UI
 {: #working-with-waf-custom-rules}
 {: ui}
@@ -74,7 +76,7 @@ Follow these steps to update an existing custom rule in the UI:
 To pause or activate any rule in the list of existing rules, click the **Enabled** toggle.
 {: note}
 
-## Deleting a custom rule in the UI
+### Deleting a custom rule in the UI
 {: #delete-custom-rule-ui}
 
 Follow these steps to delete an existing custom rule in the UI:
@@ -93,17 +95,28 @@ INTRODUCTION HERE
 ### Creating a custom rule from the CLI
 {: #create-custom-rule-cli}
 
-Run the following command to create a custom rule in the CLI:
+To create a custom rule from the CLI, follow these steps:
 
-```sh
-ibmcloud cis XXXX
-```
-{: pre}
+1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs). 
+   
+1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
 
-Where:
+    ```sh
+    ibmcloud login --sso
+    ```
+    {: pre}
 
-* **--xx** is xxxx.
-* **--xxx** is xxxx. 
+1. Run the following command to create a custom rule:
+
+   ```sh
+   ibmcloud cis XXXX
+   ```
+   {: pre}
+
+   Where:
+
+   * **--xx** is xxxx.
+   * **--xxx** is xxxx. 
 
 ### Updating a custom rule from the CLI
 {: #update-custom-rule-cli}
@@ -134,6 +147,13 @@ Where:
 
 * **--xx** is xxxx.
 * **--xxx** is xxxx. 
+
+### Command examples
+{: #command-examples-create-update-delete}
+
+*  `here`
+*  `here`
+*  `here`
 
 ## Working with WAF custom rules with the API
 {: #working-with-waf-custom-rules-api}
@@ -268,7 +288,7 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 ```
 {: pre}
 
-# Working with WAF custom rules with Terraform
+## Working with WAF custom rules with Terraform
 {: #working-with-waf-custom-rules-tf}
 {: terraform}
 
@@ -277,20 +297,35 @@ INTRODUCTION HERE
 ### Creating a custom rule with Terraform
 {: #create-custom-rule-tf}
 
-Follow these steps to create a custom rule with Terraform:
+The following example creates a custom rule by using Terraform:
 
-XXX
+```
+HERE
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
 
 ### Updating a custom rule with Terraform
 {: #update-custom-rule-tf}
 
-Follow these steps to update an existing custom rule with Terraform:
+The following example updates a custom rule by using Terraform:
 
-XXX
+```
+HERE
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
 
 ### Deleting a custom rule with Terraform
 {: #delete-custom-rule-tf}
 
-Follow these steps to delete an existing rule with Terraform:
+The following example deletes a custom rule by using Terraform:
 
-XXX
+```
+HERE
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
