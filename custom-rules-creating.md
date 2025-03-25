@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-25"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating, editing, and deleting WAF custom rules
+# Working with WAF custom rules
 {: #about--waf-custom-rules}
 
 WAF custom rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
@@ -25,19 +25,25 @@ The number of active rules per plan is fixed. Currently, you can't purchase more
 Before getting started, it's a good idea to review [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=cli).
 {: important}
 
-## Creating a custom rule
-{: #create-custom-rule}
+## Working with WAF custom rules in the UI
+{: #working-with-waf-custom-rules}
+{: ui}
 
-Follow these steps to configure a custom rule:
+INTRODUCTION HERE
+
+### Creating a custom rule in the UI
+{: #create-custom-rule-ui}
+
+Follow these steps to create a custom rule in the UI:
 
 WAF custom rules are configured using the existing Firewall rules page. Any legacy firewall rules that were previously created on your domain are automatically converted into WAF custom rules.
 {: note}
 
 1. Navigate to **Security > Firewall rules**.
-2. Click **Create**.
-3. Enter an optional description.
-4. Optionally, input a priority, if necessary. A priority of zero is a null priority and is evaluated last.
-5. Use the UI builder in the **Incoming requests** section to add a condition.
+1. Click **Create**.
+1. Enter an optional description.
+1. Optionally, input a priority, if necessary. A priority of zero is a null priority and is evaluated last.
+1. Use the UI builder in the **Incoming requests** section to add a condition.
     To build an expression with multiple conditions, click either:
     * **And** - to evaluate conditions that use _and_ logic
     * **Or** - to evaluate conditions or groups of previously _and_'ed conditions that use _or_ logic
@@ -47,15 +53,15 @@ WAF custom rules are configured using the existing Firewall rules page. Any lega
     In the Expression Preview, you can click to edit your expression manually instead of using the Visual Expression Builder, or switch between the two. However, depending on the complexity of a manually constructed expression, the Visual Expression Builder might be unable to render it.
     {: note}
 
-6. Pick an action from the **Response** list menu.
-7. To save your rule, choose the most appropriate option by clicking either:
+1. Pick an action from the **Response** list menu.
+1. To save your rule, choose the most appropriate option by clicking either:
     * **Save as draft** to save your rule, but leave it disabled.
     * **Save and deploy** to save your rule and activate it.
 
-## Editing a custom rule
-{: #edit-custom-rule}
+### Updating a custom rule in the UI
+{: #update-custom-rule-ui}
 
-Follow these steps to edit an existing rule:
+Follow these steps to update an existing custom rule in the UI:
 
 1. Navigate to **Security > Firewall rules**.
 1. In the firewall rules table, locate the rule that you want to modify, then click the Actions menu on the right of the row.
@@ -68,12 +74,199 @@ Follow these steps to edit an existing rule:
 To pause or activate any rule in the list of existing rules, click the **Enabled** toggle.
 {: note}
 
-## Deleting a custom rule
-{: #delete-custom-rule}
+## Deleting a custom rule in the UI
+{: #delete-custom-rule-ui}
 
-Follow these steps to delete an existing rule:
+Follow these steps to delete an existing custom rule in the UI:
 
 1. Navigate to **Security > Firewall rules**.
 1. In the firewall rules table, locate the rule to modify and click the Actions menu on the right of the row.
 1. Select **Delete**.
 1. Confirm the rule deletion.
+
+## Working with WAF custom rules from the CLI
+{: #working-with-waf-custom-rules-cli}
+{: cli}
+
+INTRODUCTION HERE
+
+### Creating a custom rule from the CLI
+{: #create-custom-rule-cli}
+
+Follow these steps to create a custom rule in the CLI:
+
+XXX
+
+### Updating a custom rule from the CLI
+{: #update-custom-rule-cli}
+
+Follow these steps to update an existing custom rule in the CLI:
+
+XXX
+
+### Deleting a custom rule from the CLI
+{: #delete-custom-rule-cli}
+
+Follow these steps to delete an existing custom rule from the CLI:
+
+XXX
+
+## Working with WAF custom rules with the API
+{: #working-with-waf-custom-rules-api}
+{: api}
+
+INTRODUCTION HERE
+
+### Getting the custom rule entry point for the API
+{: #get-rule-entry-point-api}
+
+All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. This entry point ruleset may already exist or needs to be created if it does not exist.
+
+Follow these steps to get the custom rule entry point ruleset:
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+1. When all variables are initiated, get the entry point ruleset:
+
+```sh
+curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_request_firewall_custom/entrypoint" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json"
+```
+{: pre}
+
+The ruleset ID will be in the response of the successful request. If the above call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the custom rule phase:
+
+```sh
+curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json" \
+--data '{
+  "name": "Zone-level phase entry point",
+  "kind": "zone",
+  "description": "Custom rule entry point ruleset.",
+  "phase": "http_request_firewall_custom"
+}'
+```
+{: pre}
+
+### Creating a custom rule with the API
+{: #create-custom-rule-api}
+
+Follow these steps to create a custom rule with the API: 
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the custom rule entrypoint ruleset.
+
+1. When all variables are initiated, create the custom rule:
+
+```sh
+curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json" \
+--data '{
+  "description": "My custom rule with plain text response",
+  "expression": "(ip.src.country eq \"GB\" or ip.src.country eq \"FR\") and cf.waf.score lt 20",
+  "action": "block",
+  "action_parameters": {
+    "response": {
+      "status_code": 403,
+      "content": "Your request was blocked.",
+      "content_type": "text/plain"
+    }
+  }
+}'
+```
+{: pre}
+
+### Updating a custom rule with the API
+{: #update-custom-rule-api}
+
+Follow these steps to update an existing custom rule with the API: 
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the custom rule entrypoint ruleset.
+
+   `RULE_ID`: The ID of the custom rule to be modified.
+
+1. When all variables are initiated, update the custom rule:
+
+```sh
+curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json" \
+--data '{
+  "enabled": false,
+  "description": "block GB and FR or based on IP Reputation (temporarily disabled)"
+}'
+```
+{: pre}
+
+### Deleting a custom rule with the API
+{: #delete-custom-rule-api}
+
+Follow these steps to delete an existing custom rule with the API:
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the custom rule entrypoint ruleset.
+
+   `RULE_ID`: The ID of the custom rule to be modified.
+
+1. When all variables are initiated, delete the custom rule:
+
+```sh
+curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json"
+```
+{: pre}
+
+# Working with WAF custom rules with Terraform
+{: #working-with-waf-custom-rules-tf}
+{: terraform}
+
+INTRODUCTION HERE
+
+### Creating a custom rule with Terraform
+{: #create-custom-rule-tf}
+
+Follow these steps to create a custom rule with Terraform:
+
+XXX
+
+### Updating a custom rule with Terraform
+{: #update-custom-rule-tf}
+
+Follow these steps to update an existing custom rule with Terraform:
+
+XXX
+
+### Deleting a custom rule with Terraform
+{: #delete-custom-rule-tf}
+
+Follow these steps to delete an existing rule with Terraform:
+
+XXX
