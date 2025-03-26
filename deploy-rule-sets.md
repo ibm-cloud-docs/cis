@@ -225,7 +225,7 @@ HERE
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry {: external}.
 
 ### Updating deployed managed rulesets with Terraform
 {: #update-managed-rule-tf}
