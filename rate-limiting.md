@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-26"
 
 keywords: 
 
@@ -25,6 +25,12 @@ Select the type of rate-limiting rule, either a **Custom rule** or **Protect log
 
 ## Creating a custom rate-limiting rule
 {: #create-a-custom-rate-limiting-rule}
+
+INTRODUCTION HERE
+
+### Creating a custom rate-limiting rule in the UI
+{: #create-a-custom-rate-limiting-rule-ui}
+{: ui}
 
 Enter a rule name that helps you remember what the rule does. This is an optional field.
 
@@ -49,7 +55,7 @@ If you have more than one header under the **HTTP response header**, an _AND_ Bo
 
 Under **Origin response code**, type the valid numerical value of each HTTP response code to match. To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
 
-### Configuring the response
+#### Configuring the response
 {: #rate-limiting-configure-response}
 
 Select from the actions listed, and specify the timeout period. In this case, the timeout refers to the ban period that the action takes place. A 60-second timeout means that the action is applied for 60 seconds.
@@ -64,14 +70,32 @@ Select from the actions listed, and specify the timeout period. In this case, th
 
 In the **Advanced response** section, specify the response type when a rule's threshold is exceeded.
 
-### Bypassing URLs
+#### Bypassing URLs
 {: #rate-limiting-bypass}
 
 Bypass lets you create the equivalent of an allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
-## Protecting login
+#### Protecting login
 {: #rate-limiting-protect-login}
 
 Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes are blocked for 15 minutes.
 
 Enter a name for the rule, and the login URL.
+
+### Creating a custom rate-limiting rule from the CLI
+{: #create-a-custom-rate-limiting-rule-cli}
+{: cli}
+
+MISSING - DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
+
+### Creating a custom rate-limiting rule with the API
+{: #create-a-custom-rate-limiting-rule-api}
+{: api}
+
+MISSING -  DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
+
+### Creating a custom rate-limiting rule with Terraform
+{: #create-a-custom-rate-limiting-rule-terraform}
+{: terraform}
+
+MISSING -  DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
