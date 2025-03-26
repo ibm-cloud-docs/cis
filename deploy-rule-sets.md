@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-26"
 
 keywords:
 
@@ -41,12 +41,23 @@ You can deploy managed rulesets from the CLI.
 ### Listing managed rulesets from the CLI
 {: #cli-list-rule-sets}
 
-To list all zone-managed rulesets from the CLI, run the following command:
+To list all zone-managed rulesets from the CLI, follow these steps:
 
-```sh
-ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
-```
-{: pre}
+1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs). 
+   
+1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
+
+    ```sh
+    ibmcloud login --sso
+    ```
+    {: pre}
+
+1. Run the following command to create a custom rule:
+
+   ```sh
+   ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+   ```
+   {: pre}
 
 Where:
 
@@ -57,7 +68,18 @@ Where:
 ### Updating deployed ruleset from the CLI
 {: #cli-update-entry-point-rule-set}
 
-To update a managed ruleset that was deployed by using the CLI, run the following command:
+To update a deployed ruleset from the CLI, follow these steps:
+
+1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs). 
+   
+1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
+
+    ```sh
+    ibmcloud login --sso
+    ```
+    {: pre}
+
+1. Run the following command to create a custom rule:
 
 ```sh
 ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--match EXPRESSION] [--enabled true|false] [--override-action ACTION] [--override-status STATUS] [--paranoia-level LEVEL] [--override-rules RULE] [-i, --instance INSTANCE] [--output FORMAT]
@@ -75,16 +97,72 @@ Where:
 * **-i, --instance value** is the instance name or ID.
 * **--output value** specifies the output format; only JSON is supported.
 
+### Command examples
+{: #command-examples-deploy-managed-rulesets}
+
+*  `here`
+*  `here`
+*  `here`
+
 ## Deploying managed rulesets with the API
 {: #api-deploy-rule-sets}
 {: api}
 
 You can deploy managed rulesets from the API.
 
+### Getting the custom rule entry point for the API
+{: #get-rule-entry-point-api-2}
+
+All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. This entry point ruleset may already exist or needs to be created if it does not exist.
+
+Follow these steps to get the custom rule entry point ruleset:
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+1. When all variables are initiated, get the entry point ruleset:
+
+```sh
+curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_request_firewall_custom/entrypoint" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json"
+```
+{: pre}
+
+The ruleset ID will be in the response of the successful request. If the above call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the custom rule phase:
+
+```sh
+curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json" \
+--data '{
+  "name": "Zone-level phase entry point",
+  "kind": "zone",
+  "description": "Custom rule entry point ruleset.",
+  "phase": "http_request_firewall_custom"
+}'
+```
+{: pre}
+
 ### Listing managed rulesets from the API
 {: #api-list-rule-sets}
 
-To list all zone-managed rulesets from the API, run the following command:
+Follow these steps to list managed rulesets with the API: 
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the custom rule entrypoint ruleset.
+
+1. When all variables are initiated, list all zone-managed rulesets:
 
 ```sh
 curl -X GET \
@@ -95,10 +173,21 @@ curl -X GET \
 ```
 {: codeblock}
 
-### Updating entry point ruleset from the API
+### Updating entry point rulesets from the API
 {: #api-update-entry-point-rule-set}
 
-To update the entry point ruleset from the API, run the following command:
+Follow these steps to update an entry point ruleset with the API: 
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the custom rule entrypoint ruleset.
+
+1. When all variables are initiated, update the entry point ruleset:
 
 ```sh
 curl -X PUT \
@@ -119,3 +208,33 @@ Where:
        - **id** is the ID of the ruleset to run. This ID is retrieved from the `list zone rulesets` operation.
    - **expression** is the condition under which the rule runs. Using `true` means that this rule always run.
    - **description** defines the summary of what your rule is accomplishing.
+
+## Deploying managed rulesets with Terraform
+{: #working-with-managed-rules-tf}
+{: terraform}
+
+INTRODUCTION HERE
+
+### Listing managed rulesets with Terraform
+{: #listing-managed-rule-tf}
+
+The following example creates a custom rule by using Terraform:
+
+```
+HERE
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
+
+### Updating deployed managed rulesets with Terraform
+{: #update-managed-rule-tf}
+
+The following example updates a custom rule by using Terraform:
+
+```
+HERE
+```
+{: codeblock}
+
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
