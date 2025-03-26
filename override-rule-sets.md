@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-03-26"
 
 keywords:
 
@@ -27,7 +27,6 @@ Specific overrides take precedence over more general ones, and rule overrides ta
 {: important}
 
 Ruleset overrides and tag overrides apply to both existing and future rules in the managed ruleset. If you want to override existing rules only, you must use rule overrides.
-
 
 ## Overriding workflow
 {: #override-workflow}
@@ -75,7 +74,6 @@ You can override the following rule properties.
 Some managed rulesets can have extra override requirements, or they might override other rule properties.
 
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
-
 
 ## Overriding managed rulesets from the CLI
 {: #cli-override-rule-sets}
@@ -206,3 +204,42 @@ Where:
             * **`action`** specifies the overridden action that the rule takes.
       * **`expression`** is the condition under which the rule runs. Using "true" means that this rule always runs.
       * **`description`** defines your own summary of what the rule is accomplishing.
+
+## Overriding managed rulesets with Terraform
+{: #override-rule-sets-terraform}
+{: terraform}
+
+You can override rulesets using Terraform.
+
+### Listing managed rulesets with Terraform
+{: #terraform-override-list-rule-sets}
+
+The following example lists all zone rulesets using Terraform:
+
+```sh 
+XXX
+```
+{: pre}
+
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry {: external}.
+
+### Listing rules under a zone ruleset with Terraform
+{: #terraform-override-list-rule-sets-rules}
+
+The following example lists the rules under a zone ruleset using Terraform:
+
+```sh 
+XXXX
+```
+{: pre}
+ 
+### Overriding managed rulesets with Terraform
+{: #terraform-override-entry-point-rule-set}
+
+The following example overrides a managed WAF ruleset using Terraform:
+
+```sh
+XXX
+```
+{: pre}
+ 
