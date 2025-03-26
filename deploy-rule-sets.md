@@ -108,7 +108,7 @@ Where:
 {: #api-deploy-rule-sets}
 {: api}
 
-You can deploy managed rulesets from the API.
+You can deploy managed rulesets with the API.
 
 ### Getting the custom rule entry point for the API
 {: #get-rule-entry-point-api-2}
@@ -148,7 +148,7 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 ```
 {: pre}
 
-### Listing managed rulesets from the API
+### Listing managed rulesets with the API
 {: #api-list-rule-sets}
 
 Follow these steps to list managed rulesets with the API: 
@@ -173,7 +173,7 @@ curl -X GET \
 ```
 {: codeblock}
 
-### Updating entry point rulesets from the API
+### Updating entry point rulesets with the API
 {: #api-update-entry-point-rule-set}
 
 Follow these steps to update an entry point ruleset with the API: 
