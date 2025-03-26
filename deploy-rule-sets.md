@@ -218,7 +218,7 @@ INTRODUCTION HERE
 ### Listing managed rulesets with Terraform
 {: #listing-managed-rule-tf}
 
-The following example creates a custom rule by using Terraform:
+The following example lists managed rulesets by using Terraform:
 
 ```
 HERE
@@ -230,7 +230,7 @@ For more information about the arguments and attributes, see [XXXX] in the Terra
 ### Updating deployed managed rulesets with Terraform
 {: #update-managed-rule-tf}
 
-The following example updates a custom rule by using Terraform:
+The following example updates deployed managed rulesets by using Terraform:
 
 ```
 HERE
