@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-25"
+lastupdated: "2025-03-26"
 
 keywords:
 
@@ -306,19 +306,19 @@ INTRODUCTION HERE
 ### Creating a custom rule with Terraform
 {: #create-custom-rule-tf}
 
-The following example creates a custom rule by using Terraform:
+The following example creates a custom rule using Terraform:
 
 ```
 HERE
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry {: external}.
 
 ### Updating a custom rule with Terraform
 {: #update-custom-rule-tf}
 
-The following example updates a custom rule by using Terraform:
+The following example updates a custom rule using Terraform:
 
 ```
 HERE
@@ -330,7 +330,7 @@ For more information about the arguments and attributes, see [XXXX] in the Terra
 ### Deleting a custom rule with Terraform
 {: #delete-custom-rule-tf}
 
-The following example deletes a custom rule by using Terraform:
+The following example deletes a custom rule using Terraform:
 
 ```
 HERE
