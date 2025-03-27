@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-26"
+lastupdated: "2025-03-27"
 
 keywords: 
 
@@ -94,6 +94,135 @@ MISSING - DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
 ### Creating a custom rate-limiting rule with the API
 {: #create-a-custom-rate-limiting-rule-api}
 {: api}
+
+### Getting the rate-limiting rule entry point for the API
+{: #get-ratelimit-rule-entry-point-api}
+
+All rate-limiting rule API operations require a `RULESET_ID` of the entry point ruleset for the rate-limiting rules phase. This entry point ruleset may already exist or needs to be created if it does not exist.
+
+Follow these steps to get the rate-limiting rule entry point ruleset:
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+1. When all variables are initiated, get the entry point ruleset:
+
+```sh
+curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_ratelimit/entrypoint" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json"
+```
+{: pre}
+
+The ruleset ID will be in the response of the successful request. If the above call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the rate-limiting rule phase:
+
+```sh
+curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json" \
+--data '{
+  "name": "Zone-level phase entry point",
+  "kind": "zone",
+  "description": "Rate-limting rule entry point ruleset.",
+  "phase": "http_ratelimit"
+}'
+```
+{: pre}
+
+### Creating a rate-limiting rule with the API
+{: #create-rate-limiting-rule-api}
+
+Follow these steps to create a rate-limiting rule with the API: 
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the rate-limiting rule entrypoint ruleset.
+
+1. When all variables are initiated, create the rate-limiting rule:
+
+```sh
+curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json" \
+--data '{
+  "description": "My rate limiting rule",
+  "expression": "(http.request.uri.path matches \"^/api/\")",
+  "action": "block",
+  "ratelimit": {
+    "characteristics": [
+      "cf.colo.id",
+      "ip.src"
+    ],
+    "period": 60,
+    "requests_per_period": 100,
+    "mitigation_timeout": 600
+  }
+}'
+```
+{: pre}
+
+### Updating a rate-limiting rule with the API
+{: #update-rate-limiting-rule-api}
+
+Follow these steps to update an existing rate-limiting rule with the API: 
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the rate-limiting rule entrypoint ruleset.
+
+   `RULE_ID`: The ID of the rate-limiting rule to be modified.
+
+1. When all variables are initiated, update the rate-limiting rule:
+
+```sh
+curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json" \
+--data '{
+  "enabled": true,
+  "description": "rate limit IPs for API"
+}'
+```
+{: pre}
+
+### Deleting a rate-limiting rule with the API
+{: #delete-rate-limiting-rule-api}
+
+Follow these steps to delete an existing rate-limiting rule with the API:
+
+1. Set up your API environment with the correct variables.
+1. Store the following values in variables to be used in the API command:
+
+   `CRN`: The full URL-encoded Cloud Resource Name (CRN) of the service instance.
+
+   `ZONE_ID`: The domain ID.
+
+   `RULESET_ID`: The ID of the rate-limiting rule entrypoint ruleset.
+
+   `RULE_ID`: The ID of the rate-limiting rule to be modified.
+
+1. When all variables are initiated, delete the rate-limiting rule:
+
+```sh
+curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
+--header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+--header "Content-Type: application/json"
+```
+{: pre}
 
 MISSING -  DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
 
