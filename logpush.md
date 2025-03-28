@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-28"
 
 keywords:
 
@@ -227,7 +227,7 @@ Log fields can be specified in the `logpull_options` of a Logpush Job to customi
    {: pre}
 
 ### Creating a Logpush job to send logs to your destination 
-{: #logpush-setup-api}
+{: #logpush-destination}
 
 To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storage, or Splunk), follow these steps: 
 
