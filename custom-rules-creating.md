@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-26"
+lastupdated: "2025-04-01"
 
 keywords:
 
@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Working with WAF custom rules
-{: #about--waf-custom-rules}
+{: #about-waf-custom-rules}
 
 WAF custom rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
 {: shortdesc}
@@ -109,7 +109,7 @@ To create a custom rule from the CLI, follow these steps:
 1. Run the following command to create a custom rule:
 
    ```sh
-   ibmcloud cis XXXX
+   cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
@@ -127,7 +127,7 @@ To create a custom rule from the CLI, follow these steps:
 Run the following command to update a custom rule in the CLI:
 
 ```sh
-ibmcloud cis XXXX
+cis custom-waf rule-order-update DNS_DOMAIN_ID RULE_ID [--before RULE_ID] [--after RULE_ID] [--index INDEX] [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
@@ -145,7 +145,7 @@ Where:
 Run the following command to delete a custom rule in the CLI:
 
 ```sh
-ibmcloud cis XXXX
+ibmcloud cis custom-waf rule-update 601b728b86e630c744c81740f72570c3 4d37cb6f87654e96a18bc531628a4d27 --enabled true
 ```
 {: pre}
 
@@ -160,9 +160,17 @@ Where:
 ### Command examples
 {: #command-examples-create-update-delete}
 
-*  `here`
-*  `here`
-*  `here`
+*  To create a custom rule:
+
+   `ibmcloud cis custom-waf rule-create 601b728b86e630c744c81740f72570c3 --action challenge --description "rule 1" --enabled true --match "(http.host eq \"www.example.com\")"`
+
+*  To update a custom rule:
+
+   `ibmcloud cis custom-waf rule-update 601b728b86e630c744c81740f72570c3 4d37cb6f87654e96a18bc531628a4d27 --enabled true`
+
+*  To delete a custom rule:
+
+   `ibmcloud cis custom-waf rule-delete 601b728b86e630c744c81740f72570c3 4d37cb6f87654e96a18bc531628a4d27`
 
 ## Working with WAF custom rules with the API
 {: #working-with-waf-custom-rules-api}
@@ -309,32 +317,43 @@ INTRODUCTION HERE
 The following example creates a custom rule using Terraform:
 
 ```
-HERE
+# First get the entrypoint ruleset ID for the phase http_request_firewall_custom.
+
+ data "ibm_cis_ruleset_entrypoint_versions" "test"{
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    phase = "http_request_firewall_custom" 
+  }
+
+# To create a custom rule.
+
+  resource ibm_cis_ruleset_rule "config" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = "data.ibm_cis_ruleset_entrypoint_versions.ruleset_id"
+    rule {
+      action =  "block"
+      description = "var.description"
+      expression = "true"
+      enabled = "false"
+      action_parameters {
+        response {
+          status_code = var.status_code
+          content =  var.content
+          content_type = "text/plain"
+        }
+      }
+      position {
+        index = var.index
+        after = <id of any existing rule>
+        before = <id of any existing rule>
+      }
+    }
+  }  
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see [XXXX] in the Terraform registry {: external}.
+For more information about the arguments and attributes, see `ibm_cis_ruleset_rule` in the Terraform registry {: external}.
 
-### Updating a custom rule with Terraform
-{: #update-custom-rule-tf}
-
-The following example updates a custom rule using Terraform:
-
-```
-HERE
-```
-{: codeblock}
-
-For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
-
-### Deleting a custom rule with Terraform
-{: #delete-custom-rule-tf}
-
-The following example deletes a custom rule using Terraform:
-
-```
-HERE
-```
-{: codeblock}
-
-For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
+You can update a custom rule with Terraform by modifying the preceding example used for creating the custom rule and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
+{: note} 

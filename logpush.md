@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-01"
 
 keywords:
 
@@ -229,7 +229,7 @@ Log fields can be specified in the `logpull_options` of a Logpush Job to customi
 ### Creating a Logpush job to send logs to your destination 
 {: #logpush-destination}
 
-To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storage, or Splunk), follow these steps: 
+To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storage, or Splunk), follow these steps:  
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
@@ -242,7 +242,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
    
    | IBM Cloud Logs | 
    |---------------------|
-   | `ibmcl`: Information to identify the IBM Cloud logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. \n \n `ibmcl_names`: Optional field to customize the application and subsystem names used in IBM Cloud Logs. Fields within the `ibmcl_names` object are: \n * `application_name`: Custom application name for the job. \n * `subsystem_name`: Custom subsystem name for the job. |
+   | `ibmcl`: Information to identify the IBM Cloud Logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. \n \n `ibmcl_names`: Optional field to customize the application and subsystem names used in IBM Cloud Logs. Fields within the `ibmcl_names` object are: \n * `application_name`: Custom application name for the job. \n * `subsystem_name`: Custom subsystem name for the job. |
    {: caption="IBM Cloud Logs destination" caption-side="bottom"}
    {: #pl-table-1}
    {: tab-title="IBM Cloud Logs"}
