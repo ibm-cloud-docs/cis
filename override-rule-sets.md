@@ -224,7 +224,7 @@ data "ibm_cis_rulesets" "tests" {
 ```
 {: pre}
 
-For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
+For more information about the arguments and attributes, see [`ibm_cis_rulesets`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/cis_rulesets){: external} in the Terraform registry.
 
 ### Listing all rules of a managed ruleset with Terraform
 {: #terraform-override-list-rule-sets-rules}
@@ -239,6 +239,8 @@ resource "ibm_cis_ruleset" "config" {
 }
 ```
 {: pre}
+
+For more information about the arguments and attributes, see [`ibm_cis_ruleset`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset){: external} in the Terraform registry.
  
 ### Overriding a rule with Terraform
 {: #terraform-override-entry-point-rule-set}
@@ -279,3 +281,5 @@ The following example overrides a rule using Terraform:
   }
 ```
 {: pre} 
+
+For more information about the arguments and attributes, see [`ibm_cis_ruleset_entrypoint_version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_entrypoint_version){: external} in the Terraform registry.

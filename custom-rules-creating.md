@@ -309,7 +309,7 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 The following example creates a custom rule using Terraform:
 
 ```
-# First get the entrypoint ruleset ID for the phase http_request_firewall_custom.
+# First get the entrypoint ruleset ID for the phase `http_request_firewall_custom`.
 
  data "ibm_cis_ruleset_entrypoint_versions" "test"{
     cis_id    = ibm_cis.instance.id
@@ -317,7 +317,7 @@ The following example creates a custom rule using Terraform:
     phase = "http_request_firewall_custom" 
   }
 
-# To create a custom rule.
+# To create a custom rule:
 
   resource ibm_cis_ruleset_rule "config" {
     cis_id    = ibm_cis.instance.id
@@ -345,7 +345,7 @@ The following example creates a custom rule using Terraform:
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see `ibm_cis_ruleset_rule` in the Terraform registry{: external}.
+For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
 
 You can update a custom rule with Terraform by modifying the preceding example used for creating the custom rule and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
 {: note} 
