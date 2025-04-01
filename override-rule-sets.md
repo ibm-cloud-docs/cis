@@ -245,7 +245,7 @@ For more information about the arguments and attributes, see [`ibm_cis_ruleset`]
 ### Overriding a rule with Terraform
 {: #terraform-override-entry-point-rule-set}
 
-The following example overrides a rule using Terraform:
+This example shows how to deploy the CIS managed ruleset with various overrides. First, it enables and blocks traffic for all rules. Then, it enables and blocks traffic for a specific rule. Finally, it enables and blocks traffic for all rules in the `wordpress` category. Essentially, this example illustrates the different methods for overriding deployed rules (global, specific, by category).
 
 ```sh
   resource "ibm_cis_ruleset_entrypoint_version" "test" {
