@@ -21,7 +21,7 @@ The previous version of rate-limiting rules is now deprecated. The rate-limiting
 Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
 {: shortdesc}
 
-Select the type of rate-limiting rule, either a **Custom rule** or **Protect login**
+Select the type of rate-limiting rule, either a **Custom rule** or **Protect login**.
 
 ## Creating a custom rate-limiting rule
 {: #create-a-custom-rate-limiting-rule}
@@ -82,12 +82,6 @@ Bypass lets you create the equivalent of an allowlist or exception for a set of 
 Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes are blocked for 15 minutes.
 
 Enter a name for the rule, and the login URL.
-
-### Creating a custom rate-limiting rule from the CLI
-{: #create-a-custom-rate-limiting-rule-cli}
-{: cli}
-
-MISSING - DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
 
 ### Creating a custom rate-limiting rule with the API
 {: #create-a-custom-rate-limiting-rule-api}
