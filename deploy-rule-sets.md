@@ -100,6 +100,8 @@ Where:
 ### Command example
 {: #command-example-deploy-managed-rulesets}
 
+This example shows how to deploy the ruleset `efb7b8c949ac4650a09736fc376e9aee` and the overriding the rule present inside the ruleset. It is also overriding rules with category wordpress.
+
 `ibmcloud cis managed-waf deployment-add-ruleset $domain efb7b8c949ac4650a09736fc376e9aee --match "(http.cookie eq \"example.com/contact?page=1234\")" --action execute --enabled false --override-action block --override-status false --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=log,enabled=true --override-rules action=managed_challenge,rule=e3a567afc347477d9702d9047e97d760` 
 
 ## Deploying managed rulesets with the API
