@@ -353,7 +353,7 @@ The following example creates a custom rule using Terraform:
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see `ibm_cis_ruleset_rule` in the Terraform registry {: external}.
+For more information about the arguments and attributes, see `ibm_cis_ruleset_rule` in the Terraform registry{: external}.
 
 You can update a custom rule with Terraform by modifying the preceding example used for creating the custom rule and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
 {: note} 
