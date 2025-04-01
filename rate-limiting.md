@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-04-01"
 
 keywords: 
 
@@ -25,9 +25,7 @@ Select the type of rate-limiting rule, either a **Custom rule** or **Protect log
 
 ## Creating a custom rate-limiting rule
 {: #create-a-custom-rate-limiting-rule}
-
-INTRODUCTION HERE
-
+ 
 ### Creating a custom rate-limiting rule in the UI
 {: #create-a-custom-rate-limiting-rule-ui}
 {: ui}

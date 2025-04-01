@@ -211,9 +211,7 @@ Where:
 
 ## Deploying managed rulesets with Terraform
 {: #working-with-managed-rules-tf}
-{: terraform}
-
-INTRODUCTION HERE
+{: terraform} 
 
 ### Listing managed rulesets with Terraform
 {: #listing-managed-rule-tf}
