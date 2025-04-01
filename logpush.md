@@ -198,7 +198,7 @@ CLI examples for the supported destinations:
        {: pre}
        
 ## Creating a Logpush job with the API
-{: #logpush-setup-api}
+{: #logpush-create-api}
 {: api}
 
 You can use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create a Logpush job when using IBM Cloud Logs, Cloud Object Storage, or Splunk.

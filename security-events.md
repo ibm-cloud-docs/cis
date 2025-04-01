@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-01"
 
 keywords:
 
@@ -61,4 +61,4 @@ Enterprise plans retain security events for 90 days. Standard plans retain secur
 CIS Security Events currently has the following limitations:
 
 - Security Events uses [sampled data](/docs/cis?topic=cis-sampling). As a result, the dashboard may not display all events.
-- Security Events are pulled using GraphQL. As a result, it is subject to the [GraphQL query limits](docs/cis?topic=cis-graphql#query-limits).
+- Security Events are pulled using GraphQL. As a result, it is subject to the [GraphQL query limits](/docs/cis?topic=cis-graphql#query-limits).
