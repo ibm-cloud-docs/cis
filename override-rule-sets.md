@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-26"
+lastupdated: "2025-04-01"
 
 keywords:
 
@@ -214,32 +214,68 @@ You can override rulesets using Terraform.
 ### Listing managed rulesets with Terraform
 {: #terraform-override-list-rule-sets}
 
-The following example lists all zone rulesets using Terraform:
+The following example lists all managed rulesets using Terraform:
 
-```sh 
-XXX
+```sh  
+data "ibm_cis_rulesets" "tests" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+}
 ```
 {: pre}
 
-For more information about the arguments and attributes, see [XXXX] in the Terraform registry {: external}.
+For more information about the arguments and attributes, see [XXXX] in the Terraform registry{: external}.
 
-### Listing rules under a zone ruleset with Terraform
+### Listing all rules of a managed ruleset with Terraform
 {: #terraform-override-list-rule-sets-rules}
 
-The following example lists the rules under a zone ruleset using Terraform:
+The following example lists all rules of a managed ruleset using Terraform:
 
 ```sh 
-XXXX
+resource "ibm_cis_ruleset" "config" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = "943c5da120114ea5831dc1edf8b6f769"
+}
 ```
 {: pre}
  
-### Overriding managed rulesets with Terraform
+### Overriding a rule with Terraform
 {: #terraform-override-entry-point-rule-set}
 
-The following example overrides a managed WAF ruleset using Terraform:
+The following example overrides a rule using Terraform:
 
 ```sh
-XXX
+  resource "ibm_cis_ruleset_entrypoint_version" "test" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    phase = "http_request_firewall_managed"
+    rulesets {
+      description = "Entrypoint ruleset for managed ruleset"
+      rules {
+        action =  "execute"
+        description = "Deploy CIS managed ruleset"
+        enabled = true
+        expression = "true"
+        action_parameters  {
+          id = "efb7b8c949ac4650a09736fc376e9aee"
+          overrides {
+            action = "block"
+            enabled = true
+            override_rules {
+              rule_id = "var.overriden_rule.id"
+              enabled = true
+              action = "block"
+            }
+            categories {
+              category = "wordpress"
+              enabled = true
+              action = "block"
+            }
+          }
+        } 
+      }
+    }
+  }
 ```
-{: pre}
- 
+{: pre} 
