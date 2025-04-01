@@ -15,7 +15,7 @@ subcollection: cis
 # Deploying managed rulesets
 {: #deploying-rule-sets}
 
-You can deploy managed rulesets at the zone or instance level by using the CLI or API.
+You can deploy managed rulesets at the zone or instance level by using the CLI, API, or Terraform. 
 {: shortdesc}
 
 You can deploy a managed ruleset with customized behavior (changes that are executed in addition to the default configuration) by overriding it. For more information, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
@@ -226,7 +226,7 @@ data "ibm_cis_rulesets" "tests" {
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see `ibm_cis_rulesets` in the Terraform registry {: external}.
+For more information about the arguments and attributes, see `ibm_cis_rulesets` in the Terraform registry{: external}.
 
 ### Listing all rules of a managed ruleset
 {: #listing-all-rules-tf}
