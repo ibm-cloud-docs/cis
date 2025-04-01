@@ -83,7 +83,7 @@ Protect login creates a standard rule that protects login pages against brute-fo
 
 Enter a name for the rule, and the login URL.
 
-### Creating a custom rate-limiting rule with the API
+## Creating a custom rate-limiting rule with the API
 {: #create-a-custom-rate-limiting-rule-api}
 {: api}
 
