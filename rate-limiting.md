@@ -223,9 +223,3 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    {: pre}
 
 MISSING -  DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
-
-### Creating a custom rate-limiting rule with Terraform
-{: #create-a-custom-rate-limiting-rule-terraform}
-{: terraform}
-
-MISSING -  DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
