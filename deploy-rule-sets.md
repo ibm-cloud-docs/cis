@@ -226,7 +226,7 @@ data "ibm_cis_rulesets" "tests" {
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see `ibm_cis_rulesets` in the Terraform registry{: external}.
+For more information about the arguments and attributes, see [`ibm_cis_rulesets`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/cis_rulesets){: external} in the Terraform registry.
 
 ### Listing all rules of a managed ruleset
 {: #listing-all-rules-tf}
@@ -241,6 +241,8 @@ resource "ibm_cis_ruleset" "config" {
 }
 ```
 {: codeblock} 
+
+For more information about the arguments and attributes, see [`ibm_cis_ruleset`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset){: external} in the Terraform registry.
 
 ### Overriding rule
 {: #overriding-rule}
@@ -280,3 +282,5 @@ resource "ibm_cis_ruleset_entrypoint_version" "test" {
     }
   }
   ```
+
+For more information about the arguments and attributes, see [`ibm_cis_ruleset_entrypoint_version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_entrypoint_version){: external} in the Terraform registry.
