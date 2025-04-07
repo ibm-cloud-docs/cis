@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-07"
 
 keywords:
 
@@ -105,7 +105,10 @@ To create a custom rule from the CLI, follow these steps:
 1. Run the following command to create a custom rule:
 
    ```sh
-   cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+
+
+ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
@@ -123,7 +126,10 @@ To create a custom rule from the CLI, follow these steps:
 Run the following command to update a custom rule in the CLI:
 
 ```sh
-cis custom-waf rule-order-update DNS_DOMAIN_ID RULE_ID [--before RULE_ID] [--after RULE_ID] [--index INDEX] [-i, --instance INSTANCE] [--output FORMAT]
+ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action ACTION] [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+
+
+ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
@@ -141,17 +147,26 @@ Where:
 Run the following command to delete a custom rule in the CLI:
 
 ```sh
-ibmcloud cis custom-waf rule-update 601b728b86e630c744c81740f72570c3 4d37cb6f87654e96a18bc531628a4d27 --enabled true
+ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
 Where:
 
-   `--xxx`
-   :   Description. Required. 
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
 
-   `--xxx`
-   :   Description. Required. 
+`RULE_ID`
+:  The ID of the custom rule.
+
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`-f, --force`
+:   Attempt to delete custom rule without prompting for confirmation.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
 
 ### Command examples
 {: #command-examples-create-update-delete}
