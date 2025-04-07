@@ -9599,7 +9599,7 @@ ibmcloud cis advanced-rate-limiting rule-delete 31984fea73a15b45779fa0df4ef62f9b
 ```
 {: pre}
 
-## WAF Managed Rules
+## WAF managed rules
 {: #waf-managed-rules}
 
 Manage the WAF managed rulesets and rules by using the following `managed-waf` commands. Migrate to new WAF by API or GUI first before you using managed WAF commands, and keep in mind that the previous version of WAF commands will stop working after you migrate.
@@ -10129,7 +10129,7 @@ ibmcloud cis managed-waf deployment-update-ruleset 31984fea73a15b45779fa0df4ef62
 ```
 {: pre}
 
-## WAF Custom Rules
+## WAF custom rules
 {: #waf-custom-rules}
  
 Manage the WAF custom rules by using the following `custom-waf` commands. Firewall rules are now managed by WAF custom rules. 
