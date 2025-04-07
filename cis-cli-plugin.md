@@ -10135,17 +10135,18 @@ ibmcloud cis managed-waf deployment-update-ruleset 31984fea73a15b45779fa0df4ef62
 Manage the WAF custom rules by using the following `custom-waf` commands. Firewall rules are now managed by WAF custom rules. 
 
 ### `ibmcloud cis custom-waf rules`
-{: #list-rules}
+{: #list-custom-rules}
 
 List all custom rules.
 
 ```sh
 ibmcloud cis custom-waf rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
+
 {: pre}
 
 #### Command options
-{: #list-rules-options}
+{: #list-custom-rules-options}
 
 `DNS_DOMAIN_ID`
 :   The ID of DNS domain.
@@ -10157,17 +10158,18 @@ ibmcloud cis custom-waf rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output 
 :   Specify output format, only `JSON` is supported.
 
 #### Examples
-{: #list-rules-examples}
+{: #list-custom-rules-examples}
 
 List all custom rules for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
 ibmcloud cis custom-waf rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
 ```
+
 {: pre}
 
 ### `ibmcloud cis custom-waf rule`
-{: #show-rule}
+{: #show-custom-rule}
 
 Get details of a custom rule.
 
@@ -10177,7 +10179,7 @@ ibmcloud cis custom-waf rule DNS_DOMAIN_ID RULE_ID [-i, --instance INSTANCE] [--
 {: pre}
 
 #### Command options
-{: #show-rule-options}
+{: #show-custom-rule-options}
 
 `DNS_DOMAIN_ID`
 :   The ID of DNS domain.
@@ -10192,7 +10194,7 @@ ibmcloud cis custom-waf rule DNS_DOMAIN_ID RULE_ID [-i, --instance INSTANCE] [--
 :   Specify output format, only `JSON` is supported.
 
 #### Examples
-{: #show-rule-examples}
+{: #show-custom-rule-examples}
 
 Show a custom rule `b94632a4cd5a49ed830544d91417a98c` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
 
@@ -10208,8 +10210,10 @@ Create a custom rule.
 
 ```sh
 ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+
 ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
+
 {: pre}
 
 #### Command options
@@ -10235,23 +10239,22 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
    - The required fields in JSON data are `expression`, `action`.
 
-      `expression`: Specifies the conditions that must be matched for the rule to run.
-      `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+      - `expression`: Specifies the conditions that must be matched for the rule to run.
+      - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
    
-      `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current.
-        `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
-        `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
-        `response`:  Define a custom response for 'block' action.
-            `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
-            `content_type`: The content type of a custom response. Valid response types are :`text/html`,`text/plain`, `application/json`, `text/xml`.
-            `content`: The response body.
-      `description`: Briefly describes the rule.
-      `enabled`: Indicates if the rule is active.
-      `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
-         - `enabled`: When disabled, matched requests don't appear in firewall events.
+      - `action_parameters`: The rule action parameters.
+      - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
+      - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
+      - `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+      - `response`:  Define a custom response for 'block' action.
+         - `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
+         - `content_type`: The content type of a custom response.Valid response types are :"text/html", "text/plain", "application/json", "text/xml".
+         - `content`: The response body.
+      - `description`: Briefly describes the rule.
+      - `enabled`: Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
+      - `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
 
    Sample JSON data:
 
@@ -10299,12 +10302,13 @@ ibmcloud cis custom-waf rule-create 9343630b9bd5c6e6899834d77f9e50ff  --action c
 {: pre}
 
 ### `ibmcloud cis custom-waf rule-update`
-{: #rule-create}
+{: #rule-update}
 
 Update a custom rule.
 
 ```sh
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action ACTION] [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
@@ -10335,23 +10339,23 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
    - The required fields in JSON data are `expression`, `action`.
 
-      `expression`: Specifies the conditions that must be matched for the rule to run.
-      `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+      - `expression`: Specifies the conditions that must be matched for the rule to run.
+      - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
    
-      `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
-        `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
-        `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
-        `response`:  Define a custom response for 'block' action.
-            `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
-            `content_type`: The content type of a custom response. Valid response types are :`text/html`,`text/plain`, `application/json`, `text/xml`.
-            `content`: The response body.
-      `description`: Briefly describes the rule.
-      `enabled`: Indicates if the rule is active.
-      `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
-         - `enabled`: When disabled, matched requests don't appear in firewall events.
+      - `action_parameters`: The rule action parameters.
+        - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`
+        - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
+        - `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+        - `response`:  Define a custom response for 'block' action.
+            - `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
+            - `content_type`: The content type of a custom response.Valid response types are :"text/html", "text/plain", "application/json", "text/xml".
+            - `content`: The response body.
+      - `description`: Briefly describes the rule.
+      - `enabled`: Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
+      - `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+         
 
    Sample JSON data:
 
