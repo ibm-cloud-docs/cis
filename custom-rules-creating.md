@@ -114,11 +114,77 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
    Where:
 
-   `--xxx`
-   :   Description. Required. 
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
 
-   `--xxx`
-   :   Description. Required. 
+`--match`
+:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+
+`--action`
+:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+
+`--enabled`
+:  Indicates if the rule is active. Default is "false".
+
+`--description`
+:  A brief description of the rule.
+
+`--json`
+:  The JSON file or JSON string used to describe a custom rule.
+
+   - The required fields in JSON data are `expression`, `action`.
+
+      `expression`: Specifies the conditions that must be matched for the rule to run.
+      `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+
+   - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
+   
+      `action_parameters`: The rule action parameters.
+        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current.
+        `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
+        `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+        `response`:  Define a custom response for 'block' action.
+            `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
+            `content_type`: The content type of a custom response. Valid response types are :`text/html`,`text/plain`, `application/json`, `text/xml`.
+            `content`: The response body.
+      `description`: Briefly describes the rule.
+      `enabled`: Indicates if the rule is active.
+      `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+         - `enabled`: When disabled, matched requests don't appear in firewall events.
+
+   Sample JSON data:
+
+         {
+           "description": "test-custom-rule",
+           "expression": "(http.cookie contains \"test\")",
+           "action": "skip",
+           "logging": {
+                   "enabled": true
+               },
+           "action_parameters": {
+             "ruleset": "current",
+               "phases": [
+                       "http_ratelimit",
+                       "http_request_firewall_managed",
+                       "http_request_sbfm"
+                   ],
+                   "products": [
+                       "waf",
+                       "rateLimit",
+                       "securityLevel",
+                       "hot",
+                       "bic",
+                       "uaBlock",
+                       "zoneLockdown"
+                   ]
+           },
+           "enabled": true
+         }
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
 
 ### Updating a custom rule from the CLI
 {: #update-custom-rule-cli}
@@ -135,11 +201,68 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
 Where:
 
-   `--xxx`
-   :   Description. Required. 
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
 
-   `--xxx`
-   :   Description. Required. 
+`RULE_ID`
+:  The ID of the rule.
+
+`--match`
+:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`.
+
+`--action`
+:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+
+`--enabled`
+:  Indicates if the rule is active. Default is "false".
+
+`--description`
+:  A brief description of the rule.
+
+`--json`
+:  The JSON file or JSON string used to describe a custom rule.
+
+   - The required fields in JSON data are `expression`, `action`.
+
+      `expression`: Specifies the conditions that must be matched for the rule to run.
+      `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+
+   - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
+   
+      `action_parameters`: The rule action parameters.
+        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
+        `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
+        `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+        `response`:  Define a custom response for 'block' action.
+            `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
+            `content_type`: The content type of a custom response. Valid response types are :`text/html`,`text/plain`, `application/json`, `text/xml`.
+            `content`: The response body.
+      `description`: Briefly describes the rule.
+      `enabled`: Indicates if the rule is active.
+      `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+         - `enabled`: When disabled, matched requests don't appear in firewall events.
+
+   Sample JSON data:
+
+         {
+           "description": "test-custom-rule",
+           "expression": "(http.cookie contains \"test\")",
+           "action": "block",
+           "action_parameters": {
+             "response": {
+             "status_code": 429,
+             "content_type": "text/xml",
+             "content": "reject"
+             }
+           },
+           "enabled": true
+         }
+
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
 
 ### Deleting a custom rule from the CLI
 {: #delete-custom-rule-cli}
