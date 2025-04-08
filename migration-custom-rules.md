@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-04-08"
 
 keywords:
 
@@ -62,7 +62,7 @@ If you customized your 1xxx error page in Custom Pages for requests blocked by f
 
 Firewall Rules supported the Allow and Bypass actions, often used together. These actions were commonly used for handling known legitimate requests — for example, requests coming from trusted IP addresses.
 
-When a request triggered Allow, all remaining firewall rules are not evaluated, effectively allowing the request to continue to the next security product. The Bypass action was designed to specify which security products (such as WAF-managed rules, rate-limiting rules, and User Agent Blocking) should not run on the request triggering the action.
+When a request triggered Allow, all remaining firewall rules are not evaluated, effectively allowing the request to continue to the next security product. The Bypass action was designed to specify which security products (such as WAF managed rules, rate-limiting rules, and User Agent Blocking) should not run on the request triggering the action.
 
 With Firewall Rules, if you wanted to stop running all security products for a given request, you would create two rules:
 
