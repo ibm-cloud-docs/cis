@@ -22,7 +22,7 @@ Like other rules evaluated by the Ruleset Engine, WAF custom rules require the f
 - An expression that specifies the criteria you are matching traffic on using the rules language.
 - An action that specifies what to do when there is a match for the rule.
 
-Custom rules are evaluated in the order that they are set, from first to last position, in the custom rules table. You can view the table by navigating to **Security > Firewall rules**. Some actions like **Block** stop the evaluation of other rules. For more details on actions and their behavior, see [Ruleset Engine rules actions](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions).
+Custom rules are evaluated in the order that they are set, from first to last position, in the custom rules table. You can view the table by navigating to **Security > Firewall rules**. Some actions like **Block** stop the evaluation of other rules. For more details on actions and their behavior, see [Ruleset Engine rule actions](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions).
 {: important}
 
 Refer to [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules) to learn more about the differences between firewall rules and WAF custom rules. 
