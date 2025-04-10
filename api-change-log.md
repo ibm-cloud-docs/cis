@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2024, 2024
-lastupdated: "2024-12-18"
+  years:  2024, 2025
+lastupdated: "2025-04-08"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -16,6 +16,17 @@ subcollection: cis
 {: #api-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/apidocs/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+
+## 28 February 2025
+{: #cis-feb2825}
+{: release-note}
+
+Ruleset Engine migration
+:   Two existing features are now part of the Ruleset Engine rules language, and have been updated to use the [Rulesets API](/apidocs/cis#get-instance-rulesets) (similar to WAF-managed rules):
+
+    * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
+
+    * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
 
 ## 16 December 2024
 {: #16-dec-2024}

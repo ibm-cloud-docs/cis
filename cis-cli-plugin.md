@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-04-07"
 
 keywords:
 
@@ -1992,7 +1992,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `response_buffering` are `on`, `off`.
     - Valid values for `script_load_optimization` are `on`, `off`.
     - Valid values for `security_header` are `enabled`, `max_age`, `include_subdomains`, `preload`, `nosniff`. For example, -v enabled=true,max_age=100,include_subdomains=true,preload=true,nosniff=true
-        - `enabled`: Whether or not security_header is enabled.Valid values for `enabled` are `true`, `false`.
+        - `enabled`: Whether or not security_header is enabled. Valid values for `enabled` are `true`, `false`.
         - `max_age`: Specify the duration(in seconds) security_header are cached in browsers.
         - `include_subdomains`: Every domain below the domain will inherit the same security_header. Valid values for `include_subdomains` are `true`, `false`.
         - `preload`: Whether or not to permit browsers to preload security_header config. Valid values for `enabled` are `true`, `false`.
@@ -2007,7 +2007,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `ciphers` are `ECDHE-ECDSA-AES128-GCM-SHA256`, `ECDHE-ECDSA-CHACHA20-POLY1305`, `ECDHE-RSA-AES128-GCM-SHA256`, `ECDHE-RSA-CHACHA20-POLY1305`, `ECDHE-ECDSA-AES128-SHA256`, `ECDHE-ECDSA-AES128-SHA`, `ECDHE-RSA-AES128-SHA256`, `ECDHE-RSA-AES128-SHA`, `AES128-GCM-SHA256`, `AES128-SHA256`, `AES128-SHA`, `ECDHE-ECDSA-AES256-GCM-SHA384`, `ECDHE-ECDSA-AES256-SHA384`, `ECDHE-RSA-AES256-GCM-SHA384`, `ECDHE-RSA-AES256-SHA384`, `ECDHE-RSA-AES256-SHA`, `AES256-GCM-SHA384`, `AES256-SHA256`, `AES256-SHA`, `DES-CBC3-SHA`, `default`. For example, `-v AES256-SHA256,AES256-SHA`, using `-v default` to reset configured cipher suites to default value.
     - Valid values for `url_normalization` are "type", "scope". For example -v type=cis,scope=both
          - `type`: Selects the type of URL normalization performed by CIS. Valid values for `type` are `cis`, `rfc3986`.
-         - `scope`: Configures the scope of the URL normalization.Valid values for `scope` are `both`, `incoming`.
+         - `scope`: Configures the scope of the URL normalization. Valid values for `scope` are `both`, `incoming`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -3124,7 +3124,7 @@ ibmcloud cis glb-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --i
         - `proxied`: Control whether or not traffic should flow through the security and performance functions on CIS.
         - `enabled`: Whether to enable (the default) this load balancer.
         - `session_affinity`: valid values are `cookie`, `none`.
-        - `session_affinity_ttl`: Time, in seconds, until this load balancers session affinity cookie expires after being created.Valid value is between [1800, 604800]. Default is 82800.
+        - `session_affinity_ttl`: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between [1800, 604800]. Default is 82800.
         - `steering_policy`: valid values for `steering_policy` are `off`, `geo`, `random`, `dynamic_latency`.
              - `off`: use default_pools.
              - `geo`: use region_pools/pop_pools.
@@ -3211,7 +3211,7 @@ ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (--json @JSON_FILE | JSON_STRING) [
         - `proxied`: Control whether or not traffic should flow through the security and performance functions on CIS.
         - `enabled`: Whether to enable (the default) this load balancer.
         - `session_affinity`: valid values are `cookie`, `none`.
-        - `session_affinity_ttl`: Time, in seconds, until this load balancers session affinity cookie expires after being created.Valid value is between [1800, 604800]. Default is 82800.
+        - `session_affinity_ttl`: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between [1800, 604800]. Default is 82800.
         - `steering_policy`: Valid values for `steering_policy` are `off`, `geo`, `random`, `dynamic_latency`.
              - `off`: Use default_pools.
              - `geo`: Use region_pools/pop_pools.
@@ -9599,7 +9599,7 @@ ibmcloud cis advanced-rate-limiting rule-delete 31984fea73a15b45779fa0df4ef62f9b
 ```
 {: pre}
 
-## WAF Managed Rules
+## WAF managed rules
 {: #waf-managed-rules}
 
 Manage the WAF managed rulesets and rules by using the following `managed-waf` commands. Migrate to new WAF by API or GUI first before you using managed WAF commands, and keep in mind that the previous version of WAF commands will stop working after you migrate.
@@ -9785,7 +9785,7 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
       `description`: Briefly describes the rule.
       `enabled`: Indicates if the rule is active.
       `logging`: Log requests matching the skip rule.
-         - `enabled`: When disabled, matched requests will not appear in firewall events.
+         - `enabled`: When disabled, matched requests don't appear in firewall events.
 
    Sample JSON data:
 
@@ -9875,7 +9875,7 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
       `description`: Briefly describes the rule.
       `enabled`: Indicates if the rule is active.
       `logging`: Log requests matching the skip rule.
-         - `enabled`: When disabled, matched requests will not appear in firewall events.
+         - `enabled`: When disabled, matched requests don't appear in firewall events.
 
 Sample JSON data:
 
@@ -10127,6 +10127,351 @@ Update a managed ruleset rule `1a18a1ea7fc043c68761bc69adcbb11c` for domain `319
 ```sh
 ibmcloud cis managed-waf deployment-update-ruleset 31984fea73a15b45779fa0df4ef62f9b 1a18a1ea7fc043c68761bc69adcbb11c --match true --enabled true --override-action block --override-status true --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=managed_challenge --override-rules rule=e3a567afc347477d9702d9047e97d760,action=action,enabled=true -i "cis-demo"
 ```
+{: pre}
+
+## WAF custom rules
+{: #waf-custom-rules}
+ 
+Manage the WAF custom rules by using the following `custom-waf` commands. Firewall rules are now managed by WAF custom rules. 
+
+### `ibmcloud cis custom-waf rules`
+{: #list-custom-rules}
+
+List all custom rules.
+
+```sh
+ibmcloud cis custom-waf rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+{: pre}
+
+#### Command options
+{: #list-custom-rules-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
+
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
+
+#### Examples
+{: #list-custom-rules-examples}
+
+List all custom rules for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis custom-waf rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+```
+
+{: pre}
+
+### `ibmcloud cis custom-waf rule`
+{: #show-custom-rule}
+
+Get details of a custom rule.
+
+```sh
+ibmcloud cis custom-waf rule DNS_DOMAIN_ID RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #show-custom-rule-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
+
+`RULE_ID`
+:   The ID of the rule.
+
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
+
+#### Examples
+{: #show-custom-rule-examples}
+
+Show a custom rule `b94632a4cd5a49ed830544d91417a98c` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
+
+```sh
+ibmcloud cis custom-waf rule 9343630b9bd5c6e6899834d77f9e50ff  b94632a4cd5a49ed830544d91417a98c -i "cis-demo"
+```
+{: pre}
+
+### `ibmcloud cis custom-waf rule-create`
+{: #rule-create}
+
+Create a custom rule.
+
+```sh
+ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+
+ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+{: pre}
+
+#### Command options
+{: #rule-create-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
+
+`--match`
+:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+
+`--action`
+:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+
+`--enabled`
+:  Indicates if the rule is active. Default is "false".
+
+`--description`
+:  A brief description of the rule.
+
+`--json`
+:  The JSON file or JSON string used to describe a custom rule.
+
+   - The required fields in JSON data are `expression`, `action`.
+
+      - `expression`: Specifies the conditions that must be matched for the rule to run.
+      - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+
+   - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
+   
+      - `action_parameters`: The rule action parameters.
+      - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
+      - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
+      - `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+      - `response`:  Define a custom response for 'block' action.
+         - `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
+         - `content_type`: The content type of a custom response.Valid response types are :"text/html", "text/plain", "application/json", "text/xml".
+         - `content`: The response body.
+      - `description`: Briefly describes the rule.
+      - `enabled`: Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
+      - `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+
+   Sample JSON data:
+
+         {
+           "description": "test-custom-rule",
+           "expression": "(http.cookie contains \"test\")",
+           "action": "skip",
+           "logging": {
+                   "enabled": true
+               },
+           "action_parameters": {
+             "ruleset": "current",
+               "phases": [
+                       "http_ratelimit",
+                       "http_request_firewall_managed",
+                       "http_request_sbfm"
+                   ],
+                   "products": [
+                       "waf",
+                       "rateLimit",
+                       "securityLevel",
+                       "hot",
+                       "bic",
+                       "uaBlock",
+                       "zoneLockdown"
+                   ]
+           },
+           "enabled": true
+         }
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
+
+#### Examples
+{: #rule-create-example}
+
+Create custom rule for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
+
+```sh
+ibmcloud cis custom-waf rule-create 9343630b9bd5c6e6899834d77f9e50ff  --action challenge --description "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
+```
+
+{: pre}
+
+### `ibmcloud cis custom-waf rule-update`
+{: #rule-update}
+
+Update a custom rule.
+
+```sh
+ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action ACTION] [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+
+ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #rule-update-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
+
+`RULE_ID`
+:  The ID of the rule.
+
+`--match`
+:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`.
+
+`--action`
+:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+
+`--enabled`
+:  Indicates if the rule is active. Default is "false".
+
+`--description`
+:  A brief description of the rule.
+
+`--json`
+:  The JSON file or JSON string used to describe a custom rule.
+
+   - The required fields in JSON data are `expression`, `action`.
+
+      - `expression`: Specifies the conditions that must be matched for the rule to run.
+      - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+
+   - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
+   
+      - `action_parameters`: The rule action parameters.
+        - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`
+        - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
+        - `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+        - `response`:  Define a custom response for 'block' action.
+            - `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
+            - `content_type`: The content type of a custom response.Valid response types are :"text/html", "text/plain", "application/json", "text/xml".
+            - `content`: The response body.
+      - `description`: Briefly describes the rule.
+      - `enabled`: Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
+      - `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+         
+
+   Sample JSON data:
+
+         {
+           "description": "test-custom-rule",
+           "expression": "(http.cookie contains \"test\")",
+           "action": "block",
+           "action_parameters": {
+             "response": {
+             "status_code": 429,
+             "content_type": "text/xml",
+             "content": "reject"
+             }
+           },
+           "enabled": true
+         }
+
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
+
+#### Examples
+{: #rule-update-example}
+
+Update custom rule `b94632a4cd5a49ed830544d91417a98c` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
+
+```sh
+ibmcloud cis custom-waf rule-update 9343630b9bd5c6e6899834d77f9e50ff b94632a4cd5a49ed830544d91417a98c --enabled false --description rule-updateion "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
+```
+
+{: pre}
+
+### `ibmcloud cis custom-waf rule-order-update`
+{: #rule-order-update}
+
+Change the execution order of the custom rule.
+
+```sh
+ibmcloud cis custom-waf rule-order-update DNS_DOMAIN_ID RULE_ID [--before RULE_ID] [--after RULE_ID] [--index INDEX] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #rule-order-update-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
+
+`RULE_ID`
+:  The ID of the custom rule.
+
+`--before`
+:  Places the rule before rule `<RULE_ID>`.
+
+`--after`
+:  Places the rule after rule `<RULE_ID>`.
+
+`--index`
+:  Places the rule in the exact position specified by the integer number.
+
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
+
+#### Examples
+{: #rule-order-update-example}
+
+Put custom rule `4eae81b170f644f795da017001383de7` before rule `2ed2dd160cb745feb415414544d97c70` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
+
+```sh
+ibmcloud cis custom-waf rule-order-update 9343630b9bd5c6e6899834d77f9e50ff 4eae81b170f644f795da017001383de7 --before 2ed2dd160cb745feb415414544d97c70 -i "cis-demo"
+```
+
+{: pre}
+
+### `ibmcloud cis custom-waf rule-delete`
+{: #rule-delete}
+
+Delete a custom rule by ID.
+
+```sh
+ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #rule-delete-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of DNS domain.
+
+`RULE_ID`
+:  The ID of the custom rule.
+
+`-i, --instance`
+:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`-f, --force`
+:   Attempt to delete custom rule without prompting for confirmation.
+
+`--output`
+:   Specify output format, only `JSON` is supported.
+
+#### Examples
+{: #rule-delete-example}
+
+Delete custom rule `e9fad806880c4c42bd7ebeec8dcba4e6` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
+
+```sh
+ibmcloud cis custom-waf rule-delete  9343630b9bd5c6e6899834d77f9e50ff e9fad806880c4c42bd7ebeec8dcba4e6 -i "cis-demo"
+```
+
 {: pre}
 
 ## Private endpoint support

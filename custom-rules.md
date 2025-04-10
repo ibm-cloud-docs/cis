@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-04-01"
 
 keywords: custom rules, rulesets, waf, firewall rules
 
@@ -22,7 +22,7 @@ Like other rules evaluated by the Ruleset Engine, WAF custom rules require the f
 - An expression that specifies the criteria you are matching traffic on using the rules language.
 - An action that specifies what to do when there is a match for the rule.
 
-Custom rules are evaluated in the order that they are set, from first to last position, in the custom rules table. You can view the table by navigating to **Security > Firewall rules**. Some actions like **Block** stop the evaluation of other rules. For more details on actions and their behavior, see [Ruleset Engine rules actions]([/docs/cis?topic=cis-cis-ruleset-engine](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions)).
+Custom rules are evaluated in the order that they are set, from first to last position, in the custom rules table. You can view the table by navigating to **Security > Firewall rules**. Some actions like **Block** stop the evaluation of other rules. For more details on actions and their behavior, see [Ruleset Engine rules actions]([/docs/cis?topic=cis-cis-ruleset-engine](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions).
 {: important}
 
 Refer to [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules) to learn more about the differences between firewall rules and WAF custom rules. 
@@ -73,7 +73,7 @@ This section contains examples of different skip rule scenarios for WAF custom r
 #### Skip the remaining rules in the current ruleset
 {: #cis-skip-remaining-rules}
 
-This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a skip rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `{ruleset_id}`. The rule skips all remaining rules in the current ruleset for requests that match the rule expression:
+This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a skip rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. If you do not know your entry point ruleset ID, see [Getting the custom rule entry point for the API](/apidocs/cis#custom-rule-entry-point-api). The rule skips all remaining rules in the current ruleset for requests that match the rule expression:
 
 ```sh
 curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
@@ -88,14 +88,15 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RUL
   "description": ""
 }'
 ```
+{: pre}
 
 #### Skip a phase 
 {: #cis-skip-phase}
 
-This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) to add a rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `{ruleset_id}`. The rule skips the `http_ratelimit` phase for requests that match the rule expression:
+This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) to add a rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. The rule skips the `http_ratelimit` phase for requests that match the rule expression:
 
 ```sh
-url -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
+curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
 --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
 --header "Content-Type: application/json" \
 --data '{
@@ -109,6 +110,7 @@ url -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULE
   "description": ""
 }'
 ```
+{: pre}
 
 #### Skip a phase and do not log matching requests
 {: #cis-skip-phase-no-matching}
@@ -133,6 +135,7 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RUL
   "description": ""
 }'
 ```
+{: pre}
 
 #### Skip security products
 {: #cis-skip-security-products}
@@ -140,7 +143,7 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RUL
 This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a rule that skips the Zone Lockdown and User Agent Blocking products for requests that match the rule expression:
 
 ```sh
-url -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
+curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
 --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
 --header "Content-Type: application/json" \
 --data '{
@@ -155,3 +158,4 @@ url -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULE
   "description": ""
 }'
 ```
+{: pre}

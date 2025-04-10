@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-04-01"
 
 keywords:
 
@@ -27,7 +27,6 @@ Specific overrides take precedence over more general ones, and rule overrides ta
 {: important}
 
 Ruleset overrides and tag overrides apply to both existing and future rules in the managed ruleset. If you want to override existing rules only, you must use rule overrides.
-
 
 ## Overriding workflow
 {: #override-workflow}
@@ -75,7 +74,6 @@ You can override the following rule properties.
 Some managed rulesets can have extra override requirements, or they might override other rule properties.
 
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
-
 
 ## Overriding managed rulesets from the CLI
 {: #cli-override-rule-sets}
@@ -206,3 +204,82 @@ Where:
             * **`action`** specifies the overridden action that the rule takes.
       * **`expression`** is the condition under which the rule runs. Using "true" means that this rule always runs.
       * **`description`** defines your own summary of what the rule is accomplishing.
+
+## Overriding managed rulesets with Terraform
+{: #override-rule-sets-terraform}
+{: terraform}
+
+You can override rulesets using Terraform.
+
+### Listing managed rulesets with Terraform
+{: #terraform-override-list-rule-sets}
+
+The following example lists all managed rulesets using Terraform:
+
+```sh  
+data "ibm_cis_rulesets" "tests" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+}
+```
+{: pre}
+
+For more information about the arguments and attributes, see [`ibm_cis_rulesets`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/cis_rulesets){: external} in the Terraform registry.
+
+### Listing all rules of a managed ruleset with Terraform
+{: #terraform-override-list-rule-sets-rules}
+
+The following example lists all rules of a managed ruleset using Terraform:
+
+```sh 
+resource "ibm_cis_ruleset" "config" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = "943c5da120114ea5831dc1edf8b6f769"
+}
+```
+{: pre}
+
+For more information about the arguments and attributes, see [`ibm_cis_ruleset`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset){: external} in the Terraform registry.
+ 
+### Overriding a rule with Terraform
+{: #terraform-override-entry-point-rule-set}
+
+This example shows how to deploy the CIS managed ruleset with various overrides. First, it enables and blocks traffic for all rules. Then, it enables and blocks traffic for a specific rule. Finally, it enables and blocks traffic for all rules in the `wordpress` category. Essentially, this example illustrates the different methods for overriding deployed rules (global, specific, by category).
+
+```sh
+  resource "ibm_cis_ruleset_entrypoint_version" "test" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    phase = "http_request_firewall_managed"
+    rulesets {
+      description = "Entrypoint ruleset for managed ruleset"
+      rules {
+        action =  "execute"
+        description = "Deploy CIS managed ruleset"
+        enabled = true
+        expression = "true"
+        action_parameters  {
+          id = "efb7b8c949ac4650a09736fc376e9aee"
+          overrides {
+            action = "block"
+            enabled = true
+            override_rules {
+              rule_id = "var.overriden_rule.id"
+              enabled = true
+              action = "block"
+            }
+            categories {
+              category = "wordpress"
+              enabled = true
+              action = "block"
+            }
+          }
+        } 
+      }
+    }
+  }
+```
+{: pre} 
+
+For more information about the arguments and attributes, see [`ibm_cis_ruleset_entrypoint_version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_entrypoint_version){: external} in the Terraform registry.

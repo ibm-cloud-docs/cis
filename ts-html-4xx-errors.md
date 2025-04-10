@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-04-08"
 
 keywords:
 
@@ -46,7 +46,7 @@ If you're seeing a 403 error without {{site.data.keyword.cis_short_notm}} brandi
 * Mod_security rules
 * IP deny rules. Ensure that {{site.data.keyword.cis_short_notm}}'s IP ranges aren't being blocked.
 
-{{site.data.keyword.cis_short_notm}} will serve 403 responses if the request violated either a default WAF-managed rule or a WAF-managed rule enabled for that particular zone.
+{{site.data.keyword.cis_short_notm}} will serve 403 responses if the request violated either a default WAF managed rule or a WAF managed rule enabled for that particular zone.
 
 [Resolution]{: tag-green} If you're seeing a 403 response that contains {{site.data.keyword.cis_short_notm}} branding in the response body, this is the HTTP response code returned along with security features:
 
