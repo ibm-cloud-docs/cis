@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-03-06"
+lastupdated: "2025-04-16"
 
 subcollection: cis
 
@@ -67,7 +67,7 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 
 The firewall rules language has several functions to convert fields.
 
-These functions are not currently supported in the CIS UI Visual Expression Builder.
+These functions are not currently supported in the Expression Builder.
 {: note}
 
 | Function name| Argument types | Return type | Usage example | Notes|
@@ -116,7 +116,7 @@ The following comparison operators are available for use in expressions:
 |bitwise_and|&|Compare bit field value|
 {: caption="Comparison operators for expressions" caption-side="bottom"}
 
-Currently the CIS UI Visual Expression Builder supports only English operators.
+Currently the Expression Builder supports only English operators.
 {: note}
 
 An expression might contain a mix of English and C-like operators. For example, `ip.src eq 93.184.216.34` is equivalent to `ip.src == 93.184.216.34`.

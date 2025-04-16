@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-04-16"
 
 subcollection: cis
 
@@ -64,7 +64,7 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 
 The custom rules language has a number of functions to convert fields.
 
-These are not currently supported in the CIS UI Visual Expression Builder.
+These are not currently supported in the Expression Builder.
 {: note}
 
 | Function name| Argument types | Return type | Usage example | Notes|
@@ -113,7 +113,7 @@ The following comparison operators are available for use in expressions:
 |bitwise_and|&|Compare bit field value|
 {: caption="Comparison operators for expressions" caption-side="bottom"}
 
-Currently the CIS UI Visual Expression Builder only supports English operators.
+Currently the Expression Builder only supports English operators.
 {: note}
 
 An expression might contain a mix of English and C-like operators. For example, `ip.src eq 93.184.216.34` is equivalent to `ip.src == 93.184.216.34`.
