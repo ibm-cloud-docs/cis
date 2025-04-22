@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-04-22"
 
 keywords: IBM Cloud, observability
 
@@ -144,7 +144,6 @@ List of IAM actions and Activity Tracker actions by API method.
 | Validate the expression of a filter. | `POST /v1/{crn}/zones/{domain_id}/filters/validate-expr` | `internet-svcs.security.manage` | `internet-svcs.filters-validate-expr.create` |
 {: caption="Firewall rules" caption-side="bottom"}
 
-
 ## Security Events
 {: #at_iam_CIS_secevents}
 
@@ -153,7 +152,6 @@ List of IAM actions and Activity Tracker actions by API method.
 | Get the security events | `GET /v1/{crn}/zones/{domain_id}/security/events` | `internet-svcs.security.read` | `internet-svcs.security-events.read` |
 | Get the firewall events (Deprecated) | `GET /v1/{crn}/zones/{domain_id}/analytics/firewall_events  [DEPRECATED]` | `internet-svcs.security.read` | `internet-svcs.firewall-events-analytics.read` |
 {: caption="Security events" caption-side="bottom"}
-
 
 ## Rate Limiting
 {: #at_iam_CIS_rate}

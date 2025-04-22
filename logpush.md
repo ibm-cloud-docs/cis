@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-04-22"
 
 keywords:
 
@@ -14,9 +14,6 @@ subcollection: cis
 
 # Managing Logpush jobs
 {: #logpush}
-
-The IBM Log Analysis service is deprecated and will no longer be supported as of 30 March 2025. You can migrate jobs to IBM Cloud Logs, Cloud Object Storage, and Splunk.
-{: deprecated}
 
 {{site.data.keyword.cis_full}} Enterprise-level plans have access to detailed logs of HTTP, DNS, and Range requests, as well as firewall events for their domains. These logs are helpful for debugging and analytics, especially when combined with other data sources, such as ingress or application server logs at the origin.
 {: shortdesc}
@@ -30,7 +27,6 @@ Before you create a Logpush job using the UI, review the following information a
    - IBM Cloud Logs
    - Cloud Object Storage
    - Splunk
-   - IBM Log Analysis (deprecated)
 * Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
 * If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.{: cli}{: api}
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to your destination.
@@ -73,10 +69,6 @@ To create a Logpush job in the UI, follow these steps:
    :   Enter the Splunk endpoint, channel ID, and authentication token.
 
       You can choose to use insecure verification; however, this is not recommended. 
-
-   IBM Log Analysis 
-   :   Be aware that IBM Log Analysis is deprecated and should not be used.
-       {: attention}
 
    Custom HTTP Destination
    :   Enter your HTTP endpoint.
