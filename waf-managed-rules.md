@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-04-23"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Migrating to WAF managed rules
 {: #migrating-to-managed-rules}
 
-The CIS web application firewall (WAF) capabilities are moving under the Ruleset Engine suite. This change requires a manual migration and it is recommended that you use the CIS UI migration wizard. To do so, you need to review the configuration, as well as review security events before finishing the update.
+The CIS web application firewall (WAF) capabilities are moving under the Ruleset Engine suite. This change requires a manual migration and it is recommended that you use the CIS UI migration wizard. To do so, you need to review the configuration, as well as review [security events](/docs/cis?topic=cis-using-the-cis-security-events-capability) before finishing the update.
 {: shortdesc}
 
 After you complete the migration, any automation that uses APIs, CLIs, or Terraform that are related to WAF will stop working and must be updated to use the new managed rulesets.
@@ -67,7 +67,10 @@ To add your own exceptions, take the following steps.
 What if I don't migrate?
 :   Users who don’t manually migrate are automatically migrated to Managed Rules on 12 June 2025, with no expected impact to their current WAF policies or security. From this date forward, you must use the [Ruleset Engine API](/apidocs/cis#get-zone-rulesets) to make WAF and Managed Rules configurations.
 
-    Rules and configuration might be slightly different than before, because the new Managed Rules added more robust OWASP security coverage. This ruleset is updated from OWASP v2.x to OWASP v3.x.
+    Rules and configuration might be slightly different than before, because the new Managed Rules added more robust OWASP security coverage. This ruleset is updated from OWASP v2.x to OWASP v3.x; which adds paranoia levels and improves false positives rates.
+
+Will there be any WAF downtime caused by the migration?
+:  There is no outage in WAF protection during the migration, but users might observe security events from both the legacy WAF and new WAF managed rules for up to one hour after the migration is complete.
 
 What will happen to the previous WAF APIs?
 :   After deprecation, the previous WAF APIs will not be available and will generate an error, returning a message that indicates to switch to the Managed Rules feature.
