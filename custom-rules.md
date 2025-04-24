@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-04-24"
 
 keywords: custom rules, rulesets, waf, firewall rules
 
@@ -73,7 +73,7 @@ This section contains examples of different skip rule scenarios for WAF custom r
 #### Skip the remaining rules in the current ruleset
 {: #cis-skip-remaining-rules}
 
-This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a skip rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. If you do not know your entry point ruleset ID, see [Getting the custom rule entry point for the API](/apidocs/cis#custom-rule-entry-point-api). The rule skips all remaining rules in the current ruleset for requests that match the rule expression:
+This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a skip rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. If you do not know your entry point ruleset ID, see [Getting the custom rule entry point for the API](/docs/cis?topic=cis-about-waf-custom-rules&interface=api#get-rule-entry-point-api). The rule skips all remaining rules in the current ruleset for requests that match the rule expression:
 
 ```sh
 curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \

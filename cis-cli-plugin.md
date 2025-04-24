@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-04-24"
 
 keywords:
 
@@ -10248,7 +10248,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
       - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
       - `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
-      - `response`:  Define a custom response for 'block' action.
+      - `response`:  Define a custom response for `block` action.
          - `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
          - `content_type`: The content type of a custom response.Valid response types are :"text/html", "text/plain", "application/json", "text/xml".
          - `content`: The response body.
