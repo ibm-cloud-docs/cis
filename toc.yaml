@@ -35,7 +35,7 @@ toc:
             - tcp-concepts.md
             - compression-concepts.md
             - domain-lifecycle.md
-        - security-events.md        
+        - security-events.md
         - url-normalization.md
         - release-notes.md
     - navgroup:
@@ -66,7 +66,7 @@ toc:
             - cname-dns-resolution.md
         - multi-domain.md
         - dns.md
-        - cname-setup.md 
+        - cname-setup.md
         - topicgroup:
             label: Working with Range applications
             topics:
@@ -99,32 +99,32 @@ toc:
             - custom-rules-creating.md
             - custom-rules-fields-and-expressions.md
         - topicgroup:
-            label: Working with WAF managed rules 
+            label: Working with WAF managed rules
             topics:
             - about-managed-rules.md
-            - deploy-rule-sets.md            
-            - override-rule-sets.md            
+            - deploy-rule-sets.md
+            - override-rule-sets.md
             - handling-false-positives-managed-rules.md
             - topicgroup:
                 label: Available managed rulesets
                 topics:
                 - cis-ruleset.md
                 - owasp-rule-set-for-waf.md
-                - exposed-credentials-check-ruleset.md   
+                - exposed-credentials-check-ruleset.md
         - topicgroup:
             label: Working with rate-limiting rules
             topics:
             - migration-rate-limiting.md
             - rate-limiting.md
-            - rate-limit-ruleset.md      
+            - rate-limit-ruleset.md
         - topicgroup:
             label: Working with legacy WAF
             topics:
             - waf-managed-rules.md
-            - waf-cis-ruleset.md  
+            - waf-cis-ruleset.md
         - topicgroup:
             label: Working with legacy firewall rules
-            topics: 
+            topics:
             - migration-custom-rules.md
             - firewall-rule.md
             - actions.md
@@ -161,9 +161,6 @@ toc:
                 - altering-headers.md
                 - redirect-country-code.md
                 - modify-response-props.md
-                - link:
-                    label: Configuring a Custom Domain for Your IBM Cloud Code Engine Application
-                    href: https://www.ibm.com/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application/
         - topicgroup:
             label: Working with logs
             topics:
@@ -207,7 +204,7 @@ toc:
             - at_events.md
             - at_iam.md
         - cis-delete.md
-        - terraform.md        
+        - terraform.md
         - terraform-generating-configuration.md
     - navgroup:
         id: reference

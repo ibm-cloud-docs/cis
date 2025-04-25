@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-04-24"
 
 keywords:
 
@@ -121,7 +121,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 :   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
 
 `--action`
-:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip". For "block" and "skip" actions, use JSON file or JSON string instead.
 
 `--enabled`
 :  Indicates if the rule is active. Default is "false".
@@ -149,7 +149,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
             `content`: The response body.
       `description`: Briefly describes the rule.
       `enabled`: Indicates if the rule is active.
-      `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+      `logging`: Log requests matching the skip rule. This field is only available for the "skip" action.
          - `enabled`: When disabled, matched requests don't appear in firewall events.
 
    Sample JSON data:
@@ -211,7 +211,7 @@ Where:
 :   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`.
 
 `--action`
-:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For "block" and "skip" actions, use JSON file or JSON string instead.
 
 `--enabled`
 :  Indicates if the rule is active. Default is "false".
@@ -239,7 +239,7 @@ Where:
             `content`: The response body.
       `description`: Briefly describes the rule.
       `enabled`: Indicates if the rule is active.
-      `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+      `logging`: Log requests matching the skip rule. This field is only available for the "skip" action.
          - `enabled`: When disabled, matched requests don't appear in firewall events.
 
    Sample JSON data:
