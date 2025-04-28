@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-04-28"
 
 keywords: plans, enterprise essential, enterprise advanced, enterprise premier, standard next
 
@@ -82,10 +82,10 @@ By moving to a more metered model, the base cost of the Enterprise Tier plans ar
 |Bot management| No | No | Yes |
 {: caption="Comparison of CIS Enterprise Tier plans" caption-side="bottom"}
 
-### Migrating to Enterprise Tiers plans
+### Migrating to Enterprise Tier plans
 {: #migration-to-enterprise-tiers}
 
-To migrate from your current Enterprise Package, Enterprise GLB, and Enterprise Security plans, take the following steps:
+To migrate from your current Enterprise package, Enterprise GLB, and Enterprise Security plans, take the following steps:
 
 1. Enter your existing {{site.data.keyword.cis_short_notm}} instance.
 1. Navigate to the **Plan** page in left side panel.
