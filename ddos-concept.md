@@ -2,17 +2,16 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-01-24"
+lastupdated: "2025-04-29"
 
-keywords: Attack Concepts, Application layer attacks, common types of internet attacks
-
+keywords: ddos, distributed denial of service, Attack Concepts, Application layer attacks 
 subcollection: cis
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Dealing with Distributed Denial of Service attacks
+# Dealing with Distributed Denial of Service (DDoS) attacks
 {: #distributed-denial-of-service-ddos-attack-concepts}
 
 Distributed Denial of Service (DDoS) attacks are among the most common types of internet attacks that your website or host can encounter.

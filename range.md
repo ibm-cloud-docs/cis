@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-30"
+  years: 2018, 2025
+lastupdated: "2025-04-29"
 
-keywords: range application, tls encryption, ddos protection, global tcp proxy
+keywords: range application, tls encryption, global tcp proxy
 
 subcollection: cis
 
