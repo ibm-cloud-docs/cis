@@ -70,29 +70,30 @@ The following data nodes are based on fixed sampling, where the sample rate does
 
 Other considerations to keep in mind:
 
-:   Access to raw data
+Access to raw data
 
-    Because sampling is primarily adaptive and automatically adjusts to provide an accurate estimate, the sampling rate cannot be directly controlled. Enterprise customers have access to raw data through [CIS logs](/docs/cis?topic=cis-logpush).
+:   Because sampling is primarily adaptive and automatically adjusts to provide an accurate estimate, the sampling rate cannot be directly controlled. Enterprise customers have access to raw data through [CIS logs](/docs/cis?topic=cis-logpush).
 
-:   When sampling occurs
+When sampling occurs
 
-    * Sampling is typically applied to high-traffic datasets where full data metrics are impractical.
-    * For smaller datasets, full data analysis is often performed without sampling.
+:   Sampling is typically applied to high-traffic datasets where full data metrics are impractical. For smaller datasets, full data analysis is often performed without sampling.
 
-:   Sampling rates
+Sampling rates
 
-    Sampling rates vary depending on the dataset and product. CIS helps ensure that sampling rates are consistent within a single dataset to maintain accuracy across queries.
+:   Sampling rates vary depending on the dataset and product. CIS helps ensure that sampling rates are consistent within a single dataset to maintain accuracy across queries.
 
-:   Impact on metrics
+Impact on metrics
 
-    While sampling reduces the volume of processed data, aggregated metrics like totals, averages, and percentiles are extrapolated based on the sample size. This ensures that the reported metrics represent the entire dataset accurately.
+:   While sampling reduces the volume of processed data, aggregated metrics like totals, averages, and percentiles are extrapolated based on the sample size. This ensures that the reported metrics represent the entire dataset accurately.
 
-:   Limitations
+Limitations
 
-    Sampling might not capture extremely rare events with very low occurrence rates.
+:   Sampling might not capture extremely rare events with very low occurrence rates.
 
-:   Sampling in metrics interfaces
+Sampling in metrics interfaces
 
-    * GraphQL API: Sampling metadata is included in the query response. For more information, refer to the sampling [GraphQL Analytics API] documentation.
-    * Workers Analytics Engine: For more information, refer to the [Workers Analytics Engine] documentation.
-    * *Dashboard Analytics: Displays an icon with the sampled percentage of data, if sampled data was used for the visualization. 
+:   GraphQL API: Sampling metadata is included in the query response. For more information, see the sampling [GraphQL Analytics API] documentation.  ???
+
+    Workers Analytics Engine: For more information, se the [Workers Analytics Engine] documentation. ???
+    
+    Dashboard metrics: Displays an icon with the sampled percentage of data, if sampled data was used for the visualization. 
