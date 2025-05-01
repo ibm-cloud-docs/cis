@@ -12,8 +12,8 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# About sampling
-{: #about-sampling}
+# Using sampling to optimize metrics
+{: #sampling}
 
 Sampling is a technique that is used in CIS metrics to analyze a subset of data rather than processing every individual data point. It helps maintain performance and scalability while delivering accurate insights. Given the volume of data CIS handles—over 700 million events per second—sampling is essential for fast, cost-effective metrics at scale.
 {: shortdesc}
@@ -40,30 +40,30 @@ This approach is similar to other domains:
 While ABR sampling resolution isn’t always visible, the number of rows read is a good indicator: the more rows read, the higher the resolution and reliability of the results.
 
 ## Other considerations
-{: #additional-considerations-sampling}
+{: #other-considerations-sampling}
  
 When sampling occurs
 
-:   Sampling is typically applied to high-traffic datasets where full data metrics are impractical.
+Sampling is typically applied to high-traffic datasets where full data metrics are impractical.
     For smaller datasets, full data analysis is often performed without sampling.
 
 Sampling rates
 
-:   Sampling rates vary depending on the dataset and product. CIS helps ensure that sampling rates are consistent within a single dataset to maintain accuracy across queries.
+Sampling rates vary depending on the dataset and product. CIS helps ensure that sampling rates are consistent within a single dataset to maintain accuracy across queries.
 
 Impact on metrics
 
-:   While sampling reduces the volume of processed data, aggregated metrics like totals, averages, and percentiles are extrapolated based on the sample size. This ensures that the reported metrics represent the entire dataset accurately.
+While sampling reduces the volume of processed data, aggregated metrics like totals, averages, and percentiles are extrapolated based on the sample size. This ensures that the reported metrics represent the entire dataset accurately.
 
 Limitations
 
-:   Sampling might not capture rare events with low occurrence rates.
+Sampling might not capture rare events with low occurrence rates.
 
 Sampling in metrics interfaces
 
-:   GraphQL API: Sampling metadata is included in the query response. For more information, refer to the sampling [GraphQL Analytics API] documentation.
-:   Workers Analytics Engine: For more information, refer to the [Workers Analytics Engine] documentation.
-:   Dashboard Analytics: Displays an icon with the sampled percentage of data, if sampled data was used for the visualization.
+* GraphQL API: Sampling metadata is included in the query response. For more information, refer to the sampling [GraphQL Analytics API] documentation.
+* Workers Analytics Engine: For more information, refer to the [Workers Analytics Engine] documentation.
+* *Dashboard Analytics: Displays an icon with the sampled percentage of data, if sampled data was used for the visualization.
 
 ## Sampled datasets
 {: #sampled-datasets}
