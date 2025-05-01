@@ -18,11 +18,14 @@ subcollection: cis
 Sampling is a technique that is used in CIS metrics to analyze a subset of data rather than processing every individual data point. It helps maintain performance and scalability while delivering accurate insights. Given the volume of data CIS handles—over 700 million events per second—sampling is essential for fast, cost-effective metrics at scale.
 {: shortdesc}
 
-In some cases, metrics that are provided in the CIS dashboard and GraphQL API are based on a sample. For example, if during an attack the sampling rate is 10% and 5,000 events are sampled, CIS estimates the total number of events as 50,000 (5,000 × 10) and report this value.
+In a small number of cases, metrics that are provided in the CIS dashboard and GraphQL API are based on a _sample_—a subset of the dataset. In these cases, CIS metrics returns an estimate derived from the sampled value. For example, if during an attack the sampling rate is 10% and 5,000 events are sampled, CIS estimates the total number of events as 50,000 (5,000 × 10) and reports this value.
 
 CIS primarily uses adaptive sampling, including a method called Adaptive Bit Rate (ABR). ABR adjusts the level of detail in the data returned based on query complexity and volume. When the number of records is small or the query is simple, full-resolution data (100%) is used. As the dataset grows or the query becomes more complex, progressively lower sample rates, such as 10% or 1%, are applied to ensure efficient query completion.
 
 This approach prevents large queries from consuming excessive computing resources, ensuring fair distribution and consistent performance for all users. Data is stored at multiple resolutions (100%, 10%, and 1%), allowing the system to select the appropriate resolution based on the query’s complexity and size, helping ABR deliver fast, accurate results.
+
+CIS GraphQL API exposes datasets that are powered by adaptive sampling. These nodes have **Adaptive** in the name and can be discovered through [introspection](https://graphql.org/learn/introspection/){: external}. 
+{: note}
  
 ## Why sampling is applied
 {: #why-sampling-applied} 
@@ -39,39 +42,10 @@ This approach is similar to other domains:
 
 While ABR sampling resolution isn’t always visible, the number of rows read is a good indicator: the more rows read, the higher the resolution and reliability of the results.
 
-## Other considerations
-{: #other-considerations-sampling}
- 
-When sampling occurs
-
-Sampling is typically applied to high-traffic datasets where full data metrics are impractical.
-    For smaller datasets, full data analysis is often performed without sampling.
-
-Sampling rates
-
-Sampling rates vary depending on the dataset and product. CIS helps ensure that sampling rates are consistent within a single dataset to maintain accuracy across queries.
-
-Impact on metrics
-
-While sampling reduces the volume of processed data, aggregated metrics like totals, averages, and percentiles are extrapolated based on the sample size. This ensures that the reported metrics represent the entire dataset accurately.
-
-Limitations
-
-Sampling might not capture rare events with low occurrence rates.
-
-Sampling in metrics interfaces
-
-* GraphQL API: Sampling metadata is included in the query response. For more information, refer to the sampling [GraphQL Analytics API] documentation.
-* Workers Analytics Engine: For more information, refer to the [Workers Analytics Engine] documentation.
-* *Dashboard Analytics: Displays an icon with the sampled percentage of data, if sampled data was used for the visualization.
-
-## Sampled datasets
-{: #sampled-datasets}
-
-CIS GraphQL API exposes datasets that powered by adaptive sampling. These nodes have **Adaptive** in the name and can be discovered through [introspection](https://graphql.org/learn/introspection/){: external}. 
-
 ## Types of sampling
 {: #types-of-sampling}
+
+CIS metrics uses two primary types of sampling: adaptive sampling and fixed sampling. The method applied depends on the dataset and how the data is queried.
 
 ### Adaptive sampling
 {: #adaptive-sampling}
@@ -91,7 +65,34 @@ The following data nodes are based on fixed sampling, where the sample rate does
 | Network metrics \n \n **Nodes:** \n \n `ipFlows1mGroups` \n `ipFlows1hGroups` \n `ipFlows1dGroups` \n `ipFlows1mAttacksGroups`| 0.012% | Sampling rate is in terms of packet count (1 of every 8,192 packets). |   
 {: caption="Fixed sampling" caption-side="bottom"}   
 
-## Access to raw data
-{: #access-to-raw-data}
+## Other considerations
+{: #other-considerations-sampling}
 
-Because sampling is primarily adaptive and automatically adjusts to provide an accurate estimate, the sampling rate cannot be directly controlled. Enterprise customers have access to raw data through [CIS logs](/docs/cis?topic=cis-logpush).
+Other considerations to keep in mind:
+
+:   Access to raw data
+
+    Because sampling is primarily adaptive and automatically adjusts to provide an accurate estimate, the sampling rate cannot be directly controlled. Enterprise customers have access to raw data through [CIS logs](/docs/cis?topic=cis-logpush).
+
+:   When sampling occurs
+
+    * Sampling is typically applied to high-traffic datasets where full data metrics are impractical.
+    * For smaller datasets, full data analysis is often performed without sampling.
+
+:   Sampling rates
+
+    Sampling rates vary depending on the dataset and product. CIS helps ensure that sampling rates are consistent within a single dataset to maintain accuracy across queries.
+
+:   Impact on metrics
+
+    While sampling reduces the volume of processed data, aggregated metrics like totals, averages, and percentiles are extrapolated based on the sample size. This ensures that the reported metrics represent the entire dataset accurately.
+
+:   Limitations
+
+    Sampling might not capture extremely rare events with very low occurrence rates.
+
+:   Sampling in metrics interfaces
+
+    * GraphQL API: Sampling metadata is included in the query response. For more information, refer to the sampling [GraphQL Analytics API] documentation.
+    * Workers Analytics Engine: For more information, refer to the [Workers Analytics Engine] documentation.
+    * *Dashboard Analytics: Displays an icon with the sampled percentage of data, if sampled data was used for the visualization. 
