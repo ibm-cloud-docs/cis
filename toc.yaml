@@ -177,7 +177,7 @@ toc:
             - graphql-firewall.md
             - query-basics.md
             - compose-query-graphiql.md
-            - sampling.md
+            - sampling-old.md
             - query-http-events.md
             - view-firewall-groups.md
         - topicgroup:
