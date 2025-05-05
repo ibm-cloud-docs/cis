@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-14"
+lastupdated: "2025-05-05"
 
 keywords:
 
@@ -21,10 +21,10 @@ The {{site.data.keyword.cis_short_notm}} WAF provides both automatic protection 
 
 The old and new implementation of rate-limiting rules have separate rules lists because the two implementations do not offer the same set of features. Re-create your rate limiting configuration (in the previous version) by using the new rate-limiting rules, either using the {{site.data.keyword.cis_short_notm}} dashboard, or the [Rulesets API](/apidocs/cis#get-instance-rulesets).
 
-For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
+Customers using the legacy version of rate limiting will have access to both the legacy and new versions of the product. Both the legacy and the new handling will be applied to incoming traffic; the new rate limiting logic will run first.
 
-Currently, the CIS dashboard shows only the legacy rate-limiting rules. To re-create the legacy rules or create new ones, you can use the [Rulesets API](/apidocs/cis#get-instance-rulesets) with the `http_ratelimit` [phase](/docs/cis?topic=cis-about-rule-sets#phase-list) or the CIS CLI. The CIS dashboard will be updated in the future to reflect both types of rules. 
-{: important}
+For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
+{: note}
 
 ## Main differences between versions
 {: #main-differences-rate-limiting}
