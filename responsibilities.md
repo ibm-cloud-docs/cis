@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2025
+lastupdated: "2025-05-07"
 
 keywords: Cloud Internet Services, cis, responsibilities, ha, high availability, disaster recovery
 
@@ -11,7 +11,6 @@ subcollection: cis
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 # Understanding your responsibilities when using {{site.data.keyword.cis_short_notm}}
 {: #responsibilities-cis}
 
@@ -19,7 +18,6 @@ Learn about the management responsibilities and terms and conditions that you ha
 {: shortdesc}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.cis_full_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud}} Terms and Notices](/docs/overview?topic=overview-terms).
-
 
 ## Incident and operations management
 {: #incident-and-ops}
@@ -31,7 +29,6 @@ Review the following sections for the specific responsibilities for you and for 
 |Deployments and cluster management| New features, updates, and bug fixes are continuously delivered as needed in a manner transparent to the customer. Maintenance with client impact is scheduled in advance with notifications posted to the {{site.data.keyword.cloud}} status page. | Set preferences to receive email notifications. Monitor the {{site.data.keyword.cloud}} status page for general announcements. |
 |Incident management| Unplanned incidents with customer impact are communicated using the CIE process. | Impacted customers can obtain a report about the incident upon request. |
 {: caption="Responsibilities for incident and operations" caption-side="bottom"}
-
 
 ## Change management
 {: #change-management}
