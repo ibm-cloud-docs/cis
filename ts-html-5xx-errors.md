@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-07"
 
 keywords:
 
@@ -111,7 +111,7 @@ Check your origin web server error logs for crashes and look for these common ca
 
 520 errors are prevalent with certain PHP applications that crash the origin web server.
 
-If HTTP/2 is enabled at your origin web server, make sure that HTTP/2 is correctly configured. A 520 error is returned if the origin web server accepts the HTTP/2 connection but then doesn’t respect or support the protocol. The maximum origin HTTP version can be set under the Advanced tab of the Reliability page in the UI.
+If HTTP/2 is enabled at your origin web server, make sure that HTTP/2 is correctly configured. A 520 error is returned if the origin web server accepts the HTTP/2 connection but then doesn’t respect or support the protocol. The maximum origin HTTP version can be set under the Advanced tab of the Reliability page in the console.
 
 If 520 errors continue to occur, provide the following information to Support:
 

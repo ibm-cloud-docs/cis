@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-05-07"
 
-keywords: 
+keywords:
 
 subcollection: cis
 
@@ -13,9 +13,9 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Configuring rate limiting
-{: #cis-rate-limiting} 
+{: #cis-rate-limiting}
 
-The previous version of rate-limiting rules is now deprecated. The rate-limiting rules interface for the previous version will remain available until 30 July 2025. After this date, any active rules from the previous version will no longer function. 
+The previous version of rate-limiting rules is now deprecated. The rate-limiting rules interface for the previous version will remain available until 30 July 2025. After this date, any active rules from the previous version will no longer function.
 {: deprecated}
 
 Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
@@ -25,8 +25,8 @@ Select the type of rate-limiting rule, either a **Custom rule** or **Protect log
 
 ## Creating a custom rate-limiting rule
 {: #create-a-custom-rate-limiting-rule}
- 
-### Creating a custom rate-limiting rule in the UI
+
+### Creating a custom rate-limiting rule in the console
 {: #create-a-custom-rate-limiting-rule-ui}
 {: ui}
 
@@ -54,7 +54,7 @@ If you have more than one header under the **HTTP response header**, an _AND_ Bo
 Under **Origin response code**, type the valid numerical value of each HTTP response code to match. To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
 
 ## Configuring the response
-{: #rate-limiting-configure-response} 
+{: #rate-limiting-configure-response}
 
 Select from the actions listed, and specify the timeout period. In this case, the timeout refers to the ban period that the action takes place. A 60-second timeout means that the action is applied for 60 seconds.
 
@@ -69,12 +69,12 @@ Select from the actions listed, and specify the timeout period. In this case, th
 In the **Advanced response** section, specify the response type when a rule's threshold is exceeded.
 
 ## Bypassing URLs
-{: #rate-limiting-bypass} 
+{: #rate-limiting-bypass}
 
 Bypass lets you create the equivalent of an allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
 ## Protecting login
-{: #rate-limiting-protect-login} 
+{: #rate-limiting-protect-login}
 
 Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes are blocked for 15 minutes.
 
@@ -125,7 +125,7 @@ The ruleset ID will be in the response of the successful request. If the above c
 ### Creating a rate-limiting rule with the API
 {: #create-rate-limiting-rule-api}
 
-Follow these steps to create a rate-limiting rule with the API: 
+Follow these steps to create a rate-limiting rule with the API:
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
@@ -162,7 +162,7 @@ Follow these steps to create a rate-limiting rule with the API:
 ### Updating a rate-limiting rule with the API
 {: #update-rate-limiting-rule-api}
 
-Follow these steps to update an existing rate-limiting rule with the API: 
+Follow these steps to update an existing rate-limiting rule with the API:
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
@@ -213,4 +213,4 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    ```
    {: pre}
 
-MISSING -  DO ANY OF THE SECTIONS IN THE UI SECTION APPLY HERE?
+MISSING -  DO ANY OF THE SECTIONS IN THE CONSOLE SECTION APPLY HERE?

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-07"
 
 keywords:
 
@@ -21,13 +21,13 @@ subcollection: cis
 Alerts are available only to Enterprise plans.
 {: note}
 
-## Configuring webhooks in the UI
+## Configuring webhooks in the console
 {: #configure-webhooks-ui}
 {: ui}
 
-To configure webhooks in the UI, navigate to your **Account** page and select the **Alerts** tab. In the Alerts section, select the **webhooks** tab.
+To configure webhooks in the console, navigate to your **Account** page and select the **Alerts** tab. In the Alerts section, select the **webhooks** tab.
 
-### Creating a webhook in the UI
+### Creating a webhook in the console
 {: #create-webhooks-ui}
 
 1. Click **Create**.
@@ -35,15 +35,15 @@ To configure webhooks in the UI, navigate to your **Account** page and select th
 1. Enter the webhook URL. This URL can't be updated; if you want to change it, you must delete and re-create the webhook.
 1. Enter the webhook secret. The secret can't be updated; if you want to change it, you must delete and re-create the webhook.
 
-### Editing a webhook in the UI
+### Editing a webhook in the console
 {: #update-webhooks-ui}
 
-To edit a webhook in the UI, click the pencil icon next to the name of the webhook you want to update. You can edit only the name of the webhook. If you need to modify a webhook, it is recommended that you delete and re-create the webhook instead of editing it.
+To edit a webhook in the console, click the pencil icon next to the name of the webhook you want to update. You can edit only the name of the webhook. If you need to modify a webhook, it is recommended that you delete and re-create the webhook instead of editing it.
 
-### Deleting a webhook in the UI
+### Deleting a webhook in the console
 {: #delete-webhooks-ui}
 
-To delete a webhook in the UI, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) of the webhook you want to delete, and select **Delete**. Select **Delete** in the confirmation box to confirm, or **Cancel** to close the confirmation box without completing the delete operation.
+To delete a webhook in the console, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) of the webhook you want to delete, and select **Delete**. Select **Delete** in the confirmation box to confirm, or **Cancel** to close the confirmation box without completing the delete operation.
 
 
 ## Configuring webhooks from the CLI

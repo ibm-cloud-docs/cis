@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-07"
 
 keywords:
 
@@ -30,11 +30,11 @@ Before you delete a CIS instance, make sure that you have satisfied the followin
 * Confirm that your name servers no longer point to CIS.
 * At your registrar, make sure you do not have a DS DNS record. This record enables DNS Security Extensions (DNSSEC) and could prevent your DNS records from being changed.
 
-## Deleting a {{site.data.keyword.cis_short_notm}} instance in the UI
+## Deleting a {{site.data.keyword.cis_short_notm}} instance in the console
 {: #delete-cis-instance-ui}
 {: ui}
 
-To delete a CIS instance in the UI, follow these steps:
+To delete a CIS instance in the console, follow these steps:
 
 1. Recommended: Delete all the Logpush jobs for that domain. To do so, go to the **Accounts** page, then scroll to the Logpush list on the Logs tab. Click **Delete** from the Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") on the right side of the Logpush name.
 
