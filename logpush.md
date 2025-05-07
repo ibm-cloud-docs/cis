@@ -57,6 +57,8 @@ To create a Logpush job in the console, follow these steps:
    IBM Cloud Logs
    :   Enter the IBM Cloud Logs instance ID, instance region, and API key (user managed).
 
+       An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
+   
        For an IBM Cloud Logs service, the user or service ID must be granted the **Sender** IAM role.
        {: important}
 
@@ -110,7 +112,7 @@ Where:
 
    | IBM Cloud Logs |
    |---------------------|
-   | `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` |
+   | `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` \n \n An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2). \n \n **Important:** The user or the service ID must be granted the Sender IAM role on the IBM Cloud Logs service. |
    {: caption="IBM Cloud Logs path" caption-side="bottom"}
    {: #cli-table-11}
    {: tab-title="IBM Cloud Logs"}
