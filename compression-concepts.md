@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-05-07"
 
 keywords:
 
@@ -107,7 +107,7 @@ CSS and JavaScript minification operates on cached CSS and JS files only. After 
 
 Image size optimization compresses resources that are cached in the {{site.data.keyword.cis_short_notm}} edge network by stripping metadata and applying lossy or lossless compression. Image size optimization accelerates image downloads by reducing image size. Image size optimization can't optimize off-site resources.
 
-Image size optimization compression is only available as a page rule in the UI. The domain level setting is available in the CLI.
+Image size optimization compression is only available as a page rule in the console. The domain level setting is available in the CLI.
 {: note}
 
 ### Image size optimization compression options

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-07"
 
 keywords:
 
@@ -49,15 +49,15 @@ Alerts are available only to Enterprise plans.
    No action is necessary if you receive a pool toggle alert. Each alert includes the state that the pool was toggled to, the time it occurred, and which user made the change.
 
 
-## Configuring alert policies in the UI
+## Configuring alert policies in the console
 {: #ui-configure-alert-policies}
 {: ui}
 
 Use the UI to create, update, and delete alerting policies.
 
-To configure alert policies in the UI, navigate to your **Account** page and select the **Alerts** tab. In the Alerts section, select the **Alerting policies** tab.
+To configure alert policies in the console, navigate to your **Account** page and select the **Alerts** tab. In the Alerts section, select the **Alerting policies** tab.
 
-### Creating a security alert policy in the UI
+### Creating a security alert policy in the console
 {: #ui-create-alert}
 
 1. Click **Create**.
@@ -82,10 +82,10 @@ To configure alert policies in the UI, navigate to your **Account** page and sel
 
 By default, alert policies are enabled when created. You can disable alerts that you created by switching the toggle in the **Enabled** column.
 
-### Creating an advanced security alert policy in the UI
+### Creating an advanced security alert policy in the console
 {: #ui-create-advanced-security-alert}
 
-To create an advanced security alert in the UI, take the following steps:
+To create an advanced security alert in the console, take the following steps:
 
 1. Click **Create**.
 1. Select Advanced security events alert.
@@ -98,7 +98,7 @@ To create an advanced security alert in the UI, take the following steps:
 1. Select which services the alert policy monitors.
 1. Click **Create**.
 
-### Editing an alert policy in the UI
+### Editing an alert policy in the console
 {: #ui-edit-alert}
 
 To edit an alert policy:
@@ -106,7 +106,7 @@ To edit an alert policy:
 1. Make the changes that you want to the name and description, add or delete email addresses, and add, remove, or edit webhooks.
 1. Click **Edit** to save your changes.
 
-### Deleting an alert policy in the UI
+### Deleting an alert policy in the console
 {: #ui-delete-alert}
 
 To delete an alert policy:
