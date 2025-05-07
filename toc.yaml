@@ -264,4 +264,5 @@ toc:
             - ts-domain-moved.md
             - ts-delete-cis-instance.md
             - ts-ddos.md
+            - ts-universal-certificate.md
         - getting-help.md
