@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -17,6 +17,8 @@ subcollection: cis
 
 Read some specific instructions about how to configure your {{site.data.keyword.cis_full}} Domain Name System (DNS) records, including how to configure Secure DNS.
 {: shortdesc}
+
+
 
 ## Adding DNS records
 {: #adding-dns-records}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -15,17 +15,17 @@ subcollection: cis
 # Managing your {{site.data.keyword.cis_short_notm}} deployment
 {: #manage-your-cis-deployment}
 
-You'll begin by using the Overview screen as your working base of operations. It shows all of the current parameters for your deployment.
+You'll begin by using the Overview page as your working base of operations. It shows all of the current parameters for your deployment.
 {: shortdesc}
 
 Once you've set up your DNS and configured it, you are ready to go!
 
-## Using the Overview screen
-{: #using-overview-screen}
+## Using the Overview page
+{: #using-overview-page}
 
-Using the Overview screen, you can see the status of all your selections. Each setting links to the section of the user interface where the setting is configured. To modify any selection, you can navigate by clicking the link for the setting. For example, to change the load balancer configuration or add a new load balancer, click the `Load Balancer` field.
+Using the Overview page, you can see the status of all your selections. Each setting links to the section of the user interface where the setting is configured. To modify any selection, you can navigate by clicking the link for the setting. For example, to change the load balancer configuration or add a new load balancer, click the `Load Balancer` field.
 
-On the Overview screen, you might see that your domain name configuration is in **Pending** status, or in **Active** status. **Pending** status indicates that your domain is not fully set up, yet. You have to update your DNS provider or registrar with the name servers that are provided as part of the setup process.
+On the Overview page, you might see that your domain name configuration is in **Pending** status, or in **Active** status. **Pending** status indicates that your domain is not fully set up, yet. You have to update your DNS provider or registrar with the name servers that are provided as part of the setup process.
 
 **Enterprise only**: The **Service Details** section of the Overview also allows you to add additional domains to your instance of {{site.data.keyword.cis_short_notm}}, and to switch between multiple domains.
 
@@ -42,7 +42,7 @@ In the Service Mode section of the Overview page is a list menu to select one of
 
 1. Select the mode you want from the list menu.
 1. Click **Activate mode**.
-1. Confirm or cancel the selection in the confirmation pop-up.
+1. Confirm or cancel the selection in the confirmation window.
 
 A notification appears on all pages to show that either Pause Service or Defense Mode is active.
 To return to normal operation, click **Deactivate mode** in the notification banner.
@@ -57,7 +57,7 @@ After creating your records, consider turning on the `Proxy` setting. Most of th
 ## Setting up and manage your caching
 {: #set-up-and-manage-your-caching}
 
-Next, you can set up caching. You have the option of three types of caching, available from the caching screen list menu.
+Next, you can set up caching. You have the option of three types of caching, available from the caching list menu.
 
 * **No query string**: Only delivers resources from cache when there is no query string.
 * **Query string independent**: Delivers the same resource to everyone independent of the query string.
@@ -88,9 +88,9 @@ Enterprise only: You can also instruct {{site.data.keyword.cis_short_notm}} not 
 
 You can use page rules to specify particular settings that only apply to certain URLs, for example to have different cache control settings for certain URL paths. Use the list menus to configure the page rule. The rule settings are divided into three categories: **Security**, **Performance**, and **Reliability**.
 
-Notice that when certain rules are enabled, other options become grayed out, if those options are in conflict with the other rules you've just selected. After you've selected the page rules that you want, click **Provision** to enable them. The new rules take effect immediately, and they can be viewed immediately on the Page Rules screen.
+Notice that when certain rules are enabled, other options become grayed out, if those options are in conflict with the other rules you've just selected. After you've selected the page rules that you want, click **Provision** to enable them. The new rules take effect immediately, and they can be viewed immediately on the Page Rules page.
 
-You also can enable or disable your page rules from the table displayed in the Page Rules screen. See [Using page rules](/docs/cis?topic=cis-use-page-rules) for details.
+You also can enable or disable your page rules from the table displayed in the Page Rules page. See [Using page rules](/docs/cis?topic=cis-use-page-rules) for details.
 
 ## Security settings
 {: #security-settings-overview}

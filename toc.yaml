@@ -16,7 +16,7 @@ toc:
         - getting-started.md
         - about.md
         - topicgroup:
-            label: Using best practices
+            label: Best practices
             topics:
             - best-practices.md
             - managing-for-security.md

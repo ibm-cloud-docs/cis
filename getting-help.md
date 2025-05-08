@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-07"
+lastupdated: "2025-05-08"
 
 keywords: support ticket, IBM Cloud development teams support case
 
@@ -33,7 +33,7 @@ To ensure that the support team has all of the details for investigating your is
 Provide the following details:
 
 1. Provide your CRN:
-    * In the console, go to the **Overview** page
+    * In the console, navigate to your CIS instance and go to the **Overview** page.
     * In the CLI, run `ibmcloud resource service-instances --long`
 2. Provide your Domain name or ID.
 3. Depending on the issue the following information might also be helpful:
