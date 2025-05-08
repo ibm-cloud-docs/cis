@@ -213,7 +213,7 @@ ibmcloud cis access-app-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e
 Delete an access application (Enterprise plan only).
 
 ```sh
-ibmcloud cis access-app-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE]`
+ibmcloud cis access-app-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE]
 ```
 {: pre}
 
@@ -289,7 +289,7 @@ ibmcloud cis access-certificate-create 31984fea73a15b45779fa0df4ef62f9b --name e
 List all access certificates for a DNS domain (Enterprise plan only).
 
 ```sh
-ibmcloud cis access-certificates DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]`
+ibmcloud cis access-certificates DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
@@ -789,7 +789,7 @@ ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--brows
 `--serve-stale-content`
 :   Continue serving cached content to users when origin servers are offline, even if the content is expired.
 
-`--query-string-sort**: In the cache, CIS treats files with the same query strings as the same file, regardless of the order of the query strings.
+`--query-string-sort`: In the cache, CIS treats files with the same query strings as the same file, regardless of the order of the query strings.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set` is used.
@@ -867,7 +867,7 @@ ibmcloud cis custom-page PAGE_ID [-d, --domain DNS_DOMAIN_ID] [-i, --instance IN
 :   The name of the Custom Page type. Valid values: `basic_challenge`, `country_challenge`, `ip_block`, `ratelimit_block`, `serve_stale_content`, `under_attack`, `waf_block`, `waf_challenge`, `1000_errors`, `500_errors`. Required.
 
 `-d, --domain`
-: DNS Domain ID.
+:   DNS Domain ID.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -898,7 +898,7 @@ ibmcloud cis custom-pages [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE]
 #### Command options
 {: #list-custom-page-options}
 
-`-d, --domain
+`-d, --domain`
 :   DNS Domain ID.
 
 `-i, --instance`
@@ -2133,7 +2133,7 @@ ibmcloud cis edge-functions-action-create --javascript-str "addEventListener('fe
 Update an Edge Functions action of a service instance.
 
 ```sh
-ibmcloud cis edge-functions-action-update (--javascript-str JAVASCRIPT_STR | --javascript-file JAVASCRIPT_FILE) [--name ACTION_NAME] [-i, --instance INSTANCE] [--output FORMAT]`
+ibmcloud cis edge-functions-action-update (--javascript-str JAVASCRIPT_STR | --javascript-file JAVASCRIPT_FILE) [--name ACTION_NAME] [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
@@ -4135,9 +4135,9 @@ ibmcloud cis logpull DNS_DOMAIN_ID --available-fields [--output FORMAT]
 {: #examples-logpull}
 
 ```sh
-ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --available-fields`
-ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --ray-id 59348abde87afe50 --all-fields --timestamps rfc3339 --output JSON`
-ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --start 2020-05-18T12:14:58Z --end 2020-05-18T13:14:58Z --fields ClientIP,EdgeServerIP,ClientRequestHost --count 10 --sample 1 --timestamps rfc3339 --output JSON`
+ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --available-fields
+ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --ray-id 59348abde87afe50 --all-fields --timestamps rfc3339 --output JSON
+ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --start 2020-05-18T12:14:58Z --end 2020-05-18T13:14:58Z --fields ClientIP,EdgeServerIP,ClientRequestHost --count 10 --sample 1 --timestamps rfc3339 --output JSON
 ```
 {: codeblock}
 
@@ -4861,7 +4861,7 @@ ibmcloud cis ratelimit-analytics 31984fea73a15b45779fa0df4ef62f9b --recent 6h --
 Enable Mutual TLS for a service instance (Enterprise plan only).
 
 ```sh
-ibmcloud cis access-enable [-i, --instance INSTANCE]`
+ibmcloud cis access-enable [-i, --instance INSTANCE]
 ```
 {: pre}
 
