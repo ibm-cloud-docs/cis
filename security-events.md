@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -39,7 +39,7 @@ Sometimes the triggered rule is not identified. In this case the UI shows a `-` 
 {: #cis-security-events-details}
 
 When viewing Security Events, you can click the arrow on an event to expand the details for that event.
-One section of your screen shows the event details, along with the Ray-Id. The other section shows request details such as Header, URI, Protocol, the type of firewall that blocked the request, and User Agent.
+One section of your page shows the event details, along with the Ray-Id. The other section shows request details such as Header, URI, Protocol, the type of firewall that blocked the request, and User Agent.
 
 Suppose, for example, you see that the triggered rule for an event has an ID of `981176`. This means that the block was caused by OWASP. When any rules in the OWASP ruleset is matched, the “threat score” of the request increases. The **Paranoia level** setting (`P1` to `P4`) for your zone translates to a threshold. If the cumulative score of all the matched OWASP rules exceeds that threshold, rule `981176` is triggered and blocks the request.
 

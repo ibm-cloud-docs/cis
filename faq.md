@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -134,7 +134,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 {: #cis-faq-what-to-do-in-ddos}
 {: faq}
 
-**Step 1:** Turn on “Defense mode" in the **Overview** screen.
+**Step 1:** Turn on “Defense mode" in the **Overview** page.
 
 ![Defense Mode](images/defense-mode.png "Defense mode"){: caption="Defense mode" caption-side="bottom}
 
@@ -163,7 +163,7 @@ If after taking the above steps you still receive errors, contact IBM CIS suppor
 * You've allowlisted our IP ranges
 * Your server/network is online and generally healthy
 
-If you contact our support team, please provide a Ray ID from a recent 522 error. We can use this to determine which CIS data center you were hitting and run further tests.
+If you contact our support team, provide a Ray ID from a recent 522 error. We can use this to determine which CIS data center you were hitting and run further tests.
 
 ## What is a proxied record and why do I need them?
 {: #cis-faq-proxied-record}

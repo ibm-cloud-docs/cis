@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -196,7 +196,7 @@ To generate a configuration with Terraform, perform the following procedure:
 
     ```txt
     # __generated__ by Terraform
-    # Please review these resources and move them into your main configuration files.
+    # Review these resources and move them into your main configuration files.
 
     # __generated__ by Terraform from "dcdec3fe0cbe41edac08619503da8de5:601b728b86e630c744c81740f72570c3:crn:v1:staging:public:internet-svcs-ci:global:a/01652b251c3ae2787110a995d8db0135:1a9174b6-0106-417a-844b-c8eb43a72f63::"
     resource "ibm_cis_ruleset" "test" {

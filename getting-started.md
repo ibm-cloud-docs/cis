@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-08"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -14,6 +14,8 @@ subcollection: cis
 
 # Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
+
+
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-manage-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
 {: shortdesc}
@@ -36,7 +38,7 @@ It is recommended that you use the Chrome browser for {{site.data.keyword.cis_sh
 
 You can start using {{site.data.keyword.cis_short_notm}} for your internet traffic with just a few steps.
 
-1. Open the {{site.data.keyword.cis_short_notm}} application from your IBM Cloud dashboard.
+1. Provision an instance of [IBM Cloud Internet Services](/catalog/services/internet-services){: external}.
 1. Add the domain that you want to manage.
 1. Set up your DNS records (optional).
 1. Configure your DNS information with the name servers provided.
@@ -47,10 +49,10 @@ You can start using {{site.data.keyword.cis_short_notm}} for your internet traff
 
 Open the [{{site.data.keyword.cloud_notm}} catalog](/catalog). Then, select the **Networking** category in the navigation pane. Click the **Internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
 
-#### The Overview screen
-{: #the-overview-screen}
+#### The Overview page
+{: #the-overview-page}
 
-After the {{site.data.keyword.cis_short_notm}} application starts up, you'll see the {{site.data.keyword.cis_short_notm}} **Overview** screen, and you'll find the tabs for **Security**, **Reliability**, and **Performance**.
+After the {{site.data.keyword.cis_short_notm}} application starts up, you'll see the {{site.data.keyword.cis_short_notm}} **Overview** page, and you'll find the tabs for **Security**, **Reliability**, and **Performance**.
 
 #### Which plan do I choose?
 {: #which-plan}
@@ -60,14 +62,13 @@ There are several plans to choose from:
 * **Enterprise Usage**
 * **Enterprise Package**
 * **Enterprise GLB**
-* **Enterprise Security**
-* **Standard** (Deprecated as of 30 April 2023)
-* **Standard Next** (Replaces deprecated Standard plan)
+* **Enterprise Security** 
+* **Standard Next** 
 * **No-cost Trial**
 
 The **No-cost Trial** expires after 30 days, at which point you can upgrade to a plan that best suits your needs. The trial plan instance will have the same features available as a **Standard Next** plan instance would. Both the **Standard Next** and **Enterprise Plans** (except for **Enterprise Usage** plan) have a single domain included, but will allow you to onboard multiple domains under a single service instance for a cost.
 
-Select **Create** on the **Overview** screen to begin provisioning your account.
+Select **Create** on the **Overview** page to begin provisioning your account.
 
 The **No-cost Trial** is limited to one instance per account.
 {: note}
@@ -75,7 +76,7 @@ The **No-cost Trial** is limited to one instance per account.
 #### Begin provisioning
 {: #begin-provisioning}
 
-You'll see the first screen of the {{site.data.keyword.cis_short_notm}} application, where you select **Add Domain** to begin.
+You'll see the first page of the {{site.data.keyword.cis_short_notm}} application, where you select **Add Domain** to begin.
 
 Select **Let's get started** from the welcome page to begin setting up {{site.data.keyword.cis_short_notm}}.
 
@@ -87,7 +88,7 @@ Next, begin protecting and improving the performance of your web service by ente
 Specify DNS zones. You can configure the name servers for these domains or subdomains at the domain's registrar or DNS provider. Do not use CNAMEs.
 {: note}
 
-The Overview screen shows your domain in `Pending` status and remains `Pending` until you complete configuring your name servers with the registrar or existing DNS provider, which is covered in Step 4.
+The Overview page shows your domain in `Pending` status and remains `Pending` until you complete configuring your name servers with the registrar or existing DNS provider, which is covered in Step 4.
 
 You can't delete the {{site.data.keyword.cis_short_notm}} instance after you add a domain. To delete the instance, delete the domain from the instance first.
 {: tip}

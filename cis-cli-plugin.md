@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -773,6 +773,7 @@ ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--brows
 
 `--browser-expiration`
 :   Specify how long you want the user's browser to store cached assets.
+
    - Valid values are: `respect-existing-header`, `30s`, `1M`, `5M`, `20M`, `30M`, `1h`, `2h`, `4h`, `8h`, `16h`, `1d` `3d`, `8d`, `16d`, `1m`, `6m`, `1y`.
    - `30s`, `1M`, `5M`, and `20M` are only available for Enterprise or Security plan instance.
    - `30s` means `30 seconds`.

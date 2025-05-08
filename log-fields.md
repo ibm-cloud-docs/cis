@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-24"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -44,7 +44,7 @@ This table contains the fields available for HTTP requests.
 
 |Field|Value|Type|
 |-----|-----|----|
-|BotScore|Cloudflare Bot Score (available for Bot Management customers; please contact your account team to enable)|int|
+|BotScore|Cloudflare Bot Score (available for Bot Management customers; contact your account team to enable)|int|
 |BotScoreSrc|Underlying detection engine or source on where a Bot Score is calculated. Possible values are `Not Computed` `Heuristics` `Machine Learning` `Behavioral Analysis` `Verified Bot`|string|
 |CacheCacheStatus|`unknown` `miss` `expired` `updating` `stale` `hit` `ignored` `bypass` `revalidated`|string|
 |CacheResponseBytes|Number of bytes returned by the cache|int|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-07"
+lastupdated: "2025-05-08"
 
 keywords:
 
@@ -140,7 +140,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
 
       `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current.
+        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid value: `current`.
         `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
         `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
         `response`:  Define a custom response for 'block' action.

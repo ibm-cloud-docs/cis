@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-08"
 
 keywords: HAR files, HAR, HTTP Archive
 
@@ -56,7 +56,7 @@ Use the following sections to generate HAR files in Firefox, Chrome, or Safari b
 ## How to generate a HAR file in Safari
 {: #har-safari}
 
-1. In Safari, first check to see if you have a "Develop" menu at the top of the screen. If not, go to **Safari > Preferences > Advanced** and check "Show Develop Menu in menu bar".
+1. In Safari, first check to see if you have a "Develop" menu at the top of the page. If not, go to **Safari > Preferences > Advanced** and check "Show Develop Menu in menu bar".
 1. In Safari, go to the page within {{site.data.keyword.cis_short_notm}} where you are experiencing trouble.
 1. Navigate to **Develop > Show Web Inspector**.
     This menu option is not available until you browse somewhere beyond Safari's starting page. The Web Inspector opens as a docked panel at the bottom of Safari.

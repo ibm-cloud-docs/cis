@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-05-08"
 
 keywords: ddos, distributed denial of service, Attack Concepts, Application layer attacks 
 subcollection: cis
@@ -58,7 +58,7 @@ This category of attack attempts to create congestion by consuming all available
 ## What do I do if I’m under a DDoS attack?
 {: #under-ddos-attack}
 
-1. Turn on “Defense mode" from the **Overview** screen. For more information, see [Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos).
+1. Turn on "Defense mode" from the **Overview** page. For more information, see [Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos).
 1. Set your DNS records for maximum security.
 1. Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}, we need the bandwidth to assist you with your situation.
 1. Block specific countries and visitors if necessary.
