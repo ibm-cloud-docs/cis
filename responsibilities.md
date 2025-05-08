@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-07"
+lastupdated: "2025-05-08"
 
 keywords: Cloud Internet Services, cis, responsibilities, ha, high availability, disaster recovery
 
@@ -28,6 +28,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Monitoring and ongoing operation of production environments| {{site.data.keyword.cis_full_notm}} provides continuous around the clock operational monitoring and coverage by on-call personnel with minimal response times. | |
 |Deployments and cluster management| New features, updates, and bug fixes are continuously delivered as needed in a manner transparent to the customer. Maintenance with client impact is scheduled in advance with notifications posted to the {{site.data.keyword.cloud}} status page. | Set preferences to receive email notifications. Monitor the {{site.data.keyword.cloud}} status page for general announcements. |
 |Incident management| Unplanned incidents with customer impact are communicated using the CIE process. | Impacted customers can obtain a report about the incident upon request. |
+|Logging | Logs system-level security events and patch activities. | Enable and manage logging for the customer's domains using [Logpush jobs](/docs/cis?topic=cis-logpush&interface=ui). |
 {: caption="Responsibilities for incident and operations" caption-side="bottom"}
 
 ## Change management
@@ -46,6 +47,7 @@ Review the following sections for the specific responsibilities for you and for 
 |----------|-----------------------|--------|
 |Service and platform permissions| {{site.data.keyword.cis_full_notm}} provides administrators a way to control access to work with an instance, domain, or subcategory. | Grant, revoke, and manage access to service instances, domains, and subcategories by using IAM, the {{site.data.keyword.cis_full_notm}} Access page, or the equivalent CLI. |
 |Security monitoring| {{site.data.keyword.cis_full_notm}} performs regular code scans and other measures to ensure ongoing security of the service.| |
+|Logging| Logs access control actions within the CIS platform and IAM system. | Monitor access changes to CIS instances using IBM Cloud Activity Tracker Routing or other audit solutions. |
 {: caption="Responsibilities for identity and access management" caption-side="bottom"}
 
 ## Security and regulation compliance
@@ -53,9 +55,10 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Maintenance of controls| {{site.data.keyword.cis_full_notm}} maintains controls pertaining to industry standards for which it is certified.  | Customer responsibility description |
+|Maintenance of controls| {{site.data.keyword.cis_full_notm}} maintains controls pertaining to industry standards for which it is certified.  |  |
 |Security and vulnerability updates| {{site.data.keyword.cis_full_notm}} applies security and vulnerability patches on a regular and timely schedule that is transparent to the user. | |
-|Security of instance and domain configuration| | Customer is responsible for setting up and maintaining the security and compliance of their domain within {{site.data.keyword.cis_full}} |
+|Security of instance and domain configuration| | Customer is responsible for setting up and maintaining the security and compliance of their domain within {{site.data.keyword.cis_full}} | 
+|Logging | Logs patch management and platform security operations to maintain compliance. | Customer is responsible for consuming and monitoring logs for their domains from configured Logpush job. | 
 {: caption="Responsibilities for security and regulation compliance" caption-side="bottom"}
 
 ## Disaster recovery
