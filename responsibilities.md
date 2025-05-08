@@ -57,7 +57,7 @@ Review the following sections for the specific responsibilities for you and for 
 |----------|-----------------------|--------|
 |Maintenance of controls| {{site.data.keyword.cis_full_notm}} maintains controls pertaining to industry standards for which it is certified.  |  |
 |Security and vulnerability updates| {{site.data.keyword.cis_full_notm}} applies security and vulnerability patches on a regular and timely schedule that is transparent to the user. | |
-|Security of instance and domain configuration| | Customer is responsible for setting up and maintaining the security and compliance of their domain within {{site.data.keyword.cis_full}} | 
+|Security of instance and domain configuration| | Customer is responsible for setting up and maintaining the security and compliance of their domain within {{site.data.keyword.cis_full}}. | 
 |Logging | Logs patch management and platform security operations to maintain compliance. | Customer is responsible for consuming and monitoring logs for their domains from configured Logpush job. | 
 {: caption="Responsibilities for security and regulation compliance" caption-side="bottom"}
 
