@@ -24,7 +24,7 @@ Cipher suites are a combination of algorithms and protocols that help to secure 
 The following ciphers are supported at the cloud edge. You can restrict the ciphers that are used for your domain through the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cis-cli#domain-settings).
 
 |OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3| IANA name |
-|:--------|:---:|:---:|:---:|:---|
+|:--------|:---:|:---:|:---:|:---|:---:|
 |ECDHE-ECDSA-AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 |
 |ECDHE-ECDSA-CHACHA20-POLY1305 | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 |
 |ECDHE-RSA-AES128-GCM-SHA256   | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 |
