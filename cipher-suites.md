@@ -34,20 +34,20 @@ The following ciphers are supported at the cloud edge. You can restrict the ciph
 |ECDHE-RSA-AES128-SHA256       | | |![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 |
 |ECDHE-RSA-AES128-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA |
 |AES128-GCM-SHA256             | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_128_GCM_SHA256 |
-|AES128-SHA256                 | | |![Available](../icons/checkmark-icon.svg)| | |
-|AES128-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg) | | |
-|ECDHE-ECDSA-AES256-GCM-SHA384 | | |![Available](../icons/checkmark-icon.svg)| | |
-|ECDHE-ECDSA-AES256-SHA384     | | |![Available](../icons/checkmark-icon.svg)| | |
-|ECDHE-RSA-AES256-GCM-SHA384   | | |![Available](../icons/checkmark-icon.svg)| | |
-|ECDHE-RSA-AES256-SHA384       | | |![Available](../icons/checkmark-icon.svg)| | |
-|ECDHE-RSA-AES256-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | |
-|AES256-GCM-SHA384             | | |![Available](../icons/checkmark-icon.svg)| | |
-|AES256-SHA256                 | | |![Available](../icons/checkmark-icon.svg)| | |
-|AES256-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | |
-|DES-CBC3-SHA                  |![Available](../icons/checkmark-icon.svg)| | | | |
-|AEAD-AES128-GCM-SHA256        | | | |![Available](../icons/checkmark-icon.svg)| |
-|AEAD-AES256-GCM-SHA384        | | | |![Available](../icons/checkmark-icon.svg)| |
-|AEAD-CHACHA20-POLY1305-SHA256 | | | |![Available](../icons/checkmark-icon.svg)| |
+|AES128-SHA256                 | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_128_CBC_SHA256 |
+|AES128-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_128_CBC_SHA |
+|ECDHE-ECDSA-AES256-GCM-SHA384 | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 |
+|ECDHE-ECDSA-AES256-SHA384     | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 |
+|ECDHE-RSA-AES256-GCM-SHA384   | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 |
+|ECDHE-RSA-AES256-SHA384       | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 |
+|ECDHE-RSA-AES256-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA |
+|AES256-GCM-SHA384             | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_256_GCM_SHA384 |
+|AES256-SHA256                 | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_256_CBC_SHA256 |
+|AES256-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_256_CBC_SHA|
+|DES-CBC3-SHA                  |![Available](../icons/checkmark-icon.svg)| | | | TLS_RSA_WITH_3DES_EDE_CBC_SHA |
+|AEAD-AES128-GCM-SHA256        | | | |![Available](../icons/checkmark-icon.svg)| TLS_AES_128_GCM_SHA256 |
+|AEAD-AES256-GCM-SHA384        | | | |![Available](../icons/checkmark-icon.svg)| TLS_AES_256_GCM_SHA384 |
+|AEAD-CHACHA20-POLY1305-SHA256 | | | |![Available](../icons/checkmark-icon.svg)| TLS_CHACHA20_POLY1305_SHA256 |
 {: caption="Edge cipher suites" caption-side="bottom"}
 
 ## Origin cipher suites
@@ -55,20 +55,20 @@ The following ciphers are supported at the cloud edge. You can restrict the ciph
 
 The following ciphers are supported at the origin. You can restrict the ciphers that are used for your domain through the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cis-cli#domain-settings).
 
-|OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3|
-|:--------|:---:|:---:|:---:|:---|
-| AEAD-AES128-GCM-SHA256 [^A]| | | | ![Available](../icons/checkmark-icon.svg) |
-| AEAD-AES256-GCM-SHA384 [^B] | | | |![Available](../icons/checkmark-icon.svg) |
-| AEAD-CHACHA20-POLY1305-SHA256 [^C] | | | | ![Available](../icons/checkmark-icon.svg) |
-| ECDHE-ECDSA-AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg) | |
-| ECDHE-RSA-AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg) | |
-| ECDHE-RSA-AES128-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | |
-| AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg) | |
-| AES128-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | |
-| ECDHE-ECDSA-AES256-GCM-SHA384 | | |![Available](../icons/checkmark-icon.svg) | |
-| ECDHE-RSA-AES256-SHA384 | | |![Available](../icons/checkmark-icon.svg) | |
-| AES256-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | |
-| DES-CBC3-SHA |![Available](../icons/checkmark-icon.svg) | | | |
+|OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3| IANA name |
+|:--------|:---:|:---:|:---:|:---|:---|
+| AEAD-AES128-GCM-SHA256 [^A]| | | | ![Available](../icons/checkmark-icon.svg) | TLS_AES_128_GCM_SHA256 |
+| AEAD-AES256-GCM-SHA384 [^B] | | | |![Available](../icons/checkmark-icon.svg) | TLS_AES_256_GCM_SHA384 |
+| AEAD-CHACHA20-POLY1305-SHA256 [^C] | | | | ![Available](../icons/checkmark-icon.svg) | TLS_CHACHA20_POLY1305_SHA256 |
+| ECDHE-ECDSA-AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 |
+| ECDHE-RSA-AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 |
+| ECDHE-RSA-AES128-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA |
+| AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_128_GCM_SHA256 |
+| AES128-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_128_CBC_SHA |
+| ECDHE-ECDSA-AES256-GCM-SHA384 | | |![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 |
+| ECDHE-RSA-AES256-SHA384 | | |![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 |
+| AES256-SHA |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) |![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_256_CBC_SHA |
+| DES-CBC3-SHA |![Available](../icons/checkmark-icon.svg) | | | | TLS_RSA_WITH_3DES_EDE_CBC_SHA |
 {: caption="Origin cipher suites" caption-side="bottom"}
 
 [^A]: Although TLS 1.3 uses the same cipher suite space as previous versions of TLS, TLS 1.3 cipher suites are defined differently, specifying only the symmetric ciphers, and can't be used for TLS 1.2. Similarly, TLS 1.2 and lower cipher suites can't be used with TLS 1.3 (IETF TLS 1.3 draft 21). BoringSSL also hardcodes cipher preferences in this order for TLS 1.3.
