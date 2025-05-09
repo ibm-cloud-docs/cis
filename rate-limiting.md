@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-07"
+lastupdated: "2025-05-09"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Configuring rate limiting
 {: #cis-rate-limiting}
 
-The previous version of rate-limiting rules is now deprecated. The rate-limiting rules interface for the previous version will remain available until 30 July 2025. After this date, any active rules from the previous version will no longer function.
+The _previous_ version of rate-limiting rules is now deprecated. The rate-limiting rules interface for the previous version will remain available until 30 July 2025. After this date, any active rules from the previous version will no longer function.
 {: deprecated}
 
 Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
