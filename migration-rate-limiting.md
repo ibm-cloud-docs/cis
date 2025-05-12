@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-05"
+lastupdated: "2025-05-09"
 
 keywords:
 
@@ -21,9 +21,7 @@ The {{site.data.keyword.cis_short_notm}} WAF provides both automatic protection 
 
 The old and new implementation of rate-limiting rules have separate rules lists because the two implementations do not offer the same set of features. Re-create your rate limiting configuration (in the previous version) by using the new rate-limiting rules, either using the {{site.data.keyword.cis_short_notm}} dashboard, or the [Rulesets API](/apidocs/cis#get-instance-rulesets).
 
-Customers using the legacy version of rate limiting will have access to both the legacy and new versions of the product. Both the legacy and the new handling will be applied to incoming traffic; the new rate limiting logic will run first.
-
-For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
+Customers using the legacy version of rate limiting will have access to both the legacy and new versions of the product. Both the legacy and the new handling will be applied to incoming traffic; the new rate limiting logic will run first. For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
 {: note}
 
 ## Main differences between versions
