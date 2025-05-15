@@ -93,7 +93,7 @@ How do I migrate without using the IBM UI or migration wizard?
 The update process partially migrates the settings of the OWASP ModSecurity Core Rule Set available in the previous version of WAF managed rules.
 
 Migrate the following OWASP settings:
-* **Sensitivity**: The [old sensitivity values](/docs/cis?topic=cis-owasp-rule-set-for-waf) will be migrated to the following [Paranoia level (PL)](/docs/cis?topic=cis-owasp-rule-set-for-waf##owasp-v3x)and [Score threshold](/docs/cis?topic=cis-owasp-rule-set-for-waf#owasp-v2x) combinations in the new OWASP ruleset:
+* **Sensitivity**: The [old sensitivity values](/docs/cis?topic=cis-owasp-rule-set-for-waf) will be migrated to the following [Paranoia level (PL)](/docs/cis?topic=cis-owasp-rule-set-for-waf#owasp-v3x) and [Score threshold](/docs/cis?topic=cis-owasp-rule-set-for-waf#owasp-v2x) combinations in the new OWASP ruleset:
 
 | Old sensitivity | PL in new OWASP | Score threshold in new OWASP |
 |:--------|:---:|:---:|
@@ -110,7 +110,7 @@ The following OWASP settings will **not** be migrated, since there is no direct 
 * OWASP group overrides
 * OWASP rule overrides
 
-To replace these settings you will need to configure the Cloudflare OWASP Core Ruleset in WAF Managed Rules again according to your needs, namely any tag/rule overrides. For more information on configuring the new OWASP Core Ruleset, see CIS OWASP Core Ruleset.
+To replace these settings you will need to configure the Cloudflare OWASP Core Ruleset in WAF Managed Rules again according to your needs, namely any tag/rule overrides. For more information on configuring the new OWASP Core Ruleset, see [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf).
 
 ## Known issues with migration
 {: #migration-known-issues}
