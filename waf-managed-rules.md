@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-15"
+lastupdated: "2025-05-16"
 
 keywords:
 
@@ -86,6 +86,32 @@ Why can I no longer see the migration wizard?
 
 How do I migrate without using the IBM UI or migration wizard?
 :   While APIs are available, the wizard is the recommended method.
+
+## Expected changes when migrating
+{: #expected-changes-when-migrating}
+
+When migrating to the new version of the WAF managed rules, the update process will partially carry over settings from the OWASP ModSecurity Core Ruleset used in the previous version.
+
+The following OWASP settings will be migrated:
+
+* **Sensitivity**: Sensitivity levels from the [previous rulset](/docs/cis?topic=cis-owasp-rule-set-for-waf) will be migrated to the [Paranoia level (PL)](/docs/cis?topic=cis-owasp-rule-set-for-waf#owasp-v3x) and [Score threshold](/docs/cis?topic=cis-owasp-rule-set-for-waf#owasp-v2x) combinations in the new OWASP ruleset:
+
+   | Old Sensitivity | New PL | New Score Threshold |
+   |:--------|:---:|:---:|
+   | High | PL2 | Medium – 40 or higher |
+   | Medium | PL1 | High – 25 or higher |
+   | Low	| PL1	| Medium – 40 or higher |
+   | Default	| PL2	| Medium – 40 or higher |
+   {: caption="Sensitivity values in the OWASP ruleset" caption-side="bottom"}
+
+* **Action**: Most actions from the previous OWASP ruleset map directly to the new one. However, the **Simulate** action is now mapped to **Log**.
+
+The following OWASP settings will not be migrated, as there are no direct equivalence between the rules in the two versions:
+
+* OWASP group overrides
+* OWASP rule overrides
+
+To replace these settings, you must reconfigure the new OWASP core ruleset in the WAF managed rules. This includes any customizations, such as tag or rule overrides. For more information, see the [CIS OWASP core ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf).
 
 ## Known issues with migration
 {: #migration-known-issues}
