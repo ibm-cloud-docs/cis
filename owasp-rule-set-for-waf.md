@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-20"
 
 keywords:
 
@@ -32,10 +32,10 @@ Depending on your WAF handling in CIS, you might be on a different version of OW
 ## Understanding the OWASP package
 {: #understanding-owasp-package}
 
-The OWASP ModSecurity Core Ruleset assigns a score to each request based on how many OWASP rules trigger.
+The OWASP ModSecurity Core Ruleset assigns a score to each request based on how many OWASP rules trigger. The ruleset in CIS is based off OWASP version 3.3.
 
-### OWASP v3.x
-{: #owasp-v3x}
+### Paranoia level
+{: #paranoia-level}
 
 The paranoia level settings are part of the core ruleset. The paranoia level (PL) helps to define how aggressive the core ruleset is.
 
@@ -47,8 +47,8 @@ The paranoia level settings are part of the core ruleset. The paranoia level (PL
 |**PL 4** | Provides rules that are so aggressive they detect almost every possible attack. This paranoia level flags a lot of legitimate traffic as malicious.|
 {: caption="Paranoia levels" caption-side="bottom"}
 
-### OWASP v2.x
-{: #owasp-v2x}
+### Sensitivity threshold
+{: #sensitivity-threshold}
 
 A request can trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, {{site.data.keyword.cis_short_notm}} compares it to the sensitivity threshold selected in the beginning, and then either blocks, challenges, or logs the request based on the option selected.
 
@@ -86,5 +86,7 @@ The OWASP ModSecurity Core Ruleset contains several rules from the OWASP project
 
 To manage OWASP thresholds, set the paranoia level in the **Package: OWASP ModSecurity Core Ruleset** section. Setting the paranoia level to `P1` disables the entire OWASP package, including all its rules. Determining the appropriate paranoia level depends on your business industry and operations. For instance, a P1 setting is appropriate for large file uploads.
 
-The activity log displays rule ID 981176 when a request is blocked by OWASP. Also, some OWASP rules listed in the activity log do not appear in the list of rules under Package: OWASP ModSecurity Core Ruleset because disabling those rules is not recommended.
+The rule ID 981176 is displayed when a request is blocked by OWASP. Also, some OWASP rules listed in the activity log do not appear in the list of rules under Package: OWASP ModSecurity Core Ruleset because disabling those rules is not recommended.
 {: important}
+
+In sampled logs and security events, the rule associated with requests mitigated by the Cloudflare OWASP Core Ruleset is the last rule in this managed ruleset: `949110: Inbound Anomaly Score Exceeded`. In the CIS dashboard, users can see the scores of individual rules contributing to the final request threat score by expanding the **OWASP score contributions** subsection. Similiarly, a list of rule IDs can be seen in the `score_rules` field of the GraphQL API response.
