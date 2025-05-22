@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-03-03"
+lastupdated: "2025-05-22"
 
 keywords:
 
@@ -23,6 +23,8 @@ The no-cost Trial plan is the same as the Standard Next plan, except that it exp
 
 The numbers in these tables are quotas or resource limits for the associated feature. Features are pay-as-you-go, except for Trial and Standard Next plans.
 {: tip}
+
+The free and Standard plans are not Financial Services regulatory compliant. All other plans are fully compliant. 
 
 The following table compares each offering to help you choose the one that's right for you. Enterprise Tier plans are available with different pricing models.
 
