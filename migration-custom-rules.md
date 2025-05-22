@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-15"
+lastupdated: "2025-05-22"
 
 keywords:
 
@@ -128,7 +128,7 @@ The **Firewall rules tab** will continue to exist and function as expected. The 
 ## Relevant changes for API users
 {: #relevant-changes-api-users}
 
-The [Firewall Rules API](/apidocs/cis#listallfirewallrules) and the associated [Filters API](/apidocs/cis#listallfilters) are now deprecated. These APIs will stop working on 30 July 2025. Migrate any automation based on the Firewall Rules API or Filters API to the [Rulesets API](/apidocs/cis#get-zone-entrypoint-ruleset) before this date to prevent any issues. Rule IDs are different between firewall rules and custom rules, which might affect automated processes dealing with specific rule IDs.
+The [Firewall Rules API](/apidocs/cis#listallfirewallrules) and the associated [Filters API](/apidocs/cis#listallfilters) are now deprecated. After 30 July 2025, these API won’t be supported. Migrate any automation based on the Firewall Rules API or Filters API to the [Rulesets API](/apidocs/cis#get-zone-entrypoint-ruleset) before this date to prevent any issues. Rule IDs are different between firewall rules and custom rules, which might affect automated processes dealing with specific rule IDs.
 {: deprecated}
 
 Until the deprecation date, all three APIs are available (Firewall Rules API, Filters API, and Rulesets API). {{site.data.keyword.cis_short_notm}} will internally convert your [Firewall Rules API](/apidocs/cis#listallfirewallrules) and [Filters API](/apidocs/cis#listallfilters) calls into the corresponding Rulesets API calls. There will be a single list of rules for both firewall rules and WAF custom rules.
