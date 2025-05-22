@@ -47,5 +47,6 @@ The new rate-limiting rules are based on the [Ruleset Engine rules language](/do
 The [previous Rate Limiting API](/apidocs/cis#list-all-zone-rate-limits) is being deprecated. Migrate your API calls to the new [Rulesets API](/apidocs/cis#get-instance-rulesets).{: external}
 {: deprecated}
 
-CIS recommends that you manually migrate your rules to the new rate-limiting ruleset. The updated system offers advanced features and additional controls, making it a good opportunity to review and improve your existing rate-limiting logic. 
+It is also recommended that you manually migrate your rate-limiting rules by recreating them with the Rulesets API using the `http_ratelimit` phase. This lets you take full advantage of the new features and refine your rate-limiting logic during the transition.
+
 After 30 July 2025, the legacy rate-limiting APIs will no longer support creating or modifying rules. Any existing rate-limiting rules will be automatically migrated to the new framework after this date.
