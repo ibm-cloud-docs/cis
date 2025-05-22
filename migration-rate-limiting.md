@@ -21,13 +21,13 @@ The {{site.data.keyword.cis_short_notm}} WAF provides both automatic protection 
 
 The old and new implementation of rate-limiting rules have separate rules lists because the two implementations do not offer the same set of features. Recreate your rate limiting configuration (in the previous version) by using the new rate-limiting rules with the [Rulesets API](/apidocs/cis#get-instance-rulesets).
 
-Customers using the legacy version of rate limiting have access to both the legacy and new versions of the product. Both the legacy and the new handling are applied to incoming traffic; the new rate limiting logic will run first. For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
+If you're using the older version of rate limiting, you have access to both the legacy and new versions of the product. Both sets of rules are applied to incoming traffic, with the new rate-limiting logic running first. For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
 {: note}
 
 ## Main differences between versions
 {: #main-differences-rate-limiting}
 
-Here are the key differences between the old and new rate-limiting rules.
+Here are the key differences between the legacy and new rate-limiting rules.
 
 ### Advanced scope expressions
 {: #advanced-scope-expressions}
@@ -48,4 +48,4 @@ The [previous Rate Limiting API](/apidocs/cis#list-all-zone-rate-limits) is bein
 {: deprecated}
 
 CIS recommends that you manually migrate your rules to the new rate-limiting ruleset. The updated system offers advanced features and additional controls, making it a good opportunity to review and improve your existing rate-limiting logic. 
-After 30 July 2025, the legacy rate-limiting APIs will no longer support creating or modifying rules.  Any existing rate-limiting rules will be automatically migrated to the new framework after this date.
+After 30 July 2025, the legacy rate-limiting APIs will no longer support creating or modifying rules. Any existing rate-limiting rules will be automatically migrated to the new framework after this date.
