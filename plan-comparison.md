@@ -21,12 +21,12 @@ subcollection: cis
 The no-cost Trial plan is the same as the Standard Next plan, except that it expires after 30 days. Only one trial is available per account. After the Trial plan expires, it is automatically subject to reclamation.
 {: note}
 
-The numbers in these tables are quotas or resource limits for the associated feature. Features are pay-as-you-go, except for Trial and Standard Next plans.
-{: tip}
-
-The free and Standard plans are not Financial Services regulatory compliant. All other plans are fully compliant. 
+The no-cost Trial and Standard plans are not Financial Services regulatory compliant. All other plans are fully compliant. 
 
 The following table compares each offering to help you choose the one that's right for you. Enterprise Tier plans are available with different pricing models.
+
+The numbers in these tables are quotas or resource limits for the associated feature. Features are pay-as-you-go, except for Trial and Standard Next plans.
+{: tip}
 
 | |Standard Next|Enterprise Essentials|Enterprise Advanced|Enterprise Premier|Enterprise Usage|
 | :------- | :------- | :--------- | :------------ | :--------- | :--------- |
