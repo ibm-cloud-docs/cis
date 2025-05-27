@@ -27,16 +27,16 @@ toc:
             id: concepts
             label: Concepts
             topics:
-            - dns-concepts.md
-            - glb.md
-            - waf-concept.md
-            - traffic-sequencing.md
-            - routing.md
             - cache.md
-            - http-concepts.md
-            - tcp-concepts.md
             - compression-concepts.md
             - domain-lifecycle.md
+            - dns-concepts.md
+            - glb.md
+            - http-concepts.md
+            - routing.md
+            - tcp-concepts.md
+            - traffic-sequencing.md
+            - waf-concept.md
         - security-events.md
         - url-normalization.md
         - release-notes.md
