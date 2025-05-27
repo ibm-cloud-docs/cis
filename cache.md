@@ -72,9 +72,9 @@ The maximum file size that CIS caches is 512 MB for Trial and Standard Next cust
 
 CIS uses file extensions to cache content. The following file extensions are cached automatically:
 
-| File extensions |  |  |
-|:---------| :--------|:-------|
-| `bmp` \n `class` \n `css` \n `csv` \n `doc` \n `docx` \n `ejs` \n `eot` \n `eps` \n `gif` \n `ico` \n `jar` \n `jpg` | `js` \n `mid` \n `midi` \n `otf` \n `pdf` \n `pict` \n `pls` \n `png` \n `ppt` \n `pptx` \n `ps` \n `svg` \n `svgz` | `swf` \n `tif` \n `tiff` \n `ttf` \n `webp` \n `woff` \n `woff2` \n `xls` \n `xlsx` |
+| File extensions |  |  |  |
+|:---------| :--------|:-------|:-------|
+| `bmp` \n `class` \n `css` \n `csv` \n `doc` \n `docx` \n `ejs` \n `eot` \n `eps`|  `gif` \n `ico` \n `jar` \n `jpg` \n `js` \n `mid` \n `midi` \n `otf` \n `pdf` | `pict` \n `pls` \n `png` \n `ppt` \n `pptx` \n `ps` \n `svg` \n `svgz` \n `swf` | `tif` \n `tiff` \n `ttf` \n `webp` \n `woff` \n `woff2` \n `xls` \n `xlsx` |
 {: caption="File extensions cached by default" caption-side="bottom"}
 
 CIS doesn't cache by MIME type, and doesn't cache HTML by default. CIS does cache a website's `robots.txt`. You can cache more content by creating page rules.
