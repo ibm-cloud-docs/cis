@@ -16,6 +16,7 @@ toc:
         - getting-started.md
         - about.md
         - topicgroup:
+            id: best-practices
             label: Best practices
             topics:
             - best-practices.md
@@ -23,6 +24,7 @@ toc:
             - managing-for-reliability.md
             - managing-for-performance.md
         - topicgroup:
+            id: concepts
             label: Concepts
             topics:
             - dns-concepts.md
