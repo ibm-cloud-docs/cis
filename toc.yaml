@@ -16,6 +16,20 @@ toc:
         - getting-started.md
         - about.md
         - topicgroup:
+            id: concepts
+            label: Concepts
+            topics:
+            - cache.md
+            - compression-concepts.md
+            - domain-lifecycle.md
+            - dns-concepts.md
+            - glb.md
+            - http-concepts.md
+            - routing.md
+            - tcp-concepts.md
+            - traffic-sequencing.md
+            - waf-concept.md
+        - topicgroup:
             id: best-practices
             label: Best practices
             topics:
@@ -23,20 +37,6 @@ toc:
             - managing-for-security.md
             - managing-for-reliability.md
             - managing-for-performance.md
-        - topicgroup:
-            id: concepts
-            label: Concepts
-            topics:
-            - dns-concepts.md
-            - glb.md
-            - waf-concept.md
-            - traffic-sequencing.md
-            - routing.md
-            - cache.md
-            - http-concepts.md
-            - tcp-concepts.md
-            - compression-concepts.md
-            - domain-lifecycle.md
         - security-events.md
         - url-normalization.md
         - release-notes.md
@@ -249,22 +249,21 @@ toc:
         - faq.md
         - known-limitations.md
         - topicgroup:
-            label: Troubleshooting CIS
+            label: Troubleshooting
             topics:
             - ts-network-connection.md
+            - ts-html-4xx-errors.md
+            - ts-html-5xx-errors.md
+            - ts-html-1xxx-errors.md
+            - ts-false-pos-neg.md
+            - ts-ddos.md
+            - ts-universal-certificate.md
             - ts-root-cert.md
             - ts-offline.md
             - ts-privacy-warn.md
             - ts-no-traffic.md
-            - ts-false-pos-neg.md
-            - troubleshooting.md
             - ts-execution-order.md
-            - ts-html-4xx-errors.md
-            - ts-html-5xx-errors.md
-            - ts-html-1xxx-errors.md
             - ts-create-har.md
             - ts-domain-moved.md
             - ts-delete-cis-instance.md
-            - ts-ddos.md
-            - ts-universal-certificate.md
         - getting-help.md

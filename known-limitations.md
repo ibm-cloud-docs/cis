@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-27"
 
 keywords: health checks, Free Trial plan, dedicated certificate, known issues
 
@@ -35,15 +35,6 @@ The following information describes some limitations when working with {{site.da
 * **CNAME (partial) setup:** On a CNAME setup zone, each subdomain has its own Universal SSL certificate and does not require extra features or purchases.
 * **Range:** Universal SSL is not compatible with an {{site.data.keyword.cis_short_notm}} Range application. If you are trying to use Range, use either an advanced certificate or a custom certificate.
 
-## Global load balancer
-{: #known-limitations-glb}
-
-* Cloud Internet Services allows you to use the character `_` in load balancer hostnames. However, Kubernetes clusters can't use `_`.
-* The Standard plan permits a maximum of 5 load balancers, pools, and health checks. Each pool can have a total of 6 origins, but only 6 unique origins are permitted throughout each CIS instance.
-* Health check events for deleted pools and origins can't be filtered, but they still appear in the table.
-* If you filter Health check events by `Pool Health`, `Degraded` pools are included because they technically are healthy, but might contain 1 or more critical origins.
-* When adding the request header name for a health check, use `Host`, capitalized. Using a lower-case `host` for a health check fails.
-
 ## DNS
 {: #known-limitations-dns}
 
@@ -74,6 +65,20 @@ The following information describes some limitations when working with {{site.da
     {: codeblock}
 
     These records must be converted from HEX to string or removed and added manually before importing.
+  
+## Edge functions
+{: #known-limitations-edge-functions}
+
+Before changing your CIS instance from an Enterprise plan to a Standard plan, you must remove all edge function actions and triggers first. Any edge function actions and triggers brought from an Enterprise plan to a Standard plan are not editable, which might cause damage to the normal datapath behavior on your domain. After your plan downgrade is complete, you can recreate the edge functions actions and triggers in the new plan.
+
+## Global load balancer
+{: #known-limitations-glb}
+
+* Cloud Internet Services allows you to use the character `_` in load balancer hostnames. However, Kubernetes clusters can't use `_`.
+* The Standard plan permits a maximum of 5 load balancers, pools, and health checks. Each pool can have a total of 6 origins, but only 6 unique origins are permitted throughout each CIS instance.
+* Health check events for deleted pools and origins can't be filtered, but they still appear in the table.
+* If you filter Health check events by `Pool Health`, `Degraded` pools are included because they technically are healthy, but might contain 1 or more critical origins.
+* When adding the request header name for a health check, use `Host`, capitalized. Using a lower-case `host` for a health check fails.
 
 ## Page rules
 {: #known-limitations-pagerules}
@@ -87,8 +92,3 @@ The following information describes some limitations when working with {{site.da
     {: pre}
 
     The JSON file should include the complete page rule configuration, including ID, with the necessary updates.
-
-## Edge functions
-{: #known-limitations-edge-functions}
-
-Before changing your CIS instance from an Enterprise plan to a Standard plan, you must remove all edge function actions and triggers first. Any edge function actions and triggers brought from an Enterprise plan to a Standard plan are not editable, which might cause damage to the normal datapath behavior on your domain. After your plan downgrade is complete, you can recreate the edge functions actions and triggers in the new plan.

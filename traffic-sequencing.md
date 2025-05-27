@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-05-27"
 
 subcollection: cis
 
@@ -10,7 +10,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Traffic sequencing
+# Traffic sequencing concepts
 {: #traffic-sequencing}
 
 When working with {{site.data.keyword.cis_short_notm}}, it can sometimes be difficult to tell which operation is going to run first (for example, whether firewall rules run before edge functions or page rules). To help you follow the traffic flow, keep in mind the following general traffic sequence:
