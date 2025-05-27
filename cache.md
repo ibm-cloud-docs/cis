@@ -20,7 +20,7 @@ Caching involves storing files on edge servers to speed up the delivery of those
 
 Cached files have a set expiration time known as Time-to-Live (TTL), after which they are purged from the cache. You can also manually purge files from the cache at any time. After files are purged, CIS retrieves the latest versions from your origin server and updates the cache accordingly.
 
-For more detailed information on cache settings and options, see [Using page rules with caching](/docs/cis?topic=cis-use-page-rules-with-caching).
+For detailed information on cache settings and options, see [Using page rules with caching](/docs/cis?topic=cis-use-page-rules-with-caching).
 
 ### Cached content
 {: #what-content-is-cached}
