@@ -58,7 +58,7 @@ In DNS-only mode, none of the {{site.data.keyword.cis_short_notm}} security, rel
 ## Root record CNAME flattening
 {: #dns-concepts-root-record-cname-flattening}
 
-With the "CNAME Flattening" feature, {{site.data.keyword.cis_short_notm}} allows root records to overcome the IETF RFC restriction that if a root record is a CNAME, it can't have any other records for that domain. {{site.data.keyword.cis_short_notm}} authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records, such as MX records, to be added to the domain even though the root record is a CNAME.
+With the "CNAME flattening" feature, {{site.data.keyword.cis_short_notm}} allows root records to overcome the IETF RFC restriction that if a root record is a CNAME, it can't have any other records for that domain. {{site.data.keyword.cis_short_notm}} authoritative servers overcome this restriction by returning the A records corresponding to the CNAME target instead of returning the CNAME itself, effectively hiding the CNAME. This technique allows other records, such as MX records, to be added to the domain even though the root record is a CNAME.
 
 ## Secure DNS
 {: #dns-concepts-secure-dns}
