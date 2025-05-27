@@ -249,21 +249,21 @@ toc:
         - faq.md
         - known-limitations.md
         - topicgroup:
-            label: Troubleshooting CIS
+            label: Troubleshooting
             topics:
             - ts-network-connection.md
+            - ts-html-4xx-errors.md
+            - ts-html-5xx-errors.md
+            - ts-html-1xxx-errors.md
+            - ts-false-pos-neg.md
+            - ts-ddos.md
+            - ts-universal-certificate.md
             - ts-root-cert.md
             - ts-offline.md
             - ts-privacy-warn.md
             - ts-no-traffic.md
-            - ts-false-pos-neg.md
             - ts-execution-order.md
-            - ts-html-4xx-errors.md
-            - ts-html-5xx-errors.md
-            - ts-html-1xxx-errors.md
             - ts-create-har.md
             - ts-domain-moved.md
             - ts-delete-cis-instance.md
-            - ts-ddos.md
-            - ts-universal-certificate.md
         - getting-help.md
