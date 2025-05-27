@@ -16,14 +16,6 @@ toc:
         - getting-started.md
         - about.md
         - topicgroup:
-            id: best-practices
-            label: Best practices
-            topics:
-            - best-practices.md
-            - managing-for-security.md
-            - managing-for-reliability.md
-            - managing-for-performance.md
-        - topicgroup:
             id: concepts
             label: Concepts
             topics:
@@ -37,6 +29,14 @@ toc:
             - tcp-concepts.md
             - traffic-sequencing.md
             - waf-concept.md
+        - topicgroup:
+            id: best-practices
+            label: Best practices
+            topics:
+            - best-practices.md
+            - managing-for-security.md
+            - managing-for-reliability.md
+            - managing-for-performance.md
         - security-events.md
         - url-normalization.md
         - release-notes.md
