@@ -15,23 +15,10 @@ subcollection: cis
 # Web Application Firewall concepts
 {: #waf-q-and-a}
 
-A Web Application Firewall (WAF) protects web applications by filtering and monitoring HTTP traffic between the application and the internet. As a Layer-7 defense in the [OSI model](https://en.wikipedia.org/wiki/OSI_model){: external}, it targets threats at the application layer. 
+A Web Application Firewall (WAF) protects web applications by filtering and monitoring HTTP traffic between the application and the internet. As a Layer-7 defense in the [OSI model](https://en.wikipedia.org/wiki/OSI_model){: external}, it targets threats at the application layer, such as cross-site forgery, cross-site scripting (XSS), file inclusion, and SQL injection.
 
-Unlike a traditional proxy, which handles outgoing traffic from a client, a WAF functions as a reverse proxy, inspecting incoming traffic before it reaches the server. This setup helps block malicious requests and shields the application from direct exposure to the internet.
+Unlike a traditional proxy that handles outgoing client traffic, a WAF functions as a reverse proxy, inspecting incoming traffic before it reaches the server. This setup blocks malicious requests and shields the application from direct exposure to the internet.
 
-CIS WAF offers a simple way to configure and manage security rules. Key features include:
+WAFs operate through configurable rule sets or policies designed to filter out malicious traffic and protect application vulnerabilities. One major benefit of a WAF is the ability to quickly modify these policies, enabling rapid responses to emerging threats, such as applying rate limiting during a [DDoS attack](https://en.wikipedia.org/wiki/Denial-of-service_attack){: external}.
 
-* Easy setup – Enable the WAF in minutes after redirecting your DNS to CIS and begin applying custom rules.
-* Detailed reporting – View in-depth insights into blocked threats, including the specific rules or rule groups involved.
-
-## Types of attacks WAF can prevent
-{: #what-types-of-attacks-can-waf-prevent}
-
-A WAF typically protects web applications from attacks such as cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection, among others. A WAF usually is part of a suite of tools, which together can create a holistic defense against a range of attack vectors.
-
-## How a WAF works
-{: #how-does-waf-work}
-
-A WAF operates through a set of rules often called policies. These policies aim to protect against vulnerabilities in the application by filtering out malicious traffic.
-
-The value of a WAF comes from the speed and ease with which its policy modifications can be implemented, thereby allowing a faster response to varying attack vectors. For example, during a [DDoS attack](https://en.wikipedia.org/wiki/Denial-of-service_attack){: external}, rate limiting can be implemented by modifying WAF policies. 
+CIS WAF offers a simple way to configure and manage security rules. Key features include easy activation after redirecting your DNS to CIS and begin applying custom rules, and detailed reporting that provides insights into blocked threat and the specific rules or rule groups involved. 
