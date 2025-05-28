@@ -51,12 +51,14 @@ HTTP/3 enables fast, reliable, and secure connections. HTTP/3 encrypts internet 
 ### Using Google Chrome as your HTTP/3 client
 {: #chrome-client}
 
+
 To connect to your website over HTTP/3 using Chrome, first download and install the [latest Chrome Canary build](https://www.google.com/chrome/canary/){: external}. Then, enable HTTP/3 support in Chrome Canary using the  `--enable-quic` and `--quic-version=h3-23` [command-line arguments](https://www.chromium.org/developers/how-tos/run-chromium-with-flags){: external}.
 
 After Chrome starts, enter your domain in the address bar. To verify the protocol version, open Chrome’s Developer Tools and go to the **Network** tab. If `http2+quic/99` doesn’t appear in the **Protocol** column, try reloading the page.
 
 ### Using cURL
 {: #using-curl}
+
 
 The cURL command-line tool supports HTTP/3. [Download the latest version](https://github.com/curl/curl){: external} and follow [the instructions to enable HTTP/3 support](https://github.com/curl/curl/blob/master/docs/HTTP3.md#quiche-version){: external}.
 
