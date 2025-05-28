@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-28"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# DNS concepts
+# DNS behavior and resolution logic 
 {: #dns-concepts}
 
 Domain Name System (DNS) underpins the web, working transparently in the background to convert human-readable website names into computer-readable numerical IP addresses. These addresses follow the [internet's RFC 1918 guidelines for IPv4 and RFC 4193 for IPv6](https://en.wikipedia.org/wiki/Private_network){: external}. In short, DNS servers match domain names, such as `ibm.com`, to their corresponding IP addresses, which most people never need to know. 
