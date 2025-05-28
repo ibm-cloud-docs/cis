@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-02-20"
+lastupdated: "2025-05-28"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Domain lifecycle concepts
+# Domain lifecycle and state transitions
 {: #domain-lifecycle-concepts}
 
 Domains configured in {{site.data.keyword.cis_short_notm}} begin in `pending` state, and become `active` after the authoritative name servers assigned to the domain are configured correctly at the DNS provider or registrar.
