@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-05-28"
 
 keywords:
 
@@ -18,7 +18,7 @@ subcollection: cis
 Read some specific instructions about how to configure your {{site.data.keyword.cis_full}} Domain Name System (DNS) records, including how to configure Secure DNS.
 {: shortdesc}
 
-
+Configuring DNS records is essential to ensure your domain operates correctly, securely, and efficiently. DNS records contain information about your domain and control how traffic is routed to your website or application. By adjusting your DNS settings, you can update or add services to launch a new website, connect a mail server, create a subdomain, and more. Regularly updating your DNS helps you maintain control over your domain, optimize performance, and ensure your online presence remains accessible.
 
 ## Adding DNS records
 {: #adding-dns-records}
