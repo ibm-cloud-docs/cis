@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Caching concepts
+# Caching behavior and logic
 {: #caching-concepts}
 
 Caching is the process of storing files on edge servers to improve the response time when serving those files to customers. By storing files closer to users, caching reduces the time it takes for data to travel across the network, commonly known as latency.
