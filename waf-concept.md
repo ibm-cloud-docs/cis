@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-28"
 
 keywords: Web Application Firewall Concepts, web application firewall
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Web Application Firewall concepts
+# Web Application Firewall protection
 {: #waf-q-and-a}
 
 A Web Application Firewall (WAF) protects web applications by filtering and monitoring HTTP traffic between the application and the internet. As a Layer-7 defense in the [OSI model](https://en.wikipedia.org/wiki/OSI_model){: external}, it targets threats at the application layer, such as cross-site forgery, cross-site scripting (XSS), file inclusion, and SQL injection.

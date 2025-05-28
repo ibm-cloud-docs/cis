@@ -10,7 +10,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Traffic sequencing concepts
+# Traffic sequencing
 {: #traffic-sequencing}
 
 When working with {{site.data.keyword.cis_short_notm}}, it can sometimes be confusing to know the order in which different operations are applied to your traffic. For example, whether firewall rules run before edge functions or page rules. clarify the general sequence of processing, traffic typically flows through CIS in the following order:

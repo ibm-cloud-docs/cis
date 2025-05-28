@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-06"
+  years: 2024, 2025
+lastupdated: "2025-05-28"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# TCP concepts
+# TCP connections and limits
 {: #tcp-concepts}
 
 Transmission Control Protocol (TCP) connections are established between clients and servers when accessing CIS-protected resources. When users request a website using CIS, their requests pass through the CIS infrastructure, enabling DDoS protection and enhanced security.
