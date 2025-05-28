@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# HTTP/2 and HTTP/3 protocol behavior
+# HTTP/2 and HTTP/3 protocols
 {: #http-concepts}
 
 HTTP/2 and HTTP/3 accelerate page load and are included in all {{site.data.keyword.cis_full}} plans.  HTTP/2 is enabled by default and requires an SSL certificate at the {{site.data.keyword.cis_short_notm}} edge network. Domains on Trial plans can't disable HTTP/2.
