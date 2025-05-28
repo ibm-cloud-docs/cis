@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-05-28"
 
 keywords:
 
@@ -23,6 +23,7 @@ IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishin
 ## Clock synchronization
 {: #clock-sync}
 
+
 ISO 27001 requires that clocks of all relevant information processing systems within an organization or security domain must be synchronized with a single reference time source. {{site.data.keyword.cis_short_notm}} synchronizes the systems with a Network Time Protocol (NTP) server to ensure that all time-based activities occur synchronously everywhere on the network.
 
 IBM {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers:
@@ -34,25 +35,31 @@ IBM {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers
 
 Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or a [global load balancer](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use the security features. The proxy allows traffic to flow through our servers and you can monitor the data.
 
+
+
 ![security graphic](images/security-graphic.png "Image describing security features"){: caption="Security features" caption-side="bottom}
 
 ### TLS
 {: #tls-feature}
+
 
 Protect your site and control your Transport Layer Security (TLS) settings. Manage the certificates used to secure traffic to your site.
 
 ### Origin
 {: #origin-feature}
 
+
 Manage the TLS certificates that encrypt traffic between your origin server and your users.
 
 ### Rate limiting
 {: #rate-limiting-feature}
 
+
 Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
 
 ### Traffic scrubbing
 {: #traffic-scrubbing}
+
 
 {{site.data.keyword.cis_short_notm}} offers 248 Tbps of global network edge capacity and can mitigate DDoS attacks that have extremely high packet and HTTP request rates.
 
@@ -87,7 +94,7 @@ IP rules apply to TCP, HTTP, and HTTPS [Range](/docs/cis?topic=cis-cis-range) ap
 #### User-agent blocking rules
 {: #user-agent-blocking-rules}
 
-With User-agent blocking rules, you can act on any user-agent string you select. This capability works like domain lockdown, except that the block examines the incoming user-agent string instead of the IP. You can choose how to handle a matching request with the same list of actions that you established in the IP rules (block, challenge, and JS challenge). User-agent blocking applies to your entire zone. You can't specify subdomains in the same manner as you can with a domain lockdown.
+With user-agent blocking rules, you can act on any user-agent string you select. This capability works like domain lockdown, except that the block examines the incoming user-agent string instead of the IP. You can choose how to handle a matching request with the same list of actions that you established in the IP rules (block, challenge, and JS challenge). User-agent blocking applies to your entire zone. You can't specify subdomains in the same manner as you can with a domain lockdown.
 
 This tool is useful for blocking any user-agent strings that you deem suspicious.
 
@@ -193,6 +200,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ### Global load balancing features
 {: #about-glb-features}
 
+
 The global load balancing service distributes your traffic across multiple servers with a combination of origin pools, health checks, and a load balancer. Global load balancing has the following features:
 * Proxy and non-proxy options for load balancing
 * Origin pools and health checks
@@ -204,6 +212,7 @@ The available health check regions are based on the [Cloudflare Global Anycast N
 
 ### DNS features
 {: #about-dns-features}
+
 
 DNS within {{site.data.keyword.cis_short_notm}} has the following features:
 * DNS management - Manage your DNS records, control proxying, and enable DNS security.
@@ -229,6 +238,7 @@ The following requirements must be met before you use gRPC:
 ### Caching
 {: #caching-features}
 
+
 Control how {{site.data.keyword.cis_short_notm}} manages your cached assets.
 
 ### Page rules
@@ -239,9 +249,11 @@ Fine-tune your cache behavior and create content optimization.
 ### Routing
 {: #routing-features}
 
+
 Eliminate excess latency by analyzing and optimizing routing decisions across the global internet using real-time network connections.
 
 ### Advanced performance
 {: #advanced-performance}
+
 
 Apply Brotli compression and restrict upload sizes in the advanced performance section.

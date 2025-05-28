@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-28"
 
 keywords:
 
@@ -86,14 +86,14 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 
 | Response code | Definition |
 |---------------|------------|
-|HIT|The resource was found in the CIS cache.|
-|MISS|The resource wasn't found in the CIS cache and was served from the origin web server.|
-|EXPIRED|The resource was found the cache but has since expired and was served from the origin web server.
-|STALE|The resource was served from cache, but is expired. CIS couldn’t contact the origin to retrieve the updated resource.|
-|BYPASS|The origin server instructed CIS to bypass cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. BYPASS is returned when you enable origin cache-control. CIS also sets BYPASS when your origin web server sends cookies in the response header.|
-|REVALIDATED|The resource is served from cache, but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
-|UPDATING|The resource was served from the cache, but is expired. The resource is being updated by the origin web server. UPDATING is typically seen only for popular cached resources.|
-|DYNAMIC|The resource wasn't cached by default and your current CIS caching configuration doesn't instruct CIS to cache the resource. Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
+|`HIT`|The resource was found in the CIS cache.|
+|`MISS`|The resource wasn't found in the CIS cache and was served from the origin web server.|
+|`EXPIRED`|The resource was found the cache but has since expired and was served from the origin web server.
+|`STALE`|The resource was served from cache, but is expired. CIS couldn’t contact the origin to retrieve the updated resource.|
+|`BYPASS`|The origin server instructed CIS to bypass cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. BYPASS is returned when you enable origin cache-control. CIS also sets BYPASS when your origin web server sends cookies in the response header.|
+|`REVALIDATED`|The resource is served from cache, but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
+|`UPDATING`|The resource was served from the cache, but is expired. The resource is being updated by the origin web server. UPDATING is typically seen only for popular cached resources.|
+|`DYNAMIC`|The resource wasn't cached by default and your current CIS caching configuration doesn't instruct CIS to cache the resource. Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
 {: caption="Cache response codes and definitions" caption-side="bottom"}
 
 ## Using query string sorting
