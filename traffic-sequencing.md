@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-28"
 
 subcollection: cis
 
@@ -23,7 +23,7 @@ When working with {{site.data.keyword.cis_short_notm}}, it can sometimes be conf
 1. WAF and firewall rules, which generally process in this order:
    1. [Firewall rules](/docs/cis?topic=cis-about-firewall-rules)
    1. [WAF rules](/docs/cis?topic=cis-waf-actions)
-   1. [Rate Limiting](/docs/cis?topic=cis-cis-rate-limiting)
+   1. [Rate limiting](/docs/cis?topic=cis-cis-rate-limiting)
 
     Based on the actions and priority settings of the rules, steps in the firewall sequence can be bypassed. For example, a firewall rule with an early priority that allows certain traffic is processed first, and then skips over the rest of the rules in the sequence.
     {: note}
