@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-10-31"
+  years: 2018, 2025
+lastupdated: "2025-05-28"
 
 keywords: origin server, pool implementation, origin servers
 
@@ -15,28 +15,21 @@ subcollection: cis
 # Global load balancer concepts
 {: #global-load-balancer-glb-concepts}
 
-This document contains some concepts and definitions related to the global load balancer and how it affects your {{site.data.keyword.cis_full}} deployment.
+A global load balancer manages traffic across server resources located in multiple regions. While a single origin server can serve all website content if traffic volumes and latency are manageable, a global load balancer uses a pool approach to distribute traffic across multiple origins. This pooling provides several benefits, including:
 {: shortdesc}
 
-## Global load balancer
-{: #global-load-balancer-cis}
-
-A global load balancer manages traffic across server resources located in multiple regions. The origin server can serve up all of the content for a website, provided that the web traffic does not extend beyond the server's processing capabilities and latency is not a primary concern. A global load balancer manages a _pool_ implementation that allows for the traffic to be distributed to multiple origins. This pool capability provides many benefits including:
-
 * Minimizes response time
-* Creates higher availability through redundancy
+* Increasing availability through redundancy
 * Maximizes traffic throughput
 
-A global load balancer routes traffic to the pool with the highest priority, distributing the load among its origin servers. See the following _Pool_ section for how traffic is distributed within a pool. If the primary pool becomes unavailable, traffic is routed automatically to the next pool in the list based on priority.
+A global load balancer routes traffic to the pool with the highest priority, distributing the load among the origin servers within that pool. If the primary pool becomes unavailable, traffic automatically routes to the next highest-priority pool.
 
-If pools are set up for specific regions, traffic from those regions is sent to the pools for the specified region first. Traffic falls back to the default pools only when all pools for a given region are down. In this case the fallback pool is the pool with the lowest priority.
+When pools are assigned to specific regions, traffic originating from those regions is sent to the corresponding regional pools first. Traffic only falls back to default pools (typically the lowest-priority pool) if all regional pools for that area are unavailable.
 
 ### How it works
 {: #how-glb-works}
 
-When a global load balancer is created, a DNS record is automatically added for it with the name of the load balancer. The load balancer then returns one of the origin IP addresses to a client making a DNS request.
-
-For example, an origin pool is created with two origins identifying IP addresses `169.61.244.18` and `169.61.244.19`. If a global load balancer is created with the name **`glbcust.ibmmo.com`** using the origin pool, then a client on the internet can execute the command:
+When you create a global load balancer in CIS, a DNS record is automatically added with the name of the load balancer. When a client makes a DNS request, the load balancer returns one of the origin IP addresses from the associated origin pool. For example, consider an origin pool that contains two origin IP addresses `169.61.244.18` and `169.61.244.19`. If a global load balancer named `glbcust.ibmmo.com` is created using this pool, a client on the internet can run the following command:
 
 ```sh
 $ ping glbcust.ibmmo.com
@@ -47,21 +40,22 @@ PING glbcust.ibmmo.com (169.61.244.18): 56 data bytes
 In this example, {{site.data.keyword.cis_short_notm}}:
 
 * Created a DNS record named `glbcust.ibmmo.com`.
-* Used the global load balancer to resolve the DNS name to one of the IP addresses identified in the origin pool.
+* Used the global load balancer to resolve the DNS name to one of the IP addresses in the origin pool.
 
-Notice that the global load balancer does not terminate the TCP connection.
+In this configuration, the global load balancer doesn't end the TCP connection.
 {: note}
 
-Setting a DNS element or global load balancer to proxy changes the behavior.
-If, for example, you turn on proxy and **Security > TLS > Mode** to something besides `Off`, the {{site.data.keyword.cis_short_notm}} now terminates the TCP connection and establishes a second connection between {{site.data.keyword.cis_short_notm}} and the originator.
+However, if you enable proxy mode for the DNS record or the global load balancer and set **Security > TLS > Mode** to anything other than **Off**, the behavior changes. {{site.data.keyword.cis_short_notm}} will then end the client connection and establish a second connection to the origin server.  
 
-In this example, {{site.data.keyword.cis_short_notm}}:
+In this proxied example, {{site.data.keyword.cis_short_notm}}:
 
-* Created a DNS record named: `glbcust.ibmmo.com`.
-* Used the global load balancer to resolve the DNS name to a {{site.data.keyword.cis_short_notm}} provided IP address.
+* Still creates a DNS record named `glbcust.ibmmo.com`.
+* Resolves the DNS name to a {{site.data.keyword.cis_short_notm}}-provided IP address.
 
-Now, connections to `glbcust.ibmmo.com` are terminated by {{site.data.keyword.cis_short_notm}}, and HTTPS certificates are hosted by {{site.data.keyword.cis_short_notm}} (which is required for TCP termination).
+Now, connections to `glbcust.ibmmo.com` are ended by {{site.data.keyword.cis_short_notm}}, and HTTPS certificates are hosted by {{site.data.keyword.cis_short_notm}} (which is required for TCP termination).
 
-After the client connects to the application the picture looks like this:
+After the client connects to the application, the connection path looks like this:
 
 `[client]<--tls-->[cis]<-->[origin server]`
+
+This setup improves security and allows {{site.data.keyword.cis_short_notm}} to apply additional features like caching, firewall rules, and traffic inspection.

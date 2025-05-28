@@ -15,23 +15,18 @@ subcollection: cis
 # Caching concepts
 {: #caching-concepts}
 
-Caching involves storing files on edge servers to speed up the delivery of those files to customers. By keeping files closer to users, caching reduces the time it takes for data to travel across the network, which is commonly known as latency.
+Caching is the process of storing files on edge servers to improve the response time when serving those files to customers. By storing files closer to users, caching reduces the time it takes for data to travel across the network, commonly known as latency.
 :{ shortdesc}
 
-Cached files have a set expiration time known as Time-to-Live (TTL), after which they are purged from the cache. You can also manually purge files from the cache at any time. After files are purged, CIS retrieves the latest versions from your origin server and updates the cache accordingly.
+By default, CIS caches static files, which include many types of image and text files (non-HTML files). The cache only includes files from your websites and does not cover third-party resources, such as those from social networking sites. Currently, CIS does not cache based on MIME type.
+
+ CIS doesn't cache HTML files by default because they are generally considered dynamic. However, if static HTML can be clearly distinguished from dynamic HTML, it is possible to cache HTML files by using page rules.
+{: note}
+
+Cached files have a specified expiration time, called Time-to-Live (TTL), after which they are purged from the cache. You can also manually purge files from the cache at any time. After files are purged, CIS goes back to your origin server to reload the files and update the cache with the latest versions.
 
 For detailed information on cache settings and options, see [Using page rules with caching](/docs/cis?topic=cis-use-page-rules-with-caching).
-
-### Cached content
-{: #what-content-is-cached}
-
-By default, CIS caches static files, which include many types of image and text files (non-HTML files). The cache includes only files from your websites and doesn't cover third-party resources, such as those from social networking sites. Currently, CIS doesn't cache based on MIME type.
-
-### Caching HTML
-{: #how-do-i-cache-html}
-
-CIS doesn't cache HTML files by default because they are generally considered dynamic. However, if static HTML can be clearly distinguished from dynamic HTML it is possible to cache HTML files by [using page rules](/docs/cis?topic=cis-use-page-rules).
-
+ 
 ## Default caching behavior
 {: #default-cache-behavior}
 
@@ -104,7 +99,7 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 ## Using query string sorting
 {: #query-string-sorting}
 
-**Enterprise Only** CIS treats URLs with query strings in different orders as separate files in the cache. For example, if one user requests:
+**Enterprise Only**: CIS treats URLs with query strings in different orders as separate files in the cache. For example, if one user requests:
 
 `/video/123456?title=0&byline=0&portrait=0&color=987654`
 
