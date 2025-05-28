@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-28"
 
 keywords: Smart Routing Route connections, routing decisions, Eliminate excess latency
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Routing concepts
 {: #cis-routing}
 
-Reduce excess latency by optimizing routing decisions across the global internet using real-time network data. On average, this can lower internet latency by 35% and connection errors by 27%.
+Reduce excess latency by optimizing routing decisions across the global internet using real-time network data. On average, this can lower internet latency by 35% and connection errors by 27%. 
 {: shortdesc}
 
 ## Smart Routing
