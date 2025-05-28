@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Routing optimization and network behavior
+# Smart routing and tiered caching
 {: #cis-routing}
 
 Reduce excess latency by optimizing routing decisions across the global internet using real-time network data. On average, this can lower internet latency by 35% and connection errors by 27%. 
