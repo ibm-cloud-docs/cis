@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Global load balancer strategy and behavior
+# Global load balancer functions
 {: #global-load-balancer-glb-concepts}
 
 A global load balancer manages traffic across server resources located in multiple regions. While a single origin server can serve all website content if traffic volumes and latency are manageable, a global load balancer uses a pool approach to distribute traffic across multiple origins. This pooling provides several benefits, including:
