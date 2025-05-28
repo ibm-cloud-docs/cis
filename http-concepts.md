@@ -15,23 +15,32 @@ subcollection: cis
 # HTTP/2 and HTTP/3 protocols
 {: #http-concepts}
 
-HTTP/2 and HTTP/3 accelerate page load and are included in all {{site.data.keyword.cis_full}} plans.  HTTP/2 is enabled by default and requires an SSL certificate at the {{site.data.keyword.cis_short_notm}} edge network. Domains on Trial plans can't disable HTTP/2.
+HTTP/2 and HTTP/3 accelerate page load times and are included in all {{site.data.keyword.cis_full}} plans. HTTP/2 is enabled by default and requires an SSL certificate at the {{site.data.keyword.cis_short_notm}} edge network. Domains on Trial plans can't disable HTTP/2.
 {: shortdesc}
 
-A browser and web server automatically negotiate the highest protocol available, so HTTP/3 takes precedence over HTTP/2.  {{site.data.keyword.cis_short_notm}} only uses HTTP/1.x between the origin web server and {{site.data.keyword.cis_short_notm}}.
+Browsers and web servers automatically negotiate the highest protocol available, so HTTP/3 takes precedence over HTTP/2. {{site.data.keyword.cis_short_notm}} only uses HTTP/1.x for communication between the origin web server and {{site.data.keyword.cis_short_notm}} edge.
 
-To determine the protocol used for your connection, enter `example.com/cdn-cgi/trace` from a web browser or client and replace `example.com` with your domain name. If `http=h2` appears in the results that are returned, the connection occurred over HTTP/2. Other possible values are `http=http2+quic/99` for HTTP/3, and `http=http/1.x` for HTTP/1.x.
+To determine the protocol used for your connection, enter `example.com/cdn-cgi/trace` in a web browser or HTTP client, replacing `example.com` with your domain.  The `http=` value in the results indicates the protocol:
 
+* `http=h2` means the connection used HTTP/2
+* `http=http2+quic/99` indicates HTTP/3
+* `http=http/1.x` indicates HTTP/1.x
+  
 ## HTTP/2
 {: #http-2}
 
 HTTP/2 improves page load times through:
 
-* Connection multiplexing - Retrieves multiple resources in a single network request. Responses are sent when resources are available to avoid slowing page rendering.
-* HTTP header compression - Compresses headers and simplifies HTTP requests to avoid resending headers.
-* HTTP/2 Server Push - To improve page load speed, {{site.data.keyword.cis_short_notm}} provides additional resources for a client to cache without waiting for additional requests.
+Connection multiplexing
+:    Retrieves multiple resources over a single network connection. Responses are sent as resources become available, helping to avoid delays in page rendering.
 
-Not all browsers support HTTP/2 and use HTTP 1.x instead. Connection multiplexing is on a per-domain basis.
+HTTP header compression
+:   Compresses headers and simplifies HTTP requests to avoid resending headers.
+
+HTTP/2 server push
+:   To improve page load speed, {{site.data.keyword.cis_short_notm}} provides additional resources for a client to cache without waiting for additional requests.
+
+Not all browsers support HTTP/2 and use HTTP 1.x instead. Connection multiplexing is handled on a per-domain basis.
 {: note}
 
 ## HTTP/3
