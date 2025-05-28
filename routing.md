@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Routing concepts
+# Routing optimization and network behavior
 {: #cis-routing}
 
 Reduce excess latency by optimizing routing decisions across the global internet using real-time network data. On average, this can lower internet latency by 35% and connection errors by 27%. 
