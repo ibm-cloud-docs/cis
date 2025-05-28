@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# TCP connections and routing
+# TCP connections and limits
 {: #tcp-concepts}
 
 Transmission Control Protocol (TCP) connections are established between clients and servers when accessing CIS-protected resources. When users request a website using CIS, their requests pass through the CIS infrastructure, enabling DDoS protection and enhanced security.
