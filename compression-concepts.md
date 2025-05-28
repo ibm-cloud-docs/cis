@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Compression behavior and optimization
+# Compression and optimization
 {: #compression-concepts}
 
 {{site.data.keyword.cis_full}} applies `gzip` and `brotli` compression to some types of content. {{site.data.keyword.cis_short_notm}} also compresses items based on the browser's UserAgent to speed up page loading time.
