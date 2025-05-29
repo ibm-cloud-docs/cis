@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 keywords:
 
@@ -20,7 +20,7 @@ Caching is the process of storing files on edge servers to improve the response 
 
 By default, CIS caches static files, which include many types of image and text files (non-HTML files). The cache only includes files from your websites and does not cover third-party resources, such as those from social networking sites. Currently, CIS does not cache based on MIME type.
 
- CIS doesn't cache HTML files by default because they are generally considered dynamic. However, if static HTML can be clearly distinguished from dynamic HTML, it is possible to cache HTML files by using page rules.
+CIS doesn't cache HTML files by default because they are generally considered dynamic. However, if static HTML can be clearly distinguished from dynamic HTML, it is possible to cache HTML files by using page rules.
 {: note}
 
 Cached files have a specified expiration time, called Time-to-Live (TTL), after which they are purged from the cache. You can also manually purge files from the cache at any time. After files are purged, CIS goes back to your origin server to reload the files and update the cache with the latest versions.
@@ -72,7 +72,7 @@ CIS uses file extensions to cache content. The following file extensions are cac
 | `bmp` \n `class` \n `css` \n `csv` \n `doc` \n `docx` \n `ejs` \n `eot` \n `eps`|  `gif` \n `ico` \n `jar` \n `jpg` \n `js` \n `mid` \n `midi` \n `otf` \n `pdf` | `pict` \n `pls` \n `png` \n `ppt` \n `pptx` \n `ps` \n `svg` \n `svgz` \n `swf` | `tif` \n `tiff` \n `ttf` \n `webp` \n `woff` \n `woff2` \n `xls` \n `xlsx` |
 {: caption="File extensions cached by default" caption-side="bottom"}
 
-CIS doesn't cache by MIME type, and doesn't cache HTML by default. CIS does cache a website's `robots.txt`. You can cache more content by creating page rules.
+CIS doesn't cache content based on MIME type, and by default, it doesn't cache HTML pages. However, it does automatically cache your website's `robots.txt` file. To cache additional content, such as HTML pages, you can set up custom page rules to control what gets cached.
 
 ## Serving stale content
 {: #serve-stale-content-caching}
