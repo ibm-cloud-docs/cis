@@ -16,7 +16,7 @@ subcollection: cis
 {: #caching-concepts}
 
 Caching is the process of storing files on edge servers to improve the response time when serving those files to customers. By storing files closer to users, caching reduces the time it takes for data to travel across the network, commonly known as latency.
-:{ shortdesc}
+{: shortdesc}
 
 By default, CIS caches static files, which include many types of image and text files (non-HTML files). The cache only includes files from your websites and does not cover third-party resources, such as those from social networking sites. Currently, CIS does not cache based on MIME type.
 
