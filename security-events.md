@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-05-29"
 
 keywords:
 
@@ -19,10 +19,10 @@ Reviewing Security Events gives you insight into your web traffic and into any p
 {: shortdesc}
 
 
-## The {{site.data.keyword.cis_short_notm}} Security Events Table
+## The {{site.data.keyword.cis_short_notm}} Security Events table
 {: #cis-security-events-table}
 
-The Security Events Table shows you information about web requests that are blocked by the WAF. Each entry shows one blocked request.
+The Security Events table shows you information about web requests that are blocked by the WAF. Each entry shows one blocked request.
 * **Triggered rule** indicates which rule blocked the request. Any of the following actions is available:
     * **Block**: A hard block.
     * **Challenge**: A CAPTCHA page that humans can bypass.
@@ -34,8 +34,7 @@ Sometimes the triggered rule is not identified. In this case the UI shows a `-` 
 * **Host**: Shows the hostname of the server that has been reached by the web request.
 * **Date**: Shows the day the event occurred.
 
-
-## {{site.data.keyword.cis_short_notm}} Security Events Details
+## {{site.data.keyword.cis_short_notm}} Security Events details
 {: #cis-security-events-details}
 
 When viewing Security Events, you can click the arrow on an event to expand the details for that event.

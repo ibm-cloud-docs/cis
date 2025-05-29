@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 keywords:
 
@@ -16,11 +16,11 @@ subcollection: cis
 {: #caching-concepts}
 
 Caching is the process of storing files on edge servers to improve the response time when serving those files to customers. By storing files closer to users, caching reduces the time it takes for data to travel across the network, commonly known as latency.
-:{ shortdesc}
+{: shortdesc}
 
 By default, CIS caches static files, which include many types of image and text files (non-HTML files). The cache only includes files from your websites and does not cover third-party resources, such as those from social networking sites. Currently, CIS does not cache based on MIME type.
 
- CIS doesn't cache HTML files by default because they are generally considered dynamic. However, if static HTML can be clearly distinguished from dynamic HTML, it is possible to cache HTML files by using page rules.
+CIS doesn't cache HTML files by default because they are generally considered dynamic. However, if static HTML can be clearly distinguished from dynamic HTML, it is possible to cache HTML files by using page rules.
 {: note}
 
 Cached files have a specified expiration time, called Time-to-Live (TTL), after which they are purged from the cache. You can also manually purge files from the cache at any time. After files are purged, CIS goes back to your origin server to reload the files and update the cache with the latest versions.
@@ -34,7 +34,7 @@ CIS caches static content based on your visitors' locations, the CIS data center
 
 Caching occurs only within the CIS data center serving the request. The following resources aren't cached by CIS:
 
-- Off-site or third-party resources (for example, Facebook and Flickr)
+- Off-site or third-party resources
 - Content hosted on DNS records that aren't proxied
 
 By default, CIS respects the origin web server’s cache headers unless an edge cache TTL page rule overrides them:
@@ -72,7 +72,7 @@ CIS uses file extensions to cache content. The following file extensions are cac
 | `bmp` \n `class` \n `css` \n `csv` \n `doc` \n `docx` \n `ejs` \n `eot` \n `eps`|  `gif` \n `ico` \n `jar` \n `jpg` \n `js` \n `mid` \n `midi` \n `otf` \n `pdf` | `pict` \n `pls` \n `png` \n `ppt` \n `pptx` \n `ps` \n `svg` \n `svgz` \n `swf` | `tif` \n `tiff` \n `ttf` \n `webp` \n `woff` \n `woff2` \n `xls` \n `xlsx` |
 {: caption="File extensions cached by default" caption-side="bottom"}
 
-CIS doesn't cache by MIME type, and doesn't cache HTML by default. CIS does cache a website's `robots.txt`. You can cache more content by creating page rules.
+CIS doesn't cache content based on MIME type, and by default, it doesn't cache HTML pages. However, it does automatically cache your website's `robots.txt` file. To cache additional content, such as HTML pages, you can set up custom page rules to control what gets cached.
 
 ## Serving stale content
 {: #serve-stale-content-caching}
@@ -90,9 +90,9 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 |`MISS`|The resource wasn't found in the CIS cache and was served from the origin web server.|
 |`EXPIRED`|The resource was found the cache but has since expired and was served from the origin web server.
 |`STALE`|The resource was served from cache, but is expired. CIS couldn’t contact the origin to retrieve the updated resource.|
-|`BYPASS`|The origin server instructed CIS to bypass cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. BYPASS is returned when you enable origin cache-control. CIS also sets BYPASS when your origin web server sends cookies in the response header.|
-|`REVALIDATED`|The resource is served from cache, but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
-|`UPDATING`|The resource was served from the cache, but is expired. The resource is being updated by the origin web server. UPDATING is typically seen only for popular cached resources.|
+|`BYPASS`|The origin server instructed CIS to bypass cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. `BYPASS` is returned when you enable origin `cache-control`. CIS also sets `BYPASS` when your origin web server sends cookies in the response header.|
+|`REVALIDATED`|The resource is served from cache, but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match` header.|
+|`UPDATING`|The resource was served from the cache, but is expired. The resource is being updated by the origin web server. `UPDATING` is typically seen only for popular cached resources.|
 |`DYNAMIC`|The resource wasn't cached by default and your current CIS caching configuration doesn't instruct CIS to cache the resource. Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
 {: caption="Cache response codes and definitions" caption-side="bottom"}
 
