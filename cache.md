@@ -34,7 +34,7 @@ CIS caches static content based on your visitors' locations, the CIS data center
 
 Caching occurs only within the CIS data center serving the request. The following resources aren't cached by CIS:
 
-- Off-site or third-party resources (for example, Facebook and Flickr)
+- Off-site or third-party resources
 - Content hosted on DNS records that aren't proxied
 
 By default, CIS respects the origin web server’s cache headers unless an edge cache TTL page rule overrides them:
@@ -90,9 +90,9 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 |`MISS`|The resource wasn't found in the CIS cache and was served from the origin web server.|
 |`EXPIRED`|The resource was found the cache but has since expired and was served from the origin web server.
 |`STALE`|The resource was served from cache, but is expired. CIS couldn’t contact the origin to retrieve the updated resource.|
-|`BYPASS`|The origin server instructed CIS to bypass cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. BYPASS is returned when you enable origin cache-control. CIS also sets BYPASS when your origin web server sends cookies in the response header.|
-|`REVALIDATED`|The resource is served from cache, but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match header`.|
-|`UPDATING`|The resource was served from the cache, but is expired. The resource is being updated by the origin web server. UPDATING is typically seen only for popular cached resources.|
+|`BYPASS`|The origin server instructed CIS to bypass cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. `BYPASS` is returned when you enable origin `cache-control`. CIS also sets `BYPASS` when your origin web server sends cookies in the response header.|
+|`REVALIDATED`|The resource is served from cache, but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match` header.|
+|`UPDATING`|The resource was served from the cache, but is expired. The resource is being updated by the origin web server. `UPDATING` is typically seen only for popular cached resources.|
 |`DYNAMIC`|The resource wasn't cached by default and your current CIS caching configuration doesn't instruct CIS to cache the resource. Instead, the resource was requested from the origin web server. Use page rules to implement custom caching options.|
 {: caption="Cache response codes and definitions" caption-side="bottom"}
 
