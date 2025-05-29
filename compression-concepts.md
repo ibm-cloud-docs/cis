@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 keywords:
 
@@ -18,14 +18,14 @@ subcollection: cis
 {{site.data.keyword.cis_full}} uses GZIP and Brotli compression for various content types to improve page load times. Compression is applied based on the browser’s `User-Agent`.
 {: shortdesc}
 
-If you're already using GZIP, CIS accepts your settings as long as the appropriate headers are passed in the server response.
+If you're already using , CIS accepts your settings as long as the appropriate headers are passed in the server response.
 
-CIS only supports GZIP when communicating with your origin server, and can deliver content that is:
+CIS only supports  when communicating with your origin server, and can deliver content that is:
 
-* Compressed using GZIP or Brotli
+* Compressed using  or Brotli
 * Uncompressed
 
-CIS’s reverse proxy can convert between compressed and uncompressed formats. For example, it can fetch gzip-compressed content from your origin and serve it uncompressed to clients. This process occurs independently of caching.
+CIS’s reverse proxy can convert between compressed and uncompressed formats. For example, it can fetch GZIP-compressed content from your origin and serve it uncompressed to clients. This process occurs independently of caching.
 
 CIS removes the `Accept-Encoding` header and does not honor it.
 {: note}
@@ -193,5 +193,5 @@ The following table lists common Cf-Polished statuses and how to troubleshoot th
 |`vary_header_present`|The origin web server sent a `Vary` header with a value other than `accept-encoding`.|If the origin web server is attempting to support WebP, disable WebP at the origin web server and let Polish perform the WebP conversion.|
 {: caption="Common Cf-Polished statuses" caption-side="bottom"}
 
-Optimization still works when `accept-encoding` is not the only value in the `Vary` header.
+Optimization still works when `accept-encoding` isn't the only value in the `Vary` header.
 {: note}
