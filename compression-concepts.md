@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-03"
 
 keywords:
 
@@ -18,16 +18,16 @@ subcollection: cis
 {{site.data.keyword.cis_full}} uses GZIP and Brotli compression for various content types to improve page load times. Compression is applied based on the browser’s `User-Agent`.
 {: shortdesc}
 
-If you're already using , CIS accepts your settings as long as the appropriate headers are passed in the server response.
+If you already use GZIP, CIS accepts your settings as long as the appropriate headers are passed in the server response.
 
-CIS only supports  when communicating with your origin server, and can deliver content that is:
+CIS supports GZIP only when it communicates with your origin server, and can deliver content that is:
 
-* Compressed using  or Brotli
+* Compressed by using GZIP or Brotli
 * Uncompressed
 
 CIS’s reverse proxy can convert between compressed and uncompressed formats. For example, it can fetch GZIP-compressed content from your origin and serve it uncompressed to clients. This process occurs independently of caching.
 
-CIS removes the `Accept-Encoding` header and does not honor it.
+CIS removes the `Accept-Encoding` header and ignores its value.
 {: note}
 
 ## Compressed content types
@@ -102,14 +102,14 @@ If you don't want a particular response from your origin to be encoded, you can 
 
 CIS uses **Minify web content** to remove all unnecessary characters from HTML, JavaScript and CSS files, without affecting their functionality.
 
-* CSS and JavaScript minification operates on cached CSS and JS files only. 
-* After CIS returns a cache HIT for the file, it is returned to browsers in minified form, which allows CIS to deliver a complete minification result. 
+* CSS and JavaScript minification operates on cached CSS and JS files only.
+* After CIS returns a cache HIT for the file, it is returned to browsers in minified form, which allows CIS to deliver a complete minification result.
 * To apply minification changes, purge your CIS cache.
 
 ## Image size optimization compression
 {: #polish-compression}
 
-CIS optimizes images cached in its edge network by stripping metadata and applying either lossy or lossless compression to speed up delivery. Off-site images are not optimized.
+CIS optimizes images that are cached in its edge network by stripping metadata and applying either lossy or lossless compression to speed up delivery. Off-site images are not optimized.
 
 Image size optimization compression is only available as a page rule in the console. The domain level setting is available in the CLI.
 {: note}
@@ -131,9 +131,9 @@ The following sections detail the image size optimization compression options.
 
 * Strips metadata and reduces image size by approximately 15%.
 * Some original data is permanently lost.
-* For PNGs, results are effectively the same as lossless. 
+* For PNGs, the results are effectively the same as lossless.
 
-With Lossless and Lossy modes attempt to remove as much metadata as possible, but complete removal is not guaranteed due to factors like caching.
+Lossless and Lossy modes attempt to remove as much metadata as possible, but complete removal might not be possible due to factors like caching.
 
 #### WebP
 {: #webp}
@@ -187,9 +187,9 @@ The following table lists common Cf-Polished statuses and how to troubleshoot th
 |--------|------------|----------------|
 |`input_too_large`| Image is too large or complex to process and needs a lower resolution.| Use PNG or JPEG images that are less than 1,000 px and 10 MB.|
 |not_compressed or not_needed|Image was fully optimized at the origin server and no compression was applied.| |
-|`webp_bigger`|Polish attempted to convert to WebP, but the image was optimized at the origin server and/or was created with a low quality setting.|Because the WebP version doesn’t exist, the status is set on the PNG or JPEG version of the response.|
+|`webp_bigger`|Polish attempted to convert to WebP, but the image was either optimized at the origin server, created with a low-quality setting, or both.|Because the WebP version doesn’t exist, the status is set on the PNG or JPEG version of the response.|
 |`cannot_optimize` or `internal_error`|Image is corrupted or incomplete at the origin server. |Upload a new version of the image to the origin server.|
-|`format_not_supported`|Image format isn't supported (for example, BMP, TIFF) and/or the origin server is using extra optimization software that is not compatible with Polish.|Try converting the input image to a web-compatible format (for example, PNG, JPEG) and/or disabling any extra optimization software at the origin server.|
+|`format_not_supported`|Image format isn't supported (for example, BMP, TIFF), the origin server is using extra optimization software that is not compatible with Polish, or both.|Try converting the input image to a web-compatible format (for example, PNG, JPEG), disabling any extra optimization software at the origin server, or both.|
 |`vary_header_present`|The origin web server sent a `Vary` header with a value other than `accept-encoding`.|If the origin web server is attempting to support WebP, disable WebP at the origin web server and let Polish perform the WebP conversion.|
 {: caption="Common Cf-Polished statuses" caption-side="bottom"}
 
