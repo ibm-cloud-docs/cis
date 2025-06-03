@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-02"
+lastupdated: "2025-06-03"
 
 keywords:
 
@@ -15,10 +15,10 @@ subcollection: cis
 # Caching
 {: #caching-concepts}
 
-Caching is the process of storing files on edge servers to improve the response time when the server delivers those files to customers. By storing files closer to users, caching reduces the time it takes for data to travel across the network, commonly known as latency.
+Caching is the process of storing files on edge servers to improve the response time when serving those files to customers. By storing files closer to users, caching reduces the time it takes for data to travel across the network, commonly known as latency.
 {: shortdesc}
 
-By default, CIS caches static files, which include many types of non-HTML files such as image and text. The cache includes files only from your websites and does not cover third-party resources, such as those from social networking sites. Currently, CIS does not cache based on MIME type.
+By default, CIS caches static files, which include many types of image and text files (non-HTML). The cache includes files only from your websites and doesn't cover third-party resources, such as those from social networking sites. Currently, CIS does not cache based on MIME type.
 
 CIS doesn't cache HTML files by default because they are generally considered dynamic. However, if static HTML can be clearly distinguished from dynamic HTML, it is possible to cache HTML files by using page rules.
 {: note}
@@ -89,7 +89,7 @@ The output of the `CF-Cache-Status` header shows whether a resource is cached.
 |`HIT`|The resource was found in the CIS cache.|
 |`MISS`|The resource wasn't found in the CIS cache and was served from the origin web server.|
 |`EXPIRED`|The resource was found in the cache but has since expired and was served from the origin web server.
-|`STALE`|The resource was served from cache, but is expired. CIS was not able to contact the origin to retrieve the updated resource.|
+|`STALE`|The resource was served from cache, but is expired. CIS wasn't able to contact the origin to retrieve the updated resource.|
 |`BYPASS`|The origin server instructed CIS to bypass the cache by using a `cache-control` header set to `no-cache`, `private`, or `max-age=0`. `BYPASS` is returned when you enable origin `cache-control`. CIS also sets `BYPASS` when your origin web server sends cookies in the response header.|
 |`REVALIDATED`|The resource is served from cache, but is stale. The resource was revalidated by either an `If-Modified-Since` header or an `If-None-Match` header.|
 |`UPDATING`|The resource was served from the cache, but is expired. The resource is being updated by the origin web server. `UPDATING` is typically seen only for popular cached resources.|
@@ -109,4 +109,4 @@ and another requests:
 
 CIS fetches the file from the origin again, even if it’s already cached.
 
-The Query String Sort feature sorts query strings "before" caching, increasing cache hit rates. You can enable Query String Sort by using the toggle option on the **Caching** page.
+The Query String Sort feature sorts query strings "before" caching, increasing cache hit rates. You can enable Query String Sort by using the toggle on the **Caching** page.

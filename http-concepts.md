@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-02"
+lastupdated: "2025-06-03"
 
 keywords:
 
@@ -40,7 +40,7 @@ HTTP header compression
 HTTP/2 server push
 :   To improve page load speed, {{site.data.keyword.cis_short_notm}} provides additional resources for a client to cache without waiting for additional requests.
 
-Not all browsers support HTTP/2 but use HTTP 1.x instead. Connection multiplexing is handled on a per-domain basis.
+Not all browsers support HTTP/2 and use HTTP 1.x instead. Connection multiplexing is handled on a per-domain basis.
 {: note}
 
 ## HTTP/3
@@ -52,7 +52,7 @@ HTTP/3 enables fast, reliable, and secure connections. By default, HTTP/3 encryp
 {: #chrome-client}
 
 
-To connect to your website over HTTP/3 using Chrome, first download and install the [most recent version of Chrome Canary build](https://www.google.com/chrome/canary/){: external}. Then, enable HTTP/3 support in Chrome Canary using the `--enable-quic` and `--quic-version=h3-23` [command-line arguments](https://www.chromium.org/developers/how-tos/run-chromium-with-flags){: external}.
+To connect to your website over HTTP/3 using Chrome, first download and install the [latest Chrome Canary build](https://www.google.com/chrome/canary/){: external}. Then, enable HTTP/3 support in Chrome Canary using the `--enable-quic` and `--quic-version=h3-23` [command-line arguments](https://www.chromium.org/developers/how-tos/run-chromium-with-flags){: external}.
 
 After Chrome starts, enter your domain in the address bar. To verify the protocol version, open Chrome’s Developer Tools and go to the **Network** tab. If `http2+quic/99` doesn’t appear in the **Protocol** column, try reloading the page.
 
@@ -76,4 +76,4 @@ Then, run an HTTP/3 cURL with the `--http3` command-line flag:
 ```
 {: pre}
 
-Confirm that HTTP/3 appears in the response and that no error messages are present.
+Confirm that HTTP/3 appears in the response and that there are no error messages.

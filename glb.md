@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-02"
+lastupdated: "2025-06-03"
 
 keywords: origin server, pool implementation, origin servers
 
@@ -22,9 +22,9 @@ A global load balancer manages traffic across server resources that are located 
 * Increasing availability through redundancy
 * Maximizing traffic throughput
 
-A global load balancer routes traffic to the pool with the highest priority, distributing the load among the origin servers within that pool. If the primary pool isn't available, traffic automatically routes to the next highest-priority pool.
+A global load balancer routes traffic to the pool with the highest priority, distributing the load among the origin servers within that pool. If the primary pool becomes unavailable, traffic automatically routes to the next highest-priority pool.
 
-When pools are assigned to specific regions, traffic that originates from those regions is sent to the corresponding regional pools first. Traffic falls back only to default pools (typically the lowest-priority pool) if all regional pools for that area aren't available.
+When pools are assigned to specific regions, traffic that originates from those regions is sent to the corresponding regional pools first. Traffic falls back only to default pools (typically the lowest-priority pool) if all regional pools for that area are unavailable.
 
 ## How it works
 {: #how-glb-works}

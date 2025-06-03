@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-02"
+lastupdated: "2025-06-03"
 
 keywords: Web Application Firewall Concepts, web application firewall
 
@@ -22,4 +22,4 @@ Unlike a traditional proxy that handles outgoing client traffic, a WAF functions
 
 WAFs operate through configurable rule sets or policies that are designed to filter out malicious traffic and protect application vulnerabilities. One major benefit of a WAF is the ability to quickly modify these policies, enabling rapid responses to emerging threats, such as applying rate limiting during a [DDoS attack](https://en.wikipedia.org/wiki/Denial-of-service_attack){: external}.
 
-CIS WAF offers a simple way to configure and manage security rules. Key features include quick activation after you redirect your DNS to CIS and options to apply custom rules. You also get detailed reporting that provides insights into blocked threats and identifies the specific rules or rule groups involved.
+CIS WAF offers a simple way to configure and manage security rules. Key features include easy activation after you redirect your DNS to CIS and begin applying custom rules. You also get detailed reporting that provides insights into blocked threats and the specific rules or rule groups involved.
