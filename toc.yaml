@@ -27,7 +27,8 @@ toc:
             - http-concepts.md
             - routing.md
             - tcp-concepts.md
-            - traffic-sequencing.md
+            - traffic-sequencing.md            
+            - url-normalization.md
             - waf-concept.md
         - topicgroup:
             id: best-practices
@@ -38,7 +39,6 @@ toc:
             - managing-for-reliability.md
             - managing-for-performance.md
         - security-events.md
-        - url-normalization.md
         - release-notes.md
     - navgroup:
         id: tutorial
