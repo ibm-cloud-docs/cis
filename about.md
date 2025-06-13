@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-06-13"
 
 keywords:
 
@@ -195,6 +195,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ## Reliability features
 {: #cis-reliability-features}
 
+
 ![reliability graphic](images/reliability-graphic.png "Image describing reliability features"){: caption="Reliability features" caption-side="bottom"}
 
 ### Global load balancing features
@@ -233,6 +234,7 @@ The following requirements must be met before you use gRPC:
 ## Performance features
 {: #cis-performance-features}
 
+
 ![performance graphic](images/performance-graphic.png "Image describing performance features"){: caption="Performance features" caption-side="bottom}
 
 ### Caching
@@ -243,6 +245,7 @@ Control how {{site.data.keyword.cis_short_notm}} manages your cached assets.
 
 ### Page rules
 {: #page-rule-features}
+
 
 Fine-tune your cache behavior and create content optimization.
 
