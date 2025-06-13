@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-06-13"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # HTTP/2 and HTTP/3 protocols
 {: #http-concepts}
 
-HTTP/2 and HTTP/3 accelerate page load times and are included in all {{site.data.keyword.cis_full}} plans. HTTP/2 is enabled by default and requires an SSL certificate at the {{site.data.keyword.cis_short_notm}} edge network. Domains on Trial plans can't disable HTTP/2.
+HTTP/2 and HTTP/3 accelerate page load times are included in all {{site.data.keyword.cis_full}} plans. HTTP/2 is enabled by default and requires an SSL certificate at the {{site.data.keyword.cis_short_notm}} edge network. Domains on Trial plans can't disable HTTP/2.
 {: shortdesc}
 
 Browsers and web servers automatically negotiate the highest protocol available, so HTTP/3 takes precedence over HTTP/2. {{site.data.keyword.cis_short_notm}} uses HTTP/1.x only for communication between the origin web server and {{site.data.keyword.cis_short_notm}} edge.
