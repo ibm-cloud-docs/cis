@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-06-13"
 
 keywords:
 
@@ -108,7 +108,6 @@ For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?to
 
 ## Best practice 4: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
-
 IBM {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
 
 TLS offers four modes of operation:

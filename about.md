@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-06-13"
 
 keywords:
 
@@ -70,10 +70,12 @@ Traffic that is identified as being "dirty" or part of an attack is not included
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
 
+
 WAF is implemented through multiple rulesets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf), [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-cis-rule-sets), and [Exposed Credentials Check](/docs/cis?topic=cis-exposed-credentials-check-ruleset).
 
 ### IP firewall
 {: #cis-ip-firewall}
+
 
 {{site.data.keyword.cis_full_notm}} offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs.
 
@@ -111,6 +113,7 @@ This capability is useful when you need more granularity in your access rules be
 ### Firewall rules
 {: #firewall-rules-feature}
 
+
 Create rules that examine incoming HTTP traffic against a set of filters to block, challenge, log, or allow matching requests.
 
 In general, firewall rules are designed for properties that are exposed in OSI Layer-7 (HTTP), such as request headers and body content characteristics. Therefore, firewall rules apply to HTTP/HTTPS [Range](/docs/cis?topic=cis-cis-range) apps.
@@ -124,10 +127,13 @@ View events that are triggered by an active web application firewall rule. For e
 ### Range
 {: #range-feature}
 
+
 Extend the power of {{site.data.keyword.cis_short_notm}} DDoS, TLS, and IP firewall to your web servers and your TCP-based services by using Range applications, keeping them online and secure.
 
 ### Advanced security
 {: #advanced-security-feature}
+
+
 
 Advanced security settings include the following features, which you can change, enable, or disable.
 
@@ -144,12 +150,15 @@ Advanced security settings include the following features, which you can change,
 ### Security standards and platform
 {: #security-standards-and-platform}
 
+
+
 * TLS (SHA2 and SHA1)
 * IPv4 and IPv6
 * HTTP/2
 
 ### Network attacks and mitigation
 {: #network-attacks-and-mitigation}
+
 
 Generally, attacks fall into two categories:
 
@@ -162,15 +171,18 @@ Generally, attacks fall into two categories:
 ### On-demand anti-DDoS
 {: #cis-on-demand-anti-ddos}
 
+
 {{site.data.keyword.cis_full_notm}} ingests traffic by returning a {{site.data.keyword.cis_short_notm}} IP address on the DNS lookup for a domain, instead of the actual record for the origin server’s IP address. This allows {{site.data.keyword.cis_short_notm}} to ingest, single-pass inspect, and re-encrypt data before sending it to the origin server destination. {{site.data.keyword.cis_short_notm}} can also act in DNS-only mode, returning the actual DNS record without obfuscating the IP, which disables DDoS and the other functions of {{site.data.keyword.cis_short_notm}}. To enable {{site.data.keyword.cis_short_notm}} protections, switch the "proxy" slider next to each DNS record to **on**; to disable protections, switch to **off**.
 
 ### Unlimited DDoS mitigation
 {: #cis-unlimited-ddos-mitigation}
 
+
 DDoS mitigation is typically an expensive service that can grow in cost when under attack. Unlimited DDoS mitigation is included with {{site.data.keyword.cis_short_notm}} at no additional cost.
 
 ### Mitigate Layer 7 attacks (configuration)
 {: #cis-mitigate-layer7-attacks}
+
 
 Though DDoS is enabled by default in {{site.data.keyword.cis_short_notm}}, you can further configure Layer 7 security by:
 
@@ -183,10 +195,12 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ### Mitigate non volumetric attacks
 {: #cis-mitigate-non-volumetric-attacks}
 
+
 {{site.data.keyword.cis_short_notm}} WAF contains rulesets to mitigate non-volumetric attacks, including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](/docs/cis?topic=cis-waf-q-and-a#what-types-of-attacks-can-waf-prevent).
 
 ### Cost protection
 {: #cis-cost-protection}
+
 
 {{site.data.keyword.cis_short_notm}} does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the {{site.data.keyword.cis_short_notm}} network to the origin destination incur charges or usage.
 
@@ -194,6 +208,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 
 ## Reliability features
 {: #cis-reliability-features}
+
 
 ![reliability graphic](images/reliability-graphic.png "Image describing reliability features"){: caption="Reliability features" caption-side="bottom"}
 
@@ -208,6 +223,7 @@ The global load balancing service distributes your traffic across multiple serve
 #### Global anycast network
 {: #global-anycast-network}
 
+ 
 The available health check regions are based on the [Cloudflare Global Anycast Network](https://www.cloudflare.com/network/){: external}.
 
 ### DNS features
@@ -221,6 +237,7 @@ DNS within {{site.data.keyword.cis_short_notm}} has the following features:
 ### gRPC protocol support
 {: #grpc}
 
+ 
 The gRPC protocol builds efficient APIs with smaller payloads, which reduces bandwidth requirements, decreases latency, and increases the implementation time. {{site.data.keyword.cis_short_notm}} supports gRPC protocol for any proxied gRPC endpoints. To enable or disable gRPC support, navigate to the **Reliability** section, select the **Advanced** tab, and toggle the gRPC switch.
 
 The following requirements must be met before you use gRPC:
@@ -233,6 +250,7 @@ The following requirements must be met before you use gRPC:
 ## Performance features
 {: #cis-performance-features}
 
+
 ![performance graphic](images/performance-graphic.png "Image describing performance features"){: caption="Performance features" caption-side="bottom}
 
 ### Caching
@@ -243,6 +261,7 @@ Control how {{site.data.keyword.cis_short_notm}} manages your cached assets.
 
 ### Page rules
 {: #page-rule-features}
+
 
 Fine-tune your cache behavior and create content optimization.
 

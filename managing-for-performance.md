@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-06-13"
 
 keywords:
 
@@ -19,6 +19,8 @@ subcollection: cis
 {: shortdesc}
 
 With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within {{site.data.keyword.cis_short_notm}}.
+
+
 
 **Recommended and best practices:**
 

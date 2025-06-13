@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-06-13"
 
 keywords:
 
@@ -9358,7 +9358,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
 :  The rule name.
 
 `--match`
-:  Specifies the conditions that must be match for the rule to run.For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:  Specifies the conditions that must be match for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
 
 `--action`
 :  Action to perform when the rate specified in the rule is reached. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`.
