@@ -70,10 +70,12 @@ Traffic that is identified as being "dirty" or part of an attack is not included
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
 
+
 WAF is implemented through multiple rulesets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf), [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-cis-rule-sets), and [Exposed Credentials Check](/docs/cis?topic=cis-exposed-credentials-check-ruleset).
 
 ### IP firewall
 {: #cis-ip-firewall}
+
 
 {{site.data.keyword.cis_full_notm}} offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs.
 
