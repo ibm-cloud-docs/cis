@@ -79,6 +79,6 @@ You must add a domain before adding triggers. However, triggers can be added wit
 
    To keep a trigger path active without running an Edge function, enable **Avoid edge functions**. For example, if `my-function` is assigned to `gamma.cistest-load.com/*`, but you want `gamma.cistest-load.com/data` to bypass it, create a separate trigger for `/data` and enable **Avoid edge functions**. This ensures the `/data` path stays active without invoking `my-function`.
 
-* **Editing a trigger** - Click the Edit icon in the table row for the selected trigger, then make changes and click **Save**.
+* **Editing a trigger** - Click the **Edit icon** ![Edit icon](../icons/edit-tagging.svg "Edit") in the table row for the selected trigger, then make changes and click **Save**.
 
-* **Deleting a trigger** - Click the Delete icon in the table row for the selected trigger. This action can't be undone.
+* **Deleting a trigger** - Click the **Delete icon** ![Delete icon](../icons/delete.svg "Delete") in the table row for the selected trigger. This action can't be undone.
