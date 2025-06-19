@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-06-19"
 
 keywords:
 
@@ -118,7 +118,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 :   The ID of DNS domain.
 
 `--match`
-:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
 :The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip". For "block" and "skip" actions, use JSON file or JSON string instead.
@@ -208,7 +208,7 @@ Where:
 :  The ID of the rule.
 
 `--match`
-:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`.
+:   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
 :The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For "block" and "skip" actions, use JSON file or JSON string instead.

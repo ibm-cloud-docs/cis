@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-06-19"
 
 keywords:
 
@@ -9358,7 +9358,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
 :  The rule name.
 
 `--match`
-:  Specifies the conditions that must be match for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:  Specifies the conditions that must be match for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
 :  Action to perform when the rate specified in the rule is reached. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`.
@@ -9472,7 +9472,7 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
 :  The rule name.
 
 `--match`
-:  Specifies the conditions that must be match for the rule to run.For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:  Specifies the conditions that must be match for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
 :  Action to perform when the rate specified in the rule is reached. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`.
@@ -9757,7 +9757,7 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
 :   The ID of DNS domain.
 
 `--match`
-:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--skip-rules`
 :  Skip all remaining rules, WAF managed rulesets, or rules of WAF managed rulesets. For example, `--skip-rules RULESETID-1:RULEID-a,RULEID-b;RULESETID-2:RULEID-x,RULEID-y.`. Set `current` to skip all remaining rules. Default is "current".
@@ -9847,7 +9847,7 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
 :   The ID of rule.
 
 `--match`
-:   Specifies the conditions that must be match for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:   Specifies the conditions that must be match for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--skip-rules`
 :  Skip all remaining rules, WAF managed rulesets, or rules of WAF managed rulesets. For example, `--skip-rules RULESETID-1:RULEID-a,RULEID-b;RULESETID-2:RULEID-x,RULEID-y.`. Set `current` to skip all remaining rules. Default is "current".
@@ -9938,7 +9938,7 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json
 :   The ID of managed ruleset.
 
 `--match`
-:   Specifies the conditions that must be match for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:   Specifies the conditions that must be match for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--enabled`
 :  Indicates if the rule is active. Default is "true".
@@ -10043,7 +10043,7 @@ ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json
 :   The ID of deployed managed rule.
 
 `--match`
-:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--enabled`
 :  Indicates if the rule is active. Default is "true".
@@ -10132,8 +10132,8 @@ ibmcloud cis managed-waf deployment-update-ruleset 31984fea73a15b45779fa0df4ef62
 
 ## WAF custom rules
 {: #waf-custom-rules}
- 
-Manage the WAF custom rules by using the following `custom-waf` commands. Firewall rules are now managed by WAF custom rules. 
+
+Manage the WAF custom rules by using the following `custom-waf` commands. Firewall rules are now managed by WAF custom rules.
 
 ### `ibmcloud cis custom-waf rules`
 {: #list-custom-rules}
@@ -10224,7 +10224,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 :   The ID of DNS domain.
 
 `--match`
-:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`
+:   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
 :The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
@@ -10244,7 +10244,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
-   
+
       - `action_parameters`: The rule action parameters.
       - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
       - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
@@ -10324,7 +10324,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 :  The ID of the rule.
 
 `--match`
-:   Specifies the conditions that must be matched for the rule to run. For match value, reference documentation `https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions`.
+:   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
 :The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
@@ -10344,7 +10344,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
-   
+
       - `action_parameters`: The rule action parameters.
         - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`
         - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
@@ -10356,7 +10356,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `description`: Briefly describes the rule.
       - `enabled`: Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
       - `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
-         
+
 
    Sample JSON data:
 
