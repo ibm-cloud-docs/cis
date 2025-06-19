@@ -80,3 +80,10 @@ You must add a domain before adding triggers. However, triggers can be added wit
 * **Editing a trigger** - Click the **Edit icon** ![Edit icon](../icons/edit-tagging.svg "Edit") in the table row for the selected trigger, then make changes and click **Save**.
 
 * **Deleting a trigger** - Click the **Delete icon** ![Delete icon](../icons/delete.svg "Delete") in the table row for the selected trigger. This action can't be undone.
+
+## Related links
+{: #related-links-edge-functions}
+
+[How Edge functions work](/docs/cis?topic=cis-working-with-edge-functions)
+
+[Edge function examples](/docs/cis?group=edge-functions-examples)

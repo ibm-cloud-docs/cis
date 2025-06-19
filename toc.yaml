@@ -158,7 +158,7 @@ toc:
             - edge-functions.md
             - edge-function-actions.md
             - topicgroup:
-                label: Edge functions examples
+                label: Edge function examples
                 topics:
                 - altering-headers.md
                 - redirect-country-code.md
