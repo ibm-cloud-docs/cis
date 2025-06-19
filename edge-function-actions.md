@@ -15,10 +15,8 @@ subcollection: cis
 # Using Edge function actions and triggers
 {: #edge-functions-actions}
 
-Edge functions consist of two main components: actions and triggers. Actions are JavaScript files that define logic to be executed at the edge. Triggers are URL-based routing rules that determine when and under what conditions those actions run. 
+Edge functions consist of two main components: actions and triggers. Actions are JavaScript files that define logic to be run at the edge. Triggers are routing rules based on URLs that define when and under what circumstances those actions should run. Triggers connect specific request patterns (like domains and paths) to the appropriate actions. Without an associated trigger, an action won't impact traffic.
 {: shortdesc}
-
-Triggers link specific request patterns (like domains and paths) to actions. Without an associated trigger, an action won't impact traffic.
 
 ## Edge function actions
 {: #edge-function-actions}
