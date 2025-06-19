@@ -47,18 +47,18 @@ Differences when working with actions depend on your plan:
 
 You can create, upload, edit, and manage actions to define the logic your Edge function runs in response to trigger events.
 
-* **Create action** - Click **Create** to add an action by using the code editor. After you add your JavaScript code, click **Save** to create your action. 
+* **Creating an action** - Click **Create** to add an action by using the code editor. After you add your JavaScript code, click **Save** to create your action. 
 
-* **Upload actions** - Click **Upload** to upload a JavaScript file. 
+* **Uploading an action** - Click **Upload** to upload a JavaScript file. 
 
     Uploading or creating an action with the same name as an existing action causes the existing action to be overwritten. Rename the action file before you upload, or enter a unique name in the text input during creation to avoid this behavior.
     {: note}
 
-* **Editing actions** - Selecting an action opens the action in the editor for modification. Make your changes and click **Save**. When you save your changes, the action uploads to the Cloud edge. If the action is in use, the changes take effect immediately.
+* **Editing an action** - Selecting an action opens the action in the editor for modification. Make your changes and click **Save**. When you save your changes, the action uploads to the Cloud edge. If the action is in use, the changes take effect immediately.
 
-* **Deleting actions** - Click the Delete icon in the table row for the selected action. An action can't be deleted while in use. To delete the action, remove it from the triggers first. The **Uses** column shows the number of triggers that are associated with this action. Delete can't be undone.
+* **Deleting an action** - Click the Delete icon in the table row for the selected action. An action can't be deleted while in use. To delete the action, remove it from the triggers first. The **Uses** column shows the number of triggers that are associated with this action. Delete can't be undone.
 
-* **Associated triggers** - Add a trigger and associate it with an action.
+* **Associating a trigger** - Add a trigger and associate it with an action.
 
 ## Edge function triggers
 {: #edge-function-triggers}
@@ -75,10 +75,10 @@ There are no differences in how triggers work across plans. All plans support ad
 
 You must add a domain before adding triggers. However, triggers can be added without having actions.
 
-* **Adding triggers** - Go to the **Triggers** tab and click **Add trigger**. Enter a URL pattern and select an action from the list of existing actions.
+* **Adding a trigger** - Go to the **Triggers** tab and click **Add trigger**. Enter a URL pattern and select an action from the list of existing actions.
 
    To keep a trigger path active without running an Edge function, enable **Avoid edge functions**. For example, if `my-function` is assigned to `gamma.cistest-load.com/*`, but you want `gamma.cistest-load.com/data` to bypass it, create a separate trigger for `/data` and enable **Avoid edge functions**. This ensures the `/data` path stays active without invoking `my-function`.
 
-* **Editing triggers** - Click the Edit icon in the table row for the selected trigger, then make changes and click **Save**.
+* **Editing a trigger** - Click the Edit icon in the table row for the selected trigger, then make changes and click **Save**.
 
-* **Deleting triggers** - Click the Delete icon in the table row for the selected trigger. This action can't be undone.
+* **Deleting a trigger** - Click the Delete icon in the table row for the selected trigger. This action can't be undone.
