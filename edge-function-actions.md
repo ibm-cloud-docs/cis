@@ -60,10 +60,18 @@ You can create, upload, edit, and manage actions to define the logic your Edge f
 
 * **Associated triggers** - Add a trigger and associate it with an action.
 
-## Working with triggers
-{: #working-with-triggers}
+## Edge function triggers
+{: #edge-function-triggers}
 
 Triggers (routes) determine how domain traffic is routed to actions. They associate URL patterns, based on a domain on the account, with a predefined action. The URL pattern must include the domain and may contain wildcards either as a prefix to the domain or at the end of the path. If no path is specified, a `/` is added implicitly. URL patterns can't contain infix wildcards or query parameters.
+
+### Plan differences
+{: #plan-differences-triggers}
+
+There are no differences in how triggers work across plans. All plans support adding, editing, and deleting triggers.
+
+### Working with triggers
+{: #working-with-triggers}
 
 You must add a domain before adding triggers. However, triggers can be added without having actions.
 
