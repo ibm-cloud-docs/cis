@@ -15,7 +15,7 @@ subcollection: cis
 # Using Edge function actions and triggers
 {: #edge-functions-actions}
 
-Edge functions consist of two main components: actions and triggers. Actions are JavaScript files that define logic to be executed at the ege. Triggers are URL-based routing rules that determine when and under what conditions those actions run. 
+Edge functions consist of two main components: actions and triggers. Actions are JavaScript files that define logic to be executed at the edge. Triggers are URL-based routing rules that determine when and under what conditions those actions run. 
 {: shortdesc}
 
 Triggers link specific request patterns (like domains and paths) to actions. Without an associated trigger, an action won't impact traffic.
@@ -77,8 +77,8 @@ You must add a domain before adding triggers. However, triggers can be added wit
 
 * **Adding triggers** - Go to the **Triggers** tab and click **Add trigger**. Enter a URL pattern and select an action from the list of existing actions.
 
-    * You can also select **Avoid Edge Functions** for a trigger's path to remain active without running any Edge function action. For example, if you have an action named `my-function` assigned to `gamma.cistest-load.com/*`, but want the path `gamma.cistest-load.com/data` to avoid running `my-function`, create a separate trigger for `gamma.cistest-load.com/data` and enable **Avoid Edge Functions**. This allows the path `gamma.cistest-load.com/data` to remain active without using the action `my-function`.
+   To keep a trigger path active without running an Edge function, enable **Avoid Edge Functions**. For example, if `my-function` is assigned to `gamma.cistest-load.com/*`, but you want `gamma.cistest-load.com/data` to bypass it, create a separate trigger for `/data` and enable **Avoid Edge Functions**. This ensures the `/data` path stays active without invoking `my-function`.
 
 * **Editing triggers** - Update a trigger by selecting the menu option in the table row for the trigger, then make changes and click **Save**.
 
-* **Deleting triggers** Delete a trigger using the menu option in the table row for a selected trigger. This action can't be undone.
+* **Deleting triggers** - Delete a trigger using the menu option in the table row for a selected trigger. This action can't be undone.
