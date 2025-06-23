@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-06-23"
 
 keywords:
 
@@ -12,14 +12,11 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Working with Edge functions
+# How Edge functions work
 {: #working-with-edge-functions}
 
 {{site.data.keyword.cis_full}} Edge functions allow you to create or modify existing applications, without having to configure or maintain infrastructure, by using a serverless execution environment. Edge functions can be defined and uploaded to the Cloud edge to process requests before they reach the origin. {{site.data.keyword.cis_short_notm}} Edge functions can be used to modify HTTP requests and responses, make parallel requests, or generate responses from the Cloud edge.
-{: shortdesc}
-
-## How Edge functions work
-{: #how-edge-functions-work}
+{: shortdesc} 
 
 Edge functions associates actions with URIs based on a defined domain. This association is called a _trigger_. Incoming requests to your site are intercepted at the Cloud edge and matched against the triggers in your account or domain. If the request URL matches the trigger's URI, the action associated with the trigger is run. 
 
@@ -136,7 +133,7 @@ All plans can set these features on outbound requests.
 
 - `cacheKey`: A request's cache key is what determines if two requests are "the same" for caching purposes. If a request has the same cache key as some previous request, then we can serve the same cached response for both (for example, `'some-key'`).
 - `cacheTtlByStatus`: This option is a version of the `cacheTtl` feature which chooses a TTL based on the response's status code. If the response to this request has a status code that matches, {{site.data.keyword.cis_short_notm}} caches for the instructed time, and overrides cache instructions sent by the origin (for example, `{ "200-299": 86400, 404: 1, "500-599": 0 }`).
-    {{site.data.keyword.cis_short_notm}} still adheres to standard cache levels, so by default this overrides cache behavior for static files. If you want to cache non-static   assets, you must set a Cache Level of Cache Everything using a Page Rule.
+    {{site.data.keyword.cis_short_notm}} still adheres to standard cache levels, so by default this overrides cache behavior for static files. If you want to cache non-static assets, you must set a Cache Level of Cache Everything using a Page Rule.
     {: note}
 
 An Edge functions script runs after {{site.data.keyword.cis_short_notm}} security features, but before everything else. Therefore, an Edge functions script can't affect the operation of security features (since they are already finished), but it can affect other features, like Image Size Optimization, or how the response is cached at the edge.
