@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-02-26"
 
 keywords:
 
@@ -12,11 +12,14 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How Edge functions work
+# Working with Edge functions
 {: #working-with-edge-functions}
 
 {{site.data.keyword.cis_full}} Edge functions allow you to create or modify existing applications, without having to configure or maintain infrastructure, by using a serverless execution environment. Edge functions can be defined and uploaded to the Cloud edge to process requests before they reach the origin. {{site.data.keyword.cis_short_notm}} Edge functions can be used to modify HTTP requests and responses, make parallel requests, or generate responses from the Cloud edge.
-{: shortdesc} 
+{: shortdesc}
+
+## How Edge functions work
+{: #how-edge-functions-work}
 
 Edge functions associates actions with URIs based on a defined domain. This association is called a _trigger_. Incoming requests to your site are intercepted at the Cloud edge and matched against the triggers in your account or domain. If the request URL matches the trigger's URI, the action associated with the trigger is run. 
 

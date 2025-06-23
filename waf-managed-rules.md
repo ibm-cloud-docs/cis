@@ -2,7 +2,9 @@
 
 copyright:
   years: 2024, 2025
+  
 lastupdated: "2025-06-23"
+=======
 
 keywords: managed rules
 
@@ -36,15 +38,7 @@ To migrate your instance to managed rules, take the following steps:
    * Click **Add** on the ruleset you want to add, then toggle the switch from **Disabled** to **Enabled** on the new rule.
    * Click **Configure** on the ruleset you want to configure before migrating. In the **Configure deployment** side panel, you can accept all incoming requests or update the scope of execution with the customized filters you make in the expression builder. Then, click **Save**.
 1. Click **Deploy** in the side panel to continue.
-1. (Enterprise only) Review security events in the **Security > Events** tab.
-
-   When you select **Deploy**, both WAF implementations are enabled simultaneously, allowing you to validate your new configuration and finish the upgrade. 
-
-   After deploying the new WAF configuration, both the old and new WAF Managed Rules run in parallel (called validation mode). During this phase, the WAF tab in the CIS console displays both rulesets, with the new WAF Managed Rules evaluated before the previous version.
-
-   1. Use the current validation mode to review the behavior of the new WAF configuration in **Security > Events**.
-   1. When you are done reviewing your configuration with both WAFs enabled, click **Ready** to complete the upgrade.
-   
+1. (Enterprise only) Review the security events in the **Security > Events** tab, and select **Ready to update** when you feel the events are correct.
 1. Select **Turn off previous version** to finalize the migration (this step can't be undone), or cancel to continue editing. This transition does not incur any downtime.
 
 ## Editing rulesets
