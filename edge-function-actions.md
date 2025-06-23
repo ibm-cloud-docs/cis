@@ -2,9 +2,7 @@
 
 copyright:
   years: 2020, 2025
-  
 lastupdated: "2025-06-23"
-=======
 
 keywords: edge functions
 
@@ -17,7 +15,7 @@ subcollection: cis
 # Working with Edge functions actions
 {: #edge-functions-actions}
 
-Actions are written in JavaScript and require an event listener to respond to a trigger event. Actions do not effect your traffic unless used by a trigger. 
+Actions are written in JavaScript and require an event listener to respond to a trigger event. Actions do not effect your traffic unless used by a trigger. 
 {: shortdesc}
 
 * **Standard plans** Have a maximum of one action. The action is assigned a name that is the same as your domain. You can replace your action by uploading another file, or update your action by using the code editor. Uploading another file removes the existing action.
@@ -43,7 +41,7 @@ Actions are written in JavaScript and require an event listener to respond to a 
 ## Working with triggers
 {: #triggers}
 
-Triggers (routes) determine domain traffic routing to the actions. Triggers associate certain URL patterns, based on a domain on the account, with a predefined action. The URL must contain the domain, but it can contain wildcards either as a prefix to the domain, or at the end of the path. If no path is given on the pattern, a `/` is added implicitly. The URL pattern can't contain infix wildcards or query parameters. 
+Triggers (routes) determine domain traffic routing to the actions. Triggers associate certain URL patterns, based on a domain on the account, with a predefined action. The URL must contain the domain, but it can contain wildcards either as a prefix to the domain, or at the end of the path. If no path is given on the pattern, a `/` is added implicitly. The URL pattern can't contain infix wildcards or query parameters. 
 
 You must add a domain to add triggers. You can add triggers without having actions.
 
