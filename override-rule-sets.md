@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-06-23"
 
 keywords:
 
@@ -216,7 +216,7 @@ You can override rulesets using Terraform.
 
 The following example lists all managed rulesets using Terraform:
 
-```sh  
+```sh
 data "ibm_cis_rulesets" "tests" {
     cis_id    = ibm_cis.instance.id
     domain_id = data.ibm_cis_domain.cis_domain.domain_id
@@ -231,7 +231,7 @@ For more information about the arguments and attributes, see [`ibm_cis_rulesets`
 
 The following example lists all rules of a managed ruleset using Terraform:
 
-```sh 
+```sh
 resource "ibm_cis_ruleset" "config" {
     cis_id    = ibm_cis.instance.id
     domain_id = data.ibm_cis_domain.cis_domain.domain_id
@@ -241,7 +241,7 @@ resource "ibm_cis_ruleset" "config" {
 {: pre}
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset){: external} in the Terraform registry.
- 
+
 ### Overriding a rule with Terraform
 {: #terraform-override-entry-point-rule-set}
 
@@ -275,11 +275,11 @@ This example shows how to deploy the CIS managed ruleset with various overrides.
               action = "block"
             }
           }
-        } 
+        }
       }
     }
   }
 ```
-{: pre} 
+{: pre}
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset_entrypoint_version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_entrypoint_version){: external} in the Terraform registry.
