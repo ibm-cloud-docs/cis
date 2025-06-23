@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-06-23"
 
 keywords:
 
@@ -374,7 +374,7 @@ ibmcloud cis access-certificate-update DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID --nam
 :   The name of the Certificate. Required.
 
 `--associated-hostnames`
-:   The hostnames that are prompted for this certificate. Required.
+:  The hostnames that are prompted for this certificate. Required.
    The associated hostnames are reset if not specified by `associated-hostnames`.
    {: note}
 
@@ -765,11 +765,11 @@ ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--brows
 :   The ID of the DNS domain. Required.
 
 `--caching-level`
-:   Specify under what URL conditions you want to deliver cached assets to the user. Valid values: `no-query-string`, `query-string-independent`, `query-string-dependent`.
+:   Specify under what URL conditions that you want to deliver cached assets to the user. Valid values: `no-query-string`, `query-string-independent`, `query-string-dependent`.
 
-    - `no-query-string`: Delivers resources from cache only when no query string is present.
-    - `query-string-independent`: Delivers the same resource to everyone independent of the query string.
-    - `query-string-dependent`: Delivers a different resource each time the query string changes.
+    - `no-query-string` : Delivers resources from cache only when no query string is present.
+    - `query-string-independent` : Delivers the same resource to everyone independent of the query string.
+    - `query-string-dependent` : Delivers a different resource each time the query string changes.
 
 `--browser-expiration`
 :   Specify how long you want the user's browser to store cached assets.
@@ -954,7 +954,7 @@ ibmcloud cis dns-record-create DNS_DOMAIN_ID --type TYPE --name NAME --content C
 :   Time to live for DNS record. A value of 1 is `automatic`. The default value is `1`.
 
 `--proxied`
-:   Control whether or not traffic flows through the security and performance functions on CIS. CIS proxies only traffic for `A`, `AAAA`, and `CNAME` records. Valid values: `true`, `false`.
+:   Control whether traffic flows through the security and performance functions on CIS. CIS proxies traffic only for `A`, `AAAA`, and `CNAME` records. Valid values: `true`, `false`.
 
 `--json`
 :   The JSON file or JSON string that is used to describe a DNS Record. Supported DNS Record types are: `A`, `AAAA`, `CNAME`, `NS`, `TXT`, `MX`, `LOC`, `SRV`, `CAA`, `PTR`.
@@ -1002,7 +1002,7 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `PTR`:
+- For type `PTR` :
    - The required fields in JSON data are `name`, `type`, `content`.
    - The optional fields are `ttl`.
 
@@ -1017,7 +1017,7 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `MX`:
+- For type `MX` :
    - The required fields in JSON data are `name`, `type`, `content`.
    - The optional fields are `ttl`, `priority`.
 
@@ -1033,21 +1033,21 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `LOC`:
+- For type `LOC` :
    - The required fields in JSON data are `name`, `type`, `data`:
       - `data`:
-         - `lat_degrees`: Degrees of latitude.
-         - `lat_minutes`: Minutes of latitude
-         - `lat_seconds`: Seconds of latitude.
-         - `lat_direction`: Latitude direction.
-         - `long_degrees`: Degrees of longitude.
-         - `long_minutes`: Minutes of longitude.
-         - `long_seconds`: Seconds of longitude.
-         - `long_direction`: Longitude direction.
-         - `altitude`: Altitude of location in meters.
-         - `size`: Size of location in meters.
-         - `precision_horz`: Horizontal precision of location.
-         - `precision_vert`: Vertical precision of location.
+         - `lat_degrees` : Degrees of latitude.
+         - `lat_minutes` : Minutes of latitude
+         - `lat_seconds` : Seconds of latitude.
+         - `lat_direction` : Latitude direction.
+         - `long_degrees` : Degrees of longitude.
+         - `long_minutes` : Minutes of longitude.
+         - `long_seconds` : Seconds of longitude.
+         - `long_direction` : Longitude direction.
+         - `altitude` : Altitude of location in meters.
+         - `size` : Size of location in meters.
+         - `precision_horz` : Horizontal precision of location.
+         - `precision_vert` : Vertical precision of location.
       - The optional field is `ttl`.
 
 Sample JSON data:
@@ -1074,15 +1074,15 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `SRV`:
+- For type `SRV` :
    - The required fields in JSON data are `type`, `data`:
       - `data`:
-            - `service`: A service type, prefixed with an underscore.
-            - `proto`: A valid protocol.
-            - `priority`: Priority.
-            - `weight`: The record weight.
-            - `port`: The port of the service.
-            - `target`: A valid hostname.
+            - `service` : A service type, prefixed with an underscore.
+            - `proto` : A valid protocol.
+            - `priority` : Priority.
+            - `weight` : The record weight.
+            - `port` : The port of the service.
+            - `target` : A valid hostname.
       - The optional field is `ttl`.
 
 Sample JSON data:
@@ -1227,7 +1227,7 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `PTR`:
+- For type `PTR` :
     - The required fields in JSON data are `name`, `type`, `content`.
     - The optional fields are `ttl`.
 
@@ -1242,7 +1242,7 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `MX`:
+- For type `MX` :
     - The required fields in JSON data are `name`, `type`, `content`.
     - The optional fields are `ttl`, `priority`.
 
@@ -1258,21 +1258,21 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `LOC`:
+- For type `LOC` :
     - The required fields in JSON data are `name`, `type`, `data`:
         - `data`:
-            - `lat_degrees`: Degrees of latitude.
-            - `lat_minutes`: Minutes of latitude
-            - `lat_seconds`: Seconds of latitude.
-            - `lat_direction`: Latitude direction.
-            - `long_degrees`: Degrees of longitude.
-            - `long_minutes`: Minutes of longitude.
-            - `long_seconds`: Seconds of longitude.
-            - `long_direction`: Longitude direction.
-            - `altitude`: Altitude of location in meters.
-            - `size`: Size of location in meters.
-            - `precision_horz`: Horizontal precision of location.
-            - `precision_vert`: Vertical precision of location.
+            - `lat_degrees` : Degrees of latitude.
+            - `lat_minutes` : Minutes of latitude
+            - `lat_seconds` : Seconds of latitude.
+            - `lat_direction` : Latitude direction.
+            - `long_degrees` : Degrees of longitude.
+            - `long_minutes` : Minutes of longitude.
+            - `long_seconds` : Seconds of longitude.
+            - `long_direction` : Longitude direction.
+            - `altitude` : Altitude of location in meters.
+            - `size` : Size of location in meters.
+            - `precision_horz` : Horizontal precision of location.
+            - `precision_vert` : Vertical precision of location.
     - The optional field is `ttl`.
 
    Sample JSON data:
@@ -1299,15 +1299,15 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `SRV`:
+- For type `SRV` :
     - The required fields in JSON data are `type`, `data`:
         - `data`:
-            - `service`: A service type, prefixed with an underscore.
-            - `proto`: A valid protocol.
-            - `priority`: Priority.
-            - `weight`: The record weight.
-            - `port`: The port of the service.
-            - `target`: A valid hostname.
+            - `service` : A service type, prefixed with an underscore.
+            - `proto` : A valid protocol.
+            - `priority` : Priority.
+            - `weight` : The record weight.
+            - `port` : The port of the service.
+            - `target` : A valid hostname.
     - The optional field is `ttl`.
 
    Sample JSON data:
@@ -1328,7 +1328,7 @@ Sample JSON data:
 ```
 {: codeblock}
 
-- For type `CAA`:
+- For type `CAA` :
      - The required fields in JSON data are `name`, `type`, `data`:
      - The optional field is `ttl`.
 
@@ -1580,8 +1580,8 @@ ibmcloud cis domain-add DNS_DOMAIN_NAME [-i, --instance INSTANCE] [--output FORM
 `type`
 :   Specify the domain type setup. Valid values: `full`, `partial` (default `full`).
 
-    - `full`: A full zone implies that the DNS is hosted.
-    - `partial`: A partial zone implies a CNAME setup domain.
+    - `full` : A full zone implies that the DNS is hosted.
+    - `partial` : A partial zone implies a CNAME setup domain.
 
 `jump-start`
 :   Automatically attempt to fetch existing DNS records.
@@ -1815,46 +1815,46 @@ ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FE
 
 `-f, --feature`
 :   Feature of domain settings to check. This option is mutually exclusive with *g, --group*. Valid values are as follows:
-    - `always_use_https`: Redirect all requests with scheme `http` to `https`. This setting applies to all HTTP requests to the domain.
-    - `automatic_https_rewrites`: Help fix mixed content by changing `http` to `https` for all resources or links on your website that can be served with HTTPS.
-    - `bot_management`: Detect and mitigate bot traffic on your domain.
-    - `brotli`: When the client that is requesting an asset supports the brotli compression algorithm, CIS serves a brotli compressed version of the asset.
-    - `browser_check`: Evaluate HTTP headers from your visitors' browser for threats. If a threat is found, then a block page is delivered.
-    - `challenge_ttl`: Specify how long a visitor with a bad IP reputation is allowed access to your website after they complete a challenge.
-    - `ciphers`: An allowlist of ciphers for TLS termination in the BoringSSL format. This command lists ciphers that are allowlisted by customers. If no ciphers are allowlisted, the list is empty and the default ciphers are used. See [Edge cipher suites](/docs/cis?topic=cis-set-up-cipher-suites&interface=cli#edge-cipher-suites) and [Origin cipher suites](/docs/cis?topic=cis-set-up-cipher-suites&interface=cli#origin-cipher-suites) for the list of default ciphers.
-    - `cname_flattening`: Follow a CNAME to where it points and return that IP address instead of the CNAME record. By default, flatten only the CNAME at the root of your domain.
+    - `always_use_https` : Redirect all requests with scheme `http` to `https`. This setting applies to all HTTP requests to the domain.
+    - `automatic_https_rewrites` : Help fix mixed content by changing `http` to `https` for all resources or links on your website that can be served with HTTPS.
+    - `bot_management` : Detect and mitigate bot traffic on your domain.
+    - `brotli` : When the client that is requesting an asset supports the brotli compression algorithm, CIS serves a brotli compressed version of the asset.
+    - `browser_check` : Evaluate HTTP headers from your visitors' browser for threats. If a threat is found, then a block page is delivered.
+    - `challenge_ttl` : Specify how long a visitor with a bad IP reputation is allowed access to your website after they complete a challenge.
+    - `ciphers` : An allowlist of ciphers for TLS termination in the BoringSSL format. This command lists ciphers that are allowlisted by customers. If no ciphers are allowlisted, the list is empty and the default ciphers are used. See [Edge cipher suites](/docs/cis?topic=cis-set-up-cipher-suites&interface=cli#edge-cipher-suites) and [Origin cipher suites](/docs/cis?topic=cis-set-up-cipher-suites&interface=cli#origin-cipher-suites) for the list of default ciphers.
+    - `cname_flattening` : Follow a CNAME to where it points and return that IP address instead of the CNAME record. By default, flatten only the CNAME at the root of your domain.
     - `domain_hold`: Domain holds prevent teams in your organization from adding domains that are already active in another account (Enterprise plan only).
-    - `email_obfuscation`: Encrypt email addresses on your web page from bots while keeping them visible to humans.
-    - `opportunistic_onion`: Allow legitimate users of Tor Browser to access your websites.
-    - `hotlink_protection`: Protect your images from off-site linking.
-    - `http2`: Accelerate your website with HTTP/2.
-    - `http3`: Accelerate your website with HTTP/3.
-    - `image_load_optimization`: Improve load time for pages that include images on mobile devices with slow network connections.
-    - `image_size_optimization`: Improve image load time by optimizing images hosted on your domain.
-    - `image_resizing`: Provide on-demand resizing, conversion and optimization for images served through the CIS network.
-    - `ip_geolocation`: Include the country code of the visitor location with all requests to your website.
-    - `ipv6`: Enable IPv6 support and gateway.
-    - `max_upload`: The amount of data visitors can upload to your website in a single request.
-    - `min_tls_version`: Only allow HTTPS connections from visitors that support the selected TLS protocol version or newer.
-    - `minify`: Reduce the file size of source code on your website.
-    - `mobile_redirect`: Redirect visitors that are using mobile devices to a mobile-optimized website.
-    - `opportunistic_encryption`: Opportunistic Encryption allows browsers to benefit from the improved performance of HTTP/2 by letting them know  that your site is available over an encrypted connection.
-    - `origin_error_page_pass_thru`: When Origin Error Page is set to `On`, CIS will proxy the 502 and 504 error pages directly from the origin. (Enterprise plan only)
-    - `origin_max_http_version`: Configure the HTTP version to Origin.
-    - `origin_post_quantum_encryption`: Instructs CIS to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin.
-    - `prefetch_preload`: CIS will prefetch any URLs included in the prefetch HTTP header (Enterprise plan only).
-    - `pseudo_ipv4`: Adds an IPv4 header to requests when a client is using IPv6, but the server only supports IPv4.
-    - `response_buffering`: Enable or disable buffering of responses from the origin server (Enterprise plan only).
-    - `script_load_optimization`: Improve the paint time for pages that include JavaScript.
-    - `security_header`: Enforce web security policy for your website.
-    - `security_level`: Choose the appropriate security profile for your website.
-    - `server_side_exclude`: Automatically hide specific content from suspicious visitors.
-    - `tls_client_auth`: TLS client certificate presented for authentication on origin pull (Enterprise plan only).
-    - `true_client_ip_header`: CIS sends the end user’s IP address in the True-Client-IP header (Enterprise plan only).
-    - `waf`: A Web Application Firewall (WAF) blocks requests that contain malicious content.
-    - `websockets`: Allow WebSockets connections to your origin server.
-    - `proxy_read_timeout`: Maximum time between two read operations from origin (Enterprise plan only).
-    - `url_normalization`: Modify the URLs of incoming requests.
+    - `email_obfuscation` : Encrypt email addresses on your web page from bots while it's kept visible to humans.
+    - `opportunistic_onion` : Allow legitimate users of Tor Browser to access your websites.
+    - `hotlink_protection` : Protect your images from off-site linking.
+    - `http2` : Accelerate your website with HTTP/2.
+    - `http3` : Accelerate your website with HTTP/3.
+    - `image_load_optimization` : Improve load time for pages that include images on mobile devices with slow network connections.
+    - `image_size_optimization` : Improve image load time by optimizing images hosted on your domain.
+    - `image_resizing` : Provide on-demand resizing, conversion, and optimization for images served through the CIS network.
+    - `ip_geolocation` : Include the country code of the visitor location with all requests to your website.
+    - `ipv6` : Enable IPv6 support and gateway.
+    - `max_upload` : The number of data visitors who can upload to your website in a single request.
+    - `min_tls_version` : Allow only HTTPS connections from visitors that support the selected TLS protocol version or newer.
+    - `minify` : Reduce the file size of source code on your website.
+    - `mobile_redirect` : Redirect visitors that are using mobile devices to a mobile-optimized website.
+    - `opportunistic_encryption` : Opportunistic Encryption allows browsers to benefit from the improved performance of HTTP/2 by letting them know that your site is available over an encrypted connection.
+    - `origin_error_page_pass_thru` : When the Origin Error Page is set to `On`, CIS will proxy the 502 and 504 error pages directly from the origin. (Enterprise plan only)
+    - `origin_max_http_version` : Configure the HTTP version to Origin.
+    - `origin_post_quantum_encryption` : Instructs CIS to use Post-Quantum (PQ) key agreement algorithms when it connects to your origin.
+    - `prefetch_preload` : CIS will prefetch any URLs included in the prefetch HTTP header (Enterprise plan only).
+    - `pseudo_ipv4` : Adds an IPv4 header to requests when a client is using IPv6, but the server only supports IPv4.
+    - `response_buffering` : Enable or disable buffering of responses from the origin server (Enterprise plan only).
+    - `script_load_optimization` : Improve the paint time for pages that include JavaScript.
+    - `security_header` : Enforce a web security policy for your website.
+    - `security_level` : Choose the appropriate security profile for your website.
+    - `server_side_exclude` : Automatically hide specific content from suspicious visitors.
+    - `tls_client_auth` : TLS client certificate presented for authentication on origin pull (Enterprise plan only).
+    - `true_client_ip_header` : CIS sends the user’s IP address in the True-Client-IP header (Enterprise plan only).
+    - `waf` : A Web Application Firewall (WAF) blocks requests that contain malicious content.
+    - `websockets` : Allow WebSockets connections to your origin server.
+    - `proxy_read_timeout` : Maximum time between two read operations from origin (Enterprise plan only).
+    - `url_normalization` : Modify the URLs of incoming requests.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -1890,66 +1890,66 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
 
 `-f, --feature`
 :   Feature of domain settings to update. Required. Valid values:
-    - `always_use_https`: Redirect all requests with scheme `http` to `https`. This redirect applies to all http requests to the domain.
-    - `automatic_https_rewrites`: Help fix mixed content by changing `http` to `https` for all resources or links on your website that can be served with HTTPS.
-    - `bot_management`: Detect and mitigate bot traffic on your domain.
-    - `brotli`: When the client that is requesting an asset supports the brotli compression algorithm, CIS serves a brotli compressed version of the asset.
-    - `browser_check`: Evaluate HTTP headers from your visitors' browser for threats. If a threat is found, then a block page is delivered.
-    - `challenge_ttl`: Specify how long a visitor with a bad IP reputation is allowed access to your website after completing a challenge.
-    - `ciphers`: A whitelist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
-    - `cname_flattening`: Follow a CNAME to where it points and return that IP address instead of the CNAME record.
+    - `always_use_https` : Redirect all requests with scheme `http` to `https`. This redirect applies to all http requests to the domain.
+    - `automatic_https_rewrites` : Help fix mixed content by changing `http` to `https` for all resources or links on your website that can be served with HTTPS.
+    - `bot_management` : Detect and mitigate bot traffic on your domain.
+    - `brotli` : When the client that is requesting an asset supports the brotli compression algorithm, CIS serves a brotli compressed version of the asset.
+    - `browser_check` : Evaluate HTTP headers from your visitors' browser for threats. If a threat is found, then a block page is delivered.
+    - `challenge_ttl` : Specify how long a visitor with a bad IP reputation is allowed access to your website after they complete a challenge.
+    - `ciphers` : A whitelist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
+    - `cname_flattening` : Follow a CNAME to where it points and return that IP address instead of the CNAME record.
        By default, only flatten the CNAME at the root of your domain.
     - `domain_hold`: Domain holds prevent teams in your organization from adding domains that are already active in another account (Enterprise plan only).
-    - `email_obfuscation`: Encrypt email addresses on your web page from bots while keeping them visible to humans.
-    - `opportunistic_onion`: Allow legitimate users of Tor Browser to access your websites.
-    - `hotlink_protection`: Protect your images from off-site linking.
-    - `http2`: Accelerate your website with HTTP/2.
-    - `http3`: Accelerate your website with HTTP/3.
-    - `image_load_optimization`: Improve load time for pages that include images on mobile devices with slow network connections.
-    - `image_size_optimization`: Improve image load time by optimizing images hosted on your domain.
-    - `image_resizing`: Provide on-demand resizing, conversion and optimization for images served through the CIS network.
-    - `ip_geolocation`: Include the country code of the visitor location with all requests to your website.
-    - `ipv6`: Enable IPv6 support and gateway.
-    - `max_upload`: The amount of data visitors can upload to your website in a single request.
-    - `min_tls_version`: Only allow HTTPS connections from visitors that support the selected TLS protocol version or newer.
-    - `minify`: Reduce the file size of source code on your website.
-    - `mobile_redirect`: Redirect visitors that are using mobile devices to a mobile-optimized website.
-    - `opportunistic_encryption`: Opportunistic Encryption allows browsers to benefit from the improved performance of HTTP/2 by letting them know that your site is available over an encrypted connection.
-    - `origin_error_page_pass_thru`: When Origin Error Page is set to `On`, CIS will proxy the 502 and 504 error pages directly from the origin (Enterprise plan only).
-    - `origin_max_http_version`: Configure the HTTP version to Origin.
-    - `origin_post_quantum_encryption`: Instructs CIS to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin.
-    - `prefetch_preload`: CIS will prefetch any URLs included in the prefetch HTTP header (Enterprise plan only).
-    - `pseudo_ipv4`: Adds an IPv4 header to requests when a client is using IPv6, but the server only supports IPv4.
-    - `response_buffering`: Enable or disable buffering of responses from the origin server (Enterprise plan only).
-    - `script_load_optimization`: Improve the paint time for pages that include JavaScript.
-    - `security_header`: Enforce web security policy for your website.
-    - `security_level`: Choose the appropriate security profile for your website.
-    - `server_side_exclude`: Automatically hide specific content from suspicious visitors.
-    - `tls_client_auth`: TLS client certificate presented for authentication on origin pull (Enterprise plan only).
-    - `true_client_ip_header`: CIS will send the end user’s IP address in the True-Client-IP header (Enterprise plan only).
-    - `waf`: A Web Application Firewall (WAF) blocks requests that contain malicious content.
-    - `websockets`: Allow WebSockets connections to your origin server.
-    - `proxy_read_timeout`: Maximum time between two read operations from origin.
-    - `url_normalization`: Modify the URLs of incoming requests.
+    - `email_obfuscation` : Encrypt email addresses on your web page from bots while it's kept visible to humans.
+    - `opportunistic_onion` : Allow legitimate users of Tor Browser to access your websites.
+    - `hotlink_protection` : Protect your images from off-site linking.
+    - `http2` : Accelerate your website with HTTP/2.
+    - `http3` : Accelerate your website with HTTP/3.
+    - `image_load_optimization` : Improve load time for pages that include images on mobile devices with slow network connections.
+    - `image_size_optimization` : Improve image load time by optimizing images hosted on your domain.
+    - `image_resizing` : Provide on-demand resizing, conversion, and optimization for images served through the CIS network.
+    - `ip_geolocation` : Include the country code of the visitor location with all requests to your website.
+    - `ipv6` : Enable IPv6 support and gateway.
+    - `max_upload` : The number of data visitors who can upload to your website in a single request.
+    - `min_tls_version`: Allow only HTTPS connections from visitors that support the selected TLS protocol version or newer.
+    - `minify` : Reduce the file size of source code on your website.
+    - `mobile_redirect` : Redirect visitors that are using mobile devices to a mobile-optimized website.
+    - `opportunistic_encryption` : Opportunistic Encryption allows browsers to benefit from the improved performance of HTTP/2 by letting them know that your site is available over an encrypted connection.
+    - `origin_error_page_pass_thru` : When Origin Error Page is set to `On`, CIS will proxy the 502 and 504 error pages directly from the origin (Enterprise plan only).
+    - `origin_max_http_version` : Configure the HTTP version to Origin.
+    - `origin_post_quantum_encryption` : Instructs CIS to use Post-Quantum (PQ) key agreement algorithms when it connects to your origin.
+    - `prefetch_preload` : CIS will prefetch any URLs included in the prefetch HTTP header (Enterprise plan only).
+    - `pseudo_ipv4` : Adds an IPv4 header to requests when a client is using IPv6, but the server only supports IPv4.
+    - `response_buffering` : Enable or disable buffering of responses from the origin server (Enterprise plan only).
+    - `script_load_optimization` : Improve the paint time for pages that include JavaScript.
+    - `security_header` : Enforce a web security policy for your website.
+    - `security_level` : Choose the appropriate security profile for your website.
+    - `server_side_exclude` : Automatically hide specific content from suspicious visitors.
+    - `tls_client_auth` : TLS client certificate presented for authentication on origin pull (Enterprise plan only).
+    - `true_client_ip_header` : CIS will send the user’s IP address in the True-Client-IP header (Enterprise plan only).
+    - `waf` : A Web Application Firewall (WAF) blocks requests that contain malicious content.
+    - `websockets` : Allow WebSockets connections to your origin server.
+    - `proxy_read_timeout` : Maximum time between two read operations from origin.
+    - `url_normalization` : Modify the URLs of incoming requests.
 
 `-v, --value`
 :   The value set to the feature for domain. Required.
     - Valid values for `always_use_https` are `on`, `off`.
     - Valid values for `automatic_https_rewrites` are `on`, `off`.
     - Valid values for `bot_management` are "use_latest_model", "fight_mode", "session_score", "enable_js". For example, `-v fight_mode=true,session_score=true`
-         - `use_latest_model`: Whether to enable latest model version. Valid values for `use_latest_model` are `true`, `false`.
-         - `fight_mode`: Whether to enable the fight mode. Valid values for `fight_mode` are `true`, `false`.
-         - `session_score`: Whether to enable the session score. Valid values for `session_score` are `true`, `false`.
-         - `enable_js`: Whether to enable javascript detections. Valid values for `enable_js` are `true`, `false`.
+         - `use_latest_model` : Whether to enable latest model version. Valid values for `use_latest_model` are `true`, `false`.
+         - `fight_mode` : Whether to enable the fight mode. Valid values for `fight_mode` are `true`, `false`.
+         - `session_score` : Whether to enable the session score. Valid values for `session_score` are `true`, `false`.
+         - `enable_js` : Whether to enable JavaScript detections. Valid values for `enable_js` are `true`, `false`.
     - Valid values for `browser_check` are `on`, `off`.
     - Valid values for `challenge_ttl` are `300, 900, 1800, 2700, 3600, 7200, 10800, 14400, 28800, 57600, 86400, 604800, 2592000, 31536000`.
     - Valid values for `cname_flattening` are `flatten_at_root`, `flatten_all`.
-        - `flatten_at_root`: Flatten CNAME at root domain. This is the default value.
-        - `flatten_all`: Flatten all CNAME records under your domain.
+        - `flatten_at_root` : Flatten CNAME at the root domain. This value is the default value.
+        - `flatten_all` : Flatten all CNAME records under your domain.
     - Valid values for `domain_hold` are `hold`, `include_subdomains`, `hold_after`.
-        - `hold`: Whether to enable the domain hold. Valid values for `hold` are `true`, `false`.
+        - `hold` : Whether to enable the domain hold. Valid values for `hold` are `true`, `false`.
         - `include_subdomains`: Whether to enable the domain hold. Valid values for `include_subdomains` are `true`, `false`.
-        - `hold_after`: If `hold_after` is provided, the hold is temporarily disabled, then automatically re-enabled by the system at the time specified.
+        - `hold_after` : If `hold_after` is provided, the hold is temporarily disabled, then automatically re-enabled by the system at the time specified.
 
         For enable domain and subdomains hold: `-v hold=true,include_subdomains=true`.
         For disable domain hold: `-v hold=false,hold_after=2023-05-31T15:56:36+00:00`.
@@ -1963,7 +1963,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `image_size_optimization` are `off`, `lossless`, `lossy`.
         - `off`: Disable Image Size Optimization.
         - `lossless`: Reduce the size of image files without impacting visual quality.
-        - `lossy`: The file size of JPEG images is reduced using lossy compression, which may reduce visual quality.
+        - `lossy`: The file size of JPEG images is reduced by using lossy compression, which might reduce visual quality.
     - Valid values for `ip_geolocation` are `on`, `off`.
     - Valid values for `ipv6` are `on`, `off`.
     - Valid values(in MB) for `max_upload` are:
@@ -1975,7 +1975,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
         - `js`: Automatically minify all JS for your website. Valid values for `js` are `on`, `off`.
     - Valid values for `mobile_redirect` are `status`, `mobile_subdomain`, `strip_uri`. For example, `-v status=on,mobile_subdomain=m,strip_uri=true`
         - `status`: Whether or not the mobile redirection is enabled. Valid values for `status` are `on`, `off`.
-        - `mobile_subdomain`: Which subdomain prefix you wish to redirect visitors on mobile devices to (subdomain must already exist).
+        - `mobile_subdomain`: Which subdomain prefix you want to redirect visitors on mobile devices to (subdomain must exist).
         - `strip_uri`: Whether to drop the current page path and redirect to the mobile subdomain URL root. Valid values for `strip_uri` are `true`, `false`.
     - Valid values for `opportunistic_encryption` are `on`, `off`.
     - Valid values for `origin_error_page_pass_thru` are `1`, `2`.
@@ -1988,14 +1988,14 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `prefetch_preload` are `on`, `off`.
     - Valid values for `pseudo_ipv4` are `off`, `add_header`, `overwrite_header`.
         - `off`: Disable Pseudo IPv4.
-        - `add_header`: Add additional Cf-Pseudo-IPv4 header only.
+        - `add_header`: Add an additional Cf-Pseudo-IPv4 header only.
         - `overwrite_header`: Overwrite the existing Cf-Connecting-IP and X-Forwarded-For headers with a pseudo IPv4 address.
     - Valid values for `response_buffering` are `on`, `off`.
     - Valid values for `script_load_optimization` are `on`, `off`.
     - Valid values for `security_header` are `enabled`, `max_age`, `include_subdomains`, `preload`, `nosniff`. For example, -v enabled=true,max_age=100,include_subdomains=true,preload=true,nosniff=true
         - `enabled`: Whether or not security_header is enabled. Valid values for `enabled` are `true`, `false`.
         - `max_age`: Specify the duration(in seconds) security_header are cached in browsers.
-        - `include_subdomains`: Every domain below the domain will inherit the same security_header. Valid values for `include_subdomains` are `true`, `false`.
+        - `include_subdomains`: Every domain below the domain inherits the same security_header. Valid values for `include_subdomains` are `true`, `false`.
         - `preload`: Whether or not to permit browsers to preload security_header config. Valid values for `enabled` are `true`, `false`.
         - `nosniff`: Whether or not to send `X-Content-Type-Options: nosniff` header. Valid values for `nosniff` are `true`, `false`.
     - Valid values for `server_level` are `off`, `essentially_off`, `low`, `medium`, `high`, `under_attack`.
@@ -2006,8 +2006,8 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `websockets` are `on`, `off`.
     - Valid values for `proxy_read_timeout`, 1-6000, default: 100.
     - Valid values for `ciphers` are `ECDHE-ECDSA-AES128-GCM-SHA256`, `ECDHE-ECDSA-CHACHA20-POLY1305`, `ECDHE-RSA-AES128-GCM-SHA256`, `ECDHE-RSA-CHACHA20-POLY1305`, `ECDHE-ECDSA-AES128-SHA256`, `ECDHE-ECDSA-AES128-SHA`, `ECDHE-RSA-AES128-SHA256`, `ECDHE-RSA-AES128-SHA`, `AES128-GCM-SHA256`, `AES128-SHA256`, `AES128-SHA`, `ECDHE-ECDSA-AES256-GCM-SHA384`, `ECDHE-ECDSA-AES256-SHA384`, `ECDHE-RSA-AES256-GCM-SHA384`, `ECDHE-RSA-AES256-SHA384`, `ECDHE-RSA-AES256-SHA`, `AES256-GCM-SHA384`, `AES256-SHA256`, `AES256-SHA`, `DES-CBC3-SHA`, `default`. For example, `-v AES256-SHA256,AES256-SHA`, using `-v default` to reset configured cipher suites to default value.
-    - Valid values for `url_normalization` are "type", "scope". For example -v type=cis,scope=both
-         - `type`: Selects the type of URL normalization performed by CIS. Valid values for `type` are `cis`, `rfc3986`.
+    - Valid values for `url_normalization` are "type", "scope". For example, -v type=cis,scope=both
+         - `type`: Selects the type of URL normalization that is performed by CIS. Valid values for `type` are `cis`, `rfc3986`.
          - `scope`: Configures the scope of the URL normalization. Valid values for `scope` are `both`, `incoming`.
 
 `-i, --instance`
@@ -3197,27 +3197,27 @@ ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (--json @JSON_FILE | JSON_STRING) [
 :   The ID of the DNS domain. Required.
 
 `GLB_ID`
-:   The ID of global load balancer. Required.
+:   The ID of the global load balancer. Required.
 
 `--json`
 :   The JSON file or JSON string used to describe a global load balancer. Required.
     - The required fields in JSON data are `name`, `fallback_pool`, `default_pools`:
-        - `name`:the DNS hostname to associate with your Load Balancer.
-        - `fallback_pool`:the pool ID to use when all other pools are detected as unhealthy.
-        - `default_pools`:a list of pool IDs ordered by their failover priority.
+        - `name` : The DNS hostname to associate with your load balancer.
+        - `fallback_pool` : The pool ID to use when all other pools are detected as unhealthy.
+        - `default_pools` : A list of pool IDs ordered by their failover priority.
     - The optional fields are `description`, `ttl`, `region_pools`, `proxied`, `enabled`, `session_affinity`, `session_affinity_ttl`, `steering_policy`:
-        - `description`: the description of your Load Balancer.
-        - `ttl`: time to live (TTL) of the DNS entry for the IP address returned by this load balancer.
-        - `region_pools`: a mapping of region and country codes to a list of pool IDs (ordered by their failover priority) for the region.
-        - `proxied`: Control whether or not traffic should flow through the security and performance functions on CIS.
-        - `enabled`: Whether to enable (the default) this load balancer.
-        - `session_affinity`: valid values are `cookie`, `none`.
-        - `session_affinity_ttl`: Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between [1800, 604800]. Default is 82800.
-        - `steering_policy`: Valid values for `steering_policy` are `off`, `geo`, `random`, `dynamic_latency`.
-             - `off`: Use default_pools.
-             - `geo`: Use region_pools/pop_pools.
-             - `random`: Select a pool randomly.
-             - `dynamic_latency`: Use round trip time to select the closest pool in default_pools (requires pool health checks).
+        - `description` : The description of your Load Balancer.
+        - `ttl` : Time to live (TTL) of the DNS entry for the IP address returned by this load balancer.
+        - `region_pools` : A mapping of region and country codes to a list of pool IDs (ordered by their failover priority) for the region.
+        - `proxied` : Control whether or not traffic should flow through the security and performance functions on CIS.
+        - `enabled` : Whether to enable (the default) this load balancer.
+        - `session_affinity` : Ensures that a user's requests are consistently directed to the same backend server during a session. Valid values are `cookie`, `none`.
+        - `session_affinity_ttl` : Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between [1800, 604800]. Default is 82800.
+        - `steering_policy` : Valid values for `steering_policy` are `off`, `geo`, `random`, `dynamic_latency`.
+             - `off` : Use `default_pools`.
+             - `geo` : Use `region_pools/pop_pools`.
+             - `random` : Select a pool randomly.
+             - `dynamic_latency` : Use round trip time to select the closest pool in `default_pools` (requires pool health checks).
 
 Sample JSON data:
 
@@ -3284,7 +3284,7 @@ ibmcloud cis glb DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE] [--output FORMAT
 :   The ID of the DNS domain. Required.
 
 `GLB_ID`
-:   The ID of global load balancer. Required.
+:   The ID of the global load balancer. Required.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -3414,9 +3414,9 @@ ibmcloud cis glb-pool-create (--json @JSON_FILE | JSON_STRING) [-i, --instance I
 `--json`
 :    The JSON file or JSON string used to describe a GLB pool. Required.
     - The required fields in JSON data are `name`, `origins`, `check_regions`:
-        - `name`:a short name (tag) for the pool.
-        - `origins`:a list of origins within this pool.
-        - `check_regions`:a list of geographic region code.
+        - `name` : A short name (tag) for the pool.
+        - `origins` : A list of origins within this pool.
+        - `check_regions` : A list of geographic region code.
     - The optional fields are `description`, `minimum_origins`, `enabled`, `monitor`, `notification_email`.
 
 Sample JSON data:
@@ -3488,7 +3488,7 @@ ibmcloud cis glb-pool GLB_POOL_ID [-i, --instance INSTANCE] [--output FORMAT]
 {: #show-glb-pool-options}
 
 `GLB_POOL_ID`
-:   The ID of global load balancer pool. Required.
+:   The ID of the global load balancer pool. Required.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -3499,7 +3499,7 @@ ibmcloud cis glb-pool GLB_POOL_ID [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #show-glb-pool-examples}
 
-Show the details of GLB pool `17b5962d775c646f3f9725cbc7a53df4`.
+Show the details of the GLB pool `17b5962d775c646f3f9725cbc7a53df4`.
 
 ```sh
 ibmcloud cis glb-pool 17b5962d775c646f3f9725cbc7a53df4 -i "cis-demo"
@@ -3552,14 +3552,14 @@ ibmcloud cis glb-pool-update GLB_POOL_ID (--json @JSON_FILE | JSON_STRING) [-i, 
 {: #update-glb-pool-options}
 
 `GLB_POOL_ID`
-:   The ID of global load balancer pool. Required.
+:   The ID of the global load balancer pool. Required.
 
 `--json`
 :   The JSON file or JSON string used to describe a GLB pool.
     - The required fields in JSON data are `name`, `origins`, `check_regions`:
-        - `name`:a short name (tag) for the pool.
-        - `origins`:a list of origins within this pool.
-        - `check_regions`:a list of geographic region code.
+        - `name` : A short name (tag) for the pool.
+        - `origins` : A list of origins within this pool.
+        - `check_regions` : A list of geographic region code.
     - The optional fields are `description`, `minimum_origins`, `enabled`, `monitor`, `notification_email`.
 
 Sample JSON data:
@@ -3673,24 +3673,24 @@ ibmcloud cis glb-monitor-create (--json @JSON_FILE | JSON_STRING) [-i, --instanc
 `--json`
 :   The JSON file or JSON string used to describe a GLB monitor. Required.
     - The required fields in JSON data are `type`.
-        - `type`: The protocol to use for the healthcheck. Valid values: `HTTP`, `HTTPS`, `TCP`.
+        - `type` : The protocol to use for the healthcheck. Valid values: `HTTP`, `HTTPS`, `TCP`.
     - The optional fields are `description`, `timeout`, `retries`, `interval`.
-        - `description`: Description.
-        - `timeout`: The timeout (in seconds) before marking the health check as failed.
-        - `retries`: The number of retries to attempt in case of a timeout before marking the origin as unhealthy.
-        - `interval`: The interval between each health check.
+        - `description` : Description.
+        - `timeout` : The timeout (in seconds) before marking the health check as failed.
+        - `retries` : The number of retries to attempt in case of a timeout before marking the origin as unhealthy.
+        - `interval` : The interval between each health check.
     - For `TCP` type health check. Extra required fields are `port`.
-        - `port`: The TCP port to use for the health check.
+        - `port` : The TCP port to use for the health check.
     - For `HTTP/HTTPS` type health check. Extra option fields are `port`, `expected_body`, `expected_codes`, `method`, `path`, `header`, `follow_redirects`, `allow_insecure`.
-        - `port`: The TCP port to use for the health check.
-        - `expected_body`: A case-insensitive sub-string to look for in the response body.
-        - `expected_codes`: The expected HTTP response code or code range of the health check.
-        - `method`: The HTTP method to use for the health check.
-        - `path`: The endpoint path to health check against.
-        - `header`: The HTTP request headers to send in the health check.
-        - `follow_redirects`: Follow redirects if returned by the origin.
-        - `allow_insecure`: Do not validate the certificate when monitor use HTTPS.
-        - `probe_zone`: Assign this monitor to emulate the specified zone while probing.
+        - `port` : The TCP port to use for the health check.
+        - `expected_body` : A case-insensitive sub-string to look for in the response body.
+        - `expected_codes` : The expected HTTP response code or code range of the health check.
+        - `method` : The HTTP method to use for the health check.
+        - `path` : The endpoint path to health check against.
+        - `header` : The HTTP request headers to send in the health check.
+        - `follow_redirects` : Follow redirects if returned by the origin.
+        - `allow_insecure` : Do not validate the certificate when monitor use HTTPS.
+        - `probe_zone` : Assign this monitor to emulate the specified zone while probing.
 
    Sample JSON data:
 
@@ -3772,7 +3772,7 @@ ibmcloud cis glb-monitor GLB_MON_ID [-i, --instance INSTANCE] [--output FORMAT]
 {: #show-glb-monitor-options}
 
 `GLB_MON_ID`
-:   The ID of global load balancer monitor. Required.
+:   The ID of the global load balancer monitor. Required.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -3842,22 +3842,22 @@ ibmcloud cis glb-monitor-update GLB_MON_ID (--json @JSON_FILE | JSON_STRING) [-i
     - The required fields in JSON data are `type`.
         - `type`: The protocol to use for the healthcheck. Valid values: `HTTP`, `HTTPS`, `TCP`.
     - The optional fields are `description`, `timeout`, `retries`, `interval`.
-        - `description`: Description.
-        - `timeout`: The timeout (in seconds) before marking the health check as failed.
-        - `retries`: The number of retries to attempt in case of a timeout before marking the origin as unhealthy.
-        - `interval`: The interval between each health check.
+        - `description` : Description.
+        - `timeout` : The timeout (in seconds) before marking the health check as failed.
+        - `retries` : The number of retries to attempt in case of a timeout before marking the origin as unhealthy.
+        - `interval` : The interval between each health check.
     - For `TCP` type health check. Extra required fields are `port`.
-        - `port`: The TCP port to use for the health check.
+        - `port` : The TCP port to use for the health check.
     - For `HTTP/HTTPS` type health check. Extra option fields are `port`, `expected_body`, `expected_codes`, `method`, `path`, `header`, `follow_redirects`, `allow_insecure`.
-        - `port`: The TCP port to use for the health check.
-        - `expected_body`: A case-insensitive sub-string to look for in the response body.
-        - `expected_codes`: The expected HTTP response code or code range of the health check.
-        - `method`: The HTTP method to use for the health check.
-        - `path`: The endpoint path to health check against.
-        - `header`: The HTTP request headers to send in the health check.
-        - `follow_redirects`: Follow redirects if returned by the origin.
-        - `allow_insecure`: Do not validate the certificate when monitor use HTTPS.
-        - `probe_zone`: Assign this monitor to emulate the specified zone while probing.
+        - `port` : The TCP port to use for the health check.
+        - `expected_body` : A case-insensitive sub-string to look for in the response body.
+        - `expected_codes` : The expected HTTP response code or code range of the health check.
+        - `method` : The HTTP method to use for the health check.
+        - `path` : The endpoint path to health check against.
+        - `header` : The HTTP request headers to send in the health check.
+        - `follow_redirects` : Follow redirects if returned by the origin.
+        - `allow_insecure` : Do not validate the certificate when monitor use HTTPS.
+        - `probe_zone` : Assign this monitor to emulate the specified zone while probing.
 
    Sample JSON data:
 
@@ -3953,10 +3953,10 @@ ibmcloud cis glb-events [-s, --since START_DATE] [-u, --until END_DATE] [--origi
 :   The name for the pool to filter for.
 
 `--origin-healthy`
-:   If true, filter events where the origin status is healthy, if false, filter events where the origin status is unhealthy. Default value is `true`,  valid values are `true` and `false`.
+:   If true, filter events where the origin status is healthy, if false, filter events where the origin status is unhealthy. Default value is `true` and valid values are `true` and `false`.
 
 `--pool-healthy`
-:   If true, filter events where the pool status is healthy, if false, filter events where the pool status is unhealthy. Default value is `true`,  valid values are `true` and `false`.
+:   If true, filter events where the pool status is healthy, if false, filter events where the pool status is unhealthy. Default value is `true` and valid values are `true` and `false`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -3999,11 +3999,11 @@ You can have only one active Instant Logs session per domain and the maximum ses
 :   The ID of the DNS domain. Required.
 
 `--fields`
-:   Define field set in return.
+:   Define the field set in return.
 
     - This must be specified as a comma-separated list without any whitespaces, and all fields must exist.
     - The order in which fields are specified doesn't matter, and the order of fields in the response is not specified.
-    - The fields are expected to be case sensitive.
+    - The fields are expected to be case-sensitive.
 
 `--filter`
 :    Filters to drill down into specific events. Filters consist of three parts: key, operator and value. For information about supported operators, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
@@ -4012,7 +4012,7 @@ You can have only one active Instant Logs session per domain and the maximum ses
 :    The sample rate of the records set by the client: `sample`: 1 is 100% of records.
 
 `-i, --instance`
-:    Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` is used.
+:    Instance name or ID. If not set, the context instance that is specified by `cis instance-set INSTANCE` is used.
 
 `--output`
 :    Specify output format, only JSON is supported.
@@ -4030,7 +4030,7 @@ cis instant-log-create dns-domain [--fields all] [--filter FILTER] [--sample 1] 
 ```
 {: pre}
 
-Here are three examples of filters:
+The following are three examples of filters:
 
 * Filter when client IP country is not Canada:
 
@@ -4108,19 +4108,19 @@ ibmcloud cis logpull DNS_DOMAIN_ID --available-fields [--output FORMAT]
 :   Lookup logs by specific Ray ID.
 
 `--fields`
-:   Define field set in return. This must be specified as a comma separated list without any spaces, and all fields must exist. The order in which fields are specified doesn't matter, and the order of fields in the response is not specified. Note that fields are expected to be case sensitive.
+:   Define the field set in return. This must be specified as a comma-separated list without any spaces, and all fields must exist. The order in which fields are specified doesn't matter, and the order of fields in the response is not specified. Note that fields are expected to be case sensitive.
 
 `--start`
 :   The (inclusive) beginning of the requested time frame. This can be a unix timestamp (in seconds or nanoseconds), or an absolute timestamp that conforms to RFC 3339. At this point in time, it cannot exceed a time in the past greater than 7 days. Default is 65 minutes earlier.
 
 `--end`
-: The (exclusive) end of the requested time frame. This can be a unix timestamp (in seconds or nanoseconds), or an absolute timestamp that conforms to RFC 3339. The `end` must be at least 5 minutes earlier than now and must be later than `start`. Difference between `start` and `end` must be not greater than 1h. Default is 5 minutes earlier.
+: The (exclusive) end of the requested time frame. This can be a unix timestamp (in seconds or nanoseconds), or an absolute timestamp that conforms to RFC 3339. The `end` must be at least 5 minutes earlier than now and must be later than `start`. The difference between `start` and `end` must be not greater than 1h. The default is 5 minutes earlier.
 
 `--count`
 :   Number of logs to retrieve. The default value is `-1`.
 
 `--sample`
-:   Percentage of sampling. When sample is provided, a sample of matching records is returned. If `sample=0.1` then 10% of records will be returned. Sampling is random: repeated calls will not only return different records, but likely will also vary slightly in number of returned records. When count is also specified, count is applied to the number of returned records, not the sampled records. So, with `sample=0.05` and `count=7`, when there is a total of 100 records available, approximately 5 will be returned. When there are 1000 records, 7 will be returned. When there are 10,000 records, 7 will be returned. The default value is `1`.
+:   Percentage of sampling. When a sample is provided, a sample of matching records is returned. If `sample=0.1` then 10% of records are returned. The sampling is random: repeated calls will not only return different records, but will likely also vary slightly in number of returned records. When count is also specified, count is applied to the number of returned records, not the sampled records. So, with `sample=0.05` and `count=7`, when there is a total of 100 records available, approximately 5 will be returned. When there are 1000 records, 7 will be returned. When there are 10,000 records, 7 will be returned. The default value is `1`.
 
 `--timestamps`
 :   Set the format in which response timestamps are returned. Valid values: `unix`, `unixnano`, `rfc3339`.
@@ -4167,7 +4167,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
       Example: `'https://logs.eu-de.logging.cloud.ibm.com/logs/ingest?hostname=testv2_logpush&apikey=xxxxxx'`
       Syntax for COS Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
       Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
-      To separate logs into daily subfolders, use the special string `{DATE}` in the bucket path.
+      To separate logs in to daily subfolders, use the special string `{DATE}` in the bucket path.
       It will be substituted with the date in `YYYYMMDD` format, for example '20190423'.
       Subfolders will be created as appropriate, for example:
       `'cos://cis-test-bucket/logs/{DATE}?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
@@ -4680,7 +4680,7 @@ ibmcloud cis http-request-analytics DNS_DOMAIN_ID [--dataset DATA_SET] [--filter
 
     The following list is usable order options for corresponding dataset and all of order options support ASC and DESC action. Combine these order options and action with `_`.
 
-    For example `date_ASC` is order by date ascending.
+    For example, `date_ASC` is order by date ascending.
     - Common order options for every http dataset.
         - `orderByParams`
         - `date`
@@ -4741,7 +4741,7 @@ ibmcloud cis http-request-analytics 31984fea73a15b45779fa0df4ef62f9b --order dat
 ### `ibmcloud cis web-analytics` (Deprecated)
 {: #web-analytics}
 
-Web analytics will be deprecated on November 2, 2020. Use [`ibmcloud cis http-request-analytics`](#http-request-analytics) instead. Get analytics of the DNS domain.
+Web analytics will be deprecated on 2 November 2020. Use [`ibmcloud cis http-request-analytics`](#http-request-analytics) instead. Get analytics of the DNS domain.
 
 ```sh
 ibmcloud cis web-analytics DNS_DOMAIN_ID [--recent DURATION] [-t, --table requests | bandwidth | uniques | threats | status_code] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4758,7 +4758,7 @@ ibmcloud cis web-analytics DNS_DOMAIN_ID [--recent DURATION] [-t, --table reques
 :   The beginning of the requested time frame. Valid values are: `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago), `1m` (1 month ago), `2m`, `3m`. The default value is `1w`.
 
 `-t, --table`
-:   Output table. Valid values are `requests`, `bandwidth`, `uniques`, `threats` and `status_code`. If not set, it outputs all the tables.
+:   Output table. Valid values are `requests`, `bandwidth`, `uniques`, `threats` and, `status_code`. If not set, it outputs all the tables.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4796,7 +4796,7 @@ ibmcloud cis dns-analytics DNS_DOMAIN_ID DIMENSION [-s, --since TIME] [-i, --ins
 :   The queried dimension. Valid values: `queries-by-response-code`, `queries-by-type`, `queries-by-name`. Required.
 
 `-s, --since`
-:   Since time to now. Valid values are: `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago)
+:   Since time to now. Valid values are: `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago).
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4939,18 +4939,18 @@ ibmcloud cis origin-certificate-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_S
 :   Signature type desired on certificate. Valid values: `origin-rsa`, `origin-ecc`.
 
 `--hostnames HOSTNAME`
-:   hostname or wildcard name bound to the certificate.
+:   hostname or wildcard name that is bound to the certificate.
 
 `--requested-validity DAYS`
-:   The number of days for which the certificate should be valid. The default value is `5475`.
+:   The number of days for which the certificate must be valid. The default value is `5475`.
 
 `--csr CSR`
 :   The Certificate Signing Request (CSR). If not set, CIS will generate one.
 
 `--json value*`
-:   The JSON file or JSON string used to describe an origin certificate.
+:   The JSON file or JSON string that is used to describe an origin certificate.
     - The required fields in JSON data are `request_type`, `hostnames`.
-        - `request_type`: Signature type desired on certificate. Valid values: `origin-rsa`, `origin-ecc`.
+        - `request_type`: Signature type desired on the certificate. Valid values: `origin-rsa`, `origin-ecc`.
         - `hostnames`: Array of hostnames or wildcard names bound to the certificate.
     - The optional fields are `requested_validity`, `csr`.
         - `requested_validity`: The number of days for which the certificate should be valid. Valid values: `0`, `7`, `30`, `90`, `365`, `730`, `1095`, `5475`.
@@ -9402,6 +9402,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
          - `content_type`: Defines the content type of a custom response when blocking a request due to rate limiting. Only available when the rule action is Block.
          - `content`: Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
       - `enabled`: Whether enable this rule or not.
+
       ```sh
          Sample JSON data:
 
@@ -9516,6 +9517,7 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
          - `content_type`: Defines the content type of a custom response when blocking a request due to rate limiting. Only available when the rule action is Block.
          - `content`: Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
       - `enabled`: Whether enable this rule or not.
+
       ```sh
          Sample JSON data:
 
@@ -9866,17 +9868,17 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
 
    - The required fields in JSON data are `expression`, `action`, `action_parameters`.
 
-      `expression`: The rule expression.
-      `action`: The rule action to perform. Valid values: skip.
-      `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets.
-        `rules`: Skip one or more rules of WAF managed rulesets.
+      `expression` : The rule expression.
+      `action` : The rule action to perform. Valid values: skip.
+      `action_parameters` : The rule action parameters.
+        `ruleset` : Skip all remaining rules or one or more WAF managed rulesets.
+        `rules` : Skip one or more rules of WAF managed rulesets.
 
    - The optional fields are `description`, `enabled`, `logging`.
-      `description`: Briefly describes the rule.
-      `enabled`: Indicates if the rule is active.
-      `logging`: Log requests matching the skip rule.
-         - `enabled`: When disabled, matched requests don't appear in firewall events.
+      `description` : Briefly describes the rule.
+      `enabled` : Indicates if the rule is active.
+      `logging` : Log requests matching the skip rule.
+         - `enabled` : When disabled, matched requests don't appear in firewall events.
 
 Sample JSON data:
 
@@ -9960,16 +9962,16 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json
 
    - The required fields in JSON data are `expression`, `action`, `action_parameters`.
 
-      `expression`: The rule expression.
-      `action`: The rule action to perform. Valid values: skip.
-      `action_parameters`: The rule action parameters.
-         `id`: The ruleset ID of the overrides.
-         `overrides`: The rules options of the overrides.
-            `action`: The ruleset action of the overrides. Valid values: "managed_challenge", "block", "js_challenge", "log", "challenge".
-            `enabled`: The ruleset status of the overrides. Valid values: true, false.
+      `expression` : The rule expression.
+      `action` : The rule action to perform. Valid values: skip.
+      `action_parameters` : The rule action parameters.
+         `id` : The ruleset ID of the overrides.
+         `overrides` : The rules options of the overrides.
+            `action` : The ruleset action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, "log", "challenge".
+            `enabled` : The ruleset status of the overrides. Valid values: true, false.
             `rules`: The rules options of the overrides.
                `id`: The rule ID of the overrides.
-               `action`: The rule action of the overrides. Valid values: "managed_challenge", "block", "js_challenge", "log", "challenge".
+               `action`: The rule action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, `log`, `challenge`.
                `enabled`: The rule status of the overrides.
                `score_threshold`: OWASP Anomaly Score Threshold, set the score threshold which will trigger the Firewall.
             `categories`: Define OWASP Paranoia Level and only valid for `CIS OWASP core ruleset`
@@ -9977,8 +9979,8 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json
                `enabled`: Whether this OWASP Paranoia Level is enabled.
 
    - The optional fields are `description`, `enabled`.
-      `description`: Briefly describes the rule.
-      `enabled`: Indicates if the rule is active.
+      `description` : Briefly describes the rule.
+      `enabled` : Indicates if the rule is active.
 
 Sample JSON data:
 
@@ -10068,21 +10070,21 @@ ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json
 
    - The required fields in JSON data are `expression`, `action`, `action_parameters`.
 
-      `expression`: The rule expression.
-      `action`: The rule action to perform. Valid values: skip.
-      `action_parameters`: The rule action parameters.
-         `id`: The ruleset id of the overrides.
-         `overrides`: The rules options of the overrides.
-            `action`: The ruleset action of the overrides. Valid values: "managed_challenge", "block", "js_challenge", "log", "challenge".
-            `enabled`: The ruleset status of the overrides. Valid values: true, false.
-            `rules`: The rules options of the overrides.
-               `id`: The rule ID of the overrides.
-               `action`: The rule action of the overrides. Valid values: "managed_challenge", "block", "js_challenge", "log", "challenge".
-               `enabled`: The rule status of the overrides.
-               `score_threshold`: OWASP Anomaly Score Threshold, set the score threshold which will trigger the Firewall.
-            `categories`: Define OWASP Paranoia Level and only valid for `CIS OWASP core ruleset`
-               `category`: OWASP paranoia level, higher paranoia levels activate more aggressive rules.
-               `enabled`: Whether this OWASP Paranoia Level enabled.
+      `expression` : The rule expression.
+      `action` : The rule action to perform. Valid values: skip.
+      `action_parameters` : The rule action parameters.
+         `id` : The ruleset id of the overrides.
+         `overrides` : The rules options of the overrides.
+            `action` : The ruleset action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, "log", "challenge".
+            `enabled` : The ruleset status of the overrides. Valid values: true, false.
+            `rules` : The rules options of the overrides.
+               `id` : The rule ID of the overrides.
+               `action` : The rule action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, "log", "challenge".
+               `enabled` : The rule status of the overrides.
+               `score_threshold` : OWASP Anomaly Score Threshold, set the score threshold which will trigger the Firewall.
+            `categories` : Define OWASP Paranoia Level and only valid for `CIS OWASP core ruleset`
+               `category` : OWASP paranoia level, higher paranoia levels activate more aggressive rules.
+               `enabled` : Whether this OWASP Paranoia Level enabled.
 
    - The optional fields are `description`, `enabled`.
       `description`: Briefly describes the rule.
@@ -10144,8 +10146,6 @@ List all custom rules.
 ibmcloud cis custom-waf rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
 
-{: pre}
-
 #### Command options
 {: #list-custom-rules-options}
 
@@ -10166,8 +10166,6 @@ List all custom rules for domain `31984fea73a15b45779fa0df4ef62f9b` under instan
 ```sh
 ibmcloud cis custom-waf rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
 ```
-
-{: pre}
 
 ### `ibmcloud cis custom-waf rule`
 {: #show-custom-rule}
@@ -10215,8 +10213,6 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action AC
 ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
 
-{: pre}
-
 #### Command options
 {: #rule-create-options}
 
@@ -10245,17 +10241,17 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
 
-      - `action_parameters`: The rule action parameters.
-      - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
-      - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
-      - `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
-      - `response`:  Define a custom response for `block` action.
-         - `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
-         - `content_type`: The content type of a custom response.Valid response types are :"text/html", "text/plain", "application/json", "text/xml".
-         - `content`: The response body.
-      - `description`: Briefly describes the rule.
-      - `enabled`: Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
-      - `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
+      - `action_parameters` : The rule action parameters.
+      - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
+      - `phases` : Skips WAF components for matching requests. Valid values: `http_ratelimit`, "http_request_firewall_managed", "http_request_sbfm".
+      - `products` : Skips specific security products for matching requests. Valid values: `waf`, `rateLimit`, "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+      - `response` :  Define a custom response for `block` action.
+         - `status_code` :  Choose an HTTP status code for the response, in the range 400-499.
+         - `content_type` : The content type of a custom response. Valid response types are :`text/html`, `text/plain`, `application/json`, `text/xml`.
+         - `content` : The response body.
+      - `description` : Briefly describes the rule.
+      - `enabled` : Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
+      - `logging` : Log requests matching the skip rule. This field is only available for 'skip' action.
 
    Sample JSON data:
 
@@ -10300,8 +10296,6 @@ Create custom rule for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance 
 ibmcloud cis custom-waf rule-create 9343630b9bd5c6e6899834d77f9e50ff  --action challenge --description "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
 ```
 
-{: pre}
-
 ### `ibmcloud cis custom-waf rule-update`
 {: #rule-update}
 
@@ -10341,22 +10335,21 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
    - The required fields in JSON data are `expression`, `action`.
 
       - `expression`: Specifies the conditions that must be matched for the rule to run.
-      - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+      - `action`: The rule action to perform. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, `skip`.
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
 
-      - `action_parameters`: The rule action parameters.
-        - `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`
-        - `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
-        - `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
-        - `response`:  Define a custom response for 'block' action.
-            - `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
-            - `content_type`: The content type of a custom response.Valid response types are :"text/html", "text/plain", "application/json", "text/xml".
-            - `content`: The response body.
-      - `description`: Briefly describes the rule.
-      - `enabled`: Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
-      - `logging`: Log requests matching the skip rule. This field is only available for 'skip' action.
-
+      - `action_parameters` : The rule action parameters.
+        - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`
+        - `phases` : Skips WAF components for matching requests. Valid values: `http_ratelimit`, `http_request_firewall_managed`, `http_request_sbfm`.
+        - `products` : Skips specific security products for matching requests. Valid values: `waf`, `rateLimit`, `securityLevel`, `hot`, `bic`, `uaBlock`, `zoneLockdown`.
+        - `response` :  Define a custom response for 'block' action.
+            - `status_code` :  Choose an HTTP status code for the response, in the range 400-499.
+            - `content_type` : The content type of a custom response.Valid response types are : `text/html`, `text/plain`, `application/json`, `text/xml`.
+            - `content` : The response body.
+      - `description` : Briefly describes the rule.
+      - `enabled` : Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
+      - `logging` : Log requests matching the skip rule. This field is only available for 'skip' action.
 
    Sample JSON data:
 
@@ -10388,8 +10381,6 @@ Update custom rule `b94632a4cd5a49ed830544d91417a98c` for domain `9343630b9bd5c6
 ```sh
 ibmcloud cis custom-waf rule-update 9343630b9bd5c6e6899834d77f9e50ff b94632a4cd5a49ed830544d91417a98c --enabled false --description rule-updateion "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
 ```
-
-{: pre}
 
 ### `ibmcloud cis custom-waf rule-order-update`
 {: #rule-order-update}
@@ -10434,8 +10425,6 @@ Put custom rule `4eae81b170f644f795da017001383de7` before rule `2ed2dd160cb745fe
 ibmcloud cis custom-waf rule-order-update 9343630b9bd5c6e6899834d77f9e50ff 4eae81b170f644f795da017001383de7 --before 2ed2dd160cb745feb415414544d97c70 -i "cis-demo"
 ```
 
-{: pre}
-
 ### `ibmcloud cis custom-waf rule-delete`
 {: #rule-delete}
 
@@ -10472,8 +10461,6 @@ Delete custom rule `e9fad806880c4c42bd7ebeec8dcba4e6` for domain `9343630b9bd5c6
 ```sh
 ibmcloud cis custom-waf rule-delete  9343630b9bd5c6e6899834d77f9e50ff e9fad806880c4c42bd7ebeec8dcba4e6 -i "cis-demo"
 ```
-
-{: pre}
 
 ## Private endpoint support
 {: #private-endpoint-support}

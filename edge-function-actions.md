@@ -2,9 +2,11 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-24"
+  
+lastupdated: "2025-06-23"
+=======
 
-keywords: edge functions, CIS,
+keywords: edge functions
 
 subcollection: cis
 

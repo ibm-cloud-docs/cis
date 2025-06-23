@@ -2,9 +2,11 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-16"
+  
+lastupdated: "2025-06-23"
+=======
 
-keywords:
+keywords: managed rules
 
 subcollection: cis
 

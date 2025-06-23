@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-06-23"
 
-keywords:
+keywords: Edge functions
 
 subcollection: cis
 
