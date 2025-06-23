@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-10-21"
+  years: 2024, 2025
+lastupdated: "2025-06-23"
 
-keywords:
+keywords: edge certificates
 
 subcollection: cis
 
