@@ -153,12 +153,12 @@ toc:
                 - glb-session-affinity.md
         - custom-page.md
         - topicgroup:
-            label: Working with Edge functions
+            label: Using edge functions
             topics:
             - edge-functions.md
             - edge-function-actions.md
             - topicgroup:
-                label: Edge function examples
+                label: Edge functions examples
                 topics:
                 - altering-headers.md
                 - redirect-country-code.md
