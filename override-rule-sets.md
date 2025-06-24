@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-06-23"
+lastupdated: "2025-06-24"
 
 keywords:
 
@@ -38,33 +38,33 @@ To apply an override for a managed ruleset, take the following steps.
 1. Call the update ruleset operation on your phase entry point.
 1. Specify the overrides in the `action_parameters` of the rule that executes your managed ruleset.
 
-```sh
-"action_parameters": {
-  "id": "<RULESET_ID>",
-  "overrides": {
-    // ruleset overrides
-    "property-to-modify": "value",
-    "property-to-modify": "value",
-    // tag overrides
-    "categories": [
-      {
-        "category": "<TAG_NAME>",
-        "property-to-modify": "value",
-        "property-to-modify": "value"
-      }
-    ],
-    // rule overrides
-    "rules": [
-      {
-        "id": "<RULE_ID>",
-        "property-to-modify": "value",
-        "property-to-modify": "value"
-      }
-    ]
-  }
-}
-```
-{: codeblock}
+   ```sh
+   "action_parameters": {
+     "id": "<RULESET_ID>",
+     "overrides": {
+       // ruleset overrides
+       "property-to-modify": "value",
+       "property-to-modify": "value",
+       // tag overrides
+       "categories": [
+         {
+           "category": "<TAG_NAME>",
+           "property-to-modify": "value",
+           "property-to-modify": "value"
+         }
+       ],
+       // rule overrides
+       "rules": [
+         {
+           "id": "<RULE_ID>",
+           "property-to-modify": "value",
+           "property-to-modify": "value"
+         }
+       ]
+     }
+   }
+   ```
+   {: codeblock}
 
 You can override the following rule properties.
 
@@ -91,11 +91,17 @@ ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--out
 ```
 {: pre}
 
-Where:
+#### Command options
+{: #command-options-listing-rules}
 
-* **`DNS_DOMAIN_ID`** is the ID of the domain.
-* **`-i, --instance value`** is the instance name or ID.
-* **`--output value`** specifies the output format; only JSON is supported.
+`DNS_DOMAIN_ID`
+:   The ID of the domain.
+
+`-i, --instance value`
+:   The instance name or ID.
+
+`--output value`
+:   Specifies the output format; only JSON is supported.
 
 ### Listing rules under a zone ruleset from the CLI
 {: #cli-override-list-rule-sets-rules}
