@@ -113,12 +113,20 @@ ibmcloud cis managed-waf ruleset DNS_DOMAIN_ID RULESET_ID [-i, --instance INSTAN
 ```
 {: pre}
 
-Where:
+#### Command options
+{: #command-options-zone-ruleset}
 
-* **`DNS_DOMAIN_ID`** is the ID of the domain.
-* **`RULESET_ID`** is the ID of the ruleset for the rules to be listed.
-* **`-i, --instance value`** is the instance name or ID.
-* **`--output value`** specifies the output format; only JSON is supported.
+`DNS_DOMAIN_ID`
+:   The ID of the domain.
+
+`RULESET_ID`
+:   The ID of the ruleset for the rules to be listed.
+
+`-i, --instance value`
+:   The instance name or ID.
+
+`--output value`
+:   Specifies the output format; only JSON is supported.
 
 ### Overriding managed rulesets from the CLI
 {: #cli-override-entry-point-rule-set}
@@ -130,17 +138,32 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--matc
 ```
 {: pre}
 
-Where:
+#### Command options
+{: #command-options-overriding-rulesets}
 
-* **`DNS_DOMAIN_ID`** is the ID of the domain.
-* **`--match value`** is the conditions that must be matched for the rule to run. See [Using fields, functions, and expressions](https://cloud.ibm.com/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
-* **`--enabled value`** indicates whether the rule is active. Defaults to "true".
-* **`--override-action value`** is the ruleset action of any overrides. Valid values are "managed_challenge", "block", "js_challenge", "log", "challenge".
-* **`--paranoia-level value`** is the OWASP paranoia level. Valid values are "PL1", "PL2", "PL3", "PL4" and it's only available for `CIS OWASP Core Ruleset`.
-* **`--override-rules value`** is the rules options of the overrides. For example, `--override-rules rule=RULE_ID,action=ACTION,enabled=STATUS`.
-* **`-i, --instance value`** is the instance name or ID.
-* **`--output value`** specifies the output format; only JSON is supported.
+`DNS_DOMAIN_ID`
+:   the ID of the domain.
 
+`--match value`
+:   The conditions that must be matched for the rule to run. See [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions) for a list of values to match.
+
+`--enabled value`
+:   Indicates whether the rule is active. Defaults to "true".
+
+`--override-action value`
+:   The ruleset action of any overrides. Valid values are "managed_challenge", "block", "js_challenge", "log", "challenge".
+
+`--paranoia-level value`
+:   The OWASP paranoia level. Valid values are "PL1", "PL2", "PL3", "PL4" and it's only available for `CIS OWASP Core Ruleset`.
+
+`--override-rules value`
+:   The rules options of the overrides. For example, `--override-rules rule=RULE_ID,action=ACTION,enabled=STATUS`.
+
+`-i, --instance value`
+:   The instance name or ID.
+
+`--output value`
+: Specifies the output format; only JSON is supported.
 
 ## Overriding managed rulesets with the API
 {: #api-override-rule-sets}
