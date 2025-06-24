@@ -95,11 +95,11 @@ ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--out
 {: #command-options-listing-rules}
 
 `DNS_DOMAIN_ID`
-   The ID of the domain.
+:   The ID of the domain.
 `-i, --instance value`
-   The instance name or ID.
+:   The instance name or ID.
 `--output value`
-   Specifies the output format; only JSON is supported.
+:   Specifies the output format; only JSON is supported.
 
 ### Listing rules under a zone ruleset from the CLI
 {: #cli-override-list-rule-sets-rules}
