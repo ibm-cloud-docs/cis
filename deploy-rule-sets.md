@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-01"
+lastupdated: "2025-06-24"
 
 keywords:
 
@@ -31,7 +31,6 @@ Use the following workflow to deploy a managed ruleset to a phase at the zone le
 1. Find the ruleset ID of the managed ruleset that you want to deploy.
 1. Identify the phase where you want to deploy the managed ruleset. Make sure that the managed ruleset belongs to the same phase where you want to deploy it.
 1. Add a rule to the zone-level phase entry point ruleset that runs the managed ruleset.
-
 ## Deploying managed rulesets from the CLI
 {: #cli-deploy-rule-sets}
 {: cli}
