@@ -3746,7 +3746,7 @@ For TCP:
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #create-glb-monitors-examples}
@@ -3778,7 +3778,7 @@ ibmcloud cis glb-monitor GLB_MON_ID [-i, --instance INSTANCE] [--output FORMAT]
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #show-glb-monitor-examples}
@@ -4015,7 +4015,7 @@ You can have only one active Instant Logs session per domain and the maximum ses
 :    Instance name or ID. If not set, the context instance that is specified by `cis instance-set INSTANCE` is used.
 
 `--output`
-:    Specify the output format. Only JSON is supported.
+:    Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 `-h, --help`
 :    Get help on this command.
@@ -4802,7 +4802,7 @@ ibmcloud cis dns-analytics DNS_DOMAIN_ID DIMENSION [-s, --since TIME] [-i, --ins
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #dns-analytics-examples}
@@ -4840,7 +4840,7 @@ ibmcloud cis ratelimit-analytics DNS_DOMAIN_ID [--recent DURATION] [--time-delta
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #ratelimit-analytics-examples}
@@ -5216,7 +5216,7 @@ Sample JSON data:
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #command-examples-page-rule-create}
@@ -5343,7 +5343,7 @@ Sample JSON data:
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #command-examples-page-rule-update}
@@ -6238,7 +6238,7 @@ ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INS
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #show-ratelimit-rule-examples}
@@ -6363,7 +6363,7 @@ ibmcloud cis instance-create INSTANCE_NAME PLAN [--output FORMAT]
 :   The name or ID of a service plan. Required.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #create-cis-service-instance-examples}
@@ -6456,7 +6456,7 @@ ibmcloud cis instance INSTANCE [--output FORMAT]
 :   The name or ID of a CIS service instance. Required.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #get-cis-service-instance-examples}
@@ -6528,7 +6528,7 @@ ibmcloud cis routing DNS_DOMAIN_ID (--smart-routing | --tiered-caching) [-i, --i
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #show-routing-examples}
@@ -6566,7 +6566,7 @@ ibmcloud cis routing-update DNS_DOMAIN_ID (--smart-routing (on|off) | --tiered-c
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #update-routing-examples}
@@ -6601,7 +6601,7 @@ ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE]
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #display-routing-analytics-examples}
@@ -6781,7 +6781,7 @@ ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true|
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #update-tls-settings-examples}
@@ -6816,7 +6816,7 @@ ibmcloud cis certificates DNS_DOMAIN_ID [--keyless] [-i, --instance INSTANCE] [-
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #list-cert-examples}
@@ -6857,7 +6857,7 @@ ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [--keyl
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #show-cert-examples}
@@ -7107,7 +7107,7 @@ Sample JSON data:
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #change-priority-custom-examples}
@@ -7214,7 +7214,7 @@ ibmcloud cis waf-setting-update DNS_DOMAIN_ID WAF_MODE [-i, --instance INSTANCE]
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #update-waf-setting-examples}
@@ -7322,7 +7322,7 @@ ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity SENSI
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #update-waf-owasp-package-examples}
@@ -7363,7 +7363,7 @@ ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page N
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #list-waf-groups-examples}
@@ -7401,7 +7401,7 @@ ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID [-i, --instance
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #show-waf-group-examples}
@@ -7483,7 +7483,7 @@ ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NU
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify the output format. Only JSON is supported.
+:   Specify whether you want the output to display in JSON format. Currently, `json` is the only supported value.
 
 #### Examples
 {: #list-waf-rules-examples}
