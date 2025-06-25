@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-06-25"
 
 keywords:
 
@@ -5334,16 +5334,16 @@ Sample JSON data:
 {: codeblock}
 
 `-s, --json-str`
-:   *Deprecated*. The JSON data describing a page rule.
+:   *Deprecated*. The json data describing a page rule.
 
 `-j, --json-file`
-:   *Deprecated*. A file contains input JSON data.
+:   *Deprecated*. A file contains input json data.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #command-examples-page-rule-update}
@@ -5518,25 +5518,25 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
 :   Determines how data travels from the edge to your origin. Valid values: `direct`, `http`, `https`. The default value is `direct`.
 
 `--json`
-:   The JSON file or JSON string used to describe a range application.
-    - The required fields in JSON data are `protocol`, `dns`.
-        - `protocol`: Port configuration at CIS's edge.
-        - `dns`: The name and type of DNS record for the range application.
-            - `name`: The name of DNS record for the range application.
-            - `type`: The type of DNS record associated with the application. Valid values: `CNAME`.
+:   The json file or json string used to describe a range application.
+    - The required fields in json data are `protocol`, `dns`.
+        - `protocol` : Port configuration at CIS's edge.
+        - `dns` : The name and type of DNS record for the range application.
+            - `name` : The name of DNS record for the range application.
+            - `type` : The type of DNS record associated with the application. Valid values: `CNAME`.
     - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, `traffic_type`.
-        - `origin_direct`: A list of destination addresses to the origin.
-        - `origin_dns`: Method and parameters used to discover the origin server address via DNS.
+        - `origin_direct` : A list of destination addresses to the origin.
+        - `origin_dns` : Method and parameters used to discover the origin server address via DNS.
             - `name`: DNS record name.
-        - `origin_port`: The destination port at the origin.
-        - `proxy_protocol`: Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
+        - `origin_port` : The destination port at the origin.
+        - `proxy_protocol` : Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
             *Deprecated*. The value `on` is equivalent to `v1`.
-        - `ip_firewall`: Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`.
-        - `edge_ips`: The anycast edge IP configuration for the hostname of this application.
-            - `type`: The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid values: `dynamic`.
-            - `connectivity`: The IP versions supported for inbound connections on range anycast IPs. Valid values: `all`, `ipv4`, `ipv6`.
+        - `ip_firewall` : Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`.
+        - `edge_ips` : The anycast edge IP configuration for the hostname of this application.
+            - `type` : The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid values: `dynamic`.
+            - `connectivity` : The IP versions supported for inbound connections on range anycast IPs. Valid values: `all`, `ipv4`, `ipv6`.
         - `tls`: The type of TLS termination associated with the application. Valid values: `off`, `flexible`, `full`, `strict`.
-        - `traffic_type`: Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values: `direct`, `http`, `https`. The default value is `direct`.
+        - `traffic_type` : Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values: `direct`, `http`, `https`. The default value is `direct`.
 
 Sample JSON data:
 
@@ -5665,25 +5665,25 @@ ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID (--json @JSON_FILE | JSON_STR
 :   Determines how data travels from the edge to your origin. Valid values: `direct`, `http`, `https`. The default value is `direct`.
 
 `--json`
-:   The JSON file or JSON string used to describe a range application.
-    - The required fields in JSON data are `protocol`, `dns`.
-        - `protocol`: Port configuration at CIS's edge.
-        - `dns`: The name and type of DNS record for the range application.
-            - `name`: The name of DNS record for the range application.
-            - `type`: The type of DNS record associated with the application. Valid values: `CNAME`.
+:   The json file or json string used to describe a range application.
+    - The required fields in json data are `protocol`, `dns`.
+        - `protocol` : Port configuration at CIS's edge.
+        - `dns` : The name and type of DNS record for the range application.
+            - `name` : The name of DNS record for the range application.
+            - `type` : The type of DNS record associated with the application. Valid values: `CNAME`.
     - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, `traffic_type`.
-        - `origin_direct`: A list of destination addresses to the origin.
-        - `origin_dns`: Method and parameters used to discover the origin server address via DNS.
-            - `name`: DNS record name.
-        - `origin_port`: The destination port at the origin.
-        - `proxy_protocol`: Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
+        - `origin_direct` : A list of destination addresses to the origin.
+        - `origin_dns` : Method and parameters used to discover the origin server address via DNS.
+            - `name` : DNS record name.
+        - `origin_port` : The destination port at the origin.
+        - `proxy_protocol` : Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
             *Deprecated*. The value `on` is equivalent to `v1`.
-        - `ip_firewall`: Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`.
-        - `edge_ips`: The anycast edge IP configuration for the hostname of this application.
-            - `type`: The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid values: `dynamic`.
+        - `ip_firewall` : Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`.
+        - `edge_ips` : The anycast edge IP configuration for the hostname of this application.
+            - `type` : The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid values: `dynamic`.
             - `connectivity`: The IP versions supported for inbound connections on range anycast IPs. Valid values: `all`, `ipv4`, `ipv6`.
         - `tls`: The type of TLS termination associated with the application. Valid values: `off`, `flexible`, `full`, `strict`.
-        - `traffic_type`: Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values: `direct`, `http`, `https`. The default value is `direct`.
+        - `traffic_type` : Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values: `direct`, `http`, `https`. The default value is `direct`.
 
 Sample JSON data:
 
@@ -5732,16 +5732,16 @@ Sample JSON data:
 {: codeblock}
 
 `-s, --json-str`
-:   *Deprecated*. The JSON data describing a range application.
+:   *Deprecated*. The json data describing a range application.
 
 `-j, --json-file`
-:   *Deprecated*. A file contains input JSON data.
+:   *Deprecated*. A file contains input json data.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format, only json is supported.
 
 #### Examples
 {: #update-range-app-examples}
@@ -5808,7 +5808,7 @@ ibmcloud cis range-app DNS_DOMAIN_ID APP_ID [--instance INSTANCE] [--output FORM
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format, only json is supported.
 
 #### Examples
 {: #show-range-app-examples}
@@ -5840,7 +5840,7 @@ ibmcloud cis range-apps DNS_DOMAIN_ID [--instance INSTANCE] [--output FORMAT]
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format, only json is supported.
 
 #### Examples
 {: #list-range-app-examples}
@@ -5944,36 +5944,36 @@ ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --url URL [--description DESCRI
 :   The ID of the DNS domain. Required.
 
 `--json`
-:   The JSON file or JSON string used to describe a rate limiting rule.
+:   The json file or json string used to describe a rate limiting rule.
     - The required fields in JSON data are `match`, `threshold`, `period`, `action` :
-        - `match`: Determines which traffic the rate limiting rule counts towards the threshold.
-            - `request`: Matches HTTP requests.
-                - `methods`:  HTTP Methods, can be a subset `[POST,PUT]` or all `[_ALL_]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `_ALL_`.
-                - `schemes`:  HTTP Schemes, can be one `[HTTPS]`, both `[HTTP`,`HTTPS]` or all `[_ALL_]`. This field is not required.
-                - `url`: The URL pattern to match comprised of the host and path, for instance, `example.org/path`. Wildcards are expanded to match applicable traffic, query strings are not matched. Use `*` for all traffic to your zone. Max length is 1024.
-            - `response`: Matches HTTP responses before they are returned to the client . If this is defined, then the entire counting of traffic occurs at this stage.
-                - `status`: HTTP Status codes, can be one `[403]`, many `[401,403]` or indicate all by not providing this value. This field is not required. Min value: 100, max value: 999.
-                - `headers`: Array of response headers to match. If a response does not meet the header criteria then the request is not counted towards the rate limiting rule. The header matching criteria includes following properties.
-                    - `name`: The name of the response header to match.
-                    - `op`: The operator when matching, eq means equals, ne means not equals. Valid values are `eq` and `ne`.
-                    - `value`: The value of the header, which is exactly matched.
-        - `threshold`: The threshold that triggers the rate limit mitigations, combined with period. For example, threshold per period. Min value: 2, max value: 1000000.
-        - `period`: The time, in seconds, to count matching traffic. If the count exceeds threshold within this period the action is performed. Min value: 10, max value: 86400.
-        - `action`: The action performed when the threshold of matched traffic within the period defined is exceeded.
-            - `mode`: The type of action performed. Valid values are: `simulate`, `ban`, `challenge`, `js_challenge`.
-            - `timeout`: The time, in seconds, as an integer to perform the mitigation action. Timeout be the same or greater than the period. This field is valid only when mode is `simulate` or `ban`. Min value: 10, max value: 86400.
-            - `response`: Custom content-type and body to return. This overrides the custom error for the zone. This field is not required. Omission results in the default HTML error page. This field is valid only when mode is `simulate` or `ban`.
-                - `content_type`: The content-type of the body, which must be one of the following: `text/plain`, `text/xml`, `application/json`.
-                - `body`: The body to return. The content here must conform to the `content_type`. Max length is 10240.
+        - `match` : Determines which traffic the rate limiting rule counts towards the threshold.
+            - `request` : Matches HTTP requests.
+                - `methods` :  HTTP Methods, can be a subset `[POST,PUT]` or all `[_ALL_]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `_ALL_`.
+                - `schemes` :  HTTP Schemes, can be one `[HTTPS]`, both `[HTTP`,`HTTPS]` or all `[_ALL_]`. This field is not required.
+                - `url` : The URL pattern to match comprised of the host and path, for instance, `example.org/path`. Wildcards are expanded to match applicable traffic, query strings are not matched. Use `*` for all traffic to your zone. Max length is 1024.
+            - `response` : Matches HTTP responses before they are returned to the client . If this is defined, then the entire counting of traffic occurs at this stage.
+                - `status` : HTTP Status codes, can be one `[403]`, many `[401,403]` or indicate all by not providing this value. This field is not required. Min value: 100, max value: 999.
+                - `headers` : Array of response headers to match. If a response does not meet the header criteria then the request is not counted towards the rate limiting rule. The header matching criteria includes following properties.
+                    - `name` : The name of the response header to match.
+                    - `op` : The operator when matching, eq means equals, ne means not equals. Valid values are `eq` and `ne`.
+                    - `value` : The value of the header, which is exactly matched.
+        - `threshold` : The threshold that triggers the rate limit mitigations, combined with period. For example, threshold per period. Min value: `2`, max value: `1000000`.
+        - `period` : The time, in seconds, to count matching traffic. If the count exceeds threshold within this period the action is performed. Min value: `10`, max value: `86400`.
+        - `action` : The action performed when the threshold of matched traffic within the period defined is exceeded.
+            - `mode` : The type of action performed. Valid values are: `simulate`, `ban`, `challenge`, `js_challenge`.
+            - `timeout` : The time, in seconds, as an integer to perform the mitigation action. Timeout be the same or greater than the period. This field is valid only when mode is `simulate` or `ban`. Min value: `10`, max value: `86400`.
+            - `response` : Custom content-type and body to return. This overrides the custom error for the zone. This field is not required. Omission results in the default HTML error page. This field is valid only when mode is `simulate` or `ban`.
+                - `content_type` : The content-type of the body, which must be one of the following: `text/plain`, `text/xml`, `application/json`.
+                - `body` : The body to return. The content here must conform to the `content_type`. Max length is `10240`.
     - The optional fields are `id`, `disabled`, `description`, `correlate` and `bypass`:
-        - `id`: Identifier of the rate limiting rule.
-        - `disabled`: Whether this rate limiting rule is currently disabled.
-        - `description`: A note that you can use to describe the reason for a rate limiting rule.
-        - `correlate`: Whether to enable NAT based rate limiting.
-            - `by`: Valid values: `nat`.
-        - `bypass`: Criteria that allows the rate limit to be bypassed. For example, to express that you shouldn’t apply a rate limit to a set of URLs.
-            - `name`: Valid values is `url`.
-            - `value`: The url to bypass.
+        - `id` : Identifier of the rate limiting rule.
+        - `disabled` : Whether this rate limiting rule is currently disabled.
+        - `description` : A note that you can use to describe the reason for a rate limiting rule.
+        - `correlate` : Whether to enable NAT based rate limiting.
+            - `by` : Valid values: `nat`.
+        - `bypass` : Criteria that allows the rate limit to be bypassed. For example, to express that you shouldn’t apply a rate limit to a set of URLs.
+            - `name` : Valid values is `url`.
+            - `value` : The url to bypass.
 
 Sample JSON data:
 
@@ -6032,16 +6032,16 @@ Sample JSON data:
 {: codeblock}
 
 `-s, --json-st`
-:   *Deprecated*. The JSON data describing a rate limiting rule.
+:   *Deprecated*. The json data describing a rate limiting rule.
 
 `-j, --json-file`
-:   *Deprecated*. A file contains input JSON data.
+:   *Deprecated*. A file contains input json data.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format. Only json is supported.
 
 #### Examples
 {: #create-ratelimit-examples}
@@ -6076,35 +6076,35 @@ ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [
 :   The ID of rate limiting rule. Required.
 
 `--json`
-:   The JSON file or JSON string used to describe a rate limiting rule.
-    - The required fields in JSON data are `match`, `threshold`, `period`, `action` :
-        - `match`: Determines which traffic the rate limiting rule counts towards the threshold.
-            - `request`: Matches HTTP requests.
-                - `methods`:  HTTP Methods, can be a subset `[POST,PUT]` or all `[_ALL_]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `_ALL_`.
-                - `schemes`:  HTTP Schemes, can be one `[HTTPS]`, both `[HTTP,HTTPS]` or all `[_ALL_]`. This field is not required.
-                - `url`: The URL pattern to match comprised of the host and path, for instance, `example.org/path`. Wildcards are expanded to match applicable traffic, query strings are not matched. Use `*` for all traffic to your zone. Max length is 1024.
-            - `response`: Matches HTTP responses before they are returned to the client . If this is defined, then the entire counting of traffic occurs at this stage.
-                - `status`: HTTP Status codes, can be one `[403]`, many `[401,403]` or indicate all by not providing this value. This field is not required. Min value: `100`, max value: `999`.
-                - `headers`: Array of response headers to match. If a response does not meet the header criteria then the request is not counted towards the rate limiting rule. An array of header matching criteria includes following properties.
-                    - `name`: The name of the response header to match.
-                    - `op`: The operator when matching, eq means equals, ne means not equals. Valid values are `eq` and `ne`.
-                    - `value`: The value of the header, which is exactly matched.
-        - `threshold`: The threshold that triggers the rate limit mitigations, combined with period. For example, threshold per period. Min value: `2`, max value: `1000000`.
-        - `period`: The time, in seconds, to count matching traffic. If the count exceeds threshold within this period the action is performed. Min value: `1`, max value: `3600`.
-        - `action`: The action performed when the threshold of matched traffic within the period defined is exceeded.
-            - `mode`: The type of action performed. Valid values are: `simulate`, `ban`, `challenge`, `js_challenge`.
-            - `timeout`: The time, in seconds, as an integer to perform the mitigation action. Timeout be the same or greater than the period. This field is valid only when mode is `simulate` or `ban`. Min value: `10`, max value: `86400`.
-            - `response`: Custom content-type and body to return. This overrides the custom error for the zone. This field is not required. Omission results in the default HTML error page. This field is valid only when mode is `simulate` or `ban`.
-                - `content_type`: The content-type of the body, which must be one of the following: `text/plain`, `text/xml`, `application/json`.
-                - `body`: The body to return. The content here must conform to the `content_type`. Max length is `10240`.
+:   The json file or json string used to describe a rate limiting rule.
+    - The required fields in json data are `match`, `threshold`, `period`, `action` :
+        - `match` : Determines which traffic the rate limiting rule counts towards the threshold.
+            - `request` : Matches HTTP requests.
+                - `methods` :  HTTP Methods, can be a subset `[POST,PUT]` or all `[_ALL_]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `_ALL_`.
+                - `schemes` :  HTTP Schemes, can be one `[HTTPS]`, both `[HTTP,HTTPS]` or all `[_ALL_]`. This field is not required.
+                - `url` : The URL pattern to match comprised of the host and path, for instance, `example.org/path`. Wildcards are expanded to match applicable traffic, query strings are not matched. Use `*` for all traffic to your zone. Max length is 1024.
+            - `response` : Matches HTTP responses before they are returned to the client . If this is defined, then the entire counting of traffic occurs at this stage.
+                - `status` : HTTP Status codes, can be one `[403]`, many `[401,403]` or indicate all by not providing this value. This field is not required. Min value: `100`, max value: `999`.
+                - `headers` : Array of response headers to match. If a response does not meet the header criteria then the request is not counted towards the rate limiting rule. An array of header matching criteria includes following properties.
+                    - `name` : The name of the response header to match.
+                    - `op` : The operator when matching, eq means equals, ne means not equals. Valid values are `eq` and `ne`.
+                    - `value` : The value of the header, which is exactly matched.
+        - `threshold` : The threshold that triggers the rate limit mitigations, combined with period. For example, threshold per period. Min value: `2`, max value: `1000000`.
+        - `period` : The time, in seconds, to count matching traffic. If the count exceeds threshold within this period the action is performed. Min value: `1`, max value: `3600`.
+        - `action` : The action performed when the threshold of matched traffic within the period defined is exceeded.
+            - `mode` : The type of action performed. Valid values are: `simulate`, `ban`, `challenge`, `js_challenge`.
+            - `timeout` : The time, in seconds, as an integer to perform the mitigation action. Timeout be the same or greater than the period. This field is valid only when mode is `simulate` or `ban`. Min value: `10`, max value: `86400`.
+            - `response` : Custom content-type and body to return. This overrides the custom error for the zone. This field is not required. Omission results in the default HTML error page. This field is valid only when mode is `simulate` or `ban`.
+                - `content_type` : The content-type of the body, which must be one of the following: `text/plain`, `text/xml`, `application/json`.
+                - `body` : The body to return. The content here must conform to the `content_type`. Max length is `10240`.
     - The optional fields are `disabled`, `description`, `correlate` and `bypass`:
-        - `disabled`: Whether this rate limiting rule is currently disabled.
-        - `description`: A note that you can use to describe the reason for a rate limiting rule.
-        - `correlate`: Whether to enable NAT based rate limiting.
-            - `by`: Valid values: `nat`.
-        - `bypass`: Criteria that allows the rate limit to be bypassed. For example, to express that you shouldn’t apply a rate limit to a set of URLs.
-            - `name`: Valid values is `url`.
-            - `value`: The url to bypass.
+        - `disabled` : Whether this rate limiting rule is currently disabled.
+        - `description` : A note that you can use to describe the reason for a rate limiting rule.
+        - `correlate` : Whether to enable NAT based rate limiting.
+            - `by` : Valid values: `nat`.
+        - `bypass` : Criteria that allows the rate limit to be bypassed. For example, to express that you shouldn’t apply a rate limit to a set of URLs.
+            - `name` : Valid values is `url`.
+            - `value` : The url to bypass.
 
 Sample JSON data:
 
@@ -6162,16 +6162,16 @@ Sample JSON data:
 {: codeblock}
 
 `-s, --json-str`
-:   *Deprecated*. The JSON data describing a rate limiting rule.
+:   *Deprecated*. The json data describing a rate limiting rule.
 
 `-j, --json-file`
-:   *Deprecated*. A file contains input JSON data.
+:   *Deprecated*. A file contains input json data.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format, only json is supported.
 
 #### Examples
 {: #update-ratelimit-examples}
@@ -6203,7 +6203,7 @@ ibmcloud cis ratelimit-rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output F
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format. Only json is supported.
 
 #### Examples
 {: #llist-ratelimit-rules-examples}
@@ -6238,7 +6238,7 @@ ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INS
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #show-ratelimit-rule-examples}
@@ -6302,7 +6302,7 @@ ibmcloud cis instances [--output FORMAT]
 {: #list-service-instances-options}
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format. Only json is supported.
 
 #### Examples
 {: #list-cis-service-instances-examples}
@@ -6363,7 +6363,7 @@ ibmcloud cis instance-create INSTANCE_NAME PLAN [--output FORMAT]
 :   The name or ID of a service plan. Required.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #create-cis-service-instance-examples}
@@ -6456,7 +6456,7 @@ ibmcloud cis instance INSTANCE [--output FORMAT]
 :   The name or ID of a CIS service instance. Required.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #get-cis-service-instance-examples}
@@ -6528,7 +6528,7 @@ ibmcloud cis routing DNS_DOMAIN_ID (--smart-routing | --tiered-caching) [-i, --i
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #show-routing-examples}
@@ -6566,7 +6566,7 @@ ibmcloud cis routing-update DNS_DOMAIN_ID (--smart-routing (on|off) | --tiered-c
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #update-routing-examples}
@@ -6601,7 +6601,7 @@ ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE]
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #display-routing-analytics-examples}
@@ -6694,7 +6694,7 @@ ibmcloud cis security-events DNS_DOMAIN_ID [--ip-class IP_CLASS] [--method METHO
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #list-security-event-examples}
@@ -6781,7 +6781,7 @@ ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true|
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #update-tls-settings-examples}
@@ -6816,7 +6816,7 @@ ibmcloud cis certificates DNS_DOMAIN_ID [--keyless] [-i, --instance INSTANCE] [-
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #list-cert-examples}
@@ -6857,7 +6857,7 @@ ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [--keyl
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #show-cert-examples}
@@ -6894,7 +6894,7 @@ ibmcloud cis certificate-order DNS_DOMAIN_ID [--hostnames host1 --hostnames host
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify output format. Only json is supported.
 
 #### Examples
 {: #order-dedicated-cert-examples}
@@ -6927,15 +6927,15 @@ ibmcloud cis certificate-upload DNS_DOMAIN_ID [--keyless] (--json @JSON_FILE | J
 :   Upload a keyless certificate.
 
 `--json`
-:   The JSON file or JSON string used to describe a custom certificate. Required.
-    - The required fields in JSON data are `certificate`, `private_key`,`host`, `port` :
-        - `certificate`: SSL certificate or certificate and the intermediate(s) for the domain.
-        - `private_key`: Private key for the domain.
-        - `host`: The keyless SSL host name.
-        - `port`: The keyless SSL port used to communicate between CIS and the client's Keyless SSL server.
+:   The json file or json string used to describe a custom certificate. Required.
+    - The required fields in json data are `certificate`, `private_key`,`host`, `port` :
+        - `certificate` : SSL certificate or certificate and the intermediate(s) for the domain.
+        - `private_key` : Private key for the domain.
+        - `host` : The keyless SSL host name.
+        - `port` : The keyless SSL port used to communicate between CIS and the client's Keyless SSL server.
     - The optional fields is `bundle_method`,`name`:
-        - `bundle_method`: Bundle method, default value is `compatible`, valid values are: `compatible`, `modern` and `user-defined`.
-        - `name`: The keyless SSL name.
+        - `bundle_method` : Bundle method, default value is `compatible`, valid values are: `compatible`, `modern` and `user-defined`.
+        - `name` : The keyless SSL name.
 
 Sample JSON data:
 
@@ -7003,7 +7003,7 @@ ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [--keyless] (--json @JSON_
 :   Update a keyless certificate.
 
 `--json`
-:   The JSON file or JSON string used to describe a custom certificate. Required.
+:   The json file or json string used to describe a custom certificate. Required.
     - The required fields in JSON data are `certificate`, `private_key`,`host`, `port` :
         - `certificate` : SSL certificate or certificate and the intermediate(s) for the domain.
         - `private_key` : Private key for the domain.
@@ -7075,9 +7075,9 @@ ibmcloud cis certificate-priority-change DNS_DOMAIN_ID (--json @JSON_FILE | JSON
 `--json`
 :   The JSON file or JSON string used to describe the custom certificates' priority. Required.
     - The required fields in JSON data are `certificates`:
-        - `certificates`: An array of objects with the follow fields.
+        - `certificates` : An array of objects with the follow fields.
             - `id`: Custom certificate identifier.
-            - `priority`: The order/priority in which the certificate is used in a request. Higher numbers are tried first.
+            - `priority` : The order/priority in which the certificate is used in a request. Higher numbers are tried first.
 
 Sample JSON data:
 
@@ -7098,16 +7098,16 @@ Sample JSON data:
 {: codeblock}
 
 `-s, --json-str`
-:   *Deprecated*. The JSON data used to change the custom certificates' priority.
+:   *Deprecated*. The json data used to change the custom certificates' priority.
 
 `-j, --json-file`
-:   *Deprecated*. A file contains input JSON data.
+:   *Deprecated*. A file contains input json data.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #change-priority-custom-examples}
@@ -7214,7 +7214,7 @@ ibmcloud cis waf-setting-update DNS_DOMAIN_ID WAF_MODE [-i, --instance INSTANCE]
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #update-waf-setting-examples}
@@ -7322,7 +7322,7 @@ ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity SENSI
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #update-waf-owasp-package-examples}
@@ -7363,7 +7363,7 @@ ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page N
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #list-waf-groups-examples}
@@ -7401,7 +7401,7 @@ ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID [-i, --instance
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #show-waf-group-examples}
@@ -7442,7 +7442,7 @@ ibmcloud cis waf-group-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID WAF_GR
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
-:   Specify output format, only JSON is supported.
+:   Specify the output format. Only json is supported.
 
 #### Examples
 {: #update-waf-group-examples}
