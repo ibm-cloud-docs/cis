@@ -2,11 +2,13 @@
 
 copyright:
   years:  2024, 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-06-25"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
 subcollection: cis
+
+content-type: release-note
 
 ---
 
