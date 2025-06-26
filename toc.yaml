@@ -27,7 +27,7 @@ toc:
             - http-concepts.md
             - routing.md
             - tcp-concepts.md
-            - traffic-sequencing.md            
+            - traffic-sequencing.md
             - url-normalization.md
             - waf-concept.md
         - topicgroup:
