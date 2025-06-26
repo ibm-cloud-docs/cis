@@ -1,0 +1,70 @@
+---
+
+copyright:
+  years: 2025
+lastupdated: "2025-06-26"
+
+keywords: lists
+
+subcollection: cis
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
+# About lists
+{: #lists}
+
+Use lists to refer to a group of items (such as IP addresses) collectively, by name, in rule expressions. You can create your own custom lists or use lists managed by CIS, such as [managed IP lists](/docs/cis?topic=cis-managed-lists#managed-ip-lists).
+
+Lists have the following advantages:
+
+* When creating a rule, using a list is easier and less error-prone than adding a long list of items, such as IP addresses to a rule expression.
+* When updating a set of rules that target the same group of IP addresses (or hostnames), using an IP list (or a hostname list) is easier and less error prone than editing multiple rules.
+* Lists are easier to read and more informative, particularly when you use descriptive names for your lists.
+
+When you update the content of a list, any rules that use the list are automatically updated, so you can make a single change to your list rather than modify rules individually.
+
+CIS stores your lists at the account level. You can use the same list in rules of different zones in your CIS account.
+
+## Supported lists
+{: #supported-lists}
+
+CIS supports the following lists:
+
+* [Custom lists](/docs/cis?topic=cis-custom-lists): Includes custom IP lists, hostname lists, and ASN lists.
+* [Managed lists](/docs/cis?topic=cis-managed-lists): Lists managed and updated by CIS. 
+
+## List availability
+{: #lists-availability}
+
+List availability varies according to the list type and your CIS plan and subscriptions.
+
+|  | Free | Pro | Business | Enterprise |
+| -- | ---- | ---- | ---- | ------------- |
+| Availability | Yes | Yes | Yes | Yes |
+| Number of custom lists | 1 | 10 | 10 | 10 |
+| Custom lists with IPs (IP lists) | Yes | Yes | Yes | Yes |
+| Other custom lists (ASNs, hostnames) | No | No | No | Yes |
+| Managed IP list: Cloudflare Open Proxies | No | No | No | Yes |
+| All managed IP lists | No | No | No | With separate add-on |
+{: caption="Available list" caption-side="bottom"}
+
+Additional details and exceptions apply by plan:
+
+* The number of available custom lists depends on the highest plan in your account. Any account with at least one paid plan will get the highest quota.
+* Customers on Enterprise plans can contact their account team if they need more custom lists or a larger maximum number of items across lists. For these customers, the maximum number of custom lists per data type is 40 lists.
+* The CIS Enterprise plan provides access to the CIS Open Proxies managed IP list. Other managed IP lists are available as part of Enterprise Security bundles. For more information, contact your IBM Support representative. 
+
+## List requirements
+{: #list-availability-requirements}
+
+All user-defined lists must follow these formatting and usage rules:
+
+* You can have a maximum number of 10,000 list items across all custom lists.
+* For a list name, use only lowercase letters, numbers, and the underscore `(_)` character in the name. A valid name satisfies this regular expression: `^[a-z0-9_]+$.`
+* The maximum length of a list name is 50 characters.
+* You can only delete a list when there are no rules (enabled or disabled) that reference that list.
+   
+To learn how to use lists in Ruleset Engine rules, see [Integrating lists in rules](/docs/cis?topic=cis-integrating-lists-in-rules).
+{: note}
