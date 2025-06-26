@@ -17,8 +17,35 @@ subcollection: cis
 
 {{site.data.keyword.cis_short_notm}} provides managed lists you can use in rule expressions. These lists are regularly updated.
 
-The available managed lists depend on your CIS plan and product subscriptions. 
+The available managed lists depend on your CIS plan and product subscriptions.
 {: note}
+
+## Listing managed lists in an instance from the CLI
+{: #listing-managed-lists-cli}
+
+To list managed lists in an instance from the CLI, run the following command:
+
+```sh
+cis managed-lists [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+### Command options
+{: #command-listing-managed-lists-cli}
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance specified by `cis instance-set INSTANCE` will be used.
+
+`--output`
+:   Specify output format, only JSON is supported now.
+
+### Example
+{: #example-listing-managed-lists-cli}
+
+```sh
+ibmcloud cis managed-lists -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9:: -o json
+```
+{: pre}
 
 ## Managed IP lists
 {: #managed-ip-lists}
