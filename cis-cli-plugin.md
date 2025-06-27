@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-06-27"
 
 keywords:
 
@@ -189,7 +189,7 @@ ibmcloud cis access-app-update DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAME -
 :   The domain and path that Access blocks. Required.
 
 `--session-duration`
-:   Defines the amount of time that the tokens issued for this application are valid. Valid values: `30m`, `6h`, `12h`, `24h`, `168h`, `730h`.
+:   Defines the amount of time that the tokens issued for this application are valid. Valid values are `30m`, `6h`, `12h`, `24h`, `168h`, and `730h`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -532,10 +532,10 @@ ibmcloud cis access-policy-create DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAM
 :   The name of the policy. Required.
 
 `--decision`
-:   Defines the action Access takes if the policy matches the user. Valid values: `non_identity`. Required.
+:   Defines the action Access takes if the policy matches the user. Valid values is `non_identity`. Required.
 
 `--include`
-:   The included rule of the policy. Valid values: `certificate`, `common_name`. Required.
+:   The included rule of the policy. Valid values are `certificate` and `common_name`. Required.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -765,7 +765,7 @@ ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--brows
 :   The ID of the DNS domain. Required.
 
 `--caching-level`
-:   Specify under what URL conditions that you want to deliver cached assets to the user. Valid values: `no-query-string`, `query-string-independent`, `query-string-dependent`.
+:   Specify under what URL conditions that you want to deliver cached assets to the user. Valid values are `no-query-string`, `query-string-independent`, and `query-string-dependent`.
 
     - `no-query-string` : Delivers resources from cache only when no query string is present.
     - `query-string-independent` : Delivers the same resource to everyone independent of the query string.
@@ -774,7 +774,7 @@ ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--brows
 `--browser-expiration`
 :   Specify how long you want the user's browser to store cached assets.
 
-   - Valid values are: `respect-existing-header`, `30s`, `1M`, `5M`, `20M`, `30M`, `1h`, `2h`, `4h`, `8h`, `16h`, `1d` `3d`, `8d`, `16d`, `1m`, `6m`, `1y`.
+   - Valid values are `respect-existing-header`, `30s`, `1M`, `5M`, `20M`, `30M`, `1h`, `2h`, `4h`, `8h`, `16h`, `1d` `3d`, `8d`, `16d`, `1m`, `6m`, and `1y`.
    - `30s`, `1M`, `5M`, and `20M` are only available for Enterprise or Security plan instance.
    - `30s` means `30 seconds`.
    - `30M` means `30 minutes`.
@@ -826,7 +826,7 @@ ibmcloud cis custom-page-update PAGE_ID PAGE_URL [-d, --domain DNS_DOMAIN_ID] [-
 {: #update-custom-page-options}
 
 `PAGE_ID`
-:   The name of the Custom Page type. Valid values: `basic_challenge`, `country_challenge`, `ip_block`, `ratelimit_block`, `serve_stale_content`, `under_attack`, `waf_block`, `waf_challenge`, `1000_errors`, `500_errors`. Required.
+:   The name of the Custom Page type. Valid values are `basic_challenge`, `country_challenge`, `ip_block`, `ratelimit_block`, `serve_stale_content`, `under_attack`, `waf_block`, `waf_challenge`, `1000_errors`, `500_errors`. Required.
 
 `PAGE_URL`
 :   A URL that is associated with the Custom Page. For example, `http://www.example.com/example.html`. Value `default` means to use the default page. Required.
@@ -864,7 +864,7 @@ ibmcloud cis custom-page PAGE_ID [-d, --domain DNS_DOMAIN_ID] [-i, --instance IN
 {: #show-custom-page-options}
 
 `PAGE_ID`
-:   The name of the Custom Page type. Valid values: `basic_challenge`, `country_challenge`, `ip_block`, `ratelimit_block`, `serve_stale_content`, `under_attack`, `waf_block`, `waf_challenge`, `1000_errors`, `500_errors`. Required.
+:   The name of the Custom Page type. Valid values are `basic_challenge`, `country_challenge`, `ip_block`, `ratelimit_block`, `serve_stale_content`, `under_attack`, `waf_block`, `waf_challenge`, `1000_errors`, and `500_errors`. Required.
 
 `-d, --domain`
 :   DNS Domain ID.
@@ -954,7 +954,7 @@ ibmcloud cis dns-record-create DNS_DOMAIN_ID --type TYPE --name NAME --content C
 :   Time to live for DNS record. A value of 1 is `automatic`. The default value is `1`.
 
 `--proxied`
-:   Control whether traffic flows through the security and performance functions on CIS. CIS proxies traffic only for `A`, `AAAA`, and `CNAME` records. Valid values: `true`, `false`.
+:   Control whether traffic flows through the security and performance functions on CIS. CIS proxies traffic only for `A`, `AAAA`, and `CNAME` records. Valid values are `true` and `false`.
 
 `--json`
 :   The JSON file or JSON string that is used to describe a DNS Record. Supported DNS Record types are: `A`, `AAAA`, `CNAME`, `NS`, `TXT`, `MX`, `LOC`, `SRV`, `CAA`, `PTR`.
@@ -1179,7 +1179,7 @@ ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID [--type TYPE] [--name
 :   Time to live for DNS record. A value of 1 is `automatic`. The default value is `1`.
 
 `--proxied`
-:   Control whether or not traffic flows through the security and performance functions on CIS. CIS proxies traffic only for `A`, `AAAA`, and `CNAME` records. Valid values: `true`, `false`.
+:   Control whether or not traffic flows through the security and performance functions on CIS. CIS proxies traffic only for `A`, `AAAA`, and `CNAME` records. Valid values are `true` and `false`.
 
 `--json`
 :   The JSON file or JSON string that is used to describe a DNS Record. Supported DNS Record types are: `A`, `AAAA`, `CNAME`, `NS`, `TXT`, `MX`, `LOC`, `SRV`, `CAA`,`PTR`.
@@ -1468,13 +1468,13 @@ ibmcloud cis dns-records DNS_DOMAIN_ID [--type TYPE] [--name NAME] [--content CO
 :   Maximum number of DNS records per page.
 
 `--order`
-:   Field by which to order the list of DNS records. Valid values are `type`, `name`, `content`, `ttl`, `proxied`.
+:   Field by which to order the list of DNS records. Valid values are `type`, `name`, `content`, `ttl`, and `proxied`.
 
 `--direction`
-:   Direction in which to order the results (ascending or descending order). Valid values are `asc`, `desc`.
+:   Direction in which to order the results (ascending or descending order). Valid values are `asc` and `desc`.
 
 `--match`
-:   Whether to match all or at least one search parameter. Valid values are `any`, `all`.
+:   Whether to match all or at least one search parameter. Valid values are `any` and `all`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -1578,7 +1578,7 @@ ibmcloud cis domain-add DNS_DOMAIN_NAME [-i, --instance INSTANCE] [--output FORM
 {: #add-domain-options}
 
 `type`
-:   Specify the domain type setup. Valid values: `full`, `partial` (default `full`).
+:   Specify the domain type setup. Valid values are `full` and `partial` (default `full`).
 
     - `full` : A full zone implies that the DNS is hosted.
     - `partial` : A partial zone implies a CNAME setup domain.
@@ -1934,21 +1934,21 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
 
 `-v, --value`
 :   The value set to the feature for domain. Required.
-    - Valid values for `always_use_https` are `on`, `off`.
-    - Valid values for `automatic_https_rewrites` are `on`, `off`.
+    - Valid values for `always_use_https` are `on` and `off`.
+    - Valid values for `automatic_https_rewrites` are `on` and `off`.
     - Valid values for `bot_management` are "use_latest_model", "fight_mode", "session_score", "enable_js". For example, `-v fight_mode=true,session_score=true`
-         - `use_latest_model` : Whether to enable latest model version. Valid values for `use_latest_model` are `true`, `false`.
-         - `fight_mode` : Whether to enable the fight mode. Valid values for `fight_mode` are `true`, `false`.
-         - `session_score` : Whether to enable the session score. Valid values for `session_score` are `true`, `false`.
-         - `enable_js` : Whether to enable JavaScript detections. Valid values for `enable_js` are `true`, `false`.
-    - Valid values for `browser_check` are `on`, `off`.
+         - `use_latest_model` : Whether to enable latest model version. Valid values for `use_latest_model` are `true` and `false`.
+         - `fight_mode` : Whether to enable the fight mode. Valid values for `fight_mode` are `true` and `false`.
+         - `session_score` : Whether to enable the session score. Valid values for `session_score` are `true` and `false`.
+         - `enable_js` : Whether to enable JavaScript detections. Valid values for `enable_js` are `true` and `false`.
+    - Valid values for `browser_check` are `on` and `off`.
     - Valid values for `challenge_ttl` are `300, 900, 1800, 2700, 3600, 7200, 10800, 14400, 28800, 57600, 86400, 604800, 2592000, 31536000`.
     - Valid values for `cname_flattening` are `flatten_at_root`, `flatten_all`.
         - `flatten_at_root` : Flatten CNAME at the root domain. This value is the default value.
         - `flatten_all` : Flatten all CNAME records under your domain.
-    - Valid values for `domain_hold` are `hold`, `include_subdomains`, `hold_after`.
-        - `hold` : Whether to enable the domain hold. Valid values for `hold` are `true`, `false`.
-        - `include_subdomains`: Whether to enable the domain hold. Valid values for `include_subdomains` are `true`, `false`.
+    - Valid values for `domain_hold` are `hold`, `include_subdomains` and `hold_after`.
+        - `hold` : Whether to enable the domain hold. Valid values for `hold` are `true` and `false`.
+        - `include_subdomains`: Whether to enable the domain hold. Valid values for `include_subdomains` are `true` and `false`.
         - `hold_after` : If `hold_after` is provided, the hold is temporarily disabled, then automatically re-enabled by the system at the time specified.
 
         For enable domain and subdomains hold: `-v hold=true,include_subdomains=true`.
@@ -2410,9 +2410,9 @@ ibmcloud cis firewall-create (-t, --type Type) (--json @JSON_FILE | JSON_STRING)
 :   The JSON file or JSON string that is used to describe a firewall rule. Required.
     - For `--type access-rules` : The JSON data that describes a firewall access rule as follows.
         - Required fields are `mode`, `configuration`.
-            - `mode` : The type of action to perform. Valid values: `block`, `challenge`, `whitelist`, `js_challenge`.
+            - `mode` : The type of action to perform. Valid values are `block`, `challenge`, `whitelist`, and `js_challenge`.
             - `configuration` : Target/Value pair to use for this rule.
-                - `target` : The request property to target. Valid values: `ip`, `ip_range`, `asn`, `country`.
+                - `target` : The request property to target. Valid values are `ip`, `ip_range`, `asn`, and `country`.
                 - `value` : The value for the selected target.
                     - For ip, the value is a valid IP address.
                     - For ip_range, the value specifies an ip range that is limited to `/16` and `/24`.
@@ -2437,9 +2437,9 @@ Sample JSON data:
 
 - For `--type ua-rules` : The JSON data describing a user-agent rule as follows.
     - Required fields are `mode`, `configuration`.
-        - `mode` : The type of action to perform. Valid values: `block`, `challenge`, `js_challenge`.
+        - `mode` : The type of action to perform. Valid values are `block`, `challenge`, and `js_challenge`.
         - `configuration` : Target/Value pair to use for this rule.
-            - `target` : The request property to target. Valid values: `ua`.
+            - `target` : The request property to target. Valid value is `ua`.
             - `value` : The exact UserAgent string to match with this rule.
     - Option fields are `paused`, `description`.
         - `paused` : Whether this rule is currently disabled.
@@ -2466,7 +2466,7 @@ Sample JSON data:
             - This field limits the URL to simple wildcard patterns.
         - `configurations` : List of IP addresses or CIDR ranges to use for this rule.
             - This field can include any number of ip or ip_range configurations that can access the provided URLs.
-            - `target` : The request property to target. Valid values: `ip`, `ip_range`.
+            - `target` : The request property to target. Valid values are `ip`, and `ip_range`.
             - `value` : IP addresses or CIDR. If target is `ip`, then value must be an IP address, otherwise CIDR.
     - Option fields are `paused`, `description`.
         - `paused` : Whether this rule is currently disabled.
@@ -2534,7 +2534,7 @@ ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FI
 - **FIREWALL_RULE_ID**: The ID of firewall rule. Required.
 
 `-t, --type`
-:   Type of firewall rule to create. Valid values: `access-rules`, `ua-rules`, `lockdowns`. Required.
+:   Type of firewall rule to create. Valid values are `access-rules`, `ua-rules`, and `lockdowns`. Required.
     - `access-rules` : Access Rules are a way to allow, challenge, or block requests to your website. You can apply access rules to one domain only or all domains in the same service instance.
     - `ua-rules` : Perform access control when matching the exact UserAgent reported by the client. The access control mechanisms can be defined within a rule to help manage traffic from particular clients. This enables you to customize the access to your site.
     - `lockdowns` : Lock access to URLs in this domain to only permitted addresses or address ranges.
@@ -2546,7 +2546,7 @@ ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FI
 :   The JSON file or JSON string that is used to describe a firewall rule. Required.
     - For `--type access-rules`: The JSON data describing a firewall access rule as follows.
         - Option fields are `mode`, `notes`.
-            - `mode` : The type of action to perform. Valid values: `block`, `challenge`, `whitelist`, `js_challenge`.
+            - `mode` : The type of action to perform. Valid values are `block`, `challenge`, `whitelist`, and `js_challenge`.
             - `notes` : Some useful information about this rule to help identify the purpose of it.
 
     Sample JSON data:
@@ -2561,9 +2561,9 @@ ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FI
 
 - For `--type ua-rules` : The JSON data describing a user-agent rule as follows.
     - Required fields are `mode`, `configuration`.
-        - `mode` : The type of action to perform. Valid values: `block`, `challenge`, `js_challenge`.
+        - `mode` : The type of action to perform. Valid values are `block`, `challenge`, and `js_challenge`.
         - `configuration` : Target/Value pair to use for this rule.
-            - `target` : The request property to target. Valid values: `ua`.
+            - `target` : The request property to target. Valid value is `ua`.
             - `value` : The exact UserAgent string to match with this rule.
     - Option fields are `paused`, `description`.
         - `paused` : Whether this rule is currently disabled.
@@ -2590,7 +2590,7 @@ ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FI
             - This field limits the URL to simple wildcard patterns.
         - `configurations` : List of IP addresses or CIDR ranges to use for this rule.
              - This field can include any number of ip or ip_range configurations that can access the provided URLs.
-             - `target` : The request property to target. Valid values: `ip`, `ip_range`.
+             - `target` : The request property to target. Valid values are `ip` and `ip_range`.
              - `value` : IP addresses or CIDR. If target is `ip`, then value should be an IP addresses, otherwise CIDR.
     - Option fields are `paused`, `description`.
         - `paused` : Whether this rule is currently disabled.
@@ -2656,7 +2656,7 @@ ibmcloud cis firewalls (-t, --type Type) [-d, --domain DNS_DOMAIN_ID] [--page PA
 {: #list-firewall-options}
 
 `-t, --type`
-:   Type of firewall rule to create. Valid values: `access-rules`, `ua-rules`, `lockdowns`. Required.
+:   Type of firewall rule to create. Valid values are `access-rules`, `ua-rules`, and `lockdowns`. Required.
     - `access-rules` : Access Rules are a way to allow, challenge, or block requests to your website. You can apply access rules to one domain only or all domains in the same service instance.
     - `ua-rules` : Perform access control when matching the exact UserAgent reported by the client. The access control mechanisms can be defined within a rule to help manage traffic from particular clients. This enables you to customize the access to your site.
     - `lockdowns` : Lock access to URLs in this domain to only permitted addresses or address ranges.
@@ -2706,7 +2706,7 @@ ibmcloud cis firewall FIREWALL_RULE_ID (-t, --type Type) [-d, --domain DNS_DOMAI
 :   The ID of firewall rule. Required.
 
 `-t, --type`
-:   Type of firewall rule to create. Valid values: `access-rules`, `ua-rules`, `lockdowns`.
+:   Type of firewall rule to create. Valid values are `access-rules`, `ua-rules`, and `lockdowns`.
     - `access-rules` : Access Rules are a way to allow, challenge, or block requests to your website. You can apply access rules to one domain only or all domains in the same service instance.
     - `ua-rules` : Perform access control when matching the exact UserAgent reported by the client. The access control mechanisms can be defined within a rule to help manage traffic from particular clients. This enables you to customize the access to your site.
     - `lockdowns` : Lock access to URLs in this domain to only permitted addresses or address ranges.
@@ -2751,7 +2751,7 @@ ibmcloud cis firewall-delete FIREWALL_RULE_ID (-t, --type Type) [-d, --domain DN
 :   The ID of firewall rule. Required.
 
 `-t, --type`
-:   Type of firewall rule to create. Valid values: `access-rules`, `ua-rules`, `lockdowns`. Required.
+:   Type of firewall rule to create. Valid values are `access-rules`, `ua-rules`, and `lockdowns`. Required.
     - `access-rules` : Access Rules are a way to allow, challenge, or block requests to your website. You can apply access rules to one domain only or all domains in the same service instance.
     - `ua-rules` : Perform access control when matching the exact UserAgent reported by the client. The access control mechanisms can be defined within a rule to help manage traffic from particular clients. This field enables you to customize the access to your site.
     - `lockdowns` : Lock access to URLs in this domain to only permitted addresses or address ranges.
@@ -2876,30 +2876,30 @@ ibmcloud cis firewall-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING
 :   A filter expression. For example, `ip.src eq 93.184.216.0`.
 
 `--action`
-:   The rule action to perform. Valid values: `log`, `allow`, `challenge`, `js_challenge`, `block`, `bypass`.
+:   The rule action to perform. Valid values are `log`, `allow`, `challenge`, `js_challenge`, `block`, and `bypass`.
 
 `--priority`
-:   The rule's priority. Valid values: 0 ~ 2147483647. Value `0` means to set to the default value.
+:   The rule's priority. Valid values range from `0` to `2147483647`. The value `0` means to set to the default value.
 
 `--description`
 :   To briefly describe the rule.
 
 `--paused`
-:   Indicates if the rule is active. Valid values: `on`, `off`. Default value is `off`.
+:   Indicates if the rule is active. Valid values are `on` and `off`. The default value is `off`.
 
 `--products`
-:   The list of security products to be bypassed. Valid values: `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, `waf`.
+:   The list of security products to be bypassed. Valid values are `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, and `waf`.
 
 `--json`
 :   The JSON file or JSON string used to describe a firewall-rule.
     - The required fields in JSON data are `expression`, `action`.
         - `expression` : A filter expression. For example, `ip.src eq 93.184.216.0`
-        - `action` : The rule action to perform. Valid values: `log`, `allow`, `challenge`, `js_challenge`, `block`, `bypass`.
+        - `action` : The rule action to perform. Valid values are `log`, `allow`, `challenge`, `js_challenge`, `block`, and `bypass`.
     - The optional fields are `description`, `priority`, `paused`, `products`.
         - `description` : To briefly describe the rule.
-        - `priority` : The rule's priority. Valid values: 0 ~ 2147483647. Value `0` means to set to the default value.
-        - `paused` : Indicates if the rule is active. Valid values: `on`, `off`.Default value is `off`.
-        - `products` : The list of security products to be bypassed. Valid values: `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, `waf` For example, --products zoneLockdown,rateLimit
+        - `priority` : The rule's priority. Valid values range from `0` to `2147483647`. The value `0` means to set to the default value.
+        - `paused` : Indicates if the rule is active. Valid values are `on` and `off`. The default value is `off`.
+        - `products` : The list of security products to be bypassed. Valid values are `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, and `waf` For example, --products zoneLockdown,rateLimit
 
    Sample JSON data:
 
@@ -2963,30 +2963,30 @@ ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID (--json @JSON_F
 :   A filter expression. For example, `ip.src eq 93.184.216.0`.
 
 `--action`
-:   The rule action to perform. Valid values: `log`, `allow`, `challenge`, `js_challenge`, `block`, `bypass`.
+:   The rule action to perform. Valid values are `log`, `allow`, `challenge`, `js_challenge`, `block`, and `bypass`.
 
 `--priority`
-:   The rule's priority. Valid values: 0 ~ 2147483647. Value `0` means to set to the default value.
+:   The rule's priority. Valid values range from `0` to `2147483647`. The value `0` means to set to the default value.
 
 `--description`
 :   To briefly describe the rule.
 
 `--paused`
-:   Indicates if the rule is active. Valid values: `on`, `off`. Default value is `off`.
+:   Indicates if the rule is active. Valid values are `on` and `off`. Default value is `off`.
 
 `--products`
-:   The list of security products to be bypassed. Valid values: `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, `waf`.
+:   The list of security products to be bypassed. Valid values are `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, and `waf`.
 
 `--json`
 :   The JSON file or JSON string used to describe a firewall-rule.
     - The required fields in JSON data are `expression`, `action`.
         - `expression` : A filter expression. For example, `ip.src eq 93.184.216.0`
-        - `action` : The rule action to perform. Valid values: `log`, `allow`, `challenge`, `js_challenge`, `block`, `bypass`.
+        - `action` : The rule action to perform. Valid values are `log`, `allow`, `challenge`, `js_challenge`, `block`, `bypass`.
     - The optional fields are `description`, `priority`, `paused`, `products`.
         - `description` : To briefly describe the rule.
-        - `priority` : The rule's priority. Valid values: 0 ~ 2147483647. Value `0` means to set to the default value.
-        - `paused` : Indicates if the rule is active. Valid values: `on`, `off`.Default value is `off`.
-        - `products` : The list of security products to be bypassed. Valid values: `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, `waf` For example, --products zoneLockdown,rateLimit
+        - `priority` : The rule's priority. Valid values range from `0` to `2147483647`. The value `0` means to set to the default value.
+        - `paused` : Indicates if the rule is active. Valid values are `on` and `off`. The default value is `off`.
+        - `products` : The list of security products to be bypassed. Valid values are `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, and `waf` For example, --products zoneLockdown,rateLimit
     - Note: Fields `description`, `priority`, `paused` which aren't explicitly set in JSON data will be overwritten by the default value.
 
 Sample JSON data:
@@ -3124,8 +3124,8 @@ ibmcloud cis glb-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --i
         - `region_pools` : A mapping of region and country codes to a list of pool IDs (ordered by their failover priority) for the region.
         - `proxied` : Control whether or not traffic should flow through the security and performance functions on CIS.
         - `enabled` : Whether to enable (the default) this load balancer.
-        - `session_affinity` : Ensures that a user's requests are consistently directed to the same backend server during a session. Valid values are `cookie`, `none`.
-        - `session_affinity_ttl` : Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between [1800, 604800]. Default is 82800.
+        - `session_affinity` : Ensures that a user's requests are consistently directed to the same backend server during a session. Valid values are `cookie` and `none`.
+        - `session_affinity_ttl` : Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between `[1800, 604800]`. The default value is `82800`.
         - `steering_policy` : Valid values for `steering_policy` are `off`, `geo`, `random`, `dynamic_latency`.
              - `off` : Use `default_pools`.
              - `geo` : Use `region_pools/pop_pools`.
@@ -3211,8 +3211,8 @@ ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (--json @JSON_FILE | JSON_STRING) [
         - `region_pools` : A mapping of region and country codes to a list of pool IDs (ordered by their failover priority) for the region.
         - `proxied` : Control whether or not traffic should flow through the security and performance functions on CIS.
         - `enabled` : Whether to enable (the default) this load balancer.
-        - `session_affinity` : Ensures that a user's requests are consistently directed to the same backend server during a session. Valid values are `cookie`, `none`.
-        - `session_affinity_ttl` : Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between `[1800, 604800]`. Default is `82800`.
+        - `session_affinity` : Ensures that a user's requests are consistently directed to the same backend server during a session. Valid values are `cookie` and `none`.
+        - `session_affinity_ttl` : Time, in seconds, until this load balancers session affinity cookie expires after being created. Valid value is between `[1800, 604800]`. The default value is `82800`.
         - `steering_policy` : Valid values for `steering_policy` are `off`, `geo`, `random`, `dynamic_latency`.
              - `off` : Use `default_pools`.
              - `geo` : Use `region_pools/pop_pools`.
@@ -3673,7 +3673,7 @@ ibmcloud cis glb-monitor-create (--json @JSON_FILE | JSON_STRING) [-i, --instanc
 `--json`
 :   The JSON file or JSON string used to describe a GLB monitor. Required.
     - The required fields in JSON data are `type`.
-        - `type` : The protocol to use for the healthcheck. Valid values: `HTTP`, `HTTPS`, `TCP`.
+        - `type` : The protocol to use for the healthcheck. Valid values are `HTTP`, `HTTPS`, and `TCP`.
     - The optional fields are `description`, `timeout`, `retries`, `interval`.
         - `description` : Description.
         - `timeout` : The timeout (in seconds) before marking the health check as failed.
@@ -3840,7 +3840,7 @@ ibmcloud cis glb-monitor-update GLB_MON_ID (--json @JSON_FILE | JSON_STRING) [-i
 `--json`
 :   The JSON file or JSON string used to describe a GLB monitor. Required.
     - The required fields in JSON data are `type`.
-        - `type` : The protocol to use for the healthcheck. Valid values: `HTTP`, `HTTPS`, `TCP`.
+        - `type` : The protocol to use for the healthcheck. Valid values are `HTTP`, `HTTPS`, and `TCP`.
     - The optional fields are `description`, `timeout`, `retries`, `interval`.
         - `description` : Description.
         - `timeout` : The timeout (in seconds) before marking the health check as failed.
@@ -4123,7 +4123,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --available-fields [--output FORMAT]
 :   Percentage of sampling. When a sample is provided, a sample of matching records is returned. If `sample=0.1` then 10% of records are returned. The sampling is random: repeated calls will not only return different records, but will likely also vary slightly in number of returned records. When count is also specified, count is applied to the number of returned records, not the sampled records. So, with `sample=0.05` and `count=7`, when there is a total of 100 records available, approximately 5 will be returned. When there are 1000 records, 7 will be returned. When there are 10,000 records, 7 will be returned. The default value is `1`.
 
 `--timestamps`
-:   Set the format in which response timestamps are returned. Valid values: `unix`, `unixnano`, `rfc3339`.
+:   Set the format in which response timestamps are returned. Valid values are `unix`, `unixnano` and `rfc3339`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4182,13 +4182,13 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
 :   Define the list of log fields to be included in log files. Multiple fields can be separated by commas and use command [`ibmcloud cis logpush-available-fields DNS_DOMAIN_ID`] to get the comprehensive list of available log fields, or use `all` to include all available fields in log files. Note that fields are expected to be case sensitive.
 
 `--timestamps`
-:   Set the format in which response timestamps are returned. Valid values: `unix`, `unixnano`, `rfc3339`.
+:   Set the format in which response timestamps are returned. Valid values are `unix`, `unixnano` and `rfc3339`.
 
 `--dataset`
-:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values: `http_requests`, `range_events`, `firewall_events`, `dns_logs`. The default value is `http_requests`.
+:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values are `http_requests`, `range_events`, `firewall_events`, `dns_logs`. The default value is `http_requests`.
 
 `--frequency`
-:   The frequency at which CIS sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files. Valid values: `high`, `low`.
+:   The frequency at which CIS sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files. Valid values are `high`, `low`.
 
 `-i , --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4240,16 +4240,16 @@ ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [-
 :   Define the list of log fields to be included in log files. Multiple fields can be separated by commas and use command `ibmcloud cis logpush-available-fields DNS_DOMAIN_ID` to get the comprehensive list of available log fields, or use `all` to include all available fields in log files. Note that fields are expected to be case sensitive.
 
 `--timestamps`
-:   Set the format in which response timestamps are returned. Valid values: `unix`, `unixnano`, `rfc3339`.
+:   Set the format in which response timestamps are returned. Valid values are `unix`, `unixnano`, `rfc3339`.
 
 `--dataset`
-:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values: `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
+:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values are `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
 
 `--jobid`
 :   JOB_ID is the ID of logpush job.
 
 `--frequency`
-:   The frequency at which CIS sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files. Valid values: `high`, `low`.
+:   The frequency at which CIS sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files. Valid values are `high` and `low`.
 
 `-i , --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4316,7 +4316,7 @@ ibmcloud cis logpush-job DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-i,
 :   The ID of the DNS domain. Required.
 
 `--dataset`
-:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values: `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
+:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values are `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
 
 `--jobid`
 :   JOB_ID is the ID of logpush job.
@@ -4354,7 +4354,7 @@ ibmcloud cis logpush-job-delete DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_I
 :   The ID of the DNS domain. Required.
 
 `--dataset`
-:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values: `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
+:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values are `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
 
 `--jobid`
 :   JOB_ID is the ID of logpush job.
@@ -4392,7 +4392,7 @@ ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --i
 :   The ID of the DNS domain. Required.
 
 `--dataset`
-:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values: `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
+:   The category of logs you want to receive. This value cannot be changed after the job is created. Valid values are `http_requests`, `range_events`, `firewall_events`,`dns_logs`. The default value is `http_requests`.
 
 `-i , --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4755,7 +4755,7 @@ ibmcloud cis web-analytics DNS_DOMAIN_ID [--recent DURATION] [-t, --table reques
 :   The ID of the DNS domain. Required.
 
 `--recent`
-:   The beginning of the requested time frame. Valid values are: `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago), `1m` (1 month ago), `2m`, `3m`. The default value is `1w`.
+:   The beginning of the requested time frame. Valid values are `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago), `1m` (1 month ago), `2m`, `3m`. The default value is `1w`.
 
 `-t, --table`
 :   Output table. Valid values are `requests`, `bandwidth`, `uniques`, `threats` and, `status_code`. If not set, it outputs all the tables.
@@ -4793,10 +4793,10 @@ ibmcloud cis dns-analytics DNS_DOMAIN_ID DIMENSION [-s, --since TIME] [-i, --ins
 :   The ID of the DNS domain. Required.
 
 `DIMENSION`
-:   The queried dimension. Valid values: `queries-by-response-code`, `queries-by-type`, `queries-by-name`. Required.
+:   The queried dimension. Valid values are `queries-by-response-code`, `queries-by-type`, `queries-by-name`. Required.
 
 `-s, --since`
-:   Since time to now. Valid values are: `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago).
+:   Since time to now. Valid values are `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago).
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4831,10 +4831,10 @@ ibmcloud cis ratelimit-analytics DNS_DOMAIN_ID [--recent DURATION] [--time-delta
 :   The ID of the DNS domain. Required.
 
 `--recent`
-:   The beginning of the requested time frame. Valid values are: `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago), `1m` (1 month ago), `2m`, `3m`. The default value is `1w`.
+:   The beginning of the requested time frame. Valid values are `6h` (6 hours ago), `12h`, `1d` (1 day ago), `1w` (1 week ago), `1m` (1 month ago), `2m`, `3m`. The default value is `1w`.
 
 `--time-delta`
-:   The time interval (seconds) of each analytic's record. Valid values: `60`, `3600`, `86400`, `2592000`. The default value is `3600`.
+:   The time interval (seconds) of each analytic's record. Valid values are `60`, `3600`, `86400`, `2592000`. The default value is `3600`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4936,7 +4936,7 @@ ibmcloud cis origin-certificate-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_S
 :   The ID of the DNS domain. Required.
 
 `--request-type REQUEST_TYPE`
-:   Signature type desired on certificate. Valid values: `origin-rsa`, `origin-ecc`.
+:   Signature type desired on certificate. Valid values are `origin-rsa` and `origin-ecc`.
 
 `--hostnames HOSTNAME`
 :   hostname or wildcard name that is bound to the certificate.
@@ -4950,10 +4950,10 @@ ibmcloud cis origin-certificate-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_S
 `--json value*`
 :   The JSON file or JSON string that is used to describe an origin certificate.
     - The required fields in JSON data are `request_type`, `hostnames`.
-        - `request_type` : Signature type desired on the certificate. Valid values: `origin-rsa`, `origin-ecc`.
+        - `request_type` : Signature type desired on the certificate. Valid values are `origin-rsa`, `origin-ecc`.
         - `hostnames` : Array of hostnames or wildcard names bound to the certificate.
     - The optional fields are `requested_validity`, `csr`.
-        - `requested_validity` : The number of days for which the certificate should be valid. Valid values: `0`, `7`, `30`, `90`, `365`, `730`, `1095`, `5475`.
+        - `requested_validity` : The number of days for which the certificate should be valid. Valid values are `0`, `7`, `30`, `90`, `365`, `730`, `1095`, `5475`.
         - `csr` : The Certificate Signing Request (CSR). If not set, CIS will generate one.
 
    Sample JSON data:
@@ -5499,23 +5499,23 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
 :   The Load Balancer port associated with the range application. The default value is `22`.
 
 `--protocol`
-:   Protocol type. Valid values: `tcp`, `udp`. UDP protocol support is in early access, request custom UDP from CIS dashboard before creating range UDP app. The default value is `tcp`.
+:   Protocol type. Valid values are `tcp`, `udp`. UDP protocol support is in early access, request custom UDP from CIS dashboard before creating range UDP app. The default value is `tcp`.
 
 `--proxy-protocol`
-:   Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
+:   Enable Proxy Protocol to the origin. Valid values are `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
     *Deprecated*. The value `on` is equivalent to `v1`.
 
 `--ip-firewall`
-:   Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`. The default value is `off`.
+:   Control whether or not enables the IP Firewall for this application. Valid values are `on`, `off`. The default value is `off`.
 
 `--edge-connectivity`
-:   The IP versions supported for inbound connections on range anycast IPs. Valid values: `all`, `ipv4`, `ipv6`. The default value is `all`.
+:   The IP versions supported for inbound connections on range anycast IPs. Valid values are `all`, `ipv4`, `ipv6`. The default value is `all`.
 
 `--edge-tls`
-:   The type of TLS termination associated with the application. Valid values: `off`, `flexible`, `full`, `strict`. The default value is `off`.
+:   The type of TLS termination associated with the application. Valid values are `off`, `flexible`, `full`, `strict`. The default value is `off`.
 
 `--traffic-type`
-:   Determines how data travels from the edge to your origin. Valid values: `direct`, `http`, `https`. The default value is `direct`.
+:   Determines how data travels from the edge to your origin. Valid values are `direct`, `http`, `https`. The default value is `direct`.
 
 `--json`
 :   The JSON file or JSON string used to describe a range application.
@@ -5523,20 +5523,20 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
         - `protocol` : Port configuration at CIS's edge.
         - `dns` : The name and type of DNS record for the range application.
             - `name` : The name of DNS record for the range application.
-            - `type` : The type of DNS record associated with the application. Valid values: `CNAME`.
+            - `type` : The type of DNS record associated with the application. Valid value is `CNAME`.
     - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, `traffic_type`.
         - `origin_direct` : A list of destination addresses to the origin.
         - `origin_dns` : Method and parameters used to discover the origin server address via DNS.
             - `name`: DNS record name.
         - `origin_port` : The destination port at the origin.
-        - `proxy_protocol` : Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
+        - `proxy_protocol` : Enable Proxy Protocol to the origin. Valid values are `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
             *Deprecated*. The value `on` is equivalent to `v1`.
-        - `ip_firewall` : Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`.
+        - `ip_firewall` : Control whether or not enables the IP Firewall for this application. Valid values are `on`, `off`.
         - `edge_ips` : The anycast edge IP configuration for the hostname of this application.
-            - `type` : The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid values: `dynamic`.
+            - `type` : The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid value is `dynamic`.
             - `connectivity` : The IP versions supported for inbound connections on range anycast IPs. Valid values: `all`, `ipv4`, `ipv6`.
-        - `tls`: The type of TLS termination associated with the application. Valid values: `off`, `flexible`, `full`, `strict`.
-        - `traffic_type` : Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values: `direct`, `http`, `https`. The default value is `direct`.
+        - `tls`: The type of TLS termination associated with the application. Valid values are `off`, `flexible`, `full`, `strict`.
+        - `traffic_type` : Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values are `direct`, `http`, `https`. The default value is `direct`.
 
 Sample JSON data:
 
@@ -5649,20 +5649,20 @@ ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID (--json @JSON_FILE | JSON_STR
 :   The Load Balancer port associated with the range application. The default value is `22`.
 
 `--proxy-protocol`
-:   Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
+:   Enable Proxy Protocol to the origin. Valid values are `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
     *Deprecated*. The value `on` is equivalent to `v1`.
 
 `--ip-firewall`
-:   Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`. The default value is `off`.
+:   Control whether or not enables the IP Firewall for this application. Valid values are `on`, `off`. The default value is `off`.
 
 `--edge-connectivity`
-:   The IP versions supported for inbound connections on range anycast IPs. Valid values: `all`, `ipv4`, `ipv6`. The default value is `all`.
+:   The IP versions supported for inbound connections on range anycast IPs. Valid values are `all`, `ipv4`, `ipv6`. The default value is `all`.
 
 `--edge-tls`
-:   The type of TLS termination associated with the application. Valid values: `off`, `flexible`, `full`, `strict`. The default value is `off`.
+:   The type of TLS termination associated with the application. Valid values are `off`, `flexible`, `full`, `strict`. The default value is `off`.
 
 `--traffic-type`
-:   Determines how data travels from the edge to your origin. Valid values: `direct`, `http`, `https`. The default value is `direct`.
+:   Determines how data travels from the edge to your origin. Valid values are `direct`, `http`, `https`. The default value is `direct`.
 
 `--json`
 :   The JSON file or JSON string used to describe a range application.
@@ -5670,20 +5670,20 @@ ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID (--json @JSON_FILE | JSON_STR
         - `protocol` : Port configuration at CIS's edge.
         - `dns` : The name and type of DNS record for the range application.
             - `name` : The name of DNS record for the range application.
-            - `type` : The type of DNS record associated with the application. Valid values: `CNAME`.
+            - `type` : The type of DNS record associated with the application. Valid value is `CNAME`.
     - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, `traffic_type`.
         - `origin_direct` : A list of destination addresses to the origin.
         - `origin_dns` : Method and parameters used to discover the origin server address via DNS.
             - `name` : DNS record name.
         - `origin_port` : The destination port at the origin.
-        - `proxy_protocol` : Enable Proxy Protocol to the origin. Valid values: `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
+        - `proxy_protocol` : Enable Proxy Protocol to the origin. Valid values are `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
             *Deprecated*. The value `on` is equivalent to `v1`.
-        - `ip_firewall` : Control whether or not enables the IP Firewall for this application. Valid values: `on`, `off`.
+        - `ip_firewall` : Control whether or not enables the IP Firewall for this application. Valid values are `on`, `off`.
         - `edge_ips` : The anycast edge IP configuration for the hostname of this application.
-            - `type` : The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid values: `dynamic`.
-            - `connectivity`: The IP versions supported for inbound connections on range anycast IPs. Valid values: `all`, `ipv4`, `ipv6`.
-        - `tls`: The type of TLS termination associated with the application. Valid values: `off`, `flexible`, `full`, `strict`.
-        - `traffic_type` : Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values: `direct`, `http`, `https`. The default value is `direct`.
+            - `type` : The type of edge IP configuration specified. Dynamically allocated edge IPs use range anycast IPs in accordance with the connectivity you specify. Valid value is `dynamic`.
+            - `connectivity`: The IP versions supported for inbound connections on range anycast IPs. Valid values are `all`, `ipv4`, `ipv6`.
+        - `tls`: The type of TLS termination associated with the application. Valid values are `off`, `flexible`, `full`, `strict`.
+        - `traffic_type` : Determines how data travels from the edge to your origin. When set to `direct`, range will send traffic directly to your origin, and the application's type is derived from the protocol. When set to `http` or `https`, range will apply CIS's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly. Valid values are `direct`, `http`, `https`. The default value is `direct`.
 
 Sample JSON data:
 
@@ -5899,7 +5899,7 @@ ibmcloud cis range-analytics DNS_DOMAIN_ID --bytime [--time_delta DELTA] [--metr
 :   Analytics data for range applications grouped by time interval.
 
 `--time-delta`
-:   Used to select time series resolution. Valid values: `year`, `quarter`, `month`, `week`, `day`, `hour`, `dekaminute`, `minute`. Only valid when `--bytime` is given.
+:   Used to select time series resolution. Valid values are `year`, `quarter`, `month`, `week`, `day`, `hour`, `dekaminute`, `minute`. Only valid when `--bytime` is given.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -5970,9 +5970,9 @@ ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --url URL [--description DESCRI
         - `disabled` : Whether this rate limiting rule is currently disabled.
         - `description` : A note that you can use to describe the reason for a rate limiting rule.
         - `correlate` : Whether to enable NAT based rate limiting.
-            - `by` : Valid values: `nat`.
+            - `by` : Valid value is `nat`.
         - `bypass` : Criteria that allows the rate limit to be bypassed. For example, to express that you shouldn’t apply a rate limit to a set of URLs.
-            - `name` : Valid values is `url`.
+            - `name` : Valid value is `url`.
             - `value` : The url to bypass.
 
 Sample JSON data:
@@ -6092,7 +6092,7 @@ ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [
         - `threshold` : The threshold that triggers the rate limit mitigations, combined with period. For example, threshold per period. Min value: `2`, max value: `1000000`.
         - `period` : The time, in seconds, to count matching traffic. If the count exceeds threshold within this period the action is performed. Min value: `1`, max value: `3600`.
         - `action` : The action performed when the threshold of matched traffic within the period defined is exceeded.
-            - `mode` : The type of action performed. Valid values are: `simulate`, `ban`, `challenge`, `js_challenge`.
+            - `mode` : The type of action performed. Valid values are `simulate`, `ban`, `challenge`, `js_challenge`.
             - `timeout` : The time, in seconds, as an integer to perform the mitigation action. Timeout be the same or greater than the period. This field is valid only when mode is `simulate` or `ban`. Min value: `10`, max value: `86400`.
             - `response` : Custom content-type and body to return. This overrides the custom error for the zone. This field is not required. Omission results in the default HTML error page. This field is valid only when mode is `simulate` or `ban`.
                 - `content_type` : The content-type of the body, which must be one of the following: `text/plain`, `text/xml`, `application/json`.
@@ -6101,9 +6101,9 @@ ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [
         - `disabled` : Whether this rate limiting rule is currently disabled.
         - `description` : A note that you can use to describe the reason for a rate limiting rule.
         - `correlate` : Whether to enable NAT based rate limiting.
-            - `by` : Valid values: `nat`.
+            - `by` : Valid value is `nat`.
         - `bypass` : Criteria that allows the rate limit to be bypassed. For example, to express that you shouldn’t apply a rate limit to a set of URLs.
-            - `name` : Valid values is `url`.
+            - `name` : Valid value is `url`.
             - `value` : The url to bypass.
 
 Sample JSON data:
@@ -6560,7 +6560,7 @@ ibmcloud cis routing-update DNS_DOMAIN_ID (--smart-routing (on|off) | --tiered-c
 :   Leverages real-time network intelligence to route traffic across paths from the origin to a CIS data center. Valid values: `on`, `off`.
 
 `--tiered-caching`
-:   Uses regional Tier 1 CIS data centers to accelerate content delivery. Valid values: `on`, `off`.
+:   Uses regional Tier 1 CIS data centers to accelerate content delivery. Valid values are `on` and `off`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -6637,13 +6637,13 @@ ibmcloud cis security-events DNS_DOMAIN_ID [--ip-class IP_CLASS] [--method METHO
 :   The ID of the DNS domain. Required.
 
 `--ip-class`
-:   IP class is a map of client IP to visitor classification. Valid values: `unknown`, `clean`, `badHost`, `searchEngine`, `whitelist`, `greylist`, `monitoringService`, `securityScanner`, `noRecord`, `scan`, `backupService`, `mobilePlatform`, `tor`.
+:   IP class is a map of client IP to visitor classification. Valid values are `unknown`, `clean`, `badHost`, `searchEngine`, `whitelist`, `greylist`, `monitoringService`, `securityScanner`, `noRecord`, `scan`, `backupService`, `mobilePlatform`, `tor`.
 
 `--method`
-:   The HTTP method of the request. Valid values: `GET`, `POST`, `DELETE`, `PUT`, `HEAD`, `PURGE`, `OPTIONS`, `PROPFIND`, `MKCOL`, `PATCH`, `ACL`, `BCOPY`, `BDELETE`, `BMOVE`, `BPROPFIND`, `BPROPPATCH`, `CHECKIN`, `CHECKOUT`, `CONNECT`, `COPY`, `LABEL`, `LOCK`, `MERGE`, `MKACTIVITY`, `MKWORKSPACE`, `MOVE`, `NOTIFY`, `ORDERPATCH`, `POLL`, `PROPPATCH`, `REPORT`, `SEARCH`, `SUBSCRIBE`, `TRACE`, `UNCHECKOUT`, `UNLOCK`, `UNSUBSCRIBE`, `UPDATE`, `VERSION-CONTROL`, `BASELINE-CONTROL`, `X-MS-ENUMATTS`, `RPC_OUT_DATA`, `RPC_IN_DATA`, `JSON`, `COOK`, `TRACK`.
+:   The HTTP method of the request. Valid values are `GET`, `POST`, `DELETE`, `PUT`, `HEAD`, `PURGE`, `OPTIONS`, `PROPFIND`, `MKCOL`, `PATCH`, `ACL`, `BCOPY`, `BDELETE`, `BMOVE`, `BPROPFIND`, `BPROPPATCH`, `CHECKIN`, `CHECKOUT`, `CONNECT`, `COPY`, `LABEL`, `LOCK`, `MERGE`, `MKACTIVITY`, `MKWORKSPACE`, `MOVE`, `NOTIFY`, `ORDERPATCH`, `POLL`, `PROPPATCH`, `REPORT`, `SEARCH`, `SUBSCRIBE`, `TRACE`, `UNCHECKOUT`, `UNLOCK`, `UNSUBSCRIBE`, `UPDATE`, `VERSION-CONTROL`, `BASELINE-CONTROL`, `X-MS-ENUMATTS`, `RPC_OUT_DATA`, `RPC_IN_DATA`, `JSON`, `COOK`, `TRACK`.
 
 `--scheme`
-:   The scheme of the URI. Valid values: `unknown`, `http`, `https`.
+:   The scheme of the URI. Valid values are `unknown`, `http` and `https`.
 
 `--ip`
 :   The IPv4 or IPv6 address from which the request originated.
@@ -6652,7 +6652,7 @@ ibmcloud cis security-events DNS_DOMAIN_ID [--ip-class IP_CLASS] [--method METHO
 :   The hostname the request attempted to access.
 
 `--protocol`
-:   The protocol of the request. Valid values: `UNK`, `HTTP/1.0`, `HTTP/1.1`, `HTTP/1.2`, `HTTP/2`, `SPDY/3.1`.
+:   The protocol of the request. Valid values are `UNK`, `HTTP/1.0`, `HTTP/1.1`, `HTTP/1.2`, `HTTP/2` and `SPDY/3.1`.
 
 `--uri`
 :   The URI requested from the hostname.
@@ -6667,7 +6667,7 @@ ibmcloud cis security-events DNS_DOMAIN_ID [--ip-class IP_CLASS] [--method METHO
 :   Ray ID of the request.
 
 `--action`
-:   What type of action was taken. Valid values: `unknown`, `allow`, `drop`, `challenge`, `jschallenge`, `simulate`, `connectionClose`, `log`.
+:   What type of action was taken. Valid values are `unknown`, `allow`, `drop`, `challenge`, `jschallenge`, `simulate`, `connectionClose` and `log`.
 
 `--cursor`
 :   Cursor position and direction for requesting next set of records when amount of results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
@@ -6682,7 +6682,7 @@ ibmcloud cis security-events DNS_DOMAIN_ID [--ip-class IP_CLASS] [--method METHO
 :   End date and time of requesting data period in the ISO8601 format. For example, `2016-11-11T12:00:00Z`.
 
 `--source`
-:   Source of the event. Valid values: `unknown`, `asn`, `country`, `ip`, `ipRange`, `securityLevel`, `zoneLockdown`, `waf`, `uaBlock`, `rateLimit`, `firewallRules`, `bic`, `hot`, `l7ddos`.
+:   Source of the event. Valid values are `unknown`, `asn`, `country`, `ip`, `ipRange`, `securityLevel`, `zoneLockdown`, `waf`, `uaBlock`, `rateLimit`, `firewallRules`, `bic`, `hot` and `l7ddos`.
 
 `--limit`
 :   The number of events to return. The cursor attribute may be used to iterate over the next batch of events, if there are more events in the queried time range. Note that the `scanned_range` parameter in the `result_info` structure gives an indication of when events were considered in the current resultset if a limit was applied. Valid values are from 10 to 1000. Default value: 50.
@@ -6762,7 +6762,7 @@ ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true|
 
 `--mode`
 :   Specify whether visitors can browse your website over a secure connection, and when they do, how CIS will connect to your origin server.
-    Valid values: `off`, `client-to-edge`, `end-to-end-flexible`, `end-to-end-ca-signed`, `https-only-origin-pull`.
+    Valid values are `off`, `client-to-edge`, `end-to-end-flexible`, `end-to-end-ca-signed`, `https-only-origin-pull`.
     See the following documentation link for detailed [TLS mode description](/docs/cis?topic=cis-cis-tls-options).
 
 `--universal`
@@ -6775,7 +6775,7 @@ ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true|
 :   Specify whether Crypto TLS 1.3 feature is enabled for your domain. Valid values are `on`, `off`.
 
 `--min-tls-version`
-:   Only accept HTTPS requests that use at least the TLS protocol version specified.  Valid values: `1.0`, `1.1`, `1.2`, `1.3`.
+:   Only accept HTTPS requests that use at least the TLS protocol version specified.  Valid values are `1.0`, `1.1`, `1.2`, `1.3`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -6934,7 +6934,7 @@ ibmcloud cis certificate-upload DNS_DOMAIN_ID [--keyless] (--json @JSON_FILE | J
         - `host` : The keyless SSL host name.
         - `port` : The keyless SSL port used to communicate between CIS and the client's Keyless SSL server.
     - The optional fields is `bundle_method`,`name`:
-        - `bundle_method` : Bundle method, default value is `compatible`, valid values are: `compatible`, `modern` and `user-defined`.
+        - `bundle_method` : Bundle method, default value is `compatible`, valid values are `compatible`, `modern` and `user-defined`.
         - `name` : The keyless SSL name.
 
 Sample JSON data:
@@ -7010,7 +7010,7 @@ ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [--keyless] (--json @JSON_
         - `host` : The keyless SSL host name.
         - `port` : The keyless SSL port used to communicate between CIS and the client's Keyless SSL server.
     - The optional fields is `bundle_method`:
-        - `bundle_method` : Bundle method, default value is `compatible`, valid values are: `compatible`, `modern` and `user-defined`.
+        - `bundle_method` : Bundle method, default value is `compatible`, valid values are `compatible`, `modern` and `user-defined`.
         - `name` : The keyless SSL name.
 
 Sample JSON data:
@@ -7208,7 +7208,7 @@ ibmcloud cis waf-setting-update DNS_DOMAIN_ID WAF_MODE [-i, --instance INSTANCE]
 :   The ID of the DNS domain. Required.
 
 `WAF_MODE`
-:   The mode of WAF setting. Valid values are: `waf-enable` , `waf-disable`. Required.
+:   The mode of WAF setting. Valid values are `waf-enable` and `waf-disable`. Required.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -7313,10 +7313,10 @@ ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity SENSI
 :   The ID of WAF package. Required.
 
 `--sensitivity`
-:   The sensitivity of the firewall package. Valid values: `high`, `medium`, `low`, `off`.
+:   The sensitivity of the firewall package. Valid values are `high`, `medium`, `low`, and `off`.
 
 `--action-mode`
-:   The default action that will be taken for rules under the firewall package. Valid values: `simulate`, `block`, `challenge`.
+:   The default action that will be taken for rules under the firewall package. Valid values are `simulate` and `block`, `challenge`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -7436,7 +7436,7 @@ ibmcloud cis waf-group-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID WAF_GR
 :   The ID of WAF group. Required.
 
 `WAF_GROUP_MODE`
-:   The mode of WAF group. Valid values are: `on`, `off`. Required.
+:   The mode of WAF group. Valid values are `on` and `off`. Required.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -7556,7 +7556,7 @@ ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE
 :   The ID of WAF rule. Required.
 
 `WAF_RULE_MODE`
-:   The mode of WAF rule. Valid values are: `on`, `off`, `default`, `disable`, `simulate`, `block`,  `challenge`. Required.
+:   The mode of WAF rule. Valid values are `on`, `off`, `default`, `disable`, `simulate`, `block`, and `challenge`. Required.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -7593,14 +7593,14 @@ ibmcloud cis waf-override-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING)
 `--json`
 :   The JSON file or JSON string used to describe a override WAF rule. Required.
     - The required fields in JSON data are `urls` and `rules`.
-        - `urls`: URLs to be included in this rule definition. Wildcards are permitted.
-        - `rules`: Change the action assigned to a WAF rule. The keys of this object are WAF rule IDs and the values must be a valid WAF action. Unless disabling the rule, ensure that you also enable the rule group that this WAF rule belongs to. Max length: 1024.
+        - `urls` : URLs to be included in this rule definition. Wildcards are permitted.
+        - `rules` : Change the action assigned to a WAF rule. The keys of this object are WAF rule IDs and the values must be a valid WAF action. Unless disabling the rule, ensure that you also enable the rule group that this WAF rule belongs to. Max length: `1024`.
     - The optional fields are `paused`, `description`, `priority`, `groups` and `rewrite_action`.
-        - `paused`: Whether this package is currently paused. Valid values: `true` and `false`.
-        - `description`: A note that you can use to describe the purpose of this rule.
-        - `priority`: Relative priority of this configuration when multiple configurations match a single URL. Higher priority configurations may overwrite values set by lower priority configurations. Min value is `-1000000000`, max value is `1000000000`.
+        - `paused` : Whether this package is currently paused. Valid values are `true` and `false`.
+        - `description` : A note that you can use to describe the purpose of this rule.
+        - `priority` : Relative priority of this configuration when multiple configurations match a single URL. Higher priority configurations may overwrite values set by lower priority configurations. Min value is `-1000000000`, max value is `1000000000`.
         - `groups` Enable or disable WAF rule groups. The keys of this object are WAF rule group IDs and the values must be a valid WAF action (usually `default` or `disable`).
-        - `rewrite_action`: When a WAF rule matches, substitute its configured action for a different action specified by this object.
+        - `rewrite_action` : When a WAF rule matches, substitute its configured action for a different action specified by this object.
 
 Sample JSON data:
 
@@ -7664,14 +7664,14 @@ ibmcloud cis waf-override-update DNS_DOMAIN_ID OVERRIDE_WAF_ID (--json @JSON_FIL
 `--json`
 :   The JSON file or JSON string used to describe a override WAF rule. Required.
     - The required fields in JSON data are `urls` and `rules`.
-        - `urls`: URLs to be included in this rule definition. Wildcards are permitted.
-        - `rules`: Change the action assigned to a WAF rule. The keys of this object are WAF rule IDs and the values must be a valid WAF action. Unless disabling the rule, ensure that you also enable the rule group that this WAF rule belongs to. Max length: 1024.
+        - `urls` : URLs to be included in this rule definition. Wildcards are permitted.
+        - `rules` : Change the action assigned to a WAF rule. The keys of this object are WAF rule IDs and the values must be a valid WAF action. Unless disabling the rule, ensure that you also enable the rule group that this WAF rule belongs to. Max length: `1024`.
     - The optional fields are `paused`, `description`, `priority`, `groups` and `rewrite_action`.
-        - `paused`: Whether this package is currently paused. Valid values: `true` and `false`.
-        - `description`: A note that you can use to describe the purpose of this rule.
-        - `priority`: Relative priority of this configuration when multiple configurations match a single URL. Higher priority configurations may overwrite values set by lower priority configurations. Min value is`-1000000000`, max value is `1000000000`.
+        - `paused` : Whether this package is currently paused. Valid values are `true` and `false`.
+        - `description` : A note that you can use to describe the purpose of this rule.
+        - `priority` : Relative priority of this configuration when multiple configurations match a single URL. Higher priority configurations may overwrite values set by lower priority configurations. Min value is`-1000000000`, max value is `1000000000`.
         - `groups` Enable or disable WAF rule groups. The keys of this object are WAF rule group IDs and the values must be a valid WAF action (usually `default` or `disable`).
-        - `rewrite_action`: When a WAF rule matches, substitute its configured action for a different action specified by this object.
+        - `rewrite_action` : When a WAF rule matches, substitute its configured action for a different action specified by this object.
 
 Sample JSON data:
 
@@ -7843,7 +7843,7 @@ ibmcloud cis authenticated-origin-pull-settings DNS_DOMAIN_ID [--level zone|host
 :   The ID of the DNS domain. Required.
 
 `----level`
-:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values: "zone", "hostname". The default is "zone".
+:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values are `zone` and `hostname`. The default value is `zone`.
 
 `--hostname`
 :   The authenticated origin pull settings on a hostname. (hostname level only)
@@ -7881,7 +7881,7 @@ ibmcloud cis authenticated-origin-pull-settings-update DNS_DOMAIN_ID [--level zo
 :   The ID of the DNS domain. Required.
 
 `----level`
-:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values: "zone", "hostname". The default is "zone".
+:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values are `zone` and `hostname`. The default value is `zone`.
 
 `--hostname`
 :   The authenticated origin pull settings on a hostname. (hostname level only)
@@ -7890,7 +7890,7 @@ ibmcloud cis authenticated-origin-pull-settings-update DNS_DOMAIN_ID [--level zo
 :   The certificate id which the hostname is bundled to. (hostname level only)
 
 `----enabled`
-:   Enable authenticated origin pull. Valid values: "on", "off".
+:   Enable authenticated origin pull. Valid values are `on` and `off`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -7925,7 +7925,7 @@ ibmcloud cis authenticated-origin-pull-certificates DNS_DOMAIN_ID [--level zone|
 :   The ID of the DNS domain. Required.
 
 `----level`
-:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values: "zone", "hostname". The default is "zone".
+:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values are `zone` and `hostname`. The default value is `zone`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -7963,7 +7963,7 @@ ibmcloud cis authenticated-origin-pull-certificate DNS_DOMAIN_ID CERT_ID [--leve
 :   The ID of certificate. Required.
 
 `----level`
-:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values: "zone", "hostname". The default is "zone".
+:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values are `zone` and `hostname`. The default value is `zone`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -7998,13 +7998,13 @@ ibmcloud cis authenticated-origin-pull-certificate-upload DNS_DOMAIN_ID [--level
 :   The ID of the DNS domain. Required.
 
 `--level`
-:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values: "zone", "hostname". The default is "zone".
+:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values are `zone` and `hostname`. The default value is `zone`.
 
 `--json`
 :   The JSON file or JSON string used to describe a custom certificate.
     - The required fields in JSON data are "certificate", "private_key":
-        - `certificate`: SSL certificate or certificate and the intermediate(s) for the domain.
-        - `private_key`: Private key for the domain.
+        - `certificate` : SSL certificate or certificate and the intermediate(s) for the domain.
+        - `private_key` : Private key for the domain.
 
    Sample JSON data:
 
@@ -8052,7 +8052,7 @@ ibmcloud cis authenticated-origin-pull-certificate-delete DNS_DOMAIN_ID CERT_ID 
 :   The ID of certificate. Required.
 
 `--level`
-:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values: "zone", "hostname". The default is "zone".
+:   Specify the authenticated origin pull certificate or settings per zone or hostname level. Valid values are `zone` and `hostname`. The default value is `zone`.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -8353,7 +8353,7 @@ ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMA
 :   The domain IDs that for the alert policy. For example, `--domains domainID1,domainID2`
 
 `--services`
-:   Specify which services the alert should monitor. Valid values: "country-access-rules", "waf", "firewall-rules", "ratelimit", "securitylevel", "ip-access-rules", "browser-integrity-check", "ua-rules", "lockdowns", "iprange-access-rules", "asn-access-rules", "Managed-firewall" (Enterprise plan only).
+:   Specify which services the alert should monitor. Valid values are `country-access-rules`, `waf`, `firewall-rules`, `ratelimit`, `securitylevel`, `ip-access-rules`, `browser-integrity-check`, `ua-rules`, `lockdowns`, `iprange-access-rules`, `asn-access-rules`, `Managed-firewall` (Enterprise plan only).
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -8450,13 +8450,13 @@ ibmcloud cis alert-policy glb-healthcheck-alert-create --name NAME (--emails EMA
 :   The IDs of origin pool, if set to all, the all pool IDs will be used.
 
 `--include-future-pools`
-:   Whether to include the future pools. (default "false")
+:   Whether to include the future pools. (The default value is `false`)
 
 `--health-status-trigger`
-:   The trigger condition to fire the notification. Valid values: "healthy", "unhealthy", "either". (default "either")
+:   The trigger condition to fire the notification. Valid values are `healthy`, `unhealthy`, and `either`. (The default value is `either`)
 
 `--event-source-trigger`
-:   The event source of trigger to fire the notification. Valid values: "pool", "origin", "either". (default "either")
+:   The event source of trigger to fire the notification. Valid values are `pool`, `origin`, and `either`. (The default value is `either`)
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -8548,7 +8548,7 @@ ibmcloud cis alert-policy maintenance-event-alert-create --name NAME (--emails E
 :   Whether the alert policy is enabled.
 
 `--event-type`
-:   The type of the maintenance event. Valid values: "scheduled", "changed", "canceled".
+:   The type of the maintenance event. Valid values are `scheduled`, `changed`, and `canceled`.
 
 `--airport-code`
 :   Comma-separated three-letter IATA Codes.
@@ -8803,7 +8803,7 @@ ibmcloud cis alert-policy firewall-events-alert-update POLICY_ID [--name NAME] [
 :   The domain IDs that for the alert policy. For example, `--domains domainID1,domainID2`
 
 `--services`
-:   Specify which services the alert should monitor. Valid values: "country-access-rules", "waf", "firewall-rules", "ratelimit", "securitylevel", "ip-access-rules", "browser-integrity-check", "ua-rules", "lockdowns", "iprange-access-rules", "asn-access-rules", "Managed-firewall" (Enterprise plan only). Note: The 'SERVICES' is only used for advanced waf alert. If the alert policy you wanted to update is created without services specified, create a new one with sevices specified instead of updating.
+:   Specify which services the alert should monitor. Valid values are `country-access-rules`, `waf`, `firewall-rules`, `ratelimit`, `securitylevel`, `ip-access-rules`, `browser-integrity-check`, `ua-rules`, `lockdowns`, `iprange-access-rules`, `asn-access-rules`, `Managed-firewall` (Enterprise plan only). Note: The 'SERVICES' is only used for advanced waf alert. If the alert policy you wanted to update is created without services specified, create a new one with sevices specified instead of updating.
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -8903,13 +8903,13 @@ ibmcloud cis alert-policy glb-healthcheck-alert-update POLICY_ID [--name NAME] [
 :   The IDs of origin pool, if set to all, the all pool IDs will be used.
 
 `--include-future-pools`
-:   Whether to include the future pools. (default "false")
+:   Whether to include the future pools. (The default value is `false`)
 
 `--health-status-trigger`
-:   The trigger condition to fire the notification. Valid values: "healthy", "unhealthy", "either". (default "either")
+:   The trigger condition to send the notification. Valid values are `healthy`, `unhealthy` and `either`. (The default value is `either`)
 
 `--event-source-trigger`
-:   The event source of trigger to fire the notification. Valid values: "pool", "origin", "either". (default "either")
+:   The event source of trigger to send the notification. Valid values are `pool`, `origin` and `either`. (The default value is `either`)
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -9006,7 +9006,7 @@ ibmcloud cis alert-policy maintenance-event-alert-update POLICY_ID [--name NAME]
 :   Whether the alert policy is enabled.
 
 `--event-type`
-:   The type of the maintenance event. Valid values: "scheduled", "changed", "canceled".
+:   The type of the maintenance event. Valid values are `scheduled`, `changed`, and `canceled`.
 
 `--airport-code`
 :   Comma-separated three-letter IATA Codes.
@@ -9361,47 +9361,47 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
 :  Specifies the conditions that must be match for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
-:  Action to perform when the rate specified in the rule is reached. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`.
+:  Action to perform when the rate specified in the rule is reached. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, and `log`.
 
 `--same-characteristics`
-:  Set of parameters defining how CIS tracks the request rate for the rule.Use one or more of the characteristics: `ip`, `ip_nat`, `host`, `path`, `country`, `asnum`. For complex characteristics, use json file or json string instead.
+:  Set of parameters defining how CIS tracks the request rate for the rule. Use one or more of the characteristics: `ip`, `ip_nat`, `host`, `path`, `country`, `asnum`. For complex characteristics, use JSON file or JSON string instead.
 
 `--requests`
-:  The number of requests over the period of time that will trigger the rule. Valid value: `1-1000000`
+:  The number of requests over the period of time that will trigger the rule. Valid values range from `1-1000000`
 
 `--period`
-:  The period of time to consider (in seconds) when evaluating the request rate. Valid values: `10`, `60`, `120`, `300`, `600`, `3600`.
+:  The period of time to consider (in seconds) when evaluating the request rate. Valid values are `10`, `60`, `120`, `300`, `600`, and `3600`.
 
 `--timeout`
-: The rate limiting rule applies the rule action to further requests for the period of time. Valid values: `0`, `10`, `60`, `120`, `300`, `600`, `3600`, `86400`.
+: The rate limiting rule applies the rule action to further requests for the period of time. Valid values are `0`, `10`, `60`, `120`, `300`, `600`, `3600`, and `86400`.
 
 `--enabled`
-: Indicates if the rule is active or not. Valid values for "enabled" are `true`, `false`. (default `false`)
+: Indicates if the rule is active or not. Valid values for "enabled" are `true`, `false`. (The default value is `false`)
 
 `--json`
 :  The JSON file or JSON string used to describe an advanced rate limiting rule.
 
    - The required fields in JSON data are `expression`, `ratelimit`, `action`.
 
-      - `expression`: Defines the criteria for the advanced rate limiting rule to match a request.
-      - `ratelimit`: Define the ratelimit parameters.
-        - `characteristics`: Set of parameters defining how CIS tracks the request rate for the rule.
-        - `requests_per_period`: The number of requests over the period of time that will trigger the rule.
-        - `period`: The period of time to consider (in seconds) when evaluating the request rate. Valid values: `10`, `60`, `120`, `300`, `600`, `3600`.
-        - `requests_to_origin`: Apply the rate limiting to cached assets or not.
-        - `mitigation_timeout`: The rate limiting rule applies the rule action to further requests for the period of time. Valid values: `0`, `10`, `60`, `120`, `300`, `600`, `3600`, `86400`.
-        - `counting_expression`: Defines the criteria used for determining the request rate.
-      - `action`: Action to perform when the rate specified in the rule is reached. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`.
+      - `expression` : Defines the criteria for the advanced rate limiting rule to match a request.
+      - `ratelimit` : Define the rate-limit parameters.
+        - `characteristics` : Set of parameters defining how CIS tracks the request rate for the rule.
+        - `requests_per_period` : The number of requests over the period of time that will trigger the rule.
+        - `period` : The period of time to consider (in seconds) when evaluating the request rate. Valid values are `10`, `60`, `120`, `300`, `600`, and `3600`.
+        - `requests_to_origin` : Apply the rate limiting to cached assets or not.
+        - `mitigation_timeout` : The rate limiting rule applies the rule action to further requests for the period of time. Valid values are `0`, `10`, `60`, `120`, `300`, `600`, `3600`, and `86400`.
+        - `counting_expression` : Defines the criteria used for determining the request rate.
+      - `action` : Action to perform when the rate specified in the rule is reached. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, and `log`.
 
    - The optional fields are `description`, `action_parameters`, `enabled`.
 
-      - `description`: The descriptive name of your rule.
-      - `action_parameters`: Define the action parameters.
-         - `response`: Define a custom response for block action.
-         - `status_code`: Defines the HTTP status code returned to the visitor when blocking the request due to rate limiting. Only available when the rule action is Block. Valid values: 400~499. The default value is 429.
-         - `content_type`: Defines the content type of a custom response when blocking a request due to rate limiting. Only available when the rule action is Block.
-         - `content`: Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
-      - `enabled`: Whether enable this rule or not.
+      - `description` : The descriptive name of your rule.
+      - `action_parameters` : Define the action parameters.
+         - `response` : Define a custom response for block action.
+         - `status_code` : Defines the HTTP status code returned to the visitor when blocking the request due to rate limiting. Only available when the rule action is Block. Valid values range from `400-499`. The default value is `429`.
+         - `content_type` : Defines the content type of a custom response when blocking a request due to rate limiting. Only available when the rule action is Block.
+         - `content` : Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
+      - `enabled` : Whether enable this rule or not.
 
       ```sh
          Sample JSON data:
@@ -9476,47 +9476,47 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
 :  Specifies the conditions that must be match for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
-:  Action to perform when the rate specified in the rule is reached. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`.
+:  Action to perform when the rate specified in the rule is reached. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, and `log`.
 
 `--same-characteristics`
 :  Set of parameters defining how CIS tracks the request rate for the rule.Use one or more of the characteristics: `ip`, `ip_nat`, `host`, `path`, `country`, `asnum`. For complex characteristics, use json file or json string instead.
 
 `--requests`
-:  The number of requests over the period of time that will trigger the rule. Valid value: `1-1000000`
+:  The number of requests over the period of time that will trigger the rule. Valid values range from `1-1000000`
 
 `--period`
-:  The period of time to consider (in seconds) when evaluating the request rate. Valid values: `10`, `60`, `120`, `300`, `600`, `3600`.
+:  The period of time to consider (in seconds) when evaluating the request rate. Valid values are `10`, `60`, `120`, `300`, `600`, and `3600`.
 
 `--timeout`
-: The rate limiting rule applies the rule action to further requests for the period of time. Valid values: `0`, `10`, `60`, `120`, `300`, `600`, `3600`, `86400`.
+: The rate limiting rule applies the rule action to further requests for the period of time. Valid values are `0`, `10`, `60`, `120`, `300`, `600`, `3600` and `86400`.
 
 `--enabled`
-: Indicates if the rule is active or not. Valid values for "enabled" are `true`, `false`. (default `false`)
+: Indicates if the rule is active or not. Valid values for "enabled" are `true`, `false`. (The default value is `false`)
 
 `--json`
 :  The JSON file or JSON string used to describe an advanced rate limiting rule.
 
    - The required fields in JSON data are `expression`, `ratelimit`, `action`.
 
-      - `expression`: Defines the criteria for the advanced rate limiting rule to match a request.
-      - `ratelimit`: Define the ratelimit parameters.
-        - `characteristics`: Set of parameters defining how CIS tracks the request rate for the rule.
-        - `requests_per_period`: The number of requests over the period of time that will trigger the rule.
-        - `period`: The period of time to consider (in seconds) when evaluating the request rate. Valid values: `10`, `60`, `120`, `300`, `600`, `3600`.
-        - `requests_to_origin`: Apply the rate limiting to cached assets or not.
-        - `mitigation_timeout`: The rate limiting rule applies the rule action to further requests for the period of time. Valid values: `0`, `10`, `60`, `120`, `300`, `600`, `3600`, `86400`.
-        - `counting_expression`: Defines the criteria used for determining the request rate.
-      - `action`: Action to perform when the rate specified in the rule is reached. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`.
+      - `expression` : Defines the criteria for the advanced rate limiting rule to match a request.
+      - `ratelimit` : Define the ratelimit parameters.
+        - `characteristics` : Set of parameters defining how CIS tracks the request rate for the rule.
+        - `requests_per_period` : The number of requests over the period of time that will trigger the rule.
+        - `period` : The period of time to consider (in seconds) when evaluating the request rate. Valid values are `10`, `60`, `120`, `300`, `600`, and `3600`.
+        - `requests_to_origin` : Apply the rate limiting to cached assets or not.
+        - `mitigation_timeout` : The rate limiting rule applies the rule action to further requests for the period of time. Valid values are `0`, `10`, `60`, `120`, `300`, `600`, `3600`, and `86400`.
+        - `counting_expression` : Defines the criteria used for determining the request rate.
+      - `action` : Action to perform when the rate specified in the rule is reached. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, and `log`.
 
    - The optional fields are `description`, `action_parameters`, `enabled`.
 
-      - `description`: The descriptive name of your rule.
-      - `action_parameters`: Define the action parameters.
-         - `response`: Define a custom response for block action.
-         - `status_code`: Defines the HTTP status code returned to the visitor when blocking the request due to rate limiting. Only available when the rule action is Block. Valid values: 400~499. The default value is 429.
-         - `content_type`: Defines the content type of a custom response when blocking a request due to rate limiting. Only available when the rule action is Block.
-         - `content`: Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
-      - `enabled`: Whether enable this rule or not.
+      - `description` : The descriptive name of your rule.
+      - `action_parameters` : Define the action parameters.
+         - `response` : Define a custom response for block action.
+         - `status_code` : Defines the HTTP status code returned to the visitor when blocking the request due to rate limiting. Only available when the rule action is Block. Valid values range from `400-499`. The default value is `429`.
+         - `content_type` : Defines the content type of a custom response when blocking a request due to rate limiting. Only available when the rule action is Block.
+         - `content` : Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
+      - `enabled` : Whether enable this rule or not.
 
       ```sh
          Sample JSON data:
@@ -9765,10 +9765,10 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
 :  Skip all remaining rules, WAF managed rulesets, or rules of WAF managed rulesets. For example, `--skip-rules RULESETID-1:RULEID-a,RULEID-b;RULESETID-2:RULEID-x,RULEID-y.`. Set `current` to skip all remaining rules. Default is "current".
 
 `--enabled`
-:  Indicates if the rule is active. Default is "true".
+:  Indicates if the rule is active. The default value is `true`.
 
 `--logging`
-:  Log requests matching the skip rule. Default is "true".
+:  Log requests matching the skip rule. The default value is `true`.
 
 `--description`
 :  A brief description of the rule.
@@ -9778,17 +9778,17 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
 
    - The required fields in JSON data are `expression`, `action`, `action_parameters`.
 
-      `expression`: The rule expression.
-      `action`: The rule action to perform. Valid values: skip.
-      `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets.
-        `rules`: Skip one or more rules of WAF managed rulesets.
+      `expression` : The rule expression.
+      `action` : The rule action to perform. Valid value is `skip`.
+      `action_parameters` : The rule action parameters.
+        `ruleset` : Skip all remaining rules or one or more WAF managed rulesets.
+        `rules` : Skip one or more rules of WAF managed rulesets.
 
    - The optional fields are `description`, `enabled`, `logging`.
-      `description`: Briefly describes the rule.
-      `enabled`: Indicates if the rule is active.
-      `logging`: Log requests matching the skip rule.
-         - `enabled`: When disabled, matched requests don't appear in firewall events.
+      `description` : Briefly describes the rule.
+      `enabled` : Indicates if the rule is active.
+      `logging` : Log requests matching the skip rule.
+         - `enabled` : When disabled, matched requests don't appear in firewall events.
 
    Sample JSON data:
 
@@ -9855,10 +9855,10 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
 :  Skip all remaining rules, WAF managed rulesets, or rules of WAF managed rulesets. For example, `--skip-rules RULESETID-1:RULEID-a,RULEID-b;RULESETID-2:RULEID-x,RULEID-y.`. Set `current` to skip all remaining rules. Default is "current".
 
 `--enabled`
-:  Indicates if the rule is active. Default is "true".
+:  Indicates if the rule is active. The default value is `true`.
 
 `--logging`
-:  Log requests matching the skip rule. Default is "true".
+:  Log requests matching the skip rule. The default value is `true`.
 
 `--description`
 :  To briefly describe the rule.
@@ -9869,7 +9869,7 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
    - The required fields in JSON data are `expression`, `action`, `action_parameters`.
 
       `expression` : The rule expression.
-      `action` : The rule action to perform. Valid values: skip.
+      `action` : The rule action to perform. Valid value is `skip`.
       `action_parameters` : The rule action parameters.
         `ruleset` : Skip all remaining rules or one or more WAF managed rulesets.
         `rules` : Skip one or more rules of WAF managed rulesets.
@@ -9946,13 +9946,13 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json
 :  Indicates if the rule is active. Default is "true".
 
 `--override-action`
-:  The ruleset action of the overrides. Valid values: "managed_challenge", "block", "js_challenge", "log", "challenge".
+:  The ruleset action of the overrides. Valid values are `managed_challenge`, `block`, `js_challenge`, `log`, and `challenge`.
 
 `--override-status`
-:  The ruleset status of the overrides. Valid values: true, false.
+:  The ruleset status of the overrides. Valid values are `true` and `false`.
 
 `--paranoia-level`
-:  OWASP paranoia level, higher paranoia levels activate more aggressive rules. Valid values: "PL1", "PL2", "PL3", "PL4" and it's only available for `CIS OWASP Core Ruleset`.
+:  OWASP paranoia level, higher paranoia levels activate more aggressive rules. Valid values are `PL1`, `PL2`, `PL3`, `PL4` and it's only available for `CIS OWASP Core Ruleset`.
 
 `--override-rules`
 :  The rules options of the overrides. For example `--override-rules rule=RULE_ID,action=ACTION,enabled=STATUS`. For OWASP Core Ruleset, you can also override the Score Threshold. For example, `--override-rules rule=6179ae15870a4bb7b2d480d4843b323c,score-threshold=25`.
@@ -9963,15 +9963,15 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json
    - The required fields in JSON data are `expression`, `action`, `action_parameters`.
 
       `expression` : The rule expression.
-      `action` : The rule action to perform. Valid values: skip.
+      `action` : The rule action to perform. Valid values is `skip`.
       `action_parameters` : The rule action parameters.
          `id` : The ruleset ID of the overrides.
          `overrides` : The rules options of the overrides.
-            `action` : The ruleset action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, "log", "challenge".
-            `enabled` : The ruleset status of the overrides. Valid values: true, false.
+            `action` : The ruleset action of the overrides. Valid values are `managed_challenge`, `block`, and `js_challenge`, "log", "challenge".
+            `enabled` : The ruleset status of the overrides. Valid values are `true` and `false`.
             `rules`: The rules options of the overrides.
                `id`: The rule ID of the overrides.
-               `action`: The rule action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, `log`, `challenge`.
+               `action`: The rule action of the overrides. Valid values are `managed_challenge`, `block`, `js_challenge`, `log`, and `challenge`.
                `enabled`: The rule status of the overrides.
                `score_threshold`: OWASP Anomaly Score Threshold, set the score threshold which will trigger the Firewall.
             `categories`: Define OWASP Paranoia Level and only valid for `CIS OWASP core ruleset`
@@ -10048,16 +10048,16 @@ ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json
 :   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--enabled`
-:  Indicates if the rule is active. Default is "true".
+:  Indicates if the rule is active. The default value is `true`.
 
 `--override-action`
-:  The ruleset action of the overrides. Valid values: "managed_challenge", "block", "js_challenge", "log", "challenge".
+:  The ruleset action of the overrides. Valid values are `managed_challenge`, `block`, `js_challenge`, `log`, and `challenge`.
 
 `--override-status`
-:  The ruleset status of the overrides. Valid values: true, false.
+:  The ruleset status of the overrides. Valid values are `true` and `false`.
 
 `--paranoia-level`
-:  OWASP paranoia level, higher paranoia levels activate more aggressive rules. Valid values: "PL1", "PL2", "PL3", "PL4" and it's only available for `CIS OWASP Core Ruleset`.
+:  OWASP paranoia level, higher paranoia levels activate more aggressive rules. Valid values are `PL1`, `PL2`, `PL3`, `PL4` and it's only available for `CIS OWASP Core Ruleset`.
 
 `--override-rules`
 :  The rules options of the overrides. For example, `--override-rules rule=RULE_ID,action=ACTION,enabled=STATUS`. For OWASP Core Ruleset, you can also override the Score Threshold. For example, `--override-rules rule=6179ae15870a4bb7b2d480d4843b323c,score-threshold=25`.
@@ -10071,15 +10071,15 @@ ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json
    - The required fields in JSON data are `expression`, `action`, `action_parameters`.
 
       `expression` : The rule expression.
-      `action` : The rule action to perform. Valid values: skip.
+      `action` : The rule action to perform. Valid value is `skip`.
       `action_parameters` : The rule action parameters.
          `id` : The ruleset id of the overrides.
          `overrides` : The rules options of the overrides.
-            `action` : The ruleset action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, "log", "challenge".
-            `enabled` : The ruleset status of the overrides. Valid values: true, false.
+            `action` : The ruleset action of the overrides. Valid values are `managed_challenge`, `block`, and `js_challenge`, `log`, `challenge`.
+            `enabled` : The ruleset status of the overrides. Valid values are `true` and `false`.
             `rules` : The rules options of the overrides.
                `id` : The rule ID of the overrides.
-               `action` : The rule action of the overrides. Valid values: `managed_challenge`, `block`, `js_challenge`, "log", "challenge".
+               `action` : The rule action of the overrides. Valid values are `managed_challenge`, `block`, `js_challenge`, `log`, and `challenge`.
                `enabled` : The rule status of the overrides.
                `score_threshold` : OWASP Anomaly Score Threshold, set the score threshold which will trigger the Firewall.
             `categories` : Define OWASP Paranoia Level and only valid for `CIS OWASP core ruleset`
@@ -10223,10 +10223,10 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 :   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
-:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+:The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`. For 'block' and 'skip' actions, use JSON file or JSON string instead.
 
 `--enabled`
-:  Indicates if the rule is active. Default is "false".
+:  Indicates if the rule is active. The default value is `false`.
 
 `--description`
 :  A brief description of the rule.
@@ -10236,17 +10236,17 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
    - The required fields in JSON data are `expression`, `action`.
 
-      - `expression`: Specifies the conditions that must be matched for the rule to run.
-      - `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+      - `expression` : Specifies the conditions that must be matched for the rule to run.
+      - `action` : The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`.
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
 
       - `action_parameters` : The rule action parameters.
-      - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
-      - `phases` : Skips WAF components for matching requests. Valid values: `http_ratelimit`, "http_request_firewall_managed", "http_request_sbfm".
-      - `products` : Skips specific security products for matching requests. Valid values: `waf`, `rateLimit`, "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
+      - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid value is `current`.
+      - `phases` : Skips WAF components for matching requests. Valid values are `http_ratelimit`, `http_request_firewall_managed`, and `http_request_sbfm`.
+      - `products` : Skips specific security products for matching requests. Valid values are `waf`, `rateLimit`, `securityLevel`, `hot`, `bic`, `uaBlock`, and `zoneLockdown`.
       - `response` :  Define a custom response for `block` action.
-         - `status_code` :  Choose an HTTP status code for the response, in the range 400-499.
+         - `status_code` :  Choose an HTTP status code for the response, in the range `400-499`.
          - `content_type` : The content type of a custom response. Valid response types are :`text/html`, `text/plain`, `application/json`, `text/xml`.
          - `content` : The response body.
       - `description` : Briefly describes the rule.
@@ -10321,10 +10321,10 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 :   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
-:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For 'block' and 'skip' actions, use JSON file or JSON string instead.
+:The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`. For 'block' and 'skip' actions, use JSON file or JSON string instead.
 
 `--enabled`
-:  Indicates if the rule is active. Default is "false".
+:  Indicates if the rule is active. The default value is `false`.
 
 `--description`
 :  A brief description of the rule.
@@ -10334,18 +10334,18 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
    - The required fields in JSON data are `expression`, `action`.
 
-      - `expression`: Specifies the conditions that must be matched for the rule to run.
-      - `action`: The rule action to perform. Valid values: `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, `skip`.
+      - `expression` : Specifies the conditions that must be matched for the rule to run.
+      - `action` : The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`.
 
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
 
       - `action_parameters` : The rule action parameters.
-        - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`
-        - `phases` : Skips WAF components for matching requests. Valid values: `http_ratelimit`, `http_request_firewall_managed`, `http_request_sbfm`.
-        - `products` : Skips specific security products for matching requests. Valid values: `waf`, `rateLimit`, `securityLevel`, `hot`, `bic`, `uaBlock`, `zoneLockdown`.
+        - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid value is `current`
+        - `phases` : Skips WAF components for matching requests. Valid values are `http_ratelimit`, `http_request_firewall_managed`, and `http_request_sbfm`.
+        - `products` : Skips specific security products for matching requests. Valid values are `waf`, `rateLimit`, `securityLevel`, `hot`, `bic`, `uaBlock`, and `zoneLockdown`.
         - `response` :  Define a custom response for 'block' action.
-            - `status_code` :  Choose an HTTP status code for the response, in the range 400-499.
-            - `content_type` : The content type of a custom response.Valid response types are : `text/html`, `text/plain`, `application/json`, `text/xml`.
+            - `status_code` :  Choose an HTTP status code for the response, in the range `400-499`.
+            - `content_type` : The content type of a custom response. Valid response types are `text/html`, `text/plain`, `application/json`, and `text/xml`.
             - `content` : The response body.
       - `description` : Briefly describes the rule.
       - `enabled` : Indicates if the rule is active. When disabled, matched requests don't appear in firewall requests.
