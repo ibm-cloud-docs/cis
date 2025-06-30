@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-06-30"
 
 keywords: Custom error page, Cloud Internet Services, Custom page
 
@@ -38,7 +38,7 @@ CIS errors
 
 The following example is a basic custom error template. When you are creating your custom error templates, the maximum page size is 1.5 MB, and the page can't be blank. Additionally, all external resources are inlined with Base64 encoding, making them approximately 50% larger when published.
 
-```sh
+```html
 <html>
 <head></head>
 <body>
