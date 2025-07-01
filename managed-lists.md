@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-07-01"
 
 keywords: managed lists
 
@@ -20,8 +20,29 @@ subcollection: cis
 The available managed lists depend on your CIS plan and product subscriptions.
 {: note}
 
+## Managed IP lists
+{: #managed-ip-lists}
+
+You can use managed IP lists to access CIS IP threat intelligence. CIS provides the following managed IP lists:
+
+| Display name | Name in expressions | Description |
+| ------------ | ------------------- | ----------- |
+| Cloudflare Open Proxies | `cf.open_proxies` | IP addresses of known open HTTP and SOCKS proxy endpoints, which are frequently used to launch attacks and hide attackers identity.|
+| Cloudflare Anonymizers | `cf.anonymizer` | IP addresses of known anonymizers (open SOCKS proxies, VPNs, and TOR nodes). |
+| Cloudflare VPNs | `cf.vpn` | IP addresses of known VPN servers. |
+| Cloudflare Malware | `cf.malware` | IP addresses of known sources of malware. |
+| Cloudflare Botnets, Command and Control Servers | `cf.botnetcc` | IP addresses of known botnet command-and-control servers. |
+{: caption="Available managed IP lists" caption-side="bottom"}
+
+## Listing managed lists in an instance in the console
+{: #listing-managed-lists-ui}
+{: ui}
+
+TBD
+
 ## Listing managed lists in an instance from the CLI
 {: #listing-managed-lists-cli}
+{: cli}
 
 To list managed lists in an instance from the CLI, run the following command:
 
@@ -39,7 +60,7 @@ cis managed-lists [-i, --instance INSTANCE] [--output FORMAT]
 `--output`
 :   Specify output format, only JSON is supported now.
 
-### Example
+### Command example
 {: #example-listing-managed-lists-cli}
 
 ```sh
@@ -47,16 +68,14 @@ ibmcloud cis managed-lists -i crn:v1:staging:public:internet-svcs-ci:global:a/c9
 ```
 {: pre}
 
-## Managed IP lists
-{: #managed-ip-lists}
+## Listing managed lists in an instance with the API
+{: #listing-managed-lists-ui}
+{: api}
 
-You can use managed IP lists to access CIS IP threat intelligence. CIS provides the following managed IP lists:
+TBD
 
-| Display name | Name in expressions | Description |
-| ------------ | ------------------- | ----------- |
-| Cloudflare Open Proxies | `cf.open_proxies` | IP addresses of known open HTTP and SOCKS proxy endpoints, which are frequently used to launch attacks and hide attackers identity.|
-| Cloudflare Anonymizers | `cf.anonymizer` | IP addresses of known anonymizers (open SOCKS proxies, VPNs, and TOR nodes). |
-| Cloudflare VPNs | `cf.vpn` | IP addresses of known VPN servers. |
-| Cloudflare Malware | `cf.malware` | IP addresses of known sources of malware. |
-| Cloudflare Botnets, Command and Control Servers | `cf.botnetcc` | IP addresses of known botnet command-and-control servers. |
-{: caption="Available managed IP lists" caption-side="bottom"}
+## Listing managed lists in an instance with Terraform
+{: #listing-managed-lists-terraform}
+{: api}
+
+TBD
