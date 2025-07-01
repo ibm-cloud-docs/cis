@@ -18,7 +18,7 @@ subcollection: cis
 You can create,update, and delete the custom list in the console, from the CLI, with the API and terraform.
 {: shortdesc}
 
-### Creating a custom list in the console
+## Creating a custom list in the console
 {: #create-custom-list-console}
 {: ui}
 
@@ -26,7 +26,7 @@ NEED UI TO BE IMPLEMENTED
 
 [Create a list in the dashboard](https://developers.cloudflare.com/waf/tools/lists/create-dashboard/) [WAITING UI]{: tag-red}
 
-### Creating a custom list from the CLI
+## Creating a custom list from the CLI
 {: #create-custom-list-cli}
 {: cli}
 
@@ -440,14 +440,12 @@ ibmcloud cis custom-lists item-update f93d11a87c4945a0a6bd12820776a66d —json @
 {: cli}
 
 To delete an item from a custom list, run the following commands:
-
-Using command 1:
+ 
 ```sh
 ibmcloud cis custom-lists item-delete LIST_ID (--item-id CUSTOM_LIST_ITEM_ID) [-f, --force] [-i, --instance INSTANCE]
 ```
-{: pre}
+{: pre} 
 
-Using command 2:
 ```sh
 ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) [-f, --force] [-i, --instance INSTANCE]
 ```
@@ -489,13 +487,11 @@ ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) 
 #### Examples
 {: #example-delete-an-item-list}
 
-Example using command 1:
 ```sh
 ibmcloud cis custom-lists item-delete f93d11a87c4945a0a6bd12820776a66d --item-id —force 42851cc4589746229552ec5a54f9d623 -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
 ```
 {: pre}
 
-Example using command 2:
 ```sh
 ibmcloud cis custom-lists item-delete f93d11a87c4945a0a6bd12820776a66d —json @example.json —-force -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
 ```
@@ -531,7 +527,7 @@ ibmcloud cis custom-lists operation 04cdb3b267a44ceb895e766fc2affe72 -i crn:v1:s
 ```
 {: pre}
 
-### Creating a custom list with the API
+## Creating a custom list with the API
 {: #create-custom-list-api}
 {: api}
 
@@ -608,7 +604,7 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/rules/lists/bulk_operations/
 
 For more information, see [Lists API](/apidocs/cis#create-custom-lists).
 
-### Creating a custom list with Terraform
+## Creating a custom list with Terraform
 {: #create-custom-list-terraform}
 {: terraform}
 
