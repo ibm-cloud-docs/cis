@@ -610,6 +610,6 @@ For more information, see [Lists API](/apidocs/cis#create-custom-lists).
 
 ### Creating a custom list with Terraform
 {: #create-custom-list-terraform}
-{: api}
+{: terraform}
 
 TBD
