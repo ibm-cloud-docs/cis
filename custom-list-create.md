@@ -549,8 +549,9 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/rules/lists" \
 ```
 {: pre}
 
-#### Adding items to a custom list with the API
+### Adding items to a custom list with the API
 {: #add-items-custom-list-api}
+{: api}
 
 Follow these steps to add items to a custom list with the API:
 
@@ -576,8 +577,9 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/rules/lists/$LIST_ID/items" 
 ```
 {: pre}
 
-#### Getting the list operation status with the API
+### Getting the list operation status with the API
 {: #list-operation-status-api}
+{: api}
 
 Operations to manage list items are asynchronous. Follow these steps to get the list operation status with the API:
 
