@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-30"
+lastupdated: "2025-07-01"
 
 keywords:
 
@@ -32,6 +32,7 @@ These options are listed in the order from the least secure (Off) to the most se
 * [End-to-End flexible](#tls-encryption-modes-end-to-end-flexible) (edge to origin certificates can be self-signed)
 * [End-to-End CA signed](#tls-encryption-modes-end-to-end-ca-signed) (default and recommended)
 * [HTTPS only origin pull](#tls-encryption-modes-origin-only-pull) (Enterprise only)
+* [Authenticated origin pull](#tls-encryption-modes-authenticated-origin): (Enterprise only)
 
 ### Off
 {: #tls-encryption-modes-off}
@@ -66,6 +67,12 @@ This mode is the default and recommended setup. A secure connection exists betwe
 {: #tls-encryption-modes-origin-only-pull}
 
 **Enterprise only.** This mode has the same certificate requirements as End-to-End CA Signed. It also upgrades all connections between {{site.data.keyword.cis_short_notm}} and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
+
+### Authenticated origin pull
+{: #tls-encryption-modes-authenticated-origin}
+
+**Enterprise only.** In this mode, the TLS client certificate is presented for authentication on origin pull. For more information, see [Authenticated origin pull](/docs/cis?topic=cis-authenticated-origin-pull).
+
 
 ## Traffic encryption - Minimum TLS version
 {: #minimum-tls-version}
