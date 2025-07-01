@@ -32,8 +32,9 @@ NEED UI TO BE IMPLEMENTED
 
 You can list, create, update, and delete the custom list from the CLI.
 
-#### Listing the custom lists for the instance
+### Listing the custom lists for the instance
 {: #list-custom-lists-instance}
+{: cli}
 
 To list the custom lists for your instance, run the following command:
 ```sh
@@ -41,7 +42,7 @@ ibmcloud cis custom-lists lists [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #custom-list-instance}
 
 `-i, --instance`
@@ -50,7 +51,7 @@ ibmcloud cis custom-lists lists [-i, --instance INSTANCE] [--output FORMAT]
 `--output`
 :   Specify the output format. Currently, only JSON is supported.
 
-##### Command example
+#### Command example
 {: #example-lists-cli}
 
 ```sh
@@ -58,8 +59,9 @@ ibmcloud cis custom-lists lists -i crn:v1:staging:public:internet-svcs-ci:global
 ```
 {: pre}
 
-#### Getting a custom list for your instance
+### Getting a custom list for your instance
 {: #get-custom-list-instance}
+{: cli}
 
 To get a custom list for your instance, run the following command:
 ```sh
@@ -67,7 +69,7 @@ ibmcloud cis custom-lists list LIST_ID [-i, --instance INSTANCE] [--output FORMA
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-options-to-get-custom-list}
 
 `LIST_ID`
@@ -79,7 +81,7 @@ ibmcloud cis custom-lists list LIST_ID [-i, --instance INSTANCE] [--output FORMA
 `--output`
 :   Specify the output format. Currently, only JSON is supported.
 
-##### Command example
+#### Command example
 {: #example-to-get-custom-list}
 
 ```sh
@@ -87,8 +89,9 @@ ibmcloud cis custom-lists list f93d11a87c4945a0a6bd12820776a66d -i crn:v1:stagin
 ```
 {: pre}
 
-#### Creating a custom list for your instance
+### Creating a custom list for your instance
 {: #create-custom-list-instance}
+{: cli}
 
 To create a custom list for your instance enter the following command:
 
@@ -104,7 +107,7 @@ ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --i
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-option-create-cli}
 
 `--kind`
@@ -140,7 +143,7 @@ ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --i
     ```
     {: codeblock}
 
-##### Command examples
+#### Command examples
 {: #example-1-create-custom-list}
 
 ```sh
@@ -153,8 +156,9 @@ ibmcloud cis custom-lists list-create —-json @example.json -i crn:v1:staging:p
 ```
 {: pre}
 
-#### Updating the description of a custom list
+### Updating the description of a custom list
 {: #updating-description-custom}
+{: cli}
 
 To update the description of a custom list, run the following commands:
 
@@ -168,7 +172,7 @@ ibmcloud cis custom-lists list-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-options-update-description-custom}
 
 `LIST_ID`
@@ -196,7 +200,7 @@ ibmcloud cis custom-lists list-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
     ```
     {: codeblock}
 
-##### Command examples
+#### Command examples
 {: #example--update-description-custom}
  
 ```sh
@@ -209,8 +213,9 @@ ibmcloud cis custom-lists list-update a46c54444a97431e810c975bf2db4f83 —-json 
 ```
 {: pre}
 
-#### Deleting a custom list
+### Deleting a custom list
 {: #delete-custom-list}
+{: cli}
 
 To delete a custom list for your instance, run the following command:
 
@@ -219,7 +224,7 @@ ibmcloud cis custom-lists list-delete LIST_ID [-f, --force] [-i, --instance INST
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-delete-custom-list}
 
 `LIST_ID`
@@ -231,7 +236,7 @@ ibmcloud cis custom-lists list-delete LIST_ID [-f, --force] [-i, --instance INST
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` will be used.
 
-##### Command example
+#### Command example
 {: #example-delete-custom-list}
 
 ```sh
@@ -239,15 +244,16 @@ custom-lists list-delete 78277700444f4f69aefef78ea2bef013 -i crn:v1:staging:publ
 ```
 {: pre}
 
-#### Getting the list items for a custom list
+### Getting the list items for a custom list
 {: #getting-list-items-custom}
+{: cli}
 
 ```sh
 ibmcloud cis custom-lists items LIST_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-get-list-items}
 
 `LIST_ID`
@@ -259,7 +265,7 @@ ibmcloud cis custom-lists items LIST_ID [-i, --instance INSTANCE] [--output FORM
 `--output`
 :   Specify output format, only JSON is supported now.
 
-##### Command example
+#### Command example
 {: #example-get-list-items}
 
 ```sh
@@ -267,8 +273,9 @@ ibmcloud cis custom-lists items f93d11a87c4945a0a6bd12820776a66d -i crn:v1:stagi
 ```
 {: pre}
 
-#### Viewing a specific item in a custom list from the CLI
+### Viewing a specific item in a custom list from the CLI
 {: #view-specific-item-in-list}
+{: cli}
 
 To view a specific item in a custom list, run the following command:
 ```sh
@@ -276,7 +283,7 @@ ibmcloud cis custom-lists item LIST_ID ITEM_ID [-i, --instance INSTANCE] [--outp
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-options-custom-list-cli}
 
 `LIST_ID`
@@ -291,7 +298,7 @@ ibmcloud cis custom-lists item LIST_ID ITEM_ID [-i, --instance INSTANCE] [--outp
 `--output`
 :   Specify output format, only JSON is supported now.
 
-##### Example
+#### Example
 {: #create-custom-list-cli}
 
 ```sh
@@ -299,24 +306,23 @@ ibmcloud cis custom-lists item f93d11a87c4945a0a6bd12820776a66d f550e1d3ede74455
 ```
 {: pre}
 
-#### Creating a new item in a custom list
+### Creating a new item in a custom list
 {: #create-item-in-custom-list}
+{: cli}
 
 To create a new item in a custom list from the CLI, run the following command:
-
-Using command 1:
+ 
 ```sh
 ibmcloud cis custom-lists item-create LIST_ID (--asn ASN | --ip IP | --hostname HOSTNAME) [--comment COMMENT] [-i, --instance INSTANCE]
 ```
 {: pre}
 
-Using command 2:
 ```sh
 ibmcloud cis custom-lists item-create LIST_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE]
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-create-new-item}
 
 `LIST_ID`
@@ -360,23 +366,22 @@ ibmcloud cis custom-lists item-create LIST_ID (--json @JSON_FILE | JSON_STRING) 
     ```
     {: codeblock}
 
-##### Examples
+#### Examples
 {: #example-create-new-item}
 
-Example using command 1:
 ```sh
 ibmcloud cis custom-lists item-create f93d11a87c4945a0a6bd12820776a66d --ip 192.0.0.3  -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
 ```
 {: pre}
 
-Example using command 2:
 ```sh
 ibmcloud cis custom-lists item-create f93d11a87c4945a0a6bd12820776a66d --json @example.json -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
 ```
 {: pre}
 
-#### Updating all list items for custom list
+### Updating all list items for custom list
 {: #update-all-list-items}
+{: cli}
 
 This step removes existing items from the list. This operation is asynchronous. To get current the operation status, use the operation command. To update all list items for your custom list, run the following command:
 
@@ -385,7 +390,7 @@ ibmcloud cis custom-lists item-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-updating-all-list-items}
 
 `LIST_ID`
@@ -422,7 +427,7 @@ ibmcloud cis custom-lists item-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 `-i, --instance`
 :   Instance name or ID. If instance value or ID is not set, the context instance specified by `cis instance-set INSTANCE` will be used.
 
-##### Example
+#### Example
 {: #example-updating-all-list-items}
 
 ```sh
@@ -430,8 +435,9 @@ ibmcloud cis custom-lists item-update f93d11a87c4945a0a6bd12820776a66d —json @
 ```
 {: pre}
 
-#### Deleting an item from a custom list
+### Deleting an item from a custom list
 {: #delete-an-item-list}
+{: cli}
 
 To delete an item from a custom list, run the following commands:
 
@@ -447,7 +453,7 @@ ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) 
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-delete-an-item-list}
 
 `LIST_ID`
@@ -480,7 +486,7 @@ ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) 
     ```
     {: codeblock}
 
-##### Examples
+#### Examples
 {: #example-delete-an-item-list}
 
 Example using command 1:
@@ -495,8 +501,9 @@ ibmcloud cis custom-lists item-delete f93d11a87c4945a0a6bd12820776a66d —json @
 ```
 {: pre}
 
-#### Getting the status for a custom list operation
+### Getting the status for a custom list operation
 {: #getting-status-custom}
+{: cli}
 
 To get the status for the custome list operation, run the following command:
 ```sh
@@ -504,7 +511,7 @@ ibmcloud cis custom-lists operation OPERATION_ID [-i, --instance INSTANCE] [--ou
 ```
 {: pre}
 
-##### Command options
+#### Command options
 {: #command-getting-status-custom}
 
 `OPERATION_ID`
@@ -516,7 +523,7 @@ ibmcloud cis custom-lists operation OPERATION_ID [-i, --instance INSTANCE] [--ou
 `--output`
 :   Specify output format, only JSON is supported now.
 
-##### Example
+#### Example
 {: #example-getting-status-custom}
 
 ```sh
