@@ -49,6 +49,18 @@ The IPv6 address topology describes the last 64 bits as the host identifier. Mat
 
 You can use uppercase or lowercase characters for IPv6 addresses in lists. However, when you save the list, uppercase characters are converted to lowercase.
 
+### CSV file format
+{: #csv-file-format-ip-lists}
+
+When uploading items to a custom list with IP addresses using a CSV file, use the following file format (enter one item per line):
+
+```text
+<IP_ADDRESS_1>,<DESCRIPTION>
+<IP_ADDRESS_2>
+```
+
+The `<DESCRIPTION>` field is optional.
+
 ## Lists with hostnames
 {: #lists-hostnames}
 
@@ -67,6 +79,18 @@ However, `example.com/path/subfolder` would not be a valid entry.
 
 You can add any valid hostname (a valid FQDN) to a custom list with hostnames. The hostnames do not need to belong to the current CIS account.
 
+### CSV file format
+{: #csv-file-format-lists-hostnames}
+
+When uploading items to a custom list with hostnames using a CSV file, use the following file format:
+
+```text
+<HOSTNAME_1>,<DESCRIPTION>
+<HOSTNAME_2>
+```
+
+The `<DESCRIPTION>` field is optional.
+
 ## Lists with ASNs
 {: #lists-asn}
 
@@ -80,3 +104,15 @@ For example, the following entries would be valid for a list with ASNs:
 - `1`
 - `13335`
 - `64512`
+
+### CSV file format
+{: #csv-file-format-lists-asns}
+
+When uploading items to a custom list with ASNs using a CSV file, use the following file format:
+
+```text
+<ASN_1>,<DESCRIPTION>
+<ASN_2>
+```
+
+The `<DESCRIPTION>` field is optional.
