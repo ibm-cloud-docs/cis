@@ -600,3 +600,9 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/rules/lists/bulk_operations/
 {: pre}
 
 For more information, see [Lists API](/apidocs/cis#create-custom-lists).
+
+### Creating a custom list with Terraform
+{: #create-custom-list-terraform}
+{: api}
+
+TBD
