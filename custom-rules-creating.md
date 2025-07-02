@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-07-02"
 
 keywords:
 
@@ -107,8 +107,8 @@ To create a custom rule from the CLI, follow these steps:
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
 
-
-ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+   ```sh
+   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
@@ -446,7 +446,7 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 
 The following example creates a custom rule using Terraform:
 
-```
+```sh
 # First get the entrypoint ruleset ID for the phase `http_request_firewall_custom`.
 
  data "ibm_cis_ruleset_entrypoint_versions" "test"{
@@ -454,7 +454,7 @@ The following example creates a custom rule using Terraform:
     domain_id = data.ibm_cis_domain.cis_domain.domain_id
     phase = "http_request_firewall_custom"
   }
-
+ 
 # To create a custom rule:
 
   resource ibm_cis_ruleset_rule "config" {

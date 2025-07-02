@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-07-02"
 
 keywords:
 
@@ -280,6 +280,7 @@ resource "ibm_cis_ruleset_entrypoint_version" "test" {
       }
     }
   }
-  ```
+```
+{: codeblock}
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset_entrypoint_version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_entrypoint_version){: external} in the Terraform registry.
