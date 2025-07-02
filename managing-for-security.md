@@ -159,7 +159,6 @@ The following are common errors that are seen when you order dedicated certifica
 
    * `Error connecting to certificate service.`
    * `Error while requesting from certificate service.`
-   {: note}
 
 If you receive an error when you order certificates, refresh the page and try again.
 
