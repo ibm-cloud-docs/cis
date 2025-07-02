@@ -364,24 +364,24 @@ Follow these steps to create a custom rule with the API:
 
 1. When all variables are initiated, create the custom rule:
 
-```sh
-curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
---header "X-Auth-User-Token: Bearer <API_TOKEN>" \
---header "Content-Type: application/json" \
---data '{
-  "description": "My custom rule with plain text response",
-  "expression": "(ip.src.country eq \"GB\" or ip.src.country eq \"FR\") and cf.waf.score lt 20",
-  "action": "block",
-  "action_parameters": {
-    "response": {
-      "status_code": 403,
-      "content": "Your request was blocked.",
-      "content_type": "text/plain"
-    }
-  }
-}'
-```
-{: pre}
+   ```sh
+   curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
+   --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+   --header "Content-Type: application/json" \
+   --data '{
+     "description": "My custom rule with plain text response",
+     "expression": "(ip.src.country eq \"GB\" or ip.src.country eq \"FR\") and cf.waf.score lt 20",
+     "action": "block",
+     "action_parameters": {
+       "response": {
+         "status_code": 403,
+         "content": "Your request was blocked.",
+         "content_type": "text/plain"
+       }
+     }
+  }'
+   ```
+   {: pre}
 
 ### Updating a custom rule with the API
 {: #update-custom-rule-api}
