@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-02"
 
 keywords:
 
@@ -156,9 +156,10 @@ The first time when you order a dedicated certificate, the Domain Control Valida
 {: note}
 
 The following are common errors that are seen when you order dedicated certificates:
-* `Error connecting to certificate service.`
-* `Error while requesting from certificate service.`
-{: note}
+
+   * `Error connecting to certificate service.`
+   * `Error while requesting from certificate service.`
+   {: note}
 
 If you receive an error when you order certificates, refresh the page and try again.
 
