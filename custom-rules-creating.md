@@ -340,10 +340,10 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
 --header "Content-Type: application/json" \
 --data '{
-  "name": "Zone-level phase entry point",
-  "kind": "zone",
-  "description": "Custom rule entry point ruleset.",
-  "phase": "http_request_firewall_custom"
+   "name": "Zone-level phase entry point",
+   "kind": "zone",
+   "description": "Custom rule entry point ruleset.",
+   "phase": "http_request_firewall_custom"
 }'
 ```
 {: pre}
@@ -379,7 +379,7 @@ Follow these steps to create a custom rule with the API:
          "content_type": "text/plain"
        }
      }
-  }'
+     }'
    ```
    {: pre}
 
