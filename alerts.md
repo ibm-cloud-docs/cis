@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-05-07"
+lastupdated: "2025-07-02"
 
 keywords:
 
@@ -47,6 +47,13 @@ Alerts are available only to Enterprise plans.
 * **Pool toggle alerts** notify when the pool is enabled or disabled manually.
 
    No action is necessary if you receive a pool toggle alert. Each alert includes the state that the pool was toggled to, the time it occurred, and which user made the change.
+
+## Limitations for advanced security events alerts
+{: #limitations-advanced-security-events}
+
+Alerts are not sent for each individual event. Instead, they are triggered only when there is a spike in traffic that crosses a certain threshold.
+
+This threshold is automatically calculated using the [Z-score](https://en.wikipedia.org/wiki/Standard_score){: external}, and it cannot be manually configured.
 
 
 ## Configuring alert policies in the console
