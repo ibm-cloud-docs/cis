@@ -455,7 +455,7 @@ First, get the entry point ruleset ID for the phase `http_request_firewall_custo
     phase = "http_request_firewall_custom"
   }
 ```
-{: codeblock}
+{: pre}
 
 Then, to create a custom rule:
 
@@ -484,7 +484,6 @@ Then, to create a custom rule:
     }
   }
 ```
-{: codeblock}
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
 
