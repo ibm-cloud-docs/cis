@@ -48,7 +48,7 @@ Alerts are available only to Enterprise plans.
 
    No action is necessary if you receive a pool toggle alert. Each alert includes the state that the pool was toggled to, the time it occurred, and which user made the change.
 
-## Limitations for advanced security events alerts
+## Limitations for advanced security events alert
 {: #limitations-advanced-security-events}
 
 Alerts are not sent for each individual event. Instead, they are triggered only when there is a spike in traffic that crosses a certain threshold.

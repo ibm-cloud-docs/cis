@@ -69,12 +69,12 @@ toc:
         - multi-domain.md
         - dns.md
         - cname-setup.md
+        - private-endpoint.md
         - topicgroup:
             label: Working with Range applications
             topics:
             - range.md
             - proxy-protocol.md
-        - private-endpoint.md
         - topicgroup:
             label: Working with TLS
             topics:
@@ -94,7 +94,7 @@ toc:
             topics:
             - about-rule-sets.md
             - ruleset-engine-actions.md
-            - integrating-lists-in-rules.md             
+            - integrating-lists-in-rules.md
         - topicgroup:
             label: Working with WAF custom rules
             topics:
