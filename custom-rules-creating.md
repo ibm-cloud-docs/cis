@@ -406,8 +406,8 @@ curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RU
 --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
 --header "Content-Type: application/json" \
 --data '{
-  "enabled": false,
-  "description": "block GB and FR or based on IP Reputation (temporarily disabled)"
+   "enabled": false,
+   "description": "block GB and FR or based on IP Reputation (temporarily disabled)"
 }'
 ```
 {: pre}
@@ -453,36 +453,36 @@ First, get the entry point ruleset ID for the phase `http_request_firewall_custo
     cis_id    = ibm_cis.instance.id
     domain_id = data.ibm_cis_domain.cis_domain.domain_id
     phase = "http_request_firewall_custom"
-  }
+   }
 ```
 {: pre}
 
 Then, to create a custom rule:
 
 ```terraform
-  resource ibm_cis_ruleset_rule "config" {
-     cis_id    = ibm_cis.instance.id
-     domain_id = data.ibm_cis_domain.cis_domain.domain_id
-     ruleset_id = "data.ibm_cis_ruleset_entrypoint_versions.ruleset_id"
-     rule {
-       action =  "block"
-       description = "var.description"
-       expression = "true"
-       enabled = "false"
-       action_parameters {
-         response {
-           status_code = var.status_code
-           content =  var.content
-           content_type = "text/plain"
-         }
-       }
-       position {
-         index = var.index
-         after = <id of any existing rule>
-         before = <id of any existing rule>
-       }
-     }
-   }
+   resource ibm_cis_ruleset_rule "config" {
+      cis_id    = ibm_cis.instance.id
+      domain_id = data.ibm_cis_domain.cis_domain.domain_id
+      ruleset_id = "data.ibm_cis_ruleset_entrypoint_versions.ruleset_id"
+      rule {
+        action =  "block"
+        description = "var.description"
+        expression = "true"
+        enabled = "false"
+        action_parameters {
+          response {
+            status_code = var.status_code
+            content =  var.content
+            content_type = "text/plain"
+          }
+        }
+        position {
+          index = var.index
+          after = <id of any existing rule>
+          before = <id of any existing rule>
+        }
+      }
+    }
 ```
 {: codeblock}
 
