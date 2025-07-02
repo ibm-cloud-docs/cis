@@ -2,11 +2,13 @@
 
 copyright:
   years:  2024, 2025
-lastupdated: "2025-04-08"
+lastupdated: "2025-07-02"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
 subcollection: cis
+
+content-type: release-note
 
 ---
 
