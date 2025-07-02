@@ -1201,7 +1201,7 @@ ibmcloud cis custom-lists item-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 :   Instance name or ID. If instance value or ID is not set, the context instance specified by `cis instance-set INSTANCE` will be used.
 
 #### Example
-{: #update-custom-list-items-options}
+{: #update-custom-list-item-options}
 
 ```sh
 ibmcloud cis custom-lists item-update f93d11a87c4945a0a6bd12820776a66d —json @example.json -f -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
