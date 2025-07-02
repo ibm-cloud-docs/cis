@@ -27,7 +27,7 @@ toc:
             - http-concepts.md
             - routing.md
             - tcp-concepts.md
-            - traffic-sequencing.md            
+            - traffic-sequencing.md
             - url-normalization.md
             - waf-concept.md
         - topicgroup:
@@ -94,6 +94,7 @@ toc:
             topics:
             - about-rule-sets.md
             - ruleset-engine-actions.md
+            - integrating-lists-in-rules.md             
         - topicgroup:
             label: Working with WAF custom rules
             topics:
