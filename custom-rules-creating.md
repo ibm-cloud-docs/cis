@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-03"
 
 keywords:
 
@@ -106,6 +106,8 @@ To create a custom rule from the CLI, follow these steps:
 
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+   ```
+   {: pre}
 
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
@@ -154,6 +156,8 @@ To create a custom rule from the CLI, follow these steps:
 
    Sample JSON data:
 
+```json
+
          {
            "description": "test-custom-rule",
            "expression": "(http.cookie contains \"test\")",
@@ -180,6 +184,9 @@ To create a custom rule from the CLI, follow these steps:
            },
            "enabled": true
          }
+```
+{: codeblock}
+
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
 
@@ -244,6 +251,7 @@ Where:
 
    Sample JSON data:
 
+```json
          {
            "description": "test-custom-rule",
            "expression": "(http.cookie contains \"test\")",
@@ -257,6 +265,8 @@ Where:
            },
            "enabled": true
          }
+```
+{: codeblock}
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
