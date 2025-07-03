@@ -94,6 +94,17 @@ toc:
             - ruleset-engine-actions.md
             - integrating-lists-in-rules.md
         - topicgroup:
+            label: Working with lists
+            topics:
+            - lists.md
+            - topicgroup:
+                label: Using custom lists
+                topics:
+                - custom-lists.md
+                - custom-list-types.md
+                - custom-list-create.md
+            - managed-lists.md
+        - topicgroup:
             label: Working with WAF custom rules
             topics:
             - custom-rules.md
@@ -184,6 +195,7 @@ toc:
         - topicgroup:
             label: Working with alerts
             topics:
+            - alerts-types.md
             - alerts.md
             - configuring-webhooks.md
             - notifications.md
