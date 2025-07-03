@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-03"
 
 keywords:
 
@@ -112,13 +112,13 @@ For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?to
 
 IBM {{site.data.keyword.cis_short_notm}} functions as a reverse proxy and provides multiple options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
 
-TLS offers four modes of operation:
-* **Off**: TLS is disabled in this mode and is not recommended.
-* **Client-to-edge**: TLS encrypts traffic from {{site.data.keyword.cis_short_notm}} to your clients, but not from {{site.data.keyword.cis_short_notm}} to your origin server.
-* **End-to-end flexible**: TLS encrypts all traffic; however, you can use a self-signed certificate to secure traffic between {{site.data.keyword.cis_short_notm}} and your origin server.
-* **End-to-end CA signed**: (Recommended) TLS encrypts all traffic; you must use a CA-signed certificate.
-* **HTTPS only origin pull**: (Enterprise only) Similar to End-to-end CA signed, but it upgrades all connections from {{site.data.keyword.cis_short_notm}} to your origin server to HTTPS.
-* **Authenticated origin pull**: (Enterprise only) TLS client certificate is presented for authentication on origin pull.
+TLS offers six modes of operation listed in the order from the most secure to the least secure (Off):
+1. [Authenticated origin pull](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-authenticated-origin): (Enterprise only)
+1. [HTTPS only origin pull](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-origin-only-pull) (Enterprise only)
+1. [End-to-end CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed) (default and recommended)
+1. [End-to-end flexible](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible) (edge to origin certificates can be self-signed)
+1. [Client-to-edge](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-client-to-edge) (edge to origin not encrypted, self-signed certificates are not supported)
+1. [Off](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-off) (not recommended)
 
 See [TLS options](/docs/cis?topic=cis-cis-tls-options) for details on the different modes of operation.
 
