@@ -87,3 +87,4 @@ You must add a domain before adding triggers. However, triggers can be added wit
 {: #related-links-edge-functions}
 
 * [How Edge functions work](/docs/cis?topic=cis-working-with-edge-functions)
+* [Edge function examples](/docs/cis?group=edge-function-examples)
