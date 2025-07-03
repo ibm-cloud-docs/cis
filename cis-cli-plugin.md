@@ -808,7 +808,7 @@ ibmcloud cis cache-settings-update 31984fea73a15b45779fa0df4ef62f9b --caching-le
 {: pre}
 
 ## Custom list
-{: #custom-lists}
+{: #custom-lists-cmd-ref}
 
 Manipulate how the custom list performs by using the following `custom-lists` commands:
 

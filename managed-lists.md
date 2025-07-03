@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Using managed lists
-{: #managed-lists}
+{: #using-managed-lists}
 
 {{site.data.keyword.cis_short_notm}} provides managed lists you can use in rule expressions. These lists are regularly updated.
 

@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Creating custom lists and adding items
-{: #create-custom-lists}
+{: #create-custom-lists-add-items}
 
 NEEDS AN INTRODUCTION
 {: shortdesc}
@@ -29,7 +29,7 @@ NEED UI TO BE IMPLEMENTED
 [Create a list in the dashboard](https://developers.cloudflare.com/waf/tools/lists/create-dashboard/) [WAITING UI]{: tag-red}
 
 ## Creating a custom list and adding items from the CLI
-{: #create-custom-list-cli}
+{: #create-custom-list-add-item-cli}
 {: cli}
 
 ONLY NEEDS CREATION AND ADDING ITEM PROCEDURES.  THEN, ADD BLANKET STATEMENT SAYING WHAT OTHER TANKS YOU CAN DO AND POINT TO THE COMMAND REFERENCE FOR DETAILS.
@@ -218,7 +218,7 @@ ibmcloud cis custom-lists list-update a46c54444a97431e810c975bf2db4f83 —-json 
 {: pre}
 
 ### Deleting a custom list
-{: #delete-custom-list}
+{: #delete-custom-list-cmd}
 {: cli}
 
 To delete a custom list for your instance, run the following command:
