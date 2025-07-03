@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-06-23"
+lastupdated: "2025-07-03"
 
 keywords: managed rules
 
@@ -102,7 +102,7 @@ When migrating to the new version of the WAF managed rules, the update process w
 
 The following OWASP settings will be migrated:
 
-* **Sensitivity**: Sensitivity levels from the [previous rulset](/docs/cis?topic=cis-owasp-rule-set-for-waf) will be migrated to the [Paranoia level (PL)](/docs/cis?topic=cis-owasp-rule-set-for-waf#owasp-v3x) and [Score threshold](/docs/cis?topic=cis-owasp-rule-set-for-waf#owasp-v2x) combinations in the new OWASP ruleset:
+* **Sensitivity**: Sensitivity levels from the [previous ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf) will be migrated to the Paranoia level (PL) and Score threshold combinations in the new OWASP ruleset:
 
    | Old Sensitivity | New PL | New Score Threshold |
    |:--------|:---:|:---:|

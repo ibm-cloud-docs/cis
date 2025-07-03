@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-03"
 
 keywords: edge functions
 
@@ -87,4 +87,3 @@ You must add a domain before adding triggers. However, triggers can be added wit
 {: #related-links-edge-functions}
 
 * [How Edge functions work](/docs/cis?topic=cis-working-with-edge-functions)
-* [Edge function examples](/docs/cis?group=edge-functions-examples)

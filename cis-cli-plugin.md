@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-03"
 
 keywords:
 
@@ -6605,7 +6605,7 @@ ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [
     - The required fields in JSON data are `match`, `threshold`, `period`, `action` :
         - `match` : Determines which traffic the rate limiting rule counts towards the threshold.
             - `request` : Matches HTTP requests.
-                - `methods` :  HTTP Methods, can be a subset `[POST,PUT]` or all `[_ALL_]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `_ALL_`.
+                - `methods` :  HTTP Methods, can be a subset `[POST,PUT]` or all `[ALL]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `ALL`.
                 - `schemes` :  HTTP Schemes, can be one `[HTTPS]`, both `[HTTP,HTTPS]` or all `[_ALL_]`. This field is not required.
                 - `url` : The URL pattern to match comprised of the host and path, for instance, `example.org/path`. Wildcards are expanded to match applicable traffic, query strings are not matched. Use `*` for all traffic to your zone. Max length is 1024.
             - `response` : Matches HTTP responses before they are returned to the client . If this is defined, then the entire counting of traffic occurs at this stage.
