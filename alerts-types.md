@@ -35,10 +35,3 @@ subcollection: cis
 * **Pool toggle alerts** notify when the pool is enabled or disabled manually.
 
    No action is necessary if you receive a pool toggle alert. Each alert includes the state that the pool was toggled to, the time it occurred, and which user made the change.
-
-## Limitation for security alerts
-{: #limitations-advanced-security-events}
-
-Security Events (WAF alerts and Advanced WAF alerts) alerts are not sent for each individual events, but only when a spike in traffic reaches the threshold for an alert to be sent.
-
-These thresholds cannot be configured. [Z-score](https://en.wikipedia.org/wiki/Standard_score){: external} is used to determine the threshold.
