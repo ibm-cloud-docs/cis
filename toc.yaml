@@ -94,7 +94,6 @@ toc:
             topics:
             - about-rule-sets.md
             - ruleset-engine-actions.md
-            - integrating-lists-rules.md
         - topicgroup:
             label: Working with WAF custom rules
             topics:
