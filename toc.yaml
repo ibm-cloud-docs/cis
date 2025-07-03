@@ -69,12 +69,12 @@ toc:
         - multi-domain.md
         - dns.md
         - cname-setup.md
+        - private-endpoint.md
         - topicgroup:
             label: Working with Range applications
             topics:
             - range.md
             - proxy-protocol.md
-        - private-endpoint.md
         - topicgroup:
             label: Working with TLS
             topics:
@@ -94,7 +94,7 @@ toc:
             topics:
             - about-rule-sets.md
             - ruleset-engine-actions.md
-            - integrating-lists-in-rules.md             
+            - integrating-lists-rules.md
         - topicgroup:
             label: Working with WAF custom rules
             topics:
@@ -159,6 +159,7 @@ toc:
             - edge-functions.md
             - edge-function-actions.md
             - topicgroup:
+                id: examples
                 label: Edge function examples
                 topics:
                 - altering-headers.md
@@ -186,6 +187,7 @@ toc:
         - topicgroup:
             label: Working with alerts
             topics:
+            - alerts-types.md
             - alerts.md
             - configuring-webhooks.md
             - notifications.md

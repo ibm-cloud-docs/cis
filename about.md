@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-07-03"
 
 keywords:
 
@@ -196,7 +196,7 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 {: #cis-mitigate-non-volumetric-attacks}
 
 
-{{site.data.keyword.cis_short_notm}} WAF contains rulesets to mitigate non-volumetric attacks, including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](/docs/cis?topic=cis-waf-q-and-a#what-types-of-attacks-can-waf-prevent).
+{{site.data.keyword.cis_short_notm}} WAF contains rulesets to mitigate non-volumetric attacks, including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](/docs/cis?topic=cis-waf-q-and-a).
 
 ### Cost protection
 {: #cis-cost-protection}

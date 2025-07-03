@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-07-03"
 
 keywords:
 
@@ -106,9 +106,11 @@ To create a custom rule from the CLI, follow these steps:
 
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+   ```
+   {: pre}
 
-
-ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+   ```sh
+   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
@@ -154,6 +156,8 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 
    Sample JSON data:
 
+```json
+
          {
            "description": "test-custom-rule",
            "expression": "(http.cookie contains \"test\")",
@@ -180,6 +184,9 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
            },
            "enabled": true
          }
+```
+{: codeblock}
+
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
 
@@ -244,6 +251,7 @@ Where:
 
    Sample JSON data:
 
+```json
          {
            "description": "test-custom-rule",
            "expression": "(http.cookie contains \"test\")",
@@ -257,6 +265,8 @@ Where:
            },
            "enabled": true
          }
+```
+{: codeblock}
 
 `-i, --instance`
 :   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -340,10 +350,10 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
 --header "Content-Type: application/json" \
 --data '{
-  "name": "Zone-level phase entry point",
-  "kind": "zone",
-  "description": "Custom rule entry point ruleset.",
-  "phase": "http_request_firewall_custom"
+   "name": "Zone-level phase entry point",
+   "kind": "zone",
+   "description": "Custom rule entry point ruleset.",
+   "phase": "http_request_firewall_custom"
 }'
 ```
 {: pre}
@@ -364,24 +374,24 @@ Follow these steps to create a custom rule with the API:
 
 1. When all variables are initiated, create the custom rule:
 
-```sh
-curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
---header "X-Auth-User-Token: Bearer <API_TOKEN>" \
---header "Content-Type: application/json" \
---data '{
-  "description": "My custom rule with plain text response",
-  "expression": "(ip.src.country eq \"GB\" or ip.src.country eq \"FR\") and cf.waf.score lt 20",
-  "action": "block",
-  "action_parameters": {
-    "response": {
-      "status_code": 403,
-      "content": "Your request was blocked.",
-      "content_type": "text/plain"
-    }
-  }
-}'
-```
-{: pre}
+   ```sh
+   curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
+   --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+   --header "Content-Type: application/json" \
+   --data '{
+     "description": "My custom rule with plain text response",
+     "expression": "(ip.src.country eq \"GB\" or ip.src.country eq \"FR\") and cf.waf.score lt 20",
+     "action": "block",
+     "action_parameters": {
+       "response": {
+         "status_code": 403,
+         "content": "Your request was blocked.",
+         "content_type": "text/plain"
+       }
+     }
+     }'
+   ```
+   {: pre}
 
 ### Updating a custom rule with the API
 {: #update-custom-rule-api}
@@ -406,8 +416,8 @@ curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RU
 --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
 --header "Content-Type: application/json" \
 --data '{
-  "enabled": false,
-  "description": "block GB and FR or based on IP Reputation (temporarily disabled)"
+   "enabled": false,
+   "description": "block GB and FR or based on IP Reputation (temporarily disabled)"
 }'
 ```
 {: pre}
@@ -446,40 +456,43 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 
 The following example creates a custom rule using Terraform:
 
-```
-# First get the entrypoint ruleset ID for the phase `http_request_firewall_custom`.
+First, get the entry point ruleset ID for the phase `http_request_firewall_custom`:
 
+```terraform
  data "ibm_cis_ruleset_entrypoint_versions" "test"{
     cis_id    = ibm_cis.instance.id
     domain_id = data.ibm_cis_domain.cis_domain.domain_id
     phase = "http_request_firewall_custom"
-  }
+   }
+```
+{: pre}
 
-# To create a custom rule:
+Then, to create a custom rule:
 
-  resource ibm_cis_ruleset_rule "config" {
-    cis_id    = ibm_cis.instance.id
-    domain_id = data.ibm_cis_domain.cis_domain.domain_id
-    ruleset_id = "data.ibm_cis_ruleset_entrypoint_versions.ruleset_id"
-    rule {
-      action =  "block"
-      description = "var.description"
-      expression = "true"
-      enabled = "false"
-      action_parameters {
-        response {
-          status_code = var.status_code
-          content =  var.content
-          content_type = "text/plain"
+```terraform
+   resource ibm_cis_ruleset_rule "config" {
+      cis_id    = ibm_cis.instance.id
+      domain_id = data.ibm_cis_domain.cis_domain.domain_id
+      ruleset_id = "data.ibm_cis_ruleset_entrypoint_versions.ruleset_id"
+      rule {
+        action =  "block"
+        description = "var.description"
+        expression = "true"
+        enabled = "false"
+        action_parameters {
+          response {
+            status_code = var.status_code
+            content =  var.content
+            content_type = "text/plain"
+          }
+        }
+        position {
+          index = var.index
+          after = <id of any existing rule>
+          before = <id of any existing rule>
         }
       }
-      position {
-        index = var.index
-        after = <id of any existing rule>
-        before = <id of any existing rule>
-      }
     }
-  }
 ```
 {: codeblock}
 

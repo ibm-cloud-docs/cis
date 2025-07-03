@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-07-02"
 
 keywords:
 
@@ -200,4 +200,5 @@ The following table contains the fields available for Range requests.
 
 ## Deprecated fields
 {: #deprecated}
+
 Log fields that are not shown in the [Available Log Fields API](/apidocs/cis#list-fields-for-dataset-v2) are considered deprecated. Deprecated log fields do remain available to prevent breaking existing jobs. However, these log fields may eventually become empty values if completely removed by Cloudflare. Customers are encouraged to migrate away from deprecated fields if they are using them.

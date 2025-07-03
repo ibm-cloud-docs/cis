@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-07-03"
 
 keywords: edge functions
 
@@ -28,13 +28,15 @@ Actions are written in JavaScript and require an event listener to respond to a 
 
 Differences when working with actions depend on your plan:
 
-**Standard plans** 
+#### Standard plans
+{: #standard-plans}
 
    * Allow only one action per account, automatically named after your domain (name can't be changed). 
    * To update an action, upload a new JavaScript file or edit the code directly in the editor. Uploading a new file replaces the existing action.
    * When you upload a JavaScript file, its name is always set to your domain name.
 
-**Enterprise plans** 
+#### Enterprise plans
+{: #enterprise-plans}
 
    * Can upload an unlimited number of scripts, each with a unique names if wanted.
    * When creating an action, you can specify a custom name.
@@ -85,4 +87,4 @@ You must add a domain before adding triggers. However, triggers can be added wit
 {: #related-links-edge-functions}
 
 * [How Edge functions work](/docs/cis?topic=cis-working-with-edge-functions)
-* [Edge function examples](/docs/cis?group=edge-functions-examples)
+* [Edge function examples](/docs/cis?group=edge-function-examples)

@@ -2,11 +2,13 @@
 
 copyright:
   years:  2024, 2025
-lastupdated: "2025-04-08"
+lastupdated: "2025-07-02"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
 subcollection: cis
+
+content-type: release-note
 
 ---
 
@@ -18,7 +20,7 @@ subcollection: cis
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/apidocs/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
 
 ## 28 February 2025
-{: #cis-feb2825}
+{: #cis-febr2825}
 {: release-note}
 
 Ruleset Engine migration

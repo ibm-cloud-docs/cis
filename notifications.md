@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-10-09"
+  years: 2021, 2025
+lastupdated: "2025-07-03"
 
 keywords:
 
@@ -21,7 +21,7 @@ subcollection: cis
 Alerts are available only to Enterprise plans.
 {: note}
 
-For more information about each type of alert, see [Types of alerts](/docs/cis?topic=cis-configuring-policies&interface=ui#notification-types).
+For more information about each type of alert, see [Types of alerts](/docs/cis?topic=cis-types-alerts&interface=ui).
 
 ## Creating an email alert using the UI
 {: #ui-create-email-notification}

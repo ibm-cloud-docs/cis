@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-07-02"
 
 keywords: Cloud Internet Services, cis, responsibilities, ha, high availability, disaster recovery
 
@@ -11,6 +11,7 @@ subcollection: cis
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 # Understanding your responsibilities when using {{site.data.keyword.cis_short_notm}}
 {: #responsibilities-cis}
 
