@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Types of alerts
+# Alerts types
 {: #types-alerts}
 
 {{site.data.keyword.cis_short_notm}} offers the following alert types:
