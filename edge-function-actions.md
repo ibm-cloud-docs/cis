@@ -35,7 +35,7 @@ Differences when working with actions depend on your plan:
    * To update an action, upload a new JavaScript file or edit the code directly in the editor. Uploading a new file replaces the existing action.
    * When you upload a JavaScript file, its name is always set to your domain name.
 
-#### Enterprise plans|
+#### Enterprise plans
 {: #enterprise-plans}
 
    * Can upload an unlimited number of scripts, each with a unique names if wanted.
