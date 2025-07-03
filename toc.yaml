@@ -47,8 +47,6 @@ toc:
             label: Solution tutorials
             topics:
             - include: ../solution-tutorials/multi-region-k8s-cis.md
-            - include: ../solution-tutorials/vpc-multi-region.md
-            - include: ../codeengine/deploy-multiple-regions.md
         - link:
             label: What are computer networking solutions
             href: https://www.ibm.com/think/topics/networking#toc-computer-n-9C7jokVu
