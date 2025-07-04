@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-04"
 
 keywords:
 
@@ -122,6 +122,7 @@ In general, firewall rules are designed for properties that are exposed in OSI L
 ### Events
 {: #events-feature}
 
+
 View events that are triggered by an active web application firewall rule. For each event, you can change the triggered action based on the requesting IP address, or the requesting region as a whole.
 
 ### Range
@@ -146,15 +147,6 @@ Advanced security settings include the following features, which you can change,
 * **Opportunistic encryption** - Allows browsers to benefit from the improved performance of HTTP/2 by informing them that your site is available over an encrypted connection.
 * **Universal SSL** - Activates universal SSL certificates from your zone to the edge.
 * **True client IP header** - Sends the user's IP address in the True-Client-IP header.
-
-### Security standards and platform
-{: #security-standards-and-platform}
-
-
-
-* TLS (SHA2 and SHA1)
-* IPv4 and IPv6
-* HTTP/2
 
 ### Network attacks and mitigation
 {: #network-attacks-and-mitigation}
@@ -206,12 +198,6 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 
 {{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic. There’s no penalty for spikes due to attack traffic, so there's no chargeback by the customer.
 
-## Reliability features
-{: #cis-reliability-features}
-
-
-![reliability graphic](images/reliability-graphic.png "Image describing reliability features"){: caption="Reliability features" caption-side="bottom"}
-
 ### Global load balancing features
 {: #about-glb-features}
 
@@ -249,9 +235,6 @@ The following requirements must be met before you use gRPC:
 
 ## Performance features
 {: #cis-performance-features}
-
-
-![performance graphic](images/performance-graphic.png "Image describing performance features"){: caption="Performance features" caption-side="bottom}
 
 ### Caching
 {: #caching-features}

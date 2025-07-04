@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-06-02"
+lastupdated: "2025-07-04"
 
 subcollection: cis
 
@@ -23,8 +23,8 @@ When you work with {{site.data.keyword.cis_short_notm}}, it can sometimes be con
 1. [Page rules](/docs/cis?topic=cis-about-firewall-rules) - Custom rules that modify how requests are handled.
 1. [IP firewall rules](/docs/cis?topic=cis-actions) - Filtering based on IP addresses.
 1. [Bot management](/docs/cis?topic=cis-about-bot-mgmt) - Identifies and manages automated traffic.
-1. WAF and firewall rules, which generally process in this order:
-   1. [Firewall rules](/docs/cis?topic=cis-about-firewall-rules)
+1. WAF and custom rules, which generally process in this order:
+   1. [Custom rules](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui)
    1. [WAF rules](/docs/cis?topic=cis-waf-actions)
    1. [Rate limiting](/docs/cis?topic=cis-cis-rate-limiting)
 

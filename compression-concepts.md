@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-07-04"
 
 keywords:
 
@@ -90,11 +90,12 @@ If you don't want a particular response from your origin to be encoded, you can 
 ### Enabling Brotli compression
 {: #enable-brotli-compression}
 
+To enable Brotli compression, follow these steps:
 
 1. Log in to your CIS account.
 1. Choose the appropriate domain.
-1. Click the Performance tab.
-1. Click the Advanced tab.
+1. Click the **Performance** tab.
+1. Click the **Advanced** tab.
 1. Toggle the Brotli switch to `On`.
 
 ## Minification for HTML, JavaScript, and CSS
