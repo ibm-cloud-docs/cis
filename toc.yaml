@@ -154,6 +154,7 @@ toc:
         - custom-page.md
         - topicgroup:
             label: Working with Edge functions
+            id: edge-functions
             topics:
             - edge-functions.md
             - edge-function-actions.md
@@ -166,6 +167,7 @@ toc:
                 - modify-response-props.md
         - topicgroup:
             label: Working with logs
+            id: logs
             topics:
             - logpull.md
             - logpush.md
@@ -174,6 +176,7 @@ toc:
             - cis-daily-volume.md
         - topicgroup:
             label: Working with metrics
+            id: metrics
             topics:
             - graphql.md
             - graphql-edge-func.md
@@ -184,6 +187,7 @@ toc:
             - query-http-events.md
             - view-firewall-groups.md
         - topicgroup:
+            id: alerts
             label: Working with alerts
             topics:
             - alerts-types.md
@@ -251,6 +255,7 @@ toc:
         - faq.md
         - known-limitations.md
         - topicgroup:
+            id: troubleshooting
             label: Troubleshooting
             topics:
             - ts-network-connection.md

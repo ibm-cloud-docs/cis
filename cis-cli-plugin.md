@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-04"
 
 keywords:
 
@@ -807,7 +807,7 @@ ibmcloud cis cache-settings-update 31984fea73a15b45779fa0df4ef62f9b --caching-le
 ```
 {: pre}
 
-## Custom list
+## Custom lists
 {: #custom-lists-cmd-ref}
 
 Manipulate how the custom list performs by using the following `custom-lists` commands:
@@ -839,7 +839,7 @@ ibmcloud cis custom-lists lists -i crn:v1:staging:public:internet-svcs-ci:global
 ```
 {: pre}
 
-### ibmcloud cis custom-lists list LIST_ID
+### `ibmcloud cis custom-lists list`
 {: #get-custom-lists}
 
 Get a custom list for your instance.
@@ -908,7 +908,7 @@ ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --i
 :   `"name"` : The list name.
 
 :   The optional field is:
-:   `"description"` : To briefly describe the list.
+:   `"description"` : Description of the list. 
 
     Sample JSON data:
 
@@ -1048,7 +1048,7 @@ ibmcloud cis custom-lists items f93d11a87c4945a0a6bd12820776a66d -i crn:v1:stagi
 ```
 {: pre}
 
-### `ibmcloud cis custom-lists item LIST_ID ITEM_ID`
+### `ibmcloud cis custom-lists item`
 {: #view-custom-list-item}
 
 View a specific item in a custom list.
@@ -1890,7 +1890,7 @@ ibmcloud cis dns-record DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE] [-
 #### Examples
 {: #get-dns-record-examples}
 
-Get a dns record details in domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get a DNS record details in domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
 ibmcloud cis dns-record 31984fea73a15b45779fa0df4ef62f9b 77335b17ce1853d0d76e08a8379a0376 -i "cis-demo"
@@ -1910,7 +1910,7 @@ ibmcloud cis dns-record-delete DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTA
 #### Command options
 {: #delete-dns-record-options}
 
-`DNS_DOMAIN_ID
+`DNS_DOMAIN_ID`
 :   The ID of the DNS domain. Required.
 
 `DNS_RECORD_ID`
@@ -1922,7 +1922,7 @@ ibmcloud cis dns-record-delete DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTA
 #### Examples
 {: #delete-dns-record-examples}
 
-Delete a dns record in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Delete a DNS record in the domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
 ibmcloud cis dns-record-delete 31984fea73a15b45779fa0df4ef62f9b 77335b17ce1853d0d76e08a8379a0376 -i "cis-demo"
@@ -1978,7 +1978,7 @@ ibmcloud cis dns-records DNS_DOMAIN_ID [--type TYPE] [--name NAME] [--content CO
 #### Examples
 {: #list-dns-records-examples}
 
-List all dns records in domain `31984fea73a15b45779fa0df4ef62f9b`.
+List all DNS records in domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
 ibmcloud cis dns-records 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
