@@ -904,11 +904,11 @@ ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --i
 :   The JSON file or JSON string used to describe a custom list.
 
 :   The required fields in JSON data are:
-:   `"kind"` : Custom list kind. Valid values are `ip`, `asn`, and `hostname`.
-:   `"name"` : The list name.
+:   `kind` : Custom list kind. Valid values are `ip`, `asn`, and `hostname`.
+:   `name` : The list name.
 
 :   The optional field is:
-:   `"description"` : Description of the list. 
+:   `"description"` : Description of the list.
 
     Sample JSON data:
 
@@ -1121,11 +1121,11 @@ ibmcloud cis custom-lists item-create LIST_ID (--json @JSON_FILE | JSON_STRING) 
 :   The JSON file or JSON string used to describe a custom list.
 
 :   The required fields in JSON data are:
-:   **"items"**: List of custom list items to create.
-:   **"asn"**: The ASN.
-:   **"hostname"**: The hostname.
-:   **"ip"**: The Ipv4 address.
-:   **"comment"**: To provide a brief comment on the item.
+:   `items` : List of custom list items to create.
+:   `asn` : The ASN.
+:   `hostname` : The hostname.
+:   `ip` : The IPv4 address.
+:   `comment` : To provide a brief comment on the item.
 
     Sample JSON data:
     ```sh
@@ -1172,11 +1172,11 @@ ibmcloud cis custom-lists item-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 `--json`
 :   The JSON file or JSON string used to describe a custom list.
 :   The required fields in JSON data are:
-:   **"items"**: List of custom list items to create.
-:   **"asn"**: The ASN value.
-:   **"hostname"**: The hostname.
-:   **"ip"**: The Ipv4 address.
-:   **"comment"**: To provide a brief comment on the item.
+:   `items` : List of custom list items to create.
+:   `asn` : The ASN value.
+:   `hostname` : The hostname.
+:   `ip` : The IPv4 address.
+:   `comment` : To provide a brief comment on the item.
 
     Sample JSON data:
     ```sh
@@ -1242,8 +1242,8 @@ ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) 
 `--json`
 :   The JSON file or JSON string used to describe a custom list.
 :   The required fields in JSON data are:
-:   **"items"**: List of custom list items to delete by ID.
-:   **"id"**: Unique ID of the custom list item.
+:   `items` : List of custom list items to delete by ID.
+:   `id` : Unique ID of the custom list item.
 
     Sample JSON data:
     ```sh
@@ -3385,7 +3385,7 @@ ibmcloud cis firewall-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING
 
 `--json`
 :   The JSON file or JSON string used to describe a firewall-rule.
-    - The required fields in JSON data are `expression`, `action`.
+    - The required fields in JSON data are `expression` and `action`.
         - `expression` : A filter expression. For example, `ip.src eq 93.184.216.0`
         - `action` : The rule action to perform. Valid values are `log`, `allow`, `challenge`, `js_challenge`, `block`, and `bypass`.
     - The optional fields are `description`, `priority`, `paused`, `products`.
@@ -3472,9 +3472,9 @@ ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID (--json @JSON_F
 
 `--json`
 :   The JSON file or JSON string used to describe a firewall-rule.
-    - The required fields in JSON data are `expression`, `action`.
+    - The required fields in JSON data are `expression`, and `action`.
         - `expression` : A filter expression. For example, `ip.src eq 93.184.216.0`
-        - `action` : The rule action to perform. Valid values are `log`, `allow`, `challenge`, `js_challenge`, `block`, `bypass`.
+        - `action` : The rule action to perform. Valid values are `log`, `allow`, `challenge`, `js_challenge`, `block`, and `bypass`.
     - The optional fields are `description`, `priority`, `paused`, `products`.
         - `description` : To briefly describe the rule.
         - `priority` : The rule's priority. Valid values range from `0` to `2147483647`. The value `0` means to set to the default value.
@@ -3607,7 +3607,7 @@ ibmcloud cis glb-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --i
 
 `--json`
 :   The JSON file or JSON string used to describe a global load balancer. Required.
-    - The required fields in JSON data are `name`, `fallback_pool`, `default_pools` :
+    - The required fields in JSON data are `name`, `fallback_pool` and `default_pools` :
         - `name` : The DNS hostname to associate with your load balancer.
         - `fallback_pool` : The pool ID to use when all other pools are detected as unhealthy.
         - `default_pools` : A list of pool IDs ordered by their failover priority.
@@ -3694,7 +3694,7 @@ ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (--json @JSON_FILE | JSON_STRING) [
 
 `--json`
 :   The JSON file or JSON string used to describe a global load balancer. Required.
-    - The required fields in JSON data are `name`, `fallback_pool`, `default_pools` :
+    - The required fields in JSON data are `name`, `fallback_pool` and `default_pools` :
         - `name` : The DNS hostname to associate with your load balancer.
         - `fallback_pool` : The pool ID to use when all other pools are detected as unhealthy.
         - `default_pools` : A list of pool IDs ordered by their failover priority.
@@ -3906,7 +3906,7 @@ ibmcloud cis glb-pool-create (--json @JSON_FILE | JSON_STRING) [-i, --instance I
 
 `--json`
 :    The JSON file or JSON string used to describe a GLB pool. Required.
-    - The required fields in JSON data are `name`, `origins`, `check_regions` :
+    - The required fields in JSON data are `name`, `origins` and `check_regions` :
         - `name` : A short name (tag) for the pool.
         - `origins` : A list of origins within this pool.
         - `check_regions` : A list of geographic region code.
@@ -4049,7 +4049,7 @@ ibmcloud cis glb-pool-update GLB_POOL_ID (--json @JSON_FILE | JSON_STRING) [-i, 
 
 `--json`
 :   The JSON file or JSON string used to describe a GLB pool.
-    - The required fields in JSON data are `name`, `origins`, `check_regions` :
+    - The required fields in JSON data are `name`, `origins` and `check_regions` :
         - `name` : A short name (tag) for the pool.
         - `origins` : A list of origins within this pool.
         - `check_regions` : A list of geographic region code.
@@ -5775,7 +5775,7 @@ ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (--json @JSON_FILE | JS
 
 `--json VALUE`
 :   The JSON file or JSON string used to describe a page rule. Required.
-    - The required fields in JSON data are targets, actions :
+    - The required fields in JSON data are `targets` and `actions` :
         - `targets` : The target URL pattern to evaluate on a request.
         - `actions` : An array of actions to perform if the targets of this rule match the request. Available actions are:
             - `disable_security`
@@ -6044,7 +6044,7 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
 
 `--json`
 :   The JSON file or JSON string used to describe a range application.
-    - The required fields in JSON data are `protocol`, `dns`.
+    - The required fields in JSON data are `protocol` and `dns`.
         - `protocol` : Port configuration at CIS's edge.
         - `dns` : The name and type of DNS record for the range application.
             - `name` : The name of DNS record for the range application.
@@ -6052,7 +6052,7 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
     - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, `traffic_type`.
         - `origin_direct` : A list of destination addresses to the origin.
         - `origin_dns` : Method and parameters used to discover the origin server address via DNS.
-            - `name`: DNS record name.
+            - `name` : DNS record name.
         - `origin_port` : The destination port at the origin.
         - `proxy_protocol` : Enable Proxy Protocol to the origin. Valid values are `on`, `off`, `v1`, `v2`, `simple`. The default value is `off`.
             *Deprecated*. The value `on` is equivalent to `v1`.
@@ -6191,7 +6191,7 @@ ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID (--json @JSON_FILE | JSON_STR
 
 `--json`
 :   The JSON file or JSON string used to describe a range application.
-    - The required fields in JSON data are `protocol`, `dns`.
+    - The required fields in JSON data are `protocol` and `dns`.
         - `protocol` : Port configuration at CIS's edge.
         - `dns` : The name and type of DNS record for the range application.
             - `name` : The name of DNS record for the range application.
@@ -6470,7 +6470,7 @@ ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --url URL [--description DESCRI
 
 `--json`
 :   The JSON file or JSON string used to describe a rate limiting rule.
-    - The required fields in JSON data are `match`, `threshold`, `period`, `action` :
+    - The required fields in JSON data are `match`, `threshold`, `period` and `action` :
         - `match` : Determines which traffic the rate limiting rule counts towards the threshold.
             - `request` : Matches HTTP requests.
                 - `methods` :  HTTP Methods, can be a subset `[POST,PUT]` or all `[_ALL_]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `_ALL_`.
@@ -6602,7 +6602,7 @@ ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [
 
 `--json`
 :   The JSON file or JSON string used to describe a rate limiting rule.
-    - The required fields in JSON data are `match`, `threshold`, `period`, `action` :
+    - The required fields in JSON data are `match`, `threshold`, `period` and `action` :
         - `match` : Determines which traffic the rate limiting rule counts towards the threshold.
             - `request` : Matches HTTP requests.
                 - `methods` :  HTTP Methods, can be a subset `[POST,PUT]` or all `[ALL]`. This field is not required to create a rate limit rule. Valid values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `ALL`.
@@ -7453,7 +7453,7 @@ ibmcloud cis certificate-upload DNS_DOMAIN_ID [--keyless] (--json @JSON_FILE | J
 
 `--json`
 :   The JSON file or JSON string used to describe a custom certificate. Required.
-    - The required fields in JSON data are `certificate`, `private_key`,`host`, `port` :
+    - The required fields in JSON data are `certificate`, `private_key`,`host` and `port` :
         - `certificate` : SSL certificate or certificate and the intermediate(s) for the domain.
         - `private_key` : Private key for the domain.
         - `host` : The keyless SSL host name.
@@ -7529,7 +7529,7 @@ ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [--keyless] (--json @JSON_
 
 `--json`
 :   The JSON file or JSON string used to describe a custom certificate. Required.
-    - The required fields in JSON data are `certificate`, `private_key`,`host`, `port` :
+    - The required fields in JSON data are `certificate`, `private_key`,`host` and `port` :
         - `certificate` : SSL certificate or certificate and the intermediate(s) for the domain.
         - `private_key` : Private key for the domain.
         - `host` : The keyless SSL host name.
@@ -8527,7 +8527,7 @@ ibmcloud cis authenticated-origin-pull-certificate-upload DNS_DOMAIN_ID [--level
 
 `--json`
 :   The JSON file or JSON string used to describe a custom certificate.
-    - The required fields in JSON data are "certificate", "private_key":
+    - The required fields in JSON data are `certificate` and `private_key` :
         - `certificate` : SSL certificate or certificate and the intermediate(s) for the domain.
         - `private_key` : Private key for the domain.
 
@@ -9906,7 +9906,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
 `--json`
 :  The JSON file or JSON string used to describe an advanced rate limiting rule.
 
-   - The required fields in JSON data are `expression`, `ratelimit`, `action`.
+   - The required fields in JSON data are `expression`, `ratelimit` and `action`.
 
       - `expression` : Defines the criteria for the advanced rate limiting rule to match a request.
       - `ratelimit` : Define the rate-limit parameters.
@@ -10021,7 +10021,7 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
 `--json`
 :  The JSON file or JSON string used to describe an advanced rate limiting rule.
 
-   - The required fields in JSON data are `expression`, `ratelimit`, `action`.
+   - The required fields in JSON data are `expression`, `ratelimit` and `action`.
 
       - `expression` : Defines the criteria for the advanced rate limiting rule to match a request.
       - `ratelimit` : Define the ratelimit parameters.
@@ -10301,7 +10301,7 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
 `--json`
 :  The JSON file or JSON string used to describe a managed WAF.
 
-   - The required fields in JSON data are `expression`, `action`, `action_parameters`.
+   - The required fields in JSON data are `expression`, `action` and `action_parameters`.
 
       `expression` : The rule expression.
       `action` : The rule action to perform. Valid value is `skip`.
@@ -10391,7 +10391,7 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
 `--json`
 :  The JSON file or JSON string used to describe a managed WAF.
 
-   - The required fields in JSON data are `expression`, `action`, `action_parameters`.
+   - The required fields in JSON data are `expression`, `action`, and `action_parameters`.
 
       `expression` : The rule expression.
       `action` : The rule action to perform. Valid value is `skip`.
@@ -10485,7 +10485,7 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json
 `--json`
 :  The JSON file or JSON string used to describe a managed WAF rule.
 
-   - The required fields in JSON data are `expression`, `action`, `action_parameters`.
+   - The required fields in JSON data are `expression`, `action`, and `action_parameters`.
 
       `expression` : The rule expression.
       `action` : The rule action to perform. Valid values is `skip`.
@@ -10593,7 +10593,7 @@ ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json
 `--json`
 :  The JSON file or JSON string used to describe a managed waf rule.
 
-   - The required fields in JSON data are `expression`, `action`, `action_parameters`.
+   - The required fields in JSON data are `expression`, `action`, and `action_parameters`.
 
       `expression` : The rule expression.
       `action` : The rule action to perform. Valid value is `skip`.
@@ -10759,7 +10759,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 `--json`
 :  The JSON file or JSON string used to describe a custom rule.
 
-   - The required fields in JSON data are `expression`, `action`.
+   - The required fields in JSON data are `expression` and `action`.
 
       - `expression` : Specifies the conditions that must be matched for the rule to run.
       - `action` : The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`.
@@ -10857,7 +10857,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 `--json`
 :  The JSON file or JSON string used to describe a custom rule.
 
-   - The required fields in JSON data are `expression`, `action`.
+   - The required fields in JSON data are `expression` and `action`.
 
       - `expression` : Specifies the conditions that must be matched for the rule to run.
       - `action` : The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`.
