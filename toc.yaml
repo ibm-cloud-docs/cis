@@ -21,9 +21,9 @@ toc:
             - cache.md
             - compression-concepts.md
             - domain-lifecycle.md
+            - dns-concepts.md
             - glb.md
             - http-concepts.md
-            - ip-firewalls.md
             - routing.md
             - tcp-concepts.md
             - traffic-sequencing.md
