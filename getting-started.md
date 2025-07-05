@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-09"
+lastupdated: "2025-07-05"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -14,8 +14,6 @@ subcollection: cis
 
 # Getting started with {{site.data.keyword.cis_full_notm}}
 {: #getting-started}
-
-
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), powered with Cloudflare, offers three main capabilities to enhance your workflow: [security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security), [reliability](/docs/cis?topic=cis-manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability), and [performance](/docs/cis?topic=cis-manage-your-cis-deployment-for-best-performance). You can navigate to features for each of these capabilities after you open the {{site.data.keyword.cis_short_notm}} UI.
 {: shortdesc}
@@ -47,7 +45,7 @@ You can start using {{site.data.keyword.cis_short_notm}} for your internet traff
 ### Step 1: Open the IBM {{site.data.keyword.cis_short_notm}} application
 {: #open-cis-application}
 
-Open the [{{site.data.keyword.cloud_notm}} catalog](/catalog). Then, select the **Networking** category in the navigation pane. Click the **Internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application. 
+Open the [{{site.data.keyword.cloud_notm}} catalog](/catalog). Then, select the **Networking** category in the navigation pane. Click the **Internet Services** tile to open the {{site.data.keyword.cis_full_notm}} application.
 
 #### The Overview page
 {: #the-overview-page}
