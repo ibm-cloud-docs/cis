@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-05"
 
 keywords:
 
@@ -135,7 +135,7 @@ You are responsible for managing your certificate if you upload a custom certifi
 ### Order dedicated certificates
 {: #order-dedicated-certs}
 
-{{site.data.keyword.cis_short_notm}} makes managing your certificates simple by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The types of certificates are:
+{{site.data.keyword.cis_short_notm}} makes managing your certificates simple by offering dedicated certificates. You no longer need to gene private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The types of certificates are:
 
 * SHA-2/ECDSA signed certificate that uses P-256 key,
 * SHA-2/RSA signed certificate that uses RSA 2048-bit key, and
@@ -152,7 +152,7 @@ You are responsible for managing your certificate if you upload a custom certifi
 
  {{site.data.keyword.cis_short_notm}} manages the certificate expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete. For example, you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterward, you _must_ delete the original dedicated custom certificate.
 
-The first time when you order a dedicated certificate, the Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process occurs again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
+The first time when you order a dedicated certificate, the Domain Control Validation (DCV) process occurs, which genes a corresponding TXT record. If you delete the TXT record, the DCV process occurs again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
 {: note}
 
 The following are common errors that are seen when you order dedicated certificates:
@@ -184,7 +184,7 @@ See [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-versio
 ## Best practice 5: Configure rate limiting
 {: #best-practice-rate-limiting}
 
-The main use cases for rate limiting are as follows:
+Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold. The main use cases for rate limiting are as follows:
 
 * Enforce granular access control to resources. This process includes access control based on criteria such as user agent, IP address, referrer, host, country, and world region.
     * Limit by user agent: A common use case is to limit the rate of requests performed by individual user agents.
