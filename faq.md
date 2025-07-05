@@ -271,3 +271,31 @@ Private IPs (RFC1918) can be reached with DNS lookup through the non-proxied {{s
 {: #port-range-edge-traffic}
 
 When the proxy is enabled, traffic is routed through the Cloudflare network to the origin server. This traffic can originate from any port within the range of `1024-65535`. When configuring Network Access Control Lists (ACLs) for your environment, ensure that both ingress and egress traffic from this port range is allowed.
+
+## How does CIS handle clock synchronization?
+{: #clock-synchronization}
+
+To meet ISO 27001 requirements, all relevant systems must synchronize with a unified time source.
+IBM {{site.data.keyword.cis_short_notm}} ensures clock synchronization across its infrastructure by using Network Time Protocol (NTP) servers. {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers:
+
+* `time.adn.networklayer.com`
+* `time.service.networklayer.com`
+
+## How does CIS handle traffic scrubbing?
+{: #traffic-scrubbing}
+
+{{site.data.keyword.cis_short_notm}} uses its 388 Tbps global edge network to mitigate high-volume DDoS attacks without scrubbing centers. Attacks are analyzed and blocked at the edge, near the source. Only protected traffic (clean requests and responses) is billed. Malicious traffic is excluded.
+
+## What network does CIS use for global traffic and health checks?
+{: #anycast-network}
+
+{{site.data.keyword.cis_short_notm}} runs its data plane on Cloudflare’s global Anycast network, which spans hundreds of cities worldwide. This network ensures fast, reliable traffic routing and DDoS mitigation.
+
+Health check requests originate from this distributed network, so the available regions for health checks are based on the [Cloudflare Global Anycast Network](https://www.cloudflare.com/network/){: external}.
+
+## How does CIS provide cost protection?
+{: #cost-protection}
+
+{{site.data.keyword.cis_short_notm}} does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the {{site.data.keyword.cis_short_notm}} network to the origin destination incur charges or usage.
+
+{{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic, and there’s no penalty or chargeback for traffic spikes caused by attacks.
