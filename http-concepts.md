@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-07-04"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# HTTP/2 and HTTP/3 protocols
+# HTTP protocols
 {: #http-concepts}
 
 HTTP/2 and HTTP/3 accelerate page load times are included in all {{site.data.keyword.cis_full}} plans. HTTP/2 is enabled by default and requires an SSL certificate at the {{site.data.keyword.cis_short_notm}} edge network. Domains on Trial plans can't disable HTTP/2.
@@ -51,14 +51,12 @@ HTTP/3 enables fast, reliable, and secure connections. By default, HTTP/3 encryp
 ### Using Google Chrome as your HTTP/3 client
 {: #chrome-client}
 
-
 To connect to your website over HTTP/3 using Chrome, first download and install the [latest Chrome Canary build](https://www.google.com/chrome/canary/){: external}. Then, enable HTTP/3 support in Chrome Canary using the `--enable-quic` and `--quic-version=h3-23` [command-line arguments](https://www.chromium.org/developers/how-tos/run-chromium-with-flags){: external}.
 
 After Chrome starts, enter your domain in the address bar. To verify the protocol version, open Chrome’s Developer Tools and go to the **Network** tab. If `http2+quic/99` doesn’t appear in the **Protocol** column, try reloading the page.
 
 ### Using cURL
 {: #using-curl}
-
 
 The cURL command-line tool supports HTTP/3. [Download the most recent version](https://github.com/curl/curl){: external} and follow [the instructions to enable HTTP/3 support](https://github.com/curl/curl/blob/master/docs/HTTP3.md#quiche-version){: external}.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-07-06"
 
 keywords:
 
@@ -134,9 +134,7 @@ The flood of incoming messages, connection requests, or malformed packets to the
 {: #cis-faq-what-to-do-in-ddos}
 {: faq}
 
-**Step 1:** Turn on “Defense mode" in the **Overview** page.
-
-![Defense Mode](images/defense-mode.png "Defense mode"){: caption="Defense mode" caption-side="bottom}
+**Step 1:** Turn on “Defense mode" in the **Overview** page. 
 
 **Step 2:** Set your DNS records for maximum security.
 
@@ -262,22 +260,6 @@ The Accept-Encoding header is not respected and is removed.
 {: faq}
 
 The global rate limit for the {{site.data.keyword.cis_short_notm}} API is 1200 requests per five minutes per user, and applies cumulatively regardless of whether the request is made through the UI, CLI, Terraform, or API.
-
-## In what order are my configurations handled for incoming traffic at the edge?
-{: #order-incoming-traffic}
-{: faq}
-
-{{site.data.keyword.cis_short_notm}} handles incoming traffic in the following order.
-
-1. DDoS
-1. URL Rewrites
-1. Page Rules
-1. IP Firewall
-1. WAF / Firewall Rules
-1. Edge Functions
-1. Load Balancer
-
-For more information about how your traffic is processed, see [Traffic sequencing](/docs/cis?topic=cis-traffic-sequencing).
 
 ## Can I use {{site.data.keyword.cis_short_notm}} with private IPs?
 {: #can-i-use-private-ips}

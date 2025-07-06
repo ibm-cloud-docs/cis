@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-06"
 
 keywords:
 
@@ -184,7 +184,7 @@ See [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-versio
 ## Best practice 5: Configure rate limiting
 {: #best-practice-rate-limiting}
 
-The main use cases for rate limiting are as follows:
+Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold. The main use cases for rate limiting are as follows:
 
 * Enforce granular access control to resources. This process includes access control based on criteria such as user agent, IP address, referrer, host, country, and world region.
     * Limit by user agent: A common use case is to limit the rate of requests performed by individual user agents.

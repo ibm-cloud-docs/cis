@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-07-04"
 
 keywords: Smart Routing Route connections, routing decisions, Eliminate excess latency
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Smart routing and tiered caching
 {: #cis-routing}
 
-Reduce excess latency by optimizing routing decisions across the global internet by using real-time network data. On average, this technique can reduce internet latency by 35% and connection errors by 27%. 
+Reduce excess latency by optimizing routing decisions across the global internet by using real-time network data. On average, this technique can reduce internet latency by 30% and connection errors by 27%.
 {: shortdesc}
 
 ## Smart Routing
