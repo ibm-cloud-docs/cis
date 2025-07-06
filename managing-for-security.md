@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-05"
+lastupdated: "2025-07-06"
 
 keywords:
 
@@ -135,7 +135,7 @@ You are responsible for managing your certificate if you upload a custom certifi
 ### Order dedicated certificates
 {: #order-dedicated-certs}
 
-{{site.data.keyword.cis_short_notm}} makes managing your certificates simple by offering dedicated certificates. You no longer need to gene private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The types of certificates are:
+{{site.data.keyword.cis_short_notm}} makes managing your certificates simple by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The types of certificates are:
 
 * SHA-2/ECDSA signed certificate that uses P-256 key,
 * SHA-2/RSA signed certificate that uses RSA 2048-bit key, and

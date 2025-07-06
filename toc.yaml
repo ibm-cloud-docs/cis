@@ -14,6 +14,7 @@ toc:
         id: learn
         topics:
         - getting-started.md
+        - about.md
         - topicgroup:
             id: concepts
             label: Concepts

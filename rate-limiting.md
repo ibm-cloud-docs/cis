@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-09"
+lastupdated: "2025-07-06"
 
 keywords:
 
@@ -212,5 +212,3 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    --header "Content-Type: application/json"
    ```
    {: pre}
-
-MISSING -  DO ANY OF THE SECTIONS IN THE CONSOLE SECTION APPLY HERE?
