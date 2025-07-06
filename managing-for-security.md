@@ -152,7 +152,7 @@ You are responsible for managing your certificate if you upload a custom certifi
 
  {{site.data.keyword.cis_short_notm}} manages the certificate expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete. For example, you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterward, you _must_ delete the original dedicated custom certificate.
 
-The first time when you order a dedicated certificate, the Domain Control Validation (DCV) process occurs, which genes a corresponding TXT record. If you delete the TXT record, the DCV process occurs again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
+The first time when you order a dedicated certificate, the Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process occurs again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
 {: note}
 
 The following are common errors that are seen when you order dedicated certificates:
