@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Deploying managed rulesets
 {: #deploying-rule-sets}
 
-You can deploy managed rulesets at the zone or instance level by using the CLI, API, or Terraform. 
+You can deploy managed rulesets at the zone or instance level by using the CLI, API, or Terraform.
 {: shortdesc}
 
 You can deploy a managed ruleset with customized behavior (changes that are executed in addition to the default configuration) by overriding it. For more information, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
@@ -31,6 +31,7 @@ Use the following workflow to deploy a managed ruleset to a phase at the zone le
 1. Find the ruleset ID of the managed ruleset that you want to deploy.
 1. Identify the phase where you want to deploy the managed ruleset. Make sure that the managed ruleset belongs to the same phase where you want to deploy it.
 1. Add a rule to the zone-level phase entry point ruleset that runs the managed ruleset.
+
 ## Deploying managed rulesets from the CLI
 {: #cli-deploy-rule-sets}
 {: cli}
@@ -42,8 +43,8 @@ You can deploy managed rulesets from the CLI.
 
 To list all zone-managed rulesets from the CLI, follow these steps:
 
-1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs). 
-   
+1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs).
+
 1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
 
     ```sh
@@ -69,8 +70,8 @@ Where:
 
 To update a deployed ruleset from the CLI, follow these steps:
 
-1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs). 
-   
+1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs).
+
 1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
 
     ```sh
@@ -101,7 +102,7 @@ Where:
 
 This example shows how to deploy the ruleset `efb7b8c949ac4650a09736fc376e9aee` and the overriding the rule present inside the ruleset. It is also overriding rules with category wordpress.
 
-`ibmcloud cis managed-waf deployment-add-ruleset $domain efb7b8c949ac4650a09736fc376e9aee --match "(http.cookie eq \"example.com/contact?page=1234\")" --action execute --enabled false --override-action block --override-status false --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=log,enabled=true --override-rules action=managed_challenge,rule=e3a567afc347477d9702d9047e97d760` 
+`ibmcloud cis managed-waf deployment-add-ruleset $domain efb7b8c949ac4650a09736fc376e9aee --match "(http.cookie eq \"example.com/contact?page=1234\")" --action execute --enabled false --override-action block --override-status false --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=log,enabled=true --override-rules action=managed_challenge,rule=e3a567afc347477d9702d9047e97d760`
 
 ## Deploying managed rulesets with the API
 {: #api-deploy-rule-sets}
@@ -150,7 +151,7 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 ### Listing managed rulesets with the API
 {: #api-list-rule-sets}
 
-Follow these steps to list managed rulesets with the API: 
+Follow these steps to list managed rulesets with the API:
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
@@ -175,7 +176,7 @@ curl -X GET \
 ### Updating entry point rulesets with the API
 {: #api-update-entry-point-rule-set}
 
-Follow these steps to update an entry point ruleset with the API: 
+Follow these steps to update an entry point ruleset with the API:
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
@@ -210,7 +211,7 @@ Where:
 
 ## Deploying managed rulesets with Terraform
 {: #working-with-managed-rules-tf}
-{: terraform} 
+{: terraform}
 
 ### Listing managed rulesets with Terraform
 {: #listing-managed-rule-tf}
@@ -239,7 +240,7 @@ resource "ibm_cis_ruleset" "config" {
     ruleset_id = "943c5da120114ea5831dc1edf8b6f769"
 }
 ```
-{: codeblock} 
+{: codeblock}
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset){: external} in the Terraform registry.
 
@@ -276,7 +277,7 @@ resource "ibm_cis_ruleset_entrypoint_version" "test" {
               action = "block"
             }
           }
-        } 
+        }
       }
     }
   }
