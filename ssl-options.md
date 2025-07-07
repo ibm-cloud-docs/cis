@@ -56,7 +56,7 @@ This mode is the default and recommended setup. A secure connection exists betwe
 {: #tls-encryption-modes-end-to-end-flexible}
 
 In this mode, a secure connection exists between your visitor and {{site.data.keyword.cis_short_notm}}, and a secure but non-authenticated connection between {{site.data.keyword.cis_short_notm}} and your web server.
-Your server must be set up to handle HTTPS connections, at a minimum with a self-signed certificate. The authenticity of this certificate is not verified; For example, when we connect to your origin webserver, from {{site.data.keyword.cis_short_notm}} perspective, it is considered similar to bypassing an error message. As long as the address of your origin webserver is correct in your DNS settings, you know that we’re connecting to your webserver, and not someone else’s.
+Your server must be set up to handle HTTPS connections, at a minimum with a self-signed certificate. The authenticity of this certificate is not verified; For example, when we connect to your origin webserver, from a {{site.data.keyword.cis_short_notm}} perspective, it is considered similar to bypassing an error message. As long as the address of your origin webserver is correct in your DNS settings, you know that we’re connecting to your webserver, and not someone else’s.
 
 ![Diagram of End to end flexible TLS](images/end-to-end-flexible.svg "Diagram of End to end flexible TLS"){: caption="A diagram of End to end flexible TLS" caption-side="bottom"}
 
@@ -70,7 +70,7 @@ In this mode, a secure connection exists between your visitor and {{site.data.ke
 ### Off
 {: #tls-encryption-modes-off}
 
-In this mode, no secure connection exists between your visitor and {{site.data.keyword.cis_short_notm}}, and between {{site.data.keyword.cis_short_notm}} and your web server. Visitors can view your website only over HTTP, and any visitor who attempts to connect by using HTTPS receives an `HTTP 301 Redirect` to the plain HTTP version of your website.
+In this mode, no secure connection exists between your visitors and {{site.data.keyword.cis_short_notm}}, and between {{site.data.keyword.cis_short_notm}} and your web server. Visitors can view your website only over HTTP, and any visitor who attempts to connect by using HTTPS receives an `HTTP 301 Redirect` to the plain HTTP version of your website.
 
 ![Diagram of TLS Off](images/off.svg "Diagram of TLS Off"){: caption="A diagram of TLS Off" caption-side="bottom"}
 

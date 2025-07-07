@@ -78,6 +78,7 @@ toc:
         - topicgroup:
             label: Working with TLS
             topics:
+            - about-tls.md
             - ssl-options.md
             - mtls.md
             - auth-origin-pull.md
