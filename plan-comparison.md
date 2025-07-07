@@ -40,15 +40,15 @@ The numbers in these tables are quotas or resource limits for the associated fea
 |**Page rules**|50 page rules per domain|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|
 |**IP firewall**|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * Block is not available to Country filter \n * 10 Domain lockdown rules \n * 250 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|
 |**Caching**|Basic caching options|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Advanced caching options|
-|**Range**|No|No|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs|
+|**Range**|Not included|Not included|Included \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Included \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Included \n * 10 unique FQDNs|
 |**Edge functions**|1 action \n (must be named after domain) \n \n 1 M Edge function requests|Unlimited actions|Unlimited actions|Unlimited actions|Unlimited actions|
 |**Firewall rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
-|**GraphQL**|No|Yes|Yes|Yes|Yes|
-|**Smart routing**|No|Yes|Yes|Yes|Yes|
-|**Logging**|No|Yes|Yes|Yes|Yes|
-|**Alerts**|No|Yes|Yes|Yes|Yes|
-|**Rate limiting**|No|No|Yes|Yes|Yes|
-|**Bot management**|No|No|No|Yes|No|
+|**GraphQL**|Not included|Included|Included|Included|Included|
+|**Smart routing**|Not included|Included|Included|Included|Included|
+|**Logging**|Not included|Included|Included|Included|Included|
+|**Alerts**|Not included|Included|Included|Included|Included|
+|**Rate limiting**|Not included|Not included|Included|Included|Included|
+|**Bot management**|Not included|Not included|Not included|Included|Not included|
 {: caption="CIS plan comparison" caption-side="bottom"}
 
 ## Additional details
