@@ -84,7 +84,7 @@ The Enterprise Tier plans adopt a more flexible, metered pricing model, lowering
 ### Migrating to Enterprise Tier plans
 {: #migration-to-enterprise-tiers}
 
-To migrate from your current Enterprise package, Enterprise GLB, or Enterprise Security plans, follow these steps:
+To migrate from your current Enterprise package, Enterprise GLB, or Enterprise Security plans:
 
 1. Navigate to your existing {{site.data.keyword.cis_short_notm}} instance.
 1. From the **Plan** page, select the Enterprise Tier plan that you want.
