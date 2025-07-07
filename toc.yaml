@@ -175,6 +175,7 @@ toc:
             - log-fields.md
             - instant-logs.md
             - cis-daily-volume.md
+            - additional-owasp-log.md
         - topicgroup:
             label: Working with metrics
             id: metrics
