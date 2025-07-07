@@ -944,7 +944,7 @@ ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --i
 
     Sample JSON data:
 
-    ```sh
+    ```json
     {
       "kind": "ip",
       "name": "string",
@@ -1002,7 +1002,7 @@ ibmcloud cis custom-lists list-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 :   **"description"**: To briefly describe the list.
 
     Sample JSON data:
-    ```sh
+    ```json
       {
         "description": "string"
       }
@@ -1160,7 +1160,7 @@ ibmcloud cis custom-lists item-create LIST_ID (--json @JSON_FILE | JSON_STRING) 
 :   `comment` : To provide a brief comment on the item.
 
     Sample JSON data:
-    ```sh
+    ```json
       [
         {
           "asn": 19604,
@@ -1211,7 +1211,7 @@ ibmcloud cis custom-lists item-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 :   `comment` : To provide a brief comment on the item.
 
     Sample JSON data:
-    ```sh
+    ```json
        [
          {
            "asn": 19604,
@@ -1278,7 +1278,7 @@ ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) 
 :   `id` : Unique ID of the custom list item.
 
     Sample JSON data:
-    ```sh
+    ```json
       {
         "items": [
           {
@@ -1491,7 +1491,7 @@ ibmcloud cis dns-record-create DNS_DOMAIN_ID --type TYPE --name NAME --content C
 
 Sample JSON data:
 
-```sh
+```json
 {
    "name": "testA",
    "type": "A",
@@ -1533,7 +1533,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
  "name": "1.2.3.4",
  "type":"PTR",
@@ -1548,7 +1548,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
    "name": "testMX",
    "type": "MX",
@@ -1577,7 +1577,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
    "name": "testLOC",
    "type": "LOC",
@@ -1612,7 +1612,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
    "type": "SRV",
    "data": {
@@ -1634,7 +1634,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
    "name": "testCAA.yourdomain.com",
    "type": "CAA",
@@ -1716,7 +1716,7 @@ ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID [--type TYPE] [--name
 
 Sample JSON data:
 
-```sh
+```json
 {
    "name": "testA",
    "type": "A",
@@ -1758,7 +1758,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
  "name": "1.2.3.4",
  "type":"PTR",
@@ -1773,7 +1773,7 @@ Sample JSON data:
 
    Sample JSON data:
 
-```sh
+```json
 {
    "name": "testMX",
    "type": "MX",
@@ -1802,7 +1802,7 @@ Sample JSON data:
 
    Sample JSON data:
 
-```sh
+```json
 {
    "name": "testLOC",
    "type": "LOC",
@@ -1837,7 +1837,7 @@ Sample JSON data:
 
    Sample JSON data:
 
-```sh
+```json
 {
    "type": "SRV",
    "data": {
@@ -1859,7 +1859,7 @@ Sample JSON data:
 
    Sample JSON data:
 
-```sh
+```json
 {
    "name": "testCAA.yourdomain.com",
    "type": "CAA",
@@ -2948,7 +2948,7 @@ ibmcloud cis firewall-create (-t, --type Type) (--json @JSON_FILE | JSON_STRING)
 
 Sample JSON data:
 
-```sh
+```json
 {
    "mode": "block",
    "notes": "This rule is added because of event X that occurred on date xyz",
@@ -2972,7 +2972,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
    "mode": "block",
    "configuration": {
@@ -2999,7 +2999,7 @@ Sample JSON data:
 
 Sample JSON data:
 
-```sh
+```json
 {
    "urls": [
       "api.mysite.com/some/endpoint*"
@@ -3076,7 +3076,7 @@ ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FI
 
     Sample JSON data:
 
-```sh
+```json
 {
    "mode": "challenge",
    "notes": "This rule is added because of event X that occurred on date xyz",
@@ -3096,7 +3096,7 @@ ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FI
 
     Sample JSON data:
 
-```sh
+```json
 {
    "mode": "block",
    "configuration": {
@@ -3123,7 +3123,7 @@ ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FI
 
 Sample JSON data:
 
-```sh
+```json
 {
    "urls": [
       "api.mysite.com/some/endpoint*"
@@ -3428,7 +3428,7 @@ ibmcloud cis firewall-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING
 
    Sample JSON data:
 
-```sh
+```json
 {
    "expression": "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"",
    "action": "allow",
@@ -3516,7 +3516,7 @@ ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID (--json @JSON_F
 
 Sample JSON data:
 
-```sh
+```json
 {
    "expression": "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"",
    "action": "allow",
@@ -3659,7 +3659,7 @@ ibmcloud cis glb-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --i
 
 Sample JSON data:
 
-```sh
+```json
 {
       "name": "www.example.com",
       "fallback_pool": "17b5962d775c646f3f9725cbc7a53df4",
@@ -3746,7 +3746,7 @@ ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (--json @JSON_FILE | JSON_STRING) [
 
 Sample JSON data:
 
-```sh
+```json
 {
       "name": "www.example.com",
       "fallback_pool": "17b5962d775c646f3f9725cbc7a53df4",
@@ -3946,7 +3946,7 @@ ibmcloud cis glb-pool-create (--json @JSON_FILE | JSON_STRING) [-i, --instance I
 
 Sample JSON data:
 
-```sh
+```json
 {
    "name": "us-pool",
    "description": "application server pool in US",
@@ -4089,7 +4089,7 @@ ibmcloud cis glb-pool-update GLB_POOL_ID (--json @JSON_FILE | JSON_STRING) [-i, 
 
 Sample JSON data:
 
-```sh
+```json
 {
    "name": "us-pool",
    "description": "application server pool in US",
@@ -4221,7 +4221,7 @@ ibmcloud cis glb-monitor-create (--json @JSON_FILE | JSON_STRING) [-i, --instanc
 
    For HTTP/HTTPS:
 
-```sh
+```json
 {
       "description": "Health monitor of web service",
       "type": "https",
@@ -4388,7 +4388,7 @@ ibmcloud cis glb-monitor-update GLB_MON_ID (--json @JSON_FILE | JSON_STRING) [-i
 
    For HTTP/HTTPS:
 
-```sh
+```json
 {
       "description": "Health monitor of web service",
       "type": "https",
@@ -5533,7 +5533,7 @@ ibmcloud cis origin-certificate-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_S
 
    Sample JSON data:
 
-```sh
+```json
 {
    "request_type": "origin-rsa",
    "hostnames": [
@@ -5740,7 +5740,7 @@ ibmcloud cis page-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
 
 Sample JSON data:
 
-```sh
+```json
    {
    "targets": [
       {
@@ -5867,7 +5867,7 @@ ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (--json @JSON_FILE | JS
 
 Sample JSON data:
 
-```sh
+```json
 {
    "targets": [
       {
@@ -6117,7 +6117,7 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
 
 Sample JSON data:
 
-```sh
+```json
 {
    "protocol": "tcp/22",
    "dns": {
@@ -6266,7 +6266,7 @@ ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID (--json @JSON_FILE | JSON_STR
 
 Sample JSON data:
 
-```sh
+```json
 {
    "protocol": "tcp/22",
    "dns": {
@@ -6566,7 +6566,7 @@ ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --url URL [--description DESCRI
 
 Sample JSON data:
 
-```sh
+```json
 {
    "id": "92f17202ed8bd63d69a66b86a49a8f6b",
    "disabled": false,
@@ -6697,7 +6697,7 @@ ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [
 
 Sample JSON data:
 
-```sh
+```json
 {
    "disabled": false,
    "description": "Prevent multiple login failures to mitigate brute force attacks",
@@ -7534,7 +7534,7 @@ ibmcloud cis certificate-upload DNS_DOMAIN_ID [--keyless] (--json @JSON_FILE | J
 
 Sample JSON data:
 
-```sh
+```json
 {
    "certificate": "xxx",
    "private_key": "xxx",
@@ -7610,7 +7610,7 @@ ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [--keyless] (--json @JSON_
 
 Sample JSON data:
 
-```sh
+```json
 {
    "certificate": "xxx",
    "private_key": "xxx",
@@ -7676,7 +7676,7 @@ ibmcloud cis certificate-priority-change DNS_DOMAIN_ID (--json @JSON_FILE | JSON
 
 Sample JSON data:
 
-```sh
+```json
 {
 "certificates":[
    {
@@ -8199,7 +8199,7 @@ ibmcloud cis waf-override-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING)
 
 Sample JSON data:
 
-```sh
+```json
    {
       "description": "Enable IBM Magento ruleset for www.example.com",
       "urls": [
@@ -8270,7 +8270,7 @@ ibmcloud cis waf-override-update DNS_DOMAIN_ID OVERRIDE_WAF_ID (--json @JSON_FIL
 
 Sample JSON data:
 
-   ```sh
+   ```json
    {
       "description": "Enable IBM Magento ruleset for www.example.com",
       "urls": [
@@ -8603,7 +8603,7 @@ ibmcloud cis authenticated-origin-pull-certificate-upload DNS_DOMAIN_ID [--level
 
    Sample JSON data:
 
-```sh
+```json
 {
   "certificate": "-----BEGIN CERTIFICATE-----\n...-----END CERTIFICATE-----\n",
   "private_key": "-----BEGIN PRIVATE KEY-----\n...-----END PRIVATE KEY-----\n"
@@ -10001,7 +10001,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
          - `content` : Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
       - `enabled` : Whether enable this rule or not.
 
-      ```sh
+      ```json
          Sample JSON data:
 
             {
@@ -10116,7 +10116,7 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
          - `content` : Defines the body of the returned HTTP response when the request is blocked due to rate limiting. Only available when the rule action is Block.
       - `enabled` : Whether enable this rule or not.
 
-      ```sh
+      ```json
          Sample JSON data:
 
             {
@@ -10389,7 +10389,7 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
          - `enabled` : When disabled, matched requests don't appear in firewall events.
 
    Sample JSON data:
-
+      ```json
          {
             "action": "skip",
             "expression": "(http.cookie eq \"example.com/contact?page=1234\")",
@@ -10410,6 +10410,7 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
                }
             }
          }
+      ```
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -10479,7 +10480,7 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
          - `enabled` : When disabled, matched requests don't appear in firewall events.
 
 Sample JSON data:
-
+   ```json
          {
             "action": "skip",
             "expression": "(http.cookie eq \"example.com/contact?page=1234\")",
@@ -10500,6 +10501,7 @@ Sample JSON data:
                }
             }
          }
+   ```
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -10581,7 +10583,7 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json
       `enabled` : Indicates whether the rule is active or not.
 
 Sample JSON data:
-
+   ```json
          {
             "action": "execute",
             "description": "CIS Managed Ruleset",
@@ -10605,6 +10607,7 @@ Sample JSON data:
                   ]
                }
          }
+   ```
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -10689,7 +10692,7 @@ ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json
       `enabled`: Indicates whether the rule is active or not.
 
 Sample JSON data:
-
+   ```json
          {
             "action": "execute",
             "description": "CIS Managed Ruleset",
@@ -10713,7 +10716,7 @@ Sample JSON data:
                   ]
                }
          }
-
+   ```
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
@@ -10852,7 +10855,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `logging` : Log requests matching the skip rule. This field is only available for 'skip' action.
 
    Sample JSON data:
-
+   ```json
          {
            "description": "test-custom-rule",
            "expression": "(http.cookie contains \"test\")",
@@ -10879,6 +10882,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
            },
            "enabled": true
          }
+   ```
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
@@ -10950,7 +10954,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `logging` : Log requests matching the skip rule. This field is only available for 'skip' action.
 
    Sample JSON data:
-
+   ```json
          {
            "description": "test-custom-rule",
            "expression": "(http.cookie contains \"test\")",
@@ -10964,6 +10968,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
            },
            "enabled": true
          }
+   ```
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
