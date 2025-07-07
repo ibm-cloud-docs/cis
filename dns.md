@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up your Domain Name System for {{site.data.keyword.cis_short_notm}}
+# Configuring DNS records and settings
 {: #set-up-your-dns-for-cis}
 
 Read some specific instructions about how to configure your {{site.data.keyword.cis_full}} Domain Name System (DNS) records, including how to configure Secure DNS.
