@@ -15,12 +15,20 @@ subcollection: cis
 # Configuring DNS records and settings
 {: #set-up-your-dns-for-cis}
 
-Read some specific instructions about how to configure your {{site.data.keyword.cis_full}} Domain Name System (DNS) records, including how to configure Secure DNS.
+Before you direct traffic to your domain through IBM Cloud Internet Services (CIS), it's recommended that you either import or manually recreate your existing DNS records within CIS. Skipping this step is optional, but if your DNS records are not properly configured in CIS, some parts of your website may become inaccessible.
 {: shortdesc}
 
+You can import your DNS records by uploading a file you’ve exported from your current DNS provider, or you can manually enter each record in CIS. To import, click **Import records** and upload the appropriate file.
 
+After you’ve finished importing or creating your records, or if you choose to skip this step, click **Next step** to continue the setup process. 
 
-Configuring DNS records is essential to ensure your domain operates correctly, securely, and efficiently. DNS records contain information about your domain and control how traffic is routed to your website or application. By adjusting your DNS settings, you can update or add services to launch a new website, connect a mail server, create a subdomain, and more. Regularly updating your DNS helps you maintain control over your domain, optimize performance, and ensure your online presence remains accessible.
+Configuring DNS records is essential to ensure your domain operates correctly, securely, and efficiently. DNS records store information about your domain and determine how traffic is routed to your website or application. By configuring your DNS settings, you can:
+
+* Update or add services to launch a new website.
+* Connect a mail server.
+* Create a subdomain.
+
+Keeping your DNS records up to date allows you to maintain full control over your domain, optimize performance, and ensure your site remains reliably accessible online.
 
 ## Adding DNS records
 {: #adding-dns-records}
