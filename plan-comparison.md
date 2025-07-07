@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -29,7 +29,7 @@ The numbers in these tables are quotas or resource limits for the associated fea
 {: tip}
 
 | |Standard Next|Enterprise Essentials|Enterprise Advanced|Enterprise Premier|Enterprise Usage|
-| :------- | :------- | :--------- | :------------ | :--------- | :--------- |
+| :------ | :------ | :----- | :----- | :----- | :----- |
 |**Domain**|1 included  \n More available for monthly cost per domain|1 included  \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|Up to 1000, but recommend no more than 20|
 |**Included protected traffic**   \n (does not include traffic that is related to an attack)  \n Overage charges can occur|0.5 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
 |**Included requests and queries**  \n Overage charges can occur|5 M requests \n 1 M queries|150 requests and queries combined|150 requests and queries combined|150 requests and queries combined|Not applicable  \n (usage based)|
@@ -41,7 +41,7 @@ The numbers in these tables are quotas or resource limits for the associated fea
 |**IP firewall**|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * Block is not available to Country filter \n * 10 Domain lockdown rules \n * 250 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|
 |**Caching**|Basic caching options|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Advanced caching options|
 |**Range**|No|No|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes \n * 10 unique FQDNs|
-|**Edge functions**|1 action \n (must be named after domain) \n 1 M Edge function requests|Unlimited actions|Unlimited actions|Unlimited actions|Unlimited actions|
+|**Edge functions**|1 action \n (must be named after domain) \n \n 1 M Edge function requests|Unlimited actions|Unlimited actions|Unlimited actions|Unlimited actions|
 |**Firewall rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
 |**GraphQL**|No|Yes|Yes|Yes|Yes|
 |**Smart routing**|No|Yes|Yes|Yes|Yes|

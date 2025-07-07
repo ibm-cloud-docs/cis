@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -63,7 +63,7 @@ Your server must be set up to handle HTTPS connections, at a minimum with a self
 ### Client-to-edge
 {: #tls-encryption-modes-client-to-edge}
 
-In this mode, a secure connection exists between your visitor and {{site.data.keyword.cis_short_notm}}, but no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. You don't need to have a TLS certificate on your web server, but your visitors still see the site as being HTTPS-enabled. This option is not recommended if you have any sensitive information on your website. This setting works only for port 443->80. It must be used only as a last resort if you are not able to set up TLS on your own web server. It is _less secure_ than any other option (even "Off"), and might cause trouble when you decide to switch away from it.
+In this mode, a secure connection exists between your visitor and {{site.data.keyword.cis_short_notm}}, but no secure connection between {{site.data.keyword.cis_short_notm}} and your web server. You don't need to have a TLS certificate on your web server, but your visitors still see the site as being HTTPS-enabled. This option is not recommended if you have any sensitive information on your website. This setting works only for port `443` to `80`. It must be used only as a last resort if you are not able to set up TLS on your own web server. It is _less secure_ than any other option (even "Off"), and might cause trouble when you decide to switch away from it.
 
 ![Diagram of Client to edge TLS](images/client-to-edge.svg "Diagram of Client to edge TLS"){: caption="A diagram of Client to edge TLS" caption-side="bottom"}
 
