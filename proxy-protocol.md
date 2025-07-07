@@ -19,7 +19,7 @@ keywords:
 
 Sending proxy information along is dependent on whether TCP or UDP is used. For TCP, Range supports adding Proxy Protocol v1, which is the human readable-version supported by Amazon ELB and NGINX. For UDP applications, {{site.data.keyword.cis_short_notm}} has developed a custom proxy protocol called Simple Proxy Protocol.
 
-This feature requires an Enterprise plan. If you would like to upgrade, contact your account team. For more information, see [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison)
+This feature requires an Enterprise plan. If you would like to upgrade, contact your account team. For more information, see [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison).
 {: note}
 
 ## Enabling proxy protocol v1 for TCP
