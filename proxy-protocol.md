@@ -2,8 +2,8 @@
 
 copyright:
 
-  years: 2022, 2024
-lastupdated: "2024-07-17"
+  years: 2022, 2025
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -19,14 +19,14 @@ keywords:
 
 Sending proxy information along is dependent on whether TCP or UDP is used. For TCP, Range supports adding Proxy Protocol v1, which is the human readable-version supported by Amazon ELB and NGINX. For UDP applications, {{site.data.keyword.cis_short_notm}} has developed a custom proxy protocol called Simple Proxy Protocol.
 
-This feature requires an Enterprise plan. If you would like to upgrade, contact your account team.
+This feature requires an Enterprise plan. If you would like to upgrade, contact your account team. For more information, see [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison)
 {: note}
 
-## Enable proxy protocol v1 for TCP
+## Enabling proxy protocol v1 for TCP
 {: #tcp-proxy-protocol}
 
-1. Log in to the {{site.data.keyword.cis_short_notm}} dashboard
-1. Click **Range**.
+1. In the CIS console, navigate to the **Security** section.
+1. Select the **Range** tab.
 1. Locate the application that will use the PROXY protocol and click **Configure**.
 1. From the menu, select **PROXY Protocol v1**.
 
@@ -54,8 +54,8 @@ The following is an example proxy protocol line for an IPv6 address:
 ## Enabling Proxy Protocol v2 for TCP/UDP
 {: #v2-proxy-protocol}
 
-1. Log in to the {{site.data.keyword.cis_short_notm}} dashboard.
-1. Click **Range**.
+1. In the CIS console, navigate to the **Security** section.
+1. Select the **Range** tab.
 1. Locate the application that will use the proxy protocol and click **Configure**.
 1. From the menu, select **PROXY Protocol v2**.
 
