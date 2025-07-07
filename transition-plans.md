@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-28"
+lastupdated: "2025-07-07"
 
 keywords: plans, enterprise essential, enterprise advanced, enterprise premier, standard next
 
@@ -15,18 +15,18 @@ subcollection: cis
 # Transitioning to updated plans
 {: #transition-plans}
 
-In 2023, the original {{site.data.keyword.cis_full}} plans are being updated to reflect new plans and associated features.
+Although the transition to updated {{site.data.keyword.cis_full}} plans began in 2023, some users are still on the original plans. This topic remains available to assist users who have not yet migrated.
 {: shortdesc}
 
-Migrating from one plan to another is considered a modification of an existing resource, and not a destruction or creation of a resource.
+Migrating from one plan to another is considered a modification of an existing resource, not a deletion or creation of a resource.
 {: note}
 
 ## Transitioning from a Standard plan to a Standard Next plan
 {: #transitioning-next-plan}
 
-Starting 30 April 2023, the {{site.data.keyword.cis_short_notm}} current Standard plan will no longer be available for new instances. Any instance that is created on or after this date will use the Standard Next plan.
+As of 30 April 2023, the original {{site.data.keyword.cis_short_notm}} Standard plan is no longer available for new instances. Any instance created on or after this date automatically uses the Standard Next plan.
 
-By moving to a more metered model, the base cost of the Standard Next plan is smaller than the original Standard plans. The following table shows what changed from the Standard to the Standard Next plans.
+The Standard Next plan follows a more metered pricing model, which reduces the base cost compared to the original Standard plan. The following table outlines the key differences between the two plans.
 
 |Feature|Standard|Standard Next|Overage|
 |--------|-------------|-----|----|
@@ -48,24 +48,23 @@ By moving to a more metered model, the base cost of the Standard Next plan is sm
 |Firewall rules|100|100|Not applicable|
 {: caption="Comparison of CIS Standard and Standard Next plans" caption-side="bottom"}
 
-### Migrating to Standard Next plans
+### Migrating to the Standard Next plan
 {: #migration-to-standard-next}
 
-To migrate from your current Standard plan to a Standard Next plan, take the following steps.
+To migrate from the Standard plan to the Standard Next plan:
 
-1. Enter your existing {{site.data.keyword.cis_short_notm}} instance
-1. Navigate to the **Plan** page in left side panel
-1. Select Standard Next plan
-1. Check the box to acknowledge the terms and conditions
-1. Click **Create** and follow any prompts that might block this plan change
+1. Navigate to your existing {{site.data.keyword.cis_short_notm}} instance.
+1. From the **Plan** page, select the Standard Next plan.
+1. Accept the terms and conditions.
+1. Click **Create** and follow any prompts.
 
 ## Transitioning to Enterprise Tier plans
 {: #transitioning-enterprise-plans}
 
-Starting 31 August 2023, the current {{site.data.keyword.cis_short_notm}} Enterprise Package, Enterprise GLB, and Enterprise Security plans will no longer be available for new instances. Any instance that is created on or after this date will use the new Enterprise Tier plans.
+As of 31 August 2023, the original {{site.data.keyword.cis_short_notm}} Enterprise Package, Enterprise GLB, and Enterprise Security plans are no longer available for new instances. All new instances created on or after this date use one of the new Enterprise Tier plans.
 {: shortdesc}
 
-By moving to a more metered model, the base cost of the Enterprise Tier plans are smaller than the original Enterprise plans. The following table shows what features are available in the Enterprise Tier plans.
+The Enterprise Tier plans adopt a more flexible, metered pricing model, lowering base costs compared to legacy Enterprise plans. The following table summarizes key features of the new plans.
 
 |Features|Enterprise Essential|Enterprise Advanced|Enterprise Premier|
 |:-------|:-------------------|:------------------|:-----------------|
@@ -85,15 +84,14 @@ By moving to a more metered model, the base cost of the Enterprise Tier plans ar
 ### Migrating to Enterprise Tier plans
 {: #migration-to-enterprise-tiers}
 
-To migrate from your current Enterprise package, Enterprise GLB, and Enterprise Security plans, take the following steps:
+To migrate from your current Enterprise package, Enterprise GLB, or Enterprise Security plans:
 
-1. Enter your existing {{site.data.keyword.cis_short_notm}} instance.
-1. Navigate to the **Plan** page in left side panel.
-1. Select desired Enterprise Tier plan.
-1. Check the box to acknowledge the terms and conditions.
-1. Click **Create** and follow any prompts that might block this plan change.
+1. Navigate to your existing {{site.data.keyword.cis_short_notm}} instance.
+1. From the **Plan** page, select the Enterprise Tier plan that you want.
+1. Accept the terms and conditions.
+1. Click **Create** and follow any prompts.
 
 ### All plans comparison
 {: #all-plans-comparison}
 
-For an overview of all currently available plans, see [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison).
+For a detailed comparison of current plans, see [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison).
