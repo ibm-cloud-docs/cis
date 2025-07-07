@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-04"
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -67,7 +67,9 @@ To learn about installing and configuring the IBM Cloud CLI, see [Getting starte
 ### `ibmcloud cis access-app-create`
 {: #access-app-create}
 
-Create an access application for a DNS domain (Enterprise plan only).
+[Enterprise Plan Only]{: tag-blue}
+
+Create an access application for a DNS domain.
 
 ```sh
 ibmcloud cis access-app-create DNS_DOMAIN_ID --name NAME --domain DOMAIN [--session-duration SESSION_DURATION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -99,7 +101,9 @@ ibmcloud cis access-app-create 31984fea73a15b45779fa0df4ef62f9b --name exampleCr
 ### `ibmcloud cis access-apps`
 {: #access-apps}
 
-List all access applications for a DNS domain (Enterprise plan only).
+[Enterprise Plan Only]{: tag-blue}
+
+List all access applications for a DNS domain.
 
 ```sh
 ibmcloud cis access-apps DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -131,7 +135,9 @@ ibmcloud cis access-apps 31984fea73a15b45779fa0df4ef62f9b -i cis-demo
 ### `ibmcloud cis access-app`
 {: #access-app}
 
-Show details of an access application (Enterprise plan only).
+[Enterprise Plan Only]{: tag-blue}
+
+Show details of an access application.
 
 ```sh
 ibmcloud cis access-app DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -166,7 +172,9 @@ ibmcloud cis access-app 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890c
 ### `ibmcloud cis access-app-update`
 {: #access-app-update}
 
-Update an access application (Enterprise plan only).
+[Enterprise Plan Only]{: tag-blue}
+
+Update an access application.
 
 ```sh
 ibmcloud cis access-app-update DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAME --domain DOMAIN [--session-duration SESSION_DURATION] [-i, --instance INSTANCE] [--output FORMAT]
@@ -210,7 +218,9 @@ ibmcloud cis access-app-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e
 ### `ibmcloud cis access-app-delete`
 {: #access-app-delete}
 
-Delete an access application (Enterprise plan only).
+[Enterprise Plan Only]{: tag-blue}
+
+Delete an access application.
 
 ```sh
 ibmcloud cis access-app-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE]
@@ -245,7 +255,9 @@ ibmcloud cis access-app-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e
 ### `ibmcloud cis access-certificate-create`
 {: #access-certificate-create}
 
-Create an access certificate for a DNS domain (Enterprise plan only).
+[Enterprise Plan Only]{: tag-blue}
+
+Create an access certificate for a DNS domain.
 
 ```sh
 ibmcloud cis access-certificate-create DNS_DOMAIN_ID --name NAME --ca-cert-file CERT_FILE [--associated-hostnames ASSOCIATED_HOSTNAMES] [-i, --instance INSTANCE] [--output FORMAT]
