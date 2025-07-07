@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -30,6 +30,7 @@ Ruleset overrides and tag overrides apply to both existing and future rules in t
 
 ## Overriding workflow
 {: #override-workflow}
+{: api}
 
 To apply an override for a managed ruleset, take the following steps.
 
