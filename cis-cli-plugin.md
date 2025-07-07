@@ -67,7 +67,7 @@ To learn about installing and configuring the IBM Cloud CLI, see [Getting starte
 ### `ibmcloud cis access-app-create`
 {: #access-app-create}
 
-[Enterprise Plan Only]{: tag-blue}
+[Enterprise Plans Only]{: tag-blue}
 
 Create an access application for a DNS domain.
 
@@ -101,7 +101,7 @@ ibmcloud cis access-app-create 31984fea73a15b45779fa0df4ef62f9b --name exampleCr
 ### `ibmcloud cis access-apps`
 {: #access-apps}
 
-[Enterprise Plan Only]{: tag-blue}
+[Enterprise Plans Only]{: tag-blue}
 
 List all access applications for a DNS domain.
 
@@ -135,7 +135,7 @@ ibmcloud cis access-apps 31984fea73a15b45779fa0df4ef62f9b -i cis-demo
 ### `ibmcloud cis access-app`
 {: #access-app}
 
-[Enterprise Plan Only]{: tag-blue}
+[Enterprise Plans Only]{: tag-blue}
 
 Show details of an access application.
 
@@ -172,7 +172,7 @@ ibmcloud cis access-app 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890c
 ### `ibmcloud cis access-app-update`
 {: #access-app-update}
 
-[Enterprise Plan Only]{: tag-blue}
+[Enterprise Plans Only]{: tag-blue}
 
 Update an access application.
 
@@ -218,7 +218,7 @@ ibmcloud cis access-app-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e
 ### `ibmcloud cis access-app-delete`
 {: #access-app-delete}
 
-[Enterprise Plan Only]{: tag-blue}
+[Enterprise Plans Only]{: tag-blue}
 
 Delete an access application.
 
@@ -255,7 +255,7 @@ ibmcloud cis access-app-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e
 ### `ibmcloud cis access-certificate-create`
 {: #access-certificate-create}
 
-[Enterprise Plan Only]{: tag-blue}
+[Enterprise Plans Only]{: tag-blue}
 
 Create an access certificate for a DNS domain.
 
@@ -298,7 +298,9 @@ ibmcloud cis access-certificate-create 31984fea73a15b45779fa0df4ef62f9b --name e
 ### `ibmcloud cis access-certificates`
 {: #access-certificates}
 
-List all access certificates for a DNS domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+List all access certificates for a DNS domain.
 
 ```sh
 ibmcloud cis access-certificates DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -330,7 +332,9 @@ ibmcloud cis access-certificates 31984fea73a15b45779fa0df4ef62f9b -i cis-demo
 ### `ibmcloud cis access-certificate`
 {: #access-certificate}
 
-Show details of an access certificate (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Show details of an access certificate.
 
 ```sh
 ibmcloud cis access-certificate DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -366,7 +370,9 @@ ibmcloud cis access-certificate 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2
 ### `ibmcloud cis access-certificate-update`
 {: #access-certificate-update}
 
-Update an access certificate (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Update an access certificate.
 
 ```sh
 ibmcloud cis access-certificate-update DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID --name NAME --associated-hostnames ASSOCIATED_HOSTNAMES [-i, --instance INSTANCE] [--output FORMAT]
@@ -409,7 +415,9 @@ ibmcloud cis access-certificate-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a
 ### `ibmcloud cis access-certificate-delete`
 {: #access-certificate-delete}
 
-Delete an access certificate (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Delete an access certificate.
 
 ```sh
 ibmcloud cis access-certificate-delete DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID [-i, --instance INSTANCE]
@@ -444,7 +452,9 @@ ibmcloud cis access-certificate-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a
 ### `ibmcloud cis access-certificates-settings`
 {: #access-certificates-settings}
 
-Get access certificates settings for a DNS domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Get access certificates settings for a DNS domain.
 
 ```sh
 ibmcloud cis access-certificates-settings DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -476,7 +486,9 @@ ibmcloud cis access-certificates-settings 31984fea73a15b45779fa0df4ef62f9b -i ci
 ### `ibmcloud cis access-certificates-settings-update`
 {: #access-certificates-settings-update}
 
-Update access certificates settings for a DNS domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Update access certificates settings for a DNS domain.
 
 ```sh
 ibmcloud cis access-certificates-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, --value VALUE) [-i, --instance INSTANCE] [--output FORMAT]
@@ -524,7 +536,9 @@ ibmcloud cis access-certificates-settings-update 31984fea73a15b45779fa0df4ef62f9
 ### `ibmcloud cis access-policy-create`
 {: #access-policy-create}
 
-Create an access policy for an access application (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Create an access policy for an access application.
 
 ```sh
 ibmcloud cis access-policy-create DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAME --decision DECISION --include INCLUDE [-i, --instance INSTANCE] [--output FORMAT]
@@ -568,7 +582,9 @@ ibmcloud cis access-policy-create 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72
 ### `ibmcloud cis access-policies`
 {: #access-policies}
 
-List all access policies for an access application (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+List all access policies for an access application.
 
 ```sh
 ibmcloud cis access-policies DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -603,7 +619,9 @@ ibmcloud cis access-policies 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e22
 ### `ibmcloud cis access-policy`
 {: #access-policy}
 
-Show details of an access policy (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Show details of an access policy.
 
 ```sh
 ibmcloud cis access-policy DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POLICY_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -641,7 +659,9 @@ ibmcloud cis access-policy 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e2258
 ### `ibmcloud cis access-policy-delete`
 {: #access-policy-delete}
 
-Delete an access policy (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue}
+
+Delete an access policy.
 
 ```sh
 ibmcloud cis access-policy-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POLICY_ID [-i, --instance INSTANCE]
@@ -701,13 +721,13 @@ ibmcloud cis cache-purge DNS_DOMAIN_ID (--all | --file file1 --file file2...｜-
 :   Granularly remove one or more files by specifying URLs. This option is mutually exclusive with *--all*.
 
 `--tag`
-:   Granularly remove one or more files by the associated Cache-Tag (Enterprise plan only). This option is mutually exclusive with *--all*.
+:   Granularly remove one or more files by the associated Cache-Tag. This option is mutually exclusive with *--all*. [Enterprise Plans Only]{: tag-blue}
 
 `--host`
-:   Granularly remove one or more files by specifying the host (Enterprise plan only). This option is mutually exclusive with *--all*.
+:   Granularly remove one or more files by specifying the host. This option is mutually exclusive with *--all*. [Enterprise Plans Only]{: tag-blue}
 
 `--prefix`
-:   Granularly remove one or more files by a prefix (Enterprise plan only). This option is mutually exclusive with *--all*.
+:   Granularly remove one or more files by a prefix. This option is mutually exclusive with *--all*. [Enterprise Plans Only]{: tag-blue}
 
 `-f, --force`
 :   Purging all cached files without prompting for confirmation.
@@ -787,7 +807,7 @@ ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--brows
 :   Specify how long you want the user's browser to store cached assets.
 
    - Valid values are `respect-existing-header`, `30s`, `1M`, `5M`, `20M`, `30M`, `1h`, `2h`, `4h`, `8h`, `16h`, `1d` `3d`, `8d`, `16d`, `1m`, `6m`, and `1y`.
-   - `30s`, `1M`, `5M`, and `20M` are only available for Enterprise or Security plan instance.
+   - `30s`, `1M`, `5M`, and `20M` are only available for an Enterprise or Security plan instance.
    - `30s` means `30 seconds`.
    - `30M` means `30 minutes`.
    - `1h` means `1 hour`.
@@ -2328,7 +2348,7 @@ ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FE
     - `challenge_ttl` : Specify how long a visitor with a bad IP reputation is allowed access to your website after they complete a challenge.
     - `ciphers` : An allowlist of ciphers for TLS termination in the BoringSSL format. This command lists ciphers that are allowlisted by customers. If no ciphers are allowlisted, the list is empty and the default ciphers are used. See [Edge cipher suites](/docs/cis?topic=cis-set-up-cipher-suites&interface=cli#edge-cipher-suites) and [Origin cipher suites](/docs/cis?topic=cis-set-up-cipher-suites&interface=cli#origin-cipher-suites) for the list of default ciphers.
     - `cname_flattening` : Follow a CNAME to where it points and return that IP address instead of the CNAME record. By default, flatten only the CNAME at the root of your domain.
-    - `domain_hold`: Domain holds prevent teams in your organization from adding domains that are already active in another account (Enterprise plan only).
+    - `domain_hold`: Domain holds prevent teams in your organization from adding domains that are already active in another account. [Enterprise Plans Only]{: tag-blue}
     - `email_obfuscation` : Encrypt email addresses on your web page from bots while it's kept visible to humans.
     - `opportunistic_onion` : Allow legitimate users of Tor Browser to access your websites.
     - `hotlink_protection` : Protect your images from off-site linking.
@@ -2344,21 +2364,22 @@ ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FE
     - `minify` : Reduce the file size of source code on your website.
     - `mobile_redirect` : Redirect visitors that are using mobile devices to a mobile-optimized website.
     - `opportunistic_encryption` : Opportunistic Encryption allows browsers to benefit from the improved performance of HTTP/2 by letting them know that your site is available over an encrypted connection.
-    - `origin_error_page_pass_thru` : When the Origin Error Page is set to `On`, CIS proxies the 502 and 504 error pages directly from the origin. (Enterprise plan only)
+    - `origin_error_page_pass_thru` : When the Origin Error Page is set to `On`, CIS proxies the 502 and 504 error pages directly from the origin. [Enterprise Plans Only]{: tag-blue}
     - `origin_max_http_version` : Configure the HTTP version to Origin.
     - `origin_post_quantum_encryption` : Instructs CIS to use Post-Quantum (PQ) key agreement algorithms when it connects to your origin.
-    - `prefetch_preload` : CIS prefetches any URLs included in the prefetch HTTP header (Enterprise plan only).
+    - `prefetch_preload` : CIS prefetches any URLs included in the prefetch HTTP header. [Enterprise Plans Only]{: tag-blue}
     - `pseudo_ipv4` : Adds an IPv4 header to requests when a client is using IPv6, but the server only supports IPv4.
-    - `response_buffering` : Enable or disable buffering of responses from the origin server (Enterprise plan only).
+    - `response_buffering` : Enable or disable buffering of responses from the origin server. [Enterprise Plans Only]{: tag-blue}
     - `script_load_optimization` : Improve the paint time for pages that include JavaScript.
     - `security_header` : Enforce a web security policy for your website.
     - `security_level` : Choose the appropriate security profile for your website.
     - `server_side_exclude` : Automatically hide specific content from suspicious visitors.
-    - `tls_client_auth` : TLS client certificate presented for authentication on origin pull (Enterprise plan only).
-    - `true_client_ip_header` : CIS sends the user’s IP address in the True-Client-IP header (Enterprise plan only).
+    - `tls_client_auth` : TLS client certificate presented for authentication on origin pull. 
+[Enterprise Plans Only]{: tag-blue}
+    - `true_client_ip_header` : CIS sends the user’s IP address in the True-Client-IP header. [Enterprise Plans Only]{: tag-blue}
     - `waf` : A Web Application Firewall (WAF) blocks requests that contain malicious content.
     - `websockets` : Allow WebSockets connections to your origin server.
-    - `proxy_read_timeout` : Maximum time between two read operations from origin (Enterprise plan only).
+    - `proxy_read_timeout` : Maximum time between two read operations from origin. [Enterprise Plans Only]{: tag-blue}
     - `url_normalization` : Modify the URLs of incoming requests.
 
 `-i, --instance`
@@ -2404,7 +2425,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - `ciphers` : A whitelist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
     - `cname_flattening` : Follow a CNAME to where it points and return that IP address instead of the CNAME record.
        By default, only flatten the CNAME at the root of your domain.
-    - `domain_hold`: Domain holds prevent teams in your organization from adding domains that are already active in another account (Enterprise plan only).
+    - `domain_hold`: Domain holds prevent teams in your organization from adding domains that are already active in another account. [Enterprise Plans Only]{: tag-blue}
     - `email_obfuscation` : Encrypt email addresses on your web page from bots while it's kept visible to humans.
     - `opportunistic_onion` : Allow legitimate users of Tor Browser to access your websites.
     - `hotlink_protection` : Protect your images from off-site linking.
@@ -2420,18 +2441,18 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - `minify` : Reduce the file size of source code on your website.
     - `mobile_redirect` : Redirect visitors that are using mobile devices to a mobile-optimized website.
     - `opportunistic_encryption` : Opportunistic Encryption allows browsers to benefit from the improved performance of HTTP/2 by letting them know that your site is available over an encrypted connection.
-    - `origin_error_page_pass_thru` : When Origin Error Page is set to `On`, CIS proxies the 502 and 504 error pages directly from the origin (Enterprise plan only).
+    - `origin_error_page_pass_thru` : When Origin Error Page is set to `On`, CIS proxies the 502 and 504 error pages directly from the origin. [Enterprise Plans Only]{: tag-blue}
     - `origin_max_http_version` : Configure the HTTP version to Origin.
     - `origin_post_quantum_encryption` : Instructs CIS to use Post-Quantum (PQ) key agreement algorithms when it connects to your origin.
-    - `prefetch_preload` : CIS prefetches any URLs included in the prefetch HTTP header (Enterprise plan only).
+    - `prefetch_preload` : CIS prefetches any URLs included in the prefetch HTTP header. [Enterprise Plans Only]{: tag-blue} 
     - `pseudo_ipv4` : Adds an IPv4 header to requests when a client is using IPv6, but the server only supports IPv4.
-    - `response_buffering` : Enable or disable buffering of responses from the origin server (Enterprise plan only).
+    - `response_buffering` : Enable or disable buffering of responses from the origin server. [Enterprise Plans Only]{: tag-blue} 
     - `script_load_optimization` : Improve the paint time for pages that include JavaScript.
     - `security_header` : Enforce a web security policy for your website.
     - `security_level` : Choose the appropriate security profile for your website.
     - `server_side_exclude` : Automatically hide specific content from suspicious visitors.
-    - `tls_client_auth` : TLS client certificate presented for authentication on origin pull (Enterprise plan only).
-    - `true_client_ip_header` : CIS sends the user’s IP address in the True-Client-IP header (Enterprise plan only).
+    - `tls_client_auth` : TLS client certificate presented for authentication on origin pull. [Enterprise Plans Only]{: tag-blue} 
+    - `true_client_ip_header` : CIS sends the user’s IP address in the True-Client-IP header. [Enterprise Plans Only]{: tag-blue} 
     - `waf` : A Web Application Firewall (WAF) blocks requests that contain malicious content.
     - `websockets` : Allow WebSockets connections to your origin server.
     - `proxy_read_timeout` : Maximum time between two read operations from origin.
@@ -2472,7 +2493,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `ip_geolocation` are `on`, `off`.
     - Valid values for `ipv6` are `on`, `off`.
     - Valid values(in MB) for `max_upload` are:
-        `100, 125, 150, 175, 200 and 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500` only for Enterprise plan.
+        `100, 125, 150, 175, 200 and 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500`. [Enterprise Plans Only]{: tag-blue} 
     - Valid values for `min_tls_version` are `1.0`, `1.1`, `1.2`, `1,3`.
     - Valid values for `minify` are `css`, `html`, `js`. For example, -v css=on,html=off,js=on
         - `css` : Automatically minify all CSS for your website. Valid values for `css` are `on`, `off`.
@@ -2579,7 +2600,7 @@ ibmcloud cis edge-functions-action [--name ACTION_NAME] [-i, --instance INSTANCE
 {: #show-an-edge-functions-action-options}
 
 `--name`
-:   Action name (Enterprise plan only).
+:   Action name. [Enterprise Plans Only]{: tag-blue} 
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -2608,7 +2629,7 @@ ibmcloud cis edge-functions-action-create [--name ACTION_NAME] (--javascript-str
 {: #create-an-edge-functions-action-options}
 
 `--name`
-:   Action name (Enterprise plan only).
+:   Action name. [Enterprise Plans Only]{: tag-blue} 
 
 `--javascript-str`
 :   JavaScript string. For example, `addEventListener('fetch', event => { event.respondWith(fetch(event.request))})`
@@ -2646,7 +2667,7 @@ ibmcloud cis edge-functions-action-update (--javascript-str JAVASCRIPT_STR | --j
 {: #update-an-edge-functions-action-options}
 
 `--name`
-:   Action name (Enterprise plan only).
+:   Action name. [Enterprise Plans Only]{: tag-blue} 
 
 `--javascript-str`
 :   JavaScript string. For example, `addEventListener('fetch', event => { event.respondWith(fetch(event.request))})`
@@ -2684,7 +2705,7 @@ ibmcloud cis edge-functions-action-delete [--name ACTION_NAME] [-i, --instance I
 {: #delete-an-edge-functions-action-options}
 
 `--name`
-:   Action name (Enterprise plan only).
+:   Action name. [Enterprise Plans Only]{: tag-blue} 
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -2786,7 +2807,7 @@ ibmcloud cis edge-functions-trigger-create DNS_DOMAIN_ID PATTERN_URL [--name ACT
 :   The request URL, which triggers the action. Required.
 
 `name`
-:   The action name to which the created trigger is attached. (Enterprise plan only).
+:   The action name to which the created trigger is attached. [Enterprise Plans Only]{: tag-blue} 
 
 `disable`
 :   Disable an Edge Functions trigger.
@@ -2830,7 +2851,7 @@ ibmcloud cis edge-functions-trigger-update DNS_DOMAIN_ID TRIGGER_ID PATTERN_URL 
 :   The request URL, which triggers the action. Required.
 
 `name`
-:   The action name, which the created trigger is attached to. (Enterprise plan only).
+:   The action name, which the created trigger is attached to. [Enterprise Plans Only]{: tag-blue} 
 
 `disable`
 :   Disable an Edge Functions trigger.
@@ -4646,13 +4667,17 @@ ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --start 2020-05-18T12:14:5
 ```
 {: codeblock}
 
-## Log push (Enterprise plan only)
+## Log push
 {: #log-push-cli-ref}
+
+[Enterprise Plans Only]{: tag-blue} 
 
 ### `ibmcloud cis logpush-job-create`
 {: #logpush-job-create}
 
-Create a new log push job for a domain. Before using this command grant write access to your IBM Cloud Object Storage bucket to the IBM Cloud account cislogp@us.ibm.com. (Enterprise plan only)
+[Enterprise Plans Only]{: tag-blue} 
+
+Create a new log push job for a domain. Before using this command grant write access to your IBM Cloud Object Storage bucket to the IBM Cloud account cislogp@us.ibm.com. 
 
 ```sh
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --name NAME [--enable true|false] [--fields FIELDS | all] [--timestamps format][--dataset DATASET] [--frequency FREQUENCY] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4714,7 +4739,9 @@ ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination c
 ### `ibmcloud cis logpush-job-update`
 {: #logpush-job-update}
 
-Update a log push job for a domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Update a log push job for a domain.
 
 ```sh
 ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [--enable true|false] [--fields FIELDS | all] [--timestamps format] [--dataset DATASET] [--jobid JOB_ID] [--frequency FREQUENCY] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4775,7 +4802,9 @@ ibmcloud cis logpush-job-update 31984fea73a15b45779fa0df4ef62f9b --destination c
 ### `ibmcloud cis logpush-jobs`
 {: #logpush-jobs}
 
-Get all log push jobs for a domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Get all log push jobs for a domain.
 
 ```sh
 ibmcloud cis logpush-jobs DNS_DOMAIN_ID  [-i, --instance INSTANCE] [--output FORMAT]
@@ -4807,7 +4836,9 @@ ibmcloud cis logpush-jobs 31984fea73a15b45779fa0df4ef62f9b -i cis-demo --output 
 ### `ibmcloud cis logpush-job`
 {: #logpush-job}
 
-Get the details of a log push job for a domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Get the details of a log push job for a domain.
 
 ```sh
 ibmcloud cis logpush-job DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4845,7 +4876,9 @@ ibmcloud cis logpush-job 31984fea73a15b45779fa0df4ef62f9b --dataset http_request
 ### `ibmcloud cis logpush-job-delete`
 {: #logpush-job-delete}
 
-Delete a log push job for a domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Delete a log push job for a domain.
 
 ```sh
 ibmcloud cis logpush-job-delete DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-f, --force] [-i, --instance INSTANCE]
@@ -4883,7 +4916,9 @@ ibmcloud cis logpush-job-delete 31984fea73a15b45779fa0df4ef62f9b --dataset http_
 ### `ibmcloud cis logpush-available-fields`
 {: #get-log-push-available-fields}
 
-Get all available fields for a data set (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Get all available fields for a data set.
 
 ```sh
 ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --instance INSTANCE]
@@ -4912,8 +4947,10 @@ ibmcloud cis logpush-available-fields 31984fea73a15b45779fa0df4ef62f9b --dataset
 ```
 {: pre}
 
-## Log retention (Enterprise plan only)
+## Log retention
 {: #log-retention-cli-ref}
+
+[Enterprise Plans Only]{: tag-blue} 
 
 ### `ibmcloud cis log-retention`
 {: #cli-log-retention}
@@ -5395,7 +5432,9 @@ ibmcloud cis ratelimit-analytics 31984fea73a15b45779fa0df4ef62f9b --recent 6h --
 ### `ibmcloud cis access-enable`
 {: #access-enable}
 
-Enable Mutual TLS for a service instance (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Enable Mutual TLS for a service instance.
 
 ```sh
 ibmcloud cis access-enable [-i, --instance INSTANCE]
@@ -6000,7 +6039,9 @@ Manipulate how the Range App performs using the following `range-app` commands:
 ### `ibmcloud cis range-app-create`
 {: #cli-create-range-app}
 
-Create a new range application (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Create a new range application.
 
 ```sh
 ibmcloud cis range-app-create DNS_DOMAIN_ID --name NAME --edge-port EDGE_PORT --origin-direct ORIGIN_DIRECT [--origin-direct ORIGIN_DIRECT] [--proxy-protocol on|off] [--ip-firewall on|off] [--edge-connectivity all|ipv4|ipv6] [--edge-tls off|flexible|full|strict] [--traffic-type direct/http/https] [-i, --instance INSTANCE] [--output FORMAT]
@@ -6146,7 +6187,9 @@ ibmcloud cis range-app-create 31984fea73a15b45779fa0df4ef62f9b --json '{"protoco
 ### `ibmcloud cis range-app-update`
 {: #update-range-app}
 
-Update an previously existing application's configuration (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Update an previously existing application's configuration.
 
 ```sh
 ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID --origin-direct ORIGIN_DIRECT [-i, --instance INSTANCE] [--output FORMAT]
@@ -6293,7 +6336,9 @@ ibmcloud cis range-app-update 31984fea73a15b45779fa0df4ef62f9b ea95132c15732412d
 ### `ibmcloud cis range-app-delete`
 {: #delete-range-app}
 
-Delete a previously existing application (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Delete a previously existing application.
 
 ```sh
 ibmcloud cis range-app-delete DNS_DOMAIN_ID APP_ID [--instance INSTANCE]
@@ -6325,7 +6370,9 @@ ibmcloud cis range-app-delete 31984fea73a15b45779fa0df4ef62f9b ea95132c15732412d
 ### `ibmcloud cis range-app`
 {: #show-range-app}
 
-Get the application configuration of a specific application (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Get the application configuration of a specific application.
 
 ```sh
 ibmcloud cis range-app DNS_DOMAIN_ID APP_ID [--instance INSTANCE] [--output FORMAT]
@@ -6360,7 +6407,9 @@ ibmcloud cis range-app 31984fea73a15b45779fa0df4ef62f9b ea95132c15732412d22c1476
 ### `ibmcloud cis range-apps`
 {: #list-range-app}
 
-Retrieve a list of currently existing range applications for a DNS domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Retrieve a list of currently existing range applications for a DNS domain.
 
 ```sh
 ibmcloud cis range-apps DNS_DOMAIN_ID [--instance INSTANCE] [--output FORMAT]
@@ -6392,7 +6441,9 @@ ibmcloud cis range-apps 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
 ### `ibmcloud cis range-analytics`
 {: #get-analytics-range-app}
 
-Get analytics data for range applications (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Get analytics data for range applications.
 
 ```sh
 ibmcloud cis range-analytics DNS_DOMAIN_ID [--metrics METRICS] [--dimensions DIMENSION] [--filters FILTERS] [--sort SORT] [--since SINCE] [--until UNTIL]
@@ -6464,7 +6515,9 @@ Manipulate rate limits by using the following `ratelimit` commands.
 ### `ibmcloud cis ratelimit-rule-create`
 {: #create-ratelimit}
 
-Create a new rate limiting rule for a DNS domain (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Create a new rate limiting rule for a DNS domain.
 
 ```sh
 ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
@@ -7042,7 +7095,9 @@ Manipulate routing by using the following `routing` commands.
 ### `ibmcloud cis routing`
 {: #show-routing}
 
-Get details of Routing settings (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Get details of Routing settings.
 
 ```sh
 ibmcloud cis routing DNS_DOMAIN_ID (--smart-routing | --tiered-caching) [-i, --instance INSTANCE] [--output FORMAT]
@@ -7080,7 +7135,9 @@ ibmcloud cis routing 31984fea73a15b45779fa0df4ef62f9b --smart-routing -i "cis-de
 ### `ibmcloud cis routing-update`
 {: #update-routing}
 
-Update Routing setting (Enterprise plan only).
+[Enterprise Plans Only]{: tag-blue} 
+
+Update Routing setting.
 
 ```sh
 ibmcloud cis routing-update DNS_DOMAIN_ID (--smart-routing (on|off) | --tiered-caching (on|off)) [-i, --instance INSTANCE] [--output FORMAT]
@@ -7118,7 +7175,9 @@ ibmcloud cis routing-update 31984fea73a15b45779fa0df4ef62f9b --smart-routing on 
 ### `ibmcloud cis routing-analytics`
 {: #display-routing-analytics}
 
-Get analytics of smart-routing latency. (Enterprise plans only)
+[Enterprise Plans Only]{: tag-blue} 
+
+Get analytics of smart-routing latency.  
 
 ```sh
 ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE] [--output FORMAT]
@@ -7198,7 +7257,7 @@ ibmcloud cis security-events DNS_DOMAIN_ID [--ip-class IP_CLASS] [--method METHO
 :   The client user agent that initiated the request.
 
 `--colo`
-:   The 3-letter airport code of the Cloudflare data-center that handled the request. For example, `SJC`.
+:   The 3-letter airport code of the Cloudflare data center that handled the request. For example, `SJC`.
 
 `--ray-id`
 :   Ray ID of the request.
@@ -8890,7 +8949,7 @@ ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMA
 :   The domain IDs that for the alert policy. For example, `--domains domainID1,domainID2`
 
 `--services`
-:   Specify which services the alert should monitor. Valid values are `country-access-rules`, `waf`, `firewall-rules`, `ratelimit`, `securitylevel`, `ip-access-rules`, `browser-integrity-check`, `ua-rules`, `lockdowns`, `iprange-access-rules`, `asn-access-rules`, `Managed-firewall` (Enterprise plan only).
+:   Specify which services the alert should monitor. Valid values are `country-access-rules`, `waf`, `firewall-rules`, `ratelimit`, `securitylevel`, `ip-access-rules`, `browser-integrity-check`, `ua-rules`, `lockdowns`, `iprange-access-rules`, `asn-access-rules`, `Managed-firewall` [Enterprise Plans Only]{: tag-blue} 
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -9340,7 +9399,10 @@ ibmcloud cis alert-policy firewall-events-alert-update POLICY_ID [--name NAME] [
 :   The domain IDs that for the alert policy. For example, `--domains domainID1,domainID2`
 
 `--services`
-:   Specify which services the alert should monitor. Valid values are `country-access-rules`, `waf`, `firewall-rules`, `ratelimit`, `securitylevel`, `ip-access-rules`, `browser-integrity-check`, `ua-rules`, `lockdowns`, `iprange-access-rules`, `asn-access-rules`, `Managed-firewall` (Enterprise plan only). Note: The 'SERVICES' is only used for advanced waf alert. If the alert policy you wanted to update is created without services specified, create a new one with sevices specified instead of updating.
+:   Specify which services the alert should monitor. Valid values are `country-access-rules`, `waf`, `firewall-rules`, `ratelimit`, `securitylevel`, `ip-access-rules`, `browser-integrity-check`, `ua-rules`, `lockdowns`, `iprange-access-rules`, `asn-access-rules`, `Managed-firewall` [Enterprise Plans Only]{: tag-blue} 
+
+   The 'SERVICES' is only used for advanced waf alert. If the alert policy you wanted to update is created without services specified, create a new one with sevices specified instead of updating.
+   {: note}
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
