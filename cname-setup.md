@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-12-04"
+  years: 2022, 2025
+lastupdated: "2025-07-07"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.cis_short_notm}} DNS zone CNAME (partial) setup
+# Configuring a partial (CNAME) zone
 {: #cname-setup}
 
 A partial or CNAME setup allows you to use reverse proxy while you maintain your primary and authoritative DNS provider. 
@@ -99,10 +99,10 @@ To set up a CNAME, take the following steps.
 
 1. After {{site.data.keyword.cis_short_notm}} verifies the record, the zone is activated. This process might take several hours.
 
-## Verify the CNAME
+## Verifying the CNAME
 {: #verification}
 
-To verify your CNAME setup, take the following steps.
+To verify your CNAME setup, follow these steps:
 
 1. Add an A record in {{site.data.keyword.cis_short_notm}} and enable proxy:
 
