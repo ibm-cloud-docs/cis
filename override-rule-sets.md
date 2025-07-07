@@ -28,7 +28,7 @@ Specific overrides take precedence over more general ones, and rule overrides ta
 
 Ruleset overrides and tag overrides apply to both existing and future rules in the managed ruleset. If you want to override existing rules only, you must use rule overrides.
 
-## Overriding workflow
+## Overriding workflow (API)
 {: #override-workflow}
 {: api}
 
@@ -76,6 +76,25 @@ Some managed rulesets can have extra override requirements, or they might overri
 
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
 
+## Overriding managed rulesets in the console
+{: #ui-override-rule-sets}
+{: ui}
+
+To override a managed ruleset in the console, follow these steps:
+
+1. In the CIS console, navigate to the **Security** section.
+1. Select the **WAF** tab.
+1. Click the name of the ruleset that you want override.
+1. From the Configure deployment side panel, click **Browse rules**.
+1. In the Override CIS Managed Ruleset rules side panel, you can:
+   * Select an action for any rule that you want to override.
+   * Select the **Status** toggle to enable or disable a rule.
+1. After you have reconfigured the ruleset rules, click **Continue**.
+1. Verify the list of rules to override, then click **Save**.
+
+   Click **Reset to default** to restore the original settings.
+   {: tip}
+   
 ## Overriding managed rulesets from the CLI
 {: #cli-override-rule-sets}
 {: cli}
