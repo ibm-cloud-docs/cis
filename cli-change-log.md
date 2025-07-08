@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-07-08"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -25,8 +25,8 @@ In this change log, you can learn about the latest changes, improvements, and up
 {: #cli-1164}
 
 Version 1.16.4 of the CLI was released on April 7, 2025.
-:   Add [WAF managed rules](/docs/cis?topic=cis-cis-cli#waf-managed-rules).
-:   Add [WAF custom rules](/docs/cis?topic=cis-cis-cli#waf-custom-rules). 
+:   Added [WAF managed rules](/docs/cis?topic=cis-cis-cli#waf-managed-rules).
+:   Added [WAF custom rules](/docs/cis?topic=cis-cis-cli#waf-custom-rules). 
 
 ## Version 1.16.3
 {: #cli-1163}
