@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-08"
 
 keywords:
 
@@ -1113,7 +1113,7 @@ ibmcloud cis custom-lists item f93d11a87c4945a0a6bd12820776a66d f550e1d3ede74455
 ```
 {: pre}
 
-### `ibmcloud cis custom-lists item-create LIST_ID`
+### `ibmcloud cis custom-lists item-create`
 {: #create-custom-list-item}
 
 Create a new item in a custom list.
@@ -1185,7 +1185,7 @@ ibmcloud cis custom-lists item-create f93d11a87c4945a0a6bd12820776a66d --json @e
 ```
 {: pre}
 
-### `ibmcloud cis custom-lists item-update LIST_ID`
+### `ibmcloud cis custom-lists item-update`
 {: #update-custom-list-items}
 
 Update all list items for your custom list.
@@ -1241,7 +1241,7 @@ ibmcloud cis custom-lists item-update f93d11a87c4945a0a6bd12820776a66d —json @
 {: pre}
 
 
-### `ibmcloud cis custom-lists item-delete LIST_ID`
+### `ibmcloud cis custom-lists item-delete`
 {: #delete-custom-list-item}
 
 Delete an item from a custom list.
