@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-09"
 
 keywords:
 
@@ -15,10 +15,12 @@ subcollection: cis
 # Using mutual TLS
 {: #mtls-features}
 
+
+
 Mutual Transport Layer Security (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It is only available for customers at the Enterprise or Security plan level.
 {: shortdesc}
 
-When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches the application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds.
+When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches your application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds.
 
 ![Diagram of mTLS handshake](images/mtls-handshake.png "Diagram of mTLS handshake"){: caption="Diagram of an mTLS handshake" caption-side="bottom"}
 
@@ -27,7 +29,7 @@ When mTLS is configured, access is granted only to requests with a corresponding
 
 Mutual TLS is not enabled by default. It is an additional service that requires prior authorization and enablement.
 
-To obtain authorization, you must submit an IBM Support case.
+To obtain authorization, you must submit an IBM Support case. See [Creating support cases](/docs/account?topic=account-open-case)
 
 After mTLS is turned on for your account, take the following steps to enable it.
 1. Navigate to the **Security** page in the CIS console.
@@ -60,7 +62,7 @@ To set up mTLS authentication in the IBM CIS console for a particular endpoint:
    ```
    {: pre}
 
-   Without a client certificate in the request, a `403 forbidden` response displays and the site can't be accessed.
+   Without a client certificate in the request, a `403 forbidden` response is displayed and the site can't be accessed.
 1. Add your client certificate information to the request:
 
    ```bash

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-09"
 
 keywords:
 
@@ -11,6 +11,8 @@ subcollection: cis
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+
 
 # Setting Transport Layer Security (TLS) options
 {: #cis-tls-options}
@@ -42,7 +44,7 @@ These options are listed in the order from the most secure to the least secure (
 ### HTTPS only origin pull
 {: #tls-encryption-modes-origin-only-pull}
 
-**Enterprise only.** This mode has the same certificate requirements as End-to-End CA Signed. It also upgrades all connections between {{site.data.keyword.cis_short_notm}} and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
+**Enterprise only.** A secure connection exists between the visitor and {{site.data.keyword.cis_short_notm}}, and a secure and authenticated connection between. This mode has the same certificate requirements as End-to-End CA Signed. However, it upgrades all connections between {{site.data.keyword.cis_short_notm}} and your origin webserver from HTTP to HTTPS, even if the original content requested is over HTTP.
 
 ### End-to-end CA signed
 {: #tls-encryption-modes-end-to-end-ca-signed}
