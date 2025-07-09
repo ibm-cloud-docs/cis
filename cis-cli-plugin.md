@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-09"
 
 keywords:
 
@@ -3454,7 +3454,7 @@ ibmcloud cis firewall-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING
 #### Examples
 {: #create-a-firewall-rule-examples}
 
-Create a firewall-rule in domain `372e67954025e0ba6aaa6d586b9e0b60`.
+Create a firewall-rule in the domain `372e67954025e0ba6aaa6d586b9e0b60`.
 
 ```sh
 ibmcloud cis firewall-rule-create 31984fea73a15b45779fa0df4ef62f9b --expression "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\""  --action allow --priority 200 --paused off --description "do not challenge login from office" -i "cis-demo"
