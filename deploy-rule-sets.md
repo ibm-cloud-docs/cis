@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-09"
 
 keywords:
 
@@ -59,11 +59,16 @@ To list all zone-managed rulesets from the CLI, follow these steps:
    ```
    {: pre}
 
-Where:
+   **Command options**
+   `DNS_DOMAIN_ID`
+   :   The ID of the domain.
 
-* **DNS_DOMAIN_ID** is the ID of the domain.
-* **-i, --instance value** is the instance name or ID.
-* **--output value** specifies the output format; only JSON is supported.
+   `-i, --instance`
+   :   Instance name or ID.
+
+   `--output`
+   :   Specifies the output format; only JSON is supported.
+
 
 ### Updating deployed ruleset from the CLI
 {: #cli-update-entry-point-rule-set}
