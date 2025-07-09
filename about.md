@@ -19,63 +19,36 @@ subcollection: cis
 {: shortdesc}
 
 IBM {{site.data.keyword.cis_short_notm}} gets you started quickly by establishing defaults for you, which you can change easily by using the UI or API.
-
-## Clock synchronization
-{: #clock-sync}
-
-
-ISO 27001 requires that clocks of all relevant information processing systems within an organization or security domain must be synchronized with a single reference time source. {{site.data.keyword.cis_short_notm}} synchronizes the systems with a Network Time Protocol (NTP) server to ensure that all time-based activities occur synchronously everywhere on the network.
-
-IBM {{site.data.keyword.cis_short_notm}} uses the following internal NTP servers:
-* `time.adn.networklayer.com/`
-* `time.service.networklayer.com`
-
+ 
 ## Security features
 {: #cis-security-features}
 
 Proxy your [DNS records](/docs/cis?topic=cis-dns-concepts#dns-concepts-proxying-dns-records) or a [global load balancer](/docs/cis?topic=cis-global-load-balancer-glb-concepts) to use the security features. The proxy allows traffic to flow through our servers and you can monitor the data.
-
-
 
 ![security graphic](images/security-graphic.png "Image describing security features"){: caption="Security features" caption-side="bottom}
 
 ### TLS
 {: #tls-feature}
 
-
 Protect your site and control your Transport Layer Security (TLS) settings. Manage the certificates used to secure traffic to your site.
 
 ### Origin
 {: #origin-feature}
-
 
 Manage the TLS certificates that encrypt traffic between your origin server and your users.
 
 ### Rate limiting
 {: #rate-limiting-feature}
 
-
 Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
-
-### Traffic scrubbing
-{: #traffic-scrubbing}
-
-
-{{site.data.keyword.cis_short_notm}} offers 248 Tbps of global network edge capacity and can mitigate DDoS attacks that have extremely high packet and HTTP request rates.
-
-When a DDoS attack occurs, {{site.data.keyword.cis_short_notm}} doesn't use scrubbing centers; the activity is analyzed on the edge, which helps to mitigate DDoS attacks closest to the source.
-
-Traffic that is identified as being "dirty" or part of an attack is not included in the billing. Customers are being billed for **protected traffic**, which consists of clean traffic that is forwarded to the origin and responses that are returned from the edge to the client.
 
 ### Web Application Firewall (WAF)
 {: #cis-web-application-firewall}
-
 
 WAF is implemented through multiple rulesets: [OWASP](/docs/cis?topic=cis-owasp-rule-set-for-waf), [{{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-cis-rule-sets), and [Exposed Credentials Check](/docs/cis?topic=cis-exposed-credentials-check-ruleset).
 
 ### IP firewall
 {: #cis-ip-firewall}
-
 
 {{site.data.keyword.cis_full_notm}} offers several tools for controlling your traffic so that you protect your domains, URLs, and directories against volumes of traffic, certain groups of requesters, and particular requesting IPs.
 
@@ -113,7 +86,6 @@ This capability is useful when you need more granularity in your access rules be
 ### Firewall rules
 {: #firewall-rules-feature}
 
-
 Create rules that examine incoming HTTP traffic against a set of filters to block, challenge, log, or allow matching requests.
 
 In general, firewall rules are designed for properties that are exposed in OSI Layer-7 (HTTP), such as request headers and body content characteristics. Therefore, firewall rules apply to HTTP/HTTPS [Range](/docs/cis?topic=cis-cis-range) apps.
@@ -127,13 +99,10 @@ View events that are triggered by an active web application firewall rule. For e
 ### Range
 {: #range-feature}
 
-
 Extend the power of {{site.data.keyword.cis_short_notm}} DDoS, TLS, and IP firewall to your web servers and your TCP-based services by using Range applications, keeping them online and secure.
 
 ### Advanced security
 {: #advanced-security-feature}
-
-
 
 Advanced security settings include the following features, which you can change, enable, or disable.
 
@@ -150,15 +119,12 @@ Advanced security settings include the following features, which you can change,
 ### Security standards and platform
 {: #security-standards-and-platform}
 
-
-
 * TLS (SHA2 and SHA1)
 * IPv4 and IPv6
 * HTTP/2
 
 ### Network attacks and mitigation
 {: #network-attacks-and-mitigation}
-
 
 Generally, attacks fall into two categories:
 
@@ -171,18 +137,15 @@ Generally, attacks fall into two categories:
 ### On-demand anti-DDoS
 {: #cis-on-demand-anti-ddos}
 
-
 {{site.data.keyword.cis_full_notm}} ingests traffic by returning a {{site.data.keyword.cis_short_notm}} IP address on the DNS lookup for a domain, instead of the actual record for the origin server’s IP address. This allows {{site.data.keyword.cis_short_notm}} to ingest, single-pass inspect, and re-encrypt data before sending it to the origin server destination. {{site.data.keyword.cis_short_notm}} can also act in DNS-only mode, returning the actual DNS record without obfuscating the IP, which disables DDoS and the other functions of {{site.data.keyword.cis_short_notm}}. To enable {{site.data.keyword.cis_short_notm}} protections, switch the "proxy" slider next to each DNS record to **on**; to disable protections, switch to **off**.
 
 ### Unlimited DDoS mitigation
 {: #cis-unlimited-ddos-mitigation}
 
-
 DDoS mitigation is typically an expensive service that can grow in cost when under attack. Unlimited DDoS mitigation is included with {{site.data.keyword.cis_short_notm}} at no additional cost.
 
 ### Mitigate Layer 7 attacks (configuration)
 {: #cis-mitigate-layer7-attacks}
-
 
 Though DDoS is enabled by default in {{site.data.keyword.cis_short_notm}}, you can further configure Layer 7 security by:
 
@@ -195,40 +158,15 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 ### Mitigate non volumetric attacks
 {: #cis-mitigate-non-volumetric-attacks}
 
-
 {{site.data.keyword.cis_short_notm}} WAF contains rulesets to mitigate non-volumetric attacks, including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](/docs/cis?topic=cis-waf-q-and-a).
-
-### Cost protection
-{: #cis-cost-protection}
-
-
-{{site.data.keyword.cis_short_notm}} does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the {{site.data.keyword.cis_short_notm}} network to the origin destination incur charges or usage.
-
-{{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic. There’s no penalty for spikes due to attack traffic, so there's no chargeback by the customer.
 
 ## Reliability features
 {: #cis-reliability-features}
 
-
 ![reliability graphic](images/reliability-graphic.png "Image describing reliability features"){: caption="Reliability features" caption-side="bottom"}
-
-### Global load balancing features
-{: #about-glb-features}
-
-
-The global load balancing service distributes your traffic across multiple servers with a combination of origin pools, health checks, and a load balancer. Global load balancing has the following features:
-* Proxy and non-proxy options for load balancing
-* Origin pools and health checks
-
-#### Global anycast network
-{: #global-anycast-network}
-
- 
-The available health check regions are based on the [Cloudflare Global Anycast Network](https://www.cloudflare.com/network/){: external}.
 
 ### DNS features
 {: #about-dns-features}
-
 
 DNS within {{site.data.keyword.cis_short_notm}} has the following features:
 * DNS management - Manage your DNS records, control proxying, and enable DNS security.
@@ -236,7 +174,6 @@ DNS within {{site.data.keyword.cis_short_notm}} has the following features:
 
 ### gRPC protocol support
 {: #grpc}
-
  
 The gRPC protocol builds efficient APIs with smaller payloads, which reduces bandwidth requirements, decreases latency, and increases the implementation time. {{site.data.keyword.cis_short_notm}} supports gRPC protocol for any proxied gRPC endpoints. To enable or disable gRPC support, navigate to the **Reliability** section, select the **Advanced** tab, and toggle the gRPC switch.
 
@@ -250,29 +187,19 @@ The following requirements must be met before you use gRPC:
 ## Performance features
 {: #cis-performance-features}
 
-
 ![performance graphic](images/performance-graphic.png "Image describing performance features"){: caption="Performance features" caption-side="bottom}
 
 ### Caching
 {: #caching-features}
-
 
 Control how {{site.data.keyword.cis_short_notm}} manages your cached assets.
 
 ### Page rules
 {: #page-rule-features}
 
-
 Fine-tune your cache behavior and create content optimization.
 
 ### Routing
 {: #routing-features}
 
-
 Eliminate excess latency by analyzing and optimizing routing decisions across the global internet using real-time network connections.
-
-### Advanced performance
-{: #advanced-performance}
-
-
-Apply Brotli compression and restrict upload sizes in the advanced performance section.
