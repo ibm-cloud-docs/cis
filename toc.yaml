@@ -73,6 +73,7 @@ toc:
         - private-endpoint.md
         - topicgroup:
             label: Working with Range applications
+            id: range
             topics:
             - range.md
             - proxy-protocol.md
