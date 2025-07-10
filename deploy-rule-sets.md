@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-10"
 
 keywords:
 
@@ -31,6 +31,30 @@ Use the following workflow to deploy a managed ruleset to a phase at the zone le
 1. Find the ruleset ID of the managed ruleset that you want to deploy.
 1. Identify the phase where you want to deploy the managed ruleset. Make sure that the managed ruleset belongs to the same phase where you want to deploy it.
 1. Add a rule to the zone-level phase entry point ruleset that runs the managed ruleset.
+
+## Deploying managed rulesets in the console
+{: #ui-deploy-rule-sets}
+{: ui}
+
+To deploy managed rulesets in the CIS console, follow these steps:
+
+1. In the CIS console, navigate to the **Security** section.
+1. Select the **WAF** tab.
+1. Click **Add exception** to open the Add exception side panel.
+1. Enter a name for your managed rules exception.
+1. Define the match condition by building an expression:
+   * Choose the request field, select an operator, and provide a value.
+   * You can also use the Expression Builder to manually write expressions
+   * Combine multiple conditions using **And** and **Or** operators to create complex logic.
+1. Choose whether to log requests that match the expression.
+1. Decide how the ruleset should behave for matching requests:
+   * Skip all remaining rules, or
+   * Skip specific rules from a managed ruleset
+
+      If you select to skip specific rules, click **Browse rules**, select a ruleset, and then select the specific rules to skip.
+1. Click **Deploy** to activate the configuration.
+
+   After deployment, you can return at any time to edit your managed ruleset configuration.
 
 ## Deploying managed rulesets from the CLI
 {: #cli-deploy-rule-sets}
