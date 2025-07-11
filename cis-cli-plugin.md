@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-11"
 
 keywords:
 
@@ -999,7 +999,7 @@ ibmcloud cis custom-lists list-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 `json`
 :   The JSON file or JSON string that is used to describe a custom list.
 :   The optional field is:
-:   **"description"**: To briefly describe the list.
+:   `"description"` : To briefly describe the list.
 
     Sample JSON data:
     ```json
@@ -1486,7 +1486,7 @@ ibmcloud cis dns-record-create DNS_DOMAIN_ID --type TYPE --name NAME --content C
 
     - For type `A`, `AAAA`, `CNAME`, `NS`, `TXT` :
         - The required fields in JSON data are `name`, `type`, `content`.
-        - The optional fields are `ttl`, `proxied`:
+        - The optional fields are `ttl`, `proxied` :
             - `proxied` Control whether traffic flows through the security and performance functions on CIS. CIS proxies only traffic for `A,` `AAAA`, and `CNAME` records.
 
 Sample JSON data:
@@ -1529,7 +1529,7 @@ Sample JSON data:
 
 - For type `PTR` :
    - The required fields in JSON data are `name`, `type`, `content`.
-   - The optional fields are `ttl`.
+   - The optional field is `ttl`.
 
 Sample JSON data:
 
@@ -1544,7 +1544,7 @@ Sample JSON data:
 
 - For type `MX` :
    - The required fields in JSON data are `name`, `type`, `content`.
-   - The optional fields are `ttl`, `priority`.
+   - The optional fields are `ttl` and `priority`.
 
 Sample JSON data:
 
@@ -1711,7 +1711,7 @@ ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID [--type TYPE] [--name
 
     - For type `A`, `AAAA`, `CNAME`, `NS`, `TXT` :
         - The required fields in JSON data are `name`, `type`, `content`.
-        - The optional fields are `ttl`, `proxied`:
+        - The optional fields are `ttl` and `proxied` :
             - `proxied` Control whether traffic flows through the security and performance functions on CIS. CIS proxies only traffic for `A`, `AAAA`, and `CNAME` records.
 
 Sample JSON data:
@@ -1754,7 +1754,7 @@ Sample JSON data:
 
 - For type `PTR` :
     - The required fields in JSON data are `name`, `type`, `content`.
-    - The optional fields are `ttl`.
+    - The optional field is `ttl`.
 
 Sample JSON data:
 
@@ -1769,7 +1769,7 @@ Sample JSON data:
 
 - For type `MX` :
     - The required fields in JSON data are `name`, `type`, `content`.
-    - The optional fields are `ttl`, `priority`.
+    - The optional fields are `ttl` and `priority`.
 
    Sample JSON data:
 
@@ -5734,7 +5734,7 @@ ibmcloud cis page-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
                 - `true_client_ip_header`
                 - `sort_query_string_for_cache`
                 - `respect_strong_etag`
-    - The optional fields are priority, status:
+    - The optional fields are `priority` and `status` :
         - `priority`: A number that indicates the preference for a page rule over another. The default value is `1`.
         - `status`: Status of the page rule. The valid values are `active` and `disabled` (default).
 
@@ -5861,7 +5861,7 @@ ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (--json @JSON_FILE | JS
                 - `true_client_ip_header`
                 - `sort_query_string_for_cache`
                 - `respect_strong_etag`
-    - The optional fields are `priority`, `status`:
+    - The optional fields are `priority` and `status` :
         - `priority` : A number that indicates the preference for a page rule over another. The default value is `1`.
         - `status` : Status of the page rule. Valid values are `active` and `disabled`. The default value is `disabled`.
 
@@ -6101,7 +6101,7 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
         - `dns` : The name and type of the DNS record for the range application.
             - `name` : The name of the DNS record for the range application.
             - `type` : The type of the DNS record associated with the application. Valid value is `CNAME`.
-    - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, `traffic_type`.
+    - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, and `traffic_type`.
         - `origin_direct` : A list of destination addresses to the origin.
         - `origin_dns` : Method and parameters that are used to discover the origin server address via DNS.
             - `name` : DNS record name.
@@ -6250,7 +6250,7 @@ ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID (--json @JSON_FILE | JSON_STR
         - `dns` : The name and type of the DNS record for the range application.
             - `name` : The name of the DNS record for the range application.
             - `type` : The type of the DNS record associated with the application. Valid value is `CNAME`.
-    - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, `traffic_type`.
+    - The optional fields are `origin_direct`, `origin_dns`, `origin_port`, `proxy_protocol`, `ip_firewall`, `edge_ips`, `tls`, and `traffic_type`.
         - `origin_direct` : A list of destination addresses to the origin.
         - `origin_dns` : Method and parameters that are used to discover the origin server address via DNS.
             - `name` : DNS record name.
@@ -7528,7 +7528,7 @@ ibmcloud cis certificate-upload DNS_DOMAIN_ID [--keyless] (--json @JSON_FILE | J
         - `private_key` : Private key for the domain.
         - `host` : The keyless SSL host name.
         - `port` : The keyless SSL port used to communicate between CIS and the client's Keyless SSL server.
-    - The optional fields are `bundle_method`,`name`:
+    - The optional fields are `bundle_method` and `name` :
         - `bundle_method` : Bundle method, default value is `compatible`, valid values are `compatible`, `modern` and `user-defined`.
         - `name` : The keyless SSL name.
 
@@ -7604,7 +7604,7 @@ ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [--keyless] (--json @JSON_
         - `private_key` : Private key for the domain.
         - `host` : The keyless SSL host name.
         - `port` : The keyless SSL port used to communicate between CIS and the client's Keyless SSL server.
-    - The optional fields are `bundle_method`:
+    - The optional fields are `bundle_method` :
         - `bundle_method` : Bundle method, default value is `compatible`, valid values are `compatible`, `modern` and `user-defined`.
         - `name` : The keyless SSL name.
 
@@ -9991,7 +9991,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
         - `counting_expression` : Defines the criteria that are used for determining the request rate.
       - `action` : Action to perform when the rate that is specified in the rule is reached. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, and `log`.
 
-   - The optional fields are `description`, `action_parameters`, `enabled`.
+   - The optional fields are `description`, `action_parameters`, and `enabled`.
 
       - `description` : The descriptive name of your rule.
       - `action_parameters` : Define the action parameters.
@@ -10106,7 +10106,7 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
         - `counting_expression` : Defines the criteria that are used for determining the request rate.
       - `action` : Action to perform when the rate that is specified in the rule is reached. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, and `log`.
 
-   - The optional fields are `description`, `action_parameters`, `enabled`.
+   - The optional fields are `description`, `action_parameters`, and `enabled`.
 
       - `description` : The descriptive name of your rule.
       - `action_parameters` : Define the action parameters.
@@ -10382,7 +10382,7 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
         `ruleset` : Skip all remaining rules or one or more WAF-managed rulesets.
         `rules` : Skip one or more rules of WAF-managed rulesets.
 
-   - The optional fields are `description`, `enabled`, `logging`.
+   - The optional fields are `description`, `enabled`, and `logging`.
       `description` : Briefly describes the rule.
       `enabled` : Indicates whether the rule is active or not.
       `logging` : Log requests matching the skip rule.
@@ -10426,6 +10426,7 @@ Create exception rule for domain `31984fea73a15b45779fa0df4ef62f9b` under instan
 ```sh
 ibmcloud cis managed-waf deployment-add-exception 31984fea73a15b45779fa0df4ef62f9b --match "(http.cookie eq \"example.com/contact?page=1234\")" --skip-rules 'efb7b8c949ac4650a09736fc376e9aee:5de7edfa648c4d6891dc3e7f84534ffa' --enabled false --logging true -i "cis-demo"
 ```
+{: pre}
 
 ### `ibmcloud cis managed-waf deployment-update-exception`
 {: #deployment-update-exception}
@@ -10473,7 +10474,7 @@ ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--js
         `ruleset` : Skip all remaining rules or one or more WAF-managed rulesets.
         `rules` : Skip one or more rules of WAF-managed rulesets.
 
-   - The optional fields are `description`, `enabled`, `logging`.
+   - The optional fields are `description`, `enabled`, and `logging`.
       `description` : Briefly describes the rule.
       `enabled` : Indicates whether the rule is active or not.
       `logging` : Log requests matching the skip rule.
@@ -10687,7 +10688,7 @@ ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json
                `category` : OWASP paranoia level, higher paranoia levels activate more aggressive rules.
                `enabled` : Whether this OWASP Paranoia Level enabled.
 
-   - The optional fields are `description`, `enabled`.
+   - The optional fields are `description` and `enabled`.
       `description`: Briefly describes the rule.
       `enabled`: Indicates whether the rule is active or not.
 
@@ -10746,6 +10747,7 @@ List all custom rules.
 ```sh
 ibmcloud cis custom-waf rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
+{: pre}
 
 #### Command options
 {: #list-custom-rules-options}
@@ -10767,6 +10769,7 @@ List all custom rules for domain `31984fea73a15b45779fa0df4ef62f9b` under instan
 ```sh
 ibmcloud cis custom-waf rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
 ```
+{: pre}
 
 ### `ibmcloud cis custom-waf rule`
 {: #show-custom-rule}
@@ -10813,6 +10816,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action AC
 
 ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
+{: pre}
 
 #### Command options
 {: #rule-create-options}
@@ -10840,7 +10844,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `expression` : Specifies the conditions that must be matched for the rule to run.
       - `action` : The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`.
 
-   - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
+   - The optional fields are `description`, `enabled`, `logging`, and `action_parameters`.
 
       - `action_parameters` : The rule action parameters.
       - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid value is `current`.
@@ -10897,6 +10901,7 @@ Create a custom rule for domain `9343630b9bd5c6e6899834d77f9e50ff` under instanc
 ```sh
 ibmcloud cis custom-waf rule-create 9343630b9bd5c6e6899834d77f9e50ff  --action challenge --description "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
 ```
+{: pre}
 
 ### `ibmcloud cis custom-waf rule-update`
 {: #rule-update}
@@ -10939,7 +10944,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
       - `expression` : Specifies the conditions that must be matched for the rule to run.
       - `action` : The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`.
 
-   - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
+   - The optional fields are `description`, `enabled`, `logging`, and `action_parameters`.
 
       - `action_parameters` : The rule action parameters.
         - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid value is `current`
@@ -10984,6 +10989,7 @@ Update a custom rule `b94632a4cd5a49ed830544d91417a98c` for the domain `9343630b
 ```sh
 ibmcloud cis custom-waf rule-update 9343630b9bd5c6e6899834d77f9e50ff b94632a4cd5a49ed830544d91417a98c --enabled false --description rule-updateion "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
 ```
+{: pre}
 
 ### `ibmcloud cis custom-waf rule-order-update`
 {: #rule-order-update}
@@ -11027,6 +11033,7 @@ Put custom rule `4eae81b170f644f795da017001383de7` before rule `2ed2dd160cb745fe
 ```sh
 ibmcloud cis custom-waf rule-order-update 9343630b9bd5c6e6899834d77f9e50ff 4eae81b170f644f795da017001383de7 --before 2ed2dd160cb745feb415414544d97c70 -i "cis-demo"
 ```
+{: pre}
 
 ### `ibmcloud cis custom-waf rule-delete`
 {: #rule-delete}
@@ -11064,6 +11071,7 @@ Delete custom rule `e9fad806880c4c42bd7ebeec8dcba4e6` for domain `9343630b9bd5c6
 ```sh
 ibmcloud cis custom-waf rule-delete  9343630b9bd5c6e6899834d77f9e50ff e9fad806880c4c42bd7ebeec8dcba4e6 -i "cis-demo"
 ```
+{: pre}
 
 ## Private endpoint support
 {: #private-endpoint-support}
