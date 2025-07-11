@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-05"
+lastupdated: "2025-07-11"
 
 keywords:
 
@@ -36,7 +36,7 @@ With a custom domain name server, you can use the DNS provider's servers with th
 
 {{site.data.keyword.cis_short_notm}} supports proxying for global load balancers and DNS records. When a record or load balancer is proxied, its traffic runs directly through {{site.data.keyword.cis_short_notm}}.
 
-Currently, DNS records of type **A**, **AAAA**, or **CNAME** can be proxied.
+Currently, DNS records of type **A**, **AAAA**, or **CNAME** can be proxied. For more information, see [DNS record types](/docs/cis?topic=cis-set-up-your-dns-for-cis&loginMethod=federated#adding-dns-records).
 {: note}
 
 ### Setting proxy modes
