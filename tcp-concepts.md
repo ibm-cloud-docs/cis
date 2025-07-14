@@ -69,7 +69,7 @@ Table 2 lists connection limits between CIS and the origin server.
 [^4]: When a TCP connection is in an idle state, it means that the connection has been established, but neither endpoint is sending any data. In the context of HTTP, an idle connection is when an established connection between a client and a server is not currently transmitting any HTTP requests or responses.
 
 [^5]: A proxy read timeout is the maximum amount of time a proxy server waits for a response from the origin server before terminating the connection.
-Modifying the Proxy Read Timeout setting is available only on CIS Enterprise plans; it cannot be changed on Standard plans.
+This setting can only be modified with Enterprise plans.
 
 [^6]: A proxy write timeout is the maximum amount of time a proxy server allows for sending data to the client before terminating the connection.
 
