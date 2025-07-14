@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-07-14"
 
 keywords:
 
@@ -23,6 +23,7 @@ Transmission Control Protocol (TCP) connections are established between clients 
 
 CIS acts as an intermediary between the user and the origin by routing user requests through CIS/Cloudflare to the application's origin server. User traffic is routed to the nearest point of presence (PoP); where the request is then processed.
 In case a request is not served from one of Cloudflare's data centers, a connection will be opened to the origin server to forward the request.
+
 
 ## Connection limits
 {: #connection-limits}
@@ -68,6 +69,7 @@ Table 2 lists connection limits between CIS and the origin server.
 [^4]: When a TCP connection is in an idle state, it means that the connection has been established, but neither endpoint is sending any data. In the context of HTTP, an idle connection is when an established connection between a client and a server is not currently transmitting any HTTP requests or responses.
 
 [^5]: A proxy read timeout is the maximum amount of time a proxy server waits for a response from the origin server before terminating the connection.
+Modifying the Proxy Read Timeout setting is available only on CIS Enterprise plans; it cannot be changed on Standard plans.
 
 [^6]: A proxy write timeout is the maximum amount of time a proxy server allows for sending data to the client before terminating the connection.
 
