@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-11"
+lastupdated: "2025-07-14"
 
 keywords:
 
@@ -74,7 +74,6 @@ Create an access application for a DNS domain.
 ```sh
 ibmcloud cis access-app-create DNS_DOMAIN_ID --name NAME --domain DOMAIN [--session-duration SESSION_DURATION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-app-create}
@@ -108,7 +107,6 @@ List all access applications for a DNS domain.
 ```sh
 ibmcloud cis access-apps DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-apps}
@@ -142,7 +140,6 @@ Show details of an access application.
 ```sh
 ibmcloud cis access-app DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-app}
@@ -179,7 +176,6 @@ Update an access application.
 ```sh
 ibmcloud cis access-app-update DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAME --domain DOMAIN [--session-duration SESSION_DURATION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-app-update}
@@ -225,7 +221,6 @@ Delete an access application.
 ```sh
 ibmcloud cis access-app-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-app-delete}
@@ -262,7 +257,6 @@ Create an access certificate for a DNS domain.
 ```sh
 ibmcloud cis access-certificate-create DNS_DOMAIN_ID --name NAME --ca-cert-file CERT_FILE [--associated-hostnames ASSOCIATED_HOSTNAMES] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #options-access-cert-create}
@@ -305,7 +299,6 @@ List all access certificates for a DNS domain.
 ```sh
 ibmcloud cis access-certificates DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-certificates}
@@ -339,7 +332,6 @@ Show details of an access certificate.
 ```sh
 ibmcloud cis access-certificate DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-certificate}
@@ -377,7 +369,6 @@ Update an access certificate.
 ```sh
 ibmcloud cis access-certificate-update DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID --name NAME --associated-hostnames ASSOCIATED_HOSTNAMES [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #options-access-cert-update}
@@ -422,7 +413,6 @@ Delete an access certificate.
 ```sh
 ibmcloud cis access-certificate-delete DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 Must clear the associated hostnames before you delete the certificate.
 {: note}
@@ -459,7 +449,6 @@ Get access certificates settings for a DNS domain.
 ```sh
 ibmcloud cis access-certificates-settings DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-certificates-settings}
@@ -493,7 +482,6 @@ Update access certificates settings for a DNS domain.
 ```sh
 ibmcloud cis access-certificates-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, --value VALUE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-certificates-settings-update}
@@ -543,7 +531,6 @@ Create an access policy for an access application.
 ```sh
 ibmcloud cis access-policy-create DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAME --decision DECISION --include INCLUDE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-policy-create}
@@ -589,7 +576,6 @@ List all access policies for an access application.
 ```sh
 ibmcloud cis access-policies DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-policies}
@@ -626,7 +612,6 @@ Show details of an access policy.
 ```sh
 ibmcloud cis access-policy DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POLICY_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-policy}
@@ -666,7 +651,6 @@ Delete an access policy.
 ```sh
 ibmcloud cis access-policy-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POLICY_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-policy-delete}
@@ -706,7 +690,6 @@ Clear the cached assets file by file or entirely for a DNS domain to guarantee t
 ```sh
 ibmcloud cis cache-purge DNS_DOMAIN_ID (--all | --file file1 --file file2...｜--tag tag1 --tag tag2...|--host host1 --host host...| --prefix prefix1 --prefix prefix2...) [-f, --force] [-i, --instance INSTANCE_NAME]  [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #purge-cache-options}
@@ -756,7 +739,6 @@ Get caching settings for a DNS domain.
 ```sh
 ibmcloud cis cache-settings DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-cache-options}
@@ -788,7 +770,6 @@ Update cache settings for a give DNS domain.
 ```sh
 ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--browser-expiration EXPIRATION] [--development-mode (on | off)] [--serve-stale-content (on | off)] [--query-string-sort (on | off)] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-cache-options}
@@ -852,7 +833,6 @@ List the custom lists for your instance.
 ```sh
 ibmcloud cis custom-lists lists [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #custom-list-instance-options}
@@ -878,7 +858,6 @@ Get a custom list for your instance.
 ```sh
 ibmcloud cis custom-lists list LIST_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-custom-list-options}
@@ -908,14 +887,12 @@ Create a custom list for your instance.
 ```sh
 ibmcloud cis custom-lists list-create (--kind KIND) (--name NAME) [--description DESCRIPTION] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 You can also accept JSON input (from a file or directly as a string):
 
 ```sh
 ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #create-custom-lists-options}
@@ -974,12 +951,10 @@ Update the description of a custom list.
 ```sh
 ibmcloud cis custom-lists list-update LIST_ID (--description DESCRIPTION) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 ```sh
 ibmcloud cis custom-lists list-update LIST_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-custom-list-options}
@@ -1030,7 +1005,6 @@ Delete a custom list for your instance.
 ```sh
 ibmcloud cis custom-lists list-delete LIST_ID [-f, --force] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-custom-list-options}
@@ -1058,7 +1032,6 @@ custom-lists list-delete 78277700444f4f69aefef78ea2bef013 -i crn:v1:staging:publ
 ```sh
 ibmcloud cis custom-lists items LIST_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-custom-list-items-options}
@@ -1088,7 +1061,6 @@ View a specific item in a custom list.
 ```sh
 ibmcloud cis custom-lists item LIST_ID ITEM_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #view-custom-list-item-options}
@@ -1121,12 +1093,10 @@ Create a new item in a custom list.
 ```sh
 ibmcloud cis custom-lists item-create LIST_ID (--asn ASN | --ip IP | --hostname HOSTNAME) [--comment COMMENT] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 ```sh
 ibmcloud cis custom-lists item-create LIST_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #create-custom-list-item-options}
@@ -1193,7 +1163,6 @@ Update all list items for your custom list.
 ```sh
 ibmcloud cis custom-lists item-update LIST_ID (--json @JSON_FILE | JSON_STRING) [-f, --force] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-custom-list-items-options}
@@ -1249,12 +1218,10 @@ Delete an item from a custom list.
 ```sh
 ibmcloud cis custom-lists item-delete LIST_ID (--item-id CUSTOM_LIST_ITEM_ID) [-f, --force] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 ```sh
 ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) [-f, --force] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-custom-list-item-options}
@@ -1310,7 +1277,6 @@ Get the status for the custom list operation.
 ```sh
 ibmcloud cis custom-lists operation OPERATION_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-status-custom-list-operation-options}
@@ -1345,7 +1311,6 @@ Update a specific custom page.
 ```sh
 ibmcloud cis custom-page-update PAGE_ID PAGE_URL [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-custom-page-options}
@@ -1383,7 +1348,6 @@ Retrieve a specific custom page.
 ```sh
 ibmcloud cis custom-page PAGE_ID [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-custom-page-options}
@@ -1418,7 +1382,6 @@ Retrieve a list of currently existing custom pages.
 ```sh
 ibmcloud cis custom-pages [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-custom-page-options}
@@ -1458,7 +1421,6 @@ ibmcloud cis dns-record-create DNS_DOMAIN_ID --type TYPE --name NAME --content C
 [Deprecated] ibmcloud cis dns-record-create DNS_DOMAIN_ID --json-str JSON_STR [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis dns-record-create DNS_DOMAIN_ID --json-file JSON_FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-dns-record-options}
@@ -1680,7 +1642,6 @@ ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID [--type TYPE] [--name
 [Deprecated] ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID --json-str JSON_STR [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID --json-file JSON_FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-dns-record-options}
@@ -1902,7 +1863,6 @@ Get a DNS record details for a domain under a service instance.
 ```sh
 ibmcloud cis dns-record DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-dns-record-options}
@@ -1937,7 +1897,6 @@ Delete a DNS record for a domain of a service instance.
 ```sh
 ibmcloud cis dns-record-delete DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-dns-record-options}
@@ -1969,7 +1928,6 @@ List all DNS records for a domain of a service instance.
 ```sh
 ibmcloud cis dns-records DNS_DOMAIN_ID [--type TYPE] [--name NAME] [--content CONTENT] [--page PAGE] [--per-page PER_PAGE] [--order ORDER] [--direction DIRECTION] [--match MATCH] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-dns-records-options}
@@ -2025,7 +1983,6 @@ Import your BIND config.
 ```sh
 ibmcloud cis dns-records-import DNS_DOMAIN_ID --file FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #dns-record-import-options}
@@ -2060,7 +2017,6 @@ Export BIND config.
 ```sh
 ibmcloud cis dns-records-export DNS_DOMAIN_ID [--file FILE] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #dns-record-export-options}
@@ -2097,7 +2053,6 @@ Add a domain.
 ```sh
 ibmcloud cis domain-add DNS_DOMAIN_NAME [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #add-domain-options}
@@ -2138,7 +2093,6 @@ Resume the domain.
 ```sh
 ibmcloud cis domain-resume DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #resume-domain-options}
@@ -2170,7 +2124,6 @@ Pause the domain.
 ```sh
 ibmcloud cis domain-pause DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #pause-domain-options}
@@ -2202,7 +2155,6 @@ Display the domain details.
 ```sh
 ibmcloud cis domain DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #display-domain-options}
@@ -2234,7 +2186,6 @@ Remove a domain.
 ```sh
 ibmcloud cis domain-remove DNS_DOMAIN_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #remove-domain-options}
@@ -2263,7 +2214,6 @@ List domains for a service instance.
 ```sh
 ibmcloud cis domains [--instance INSTANCE_NAME] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-domain-options}
@@ -2293,7 +2243,6 @@ Check the activation on the domain.
 ```sh
 ibmcloud cis domain-activation-check DNS_DOMAIN_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #check-domain-options}
@@ -2327,7 +2276,6 @@ Get details of a feature for the domain.
 ```sh
 ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FEATURE] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #display-domain-settings-options}
@@ -2405,7 +2353,6 @@ Update a feature for the domain.
 ```sh
 ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, --value VALUE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-domain-settings-options}
@@ -2564,7 +2511,6 @@ List all Edge Functions actions of a service instance.
 ```sh
 ibmcloud cis edge-functions-actions [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-edge-functions-actions-options}
@@ -2593,7 +2539,6 @@ Show an Edge Functions action of a service instance.
 ```sh
 ibmcloud cis edge-functions-action [--name ACTION_NAME] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #show-an-edge-functions-action-options}
@@ -2622,7 +2567,6 @@ Create an Edge Functions action for a service instance.
 ```sh
 ibmcloud cis edge-functions-action-create [--name ACTION_NAME] (--javascript-str JAVASCRIPT_STR | --javascript-file JAVASCRIPT_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #create-an-edge-functions-action-options}
@@ -2660,7 +2604,6 @@ Update an Edge Functions action of a service instance.
 ```sh
 ibmcloud cis edge-functions-action-update (--javascript-str JAVASCRIPT_STR | --javascript-file JAVASCRIPT_FILE) [--name ACTION_NAME] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-an-edge-functions-action-options}
@@ -2698,7 +2641,6 @@ Delete an Edge Functions action of a service instance.
 ```sh
 ibmcloud cis edge-functions-action-delete [--name ACTION_NAME] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-an-edge-functions-action-options}
@@ -2727,7 +2669,6 @@ List all Edge Functions triggers for a domain of a service instance.
 ```sh
 ibmcloud cis edge-functions-triggers DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-edge-functions-triggers-options}
@@ -2759,7 +2700,6 @@ Show an Edge Functions trigger for a domain of a service instance.
 ```sh
 ibmcloud cis edge-functions-trigger DNS_DOMAIN_ID TRIGGER_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-edge-functions-trigger-options}
@@ -2794,7 +2734,6 @@ Create an Edge Functions trigger for a domain of a service instance.
 ```sh
 ibmcloud cis edge-functions-trigger-create DNS_DOMAIN_ID PATTERN_URL [--name ACTION_NAME] [--disable] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #create-edge-functions-trigger-options}
@@ -2835,7 +2774,6 @@ Update an Edge Functions trigger for a domain of a service instance.
 ```sh
 ibmcloud cis edge-functions-trigger-update DNS_DOMAIN_ID TRIGGER_ID PATTERN_URL [--name ACTION_NAME] [--disable] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-edge-functions-trigger-options}
@@ -2879,7 +2817,6 @@ Delete an Edge Functions trigger for a domain of a service instance.
 ```sh
 ibmcloud cis edge-functions-trigger-delete DNS_DOMAIN_ID TRIGGER_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-edge-functions-trigger-options}
@@ -2917,7 +2854,6 @@ Create a new firewall rule.
 ibmcloud cis firewall-create (-t, --type Type) (--json @JSON_FILE | JSON_STRING) [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis firewall-create (-t, --type Type) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-firewall-options}
@@ -3051,7 +2987,6 @@ Update a firewall rule.
 ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (--json @JSON_FILE | JSON_STRING) [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis firewall-update FIREWALL_RULE_ID (-t, --type Type) (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-firewall-options}
@@ -3175,7 +3110,6 @@ List firewall rules.
 ```sh
 ibmcloud cis firewalls (-t, --type Type) [-d, --domain DNS_DOMAIN_ID] [--page PAGE] [--per-page PER_PAGE ] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-firewall-options}
@@ -3222,7 +3156,6 @@ Get details of a firewall rule.
 ```sh
 ibmcloud cis firewall FIREWALL_RULE_ID (-t, --type Type) [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-firewall-detail-options}
@@ -3267,7 +3200,6 @@ Delete a firewall rule by ID.
 ```sh
 ibmcloud cis firewall-delete FIREWALL_RULE_ID (-t, --type Type) [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-firewall-options}
@@ -3298,7 +3230,7 @@ ibmcloud cis firewall-delete bc014906ccce4e7ea2e28be7df70d0d2 -t access-rules -d
 ibmcloud cis firewall-delete 4af47b1518be478aa2c8f024af1c0bad -t ua-rules -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
 ibmcloud cis firewall-delete e6106d7ec58e47ebb2fa053dedcd7dcb -t lockdown -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
 ```
-{: codeblock}
+{: pre}
 
 ## Firewall rules
 {: #firewall-rules}
@@ -3313,7 +3245,6 @@ Retrieve a list of currently existing firewall-rules for a DNS domain.
 ```sh
 ibmcloud cis firewall-rules DNS_DOMAIN_ID [--page PAGE] [--per-page PER_PAGE] [-i, --instance INSTANCE] [--output FORMAT
 ```
-{: pre}
 
 #### Command options
 {: #list-firewall-rules-options}
@@ -3351,7 +3282,6 @@ Retrieve a specific firewall-rule for a DNS domain.
 ```sh
 ibmcloud cis firewall-rule DNS_DOMAIN_ID FIREWALL_RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-a-firewall-rule-options}
@@ -3389,7 +3319,6 @@ ibmcloud cis firewall-rule-create DNS_DOMAIN_ID --expression EXPRESSION --action
 ibmcloud cis firewall-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis firewall-rule-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-a-firewall-rule-options}
@@ -3473,7 +3402,6 @@ ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID [--expression E
 ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-a-firewall-rule-options}
@@ -3549,7 +3477,7 @@ ibmcloud cis firewall-rule-update 31984fea73a15b45779fa0df4ef62f9b 372e67954025e
 
 ibmcloud cis firewall-rule-update 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b60 --json '{"expression": "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"", "action": "allow", "priority": 100, "paused": false, "description": "do not challenge login from office"}' -i "cis-demo"
 ```
-{: codeblock}
+{: pre}
 
 ### `ibmcloud cis firewall-rule-delete`
 {: #delete-a-Firewall-rule}
@@ -3559,7 +3487,6 @@ Delete a specific firewall-rule for a DNS domain.
 ```sh
 ibmcloud cis firewall-rule-delete DNS_DOMAIN_ID FIREWALL_RULE_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-a-firewall-rule-options}
@@ -3591,7 +3518,6 @@ Validate a firewall-rule expression.
 ```sh
 ibmcloud cis firewall-rule-validate DNS_DOMAIN_ID EXPRESSION [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #validate-a-firewall-rule-expression-options}
@@ -3629,7 +3555,6 @@ Create a global load balancer under a DNS domain.
 ibmcloud cis glb-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis glb-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-glb-options}
@@ -3713,7 +3638,6 @@ Update a global load balancer under a DNS domain.
 ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-glb-options}
@@ -3800,7 +3724,6 @@ Show a global load balancer under a DNS domain.
 ```sh
 ibmcloud cis glb DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-glb-options}
@@ -3836,7 +3759,6 @@ Delete a global load balancer under a DNS domain.
 ```sh
 ibmcloud cis glb-delete DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-glb-options}
@@ -3869,7 +3791,6 @@ List all load balancers for the domain.
 ```sh
 ibmcloud cis glbs DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-glb-options}
@@ -3901,7 +3822,6 @@ List all GLB pools for a service instance.
 ```sh
 ibmcloud cis glb-pools [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-glb-pools-options}
@@ -3931,7 +3851,6 @@ Create a GLB pool for a service instance.
 ibmcloud cis glb-pool-create (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis glb-pool-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-glb-pool-options}
@@ -4007,7 +3926,6 @@ Show the details of a GLB pool.
 ```sh
 ibmcloud cis glb-pool GLB_POOL_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-glb-pool-options}
@@ -4039,7 +3957,6 @@ Delete a GLB pool.
 ```sh
 ibmcloud cis glb-pool-delete GLB_POOL_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-glb-pool-options}
@@ -4071,7 +3988,6 @@ ibmcloud cis glb-pool-update GLB_POOL_ID [--enable-origin ORIGIN_NAME --enable-o
 ibmcloud cis glb-pool-update GLB_POOL_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis glb-pool-update GLB_POOL_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-glb-pool-options}
@@ -4160,7 +4076,6 @@ List GLB monitors for a service instance.
 ```sh
 ibmcloud cis glb-monitors [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-glb-monitors-options}
@@ -4190,7 +4105,6 @@ Create a GLB monitor for a service instance.
 ibmcloud cis glb-monitor-create (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis glb-monitor-create (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-glb-monitors-options}
@@ -4249,7 +4163,7 @@ ibmcloud cis glb-monitor-create (--json @JSON_FILE | JSON_STRING) [-i, --instanc
 
 For TCP:
 
-```sh
+```json
 {
       "description": "Health monitor of TCP",
       "type": "tcp",
@@ -4291,7 +4205,6 @@ Show the details of a GLB monitor.
 ```sh
 ibmcloud cis glb-monitor GLB_MON_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-glb-monitor-options}
@@ -4323,7 +4236,6 @@ Delete the GLB monitor for a service instance.
 ```sh
 ibmcloud cis glb-monitor-delete GLB_MON_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-glb-monitor-options}
@@ -4354,7 +4266,6 @@ Update the GLB monitor for a service instance.
 ibmcloud cis glb-monitor-update GLB_MON_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis glb-monitor-update GLB_MON_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-glb-monitor-options}
@@ -4416,7 +4327,7 @@ ibmcloud cis glb-monitor-update GLB_MON_ID (--json @JSON_FILE | JSON_STRING) [-i
 
 For TCP:
 
-```sh
+```json
 {
       "description": "Health monitor of TCP",
       "type": "tcp",
@@ -4460,7 +4371,6 @@ ibmcloud cis glb-events [-s, --since START_DATE] [-u, --until END_DATE] [--origi
                         [--origin-healthy (true | false)] [--pool-healthy (true | false)]
                         [-i, --instance INSTANCE]  [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #get-glb-events-options}
@@ -4512,7 +4422,6 @@ Creates an instant logs job for a domain. The command returns a `Destination`, w
 ```sh
 cis instant-log-create DNS_DOMAIN_ID [--fields FIELD1,FIELD2,FIELD3|all] [--filter FILTER] [--sample SAMPLE] [-i, --instance INSTANCE] [--output FORMAT] [-h, --help HELP]
 ```
-{: codeblock}
 
 You can have only one active Instant Logs session per domain and the maximum session time is 60 minutes.
 {: note}
@@ -4553,7 +4462,6 @@ Create an instant log for `dns-domain`:
 ```sh
 cis instant-log-create dns-domain [--fields all] [--filter FILTER] [--sample 1] [-i cis-demo]
 ```
-{: pre}
 
 The following are three examples of filters:
 
@@ -4580,7 +4488,6 @@ Get the instant logs job for a domain.
 ```sh
 cis instant-log-get DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT] [-h, --help HELP]
 ```
-{: codeblock}
 
 #### Command options
 {: #get-instant-logs-options}
@@ -4618,7 +4525,6 @@ Manipulate Logpull services by using the following `logpull` commands.
 ```sh
 ibmcloud cis logpull DNS_DOMAIN_ID --available-fields [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-logpull}
@@ -4681,7 +4587,6 @@ Create a new log push job for a domain. Before using this command grant write ac
 ```sh
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --name NAME [--enable true|false] [--fields FIELDS | all] [--timestamps format][--dataset DATASET] [--frequency FREQUENCY] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-logpush-job-create}
@@ -4745,7 +4650,6 @@ Update a log push job for a domain.
 ```sh
 ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [--enable true|false] [--fields FIELDS | all] [--timestamps format] [--dataset DATASET] [--jobid JOB_ID] [--frequency FREQUENCY] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-logpush-job-update}
@@ -4808,7 +4712,6 @@ Get all log push jobs for a domain.
 ```sh
 ibmcloud cis logpush-jobs DNS_DOMAIN_ID  [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-logpush-jobs}
@@ -4842,7 +4745,6 @@ Get the details of a log push job for a domain.
 ```sh
 ibmcloud cis logpush-job DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-logpush-job}
@@ -4882,7 +4784,6 @@ Delete a log push job for a domain.
 ```sh
 ibmcloud cis logpush-job-delete DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-f, --force] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-logpush-job-delete}
@@ -4922,7 +4823,6 @@ Get all available fields for a data set.
 ```sh
 ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-logpush-available-fields}
@@ -4959,7 +4859,6 @@ Get a log retention setting for the domain.
 ```sh
 ibmcloud cis log-retention DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-log-retention}
@@ -4991,7 +4890,6 @@ Update the log retention setting for the domain.
 ```sh
 ibmcloud cis log-retention-update DNS_DOMAIN_ID (--flag on|off) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-log-retention-update}
@@ -5031,7 +4929,6 @@ List managed lists in an instance.
 ```sh
 cis managed-lists [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 ### Command options
 {: #list-managed-lists-options}
@@ -5063,7 +4960,6 @@ Retrieve a full log of firewall events.
 ```sh
 ibmcloud cis firewall-event-analytics DNS_DOMAIN_ID [--dataset DATA_SET] [--filter FILTER] [--order FILTER_ORDER] [--limit LIMIT_NUMBER] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #firewall-event-analytics-options}
@@ -5206,7 +5102,6 @@ Retrieve a full log of http request events.
 ```sh
 ibmcloud cis http-request-analytics DNS_DOMAIN_ID [--dataset DATA_SET] [--filter FILTER] [--order FILTER_ORDER] [--limit LIMIT_NUMBER] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #http-request-analytics-options}
@@ -5319,7 +5214,6 @@ Web analytics are deprecated on 2 November 2020. Use [`ibmcloud cis http-request
 ```sh
 ibmcloud cis web-analytics DNS_DOMAIN_ID [--recent DURATION] [-t, --table requests | bandwidth | uniques | threats | status_code] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #web-analytics-options}
@@ -5357,7 +5251,6 @@ Get DNS analytics of the domain.
 ```sh
 ibmcloud cis dns-analytics DNS_DOMAIN_ID DIMENSION [-s, --since TIME] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #dns-analytics-options}
@@ -5395,7 +5288,6 @@ Get rate limit analytics for a DNS domain.
 ```sh
 ibmcloud cis ratelimit-analytics DNS_DOMAIN_ID [--recent DURATION] [--time-delta SECONDS] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #ratelimit-analytics-options}
@@ -5438,7 +5330,6 @@ Enable Mutual TLS for a service instance.
 ```sh
 ibmcloud cis access-enable [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-access-enable}
@@ -5467,7 +5358,6 @@ List all origin certificates for a DNS domain.
 ```sh
 ibmcloud cis origin-certificates DNS_DOMAIN_ID [--instance INSTANCE_NAME] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-origin-certificates}
@@ -5502,7 +5392,6 @@ ibmcloud cis origin-certificate-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_S
 [Deprecated] ibmcloud cis origin-certificate-create DNS_DOMAIN_ID --json-str JSON_STR [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis origin-certificate-create DNS_DOMAIN_ID --json-file JSON_FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #command-options-origin-certificate-create}
@@ -5578,7 +5467,6 @@ Get details of an origin certificate.
 ```sh
 ibmcloud cis origin-certificate DNS_DOMAIN_ID CERT_ID [--instance INSTANCE_NAME] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-origin-certificate}
@@ -5613,7 +5501,6 @@ Delete an origin certificate.
 ```sh
 ibmcloud cis origin-certificate-delete DNS_DOMAIN_ID CERT_ID [--instance INSTANCE_NAME]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-origin-certificate-delete}
@@ -5650,7 +5537,6 @@ Show the overview information for a domain.
 ```sh
 ibmcloud cis overview DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-overview-options}
@@ -5688,7 +5574,6 @@ Create a page rule of the DNS domain.
 ibmcloud cis page-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis page-rule-create DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-page-rule-create}
@@ -5812,7 +5697,6 @@ Update the page rule of the DNS domain.
 ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-page-rule-update}
@@ -5938,7 +5822,6 @@ Delete a page rule of the DNS domain.
 ```sh
 ibmcloud cis page-rule-delete DNS_DOMAIN_ID PAGE_RULE_ID [-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-page-rule-delete}
@@ -5970,7 +5853,6 @@ List page rules of the DNS domain.
 ```sh
 ibmcloud cis page-rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-page-rules}
@@ -6003,7 +5885,6 @@ Get details of a page rule.
 ```sh
 ibmcloud cis page-rule DNS_DOMAIN_ID PAGE_RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #command-options-page-rule}
@@ -6052,7 +5933,6 @@ ibmcloud cis range-app-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
 [Deprecated] ibmcloud cis range-app-create DNS_DOMAIN_ID -s JSON_STR [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis range-app-create DNS_DOMAIN_ID -j JSON_FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-range-app-options}
@@ -6198,7 +6078,6 @@ ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID (--json @JSON_FILE | JSON_STR
 [Deprecated] ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID -s JSON_STR [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID -j JSON_FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-range-app-options}
@@ -6342,7 +6221,6 @@ Delete a previously existing application.
 ```sh
 ibmcloud cis range-app-delete DNS_DOMAIN_ID APP_ID [--instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-range-app-options}
@@ -6376,7 +6254,6 @@ Get the application configuration of a specific application.
 ```sh
 ibmcloud cis range-app DNS_DOMAIN_ID APP_ID [--instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-range-app-options}
@@ -6413,7 +6290,6 @@ Retrieve a list of currently existing range applications for a DNS domain.
 ```sh
 ibmcloud cis range-apps DNS_DOMAIN_ID [--instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-range-app-options}
@@ -6448,7 +6324,6 @@ Get analytics data for range applications.
 ibmcloud cis range-analytics DNS_DOMAIN_ID [--metrics METRICS] [--dimensions DIMENSION] [--filters FILTERS] [--sort SORT] [--since SINCE] [--until UNTIL]
 ibmcloud cis range-analytics DNS_DOMAIN_ID --bytime [--time_delta DELTA] [--metrics METRICS] [--dimensions DIMENSION] [--filters FILTERS] [--sort SORT] [--since SINCE] [--until UNTIL]
 ```
-{: pre}
 
 #### Command options
 {: #get-analytics-range-app-options}
@@ -6524,7 +6399,6 @@ ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --url URL [--description DESCRI
 [Deprecated] ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --json-str JSON_STR [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --json-file JSON_FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #create-ratelimit-options}
@@ -6653,7 +6527,6 @@ ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [
 [Deprecated] ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID --json-str JSON_STR [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID --json-file JSON_FILE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-ratelimit-options}
@@ -6780,7 +6653,6 @@ List rate limiting rules of a DNS domain.
 ```sh
 ibmcloud cis ratelimit-rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-ratelimit-rules-options}
@@ -6812,7 +6684,6 @@ Get details of a rate limiting rule by ID.
 ```sh
 ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-ratelimit-rule-options}
@@ -6848,7 +6719,6 @@ Delete a rate limiting rule by ID.
 ```sh
 ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID [--instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-ratelimit-rule-options}
@@ -6885,7 +6755,6 @@ List all CIS service instances.
 ```sh
 ibmcloud cis instances [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-service-instances-options}
@@ -6911,7 +6780,6 @@ Set the context service instance to operate.
 ```sh
 ibmcloud cis instance-set [INSTANCE_NAME] [--unset]
 ```
-{: pre}
 
 #### Command options
 {: #set-service-instances-options}
@@ -6940,7 +6808,6 @@ Create a CIS service instance.
 ```sh
 ibmcloud cis instance-create INSTANCE_NAME PLAN [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #create-cis-service-instance-options}
@@ -6972,7 +6839,6 @@ Delete a CIS service instance.
 ```sh
 ibmcloud cis instance-delete INSTANCE [-f, --force]
 ```
-{: pre}
 
 #### Command options
 {: #delete-cis-service-instance-options}
@@ -7001,7 +6867,6 @@ Update a CIS service instance.
 ```sh
 ibmcloud cis instance-update INSTANCE [--name NAME] [--plan PLAN]  [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-cis-service-instance-options}
@@ -7036,7 +6901,6 @@ Show details of a CIS service instance.
 ```sh
 ibmcloud cis instance INSTANCE [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-cis-service-instance-options}
@@ -7065,7 +6929,6 @@ List all CIS service plans.
 ```sh
 ibmcloud cis plans [--refresh] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-cis-service-plans-options}
@@ -7101,7 +6964,6 @@ Get details of Routing settings.
 ```sh
 ibmcloud cis routing DNS_DOMAIN_ID (--smart-routing | --tiered-caching) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-routinge-options}
@@ -7141,7 +7003,6 @@ Update Routing setting.
 ```sh
 ibmcloud cis routing-update DNS_DOMAIN_ID (--smart-routing (on|off) | --tiered-caching (on|off)) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-routinge-options}
@@ -7181,7 +7042,6 @@ Get analytics of smart-routing latency.
 ```sh
 ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #display-routing-analytics-options}
@@ -7223,7 +7083,6 @@ Retrieve a full log of security events include Firewall Rules, Rate Limiting, Se
 ```sh
 ibmcloud cis security-events DNS_DOMAIN_ID [--ip-class IP_CLASS] [--method METHOD] [--scheme SCHEME] [--ip IP_ADDR] [--host HOSTNAME] [--protocol PROTOCOL] [--uri URI] [--ua USER_AGENT] [--colo COLO] [--ray-id RAY_ID] [--kind KIND] [--action ACTION] [--cursor CURSOR] [--country COUNTRY] [--since START_DATE] [--until END_DATE] [--source SOURCE] [--limit LIMIT] [--rule_id RULE_ID] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-security-event-options}
@@ -7315,7 +7174,6 @@ Get TLS settings for a domain.
 ```sh
 ibmcloud cis tls-settings DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-tls-setting-options}
@@ -7347,7 +7205,6 @@ Update TLS settings for a DNS domain.
 ```sh
 ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true|false)] [--tls-1-2-only (on|off)] [--tls-1-3 (on|off)] [-i, --instance INSTANCE][--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-tls-settings-options}
@@ -7396,7 +7253,6 @@ List all certificates for a DNS domain, including shared, dedicated, and custom 
 ```sh
 ibmcloud cis certificates DNS_DOMAIN_ID [--keyless] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-cert-options}
@@ -7431,7 +7287,6 @@ Get the details of a shared, dedicated, or custom certificate.
 ```sh
 ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [--keyless] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-cert-options}
@@ -7474,7 +7329,6 @@ Order a certificate pack with an optional list of hostnames for a DNS domain.
 ```sh
 ibmcloud cis certificate-order DNS_DOMAIN_ID [--hostnames host1 --hostnames host2 ...] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #order-dedicated-cert-options}
@@ -7510,7 +7364,6 @@ Upload a custom certificate for a DNS domain.
 ibmcloud cis certificate-upload DNS_DOMAIN_ID [--keyless] (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis certificate-upload DNS_DOMAIN_ID [--keyless] (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #upload-cert-options}
@@ -7583,7 +7436,6 @@ Update a custom certificate for a DNS domain.
 ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [--keyless] (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis certificate-update DNS_DOMAIN_ID CERT_ID [--keyless] [-s, --json-str JSON_STR | -j, --json-file JSON_FILE] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: codeblock}
 
 #### Command options
 {: #update-cert-options}
@@ -7659,7 +7511,6 @@ Change custom certificates' priority for a DNS domain.
 ibmcloud cis certificate-priority-change DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 [Deprecated] ibmcloud cis certificate-priority-change DNS_DOMAIN_ID (-s, --json-str JSON_STR | -j, --json-file JSON_FILE) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #change-priority-custom-options}
@@ -7722,7 +7573,6 @@ Delete a dedicated or custom certificate.
 ```sh
 ibmcloud cis certificate-delete DNS_DOMAIN_ID CERT_ID [--keyless][-i, --instance INSTANCE]
 ```
-{: pre}
 
 #### Command options
 {: #delete-cert-options}
@@ -7762,7 +7612,6 @@ Show WAF setting.
 ```sh
 ibmcloud cis waf-setting DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-waf-setting-options}
@@ -7794,7 +7643,6 @@ Update the WAF setting.
 ```sh
 ibmcloud cis waf-setting-update DNS_DOMAIN_ID WAF_MODE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-waf-setting-options}
@@ -7829,7 +7677,6 @@ List all WAF packages.
 ```sh
 ibmcloud cis waf-packages DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-waf-packages-options}
@@ -7861,7 +7708,6 @@ Get detail of a WAF package.
 ```sh
 ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-waf-package-options}
@@ -7896,7 +7742,6 @@ Update OWASP Package setting.
 ```sh
 ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity SENSITIVITY] [--action-mode ACTION_MODE] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-waf-owasp-package-options}
@@ -7937,7 +7782,6 @@ List the WAF groups in a WAF package.
 ```sh
 ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-waf-groups-options}
@@ -7978,7 +7822,6 @@ Get detail of a WAF group.
 ```sh
 ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-waf-group-options}
@@ -8016,7 +7859,6 @@ Set the mode of a WAF group.
 ```sh
 ibmcloud cis waf-group-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID WAF_GROUP_MODE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-waf-group-options}
@@ -8057,7 +7899,6 @@ List all WAF rules of a WAF package.
 ```sh
 ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NUM] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-waf-rules-options}
@@ -8098,7 +7939,6 @@ Get detail of a WAF rule.
 ```sh
 ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-waf-rule-options}
@@ -8136,7 +7976,6 @@ Set the mode of a WAF rule.
 ```sh
 ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE_MODE [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-waf-rule-options}
@@ -8177,7 +8016,6 @@ Create a URL-based Web Application Firewall (WAF) rule.
 ```sh
 ibmcloud cis waf-override-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #create-waf-override-options}
@@ -8245,7 +8083,6 @@ Update a URL-based Web Application Firewall (WAF) rules.
 ```sh
 ibmcloud cis waf-override-update DNS_DOMAIN_ID OVERRIDE_WAF_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-waf-override-options}
@@ -8316,7 +8153,6 @@ List all URL-based Web Application Firewall (WAF) rules.
 ```sh
 ibmcloud cis waf-overrides DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-waf-overrides-options}
@@ -8354,7 +8190,6 @@ Get a URL-based Web Application Firewall (WAF) rule.
 ```sh
 ibmcloud cis waf-override DNS_DOMAIN_ID OVERRIDE_WAF_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #get-waf-overrides-options}
@@ -8389,7 +8224,6 @@ Delete a URL-based Web Application Firewall (WAF) rule.
 ```sh
 ibmcloud cis waf-override-delete DNS_DOMAIN_ID OVERRIDE_WAF_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #delete-waf-overrides-options}
@@ -8429,7 +8263,6 @@ Get authenticated origin pull settings for a domain.
 ```sh
 ibmcloud cis authenticated-origin-pull-settings DNS_DOMAIN_ID [--level zone|hostname] [--hostname HOSTNAME] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-authenticated-origin-pull-settings-options}
@@ -8467,7 +8300,6 @@ Update authenticated origin pull settings for a domain.
 ```sh
 ibmcloud cis authenticated-origin-pull-settings-update DNS_DOMAIN_ID [--level zone|hostname] [--hostname HOSTNAME] [--cert_id CERT_ID] (--enabled on|off) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-authenticated-origin-pull-settings-option}
@@ -8511,7 +8343,6 @@ List zone-level authenticated origin pull certificates for a domain.
 ```sh
 ibmcloud cis authenticated-origin-pull-certificates DNS_DOMAIN_ID [--level zone|hostname][-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-authenticated-origin-pull-certificates-option}
@@ -8546,7 +8377,6 @@ Get an authenticated origin pull certificate for a domain.
 ```sh
 ibmcloud cis authenticated-origin-pull-certificate DNS_DOMAIN_ID CERT_ID [--level zone|hostname] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-authenticated-origin-pull-certificate-option}
@@ -8584,7 +8414,6 @@ Upload an authenticated origin pull certificate for a domain.
 ```sh
 ibmcloud cis authenticated-origin-pull-certificate-upload DNS_DOMAIN_ID [--level zone|hostname] (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #upload-authenticated-origin-pull-certificate-option}
@@ -8635,7 +8464,6 @@ Delete the authenticated origin pull certificate for a domain.
 ```sh
 ibmcloud cis authenticated-origin-pull-certificate-delete DNS_DOMAIN_ID CERT_ID [--level zone|hostname] [-i, --instance INSTANCE] [--output FORMAT] [-f, --force]
 ```
-{: pre}
 
 #### Command options
 {: #delete-authenticated-origin-pull-certificate-option}
@@ -8678,7 +8506,6 @@ List all alert policies.
 ```sh
 ibmcloud cis alert-policy list [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-list-alert-policies}
@@ -8707,7 +8534,6 @@ Show the details of a policy.
 ```sh
 ibmcloud cis alert-policy get POLICY_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-alert-policy-options}
@@ -8739,7 +8565,6 @@ ibmcloud cis alert-policy get a2633e68-1a64-2512-a321-b64a17c7db7a -i "cis-demo"
 ```sh
 ibmcloud cis alert-policy ddos-attack-l7-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-create-ddos-attack-l7-alert}
@@ -8783,7 +8608,6 @@ ibmcloud cis alert-policy ddos-attack-l7-alert-create --name test1 --emails test
 ```sh
 ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-create-ddos-attack-l3-l4-alert}
@@ -8827,7 +8651,6 @@ ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name test1 --emails t
 ```sh
 ibmcloud cis alert-policy failing-logpush-job-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-failing-logpush-job-alert-create}
@@ -8871,7 +8694,6 @@ ibmcloud cis alert-policy failing-logpush-job-alert-create --name test1 --emails
 ```sh
 ibmcloud cis alert-policy pool-toggle-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --pools POOLS --trigger-condition (enabled | disabled | either) [--include-future-pools (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-create-pool-toggle-alert}
@@ -8924,7 +8746,6 @@ Create an alert policy about spikes in firewall events. Firewall events alerts u
 ```sh
 ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --domains DOMAINS [--services SERVICES] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-firewall-events-alert}
@@ -8974,7 +8795,6 @@ Create an alert policy for certificate events.
 ```sh
 ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated | mtls ) --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-certificate-alert}
@@ -9021,7 +8841,6 @@ ibmcloud cis alert-policy certificate-alert-create --type universal --name test1
 ```sh
 ibmcloud cis alert-policy glb-healthcheck-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --pools POOLS [--include-future-pools (true | false)] [--health-status-trigger (healthy | unhealthy | either)] [--event-source-trigger (pool | origin | either)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-create-glb-healthcheck-alert}
@@ -9078,7 +8897,6 @@ ibmcloud cis alert-policy glb-healthcheck-alert-create --name test1 --emails tes
 ```sh
 ibmcloud cis alert-policy web-analytics-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-create-web-analytics-alert}
@@ -9122,7 +8940,6 @@ ibmcloud cis alert-policy web-analytics-alert-create --name test1 --emails test1
 ```sh
 ibmcloud cis alert-policy maintenance-event-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --event-type TYPE [--airport-code AIRPORT_CODE] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-create-maintenance-event-alert}
@@ -9172,7 +8989,6 @@ ibmcloud cis alert-policy maintenance-event-alert-create --name test1 --emails t
 ```sh
 ibmcloud cis alert-policy ddos-attack-l7-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-ddos-attack-l7-alert}
@@ -9219,7 +9035,6 @@ ibmcloud cis alert-policy ddos-attack-l7-alert-update a2633e68-1a64-2512-a321-b6
 ```sh
 ibmcloud cis alert-policy ddos-attack-l3-l4-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-ddos-attack-l3-l4-alert}
@@ -9267,7 +9082,6 @@ Update an alert policy when logpush job did not complete at least one successful
 ```sh
 ibmcloud cis alert-policy failing-logpush-job-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-failing-logpush-job-alert}
@@ -9315,7 +9129,6 @@ ibmcloud cis alert-policy failing-logpush-job-alert-update a2633e68-1a64-2512-a3
 ```sh
 ibmcloud cis alert-policy pool-toggle-alert-update POLICY_ID --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --pools POOLS --trigger-condition (enabled | disabled | either) [--include-future-pools (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-pool-toggle-alert}
@@ -9371,7 +9184,6 @@ ibmcloud cis alert-policy pool-toggle-alert-update a2633e68-1a64-2512-a321-b64a1
 ```sh
 ibmcloud cis alert-policy firewall-events-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--domains DOMAINS] [--services SERVICES] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-firewall-events-alert}
@@ -9427,7 +9239,6 @@ ibmcloud cis alert-policy firewall-events-alert-update a2633e68-1a64-2512-a321-b
 ```sh
 ibmcloud cis alert-policy certificate-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-certificate-alert}
@@ -9474,7 +9285,6 @@ ibmcloud cis alert-policy certificate-alert-update a2633e68-1a64-2512-a321-b64a1
 ```sh
 ibmcloud cis alert-policy glb-healthcheck-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--pools POOLS] [--include-future-pools (true | false)] [--health-status-trigger (healthy | unhealthy | either)] [--event-source-trigger (pool | origin | either)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-glb-healthcheck-alert}
@@ -9533,7 +9343,6 @@ ibmcloud cis alert-policy glb-healthcheck-alert-update  a2633e68-1a64-2512-a321-
 ```sh
 ibmcloud cis alert-policy web-analytics-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-web-analytics-alert}
@@ -9580,7 +9389,6 @@ ibmcloud cis alert-policy web-analytics-alert-update a2633e68-1a64-2512-a321-b64
 ```sh
 ibmcloud cis alert-policy maintenance-event-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-update-maintenance-event-alert}
@@ -9633,7 +9441,6 @@ Delete an alert policy.
 ```sh
 cis alert-policy delete POLICY_ID [-i, --instance INSTANCE] [-f, --force]
 ```
-{: pre}
 
 #### Command options
 {: #delete-alert-policy-options}
@@ -9665,7 +9472,6 @@ Send a test alert for an alert policy.
 ```sh
 cis alert-policy test POLICY_ID [-i, --instance INSTANCE] [-f, --force]
 ```
-{: pre}
 
 #### Command options
 {: #test-alert-policy-options}
@@ -9700,7 +9506,6 @@ List all alert webhooks.
 ```sh
 ibmcloud cis alert-webhooks [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #opt-list-alert-webhooks}
@@ -9729,7 +9534,6 @@ Show the details of a webhook.
 ```sh
 ibmcloud cis alert-webhook WEBHOOK_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-alert-webhook-options}
@@ -9761,7 +9565,6 @@ Create an alert webhook for an instance.
 ```sh
 ibmcloud cis alert-webhook-create --name NAME --url URL [--secret SECRET] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #create-alert-webhook-options}
@@ -9799,7 +9602,6 @@ Update an alert webhook.
 ```sh
 cis alert-webhook-update WEBHOOK_ID [--name NAME] [--url URL] [--secret SECRET] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-alert-webhook-options}
@@ -9840,7 +9642,6 @@ Delete an alert webhook.
 ```sh
 ibmcloud cis alert-webhook-delete WEBHOOK_ID [-i, --instance INSTANCE] [-f, --force]
 ```
-{: pre}
 
 #### Command options
 {: #delete-alert-webhook-options}
@@ -9877,7 +9678,6 @@ List all advanced rate limiting rules.
 ```sh
 ibmcloud cis advanced-rate-limiting rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-rules-options}
@@ -9909,7 +9709,6 @@ Get details of an advanced rate limiting rule.
 ```sh
 ibmcloud cis advanced-rate-limiting rule DNS_DOMAIN_ID RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-rule-options}
@@ -9944,7 +9743,6 @@ Create an advanced rate limiting rule.
 ```sh
 ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --match EXPRESSION --action ACTION --same-characteristics CHARACTERSTICS --requests REQUEST_PER_PERIOD --period PERIOD [--timeout TIMEOUT] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #create-rule-options}
@@ -10056,7 +9854,6 @@ Update an advanced rate limiting rule.
 ```sh
 ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAME --match EXPRESSION --action ACTION --same-characteristics CHARACTERSTICS --requests REQUEST_PER_PERIOD --period PERIOD [--timeout TIMEOUT] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #update-rule-options}
@@ -10170,7 +9967,6 @@ Delete an advanced rate limiting rule by id.
 ```sh
 ibmcloud cis advanced-rate-limiting rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #delete-rule-options}
@@ -10213,7 +10009,6 @@ List all managed WAF rulesets.
 ```sh
 ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-rulesets-options}
@@ -10245,7 +10040,6 @@ Get details of a managed WAF ruleset.
 ```sh
 ibmcloud cis managed-waf ruleset DNS_DOMAIN_ID RULESET_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-ruleset-options}
@@ -10280,7 +10074,6 @@ Get details of a deployed managed WAF rule.
 ```sh
 ibmcloud cis managed-waf deployment DNS_DOMAIN_ID RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-deployment-options}
@@ -10315,7 +10108,6 @@ List all deployed managed WAF rules.
 ```sh
 ibmcloud cis managed-waf deployments DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-deployments-options}
@@ -10348,7 +10140,6 @@ Create an exception rule to skip execution of specified managed WAF rules.
 ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID --match EXPRESSION [--skip-rules RULES] [--enabled true|false] [--logging true|false] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #deployment-add-exception-options}
@@ -10437,7 +10228,6 @@ Update an exception rule in the deployed managed WAF rules.
 ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID [--match MATCH] [--skip-rules RULES] [--enabled true|false] [--logging true|false] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
 ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #deployment-update-exception-options}
@@ -10529,7 +10319,6 @@ Add a managed ruleset to the deployed managed WAF rules.
 ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--match EXPRESSION] [--enabled true|false] [--override-action ACTION] [--override-status STATUS] [--paranoia-level LEVEL] [--override-rules RULE] [-i, --instance INSTANCE] [--output FORMAT]
 ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #deployment-add-ruleset-options}
@@ -10635,7 +10424,6 @@ Update a managed ruleset in the deployed managed WAF rules.
 ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID [--match EXPRESSION] [--enabled true|false] [--override-action ACTION] [--override-status STATUS] [--paranoia-level LEVEL] [--override-rules RULE] [--reset-all] [-i, --instance INSTANCE] [--output FORMAT]
 ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #deployment-update-ruleset-options}
@@ -10747,7 +10535,6 @@ List all custom rules.
 ```sh
 ibmcloud cis custom-waf rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #list-custom-rules-options}
@@ -10779,7 +10566,6 @@ Get details of a custom rule.
 ```sh
 ibmcloud cis custom-waf rule DNS_DOMAIN_ID RULE_ID [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #show-custom-rule-options}
@@ -10816,7 +10602,6 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action AC
 
 ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #rule-create-options}
@@ -10913,7 +10698,6 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action
 
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #rule-update-options}
@@ -10999,7 +10783,6 @@ Change the execution order of the custom rule.
 ```sh
 ibmcloud cis custom-waf rule-order-update DNS_DOMAIN_ID RULE_ID [--before RULE_ID] [--after RULE_ID] [--index INDEX] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #rule-order-update-options}
@@ -11043,7 +10826,6 @@ Delete a custom rule by ID.
 ```sh
 ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --instance INSTANCE] [--output FORMAT]
 ```
-{: pre}
 
 #### Command options
 {: #rule-delete-options}
