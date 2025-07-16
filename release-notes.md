@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-07-16"
 
 keywords:
 
@@ -21,7 +21,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 ## 15 July 2025
-{: #cis-april0825}
+{: #cis-july1525}
 
 Custom and managed lists
 :   Released support for custom lists and managed lists to enhance control over security and traffic management policies.
