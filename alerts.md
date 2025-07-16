@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-16"
 
 keywords:
 
@@ -52,7 +52,7 @@ To configure alert policies in the console, navigate to your **Account** page an
 1. Choose an alerting method. You can select a webhook, enter an email address to send alerts to, or both. Only one notification is required to complete configuration.
     * Enter an email address to which {{site.data.keyword.cis_short}} sends alerts. Click the `+` to add the address to the alert. Repeat for all email addresses.
     * Click **Add webhook** and select an available webhook. If no webhooks are present, this option is unavailable.
-1. Click **Create**
+1. Click **Create**.
 
 By default, alert policies are enabled when created. You can disable alerts that you created by switching the toggle in the **Enabled** column.
 
