@@ -36,6 +36,7 @@ Before you create a Logpush job by using the UI, review the following informatio
 * If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
 
    * Accepting the logpush user invitation (cislogp@us.ibm.com) is a manual process. An authorized CIS team accepts the user invitation and the portal reflects the updated status. If the invitation still shows as `Pending`, contact support team.
+
    * To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
    {: important}
 
