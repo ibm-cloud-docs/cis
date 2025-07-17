@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-16"
 
 keywords:
 
@@ -19,6 +19,18 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
+## 15 July 2025
+{: #cis-july1525}
+
+Custom and managed lists
+:   Released support for custom lists and managed lists to enhance control over security and traffic management policies.
+
+    * [Custom lists](/apidocs/cis#get-custom-lists) let you define and manage ASN, IP, and hostname entries for use in access rules and other policy configurations.
+
+    * [Managed lists](/apidocs/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
+
+    These features enable more accurate policy targeting and improve operational efficiency within CIS. For more information, see [Working with lists](/docs/cis?group=working-with-lists).
 
 ## 28 February 2025
 {: #cis-feb2825}

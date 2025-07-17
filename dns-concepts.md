@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-11"
+lastupdated: "2025-07-16"
 
 keywords:
 
@@ -25,7 +25,7 @@ To perform this translation, the DNS system queries a network of interconnected 
 
 A name server provides services that respond to queries against a directory, translating meaningful, text-based web or hostnames into IP addresses.
 
-Name server delegation occurs when a domain's name server receives a request for a subdomain's records and responds by referring the requester to the delegated name server responsible for that subdomain. This process allows decentralized management of large domains, such as `ibm.com`.
+Name server delegation occurs when a domain's name server gets a request for a subdomain's records and responds by referring the requester to the delegated name server that manages the subdomain. This process allows decentralized management of large domains, such as `ibm.com`.
 
 With a custom domain name server, you can use the DNS provider's servers with the customized reference name of your own domain. For example, you can define your name server as `ns1.cloud.ibm.com` instead of the provider's default like `ns1.acme.com`.
 
