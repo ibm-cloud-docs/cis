@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-07"
+lastupdated: "2025-07-17"
 
 keywords:
 
@@ -21,24 +21,25 @@ subcollection: cis
 ## Before you begin
 {: #before-you-begin-logpush-ui}
 
-Before you create a Logpush job using the UI, review the following information and satisfy any prerequisites:
+Before you create a Logpush job by using the UI, review the following information and satisfy any prerequisites:
 
 * Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations:{: ui}
    - IBM Cloud Logs
    - Cloud Object Storage
    - Splunk
 * Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
-* If using Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.{: cli}{: api}
+* when you use Cloud Object Storage, you must have a Cloud Object Storage instance with a bucket that has **Object Writer** access that is granted to IBM Cloud account `cislogp@us.ibm.com`. This enables CIS to write request logs to the Cloud Object Storage bucket.{: cli}{: api}
 * The data from Logpush is the same as that from [Logpull](/docs/cis?topic=cis-logpull#logpull). However, unlike Logpull, which allows you to download request logs, Logpush enables you to push the request logs to your destination.
-* DNS, Range, and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when using Cloud Object Storage, you'll need to specify a different path.
-* Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring the log data is encrypted while in motion.
-* When sending logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk).
+* DNS, Range, and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can be sent to the same destination. However, when you use Cloud Object Storage, you need to specify a different path.
+* Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring that the log data is encrypted while in motion.
+* When you send logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk).
 * If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
 
-   To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
+   * Accepting the logpush user invitation (cislogp@us.ibm.com) is a manual process. An authorized CIS team accepts the user invitation and the portal reflects the updated status. If the invitation still shows as `Pending`, contact support team.
+   * To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
    {: important}
 
-* When using Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
+* When you use Cloud Object Storage, you must verify ownership after creating a Logpush job. This task is described in the following procedure.
 
 ## Creating a Logpush job in the console
 {: #logpush-setup-ui}
@@ -58,7 +59,7 @@ To create a Logpush job in the console, follow these steps:
    :   Enter the IBM Cloud Logs instance ID, instance region, and API key (user managed).
 
        An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
-   
+
        For an IBM Cloud Logs service, the user or service ID must be granted the **Sender** IAM role.
        {: important}
 
