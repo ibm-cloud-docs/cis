@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-06"
+lastupdated: "2025-07-18"
 
 keywords:
 
@@ -30,7 +30,7 @@ Select the type of rate-limiting rule, either a **Custom rule** or **Protect log
 {: #create-a-custom-rate-limiting-rule-ui}
 {: ui}
 
-Enter a rule name that helps you remember what the rule does. This is an optional field.
+Enter a rule name that helps you remember what the rule does. This field is an optional field.
 
 In the **Traffic matching criteria** section, enter the following information.
 
@@ -61,8 +61,8 @@ Select from the actions listed, and specify the timeout period. In this case, th
 |Action| Description|
 |------|------------|
 |Block | Issues a 429 error when the threshold is exceeded|
-|Challenge | User must pass a Google reCaptcha Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.|
-|JS Challenge | The user must pass a Javascript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.
+|Challenge | User must pass a Google re-Captcha Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.|
+|JS Challenge | The user must pass a JavaScript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.
 |Simulate| You can use this option to test your rule before applying any of the other options in your live environment.
 {: caption="Actions for rate limiting" caption-side="bottom"}
 
@@ -71,7 +71,7 @@ In the **Advanced response** section, specify the response type when a rule's th
 ## Bypassing URLs
 {: #rate-limiting-bypass}
 
-Bypass lets you create the equivalent of an allowlist or exception for a set of URLs.  No actions trigger for those URLs, even if the rate-limiting rule is matched.
+Bypass lets you create the equivalent of an allowlist or exception for a set of URLs. No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
 ## Protecting login
 {: #rate-limiting-protect-login}
@@ -107,7 +107,7 @@ Follow these steps to get the rate-limiting rule entry point ruleset:
    ```
    {: pre}
 
-The ruleset ID will be in the response of the successful request. If the above call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the rate-limiting rule phase:
+The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the rate-limiting rule phase:
 
    ```sh
    curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \

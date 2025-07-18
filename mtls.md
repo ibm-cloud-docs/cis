@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-18"
 
 keywords:
 
@@ -15,9 +15,7 @@ subcollection: cis
 # Using mutual TLS
 {: #mtls-features}
 
-
-
-Mutual Transport Layer Security (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It is only available for customers at the Enterprise or Security plan level.
+Mutual Transport Layer Security (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It is only available to customers at any Enterprise plan level.
 {: shortdesc}
 
 When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches your application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds.
@@ -27,7 +25,7 @@ When mTLS is configured, access is granted only to requests with a corresponding
 ## Configuring mutual TLS
 {: #configure-mtls}
 
-Mutual TLS is not enabled by default. It is an additional service that requires prior authorization and enablement.
+Mutual TLS is not enabled by default. It is an additional service that requires prior authorization and enablement and is enabled per domain.
 
 To obtain authorization, you must submit an IBM Support case. See [Creating support cases](/docs/account?topic=account-open-case)
 
@@ -41,7 +39,7 @@ After mTLS is enabled, it can't be disabled.
 
 To set up mTLS authentication in the IBM CIS console for a particular endpoint:
 1. In the Root certificates table, click **Add** to define a new root certificate.
-1. Paste the certificate content into the content field, provide a name for the Root CA, and add one or more fully qualified domain names (FQDN) of the endpoints that you want to use this certificate.
+1. Paste the certificate content into the content field. Provide a name for the Root CA, and add one or more fully qualified domain names (FQDN) of the endpoints that you want to use this certificate.
    These FQDNs are the hostnames that are used for the resources protected by the application policy. You must associate the Root CA with the FQDN used by the application that is protected.
 
 1. Click **Save**.
@@ -84,3 +82,5 @@ Follow this validation workflow when you enable this Access policy:
    Chain verification is applicable to certificate validation.
 1. When the client certificate is trusted by the root certificate, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed.
    If a request has no valid client certificate, `403 Forbidden` returns in the response.
+
+To list access certificates with the API, see [List access certificates](/apidocs/cis#list-access-certificates)
