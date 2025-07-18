@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-07-18"
 
 keywords: health checks, Free Trial plan, dedicated certificate, known issues
 
@@ -92,3 +92,12 @@ Before changing your CIS instance from an Enterprise plan to a Standard plan, yo
     {: pre}
 
     The JSON file should include the complete page rule configuration, including ID, with the necessary updates.
+
+## Protocols
+{: #limitations-protocols}
+ 
+The following limitations apply to supported protocols:
+
+* HTTPS: Currently, HTTPS applications do not support HTTP/3.
+* UDP: Currently, CIS doesn't support UDP packet fragmentation. If a packet is fragmented, the CIS edge drops it.
+* Minecraft: Minecraft Java Edition is supported, but Minecraft Bedrock Edition is not supported.
