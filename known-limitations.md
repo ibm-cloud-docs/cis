@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-07-18"
 
 keywords: health checks, Free Trial plan, dedicated certificate, known issues
 
@@ -18,22 +18,25 @@ subcollection: cis
 The following information describes some limitations when working with {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}), as well as some suggested courses of action to improve your experience.
 {: shortdesc}
 
+## General
+{: #general-limitations}
+
 * It is recommended that you use Chrome.
 * The free trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed to add new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.
 * For this service, we support subdomain delegation only using NS records from another provider. CNAME delegation is not supported.
 * A, AAAA, and CNAME wildcard records ("*") can't be proxied.
-* When you delete a dedicated certificate, it might reappear in the list for a short time before the deletion is complete.
-* To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
 * IP rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
 
 ## Certificates
 {: #known-limitations-certificates}
 
-* **Universal CA:** CIS can change the CA of Universal certificates without prior notice, and will not notify you of these changes. If you prefer to select your own issuing certificate authority, order an advanced certificate.
-* **Certificate pinning:** Certificate pinning is not supported natively in {{site.data.keyword.cis_short_notm}}. If you want to use certificate pinning, you must use custom certificates.
-* **Full setup:** Universal SSL certificates only support SSL for the root or first-level subdomains such as `example.com` and `www.example.com`. To enable SSL support on second, third, and fourth-level subdomains such as `dev.www.example.com` or `app3.dev.www.example.com` use either an advanced certificate or a custom certificate.
-* **CNAME (partial) setup:** On a CNAME setup zone, each subdomain has its own Universal SSL certificate and does not require extra features or purchases.
-* **Range:** Universal SSL is not compatible with an {{site.data.keyword.cis_short_notm}} Range application. If you are trying to use Range, use either an advanced certificate or a custom certificate.
+* Universal CA: CIS can change the CA of Universal certificates without prior notice, and will not notify you of these changes. If you prefer to select your own issuing certificate authority, order an advanced certificate.
+* Certificate pinning: Certificate pinning is not supported natively in {{site.data.keyword.cis_short_notm}}. If you want to use certificate pinning, you must use custom certificates.
+* Full setup: Universal SSL certificates only support SSL for the root or first-level subdomains such as `example.com` and `www.example.com`. To enable SSL support on second, third, and fourth-level subdomains such as `dev.www.example.com` or `app3.dev.www.example.com` use either an advanced certificate or a custom certificate.
+* CNAME (partial) setup: On a CNAME setup zone, each subdomain has its own Universal SSL certificate and does not require extra features or purchases.
+* Range: Universal SSL is not compatible with an {{site.data.keyword.cis_short_notm}} Range application. If you are trying to use Range, use either an advanced certificate or a custom certificate.
+* When you delete a dedicated certificate, it might reappear in the list for a short time before the deletion is complete.
+* To modify your custom dedicated certificate’s hostnames after ordering, you must order a new certificate and then delete the old one.
 
 ## DNS
 {: #known-limitations-dns}
@@ -92,3 +95,12 @@ Before changing your CIS instance from an Enterprise plan to a Standard plan, yo
     {: pre}
 
     The JSON file should include the complete page rule configuration, including ID, with the necessary updates.
+
+## Protocols
+{: #limitations-protocols}
+ 
+The following limitations apply to supported protocols:
+
+* HTTPS: Currently, HTTPS applications do not support HTTP/3.
+* UDP: Currently, CIS doesn't support UDP packet fragmentation. Fragmented UDP packets are dropped at the CIS edge.
+* Minecraft: Only Minecraft Java Edition is supported; Minecraft Bedrock Edition isn't supported. 
