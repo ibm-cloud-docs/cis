@@ -71,7 +71,7 @@ In the **Advanced response** section, specify the response type when a rule's th
 ## Bypassing URLs
 {: #rate-limiting-bypass}
 
-Bypass lets you create the equivalent of an allowlist or exception for a set of URLs. No actions trigger for those URLs, even if the rate-limiting rule is matched.
+Bypass helps you to create the equivalent of an allowlist or exception for a set of URLs. No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
 ## Protecting login
 {: #rate-limiting-protect-login}
@@ -87,7 +87,7 @@ Enter a name for the rule, and the login URL.
 ### Getting the rate-limiting rule entry point for the API
 {: #get-ratelimit-rule-entry-point-api}
 
-All rate-limiting rule API operations require a `RULESET_ID` of the entry point ruleset for the rate-limiting rules phase. This entry point ruleset may already exist or needs to be created if it does not exist.
+All rate-limiting rule API operations require a `RULESET_ID` of the entry point ruleset for the rate-limiting rules phase. This entry point ruleset might exist or needs to be created if it does not exist.
 
 Follow these steps to get the rate-limiting rule entry point ruleset:
 
