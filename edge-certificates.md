@@ -15,7 +15,7 @@ subcollection: cis
 # Managing edge certificates
 {: #managing-edge-certs}
 
-Edge certificates are TLS certificates that are presented to users when they access your domain over HTTPS. These certificates secure the connection between the user's browser and the {{site.data.keyword.cis_full}} edge network. {{site.data.keyword.cis_full}} offers three types of edge certificates: Universal, Advanced, and Custom.
+Edge certificates are TLS certificates that are presented to users when they access your domain over HTTPS. These certificates secure the connection between the user's browser and the {{site.data.keyword.cis_full}} edge network. {{site.data.keyword.cis_short_notm}} offers three types of edge certificates: Universal, Advanced, and Custom.
 {: shortdesc}
 
 ![Diagram of an edge certificate](images/edge-cert.svg "Diagram of an edge certificate"){: caption="A diagram of an edge certificate" caption-side="bottom"}
