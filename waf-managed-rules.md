@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-17"
 
 keywords: managed rules
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Migrating to WAF managed rules
 {: #migrating-to-managed-rules}
 
-The CIS web application firewall (WAF) capabilities are moving under the Ruleset Engine suite. This change requires a manual migration and it is recommended that you use the CIS UI migration wizard. To do so, you need to review the configuration, as well as review [security events](/docs/cis?topic=cis-using-the-cis-security-events-capability) before finishing the update.
+The CIS web application firewall (WAF) capabilities are moving under the Ruleset Engine suite. This change requires a manual migration and it is recommended that you use the CIS UI migration wizard. To do so, you must review the configuration as well as review [security events](/docs/cis?topic=cis-using-the-cis-security-events-capability) before finishing the update.
 {: shortdesc}
 
 After you complete the migration, any automation that uses APIs, CLIs, or Terraform that are related to WAF will stop working and must be updated to use the new managed rulesets.
