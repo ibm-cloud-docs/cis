@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-18"
 
 keywords:
 
@@ -11,8 +11,6 @@ subcollection: cis
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 # Authenticated origin pull
 {: #authenticated-origin-pull}
@@ -53,7 +51,7 @@ To enable authenticated origin, pull globally on a zone:
 1. Configure the origin web server to accept client certificates.
 1. Enable authenticated origin pull by using the [{{site.data.keyword.cis_short_notm}} CLI](/docs/cis?topic=cis-cis-cli#update-authenticated-origin-pull-setting).
 
-## Zone-level authenticated origin pull with customer certificates
+## Zone-level authenticated origin pull with custom certificates
 {: #cust-cert-zone-auth-org-pull}
 
 This option enables secure content access from the origin server by using customer-uploaded certificates for authentication at the zone level.
