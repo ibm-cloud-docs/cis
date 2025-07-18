@@ -16,7 +16,7 @@ subcollection: cis
 {: #cis-origin-certificates}
 
 
-Origin certificates are TLS certificates that are issued by {{site.data.keyword.cis_full}} to secure traffic between the {{site.data.keyword.cis_full}} edge and your origin server. Order free TLS certificates to install on your origin server.
+Origin certificates are TLS certificates that are issued by {{site.data.keyword.cis_full}} to secure traffic between the {{site.data.keyword.cis_short_notm}} edge and your origin server. Order free TLS certificates to install on your origin server.
 {: shortdesc}
 
 ![Diagram of an origin certificate](images/origin-cert.svg "Diagram of an origin certificate"){: caption="A diagram of an origin certificate" caption-side="bottom"}
