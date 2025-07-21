@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-07-21"
 
 keywords:
 
@@ -70,41 +70,3 @@ Enterprise Tier plans released
 
 Standard Next plan released
 :   Released the new [Standard Next plan](/docs/cis?topic=cis-transition-plans), which replaces the current Standard plan.
-
-## 23 March 2022
-{: #cis-mar2322}
-{: release-note}
-
-Alert policies
-:   Added UI support for creating and managing alert policies.
-
-Logpush workflow updates
-:   Updated Logpush UI, and included IBM Log Analysis instance support.
-
-## 8 March 2022
-{: #cis-mar0822}
-{: release-note}
-
-Log Analysis integration with Logpush
-:   Added Log Analysis instance support to the API and CLI for creating and configuring Logpush jobs.
-
-## 2 March 2022
-{: #cis-mar0222}
-{: release-note}
-
-New security alerts API
-:   Added API for creating and configuring security alerts.
-
-## 5 November 2021
-{: #cis-nov0521}
-{: release-note}
-
-New API for notifications
-:   Added API for creating and configuring notifications.
-
-## 11 May 2021
-{: #cis-may1121}
-{: release-note}
-
-Service clock synchronization
-:   Add service clock synchronization information.
