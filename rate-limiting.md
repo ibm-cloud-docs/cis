@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-07-21"
 
 keywords:
 
@@ -67,6 +67,32 @@ Select from the actions listed, and specify the timeout period. In this case, th
 {: caption="Actions for rate limiting" caption-side="bottom"}
 
 In the **Advanced response** section, specify the response type when a rule's threshold is exceeded.
+
+### Verifying the rate-limiting rules and response consistency by using HTTP status
+{: #verify-rate-limiting-response}
+
+When you apply rate-limiting rules to a web address or service, it’s important to confirm that the rules are enforced correctly. A simple test confirms that the system responds with the following appropriate HTTP status codes:
+
+* `200 OK` or `404 Not Found` for allowed requests
+* `429 Too Many Requests` when rate limits are exceeded.
+
+To verify the rate-limiting rules and response consistency, run the following command:
+
+```sh
+for i in {1..N}; do curl -s -o /dev/null -w "%{http_code}\n" <your-target-url>; done
+```
+{: pre}
+
+#### Command options
+{: #rate-command-options}
+
+`N`
+:   Number of requests you want to send.
+
+`your-target-url`
+:   URL of the service or endpoint you want to test.
+
+This command provides output to the HTTP status code for each request and allows you to observe when the rate limit threshold is reached.
 
 ## Bypassing URLs
 {: #rate-limiting-bypass}

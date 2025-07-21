@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-17"
+lastupdated: "2025-07-21"
 
 keywords:
 
@@ -34,6 +34,7 @@ Before you create a Logpush job by using the UI, review the following informatio
 * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring that the log data is encrypted while in motion.
 * When you send logs to Splunk, CIS checks the IP address's accessibility and port, and then validates the certificate of the HTTP Receive log source. If all parameters are valid, then a Logpush is created. The Logpush then begins sending events to the HTTP Event Collector (Splunk).
 * If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
+
    To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
    {: important}
 
