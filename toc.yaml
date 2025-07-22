@@ -92,6 +92,7 @@ toc:
             - preventing-ddos-attacks.md
             - ddos-responding.md
             - ddos-defense-mode.md
+            - ddos-using-third-party-services.md
         - topicgroup:
             label: Working with rulesets
             topics:
