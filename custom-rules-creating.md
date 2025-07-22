@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-22"
 
 keywords:
 
@@ -456,14 +456,22 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 
 The following example creates a custom rule using Terraform:
 
-First, get the entry point ruleset ID for the phase `http_request_firewall_custom`:
+First, create an entrypoint ruleset:
 
 ```terraform
- data "ibm_cis_ruleset_entrypoint_versions" "test"{
-    cis_id    = ibm_cis.instance.id
-    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+resource "ibm_cis_ruleset_entrypoint_version" "test" {
+    cis_id    = "<cis-id>"
+    domain_id = "<domain-id>"
     phase = "http_request_firewall_custom"
-   }
+    rulesets {
+      description = "Entry point ruleset for custom ruleset"
+    }
+    lifecycle {
+      ignore_changes = [
+        rulesets
+      ]
+  }
+}
 ```
 {: pre}
 
@@ -473,7 +481,7 @@ Then, to create a custom rule:
    resource ibm_cis_ruleset_rule "config" {
       cis_id    = ibm_cis.instance.id
       domain_id = data.ibm_cis_domain.cis_domain.domain_id
-      ruleset_id = "data.ibm_cis_ruleset_entrypoint_versions.ruleset_id"
+      ruleset_id = resource.ibm_cis_ruleset_entrypoint_version.rulesets[0].ruleset_id
       rule {
         action =  "block"
         description = "var.description"
