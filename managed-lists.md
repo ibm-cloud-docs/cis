@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-07-22"
 
 keywords: managed lists
 
@@ -29,8 +29,9 @@ You can access CIS IP threat intelligence through managed IP lists. CIS offers s
 | Cloudflare VPNs | `cf.vpn` | IP addresses of known VPN servers. |
 | Cloudflare Malware | `cf.malware` | IP addresses of known sources of malware. |
 | Cloudflare Botnets, Command and Control Servers | `cf.botnetcc` | IP addresses of known botnet command-and-control servers. |
-
 {: caption="Available managed IP lists" caption-side="bottom"}
+
+
 
 ## Listing managed lists in an instance from the CLI
 {: #listing-managed-lists-cli}
