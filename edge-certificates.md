@@ -15,7 +15,7 @@ subcollection: cis
 # Managing edge certificates
 {: #managing-edge-certs}
 
-Edge certificates are TLS certificates that are presented to users when they access your domain over HTTPS. These certificates secure the connection between the visitor's browser and the {{site.data.keyword.cis_full}} edge network. {{site.data.keyword.cis_short_notm}} offers three types of edge certificates: Universal, Advanced, and Custom.
+Edge certificates are TLS certificates that are presented to users when they access your domain over HTTPS. These certificates secure the connection between the browser and the {{site.data.keyword.cis_full}} edge network. {{site.data.keyword.cis_short_notm}} offers three types of edge certificates: Universal, Advanced, and Custom.
 {: shortdesc}
 
 ![Diagram of an edge certificate](images/edge-cert.svg "Diagram of an edge certificate"){: caption="A diagram of an edge certificate" caption-side="bottom"}
@@ -99,7 +99,7 @@ Custom certificates are for customers who want to use their own SSL certificates
 
 Unlike universal or advanced certificates, {{site.data.keyword.cis_short_notm}} doesn't manage the issuance or renewal of custom certificates. You are responsible for uploading, updating, and tracking the expiration dates of your custom certificates.
 
-The number of certificates you can use depends on your plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information. If you need more, submit a support ticket. See [Creating support cases](/docs/account?topic=account-open-case&interface=ui)
+The number of certificates you can use depends on your plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information. If you need more, submit a support case. See [Creating support cases](/docs/account?topic=account-open-case&interface=ui)
 {: note}
 
 ## Certificate renewal failure and replacement

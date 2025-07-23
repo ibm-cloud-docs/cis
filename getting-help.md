@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-02"
+lastupdated: "2025-07-23"
 
-keywords: support ticket, IBM Cloud development teams support case
+keywords: support case IBM Cloud development teams support case
 
 subcollection: cis
 
