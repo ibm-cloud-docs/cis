@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-23"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # About TLS
 {: #about-tls}
 
-TLS is a standard security protocol for establishing encrypted links between a web server and a browser in an online communication. A TLS certificate is necessary to create a TLS connection with a website and comprises the domain name, the name of the company, and additional data, such as company address, city, state, and country. The certificate also shows the expiration date and details of the issuing certificate authority (CA).
+Transport Layer Security (TLS) is a standard security protocol for establishing encrypted links between a web server and a browser in an online communication. A TLS certificate is necessary to create a TLS connection with a website and comprises the domain name, the name of the company, and additional data, such as company address, city, state, and country. The certificate also shows the expiration date and details of the issuing certificate authority (CA).
 {: shortdesc}
 
 ## How Does TLS Work?
