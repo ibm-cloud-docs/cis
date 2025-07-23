@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-07-23"
 
 keywords:
 
@@ -64,3 +64,85 @@ The "CNAME flattening" feature in {{site.data.keyword.cis_short_notm}} makes it 
 {: #dns-concepts-secure-dns}
 
 DNSSEC is a technology that digitally "signs" DNS data so you can be confident that it is valid. To eliminate vulnerability from the internet, DNSSEC must be deployed at each step in the lookup process, from the root zone to the final domain name (for example, `www.icann.org`).
+
+## Batch DNS record changes
+{: #batch-dns-records}
+
+{{site.data.keyword.cis_short_notm}} supports batch DNS record changes, allowing you to update multiple zone records in a single action. This approach reduces manual effort and simplifies domain management tasks, such as migrations, environment setups, or automation workflows. While the {{site.data.keyword.cis_short_notm}} console supports individual changes, batch operations are best performed by using API.
+
+The [Batch DNS records](/apidocs/cis#create-dns-record-0fa00f) API endpoint allows you to perform multiple `DELETES`, `PATCHES`, `PUTS`, and `POSTS` in a single request.
+
+Operations that are included in the `/batch` request body are always processed in the following order:
+1. Deletes
+1. Patches
+1. Puts
+1. Posts
+
+Within each operation type, individual record changes are applied in the order in which they are processed. If any of the operations fail, no changes are applied, and the API returns the first error that it encounters.
+
+### Key considerations for batch DNS records
+{: #key-considerations-batch-dns}
+
+When specifying each operation in the /batch request body, follow these guidelines for required fields and how unspecified fields are handled:
+
+* `Deletes`: Only the `id` field is required for each record object. You can include additional fields, such as `name` for clarity, but all other fields are ignored.
+
+* `Patches`: Apart from each record `id`, specify the fields that you want to update. All unspecified fields remain the same.
+
+* `Puts`: Specify the `id`, `content`, `name`, and `type` of each record. Also specify any other fields that you want to set to non-default values. Any unspecified fields assume the default value for each [Record type](/docs/cis?topic=cis-set-up-your-dns-for-cis#adding-dns-records). This operation works as an overwrite, so all fields in a record are always affected.
+
+* `Posts`: Used to create new records. The `id` field is not required. For field definitions, see the [Create DNS Record](/apidocs/cis#create-dns-record-e2ec84) endpoint and select the appropriate record type from the request body specification.
+
+#### Example request
+{: #example-request}
+
+In this example, the proxied field for the first record that is listed in the `puts` assumes the default value `false`.
+
+```json
+{
+  "deletes": [
+    {
+      "id": "023e105f4ecef8ad9ca31a8372d0c353"
+    }
+  ],
+  "patches": [
+    {
+      "id": "023e105f4ecef8ad9ca31a8372d0c353",
+      "comment": "Domain verification record",
+      "name": "example.com",
+      "proxied": true,
+      "settings": {},
+      "tags": [],
+      "ttl": 3600,
+      "content": "198.51.100.4",
+      "type": "A"
+    }
+  ],
+  "posts": [
+    {
+      "comment": "Domain verification record",
+      "name": "example.com",
+      "proxied": true,
+      "settings": {},
+      "tags": [],
+      "ttl": 3600,
+      "content": "198.51.100.4",
+      "type": "A"
+    }
+  ],
+  "puts": [
+    {
+      "id": "023e105f4ecef8ad9ca31a8372d0c353",
+      "comment": "Domain verification record",
+      "name": "example.com",
+      "proxied": true,
+      "settings": {},
+      "tags": [],
+      "ttl": 3600,
+      "content": "198.51.100.4",
+      "type": "A"
+    }
+  ]
+}
+```
+{: codeblock}
