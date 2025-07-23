@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-07-23"
 
 keywords: lists
 
@@ -34,27 +34,6 @@ CIS supports the following lists:
 
 * [Custom lists](/docs/cis?topic=cis-custom-lists): Includes custom IP lists, hostname lists, and ASN lists.
 * [Managed lists](/docs/cis?topic=cis-managed-lists): Lists managed and updated by CIS. 
-
-## List availability
-{: #lists-availability}
-
-List availability varies according to the list type and your CIS plan and subscriptions.
-
-|  | Free | Pro | Business | Enterprise |
-| -- | ---- | ---- | ---- | ------------- |
-| Availability | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-| Number of custom lists | 1 | 10 | 10 | 10 |
-| Custom lists with IPs (IP lists) | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-| Other custom lists (ASNs, hostnames) | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [Yes]{: tag-green} |
-| Managed IP list: Cloudflare Open Proxies | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [Yes]{: tag-green} |
-| All managed IP lists | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | With separate add-on |
-{: caption="Available list" caption-side="bottom"}
-
-Additional details and exceptions apply by plan:
-
-* The number of available custom lists depends on the highest plan in your account. Any account with at least one paid plan will get the highest quota.
-* Customers on Enterprise plans can contact their account team if they need more custom lists or a larger maximum number of items across lists. For these customers, the maximum number of custom lists per data type is 40 lists.
-* The CIS Enterprise plan provides access to the CIS Open Proxies managed IP list. Other managed IP lists are available as part of Enterprise Security bundles. For more information, contact your IBM Support representative. 
 
 ## List requirements
 {: #list-availability-requirements}
