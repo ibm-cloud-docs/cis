@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-06"
+lastupdated: "2025-07-23"
 
 keywords:
 
@@ -179,7 +179,7 @@ The following list denotes the priority by which the certificates are displayed 
 ### Minimum TLS version
 {: #security-minimum-tls-version}
 
-See [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version). Higher levels of TLS provide more security, but might prevent customers from connecting to your site.
+Higher levels of TLS provide more security, but might prevent customers from connecting to your site. For more informtion, see [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version).
 
 ## Best practice 5: Configure rate limiting
 {: #best-practice-rate-limiting}

@@ -79,5 +79,5 @@ Set the minimum TLS version for traffic that tries to connect to your site by se
 
 By default, this version is set to `1.2`. Higher TLS versions provide additional security, but might not be supported by all browsers, which might prevent some customers from connecting to your site.
 
-   To update the minimum TLS version with the API see, [Update minimum TLS version setting](/apidocs/cis#update-min-tls-version)
+   To update the minimum TLS version with the API, see [Update minimum TLS version setting](/apidocs/cis#update-min-tls-version).
    {: tip}

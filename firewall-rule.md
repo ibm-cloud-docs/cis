@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-07-23"
 
 keywords:
 
@@ -21,7 +21,7 @@ Firewall rules are deprecated. CIS moved existing firewall rules to WAF custom r
 {{site.data.keyword.cis_full}} firewall rules offer power and flexibility by targeting HTTP traffic and applying custom criteria to block, challenge, log, or allow certain requests.
 {: shortdesc}
 
-You can create many types of firewall rules. However, the number of active rules on your site is limited by your customer plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information on entitlements.
+You can create many types of firewall rules. However, the number of active rules on your site is limited by your customer plan. For more information on entitlements, see [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison).
 
 The number of active rules per plan is fixed. Currently, you can't purchase more active rules.
 
