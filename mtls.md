@@ -76,15 +76,17 @@ The following example uses `curl` to test mTLS authentication by making requests
 ## Validating mutual TLS
 {: #validating-mtls}
 
-Follow this validation workflow when you enable this access policy:
+When you enable this access policy, use the following workflow to validate client certificates:
 
-1. All requests to the origin are evaluated for a valid client certificate.
-   The client device sends the client "hello". The access application responds with "hello" and a request for the client certificate.
-1. The client returns a valid certificate.
-1. Client authentication handshake is completed against the root certificate authority.
-1. For chains, a check for expired certificates exists.
-   Chain verification is applicable to certificate validation.
-1. When the client certificate is trusted by the root certificate, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed.
-   If a request has no valid client certificate, `403 Forbidden` returns in the response.
+All requests to the origin are evaluated for a valid client certificate.
+{: note}
 
-To list access certificates with the API, see [List access certificates](/apidocs/cis#list-access-certificates).
+1. The client initiates a connection by sending a `Hello` message.
+1. The access application responds with a `Hello` and requests the client certificate.
+1. The client sends its certificate for validation.
+1. The client certificate is authenticated against the configured root certificate authority.
+1. If a certificate chain is used, the system also checks for expired certificates and validates the entire chain.
+1. If the client certificate is trusted, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed. 
+1. If the client does not present a valid certificate, the server returns a `403 Forbidden` response.
+
+To retrieve access certificates with the API, see [List access certificates](/apidocs/cis#list-access-certificates).
