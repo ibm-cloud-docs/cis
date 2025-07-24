@@ -58,7 +58,7 @@ Additional details and exceptions apply by plan:
 
 * The Enterprise Usage plan only has access to the Open Proxies managed list. Custom lists are still supported.
 * Enterprise users can request a higher quota of custom lists or a larger maximum number of items across lists.
-  * The maximum number of custom lists per data type is 40 lists.
+* The maximum number of custom lists per data type is 40 lists.
   
 ## List requirements
 {: #list-availability-requirements}
