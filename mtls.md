@@ -27,20 +27,20 @@ When mTLS is configured, access is granted only to requests with a corresponding
 
 Mutual TLS (mTLS) provides certificate-based client authentication for enhanced security. mTLS is not enabled by default and requires prior authorization on a per-domain basis. To configure mTLS, follow these steps:
 
-1. Request authorization. To enable mTLS, [create a support case](/docs/account?topic=account-open-case) to request mTLS enablement for your IBM Cloud account.
+1. Request authorization. [Create a support case](/docs/account?topic=account-open-case) to request mTLS enablement for your IBM Cloud account.
 
    After mTLS is enabled, it can't be disabled.
    {: note}
    
-1. Enable mTLS in the CIS console:
+1. Enable mTLS:
 
-   1. Navigate to the **Security** page, then select the **Mutual TLS** tab.
+   1. In the CIS console, click **Security**, then select the **Mutual TLS** tab.
    1. Click **Enable**.
 
-1. Upload Root certificates in the CIS console:
+1. Upload Root certificates:
 
-   1. In the Root certificates table, click **Add** to define a new root certificate.
-   1. Paste the certificate content into the content field. Provide a name for the Root CA, and add one or more fully qualified domain names (FQDNs) of the endpoints that will use this certificate.
+   1. In the **Root certificates** table on the **Mutual TLS** page, click **Add** to define a new root certificate.
+   1. Paste the certificate content into the Certificate content field. Provide a name for the Root CA certificate, and add one or more fully qualified domain names (FQDNs) of the endpoints that will use this certificate.
 
       These FQDNs are the hostnames that are used by the resources protected by the mTLS application policy. You must associate the Root CA with the FQDN used by the protected application.
 
@@ -49,10 +49,10 @@ Mutual TLS (mTLS) provides certificate-based client authentication for enhanced 
       If using an intermediate certificate, upload the entire certificate chain.
       {: note}
 
-1. Create an mTLS access policy in the CIS console:
+1. Create an mTLS access policy:
 
-   1. In the MTLS access policies table, click to create an access application. 
-   1. Select or enter a hostname that matches one of the FQDNs associated with the uploaded root certificate.
+   1. In the **MTLS access policies** table on the **Mutual TLS** page, click **Create** to create an access application. 
+   1. Select or enter a hostname that matches one of the FQDNs associated with the uploaded root certificate and click **Create**.
 
       The application policy is pre-set to use a decision of `non_identity, and include a rule that matches any valid client certificate.
 
