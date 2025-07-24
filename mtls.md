@@ -52,7 +52,7 @@ To set up mTLS authentication in the IBM CIS console for a particular endpoint:
 ## Testing mTLS access
 {: #test-curl}
 
-The following example uses `curl` to test mTLS authentication by making requests with and without a client certificate.
+The following example uses **curl** to test mTLS authentication by making requests with and without a client certificate.
 
 1. Attempt to access the site without a client certificate.
 
