@@ -49,10 +49,13 @@ To set up mTLS authentication in the IBM CIS console for a particular endpoint:
 
 1. In the MTLS access policies table, create a new access application that enforces mTLS authentication. The application must be built with a hostname that was associated in the certificate upload modal. The policy section is pre-set to enforce a decision of `non_identity`, and an `include` rule to match any valid certificate.
 
-## Testing mTLS access using cURL
+## Testing mTLS access
 {: #test-curl}
 
+The following example uses `curl` to test mTLS authentication by making requests with and without a client certificate.
+
 1. Attempt to access the site without a client certificate.
+
    This example demonstrates using **curl** to test access to a site that enforces mTLS. The target URL in this example is `https://auth.example.com`.
 
    ```sh
@@ -68,7 +71,7 @@ To set up mTLS authentication in the IBM CIS console for a particular endpoint:
    ```
    {: pre}
 
-   If the client is properly authenticated, the response will include a CF_Authorization Set-Cookie header, indicating successful mTLS authentication.
+   If the client is properly authenticated, the response includes a `CF_Authorization Set-Cookie` header, indicating successful mTLS authentication.
 
 ## Validating mutual TLS
 {: #validating-mtls}
