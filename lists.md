@@ -35,6 +35,38 @@ CIS supports the following lists:
 * [Custom lists](/docs/cis?topic=cis-custom-lists): Includes custom IP lists, hostname lists, and ASN lists.
 * [Managed lists](/docs/cis?topic=cis-managed-lists): Lists managed and updated by CIS. 
 
+## List availability
+{: #lists-availability} 
+
+List availability varies according to the list type and your CIS plan and subscriptions.
+
+|  | Trial (no cost) | Standard Next | Enterprise |
+| -- | ---- |---- | ------------- |
+| Availability | Yes | Yes | Yes | Yes |
+| Number of custom lists | 1 | 10 | 10 |
+| Custom lists with IPs | Yes | Yes | Yes |
+| Custom lists with ASNs | No | No | Yes |
+| Custom lists with hostnames | No | No | Yes |
+| Open Proxies managed list | No | No | Yes |
+| Anonymizers managed list | No | No | Yes[^1] |
+| VPNs managed list | No | No | Yes[^2] |
+| Malware managed list | No | No | Yes[^3] |
+| Botnets, Command and Control Servers	managed list | No | No | Yes[^4]|
+{: caption="Available list" caption-side="bottom"}
+
+[^1]: Enterprise Usage plan includes Open Proxies only; custom lists are supported.
+
+[^2]: Enterprise Usage plan includes Open Proxies only; custom lists are supported.
+
+[^3]: Enterprise Usage plan includes Open Proxies only; custom lists are supported.
+
+[^4]: Enterprise Usage plan includes Open Proxies only; custom lists are supported.
+
+Additional details and exceptions apply by plan:
+ 
+* Enterprise users can request a higher quota of custom lists or a larger maximum number of items across lists.
+* The maximum number of custom lists per data type is 40 lists.
+
 ## List requirements
 {: #list-availability-requirements}
 
