@@ -87,6 +87,6 @@ All requests to the origin are evaluated for a valid client certificate.
 1. The client certificate is authenticated against the configured root certificate authority.
 1. If a certificate chain is used, the system also checks for expired certificates and validates the entire chain.
 1. If the client certificate is trusted, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed. 
-1. If the client does not present a valid certificate, the server returns a `403 Forbidden` response.
+1. If the client doesn't present a valid certificate, the server returns a `403 Forbidden` response.
 
 To retrieve access certificates with the API, see [List access certificates](/apidocs/cis#list-access-certificates).
