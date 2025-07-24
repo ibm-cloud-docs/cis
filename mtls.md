@@ -15,85 +15,68 @@ subcollection: cis
 # Using mutual TLS
 {: #mtls-features}
 
-Mutual Transport Layer Security (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It is only available to customers at any Enterprise plan level.
+Mutual Transport Layer Security (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It is only available for customers at the Enterprise or Security plan level.
 {: shortdesc}
 
-When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches your application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds.
+When mTLS is configured, access is granted only to requests with a corresponding client certificate. When a request reaches the application, CIS responds with a request for the client certificate. If the client fails to present the certificate, the request is not allowed to proceed. Otherwise, the key exchange proceeds.
 
 ![Diagram of mTLS handshake](images/mtls-handshake.png "Diagram of mTLS handshake"){: caption="Diagram of an mTLS handshake" caption-side="bottom"}
 
 ## Configuring mutual TLS
 {: #configure-mtls}
 
-Mutual TLS (mTLS) provides certificate-based client authentication for enhanced security. mTLS is not enabled by default and requires prior authorization on a per-domain basis. To configure mTLS, follow these steps:
+Mutual TLS is not enabled by default. It is an additional service that requires prior authorization and enablement.
 
-1. Request authorization. [Create a support case](/docs/account?topic=account-open-case) to request mTLS enablement for your IBM Cloud account.
+To obtain authorization, you must submit an IBM Support case.
 
-   After mTLS is enabled, it can't be disabled.
+After mTLS is turned on for your account, take the following steps to enable it.
+1. Navigate to the **Security** page in the CIS UI.
+1. Select the **Mutual TLS** tab.
+1. Click **Enable** to enable the feature.
+
+After mTLS is enabled, it can't be disabled.
+{: tip}
+
+To set up mTLS authentication in the IBM Cloud Internet Services UI for a particular endpoint:
+1. In the Root certificates table, click **Add** to define a new root certificate.
+1. Paste the certificate content into the content field, provide a name for the Root CA, and add one or more fully qualified domain names (FQDN) of the endpoints that you want to use this certificate.
+   These FQDNs are the hostnames that are used for the resources being protected by the application policy. You must associate the Root CA with the FQDN that the application being protected uses.
+1. Click **Save**.
+
+   If your zone is using an intermediate certificate in addition to the root certificate, upload the entire chain.
    {: note}
-   
-1. Enable mTLS:
 
-   1. In the CIS console, click **Security**, then select the **Mutual TLS** tab.
-   1. Click **Enable**.
+1. In the MTLS access policies table, create a new access application that enforces mTLS authentication. The application must be built with a hostname that was associated in the certificate upload modal. The policy section is pre-set to enforce a decision of `non_identity`, and an `include` rule to match any valid certificate.
 
-1. Upload Root certificates:
-
-   1. In the **Root certificates** table on the **Mutual TLS** page, click **Add** to define a new root certificate.
-   1. Paste the certificate content into the Certificate content field. Provide a name for the Root CA certificate, and add one or more fully qualified domain names (FQDNs) of the endpoints that will use this certificate.
-
-      These FQDNs are the hostnames that are used by the resources protected by the mTLS application policy. You must associate the Root CA with the FQDN used by the protected application.
-
-   1. Click **Save**.
-
-      If using an intermediate certificate, upload the entire certificate chain.
-      {: note}
-
-1. Create an mTLS access policy:
-
-   1. In the **MTLS access policies** table on the **Mutual TLS** page, click **Create** to create an access application. 
-   1. Select or enter a hostname that matches one of the FQDNs associated with the uploaded root certificate and click **Create**.
-
-      The application policy is pre-set to use a decision of `non_identity, and include a rule that matches any valid client certificate.
-
-## Testing mTLS access
+## Testing using cURL
 {: #test-curl}
 
-The following example uses **curl** to test mTLS authentication by making requests with and without a client certificate.
+1. Test for the site using mTLS by attempting to curl the site without a client certificate.
+   This curl command example is for the site example.com that has an Access policy set for `https://auth.example.com`:
 
-1. Attempt to access the site without a client certificate.
-
-   This example demonstrates using **curl** to test access to a site that enforces mTLS. The target URL in this example is `https://auth.example.com`.
-
-   ```sh
+   ```bash
    curl -sv https://auth.example.com
    ```
    {: pre}
 
-   Because no client certificate is provided, the request is expected to fail with a `403 Forbidden` response.
-1. Add your client certificate and private key to the request:
+   Without a client certificate in the request, a "403 forbidden" response displays and the site can't be accessed.
+1. Add your client certificate information to the request:
 
-   ```sh
+   ```bash
    curl -sv https://auth.example.com --cert example.pem --key key.pem
    ```
    {: pre}
 
-   If the client is properly authenticated, the response includes a `CF_Authorization Set-Cookie` header, indicating successful mTLS authentication.
+   When the authentication process completes successfully, a CF_Authorization Set-Cookie header returns in the response.
 
 ## Validating mutual TLS
 {: #validating-mtls}
 
-When you enable this access policy, use the following workflow to validate client certificates:
-
-All requests to the origin are evaluated for a valid client certificate.
-{: note}
-
-1. The client initiates a connection by sending a `Hello` message.
-1. The access application responds with a `Hello` and requests the client certificate.
-1. The client sends its certificate for validation.
-1. The client certificate is authenticated against the configured root certificate authority.
-1. If a certificate chain is used, the system also checks for expired certificates and validates the entire chain.
-1. If the client certificate is trusted, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed. 
-1. If the client doesn't present a valid certificate, the server returns a `403 Forbidden` response.
-
-To retrieve access certificates with the API, see [List access certificates](/apidocs/cis#list-access-certificates).
+Follow this validation workflow when you enable this Access policy:
+1. All requests to the origin are evaluated for a valid client certificate.
+   The client device sends the client "hello". The access application responds with "hello" and a request for the client certificate.
+1. The client returns a valid certificate.
+1. Client authentication handshake is completed against the root certificate authority.
+1. For chains, there is a check for expired certificates.
+   Chain verification is applicable to certificate validation.
+   
