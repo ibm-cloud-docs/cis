@@ -35,31 +35,6 @@ CIS supports the following lists:
 * [Custom lists](/docs/cis?topic=cis-custom-lists): Includes custom IP lists, hostname lists, and ASN lists.
 * [Managed lists](/docs/cis?topic=cis-managed-lists): Lists managed and updated by CIS. 
 
-## List availability
-{: #lists-availability} 
-
-List availability varies according to the list type and your CIS plan and subscriptions.
-
-|  | Trial (no cost) | Standard Next | Enterprise |
-| -- | ---- |---- | ------------- |
-| Availability | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-| Number of custom lists | 1 | 10 | 10 |
-| Custom lists with IPs | [Yes]{: tag-green} | [Yes]{: tag-green} | [Yes]{: tag-green} |
-| Custom lists with ASNs | [No]{: tag-red} | [No]{: tag-red} | [Yes]{: tag-green} |
-| Custom lists with hostnames) | [No]{: tag-red} | [No]{: tag-red} | [Yes]{: tag-green} |
-| Open Proxies managed list | [No]{: tag-red} | [No]{: tag-red} | [Yes]{: tag-green} |
-| Anonymizers managed list | [No]{: tag-red} | [No]{: tag-red} | [Yes*]{: tag-yellow} |
-| VPNs managed list | [No]{: tag-red} | [No]{: tag-red} | [Yes*]{: tag-yellow} |
-| Malware managed list | [No]{: tag-red} | [No]{: tag-red} | [Yes*]{: tag-yellow} |
-| Botnets, Command and Control Servers	managed list | [No]{: tag-red} | [No]{: tag-red} | [Yes*]{: tag-yellow} |
-{: caption="Available list" caption-side="bottom"}
-
-Additional details and exceptions apply by plan:
-
-* The Enterprise Usage plan only has access to the Open Proxies managed list. Custom lists are still supported.
-* Enterprise users can request a higher quota of custom lists or a larger maximum number of items across lists.
-* The maximum number of custom lists per data type is 40 lists.
-  
 ## List requirements
 {: #list-availability-requirements}
 
