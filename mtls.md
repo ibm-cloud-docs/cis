@@ -54,7 +54,7 @@ Mutual TLS (mTLS) provides certificate-based client authentication for enhanced 
    1. In the **MTLS access policies** table on the **Mutual TLS** page, click **Create** to create an access application.
    1. Select or enter a hostname that matches one of the FQDNs associated with the uploaded root certificate and click **Create**.
 
-      The application policy is pre-set to use a decision of `non_identity, and include a rule that matches any valid client certificate.
+      The application policy is pre-set to use a decision of `non_identity`, and include a rule that matches any valid client certificate.
 
 ## Testing mTLS access
 {: #test-curl}
