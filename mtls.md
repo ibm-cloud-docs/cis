@@ -31,7 +31,7 @@ Mutual TLS (mTLS) provides certificate-based client authentication for enhanced 
 
    After mTLS is enabled, it can't be disabled.
    {: note}
-   
+
 1. Enable mTLS:
 
    1. In the CIS console, click **Security**, then select the **Mutual TLS** tab.
@@ -51,7 +51,7 @@ Mutual TLS (mTLS) provides certificate-based client authentication for enhanced 
 
 1. Create an mTLS access policy:
 
-   1. In the **MTLS access policies** table on the **Mutual TLS** page, click **Create** to create an access application. 
+   1. In the **MTLS access policies** table on the **Mutual TLS** page, click **Create** to create an access application.
    1. Select or enter a hostname that matches one of the FQDNs associated with the uploaded root certificate and click **Create**.
 
       The application policy is pre-set to use a decision of `non_identity, and include a rule that matches any valid client certificate.
@@ -93,7 +93,7 @@ All requests to the origin are evaluated for a valid client certificate.
 1. The client sends its certificate for validation.
 1. The client certificate is authenticated against the configured root certificate authority.
 1. If a certificate chain is used, the system also checks for expired certificates and validates the entire chain.
-1. If the client certificate is trusted, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed. 
+1. If the client certificate is trusted, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed.
 1. If the client doesn't present a valid certificate, the server returns a `403 Forbidden` response.
 
 To retrieve access certificates with the API, see [List access certificates](/apidocs/cis#list-access-certificates).
