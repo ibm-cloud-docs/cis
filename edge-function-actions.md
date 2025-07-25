@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-07-24"
 
 keywords: edge functions
 
@@ -79,8 +79,8 @@ Triggers can be created even if no actions exist yet, but they will not invoke a
 
    To keep a trigger path active without running an Edge function, enable **Avoid edge functions**. For example, if `my-function` is assigned to `gamma.cistest-load.com/*`, but you want `gamma.cistest-load.com/data` to bypass it, create a separate trigger for `/data` and enable **Avoid edge functions**. This ensures the `/data` path remains active without invoking `my-function`.
 
-* **Editing a trigger** - Click the **Edit icon** ![Edit icon](../icons/edit-tagging.svg "Edit") in the table row of the trigger that you want to modify, then make changes and click **Save**.
-* **Deleting a trigger** - Click the **Delete icon** ![Delete icon](../icons/delete.svg "Delete") in the table row of the trigger that you want to modify. This action can't be undone. Deleting a trigger removes the association between the route and the action.
+* **Editing a trigger** - Click the **Edit** icon ![Edit icon](../icons/edit-tagging.svg "Edit") in the table row of the trigger that you want to modify, then make changes and click **Save**.
+* **Deleting a trigger** - Click the **Delete** icon ![Delete icon](../icons/delete.svg "Delete") in the table row of the trigger that you want to modify. This action can't be undone. Deleting a trigger removes the association between the route and the action.
 
 ## Related links
 {: #related-links-edge-functions}
