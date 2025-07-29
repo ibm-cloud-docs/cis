@@ -102,6 +102,7 @@ toc:
             - integrating-lists-rules.md
         - topicgroup:
             label: Working with lists
+            id: lists
             topics:
             - lists.md
             - topicgroup:
