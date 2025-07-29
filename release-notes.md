@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-07-29"
 
 keywords:
 
@@ -30,7 +30,7 @@ Custom and managed lists
 
     * [Managed lists](/apidocs/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
 
-    These features enable more accurate policy targeting and improve operational efficiency within CIS. For more information, see [Working with lists](/docs/cis?group=working-with-lists).
+    These features enable more accurate policy targeting and improve operational efficiency within CIS. For more information, see [Working with lists](/docs/cis?group=lists).
 
 ## 28 February 2025
 {: #cis-feb2825}
