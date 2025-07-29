@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-07-29"
 
 keywords: integrating lists
 subcollection: cis
@@ -25,7 +25,7 @@ The Expression Editor allows users to create custom firewall rules by defining c
 To use a list in the Expression Builder, follow these steps:
 
 1. Select **is in list** or **is not in list** from the **Operator** menu.
-1. Select a list from the **Value** menu. Depending on your plan, you might be able to select a [managed IP list](/docs/cis?topic=cis-managed-lists#managed-ip-lists).
+1. Select a list from the **Value** menu. Depending on your plan, you might be able to select a [managed IP list](/docs/cis?topic=cis-using-managed-lists&interface=cli#managed-ip-lists).
 1. To commit your changes and enable the rule, select **Deploy**. If you are not ready to enable the rule, select **Save as Draft**.
 
 ## Expression Editor
