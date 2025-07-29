@@ -238,11 +238,12 @@ toc:
         id: reference
         topics:
         - topicgroup:
-            label: API reference
+            id: api-cis
+            label: CIS API
             topics:
             - link:
-                label: CIS API
-                href: https://{DomainName}/apidocs/cis
+               label: Reference
+               href: https://{DomainName}/apidocs/cis
             - api-change-log.md
         - topicgroup:
             label: CLI reference
