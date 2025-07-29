@@ -79,6 +79,7 @@ toc:
             - proxy-protocol.md
         - topicgroup:
             label: Working with TLS
+            id: tls
             topics:
             - about-tls.md
             - ssl-options.md
