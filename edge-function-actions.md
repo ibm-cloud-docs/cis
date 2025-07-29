@@ -47,14 +47,14 @@ Differences when working with actions depend on your plan:
 
 You can create, upload, edit, and manage actions to define the logic your Edge function runs in response to trigger events. The console provides tools for each of the core operations:
 
-* **Creating an action** - Click **Create** to add an action by using the built-in code editor. After you add your JavaScript code, click **Save** to create your action.
-* **Reading an action** - Click on an existing action from the actions table to open it in the editor. This allows you to view its code without making changes.
-* **Updating an action** - To modify an action, open it in the editor by clicking on it in the list. Make your changes, then click Save. When you save your changes, the updated action is uploaded to the Cloud edge. If the action is in use, the updates take effect immediately.
+* **Creating an action** - Click **Create** to add an action by using the built-in code editor. After you add your JavaScript code, click **Save** to create your action. 
+* **Reading an action** - Click an existing action from the actions table to open it in the editor. This allows you to view its code without making changes.
+* **Updating an action** - To modify an action, open it in the editor by clicking on it in the list. Make your changes, then click **Save**. When you save your changes, the updated action is uploaded. If the action is in use, the updates take effect immediately.
 * **Uploading an action** - Click **Upload** to upload a JavaScript file. Uploading or creating an action with the same name as an existing action causes the existing action to be overwritten. Rename the action file before uploading, or enter a unique name during creation to avoid this behavior.
 
    Uploading can also be used as part of creating or updating an action, depending on whether the name already exists.
 
-* **Deleting an action** - To delete an action, click the Delete icon (trash can) in the table row for the selected action. An action can't be deleted while it’s associated with a trigger. To delete the action, you must first remove all triggers that use it. The **Uses** column shows how many triggers are linked to each action.
+* **Deleting an action** - To delete an action, click the **Delete** icon ![Delete icon](../icons/delete.svg "Delete") in the table row for the selected action. An action can't be deleted while it’s associated with a trigger. To delete the action, you must first remove all triggers that use it. The **Uses** column shows how many triggers are linked to each action.
 * **Associating a trigger** - Triggers are required for an action to run. Add a trigger from the **Triggers** tab and select the action from the list of existing actions. The **Uses** column in the actions table displays the number of triggers currently linked to each action.
 
 ## Edge function triggers
