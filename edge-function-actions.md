@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-07-29"
 
 keywords: edge functions
 
@@ -31,7 +31,7 @@ Differences when working with actions depend on your plan:
 #### Standard plans
 {: #standard-plans}
 
-   * Allow only one action per account, automatically named after your domain (name can't be changed). 
+   * Allow only one action per account, automatically named after your domain (name can't be changed).
    * To update an action, upload a new JavaScript file or edit the code directly in the editor. Uploading a new file replaces the existing action.
    * When you upload a JavaScript file, its name is always set to your domain name.
 
@@ -47,7 +47,7 @@ Differences when working with actions depend on your plan:
 
 You can create, upload, edit, and manage actions to define the logic your Edge function runs in response to trigger events. The console provides tools for each of the core operations:
 
-* **Creating an action** - Click **Create** to add an action by using the built-in code editor. After you add your JavaScript code, click **Save** to create your action. 
+* **Creating an action** - Click **Create** to add an action by using the built-in code editor. After you add your JavaScript code, click **Save** to create your action.
 * **Reading an action** - Click on an existing action from the actions table to open it in the editor. This allows you to view its code without making changes.
 * **Updating an action** - To modify an action, open it in the editor by clicking on it in the list. Make your changes, then click Save. When you save your changes, the updated action is uploaded to the Cloud edge. If the action is in use, the updates take effect immediately.
 * **Uploading an action** - Click **Upload** to upload a JavaScript file. Uploading or creating an action with the same name as an existing action causes the existing action to be overwritten. Rename the action file before uploading, or enter a unique name during creation to avoid this behavior.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-07-29"
 
 keywords: lists
 
@@ -33,10 +33,10 @@ CIS stores your lists at the account level. You can use the same list in rules o
 CIS supports the following lists:
 
 * [Custom lists](/docs/cis?topic=cis-custom-lists): Includes custom IP lists, hostname lists, and ASN lists.
-* [Managed lists](/docs/cis?topic=cis-managed-lists): Lists managed and updated by CIS. 
+* [Managed lists](/docs/cis?topic=cis-using-managed-lists&interface=cli): Lists managed and updated by CIS.
 
 ## List availability
-{: #lists-availability} 
+{: #lists-availability}
 
 List availability varies according to the list type and your CIS plan and subscriptions.
 
@@ -63,7 +63,7 @@ List availability varies according to the list type and your CIS plan and subscr
 [^4]: Enterprise Usage plan includes Open Proxies only; custom lists are supported.
 
 Additional details and exceptions apply by plan:
- 
+
 * Enterprise users can request a higher quota of custom lists or a larger maximum number of items across lists.
 * The maximum number of custom lists per data type is 40 lists.
 
@@ -76,7 +76,7 @@ All user-defined lists must follow these formatting and usage rules:
 * For a list name, use only lowercase letters, numbers, and the underscore `(_)` character in the name. A valid name satisfies this regular expression: `^[a-z0-9_]+$.`
 * The maximum length of a list name is 50 characters.
 * You can only delete a list when there are no rules (enabled or disabled) that reference that list.
-   
+
 To learn how to use lists in Ruleset Engine rules, see [Integrating lists in rules](/docs/cis?topic=cis-integrating-lists-in-rules).
 {: note}
 
@@ -107,4 +107,4 @@ You can apply lists in a variety of use cases, such as:
 * Filtering requests by known domains
 * Prioritizing routing for traffic from specific ISPs or regions
 
-For details on how to build rule expressions with lists, see [Integrating lists in rules](/docs/cis?topic=cis-integrating-lists-in-rules). 
+For details on how to build rule expressions with lists, see [Integrating lists in rules](/docs/cis?topic=cis-integrating-lists-in-rules).
