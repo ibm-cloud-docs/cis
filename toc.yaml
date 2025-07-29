@@ -178,8 +178,8 @@ toc:
             - edge-functions.md
             - edge-function-actions.md
             - topicgroup:
-                id: examples
                 label: Edge function examples
+                id: examples
                 topics:
                 - altering-headers.md
                 - redirect-country-code.md
