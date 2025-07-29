@@ -51,7 +51,7 @@ Examples:
    ```
    {: pre}
 
-* Expression matching requests from IP addresses in the CIS Open Proxies [managed IP list](/docs/cis?topic=cis-using-managed-lists&interface=ui#managed-ip-lists).
+* Expression matching requests from IP addresses in the CIS Open Proxies [managed IP list](/docs/cis?topic=cis-using-managed-lists&interface=cli#managed-ip-lists).
 
    ```sh
    ip.src in $cf.open_proxies
