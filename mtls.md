@@ -95,8 +95,7 @@ Mutual TLS (mTLS) provides certificate-based client authentication for enhanced 
    1. Set the **Action** to **Block**.
    1. Click **Create**.
 
-   This rule allows access to authenticate only if the client certificate is successfully verified. Requests without mTLS or with invalid certificates are blocked. 
-   
+   This rule allows access to authenticate only if the client certificate is successfully verified. Requests without mTLS or with invalid certificates are blocked.   
    {: note} 
 
 ## Testing mTLS access
