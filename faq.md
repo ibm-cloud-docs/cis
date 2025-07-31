@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-31"
 
 keywords:
 
@@ -284,4 +284,19 @@ Health check requests originate from this distributed network, so the available 
 
 {{site.data.keyword.cis_short_notm}} does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the {{site.data.keyword.cis_short_notm}} network to the origin destination incur charges or usage.
 
-{{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic, and there’s no penalty or chargeback for traffic spikes caused by attacks.
+{{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic, and there’s no penalty or chargeback for traffic spikes caused by attacks. 
+
+## Does CIS support outbound traffic filtering?
+{: #outbound-traffic-filtering}
+
+No. CIS is designed to secure inbound traffic to your IBM Cloud applications. It doesn't inspect, log, or filter outbound traffic from cloud resources, such as virtual server instances, containers, or VPC resources.
+
+CIS acts as a reverse proxy to protect traffic coming into your applications. CIS doesn't function as a forward proxy or egress filter.
+{: note}
+
+For outbound traffic control, consider:
+
+- [VPC Security Groups](/docs/vpc?topic=vpc-using-security-groups)  – Control outbound ports/IPs at the instance level.
+- [VPC Network ACLs (NACLs)](/docs/vpc?topic=vpc-using-acls)– Subnet-level inbound/outbound rules.
+- **Firewall appliances** – Deploy third-party firewalls within your VPC.
+- **DNS filtering** – Use DNS-based services to restrict domains.
