@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-08-04"
 
 keywords: managed lists
 
@@ -73,3 +73,16 @@ curl -X GET https://api.cis.cloud.ibm.com/v1/$CRN/rules/managed_lists \
 -H 'X-Auth-User-Token: Bearer xxxxxx'
 ```
 {: pre}
+
+## Listing managed lists in an instance with Terraform
+{: #listing-managed-lists-terraform}
+{: terraform}
+
+The following example lists managed lists in an instance:
+
+```terraform
+data ibm_cis_managed_lists managed_lists {
+    cis_id    = "crn:v1:staging:public:internet-svcs-ci:global:a/01652b251c3ae2787110a995d8db0135:1a9174b6-0106-417a-844b-c8eb43a72f63::"
+}
+```
+{: codeblock}

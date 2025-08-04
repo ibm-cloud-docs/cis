@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-08-04"
 
 keywords: custom lists
 
@@ -233,3 +233,41 @@ Operations to manage list items are asynchronous. Follow these steps to get the 
    {: pre}
 
 For more information, see [Lists API](/apidocs/cis#create-custom-lists).
+
+## Creating a custom list with Terraform
+{: #create-custom-list-terraform}
+{: terraform}
+
+The following example creates a custom list:
+
+```terraform
+resource ibm_cis_custom_list custom_list {
+    cis_id    = "crn:v1:staging:public:internet-svcs-ci:global:a/01652b251c3ae2787110a995d8db0135:1a9174b6-0106-417a-844b-c8eb43a72f63::"
+    kind = "ip"
+    name = "testip"
+    description = "custom list"
+}
+```
+{: codeblock}
+
+## Adding items to a custom list with Terraform
+{: #add-items-custom-list-terraform}
+{: terraform}
+
+The following example adds items to a custom list:
+
+```terraform
+resource ibm_cis_custom_list_items items1 {
+    cis_id    = "crn:v1:staging:public:internet-svcs-ci:global:a/01652b251c3ae2787110a995d8db0135:1a9174b6-0106-417a-844b-c8eb43a72f63::"
+    list_id = "ibm_cis_custom_list.custom_list.list_id"
+    items {
+        ip = "1.2.3.6"
+    }
+    items {
+        ip = "2.3.4.5"
+    items {
+        ip = "192.168.0.1"
+    }
+}
+```
+{: codeblock}
