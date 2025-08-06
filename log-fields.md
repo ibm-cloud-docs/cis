@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Accessing log fields
-{: #log-fields}
+{: #log-fields1}
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields using the following request.
 
@@ -23,7 +23,7 @@ ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --i
 {: pre}
 
 ## Datasets
-{: #log-datasets}
+{: #log-datasets2}
 
 These available datasets describe the fields available by log category:
 
@@ -33,12 +33,12 @@ These available datasets describe the fields available by log category:
 - DNS logs (`dns_logs`)
 
 ## Available Fields
-{: #logpull-available-fields}
+{: #logpull-available-fields3}
 
 The following tables indicate the fields available by dataset. Log fields are subject to change, so it is recommended to use the [Available Log Fields API](/apidocs/cis#list-fields-for-dataset-v2) to pull the most up-to-date version of the available fields.
 
 ### HTTP requests
-{: #http-requests}
+{: #http-requests4}
 
 This table contains the fields available for HTTP requests.
 
@@ -106,7 +106,7 @@ This table contains the fields available for HTTP requests.
 {: note}
 
 ### Range requests
-{: #range-requests}
+{: #range-requests5}
 
 The following table contains the fields available for Range requests.
 
@@ -146,7 +146,7 @@ The following table contains the fields available for Range requests.
 {: caption="Range events" caption-side="bottom"}
 
 ### Firewall events
-{: #firewall-events}
+{: #firewall-events6}
 
 |Field|Value|Type|
 |-----|-----|----|
@@ -183,7 +183,7 @@ The following table contains the fields available for Range requests.
 {: caption="Firewall events" caption-side="bottom"}
 
 ### DNS logs
-{: #dns-logs}
+{: #dns-logs7}
 
 |Field|Value|Type|
 |-----|-----|----|
@@ -199,6 +199,6 @@ The following table contains the fields available for Range requests.
 {: caption="DNS logs" caption-side="bottom"}
 
 ## Deprecated fields
-{: #deprecated}
+{: #deprecated8}
 
 Log fields that are not shown in the [Available Log Fields API](/apidocs/cis#list-fields-for-dataset-v2) are considered deprecated. Deprecated log fields do remain available to prevent breaking existing jobs. However, these log fields may eventually become empty values if completely removed by Cloudflare. Customers are encouraged to migrate away from deprecated fields if they are using them.
