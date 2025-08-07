@@ -295,4 +295,5 @@ toc:
             - ts-create-har.md
             - ts-domain-moved.md
             - ts-delete-cis-instance.md
+            - ts-uuid-support.md
         - getting-help.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-06"
 
 keywords:
 
@@ -18,7 +18,15 @@ content-type: release-note
 {: #release-notes}
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
-{: shortdesc}
+{: shortdesc} 
+
+## 31 July 2025
+{: #cis-july-3125}
+
+X-Request-ID Header for improved CLI request tracing
+:   The CIS CLI now includes an automatically generated `X-Request-ID` header with every API request. This unique UUID enhances traceability and debugging by enabling better correlation of CLI calls across back-end systems. No user action is needed, and this update is fully transparent, with no impact on CLI functionality or output.
+
+    For more information, see [How can I help IBM Support trace my CLI API request?](/docs/cis?topic=cis-uuid-support).
 
 ## 15 July 2025
 {: #cis-july1525}
