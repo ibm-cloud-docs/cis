@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-08-07"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Alerts types
+# Alert types
 {: #types-alerts}
 
 {{site.data.keyword.cis_short_notm}} offers the following alert types:
