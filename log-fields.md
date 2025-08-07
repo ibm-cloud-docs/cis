@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-06"
+lastupdated: "2025-08-07"
 
 keywords:
 
@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Accessing log fields
-{: #log-fields1}
+{: #log-fields}
 
 If `fields` are not specified in the request, a limited set of default fields are returned. Find the full list of all available fields using the following request.
 
