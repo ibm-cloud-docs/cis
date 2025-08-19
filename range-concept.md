@@ -15,7 +15,7 @@ subcollection: cis
 # Range applications
 {: #range-concept}
 
-IBM Cloud CIS Range applications allow you to extend DDoS protection, TLS encryption, and custom rule policies to TCP and UDP services beyond traditional HTTP/HTTPS traffic. This secures your TCP-based services beyond just web traffic and provides comprehensive security and performance benefits within IBM Cloud CIS.
+Range applications allow you to extend DDoS protection, TLS encryption, and custom rule policies to TCP and UDP services beyond traditional HTTP/HTTPS traffic. This secures your TCP-based services beyond just web traffic and provides comprehensive security and performance benefits within IBM Cloud CIS.
 {: shortdesc}
 
 Unlike standard web applications protected by CIS, Range applications enable your non-web services, such as VPN endpoints, NAT gateways, database ports, and custom TCP services, to leverage CIS global network and threat intelligence. Traffic destined for these services passes through the CIS infrastructure, where it benefits from multiple layers of security and performance enhancements, including:
@@ -27,7 +27,7 @@ Unlike standard web applications protected by CIS, Range applications enable you
 * Configure load balancers: Support TCP health checks, automatic failover, and traffic steering to optimize performance and maintain high availability across Range-enabled services.
 * Proxy protocol support: Preserve client IP visibility across proxy and load balancer setups, which is critical for accurate logging, security policy enforcement, and auditing.
 
-Range application is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
+Range applications are only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
 {: note}
 
 ## Range application use cases
@@ -47,7 +47,7 @@ Database and Application Servers
 Collaboration Tools and Third-Party Services
 :   Protect integrations with services such as Zoom or Microsoft Teams, where traffic typically comes from a limited set of IP ranges, to avoid being mistakenly identified as DDoS activity.
 
-## Choosing the protocol based on application type
+## Supported protocols and use cases
 {: #choosing-protocol-on}
 
 The application type determines how traffic is routed from the CIS edge to your origin:
@@ -70,7 +70,7 @@ When a TCP handshake is initiated on any port of a Range application IP, the han
 
 The Range application proxies traffic to the origin only when a Range application is configured for the requested port.
 
-## Related link
+## Related links
 {: #range-application-information}
 
 [Working with Range applications](/docs/cis?group=range)
