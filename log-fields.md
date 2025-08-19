@@ -110,7 +110,7 @@ This table contains the fields available for http_requests.
 |OriginIP|IP of the origin server.|string|
 |OriginRequestHeaderSendDurationMs|Time taken to send request headers to origin after establishing a connection. Note that this value is usually `0`.|int|
 |OriginResponseBytes|Number of bytes returned by the origin server.|int|
-|OriginResponseDurationMs|Upstream response time, measured from the first datacenter that receives a request. Includes time taken by  Smart Routing and Tiered Cache, plus time to connect and receive a response from origin servers. This field replaces OriginResponseTime.|int|
+|OriginResponseDurationMs|Upstream response time, measured from the first data center that receives a request. Includes time taken by Smart Routing and Tiered Cache, plus time to connect and receive a response from origin servers. This field replaces OriginResponseTime.|int|
 |OriginResponseHTTPExpires|Value of the origin 'expires' header in RFC1123 format.|string|
 |OriginResponseHTTPLastModified|Value of the origin 'last-modified' header in RFC1123 format.|string|
 |OriginResponseHeaderReceiveDurationMs|Time taken for origin to return response headers after Cloudflare finishes sending request headers.|int|
@@ -154,12 +154,12 @@ This table contains the fields available for dns_logs.
 | Field | Description | Type |
 |-------|-------------|------|
 |ColoCode|IATA airport code of the data center that received the request.|string|
-|EDNSSubnet|IPv4 or IPv6 address information corresponding to the EDNS Client Subnet (ECS) forwarded by recursive resolvers. Not all resolvers send this information.|string|
+|EDNSSubnet|IPv4 or IPv6 address information corresponding to the [EDNS Client Subnet (ECS)](https://www.rfc-editor.org/rfc/rfc7871.html#section-4){: external} forwarded by recursive resolvers. Not all resolvers send this information.|string|
 |EDNSSubnetLength|Size of the EDNS Client Subnet (ECS) in bits. For example, if the last octet of an IPv4 address is omitted (`192.0.2.x.`), the subnet length will be `24`.|int|
 |QueryName|Name of the query that was sent.|string|
-|QueryType|Integer value of query type. iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).|int|
+|QueryType|Integer value of query type. (iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).|int|
 |ResponseCached|Whether the response was cached or not.|bool|
-|ResponseCode|Integer value of response code. iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6).|int|
+|ResponseCode|Integer value of response code. (iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6).|int|
 |SourceIP|IP address of the client (IPv4 or IPv6).|string|
 |Timestamp|Timestamp at which the query occurred.|int or string|
 
