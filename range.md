@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-19"
+lastupdated: "2025-08-20"
 
 keywords: range application, tls encryption, global tcp proxy
 
@@ -12,37 +12,44 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating Range application
+# Creating Range applications
 {: #cis-range}
 
-You can add a Range application by using the CIS console or API. This procedure allows you to specify protocol types, origin settings, and optional features such as TLS termination and custom rules.
+Creating a Range application involves configuring how traffic is routed to your origin servers, with support for specifying protocols, origin settings, and advanced features like TLS termination and custom rules. You can add a Range application by using the CIS console or API.
 {: shortdesc}
 
 Range is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
 {: note}
 
-## Range limitations
+## Before you begin
 {: #range-limitations}
 
-You can create up to 10 Range applications, each with a unique origin. Every Range application with a unique origin requires a unique IP address, which are a limited resource. If you need more than 10 Range applications, submit a support case to IBM. Requests to increase the limit require a use case review and may take several days
+Review the following planning considerations:
 
-You can create more than 10 applications if they share an existing origin, but use different ports.
-{: tip}
+* You can create up to 10 Range applications, each with a unique origin. Every Range application with a unique origin requires a unique IP address, which are a limited resource. If you need more than 10 Range applications, submit a support case to IBM. Requests to increase the limit require a use case review and may take several days
 
-For TCP Range applications, only custom IP rules apply because these rules operate at OSI Layer 3 and 4. HTTP(S) Range applications support both firewall rules and IP rules. Generally, firewall rules are designed for Layer 7 (HTTP) properties, such as request headers and body content.
+   You can create more than 10 applications if they share an existing origin, but use different ports.
+   {: tip}
+
+* For TCP Range applications, only custom IP rules apply because these rules operate at OSI Layer 3 and 4. HTTP(S) Range applications support both firewall rules and IP rules. Generally, firewall rules are designed for Layer 7 (HTTP) properties, such as request headers and body content.
+
+For more information, see [Range applications](/docs/cis?topic=cis-range-concept).
+{: note}
 
 ## Creating a Range application in the console
 {: #range-add-an-application}
 {: ui}
 
-Follow these steps to add an application by using the UI.
+To add a Range application in the console, follow these steps: 
 
 1. In the CIS console, navigate to the **Security** section.
 1. Select the **Range** tab, then click **Create**.
-1. Selec the application type from the list: TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft.
+1. Select an application type from the list: TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft. For more information, see [Protocols and use cases](/docs/cis?topic=cis-range-concept#choosing-protocol-on).
 1. Enter the application name. This name associates your application with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
 1. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections on these ports and proxies them to your origin. Connections to these addresses are proxied to your origin.
+
    You can enter a port range for example, (`8080-8090`), but the origin must have an equal number of consecutive ports matching the range.
+   {: note}
 1. Select the edge IP connectivity.
 1. In the Origin section, enter the origin IP and port of your TCP application, or select an existing load balancer and port.
 1. Optionally, enable custom rules. When enabled, rules with a "block" or "allowlist" action are enforced for the application.
@@ -51,7 +58,7 @@ Follow these steps to add an application by using the UI.
 1. Click **Create**.
 
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
-{: note}
+{: attention}
 
 ### Viewing metrics
 {: #range-view-metrics}
@@ -63,21 +70,21 @@ Navigate to **Metrics > Range** to view your number of connections to applicatio
 The graphs show metrics for up to 10 applications.
 {: note}
 
-To toggle application metrics, use the Chart key or click **Select applications**. To change the Metrics data time frame, use the list menu.
+To toggle application metrics, use the Chart key or click **Select applications**. To change the Metrics data timeframe, use the list menu.
 
 ## API usage examples
 {: #range-api-usage-examples}
 {: api}
 
-The following examples are used to create and list the Range applications.
+Use the following examples to create and list the Range applications.
 
 ### Creating Range applications
 {: #create-range-app}
 
 You can designate an origin in two ways in Range applications:
 
-1. Origin IP - use parameter `origin_direct`
-2. Load balancer - use parameters `origin_dns` and `origin_port`
+1. Origin IP - Use the `origin_direct`parameter.
+2. Load balancer - Use the `origin_dns` and `origin_port` parameters. 
 
 For the origin IP request:
 
@@ -160,13 +167,26 @@ Example response:
 ```
 {: codeblock}
 
-* **DNS Name** - The DNS name associated with your application on your domain.
-* **Protocol/Edge port** - The port your application listens on; incoming connections are proxied to your origin.
-* **Origin direct** - The IP and port where your application runs, specifying traffic flow from edge to origin.
-* **IP Firewall** - If enabled, CIS enforces custom rule criteria, such as allowing, blocking, or challenging specific IPs or ranges, replacing legacy IP firewall behavior to provide more granular access control.
-* **PROXY Protocol** - Enable only if you have an inline proxy supporting PROXY Protocol v1; usually disabled.
-* **Origin DNS** - The load balancer name used as your origin.
-* **Origin Port:** - The port of your origin service.
+DNS Name
+:    The DNS name associated with your application on your domain.
+
+Protocol/Edge port
+:   The port your application listens on; incoming connections are proxied to your origin.
+
+Origin direct
+:    The IP and port where your application runs, specifying traffic flow from edge to origin.
+
+IP Firewall
+:    If enabled, CIS enforces custom rule criteria, such as allowing, blocking, or challenging specific IPs or ranges, replacing legacy IP firewall behavior to provide more granular access control.
+
+PROXY Protocol
+:    Enable only if you have an inline proxy supporting PROXY Protocol v1; usually disabled.
+
+Origin DNS
+:    The load balancer name used as your origin.
+
+Origin Port
+:    The port of your origin service.
 
 For more information, see [Creating Range applications](/apidocs/cis#create-range-app).
 
@@ -215,6 +235,7 @@ Example response:
 }
 ```
 {: codeblock}
+
 For more information, see [Listing Range applications](/apidocs/cis#list-range-apps).
 
 ### Listing specific Range applications
@@ -282,5 +303,3 @@ Example responses:
     }
     ```
     {: codeblock}
-
-For more information, see [Range applications](/docs/cis?topic=cis-range-concept)
