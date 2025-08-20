@@ -25,6 +25,7 @@ toc:
             - dns-concepts.md
             - glb.md
             - http-concepts.md
+            - range-concept.md
             - routing.md
             - tcp-concepts.md
             - traffic-sequencing.md

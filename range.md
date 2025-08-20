@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-08-19"
 
 keywords: range application, tls encryption, global tcp proxy
 
@@ -12,19 +12,11 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Protecting TCP traffic (Range)
+# Creating Range application
 {: #cis-range}
 
-The Range feature brings DDoS protection, load balancing, and content acceleration to any TCP-based protocol.
-Range is a global TCP proxy running on {{site.data.keyword.cis_full}} (Cloudflare) edge nodes.
+You can add a Range application by using the CIS console or API. This procedure allows you to specify protocol types, origin settings, and optional features such as TLS termination and custom rules.
 {: shortdesc}
-
-Range can be used to:
-* Protect your TCP ports and protocols from Layer-3 and Layer-4 DDoS attacks.
-* Protect your HTTP(S) Range app with Layer-7 [firewall rules](/docs/cis?topic=cis-about-firewall-rules).
-* Reduce the ability of attackers to snoop and steal sensitive data by enabling TLS encryption.
-* Integrate with CIS IP firewall, which allows you to block or challenge IP addresses, or entire IP ranges, from reaching your TCP services.
-* Configure load balancers with TCP health checks, failover, and steering policies to dictate where traffic flows.
 
 Range is only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
 {: note}
@@ -32,51 +24,34 @@ Range is only available to Enterprise customers for an additional cost, and is p
 ## Range limitations
 {: #range-limitations}
 
-You can create a maximum of 10 Range applications with unique origins. Each Range application with a unique origin must have a unique IP address allocated, and IP addresses are a limited resource. If you need more than 10 Range applications, open an IBM Support case. Support cases to add more Range applications require a review of the use case, and the process can take a few days.
+You can create up to 10 Range applications, each with a unique origin. Every Range application with a unique origin requires a unique IP address, which are a limited resource. If you need more than 10 Range applications, submit a support case to IBM. Requests to increase the limit require a use case review and may take several days
 
-You can create more than 10 applications if they reuse an existing origin, but use different ports.
+You can create more than 10 applications if they share an existing origin, but use different ports.
 {: tip}
 
-For TCP Range apps, only IP rules apply. This is because IP rules are applied to OSI Layer 3 and Layer 4. However HTTP(S) Range apps work with both firewall rules and IP rules. In general, firewall rules are designed for properties exposed in OSI Layer 7 (HTTP), such as request headers and body content characteristics.
+For TCP Range applications, only custom IP rules apply because these rules operate at OSI Layer 3 and 4. HTTP(S) Range applications support both firewall rules and IP rules. Generally, firewall rules are designed for Layer 7 (HTTP) properties, such as request headers and body content.
 
-## Adding an application using the console
+## Creating a Range application in the console
 {: #range-add-an-application}
 {: ui}
 
-Follow these steps to add an application using the UI.
+Follow these steps to add an application by using the UI.
 
-1. Navigate to **Security > Range**.
-2. Click **Create**.
-3. Select a type of application from the list menu. You can choose TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft.
-4. Enter the application name. Your application becomes associated with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
-5. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections to these addresses on this port. Connections to these addresses are proxied to your origin.
-   You can enter a port range (for example: `8080-8090`), but the origin must have the same quantity of ports specified in a consecutive range.
-6. Select the edge IP connectivity.
-7. In the Origin section, enter the origin IP and port of your TCP application. You can also select an existing load balancer and its port.
-8. Enable an IP firewall (optional). When enabled, IP access rules with a "block" or "allowlist" action are enforced for the application.
-9. Enable edge TLS termination (optional). When enabled, select the type of TLS termination you want to use from the list menu.
-10. Select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy inline that supports PROXY Protocol (optional). This feature is useful if you are running a service that requires knowledge of the true client IP. In most cases, this setting remains `off`. 
-11. Click **Create**.
+1. In the CIS console, navigate to the **Security** section.
+1. Select the **Range** tab, then click **Create**.
+1. Selec the application type from the list: TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft.
+1. Enter the application name. This name associates your application with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
+1. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections on these ports and proxies them to your origin. Connections to these addresses are proxied to your origin.
+   You can enter a port range for example, (`8080-8090`), but the origin must have an equal number of consecutive ports matching the range.
+1. Select the edge IP connectivity.
+1. In the Origin section, enter the origin IP and port of your TCP application, or select an existing load balancer and port.
+1. Optionally, enable custom rules. When enabled, rules with a "block" or "allowlist" action are enforced for the application.
+1. Optionally, enable edge TLS termination. When enabled, select the type of TLS termination you want to use from the list.
+1. Optionally, select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy inline that supports it. This is useful if you are running a service that requires knowledge of the true client IP. Usually, this setting remains `off`. 
+1. Click **Create**.
 
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.
 {: note}
-
-Your application is now visible in a tile or table view with the following properties:
-
-* Application name
-* Application type
-* Edge port
-* TLS edge termination
-* Proxy protocol
-* Origin
-* Connections from the past hour (polled every minute)
-* Throughput from the past hour (polled every minute)
-* The Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") (upper right corner) has the following options:
-    * Edit the application
-    * View metrics for the specified application
-    * Delete the application
-
-When a Range application is created, it is assigned a unique IPv4 and IPv6 address. These IP addresses are not static and might be subject to change. You can determine the assigned IP address by using DNS. The DNS name always returns the IP addressed assigned to the application.
 
 ### Viewing metrics
 {: #range-view-metrics}
@@ -84,41 +59,22 @@ When a Range application is created, it is assigned a unique IPv4 and IPv6 addre
 Your application is now ready to proxy TCP traffic through {{site.data.keyword.cis_short_notm}} (Cloudflare).
 
 Navigate to **Metrics > Range** to view your number of connections to applications and throughput traffic.
+
 The graphs show metrics for up to 10 applications.
 {: note}
 
-To toggle application metrics, use the Chart key or click the **Select applications** button. To change the Metrics data time frame, use the list menu.
-
-## Viewing Range application
-{: #range-apptiles}
-
-After creating Range applications, the **Security > Range** page is populated with tiles (or an option to switch to a table view if preferred) containing the following information:
-
-* Application name
-* Proxy protocol
-* Edge port
-* Origin and port
-* Connections from the past hour (polled every minute)
-* Throughput from the past hour (polled every minute)
-* TLS edge termination (for relevant applications)
-
-The applications list also contains an Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") that allows users to perform the following tasks:
-
-* Edit the application
-* View metrics for the specified application
-    * This takes the user to the **Metrics > Range** page, which displays the metrics for only that application.
-* Delete the application
+To toggle application metrics, use the Chart key or click **Select applications**. To change the Metrics data time frame, use the list menu.
 
 ## API usage examples
 {: #range-api-usage-examples}
 {: api}
 
-These are examples to create and list applications using Range.
+The following examples are used to create and list the Range applications.
 
-### Creating a Range app
+### Creating Range applications
 {: #create-range-app}
 
-There are two ways that you can designate an origin in a Range app.
+You can designate an origin in two ways in Range applications:
 
 1. Origin IP - use parameter `origin_direct`
 2. Load balancer - use parameters `origin_dns` and `origin_port`
@@ -126,32 +82,39 @@ There are two ways that you can designate an origin in a Range app.
 For the origin IP request:
 
 ```sh
-curl -X POST \
-  https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps \
-  -H 'X-Auth-User-Token: <token>' \
-  -d '{"protocol":"tcp/22","dns":{"type":"CNAME","name":"ssh.example.com"},"origin_direct":["tcp://172.0.2.1:22"],"proxy_protocol":true,"ip_firewall":true}'
-
+curl --request POST \
+  --url https://api-int.cis.dev.cloud.ibm.com/v1/crn:v1:staging:public:internet-svcs-ci:global:a/ce12845bf2914ca18db35bedcd9aefa2:e04e7ccd-9197-4b6d-bf98-933de5074fe6::/zones/2566bebb17f5c0b559a9873a692ccab5/range/apps \
+  --header 'Content-Type: application/json' \
+  --header 'X-AUTH-USER-TOKEN: Bearer XXXX' \
+  --data '{"protocol":"tcp/22","dns":{"type":"CNAME","name":"origin.entdemo5.batflare.com"},"origin_direct":
+["tcp://8.8.8.8:22"],"proxy_protocol":"off","ip_firewall":true}'
 ```
 {: codeblock}
 
-The response follows:
+Example response:
 
 ```sh
 {
     "result": {
-        "id": "4f70c3d4f20576b79135b898295e8093",
+        "id": "de4d336aea6f4f56b998ffdec9a0f00c",
         "protocol": "tcp/22",
         "dns": {
             "type": "CNAME",
-            "name": "ssh.example.com"
+            "name": "origin.entdemo5.batflare.com"
         },
         "origin_direct": [
-            "tcp://172.0.2.1:22"
+            "tcp://8.8.8.8:22"
         ],
         "ip_firewall": true,
-        "proxy_protocol": true,
-        "created_on": "2019-01-09T17:33:09.190606Z",
-        "modified_on": "2019-01-09T17:33:09.190606Z"
+        "proxy_protocol": "off",
+        "tls": "off",
+        "traffic_type": "direct",
+        "edge_ips": {
+            "type": "dynamic",
+            "connectivity": "all"
+        },
+        "created_on": "2025-08-13T07:39:54.175727Z",
+        "modified_on": "2025-08-13T07:39:54.175727Z"
     },
     "success": true,
     "errors": [],
@@ -160,7 +123,7 @@ The response follows:
 ```
 {: codeblock}
 
-For a load balancer request:
+Example request using a load balancer:
 
 ```sh
 curl -X POST \
@@ -170,7 +133,7 @@ curl -X POST \
 ```
 {: codeblock}
 
-The response follows:
+Example response:
 
 ```sh
 {
@@ -197,44 +160,53 @@ The response follows:
 ```
 {: codeblock}
 
-* **DNS Name** - Your application is associated with a DNS name on your domain.
-* **Protocol/Edge port** - Port on which your application is running. Connections to these addresses are proxied to your origin.
-* **Origin direct** - IP on which your application is running, and the port that you want traffic to flow through from the edge to your origin.
-* **IP Firewall** - If enabled, firewall rules with a Block action are enforced for this Range application.
-* **PROXY Protocol** - Enable if you have a proxy in-line that supports PROXY Protocol v1. In most cases, this setting remains disabled.
-* **Origin DNS** - Name of the load balancer that you want to set as your origin.
-* **Origin Port:** - Port of your service.
+* **DNS Name** - The DNS name associated with your application on your domain.
+* **Protocol/Edge port** - The port your application listens on; incoming connections are proxied to your origin.
+* **Origin direct** - The IP and port where your application runs, specifying traffic flow from edge to origin.
+* **IP Firewall** - If enabled, CIS enforces custom rule criteria, such as allowing, blocking, or challenging specific IPs or ranges, replacing legacy IP firewall behavior to provide more granular access control.
+* **PROXY Protocol** - Enable only if you have an inline proxy supporting PROXY Protocol v1; usually disabled.
+* **Origin DNS** - The load balancer name used as your origin.
+* **Origin Port:** - The port of your origin service.
 
-### Listing all Range apps
+For more information, see [Creating Range applications](/apidocs/cis#create-range-app).
+
+### Listing all Range applications
 {: #range-list-all-apps}
 
-Use the following request to list all Range apps:
+Use the following request to list all Range applications:
 
 ```sh
-curl -X GET \
-  https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps
-```
+curl --request GET \
+  --url https://api-int.cis.dev.cloud.ibm.com/v1/crn:v1:staging:public:internet-svcs-ci:global:a/ce12845bf2914ca18db35bedcd9aefa2:e04e7ccd-9197-4b6d-bf98-933de5074fe6::/zones/2566bebb17f5c0b559a9873a692ccab5/range/apps \
+  --header'content-type: application/json'
+  --header 'X-AUTH-USER-TOKEN: Bearer XXXX' \
 {: pre}
 
-The response follows:
+Example response:
 
 ```sh
 {
     "result": [
         {
-            "id": "4f70c3d4f20546b79135b898295e8093",
+            "id": "de4d336aea6f4f56b998ffdec9a0f00c",
             "protocol": "tcp/22",
             "dns": {
                 "type": "CNAME",
-                "name": "ssh.example.com"
+                "name": "origin.entdemo5.batflare.com"
             },
             "origin_direct": [
-                "tcp://172.0.2.1:22"
+                "tcp://8.8.8.8:22"
             ],
             "ip_firewall": true,
-            "proxy_protocol": true,
-            "created_on": "2019-01-09T17:33:09.190606Z",
-            "modified_on": "2019-01-09T17:33:09.190606Z"
+            "proxy_protocol": "off",
+            "tls": "off",
+            "traffic_type": "direct",
+            "edge_ips": {
+                "type": "dynamic",
+                "connectivity": "all"
+            },
+            "created_on": "2025-08-13T07:39:54.175727Z",
+            "modified_on": "2025-08-13T07:39:54.175727Z"
         }
     ],
     "success": true,
@@ -242,21 +214,23 @@ The response follows:
     "messages": []
 }
 ```
+{: codeblock}
+For more information, see [Listing Range applications](/apidocs/cis#list-range-apps).
 
-### Listing a specific Range app
+### Listing specific Range applications
 {: #range-list-a-specific-range-app}
 
-Use the following request to list a specific Range app:
+Use the following request to list specific Range applications:
 
 ```sh
 curl -X GET \
-  https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps/4f70c3d4f20546b79135b898295e8093
+https://api.cis.cloud.ibm.com/v1/<url-encoded-crn>/zones/<zone-d>/range/apps/4f70c3d4f20546b79135b898295e8093
 ```
 {: pre}
 
-The response follows:
+Example responses:
 
-* App using the Origin IP
+* Applications by Origin IP:
 
     ```sh
     {
@@ -282,7 +256,7 @@ The response follows:
     ```
     {: codeblock}
 
-* App using a load balancer
+* Applications by load balancer:
 
     ```sh
     {
@@ -308,3 +282,5 @@ The response follows:
     }
     ```
     {: codeblock}
+
+For more information, see [Range applications](/docs/cis?topic=cis-range-concept)
