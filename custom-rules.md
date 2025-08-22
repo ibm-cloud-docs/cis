@@ -54,6 +54,29 @@ Using the **Block** action, this example blocks requests based on country codes 
 
 ```sh
 (ip.src.country in {"CN" "TW" "US" "GB"} and cf.threat_score gt 0)
+```
+
+### Only allow traffic from specified IP addresses
+{: #cis-allow-traffic-ip}
+
+The **Block** action restricts access to your domain, allowing only requests from specified IP addresses and denying all others.
+
+For example, to allow traffic only from the IPs `192.0.2.10` and `203.0.113.25`, run the following expression:
+```sh
+(not ip.src in {"192.0.2.10" "203.0.113.25"})
+```
+Use one of the following expressions depending on the protocol you want to restrict:
+* If you want to specify subnets instead of single IP addresses, IBM Cloud CIS supports only:
+
+   IPv4: `/16` and `/24`
+
+   IPv6: `/32`, `/48`, and `/64`
+
+* Always include both IPv4 and IPv6 for full coverage.
+* Blocking only IPv4 (0.0.0.0/0) still allows IPv6 traffic. To block both:
+   ```sh
+   (ip.src in {0.0.0.0/0} or ip.src in {::/0})
+   ```
 
 ### Configuring a rule to skip other CIS features
 {: #cis-cr-skip-features}
