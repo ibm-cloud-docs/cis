@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-08-22"
 
 keywords: range application, tls encryption, global tcp proxy
 
@@ -50,6 +50,7 @@ To add a Range application in the console, follow these steps:
 
    You can enter a port range for example, (`8080-8090`), but the origin must have an equal number of consecutive ports matching the range.
    {: note}
+   
 1. Select the edge IP connectivity.
 1. In the Origin section, enter the origin IP and port of your TCP application, or select an existing load balancer and port.
 1. Optionally, enable custom rules. When enabled, rules with a "block" or "allowlist" action are enforced for the application.
