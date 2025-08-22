@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-08-22"
 
 keywords: custom rules, rulesets, waf, firewall rules
 
@@ -25,7 +25,7 @@ Like other rules evaluated by the Ruleset Engine, WAF custom rules require the f
 Custom rules are evaluated in the order that they are set, from first to last position, in the custom rules table. You can view the table by navigating to **Security > Firewall rules**. Some actions like **Block** stop the evaluation of other rules. For more details on actions and their behavior, see [Ruleset Engine rule actions](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions).
 {: important}
 
-Refer to [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules) to learn more about the differences between firewall rules and WAF custom rules. 
+Refer to [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules) to learn more about the differences between firewall rules and WAF custom rules.
 {: note}
 
 ## Common use cases
@@ -36,7 +36,7 @@ The following sections detail examples of common use cases for WAF custom rules.
 ### Only allow traffic from specified countries
 {: #cis-cr-allow-countries}
 
-Using the **Block** action, this example blocks requests based on their country code by using the `ip.src.country` field, allowing requests from only two countries: the United States and Mexico: 
+Using the **Block** action, this example blocks requests based on their country code by using the `ip.src.country` field, allowing requests from only two countries: the United States and Mexico:
 
 ```sh
 (not ip.src.country in {"US" "MX"})
@@ -56,12 +56,34 @@ Using the **Block** action, this example blocks requests based on country codes 
 (ip.src.country in {"CN" "TW" "US" "GB"} and cf.threat_score gt 0)
 ```
 
+### Only allow traffic from specified IP addresses
+{: #cis-allow-traffic-ip}
+
+The **Block** action restricts access to your domain, allowing only requests from specified IP addresses and denying all others.
+
+For example, to allow traffic only from the IPs `192.0.2.10` and `203.0.113.25`, run the following expression:
+```sh
+(not ip.src in {"192.0.2.10" "203.0.113.25"})
+```
+Use one of the following expressions depending on the protocol you want to restrict:
+* If you want to specify subnets instead of single IP addresses, IBM Cloud CIS supports only:
+
+   IPv4: `/16` and `/24`
+
+   IPv6: `/32`, `/48`, and `/64`
+
+* Always include both IPv4 and IPv6 for full coverage.
+* Blocking only IPv4 (0.0.0.0/0) still allows IPv6 traffic. To block both:
+   ```sh
+   (ip.src in {0.0.0.0/0} or ip.src in {::/0})
+   ```
+
 ### Configuring a rule to skip other CIS features
 {: #cis-cr-skip-features}
 
 The skip action supports different skip options, according to the security features or products that you want to skip.
 
-This section contains examples of different skip rule scenarios for WAF custom rules. Take the following considerations into account: 
+This section contains examples of different skip rule scenarios for WAF custom rules. Take the following considerations into account:
 
 * The `{zone_id}` value is the ID of the zone where you want to add the rule.
 * The `{ruleset_id}` value is the ID of the entry point ruleset of the `http_request_firewall_custom` phase. For details on obtaining this ruleset ID, see [List and view rulesets](/apidocs/cis#get-zone-rulesets). The following API examples add a skip rule to an existing ruleset by using the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation.
@@ -90,7 +112,7 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RUL
 ```
 {: pre}
 
-#### Skip a phase 
+#### Skip a phase
 {: #cis-skip-phase}
 
 This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) to add a rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. The rule skips the `http_ratelimit` phase for requests that match the rule expression:
