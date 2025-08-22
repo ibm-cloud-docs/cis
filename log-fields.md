@@ -1,11 +1,10 @@
-
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-19"
+  years: 2025
+lastupdated: "2025-08-22"
 
-keywords:
+keywords: log fields
 
 subcollection: cis
 
@@ -145,6 +144,7 @@ This table contains the fields available for http_requests.
 |WorkerSubrequestCount|Number of subrequests issued by a Edge function when handling this request.|int|
 |WorkerWallTimeUs|The elapsed time in microseconds between the start of a Edge function invocation, and when the Edge functions Runtime determines that no more JavaScript needs to run. Specifically, this measures the wall-clock time that the JavaScript context remained open. For example, when returning a response with a large body, the Edge functions runtime can, in some cases, determine that no more JavaScript needs to run, and closes the JS context before all the bytes have passed through and been sent. Alternatively, if you use the `waitUntil()` API to perform work without blocking the return of a response, this work may continue executing after the response has been returned, and will be included in `Edge functionWallTimeUs`.|int|
 |ZoneName|The human-readable name of the zone (for example, 'cloudflare.com').|string|
+{: caption="Available log fields for HTTP requests" caption-side="bottom"}
 
 ### DNS logs
  {: #dns-logs}
@@ -162,6 +162,7 @@ This table contains the fields available for dns_logs.
 |ResponseCode|Integer value of response code. (iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6).|int|
 |SourceIP|IP address of the client (IPv4 or IPv6).|string|
 |Timestamp|Timestamp at which the query occurred.|int or string|
+{: caption="Available log fields for DNS logs" caption-side="bottom"}
 
 ### Range requests
  {: #range-requests}
@@ -201,6 +202,7 @@ This table contains the fields available for range_events.
 |ProxyProtocol|`v1` \| `v2` \| `simple`.|string|
 |Status|A code indicating reason for connection closure.|int|
 |Timestamp|Timestamp at which the event took place.|int or string|
+{: caption="Available log fields for Range requests" caption-side="bottom"}
 
 ### Firewall events
  {: #firewall-events}
@@ -242,3 +244,4 @@ This table contains the fields available for firewall_events.
 |Ref|The user-defined identifier for the rule triggered by this request. Use refs to label your rules individually alongside the Cloudflare-provided RuleID. You can set refs via the Rulesets API for some security products.|string|
 |RuleID|The Cloudflare security product-specific RuleID triggered by this request.|string|
 |Source|`asn` \| `country` \| `ip` \| `iprange` \| `securitylevel` \| `zonelockdown` \| `waf` \| `firewallrules` \| `uablock` \| `ratelimit` \| `bic` \| `hot` \| `l7ddos` \| `validation` \| `botfight` \| `apishield` \| `botmanagement` \| `dlp` \| `firewallmanaged` \| `firewallcustom` \| `apishieldschemavalidation` \| `apishieldtokenvalidation` \| `apishieldsequencemitigation`.|string|
+{: caption="Available log fields for Firewall events" caption-side="bottom"}
