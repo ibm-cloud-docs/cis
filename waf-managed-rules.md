@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-17"
+lastupdated: "2025-08-25"
 
 keywords: managed rules
 
@@ -119,7 +119,7 @@ The following OWASP settings will not be migrated, as there are no direct equiva
 * OWASP group overrides
 * OWASP rule overrides
 
-To replace these settings, you must reconfigure the new OWASP core ruleset in the WAF managed rules. This includes any customizations, such as tag or rule overrides. For more information, see the [CIS OWASP core ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf).
+To replace these settings, you must reconfigure the new OWASP Core Ruleset in the WAF managed rules. This includes any customizations, such as tag or rule overrides. For more information, see the [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf).
 
 ## Known issues with migration
 {: #migration-known-issues}
