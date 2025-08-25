@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-08-25"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # OWASP ruleset
 {: #owasp-rule-set-for-waf}
 
-The OWASP core ruleset for WAF contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL injection, cross-site scripting, and local file inclusion. {{site.data.keyword.cis_short_notm}} provides, but does not curate these rules.
+The OWASP Core Ruleset for WAF contains generic attack detection rules. The OWASP rules protect against many common attack categories, including SQL injection, cross-site scripting, and local file inclusion. {{site.data.keyword.cis_short_notm}} provides, but does not curate these rules.
 
 OWASP is an industry standard that provides a good security baseline. For more information, see:
 
@@ -89,4 +89,4 @@ To manage OWASP thresholds, set the paranoia level in the **Package: OWASP ModSe
 The rule ID 981176 is displayed when a request is blocked by OWASP. Also, some OWASP rules listed in the activity log do not appear in the list of rules under Package: OWASP ModSecurity Core Ruleset because disabling those rules is not recommended.
 {: important}
 
-In sampled logs and security events, the rule associated with requests mitigated by the Cloudflare OWASP Core Ruleset is the last rule in this managed ruleset: `949110: Inbound Anomaly Score Exceeded`. In the CIS dashboard, users can see the scores of individual rules contributing to the final request threat score by expanding the **OWASP score contributions** subsection. Similiarly, a list of rule IDs can be seen in the `score_rules` field of the GraphQL API response.
+In sampled logs and security events, the rule associated with requests mitigated by the OWASP Core Ruleset is the last rule in this managed ruleset: `949110: Inbound Anomaly Score Exceeded`. In the CIS dashboard, users can see the scores of individual rules contributing to the final request threat score by expanding the **OWASP score contributions** subsection. Similiarly, a list of rule IDs can be seen in the `score_rules` field of the GraphQL API response.
