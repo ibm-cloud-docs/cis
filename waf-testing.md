@@ -118,7 +118,7 @@ Follow these high-level steps to configure WAF for your zones:
          * Strict first: Start with **paranoia level** = `PL4` and **score threshold** = `Low - 60 and higher`. Reduce the score threshold and paranoia level until you achieve a good false positives/true positives rate for your incoming traffic.
          * Permissive first: Start from a more permissive configuration (**paranoia level** = `PL1`, **score threshold** = `High - 25 and higher`) and increase both parameters to adjust your protection, trying to keep a low number of false positives.
 
-      For more information on configuring the OWASP Core Ruleset in the console, see [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui).
+      For more information on configuring the OWASP Core Ruleset, see [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui).
    
 1. Review traffic in security dashboards.
 
