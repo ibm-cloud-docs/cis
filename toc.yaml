@@ -101,6 +101,7 @@ toc:
             - about-rule-sets.md
             - ruleset-engine-actions.md
             - integrating-lists-rules.md
+            - waf-testing.md
         - topicgroup:
             label: Working with lists
             id: lists
@@ -133,6 +134,7 @@ toc:
                 - cis-ruleset.md
                 - owasp-rule-set-for-waf.md
                 - exposed-credentials-check-ruleset.md
+                - owasp-evaluation-example.md
         - topicgroup:
             label: Working with rate-limiting rules
             topics:
@@ -221,6 +223,7 @@ toc:
             - about-bots.md
             - machine-learning-model.md
             - javascript-detections.md
+            - bot-management-fields.md
         - topicgroup:
             label: Enhancing security
             topics:
