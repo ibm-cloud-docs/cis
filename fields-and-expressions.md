@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-04-16"
+lastupdated: "2025-08-26"
 
 subcollection: cis
 
@@ -60,6 +60,7 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 | ------- | :--------- | :------------ | :--------- |
 |cf.client.bot|Boolean|true|This field indicates whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
 |cf.threat_score|Number|A 0-100 value|This field represents a risk score, 0 indicates low risk as determined by Cloudflare. Values greater than 10 can represent spammers or bots, and values greater than 40 point to bad actors on the internet. It is rare to see values higher than 60, so tune your firewall rules to challenge those greater than 10, and to block those greater than 50.|
+| cf.waf.score | Number | 1-99 |  Machine learning–based score that estimates the likelihood of a request being malicious. Scores range from 1 (most likely malicious) to 99 (most likely safe). Lower scores indicate a higher risk. Useful for creating threshold-based firewall rules. |
 {: caption="Available Cloudflare fields" caption-side="bottom"}
 
 ## Functions
