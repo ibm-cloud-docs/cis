@@ -24,7 +24,7 @@ If you're performing a penetration test (pentest), begin with the most restricti
 ## Before you begin
 {: #before-you-begin-waf}
 
-Before testing WAF capabilities, ensure you’ve set up a CIS instance in your IBM Cloud account and added your domain to CIS.
+Before testing WAF capabilities, ensure that you’ve set up a CIS instance in your IBM Cloud account and added your domain to CIS.
 
 ## Configuring WAF 
 {: #waf-process}
@@ -102,7 +102,7 @@ Follow these high-level steps to configure WAF for your zones:
 
 1. Optional: Deploy the CIS [OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf).
 
-   After configuring the CIS Managed Ruleset and attack score, you can also deploy the OWASP Core Ruleset. This managed ruleset is CIS's implementation of the OWASP ModSecurity Core Ruleset. Its attack coverage significantly overlaps with CIS managed ruleset by detecting common attack vectors such as SQLi and XSS.
+   After configuring the CIS Managed Ruleset and attack score, you can also deploy the OWASP Core Ruleset. This managed ruleset is CIS's implementation of the OWASP ModSecurity Core Ruleset. Its attack coverage significantly overlaps with CIS managed ruleset by detecting common attack vectors, such as SQLi and XSS.
 
    The OWASP Core Ruleset is prone to false positives and offers only marginal benefits when added on top of CIS managed ruleset and WAF attack score. If you decide to deploy this managed ruleset, you must monitor and adjust its settings based on your traffic to prevent false positives.
    {: important}

@@ -44,7 +44,7 @@ This table shows the progress of the OWASP ruleset evaluation:
 
 Final request threat score: `26`
 
-Since `26` >= `25` — that is, the threat score is greater than the configured score threshold — CIS will apply the configured action (**Managed Challenge**). If you had configured a score threshold of `Medium - 40 and higher`, CIS wouldn't apply the action, since the request threat score would be lower than the score threshold (`26` < `40`).
+Since `26` >= `25` — that is, the threat score is greater than the configured score threshold — CIS applies the configured action (**Managed Challenge**). If you configured a score threshold of `Medium - 40 and higher`, CIS wouldn't apply the action, since the request threat score would be lower than the score threshold (`26` < `40`).
 
 [Sampled logs in Security Events](/docs/cis?topic=cis-sampling) would display the following details for the example incoming request handled by the OWASP Core Ruleset.
  

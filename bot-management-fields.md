@@ -21,7 +21,7 @@ Bot Management provides access to several new variables within the expression bu
 ## Ruleset Engine fields
 {: #ruleset-engine-fields}
 
-Bot Management provides access to several new variables within the expression builder of Ruleset Engine-based products such as [WAF custom rules](https://developers.cloudflare.com/waf/custom-rules/).
+Bot Management provides access to several new variables within the expression builder of Ruleset Engine-based products, such as WAF custom rules.
 
 * **Bot Score** (`cf.bot_management.score`): An integer between 1-99 that indicates that a request comes from a bot.
 * **Verified Bot** (`cf.bot_management.verified_bot`): A boolean value that is true if the request comes from a good bot, like Google or Bing. Most customers choose to allow this traffic. 
