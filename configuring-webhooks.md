@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-05-07"
+lastupdated: "2025-08-27"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Configuring webhooks
 {: #configuring-webhooks}
 
-{{site.data.keyword.cis_full}} has alerts that you can configure through the API to warn you when events occur. Use webhooks to notify an external service when events occur in your account.
+{{site.data.keyword.cis_full}} has alerts that you can configure through the UI, CLI, and API to warn you when events occur. Use webhooks to notify an external service when events occur in your account.
 {: shortdesc}
 
 Alerts are available only to Enterprise plans.
@@ -161,13 +161,37 @@ To create a webhook by with the API, follow these steps:
     * `name`: the name of the webhook.
     * `url`: the URL of the webhook.
     * `secret`: the optional secret or API key that is needed to use the webhook.
-1. When all variables are initiated, create the webhook:
+1. When all variables are initiated, run the following command to create the webhook:
 
 ```sh
 curl -X POST https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
 -H 'content-type: application/json'
 -H 'x-auth-user-token: Bearer xxxxxx'
 -d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
+```
+{: codeblock}
+
+The following response is returned:
+
+```sh
+{
+    "result": {
+        "id": "6d16fcab3e8044b3b59ba3716237832e"
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+}
+```
+{: codeblock}
+
+Use the ID in the response that you receive to create the alert:
+```sh
+    curl -X POST \
+        https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+        -H 'content-type: application/json' \
+        -H 'x-auth-user-token: Bearer xxxxxx' \
+        -d '{"name":"Example Policy","enabled":true,"alert_type":"dos_attack_l7","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks": [{"id": "6d16fcab3e8044b3b59ba3716237832e"}]}}'
 ```
 {: codeblock}
 
