@@ -15,28 +15,27 @@ subcollection: cis
 # Configuring alert policies
 {: #configuring-policies}
 
-{{site.data.keyword.cis_full}} has alerts that you can configure through the API to warn you when events occur.
+{{site.data.keyword.cis_full}} provides customizable alert policies that notify you when specific events or conditions occur within your account. You can set up these alerts using the IBM Cloud console, CLI, or API, enabling proactive monitoring and faster response times.
 {: shortdesc}
 
-See [Configuring webhooks](/docs/cis?topic=cis-configuring-webhooks) for instructions on using webhooks.
+To send alerts to external sysems, see [Configuring webhooks](/docs/cis?topic=cis-configuring-webhooks).
 
-Alerts are available only to Enterprise plans.
+Alerts are available only on Enterprise plans.
 {: note}
 
 ## Configuring alert policies in the console
 {: #ui-configure-alert-policies}
 {: ui}
 
-Use the UI to create, update, and delete alerting policies.
+Use the IBM Cloud console to create, update, and delete alert policies.
 
 ### Creating a security alert policy in the console
 {: #ui-create-alert}
 
 To create a security alert policy, follow these steps:
 
-1. In the CIS console, navigate to the **Account** page.
-1. Select the **Alerts** tab.
-1. Select the **Alerting policies** and then click **Create**
+1. In the CIS console, navigate to the **Account** page, then select the **Alerts** tab.
+1. Select the **Alerting policies**, then click **Create**
 1. Select the type of alert policy that you want to create. For more information, see [Alert types](/docs/cis?topic=cis-types-alerts) to select alert policies.
 1. Enter a name for your alerting policy, and optionally enter a description.
 1. Choose an alerting method. You can select a webhook, enter an email address to send alerts to, or both. Only one notification is required to complete configuration.
@@ -45,16 +44,16 @@ To create a security alert policy, follow these steps:
 1. Click **Create**.
 
 By default, alert policies are enabled when created. You can disable alerts that you created by switching the toggle in the **Enabled** column.
+{: tip}
 
 ### Creating an advanced security alert policy in the console
 {: #ui-create-advanced-security-alert}
 
-To create an advanced security alert, take these steps:
+To create an advanced security alert policy, follow these steps:
 
-1. In the CIS console, navigate to the **Account** page.
-1. Select the **Alerts** tab.
-1. Select the **Alerting policies** and then click **Create**
-1. Select **Advanced security events alert** and then click **Next**.
+1. In the CIS console, navigate to the **Account** page, then select the **Alerts** tab.
+1. Select the **Alerting policies**, then click **Create**
+1. Select **Advanced security events alert**, then click **Next**.
 1. Enter a name for your alerting policy, and optionally enter a description.
 1. Choose an alerting method. You can either select a webhook, or enter an email address to send alerts to, or both. Only one notification is required to complete configuration.
     * Enter an email address to which {{site.data.keyword.cis_short}} sends alerts. Click the `+` to add the address to the alert. Repeat for all email addresses.
@@ -68,11 +67,11 @@ To create an advanced security alert, take these steps:
 {: #ui-edit-alert}
 
 To edit an alert policy, follow these steps:
-1. In the CIS console, navigate to the **Account** page.
-1. Select the **Alerts** tab.
-1. In the **Alerting policies**, locate the alert policy that you want to edit, then click the Actions menu on the right of the row.
-1. Click **Edit** to save your changes.
-1. Make the changes that you want to the name and description, add or delete email addresses, and add, remove, or edit webhooks.
+
+1. In the CIS console, navigate to the **Account** page, then select the **Alerts** tab.
+1. In the **Alerting policies**, locate the alert policy that you want to edit, then click the Actions menu for that row.
+1. Click **Edit**. |
+1. Make necessary changes. You can change the name and description, add or delete email addresses, and add, remove, or edit webhooks.
 1. Click **Save**.
 
 ### Deleting an alert policy in the console
@@ -80,10 +79,9 @@ To edit an alert policy, follow these steps:
 
 To delete an alert policy, follow these steps:
 
-1. In the CIS console, navigate to the **Account** page.
-1. Select the **Alerts** tab.
-1. In the **Alerting policies**, locate the alert policy that you want to delete, then click the Actions menu on the right of the row.
-1. Click **Delete** in the confirmation message.
+1. In the CIS console, navigate to the **Account** page, then select the **Alerts** tab.
+1. In the **Alerting policies** section, locate the alert policy that you want to delete, then click the Actions menu for that row. 
+1. Click **Delete**, then confirm deletion.  
 
 You can delete only alerts that you created.
 {: note}
@@ -92,7 +90,7 @@ You can delete only alerts that you created.
 {: #cli-configure-alert}
 {: cli}
 
-You can create email alerts for each alert type by using the CLI.
+Use the CLI to list, create, update, and delete alerting policies.
 
 ### Listing all alert policies from the CLI
 {: #cli-list-alerts}
