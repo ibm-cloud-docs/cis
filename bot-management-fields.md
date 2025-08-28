@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-08-26"
+lastupdated: "2025-08-28"
 
 keywords: managed rules
 
@@ -31,7 +31,7 @@ Bot Management provides access to several new variables within the expression bu
 * **Verified Bot Categories** (`cf.verified_bot_category`): A string that allows you to segment your verified bot traffic by its type and purpose.
  
 ## Log fields
-{: #log-fields}
+{: #bot-log-fields}
 
 After you enable Bot Management, CIS also surfaces bot information in its [HTTP requests log fields](/docs/cis?topic=cis-log-fields#logpull-available-fields): 
 
