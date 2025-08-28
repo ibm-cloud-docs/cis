@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-08-28"
 
 keywords:
 
@@ -15,10 +15,12 @@ subcollection: cis
 # Configuring webhooks
 {: #configuring-webhooks}
 
-{{site.data.keyword.cis_full}} has alerts that you can configure through the UI, CLI, and API to warn you when events occur. Use webhooks to notify an external service when events occur in your account.
+Webhooks allow {{site.data.keyword.cis_full}} to send real-time notifications to external systems when specific events occur in your account. By integrating webhooks with your alert policies, you can automate responses or trigger workflows in third-party services.
 {: shortdesc}
 
-Alerts are available only to Enterprise plans.
+You can configure webhooks using the IBM Cloud console, CLI, or API.
+
+Alerts and webhooks are available only on Enterprise plans.
 {: note}
 
 ## Configuring webhooks in the console
@@ -38,13 +40,12 @@ To configure webhooks in the console, navigate to your **Account** page and sele
 ### Editing a webhook in the console
 {: #update-webhooks-ui}
 
-To edit a webhook in the console, click the pencil icon next to the name of the webhook you want to update. You can edit only the name of the webhook. If you need to modify a webhook, it is recommended that you delete and re-create the webhook instead of editing it.
+To edit a webhook in the console, click the Edit icon next to the name of the webhook that you want to update. You can edit only the name of the webhook. If you need to modify a webhook, it is recommended that you delete and re-create the webhook instead of editing it.
 
 ### Deleting a webhook in the console
 {: #delete-webhooks-ui}
 
-To delete a webhook in the console, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) of the webhook you want to delete, and select **Delete**. Select **Delete** in the confirmation box to confirm, or **Cancel** to close the confirmation box without completing the delete operation.
-
+To delete a webhook in the console, click the Actions menu ![Actions icon](/images/horizontal-overflow-icon.png) of the webhook that you want to delete, then select **Delete**. Select **Delete** in the confirmation window.
 
 ## Configuring webhooks from the CLI
 {: #configure-webhooks-cli}
@@ -53,7 +54,7 @@ To delete a webhook in the console, click the Actions menu ![overflow icon](/ima
 ### Creating a webhook from the CLI
 {: #create-webhooks-cli}
 
-To create a webhook from the CLI, run the following command.
+To create a webhook from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-webhook-create --name NAME --url URL [--secret SECRET] [-i, --instance INSTANCE] [--output FORMAT]
@@ -87,7 +88,7 @@ Where:
 ### Getting details for a webhook from the CLI
 {: #get-webhooks-cli}
 
-To get a webhook from the CLI, run the following command.
+To get details for a webhook from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-webhook WEBHOOK_ID [-i, --instance INSTANCE] [--output FORMAT]
@@ -103,7 +104,7 @@ Where:
 ### Updating a webhook from the CLI
 {: #update-webhooks-cli}
 
-To update a webhook from the CLI, run the following command.
+To update a webhook from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-webhook-update WEBHOOK_ID [--name NAME] [--url URL] [--secret SECRET] [-i, --instance INSTANCE] [--output FORMAT]
@@ -122,7 +123,7 @@ Where:
 ### Deleting a webhook from the CLI
 {: #delete-webhooks-cli}
 
-To delete a webhook from the CLI, run the following command.
+To delete a webhook from the CLI, run the following command:
 
 ```sh
 ibmcloud cis alert-webhook-delete WEBHOOK_ID [-i, --instance INSTANCE] [-f, --force]
@@ -156,20 +157,21 @@ Creating a webhook alert is a two-step process. First, create the webhook, then 
 To create a webhook by with the API, follow these steps:
 
 1. Set up your API environment with the correct variables.
-1. Store the following variable to be used in the API command:
-    * `crn`: the full url-encoded CRN of the service instance.
+1. Store the following variables to be used in the API command:
+
+    * `crn`: the full URL-encoded CRN of the service instance.
     * `name`: the name of the webhook.
     * `url`: the URL of the webhook.
     * `secret`: the optional secret or API key that is needed to use the webhook.
 1. When all variables are initiated, run the following command to create the webhook:
 
-```sh
-curl -X POST https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
--H 'content-type: application/json'
--H 'x-auth-user-token: Bearer xxxxxx'
--d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
-```
-{: codeblock}
+   ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
+   -H 'content-type: application/json'
+   -H 'x-auth-user-token: Bearer xxxxxx'
+   -d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
+   ```
+   {: codeblock}
 
 The following response is returned:
 
@@ -185,7 +187,8 @@ The following response is returned:
 ```
 {: codeblock}
 
-Use the ID in the response that you receive to create the alert:
+Use the ID in the response that you received to create the alert:
+
 ```sh
     curl -X POST \
         https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
@@ -198,62 +201,64 @@ Use the ID in the response that you receive to create the alert:
 ### Listing all webhooks with the API
 {: #api-list-webhooks}
 
-To list all webhooks by with the API, follow these steps:
+To list all webhooks with the API, follow these steps:
 
 1. Set up your API environment with the correct variables.
 1. Store the following variable to be used in the API command:
-    * `crn`: the full url-encoded CRN of the service instance.
+
+    * `crn`: the full URL-encoded CRN of the service instance.
 1. When all variables are initiated, get the list of webhooks:
 
-```sh
-curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
--H 'content-type: application/json'
--H 'accept: application/json'
--H 'x-auth-user-token: Bearer xxxxxx'
-```
-{: codeblock}
-
+   ```sh
+   curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
+   -H 'content-type: application/json'
+   -H 'accept: application/json'
+   -H 'x-auth-user-token: Bearer xxxxxx'
+   ```
+   {: codeblock}
 
 ### Getting details for a webhook with the API
 {: #api-get-webhooks}
 
-To get the details of a webhook by with the API, follow these steps:
+To get the details of a webhook with the API, follow these steps:
 
 1. Set up your API environment with the correct variables.
-1. Store the following variable to be used in the API command:
-    * `crn`: the full url-encoded CRN of the service instance.
+1. Store the following variables to be used in the API command:
+
+    * `crn`: the full URL-encoded CRN of the service instance.
     * `webhook_id`: alert webhook identifier.
 1. When all variables are initiated, get the webhook details:
 
-```sh
-curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
--H 'content-type: application/json'
--H 'accept: application/json'
--H 'x-auth-user-token: Bearer xxxxxx'
-```
-{: codeblock}
+   ```sh
+   curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
+   -H 'content-type: application/json'
+   -H 'accept: application/json'
+   -H 'x-auth-user-token: Bearer xxxxxx'
+   ```
+   {: codeblock}
 
 ### Updating a webhook with the API
 {: #api-update-webhooks}
 
-To update a webhook by with the API, follow these steps:
+To update a webhook with the API, follow these steps:
 
 1. Set up your API environment with the correct variables.
-1. Store the following variable to be used in the API command:
-    * `crn`: the full url-encoded CRN of the service instance.
+1. Store the following variables to be used in the API command:
+
+    * `crn`: the full URL-encoded CRN of the service instance.
     * `webhook_id`: alert webhook identifier.
     * `name`: the name of the webhook.
     * `url`: the URL of the webhook.
     * `secret`: the optional secret or API key that is needed to use the webhook.
 1. When all variables are initiated, update the webhook:
 
-```sh
-curl -X PUT https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
--H 'content-type: application/json'
--H 'x-auth-user-token: Bearer xxxxxx'
--d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
-```
-{: codeblock}
+   ```sh
+   curl -X PUT https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
+   -H 'content-type: application/json'
+   -H 'x-auth-user-token: Bearer xxxxxx'
+   -d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
+   ```
+   {: codeblock}
 
 ### Deleting a webhook with the API
 {: #api-delete-webhooks}
@@ -261,15 +266,16 @@ curl -X PUT https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
 To delete a webhook by with the API, follow these steps:
 
 1. Set up your API environment with the correct variables.
-1. Store the following variable to be used in the API command:
-    * `crn`: the full url-encoded CRN of the service instance.
+1. Store the following variables to be used in the API command:
+
+    * `crn`: the full URL-encoded CRN of the service instance.
     * `webhook_id`: alert webhook identifier.
 1. When all variables are initiated, delete the webhook:
 
-```sh
-curl -X DELETE https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
--H 'content-type: application/json'
--H 'accept: application/json'
--H 'x-auth-user-token: Bearer xxxxxx'
-```
-{: codeblock}
+   ```sh
+   curl -X DELETE https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
+   -H 'content-type: application/json'
+   -H 'accept: application/json'
+   -H 'x-auth-user-token: Bearer xxxxxx'
+   ```
+   {: codeblock}
