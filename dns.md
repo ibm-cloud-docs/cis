@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-08-28"
 
 keywords:
 
@@ -160,7 +160,7 @@ You can select the **Delete** button to confirm your delete action. Select **Can
 ## Importing and exporting DNS records
 {: #import-export-records}
 
-DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.wikipedia.org/wiki/Zone_file){: external}.
+DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.m.wikipedia.org/wiki/Zone_file){: external}.
 Click the Actions menu and select to import or export records.
 
 **Import records** - By default, a total of 3500 DNS records are allowed (imported and created on {{site.data.keyword.cis_short_notm}}). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After you import, you are shown a summary with the number of records that were successfully added and the number that failed, along with the reason why each record failed.

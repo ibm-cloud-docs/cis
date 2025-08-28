@@ -57,7 +57,7 @@ Follow these high-level steps to configure WAF for your zones:
    
    The WAF attack score is a machine-learning layer that complements CIS's managed rulesets, providing additional protection against SQL injection (SQLi), cross-site scripting (XSS), and many remote code execution (RCE) attacks. It helps identify rule bypasses and potentially new, undiscovered attacks.
 
-  Do the following: 
+   Do the following: 
 
    1. [Create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui) using the Attack Score field:
 
@@ -115,8 +115,8 @@ Follow these high-level steps to configure WAF for your zones:
 
       Two common configuration strategies:
 
-         * Strict first: Start with **paranoia level** = `PL4` and **score threshold** = `Low - 60 and higher`. Reduce the score threshold and paranoia level until you achieve a good false positives/true positives rate for your incoming traffic.
-         * Permissive first: Start from a more permissive configuration (**paranoia level** = `PL1`, **score threshold** = `High - 25 and higher`) and increase both parameters to adjust your protection, trying to keep a low number of false positives.
+      * Strict first: Start with **paranoia level** = `PL4` and **score threshold** = `Low - 60 and higher`. Reduce the score threshold and paranoia level until you achieve a good false positives/true positives rate for your incoming traffic.
+      * Permissive first: Start from a more permissive configuration (**paranoia level** = `PL1`, **score threshold** = `High - 25 and higher`) and increase both parameters to adjust your protection, trying to keep a low number of false positives.
 
       For more information on configuring the OWASP Core Ruleset, see [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui).
    
@@ -124,9 +124,9 @@ Follow these high-level steps to configure WAF for your zones:
 
    After configuring the WAF, monitor how your settings affect incoming traffic:
 
-      * Use [CIS metrics](/docs/cis?group=metrics) to explore traffic patterns, including traffic not blocked by WAF rules. All data provided by traffic detections is available (for example, WAF attach score and bot score).
-      * Use [Security Events](/docs/cis?topic=cis-using-the-cis-security-events-capability) to analyze requests that are being mitigated by CIS security products.
-      * Enterprise plans can also obtain data about HTTP requests and security events using [CIS Logpush jobs](/docs/cis?topic=cis-logpush&interface=ui).
+   * Use [CIS metrics](/docs/cis?group=metrics) to explore traffic patterns, including traffic not blocked by WAF rules. All data provided by traffic detections is available (for example, WAF attach score and bot score).
+   * Use [Security Events](/docs/cis?topic=cis-using-the-cis-security-events-capability) to analyze requests that are being mitigated by CIS security products.
+   * Enterprise plans can also obtain data about HTTP requests and security events using [CIS Logpush jobs](/docs/cis?topic=cis-logpush&interface=ui).
 
 ## Next steps
 {: #next-steps-waf}
