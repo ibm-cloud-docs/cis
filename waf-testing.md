@@ -57,7 +57,7 @@ Follow these high-level steps to configure WAF for your zones:
    
    The WAF attack score is a machine-learning layer that complements CIS's managed rulesets, providing additional protection against SQL injection (SQLi), cross-site scripting (XSS), and many remote code execution (RCE) attacks. It helps identify rule bypasses and potentially new, undiscovered attacks.
 
-  Do the following: 
+   Do the following: 
 
    1. [Create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui) using the Attack Score field:
 
