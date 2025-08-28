@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-08-28"
 
 keywords:
 
@@ -3861,7 +3861,7 @@ ibmcloud cis glb-pool-create (--json @JSON_FILE | JSON_STRING) [-i, --instance I
         - `name` : A short name (tag) for the pool.
         - `origins` : A list of origins within this pool.
         - `check_regions` : A list of geographic region code.
-    - The optional fields are `description`, `minimum_origins`, `enabled`, `monitor`, `notification_email`.
+    - The optional fields are `description`, `minimum_origins`, `enabled`, `monitor`.
 
 Sample JSON data:
 
@@ -3890,8 +3890,7 @@ Sample JSON data:
    "minimum_origins": 1,
    "check_regions": [ "WNAM" ],
    "monitor": "f1aba936b94213e5b8dca0c0dbf1f9cc",
-   "enabled": true,
-   "notification_email": "someone@example.com"
+   "enabled": true
 }
 ```
 {: codeblock}
@@ -3914,7 +3913,7 @@ Sample JSON data:
 Create a GLB pool for instance `cis-demo`.
 
 ```sh
-ibmcloud cis glb-pool-create --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["test.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true,"header":{"host":["example.com"]}}], "notification_email":"someone@example.com"}'-i "cis-demo"
+ibmcloud cis glb-pool-create --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["test.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true,"header":{"host":["example.com"]}}]}'-i "cis-demo"
 ```
 {: pre}
 
@@ -4001,7 +4000,7 @@ ibmcloud cis glb-pool-update GLB_POOL_ID (--json @JSON_FILE | JSON_STRING) [-i, 
         - `name` : A short name (tag) for the pool.
         - `origins` : A list of origins within this pool.
         - `check_regions` : A list of geographic region code.
-    - The optional fields are `description`, `minimum_origins`, `enabled`, `monitor`, `notification_email`.
+    - The optional fields are `description`, `minimum_origins`, `enabled`, `monitor`.
 
 Sample JSON data:
 
@@ -4027,8 +4026,7 @@ Sample JSON data:
    "minimum_origins": 1,
    "check_regions": [ "WNAM" ],
    "monitor": "f1aba936b94213e5b8dca0c0dbf1f9cc",
-   "enabled": true,
-   "notification_email": "someone@example.com"
+   "enabled": true
 }
 ```
 {: codeblock}
@@ -4063,7 +4061,7 @@ Sample JSON data:
 Update GLB pool `17b5962d775c646f3f9725cbc7a53df4`.
 
 ```sh
-ibmcloud cis glb-pool-update 17b5962d775c646f3f9725cbc7a53df4 --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["example.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true}], "notification_email":"someone@example.com"}'-i "cis-demo"
+ibmcloud cis glb-pool-update 17b5962d775c646f3f9725cbc7a53df4 --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["example.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true}]}'-i "cis-demo"
 ```
 {: pre}
 
@@ -8741,7 +8739,7 @@ ibmcloud cis alert-policy pool-toggle-alert-create --name test1 --emails test1@c
 ### `ibmcloud cis alert-policy firewall-events-alert-create`
 {: #firewall-events-alert}
 
-Create an alert policy about spikes in firewall events. Firewall events alerts use a [z-score](https://en.wikipedia.org/wiki/Standard_score) calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score is above the threshold of 3.5. You will not receive duplicate alerts within the same two-hour time frame.
+Create an alert policy about spikes in firewall events. Firewall events alerts use a [z-score] (https://en.m.wikipedia.org/wiki/Standard_score) calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score is above the threshold of 3.5. You will not receive duplicate alerts within the same two-hour time frame.
 
 ```sh
 ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --domains DOMAINS [--services SERVICES] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
