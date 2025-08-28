@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-23"
+lastupdated: "2025-08-27"
 
 keywords:
 
@@ -8593,7 +8593,7 @@ ibmcloud cis alert-policy ddos-attack-l7-alert-create --name NAME (--emails EMAI
 #### Examples
 {: #create-ddos-attack-l7-alert-examples}
 
-Create a ddos attack alert policy for instance `cis-demo`.
+Create a DDoS attack alert policy for instance `cis-demo`.
 
 ```sh
 ibmcloud cis alert-policy ddos-attack-l7-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
@@ -8636,7 +8636,7 @@ ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name NAME (--emails E
 #### Examples
 {: #create-ddos-attack-l3-l4-alert-examples}
 
-Create a ddos L3/L4 attack alert policy for instance `cis-demo`.
+Create a DDoS L3/L4 attack alert policy for instance `cis-demo`.
 
 ```sh
 ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"

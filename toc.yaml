@@ -216,7 +216,6 @@ toc:
             - alerts-types.md
             - alerts.md
             - configuring-webhooks.md
-            - notifications.md
         - topicgroup:
             label: Working with Bot management
             topics:

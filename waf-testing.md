@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-26"
+lastupdated: "2025-08-28"
 
 keywords: waf 
 
@@ -33,7 +33,7 @@ Follow these high-level steps to configure WAF for your zones:
 
 1. Deploy the CIS managed ruleset.
 
-   The [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets) protects against Common Vulnerabilities and Exposures (CVEs) and known attack vectors. It identifies common attacks using signatures and is designed to generate low false positives. CIS can also update this ruleset during emergency releases to protect against high-profile zero-day threats.
+   The [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets) helps protect against Common Vulnerabilities and Exposures (CVEs) and known attack vectors. It uses signature-based detection to identify common attacks, with a focus on minimizing false positives. CIS will update these rulesets during emergency releases to respond to high-profile zero-day threats.
 
    1. In the IBM Cloud console, go to **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg), click **Resource list**, then expand **Security**. 
    1. Click your CIS instance name.
