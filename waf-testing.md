@@ -54,12 +54,12 @@ Follow these high-level steps to configure WAF for your zones:
 
       For more information, see [Working with WAF managed rules](/docs/cis?group=working-with-waf-managed-rules).
 
-1. Create a custom rule based on WAF attack score.
+1. Create a custom rule based on WAF Attack Score.
 
-   WAF attack score is only available to Standard plan customers.
+   WAF Attack Score is only available to Standard plan customers.
    {: note}
    
-   The WAF attack score is a machine-learning layer that complements CIS's managed rulesets, providing additional protection against SQL injection (SQLi), cross-site scripting (XSS), and many remote code execution (RCE) attacks. It helps identify rule bypasses and potentially new, undiscovered attacks.
+   The WAF Attack Score is a machine-learning layer that complements CIS's managed rulesets, providing additional protection against SQL injection (SQLi), cross-site scripting (XSS), and many remote code execution (RCE) attacks. It helps identify rule bypasses and potentially new, undiscovered attacks.
 
    Do the following: 
 
@@ -94,7 +94,7 @@ Follow these high-level steps to configure WAF for your zones:
       
          | Field | Operator | Value | Logic |
          |:------------| :-----------|:----------|:----------| 
-         | Bot Score | less than | `20` | And |
+         | Bot Score | less than or equal to | `20` | And |
          | Verified Bot | equals | Off |   |
          {: caption="Match conditions for applying a managed challenge to suspected bot traffic" caption-side="bottom"}
 
@@ -108,7 +108,7 @@ Follow these high-level steps to configure WAF for your zones:
 
    After configuring the CIS Managed Ruleset and attack score, you can also deploy the OWASP Core Ruleset. This managed ruleset is CIS's implementation of the OWASP ModSecurity Core Ruleset. Its attack coverage significantly overlaps with CIS managed ruleset by detecting common attack vectors, such as SQLi and XSS.
 
-   The OWASP Core Ruleset is prone to false positives and offers only marginal benefits when added on top of CIS managed ruleset and WAF attack score. If you decide to deploy this managed ruleset, you must monitor and adjust its settings based on your traffic to prevent false positives.
+   The OWASP Core Ruleset is prone to false positives and offers only marginal benefits when added on top of CIS managed ruleset and WAF Attack Score. If you decide to deploy this managed ruleset, you must monitor and adjust its settings based on your traffic to prevent false positives.
    {: important}
 
    1. From your CIS instance, go to **Security > WAF** and ensure that the **CIS OWASP Core Ruleset** Status toggle is enabled.
@@ -128,9 +128,17 @@ Follow these high-level steps to configure WAF for your zones:
 
    After configuring the WAF, monitor how your settings affect incoming traffic:
 
-   * Use [CIS metrics](/docs/cis?group=metrics) to explore traffic patterns, including traffic not blocked by WAF rules. All data provided by traffic detections is available (for example, WAF attach score and bot score).
+   * Use [CIS metrics](/docs/cis?group=metrics) to explore traffic patterns, including traffic not blocked by WAF rules. All data provided by traffic detections is available (for example, WAF Attack Score and Bot Score).
    * Use [Security Events](/docs/cis?topic=cis-using-the-cis-security-events-capability) to analyze requests that are being mitigated by CIS security products.
    * Enterprise plans can also obtain data about HTTP requests and security events using [CIS Logpush jobs](/docs/cis?topic=cis-logpush&interface=ui).
+
+## Rule recommendations 
+{: #rule-recommendations}
+
+CIS doesn't recommend that you block traffic solely based on the WAF Attack Score for all values below `50`, since the _Likely attack_ range (scores between `21` and `50`) tends to have false positives. However, if you choose to block traffic based on this score, you might consider one of the following:
+
+* Use a stricter WAF Attack Score value in your expression. For example, block traffic with a WAF Attack Score below `20` or below `15` (you might need to adjust the exact threshold). 
+* Combine a higher WAF Attack Score threshold with additional filters when blocking incoming traffic. For example, include a check for a specific URI path in your expression or use bot score as part of your criteria.
 
 ## Next steps
 {: #next-steps-waf}
