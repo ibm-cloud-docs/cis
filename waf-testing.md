@@ -19,10 +19,14 @@ CIS inspects incoming web and API traffic and blocks unwanted requests using pre
 {: shortdesc}
 
 **Attention**: When performing a "penetration test (pentest)," it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
+
 * Enable all managed rules.
-   * OWASP Core Ruleset: Set Paranoia Level to 4 (PL4) and Score Threshold to **High** (`High-25 and higher`).
-   * CIS Managed Ruleset: Set the default ruleset (for all signatures) to **Block**.
-* Create a custom rule to block any request with an Attack Score less than or equal to `20`. [Expression preview: `(cf.waf.score le 20)`].
+   * [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf): Set paranoia level to `4` (`PL4`) and score threshold to **High** (`High-25 and higher`).
+   * [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets): Set the default ruleset (for all signatures) to **Block**.
+* Create a custom rule to block any request with an Attack Score less than or equal to `20`. 
+
+   Expression preview: `(cf.waf.score le 20)`
+
 After testing, you can adjust this configuration to accommodate your application's expected behavior and reduce false positives. 
   
 ## Before you begin
@@ -65,7 +69,7 @@ Follow these high-level steps to configure WAF for your zones:
 
    1. [Create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui) using the Attack Score field:
 
-      The Attack Score field is a number from 1 (likely malicious) to 99 (likely clean) classifying how likely an incoming request is malicious or not. Allows you to detect new attack techniques before they are publicly known.
+      The Attack Score field is a number from `1` (likely malicious) to `99` (likely clean) classifying how likely an incoming request is malicious or not. Allows you to detect new attack techniques before they are publicly known.
       {: note}
 
       * When incoming requests match:
@@ -81,13 +85,13 @@ Follow these high-level steps to configure WAF for your zones:
 
          If you're on the CIS Standard, Standard Next, or Free Trial plans, you can create a custom rule using the WAF Attack Score Class field instead. For example, use the following rule expression: `WAF Attack Score Class equals Attack`.
 
-1. Create a custom rule based on bot score.
+1. Create a custom rule based on Bot Score.
 
-   The bot score feature is available only to CIS Enterprise Premier customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt). Standard Next and Enterprise Advanced/Usage plans can use Super Bot Fight Mode, but note that no UI is currently available for configuration.
+   The Bot Score feature is available only to CIS Enterprise Premier customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt). Standard Next and Enterprise Advanced/Usage plans can use Super Bot Fight Mode, but note that no UI is currently available for configuration.
 
    1. Create a custom rule using the Bot Score and Verified Bot fields:
    
-      Bot scores range from 1–99. A score below 30 typically indicates automation. The Verified Bot field identifies bots that are transparent about their identity and purpose.
+      Bot scores range from `1–99`. A score below `30` typically indicates automation. The Verified Bot field identifies bots that are transparent about their identity and purpose.
       {: note}
 
       * When incoming requests match:
@@ -104,14 +108,14 @@ Follow these high-level steps to configure WAF for your zones:
 
          With these protections in place, your WAF setup provides robust mitigation against known and unknown threats while minimizing false positives.
 
-1. Optional: Deploy the CIS [OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf).
+1. Optional: Deploy the [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf).
 
-   After configuring the CIS Managed Ruleset and attack score, you can also deploy the OWASP Core Ruleset. This managed ruleset is CIS's implementation of the OWASP ModSecurity Core Ruleset. Its attack coverage significantly overlaps with CIS managed ruleset by detecting common attack vectors, such as SQLi and XSS.
+   After configuring the CIS Managed Ruleset and attack score, you can also deploy the CIS OWASP Core Ruleset. This managed ruleset is CIS's implementation of the OWASP ModSecurity Core Ruleset. Its attack coverage significantly overlaps with CIS managed ruleset by detecting common attack vectors, such as SQLi and XSS.
 
-   The OWASP Core Ruleset is prone to false positives and offers only marginal benefits when added on top of CIS managed ruleset and WAF Attack Score. If you decide to deploy this managed ruleset, you must monitor and adjust its settings based on your traffic to prevent false positives.
+   The CIS OWASP Core Ruleset is prone to false positives and offers only marginal benefits when added on top of CIS managed ruleset and WAF Attack Score. If you decide to deploy this managed ruleset, you must monitor and adjust its settings based on your traffic to prevent false positives.
    {: important}
 
-   1. From your CIS instance, go to **Security > WAF** and ensure that the **CIS OWASP Core Ruleset** Status toggle is enabled.
+   From your CIS instance, go to **Security > WAF** and ensure that the **CIS OWASP Core Ruleset** Status toggle is enabled.
 
       This deploys the ruleset with the default config: **paranoia level** = `PL1` and **score threshold** = `Medium (40+)`.
 
