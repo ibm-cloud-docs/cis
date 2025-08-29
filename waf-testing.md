@@ -15,7 +15,7 @@ subcollection: cis
 # Setting up and tuning CIS WAF security 
 {: #waf-configuration}
 
-CIS inspects incoming web and API traffic and blocks unwanted requests using predefined rule sets, known as rulesets. This topic walks you through the initial steps to configure the Web Application Firewall (WAF) and quickly enable protection against the most common web attacks.
+Cloud Internet Services (CIS) inspects incoming web and API traffic and blocks unwanted requests using predefined rulesets. This topic walks you through the initial steps to configure the Web Application Firewall (WAF) and quickly enable protection against the most common web attacks.
 {: shortdesc}
 
 **Attention**: When performing a _penetration test (pentest)_, it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
@@ -32,7 +32,7 @@ After testing, you can adjust this configuration to accommodate your application
 ## Before you begin
 {: #before-you-begin-waf}
 
-Before testing WAF capabilities, ensure that you’ve set up a CIS instance in your IBM Cloud account and added your domain to CIS.
+Before testing WAF capabilities, make sure that you have a CIS instance set up in your IBM Cloud account and your domain added to CIS.
 
 ## Configuring WAF 
 {: #waf-process}
@@ -41,13 +41,16 @@ Follow these high-level steps to configure WAF for your zones:
 
 1. Deploy the CIS managed ruleset.
 
-   The [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets) helps protect against Common Vulnerabilities and Exposures (CVEs) and known attack vectors. It uses signature-based detection to identify common attacks, with a focus on minimizing false positives. CIS will update these rulesets during emergency releases to respond to high-profile zero-day threats.
+   The [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets) protects against Common Vulnerabilities and Exposures (CVEs) and attack vectors using signature-based detection to identify common attacks, with a focus on minimizing false positives. 
+   
+   CIS updates these rulesets during emergency releases to respond to high-profile, zero-day threats.
+   {: note}
 
-   1. In the IBM Cloud console, go to **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg), click **Resource list**, then expand **Security**. 
+   1. In the IBM Cloud console, open the **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg), then click **Resource list** and expand **Security**. 
    1. Click your CIS instance name.
-   1. Navigate to **Security > WAF** and ensure that the **CIS Managed Ruleset** Status toggle is enabled.
+   1. Navigate to **Security > WAF** and make sure that the **CIS Managed Ruleset** Status toggle is enabled.
 
-      **Default settings and ruleset customization**: By default, only a subset of rules is enabled to balance protection with reduced false positives. You can review and enable additional rules based on your application stack.
+      By default, a subset of rules is enabled to balance protection with reduced false positives. You can review and enable additional rules based on your application's stack.
 
       In particular situations, enabling the managed ruleset can cause some false positives. False positives are legitimate requests inadvertently mitigated by the WAF. For information on addressing false positives, see [Handling false positives in managed rules](/docs/cis?topic=cis-handling-false-positives-managed-rules).
 
@@ -110,10 +113,10 @@ Follow these high-level steps to configure WAF for your zones:
 
    After configuring the CIS Managed Ruleset and attack score, you can also deploy the CIS OWASP Core Ruleset. This managed ruleset is CIS's implementation of the OWASP ModSecurity Core Ruleset. Its attack coverage significantly overlaps with CIS managed ruleset by detecting common attack vectors, such as SQLi and XSS.
 
-   The CIS OWASP Core Ruleset is prone to false positives and offers only marginal benefits when added on top of CIS managed ruleset and WAF Attack Score. If you decide to deploy this managed ruleset, you must monitor and adjust its settings based on your traffic to prevent false positives.
+   This ruleset is prone to false positives and provides limited additional benefit when combined with CIS managed rules and WAF Attack Score. If you decide to deploy this managed ruleset, you must monitor and adjust its settings based on your traffic to prevent false positives.
    {: important}
 
-   From your CIS instance, go to **Security > WAF** and ensure that the **CIS OWASP Core Ruleset** Status toggle is enabled.
+   From the CIS dashboard, go to **Security > WAF** and ensure that the **CIS OWASP Core Ruleset** Status toggle is enabled.
 
       This deploys the ruleset with the default config: **paranoia level** = `PL1` and **score threshold** = `Medium (40+)`.
 
@@ -131,13 +134,13 @@ Follow these high-level steps to configure WAF for your zones:
    After configuring the WAF, monitor how your settings affect incoming traffic:
 
    * Use [CIS metrics](/docs/cis?group=metrics) to explore traffic patterns, including traffic not blocked by WAF rules. All data provided by traffic detections is available (for example, WAF Attack Score and Bot Score).
-   * Use [Security Events](/docs/cis?topic=cis-using-the-cis-security-events-capability) to analyze requests that are being mitigated by CIS security products.
-   * Enterprise plans can also obtain data about HTTP requests and security events using [CIS Logpush jobs](/docs/cis?topic=cis-logpush&interface=ui).
+   * Use [Security Events](/docs/cis?topic=cis-using-the-cis-security-events-capability) to review mitigated traffic. 
+   * Enterprise plans can access HTTP requests and security events using [CIS Logpush](/docs/cis?topic=cis-logpush&interface=ui).
 
 ## Rule recommendations 
 {: #rule-recommendations}
 
-CIS doesn't recommend that you block traffic solely based on the WAF Attack Score for all values below `50`, since the _Likely attack_ range (scores between `21` and `50`) tends to have false positives. However, if you choose to block traffic based on this score, you might consider one of the following:
+CIS doesn't recommend blocking traffic solely based on the WAF Attack Score for all values below `50`, since the _Likely attack_ range (scores between `21` and `50`) tends to have false positives. However, if you choose to block traffic based on this score, you might consider one of the following:
 
 * Use a stricter WAF Attack Score value in your expression. For example, block traffic with a WAF Attack Score below `20` or below `15` (you might need to adjust the exact threshold). 
 * Combine a higher WAF Attack Score threshold with additional filters when blocking incoming traffic. For example, include a check for a specific URI path in your expression or use bot score as part of your criteria.
@@ -145,7 +148,7 @@ CIS doesn't recommend that you block traffic solely based on the WAF Attack Scor
 ## Next steps
 {: #next-steps-waf}
 
-After setting up your WAF configuration, you’ll have a strong baseline of protection against common and advanced web threats.
+After your WAF is configured, you’ll have a solid baseline of protection against common and advanced web threats.
 
 To further enhance protection, consider:
 
