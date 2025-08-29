@@ -76,7 +76,7 @@ Follow these high-level steps to configure WAF for your zones:
 
          | Field | Operator | Value |
          |:------------| :-----------|:----------| 
-         | WAF Attack Score | less than | `20` |
+         | WAF Attack Score | less than or equal to | `20` |
          {: caption="Rule conditions for detecting unverified low-score bot requests" caption-side="bottom"}
  
         Expression Preview:  `(cf.waf.score lt 20)`
@@ -98,7 +98,7 @@ Follow these high-level steps to configure WAF for your zones:
       
          | Field | Operator | Value | Logic |
          |:------------| :-----------|:----------|:----------| 
-         | Bot Score | less than or equal to | `20` | And |
+         | Bot Score | less than | `20` | And |
          | Verified Bot | equals | Off |   |
          {: caption="Match conditions for applying a managed challenge to suspected bot traffic" caption-side="bottom"}
 
