@@ -18,13 +18,12 @@ subcollection: cis
 CIS inspects incoming web and API traffic and blocks unwanted requests using predefined rule sets, known as rulesets. This topic walks you through the initial steps to configure the Web Application Firewall (WAF) and quickly enable protection against the most common web attacks.
 {: shortdesc}
 
-When performing a "penetration test (pentest)," it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
+**Attention**: When performing a "penetration test (pentest)," it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
 * Enable all managed rules.
    * OWASP Core Ruleset: Set Paranoia Level to 4 (PL4) and Score Threshold to **High** (`High-25 and higher`).
    * CIS Managed Ruleset: Set the default ruleset (for all signatures) to **Block**.
 * Create a custom rule to block any request with an Attack Score less than or equal to `20`. [Expression preview: `(cf.waf.score le 20)`].
-After testing, you can adjust this configuration to accommodate your application's expected behavior and reduce false positives.
-{: attention}
+After testing, you can adjust this configuration to accommodate your application's expected behavior and reduce false positives. 
   
 ## Before you begin
 {: #before-you-begin-waf}
@@ -120,8 +119,8 @@ Follow these high-level steps to configure WAF for your zones:
 
       Two common configuration strategies:
 
-      * Strict first: Start with **paranoia level** = `PL4` and **score threshold** = `Low - 60 and higher`. Reduce the score threshold and paranoia level until you achieve a good false positives/true positives rate for your incoming traffic.
-      * Permissive first: Start from a more permissive configuration (**paranoia level** = `PL1`, **score threshold** = `High - 25 and higher`) and increase both parameters to adjust your protection, trying to keep a low number of false positives.
+      * Strict first: Start with **paranoia level** = `PL4` and **score threshold** = `High - 25 and higher`. Reduce the score threshold and paranoia level until you achieve a good false positives/true positives rate for your incoming traffic.
+      * Permissive first: Start from a more permissive configuration (**paranoia level** = `PL1`, **score threshold** = `Low - 60 and higher`) and increase both parameters to adjust your protection, trying to keep a low number of false positives.
 
       For more information on configuring the OWASP Core Ruleset, see [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui).
    
