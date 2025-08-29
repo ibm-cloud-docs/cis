@@ -112,8 +112,8 @@ These properties contain special information from an incoming request to help wi
 - `latitude`: Latitude of the incoming request (for example, `"30.27130"`).
 - `longitude`: Longitude of the incoming request (for example, `"-97.74260"`).
 - `postalCode`: PostalCode of the incoming request (for example, `"78701"`).
-- `region`: If known, the [ISO 3166-2]( https://en.m.wikipedia.org/wiki/ISO_3166-2){: external} name for the first level region associated with the IP address of the incoming request. If it is not known, it is an empty string (for example, `"Texas"`).
-- `regionCode`: If known, the [ISO 3166-2]( https://en.m.wikipedia.org/wiki/ISO_3166-2){: external} code for the first level region associated with the IP address of the incoming request. If it is not known, it is an empty string (for example, `"TX"`).
+- `region`: If known, the [ISO 3166-2](https://en.m.wikipedia.org/wiki/ISO_3166-2){: external} name for the first level region associated with the IP address of the incoming request. If it is not known, it is an empty string (for example, `"Texas"`).
+- `regionCode`: If known, the [ISO 3166-2](https://en.m.wikipedia.org/wiki/ISO_3166-2){: external} code for the first level region associated with the IP address of the incoming request. If it is not known, it is an empty string (for example, `"TX"`).
 - `timezone`: Timezone of the incoming request (for example, `"America/Chicago"`).
 
 All plans can set these features on outbound requests.
