@@ -18,10 +18,10 @@ subcollection: cis
 CIS inspects incoming web and API traffic and blocks unwanted requests using predefined rule sets, known as rulesets. This topic walks you through the initial steps to configure the Web Application Firewall (WAF) and quickly enable protection against the most common web attacks.
 {: shortdesc}
 
-**Attention**: When performing a "penetration test (pentest)," it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
+**Attention**: When performing a _penetration test (pentest)_, it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
 
 * Enable all managed rules.
-   * [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf): Set paranoia level to `4` (`PL4`) and score threshold to **High** (`High-25 and higher`).
+   * [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf): Set paranoia level to 4 (`PL4`) and score threshold to **High** (`High-25 and higher`).
    * [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets): Set the default ruleset (for all signatures) to **Block**.
 * Create a custom rule to block any request with an Attack Score less than or equal to `20`. 
 
@@ -67,7 +67,7 @@ Follow these high-level steps to configure WAF for your zones:
 
    Do the following: 
 
-   1. [Create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui) using the Attack Score field:
+   [Create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui) using the Attack Score field:
 
       The Attack Score field is a number from `1` (likely malicious) to `99` (likely clean) classifying how likely an incoming request is malicious or not. Allows you to detect new attack techniques before they are publicly known.
       {: note}
@@ -89,7 +89,7 @@ Follow these high-level steps to configure WAF for your zones:
 
    The Bot Score feature is available only to CIS Enterprise Premier customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt). Standard Next and Enterprise Advanced/Usage plans can use Super Bot Fight Mode, but note that no UI is currently available for configuration.
 
-   1. Create a custom rule using the Bot Score and Verified Bot fields:
+   Create a custom rule using the Bot Score and Verified Bot fields:
    
       Bot scores range from `1–99`. A score below `30` typically indicates automation. The Verified Bot field identifies bots that are transparent about their identity and purpose.
       {: note}
