@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-28"
+lastupdated: "2025-08-29"
 
 keywords: waf 
 
@@ -18,7 +18,12 @@ subcollection: cis
 CIS inspects incoming web and API traffic and blocks unwanted requests using predefined rule sets, known as rulesets. This topic walks you through the initial steps to configure the Web Application Firewall (WAF) and quickly enable protection against the most common web attacks.
 {: shortdesc}
 
-If you're performing a penetration test (pentest), begin with the most restrictive WAF configuration, for example, enable all available rules and set actions to **Block**. This approach helps you evaluate the full protection capabilities of CIS. After testing, you can adjust the configuration to accommodate expected application behavior and reduce false positives.
+When performing a "penetration test (pentest)," it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
+* Enable all managed rules.
+   * OWASP Core Ruleset: Set Paranoia Level to 4 (PL4) and Score Threshold to **High** (`High-25 and higher`).
+   * CIS Managed Ruleset: Set the default ruleset (for all signatures) to **Block**.
+* Create a custom rule to block any request with an Attack Score less than or equal to `20`. [Expression preview: `(cf.waf.score le 20)`].
+After testing, you can adjust this configuration to accommodate your application's expected behavior and reduce false positives.
 {: attention}
   
 ## Before you begin
