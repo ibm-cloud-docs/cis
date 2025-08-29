@@ -135,7 +135,7 @@ ibmcloud cis alert-policy get POLICY_ID [-i, --instance INSTANCE] [--output FORM
 `--output`
 :   Specifies the output format; only JSON is supported.
 
-### Creating a DDoS Attack Alert from the CLI
+### Creating a DDoS attack alert policy from the CLI
 {: #cli-create-ddos-alert}
 
 To create a DDoS attack alert policy from the CLI, run the following command:
@@ -169,7 +169,7 @@ ibmcloud cis alert-policy ddos-attack-l7-alert-create --name NAME (--emails EMAI
 `--output`
 :   Specifies the output format; only JSON is supported.
 
-### Creating a pool toggle alert from the CLI
+### Creating a pool toggle alert policy from the CLI
 {: #cli-create-pool-toggle-alert}
 
 To create a pool toggle alert from the CLI, run the following command:
@@ -210,9 +210,9 @@ ibmcloud cis alert-policy pool-toggle-alert-create --name NAME (--emails EMAILS 
 :   The instance name or ID.
 
 `--output`
-Specifies the output format; only JSON is supported.
+:   Specifies the output format; only JSON is supported.
 
-### Creating a security alert from the CLI
+### Creating a security alert policy from the CLI
 {: #cli-create-security-alert}
 
 Create an alert policy about spikes in firewall events. Firewall events alerts use a z-score calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score is more than 3.5 (the threshold). Duplicate alerts are not recieved within the same two-hour time frame.
@@ -257,7 +257,7 @@ ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMA
 Security alerts and advanced security alerts use the same command. When you create an advanced security events alert command in the CLI, specify the services for the alert. If you do not specify the services for the alert, the mean detection time changes from 5 minutes to 2 hours.
 {: important}
 
-### Creating Universal SSL alert command
+### Creating Universal SSL alert policy
 {: #cli-universal-ssl-alert-cmd}
 
 To create an alert policy for certificate events, run the following command:
@@ -294,7 +294,7 @@ ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated
 `--output`
 :   Specifies the output format; only JSON is supported.
 
-### Load balancing health check alert command
+### Creating Load balancing health check alert policy
 {: #cli-lb-health-check-alert-cmd}
 
 To create an alert policy for changes in health status for global load balancer, pools, and origins, run the following command:
@@ -340,7 +340,7 @@ ibmcloud cis alert-policy glb-healthcheck-alert-create --name NAME (--emails EMA
 `--output`
 :   Specifies the output format; only JSON is supported.
 
-### Updating a DDoS Attack Alert Policy from the CLI
+### Updating a DDoS attack alert policy from the CLI
 {: #cli-update-ddos-alert}
 
 To update a DDoS attack alert policy from the CLI, run the following command:
@@ -496,7 +496,7 @@ To create an email alert, follow these steps:
     * Security (WAF) alert
     * Advanced security (WAF) alert
 
-### Creating DDoS attack layer 7 command with the API
+### Creating DDoS attack layer 7 alert policy with the API
 {: #api-ddos-attack-alert-cmd}
 
 To create the DDoS attack layer 7, run the following command:
@@ -519,7 +519,7 @@ Where:
     - **mechanisms** are at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
 
-### Creating pool toggle alert command with API
+### Creating pool toggle alert policy with API
 {: #api-pool-toggle-alert-cmd}
 
 To create the pool toggle alert, run the following command:
@@ -556,7 +556,7 @@ Where:
     - **filter** is the list of all enablement statuses and pool IDs for the pool toggle alert.
     - **conditions** describe for all pools whether the pool is being enabled, disabled, or both. Content is generated automatically if the field is empty.
 
-### Creating security (WAF) alert command with the API
+### Creating security (WAF) alert policy with the API
 {: #api-waf-alert-command}
 
 To create a WAF alert, run the following command:
@@ -597,7 +597,7 @@ Where:
     - **mechanisms** are at least one of `email`, `webhooks`.
     - **filters** are the list of all zones for the WAF alert.
 
-#### Creating advanced security (WAF) alert command with the API
+#### Creating advanced security (WAF) alert policy with the API
 {: #api-advanced-waf-command}
 
 To create an Advanced WAF alert, run the following command:
@@ -664,7 +664,7 @@ You can monitor the following services:
 |Data loss prevention|`dlp`|
 {: caption="Services that can be monitored by Advanced WAF alerts" caption-side="bottom"}
 
-### Creating universal SSL alert command
+### Creating universal SSL alert policy
 {: #api-universal-ssl-alert-cmd}
 
 To create a Universal SSL alert, run the following command:
@@ -687,7 +687,7 @@ Where:
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
 
-### Creating load balancing health check alert command
+### Creating load balancing health check alert policy
 {: #api-lb-health-check-alert-cmd}
 
 To create a load balancing health check alert, run the following command:
@@ -725,7 +725,7 @@ Where:
     - **description** (optional) is the description of the alert.
     - **filter** is the list of all sources, pools, health status for the load balancing health alert.
 
-### Editing alert policies with the API
+### Editing alert policy with the API
 {: #api-edit-alert}
 
 To edit an email alert, run the following command:
@@ -742,7 +742,7 @@ curl -X PUT \
 The **conditions** field is required, even though it might be empty.
 {: tip}
 
-### Deleting alert policies with the API
+### Deleting alert policy with the API
 {: #api-delete-alert}
 
 To delete an email alert, run the following command:
