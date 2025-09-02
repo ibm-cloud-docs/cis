@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-08"
+lastupdated: "2025-09-02"
 
 keywords:
 
@@ -22,7 +22,7 @@ The 4xx class error code responses occur when an issue is at the client end, and
 {: shortdesc}
 
 * 4xx codes can be used as a response to any request method.
-* Origin server should include an explanation which should be displayed by User-Agent, with the exception of a HEAD request.
+* An explanation is included in the origin server should be displayed by User-Agent, except for a HEAD request.
 * Custom rules can return any response code in the range 400-499 in your HTML page, if the site owner has created a rule with Block action and configured a custom response code.
 
 ## Error 400: Bad request
@@ -175,7 +175,7 @@ The server failed to meet the requirements specified in the `Expect` header of t
 
 The client sent too many requests in the specified amount of time, according to the server (often known as “rate-limiting”). The server might respond with information allowing the requester to retry the request after a specific period of time.
 
-The global rate limit for the {{site.data.keyword.cis_short_notm}} API is 1200 requests per five minutes per user, and applies cumulatively regardless of whether the request is made through the dashboard, API key, or API token. If you exceed this limit, all API calls for the next five minutes are blocked, receiving an `HTTP 429` response.
+The default global rate limit for the {{site.data.keyword.cis_short_notm}} API is 100 requests per minute per user, and applies cumulatively regardless of whether the request is made through the dashboard, API key, or API token. If you exceed this limit, all API calls for the next five minutes are blocked, receiving an `HTTP 429` response.
 
 Some specific API calls have their own limits and are documented separately, such as Cache Purge APIs, GraphQL APIs, and rulesets APIs.
 
