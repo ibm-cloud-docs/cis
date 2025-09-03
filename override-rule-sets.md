@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-09-03"
 
 keywords:
 
@@ -94,7 +94,7 @@ To override a managed ruleset in the console, follow these steps:
 
    Click **Reset to default** to restore the original settings.
    {: tip}
-   
+
 ## Overriding managed rulesets from the CLI
 {: #cli-override-rule-sets}
 {: cli}
@@ -328,6 +328,123 @@ This example shows how to deploy the CIS managed ruleset with various overrides.
       }
     }
   }
+```
+{: pre}
+
+Following example shows how to create a WAF entrypoint and overriding a rule with terraform:
+
+```sh
+resource "ibm_cis_ruleset_entrypoint_version" "waf_config" {
+  cis_id    = ibm_cis.instance.id
+  domain_id = data.ibm_cis_domain.cis_domain.domain_id
+  phase = "http_request_firewall_managed"
+  rulesets {
+     description = "Entry Point rulesets"
+  }
+  lifecycle {
+      ignore_changes = [
+        rulesets
+      ]
+  }
+}
+
+ data "ibm_cis_ruleset_entrypoint_versions" "test"{
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    phase = "http_request_firewall_managed"
+    depends_on = [
+      ibm_cis_ruleset_entrypoint_version.waf_config
+    ]
+  }
+
+resource ibm_cis_ruleset_rule "rule1" {
+
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.test.rulesets[0].ruleset_id
+
+      rule {
+        action = "execute"
+        description = "OWASP Core RuleSet"
+        enabled = true
+        expression = "true"
+        action_parameters {
+            id = "4814384a9e5d4991b9815dcfc25d2f1f"
+            overrides {
+            categories {
+                 category = "paranoia-level-2"
+                 enabled = false
+            }
+            categories {
+                 category = "paranoia-level-3"
+                  enabled = false
+            }
+            categories {
+                 category = "paranoia-level-4"
+                 enabled = false
+            }
+            override_rules {
+              rule_id         = "6179ae15870a4bb7b2d480d4843b323c"
+              action          = "block"
+              score_threshold = 60
+              enabled = true
+            }
+            override_rules {
+              rule_id         = "8ac8bc2a661e475d940980f9317f28e1"
+              enabled         = true
+            }
+       }
+   }
+}
+}
+
+resource ibm_cis_ruleset_rule "rule2" {
+
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.test.rulesets[0].ruleset_id
+
+    rule {
+      action = "execute"
+      description = "CIS exposed credential ruleset"
+      enabled = true
+      expression = "true"
+      action_parameters {
+           id = "c2e184081120413c86c3ab7e14069605"
+           overrides {
+            override_rules {
+              rule_id = "53f38cd8974a4cd3bc9a8a64fc731fb0"
+              enabled = true
+              action = "log"
+            }
+      }
+      }
+    }
+}
+
+resource ibm_cis_ruleset_rule "rule3" {
+
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.test.rulesets[0].ruleset_id
+
+      rule {
+          action = "execute"
+         description = "CIS Managed ruleset"
+          enabled = true
+          expression = "true"
+          action_parameters {
+              id = "efb7b8c949ac4650a09736fc376e9aee"
+              overrides {
+            override_rules {
+              rule_id = "5de7edfa648c4d6891dc3e7f84534ffa"
+              enabled = true
+              action = "block"
+            }
+          }
+         }
+      }
+}
 ```
 {: pre}
 
