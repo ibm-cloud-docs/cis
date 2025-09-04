@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-09-04"
 
 keywords:
 
@@ -238,3 +238,54 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    --header "Content-Type: application/json"
    ```
    {: pre}
+
+### Creating a custom rate-limiting rule with Terraform
+{: #create-a-custom-rate-limiting-rule-tf}
+{: terraform}
+
+The following example shows how to create an entry point and rate-limiting rule with Terraform:
+```sh
+resource ibm_cis_ruleset_entrypoint_version test {
+  cis_id    = ibm_cis.instance.id
+  domain_id = data.ibm_cis_domain.cis_domain.domain_id
+  phase = "http_ratelimit"
+  rulesets {
+      description = "Entrypoint ruleset for ratelimit ruleset"
+    }
+    lifecycle {
+      ignore_changes = [
+        rulesets
+      ]
+  }
+}
+
+data ibm_cis_ruleset_entrypoint_versions test {
+  cis_id    = ibm_cis.instance.id
+  domain_id = data.ibm_cis_domain.cis_domain.domain_id
+  phase = "http_ratelimit"
+   depends_on = [
+    ibm_cis_ruleset_entrypoint_version.ratelimit_ep
+  ]
+}
+
+resource "ibm_cis_ruleset_rule" "ratelimit_rule_1" {
+  cis_id    = ibm_cis.instance.id
+  domain_id = data.ibm_cis_domain.cis_domain.domain_id
+  ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.ratelimit_data.rulesets[0].ruleset_id
+
+    rule {
+      action      = "block"
+      description = "Block IPs making over 100 requests/minute to /api/"
+      enabled     = true
+      expression  = "(http.request.uri.path matches \"^/api/\")"
+
+      rate_limit {
+      characteristics     = ["cf.colo.id","ip.src"]
+      mitigation_timeout  = 300
+      period              = 120
+      requests_per_period = 100
+      }
+    }
+  }
+```
+{: codeblock}
