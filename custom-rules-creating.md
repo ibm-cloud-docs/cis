@@ -29,6 +29,7 @@ You can create, update, and delete a custom rule by using the UI, CLI, API, or T
 
 ## Creating a custom rule in the console
 {: #create-custom-rule-ui}
+{: ui}
 
 Follow these steps to create a custom rule in the console:
 
@@ -56,6 +57,7 @@ WAF custom rules are configured using the existing Firewall rules page. Any lega
 
 ## Updating a custom rule in the console
 {: #update-custom-rule-ui}
+{: ui}
 
 Follow these steps to update an existing custom rule in the console:
 
@@ -73,6 +75,7 @@ To pause or activate any rule in the list of existing rules, click the **Enabled
 
 ## Deleting a custom rule in the console
 {: #delete-custom-rule-ui}
+{: ui}
 
 Follow these steps to delete an existing custom rule in the console:
 
@@ -83,6 +86,7 @@ Follow these steps to delete an existing custom rule in the console:
 
 ## Creating a custom rule from the CLI
 {: #create-custom-rule-cli}
+{: cli}
 
 To create a custom rule from the CLI, follow these steps:
 
@@ -188,6 +192,7 @@ To create a custom rule from the CLI, follow these steps:
 
 ### Updating a custom rule from the CLI
 {: #update-custom-rule-cli}
+{: cli}
 
 Run the following command to update a custom rule in the CLI:
 
@@ -269,6 +274,7 @@ Where:
 
 ## Deleting a custom rule from the CLI
 {: #delete-custom-rule-cli}
+{: cli}
 
 Run the following command to delete a custom rule in the CLI:
 
@@ -296,6 +302,7 @@ Where:
 
 ## Command examples
 {: #command-examples-create-update-delete}
+{: cli}
 
 *  To create a custom rule:
 
@@ -311,6 +318,7 @@ Where:
 
 ## Getting the custom rule entry point for the API
 {: #get-rule-entry-point-api}
+{: api}
 
 All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. This entry point ruleset might already exist or needs to be created if it does not exist.
 
@@ -349,6 +357,7 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 
 ## Creating a custom rule with the API
 {: #create-custom-rule-api}
+{: api}
 
 Follow these steps to create a custom rule with the API:
 
@@ -384,6 +393,7 @@ Follow these steps to create a custom rule with the API:
 
 ## Updating a custom rule with the API
 {: #update-custom-rule-api}
+{: api}
 
 Follow these steps to update an existing custom rule with the API:
 
@@ -413,6 +423,7 @@ curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RU
 
 ## Deleting a custom rule with the API
 {: #delete-custom-rule-api}
+{: api}
 
 Follow these steps to delete an existing custom rule with the API:
 
@@ -438,6 +449,7 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 
 ## Creating a custom rule with Terraform
 {: #create-custom-rule-tf}
+{: terraform}
 
 To create a custom rule, you need to create an entry point first and then create the custom rule. The following example creates a custom rule with Terraform.
 
