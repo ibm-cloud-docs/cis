@@ -239,9 +239,12 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    ```
    {: pre}
 
-### Creating a custom rate-limiting rule with Terraform
+## Creating a rate-limiting rule with Terraform
 {: #create-a-custom-rate-limiting-rule-tf}
 {: terraform}
+
+### Creating a custom rate-limiting rule with Terraform
+{: #create-a-custom-rate-limiting-rule-tf}
 
 The following example shows how to create an entry point and rate-limiting rule with Terraform:
 ```sh
