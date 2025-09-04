@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-23"
+lastupdated: "2025-09-04"
 
 keywords:
 
@@ -31,6 +31,8 @@ You can create, update, and delete a custom rule by using the UI, CLI, API, or T
 {: #working-with-waf-custom-rules}
 {: ui}
 
+This section provides the information about creating, updating, and deleting WAF custom rules in the console.
+
 ### Creating a custom rule in the console
 {: #create-custom-rule-ui}
 
@@ -39,8 +41,8 @@ Follow these steps to create a custom rule in the console:
 WAF custom rules are configured using the existing Firewall rules page. Any legacy firewall rules that were previously created on your domain are automatically converted into WAF custom rules.
 {: note}
 
-1. Navigate to **Security > Firewall rules**.
-1. Click **Create**.
+1. In the CIS console, navigate to the **Security**.
+1. Select the **Custom rules** tab and then click **Create**.
 1. Enter an optional description.
 1. Optionally, input a priority, if necessary. A priority of zero is a null priority and is evaluated last.
 1. Use the UI builder in the **Incoming requests** section to add a condition.
@@ -63,8 +65,9 @@ WAF custom rules are configured using the existing Firewall rules page. Any lega
 
 Follow these steps to update an existing custom rule in the console:
 
-1. Navigate to **Security > Firewall rules**.
-1. In the firewall rules table, locate the rule that you want to modify, then click the Actions menu on the right of the row.
+1. In the CIS console, navigate to the **Security**.
+1. Select the **Custom rules** tab.
+1. In the Custom rules table, locate the rule that you want to modify, then click the Actions menu on the right of the row.
 1. Select **Edit**.
 1. Make your changes to the rule.
 1. To save your rule, choose the most appropriate option by clicking either:
@@ -79,10 +82,10 @@ To pause or activate any rule in the list of existing rules, click the **Enabled
 
 Follow these steps to delete an existing custom rule in the console:
 
-1. Navigate to **Security > Firewall rules**.
-1. In the firewall rules table, locate the rule to modify and click the Actions menu on the right of the row.
-1. Select **Delete**.
-1. Confirm the rule deletion.
+1. In the CIS console, navigate to the **Security**.
+1. In the Custom rules table, locate the rule to delete and click the Actions menu on the right of the row.
+1. Select **Delete** from the action menu.
+1. Click **Delete WAF custom rule** to delete the rule.
 
 ## Working with WAF custom rules from the CLI
 {: #working-with-waf-custom-rules-cli}
