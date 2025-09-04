@@ -331,7 +331,7 @@ This example shows how to deploy the CIS managed ruleset with various overrides.
 ```
 {: pre}
 
-The following example shows how to create a WAF entrypoint and override a rule with terraform:
+The following example shows how to create a WAF entry point and override a rule with Terraform:
 
 ```sh
 resource "ibm_cis_ruleset_entrypoint_version" "waf_config" {
@@ -446,6 +446,6 @@ resource ibm_cis_ruleset_rule "rule3" {
       }
 }
 ```
-{: pre}
+{: codeblock}
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset_entrypoint_version`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_entrypoint_version){: external} in the Terraform registry.
