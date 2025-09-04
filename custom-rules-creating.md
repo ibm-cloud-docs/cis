@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-07-23"
+lastupdated: "2025-09-04"
 
 keywords:
 
@@ -27,20 +27,17 @@ Before getting started, it's a good idea to review [Using fields, functions, and
 
 You can create, update, and delete a custom rule by using the UI, CLI, API, or Terraform.
 
-## Working with WAF custom rules in the console
-{: #working-with-waf-custom-rules}
-{: ui}
-
-### Creating a custom rule in the console
+## Creating a custom rule in the console
 {: #create-custom-rule-ui}
+{: ui}
 
 Follow these steps to create a custom rule in the console:
 
 WAF custom rules are configured using the existing Firewall rules page. Any legacy firewall rules that were previously created on your domain are automatically converted into WAF custom rules.
 {: note}
 
-1. Navigate to **Security > Firewall rules**.
-1. Click **Create**.
+1. In the CIS console, navigate to the **Security**.
+1. Select the **Custom rules** tab and then click **Create**.
 1. Enter an optional description.
 1. Optionally, input a priority, if necessary. A priority of zero is a null priority and is evaluated last.
 1. Use the UI builder in the **Incoming requests** section to add a condition.
@@ -55,41 +52,41 @@ WAF custom rules are configured using the existing Firewall rules page. Any lega
 
 1. Pick an action from the **Response** list menu.
 1. To save your rule, choose the most appropriate option by clicking either:
-    * **Save as draft** to save your rule, but leave it disabled.
+    * **Save as draft** to save your rule, but keep it disabled.
     * **Save and deploy** to save your rule and activate it.
 
-### Updating a custom rule in the console
+## Updating a custom rule in the console
 {: #update-custom-rule-ui}
+{: ui}
 
 Follow these steps to update an existing custom rule in the console:
 
-1. Navigate to **Security > Firewall rules**.
-1. In the firewall rules table, locate the rule that you want to modify, then click the Actions menu on the right of the row.
+1. In the CIS console, navigate to the **Security**.
+1. Select the **Custom rules** tab.
+1. In the Custom rules table, locate the rule that you want to modify, then click the Actions menu on the right of the row.
 1. Select **Edit**.
 1. Make your changes to the rule.
 1. To save your rule, choose the most appropriate option by clicking either:
-    * **Save as draft** to save your rule, but leave it disabled.
+    * **Save as draft** to save your rule, but keep it disabled.
     * **Save and deploy** to save your rule and activate it.
 
 To pause or activate any rule in the list of existing rules, click the **Enabled** toggle.
 {: note}
 
-### Deleting a custom rule in the console
+## Deleting a custom rule in the console
 {: #delete-custom-rule-ui}
+{: ui}
 
 Follow these steps to delete an existing custom rule in the console:
 
-1. Navigate to **Security > Firewall rules**.
-1. In the firewall rules table, locate the rule to modify and click the Actions menu on the right of the row.
-1. Select **Delete**.
-1. Confirm the rule deletion.
+1. In the CIS console, navigate to the **Security**.
+1. In the Custom rules table, locate the rule to delete and click the Actions menu on the right of the row.
+1. Select **Delete** from the action menu.
+1. Click **Delete WAF custom rule** to delete the rule.
 
-## Working with WAF custom rules from the CLI
-{: #working-with-waf-custom-rules-cli}
-{: cli}
-
-### Creating a custom rule from the CLI
+## Creating a custom rule from the CLI
 {: #create-custom-rule-cli}
+{: cli}
 
 To create a custom rule from the CLI, follow these steps:
 
@@ -117,16 +114,16 @@ To create a custom rule from the CLI, follow these steps:
    Where:
 
 `DNS_DOMAIN_ID`
-:   The ID of DNS domain.
+:   The ID of the DNS domain.
 
 `--match`
 :   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
-:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip". For "block" and "skip" actions, use JSON file or JSON string instead.
+:   The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip". For "block" and "skip" actions, use JSON file or JSON string instead.
 
 `--enabled`
-:  Indicates if the rule is active. Default is "false".
+:  Indicates if the rule is active. The default is "false".
 
 `--description`
 :  A brief description of the rule.
@@ -142,7 +139,7 @@ To create a custom rule from the CLI, follow these steps:
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
 
       `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid value: `current`.
+        `ruleset`: Skip all remaining rules or one or more WAF-managed rulesets. Valid value: `current`.
         `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
         `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
         `response`:  Define a custom response for 'block' action.
@@ -188,13 +185,14 @@ To create a custom rule from the CLI, follow these steps:
 {: codeblock}
 
 `-i, --instance`
-:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+:   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
 :   Specify output format, only `JSON` is supported.
 
-### Updating a custom rule from the CLI
+## Updating a custom rule from the CLI
 {: #update-custom-rule-cli}
+{: cli}
 
 Run the following command to update a custom rule in the CLI:
 
@@ -209,7 +207,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 Where:
 
 `DNS_DOMAIN_ID`
-:   The ID of DNS domain.
+:   The ID of the DNS domain.
 
 `RULE_ID`
 :  The ID of the rule.
@@ -218,10 +216,10 @@ Where:
 :   Specifies the conditions that must be matched for the rule to run. For match value, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-and-expressions).
 
 `--action`
-:The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For "block" and "skip" actions, use JSON file or JSON string instead.
+:   The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".For "block" and "skip" actions, use JSON file or JSON string instead.
 
 `--enabled`
-:  Indicates if the rule is active. Default is "false".
+:  Indicates if the rule is active. The default value is "false".
 
 `--description`
 :  A brief description of the rule.
@@ -237,7 +235,7 @@ Where:
    - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
 
       `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF managed rulesets. Valid values: `current`.
+        `ruleset`: Skip all remaining rules or one or more WAF-managed rulesets. Valid values: `current`.
         `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
         `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
         `response`:  Define a custom response for 'block' action.
@@ -274,8 +272,9 @@ Where:
 `--output`
 :   Specify output format, only `JSON` is supported.
 
-### Deleting a custom rule from the CLI
+## Deleting a custom rule from the CLI
 {: #delete-custom-rule-cli}
+{: cli}
 
 Run the following command to delete a custom rule in the CLI:
 
@@ -287,22 +286,23 @@ ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --i
 Where:
 
 `DNS_DOMAIN_ID`
-:   The ID of DNS domain.
+:   The ID of the DNS domain.
 
 `RULE_ID`
 :  The ID of the custom rule.
 
 `-i, --instance`
-:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+:   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `-f, --force`
-:   Attempt to delete custom rule without prompting for confirmation.
+:   Attempt to delete a custom rule without prompting for confirmation.
 
 `--output`
 :   Specify output format, only `JSON` is supported.
 
-### Command examples
+## Command examples
 {: #command-examples-create-update-delete}
+{: cli}
 
 *  To create a custom rule:
 
@@ -316,14 +316,11 @@ Where:
 
    `ibmcloud cis custom-waf rule-delete 601b728b86e630c744c81740f72570c3 4d37cb6f87654e96a18bc531628a4d27`
 
-## Working with WAF custom rules with the API
-{: #working-with-waf-custom-rules-api}
+## Getting the custom rule entry point for the API
+{: #get-rule-entry-point-api}
 {: api}
 
-### Getting the custom rule entry point for the API
-{: #get-rule-entry-point-api}
-
-All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. This entry point ruleset may already exist or needs to be created if it does not exist.
+All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. This entry point ruleset might already exist or needs to be created if it does not exist.
 
 Follow these steps to get the custom rule entry point ruleset:
 
@@ -343,7 +340,7 @@ curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phase
 ```
 {: pre}
 
-The ruleset ID will be in the response of the successful request. If the above call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the custom rule phase:
+The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the custom rule phase:
 
 ```sh
 curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
@@ -358,8 +355,9 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 ```
 {: pre}
 
-### Creating a custom rule with the API
+## Creating a custom rule with the API
 {: #create-custom-rule-api}
+{: api}
 
 Follow these steps to create a custom rule with the API:
 
@@ -393,8 +391,9 @@ Follow these steps to create a custom rule with the API:
    ```
    {: pre}
 
-### Updating a custom rule with the API
+## Updating a custom rule with the API
 {: #update-custom-rule-api}
+{: api}
 
 Follow these steps to update an existing custom rule with the API:
 
@@ -422,8 +421,9 @@ curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RU
 ```
 {: pre}
 
-### Deleting a custom rule with the API
+## Deleting a custom rule with the API
 {: #delete-custom-rule-api}
+{: api}
 
 Follow these steps to delete an existing custom rule with the API:
 
@@ -447,16 +447,13 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 ```
 {: pre}
 
-## Working with WAF custom rules with Terraform
-{: #working-with-waf-custom-rules-tf}
+## Creating a custom rule with Terraform
+{: #create-custom-rule-tf}
 {: terraform}
 
-### Creating a custom rule with Terraform
-{: #create-custom-rule-tf}
+To create a custom rule, you need to create an entry point first and then create the custom rule. The following example creates a custom rule with Terraform.
 
-The following example creates a custom rule using Terraform:
-
-First, create an entrypoint ruleset:
+To create an entry point ruleset, run the following command:
 
 ```terraform
 resource "ibm_cis_ruleset_entrypoint_version" "test" {
@@ -475,7 +472,7 @@ resource "ibm_cis_ruleset_entrypoint_version" "test" {
 ```
 {: pre}
 
-Then, to create a custom rule:
+To create a custom rule, run the following command:
 
 ```terraform
    resource ibm_cis_ruleset_rule "config" {
@@ -504,7 +501,63 @@ Then, to create a custom rule:
 ```
 {: codeblock}
 
+The following example shows how to create an entry point and WAF custom rule with Terraform:
+
+```sh
+resource ibm_cis_ruleset_entrypoint_version test {
+cis_id    = ibm_cis.instance.id
+domain_id = data.ibm_cis_domain.cis_domain.domain_id
+phase = "http_request_firewall_custom"
+rulesets {
+   description = "Entrypoint ruleset for custom ruleset"
+   }
+   lifecycle {
+   ignore_changes = [
+      rulesets
+   ]
+  }
+}
+data ibm_cis_ruleset_entrypoint_versions custom_rule_ep {
+  cis_id    = ibm_cis.instance.id
+  domain_id = data.ibm_cis_domain.cis_domain.domain_id
+  phase = "http_request_firewall_custom"
+  depends_on = [
+  ibm_cis_ruleset_entrypoint_version.test
+  ]
+}
+
+resource ibm_cis_ruleset_rule "custom_rule1" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.custom_rule_ep.rulesets[0].ruleset_id
+      rule {
+        action =  "skip"
+        description = "adding custom rule via terraform"
+        expression = "true"
+        enabled = "true"
+        action_parameters{
+          ruleset = "current"
+          phases = ["http_ratelimit", "http_request_sbfm","http_request_firewall_managed"]
+          products = ["zoneLockdown","uaBlock", "bic", "hot", "securityLevel", "rateLimit","waf"]
+        }
+      }
+}
+
+resource ibm_cis_ruleset_rule "custom_rule2" {
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.custom_rule_ep.rulesets[0].ruleset_id
+      rule {
+        action =  "block"
+        description = "adding custom rule via terraform2"
+        expression = "(http.request.uri.path eq \"/path1\")"
+        enabled = "false"
+      }
+}
+```
+{: codeblock}
+
 For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
 
-You can update a custom rule with Terraform by modifying the preceding example used for creating the custom rule and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
+You can update a custom rule with Terraform by modifying the preceding example and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
 {: note}
