@@ -247,6 +247,7 @@ Follow these steps to delete an existing rate-limiting rule with the API:
 {: #create-a-custom-rate-limiting-rule-tf}
 
 The following example shows how to create an entry point and rate-limiting rule with Terraform:
+
 ```sh
 resource ibm_cis_ruleset_entrypoint_version test {
   cis_id    = ibm_cis.instance.id
