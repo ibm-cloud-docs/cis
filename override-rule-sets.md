@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-04"
 
 keywords:
 
@@ -331,7 +331,7 @@ This example shows how to deploy the CIS managed ruleset with various overrides.
 ```
 {: pre}
 
-Following example shows how to create a WAF entrypoint and overriding a rule with terraform:
+The following example shows how to create a WAF entrypoint and override a rule with terraform:
 
 ```sh
 resource "ibm_cis_ruleset_entrypoint_version" "waf_config" {
