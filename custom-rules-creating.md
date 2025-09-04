@@ -190,7 +190,7 @@ To create a custom rule from the CLI, follow these steps:
 `--output`
 :   Specify output format, only `JSON` is supported.
 
-### Updating a custom rule from the CLI
+## Updating a custom rule from the CLI
 {: #update-custom-rule-cli}
 {: cli}
 
