@@ -27,13 +27,7 @@ Before getting started, it's a good idea to review [Using fields, functions, and
 
 You can create, update, and delete a custom rule by using the UI, CLI, API, or Terraform.
 
-## Working with WAF custom rules in the console
-{: #working-with-waf-custom-rules}
-{: ui}
-
-This section provides the information about creating, updating, and deleting WAF custom rules in the console.
-
-### Creating a custom rule in the console
+## Creating a custom rule in the console
 {: #create-custom-rule-ui}
 
 Follow these steps to create a custom rule in the console:
@@ -60,7 +54,7 @@ WAF custom rules are configured using the existing Firewall rules page. Any lega
     * **Save as draft** to save your rule, but keep it disabled.
     * **Save and deploy** to save your rule and activate it.
 
-### Updating a custom rule in the console
+## Updating a custom rule in the console
 {: #update-custom-rule-ui}
 
 Follow these steps to update an existing custom rule in the console:
@@ -77,7 +71,7 @@ Follow these steps to update an existing custom rule in the console:
 To pause or activate any rule in the list of existing rules, click the **Enabled** toggle.
 {: note}
 
-### Deleting a custom rule in the console
+## Deleting a custom rule in the console
 {: #delete-custom-rule-ui}
 
 Follow these steps to delete an existing custom rule in the console:
@@ -87,13 +81,7 @@ Follow these steps to delete an existing custom rule in the console:
 1. Select **Delete** from the action menu.
 1. Click **Delete WAF custom rule** to delete the rule.
 
-## Working with WAF custom rules from the CLI
-{: #working-with-waf-custom-rules-cli}
-{: cli}
-
-This section provides the information about creating, updating, and deleting WAF custom rules from the CLI.
-
-### Creating a custom rule from the CLI
+## Creating a custom rule from the CLI
 {: #create-custom-rule-cli}
 
 To create a custom rule from the CLI, follow these steps:
@@ -279,7 +267,7 @@ Where:
 `--output`
 :   Specify output format, only `JSON` is supported.
 
-### Deleting a custom rule from the CLI
+## Deleting a custom rule from the CLI
 {: #delete-custom-rule-cli}
 
 Run the following command to delete a custom rule in the CLI:
@@ -306,7 +294,7 @@ Where:
 `--output`
 :   Specify output format, only `JSON` is supported.
 
-### Command examples
+## Command examples
 {: #command-examples-create-update-delete}
 
 *  To create a custom rule:
@@ -321,13 +309,7 @@ Where:
 
    `ibmcloud cis custom-waf rule-delete 601b728b86e630c744c81740f72570c3 4d37cb6f87654e96a18bc531628a4d27`
 
-## Working with WAF custom rules with the API
-{: #working-with-waf-custom-rules-api}
-{: api}
-
-This section provides the information about getting, creating, updating, and deleting WAF custom rules with the API.
-
-### Getting the custom rule entry point for the API
+## Getting the custom rule entry point for the API
 {: #get-rule-entry-point-api}
 
 All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. This entry point ruleset might already exist or needs to be created if it does not exist.
@@ -365,7 +347,7 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 ```
 {: pre}
 
-### Creating a custom rule with the API
+## Creating a custom rule with the API
 {: #create-custom-rule-api}
 
 Follow these steps to create a custom rule with the API:
@@ -400,7 +382,7 @@ Follow these steps to create a custom rule with the API:
    ```
    {: pre}
 
-### Updating a custom rule with the API
+## Updating a custom rule with the API
 {: #update-custom-rule-api}
 
 Follow these steps to update an existing custom rule with the API:
@@ -429,7 +411,7 @@ curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RU
 ```
 {: pre}
 
-### Deleting a custom rule with the API
+## Deleting a custom rule with the API
 {: #delete-custom-rule-api}
 
 Follow these steps to delete an existing custom rule with the API:
@@ -454,13 +436,7 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 ```
 {: pre}
 
-## Working with WAF custom rules with Terraform
-{: #working-with-waf-custom-rules-tf}
-{: terraform}
-
-This section provides the information about creating the WAF custom rule with Terraform.
-
-### Creating a custom rule with Terraform
+## Creating a custom rule with Terraform
 {: #create-custom-rule-tf}
 
 To create a custom rule, you need to create an entry point first and then create the custom rule. The following example creates a custom rule with Terraform.
