@@ -559,5 +559,5 @@ resource ibm_cis_ruleset_rule "custom_rule2" {
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
 
-You can update a custom rule with Terraform by modifying the preceding example that is used for creating the custom rule and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
+You can update a custom rule with Terraform by modifying the preceding example and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
 {: note}
