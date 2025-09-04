@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-29"
+lastupdated: "2025-09-04"
 
 keywords: waf 
 
@@ -80,7 +80,7 @@ Follow these high-level steps to configure WAF for your zones:
          | WAF Attack Score | less than or equal to | `20` |
          {: caption="Rule conditions for detecting unverified low-score bot requests" caption-side="bottom"}
  
-        Expression Preview:  `(cf.waf.score lt 20)`
+         Expression Preview: `(cf.waf.score le 20)`
 
       * Choose action: **Block**
 
