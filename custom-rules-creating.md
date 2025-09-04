@@ -463,7 +463,7 @@ This section provides the information about creating the WAF custom rule with Te
 ### Creating a custom rule with Terraform
 {: #create-custom-rule-tf}
 
-The following example creates a custom rule with Terraform:
+To create a custom rule, you need to create an entry point first and then create the custom rule. The following example creates a custom rule with Terraform:
 
 To create an entry point ruleset, run the following command:
 
@@ -516,23 +516,19 @@ To create a custom rule, run the following command:
 The following example shows how to create a entry point and WAF custom rule with Terraform:
 
 ```sh
-  resource ibm_cis_ruleset_entrypoint_version test {
-  cis_id    = ibm_cis.instance.id
-  domain_id = data.ibm_cis_domain.cis_domain.domain_id
-  phase = "http_request_firewall_custom"
-  rulesets {
-      description = "Entrypoint ruleset for custom ruleset"
-    }
-
-    lifecycle {
-      ignore_changes = [
-        rulesets
-      ]
+resource ibm_cis_ruleset_entrypoint_version test {
+cis_id    = ibm_cis.instance.id
+domain_id = data.ibm_cis_domain.cis_domain.domain_id
+phase = "http_request_firewall_custom"
+rulesets {
+   description = "Entrypoint ruleset for custom ruleset"
+   }
+   lifecycle {
+   ignore_changes = [
+      rulesets
+   ]
   }
-
 }
-
-
 data ibm_cis_ruleset_entrypoint_versions custom_rule_ep {
   cis_id    = ibm_cis.instance.id
   domain_id = data.ibm_cis_domain.cis_domain.domain_id
@@ -543,13 +539,10 @@ data ibm_cis_ruleset_entrypoint_versions custom_rule_ep {
 }
 
 resource ibm_cis_ruleset_rule "custom_rule1" {
-
     cis_id    = ibm_cis.instance.id
     domain_id = data.ibm_cis_domain.cis_domain.domain_id
     ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.custom_rule_ep.rulesets[0].ruleset_id
-
       rule {
-
         action =  "skip"
         description = "adding custom rule via terraform"
         expression = "true"
@@ -563,13 +556,10 @@ resource ibm_cis_ruleset_rule "custom_rule1" {
 }
 
 resource ibm_cis_ruleset_rule "custom_rule2" {
-
     cis_id    = ibm_cis.instance.id
     domain_id = data.ibm_cis_domain.cis_domain.domain_id
     ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.custom_rule_ep.rulesets[0].ruleset_id
-
       rule {
-
         action =  "block"
         description = "adding custom rule via terraform2"
         expression = "(http.request.uri.path eq \"/path1\")"
