@@ -91,6 +91,8 @@ Follow these steps to delete an existing custom rule in the console:
 {: #working-with-waf-custom-rules-cli}
 {: cli}
 
+This section provides the information about creating, updating, and deleting WAF custom rules from the CLI.
+
 ### Creating a custom rule from the CLI
 {: #create-custom-rule-cli}
 
@@ -323,6 +325,8 @@ Where:
 {: #working-with-waf-custom-rules-api}
 {: api}
 
+This section provides the information about getting, creating, updating, and deleting WAF custom rules with the API.
+
 ### Getting the custom rule entry point for the API
 {: #get-rule-entry-point-api}
 
@@ -454,12 +458,14 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 {: #working-with-waf-custom-rules-tf}
 {: terraform}
 
+This section provides the information about creating the WAF custom rule with Terraform.
+
 ### Creating a custom rule with Terraform
 {: #create-custom-rule-tf}
 
-The following example creates a custom rule using Terraform:
+The following example creates a custom rule with Terraform:
 
-First, create an entrypoint ruleset:
+To create an entry point ruleset, run the following command:
 
 ```terraform
 resource "ibm_cis_ruleset_entrypoint_version" "test" {
@@ -478,7 +484,7 @@ resource "ibm_cis_ruleset_entrypoint_version" "test" {
 ```
 {: pre}
 
-Then, to create a custom rule:
+To create a custom rule, run the following command:
 
 ```terraform
    resource ibm_cis_ruleset_rule "config" {
@@ -504,6 +510,72 @@ Then, to create a custom rule:
         }
       }
     }
+```
+{: codeblock}
+
+The following example shows how to create a entry point and WAF custom rule with Terraform:
+
+```sh
+  resource ibm_cis_ruleset_entrypoint_version test {
+  cis_id    = ibm_cis.instance.id
+  domain_id = data.ibm_cis_domain.cis_domain.domain_id
+  phase = "http_request_firewall_custom"
+  rulesets {
+      description = "Entrypoint ruleset for custom ruleset"
+    }
+
+    lifecycle {
+      ignore_changes = [
+        rulesets
+      ]
+  }
+
+}
+
+
+data ibm_cis_ruleset_entrypoint_versions custom_rule_ep {
+  cis_id    = ibm_cis.instance.id
+  domain_id = data.ibm_cis_domain.cis_domain.domain_id
+  phase = "http_request_firewall_custom"
+  depends_on = [
+  ibm_cis_ruleset_entrypoint_version.test
+  ]
+}
+
+resource ibm_cis_ruleset_rule "custom_rule1" {
+
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.custom_rule_ep.rulesets[0].ruleset_id
+
+      rule {
+
+        action =  "skip"
+        description = "adding custom rule via terraform"
+        expression = "true"
+        enabled = "true"
+        action_parameters{
+          ruleset = "current"
+          phases = ["http_ratelimit", "http_request_sbfm","http_request_firewall_managed"]
+          products = ["zoneLockdown","uaBlock", "bic", "hot", "securityLevel", "rateLimit","waf"]
+        }
+      }
+}
+
+resource ibm_cis_ruleset_rule "custom_rule2" {
+
+    cis_id    = ibm_cis.instance.id
+    domain_id = data.ibm_cis_domain.cis_domain.domain_id
+    ruleset_id = data.ibm_cis_ruleset_entrypoint_versions.custom_rule_ep.rulesets[0].ruleset_id
+
+      rule {
+
+        action =  "block"
+        description = "adding custom rule via terraform2"
+        expression = "(http.request.uri.path eq \"/path1\")"
+        enabled = "false"
+      }
+}
 ```
 {: codeblock}
 
