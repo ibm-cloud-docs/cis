@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-28"
+lastupdated: "2025-09-05"
 
 keywords:
 
@@ -166,10 +166,12 @@ To create a webhook by with the API, follow these steps:
 1. When all variables are initiated, run the following command to create the webhook:
 
    ```sh
-   curl -X POST https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
-   -H 'content-type: application/json'
-   -H 'x-auth-user-token: Bearer xxxxxx'
-   -d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
+   curl -X POST
+   https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
+     -H 'content-type: application/json'
+     -H 'x-auth-user-token: Bearer xxxxxx'
+     -d '{"name":"Example
+   Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
    ```
    {: codeblock}
 
@@ -177,12 +179,12 @@ The following response is returned:
 
 ```sh
 {
-    "result": {
-        "id": "6d16fcab3e8044b3b59ba3716237832e"
-    },
-    "success": true,
-    "errors": [],
-    "messages": []
+  "result": {
+    "id": "6d16fcab-3e80-44b3-b59b-a3716237832e"
+  },
+  "success": true,
+  "errors": [],
+  "messages": []
 }
 ```
 {: codeblock}
@@ -190,11 +192,11 @@ The following response is returned:
 Use the ID in the response that you received to create the alert:
 
 ```sh
-    curl -X POST \
-        https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
-        -H 'content-type: application/json' \
-        -H 'x-auth-user-token: Bearer xxxxxx' \
-        -d '{"name":"Example Policy","enabled":true,"alert_type":"dos_attack_l7","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks": [{"id": "6d16fcab3e8044b3b59ba3716237832e"}]}}'
+curl -X POST \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+  -H 'content-type: application/json' \
+  -H 'x-auth-user-token: Bearer xxxxxx' \
+  -d '{"name":"Example Policy","enabled":true,"alert_type":"dos_attack_l7","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks": [{"id": "6d16fcab3e8044b3b59ba3716237832e"}]}}'
 ```
 {: codeblock}
 
@@ -210,10 +212,11 @@ To list all webhooks with the API, follow these steps:
 1. When all variables are initiated, get the list of webhooks:
 
    ```sh
-   curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
-   -H 'content-type: application/json'
-   -H 'accept: application/json'
-   -H 'x-auth-user-token: Bearer xxxxxx'
+   curl -X GET
+   https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
+     -H 'content-type: application/json'
+     -H 'accept: application/json'
+     -H 'x-auth-user-token: Bearer xxxxxx'
    ```
    {: codeblock}
 
@@ -230,10 +233,11 @@ To get the details of a webhook with the API, follow these steps:
 1. When all variables are initiated, get the webhook details:
 
    ```sh
-   curl -X GET https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
-   -H 'content-type: application/json'
-   -H 'accept: application/json'
-   -H 'x-auth-user-token: Bearer xxxxxx'
+   curl -X GET
+   https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
+     -H 'content-type: application/json'
+     -H 'accept: application/json'
+     -H 'x-auth-user-token: Bearer xxxxxx'
    ```
    {: codeblock}
 
@@ -253,10 +257,11 @@ To update a webhook with the API, follow these steps:
 1. When all variables are initiated, update the webhook:
 
    ```sh
-   curl -X PUT https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
-   -H 'content-type: application/json'
-   -H 'x-auth-user-token: Bearer xxxxxx'
-   -d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
+   curl -X PUT
+   https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
+     -H 'content-type: application/json'
+     -H 'x-auth-user-token: Bearer xxxxxx'
+     -d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
    ```
    {: codeblock}
 
@@ -273,9 +278,10 @@ To delete a webhook by with the API, follow these steps:
 1. When all variables are initiated, delete the webhook:
 
    ```sh
-   curl -X DELETE https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
-   -H 'content-type: application/json'
-   -H 'accept: application/json'
-   -H 'x-auth-user-token: Bearer xxxxxx'
+   curl -X DELETE
+   https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks/:webhook_id
+     -H 'content-type: application/json'
+     -H 'accept: application/json'
+     -H 'x-auth-user-token: Bearer xxxxxx'
    ```
    {: codeblock}

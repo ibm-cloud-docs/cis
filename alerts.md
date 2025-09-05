@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-29"
+lastupdated: "2025-09-05"
 
 keywords:
 
@@ -57,7 +57,7 @@ To create an advanced security alert policy in the console, follow these steps:
 1. Select **Advanced security events alert**, then click **Next**.
 1. Enter a name for your alerting policy, and optionally enter a description.
 1. Choose an alerting method. You can either select a webhook, or enter an email address to send alerts to, or both. Only one notification is required to complete configuration.
-   
+
     * Enter an email address to which {{site.data.keyword.cis_short}} sends alerts. Click the `+` to add the address to the alert. Repeat for all email addresses.
     * Click **Add webhook** and select an available webhook. If no webhooks are present, this option is unavailable.
 1. Click **Next**.
@@ -72,7 +72,7 @@ To update an alert policy in the console, follow these steps:
 
 1. In the CIS console, navigate to the **Account** page, then select the **Alerts** tab.
 1. In the **Alerting policies**, locate the alert policy that you want to update, then click the Actions menu for that row.
-1. Click **Edit**. 
+1. Click **Edit**.
 1. Make necessary changes. You can change the name and description, add or delete email addresses, and add, remove, or update webhooks.
 1. Click **Save**.
 
@@ -82,8 +82,8 @@ To update an alert policy in the console, follow these steps:
 To delete an alert policy, follow these steps:
 
 1. In the CIS console, navigate to the **Account** page, then select the **Alerts** tab.
-1. In the **Alerting policies** section, locate the alert policy that you want to delete, then click the Actions menu for that row. 
-1. Click **Delete**, then confirm deletion.  
+1. In the **Alerting policies** section, locate the alert policy that you want to delete, then click the Actions menu for that row.
+1. Click **Delete**, then confirm deletion.
 
 You can delete only alerts that you created.
 {: note}
@@ -257,7 +257,7 @@ ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMA
 Security alerts and advanced security alerts use the same command. When you create an advanced security events alert command in the CLI, specify the services for the alert. If you do not specify the services for the alert, the mean detection time changes from 5 minutes to 2 hours.
 {: important}
 
-### Creating a universal SSL alert policy from the CLI 
+### Creating a universal SSL alert policy from the CLI
 {: #cli-universal-ssl-alert-cmd}
 
 To create an alert policy for certificate events from the CLI, run the following command:
@@ -294,7 +294,7 @@ ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated
 `--output`
 :   Specifies the output format; only JSON is supported.
 
-### Creating a load balancer health check alert policy from the CLI 
+### Creating a load balancer health check alert policy from the CLI
 {: #cli-lb-health-check-alert-cmd}
 
 To create an alert policy for changes in load balancer health check alerts from the CLI, run the following command:
@@ -503,7 +503,7 @@ To create a DDoS attack layer 7 alert policy with the API, run the following com
 
 ```sh
 curl -X POST \
-  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
   -H 'content-type: application/json' \
   -H 'x-auth-user-token: Bearer xxxxxx' \
   -d '{"name":"Example Policy","enabled":true,"alert_type":"dos_attack_l7","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]}}'
@@ -526,7 +526,7 @@ To create the pool toggle alert policy with the API, run the following command:
 
 ```sh
 curl -X POST \
-  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
   -H 'content-type: application/json' \
   -H 'x-auth-user-token: Bearer xxxxxx' \
   -d '{"name":"Example Policy","enabled":true,"alert_type":"load_balancing_pool_enablement_alert","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]},
@@ -563,7 +563,7 @@ To create a WAF alert policy with the API, run the following command:
 
 ```sh
 curl -X POST \
-  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
   -H 'Content-Type: application/json' \
   -H 'X-Auth-User-Token: Bearer xxxxxx' \
   -d '{
@@ -582,8 +582,8 @@ curl -X POST \
     "zones": [
       "123456ab7d8e9f0g12h2j34l5mn6op78"
     ]
-  }
-}'
+    }
+  }'
 ```
 {: codeblock}
 
@@ -604,7 +604,7 @@ To create an advanced WAF alert policy with the API, run the following command:
 
 ```sh
 curl -X POST \
-  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
   -H 'Content-Type: application/json' \
   -H 'X-Auth-User-Token: Bearer xxxxxx' \
   -d '{
@@ -627,8 +627,8 @@ curl -X POST \
     "zones": [
       "123456ab7d8e9f0g12h2j34l5mn6op78"
     ]
-  }
-}'
+    }
+  }'
 ```
 {: codeblock}
 
@@ -664,7 +664,7 @@ You can monitor the following services:
 |Data loss prevention|`dlp`|
 {: caption="Services that can be monitored by Advanced WAF alerts" caption-side="bottom"}
 
-### Creating a universal SSL alert policy with the API 
+### Creating a universal SSL alert policy with the API
 {: #api-universal-ssl-alert-cmd}
 
 To create a universal SSL alert policy with the API, run the following command:
@@ -687,14 +687,14 @@ Where:
     - **mechanisms** is at least one of `email`, `webhooks`.
     - **description** (optional) is the description of the alert.
 
-### Creating a load balancer health check alert policy with the API 
+### Creating a load balancer health check alert policy with the API
 {: #api-lb-health-check-alert-cmd}
 
 To create a load balancer health check alert policy with the API, run the following command:
 
 ```sh
 curl -X POST \
-  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies \
   -H 'content-type: application/json' \
   -H 'x-auth-user-token: Bearer xxxxxx' \
   -d '{"name":"Example Policy","enabled":true,"alert_type":"load_balancing_health_alert","mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]},
@@ -728,11 +728,11 @@ Where:
 ### Updating an alert policy with the API
 {: #api-edit-alert}
 
-To update an alert policy with the API, such as an email alert policy, run the following command: 
+To update an alert policy with the API, such as an email alert policy, run the following command:
 
 ```sh
 curl -X PUT \
-  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies/:policy_id \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies/:policy_id \
   -H 'content-type: application/json' \
   -H 'x-auth-user-token: Bearer xxxxxx' \
   -d '{"name":"Example Policy","enabled":true,"alert_type":"dos_attack_l7","conditions":{},"mechanisms":{"email":[{"id":"cistestemail@ibm.com"}],"webhooks":[]}}'
@@ -749,7 +749,7 @@ To delete an alert policy with the API, run the following command:
 
 ```sh
 curl -X DELETE \
-  https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies/:policy_id \
+https://api.cis.cloud.ibm.com/v1/:crn/alerting/policies/:policy_id \
   -H 'content-type: application/json' \
   -H 'accept: application/json' \
   -H 'x-auth-user-token: Bearer xxxxxx'
