@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-05"
 
 keywords:
 
@@ -23,10 +23,7 @@ Rate limiting (Enterprise plan only) protects against denial-of-service attacks,
 
 Select the type of rate-limiting rule, either a **Custom rule** or **Protect login**.
 
-## Creating a custom rate-limiting rule
-{: #create-a-custom-rate-limiting-rule}
-
-### Creating a custom rate-limiting rule in the console
+## Creating a custom rate-limiting rule in the console
 {: #create-a-custom-rate-limiting-rule-ui}
 {: ui}
 
@@ -106,12 +103,9 @@ Protect login creates a standard rule that protects login pages against brute-fo
 
 Enter a name for the rule, and the login URL.
 
-## Creating a custom rate-limiting rule with the API
-{: #create-a-custom-rate-limiting-rule-api}
-{: api}
-
-### Getting the rate-limiting rule entry point for the API
+## Getting the rate-limiting rule entry point for the API
 {: #get-ratelimit-rule-entry-point-api}
+{: api}
 
 All rate-limiting rule API operations require a `RULESET_ID` of the entry point ruleset for the rate-limiting rules phase. This entry point ruleset might exist or needs to be created if it does not exist.
 
@@ -150,6 +144,7 @@ The ruleset ID is in the response of the successful request. If the preceding ca
 
 ### Creating a rate-limiting rule with the API
 {: #create-rate-limiting-rule-api}
+{: api}
 
 Follow these steps to create a rate-limiting rule with the API:
 
@@ -187,6 +182,7 @@ Follow these steps to create a rate-limiting rule with the API:
 
 ### Updating a rate-limiting rule with the API
 {: #update-rate-limiting-rule-api}
+{: api}
 
 Follow these steps to update an existing rate-limiting rule with the API:
 
@@ -216,6 +212,7 @@ Follow these steps to update an existing rate-limiting rule with the API:
 
 ### Deleting a rate-limiting rule with the API
 {: #delete-rate-limiting-rule-api}
+{: api}
 
 Follow these steps to delete an existing rate-limiting rule with the API:
 
@@ -239,12 +236,9 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    ```
    {: pre}
 
-## Creating a rate-limiting rule with Terraform
+## Creating a custom rate-limiting rule with Terraform
 {: #create-a-custom-rate-limiting-rule-tf}
 {: terraform}
-
-### Creating a custom rate-limiting rule with Terraform
-{: #create-a-custom-rate-limiting-rule-tf}
 
 The following example shows how to create an entry point and rate-limiting rule with Terraform:
 
