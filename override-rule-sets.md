@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-05"
 
 keywords:
 
@@ -95,14 +95,9 @@ To override a managed ruleset in the console, follow these steps:
    Click **Reset to default** to restore the original settings.
    {: tip}
 
-## Overriding managed rulesets from the CLI
-{: #cli-override-rule-sets}
-{: cli}
-
-You can override rulesets from the CLI.
-
-### Listing managed rulesets from the CLI
+## Listing managed rulesets from the CLI
 {: #cli-override-list-rule-sets}
+{: cli}
 
 To list all zone rulesets from the CLI, run the following command:
 
@@ -111,7 +106,7 @@ ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--out
 ```
 {: pre}
 
-#### Command options
+### Command options
 {: #command-options-listing-rules}
 
 `DNS_DOMAIN_ID`
@@ -123,8 +118,9 @@ ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--out
 `--output value`
 :   Specifies the output format; only JSON is supported.
 
-### Listing rules under a zone ruleset from the CLI
+## Listing rules under a zone ruleset from the CLI
 {: #cli-override-list-rule-sets-rules}
+{: cli}
 
 To list the rules under a zone ruleset from the CLI, run the following command:
 
@@ -133,7 +129,7 @@ ibmcloud cis managed-waf ruleset DNS_DOMAIN_ID RULESET_ID [-i, --instance INSTAN
 ```
 {: pre}
 
-#### Command options
+### Command options
 {: #command-options-zone-ruleset}
 
 `DNS_DOMAIN_ID`
@@ -148,8 +144,9 @@ ibmcloud cis managed-waf ruleset DNS_DOMAIN_ID RULESET_ID [-i, --instance INSTAN
 `--output value`
 :   Specifies the output format; only JSON is supported.
 
-### Overriding managed rulesets from the CLI
+## Overriding managed rulesets from the CLI
 {: #cli-override-entry-point-rule-set}
+{: cli}
 
 To override a managed WAF ruleset from the CLI, run the following command:
 
@@ -158,7 +155,7 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--matc
 ```
 {: pre}
 
-#### Command options
+### Command options
 {: #command-options-overriding-rulesets}
 
 `DNS_DOMAIN_ID`
@@ -183,16 +180,11 @@ ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID [--matc
 :   The instance name or ID.
 
 `--output value`
-: Specifies the output format; only JSON is supported.
+:   Specifies the output format; only JSON is supported.
 
-## Overriding managed rulesets with the API
-{: #api-override-rule-sets}
-{: api}
-
-You can override rulesets from the API.
-
-### Listing zone rulesets from the API
+## Listing zone rulesets from the API
 {: #api-override-list-zone-rule-sets}
+{: api}
 
 To list all zone rulesets from the API, run the following command:
 
@@ -205,8 +197,9 @@ curl -X GET \
 ```
 {: codeblock}
 
-### Listing all rules for a ruleset from the API
+## Listing all rules for a ruleset from the API
 {: #api-override-list-rule-sets-rules}
+{: api}
 
 To list all rules for a specific ruleset, run the following command:
 
@@ -223,8 +216,9 @@ Where:
 
 * **`$RULESET_ID`** is the ID of the managed ruleset which the rules are listed for.
 
-### Overriding an entry point ruleset from the API
+## Overriding an entry point ruleset from the API
 {: #api-override-entry-point-rule-set}
+{: api}
 
 To update the entry point ruleset from the API with an override, run the following command:
 
@@ -254,14 +248,9 @@ Where:
       * **`expression`** is the condition under which the rule runs. Using "true" means that this rule always runs.
       * **`description`** defines your own summary of what the rule is accomplishing.
 
-## Overriding managed rulesets with Terraform
-{: #override-rule-sets-terraform}
-{: terraform}
-
-You can override rulesets using Terraform.
-
-### Listing managed rulesets with Terraform
+## Listing managed rulesets with Terraform
 {: #terraform-override-list-rule-sets}
+{: terraform}
 
 The following example lists all managed rulesets using Terraform:
 
@@ -275,8 +264,9 @@ data "ibm_cis_rulesets" "tests" {
 
 For more information about the arguments and attributes, see [`ibm_cis_rulesets`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/cis_rulesets){: external} in the Terraform registry.
 
-### Listing all rules of a managed ruleset with Terraform
+## Listing all rules of a managed ruleset with Terraform
 {: #terraform-override-list-rule-sets-rules}
+{: terraform}
 
 The following example lists all rules of a managed ruleset using Terraform:
 
@@ -291,8 +281,9 @@ resource "ibm_cis_ruleset" "config" {
 
 For more information about the arguments and attributes, see [`ibm_cis_ruleset`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset){: external} in the Terraform registry.
 
-### Overriding a rule with Terraform
+## Overriding a rule with Terraform
 {: #terraform-override-entry-point-rule-set}
+{: terraform}
 
 This example shows how to deploy the CIS managed ruleset with various overrides. First, it enables and blocks traffic for all rules. Then, it enables and blocks traffic for a specific rule. Finally, it enables and blocks traffic for all rules in the `wordpress` category. Essentially, this example illustrates the different methods for overriding deployed rules (global, specific, by category).
 
