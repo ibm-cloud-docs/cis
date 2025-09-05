@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2025
-lastupdated: "2025-08-28"
+lastupdated: "2025-09-05"
 
 keywords:
 
@@ -166,10 +166,12 @@ To create a webhook by with the API, follow these steps:
 1. When all variables are initiated, run the following command to create the webhook:
 
    ```sh
-   curl -X POST https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
-   -H 'content-type: application/json'
-   -H 'x-auth-user-token: Bearer xxxxxx'
-   -d '{"name":"Example Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
+   curl -X POST
+   https://api.cis.cloud.ibm.com/v1/:crn/alerting/destinations/webhooks
+     -H 'content-type: application/json'
+     -H 'x-auth-user-token: Bearer xxxxxx'
+     -d '{"name":"Example
+   Webhook","url":"https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"}'
    ```
    {: codeblock}
 
