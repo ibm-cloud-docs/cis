@@ -22,7 +22,7 @@ A page rule specifies settings and values that you can apply to a specific URL p
 {: #page-rules-security}
 
 Security Level feature is Deprecated.
-{: Deprecated}
+{: deprecated}
 
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
