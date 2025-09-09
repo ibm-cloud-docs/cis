@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-08"
+lastupdated: "2025-09-09"
 
 keywords:
 
@@ -21,9 +21,6 @@ A page rule specifies settings and values that you can apply to a specific URL p
 ## Security
 {: #page-rules-security}
 
-Security Level feature is deprecated.
-{: deprecated}
-
 | **Setting** | **Behavior** | **Considerations** |
 |-----------|----------|----------------|
 |**Always Use HTTPS**|Converts any `http://` URL to an `https://` URL by creating a `301` redirect.|Using this setting disables all other setting configurations for the rule because {{site.data.keyword.cis_short_notm}} forces a redirect to `HTTPS` for the request, which becomes a new request that is then evaluated against page rules. |
@@ -31,7 +28,7 @@ Security Level feature is deprecated.
 |**Disable Security**|Disables the following features: **Email Obfuscation**, **Server Side Excludes** and **WAF** (Web Application Firewall).|If a rule is set to disable security, and another rule is set to enable the WAF, the WAF rule takes precedence regardless of the order in which they appear.|
 |**Email Obfuscation**|Toggles email obfuscation feature on or off. When the email obfuscation feature is turned on, email addresses on your web page are obfuscated (hidden) from bots, but visible to humans. There are no visible changes to your website for visitors. | |
 |**IP Geolocation Header**|Includes the country code of the visitor location with all requests to your website. The information can be found in the `CF-IPCountry` HTTP header. | |
-|**Security Level**|Controls how high a client threat score must be so that a client encounters a challenge page. Use this setting to present visitors with a **Defense Mode** challenge when they visit your site. | |
+|**Security Level**|Controls how high a client threat score must be so that a client encounters a challenge page. Use this setting to present visitors with a **Defense Mode** challenge when they visit your site.[deprecated]{: tag-deprecated} | |
 |**Server Side Excludes**|Toggles server-side excludes on or off. Server-side excludes gives you the ability to hide sensitive content from suspicious visitors, but keep it visible to normal visitors. | SSE only works with HTML. |
 |**TLS**|Controls which TLS mode is used. | |
 |**WAF**|Toggles WAF rules on or off. | Individual WAF rules can't be turned on or off using page rules.
