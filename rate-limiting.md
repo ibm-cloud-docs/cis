@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-05"
+lastupdated: "2025-09-09"
 
 keywords:
 
@@ -127,7 +127,7 @@ Follow these steps to get the rate-limiting rule entry point ruleset:
    ```
    {: pre}
 
-The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the rate-limiting rule phase:
+   The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the rate-limiting rule phase:
 
    ```sh
    curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
