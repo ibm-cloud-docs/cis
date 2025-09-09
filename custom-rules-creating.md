@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-09"
 
 keywords:
 
@@ -451,7 +451,7 @@ curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$R
 {: #create-custom-rule-tf}
 {: terraform}
 
-To create a custom rule, you need to create an entry point first and then create the custom rule. The following example creates a custom rule with Terraform.
+To create a custom rule, you must create an entry point first, then create the custom rule. The following example creates a custom rule with Terraform.
 
 To create an entry point ruleset, run the following command:
 
@@ -501,9 +501,9 @@ To create a custom rule, run the following command:
 ```
 {: codeblock}
 
-The following example shows how to create an entry point and WAF custom rule with Terraform:
+The following example shows how to create an entry point and WAF custom rule:
 
-```sh
+```terraform
 resource ibm_cis_ruleset_entrypoint_version test {
 cis_id    = ibm_cis.instance.id
 domain_id = data.ibm_cis_domain.cis_domain.domain_id
@@ -557,7 +557,7 @@ resource ibm_cis_ruleset_rule "custom_rule2" {
 ```
 {: codeblock}
 
-For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
+For more information, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
 
 You can update a custom rule with Terraform by modifying the preceding example and running the `terraform apply` command. To delete the rule, simply remove the configuration and run `terraform apply`.
 {: note}
