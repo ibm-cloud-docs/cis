@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-05"
+lastupdated: "2025-09-08"
 
 keywords:
 
@@ -22,7 +22,7 @@ The 4xx class error code responses occur when an issue is at the client end, and
 {: shortdesc}
 
 * 4xx codes can be used as a response to any request method.
-* Origin server should include an explanation which should be displayed by User-Agent, with the exception of a HEAD request.
+* The origin server might include an explanation in the response, which should be displayed by the User-Agent, with the exception of a HEAD request.
 * Custom rules can return any response code in the range 400-499 in your HTML page, if the site owner has created a rule with Block action and configured a custom response code.
 
 ## Error 400: Bad request
