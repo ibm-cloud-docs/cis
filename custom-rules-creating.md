@@ -320,7 +320,7 @@ Where:
 {: #get-rule-entry-point-api}
 {: api}
 
-All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. This entry point ruleset might already exist or needs to be created if it does not exist.
+All custom rule API operations require a `RULESET_ID` of the entry point ruleset for the custom rules phase. 
 
 Follow these steps to get the custom rule entry point ruleset:
 
@@ -333,27 +333,27 @@ Follow these steps to get the custom rule entry point ruleset:
 
 1. When all variables are initiated, get the entry point ruleset:
 
-```sh
-curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_request_firewall_custom/entrypoint" \
---header "X-Auth-User-Token: Bearer <API_TOKEN>" \
---header "Content-Type: application/json"
-```
-{: pre}
+   ```sh
+   curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_request_firewall_custom/entrypoint" \
+   --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+   --header "Content-Type: application/json"
+   ```
+   {: pre}
 
-The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the custom rule phase:
+   The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entry point ruleset for the custom rule phase:
 
-```sh
-curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
---header "X-Auth-User-Token: Bearer <API_TOKEN>" \
---header "Content-Type: application/json" \
---data '{
-   "name": "Zone-level phase entry point",
-   "kind": "zone",
-   "description": "Custom rule entry point ruleset.",
-   "phase": "http_request_firewall_custom"
-}'
-```
-{: pre}
+   ```sh
+   curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
+   --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+   --header "Content-Type: application/json" \
+   --data '{
+      "name": "Zone-level phase entry point",
+      "kind": "zone",
+      "description": "Custom rule entry point ruleset.",
+      "phase": "http_request_firewall_custom"
+   }'
+   ```
+   {: pre}
 
 ## Creating a custom rule with the API
 {: #create-custom-rule-api}
@@ -410,16 +410,16 @@ Follow these steps to update an existing custom rule with the API:
 
 1. When all variables are initiated, update the custom rule:
 
-```sh
-curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
---header "X-Auth-User-Token: Bearer <API_TOKEN>" \
---header "Content-Type: application/json" \
---data '{
-   "enabled": false,
-   "description": "block GB and FR or based on IP Reputation (temporarily disabled)"
-}'
-```
-{: pre}
+   ```sh
+   curl -X PATCH "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
+   --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+   --header "Content-Type: application/json" \
+   --data '{
+      "enabled": false,
+      "description": "block GB and FR or based on IP Reputation (temporarily disabled)"
+   }'
+   ```
+   {: pre}
 
 ## Deleting a custom rule with the API
 {: #delete-custom-rule-api}
@@ -440,66 +440,66 @@ Follow these steps to delete an existing custom rule with the API:
 
 1. When all variables are initiated, delete the custom rule:
 
-```sh
-curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
---header "X-Auth-User-Token: Bearer <API_TOKEN>" \
---header "Content-Type: application/json"
-```
-{: pre}
+   ```sh
+   curl -X DELETE "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules/$RULE_ID" \
+   --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
+   --header "Content-Type: application/json"
+   ```
+   {: pre}
 
 ## Creating a custom rule with Terraform
 {: #create-custom-rule-tf}
 {: terraform}
 
-To create a custom rule, you must create an entry point first, then create the custom rule. The following example creates a custom rule with Terraform.
+To create a custom rule, you must create an entry point first, then create the custom rule. To do so, follow these steps:
 
-To create an entry point ruleset, run the following command:
+1. To create an entry point ruleset, run the following command:
 
-```terraform
-resource "ibm_cis_ruleset_entrypoint_version" "test" {
-    cis_id    = "<cis-id>"
-    domain_id = "<domain-id>"
-    phase = "http_request_firewall_custom"
-    rulesets {
-      description = "Entry point ruleset for custom ruleset"
-    }
-    lifecycle {
-      ignore_changes = [
-        rulesets
-      ]
-  }
-}
-```
-{: pre}
+   ```terraform
+   resource "ibm_cis_ruleset_entrypoint_version" "test" {
+       cis_id    = "<cis-id>"
+       domain_id = "<domain-id>"
+       phase = "http_request_firewall_custom"
+       rulesets {
+         description = "Entry point ruleset for custom ruleset"
+       }
+       lifecycle {
+         ignore_changes = [
+           rulesets
+         ]
+     }
+   }
+   ```
+   {: pre}
 
-To create a custom rule, run the following command:
+1. To create a custom rule, run the following command:
 
-```terraform
-   resource ibm_cis_ruleset_rule "config" {
-      cis_id    = ibm_cis.instance.id
-      domain_id = data.ibm_cis_domain.cis_domain.domain_id
-      ruleset_id = resource.ibm_cis_ruleset_entrypoint_version.rulesets[0].ruleset_id
-      rule {
-        action =  "block"
-        description = "var.description"
-        expression = "true"
-        enabled = "false"
-        action_parameters {
-          response {
-            status_code = var.status_code
-            content =  var.content
-            content_type = "text/plain"
-          }
-        }
-        position {
-          index = var.index
-          after = <id of any existing rule>
-          before = <id of any existing rule>
-        }
-      }
-    }
-```
-{: codeblock}
+   ```terraform
+      resource ibm_cis_ruleset_rule "config" {
+         cis_id    = ibm_cis.instance.id
+         domain_id = data.ibm_cis_domain.cis_domain.domain_id
+         ruleset_id = resource.ibm_cis_ruleset_entrypoint_version.rulesets[0].ruleset_id
+         rule {
+           action =  "block"
+           description = "var.description"
+           expression = "true"
+           enabled = "false"
+           action_parameters {
+             response {
+               status_code = var.status_code
+               content =  var.content
+               content_type = "text/plain"
+             }
+           }
+           position {
+             index = var.index
+             after = <id of any existing rule>
+             before = <id of any existing rule>
+           }
+         }
+       }
+   ```
+   {: codeblock}
 
 The following example shows how to create an entry point and WAF custom rule:
 
