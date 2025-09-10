@@ -96,7 +96,7 @@ This command provides output to the HTTP status code for each request and allows
 
 Bypass helps you to create the equivalent of an allowlist or exception for a set of URLs. No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
-## Login protection
+## Protect login rule
 {: #rate-limiting-protect-login}
 
 Protect login is a predefined rate-limiting rule designed to prevent brute-force attacks on your login endpoint. Clients (by IP address) that attempt to log in more than 5 times within 5 minutes
