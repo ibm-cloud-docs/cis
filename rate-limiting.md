@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-09"
+lastupdated: "2025-09-10"
 
 keywords:
 
@@ -106,7 +106,7 @@ To configure this rule:
 
 1. Enter a name for the rule.
 1. Specify the login URL path (for example, `/login`, `/admin/login`).
- 
+
 CIS automatically enforces the rate limits to protect your login page.
 
 ## Getting the rate-limiting rule entry point for the API
@@ -242,13 +242,52 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    ```
    {: pre}
 
-## Creating a custom rate-limiting rule with Terraform
+## Creating a new custom rate-limiting rule with Terraform
 {: #create-a-custom-rate-limiting-rule-tf}
 {: terraform}
 
+To create a rate-limiting ruleset, you must create an entry point first, then create the rate-limiting ruleset. To do so, follow these steps:
+
+1. To create an entry point ruleset, run the following command:
+
+   ```terraform
+   resource "ibm_cis_ruleset_entrypoint_version" "config" {
+     cis_id    = data.ibm_cis.cis_instance.id
+     domain_id = data.ibm_cis_domain.cis_domain.domain_id
+     phase     = "http_ratelimit"
+     rulesets {
+       description = "Zone rate limit entrypoint"
+     }
+   }
+   ```
+   {: pre}
+
+1. To create a rate-limiting ruleset, run the following command:
+
+   ```terraform
+   resource "ibm_cis_ruleset_rule" "config" {
+     cis_id     = data.ibm_cis.cis_instance.id
+     domain_id  = data.ibm_cis_domain.cis_domain.domain_id
+     ruleset_id = "data.ibm_cis_ruleset_entrypoint_versions.ruleset_id"
+     rule {
+       action      = "block"
+       enabled     = true
+       description = "Block IPs making over 100 requests/minute to /api/"
+       expression  = "(http.request.uri.path matches \"^/api/\")"
+       ratelimit {
+         characteristics     = ["cf.colo.id", "ip.src"]
+         period              = 60
+         requests_per_period = 100
+         mitigation_timeout  = 300
+       }
+     }
+   }
+   ```
+   {: codeblock}
+
 The following example shows how to create an entry point and rate-limiting rule with Terraform:
 
-```sh
+```terraform
 resource ibm_cis_ruleset_entrypoint_version test {
   cis_id    = ibm_cis.instance.id
   domain_id = data.ibm_cis_domain.cis_domain.domain_id
