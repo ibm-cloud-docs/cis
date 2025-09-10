@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-05"
+lastupdated: "2025-09-09"
 
 keywords:
 
@@ -96,12 +96,18 @@ This command provides output to the HTTP status code for each request and allows
 
 Bypass helps you to create the equivalent of an allowlist or exception for a set of URLs. No actions trigger for those URLs, even if the rate-limiting rule is matched.
 
-## Protecting login
+## Login protection
 {: #rate-limiting-protect-login}
 
-Protect login creates a standard rule that protects login pages against brute-force attacks. Clients attempting to log in more than 5 times in 5 minutes are blocked for 15 minutes.
+Protect login is a predefined rate-limiting rule designed to prevent brute-force attacks on your login endpoint. Clients (by IP address) that attempt to log in more than 5 times within 5 minutes
+are blocked from accessing the login URL for 15 minutes.
 
-Enter a name for the rule, and the login URL.
+To configure this rule:
+
+1. Enter a name for the rule.
+1. Specify the login URL path (for example, `/login`, `/admin/login`).
+ 
+CIS automatically enforces the rate limits to protect your login page.
 
 ## Getting the rate-limiting rule entry point for the API
 {: #get-ratelimit-rule-entry-point-api}
@@ -127,7 +133,7 @@ Follow these steps to get the rate-limiting rule entry point ruleset:
    ```
    {: pre}
 
-The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the rate-limiting rule phase:
+   The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the rate-limiting rule phase:
 
    ```sh
    curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
