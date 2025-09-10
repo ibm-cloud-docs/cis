@@ -224,29 +224,28 @@ Where:
 :  A brief description of the rule.
 
 `--json`
-:  The JSON file or JSON string used to describe a custom rule.
+:  The JSON file or JSON string that is used to describe a custom rule.
 
-   - The required fields in JSON data are `expression`, `action`.
+   - The required fields in JSON data are `expression` and `action`.
 
-      `expression`: Specifies the conditions that must be matched for the rule to run.
-      `action`: The rule action to perform. Valid values: "block", "challenge", "js_challenge", "managed_challenge", "log", "skip".
+      - `expression` : Specifies the conditions that must be matched for the rule to run.
+      - `action` : The rule action to perform. Valid values are `block`, `challenge`, `js_challenge`, `managed_challenge`, `log`, and `skip`.
 
-   - The optional fields are `description`, `enabled`, `logging`, `action_parameters`.
+   - The optional fields are `description`, `enabled`, `logging`, and `action_parameters`.
 
-      `action_parameters`: The rule action parameters.
-        `ruleset`: Skip all remaining rules or one or more WAF-managed rulesets. Valid values: `current`.
-        `phases`: Skips WAF components for matching requests. Valid values: "http_ratelimit", "http_request_firewall_managed", "http_request_sbfm".
-        `products`: Skips specific security products for matching requests. Valid values: "waf", "rateLimit", "securityLevel", "hot", "bic", "uaBlock", "zoneLockdown".
-        `response`:  Define a custom response for 'block' action.
-            `status_code`:  Choose an HTTP status code for the response, in the range 400-499.
-            `content_type`: The content type of a custom response. Valid response types are :`text/html`,`text/plain`, `application/json`, `text/xml`.
-            `content`: The response body.
-      `description`: Briefly describes the rule.
-      `enabled`: Indicates if the rule is active.
-      `logging`: Log requests matching the skip rule. This field is only available for the "skip" action.
-         - `enabled`: When disabled, matched requests don't appear in firewall events.
+      - `action_parameters` : The rule action parameters.
+        - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid value is `current`
+        - `phases` : Skips WAF components for matching requests. Valid values are `http_ratelimit`, `http_request_firewall_managed`, and `http_request_sbfm`.
+        - `products` : Skips specific security products for matching requests. Valid values are `waf`, `rateLimit`, `securityLevel`, `hot`, `bic`, `uaBlock`, and `zoneLockdown`.
+        - `response` :  Define a custom response for 'block' action.
+            - `status_code` :  Choose an HTTP status code for the response in the range `400-499`.
+            - `content_type` : The content type of a custom response. Valid response types are `text/html`, `text/plain`, `application/json`, and `text/xml`.
+            - `content` : The response body.
+      - `description` : Briefly describes the rule.
+      - `enabled` : Indicates whether the rule is active or not. When this field is disabled, matched requests don't appear in firewall requests.
+      - `logging` : Log requests matching the skip rule. This field is only available for 'skip' action.
 
-   Sample JSON data:
+Sample JSON data:
 
 ```json
          {
