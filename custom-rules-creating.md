@@ -150,7 +150,7 @@ To create a custom rule from the CLI, follow these steps:
       - `enabled` : Indicates whether the rule is active or not. When this field is disabled, matched requests don't appear in firewall requests.
       - `logging` : Log requests matching the skip rule. This field is only available for 'skip' action.
 
-   Sample JSON data:
+Sample JSON data:
 
 ```json
 
