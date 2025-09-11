@@ -62,6 +62,9 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 | cf.waf.score | Number | 1-99 |  Machine learning–based score that estimates the likelihood of a request being malicious. Scores range from 1 (most likely malicious) to 99 (most likely safe). Lower scores indicate a higher risk. Useful for creating threshold-based firewall rules. |
 |cf.ray_id|String| |It is an identifier given to every request that goes through Cloudflare.|
 |cf.edge.server_ip|IP Address| |Represents the global network's IP address to which the HTTP request has resolved. This field is only meaningful for BYOIP customers [where]{: tag-red}.|
+|cf.edge.server_port|IP Address|1–65535|Represents the port number at which the Cloudflare global network received the request. Use this field to filter traffic on a specific port.|
+|cf.tls_cipher|String|AES128-SHA256|The cipher for the connection to Cloudflare.|
+|cf.tls_version|String|TLSv1.2|The TLS version of the connection to Cloudflare.|
 {: caption="Available Cloudflare fields" caption-side="bottom"}
 
 ## Functions
