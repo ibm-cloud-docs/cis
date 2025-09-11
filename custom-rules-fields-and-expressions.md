@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-08-26"
+lastupdated: "2025-09-11"
 
 subcollection: cis
 
@@ -46,6 +46,7 @@ Each field value can be sourced from different places, such as:
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
 |ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/#search/code/){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
+|ip.src.subdivision_1_iso_code|String|GB-ENG|The ISO 3166-2 code for the first-level region associated with the IP address. When the actual value is not available, this field contains an empty string. Requires a CIS Business or Enterprise plan.|
 {: caption="Available fields" caption-side="bottom"}
 
 These standard fields follow the naming convention of the Wireshark display field reference. However, some subtle variations might exist in the preceding example values.
