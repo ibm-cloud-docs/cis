@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-10"
+lastupdated: "2025-09-12"
 
 keywords:
 
@@ -33,7 +33,7 @@ You can create, update, and delete a custom rule by using the UI, CLI, API, or T
 
 Follow these steps to create a custom rule in the console:
 
-WAF custom rules are configured using the existing Firewall rules page. Any legacy firewall rules that were previously created on your domain are automatically converted into WAF custom rules.
+WAF custom rules are configured by using the existing Firewall rules page. Any legacy firewall rules that were previously created on your domain are automatically converted into WAF custom rules.
 {: note}
 
 1. In the CIS console, navigate to the **Security**.
@@ -99,19 +99,22 @@ To create a custom rule from the CLI, follow these steps:
     ```
     {: pre}
 
-1. Run the following command to create a custom rule:
+1. Run the following command to create the custom rule:
 
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
+   You can also create the custom rule by accepting the following JSON file or directly as a JSON string:
+
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
-   Where:
+### Command options
+{: #create-command-options}
 
 `DNS_DOMAIN_ID`
 :   The ID of the DNS domain.
@@ -139,7 +142,7 @@ To create a custom rule from the CLI, follow these steps:
    - The optional fields are `description`, `enabled`, `logging`, and `action_parameters`.
 
       - `action_parameters` : The rule action parameters.
-      - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid value is `current`.
+      - `ruleset` : Skip all remaining rules or one or more WAF-managed rulesets. Valid value is `current`.
       - `phases` : Skips WAF components for matching requests. Valid values are `http_ratelimit`, `http_request_firewall_managed`, and `http_request_sbfm`.
       - `products` : Skips specific security products for matching requests. Valid values are `waf`, `rateLimit`, `securityLevel`, `hot`, `bic`, `uaBlock`, and `zoneLockdown`.
       - `response` :  Define a custom response for `block` action.
@@ -193,17 +196,22 @@ Sample JSON data:
 {: #update-custom-rule-cli}
 {: cli}
 
-Run the following command to update a custom rule in the CLI:
+Run the following command to update the custom rule in the CLI:
 
 ```sh
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action ACTION] [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
 
+You can also update the custom rule by accepting the following JSON file or directly as a JSON string:
 
+```sh
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
-Where:
+### Command options
+{: #update-command-options}
 
 `DNS_DOMAIN_ID`
 :   The ID of the DNS domain.
@@ -234,7 +242,7 @@ Where:
    - The optional fields are `description`, `enabled`, `logging`, and `action_parameters`.
 
       - `action_parameters` : The rule action parameters.
-        - `ruleset` : Skip all remaining rules or one or more WAF managed rulesets. Valid value is `current`
+        - `ruleset` : Skip all remaining rules or one or more WAF-managed rulesets. Valid value is `current`
         - `phases` : Skips WAF components for matching requests. Valid values are `http_ratelimit`, `http_request_firewall_managed`, and `http_request_sbfm`.
         - `products` : Skips specific security products for matching requests. Valid values are `waf`, `rateLimit`, `securityLevel`, `hot`, `bic`, `uaBlock`, and `zoneLockdown`.
         - `response` :  Define a custom response for 'block' action.
@@ -265,7 +273,7 @@ Sample JSON data:
 {: codeblock}
 
 `-i, --instance`
-:   Instance name or ID. If not set, the context instance specified by `ibmcloud cis instance-set INSTANCE` is used.
+:   Instance name or ID. If not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
 
 `--output`
 :   Specify output format, only `JSON` is supported.
@@ -281,7 +289,8 @@ ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --i
 ```
 {: pre}
 
-Where:
+### Command options
+{: #delete-command-options}
 
 `DNS_DOMAIN_ID`
 :   The ID of the DNS domain.
