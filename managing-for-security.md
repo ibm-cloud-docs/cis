@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-23"
+lastupdated: "2025-09-12"
 
 keywords:
 
@@ -57,6 +57,9 @@ Some customers use separate IP ranges for HTTP and non-HTTP traffic. This approa
 ## Best practice 2: Configure your security level selectively
 {: #best-practice-configure-security-level-selectively}
 
+The security level feature is deprecated.
+{: deprecated}
+
 Your **Security Level** establishes the sensitivity of our **IP Reputation Database**. To prevent negative interactions or false positives, configure your **Security Level** by domain to heighten security where necessary, and to decrease it where appropriate.
 
 ### Increase the security level for sensitive areas to 'High'
@@ -95,6 +98,9 @@ Consider reviewing your security-level settings periodically. You can find instr
 
 ## Best practice 3: Activate your Web Application Firewall (WAF) safely
 {: #best-practice-activate-waf-safely}
+
+The security level feature is deprecated.
+{: deprecated}
 
 Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before you turn it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified. For more information, see [Using Security events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 
