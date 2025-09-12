@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-11"
+lastupdated: "2025-09-12"
 
 keywords:
 
@@ -106,7 +106,7 @@ To create a custom rule from the CLI, follow these steps:
    ```
    {: pre}
 
-   You can also create the custom rule by accepting a JSON input command (from a file or directly as a string):
+   You can also create the custom rule by accepting the following JSON file or directly as a JSON string:
 
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
@@ -203,7 +203,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action
 ```
 {: pre}
 
-You can also update the custom rule by accepting the following JSON input command(from a file or directly as a string):
+You can also update the custom rule by accepting the following JSON file or directly as a JSON string:
 
 ```sh
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
