@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-12"
+lastupdated: "2025-09-15"
 
 keywords:
 
@@ -98,9 +98,6 @@ Consider reviewing your security-level settings periodically. You can find instr
 
 ## Best practice 3: Activate your Web Application Firewall (WAF) safely
 {: #best-practice-activate-waf-safely}
-
-The security level feature is deprecated.
-{: deprecated}
 
 Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before you turn it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified. For more information, see [Using Security events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 
