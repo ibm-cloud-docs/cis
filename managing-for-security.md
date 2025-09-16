@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-15"
+lastupdated: "2025-09-16"
 
 keywords:
 
@@ -57,8 +57,7 @@ Some customers use separate IP ranges for HTTP and non-HTTP traffic. This approa
 ## Best practice 2: Configure your security level selectively
 {: #best-practice-configure-security-level-selectively}
 
-The security level feature is deprecated.
-{: deprecated}
+
 
 Your **Security Level** establishes the sensitivity of our **IP Reputation Database**. To prevent negative interactions or false positives, configure your **Security Level** by domain to heighten security where necessary, and to decrease it where appropriate.
 
