@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-10"
+lastupdated: "2025-09-16"
 
 keywords:
 
@@ -172,7 +172,7 @@ Follow these steps to get the custom rule entry point ruleset:
 1. When all variables are initiated, get the entry point ruleset:
 
 ```sh
-curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_request_firewall_custom/entrypoint" \
+curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_request_firewall_managed/entrypoint" \
 --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
 --header "Content-Type: application/json"
 ```
@@ -187,8 +187,8 @@ curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
 --data '{
   "name": "Zone-level phase entry point",
   "kind": "zone",
-  "description": "Custom rule entry point ruleset.",
-  "phase": "http_request_firewall_custom"
+  "description": "WAF managed rule entrypoint ruleset.",
+  "phase": "http_request_firewall_managed"
 }'
 ```
 {: pre}

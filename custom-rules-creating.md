@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-12"
+lastupdated: "2025-09-14"
 
 keywords:
 
@@ -99,14 +99,14 @@ To create a custom rule from the CLI, follow these steps:
     ```
     {: pre}
 
-1. Run the following command to create the custom rule:
+1. Run the following command to create a custom rule:
 
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --match EXPRESSION --action ACTION [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
    ```
    {: pre}
 
-   You can also create the custom rule by accepting the following JSON file or directly as a JSON string:
+   You can also create a custom rule by providing a JSON file or a JSON string directly:
 
    ```sh
    ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
@@ -196,14 +196,14 @@ Sample JSON data:
 {: #update-custom-rule-cli}
 {: cli}
 
-Run the following command to update the custom rule in the CLI:
+Run the following command to update a custom rule in the CLI:
 
 ```sh
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action ACTION] [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
 ```
 {: pre}
 
-You can also update the custom rule by accepting the following JSON file or directly as a JSON string:
+You can also update a custom rule by providing a JSON file or a JSON string directly:
 
 ```sh
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
