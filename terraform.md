@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-02-09"
+  years: 2021, 2025
+lastupdated: "2025-09-23"
 
 subcollection: cis
 
@@ -22,14 +22,14 @@ Looking for a managed Terraform on {{site.data.keyword.cloud}} solution? Try out
 ## Installing Terraform and configuring resources for {{site.data.keyword.cis_full_notm}}
 {: #install-terraform}
 
-Before you begin, make sure that you have the [required access](/docs/cis?topic=cis-at_iam_CIS) to create and work with {{site.data.keyword.cis_full_notm}} resources.
+Before creating an authorization by using Terraform, complete the following prerequisites:
 
-- Follow the [Terraform on {{site.data.keyword.cloud}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI and configure the {{site.data.keyword.cloud}} Provider plug-in for Terraform. The plug-in abstracts the {{site.data.keyword.cloud}} APIs that are used to provision, update, or delete {{site.data.keyword.cis_full_notm}} service instances and resources.
-- Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.cis_short_notm}} service instance and to assign a user an access policy in Identity and Access Management (IAM) for that instance by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://developer.hashicorp.com/terraform/language){: external}.
+* Make sure that you have the [required access](/docs/cis?topic=cis-at_iam_CIS) to create and work with {{site.data.keyword.cis_full_notm}}.
+* Install the Terraform CLI and configure the IBM Cloud Provider plug-in for Terraform. For more information, see [Getting started with Terraform on IBM Cloud](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started). The plug-in abstracts the IBM Cloud APIs that are used to complete this task.
+* Create a Terraform configuration file named `main.tf`. Use this file to define the authorization between services by writing Terraform code in HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://developer.hashicorp.com/terraform/language){: external}.
 
-1. Create a {{site.data.keyword.cis_short_notm}} instance by using the `ibm_resource_instance` resource argument in your `main.tf` file.
-   The {{site.data.keyword.cis_short_notm}} instance in the following example is named `test` and is created with the `standard` pricing plan. The `resource_group_id` is `data.ibm_resource_group.group.id`, and the location property is set to `global`.
-
+1. In your Terraform configuration file, find the Terraform code that you used to create the CIS instance.
+1. Create a {{site.data.keyword.cis_short_notm}} instance by using the `ibm_resource_instance` resource argument in your `main.tf` file. The {{site.data.keyword.cis_short_notm}} instance in the following example is named `test` and is created with the Standard pricing plan. The `resource_group_id` is `data.ibm_resource_group.group.id`, and the location property is set to `global`.
    ```terraform
    data "ibm_resource_group" "group" {
      name = "test"
@@ -52,14 +52,19 @@ Before you begin, make sure that you have the [required access](/docs/cis?topic=
    ```
    {: codeblock}
 
-1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initializing Working Directories](https://developer.hashicorp.com/terraform/cli/init){: external}.
+   If you don't specify the `resource_group_id`, the CIS instance is created in the default resource group. The `API_KEY` must have permissions for this group.
+
+   If you migrate from one plan to another, the change is considered a modification of an existing resource. It isn't considered as a resource creation or deletion.
+   {: important}
+
+1. After you finish building your configuration file, initialize the Terraform CLI. For more information, see [Initialize the Working Directory](https://developer.hashicorp.com/terraform/cli/init){: external}.
 
    ```terraform
    terraform init
    ```
    {: pre}
 
-1. Provision the resources from the `main.tf` file. For more information, see [Provisioning Infrastructure with Terraform](https://developer.hashicorp.com/terraform/cli/run){: external}.
+1. Provision the resources from the `main.tf` file. For more information, see [Terraform workflow for provisioning infrastructure](https://developer.hashicorp.com/terraform/cli/run){: external}.
 
    1. Run `terraform plan` to generate a Terraform execution plan to preview the proposed actions.
 
@@ -81,4 +86,4 @@ Before you begin, make sure that you have the [required access](/docs/cis?topic=
 ## What's next?
 {: #terraform-setup-next}
 
-Now that you successfully created your first {{site.data.keyword.cis_short_notm}} service instance with Terraform on {{site.data.keyword.cloud_notm}}, you can visit the [{{site.data.keyword.cis_short}} Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis){: external} to perform additional tasks using Terraform.
+Now that you successfully created your first {{site.data.keyword.cis_short_notm}} service instance with Terraform on {{site.data.keyword.cloud_notm}}, you can visit the CIS [{{site.data.keyword.cis_short}} Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis){: external} to perform additional tasks using Terraform.
