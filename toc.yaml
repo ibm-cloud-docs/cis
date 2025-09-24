@@ -87,6 +87,7 @@ toc:
             - mtls.md
             - auth-origin-pull.md
             - cipher-suites.md
+            - total-tls.md
         - topicgroup:
             label: Working with DDoS protection
             topics:
