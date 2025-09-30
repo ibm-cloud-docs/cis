@@ -3442,7 +3442,7 @@ ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID (--json @JSON_F
         - `paused` : Indicates whether the rule is active or not. Valid values are `on` and `off`. The default value is `off`.
         - `products` : The list of security products to be bypassed. Valid values are `zoneLockdown`, `uaBlock`, `bic`, `hot`, `securityLevel`, `rateLimit`, and `waf` For example, --products zoneLockdown, rateLimit
 
-    Fields `description`, `priority`, `paused`, which aren't explicitly set in JSON data are overwritten by the default value.
+    Fields `description`, `priority`, and `paused`, which aren't explicitly set in JSON data are overwritten by the default value.
     {: note}
 
 Sample JSON data:
