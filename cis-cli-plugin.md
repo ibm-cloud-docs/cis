@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-28"
+lastupdated: "2025-09-30"
 
 keywords:
 
@@ -384,6 +384,7 @@ ibmcloud cis access-certificate-update DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID --nam
 
 `--associated-hostnames`
 :  The hostnames that are prompted for this certificate. Required.
+
    The associated hostnames are reset if not specified by `associated-hostnames`.
    {: note}
 

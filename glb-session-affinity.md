@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-09-30"
 
 keywords:
 
@@ -129,7 +129,7 @@ When you create a global load balancer using the API, take the following steps t
         * `drain_duration` is the value of the drain duration, in seconds.
         * `zero_downtime_failover` (optional) automatically sends traffic to endpoints within a pool during transient network issues. Value values are `temporary`, and `sticky`; default `none`.
 
-           Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
+          Sticky Zero-Downtime Failover is not supported for session affinity by HTTP header.
           {: note}
 
 1. When all variables are initiated, create the global load balancer with session affinity:
