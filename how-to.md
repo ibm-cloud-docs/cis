@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-04"
+lastupdated: "2025-09-30"
 
 keywords:
 
@@ -63,6 +63,7 @@ Next, you can set up caching. You have the option of three types of caching, ava
 
 * **No query string**: Only delivers resources from cache when there is no query string.
 * **Query string independent**: Delivers the same resource to everyone independent of the query string.
+
    The **Ignore Query String** setting applies only to static file extensions. This setting removes the query string when generating the cache key, so that a request for `style.css?something` is normalized to `style.css` when serving from the cache.
    {: note}
 
