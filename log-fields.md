@@ -1,8 +1,9 @@
+
 ---
 
 copyright:
   years: 2025
-lastupdated: "2025-08-22"
+lastupdated: "2025-10-02"
 
 keywords: log fields
 
@@ -49,11 +50,11 @@ This table contains the fields available for http_requests.
 |BotDetectionTags|List of tags that correlate to the Bot Management Heuristic detections made on a request. Available only for Bot Management customers. To enable this feature, contact your account team.|array[string]|
 |BotScore|Cloudflare Bot Score. Scores below 30 are commonly associated with automated traffic. Available only for Bot Management customers. To enable this feature, contact your account team.|int|
 |BotScoreSrc|`Heuristics` \| Machine Learning \| Behavioral Analysis \| Verified Bot \| JS Fingerprinting \| Cloudflare Service. Available only for Bot Management customers. To enable this feature, contact your account team.|string|
-|BotTags|Type of bot traffic (if available). Refer to Bot Tags for the list of potential values. Available only for Bot Management customers. To enable this feature, contact your account team.|array[string]|
-|CacheCacheStatus|`miss` \| `expired` \| `updating` \| `stale` \| `hit` \| `ignored` \| `bypass` \| `revalidated` \| `dynamic` \| `stream_hit` \| deferred "dynamic" means that a request is not eligible for cache. This can mean, for example that it was blocked by the firewall. Refer to Cloudflare cache responses for more details.|string|
+|BotTags|Type of bot traffic (if available).  Available only for Bot Management customers. To enable this feature, contact your account team.|array[string]|
+|CacheCacheStatus|`miss` \| `expired` \| `updating` \| `stale` \| `hit` \| `ignored` \| `bypass` \| `revalidated` \| `dynamic` \| `stream_hit` \| deferred "dynamic" means that a request is not eligible for cache. This can mean, for example that it was blocked by the firewall.|string|
 |CacheReserveUsed|Cache Reserve was used to serve this request.|bool|
 |CacheResponseBytes|Number of bytes returned by the cache.|int|
-|CacheResponseStatus|HTTP status code returned by the cache to the edge. All requests (including non-cacheable ones) go through the cache.|int|
+|CacheResponseStatus|HTTP status code returned by the cache to the edge. All requests (including non-cacheable ones) go through the cache. Refer also to CacheCacheStatus field.|int|
 |CacheTieredFill|Tiered Cache was used to serve this request.|bool|
 |ClientASN|Client AS number.|int|
 |ClientCity|Approximate city of the client.|string|
@@ -69,12 +70,12 @@ This table contains the fields available for http_requests.
 |ClientRequestBytes|Number of bytes in the client request.|int|
 |ClientRequestHost|Host requested by the client.|string|
 |ClientRequestMethod|HTTP method of client request.|string|
-|ClientRequestPath|URI path requested by the client.|string|
+|ClientRequestPath|URI path requested by the client, which includes only the path portion of the requested URL, without the query string.|string|
 |ClientRequestProtocol|HTTP protocol of client request.|string|
 |ClientRequestReferer|HTTP request referrer.|string|
 |ClientRequestScheme|The URL scheme requested by the visitor.|string|
-|ClientRequestSource|Identifies requests as coming from an external source or another service within Cloudflare. Refer to ClientRequestSource field for the list of potential values.|string|
-|ClientRequestURI|URI requested by the client.|string|
+|ClientRequestSource|Identifies requests as coming from an external source or another service within Cloudflare.|string|
+|ClientRequestURI|URI requested by the client, which includes the TLS Mode: End-to-End flexible path and query string of the requested URL.|string|
 |ClientRequestUserAgent|User agent reported by the client.|string|
 |ClientSSLCipher|Client SSL cipher.|string|
 |ClientSSLProtocol|Client SSL (TLS) protocol. The value "none" means that SSL was not used.|string|
@@ -84,7 +85,7 @@ This table contains the fields available for http_requests.
 |ContentScanObjResults|List of content scan results.|array[string]|
 |ContentScanObjSizes|List of content object sizes.|array[int]|
 |ContentScanObjTypes|List of content types.|array[string]|
-|Cookies|String key-value pairs for Cookies. This field is populated based on Logpush Custom fields, which need to be configured.|object|
+|Cookies|String key-value pairs for Cookies.|object|
 |EdgeCFConnectingO2O|True if the request looped through multiple zones on the Cloudflare edge. This is considered an orange to orange (O2O) request.|bool|
 |EdgeColoCode|IATA airport code of the data center that received the request.|string|
 |EdgeColoID|Cloudflare edge data center ID.|int|
@@ -109,26 +110,26 @@ This table contains the fields available for http_requests.
 |OriginIP|IP of the origin server.|string|
 |OriginRequestHeaderSendDurationMs|Time taken to send request headers to origin after establishing a connection. Note that this value is usually `0`.|int|
 |OriginResponseBytes|Number of bytes returned by the origin server.|int|
-|OriginResponseDurationMs|Upstream response time, measured from the first data center that receives a request. Includes time taken by Smart Routing and Tiered Cache, plus time to connect and receive a response from origin servers. This field replaces OriginResponseTime.|int|
+|OriginResponseDurationMs|Upstream response time, measured from the first datacenter that receives a request. Includes time taken by Smart Routing and Tiered Cache, plus time to connect and receive a response from origin servers. This field replaces OriginResponseTime.|int|
 |OriginResponseHTTPExpires|Value of the origin 'expires' header in RFC1123 format.|string|
 |OriginResponseHTTPLastModified|Value of the origin 'last-modified' header in RFC1123 format.|string|
 |OriginResponseHeaderReceiveDurationMs|Time taken for origin to return response headers after Cloudflare finishes sending request headers.|int|
-|OriginResponseStatus|Status returned by the upstream server. The value `0` means that there was no request made to the origin server and the response was served by Cloudflare's Edge. However, if the zone has a Edge function running on it, the value `0` could be the result of a Edge functions subrequest made to the origin.|int|
+|OriginResponseStatus|Status returned by the upstream server. The value `0` means that there was no response received from the origin server and the response was served by Cloudflare's Edge. However, if the zone has a Edge function running on it, the value `0` could be the result of a Edge functions subrequest made to the origin.|int|
 |OriginResponseTime|Number of nanoseconds it took the origin to return the response to edge.|int|
 |OriginSSLProtocol|SSL (TLS) protocol used to connect to the origin.|string|
 |OriginTCPHandshakeDurationMs|Time taken to complete TCP handshake with origin. This will be `0` if an origin connection is reused.|int|
 |OriginTLSHandshakeDurationMs|Time taken to complete TLS handshake with origin. This will be `0` if an origin connection is reused.|int|
 |ParentRayID|Ray ID of the parent request if this request was made using a Edge function script.|string|
 |RayID|ID of the request.|string|
-|RequestHeaders|String key-value pairs for RequestHeaders. This field is populated based on Logpush Custom fields, which need to be configured.|object|
-|ResponseHeaders|String key-value pairs for ResponseHeaders. This field is populated based on Logpush Custom fields, which need to be configured.|object|
+|RequestHeaders|String key-value pairs for RequestHeaders.|object|
+|ResponseHeaders|String key-value pairs for ResponseHeaders.|object|
 |SecurityAction|Action of the security rule that triggered a terminating action, if any.|string|
 |SecurityActions|`allow` \| `block` \| `challenge` \| `jschallenge` \| `log` \| `connectionClose` \| `challengeSolved` \| `challengeBypassed` \| `jschallengeSolved` \| `jschallengeBypassed` \| `bypass` \| `managedChallenge` \| `managedChallengeNonInteractiveSolved` \| `managedChallengeInteractiveSolved` \| `managedChallengeBypassed` \| `rewrite` \| `forceConnectionClose` \| `skip`.|array[string]|
 |SecurityRuleDescription|Description of the security rule that triggered a terminating action, if any.|string|
 |SecurityRuleID|Rule ID of the security rule that triggered a terminating action, if any.|string|
 |SecurityRuleIDs|Array of rule IDs of the security product that matched the request. The security product associated with the rule ID can be found in SecuritySources. The length of the array is the same as SecurityActions and SecuritySources.|array[string]|
 |SecuritySources|`asn` \| `country` \| `ip` \| `ipRange` \| `securityLevel` \| `zoneLockdown` \| `waf` \| `firewallRules` \| `uaBlock` \| `rateLimit` \| `bic` \| `hot` \| `l7ddos` \| `validation` \| `botFight` \| `apiShield` \| `botManagement` \| `dlp` \| `firewallManaged` \| `firewallCustom` \| `apiShieldSchemaValidation` \| `apiShieldTokenValidation` \| `apiShieldSequenceMitigation`.|array[string]|
-|SmartRouteColoID|The Cloudflare data center used to connect to the origin server if  Smart Routing is used.|int|
+|SmartRouteColoID|The Cloudflare data center used to connect to the origin server if Smart Routing is used.|int|
 |UpperTierColoID|The "upper tier" data center that was checked for a cached copy if Tiered Cache is used.|int|
 |VerifiedBotCategory|The category of verified bot.|string|
 |WAFAttackScore|Overall request score generated by the WAF detection module.|int|
@@ -157,9 +158,9 @@ This table contains the fields available for dns_logs.
 |EDNSSubnet|IPv4 or IPv6 address information corresponding to the [EDNS Client Subnet (ECS)](https://www.rfc-editor.org/rfc/rfc7871.html#section-4){: external} forwarded by recursive resolvers. Not all resolvers send this information.|string|
 |EDNSSubnetLength|Size of the EDNS Client Subnet (ECS) in bits. For example, if the last octet of an IPv4 address is omitted (`192.0.2.x.`), the subnet length will be `24`.|int|
 |QueryName|Name of the query that was sent.|string|
-|QueryType|Integer value of query type. (iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).|int|
+|QueryType|Integer value of query type. For more information refer to [Query type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).|int|
 |ResponseCached|Whether the response was cached or not.|bool|
-|ResponseCode|Integer value of response code. (iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6).|int|
+|ResponseCode|Integer value of response code. For more information refer to  [Response code](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6).|int|
 |SourceIP|IP address of the client (IPv4 or IPv6).|string|
 |Timestamp|Timestamp at which the query occurred.|int or string|
 {: caption="Available log fields for DNS logs" caption-side="bottom"}
