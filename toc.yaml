@@ -10,294 +10,294 @@ toc:
     path: cis
     label: Cloud Internet Services (CIS)
   entries:
-    - navgroup:
-        id: learn
-        topics:
-        - getting-started.md
-        - about.md
-        - topicgroup:
-            id: concepts
-            label: Concepts
-            topics:
-            - cache.md
-            - compression-concepts.md
-            - domain-lifecycle.md
-            - dns-concepts.md
-            - glb.md
-            - http-concepts.md
-            - range-concept.md
-            - routing.md
-            - tcp-concepts.md
-            - traffic-sequencing.md
-            - url-normalization.md
-            - waf-concept.md
-        - topicgroup:
-            id: best-practices
-            label: Best practices
-            topics:
-            - best-practices.md
-            - managing-for-security.md
-            - managing-for-reliability.md
-            - managing-for-performance.md
-        - security-events.md
-        - release-notes.md
-    - navgroup:
-        id: tutorial
-        topics:
-        - topicgroup:
-            label: Solution tutorials
-            topics:
-            - include: ../solution-tutorials/multi-region-k8s-cis.md
-            - include: ../solution-tutorials/vpc-multi-region.md
-            - include: ../codeengine/deploy-multiple-regions.md
-        - link:
-            label: What are computer networking solutions
-            href: https://www.ibm.com/think/topics/networking#toc-computer-n-9C7jokVu
-    - navgroup:
-        id: howto
-        topics:
-        - how-to.md
-        - topicgroup:
-            label: Managing certificates
-            topics:
-            - edge-certificates.md
-            - origin.md
-        - topicgroup:
-            label: CNAME (partial) configuration
-            topics:
-            - start-with-subdomain.md
-            - cname-dns-resolution.md
-            - convert-partial-full.md
-        - multi-domain.md
-        - dns.md
-        - cname-setup.md
-        - private-endpoint.md
-        - topicgroup:
-            label: Working with Range applications
-            id: range
-            topics:
-            - range.md
-            - proxy-protocol.md
-        - topicgroup:
-            label: Working with TLS
-            id: tls
-            topics:
-            - about-tls.md
-            - ssl-options.md
-            - mtls.md
-            - auth-origin-pull.md
-            - cipher-suites.md
-            - total-tls.md
-        - topicgroup:
-            label: Working with DDoS protection
-            topics:
-            - ddos-concept.md
-            - preventing-ddos-attacks.md
-            - ddos-responding.md
-            - ddos-defense-mode.md
-            - ddos-using-third-party-services.md
-        - topicgroup:
-            label: Working with rulesets
-            topics:
-            - about-rule-sets.md
-            - ruleset-engine-actions.md
-            - integrating-lists-rules.md
-            - waf-testing.md
-        - topicgroup:
-            label: Working with lists
-            id: lists
-            topics:
-            - lists.md
-            - topicgroup:
-                label: Using custom lists
-                id: custom-lists
-                topics:
-                - custom-lists.md
-                - custom-list-types.md
-                - custom-list-create.md
-            - managed-lists.md
-        - topicgroup:
-            label: Working with WAF custom rules
-            topics:
-            - custom-rules.md
-            - custom-rules-creating.md
-            - custom-rules-fields-and-expressions.md
-        - topicgroup:
-            label: Working with WAF managed rules
-            topics:
-            - about-managed-rules.md
-            - deploy-rule-sets.md
-            - override-rule-sets.md
-            - handling-false-positives-managed-rules.md
-            - topicgroup:
-                label: Available managed rulesets
-                topics:
-                - cis-ruleset.md
-                - owasp-rule-set-for-waf.md
-                - exposed-credentials-check-ruleset.md
-                - owasp-evaluation-example.md
-        - topicgroup:
-            label: Working with rate-limiting rules
-            topics:
-            - migration-rate-limiting.md
-            - rate-limiting.md
-            - rate-limit-ruleset.md
-        - topicgroup:
-            label: Working with legacy WAF
-            topics:
-            - waf-managed-rules.md
-            - waf-cis-ruleset.md
-        - topicgroup:
-            label: Working with legacy firewall rules
-            topics:
-            - migration-custom-rules.md
-            - firewall-rule.md
-            - actions.md
-            - fields-and-expressions.md
-            - order-and-priority.md
-        - topicgroup:
-            label: Working with page rules
-            topics:
-            - using-page-rules.md
-            - caching-with-page-rules.md
-            - resolve-override-cos.md
-        - topicgroup:
-            label: Working with global load balancers
-            topics:
-            - glb-setup.md
-            - topicgroup:
-                label: Global load balancer features
-                topics:
-                - glb-dns-records.md
-                - glb-origin-pools.md
-                - glb-health-checks.md
-                - glb-traffic-steering.md
-                - glb-proxy-modes.md
-                - glb-session-affinity.md
-        - custom-page.md
-        - topicgroup:
-            label: Working with Edge functions
-            id: edge-functions
-            topics:
-            - edge-functions.md
-            - edge-function-actions.md
-            - topicgroup:
-                label: Edge function examples
-                id: examples
-                topics:
-                - altering-headers.md
-                - redirect-country-code.md
-                - modify-response-props.md
-        - topicgroup:
-            label: Working with logs
-            id: logs
-            topics:
-            - logpull.md
-            - logpush.md
-            - log-fields.md
-            - instant-logs.md
-            - cis-daily-volume.md
-            - additional-owasp-log.md
-        - topicgroup:
-            label: Working with metrics
-            id: metrics
-            topics:
-            - graphql.md
-            - graphql-edge-func.md
-            - graphql-firewall.md
-            - query-basics.md
-            - compose-query-graphiql.md
-            - sampling.md
-            - query-http-events.md
-            - view-firewall-groups.md
-        - topicgroup:
-            id: alerts
-            label: Working with alerts
-            topics:
-            - alerts-types.md
-            - alerts.md
-            - configuring-webhooks.md
-        - topicgroup:
-            label: Working with Bot management
-            topics:
-            - about-bots.md
-            - machine-learning-model.md
-            - javascript-detections.md
-            - bot-management-fields.md
-        - topicgroup:
-            label: Enhancing security
-            topics:
-            - iam.md
-            - architecture-workload-isolation.md
-            - data-security.md
-        - topicgroup:
-            label: Observability
-            topics:
-            - at_events.md
-            - at_iam.md
-        - cis-delete.md
-        - terraform.md
-        - terraform-generating-configuration.md
-    - navgroup:
-        id: reference
-        topics:
-        - topicgroup:
-            id: api-cis
-            label: CIS API
-            topics:
-            - link:
-               label: Reference
-               href: https://{DomainName}/apidocs/cis
-            - api-change-log.md
-        - topicgroup:
-            label: CLI reference
-            topics:
-            - cli-change-log.md
-            - cis-cli-plugin.md
-        - link:
-            label: Terraform
-            href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis
-        - topicgroup:
-            label: CIS use cases
-            topics:
-            - cloudant-and-cis.md
-            - edge-functions-use-cases.md
-        - topicgroup:
-            label: High availability and disaster recovery
-            topics:
-            - ha.md
-            - bc-dr.md
-        - data-portability.md
-        - responsibilities.md
-        - embargoed-countries.md
-        - plan-comparison.md
-        - transition-plans.md
-        - allowlisted-ips.md
-        - helpful-tools.md
-        - hipaa-advisory.md
-    - navgroup:
-        id: help
-        topics:
-        - faq.md
-        - known-limitations.md
-        - topicgroup:
-            id: troubleshooting
-            label: Troubleshooting
-            topics:
-            - ts-network-connection.md
-            - ts-html-4xx-errors.md
-            - ts-html-5xx-errors.md
-            - ts-html-1xxx-errors.md
-            - ts-false-pos-neg.md
-            - ts-ddos.md
-            - ts-universal-certificate.md
-            - ts-root-cert.md
-            - ts-offline.md
-            - ts-privacy-warn.md
-            - ts-no-traffic.md
-            - ts-execution-order.md
-            - ts-create-har.md
-            - ts-domain-moved.md
-            - ts-delete-cis-instance.md
-            - ts-uuid-support.md
-        - getting-help.md
+  - navgroup:
+      id: learn
+      topics:
+      - getting-started.md
+      - about.md
+      - topicgroup:
+          id: concepts
+          label: Concepts
+          topics:
+          - cache.md
+          - compression-concepts.md
+          - domain-lifecycle.md
+          - dns-concepts.md
+          - glb.md
+          - http-concepts.md
+          - range-concept.md
+          - routing.md
+          - tcp-concepts.md
+          - traffic-sequencing.md
+          - url-normalization.md
+          - waf-concept.md
+      - topicgroup:
+          id: best-practices
+          label: Best practices
+          topics:
+          - best-practices.md
+          - managing-for-security.md
+          - managing-for-reliability.md
+          - managing-for-performance.md
+      - security-events.md
+      - release-notes.md
+  - navgroup:
+      id: tutorial
+      topics:
+      - topicgroup:
+          label: Solution tutorials
+          topics:
+          - include: ../solution-tutorials/multi-region-k8s-cis.md
+          - include: ../solution-tutorials/vpc-multi-region.md
+          - include: ../codeengine/deploy-multiple-regions.md
+      - link:
+          label: What are computer networking solutions
+          href: https://www.ibm.com/think/topics/networking#toc-computer-n-9C7jokVu
+  - navgroup:
+      id: howto
+      topics:
+      - how-to.md
+      - topicgroup:
+          label: Managing certificates
+          topics:
+          - edge-certificates.md
+          - origin.md
+      - topicgroup:
+          label: CNAME (partial) configuration
+          topics:
+          - start-with-subdomain.md
+          - cname-dns-resolution.md
+          - convert-partial-full.md
+      - multi-domain.md
+      - dns.md
+      - cname-setup.md
+      - private-endpoint.md
+      - topicgroup:
+          label: Working with Range applications
+          id: range
+          topics:
+          - range.md
+          - proxy-protocol.md
+      - topicgroup:
+          label: Working with TLS
+          id: tls
+          topics:
+          - about-tls.md
+          - ssl-options.md
+          - mtls.md
+          - auth-origin-pull.md
+          - cipher-suites.md
+          - total-tls.md
+      - topicgroup:
+          label: Working with DDoS protection
+          topics:
+          - ddos-concept.md
+          - preventing-ddos-attacks.md
+          - ddos-responding.md
+          - ddos-defense-mode.md
+          - ddos-using-third-party-services.md
+      - topicgroup:
+          label: Working with rulesets
+          topics:
+          - about-rule-sets.md
+          - ruleset-engine-actions.md
+          - integrating-lists-rules.md
+          - waf-testing.md
+      - topicgroup:
+          label: Working with lists
+          id: lists
+          topics:
+          - lists.md
+          - topicgroup:
+              label: Using custom lists
+              id: custom-lists
+              topics:
+              - custom-lists.md
+              - custom-list-types.md
+              - custom-list-create.md
+          - managed-lists.md
+      - topicgroup:
+          label: Working with WAF custom rules
+          topics:
+          - custom-rules.md
+          - custom-rules-creating.md
+          - custom-rules-fields-and-expressions.md
+      - topicgroup:
+          label: Working with WAF managed rules
+          topics:
+          - about-managed-rules.md
+          - deploy-rule-sets.md
+          - override-rule-sets.md
+          - handling-false-positives-managed-rules.md
+          - topicgroup:
+              label: Available managed rulesets
+              topics:
+              - cis-ruleset.md
+              - owasp-rule-set-for-waf.md
+              - exposed-credentials-check-ruleset.md
+              - owasp-evaluation-example.md
+      - topicgroup:
+          label: Working with rate-limiting rules
+          topics:
+          - migration-rate-limiting.md
+          - rate-limiting.md
+          - rate-limit-ruleset.md
+      - topicgroup:
+          label: Working with legacy WAF
+          topics:
+          - waf-managed-rules.md
+          - waf-cis-ruleset.md
+      - topicgroup:
+          label: Working with legacy firewall rules
+          topics:
+          - migration-custom-rules.md
+          - firewall-rule.md
+          - actions.md
+          - fields-and-expressions.md
+          - order-and-priority.md
+      - topicgroup:
+          label: Working with page rules
+          topics:
+          - using-page-rules.md
+          - caching-with-page-rules.md
+          - resolve-override-cos.md
+      - topicgroup:
+          label: Working with global load balancers
+          topics:
+          - glb-setup.md
+          - topicgroup:
+              label: Global load balancer features
+              topics:
+              - glb-dns-records.md
+              - glb-origin-pools.md
+              - glb-health-checks.md
+              - glb-traffic-steering.md
+              - glb-proxy-modes.md
+              - glb-session-affinity.md
+      - custom-page.md
+      - topicgroup:
+          label: Working with Edge functions
+          id: edge-functions
+          topics:
+          - edge-functions.md
+          - edge-function-actions.md
+          - topicgroup:
+              label: Edge function examples
+              id: examples
+              topics:
+              - altering-headers.md
+              - redirect-country-code.md
+              - modify-response-props.md
+      - topicgroup:
+          label: Working with logs
+          id: logs
+          topics:
+          - logpull.md
+          - logpush.md
+          - log-fields.md
+          - instant-logs.md
+          - cis-daily-volume.md
+          - additional-owasp-log.md
+      - topicgroup:
+          label: Working with metrics
+          id: metrics
+          topics:
+          - graphql.md
+          - graphql-edge-func.md
+          - graphql-firewall.md
+          - query-basics.md
+          - compose-query-graphiql.md
+          - sampling.md
+          - query-http-events.md
+          - view-firewall-groups.md
+      - topicgroup:
+          id: alerts
+          label: Working with alerts
+          topics:
+          - alerts-types.md
+          - alerts.md
+          - configuring-webhooks.md
+      - topicgroup:
+          label: Working with Bot management
+          topics:
+          - about-bots.md
+          - machine-learning-model.md
+          - javascript-detections.md
+          - bot-management-fields.md
+      - topicgroup:
+          label: Enhancing security
+          topics:
+          - iam.md
+          - architecture-workload-isolation.md
+          - data-security.md
+      - topicgroup:
+          label: Observability
+          topics:
+          - at_events.md
+          - at_iam.md
+      - cis-delete.md
+      - terraform.md
+      - terraform-generating-configuration.md
+  - navgroup:
+      id: reference
+      topics:
+      - topicgroup:
+          id: api-cis
+          label: CIS API
+          topics:
+          - link:
+              label: Reference
+              href: https://{DomainName}/apidocs/cis
+          - api-change-log.md
+      - topicgroup:
+          label: CLI reference
+          topics:
+          - cli-change-log.md
+          - cis-cli-plugin.md
+      - link:
+          label: Terraform
+          href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis
+      - topicgroup:
+          label: CIS use cases
+          topics:
+          - cloudant-and-cis.md
+          - edge-functions-use-cases.md
+      - topicgroup:
+          label: High availability and disaster recovery
+          topics:
+          - ha.md
+          - bc-dr.md
+      - data-portability.md
+      - responsibilities.md
+      - embargoed-countries.md
+      - plan-comparison.md
+      - transition-plans.md
+      - allowlisted-ips.md
+      - helpful-tools.md
+      - hipaa-advisory.md
+  - navgroup:
+      id: help
+      topics:
+      - faq.md
+      - known-limitations.md
+      - topicgroup:
+          id: troubleshooting
+          label: Troubleshooting
+          topics:
+          - ts-network-connection.md
+          - ts-html-4xx-errors.md
+          - ts-html-5xx-errors.md
+          - ts-html-1xxx-errors.md
+          - ts-false-pos-neg.md
+          - ts-ddos.md
+          - ts-universal-certificate.md
+          - ts-root-cert.md
+          - ts-offline.md
+          - ts-privacy-warn.md
+          - ts-no-traffic.md
+          - ts-execution-order.md
+          - ts-create-har.md
+          - ts-domain-moved.md
+          - ts-delete-cis-instance.md
+          - ts-uuid-support.md
+      - getting-help.md
