@@ -33,16 +33,16 @@ Each field value can be sourced from different places, such as:
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
 |http.cookie|String|session=A12345;-background=light|Entire cookie as a string|
-|http.host|String| `www.example.com` | The host name used in the full request URI|
+|http.host|String| `www.example.com` | The hostname used in the full request URI|
 |http.referer|String|_HTTP referer header_| |
 |http.request.full_uri|String|`https://www.example.com/articles/index?section=539061&expand=comments`|The full URI as received by the web server (does not include _#fragment_ which is not sent to web servers)|
-|http.request.method|String|POST|The HTTP method, in upper case|
+|http.request.method|String|POST|The HTTP method, in uppercase|
 |http.request.uri|String|/articles/index?section=539061&expand=comments|The absolute URI of the request|
 |http.request.uri.path|String|/articles/index|The path of the request|
 |http.request.uri.query|String|section=539061&expand=comments|The whole query string, minus the delimiting prefix "?"|
 |http.user_agent|String|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36|The whole HTTP user agent|
 |http.x_forwarded_for|String|_The full X-Forwarded-For HTTP header_ |
-|ip.src|IP address|93.155.208.22|The client TCP IP address, which can be adjusted to reflect the real client IP of the original client as applicable (for example, using HTTP headers like X-Forwarded-For or X-Real-IP)|
+|ip.src|IP address|93.155.208.22|The client TCP IP address, which can be adjusted to reflect the real client IP of the original client as applicable (for example, by using HTTP headers like X-Forwarded-For or X-Real-IP)|
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
 |ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/#search/code/){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
@@ -55,8 +55,8 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
-|cf.client.bot|Boolean|true|This field indicates whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
-|cf.threat_score|Number| o-100 | Represents a Cloudflare threat score. Previously, a threat score represented a Cloudflare threat score from 0–100, where 0 indicated low risk. Now, the threat score is always 0 (zero). |
+|cf.client.bot|Boolean|true|c whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
+|cf.threat_score|Number| 0 | This field indicates a Cloudflare threat score. Previously, a threat score represented a Cloudflare threat score from 0–100, where 0 indicated low risk. Now, the threat score is always 0 (zero). |
 | cf.waf.score | Number | 1-99 | Machine learning–based score that estimates the likelihood of a request being malicious. Scores range from 1 (most likely malicious) to 99 (most likely safe). Lower scores indicate a higher risk. Useful for creating threshold-based firewall rules. |
 {: caption="Available Cloudflare fields" caption-side="bottom"}
 
