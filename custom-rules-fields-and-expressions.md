@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-10-24"
 
 subcollection: cis
 
@@ -13,13 +13,13 @@ subcollection: cis
 # Using fields, functions, and expressions
 {: #custom-rules-fields-and-expressions}
 
-Along with actions, fields and expressions are the building blocks of WAF custom rules. These two elements work together when defining the criteria to use when a custom rule is matched.
+Along with actions, fields and expressions are the building blocks of WAF custom rules. These elements work together to define the criteria for matching a custom rule.
 {: shortdesc}
 
 ## Fields
 {: #custom-rule-fields}
 
-When CIS receives an HTTP request, it is examined and a table of fields is produced to match against. This field table exists for as long as the current request is being processed. Think of it as a table that holds the request properties to be matched against expressions.
+When CIS receives an HTTP request, it analyzes the request and creates a table of fields for matching. This field table exists only while the request is being processed and contains the request properties used for expression matching.
 
 Each field value can be sourced from different places, such as:
 
@@ -55,9 +55,9 @@ In addition to the standard fields, the following Cloudflare-defined fields are 
 
 | Field name | Type | Example value | Notes |
 | ------- | :--------- | :------------ | :--------- |
-|cf.client.bot|Boolean|true|c whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
+|cf.client.bot|Boolean|true| whether the request is coming from a known bot or crawler, regardless of good or bad intent.|
 |cf.threat_score|Number| 0 | This field indicates a Cloudflare threat score. Previously, a threat score represented a Cloudflare threat score from 0–100, where 0 indicated low risk. Now, the threat score is always 0 (zero). |
-| cf.waf.score | Number | 1-99 | Machine learning–based score that estimates the likelihood of a request being malicious. Scores range from 1 (most likely malicious) to 99 (most likely safe). Lower scores indicate a higher risk. Useful for creating threshold-based firewall rules. |
+| cf.waf.score | Number | 1-99 | Machine learning–based score that estimates the likelihood of a request being malicious. Scores range from 1 (most likely malicious) to 99 (most likely safe). Low scores indicate a higher risk. Useful for creating threshold-based firewall rules. |
 {: caption="Available Cloudflare fields" caption-side="bottom"}
 
 
