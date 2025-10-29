@@ -267,6 +267,7 @@ toc:
           topics:
           - ha.md
           - bc-dr.md
+          - ha-dr.md
       - data-portability.md
       - responsibilities.md
       - embargoed-countries.md
