@@ -2,8 +2,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-10-02"
+years: 2025
+lastupdated: "2025-11-24"
 
 keywords: log fields
 
