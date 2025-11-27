@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-09-24"
+lastupdated: "2025-11-27"
 
 keywords:
 
@@ -14,7 +14,7 @@ subcollection: cis
 
 # Creating Total TLS
 {: #using-total-tls}
-{: api}
+
 
 Total TLS allows CIS to issue individual certificates for your proxied hostnames. These certificates protect the proxied hostnames not covered by [Universal certificates](/docs/cis?topic=cis-managing-edge-certs#universal-certificate-type).
 {: shortdesc}
@@ -24,8 +24,15 @@ Total TLS certificates follow the Common Name (CN) restriction of 64 characters 
 
 The issued certificates have a type of **Advanced - Total TLS**, and their default validity period is 90 days.
 
+## Getting the Total TLS for CLI
+{: #ttls-cli}
+{: cli}
+
+
+
 ## Getting the Total TLS for API
 {: #get-total-ttls}
+{: api}
 
 Follow these steps to get the Total TLS:
 1. Set up your API environment with the correct variables.
