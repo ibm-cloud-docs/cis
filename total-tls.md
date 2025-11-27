@@ -47,6 +47,7 @@ Follow these steps to get the Total TLS:
 
 ## Changing the Total TLS with API
 {: #create-ttls}
+{: api}
 
 Follow these steps to create the Total TLS:
 
