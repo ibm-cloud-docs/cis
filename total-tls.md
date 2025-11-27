@@ -24,12 +24,6 @@ Total TLS certificates follow the Common Name (CN) restriction of 64 characters 
 
 The issued certificates have a type of **Advanced - Total TLS**, and their default validity period is 90 days.
 
-## Getting the Total TLS for CLI
-{: #ttls-cli}
-{: cli}
-
-
-
 ## Getting the Total TLS for API
 {: #get-total-ttls}
 {: api}
