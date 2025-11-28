@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-27"
+lastupdated: "2025-11-28"
 
 keywords:
 
@@ -23,6 +23,85 @@ Total TLS certificates follow the Common Name (CN) restriction of 64 characters 
 {: important}
 
 The issued certificates have a type of **Advanced - Total TLS**, and their default validity period is 90 days.
+
+## Getting the Total TLS for CLI
+{: #get-ttls-cli}
+{: cli}
+
+To get the Total TLS, run the following command:
+
+```sh
+cis total-tls cert-get DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+### Command options
+{: #get-command-options}
+
+`DNS_DOMAIN_ID`
+:  The id of DNS domain.
+
+`-i, --instance`
+:  Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` will be used.
+
+`--output`
+:  Specify output format, only JSON is supported.
+
+## Updating the Total TLS with CLI
+{: #update-ttls-cli}
+{: cli}
+
+To update the Total TLS, run the follwoing command:
+
+```sh
+cis total-tls cert-update DNS_DOMAIN_ID [-c, --certificate_authority CERTIFICATE_AUTHORITY] (--enabled true|false) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+You can also update a custom rule by providing a JSON file or a JSON string directly:
+```sh
+cis total-tls cert-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+### Command options
+{: #command-option}
+
+`DNS_DOMAIN_ID`
+:  The ID of the DNS domain.
+
+`--enabled`
+:  Enable or disable Total TLS setting for a zone. Valid values are `true` and `false`.
+
+`-c, --certificate_authority`
+:  The certificate authority. Valid values are `google`, `lets_encrypt`, and `ssl_com`.
+
+`--json value`
+:  The JSON file or JSON string that is used to set Total TLS Settings or disable the feature for a zone.
+
+   - The required fields in JSON data are `enabled`.
+
+      `enabled`: Enable or disable Total TLS setting for a zone. Valid values are `true` and `false`.
+
+   - The optional fields are `certificate_authority`.
+
+      `certificate_authority`: The certificate authority. Valid values are `google`, `lets_encrypt`, and `ssl_com`.
+
+Sample JSON data:
+
+```json
+{
+  "certificate_authority": "lets_encrypt",
+  "enabled": true
+}
+```
+{: codeblock}
+
+`-i, --instance value`
+:  Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` will be used.
+
+`--output value`
+:  Specify output format, only `JSON` is supported.
 
 ## Getting the Total TLS for API
 {: #get-total-ttls}
