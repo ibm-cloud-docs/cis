@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-03"
 
 keywords:
 
@@ -259,17 +259,9 @@ To create a rate-limiting ruleset, you must create an entry point first, then cr
      rulesets {
        description = "Zone rate limit entrypoint"
      }
-     lifecycle {
-       ignore_changes = [
-         rulesets
-       ]
-     }
    }
    ```
    {: pre}
-
-   Use a `lifecycle` block to prevent Terraform from updating the entrypoint ruleset. Some entrypoint parameters are updated during every `terraform apply`, which can introduce unintended configuration changes. The `lifecycle` block helps you ignore these updates and maintain resource stability.
-   {: important}
 
 1. To create a rate-limiting ruleset, run the following command:
 
