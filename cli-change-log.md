@@ -24,8 +24,8 @@ In this change log, you can learn about the latest changes, improvements, and up
 ## Version 1.19.0
 {: #cli-1190}
 
-Version 1.19.0 of the CLI was released on November 17, 2025.
-:   Added deprecation notice to legacy WAF commands.
+Version 1.19.0 of the CLI was released on 17th November, 2025.
+:   Added the deprecation notice to legacy WAF commands.
 :   Added the [Total TLS commands](/docs/cis?topic=cis-using-total-tls&interface=cli).
 :   Removed the notification-email parameter from `glb-create` and `glb-update` commands.
 
