@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-12-03"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -20,6 +20,14 @@ content-type: release-note
 
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
+
+## Version 1.19.0
+{: #cli-1190}
+
+Version 1.19.0 of the CLI was released on November 17, 2025.
+:   Added deprecation notice to legacy WAF commands.
+:   Added the [Total TLS commands](/docs/cis?topic=cis-using-total-tls&interface=cli).
+:   Removed the notification-email parameter from `glb-create` and `glb-update` commands.
 
 ## Version 1.18.1
 {: #cli-1181}
