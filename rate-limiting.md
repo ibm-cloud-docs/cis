@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-10"
+lastupdated: "2025-12-03"
 
 keywords:
 
@@ -255,6 +255,7 @@ To create a rate-limiting ruleset, you must create an entry point first, then cr
      cis_id    = data.ibm_cis.cis_instance.id
      domain_id = data.ibm_cis_domain.cis_domain.domain_id
      phase     = "http_ratelimit"
+
      rulesets {
        description = "Zone rate limit entrypoint"
      }

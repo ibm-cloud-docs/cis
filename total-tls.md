@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-11-28"
+lastupdated: "2025-12-01"
 
 keywords:
 
@@ -39,10 +39,10 @@ cis total-tls cert-get DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 {: #get-command-options}
 
 `DNS_DOMAIN_ID`
-:  The id of DNS domain.
+:  The ID of DNS domain.
 
 `-i, --instance`
-:  Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` will be used.
+:  Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` is used.
 
 `--output`
 :  Specify output format, only JSON is supported.
@@ -51,7 +51,7 @@ cis total-tls cert-get DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 {: #update-ttls-cli}
 {: cli}
 
-To update the Total TLS, run the follwoing command:
+To update the Total TLS, run the following command:
 
 ```sh
 cis total-tls cert-update DNS_DOMAIN_ID [-c, --certificate_authority CERTIFICATE_AUTHORITY] (--enabled true|false) [-i, --instance INSTANCE] [--output FORMAT]
@@ -98,12 +98,12 @@ Sample JSON data:
 {: codeblock}
 
 `-i, --instance value`
-:  Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` will be used.
+:  Instance name or ID. If not set, the context instance specified by `cis instance-set INSTANCE` is used.
 
 `--output value`
 :  Specify output format, only `JSON` is supported.
 
-## Getting the Total TLS for API
+## Getting the Total TLS with the API
 {: #get-total-ttls}
 {: api}
 
