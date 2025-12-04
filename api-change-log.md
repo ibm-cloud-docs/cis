@@ -22,7 +22,10 @@ In this change log, you can learn about the latest changes, improvements, and up
 ## 03 December 2025
 {: #cis-dec-0325}
 
-placeholder
+Custom and CIS-managed list support
+:    You can now create and manage custom lists or use CIS-managed lists through the API. You can list all [managed](/apidocs/cis#get-managed-lists) and [custom lists](/apidocs/cis#get-custom-lists), [create a custom list](/apidocs/cis#create-custom-lists), [retrieve](/apidocs/cis#get-custom-list) or [update](/apidocs/cis#update-custom-list) an existing custom list, or [delete](/apidocs/cis#delete-custom-list) one you no longer need. List items can also be managed with the API: you can [get](/apidocs/cis#get-list-items), [create](/apidocs/cis#create-list-items), [update](/apidocs/cis#update-list-items), or [delete](/apidocs/cis#delete-list-items) individual items, update all items at once, [retrieve](/apidocs/cis#get-list-item) a single list item, or [check the status](/apidocs/cis#get-operation-status) of a list operation. 
+
+Learn more about [managed and custom lists](/docs/cis?group=lists) and explore the available API methods to start integrating these capabilities into your workflow.
 
 ## 28 February 2025
 {: #cis-febr2825}
