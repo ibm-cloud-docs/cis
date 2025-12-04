@@ -20,7 +20,7 @@ content-type: release-note
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/apidocs/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
 
 ## 03 December 2025
-{: cis-dec-0325)
+{: #cis-dec-0325)
 
 placeholder
 
