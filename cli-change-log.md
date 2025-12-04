@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -34,7 +34,7 @@ Version 1.19.0 of the CLI was released on 17th November, 2025.
 
 Version 1.18.1 of the CLI was released on July 11, 2025.
 :   Added [custom lists](/docs/cis?topic=cis-cis-cli&interface=ui#custom-lists-cmd-ref).
-:   Added [managed rules](/docs/cis?topic=cis-cis-cli&interface=ui#managed-lists).
+:   Added [managed lists](/docs/cis?topic=cis-cis-cli&interface=ui#managed-lists).
 
 ## Version 1.16.4
 {: #cli-1164}
