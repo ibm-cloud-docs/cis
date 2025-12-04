@@ -32,7 +32,7 @@ These available datasets describe the fields available by log category:
 - Range events (`range_events`)
 - DNS logs (`dns_logs`)
 
-## Available Fields
+## Available fields
 {: #logpull-available-fields}
 
 The following tables indicate the fields available by dataset. Log fields are subject to change, so it is recommended to use the [Available Log Fields API](/apidocs/cis#list-fields-for-dataset-v2) to pull the most up-to-date version of the available fields.
