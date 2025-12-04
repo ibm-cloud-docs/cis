@@ -43,11 +43,11 @@ Follow these steps to create a custom list in the console:
          The CSV file size is limited to 50 MB.
          {: note}
 
-   1. Browse to the location of your CSV file, select the file, and then click **Upload**. The items displayed on the page include the items loaded from the CSV file.
+      1. Browse to the location of your CSV file, select the file, and then click **Upload**. The items displayed on the page include the items loaded from the CSV file.
 
-      The exact CSV file format depends on the [list type](/docs/cis?topic=cis-custom-list-types).
+         The exact CSV file format depends on the [list type](/docs/cis?topic=cis-custom-list-types).
 
-   1. Click **Add item** to add items to the list.
+      1. Click **Add item** to add items to the list.
 1. Click **Create list items**.
 
 ##  Creating a custom list from the CLI
