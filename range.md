@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-08-22"
+lastupdated: "2025-12-04"
 
 keywords: range application, tls encryption, global tcp proxy
 
@@ -201,7 +201,8 @@ curl --request GET \
   --url https://api-int.cis.dev.cloud.ibm.com/v1/crn:v1:staging:public:internet-svcs-ci:global:a/ce12845bf2914ca18db35bedcd9aefa2:e04e7ccd-9197-4b6d-bf98-933de5074fe6::/zones/2566bebb17f5c0b559a9873a692ccab5/range/apps \
   --header'content-type: application/json'
   --header 'X-AUTH-USER-TOKEN: Bearer XXXX' \
-{: pre}
+```
+{: codeblock}
 
 Example response:
 
