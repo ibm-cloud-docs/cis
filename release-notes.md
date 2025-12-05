@@ -26,7 +26,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 Custom and managed lists
 :   Released UI and API support for custom lists and managed lists to enhance control over security and traffic management policies.
 
-    This release (v1.7.3) introduces a new Lists tab on the Account page, enabling users to create and manage custom lists or use CIS-managed lists directly from the CIS console. CLI and Terraform support for lists were previously released in July, and full API support is also now available (see the [API change log](/docs/cis?topic=cis-api-change-log&interface=ui#cis-dec-0325) for details).
+:   This release (v1.7.3) introduces a new Lists tab on the Account page, enabling users to create and manage custom lists or use CIS-managed lists directly from the CIS console. CLI and Terraform support for lists were previously released in July, and full API support is also now available (see the [API change log](/docs/cis?topic=cis-api-change-log&interface=ui#cis-dec-0325) for details).
 
     * [Custom lists](/apidocs/cis#get-custom-lists) let you define and manage ASN, IP, and hostname entries for use in access rules and other policy configurations. For more information, see [Creating custom lists and adding items](/docs/cis?topic=cis-create-custom-lists-add-items&interface=ui).
 
