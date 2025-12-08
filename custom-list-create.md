@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-08"
 
 keywords: custom lists
 
@@ -33,10 +33,6 @@ Follow these steps to create a custom list in the console:
 1. Click **Create custom list**.
 1. Select one of the following options:
 
-   * To add items to the list manually:
-      1. Enter the values, depending on the list type.
-      1. Optionally, enter a description and then click **Add item**.
-
    * To add items to the list by using a CSV file:
       1. Click **Upload CSV**.
 
@@ -48,6 +44,11 @@ Follow these steps to create a custom list in the console:
          The exact CSV file format depends on the [list type](/docs/cis?topic=cis-custom-list-types).
 
       1. Click **Add item** to add items to the list.
+
+   * To add items to the list manually:
+      1. Enter the values, depending on the list type.
+      1. Optionally, enter a description and then click **Add item**.
+
 1. Click **Create list items**.
 
 ##  Creating a custom list from the CLI
