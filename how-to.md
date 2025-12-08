@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-12-08"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing your {{site.data.keyword.cis_short_notm}} deployment
+# Exploring the CIS console
 {: #manage-your-cis-deployment}
 
 You'll begin by using the Overview page as your working base of operations. It shows all of the current parameters for your deployment.
@@ -20,7 +20,9 @@ You'll begin by using the Overview page as your working base of operations. It s
 
 
 
-Once you've set up your DNS and configured it, you are ready to go!
+
+
+After you've set up your DNS and configured it, you are ready to go!
 
 ## Using the Overview page
 {: #using-overview-page}

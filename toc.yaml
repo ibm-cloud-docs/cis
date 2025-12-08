@@ -13,8 +13,9 @@ toc:
   - navgroup:
       id: learn
       topics:
-      - getting-started.md
-      - about.md
+      - getting-started-new.md
+      - create-cis-instance.md
+      - name-server.md
       - topicgroup:
           id: concepts
           label: Concepts

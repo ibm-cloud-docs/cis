@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-12-08"
 
 keywords: Page Rules, web content, IBM CIS deployment
 
@@ -17,8 +17,6 @@ subcollection: cis
 
 To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and global load balancers. For additional reliability, you can use our page rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your {{site.data.keyword.cis_short_notm}} deployment optimally reliable.
 {: shortdesc}
-
-
 
 Generally, our recommended best practices are these:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-12-08"
 
 keywords:
 
@@ -18,9 +18,7 @@ subcollection: cis
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) can provide the fastest experience for your customers because it optimizes your images, and it stores your web content as near as possible to your end-users. Your content is loaded from proxied edge servers (which reduces latency).
 {: shortdesc}
 
-With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within {{site.data.keyword.cis_short_notm}}.
-
-
+With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performance further by using best practices to speed up the loading of your web content. Here are some specific best practices for enhancing the performance of your web content within {{site.data.keyword.cis_short_notm}}. 
 
 **Recommended and best practices:**
 

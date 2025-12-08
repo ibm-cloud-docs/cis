@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-12-05"
 
 subcollection: cis
 
@@ -34,7 +34,8 @@ Each field value can be sourced from different places, such as:
 | ------- | :--------- | :------------ | :--------- |
 |http.cookie|String|session=A12345;-background=light|Entire cookie as a string|
 |http.host|String| `www.example.com` | The hostname used in the full request URI|
-|http.referer|String|_HTTP referer header_| |
+|http.referer|String|_HTTP referer header_| The HTTP Referer `request` header, which contains the address of the web page that linked to the currently requested page. |
+|http.request.body.raw|String| | The unaltered HTTP request body. |
 |http.request.full_uri|String|`https://www.example.com/articles/index?section=539061&expand=comments`|The full URI as received by the web server (does not include _#fragment_ which is not sent to web servers)|
 |http.request.method|String|POST|The HTTP method, in uppercase|
 |http.request.uri|String|/articles/index?section=539061&expand=comments|The absolute URI of the request|
