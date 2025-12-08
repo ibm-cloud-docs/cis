@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing your {{site.data.keyword.cis_short_notm}} deployment
+# Exploring the CIS console
 {: #manage-your-cis-deployment}
 
 You'll begin by using the Overview page as your working base of operations. It shows all of the current parameters for your deployment.
