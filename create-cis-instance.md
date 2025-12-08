@@ -36,4 +36,4 @@ To create a CIS instance, follow these steps:
 ## Next steps
 {: #next-steps-tutorial}
 
-From the first page of the CIS application, click **Add Domain** and continue to step 2 in the [Getting started](/docs/cis?topic=cis-getting-started-new) to add and configure your domain.
+From the first page of the CIS application, click **Add Domain** and continue to step 2 in the [Getting started](/docs/cis?topic=cis-getting-started) to add and configure your domain.

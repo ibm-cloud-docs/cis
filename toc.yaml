@@ -13,7 +13,6 @@ toc:
   - navgroup:
       id: learn
       topics:
-      - getting-started.md
       - getting-started-new.md
       - create-cis-instance.md
       - add-domain.md

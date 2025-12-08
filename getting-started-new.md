@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Getting started with {{site.data.keyword.cis_full_notm}}
-{: #getting-started-new}
+{: #getting-started}
 
 {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) is a cloud-native solution that helps protect and optimize your internet-facing applications. Powered by Cloudflare’s global network, CIS acts as a reverse proxy to help secure traffic, improve performance, and maintain availability.
 {: shortdesc}
@@ -87,4 +87,3 @@ To navigate to your CIS instance:
 [DANA]{: tag-red} NEED TO UNDERSTAND WHEN TO POINT TO THIS SET OF TOPICS [PARTIAL SETUP - CNAME](/docs/cis?group=cname-partial-configuration) VERSUS ONE LINKED ABOVE
 
 [QUESTION]{: tag-red} WHERE SHOULD WE TALK ABOUT DELEGATING DOMAIN MANAGEMENT AFTER ADDING DNS RECORDS? ALSO, WE HAVE TOPIC ON USING SERVICE ENDPOINTS TO PRIVATELY CONNECT TO CIS. SHOULD THIS BE PART OF THE GETTING STARTED STEPS LIKE ADDING DNS RECORDS?
-
