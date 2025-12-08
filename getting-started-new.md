@@ -67,13 +67,11 @@ Follow these high-level steps to get started with CIS:
 
    To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the A Record and any AAAA or MX entries that are populated. If you forget to add these records before the registrar's delegation is complete, CIS can't resolve the domain information for your internet-facing applications.
  
-1. [Explore the CIS console](/docs/cis?topic=cis-manage-your-cis-deployment). Familiarize yourself with CIS, including areas for domain management, DNS configuration, traffic analytics, and security settings.
+1. [Managing your CIS deployment](/docs/cis?topic=cis-manage-your-cis-deployment). Familiarize yourself with the CIS console, including areas for domain management, DNS configuration, traffic analytics, and security settings.
 1. [Review best practices](/docs/cis?group=best-practices) for CIS setup, security, reliability, and performance.
-1. Enable and configure additional features. After your domain is active, [explore the full range of CIS capabilities](/docs/cis?topic=cis-about-ibm-cloud-internet-services-cis), such as DDoS protection, Web Application Firewall (WAF), rate limiting and bot management, SSL/TLS settings, page rules, and real-time traffic analytics.
+1. Enable and configure additional features. After your domain is active, explore the full range of CIS capabilities, such as DDoS protection, Web Application Firewall (WAF), rate limiting and bot management, SSL/TLS settings, page rules, and real-time traffic analytics.
 
 To navigate to your CIS instance:
 
    1. Go to **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg) and click **Resource list**, then expand **Security**. 
    1. Expand **Security** and click the name of your CIS instance.
-
-[QUESTION]{: tag-red} WHERE SHOULD WE TALK ABOUT DELEGATING DOMAIN MANAGEMENT AFTER ADDING DNS RECORDS? ALSO, WE HAVE TOPIC ON USING SERVICE ENDPOINTS TO PRIVATELY CONNECT TO CIS. SHOULD THIS BE PART OF THE GETTING STARTED STEPS LIKE ADDING DNS RECORDS?
