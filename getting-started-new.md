@@ -49,11 +49,10 @@ Follow these high-level steps to get started with CIS:
 1. [Create a CIS instance](/docs/cis?topic=cis-create-cis-instance) in your IBM Cloud account. The CIS instance acts as the central place to manage your domain's security, DNS, and performance settings.
 1. Add your domain to your CIS instance. CIS supports multiple ways to onboard a domain, depending on your DNS setup needs. Choose the method that best fits your setup:
 
-   * [Configure a full setup (authoritative DNS)](/docs/cis?topic=cis-domains): CIS becomes your domain’s DNS provider. You update your domain registrar’s name servers to point to CIS. This gives you full control and access to all CIS features.
    * [Configure a partial setup (CNAME-based)](/docs/cis?topic=cis-cname-setup): You keep your current DNS provider and only route specific subdomains (for example, `www.techcorp.com`) through CIS by configuring CNAME records. Ideal if you can’t or prefer not to change your domain’s name servers.
+   * [Configure a full setup (authoritative DNS)](/docs/cis?topic=cis-convert-partial-cname-full): CIS becomes your domain’s DNS provider. You update your domain registrar’s name servers to point to CIS. This gives you full control and access to all CIS features.
    
 1. After adding your domain, optionally [import or set up your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis) before activating traffic through CIS. 
-
 1. [Configure your name servers with the registrar or existing DNS provider](/docs/cis?topic=cis-name-servers). 
 
    * If you're using a full setup, update your domain registrar's name servers to the ones provided by CIS. This change routes all DNS queries through CIS so that its security and performance features can take effect.
