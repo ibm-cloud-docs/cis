@@ -15,7 +15,7 @@ subcollection: cis
 #  Creating a CIS instance
 {: #create-cis-instance}
 
-[QUESTION]{: tag-red} ARE THERE ANY PLANNING CONSIDERATIONS TO KEEP IN MIND? 
+
 
 To create a CIS instance, follow these steps:
 
