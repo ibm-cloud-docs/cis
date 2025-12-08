@@ -17,7 +17,6 @@ toc:
       - create-cis-instance.md
       - add-domain.md
       - name-server.md
-      - resolve-domain-information.md
       - manage-cis-tutorial.md
       - topicgroup:
           id: concepts
