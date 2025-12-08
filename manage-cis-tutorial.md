@@ -15,8 +15,6 @@ subcollection: cis
 # Exploring the CIS dashboard
 {: #manage-your-cis-deployment}
 
-[CHIDA]{: tag-red} MAKE THIS INTO A TASK-BASED TUTORIAL -- EXPLORE THE DASHBOARD/UI AND STATE WHAT YOU SHOULD FOCUS ON WHEN FIRST SETTING UP CIS
-
 You'll begin by using the Overview page as your working base of operations. It shows all of the current parameters for your deployment.
 {: shortdesc}
 
