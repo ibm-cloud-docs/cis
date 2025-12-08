@@ -15,8 +15,6 @@ subcollection: cis
 # Configuring a full (authoritative) zone
 {: #domains}
 
-FROM EXISTING GETTING STARTED
-
 Next, begin protecting and improving the performance of your web service by entering your domain or a subdomain.
 
 Note: Specify DNS zones. You can configure the name servers for these domains or subdomains at the domain's registrar or DNS provider. Do not use CNAMEs.
