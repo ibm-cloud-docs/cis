@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-12-08"
 
 keywords:
 
@@ -19,8 +19,7 @@ You'll begin by using the Overview page as your working base of operations. It s
 {: shortdesc}
 
 
-
-Once you've set up your DNS and configured it, you are ready to go!
+After you've set up your DNS and configured it, you are ready to go!
 
 ## Using the Overview page
 {: #using-overview-page}
