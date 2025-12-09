@@ -264,6 +264,10 @@ toc:
           - cloudant-and-cis.md
           - edge-functions-use-cases.md
       - topicgroup:
+          label: Service dependencies
+          topics:
+          - service-dependency.md
+      - topicgroup:
           label: High availability and disaster recovery
           topics:
           - ha.md
