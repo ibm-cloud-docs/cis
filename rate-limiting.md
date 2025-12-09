@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-09"
 
 keywords:
 
@@ -109,13 +109,13 @@ To configure this rule:
 
 CIS automatically enforces the rate limits to protect your login page.
 
-## Getting the rate-limiting rule entry point for the API
+## Getting the rate-limiting rule entrypoint for the API
 {: #get-ratelimit-rule-entry-point-api}
 {: api}
 
-All rate-limiting rule API operations require a `RULESET_ID` of the entry point ruleset for the rate-limiting rules phase. This entry point ruleset might exist or needs to be created if it does not exist.
+All rate-limiting rule API operations require a `RULESET_ID` of the entrypoint ruleset for the rate-limiting rules phase. This entrypoint ruleset might exist or needs to be created if it does not exist.
 
-Follow these steps to get the rate-limiting rule entry point ruleset:
+Follow these steps to get the rate-limiting rule entrypoint ruleset:
 
 1. Set up your API environment with the correct variables.
 1. Store the following values in variables to be used in the API command:
@@ -124,7 +124,7 @@ Follow these steps to get the rate-limiting rule entry point ruleset:
 
    `ZONE_ID`: The domain ID.
 
-1. When all variables are initiated, get the entry point ruleset:
+1. When all variables are initiated, get the entrypoint ruleset:
 
    ```sh
    curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phases/http_ratelimit/entrypoint" \
@@ -140,9 +140,9 @@ Follow these steps to get the rate-limiting rule entry point ruleset:
    --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
    --header "Content-Type: application/json" \
    --data '{
-     "name": "Zone-level phase entry point",
+     "name": "Zone-level phase entrypoint",
      "kind": "zone",
-     "description": "Rate-limting rule entry point ruleset.",
+     "description": "Rate-limting rule entrypoint ruleset.",
      "phase": "http_ratelimit"
    }'
    ```
@@ -246,9 +246,9 @@ Follow these steps to delete an existing rate-limiting rule with the API:
 {: #create-a-custom-rate-limiting-rule-tf}
 {: terraform}
 
-To create a rate-limiting ruleset, you must create an entry point first, then create the rate-limiting ruleset. To do so, follow these steps:
+To create a rate-limiting ruleset, you must create an entrypoint first, then create the rate-limiting ruleset. To do so, follow these steps:
 
-1. To create an entry point ruleset, run the following command:
+1. To create an entrypoint ruleset, run the following command:
 
    ```terraform
    resource "ibm_cis_ruleset_entrypoint_version" "config" {
@@ -259,9 +259,17 @@ To create a rate-limiting ruleset, you must create an entry point first, then cr
      rulesets {
        description = "Zone rate limit entrypoint"
      }
+     lifecycle {
+       ignore_changes = [
+         rulesets
+       ]
+     }
    }
    ```
    {: pre}
+
+   Use a `lifecycle` block to prevent Terraform from updating the entrypoint ruleset. Some entrypoint parameters are updated during every `terraform apply`, which can introduce unintended configuration changes. The `lifecycle` block helps you ignore these updates and maintain resource stability.
+   {: important}
 
 1. To create a rate-limiting ruleset, run the following command:
 
@@ -286,7 +294,7 @@ To create a rate-limiting ruleset, you must create an entry point first, then cr
    ```
    {: codeblock}
 
-The following example shows how to create an entry point and rate-limiting rule with Terraform:
+The following example shows how to create an entrypoint and rate-limiting rule with Terraform:
 
 ```terraform
 resource ibm_cis_ruleset_entrypoint_version test {
