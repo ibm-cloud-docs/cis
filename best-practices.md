@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-04"
+lastupdated: "2025-12-09"
 
 keywords:
 
@@ -52,6 +52,8 @@ You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short
 
 ## Best practice 3: Review your security settings to make sure they don’t interfere with API traffic
 {: #best-practice-review-security-settings-interference}
+
+
 
 IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by removing connection overhead. However, the default security stance can interfere with many API calls. It is recommended that you take a few actions to prevent interference with your API traffic after proxying is active.
 
