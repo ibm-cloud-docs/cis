@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-09"
+lastupdated: "2025-12-10"
 
 keywords:
 
@@ -49,28 +49,6 @@ Take the following two steps:
 * Set up your ACLs to allow only {{site.data.keyword.cis_short_notm}} IP addresses and other trusted parties
 
 You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short_notm}} [at this location](/docs/cis?topic=cis-cis-allowlisted-ip-addresses).
-
-## Best practice 3: Review your security settings to make sure they don’t interfere with API traffic
-{: #best-practice-review-security-settings-interference}
-
-
-
-IBM {{site.data.keyword.cis_short_notm}} usually accelerates API traffic by removing connection overhead. However, the default security stance can interfere with many API calls. It is recommended that you take a few actions to prevent interference with your API traffic after proxying is active.
-
-* Turn your security features off selectively by using the **Page Rules** features.
-    * Create a Page Rule with the URL pattern of your API, such as `api.example.com`
-    * Add the following rule behaviors:
-        * Select **Security Level** to **Essentially off**
-        * Select **TLS** to **Off**
-        * Select **Browser Integrity Check** to **Off**
-    * Select **Provision Resource**
-
-* Alternatively, you can turn off **Web Application Firewall** globally from the Security page.
-
-### What does the Browser Integrity Check do?
-{: #browser-integrity-check}
-
-The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks visitors that do not have a user agent, or who add a non-standard user agent (this tactic is commonly used by abuse bots, crawlers, or APIs).
 
 ## Best practice 4: Configure your security settings as strictly as possible
 {: #best-practice-configure-strict-security-settings}
