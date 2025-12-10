@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-08"
+lastupdated: "2025-12-10"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -65,10 +65,10 @@ Follow these high-level steps to get started with CIS:
 1. Ensure that CIS is resolving the domain information for your application, hostname, or website.
 
    To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the A Record and any AAAA or MX entries that are populated. If you forget to add these records before the registrar's delegation is complete, CIS can't resolve the domain information for your internet-facing applications.
- 
-1. [Managing your CIS deployment](/docs/cis?topic=cis-manage-your-cis-deployment). Familiarize yourself with the CIS console, including areas for domain management, DNS configuration, traffic analytics, and security settings.
+
 1. [Review best practices](/docs/cis?group=best-practices) for CIS setup, security, reliability, and performance.
-1. Enable and configure additional features. After your domain is active, explore the full range of CIS capabilities, such as DDoS protection, Web Application Firewall (WAF), rate limiting and bot management, SSL/TLS settings, page rules, and real-time traffic analytics.
+1. [Expore the CIS console](/docs/cis?topic=cis-manage-your-cis-deployment). Familiarize yourself with the CIS console, including areas for domain management, DNS configuration, traffic analytics, and security settings.
+1. Enable and configure additional features. After your domain is active, explore the full range of CIS capabilities, such as DDoS protection, rate limiting and bot management, SSL/TLS settings, page rules, and real-time traffic analytics.
 
 To navigate to your CIS instance:
 

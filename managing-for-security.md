@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-09-16"
+lastupdated: "2025-12-10"
 
 keywords:
 
@@ -53,47 +53,6 @@ Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, 
 {: #use-separate-ipranges-for-traffic}
 
 Some customers use separate IP ranges for HTTP and non-HTTP traffic. This approach helps them proxy all records for their HTTP IP range, and hide all non-HTTP traffic with a different IP subnet.
-
-## Best practice 2: Configure your security level selectively
-{: #best-practice-configure-security-level-selectively}
-
-
-
-Your **Security Level** establishes the sensitivity of our **IP Reputation Database**. To prevent negative interactions or false positives, configure your **Security Level** by domain to heighten security where necessary, and to decrease it where appropriate.
-
-### Increase the security level for sensitive areas to 'High'
-{: #increase-security-level-for-sensitive-areas}
-
-You can increase this level in the Advanced Security page for your domain, or by adding a **Page Rule** for admin or login pages to reduce brute-force attempts:
-
-1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/wp-login`).
-2. Identify the **Security Level** setting.
-3. Mark the setting as **High**.
-4. Select **Provision Resource**.
-
-### Decrease the security level for non-sensitive paths or APIs to reduce false positives
-{: #decrease-security-level-non-sensitive-paths-reduce-false-positives}
-
-You can decrease this level for general pages and API traffic:
-
-1. Create a **Page Rule** with the URL pattern of your API (for example, `www.example.com/api/*`).
-2. Identify the **Security Level** setting.
-3. Turn the Security Level to **Low** or **Essentially off**.
-4. Select **Provision Resource**.
-
-### What do the security level settings mean?
-{: #what-do-security-level-settings-mean}
-
-Our security level settings are aligned with threat scores that certain IP addresses acquire from malicious behavior on our network. A threat score greater than 10 is considered high.
-
-* **High**: Threat scores greater than 0 are challenged.
-* **Medium**: Threat scores greater than 14 are challenged.
-* **Low**: Threat scores greater than 24 are challenged.
-* **Essentially off**: Threat scores greater than 49 are challenged.
-* **Off**: Enterprise only
-* **Defense mode**: This level must be used only when your website is under a DDoS attack. Visitors receive an interstitial page for about five seconds while {{site.data.keyword.cis_short_notm}} analyzes the traffic and behavior to make sure that it is a legitimate visitor who is trying to access your website. Defense mode might affect some actions on your domain, such as using an API. You can set a custom security level for your API or any other part of your domain by creating a page rule for that section.
-
-Consider reviewing your security-level settings periodically. You can find instructions in [Best practices for CIS setup](/docs/cis?topic=cis-best-practices-for-cis-setup).
 
 ## Best practice 3: Activate your Web Application Firewall (WAF) safely
 {: #best-practice-activate-waf-safely}
