@@ -40,6 +40,7 @@ toc:
           - managing-for-security.md
           - managing-for-reliability.md
           - managing-for-performance.md
+          - rate-limit-best-practice.md
       - security-events.md
       - release-notes.md
   - navgroup:
