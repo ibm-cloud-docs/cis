@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-10"
+lastupdated: "2025-12-11"
 
 keywords:
 
@@ -50,7 +50,7 @@ Take the following two steps:
 
 You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short_notm}} [at this location](/docs/cis?topic=cis-cis-allowlisted-ip-addresses).
 
-## Best practice 4: Configure your security settings as strictly as possible
+## Best practice 3: Configure your security settings as strictly as possible
 {: #best-practice-configure-strict-security-settings}
 
 {{site.data.keyword.cis_short_notm}} provides some options for encrypting your traffic. As a reverse proxy, the TLS connection is terminated at Cloudflare and a new TLS connection is opened to your origin servers. For your termination with {{site.data.keyword.cis_short_notm}}, you can upload a custom certificate from your account, use a wildcard certificate that is provisioned for you by {{site.data.keyword.cis_short_notm}}, or both.
