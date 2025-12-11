@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-12-11"
 
 keywords:
 
@@ -284,7 +284,7 @@ Health check requests originate from this distributed network, so the available 
 
 {{site.data.keyword.cis_short_notm}} does not meter or bill for traffic that is blocked as part of DDoS mitigation, firewall, or rate limiting. Only requests that are passed through the {{site.data.keyword.cis_short_notm}} network to the origin destination incur charges or usage.
 
-{{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic, and there’s no penalty or chargeback for traffic spikes caused by attacks. 
+{{site.data.keyword.cis_short_notm}} also helps keep egress bandwidth charges from your origin under control by only passing along good requests that the origin needs to respond to. All {{site.data.keyword.cis_short_notm}} plans offer unlimited and unmetered mitigation of DDoS attacks. You are never charged for attack traffic, and there’s no penalty or chargeback for traffic spikes caused by attacks.
 
 ## Does CIS support outbound traffic filtering?
 {: #outbound-traffic-filtering}

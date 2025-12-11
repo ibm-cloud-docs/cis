@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-10"
+lastupdated: "2025-12-11"
 
 keywords:
 
@@ -54,7 +54,7 @@ Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, 
 
 Some customers use separate IP ranges for HTTP and non-HTTP traffic. This approach helps them proxy all records for their HTTP IP range, and hide all non-HTTP traffic with a different IP subnet.
 
-## Best practice 3: Activate your Web Application Firewall (WAF) safely
+## Best practice 2: Activate your Web Application Firewall (WAF) safely
 {: #best-practice-activate-waf-safely}
 
 Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before you turn it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified. For more information, see [Using Security events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
@@ -68,7 +68,7 @@ The WAF contains a default ruleset, which includes rules to stop the most common
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
 
-## Best practice 4: Configure your TLS settings
+## Best practice 3: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
 
 IBM {{site.data.keyword.cis_short_notm}} functions as a reverse proxy and provides multiple options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
@@ -142,7 +142,7 @@ The following list denotes the priority by which the certificates are displayed 
 
 Higher levels of TLS provide more security, but might prevent customers from connecting to your site. For more information, see [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version).
 
-## Best practice 5: Configure rate limiting
+## Best practice 4: Configure rate limiting
 {: #best-practice-rate-limiting}
 
 Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold. The main use cases for rate limiting are as follows:
