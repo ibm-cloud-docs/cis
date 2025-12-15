@@ -33,7 +33,7 @@ In this step-by-step demo, learn how to configure a setup similar to the followi
 
 In this example, the application resources are deployed in two data center locations, one in US West and the other in US East. Users might be accessing this application from all over the world.
 
-You can configure global load balancer using the IBM Cloud console and CLI.
+You can configure global load balancer by using the IBM Cloud console and CLI.
 
 ## Configuring global load balancer in the console
 {: #configure-load-bal-ui}
