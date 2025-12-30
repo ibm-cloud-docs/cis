@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-30"
 
 keywords:
 
@@ -300,3 +300,8 @@ For outbound traffic control, consider:
 - [VPC Network ACLs (NACLs)](/docs/vpc?topic=vpc-using-acls)– Subnet-level inbound/outbound rules.
 - **Firewall appliances** – Deploy third-party firewalls within your VPC.
 - **DNS filtering** – Use DNS-based services to restrict domains.
+
+## What changed in the WAF payload limit and why is the payload limit increasing?
+{: #waf-traffic-limit}
+ 
+For all plans, CIS Web Application Firewall (WAF) inspects request payloads up to 1 MB. This helps the WAF to detect more complex threats that appear in larger request bodies.
