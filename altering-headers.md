@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-12-30"
 
 keywords:
 
@@ -32,7 +32,7 @@ export default {
 		// Add a custom header with a value
 		newResponse.headers.append(
 			"x-workers-hello",
-			"Hello from Cloudflare Workers",
+			"Hello from CIS Edge Functions",
 		);
 
 		// Delete headers
