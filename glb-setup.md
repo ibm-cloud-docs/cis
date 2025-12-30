@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-30"
 
 keywords:
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Configuring a global load balancer
+# Configuring global load balancers
 {: #configure-glb}
 
 If you have an e-commerce website, or are hosting an application that must always be accessible to your users, then you're likely concerned about 24 x 7 availability and performance of your application.
@@ -33,7 +33,7 @@ In this step-by-step demo, learn how to configure a setup similar to the followi
 
 In this example, the application resources are deployed in two data center locations, one in US West and the other in US East. Users might be accessing this application from all over the world.
 
-You can configure global load balancer by using the IBM Cloud console and CLI.
+You can configure a global load balancer by using the IBM Cloud console and CLI.
 
 ## Configuring global load balancer in the console
 {: #configure-load-bal-ui}
@@ -94,7 +94,6 @@ Define your global load balancer configuration by specifying a hostname, adding 
 4. Optionally, you can define additional rules to control how traffic is served to clients from different geographical regions. You can use these rules to direct clients to their closet possible region. If any of these regions fail, then the requests are routed to other available healthy locations, so that users are not affected by downtime.
 5. Click **Create** to complete the configuration of your global load balancer.
 6. Finally, verify connectivity to your application by trying to connect to the FQDN URL from a browser.
-
 
 ### Global load balancer details
 {: #glb-details}
@@ -167,7 +166,7 @@ Optionally, you can configure the following fields:
    IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering){: external}.
    {: note}
 
-#### Editing or deleting a global load balancer
+#### Editing or deleting global load balancers
 {: #edit-delete-load-balancer}
 
 To edit or delete a load balancer, or one of its components, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) located on the right of the row, and select the action you want to take from the list.
