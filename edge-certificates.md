@@ -107,11 +107,11 @@ The number of certificates you can use depends on your plan. See [Comparing CIS 
 
 If the hostname is the same, certain types of certificates take precedence over others as following:
 
-| Priority | Certificate type |
-| ---------- | ------------ |
-| 1 | Custom certificates |
-| 2 | Advanced certificates |
-| 3 | Universal certificates |
+|Priority|Certificate type|
+|----------|------------|
+|1|[Custom certificates](/docs/cis?topic=cis-managing-edge-certs#custom-certificate-type)|
+|2|[Advanced certificates](/docs/cis?topic=cis-managing-edge-certs#advanced-certificate-type)|
+|3|[Universal certificates](/docs/cis?topic=cis-managing-edge-certs#universal-certificate-type)|
 {: caption="Priority order of certificate" caption-side="bottom"}
 
 ## Certificate renewal failure and replacement
