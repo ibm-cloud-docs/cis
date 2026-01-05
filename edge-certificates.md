@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-07-23"
+  years: 2024, 2026
+lastupdated: "2026-01-05"
 
 keywords: edge certificates
 
@@ -101,6 +101,18 @@ Unlike universal or advanced certificates, {{site.data.keyword.cis_short_notm}} 
 
 The number of certificates you can use depends on your plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information. If you need more, submit a support case. See [Creating support cases](/docs/account?topic=account-open-case&interface=ui)
 {: note}
+
+### Certificate priority
+{: #certificate-priority}
+
+If the hostname is the same, certain types of certificates take precedence over others as following:
+
+| Priority | Certificate type |
+| ---------- | ------------ |
+| 1 | Custom certificates |
+| 2 | Advanced certificates |
+| 3 | Universal certificates |
+{: caption="Priority order of certificate" caption-side="bottom"}
 
 ## Certificate renewal failure and replacement
 {: #failure-to-renew-replace}
