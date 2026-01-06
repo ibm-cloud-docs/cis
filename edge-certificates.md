@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-07-23"
+  years: 2024, 2026
+lastupdated: "2026-01-06"
 
 keywords: edge certificates
 
@@ -101,6 +101,32 @@ Unlike universal or advanced certificates, {{site.data.keyword.cis_short_notm}} 
 
 The number of certificates you can use depends on your plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information. If you need more, submit a support case. See [Creating support cases](/docs/account?topic=account-open-case&interface=ui)
 {: note}
+
+### Selecting certificates for a hostname
+{: #certificate-hostname}
+
+CIS applies TLS certificates to a hostname by evaluating several criteria in a defined order. This process ensures that the most specific and appropriate certificate is used for each request.
+
+#### Certificate selection order
+{: #certificate-selection-order}
+
+For a specific hostname, CIS determines which certificate to present by using the following precedence rules:
+
+1. **Hostname specificity**: A specific subdomain certificate (`www.example.com`) takes precedence over a wildcard certificate (`*.example.com`) for requests to `www.example.com`.
+1. **Zone specificity**: A specific subdomain certificate (`www.example.com`) takes precedence over a custom hostname certificate when the domain is active as a zone in CIS.
+1. **Certificate priority**: When multiple certificates match the same hostname, CIS selects the certificate based on its following priority level.
+
+   |Priority|Certificate type|
+   |----------|------------|
+   |1|[Custom certificates](/docs/cis?topic=cis-managing-edge-certs#custom-certificate-type)|
+   |2|[Advanced certificates](/docs/cis?topic=cis-managing-edge-certs#advanced-certificate-type)|
+   |3|[Universal certificates](/docs/cis?topic=cis-managing-edge-certs#universal-certificate-type)|
+   {: caption="certificate type priority " caption-side="bottom"}
+
+1. **Certificate expiration**: If multiple certificates still qualify, CIS presents the certificate that was issued most recently. If a certificate is removed, CIS selects the remaining certificate with the latest expiration date.
+
+   When CIS renews a certificate, the renewed certificate receives a new expiration date. As a result, CIS presents the renewed certificate because it now has the latest expiration date.
+   {: note}
 
 ## Certificate renewal failure and replacement
 {: #failure-to-renew-replace}
