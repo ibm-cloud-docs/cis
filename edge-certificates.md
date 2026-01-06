@@ -28,7 +28,7 @@ By default, {{site.data.keyword.cis_short_notm}} issues free, unshared, publicly
 CIS can change the CA of Universal certificates without prior notice, and notifies you of these changes. If you prefer to select your own issuing certificate authority, order an advanced certificate.
 {: attention}
 
-To change the universal certificate settings from the API, see [Enable or Disable Universal Certificate](/apidocs/cis#change-universal-certificate-setting). Keep in mind that this certificate is enabled by default, and it must remain enabled unless another valid certificate is already configured.
+To change the universal certificate settings from the API, see [Enable or Disable universal certificate](/apidocs/cis#change-universal-certificate-setting). Keep in mind that this certificate is enabled by default, and it must remain enabled unless another valid certificate is already configured.
 
 ## Advanced certificates
 {: #advanced-certificate-type}
@@ -114,7 +114,7 @@ For a specific hostname, CIS determines which certificate to present by using th
 
 1. **Hostname specificity**: A specific subdomain certificate (`www.example.com`) takes precedence over a wildcard certificate (`*.example.com`) for requests to `www.example.com`.
 1. **Zone specificity**: A specific subdomain certificate (`www.example.com`) takes precedence over a custom hostname certificate when the domain is active as a zone in CIS.
-1. **Certificate priority**: When multiple certificates match the same hostname, CIS selects the certificate based on its following priority level.
+1. **Certificate priority**: When multiple certificates match the same hostname, CIS selects the certificate based on its priority level.
 
    |Priority|Certificate type|
    |----------|------------|
