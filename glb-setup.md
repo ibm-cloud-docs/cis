@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-30"
+  years: 2018, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -35,11 +35,11 @@ In this example, the application resources are deployed in two data center locat
 
 You can configure a global load balancer by using the IBM Cloud console and CLI.
 
-## Configuring global load balancer in the console
+## Configuring a global load balancer in the console
 {: #configure-load-bal-ui}
 {: ui}
 
-Use the IBM Cloud console to configure global load balancer.
+Use the IBM Cloud console to configure a global load balancer.
 
 ### Step 1: Configure your global load balancer
 {: #begin-global-load-balancer-configuration}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-08-07"
+  years: 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -30,7 +30,7 @@ Although the CLI automatically includes the `X-Request-ID` header in every API r
 To ensure that IBM Support can trace and analyze the request properly, follow these steps when capturing and sharing CLI logs:
 {: tsResolve}
 
-1. Enable trace logging in the CLI before reproducing the issue.
+1. Enable trace logging from the CLI before reproducing the issue.
 1. Capture and share the full API request and response logs, including the `X-Request-ID` and, if available, the `X-Correlation-Id` from the response.
 1. Look for details similar to the following:
 

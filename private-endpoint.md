@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-03-13"
+  years: 2021, 2026
+lastupdated: "2026-01-06"
 
 keywords: isolation for cis, service endpoints for cis, private network for cis, network isolation in cis, non-public routes for cis, private connection for cis, private connectivity for cis
 
@@ -53,7 +53,7 @@ Before you target a private endpoint for {{site.data.keyword.cis_short_notm}}:
     After you enable VRF and service endpoints for your account, all existing and future {{site.data.keyword.cis_short_notm}} resources and instances become available from both the public and private endpoints.
     {: note}
 
-## Using the CLI
+## From the CLI
 {: #vpe-setup-cli}
 {: cli}
 
@@ -131,7 +131,7 @@ Test your private network connection by using the [{{site.data.keyword.cis_short
     ```
     {: pre}
 
-## Using the API
+## With the API
 {: #vpe-setup-api}
 {: api}
 

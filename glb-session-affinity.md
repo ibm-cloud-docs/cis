@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-30"
+  years: 2020, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -28,11 +28,11 @@ When enabled, {{site.data.keyword.cis_short_notm}} session affinity does the fol
 
 All sessions default to 23 hours unless a custom session TTL is specified (in seconds) between 30 minutes and 7 days. A session affinity cookie is required to honor the TTL. The session cookie is secure when [`Always Use HTTPS`](/docs/cis?topic=cis-use-page-rules#page-rules-security) is enabled. Additionally, `HttpOnly` is always enabled for the cookie to prevent cross-site scripting attacks.
 
-## Setting session affinity using the CLI
+## Setting session affinity from the CLI
 {: #cli-set-session-affinity}
 {: cli}
 
-When you create a global load balancer using the CLI, take the following steps to set the session affinity:
+When you create a global load balancer from the CLI, take the following steps to set the session affinity:
 
 1. Log in to your IBM Cloud account.
 1. Create a global load balancer.
@@ -103,7 +103,7 @@ ibmcloud cis glb-update fc72db47cee8290eaef292cda6e1619a 12b68758126546e0d129c7b
 ```
 {: codeblock}
 
-## Setting session affinity using the API
+## Setting session affinity with the API
 {: #api-set-session-affinity}
 {: api}
 

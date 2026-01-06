@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-07-04"
+  years: 2021, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -112,7 +112,7 @@ CIS uses **Minify web content** to remove all unnecessary characters from HTML, 
 
 CIS optimizes images that are cached in its edge network by stripping metadata and applying either lossy or lossless compression to speed up delivery. Off-site images are not optimized.
 
-Image size optimization compression is only available as a page rule in the console. The domain level setting is available in the CLI.
+Image size optimization compression is only available as a page rule in the console. The domain level setting is available from the CLI.
 {: note}
 
 ### Image size optimization compression options

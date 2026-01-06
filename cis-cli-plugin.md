@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-09-30"
+  years: 2018, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -10869,7 +10869,7 @@ Regional support is provided for a limited number of CLI commands. The following
 ### Logging in to the CLI with a private endpoint
 {: #logging-in-cli-private-endpoint}
 
-Use the following command to log in to a private endpoint by using the CLI:
+Use the following command to log in to a private endpoint from the CLI:
 
 ```sh
 ibmcloud login -a private.cloud.ibm.com

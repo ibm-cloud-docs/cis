@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-09-14"
+  years: 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -25,7 +25,7 @@ The number of active rules per plan is fixed. Currently, you can't purchase more
 Before getting started, it's a good idea to review [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=cli).
 {: important}
 
-You can create, update, and delete a custom rule by using the UI, CLI, API, or Terraform.
+You can create, update, and delete a custom rule by using the console, CLI, API, or Terraform.
 
 ## Creating a custom rule in the console
 {: #create-custom-rule-ui}
@@ -92,7 +92,7 @@ To create a custom rule from the CLI, follow these steps:
 
 1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs).
 
-1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
+1. Log in to your account from the CLI. After you enter the password, the system prompts for the account and region that you want to use:
 
     ```sh
     ibmcloud login --sso
@@ -196,7 +196,7 @@ Sample JSON data:
 {: #update-custom-rule-cli}
 {: cli}
 
-Run the following command to update a custom rule in the CLI:
+Run the following command to update a custom rule from the CLI:
 
 ```sh
 ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID [--match EXPRESSION] [--action ACTION] [--description DESCRIPTION] [--enabled true|false] [-i, --instance INSTANCE] [--output FORMAT]
@@ -282,7 +282,7 @@ Sample JSON data:
 {: #delete-custom-rule-cli}
 {: cli}
 
-Run the following command to delete a custom rule in the CLI:
+Run the following command to delete a custom rule from the CLI:
 
 ```sh
 ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --instance INSTANCE] [--output FORMAT]
