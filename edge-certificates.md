@@ -102,7 +102,7 @@ Unlike universal or advanced certificates, {{site.data.keyword.cis_short_notm}} 
 The number of certificates you can use depends on your plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information. If you need more, submit a support case. See [Creating support cases](/docs/account?topic=account-open-case&interface=ui)
 {: note}
 
-### Selecting certificates for a hostnames
+### Selecting certificates for a hostname
 {: #certificate-hostname}
 
 CIS applies TLS certificates to a hostname by evaluating several criteria in a defined order. This process ensures that the most specific and appropriate certificate is used for each request.
@@ -110,11 +110,11 @@ CIS applies TLS certificates to a hostname by evaluating several criteria in a d
 #### Certificate selection order
 {: #certificate-selection-order}
 
-For a given hostname, CIS determines which certificate to present by using the following precedence rules:
+For a specific hostname, CIS determines which certificate to present by using the following precedence rules:
 
 1. **Hostname specificity**: A specific subdomain certificate (`www.example.com`) takes precedence over a wildcard certificate (`*.example.com`) for requests to `www.example.com`.
 1. **Zone specificity**: A specific subdomain certificate (`www.example.com`) takes precedence over a custom hostname certificate when the domain is active as a zone in CIS.
-1. **Certificate priority**: When multiple certificates match the same hostname, CIS selects the certificate based on its priority level.
+1. **Certificate priority**: When multiple certificates match the same hostname, CIS selects the certificate based on its following priority level.
 
    |Priority|Certificate type|
    |----------|------------|
