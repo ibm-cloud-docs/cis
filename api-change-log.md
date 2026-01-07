@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2024, 2025
-lastupdated: "2025-12-04"
+  years:  2024, 2026
+lastupdated: "2026-01-06"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -41,7 +41,7 @@ Ruleset Engine migration
 ## 16 December 2024
 {: #16-dec-2024}
 
-CIS Enterprise-level plans can now configure the [Logpush jobs](/docs/cis?topic=cis-logpush&interface=api) to push request logs to IBM Cloud Logs using the API. For more information, see [Create a Logpush job](/apidocs/cis#create-logpush-job-v2).
+CIS Enterprise-level plans can now configure the [Logpush jobs](/docs/cis?topic=cis-logpush&interface=api) to push request logs to IBM Cloud Logs with the API. For more information, see [Create a Logpush job](/apidocs/cis#create-logpush-job-v2).
 
 ## 12 June 2024
 {: #12-jun-2024}

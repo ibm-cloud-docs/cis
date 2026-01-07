@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-09-05"
+  years: 2021, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -254,7 +254,7 @@ ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMA
 `--output`
 :   Specifies the output format; only JSON is supported.
 
-Security alerts and advanced security alerts use the same command. When you create an advanced security events alert command in the CLI, specify the services for the alert. If you do not specify the services for the alert, the mean detection time changes from 5 minutes to 2 hours.
+Security alerts and advanced security alerts use the same command. When you create an advanced security events alert command from the CLI, specify the services for the alert. If you do not specify the services for the alert, the mean detection time changes from 5 minutes to 2 hours.
 {: important}
 
 ### Creating a universal SSL alert policy from the CLI

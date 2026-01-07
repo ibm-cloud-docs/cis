@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-07-22"
+  years: 2018, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -21,9 +21,9 @@ subcollection: cis
 ## Before you begin
 {: #before-you-begin-logpush-ui}
 
-Before you create a Logpush job by using the UI, review the following information and satisfy any prerequisites:
+Before you create a Logpush job by using the console, review the following information and satisfy any prerequisites:
 
-* Currently, the {{site.data.keyword.cis_short_notm}} UI supports the following destinations:{: ui}
+* Currently, the {{site.data.keyword.cis_short_notm}} console supports the following destinations:{: ui}
    - IBM Cloud Logs
    - Cloud Object Storage
    - Splunk

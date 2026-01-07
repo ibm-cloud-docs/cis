@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-09-16"
+  years: 2024, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -69,7 +69,7 @@ To list all zone-managed rulesets from the CLI, follow these steps:
 
 1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs).
 
-1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
+1. Log in to your account from the CLI. After you enter the password, the system prompts for the account and region that you want to use:
 
     ```sh
     ibmcloud login --sso
@@ -102,7 +102,7 @@ To update a deployed ruleset from the CLI, follow these steps:
 
 1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs).
 
-1. Log in to your account with the CLI. After you enter the password, the system prompts for the account and region that you want to use:
+1. Log in to your account from the CLI. After you enter the password, the system prompts for the account and region that you want to use:
 
     ```sh
     ibmcloud login --sso

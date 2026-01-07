@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-08"
+  years: 2026
+lastupdated: "2026-01-06"
 
 keywords: custom lists
 
@@ -18,7 +18,7 @@ subcollection: cis
 Custom lists are a practical way to group related items, such as IP addresses, domains, or user IDs, for easier management and reuse. Custom lists help simplify rule configuration, reduce repetition, and make updates more efficient by centralizing control in one place.
 {: shortdesc}
 
-You can create and add items to a custom list using the UI, CLI, API, and Terraform.
+You can create and add items to a custom list using the console, CLI, API, and Terraform.
 
 ## Creating a custom list and adding items in the console
 {: #create-custom-list-console}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-08"
+  years: 2018, 2026
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -23,7 +23,7 @@ With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performan
 **Recommended and best practices:**
 
 * Cache as much of your static and semi-static web content as possible
-* For event-driven content, purge your cache using the API
+* For event-driven content, purge your cache with the API
 
 ## Best practice 1: Cache as much static and semi-static content as possible
 {: #best-practice-cache-static-content}
