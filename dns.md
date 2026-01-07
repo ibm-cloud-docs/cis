@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-08-28"
+  years: 2018, 2026
+lastupdated: "2026-01-07"
 
 keywords:
 
@@ -21,7 +21,7 @@ Before you direct traffic to your domain through IBM Cloud Internet Services (CI
 
 You can import your DNS records by uploading a file you’ve exported from your current DNS provider, or you can manually enter each record in CIS. To import, click **Import records** and upload the appropriate file.
 
-After you’ve finished importing or creating your records, or if you choose to skip this step, click **Next step** to continue the setup process. 
+After you’ve finished importing or creating your records, or if you choose to skip this step, click **Next step** to continue the setup process.
 
 Configuring DNS records is essential to ensure your domain operates correctly, securely, and efficiently. DNS records store information about your domain and determine how traffic is routed to your website or application. By configuring your DNS settings, you can:
 
@@ -160,7 +160,7 @@ You can select the **Delete** button to confirm your delete action. Select **Can
 ## Importing and exporting DNS records
 {: #import-export-records}
 
-DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.m.wikipedia.org/wiki/Zone_file){: external}.
+DNS records can be imported into and exported from {{site.data.keyword.cis_short_notm}}. All files are imported and exported as .txt files in BIND format. Learn more about [BIND format](https://en.wikipedia.org/wiki/Zone_file){: external}.
 Click the Actions menu and select to import or export records.
 
 **Import records** - By default, a total of 3500 DNS records are allowed (imported and created on {{site.data.keyword.cis_short_notm}}). You can import multiple files, one at a time, as long as the total number of records is under the max limit. After you import, you are shown a summary with the number of records that were successfully added and the number that failed, along with the reason why each record failed.

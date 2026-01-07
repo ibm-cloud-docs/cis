@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-08-28"
+  years: 2024, 2026
+lastupdated: "2026-01-07"
 
 keywords: CIS
 
@@ -75,7 +75,7 @@ CIS supports the following data format and schema of the exported data, configur
 
 CIS doesn't support the export of other data formats and other schema of the exported data, configuration, and application, including the following:
 
-* Exporting [zone files](https://en.m.wikipedia.org/wiki/Zone_file){: external}
+* Exporting [zone files](https://en.wikipedia.org/wiki/Zone_file){: external}
 
 ## Data ownership
 {: #data-portability-ownership}
