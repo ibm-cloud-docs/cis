@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-08-28"
+  years: 2018, 2026
+lastupdated: "2026-01-07"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # DNS behavior and resolution logic
 {: #dns-concepts}
 
-The Domain Name System (DNS) underpins the web, working transparently in the background to convert human-readable website names into computer-readable numerical IP addresses. These addresses follow the [internet's RFC 1918 guidelines for IPv4 and RFC 4193 for IPv6](https://en.m.wikipedia.org/wiki/Private_network){: external}. In short, DNS servers match domain names, such as `ibm.com`, to their corresponding IP addresses, which most people never need to know.
+The Domain Name System (DNS) underpins the web, working transparently in the background to convert human-readable website names into computer-readable numerical IP addresses. These addresses follow the [internet's RFC 1918 guidelines for IPv4 and RFC 4193 for IPv6](https://en.wikipedia.org/wiki/Private_network){: external}. In short, DNS servers match domain names, such as `ibm.com`, to their corresponding IP addresses, which most people never need to know.
 {: shortdesc}
 
 To perform this translation, the DNS system queries a network of interconnected DNS servers across the internet. This process is similar to using a phone book or a map to find a specific location.
