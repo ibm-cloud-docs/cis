@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-08-28"
+  years: 2021, 2026
+lastupdated: "2026-01-07"
 
 keywords:
 
@@ -41,4 +41,4 @@ subcollection: cis
 
 Security Events (WAF alerts and Advanced WAF alerts) alerts are not sent for each individual events, but only when a spike in traffic reaches the threshold for an alert to be sent.
 
-These thresholds cannot be configured. [Z-score](https://en.m.wikipedia.org/wiki/Standard_score){: external} is used to determine the threshold.
+These thresholds cannot be configured. [Z-score](https://en.wikipedia.org/wiki/Standard_score){: external} is used to determine the threshold.
