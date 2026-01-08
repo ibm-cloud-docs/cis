@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-11"
+  years: 2026
+lastupdated: "2026-01-08"
 
 keywords: HA for CIS, DR for CIS, CIS recovery time objective, CIS recovery point objective
 
@@ -263,7 +263,7 @@ You can use rate limiting to control automated traffic from bots. A common appro
 In this situation, you might configure a rule similar to the following:
 
 | Setting |	Value |
-|----------|-----------------------|
+| ---------- | ----------------------- |
 | Matching criteria | Hostname equals `example.com` |
 | Expression | `http.host eq "example.com"` |
 | Counting characteristics | IP |
@@ -276,9 +276,9 @@ In this situation, you might configure a rule similar to the following:
 This example rule requires a Business plan or above.
 {: note}
 
-To control the rate of actions performed by automated sources, consider use rate limiting rules together with [Bot Management](https://test.cloud.ibm.com/docs/cis?topic=cis-about-bot-mgmt&interface=cli). With Bot Management, you can use the [bot score](/docs/cis?topic=cis-bot-management-fields&interface=cli) as part of the matching criteria to apply the rule only to automated or likely automated traffic. For example, you can use a maximum score (or threshold) of `30` for likely automated traffic and `10` for automated traffic.
+To control the rate of actions performed by automated sources, consider use rate limiting rules together with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli). With Bot Management, you can use the [bot score](/docs/cis?topic=cis-bot-management-fields&interface=cli) as part of the matching criteria to apply the rule only to automated or likely automated traffic. For example, you can use a maximum score (or threshold) of `30` for likely automated traffic and `10` for automated traffic.
 
-You can enhance protection by combining rate limiting with [Bot Management](https://test.cloud.ibm.com/docs/cis?topic=cis-about-bot-mgmt&interface=cli). With Bot Management, you can use the [bot score](/docs/cis?topic=cis-bot-management-fields&interface=cli) as part of the matching criteria to apply the rule only to automated or likely automated traffic.
+You can enhance protection by combining rate limiting with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli). With Bot Management, you can use the [bot score](/docs/cis?topic=cis-bot-management-fields&interface=cli) as part of the matching criteria to apply the rule only to automated or likely automated traffic.
 
 For example:
 
@@ -319,7 +319,7 @@ These example rules require Advanced Rate Limiting and Bot Management.
 #### Using JA3 fingerprints
 {: #ja3-fingerprint}
 
-If the application does not use a session cookie, you can use JA3 fingerprints to identify individual clients. A [JA3 fingerprint](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui#bot-management-fields) is a unique identifier, available to customers with [Bot Management](https://test.cloud.ibm.com/docs/cis?topic=cis-about-bot-mgmt&interface=cli), that allows CIS to identify requests coming from the same client. All clients have an associated fingerprint, whether they are automated or not.
+If the application does not use a session cookie, you can use JA3 fingerprints to identify individual clients. A [JA3 fingerprint](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui#bot-management-fields) is a unique identifier, available to customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli), that allows CIS to identify requests coming from the same client. All clients have an associated fingerprint, whether they are automated or not.
 
 | Setting | Value |
 |----------|-----------------------|
