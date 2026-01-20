@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-07-24"
+  years: 2024, 2026
+lastupdated: "2026-01-20"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Adhering to IBM Cloud sanctions on embargoed countries
 {: #adhering-to-embargoed-countries}
 
-Compliance with IBM Cloud sanctions involves following restrictions related to specific embargoed countries: **Iran**, **Cuba**, **North Korea**, and **Syria**. Adhering to these sanctions is crucial for maintaining compliance with international laws and regulations.
+Compliance with IBM Cloud sanctions involves the following restrictions that are related to specific embargoed countries: **Iran**, **Cuba**, **North Korea**, and **Syria**. Adhering to these sanctions is crucial for maintaining compliance with international laws and regulations.
 {: shortdesc}
 
 ## Understanding sanctions and embargoes
@@ -29,20 +29,24 @@ IBM Cloud is committed to complying with all applicable laws and regulations, in
 {: #custom-rules-cli}
 {: cli}
 
-CIS custom rules help you define specific conditions to control whether traffic is allowed or blocked. To block traffic from the embargoed countries, you can use the following custom rules expression:
+CIS custom rules help you to define conditions that allow or block traffic. To block the traffic from US-embargoed countries, create the country-blocking custom rule and place it first in the custom rules order. Use the following commands to create the rule and add it as the first custom rule.
 
    ```sh
-   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID -i INSTANCE --match "(ip.geoip.country eq "IQ" and ip.geoip.country eq "KP" and ip.geoip.country eq "CU" and ip.geoip.country eq "SY")" --action block --description "Embargo" --enabled true
+   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID -i INSTANCE --match "(ip.geoip.country in {\"CU\" \"IR\" \"SY\" \"KP\"})" --action block --description "Embargo" --enabled true
+   ibmcloud cis custom-waf rule-order-update $DNS_DOMAIN_ID -i INSTANCE RULE_ID --index 1
    ```
    {: pre}
 
 Where:
 
 `DNS_DOMAIN_ID`
-:   Is the ID of the DNS domain.
+:   The ID of the DNS domain.
 
 `INSTANCE`
-:   Is the name or ID of the instance.
+:   The name or ID of the instance.
+
+`RULE_ID`
+:   The ID of the custom rule for blocking the embargoed countries.
 
 ## Adding custom rules with the API
 {: #custom-rules-api}
@@ -59,27 +63,12 @@ To add a custom rule with the API, follow these steps:
    --header 'Authorization: Bearer <TOKEN>' \
    --header 'Content-Type: application/json' \
    --data '[
-	{
-		"expression": "ip.src.country eq \"IR\"",
-		"description": "Filter traffic from Iran",
-		"paused": false
-	},
-	{
-		"expression": "ip.src.country eq \"CU\"",
-		"description": "Filter traffic from Cuba",
-		"paused": false
-	},
-	{
-		"expression": "ip.src.country eq \"KP\"",
-		"description": "Filter traffic from North Korea",
-		"paused": false
-	},
-	{
-		"expression": "ip.src.country eq \"SY\"",
-		"description": "Filter traffic from Syria",
-		"paused": false
-	}
-         ]'
+        {
+                "expression": "(ip.geoip.country in {"IR" "CU" "SY" "KP"})",
+                "description": "Block Traffic from US Embargoed Countries",
+                "paused": false
+        }
+      ]'
    ```
    {: codeblock}
 
@@ -98,28 +87,6 @@ To add a custom rule with the API, follow these steps:
 		},
 		"action": "block",
 		"paused": false
-	},
-	{
-		"filter": {
-			"id": "<Filter 2 ID>"
-		},
-		"action": "block",
-		"paused": false
-	},
-	{
-		"filter": {
-			"id": "<Filter 3 ID>"
-		},
-		"action": "block",
-		"paused": false
-	},
-	{
-		"filter": {
-			"id": "<Filter 4 ID>"
-		},
-		"action": "block",
-		"paused": false
-	}
-           ]'
+	} ]'
    ```
    {: codeblock}
