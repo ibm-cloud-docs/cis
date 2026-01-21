@@ -98,13 +98,6 @@ toc:
           - ddos-responding.md
           - ddos-defense-mode.md
           - ddos-using-third-party-services.md
-          - topicgroup:
-              label: HTTP DDoS Attack Protection
-              id: http-ddos
-              topics:
-              - about-http-ddos.md
-              - ddos-parameters.md
-              - ddos-rule-catagory.md
       - topicgroup:
           label: Working with rulesets
           topics:
