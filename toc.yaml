@@ -99,7 +99,7 @@ toc:
           - ddos-defense-mode.md
           - ddos-using-third-party-services.md
           - topicgroup:
-              label: About HTTP DDoS Attack Protection
+              label: HTTP DDoS Attack Protection
               id: http-ddos
               topics:
               - about-http-ddos.md
