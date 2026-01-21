@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-05-09"
+  years: 2024, 2026
+lastupdated: "2026-01-21"
 
 keywords:
 
@@ -93,6 +93,9 @@ You can manage cipher suites by from the CLI.
 * Within the `ibmcloud cis domain-settings-update` CLI, set the following variable:
 
     `ciphers`: An allowlist of ciphers for TLS termination. These ciphers must be in the `BoringSSL` format.
+
+Note: If you want to revert to the default cipher list please use as option -v default after -f ciphers
+
 
 ## Managing cipher suites with the API
 {: #api-manage-cipher-suites}
