@@ -94,7 +94,8 @@ You can manage cipher suites by from the CLI.
 
     `ciphers`: An allowlist of ciphers for TLS termination. These ciphers must be in the `BoringSSL` format.
 
-Note: If you want to revert to the default cipher list please use as option -v default after -f ciphers
+If you want to revert to the default cipher list, use option `-v` default after `-f` ciphers.
+{: note}
 
 
 ## Managing cipher suites with the API
