@@ -15,14 +15,12 @@ subcollection: cis
 # Parameters
 {: #ddos-parameters}
 
-Configure the HTTP DDoS Attack Protection managed ruleset to change the action applied to a given attack or modify the sensitivity level of the detection mechanism. You can [define overrides via Rulesets API](docs/cis?topic=cis-third-party-ddos#example-sensitivity-level-api).
-
-The available parameters are the following:
+Configure the HTTP DDoS Attack Protection managed ruleset to change the action that is applied to a given attack or modify the sensitivity level of the detection mechanism. You can [define overrides via Rulesets API](docs/cis?topic=cis-third-party-ddos#example-sensitivity-level-api). The following parameters are available in HTTP DDos Attack Proction:
 
 * Action
 * Sensitivity Level
 
-You can configure the HTTP DDoS Attack Protection managed ruleset to change the action applied when an attack is detected or to adjust the sensitivity level of the detection mechanism.
+You can configure the HTTP DDoS Attack Protection managed ruleset to change the action that is applied when an attack is detected or to adjust the sensitivity level of the detection mechanism.
 
 You can configure the managed ruleset by defining overrides through the Rulesets API
 
@@ -41,7 +39,7 @@ The action determines how CIS handles HTTP requests that match rules in the HTTP
 | Action | API value | Description |
 | ---------- | ------------ | ----------- |
 | Block | `block` | Blocks HTTP requests that match the rule expression. |
-| Managed Challenge | `managed_challenge` | * Managed Challenges help to human time spent on solving Captchas across the Internet. \n * Depending on the characteristics of a request, CIS dynamically choose the appropriate type of challenge based on specific criteria. |
+| Managed Challenge | `managed_challenge` | * Managed Challenges help to human time spent on solving Captchas across the internet. \n * Depending on the characteristics of a request, CIS dynamically choose the appropriate type of challenge based on specific criteria. |
 | Interactive Challenge | `challenge` | Presents an interactive challenge to clients making HTTP requests that match the rule expression. |
 | Log | `log` | Available only on Enterprise plans with Advanced DDoS Protection. Logs requests that match the expression of a rule detecting HTTP DDoS attacks. Recommended for validating a rule before committing to a more severe action. |
 | Connection Close | Not applicable (Internal rule action that you cannot use in overrides) | Instructs the client to establish a new connection by disabling `keep-alive`, instead of reusing the existing connection. Existing requests are not affected. |
