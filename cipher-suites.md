@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-21"
+lastupdated: "2026-01-22"
 
 keywords:
 
@@ -81,7 +81,7 @@ The following ciphers are supported at the origin. You can restrict the ciphers 
 {: #cli-manage-cipher-suites}
 {: cli}
 
-You can manage cipher suites by from the CLI.
+You can manage cipher suites from the CLI.
 
 ### Working with edge cipher suites from the CLI
 {: #cli-edge-cipher}
@@ -93,10 +93,6 @@ You can manage cipher suites by from the CLI.
 * Within the `ibmcloud cis domain-settings-update` CLI, set the following variable:
 
     `ciphers`: An allowlist of ciphers for TLS termination. These ciphers must be in the `BoringSSL` format.
-
-If you want to revert to the default cipher list, use option `-v` default after `-f` ciphers.
-{: note}
-
 
 ## Managing cipher suites with the API
 {: #api-manage-cipher-suites}
