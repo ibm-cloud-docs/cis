@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2025
+  years: 2020, 2026
 lastupdated: "2024-10-09"
 
 keywords: graphql
