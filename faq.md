@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-01-30"
 
 keywords:
 
@@ -127,15 +127,6 @@ The flood of incoming messages, connection requests, or malformed packets to the
 **Step 3:** Do not rate-limit or throttle requests from IBM CIS, we need the bandwidth to assist you with your situation.
 
 **Step 4:** Block specific countries and visitors, if necessary.
-
-## How does CIS protect against "low and slow" DDoS attacks?
-{: #ddos-low-slow-attack}
-
-A low and slow DDoS attack [where]{: tag-red} is most commonly a non-volumetric attack. The attacker will send a low volume of HTTP requests, and do so slowly. This type of attack aims to be less detectable and slowly exhausts resources.
-
-Slowloris [where]{: tag-red} is a type of low and slow attack where the attacker establishes [TCP connections](/docs/cis?topic=cis-tcp-concepts) to the target server, often using HTTP or HTTPS protocols.
-
-In the case of a Slowloris attack, the attacker sends incomplete HTTP header lines, thus never completing the HTTP request. The server waits for the complete request, holding the connection open. The attacker periodically sends additional HTTP header fields or partial lines to keep the connection alive. This can be achieved by sending partial HTTP headers, or using the content-length header to declare a message body size larger than what is actually sent.
 
 ## I got a 522 error, what do I do now?
 {: #cis-faq-522-error}
