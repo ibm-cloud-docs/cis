@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-30"
+  years: 2018, 2026
+lastupdated: "2026-01-30"
 
 keywords:
 
@@ -303,5 +303,5 @@ For outbound traffic control, consider:
 
 ## What changed in the WAF payload limit and why is the payload limit increasing?
 {: #waf-traffic-limit}
- 
+
 For all plans, CIS Web Application Firewall (WAF) inspects request payloads up to 1 MB. This helps the WAF to detect more complex threats that appear in larger request bodies.
