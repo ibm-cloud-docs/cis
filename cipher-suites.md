@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-22"
+lastupdated: "2026-01-30"
 
 keywords:
 
@@ -23,31 +23,31 @@ Cipher suites are a combination of algorithms and protocols that help to secure 
 
 The following ciphers are supported at the cloud edge. You can restrict the ciphers that are used for your domain through the CIS CLI plugin to the IBM Cloud CLI. See the `ciphers` option on the [domain settings command](/docs/cis?topic=cis-cis-cli#domain-settings).
 
-|OpenSSL Name| TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3| IANA name |
-|:--------|:---:|:---:|:---:|:---|:---:|
-|ECDHE-ECDSA-AES128-GCM-SHA256 | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 |
-|ECDHE-ECDSA-CHACHA20-POLY1305 | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 |
-|ECDHE-RSA-AES128-GCM-SHA256   | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 |
-|ECDHE-RSA-CHACHA20-POLY1305   | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 |
-|ECDHE-ECDSA-AES128-SHA256     | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 |
-|ECDHE-ECDSA-AES128-SHA        |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA |
-|ECDHE-RSA-AES128-SHA256       | | |![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 |
-|ECDHE-RSA-AES128-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA |
-|AES128-GCM-SHA256             | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_128_GCM_SHA256 |
-|AES128-SHA256                 | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_128_CBC_SHA256 |
-|AES128-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_128_CBC_SHA |
-|ECDHE-ECDSA-AES256-GCM-SHA384 | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 |
-|ECDHE-ECDSA-AES256-SHA384     | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 |
-|ECDHE-RSA-AES256-GCM-SHA384   | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 |
-|ECDHE-RSA-AES256-SHA384       | | |![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 |
-|ECDHE-RSA-AES256-SHA          |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA |
-|AES256-GCM-SHA384             | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_256_GCM_SHA384 |
-|AES256-SHA256                 | | |![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_256_CBC_SHA256 |
-|AES256-SHA                    |![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)|![Available](../icons/checkmark-icon.svg)| | TLS_RSA_WITH_AES_256_CBC_SHA|
-|DES-CBC3-SHA                  |![Available](../icons/checkmark-icon.svg)| | | | TLS_RSA_WITH_3DES_EDE_CBC_SHA |
-|AEAD-AES128-GCM-SHA256        | | | |![Available](../icons/checkmark-icon.svg)| TLS_AES_128_GCM_SHA256 |
-|AEAD-AES256-GCM-SHA384        | | | |![Available](../icons/checkmark-icon.svg)| TLS_AES_256_GCM_SHA384 |
-|AEAD-CHACHA20-POLY1305-SHA256 | | | |![Available](../icons/checkmark-icon.svg)| TLS_CHACHA20_POLY1305_SHA256 |
+| OpenSSL Name | TLS 1.0 | TLS 1.1 | TLS 1.2 | TLS 1.3 | IANA name |
+| :-------- | :---: | :---: | :---: | :--- | :---: |
+| ECDHE-ECDSA-AES128-GCM-SHA256 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 |
+| ECDHE-ECDSA-CHACHA20-POLY1305 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 |
+| ECDHE-RSA-AES128-GCM-SHA256 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 |
+| ECDHE-RSA-CHACHA20-POLY1305 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 |
+| ECDHE-ECDSA-AES128-SHA256 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 |
+| ECDHE-ECDSA-AES128-SHA | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA |
+| ECDHE-RSA-AES128-SHA256 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 |
+| ECDHE-RSA-AES128-SHA | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA |
+| AES128-GCM-SHA256 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_128_GCM_SHA256 |
+| AES128-SHA256 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_128_CBC_SHA256 |
+| AES128-SHA | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_128_CBC_SHA |
+| ECDHE-ECDSA-AES256-GCM-SHA384 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 |
+| ECDHE-ECDSA-AES256-SHA384 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 |
+| ECDHE-RSA-AES256-GCM-SHA384 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 |
+| ECDHE-RSA-AES256-SHA384 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 |
+| ECDHE-RSA-AES256-SHA | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | | TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA |
+| AES256-GCM-SHA384 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_256_GCM_SHA384 |
+| AES256-SHA256 | | | ![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_256_CBC_SHA256 |
+| AES256-SHA | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | ![Available](../icons/checkmark-icon.svg) | | TLS_RSA_WITH_AES_256_CBC_SHA |
+| DES-CBC3-SHA | ![Available](../icons/checkmark-icon.svg) | | | | TLS_RSA_WITH_3DES_EDE_CBC_SHA |
+| AEAD-AES128-GCM-SHA256 | | | | ![Available](../icons/checkmark-icon.svg) | TLS_AES_128_GCM_SHA256 |
+| AEAD-AES256-GCM-SHA384 | | | | ![Available](../icons/checkmark-icon.svg) | TLS_AES_256_GCM_SHA384 |
+| AEAD-CHACHA20-POLY1305-SHA256 | | | | ![Available](../icons/checkmark-icon.svg) | TLS_CHACHA20_POLY1305_SHA256 |
 {: caption="Edge cipher suites" caption-side="bottom"}
 
 ## Origin cipher suites
@@ -83,16 +83,102 @@ The following ciphers are supported at the origin. You can restrict the ciphers 
 
 You can manage cipher suites from the CLI.
 
-### Working with edge cipher suites from the CLI
-{: #cli-edge-cipher}
+### Getting the cipher suites from the CLI
+{: #get-cipher-suites}
 
-* Within the `ibmcloud cis domain-settings` CLI, set the following variable:
+To list the `cipher` variable, run the following command:
 
-    `ciphers`: An allowlist of ciphers for TLS termination in the `BoringSSL` format. This command lists only ciphers that are allowlisted by customers. If no ciphers are allowlisted, the list is empty and the default ciphers are used. See [Edge cipher suites](#edge-cipher-suites) for the list of default ciphers.
+```sh
+ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FEATURE] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
 
-* Within the `ibmcloud cis domain-settings-update` CLI, set the following variable:
+#### Command options
+{: #command-options-cipher}
 
-    `ciphers`: An allowlist of ciphers for TLS termination. These ciphers must be in the `BoringSSL` format.
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. This option is required.
+
+`-f, --feature`
+:   Specifies the domain setting feature to check. This option is mutually exclusive with -g, --group.
+    Set this option to the following variable:
+    - `ciphers`: Defines an allowlist of TLS cipher suites for edge TLS termination, using the `BoringSSL` cipher format.
+      This command lists only cipher suites that customers have explicitly allowlisted. If no cipher suites are allowlisted, the command returns an empty list and uses the default cipher suites. For the list of default cipher suites, see [Edge cipher suites](#edge-cipher-suites).
+
+##### Example
+{: #get-cipher-example}
+
+Get `ciphers` settings for domain `31984fea73a15b45779fa0df4ef62f9b`.
+
+```sh
+ibmcloud cis domain-settings -f "ciphers" 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+```
+{: pre}
+
+For more information, see [ibmcloud cis domain-settings](/docs/cis?topic=cis-cis-cli&interface=cli#display-domain-settings).
+
+### Updating the cipher suites from the CLI
+{: #update-cipher-suites}
+
+To update the `cipher` variable, run the following command:
+
+```sh
+ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, --value VALUE) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #update-command-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. This option is required.
+
+`-f, --feature`
+:   Feature of domain settings to update. This option is required. Valid `cipher` value is:
+    - `ciphers` : An allowlist of ciphers for TLS termination. These ciphers must be in the `BoringSSL` format.
+
+`-v, --value`
+:   Specifies the value to set for the feature on the domain. This option is required.
+    - Valid values for `tls_client_auth` are `on` and `off`.
+    - Valid values for ciphers are:
+      - `ECDHE-ECDSA-AES128-GCM-SHA256`
+      - `ECDHE-ECDSA-CHACHA20-POLY1305`
+      - `ECDHE-RSA-AES128-GCM-SHA256`
+      - `ECDHE-RSA-CHACHA20-POLY1305`
+      - `ECDHE-ECDSA-AES128-SHA256`
+      - `ECDHE-ECDSA-AES128-SHA`
+      - `ECDHE-RSA-AES128-SHA256`
+      - `ECDHE-RSA-AES128-SHA`
+      - `AES128-GCM-SHA256`
+      - `AES128-SHA256`
+      - `AES128-SHA`
+      - `ECDHE-ECDSA-AES256-GCM-SHA384`
+      - `ECDHE-ECDSA-AES256-SHA384`
+      - `ECDHE-RSA-AES256-GCM-SHA384`
+      - `ECDHE-RSA-AES256-SHA384`
+      - `ECDHE-RSA-AES256-SHA`
+      - `AES256-GCM-SHA384`
+      - `AES256-SHA256`
+      - `AES256-SHA`
+      - `DES-CBC3-SHA`
+      - `default`
+
+:   For example, use `-v default` to reset the specific configured cipher suites like `-v AES256-SHA256,AES256-SHA`, to the default value.
+
+##### Example
+{: #update-cipher-example}
+
+Enable `tls_client_auth` for domain 31984fea73a15b45779fa0df4ef62f9b.
+
+```sh
+ibmcloud cis domain-settings-update -f tls_client_auth -v on 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+```
+{: pre}
+
+For more information, see [ibmcloud cis domain-settings-update](/docs/cis?topic=cis-cis-cli&interface=cli#update-domain-settings).
+
+To revert to the default cipher list, specify **-v default** after **-f** ciphers.
+{: note}
 
 ## Managing cipher suites with the API
 {: #api-manage-cipher-suites}
