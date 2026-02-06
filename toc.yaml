@@ -22,6 +22,7 @@ toc:
           topics:
           - cache.md
           - compression-concepts.md
+          - ddos-conceptual.md
           - domain-lifecycle.md
           - dns-concepts.md
           - glb.md
