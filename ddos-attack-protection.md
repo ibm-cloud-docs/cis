@@ -14,8 +14,12 @@ subcollection: cis
 
 # HTTP DDoS Attack Protection managed ruleset
 {: #http-ddos}
+{: api}
 
-The CIS HTTP DDoS Attack Protection managed ruleset is a set of pre-configured rules that are designed to detect and mitigate known Layer 7 (application-layer) DDoS attack vectors across the CIS global network.
+The CIS HTTP DDoS Attack Protection managed ruleset is a set of pre-configured rules that are designed to detect and mitigate known Layer 7 (application-layer) DDoS attack vectors across the CIS global network. 
+
+Currently, the HTTP DDoS Attack Protection ruleset is only available using the CIS API.
+{: note}
 
 The managed ruleset helps protect against:
 
