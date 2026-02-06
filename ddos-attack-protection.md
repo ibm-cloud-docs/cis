@@ -74,13 +74,6 @@ The following parameters are available in the HTTP DDoS Attack Protection manage
 * Action
 * Sensitivity level
 
-You configure these parameters by defining overrides through the Rulesets API.
-
-The available parameters are:
-
-* Action
-* Sensitivity level
-
 ### Action
 {: #ddos-action}
 
