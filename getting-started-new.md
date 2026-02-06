@@ -54,7 +54,7 @@ Follow these high-level steps to get started with CIS:
 
    After adding your domain, optionally [import or set up your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis) before activating traffic through CIS. 
 
-1. After adding your domain and any required DNS records, ensure your domain is delegated correctly. Delegation tells the global DNS system which authoritative name servers should be used for your domain. For more information, see [Adding and delegating your domain]().
+1. After adding your domain and any required DNS records, ensure your domain is delegated correctly. Delegation tells the global DNS system which authoritative name servers should be used for your domain. For more information, see [Adding and delegating your domain](/docs/cis?topic=cis-add-delegate-domain).
 
 1. [Configure your name servers with the registrar or existing DNS provider](/docs/cis?topic=cis-name-servers). 
 
