@@ -15,7 +15,7 @@ subcollection: cis
 # Adding and delegating your domain
 {: #add-delegate-domain}
 
-Adding your domain to CIS allows you to protect, accelerate, and manage traffic for your applications. Delegating your domain ensures that DNS queries for your domain are correctly routed to CIS or your designated DNS provider. This topic explains how to add your domain, optionally set up DNS records, delegate it, and verify proper propagation.
+Adding your domain to CIS allows you to protect, accelerate, and manage traffic for your applications. Delegating your domain ensures that DNS queries for your domain are correctly routed to CIS or your designated DNS provider.
 {: shortdesc} 
 
 Follow these steps to add your domain to CIS, optionally configure DNS records, delegate your domain, and verify that it is properly set up.
