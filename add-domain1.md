@@ -31,9 +31,9 @@ Follow these steps to add your domain to CIS, optionally configure DNS records, 
 1. Optionally import or set up your DNS records before activating traffic through CIS. Ensure all required records (A, AAAA, MX, and CNAME) are present. You can [import existing DNS records or add new ones](/docs/cis?topic=cis-set-up-your-dns-for-cis).  
 
 1. Delegate your domain:  
-   - Sign in to your domain registrar or DNS host and locate the **Name Server (NS) settings**.  
-   - Update the NS records to point to CIS name servers (for full setup) or your existing DNS provider (for partial setup with CNAMEs).  
-   - Save the changes. 
+   1. Sign in to your domain registrar or DNS host and locate the **Name Server (NS) settings**.  
+   1. Update the NS records to point to CIS name servers (for full setup) or your existing DNS provider (for partial setup with CNAMEs).  
+   1. Save your changes. 
    
    DNS delegation changes can take up to 24–48 hours to propagate globally.  
    {: note}
