@@ -85,8 +85,3 @@ Follow these high-level steps to get started with CIS:
 1. [Review best practices](/docs/cis?group=best-practices) for CIS setup, security, reliability, and performance.
 1. [Explore the CIS console](/docs/cis?topic=cis-manage-your-cis-deployment). Familiarize yourself with the CIS console, including areas for domain management, DNS configuration, traffic analytics, and security settings.
 1. Enable and configure additional features. After your domain is active, explore the full range of CIS capabilities, such as DDoS protection, rate limiting and bot management, SSL/TLS settings, page rules, and real-time traffic analytics.
-
-To navigate to your CIS instance:
-
-   1. Go to **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg) and click **Resource list**, then expand **Security**. 
-   1. Expand **Security** and click the name of your CIS instance.
