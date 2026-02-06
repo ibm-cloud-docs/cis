@@ -94,7 +94,7 @@ toc:
       - topicgroup:
           label: Working with DDoS protection
           topics:
-          - ddos-concept.md
+          - ddos-about.md
           - preventing-ddos-attacks.md
           - ddos-responding.md
           - ddos-defense-mode.md
