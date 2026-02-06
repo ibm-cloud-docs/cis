@@ -14,8 +14,6 @@ toc:
       id: learn
       topics:
       - getting-started-new.md
-      - create-cis-instance.md
-      - name-server.md
       - topicgroup:
           id: concepts
           label: Concepts
@@ -59,22 +57,25 @@ toc:
   - navgroup:
       id: howto
       topics:
-      - how-to.md
-      - topicgroup:
-          label: Managing certificates
-          topics:
-          - edge-certificates.md
-          - origin.md
+      - create-cis-instance.md
+      - add-domain.md
       - topicgroup:
           label: CNAME (partial) configuration
           topics:
           - start-with-subdomain.md
           - cname-dns-resolution.md
           - convert-partial-full.md
+      - name-server.md
       - multi-domain.md
       - dns.md
       - cname-setup.md
+      - how-to.md
       - private-endpoint.md
+      - topicgroup:
+          label: Managing certificates
+          topics:
+          - edge-certificates.md
+          - origin.md
       - topicgroup:
           label: Working with Range applications
           id: range
