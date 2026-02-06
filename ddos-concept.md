@@ -66,7 +66,7 @@ Generally, attacks fall into two categories:
 ## What do I do if I’m under a DDoS attack?
 {: #under-ddos-attack}
 
-1. Turn on "Defense mode" from the **Overview** page. For more information, see [Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos).
+1. Turn on "Defense mode" from the **Overview** page.
 1. Set your DNS records for maximum security.
 1. Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}, we need the bandwidth to assist you with your situation.
 1. Block specific countries and visitors if necessary.
@@ -79,4 +79,5 @@ Generally, attacks fall into two categories:
 * [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
 * [Using Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos)
 * [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
-* [HTTP DDoS attack protection](/docs/cis?group=http-ddos)
+* [HTTP DDoS Attack Protection managed ruleset](/docs/cis?topic=cis-http-ddos)
+

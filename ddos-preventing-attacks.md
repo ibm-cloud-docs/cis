@@ -49,6 +49,9 @@ Generally, your origin server should accept only requests that come from your we
 ### Related links
 {: #ddos-related-links}
 
-* [DDoS attack concepts](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts)
+* [DDoS attack concepts](/docs/cis?topic=cis-ddos-attack-concepts) 
+* [About DDoS protection in CIS](/docs/cis?topic=cis-about-ddos)
 * [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
-* [Defense mode during a DDoS attack](/docs/cis?topic=cis-defense-mode-attack-ddos)
+* [Using Defense mode during a DDoS attack](/docs/cis?topic=cis-defense-mode-attack-ddos)
+* [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
+* [HTTP DDoS Attack Protection managed ruleset](/docs/cis?topic=cis-http-ddos)

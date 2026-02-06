@@ -34,6 +34,9 @@ The CIS network automatically mitigates large DDoS attacks, but these attacks ca
 ## Related links
 {: #responding-to-ddos-attacks-related-links}
 
-* [DDoS attack concepts](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts)
-* [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
-* [Defense mode during a DDoS attack](/docs/cis?topic=cis-defense-mode-attack-ddos)
+* [DDoS attack concepts](/docs/cis?topic=cis-ddos-attack-concepts)
+* [About DDoS protection in CIS](/docs/cis?topic=cis-about-ddos)
+* [Preventing DDoS attacks](/docs/cis?topic=cis-preventing-ddos-attacks)
+* [Using Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos)
+* [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
+* [HTTP DDoS Attack Protection managed ruleset](/docs/cis?topic=cis-http-ddos)

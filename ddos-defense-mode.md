@@ -58,6 +58,9 @@ Defense mode requires the browser to support JavaScript in order to display and 
 ## Related links
 {: #defense-mode-related-links}
 
-* [DDoS attack concepts](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts)
+* [DDoS attack concepts](/docs/cis?topic=cis-ddos-attack-concepts)
+* [About DDoS protection in CIS](/docs/cis?topic=cis-about-ddos)
 * [Preventing DDoS attacks](/docs/cis?topic=cis-preventing-ddos-attacks)
 * [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
+* [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
+* [HTTP DDoS Attack Protection managed ruleset](/docs/cis?topic=cis-http-ddos)

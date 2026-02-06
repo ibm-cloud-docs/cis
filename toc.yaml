@@ -22,7 +22,7 @@ toc:
           topics:
           - cache.md
           - compression-concepts.md
-          - ddos-conceptual.md
+          - ddos-concept.md
           - domain-lifecycle.md
           - dns-concepts.md
           - glb.md
@@ -95,7 +95,7 @@ toc:
           label: Working with DDoS protection
           topics:
           - ddos-about.md
-          - preventing-ddos-attacks.md
+          - ddos-preventing-attacks.md
           - ddos-responding.md
           - ddos-defense-mode.md
           - ddos-using-third-party-services.md
