@@ -25,8 +25,8 @@ Follow these steps to add your domain to CIS, optionally configure DNS records, 
 1. Click **Add a Domain** and enter your domain name (for example, `example.com`).  
 
 1. Choose your setup type:  
-   - **Partial setup (CNAME-based):** Only specific subdomains (like `www.example.com`) are proxied through CIS. You keep your existing DNS provider.  
-   - **Full setup (authoritative DNS):** CIS becomes the authoritative DNS provider for your domain, routing all DNS queries through CIS.  
+   - Partial setup (CNAME-based): Only specific subdomains (like `www.example.com`) are proxied through CIS. You keep your existing DNS provider.  
+   - Full setup (authoritative DNS): CIS becomes the authoritative DNS provider for your domain, routing all DNS queries through CIS.  
 
 1. Optionally import or set up your DNS records before activating traffic through CIS. Ensure all required records (A, AAAA, MX, and CNAME) are present. You can [import existing DNS records or add new ones](/docs/cis?topic=cis-set-up-your-dns-for-cis).  
 
