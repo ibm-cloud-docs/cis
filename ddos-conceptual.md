@@ -74,6 +74,9 @@ Generally, attacks fall into two categories:
 ## Related links
 {: #ddos-concept-related-links}
 
+* [About DDoS protection in CIS](/docs/cis?topic=cis-about-ddos)
 * [Preventing DDoS attacks](/docs/cis?topic=cis-preventing-ddos-attacks)
 * [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
-* [Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos)
+* [Using Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos)
+* [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
+* [HTTP DDoS attack protection](/docs/cis?group=http-ddos)
