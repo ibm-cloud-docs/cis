@@ -52,9 +52,22 @@ Follow these high-level steps to get started with CIS:
    * [Configure a partial setup (CNAME-based)](/docs/cis?topic=cis-cname-setup): You keep your current DNS provider and only route specific subdomains (for example, `www.techcorp.com`) through CIS by configuring CNAME records. Ideal if you can’t or prefer not to change your domain’s name servers.
    * [Configure a full setup (authoritative DNS)](/docs/cis?topic=cis-convert-partial-cname-full): CIS becomes your domain’s DNS provider. You update your domain registrar’s name servers to point to CIS. This gives you full control and access to all CIS features.
 
-   After adding your domain, optionally [import or set up your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis) before activating traffic through CIS. 
+   After adding your domain, optionally [import or set up your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis) Ensure all required records (A, AAAA, MX, and CNAME) are present. You can import existing DNS records or add new ones.
 
-1. After adding your domain and any required DNS records, ensure your domain is delegated correctly. Delegation tells the global DNS system which authoritative name servers should be used for your domain. For more information, see [Adding and delegating your domain](/docs/cis?topic=cis-add-delegate-domain).
+1. Make sure that your domain is delegated correctly. Delegating your domain ensures that DNS queries for your domain are correctly routed to CIS or your designated DNS provider.
+
+   1. Sign in to your domain registrar or DNS host and locate the **Name Server (NS) settings**.  
+   1. Update the NS records to point to CIS name servers (for full setup) or your existing DNS provider (for partial setup with CNAMEs).  
+   1. Save your changes. 
+   1. To verify delegation and DNS record, use a DNS lookup tool, such as `dig` or `nslookup` to confirm your domain points to the correct authoritative name servers. For example:  
+
+      ```bash
+      dig NS example.com
+      ```
+      {: pre}
+   
+   DNS delegation changes can take up to 24–48 hours to propagate globally.  
+   {: note} 
 
 1. [Configure your name servers with the registrar or existing DNS provider](/docs/cis?topic=cis-name-servers). 
 

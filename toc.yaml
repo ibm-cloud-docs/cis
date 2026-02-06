@@ -15,7 +15,6 @@ toc:
       topics:
       - getting-started-new.md
       - create-cis-instance.md
-      - add-domain1.md
       - name-server.md
       - topicgroup:
           id: concepts
