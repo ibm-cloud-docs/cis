@@ -32,7 +32,7 @@ Before you begin using {{site.data.keyword.cis_short_notm}}, make sure that you 
 
 * You need an IBMid to sign in to IBM Cloud and manage CIS. If you don’t have one, you can [create an account](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776){: external} to access trials, demos, and services.
 * You must have a domain registered with a domain registrar. CIS protects and accelerates traffic for this domain. 
-* Decide whether you want to protect your entire domain ([full setup](/docs/cis?topic=cis-convert-partial-cname-full&interface=cli)) or specific subdomains ([partial setup](/docs/cis?topic=cis-cname-setup&interface=cli)). This decision affects how you’ll configure DNS and what level of protection and optimization you get from CIS.
+* Decide whether you want to protect your entire domain ([full setup](/docs/cis?topic=cis-full-authoritative-zone&interface=cli)) or specific subdomains ([partial setup](/docs/cis?topic=cis-cname-setup&interface=cli)). This decision affects how you’ll configure DNS and what level of protection and optimization you get from CIS.
 * [Compare and select a CIS plan](/docs/cis?topic=cis-cis-plan-comparison) that best meets your needs (Lite, Standard, or Enterprise). Each plan offers different levels of security, performance, and feature access.
 * Understand the basics. Take time to familiarize yourself with the [core concepts](/docs/cis?group=concepts) of CIS so that you can configure it effectively. 
 
@@ -49,14 +49,14 @@ Follow these high-level steps to get started with CIS:
 1. [Create a CIS instance](/docs/cis?topic=cis-create-cis-instance) in your IBM Cloud account. The CIS instance acts as the central place to manage your domain's security, DNS, and performance settings.
 1. Add your domain to your CIS instance. CIS supports multiple ways to onboard a domain, depending on your DNS setup needs. Choose the method that best fits your setup:
 
-   * [Configure a full setup (authoritative DNS)](/docs/cis?topic=cis-domains): CIS becomes your domain’s DNS provider. You update your domain registrar’s name servers to point to CIS. This gives you full control and access to all CIS features.
+   * [Configure a full setup (authoritative DNS)](/docs/cis?topic=cis-full-authoritative-zone): CIS becomes your domain’s DNS provider. You update your domain registrar’s name servers to point to CIS. This gives you full control and access to all CIS features.
 
       If you already have a partial setup, see [Converting a partial (CNAME) configuration to full](/docs/cis?topic=cis-convert-partial-cname-full).
       {: note}
 
    * [Configure a partial setup (CNAME-based)](/docs/cis?topic=cis-cname-setup): You keep your current DNS provider and only route specific subdomains (for example, `www.techcorp.com`) through CIS by configuring CNAME records. Ideal if you can’t or prefer not to change your domain’s name servers.
 
-   After adding your domain, optionally [import or set up your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis. Make sure all required records (A, AAAA, MX, and CNAME) are present. You can import existing DNS records or add new ones.
+   After adding your domain, optionally [import or set up your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis). Make sure all required records (A, AAAA, MX, and CNAME) are present. You can import existing DNS records or add new ones.
 
 1. Make sure that your domain is delegated correctly. Delegating your domain makes sure that DNS queries for your domain are correctly routed to CIS or your designated DNS provider.
 
