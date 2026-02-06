@@ -52,6 +52,7 @@ Follow these high-level steps to get started with CIS:
    * [Configure a full setup (authoritative DNS)](/docs/cis?topic=cis-domains): CIS becomes your domain’s DNS provider. You update your domain registrar’s name servers to point to CIS. This gives you full control and access to all CIS features.
 
       If you already have a partial setup, see [Converting a partial (CNAME) configuration to full](/docs/cis?topic=cis-convert-partial-cname-full).
+      {: note}
 
    * [Configure a partial setup (CNAME-based)](/docs/cis?topic=cis-cname-setup): You keep your current DNS provider and only route specific subdomains (for example, `www.techcorp.com`) through CIS by configuring CNAME records. Ideal if you can’t or prefer not to change your domain’s name servers.
 
@@ -69,8 +70,8 @@ Follow these high-level steps to get started with CIS:
       ```
       {: pre}
    
-      Updates to your DNS delegation, name servers, or CNAME records can take up to 24–48 hours to propagate globally.  
-      {: attention} 
+   Updates to your DNS delegation, name servers, or CNAME records can take up to 24–48 hours to propagate globally.  
+   {: attention}
 
 1. [Configure your name servers with the registrar or existing DNS provider](/docs/cis?topic=cis-name-servers). 
 
