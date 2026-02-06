@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-05-08"
+  years: 2024, 2026
+lastupdated: "2026-02-06"
 
 keywords:
 
@@ -12,38 +12,31 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Defense mode for DDoS attacks
+# Using Defense mode for DDoS attacks
 {: #defense-mode-attack-ddos}
 
-When your site is under a DDoS attack, you can switch on defense mode to quickly mitigate the attack.
+When your site is under a DDoS attack, you can switch on defense mode to quickly mitigate the attack. Defense mode uses additional security checks to help mitigate Layer 7 DDoS attacks, allowing validated users through while blocking suspicious traffic. The following guidance explains how to apply defense mode at the domain or page level and what to expect when it is enabled.
 {: shortdesc}
 
-Follow these steps to set your entire domain in defense mode when you are under attack.
+To set your entire domain in defense mode when you are under attack, turn on “Defense mode" from the CIS **Overview** page. When enabled:
 
-1. Turn on “Defense mode" from the **Overview** page.
-1. Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}, because {{site.data.keyword.cis_short_notm}} needs the bandwidth to assist you with your situation.
-1. Block specific countries and visitors if necessary.
+* Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}, because {{site.data.keyword.cis_short_notm}} needs the bandwidth to assist you with your situation.
+* You can block specific countries and visitors if necessary.
+* Visitors see an interstitial page, and access to your site may be temporarily paused, which can impact analytics.
 
-## How defense mode works
-{: #how-defense-mode-works}
-
-The defense mode runs additional security checks to help mitigate layer 7 DDoS attacks. Validated users can gain access your website and suspicious traffic is blocked. Defense mode is designed to be used as one of the last resorts when a zone is under attack. In defense mode, access to your site is temporarily paused, which can impact your site analytics.
-
-When enabled, visitors receive an interstitial page.
-
-Defense mode is disabled by default for your domain.
+Defense mode is disabled by default and intended as a last resort when a zone is under attack.
 {: note}
 
-### Selectively apply defense mode
+### Applying defense mode selectively 
 {: #selectively-apply-defense-mode}
 
-To enable defense for specific pages or sections of your site, use a configuration rule to adjust the security level.
+Instead of enabling defense mode for the entire domain, you can apply it to specific pages or site sections by adjusting the security level with a configuration rule.
 
-For example, consider the following incoming request matching scenario.
+For example, consider the following incoming request matching scenario:
 
-* Field: URI Path
-* Operator: starts with
-* Value: /admin
+* Field: `URI Path`
+* Operator: `starts with`
+* Value: `/admin`
 
 1. If you are using the Expression Editor, enter the following expression.
 
@@ -55,9 +48,16 @@ For example, consider the following incoming request matching scenario.
 2. For defense mode, select **Add**.
 3. Move the switch to **0n**.
 
-To turn it on for specific ASNs (hosts/ISPs that own IP addresses), countries, or IP ranges, use IP Access Rules.
+To target specific ASNs (hosts/ISPs that own IP addresses), countries, or IP ranges, use **IP Access Rules**.
 
 ## Potential issues
 {: #potential-issues}
 
-Because defense mode requires your browser to support JavaScript to display and pass the interstitial page, there is an expected impact on third party analytics tools.
+Defense mode requires the browser to support JavaScript in order to display and pass the interstitial page. This requirement can affect third‑party analytics tools, which might not record traffic accurately while defense mode is active.
+
+## Related links
+{: #defense-mode-related-links}
+
+* [DDoS attack concepts](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts)
+* [Preventing DDoS attacks](/docs/cis?topic=cis-preventing-ddos-attacks)
+* [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
