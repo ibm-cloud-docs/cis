@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-02-08"
 
 keywords:
 
@@ -50,9 +50,7 @@ Currently, you can define account-level overrides for the HTTP DDoS Attack Prote
 {: note}
 
 To adjust the rule behavior, use [ruleset APIs](/apidocs/cis#get-zone-entrypoint-ruleset) with the `ddos_l7` phase.
-
-For more information on the available configuration parameters, see [Managed ruleset parameters](/docs/cis?topic=cis-ddos-parameters).
-
+ 
 ## Availability
 {: #http-ddos-availability}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-08"
+lastupdated: "2026-02-08"
 
 keywords: HA for CIS, DR for CIS, CIS recovery time objective, CIS recovery point objective
 
@@ -252,7 +252,7 @@ You can also limit the number of lookups of each `product_id` regardless of the 
 This example rule requires Advanced Rate Limiting and payload inspection.
 
 
-If the request body is not JSON format, you can use the [http.request.body.raw](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui#custom-rule-available-fields) field and regular expressions (along with the [matches operator](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui#custom-rule-comparison-operators)) to achieve the same goal.
+If the request body is not JSON format, you can use the [http.request.body.raw](/docs/cis?topic=cis-custom-rules-fields-and-expressions#custom-rule-available-fields) field and regular expressions (along with the [matches operator](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui#custom-rule-comparison-operators)) to achieve the same goal.
 {: important}
 
 ### Limiting requests from bots
