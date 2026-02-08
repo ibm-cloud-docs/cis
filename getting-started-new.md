@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-02-08"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -46,6 +46,9 @@ CIS provides cloud-native tools to secure, optimize, and make sure the reliabili
 
 Follow these high-level steps to get started with CIS:
 
+Updates to your DNS delegation, name servers, or CNAME records can take up to 24–48 hours to propagate globally.  
+{: attention}
+
 1. [Create a CIS instance](/docs/cis?topic=cis-create-cis-instance) in your IBM Cloud account. The CIS instance acts as the central place to manage your domain's security, DNS, and performance settings.
 1. Add your domain to your CIS instance. CIS supports multiple ways to onboard a domain, depending on your DNS setup needs. Choose the method that best fits your setup:
 
@@ -70,9 +73,6 @@ Follow these high-level steps to get started with CIS:
       ```
       {: pre}
    
-   Updates to your DNS delegation, name servers, or CNAME records can take up to 24–48 hours to propagate globally.  
-   {: attention}
-
 1. [Configure your name servers with the registrar or existing DNS provider](/docs/cis?topic=cis-name-servers). 
 
    * If you're using a full setup, update your domain registrar's name servers to the ones provided by CIS. This change routes all DNS queries through CIS so that its security and performance features can take effect.
