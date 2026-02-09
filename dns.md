@@ -15,7 +15,7 @@ subcollection: cis
 # Configuring DNS records and settings
 {: #set-up-your-dns-for-cis}
 
-Before you direct traffic to your domain through IBM Cloud Internet Services (CIS), it's recommended that you either import or manually recreate your existing DNS records within CIS. Skipping this step is optional, but if your DNS records are not properly configured in CIS, some parts of your website may become inaccessible.
+Before directing traffic to your domain through CIS, it is recommended that you import or manually recreate your existing DNS records within CIS. This action helps ensure that all domain resources, such as subdomains and dependent services, continue to resolve correctly after traffic is routed through CIS. Although this step is optional, failing to configure DNS records in CIS can result in partial service disruption or inaccessible website components.
 {: shortdesc}
 
 You can import your DNS records by uploading a file you’ve exported from your current DNS provider, or you can manually enter each record in CIS. To import, click **Import records** and upload the appropriate file.
