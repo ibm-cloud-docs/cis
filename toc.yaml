@@ -195,6 +195,7 @@ toc:
               - altering-headers.md
               - redirect-country-code.md
               - modify-response-props.md
+              - setting-security-headers.md
       - topicgroup:
           label: Working with logs
           id: logs
