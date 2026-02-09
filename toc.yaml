@@ -62,13 +62,13 @@ toc:
       - topicgroup:
           label: CNAME (partial) configuration
           topics:
+          - cname-setup.md
+          - convert-partial-full.md
           - start-with-subdomain.md
           - cname-dns-resolution.md
-          - convert-partial-full.md
+      - dns.md
       - name-server.md
       - multi-domain.md
-      - dns.md
-      - cname-setup.md
       - how-to.md
       - private-endpoint.md
       - topicgroup:
