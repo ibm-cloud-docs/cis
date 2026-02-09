@@ -26,6 +26,7 @@ toc:
           - glb.md
           - grpc-protocol-support.md
           - http-concepts.md
+          - ip-firewalls.md
           - range-concept.md
           - routing.md
           - tcp-concepts.md
