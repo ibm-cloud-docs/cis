@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-02-09"
 
 keywords: domains
 
@@ -36,7 +36,7 @@ To configure a full (authoritiative) zone, follow these steps:
 
 1. Import or recreate DNS records in CIS:
 
-   1. Go to **DNS → Records** in the CIS dashboard.  
+   1. Go to **DNS > Records** in the CIS dashboard.  
    1. Import existing DNS records from your previous provider if available.  
    1. If import is not available, manually add all necessary records, including:  
       - A and AAAA records  
@@ -44,7 +44,7 @@ To configure a full (authoritiative) zone, follow these steps:
       - CAA and other service-specific records  
    1. Verify that all records are correct before updating name servers.  
 
-   Missing or incorrect records will cause service interruptions once CIS becomes authoritative.  
+   Missing or incorrect records cause service interruptions once CIS becomes authoritative.  
    {: note}
 
 1. Update name servers at your registrar:
