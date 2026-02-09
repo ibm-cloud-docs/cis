@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-07"
+lastupdated: "2026-02-09"
 
 keywords:
 
@@ -17,7 +17,6 @@ subcollection: cis
 
 Before you direct traffic to your domain through IBM Cloud Internet Services (CIS), it's recommended that you either import or manually recreate your existing DNS records within CIS. Skipping this step is optional, but if your DNS records are not properly configured in CIS, some parts of your website may become inaccessible.
 {: shortdesc}
-
 
 You can import your DNS records by uploading a file you’ve exported from your current DNS provider, or you can manually enter each record in CIS. To import, click **Import records** and upload the appropriate file.
 
