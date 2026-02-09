@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-08"
+lastupdated: "2026-02-09"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -20,7 +20,7 @@ subcollection: cis
 
 CIS delivers three essential benefits:
 * Security – Safeguards your applications from DDoS attacks, malicious bots, and other web threats using features like a Web Application Firewall (WAF), rate limiting, and SSL/TLS encryption.
-* Reliability – Makes sure uptime and resilience through global load balancing, automatic failover, and robust DNS services.
+* Reliability – Helps ensure uptime and resilience through global load balancing, automatic failover, and robust DNS services.
 * Performance – Accelerates content delivery with a global Content Delivery Network (CDN), intelligent caching, and optimized protocols.
 
 After you provision a CIS instance on IBM Cloud, you can access and configure these features.
@@ -34,7 +34,7 @@ Before you begin using {{site.data.keyword.cis_short_notm}}, make sure that you 
 * You must have a domain registered with a domain registrar. CIS protects and accelerates traffic for this domain. 
 * Decide whether you want to protect your entire domain ([full setup](/docs/cis?topic=cis-full-authoritative-zone&interface=cli)) or specific subdomains ([partial setup](/docs/cis?topic=cis-cname-setup&interface=cli)). This decision affects how you’ll configure DNS and what level of protection and optimization you get from CIS.
 * [Compare and select a CIS plan](/docs/cis?topic=cis-cis-plan-comparison) that best meets your needs (Lite, Standard, or Enterprise). Each plan offers different levels of security, performance, and feature access.
-* Understand the basics. Take time to familiarize yourself with the [core concepts](/docs/cis?group=concepts) of CIS so that you can configure it effectively. 
+* Familiarize yourself with [CIS core concepts](/docs/cis?group=concepts) and terminology to better understand the configuration steps.  
 
 It is recommended that you use Google Chrome when working with {{site.data.keyword.cis_short_notm}}.
 {: tip}
@@ -42,9 +42,7 @@ It is recommended that you use Google Chrome when working with {{site.data.keywo
 ## Getting started process
 {: #process-overview-new}
 
-CIS provides cloud-native tools to secure, optimize, and make sure the reliability of your internet-facing applications. Key capabilities include DDoS protection, a Web Application Firewall (WAF), DNS management, traffic analytics, and performance acceleration.
-
-Follow these high-level steps to get started with CIS:
+This section outlines high-level steps to onboard your domain and activate CIS features. 
 
 Updates to your DNS delegation, name servers, or CNAME records can take up to 24–48 hours to propagate globally.  
 {: attention}
@@ -59,14 +57,27 @@ Updates to your DNS delegation, name servers, or CNAME records can take up to 24
 
    * [Configure a partial setup (CNAME-based)](/docs/cis?topic=cis-cname-setup): You keep your current DNS provider and only route specific subdomains (for example, `www.techcorp.com`) through CIS by configuring CNAME records. Ideal if you can’t or prefer not to change your domain’s name servers.
 
-   After adding your domain, optionally [import or set up your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis). Make sure all required records (A, AAAA, MX, and CNAME) are present. You can import existing DNS records or add new ones.
+1. [Import or add your DNS records](/docs/cis?topic=cis-set-up-your-dns-for-cis). Before updating DNS delegation or CNAME records, make sure that all required DNS records exist in CIS. This step ensures that CIS can immediately resolve traffic when delegation is complete.
 
-1. Make sure that your domain is delegated correctly. Delegating your domain makes sure that DNS queries for your domain are correctly routed to CIS or your designated DNS provider.
+   You can import existing DNS records or add them manually. Make sure that required records such as A, AAAA, MX, and CNAME records are present. 
+
+1. Configure DNS delegation based on the setup type you selected. After DNS records are in place, update your registrar or DNS provider to route traffic through CIS.
+
+   For a full setup:
 
    1. Sign in to your domain registrar or DNS host and locate the **Name Server (NS) settings**.  
    1. Update the NS records to point to CIS name servers (for full setup) or your existing DNS provider (for partial setup with CNAMEs).  
    1. Save your changes. 
-   1. To verify delegation and DNS record, use a DNS lookup tool, such as `dig` or `nslookup` to confirm your domain points to the correct authoritative name servers. For example:  
+
+   For a partial setup:
+
+   1. Sign in to your DNS provider and locate the DNS record settings.
+   1. Configure the required CNAME records to proxy specific subdomains through CIS.
+   1. Save your changes.
+
+1. Verify DNS delegation and domain resolution. After propagation begins, confirm that your domain is delegated correctly and that CIS is resolving traffic as expected.
+
+   Use a DNS lookup tool, such as `dig` or `nslookup` to verify authoritativee name servers and record resolution. For example:  
 
       ```bash
       dig NS example.com
@@ -78,10 +89,9 @@ Updates to your DNS delegation, name servers, or CNAME records can take up to 24
    * If you're using a full setup, update your domain registrar's name servers to the ones provided by CIS. This change routes all DNS queries through CIS so that its security and performance features can take effect.
    * If you're using a partial setup, configure the necessary CNAME records at your DNS provider to proxy specific subdomains through CIS. 
 
-1. Make sure that CIS is resolving the domain information for your application, hostname, or website.
+1. Confirm that CIS is resolving the domain information for your application, hostname, or website.
 
    To proceed, select **Reliability > DNS**. Be sure to add the appropriate DNS records. Add the A Record and any AAAA or MX entries that are populated. If you forget to add these records before the registrar's delegation is complete, CIS can't resolve the domain information for your internet-facing applications.
 
-1. [Review best practices](/docs/cis?group=best-practices) for CIS setup, security, reliability, and performance.
-1. [Explore the CIS console](/docs/cis?topic=cis-manage-your-cis-deployment) to familiarize yourself with the areas for domain management, DNS configuration, traffic analytics, and security settings.
+1. [Review CIS best practices](/docs/cis?group=best-practices) and [explore the CIS console](/docs/cis?topic=cis-manage-your-cis-deployment) to familiarize yourself with domain management, DNS configuration, traffic analytics, and security settings.
 1. Enable and configure additional features. After your domain is active, explore the full range of CIS capabilities, such as DDoS protection, rate limiting and bot management, SSL/TLS settings, page rules, and real-time traffic analytics.
