@@ -60,14 +60,11 @@ To configure a full (authoritiative) zone, follow these steps:
 
 1. Wait for propagation and verify:
 
-   1. DNS changes can take **24–48 hours**, or in rare cases up to **72 hours**, to propagate globally.  
-   1. Use `dig` or `nslookup` to confirm that the domain now resolves with CIS name servers.  
-   1. The CIS console automatically detects when delegation is complete, and the domain status changes from **Pending** to **Active**. 
+   * DNS changes can take **24–48 hours**, or in rare cases up to **72 hours**, to propagate globally.  
+   * Use `dig` or `nslookup` to confirm that the domain now resolves with CIS name servers.  
+   * The CIS console automatically detects when delegation is complete, and the domain status changes from **Pending** to **Active**. 
 
-1. Optionally, re-enable DNSSEC:
-
-   1. After propagation, re-enable DNSSEC at your registrar if required.  
-   1. Use the DS records provided by CIS to complete DNSSEC setup.  
+1. Optionally, after propagation, re-enable DNSSEC at your registrar if required. Use the DS records provided by CIS to complete DNSSEC setup.  
 
 1. Confirm DNS functionality:
 
@@ -75,13 +72,3 @@ To configure a full (authoritiative) zone, follow these steps:
    1. Ensure all DNS records (for example, A, MX, TXT, CAA) are resolving correctly.  
    1. Troubleshoot any issues by checking records in CIS or verifying name server settings at your registrar.  
  
-## Best practices
-{: #best-practices-full-setup}
-
-- Full setup delegates DNS authority to CIS for a root domain or subdomain.  
-- Import or recreate all existing DNS records in CIS before updating NS.  
-- Update name servers at your registrar with CIS-assigned name servers.  
-- Wait for propagation (24–48h, up to 72h in rare cases) and verify with `dig` or `nslookup`.  
-- CIS automatically detects when delegation is complete.  
-- Optionally, re-enable DNSSEC using CIS DS records.  
-- Ensure all service-critical records (MX, DKIM, SPF, TXT, CAA) are present before delegation to prevent downtime.  
