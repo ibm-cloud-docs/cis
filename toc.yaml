@@ -24,6 +24,7 @@ toc:
           - domain-lifecycle.md
           - dns-concepts.md
           - glb.md
+          - grpc-protocol-support.md
           - http-concepts.md
           - range-concept.md
           - routing.md
