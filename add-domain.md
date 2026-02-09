@@ -53,7 +53,7 @@ To configure a full (authoritiative) zone, follow these steps:
    1. Log in to your domain registrar.  
    1. Locate your domain’s **DNS / Nameserver settings**.  
    1. Replace the existing name servers with the CIS name servers exactly as provided.  
-   1. Save the changes.  
+   1. Save the changes.
 
    Ensure name servers are entered accurately. Typos or omissions break DNS resolution.
    {: note}
