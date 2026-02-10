@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-02-10"
 
 keywords:
 
@@ -95,6 +95,17 @@ The following dependencies apply to the following deployment locations: Dallas (
 
 The following dependencies apply to the following deployment locations: Dallas (us-south).
 
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
+| {{site.data.keyword.cis_full}} | Availability, Disaster recovery, Operations, Security compliance | No | data-plane |  Same region  |
+{: row-headers}
+{: caption="IBM Cloud Internet Services - The CIS control plane is managed by IBM, while the data plane is managed by Cloudflare. service dependency information - Critical dependencies" caption-side="top"}
+{: tab-title="Critical dependencies"}
+{: tab-group="service-dependency-data-for-internet-svcs-The-CIS-control-plane-is-managed-by-IBM,-while-the-data-plane-is-managed-by-Cloudflare."}
+{: class="comparison-tab-table"}
+{: #critical-deps-the-cis-control-plane-is-managed-by-ibm,-while-the-data-plane-is-managed-by-cloudflare.}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 
 ## Understanding service dependency data
