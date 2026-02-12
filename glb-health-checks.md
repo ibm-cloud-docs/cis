@@ -27,19 +27,13 @@ Be aware that your logs have references to Cloudflare because IBM is partnering 
 
 Health checks that result in a status change for an origin server are recorded as events in the load balancer event logs. You can create, attach, and configure health checks from either the global load balancer dashboard or the {{site.data.keyword.cis_short_notm}} API.
 
-Good call — combining them makes it cleaner and avoids artificial separation between “create” and “attach,” since users conceptually think of this as one task.
-
-Below is a **single, cohesive IBM Docs–style procedure** you can drop into the topic.
-
----
-
-# Creating and attaching a health check in the console
+## Creating and attaching a health check in the console
 {: #create-attach-health-check-ui}
 {: ui}
 
 To set up a health check, create a monitor and attach it to a load balancer pool.
 
-## Before you begin
+### Before you begin
 {: #before-you-begin-health-check}
 
 Ensure you meet the following prerequisites: 
@@ -55,18 +49,18 @@ To create and attach a health check in the console, follow these steps:
 1. Click **Create monitor**.
 1. Enter a **Name** for the monitor.
 1. Select a **Type**:
-   * **HTTP**
-   * **HTTPS**
-   * **TCP**
-   * **ICMP**
+   * HTTP
+   * HTTPS
+   * TCP
+   * ICMP
 1. Configure the monitor settings based on the selected type:
-   * **Port** (if different from the default)
-   * **Path** (for HTTP or HTTPS)
-   * **Method** (GET or HEAD)
-   * **Expected status codes**
-   * **Interval**
-   * **Timeout**
-   * **Retry count**
+   * Port (if different from the default)
+   * Path (for HTTP or HTTPS)
+   * Method (GET or HEAD)
+   * Expected status codes
+   * Interval
+   * Timeout
+   * Retry count
 
 1. Click **Create**.
 1. Go to **Load Balancing > Pools**.
