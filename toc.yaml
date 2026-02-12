@@ -14,19 +14,19 @@ toc:
       id: learn
       topics:
       - getting-started-new.md
-      - create-cis-instance.md
-      - name-server.md
       - topicgroup:
           id: concepts
           label: Concepts
           topics:
           - cache.md
           - compression-concepts.md
-          - ddos-conceptual.md
+          - ddos-concept.md
           - domain-lifecycle.md
           - dns-concepts.md
           - glb.md
+          - grpc-protocol-support.md
           - http-concepts.md
+          - ip-firewalls.md
           - range-concept.md
           - routing.md
           - tcp-concepts.md
@@ -59,22 +59,25 @@ toc:
   - navgroup:
       id: howto
       topics:
+      - create-cis-instance.md
+      - add-domain.md
+      - topicgroup:
+          label: CNAME (partial) configuration
+          topics:
+          - cname-setup.md
+          - convert-partial-full.md
+          - start-with-subdomain.md
+          - cname-dns-resolution.md
+      - dns.md
+      - name-server.md
+      - multi-domain.md
       - how-to.md
+      - private-endpoint.md
       - topicgroup:
           label: Managing certificates
           topics:
           - edge-certificates.md
           - origin.md
-      - topicgroup:
-          label: CNAME (partial) configuration
-          topics:
-          - start-with-subdomain.md
-          - cname-dns-resolution.md
-          - convert-partial-full.md
-      - multi-domain.md
-      - dns.md
-      - cname-setup.md
-      - private-endpoint.md
       - topicgroup:
           label: Working with Range applications
           id: range
@@ -95,10 +98,11 @@ toc:
           label: Working with DDoS protection
           topics:
           - ddos-about.md
-          - preventing-ddos-attacks.md
+          - ddos-preventing-attacks.md
           - ddos-responding.md
           - ddos-defense-mode.md
           - ddos-using-third-party-services.md
+          - ddos-attack-protection.md
       - topicgroup:
           label: Working with rulesets
           topics:
@@ -191,6 +195,7 @@ toc:
               - altering-headers.md
               - redirect-country-code.md
               - modify-response-props.md
+              - setting-security-headers.md
       - topicgroup:
           label: Working with logs
           id: logs

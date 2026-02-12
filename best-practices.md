@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-11"
+  years: 2018, 2026
+lastupdated: "2026-02-06"
 
 keywords:
 
@@ -14,8 +14,6 @@ subcollection: cis
 
 # Best practices for {{site.data.keyword.cis_short_notm}} setup
 {: #best-practices-for-cis-setup}
-
-
 
 Because {{site.data.keyword.cis_full}} is positioned at the edge of your network, you’ll need to take a few steps to guarantee a smooth integration with your {{site.data.keyword.cis_short_notm}} services. Consider these recommended best practices for integrating {{site.data.keyword.cis_short_notm}} with your origin servers.
 {: shortdesc}

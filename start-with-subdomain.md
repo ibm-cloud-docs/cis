@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-07-06"
+  years: 2019, 2026
+lastupdated: "2026-02-06"
 
 keywords: IBM Cloud Internet Services, subdomain, CNAME
 
@@ -30,7 +30,7 @@ Follow these steps to practice using {{site.data.keyword.cis_short_notm}} with a
 6. Log in to GoDaddy domain Registrar.
 7. Navigate to the DNS Management page for the candidate {{site.data.keyword.cis_short_notm}} domain. {{site.data.keyword.cloud}} must be updated through the API.
 8. Click **ADD** to create an NS Host record for each name server entry provided from {{site.data.keyword.cis_short_notm}}.
-9. Set up a DNS record with the supplied {{site.data.keyword.cis_short_notm}} NS Records
+9. Set up a DNS record with the supplied {{site.data.keyword.cis_short_notm}} NS Records:
     * Type **Nameserver**
     * Host **subdomain** (the name of the subdomain, for example, `subdomain.example.com`)
     * Points to `ns004.name.cloud.ibm.com`

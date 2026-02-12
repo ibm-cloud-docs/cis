@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-02-06"
 
 keywords:
 
@@ -8985,7 +8985,7 @@ ibmcloud cis alert-policy maintenance-event-alert-create --name test1 --emails t
 ### `ibmcloud cis alert-policy ddos-attack-l7-alert-update`
 {: #update-ddos-attack-l7-alert}
 
- Update an alert policy for DDos attack l7.
+ Update an alert policy for DDoS attack l7.
 
 ```sh
 ibmcloud cis alert-policy ddos-attack-l7-alert-update POLICY_ID [--name NAME] [--emails EMAILS] [--webhooks WEBHOOKS] [--enabled (true | false)] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]

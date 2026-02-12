@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-07"
+lastupdated: "2026-02-06"
 
 keywords:
 
@@ -21,7 +21,7 @@ The Domain Name System (DNS) underpins the web, working transparently in the bac
 To perform this translation, the DNS system queries a network of interconnected DNS servers across the internet. This process is similar to using a phone book or a map to find a specific location.
 
 ## Name servers
-{: #dns-concepts-nameservers}
+{: #dns-concepts-name-servers}
 
 A name server provides services that respond to queries against a directory, translating meaningful, text-based web or hostnames into IP addresses.
 

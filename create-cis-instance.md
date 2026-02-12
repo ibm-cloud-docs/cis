@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-08"
+  years: 2018, 2026
+lastupdated: "2026-02-06"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -33,7 +33,12 @@ To create a CIS instance, follow these steps:
    The No-cost Trial plan is limited to one instance per account.
    {: note} 
 
-## Next steps
-{: #next-steps-tutorial}
+1. From the first page of the CIS application, click **Add Domain** and continue to step 2 in the [Getting started](/docs/cis?topic=cis-getting-started) topic to add and configure your domain.
 
-From the first page of the CIS application, click **Add Domain** and continue to step 2 in the [Getting started](/docs/cis?topic=cis-getting-started) to add and configure your domain.
+## Navigating to your CIS instance
+{: #navigate-cis-instance}
+
+To open to your CIS instance:
+
+1. Go to **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg) and click **Resource list**, then expand **Security**. 
+1. Expand **Security** and click the name of your CIS instance.

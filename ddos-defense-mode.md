@@ -27,7 +27,7 @@ To set your entire domain in defense mode when you are under attack, turn on “
 Defense mode is disabled by default and intended as a last resort when a zone is under attack.
 {: note}
 
-### Applying defense mode selectively 
+## Applying defense mode selectively 
 {: #selectively-apply-defense-mode}
 
 Instead of enabling defense mode for the entire domain, you can apply it to specific pages or site sections by adjusting the security level with a configuration rule.
@@ -45,8 +45,8 @@ For example, consider the following incoming request matching scenario:
     ```
     {: pre}
 
-2. For defense mode, select **Add**.
-3. Move the switch to **0n**.
+1. For defense mode, select **Add**.
+1. Move the switch to **0n**.
 
 To target specific ASNs (hosts/ISPs that own IP addresses), countries, or IP ranges, use **IP Access Rules**.
 
@@ -58,6 +58,9 @@ Defense mode requires the browser to support JavaScript in order to display and 
 ## Related links
 {: #defense-mode-related-links}
 
-* [DDoS attack concepts](/docs/cis?topic=cis-distributed-denial-of-service-ddos-attack-concepts)
+* [DDoS attack concepts](/docs/cis?topic=cis-ddos-attack-concepts)
+* [About DDoS protection in CIS](/docs/cis?topic=cis-about-ddos)
 * [Preventing DDoS attacks](/docs/cis?topic=cis-preventing-ddos-attacks)
 * [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
+* [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
+* [HTTP DDoS Attack Protection managed ruleset](/docs/cis?topic=cis-http-ddos)

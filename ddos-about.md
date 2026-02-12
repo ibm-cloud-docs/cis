@@ -44,3 +44,13 @@ Use these features to customize Layer 7 mitigation of both volumetric and non-vo
 {: #cis-mitigate-non-volumetric-attacks}
  
 {{site.data.keyword.cis_short_notm}} WAF contains rulesets to mitigate non-volumetric attacks, including cross-site forgery, cross-site-scripting (XSS), file inclusion, and SQL injection. For additional information about WAF, see [Web Application Firewall concepts](/docs/cis?topic=cis-waf-q-and-a).
+
+## Related links
+{: #about-ddos-related-links}
+ 
+* [DDoS attack concepts](/docs/cis?topic=cis-ddos-attack-concepts)
+* [Preventing DDoS attacks](/docs/cis?topic=cis-preventing-ddos-attacks)
+* [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)
+* [Using Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos)
+* [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
+* [HTTP DDoS Attack Protection managed ruleset](/docs/cis?topic=cis-http-ddos)

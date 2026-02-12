@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-02-06"
 
 keywords:
 
@@ -95,17 +95,14 @@ Define your global load balancer configuration by specifying a hostname, adding 
 5. Click **Create** to complete the configuration of your global load balancer.
 6. Finally, verify connectivity to your application by trying to connect to the FQDN URL from a browser.
 
-### Global load balancer details
-{: #glb-details}
-
-#### Global load balancer quick setup
+### Global load balancer quick setup
 {: #global-load-balancer-quick-setup}
 
 You can directly create pools and health checks from the **Create Load Balancer** menu option. Navigate to **Reliability > Global Load Balancer > Create load balancer > Add pool**, then select **Create New** from the Origin pool list.
 
 Input a pool name, [origins](#x2210603){: term}, and select a health check. You can create a new health check here by choosing **Create New** in the **Health Check** list menu, and entering the information to create the health check.
 
-#### Adding a health check
+### Adding a health check
 {: #add-a-health-check}
 
 Health checks are optional attachments for origin pools. They use a custom repeating interval to probe for a specific response body, or for a status code, to monitor the pool's health. After you create a health check, you can add it to a new or existing origin pool. Navigate to **Reliability > Global Load Balancer > Health Check Events** to see a table of health check events. You can filter by date, health of the pool or origin, pool name, and origin name.
@@ -128,7 +125,7 @@ Expand the **Advanced options** section to see more settings.
 Expand the **Configure request headers** section to add and configure HTTP request headers to send in the health check.
 It is recommended that you set a Host header by default. The `User-Agent` header can't be overridden.
 
-#### Adding a pool
+### Adding a pool
 {: #add-a-pool}
 
 At least one pool is required for each provisioned load balancer. Pools group your origins for the load balancer to use.
@@ -147,7 +144,7 @@ Additional optional fields:
 
 * **Enabled**: Whether to enable (the default) this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any (default to true).
 
-#### Adding a global load balancer
+### Adding a global load balancer
 {: #add-a-load-balancer}
 
 Load balancers help to distribute your proxied traffic across multiple origin pools using a round-robin distribution.
@@ -166,7 +163,7 @@ Optionally, you can configure the following fields:
    IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/#geo-steering){: external}.
    {: note}
 
-#### Editing or deleting global load balancers
+### Editing or deleting global load balancers
 {: #edit-delete-load-balancer}
 
 To edit or delete a load balancer, or one of its components, click the Actions menu ![overflow icon](/images/horizontal-overflow-icon.png) located on the right of the row, and select the action you want to take from the list.
