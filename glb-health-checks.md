@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-10-30"
+  years: 2020, 2026
+lastupdated: "2026-02-12"
 
 keywords:
 
@@ -39,8 +39,43 @@ Health checks that result in a status change for an origin server are recorded a
     * Use the {{site.data.keyword.cis_short_notm}} user agent to reject HTTP requests that don't come from these ranges.
     * Ensure that your firewall or web server does not block or rate limit {{site.data.keyword.cis_short_notm}} health checks.
 
-
 ## Health check events
 {: #health-check-events}
 
 Health Check Events are status changes from pools with connected health checks and their associated origin servers. If an origin's status degrades, a new item appears in a table, with the event's description.
+
+## Monitoring health check failures with alert policies
+{: #monitor-health-check-failures-with-alert-policies}
+
+Enterprise plan users can configure alert policies to receive notifications when load balancer health checks fail.
+
+To create an alert:
+
+1. Go to Alerts and notifications.
+1. Create a new alert policy.
+1. Select the appropriate load balancer health metrics.
+1. Configure notification channels.
+
+For more information, see [Configuring CIS alert policies](/docs/cis?topic=cis-configuring-policies&interface=ui).
+
+## Supported health check types
+{: #health-check-types-supported}
+
+| Type            | Description                                                   |
+| --------------- | ------------------------------------------------------------- |
+| **HTTP      | Sends HTTP requests and validates response codes and content. |
+| HTTPS       | Sends HTTPS requests and validates TLS-secured responses.     |
+| TCP         | Verifies that a TCP connection can be established.            |
+| ICMP (Ping) | Verifies host reachability using ICMP echo requests.          |
+
+Depending on the selected monitor type, additional configuration options might be available, such as:
+
+* HTTP method (GET, HEAD)
+* Expected response codes
+* Request path
+* Host header override
+* Timeout
+* Interval
+* Retry count
+
+Choose the monitor type that best matches your application protocol and availability requirements.
