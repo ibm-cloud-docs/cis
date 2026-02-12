@@ -110,6 +110,7 @@ For more information, see [Configuring CIS alert policies](/docs/cis?topic=cis-c
 | HTTPS       | Sends HTTPS requests and validates TLS-secured responses.     |
 | TCP         | Verifies that a TCP connection can be established.            |
 | ICMP (Ping) | Verifies host reachability using ICMP echo requests.          |
+{: caption="Supported health check types" caption-side="bottom"}
 
 Depending on the selected monitor type, additional configuration options might be available, such as:
 
