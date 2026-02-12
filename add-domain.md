@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-02-12"
 
 keywords: domains
 
@@ -14,6 +14,7 @@ subcollection: cis
 
 # Configuring a full (authoritative) zone
 {: #full-authoritative-zone}
+{: ui}
 
 A "full setup" delegates DNS authority to CIS. You update your domain’s name servers at your registrar so CIS becomes the authoritative DNS provider for your domain. This can be applied to a root domain (`example.com`) or a subdomain (`sub.example.com`) if needed.
 
