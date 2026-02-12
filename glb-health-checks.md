@@ -49,10 +49,10 @@ Health Check Events are status changes from pools with connected health checks a
 
 Enterprise plan users can configure alert policies to receive notifications when load balancer health checks fail.
 
-To create an alert:
+To create an alert policy:
 
-1. Go to Alerts and notifications.
-1. Create a new alert policy.
+1. Fron the CIS console, go to **Account > Alerts**. 
+1. In the Alerting policies view, click **Create** to create an alert policy.
 1. Select the appropriate load balancer health metrics.
 1. Configure notification channels.
 
