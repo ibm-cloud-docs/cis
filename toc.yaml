@@ -101,6 +101,7 @@ toc:
           - ddos-preventing-attacks.md
           - ddos-responding.md
           - ddos-defense-mode.md
+          - ddos-low-slow-attacks.md
           - ddos-using-third-party-services.md
           - ddos-attack-protection.md
       - topicgroup:
