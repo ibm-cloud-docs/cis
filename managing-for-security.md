@@ -26,7 +26,7 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) securi
 ## Best practice 1: Secure your origin IP addresses
 {: #best-practice-secure-origin-ip-address}
 
-When a subdomain uses {{site.data.keyword.cis_short_notm}} for proxying, all traffic is protected because {{site.data.keyword.cis_short_notm}} responds with specific IP addresses that are associated with it. This process helps ensure that you connect to CIS proxies first, which hides your original IP addresses.
+When a subdomain uses {{site.data.keyword.cis_short_notm}} for proxying, all traffic is protected because {{site.data.keyword.cis_short_notm}} responds with specific IP addresses that are associated with it. This process ensures you to connect to CIS proxies first, which hides your original IP addresses.
 
 ### Use {{site.data.keyword.cis_short_notm}} proxies for all DNS records for HTTP traffic from your origin
 {: #use-cis-proxies-for-dns-records}
@@ -67,42 +67,6 @@ The WAF protects you against the following types of attacks:
 The WAF contains a default ruleset, which includes rules to stop the most common attacks. Currently, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rulesets. See [WAF actions](/docs/cis?topic=cis-waf-actions) document for more details on the ruleset and the behavior of each rule.
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
-
-## Best practice 3: Configure WAF Attack score safely
-{: #waf-attack-score-rule}
-
-WAF Attack Score strengthens your security posture by detecting variations of known attacks by using machine learning. It complements WAF managed rules by identifying malicious requests that do not match existing rule signatures.
-
-To configure WAF Attack Score safely, begin with monitoring before enforcing blocking actions. This allows you to review scored traffic in Security Events and adjust thresholds to minimize false positives.
-
-### Configuring WAF Attack score in custome rule
-{: #waf-score-in-rule}
-
-1. If you are an Enterprise customer, [create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui#create-custom-rule-ui) that blocks requests with a WAF Attack Score less than or equal to 20. This value is the recommended starting threshold.
-
-   | Field | Operator | Value |
-   | ----- | -------- | ----- |
-   | WAF Attack Score | less than or equal to | `20` |
-   {: caption="Enterprise rule example" caption-side="bottom"}
-
-     * Equivalent rule expression: `cf.waf.score le 20`
-     * Action: _Block_
-
-   If you are a Business customer, create a custom rule using the **WAF Attack Score Class** field instead. For example, block requests with a score class of Attack.
-
-   | Field | Operator | Value |
-   | ----- | -------- | ----- |
-   | WAF Attack Score Class | Equals | `Attack` |
-   {: caption="Business rule example" caption-side="bottom"}
-
-     * Equivalent rule expression: `cf.waf.score.class eq "attack"`
-     * Action: _Block_
-
-1. Monitor the rule closely during the first few days. Verify that the selected threshold or class value aligns with your traffic patterns. Adjust the rule if you observe false positives or missed threats.
-
-1. If you are an Enterprise customer and you created a rule with Log action, change the rule action to a more severe one, like _Managed Challenge_ or _Block_.
-
-CIS recommends to use WAF managed rules together with WAF Attack Score. Managed rules protect against well known attack patterns, while Attack Score detects modified or obfuscated attacks—providing layered and adaptive protection for your domain. For more information, see [WAF Attack score](/docs/cis?topic=cis-waf-attack-score).
 
 ## Best practice 4: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
