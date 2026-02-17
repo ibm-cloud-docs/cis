@@ -102,9 +102,9 @@ To configure WAF Attack Score safely, begin with monitoring before enforcing blo
 
 1. If you are an Enterprise customer and you created a rule with Log action, change the rule action to a more severe one, like _Managed Challenge_ or _Block_.
 
-CIS recommends to use WAF managed rules together with WAF Attack Score. Managed rules protect against well known attack patterns, while Attack Score detects modified or obfuscated attacks—providing layered and adaptive protection for your domain.
+CIS recommends to use WAF managed rules together with WAF Attack Score. Managed rules protect against well known attack patterns, while Attack Score detects modified or obfuscated attacks—providing layered and adaptive protection for your domain. For more information, see [WAF Attack score](/docs/cis?topic=cis-waf-attack-score).
 
-## Best practice 3: Configure your TLS settings
+## Best practice 4: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
 
 IBM {{site.data.keyword.cis_short_notm}} functions as a reverse proxy and provides multiple options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
@@ -178,7 +178,7 @@ The following list denotes the priority by which the certificates are displayed 
 
 Higher levels of TLS provide more security, but might prevent customers from connecting to your site. For more information, see [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version).
 
-## Best practice 4: Configure rate limiting
+## Best practice 5: Configure rate limiting
 {: #best-practice-rate-limiting}
 
 Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold. The main use cases for rate limiting are as follows:
