@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-11"
+  years: 2018, 2026
+lastupdated: "2026-02-17"
 
 keywords:
 
@@ -26,7 +26,7 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) securi
 ## Best practice 1: Secure your origin IP addresses
 {: #best-practice-secure-origin-ip-address}
 
-When a subdomain uses {{site.data.keyword.cis_short_notm}} for proxying, all traffic is protected because {{site.data.keyword.cis_short_notm}} responds with specific IP addresses that are associated with it. This process helps ensure that you connect to CIS proxies first, which hides your original IP addresses.
+When a subdomain uses {{site.data.keyword.cis_short_notm}} for proxying, all traffic is protected because {{site.data.keyword.cis_short_notm}} responds with specific IP addresses that are associated with it. This process ensures you to connect to CIS proxies first, which hides your original IP addresses.
 
 ### Use {{site.data.keyword.cis_short_notm}} proxies for all DNS records for HTTP traffic from your origin
 {: #use-cis-proxies-for-dns-records}
@@ -68,7 +68,7 @@ The WAF contains a default ruleset, which includes rules to stop the most common
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
 
-## Best practice 3: Configure your TLS settings
+## Best practice 4: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
 
 IBM {{site.data.keyword.cis_short_notm}} functions as a reverse proxy and provides multiple options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
@@ -142,7 +142,7 @@ The following list denotes the priority by which the certificates are displayed 
 
 Higher levels of TLS provide more security, but might prevent customers from connecting to your site. For more information, see [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version).
 
-## Best practice 4: Configure rate limiting
+## Best practice 5: Configure rate limiting
 {: #best-practice-rate-limiting}
 
 Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold. The main use cases for rate limiting are as follows:
