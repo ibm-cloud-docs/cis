@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-02-20"
 
 keywords:
 
@@ -26,7 +26,7 @@ The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) securi
 ## Best practice 1: Secure your origin IP addresses
 {: #best-practice-secure-origin-ip-address}
 
-When a subdomain uses {{site.data.keyword.cis_short_notm}} for proxying, all traffic is protected because {{site.data.keyword.cis_short_notm}} responds with specific IP addresses that are associated with it. This process ensures that requests are routed through CIS proxy servers first, effectively hiding the origin server’s IP address.
+When a subdomain uses {{site.data.keyword.cis_short_notm}} for proxying, all traffic is protected because {{site.data.keyword.cis_short_notm}} returns IP addresses that are associated with its proxy network. This ensures that connections are routed through CIS proxies first, which hides the origin IP addresses.
 
 ### Use {{site.data.keyword.cis_short_notm}} proxies for all DNS records for HTTP traffic from your origin
 {: #use-cis-proxies-for-dns-records}
