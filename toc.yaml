@@ -314,5 +314,5 @@ toc:
           - ts-domain-moved.md
           - ts-delete-cis-instance.md
           - ts-uuid-support.md
-          - ts-err-too-many-redirects
+          - ts-err-too-many-redirects.md
       - getting-help.md
