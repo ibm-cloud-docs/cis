@@ -23,6 +23,7 @@ toc:
           - ddos-concept.md
           - domain-lifecycle.md
           - dns-concepts.md
+          - events-concept.md
           - glb.md
           - grpc-protocol-support.md
           - http-concepts.md
