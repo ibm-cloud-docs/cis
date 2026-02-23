@@ -22,6 +22,7 @@ toc:
           - compression-concepts.md
           - ddos-concept.md
           - domain-lifecycle.md
+          - domain-settings.md
           - dns-concepts.md
           - events-concept.md
           - glb.md
