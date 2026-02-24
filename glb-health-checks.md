@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-02-24"
 
 keywords:
 
@@ -36,7 +36,7 @@ To set up a health check, create a monitor and attach it to a load balancer pool
 ### Before you begin
 {: #before-you-begin-health-check}
 
-Ensure you meet the following prerequisites: 
+Ensure you meet the following prerequisites:
 
 * A {{site.data.keyword.cis_short_notm}} instance is provisioned.
 * At least one load balancer pool exists.
@@ -68,13 +68,13 @@ To create and attach a health check in the console, follow these steps:
 1. In the **Health monitor** section, select the monitor that you created.
 1. Click **Save**.
 
-After the monitor is attached, {{site.data.keyword.cis_short_notm}} begins checking the health of each origin server in the pool. If an origin fails the configured number of health checks, it is marked unhealthy and traffic is routed to healthy origins based on your traffic steering configuration. 
+After the monitor is attached, {{site.data.keyword.cis_short_notm}} begins checking the health of each origin server in the pool. If an origin fails the configured number of health checks, it is marked unhealthy and traffic is routed to healthy origins based on your traffic steering configuration.
 
 ## Health check considerations
 {: #health-check-notes}
 
-* Availability monitoring checks the health of origin servers every 15 seconds. It reports results via email notifications and the {{site.data.keyword.cis_short_notm}} API.
-* The default retry rate is 5 retries per second, and is completely configurable. It is not recommend to increase the retry rate significantly. Retries use exponential backoff (1, 2, 4, 8, and 16 seconds, by default).
+* Availability monitoring checks the health of origin servers every 15 seconds. It reports results using email notifications and the {{site.data.keyword.cis_short_notm}} API.
+* The default retry rate is 5 retries per second, and is completely configurable. It is not recommended to increase the retry rate significantly. Retries use exponential backoff (1, 2, 4, 8, and 16 seconds, by default).
 * You can configure monitoring for specific URLs by sending periodic HTTP requests to the load balancer, taking advantage of customizable intervals, timeouts, and status codes. After an origin server is marked unhealthy, multi-region failover reroutes traffic to the next available server in failover order.
 * Load balancer monitors use the following HTTP user-agent: `"Mozilla/5.0 (compatible; Cloudflare-Traffic-Manager/1.0; +https://www.cloudflare.com/traffic-manager/; pool-id: $poolid)"`. The `$poolid` contains the first 16 characters of the load balancer pool that is the target of the health check.
 * To prevent health checks from failing, and to secure user infrastructure against spoofed checks from bad actors, it is recommended that you do the following:
@@ -94,7 +94,7 @@ Enterprise plan users can configure alert policies to receive notifications when
 
 To create an alert policy:
 
-1. Fron the CIS console, go to **Account > Alerts**. 
+1. From the CIS console, go to **Account > Alerts**.
 1. In the Alerting policies view, click **Create** to create an alert policy.
 1. Select the appropriate load balancer health metrics.
 1. Configure notification channels.
@@ -106,7 +106,7 @@ For more information, see [Configuring CIS alert policies](/docs/cis?topic=cis-c
 
 | Type            | Description                                                   |
 | --------------- | ------------------------------------------------------------- |
-| **HTTP      | Sends HTTP requests and validates response codes and content. |
+| HTTP      | Sends HTTP requests and validates response codes and content. |
 | HTTPS       | Sends HTTPS requests and validates TLS-secured responses.     |
 | TCP         | Verifies that a TCP connection can be established.            |
 | ICMP (Ping) | Verifies host reachability using ICMP echo requests.          |
