@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-23"
+lastupdated: "2026-02-24"
 
 keywords:
 
@@ -20,7 +20,7 @@ subcollection: cis
 ## Advanced security
 {: #advanced-security-feature}
 
-Advanced security settings include the following features, which you can change, enable, or disable.
+Domain settings provide the configuration framework through which advanced security features are enabled, managed, and enforced for each domain. These settings include the following features, which you can change, enable, or disable.
 
 * **Browser integrity check** - The browser integrity check looks for HTTP headers that are commonly abused by spammers. It denies traffic with those headers access to your page. It also blocks or challenges visitors that do not have a user agent, or who add a nonstandard user agent. This tactic is commonly used by abuse bots, crawlers, or APIs.
 * **Challenge passage** - Controls how long a visitor that passed a challenge (or JavaScript challenge) gains access to your site before they are challenged again. This challenge is based on the visitor's IP, and therefore does not apply to challenges presented by WAF rules because they are based on an action that the user performs on your site.
