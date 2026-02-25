@@ -75,7 +75,7 @@ If you do not define any custom health checks, the system uses `/` as your defau
    * **Path**: The endpoint path against which to perform the health check (defaults to `/`).
    * **Port**: Click the arrow buttons to increase or decrease the port number.
    * **Description**: Optional health check description.
-   
+
 1. Expand **Advanced options** to configure:
 
    * **Test interval**: The interval (in seconds) between each health check. Shorter intervals can improve failover time, but increase load on the origins as checks come from multiple locations (default: 60).
