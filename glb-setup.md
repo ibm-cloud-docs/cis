@@ -29,7 +29,7 @@ You can configure a global load balancer by using the console, CLI, or API.
 * Configure your domain in {{site.data.keyword.cis_short_notm}}.
 * Identify the IP addresses or FQDNs of your application origins.
 
-{{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address. However, for these private IP pools, you cannot use proxy services or health checks; only DNS-based load balancing is supported. For pools with public IPs, health checks can be configured as described in the following procedure (step 1).
+{{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address. However, for these private IP pools, you cannot use proxy services or health checks; only DNS-based load balancing is supported. For pools with public IPs, health checks can be configured as described in ([Step 1: Create a health check](#create-health-check)).
 {: important}
 
 ## Quick setup
