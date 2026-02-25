@@ -23,7 +23,7 @@ The global load-balancing capabilities available with {{site.data.keyword.cis_fu
 You can configure a global load balancer by using the console, CLI, or API.
 
 ## Before you begin
-{: before-you-create-glbs}
+{: #before-you-create-glbs}
 
 * Provision a {{site.data.keyword.cis_short_notm}} instance.
 * Configure your domain in {{site.data.keyword.cis_short_notm}}.
@@ -94,7 +94,7 @@ If you do not define any custom health checks, the system uses `/` as your defau
 To see health check events, navigate to
 **Reliability > Global Load Balancer > Health Check Events**. You can filter by date, health of the pool or origin, pool name, and origin name.
 
-## Step 2: Create an origin pool
+### Step 2: Create an origin pool
 {: #create-origin-pool-glb}
 
 At least one pool is required for each provisioned load balancer. Pools group your origins for the load balancer to use.
