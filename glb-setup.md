@@ -29,7 +29,7 @@ You can configure a global load balancer by using the console, CLI, or API.
 * Configure your domain in {{site.data.keyword.cis_short_notm}}.
 * Identify the IP addresses or FQDNs of your application origins.
 
-{{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address. However, for these private IP pools, you cannot use proxy services or health checks; only DNS-based load balancing is supported. For pools with public IPs, health checks can be configured as described in the following procedure (step 1).
+{{site.data.keyword.cis_short_notm}} can support load balancer pools that use a private IP address. However, for these private IP pools, you cannot use proxy services or health checks; only DNS-based load balancing is supported. For pools with public IPs, health checks can be configured as described in ([Step 1: Create a health check](#create-health-check)).
 {: important}
 
 ## Quick setup
@@ -51,11 +51,9 @@ This is a shortcut for advanced users. The following steps provide the full proc
 
 On the CIS console, you'll see three lists that show the [load balancers](#x2788902){: term}, origin pools, and [health checks](#x4571658){: term}. The lists display the new or updated global load balancer, or one of its components after you've provisioned or updated it.
 
-In the following step-by-step procedure, learn how to configure a setup similar to the following diagram:
+In the following step-by-step procedure, learn how to configure a setup similar to the following diagram. In this example, the application resources are deployed in two data center locations, one in US West and the other in US East. Users might be accessing this application from all over the world.
 
 ![Global load balancer](images/cis-glb1.svg "Diagram showing the global load balancer"){: caption="Diagram of global load balancer example" caption-side="bottom"}
-
-In this example, the application resources are deployed in two data center locations, one in US West and the other in US East. Users might be accessing this application from all over the world.
 
 To create and configure a global load balancer in the console, follow these steps:
 
