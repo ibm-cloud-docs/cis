@@ -15,9 +15,9 @@ subcollection: cis
 # Creating global load balancers
 {: #configure-glb}
 
-If you have an e-commerce website, or are hosting an application that must always be accessible to your users, then you're likely concerned about the 24 x 7 availability and performance of your application.
+If you have an e-commerce website, or are hosting an application that must be accessible to your users, then you're likely concerned about the availability and performance of your application.
 
-The global load-balancing capabilities available with {{site.data.keyword.cis_full_notm}} ({{site.data.keyword.cis_short_notm}}) can help improve reliability and scalability of your applications while delivering the best possible user experience.
+Global load balancer capabilities available with {{site.data.keyword.cis_full_notm}} ({{site.data.keyword.cis_short_notm}}) can help improve reliability and scalability of your applications and deliver the best possible user experience.
 {: shortdesc}
 
 You can configure a global load balancer by using the console, CLI, or API.
@@ -36,22 +36,22 @@ You can configure a global load balancer by using the console, CLI, or API.
 {: #quick-setup}
 {: ui}
 
-If you already know your pools and health checks, you can create them inline while creating a load balancer:
+If you already know your pools and health checks, you can create them inline when you create a load balancer:
 
-1. Navigate to **Reliability > Global load balancers**. Click **Origin pools > Create**.
+1. In the CIS console, click **Reliability > Global load balancers**. Then, click **Origin pools > Create**.
 1. Input a pool name, origins, and select a health check.
 
    You can create a new health check here by selecting **Create new** in the Health Check list menu and completing the information.
 
 1. Click **Save**.
 
-This is a shortcut for advanced users. The following steps provide the full procedure for creating health checks, pools, and the global load balancer.
+The following steps provide the full procedure for creating health checks, pools, and the global load balancer.
 
 ## Creating a global load balancer in the console
 {: #configure-load-bal-ui}
 {: ui}
 
-When you navigate to the Global load balancers page (**Reliability > Global load balancers**), you'll see tabs for [Load balancers](#x2788902){: term}, Origin pools, [Health checks](#x4571658){: term}, and Events. The lists in these tabbed views display new or updated global load balancers, or one of its components after you've provisioned or updated it.
+When you open the Global load balancers page (**Reliability > Global load balancers**), tabs are shown for [Load balancers](#x2788902){: term}, Origin pools, [Health checks](#x4571658){: term}, and Events. The lists in these tabbed views display new or updated global load balancers, or one of its components after you provisioned or updated it.
 
 In the following step-by-step procedure, learn how to configure a setup similar to the following diagram. In this example, the application resources are deployed in two data center locations, one in US West and the other in US East. Users might be accessing this application from all over the world.
 
@@ -67,24 +67,24 @@ Health checks are optional attachments for origin pools. They use a custom repea
 If you do not define any custom health checks, the system uses `/` as your default health check path.
 {: note}
 
-1. Navigate to **Reliability > Global load balancers > Health checks**, then click **Create**.
+1. In the CIS console, click **Reliability > Global load balancers > Health checks**, then click **Create**.
 1. Configure the following fields:
 
    * **Name**: Name of the health check.
    * **Monitor type**: The protocol to use for the health check. (Default: `HTTP`).
-   * **Port**: Click the arrow buttons to increase or decrease the port number.
+   * **Port**: Click the arrows to increase or decrease the port number.
    * **Path**: The endpoint path against which to perform the health check. (Default: `/`)
 
 1. Expand **Advanced options** to configure:
 
    * **Test interval**: The interval (in seconds) between each health check. Shorter intervals can improve failover time, but increase load on the origins as checks come from multiple locations. (Default: `60`).
    * **Method**: The HTTP method to use for the health check. (Default: `GET`)
-   * **Timeout (seconds)**: The time (in seconds) before marking the health check as failed.(Default: `5`)
-   * **Number of retries**: The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. (Default: `2`)
-   * **Expected response codes**: The expected HTTP response code or code range of the health check. This value must be between 200-299 with wildcards that are denoted by an `x`.
-   * **Response body**: A case-insensitive sub-string to match against in the response body. If this string is not found, the origin is marked as unhealthy.
-   * **Healthy threshold**: The number of consecutive successful health check responses that must be received before an origin is marked as healthy. This setting prevents an origin from being marked healthy after a single successful probe and helps avoid flapping during intermittent recovery. (Default: 1)
-   * **Unhealthy threshold**: The number of consecutive failed health check responses that must occur before an origin is marked as unhealthy. This setting helps prevent temporary network or application issues from immediately triggering failover. (Default: `1`)
+   * **Timeout (seconds)**: The time (in seconds) before the health check is marked as failed. (Default: `5`)
+   * **Number of retries**: The number of retries to attempt if there is a timeout before the origin is marked as unhealthy. Retries are attempted immediately. (Default: `2`)
+   * **Expected response codes**: The expected HTTP response code or code range of the health check. This value must be between 200-299 with wildcards that are denoted with an `x`.
+   * **Response body**: A case-insensitive substring to match against in the response body. If this string is not found, the origin is marked as unhealthy.
+   * **Healthy threshold**: The number of consecutive successful health check responses that must be received before an origin is marked as healthy. Prevents an origin from being marked healthy after a single successful probe and helps avoid flapping during intermittent recovery. (Default: `1`)
+   * **Unhealthy threshold**: The number of consecutive failed health check responses that must occur before an origin is marked as unhealthy. Helps prevent temporary network or application issues from immediately triggering failover. (Default: `1`)
    * **Follow redirects**: Determines whether the health check automatically follows HTTP 3xx redirect responses. When enabled, the health check continues to the redirected location and evaluates the final response against the configured success criteria (status code and optional response body). When disabled, redirect responses are evaluated directly against the expected response codes.
 
 1. Expand **Configure request headers (optional)** to add and configure HTTP request headers to send in the health check.
@@ -93,16 +93,15 @@ If you do not define any custom health checks, the system uses `/` as your defau
 
 1. Click **Create** to complete your health check configuration.
 
-To see health check events, navigate to
-**Reliability > Global load balancers > Events**. You can filter by date, health of the pool or origin, pool name, and origin name.
+To see health check events, click **Reliability > Global load balancers > Events**. You can filter by date, health of the pool or origin, pool name, and origin name.
 
 ### Step 2: Create an origin pool
 {: #create-origin-pool-glb}
 
 At least one pool is required for each provisioned load balancer. Pools group your origins for the load balancer to use.
 
-1. Navigate to **Reliability > Global load balancers > Origin pools**, then click **Create**.
-1. Select whether to enable this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers using it to failover to the next pool, if any.
+1. In the CIS console, click **Reliability > Global load balancers > Origin pools**, then click **Create**.
+1. Select whether to enable this pool. Disabled pools do not receive traffic and are excluded from health checks. Disabling a pool causes any load balancers that use it to failover to the next pool, if any.
 1. Configure the required fields:
 
    * **Name**: A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
@@ -117,7 +116,7 @@ At least one pool is required for each provisioned load balancer. Pools group yo
    * **Pool health check region**: Region from which the health check performs monitoring.
    * **Health check**: The health check to use for checking origins within this pool. (Default: **No health check**)
 
-     IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
+     IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare use, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
      {: note}
 
 1. Click **Save** to complete origin pool configuration.
@@ -130,20 +129,20 @@ Define as many origin pools as the number of application farms that you have. Th
 ### Step 3: Configure the global load balancer
 {: #global-load-balancer-configuration}
 
-Load balancers help to distribute your proxied traffic across multiple origin pools using a round-robin distribution.
+Load balancers help to distribute your proxied traffic across multiple origin pools by using a round-robin distribution.
 
-1. Navigate to **Reliability > Global load balancers > Load balancers**, then click **Create**.
+1. In the CIS console, click **Reliability > Global load balancers > Load balancers**, then click **Create**.
 1. Enable the load balancer.
-1. For Proxy, determine if you want to control whether traffic should flow through the security and performance functions on CIS. 'Off' bypasses these systems.
+1. For Proxy, determine whether you want to control whether traffic should flow through the security and performance functions on CIS. 'Off' bypasses these systems.
 1. Configure the following information:
 
    * **Name (optional)**: The name to associate with your load balancer.
    * **TTL**: Time-to-live (TTL) of the DNS entry for the IP address returned by this load balancer. This option applies only to unproxied load balancer; otherwise, it defaults to `Automatic`.
    * **Traffic steering**: Controls how incoming user requests are distributed across your configured origin pools by determining the algorithm CIS uses to decide which data center (pool) serves each request. For more information, see [Optimizing traffic steering](/docs/cis?topic=cis-traffic-steering&interface=ui).
    * **Session Affinity**: Always route through the same performance and metrics instance. This option is available only if **Proxy** is enabled.
-   * **Geo routes**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the given region. Any regions not explicitly defined fall back to using the default pools.
+   * **Geo routes**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the specified region. Any regions not explicitly defined fall back to using the default pools.
 
-     IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
+     IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare use, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
      {: note}
 
 1. Click **Create** to complete the global load balancer configuration.
