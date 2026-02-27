@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-02-27"
 
 keywords:
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #uuid-support}
 {: troubleshoot}
 
-When investigating CLI-related issues, effective traceability depends on receiving complete and properly formatted request data. The new `X-Request-ID` header in the CIS CLI improves transparency and traceability across systems, making it easier for IBM Support to pinpoint and resolve issues efficiently. 
+When investigating CLI-related issues, effective traceability depends on receiving complete and properly formatted request data. The new `X-Request-ID` header in the CIS CLI improves transparency and traceability across systems, making it easier for IBM Support to pinpoint and resolve issues efficiently.
 {: shortdesc}
 
 IBM Support might encounter difficulty tracing specific CLI-initiated API calls if the necessary request identifiers are missing from the logs you share.
@@ -60,9 +60,8 @@ To ensure that IBM Support can trace and analyze the request properly, follow th
    X-Envoy-Upstream-Service-Time: 842
    ```
    {: screen}
-   
+
 1. Attach this information to your support case to assist IBM Support in isolating and debugging the issue quickly.
 
    Make sure to redact sensitive data, such as Authorization tokens, before sharing logs externally.
    {: note}
- 
