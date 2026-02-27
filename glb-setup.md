@@ -71,21 +71,21 @@ If you do not define any custom health checks, the system uses `/` as your defau
 1. Configure the following fields:
 
    * **Name**: Name of the health check.
-   * **Monitor type**: The protocol to use for the health check (defaults to `HTTP`).
+   * **Monitor type**: The protocol to use for the health check. (Default: `HTTP`).
    * **Port**: Click the arrow buttons to increase or decrease the port number.
-   * **Path**: The endpoint path against which to perform the health check (defaults to `/`).
+   * **Path**: The endpoint path against which to perform the health check. (Default: `/`)
 
 1. Expand **Advanced options** to configure:
 
-   * **Test interval**: The interval (in seconds) between each health check. Shorter intervals can improve failover time, but increase load on the origins as checks come from multiple locations (default: 60).
-   * **Method**: The HTTP method to use for the health check (default: `GET`).
-   * **Timeout (seconds)**: The time (in seconds) before marking the health check as failed (default: 5).
-   * **Number of retries**: The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately (default: 2).
+   * **Test interval**: The interval (in seconds) between each health check. Shorter intervals can improve failover time, but increase load on the origins as checks come from multiple locations. (Default: `60`).
+   * **Method**: The HTTP method to use for the health check. (Default: `GET`)
+   * **Timeout (seconds)**: The time (in seconds) before marking the health check as failed.(Default: `5`)
+   * **Number of retries**: The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. (Default: `2`)
    * **Expected response codes**: The expected HTTP response code or code range of the health check. This value must be between 200-299 with wildcards that are denoted by an `x`.
    * **Response body**: A case-insensitive sub-string to match against in the response body. If this string is not found, the origin is marked as unhealthy.
-   * **Healthy threshold**: NEED INPUT
-   * **Unhealthy threshold**: NEED INPUT
-   * **Follow redirects**: NEED INPUT
+   * **Healthy threshold**: The number of consecutive successful health check responses that must be received before an origin is marked as healthy. This setting prevents an origin from being marked healthy after a single successful probe and helps avoid flapping during intermittent recovery. (Default: 1)
+   * **Unhealthy threshold**: The number of consecutive failed health check responses that must occur before an origin is marked as unhealthy. This setting helps prevent temporary network or application issues from immediately triggering failover. (Default: `1`)
+   * **Follow redirects**: Determines whether the health check automatically follows HTTP 3xx redirect responses. When enabled, the health check continues to the redirected location and evaluates the final response against the configured success criteria (status code and optional response body). When disabled, redirect responses are evaluated directly against the expected response codes.
 
 1. Expand **Configure request headers (optional)** to add and configure HTTP request headers to send in the health check.
 
@@ -113,9 +113,9 @@ At least one pool is required for each provisioned load balancer. Pools group yo
 
 1. Configure optional fields as needed:
 
-   * **Healthy origin threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and fails over to the next available pool. (defaults to 1)
+   * **Healthy origin threshold**: The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool is marked unhealthy and fails over to the next available pool. (Default: `1`)
    * **Pool health check region**: Region from which the health check performs monitoring.
-   * **Health check**: The health check to use for checking origins within this pool. (default: **No health check**)
+   * **Health check**: The health check to use for checking origins within this pool. (Default: **No health check**)
 
      IBM's geographic regions differ from Cloudflare's regions. For details about the geographic regions Cloudflare uses, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
      {: note}
