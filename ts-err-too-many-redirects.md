@@ -76,9 +76,10 @@ When the domain encryption mode is set to End-to-end CA signed, CIS sends encryp
 1. The origin continues redirecting to HTTP.
 
 This creates an HTTPS-to-HTTP redirect loop.
-{: tsSymptoms}
 
 Redirect loops occur when the SSL/TLS encryption mode configured in CIS conflicts with redirect behavior on the origin server:
+{: tsSymptoms}
+
 * In Flexible mode, CIS communicates with the origin over HTTP while the origin enforces HTTP-to-HTTPS redirection.
 * In CA Signed mode, CIS communicates with the origin over HTTPS while the origin redirects HTTPS traffic back to HTTP.
 
