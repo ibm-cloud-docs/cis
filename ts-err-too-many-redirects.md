@@ -109,12 +109,14 @@ The most common edge settings involved in this issue are **Always Use HTTPS** an
 If you have **Always Use HTTPS** enabled for your domain, CIS redirects all `http` requests to `https` for all subdomains and hosts in your application.
 
 When **Always Use HTTPS** is enabled:
+{: tsSymptoms}
+
 1. A user sends a request using `HTTP`.
 1. CIS immediately redirects the request to `HTTPS`.
 1. CIS forwards the `HTTPS` request to the origin server.
 1. If the origin redirects `HTTPS` traffic back to `HTTP`, the request cycles again.
 1. The browser eventually stops the repeated redirects and displays a redirect error.
-{: tsSymptoms}
+
 
 A redirect loop occurs when:
 * CIS upgrades HTTP traffic to HTTPS.
