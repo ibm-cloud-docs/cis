@@ -42,6 +42,7 @@ In CIS, this typically occurs because of one of the following configuration conf
 
 To determine which scenario applies, consider what changed before the issue started:
 {: tsCauses}
+
 * Did the issue begin after modifying the SSL/TLS encryption mode?
 * Did the issue begin after enabling Always Use HTTPS or HSTS?
 * Did the issue begin after creating or editing redirect rules?
