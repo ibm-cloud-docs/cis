@@ -118,7 +118,6 @@ When **Always Use HTTPS** is enabled:
 1. If the origin redirects `HTTPS` traffic back to `HTTP`, the request cycles again.
 1. The browser eventually stops the repeated redirects and displays a redirect error.
 
-
 A redirect loop occurs when:
 * CIS upgrades HTTP traffic to HTTPS.
 * The origin server downgrades HTTPS traffic back to HTTP.
