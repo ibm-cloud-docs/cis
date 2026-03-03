@@ -173,7 +173,6 @@ A redirect loop occurs when:
 * Another rule redirects URL B back to URL A (or to another URL that eventually points back to A).
 * The browser repeatedly follows these redirects.
 * No final destination page is reached.
-
 As a result, the browser stops the process and displays a redirect error.
 
 This typically happens because:
