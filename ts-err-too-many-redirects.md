@@ -126,9 +126,10 @@ Because both layers enforce opposite protocol behavior, the request continuously
 {: tsCauses}
 
 Use one of the following options:
+{: tsResolve}
+
 * Remove the `HTTPS-to-HTTP` redirect from the origin server.
 * Disable **Always Use HTTPS**.
-{: tsResolve}
 
 ### HSTS forces HTTPS while origin downgrades to HTTP
 {: #http-hsts}
@@ -136,24 +137,27 @@ Use one of the following options:
 HTTP Strict Transport Security (HSTS) is a security policy that instructs supported browsers to always access your domain using `HTTPS`. When enabled, CIS sends an `HSTS` response header that tells browsers to automatically convert future `HTTP` requests to `HTTPS`.
 
 When HSTS is enabled:
+{: tsSymptoms}
+
 1. The browser receives the HSTS header from CIS.
 1. The browser automatically converts future HTTP requests to HTTPS.
 1. If the origin server redirects HTTPS traffic to HTTP, the browser upgrades it back to HTTPS.
 1. This repeated upgrade/downgrade behavior creates a redirect loop.
 1. The browser eventually stops loading the page and displays an error.
-{: tsSymptoms}
 
 This typically occurs when:
+{: tsCauses}
+
 * The origin server redirects HTTPS requests to HTTP, or
 * The domain encryption mode is set to `Off`.
 
 HSTS enforces HTTPS at the client side, while the origin attempts to downgrade the connection. This protocol mismatch causes continuous redirection.
-{: tsCauses}
 
 To resolve this issue:
+{: tsResolve}
+
 * Remove any `HTTPS-to-HTTP` redirects from the origin server and ensure the domain encryption mode is set to Flexible or higher.
 * Alternatively, disable HSTS.
-{: tsResolve}
 
 ## Scenario 3: Conflicting redirect rules
 {: #redirect-rules}
