@@ -31,9 +31,9 @@ Because the browser never reaches a final destination page, it eventually stops 
 * `The page isn’t redirecting properly`
 
 `ERR_TOO_MANY_REDIRECTS` does not indicate a connectivity issue. It indicates a configuration conflict where redirect logic never resolves to a final destination.
-{: tsSymptoms}
 
 A redirect loop happens when multiple components attempt to enforce conflicting rules.
+{: tsSymptoms}
 
 In CIS, this typically occurs because of one of the following configuration conflicts:
 * SSL/TLS encryption mode misconfigurations
@@ -41,10 +41,10 @@ In CIS, this typically occurs because of one of the following configuration conf
 * Conflicting redirect rules
 
 To determine which scenario applies, consider what changed before the issue started:
+{: tsCauses}
 * Did the issue begin after modifying the SSL/TLS encryption mode?
 * Did the issue begin after enabling Always Use HTTPS or HSTS?
 * Did the issue begin after creating or editing redirect rules?
-{: tsCauses}
 
 The resolution depends on which configuration conflict is causing the redirect loop. Review the following scenarios and apply the solution that matches your configuration.
 {: tsResolve}
