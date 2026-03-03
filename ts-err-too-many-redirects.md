@@ -47,8 +47,10 @@ To determine which scenario applies, consider what changed before the issue star
 * Did the issue begin after enabling Always Use HTTPS or HSTS?
 * Did the issue begin after creating or editing redirect rules?
 
-The resolution depends on which configuration conflict is causing the redirect loop. Review the following scenarios and apply the solution that matches your configuration.
+The resolution depends on which configuration conflict is causing the redirect loop. 
 {: tsResolve}
+
+Review the following scenarios and apply the solution that matches your configuration.
 
 ## Scenario 1: SSL/TLS encryption mode misconfigurations
 {: #encryption-mode-misconfigure}
