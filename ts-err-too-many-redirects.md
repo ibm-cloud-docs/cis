@@ -168,22 +168,24 @@ Redirect loops can also occur when multiple redirect configurations conflict wit
 When more than one rule attempts to control the same request path, traffic can be redirected in a circular pattern.
 
 A redirect loop occurs when:
+{: tsSymptoms}
+
 * One rule redirects a request from URL A to URL B.
 * Another rule redirects URL B back to URL A (or to another URL that eventually points back to A).
 * The browser repeatedly follows these redirects.
 * No final destination page is reached.
 
 As a result, the browser stops the process and displays a redirect error.
-{: tsSymptoms}
 
 This typically happens because:
+{: tsCauses}
+
 * Multiple redirect rules target overlapping URL patterns.
 * Redirect rules and Page Rules enforce different behaviors.
 * Both CIS and the origin server define redirects for the same traffic.
 * Wildcard or broad match conditions unintentionally apply to unintended URLs.
 
 Without careful rule order and validation, these configurations can create circular redirect paths.
-{: tsCauses}
 
 Review your various redirect rules and Page Rules to make sure no rules are in conflict with each other. Ensure that no rules redirect traffic in a circular pattern.
 {: tsResolve}
