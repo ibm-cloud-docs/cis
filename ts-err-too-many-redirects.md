@@ -54,7 +54,7 @@ The resolution depends on which configuration conflict is causing the redirect l
 
 Your domain's SSL/TLS encryption mode determines how CIS connects to your origin server and validates how SSL certificates presented by your origin. This configuration causes redirect loops when the value you set in CIS conflicts with the settings at your origin web server.
 
-### Problem: Flexible mode + origin forces HTTP → HTTPS
+### Flexible mode + origin forces HTTP → HTTPS
 {: #end-to-end-flexible-encryption}
 
 If the domain encryption mode is set to End-to-End flexible, CIS sends unencrypted requests to the origin server over HTTP.
@@ -65,7 +65,7 @@ If the domain encryption mode is set to End-to-End flexible, CIS sends unencrypt
 
 This process repeats, creating a redirect loop.
 
-### Problem: CA Signed mode + origin forces HTTPS → HTTP
+### CA Signed mode + origin forces HTTPS → HTTP
 {: #end-end-ca-signed}
 
 When the domain encryption mode is set to End-to-end CA signed, CIS sends encrypted requests to your origin server over HTTPS.
