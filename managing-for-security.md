@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-03-04"
 
 keywords:
 
@@ -59,12 +59,13 @@ Some customers use separate IP ranges for HTTP and non-HTTP traffic. This approa
 
 Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before you turn it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified. For more information, see [Using Security events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 
-The WAF protects you against the following types of attacks:
+The following are some examples of the types of attacks that WAF can protect against:
+
 * SQL injection attack
 * Cross-site scripting
 * Cross-site forgery
 
-The WAF contains a default ruleset, which includes rules to stop the most common attacks. Currently, we allow you to either enable or disable the WAF and fine-tune specific rules in the WAF rulesets. See [WAF actions](/docs/cis?topic=cis-waf-actions) document for more details on the ruleset and the behavior of each rule.
+CIS provides several preconfigured rulesets within WAF. Each ruleset includes protections that are designed to mitigate the most common web application attacks. You can enable or disable these rulesets and override individual rules as needed to meet your security requirements. For maximum coverage, it is recommended to enable both the CIS Managed Ruleset and the OWASP Ruleset together. See [WAF actions](/docs/cis?topic=cis-waf-actions) for more details on the ruleset and the behavior of each rule.
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
 
@@ -73,7 +74,7 @@ For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?to
 
 IBM {{site.data.keyword.cis_short_notm}} functions as a reverse proxy and provides multiple options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
 
-TLS offers six modes of operation listed in the order from the most secure to the least secure (Off):
+TLS offers six modes of operations that are listed in the order from the most secure to the least secure (Off):
 1. [Authenticated origin pull](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-authenticated-origin): (Enterprise only)
 1. [HTTPS only origin pull](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-origin-only-pull) (Enterprise only)
 1. [End-to-end CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed) (default and recommended)
