@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-12-05"
+  years: 2021, 2026
+lastupdated: "2026-03-04"
 
 keywords:
 
@@ -19,7 +19,6 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
-
 ## 03 December 2025
 {: #cis-december-0325}
 
