@@ -349,7 +349,7 @@ The Accept-Encoding header from the client is removed and not respected.
 {: #waf-traffic-limit}
 {: faq}
 
-{{site.data.keyword.cis_short_notm}} Web Application Firewall (WAF) now inspects request payloads up to 1 MB for all plans. This allows the WAF to detect more complex threats that may appear in larger request bodies.
+{{site.data.keyword.cis_short_notm}} Web Application Firewall (WAF) now inspects request payloads up to 1 MB for all plans. This allows the WAF to detect more complex threats that may appear in larger request bodies. For more information, see [Request body inspection limit](/docs/cis?topic=cis-managed-rules-overview#request-body-inspection-limit).
 
 ### What is the API rate limit for {{site.data.keyword.cis_short_notm}}?
 {: #request-limit-api}
