@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-03"
+lastupdated: "2026-03-06"
 
 keywords:
 
@@ -47,7 +47,7 @@ To determine which scenario applies, consider what changed before the issue star
 * Did the issue begin after enabling Always Use HTTPS or HSTS?
 * Did the issue begin after creating or editing redirect rules?
 
-The resolution depends on which configuration conflict is causing the redirect loop. 
+The resolution depends on which configuration conflict is causing the redirect loop.
 {: tsResolve}
 
 Review the following scenarios and apply the solution that matches your configuration.
