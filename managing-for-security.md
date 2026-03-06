@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-04"
+lastupdated: "2026-03-06"
 
 keywords:
 
@@ -68,6 +68,42 @@ The following are some examples of the types of attacks that WAF can protect aga
 CIS provides several preconfigured rulesets within WAF. Each ruleset includes protections that are designed to mitigate the most common web application attacks. You can enable or disable these rulesets and override individual rules as needed to meet your security requirements. For maximum coverage, it is recommended to enable both the CIS Managed Ruleset and the OWASP Ruleset together. See [WAF actions](/docs/cis?topic=cis-waf-actions) for more details on the ruleset and the behavior of each rule.
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
+
+## Best practice 3: Configure WAF Attack score safely
+{: #waf-attack-score-rule}
+
+WAF Attack Score strengthens your security posture by detecting variations of known attacks by using machine learning. It complements WAF managed rules by identifying malicious requests that do not match existing rule signatures.
+
+To configure WAF Attack Score safely, begin with monitoring traffic before you enforce blocking actions. This approach allows you to review scored traffic in Security Events and adjust thresholds to minimize false positives.
+
+### Configuring WAF Attack score in a custom rule
+{: #waf-score-in-rule}
+
+1. If you are an Enterprise customer, [create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui#create-custom-rule-ui) that blocks requests with a WAF Attack Score less than or equal to 20. This value is the recommended starting threshold.
+
+   | Field | Operator | Value |
+   | ----- | -------- | ----- |
+   | WAF Attack Score | less than or equal to | `20` |
+   {: caption="Enterprise rule example" caption-side="bottom"}
+
+     * Equivalent rule expression: `cf.waf.score le 20`
+     * Action: _Block_
+
+   If you are a standard plan user, create a custom rule by using the **WAF Attack Score Class** field instead. For example, block requests with a score class of Attack.
+
+   | Field | Operator | Value |
+   | ----- | -------- | ----- |
+   | WAF Attack Score Class | Equals | `Attack` |
+   {: caption="Standard rule example" caption-side="bottom"}
+
+     * Equivalent rule expression: `cf.waf.score.class eq "attack"`
+     * Action: _Block_
+
+1. Monitor the rule closely during the first few days. Verify that the selected threshold or class value aligns with your traffic patterns. Adjust the rule if you observe false positives or missed threats.
+
+1. If you are an Enterprise customer and you created a rule with Log action, change the rule action to a more severe one, like _Managed Challenge_ or _Block_.
+
+CIS recommends using WAF managed rules along with WAF Attack Score. Managed rules protect against known attack patterns, while Attack Score detects modified or obfuscated attacks, providing layered and adaptive protection for your domain. For more information, see [WAF Attack score](/docs/cis?topic=cis-waf-attack-score).
 
 ## Best practice 4: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
