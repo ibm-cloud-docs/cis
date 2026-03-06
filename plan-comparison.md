@@ -29,7 +29,7 @@ The numbers in these tables are quotas or resource limits for the associated fea
 {: tip}
 
 | |Standard Next|Enterprise Essentials|Enterprise Advanced|Enterprise Premier|Enterprise Usage|
-| :------ | :------ | :----- | :----- | :----- | :----- |
+| :-------- | :----- | :---- | :---- | :---- | :---- |
 |**Domain** \n \n Overage charges apply|1 included \n \n More available for monthly cost per domain|1 included  \n \n More available for monthly cost per domain|2 included  \n \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|Up to 1000, but recommend no more than 20|
 |**Included protected traffic**  \n (does not include traffic that is related to an attack)  \n \n Overage charges apply|0.5 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
 |**Included requests and queries**  \n \n Overage charges apply|5 M requests \n 1 M queries|150 M requests and queries combined|150 M requests and queries combined|150 M requests and queries combined|Not applicable  \n (usage based)|
