@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-11-13"
+  years: 2018, 2026
+lastupdated: "2026-03-06"
 
 keywords:
 
@@ -21,7 +21,7 @@ subcollection: cis
 The no-cost Trial plan is the same as the Standard Next plan, except that it expires after 30 days. Only one trial is available per account. After the Trial plan expires, it is automatically subject to reclamation.
 {: note}
 
-The no-cost Trial and Standard plans are not Financial Services regulatory compliant. All other plans are fully compliant. 
+The no-cost Trial and Standard plans are not Financial Services regulatory compliant. All other plans are fully compliant.
 
 The following table compares each offering to help you choose the one that's right for you. Enterprise Tier plans are available with different pricing models.
 
@@ -37,6 +37,7 @@ The numbers in these tables are quotas or resource limits for the associated fea
 |**Global load balancers**|* 3 pools \n * 3 origin servers \n * 5 Health checks \n * 60s health checks \n * Geo Routing \n * Health checks from single region \n * 60s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers \n (more origins available for charge) \n * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers  \n (more origins available for charge) \n  * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|* 20 pools  \n * 20 origin servers  \n (more origins available for charge)  \n * 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for nonproxied global load balancers|* Up to 100 pools \n * 100 origin servers \n * Up to 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|
 |**WAF**|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|
 |**Custom certificate**|1 uploaded custom certificate per domain|25 included custom certificates  \n \n More certificates can be added at a monthly rate|25 included custom certificates  \n \n More certificates can be added at a monthly rate|25 included custom certificates  \n \n More certificates can be added at a monthly rate|1 uploaded custom certificate per domain|
+| You can upload up to 25 SNI custom certificates per domain. Only one legacy custom certificate that does not support Server Name Indication (non-SNI) can be uploaded. |
 |**Page rules**|50 page rules per domain|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|
 |**IP firewall**|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * Block is not available to Country filter \n * 10 Domain lockdown rules \n * 250 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|
 |**Caching**|Basic caching options|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Advanced caching options|
