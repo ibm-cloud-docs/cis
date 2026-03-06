@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-03-04"
+lastupdated: "2026-03-05"
 
 keywords: managed rules, rulesets, waf
 
@@ -48,3 +48,11 @@ These managed rulesets are regularly updated. You can adjust the behavior of spe
 |OWASP Core Ruleset |The Open Web Application Security Project, or OWASP ModSecurity Core ruleset. CIS routinely monitors for updates from OWASP from the official code repository.|`4814384a9e5d4991b9815dcfc25d2f1f` |
 |Exposed credentials check | Deploy an automated credentials check on your user authentication endpoints. For any credential pair, the CIS WAF performs a lookup against a public database of stolen credentials.|`c2e184081120413c86c3ab7e14069605` |
 {: caption="Available rulesets and ruleset IDs" caption-side="bottom"}
+
+## Request body inspection limit
+{: #request-body-inspection-limit}
+
+The WAF inspects HTTP request bodies up to 128 KB by default. This limit applies to all managed rulesets, including the CIS Managed Ruleset and OWASP Core Ruleset, and determines how much of each request the WAF can evaluate. Customers can request an increase of the inspection limit to 1 MB by [creating a support case](/docs/account?topic=account-open-case&interface=ui).
+
+Increasing the inspection limit can affect how managed rules evaluate traffic and could impact rule matches. Review ruleset behavior if higher limits are required.
+{: note}
