@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # About WAF attack score
-{: #waf-attack-score-copy}
+{: #waf-attack-score}
 
 WAF attack score helps detect variations of known attacks by analyzing request behavior and payload characteristics. This capability complements [WAF managed rules](/docs/cis?topic=cis-managed-rules-overview) by identifying malicious traffic that does not exactly match existing rule signatures.
 {: shortdesc}
