@@ -113,6 +113,7 @@ toc:
           - ruleset-engine-actions.md
           - integrating-lists-rules.md
           - waf-testing.md
+          - waf-attack-score-copy.md
       - topicgroup:
           label: Working with lists
           id: lists
