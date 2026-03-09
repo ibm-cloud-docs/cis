@@ -29,14 +29,14 @@ The numbers in these tables are quotas or resource limits for the associated fea
 {: tip}
 
 | |Standard Next|Enterprise Essentials|Enterprise Advanced|Enterprise Premier|Enterprise Usage|
-| :------ | :------ | :----- | :----- | :----- | :----- |
+| :-------- | :----- | :---- | :---- | :---- | :---- |
 |**Domain** \n \n Overage charges apply|1 included \n \n More available for monthly cost per domain|1 included  \n \n More available for monthly cost per domain|2 included  \n \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|Up to 1000, but recommend no more than 20|
 |**Included protected traffic**  \n (does not include traffic that is related to an attack)  \n \n Overage charges apply|0.5 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
 |**Included requests and queries**  \n \n Overage charges apply|5 M requests \n 1 M queries|150 M requests and queries combined|150 M requests and queries combined|150 M requests and queries combined|Not applicable  \n (usage based)|
 |**DNS**|250 records|3500 records|3500 records|3500 records|3500 records|
 |**Global load balancers**|* 3 pools \n * 3 origin servers \n * 5 Health checks \n * 60s health checks \n * Geo Routing \n * Health checks from single region \n * 60s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers \n (more origins available for charge) \n * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers  \n (more origins available for charge) \n  * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|* 20 pools  \n * 20 origin servers  \n (more origins available for charge)  \n * 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for nonproxied global load balancers|* Up to 100 pools \n * 100 origin servers \n * Up to 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|
 |**WAF**|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|OWASP and CIS ruleset|
-|**Custom certificate** \n |1 uploaded custom certificate per domain|25 included custom certificates  \n \n More certificates can be added at a monthly rate|25 included custom certificates  \n \n More certificates can be added at a monthly rate|25 included custom certificates  \n \n More certificates can be added at a monthly rate|1 uploaded custom certificate per domain|
+|**Custom certificate** [^fn1]|1 uploaded custom certificate per domain|25 included custom certificates  \n \n More certificates can be added at a monthly rate|25 included custom certificates  \n \n More certificates can be added at a monthly rate|25 included custom certificates  \n \n More certificates can be added at a monthly rate|1 uploaded custom certificate per domain|
 |**Page rules**|50 page rules per domain|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|* 100 page rules per domain \n * More settings for fine-grained control|
 |**IP firewall**|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * Block is not available to Country filter \n * 10 Domain lockdown rules \n * 250 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|* [All IP firewall rule actions](/docs/cis?topic=cis-actions) \n * 200 Domain lockdown rules \n * 1000 User agent rules|
 |**Caching**|Basic caching options|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Browser cache minimum TTL 30 seconds|Advanced caching options|
@@ -51,6 +51,8 @@ The numbers in these tables are quotas or resource limits for the associated fea
 |**Bot management**|No|No|No|Yes|No|
 {: caption="CIS plan comparison" caption-side="bottom"}
 
+
+[^fn1]: One legacy custom certificate without Server Name Indication (non-SNI) is supported across all plans.
 
 ## Additional details
 {: #additional-details}
