@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-03-10"
 
 keywords: waf
 
@@ -34,7 +34,7 @@ The CIS WAF provides the following attack score fields:
 | ---------- | ----- | ------------ | ----------- |
 | WAF Attack Score \n `cf.waf.score` | Number | A global score from 1–99 that combines the score of each WAF attack vector into a single score. | Enterprise |
 | WAF SQLi Attack Score \n `cf.waf.score.sqli` | Number | A score from 1–99 classifying the [SQL injection](https://w3.terminology.g11n.ibm.com/standards/terminology/translationsearch/?ug=corporate&term=Structured+Query+Language+injection&sourceLanguage=English&view=details&targetLanguages=English&exact=true){: external} (SQLi) attack vector. | Enterprise |
-| WAF XSS Attack Score \n `cf.waf.score.xss` | Number | A score from 1–99 classifying the cross-site scripting (XSS) attack vector. | Enterprise |
+| WAF XSS Attack Score \n `cf.waf.score.xss` | Number | A score from 1–99 classifying the [cross-site scripting (XSS)](https://w3.terminology.g11n.ibm.com/standards/terminology/translationsearch/?ug=corporate&term=cross-site+scripting&sourceLanguage=English&view=details&targetLanguages=English&exact=true){: external} attack vector. | Enterprise |
 | WAF RCE Attack Score \n `cf.waf.score.rce` | Number | A score from 1–99 classifying the command injection or remote code execution (RCE) attack vector. | Enterprise |
 | WAF Attack Score Class \n `cf.waf.score.class` | String | The attack score class of the current request, based on the WAF attack score. Possible values: `attack`, `likely_attack`, `likely_clean`, and `clean`. | All plans |
 {: caption="Available WAF scores" caption-side="bottom"}
