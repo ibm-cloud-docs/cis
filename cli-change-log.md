@@ -25,7 +25,7 @@ In this change log, you can learn about the latest changes, improvements, and up
 {: #cli-1191}
 
 Version 1.19.1 of the CLI was released on 9 March 2026.
-:   Upgraded go to v1.26.0.
+:   Upgraded the Go version to v1.26.0.
 
 ## Version 1.19.0
 {: #cli-1190}
