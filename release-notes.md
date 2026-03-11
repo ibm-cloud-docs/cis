@@ -25,7 +25,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Logpush COS job improvements
-:   Released API and CLI support for Logpush jobs with COS destinations to support API keys. This handling will be done similar to how IBM Cloud Logs is performed. For more information, see [Managing Logpush jobs](https://cloud.ibm.com/docs/cis?topic=cis-logpush).
+:   Released API and CLI support for Logpush jobs with Cloud Object Storage (COS) destinations to support API key authentication. This implementation follows the same handling approach that is used for IBM Cloud Logs (ICL). For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 03 December 2025
 {: #cis-december-0325}
@@ -38,7 +38,7 @@ Custom and managed lists
 
     * [Custom lists](/apidocs/cis#get-custom-lists) let you define and manage ASN, IP, and hostname entries for use in access rules and other policy configurations. For more information, see [Creating custom lists and adding items](/docs/cis?topic=cis-create-custom-lists-add-items&interface=ui).
 
-    * [Managed lists](/apidocs/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
+    * [Managed lists](/apidocs/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data that is maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
 
     These features enable more accurate policy targeting and improve operational efficiency within CIS. For more information, see [Working with lists](/docs/cis?group=lists).
 
@@ -56,7 +56,7 @@ X-Request-ID Header for improved CLI request tracing
 {: release-note}
 
 Ruleset Engine migration
-:   Two existing features are now part of the Ruleset Engine rules language, and have been updated to use the [Rulesets API](/apidocs/cis#get-zone-rulesets) (similar to WAF managed rules).
+:   Two existing features are now part of the Ruleset Engine rules language, and they are updated to use the [Rulesets API](/apidocs/cis#get-zone-rulesets) (similar to WAF managed rules).
 
     * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 
@@ -67,14 +67,14 @@ Ruleset Engine migration
 {: release-note}
 
 QRadar and Splunk Logpush destinations
-:   Released support for configuring CIS Logpush jobs to push to QRadar and Splunk instances. For more information, see [Managing Logpush jobs](https://cloud.ibm.com/docs/cis?topic=cis-logpush).
+:   Released support for configuring CIS Logpush jobs to push logs directly to QRadar and Splunk instances. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 05 December 2024
 {: #cis-dec-0524}
 {: release-note}
 
 IBM Cloud Logs and generic Logpush destinations
-:   Released support for configuring CIS Logpush jobs to push to IBM Cloud Log (ICL) instances and generic destinations. For more information, see [Managing Logpush jobs](https://cloud.ibm.com/docs/cis?topic=cis-logpush).
+:   Released support for configuring CIS Logpush jobs to push logs to IBM Cloud Log (ICL) instances and generic destinations. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 21 October 2024
 {: #cis-oct2124}
@@ -88,7 +88,7 @@ Enhanced security
 {: release-note}
 
 Managed Rules
-:   Released the new [managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which replaces the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
+:   Released the new [managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which replaces the current WAF. Enterprise plans have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
 
 ## 21 June 2023
 {: #cis-jun2123}
