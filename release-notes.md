@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-05"
+lastupdated: "2026-03-11"
 
 keywords:
 
@@ -20,8 +20,16 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
+## 10 March 2026
+{: #cis-march-1026}
+{: release-note}
+
+Logpush COS job improvements
+:   Released API and CLI support for Logpush jobs with COS destinations to support API keys. This handling will be done similar to how IBM Cloud Logs is performed. For more information, see [Managing Logpush jobs](https://cloud.ibm.com/docs/cis?topic=cis-logpush).
+
 ## 03 December 2025
 {: #cis-december-0325}
+{: release-note}
 
 Custom and managed lists
 :   Released UI and API support for custom lists and managed lists to enhance control over security and traffic management policies.
@@ -36,6 +44,7 @@ Custom and managed lists
 
 ## 31 July 2025
 {: #cis-july-3125}
+{: release-note}
 
 X-Request-ID Header for improved CLI request tracing
 :   The CIS CLI now includes an automatically generated `X-Request-ID` header with every API request. This unique UUID enhances traceability and debugging by enabling better correlation of CLI calls across back-end systems. No user action is needed, and this update is fully transparent, with no impact on CLI functionality or output.
@@ -52,6 +61,20 @@ Ruleset Engine migration
     * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 
     * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
+
+## 13 January 2025
+{: #cis-jan-1325}
+{: release-note}
+
+QRadar and Splunk Logpush destinations
+:   Released support for configuring CIS Logpush jobs to push to QRadar and Splunk instances. For more information, see [Managing Logpush jobs](https://cloud.ibm.com/docs/cis?topic=cis-logpush).
+
+## 05 December 2024
+{: #cis-dec-0524}
+{: release-note}
+
+IBM Cloud Logs and generic Logpush destinations
+:   Released support for configuring CIS Logpush jobs to push to IBM Cloud Log (ICL) instances and generic destinations. For more information, see [Managing Logpush jobs](https://cloud.ibm.com/docs/cis?topic=cis-logpush).
 
 ## 21 October 2024
 {: #cis-oct2124}
