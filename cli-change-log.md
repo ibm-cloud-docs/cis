@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2024, 2025
-lastupdated: "2025-12-04"
+  years:  2024, 2026
+lastupdated: "2026-03-10"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -21,10 +21,16 @@ content-type: release-note
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
 
+## Version 1.19.1
+{: #cli-1191}
+
+Version 1.19.1 of the CLI was released on 9 March 2026.
+:   Upgraded the Go version to v1.26.0.
+
 ## Version 1.19.0
 {: #cli-1190}
 
-Version 1.19.0 of the CLI was released on 17th November, 2025.
+Version 1.19.0 of the CLI was released on 17 November 2025.
 :   Added the deprecation notice to legacy WAF commands.
 :   Added the [Total TLS commands](/docs/cis?topic=cis-using-total-tls&interface=cli).
 :   Removed the notification-email parameter from `glb-create` and `glb-update` commands.
@@ -32,21 +38,21 @@ Version 1.19.0 of the CLI was released on 17th November, 2025.
 ## Version 1.18.1
 {: #cli-1181}
 
-Version 1.18.1 of the CLI was released on July 11, 2025.
+Version 1.18.1 of the CLI was released on 11 July 2025.
 :   Added [custom lists](/docs/cis?topic=cis-cis-cli&interface=ui#custom-lists-cmd-ref).
 :   Added [managed lists](/docs/cis?topic=cis-cis-cli&interface=ui#managed-lists).
 
 ## Version 1.16.4
 {: #cli-1164}
 
-Version 1.16.4 of the CLI was released on April 7, 2025.
+Version 1.16.4 of the CLI was released on 7 April 2025.
 :   Added [WAF managed rules](/docs/cis?topic=cis-cis-cli#waf-managed-rules).
 :   Added [WAF custom rules](/docs/cis?topic=cis-cis-cli#waf-custom-rules).
 
 ## Version 1.16.3
 {: #cli-1163}
 
-Version 1.16.3 of the CLI was released on July 19, 2024.
+Version 1.16.3 of the CLI was released on 19 July 2024.
 :   Fix CVE certifi.
 :   Add `replace_insecure_js` domain setting.
 :   Fix managed rules and advanced rate-limiting rule bugs.
@@ -56,53 +62,53 @@ Version 1.16.3 of the CLI was released on July 19, 2024.
 ## Version 1.16.2
 {: #cli-1162}
 
-Version 1.16.2 of the CLI was released on June 13, 2024.
+Version 1.16.2 of the CLI was released on 13 June 2024.
 :   Support Advanced rate-limiting rules.
 :   Update the description of listing dns record per page.
 
 ## Version 1.16.1
 {: #cli-1161}
 
-Version 1.16.1 of the CLI was released on May 11, 2024.
+Version 1.16.1 of the CLI was released on 11 May 2024.
 :   Fix WAF overrides list and domain settings issue.
 :   Display WAF migration notice.
 
 ## Version 1.16.0
 {: #cli-1160}
 
-Version 1.16.0 of the CLI was released on May 6, 2024.
+Version 1.16.0 of the CLI was released on 6 May 2024.
 :   Support managed WAF rules.
 
 ## Version 1.15.13
 {: #cli-11513}
 
-Version 1.15.13 of the CLI was released on Apr 12, 2024.
+Version 1.15.13 of the CLI was released on 12 April 2024.
 :   Add Origin max HTTP version support.
 :   Add origin post quantum encryption support.
 
 ## Version 1.15.12
 {: #cli-11512}
 
-Version 1.15.12 of the CLI was released on Mar 22, 2024.
+Version 1.15.12 of the CLI was released on 22 March 2024.
 :   Enhance the custom certificates.
 :   Go modules upgrade.
 
 ## Version 1.15.11
 {: #cli-11511}
 
-Version 1.15.11 of the CLI was released on Feb 28, 2024.
+Version 1.15.11 of the CLI was released on 28 February 2024.
 :   Fix listing certificate issue.
 
 ## Version 1.15.10
 {: #cli-11510}
 
-Version 1.15.10 of the CLI was released on Feb 1, 2024.
+Version 1.15.10 of the CLI was released on 1 February 2024.
 :   Support HTTP origin alert policy.
 
 ## Version 1.15.8
 {: #cli-1158}
 
-Version 1.15.8 of the CLI was released on Jan 11, 2023.
+Version 1.15.8 of the CLI was released on 11 January 2023.
 :   fix bug of deleting filter and firewall rules.
 :   gvt translation.
 :   Update go to v20.
@@ -110,7 +116,7 @@ Version 1.15.8 of the CLI was released on Jan 11, 2023.
 ## Version 1.15.7
 {: #cli-1157}
 
-Version 1.15.7 of the CLI was released on Nov 8, 2023.
+Version 1.15.7 of the CLI was released on 8 November 2023.
 :   Support ddos `L3/L4` alerting policy.
 :   Support mtls certificate expiration alerting policy.
 :   Failing Logpush job disabled alerting policy.
@@ -119,13 +125,13 @@ Version 1.15.7 of the CLI was released on Nov 8, 2023.
 ## Version 1.15.6
 {: #cli-1156}
 
-Version 1.15.6 of the CLI was released on Oct 16, 2023.
+Version 1.15.6 of the CLI was released on 16 October 2023.
 :   Support instant logs.
 
 ## Version 1.15.5
 {: #cli-1155}
 
-Version 1.15.5 of the CLI was released on Sep 7, 2023.
+Version 1.15.5 of the CLI was released on 7 September 2023.
 :   Support alert policy test.
 :   Support maintenance event alert policy.
 :   Bug fix: certificate deletion issue.
@@ -133,7 +139,7 @@ Version 1.15.5 of the CLI was released on Sep 7, 2023.
 ## Version 1.15.4
 {: #cli-1154}
 
-Version 1.15.4 of the CLI was released on Aug 29, 2023.
+Version 1.15.4 of the CLI was released on 29 August 2023.
 :   Support `dns_logs` dataset for logpush job.
 :   Update security fields for logpull.
 :   Support Web analytic report alert policy.
@@ -141,13 +147,13 @@ Version 1.15.4 of the CLI was released on Aug 29, 2023.
 ## Version 1.15.3
 {: #cli-1153}
 
-Version 1.15.3 of the CLI was released on Jul 23, 2023.
+Version 1.15.3 of the CLI was released on 23 July 2023.
 :   Support `linux/arm64` binary.
 
 ## Version 1.15.2
 {: #cli-1152}
 
-Version 1.15.2 of the CLI was released on June 6, 2023.
+Version 1.15.2 of the CLI was released on 6 June 2023.
 :   Support Zone hold.
 :   Support Image Resizing.
 :   Fix bugs of alerts.
@@ -155,7 +161,7 @@ Version 1.15.2 of the CLI was released on June 6, 2023.
 ## Version 1.15.0
 {: #cli-1150}
 
-Version 1.15.0 of the CLI was released on Apr 24, 2023.
+Version 1.15.0 of the CLI was released on 24 April 2023.
 :   Enterprise 2.0 plan support.
 :   Bot management support.
 :   FVT/GVT.
@@ -197,7 +203,7 @@ Version 1.14.8 of the CLI was released on 26 August 2022.
 ## Version 1.14.5
 {: #cli-1145}
 
-Version 1.14.5 of the CLI was released on 09 August 2022.
+Version 1.14.5 of the CLI was released on 9 August 2022.
 :   Fix edge functions trigger.
 :   Fix cross account resource access.
 :   Add `ppc64le` binary release.
