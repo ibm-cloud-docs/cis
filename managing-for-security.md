@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-03-11"
 
 keywords:
 
@@ -18,11 +18,6 @@ subcollection: cis
 The {{site.data.keyword.cis_full}} ({{site.data.keyword.cis_short_notm}}) security settings include safe defaults that are designed to avoid false positives and negative influence on your traffic. However, these safe default settings do not provide the best security posture for every customer. Follow these steps to make sure that your {{site.data.keyword.cis_short_notm}} account is configured in a safe and secure way.
 {: shortdesc}
 
-* Secure your origin IP addresses by using proxies and increasing obfuscation.
-* Configure your security level selectively.
-* Activate your Web Application Firewall (WAF) safely.
-* Configure your TLS settings.
-
 ## Best practice 1: Secure your origin IP addresses
 {: #best-practice-secure-origin-ip-address}
 
@@ -33,7 +28,7 @@ When a subdomain uses {{site.data.keyword.cis_short_notm}} for proxying, all tra
 
 To improve the security of your origin IP address, you must proxy all HTTP and HTTPS traffic.
 
-**See the difference by querying a non-proxied and a proxied record:**
+See the difference by querying a non-proxied and a proxied record:
 
 ```sh
 dig nonproxied.theburritobot.com +short
@@ -47,17 +42,21 @@ $ dig proxied.theburritobot.com +short
 ### Obscure non-proxied origin records with non-standard names
 {: #obscure-non-proxied-origin-records-with-non-standard-names}
 
-Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. In particular, if you require a record for your origin that can't be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
+Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. 
+
+If you require a record for your origin that can't be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
 ### Use separate IP ranges for HTTP and non-HTTP traffic if possible
 {: #use-separate-ipranges-for-traffic}
 
 Some customers use separate IP ranges for HTTP and non-HTTP traffic. This approach helps them proxy all records for their HTTP IP range, and hide all non-HTTP traffic with a different IP subnet.
 
-## Best practice 2: Activate your Web Application Firewall (WAF) safely
+## Best practice 2: Activate your Web Application Firewall safely
 {: #best-practice-activate-waf-safely}
 
-Your WAF is available in the **Security** section. Here, we walk through these settings in reverse order to ensure that your WAF is configured as safely as possible before you turn it on for your entire domain. These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified. For more information, see [Using Security events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
+Your WAF is available in the **Security** section. These steps walk through the settings in reverse order to ensure that your WAF is configured as safely as possible before you enable it for your entire domain.
+
+These initial settings can reduce false positives by populating **Security Events** for further tuning. Your WAF is updated automatically to handle new vulnerabilities as they are identified. For more information, see [Using Security events capability](/docs/cis?topic=cis-using-the-cis-security-events-capability).
 
 The following are some examples of the types of attacks that WAF can protect against:
 
@@ -65,67 +64,63 @@ The following are some examples of the types of attacks that WAF can protect aga
 * Cross-site scripting
 * Cross-site forgery
 
-CIS provides several preconfigured rulesets within WAF. Each ruleset includes protections that are designed to mitigate the most common web application attacks. You can enable or disable these rulesets and override individual rules as needed to meet your security requirements. For maximum coverage, it is recommended to enable both the CIS Managed Ruleset and the OWASP Ruleset together. See [WAF actions](/docs/cis?topic=cis-waf-actions) for more details on the ruleset and the behavior of each rule.
+CIS provides several preconfigured rulesets within WAF. Each ruleset includes protections that are designed to mitigate the most common web application attacks. You can enable or disable these rulesets and override individual rules as needed to meet your security requirements. For maximum coverage, enable both the CIS Managed Ruleset and the OWASP Ruleset together. For more information, see [WAF actions](/docs/cis?topic=cis-waf-actions) for details about the ruleset and the behavior of each rule.
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
 
-## Best practice 3: Configure WAF Attack score safely
+## Best practice 3: Configure WAF Attack Score safely
 {: #waf-attack-score-rule}
 
 WAF Attack Score strengthens your security posture by detecting variations of known attacks by using machine learning. It complements WAF managed rules by identifying malicious requests that do not match existing rule signatures.
 
 To configure WAF Attack Score safely, begin with monitoring traffic before you enforce blocking actions. This approach allows you to review scored traffic in Security Events and adjust thresholds to minimize false positives.
 
-### Configuring WAF Attack score in a custom rule
+### Configure WAF Attack Score in a custom rule
 {: #waf-score-in-rule}
 
-1. If you are an Enterprise customer, [create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui#create-custom-rule-ui) that blocks requests with a WAF Attack Score less than or equal to 20. This value is the recommended starting threshold.
+To cofigure WAF Attack Score in a custom rule, follow these steps:
 
-   | Field | Operator | Value |
-   | ----- | -------- | ----- |
-   | WAF Attack Score | less than or equal to | `20` |
-   {: caption="Enterprise rule example" caption-side="bottom"}
+1. Do one of the following:
 
-     * Equivalent rule expression: `cf.waf.score le 20`
-     * Action: _Block_
+   * If you are an Enterprise plan customer, [create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui#create-custom-rule-ui) that blocks requests with a WAF Attack Score less than or equal to `20`. This value is the recommended starting threshold.
 
-   If you are a standard plan user, create a custom rule by using the **WAF Attack Score Class** field instead. For example, block requests with a score class of Attack.
+      * Equivalent rule expression: `cf.waf.score le 20`
+      * Action: **Block**
 
-   | Field | Operator | Value |
-   | ----- | -------- | ----- |
-   | WAF Attack Score Class | Equals | `Attack` |
-   {: caption="Standard rule example" caption-side="bottom"}
-
-     * Equivalent rule expression: `cf.waf.score.class eq "attack"`
-     * Action: _Block_
+   * If you are a Standard plan user, create a custom rule by using the **WAF Attack Score Class** field. For example, block requests with a score class of `Attack`.
+      * Equivalent rule expression: `cf.waf.score.class eq "attack"`
+      * Action: **Block**
 
 1. Monitor the rule closely during the first few days. Verify that the selected threshold or class value aligns with your traffic patterns. Adjust the rule if you observe false positives or missed threats.
 
-1. If you are an Enterprise customer and you created a rule with Log action, change the rule action to a more severe one, like _Managed Challenge_ or _Block_.
+1. If you are an Enterprise plan customer and you created a rule with a **Log** action, change the rule action to a more severe one, like **Managed Challenge** or **Block**.
 
-CIS recommends using WAF managed rules along with WAF Attack Score. Managed rules protect against known attack patterns, while Attack Score detects modified or obfuscated attacks, providing layered and adaptive protection for your domain. For more information, see [WAF Attack score](/docs/cis?topic=cis-waf-attack-score).
+CIS recommends using WAF managed rules along with WAF Attack Score. Managed rules protect against known attack patterns, while WAF Attack Score detects modified or obfuscated attacks, providing layered and adaptive protection for your domain. For more information, see [About WAF Attack Score](/docs/cis?topic=cis-waf-attack-score).
 
 ## Best practice 4: Configure your TLS settings
 {: #best-practice-configure-tls-settings}
 
-IBM {{site.data.keyword.cis_short_notm}} functions as a reverse proxy and provides multiple options for encrypting your traffic. As a reverse proxy, we close TLS connections at our data centers and open a new TLS connection to your origin server.
+Protect your site and control your Transport Layer Security (TLS) settings. Manage the certificates used to secure traffic to your site. IBM {{site.data.keyword.cis_short_notm}} functions as a reverse proxy and provides multiple options for encrypting your traffic. As a reverse proxy, TLS connections terminate at CIS data centers, and a new TLS connection is opened to your origin server.
 
-TLS offers six modes of operations that are listed in the order from the most secure to the least secure (Off):
+TLS offers six modes of operations that are listed from most secure to least secure:
+
 1. [Authenticated origin pull](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-authenticated-origin): (Enterprise only)
 1. [HTTPS only origin pull](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-origin-only-pull) (Enterprise only)
 1. [End-to-end CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed) (default and recommended)
-1. [End-to-end flexible](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible) (edge to origin certificates can be self-signed)
-1. [Client-to-edge](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-client-to-edge) (edge to origin not encrypted, self-signed certificates are not supported)
+1. [End-to-end flexible](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-flexible) (edge-to-origin certificates can be self-signed)
+1. [Client-to-edge](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-client-to-edge) (edge-to-origin not encrypted, self-signed certificates are not supported)
 1. [Off](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-off) (not recommended)
 
-See [TLS options](/docs/cis?topic=cis-cis-tls-options) for details on the different modes of operation.
+See [TLS options](/docs/cis?topic=cis-cis-tls-options) for details on the different modes.
 
-With IBM {{site.data.keyword.cis_short_notm}}, you can use custom certificates, or you can use a wildcard certificate that is provisioned for you by {{site.data.keyword.cis_short_notm}}.
+With IBM {{site.data.keyword.cis_short_notm}}, you can use custom certificates or a wildcard certificate that is provisioned for you by {{site.data.keyword.cis_short_notm}}.
 
 ### Upload custom certificates
 {: #upload-custom-certs}
 
-You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. After you upload the custom certificate, you gain immediate compatibility with encrypted traffic, and you maintain control over your certificate (for example, an Extended Validation (EV) certificate). {{site.data.keyword.cis_short_notm}} does not support certificate pinning through ordered or Universal certificates. If you want to use certificate pinning, it is recommended that you upload and maintain your own custom certificate.
+You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. After you upload a custom certificate, you gain immediate compatibility with encrypted traffic and maintain control over your certificate (for example, an Extended Validation (EV) certificate).    
+
+{{site.data.keyword.cis_short_notm}} does not support certificate pinning with ordered or Universal certificates. If you want to use certificate pinning, it is recommended that you upload and maintain your own custom certificate.
 
 You are responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} doesn't track the certificate expiration date.
 {: important}
@@ -133,13 +128,14 @@ You are responsible for managing your certificate if you upload a custom certifi
 ### Order dedicated certificates
 {: #order-dedicated-certs}
 
-{{site.data.keyword.cis_short_notm}} makes managing your certificates simple by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. The types of certificates are:
+{{site.data.keyword.cis_short_notm}} simplifies certificate management by offering dedicated certificates. You no longer need to generate private keys, create certificate signing requests (CSR), or remember to renew certificates. You can order a dedicated certificate by clicking **Add Certificate** and ordering a wildcard certificate or entering hostnames to order a dedicated custom certificate. Available certificate types include:
 
-* SHA-2/ECDSA signed certificate that uses P-256 key,
-* SHA-2/RSA signed certificate that uses RSA 2048-bit key, and
-* SHA-1/RSA signed certificate that uses RSA 2048-bit key.
+* SHA-2/ECDSA signed certificate that uses a P-256 key,
+* SHA-2/RSA signed certificate that uses an RSA 2048-bit key, and
+* SHA-1/RSA signed certificate that uses an RSA 2048-bit key.
 
-{{site.data.keyword.cis_short_notm}} can issue certificates for all top-level domains (TLDs) except for the following ones:
+{{site.data.keyword.cis_short_notm}} can issue certificates for all top-level domains (TLDs) except the following:
+
  * `.cu` (Cuba)
  * `.iq` (Iraq)
  * `.ir` (Iran)
@@ -148,12 +144,14 @@ You are responsible for managing your certificate if you upload a custom certifi
  * `.ss` (South Sudan)
  * `.ye` (Yemen)
 
- {{site.data.keyword.cis_short_notm}} manages the certificate expiration date. To edit the hostnames on your dedicated custom certificate, you must reorder then delete. For example, you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterward, you _must_ delete the original dedicated custom certificate.
+{{site.data.keyword.cis_short_notm}} manages the certificate expiration date for dedicated certificates. 
 
-The first time when you order a dedicated certificate, the Domain Control Validation (DCV) process occurs, which generates a corresponding TXT record. If you delete the TXT record, the DCV process occurs again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
+To edit the hostnames on a dedicated custom certificate, you must reorder the certificate and then delete the original one. For example, suppose that you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterward, you must delete the original dedicated custom certificate.
+
+The first time that you order a dedicated certificate, the Domain Control Validation (DCV) process runs and generates a corresponding TXT record. If you delete the TXT record, the DCV process runs again when you order another dedicated certificate. If you delete a dedicated certificate, the TXT record corresponding to the DCV process is not deleted.
 {: note}
 
-The following are common errors that are seen when you order dedicated certificates:
+The following are common errors that might occur when you order dedicated certificates:
 
    * `Error connecting to certificate service.`
    * `Error while requesting from certificate service.`
@@ -163,40 +161,43 @@ If you receive an error when you order certificates, refresh the page and try ag
 ### Use a provisioned certificate
 {: #use-provisioned-certificate}
 
-IBM has partnered with several certificate authorities (CAs) to provide domain wildcard certificates for our customers. Manual verification might be required for setting up these certificates. Your support team can help you perform these additional steps.
+IBM has partnered with several certificate authorities (CAs) to provide wildcard certificates for customer domains. Manual verification might be required during he setup process. Your support team can help you complete these additional steps.
 
 ### Certificate priority at our edge
 {: #certificate-priority-at-our-edge}
 
-The following list denotes the priority by which the certificates are displayed at our edge:
+Certificates are served at the edge in the following priority order:
+
 1. Uploaded custom
-2. Dedicated custom
-3. Dedicated wildcard
-4. Universal
+1. Dedicated custom
+1. Dedicated wildcard
+1. Universal
 
 ### Minimum TLS version
 {: #security-minimum-tls-version}
 
-Higher levels of TLS provide more security, but might prevent customers from connecting to your site. For more information, see [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version).
+Higher TLS versions provide stronger security but might prevent some customers from connecting to your site. For more information, see [Minimum TLS version](/docs/cis?topic=cis-cis-tls-options#minimum-tls-version).
 
 ## Best practice 5: Configure rate limiting
 {: #best-practice-rate-limiting}
 
-Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold. The main use cases for rate limiting are as follows:
+Use rate-limiting rules to protect your site or API from malicious traffic by blocking client IP addresses that match a URL pattern or exceed a defined threshold.
 
-* Enforce granular access control to resources. This process includes access control based on criteria such as user agent, IP address, referrer, host, country, and world region.
+Common use cases for rate limiting include:
+
+* Enforcing granular access control to resources. This process includes access control based on criteria, such as user agent, IP address, referrer, host, country, and world region.
     * Limit by user agent: A common use case is to limit the rate of requests performed by individual user agents.
     * Allow specific IP addresses or ASNs: Another use case when you control access to resources is to exclude or include IP addresses or Autonomous System Numbers (ASNs) from a rate-limiting rule.
     * Limit by referrer: Some applications receive requests that are originated by other sources (for example, used by advertisements that link to third-party pages). You can limit the number of requests that are generated by individual referrer pages to manage quotas or avoid indirect DDoS attacks.
     * Limit by destination host: Create a rate-limiting rule that uses the host as a counting characteristic.
-* Protect against credential stuffing and account takeover attacks.
-* Limit the number of operations performed by individual clients. This action includes preventing scraping by bots, accessing sensitive data, bulk creation of new accounts, and programmatic buying in e-commerce platforms.
+* Protecting against credential stuffing and account takeover attacks.
+* Limiting the number of operations performed by individual clients. This action includes preventing scraping by bots, accessing sensitive data, bulk creation of new accounts, and programmatic buying in e-commerce platforms.
     * Prevent content scraping (through query string)
     * Prevent content scraping (through body)
     * Limit requests from bots
-* Protect REST APIs from resource exhaustion (targeted DDoS attacks) and resources from abuse in general.
+* Protecting REST APIs from resource exhaustion (targeted DDoS attacks) and resources from abuse in general.
     * Prevent volumetric attacks
     * Protect resources
-* Protect GraphQL APIs by preventing server overload and limiting the number of operations.
+* Protecting GraphQL APIs by preventing server overload and limiting the number of operations.
     * Limit the number of operations
     * Prevent server overload
