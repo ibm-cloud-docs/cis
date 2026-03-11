@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-05"
+lastupdated: "2026-03-11"
 
 keywords:
 
@@ -22,6 +22,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 ## 03 December 2025
 {: #cis-december-0325}
+{: release-note}
 
 Custom and managed lists
 :   Released UI and API support for custom lists and managed lists to enhance control over security and traffic management policies.
@@ -30,12 +31,13 @@ Custom and managed lists
 
     * [Custom lists](/apidocs/cis#get-custom-lists) let you define and manage ASN, IP, and hostname entries for use in access rules and other policy configurations. For more information, see [Creating custom lists and adding items](/docs/cis?topic=cis-create-custom-lists-add-items&interface=ui).
 
-    * [Managed lists](/apidocs/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
+    * [Managed lists](/apidocs/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data that is maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
 
     These features enable more accurate policy targeting and improve operational efficiency within CIS. For more information, see [Working with lists](/docs/cis?group=lists).
 
 ## 31 July 2025
 {: #cis-july-3125}
+{: release-note}
 
 X-Request-ID Header for improved CLI request tracing
 :   The CIS CLI now includes an automatically generated `X-Request-ID` header with every API request. This unique UUID enhances traceability and debugging by enabling better correlation of CLI calls across back-end systems. No user action is needed, and this update is fully transparent, with no impact on CLI functionality or output.
@@ -47,11 +49,13 @@ X-Request-ID Header for improved CLI request tracing
 {: release-note}
 
 Ruleset Engine migration
-:   Two existing features are now part of the Ruleset Engine rules language, and have been updated to use the [Rulesets API](/apidocs/cis#get-zone-rulesets) (similar to WAF managed rules).
+:   Two existing features are now part of the Ruleset Engine rules language, and they are updated to use the [Rulesets API](/apidocs/cis#get-zone-rulesets) (similar to WAF managed rules).
 
     * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 
     * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
+
+
 
 ## 21 October 2024
 {: #cis-oct2124}
@@ -65,7 +69,7 @@ Enhanced security
 {: release-note}
 
 Managed Rules
-:   Released the new [managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which replaces the current WAF. Enterprise plans will have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
+:   Released the new [managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which replaces the current WAF. Enterprise plans have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
 
 ## 21 June 2023
 {: #cis-jun2123}
