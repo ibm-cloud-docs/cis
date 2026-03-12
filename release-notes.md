@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-11"
+lastupdated: "2026-03-12"
 
 keywords:
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
+## 10 March 2026
+{: #cis-march-1026}
+{: release-note}
+
+Logpush COS job improvements
+:   Released API and CLI support for Logpush jobs with Cloud Object Storage (COS) destinations to support API key authentication. This implementation follows the same handling approach that is used for IBM Cloud Logs (ICL). For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 03 December 2025
 {: #cis-december-0325}
@@ -55,7 +62,19 @@ Ruleset Engine migration
 
     * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
 
+## 13 January 2025
+{: #cis-jan-1325}
+{: release-note}
 
+QRadar and Splunk Logpush destinations
+:   Released support for configuring CIS Logpush jobs to push logs directly to QRadar and Splunk instances. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
+
+## 05 December 2024
+{: #cis-dec-0524}
+{: release-note}
+
+IBM Cloud Logs and generic Logpush destinations
+:   Released support for configuring CIS Logpush jobs to push logs to IBM Cloud Log (ICL) instances and generic destinations. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 21 October 2024
 {: #cis-oct2124}

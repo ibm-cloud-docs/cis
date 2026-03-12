@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-11"
+lastupdated: "2026-03-12"
 
 keywords:
 
@@ -42,7 +42,7 @@ $ dig proxied.theburritobot.com +short
 ### Obscure non-proxied origin records with non-standard names
 {: #obscure-non-proxied-origin-records-with-non-standard-names}
 
-Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation. 
+Any records that can't be proxied through {{site.data.keyword.cis_short_notm}}, and that still use your origin IP, such as FTP, can be secured by creating additional obfuscation.
 
 If you require a record for your origin that can't be proxied by {{site.data.keyword.cis_short_notm}}, use a non-standard name. For example, instead of `ftp.example.com` use `[random word or-random characters].example.com.` This obfuscation makes dictionary scans of your DNS records less likely to expose your origin IP addresses.
 
@@ -75,25 +75,7 @@ WAF Attack Score strengthens your security posture by detecting variations of kn
 
 To configure WAF Attack Score safely, begin with monitoring traffic before you enforce blocking actions. This approach allows you to review scored traffic in Security Events and adjust thresholds to minimize false positives.
 
-### Configure WAF Attack Score in a custom rule
-{: #waf-score-in-rule}
-
-To cofigure WAF Attack Score in a custom rule, follow these steps:
-
-1. Do one of the following:
-
-   * If you are an Enterprise plan customer, [create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui#create-custom-rule-ui) that blocks requests with a WAF Attack Score less than or equal to `20`. This value is the recommended starting threshold.
-
-      * Equivalent rule expression: `cf.waf.score le 20`
-      * Action: **Block**
-
-   * If you are a Standard plan user, create a custom rule by using the **WAF Attack Score Class** field. For example, block requests with a score class of `Attack`.
-      * Equivalent rule expression: `cf.waf.score.class eq "attack"`
-      * Action: **Block**
-
-1. Monitor the rule closely during the first few days. Verify that the selected threshold or class value aligns with your traffic patterns. Adjust the rule if you observe false positives or missed threats.
-
-1. If you are an Enterprise plan customer and you created a rule with a **Log** action, change the rule action to a more severe one, like **Managed Challenge** or **Block**.
+For more information, see [using WAF Attack Score](/docs/cis?topic=cis-waf-attack-score#using-waf-score) to cofigure WAF Attack Score in a custom rule.
 
 CIS recommends using WAF managed rules along with WAF Attack Score. Managed rules protect against known attack patterns, while WAF Attack Score detects modified or obfuscated attacks, providing layered and adaptive protection for your domain. For more information, see [About WAF Attack Score](/docs/cis?topic=cis-waf-attack-score).
 
@@ -118,7 +100,7 @@ With IBM {{site.data.keyword.cis_short_notm}}, you can use custom certificates o
 ### Upload custom certificates
 {: #upload-custom-certs}
 
-You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. After you upload a custom certificate, you gain immediate compatibility with encrypted traffic and maintain control over your certificate (for example, an Extended Validation (EV) certificate).    
+You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. After you upload a custom certificate, you gain immediate compatibility with encrypted traffic and maintain control over your certificate (for example, an Extended Validation (EV) certificate).
 
 {{site.data.keyword.cis_short_notm}} does not support certificate pinning with ordered or Universal certificates. If you want to use certificate pinning, it is recommended that you upload and maintain your own custom certificate.
 
@@ -144,7 +126,7 @@ You are responsible for managing your certificate if you upload a custom certifi
  * `.ss` (South Sudan)
  * `.ye` (Yemen)
 
-{{site.data.keyword.cis_short_notm}} manages the certificate expiration date for dedicated certificates. 
+{{site.data.keyword.cis_short_notm}} manages the certificate expiration date for dedicated certificates.
 
 To edit the hostnames on a dedicated custom certificate, you must reorder the certificate and then delete the original one. For example, suppose that you order a dedicated custom certificate with the hostname `alpha.yourdomain.com`. To add the hostname `beta.yourdomain.com` to your dedicated custom certificate, order another dedicated custom certificate with the hostnames `alpha.yourdomain.com` and `beta.yourdomain.com`. Afterward, you must delete the original dedicated custom certificate.
 
