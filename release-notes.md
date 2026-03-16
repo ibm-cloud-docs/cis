@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-12"
+lastupdated: "2026-03-16"
 
 keywords:
 
@@ -19,13 +19,6 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
-
-## 10 March 2026
-{: #cis-march-1026}
-{: release-note}
-
-Logpush COS job improvements
-:   Released API and CLI support for Logpush jobs with Cloud Object Storage (COS) destinations to support API key authentication. This implementation follows the same handling approach that is used for IBM Cloud Logs (ICL). For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 03 December 2025
 {: #cis-december-0325}
