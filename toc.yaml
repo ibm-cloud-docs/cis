@@ -290,7 +290,6 @@ toc:
       - plan-comparison.md
       - transition-plans.md
       - allowlisted-ips.md
-      - network-ports-cis-proxy.md
       - helpful-tools.md
       - hipaa-advisory.md
   - navgroup:
