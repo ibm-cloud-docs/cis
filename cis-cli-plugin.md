@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-03-16"
 
 keywords:
 
@@ -2303,7 +2303,7 @@ ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FE
     - `hotlink_protection` : Protect your images from off-site linking.
     - `http2` : Accelerate your website with HTTP/2.
     - `http3` : Accelerate your website with HTTP/3.
-    - `image_load_optimization` : Improve load time for pages that include images on mobile devices with slow network connections.
+    - `image_load_optimization` : *Deprecated*. Improve load time for pages that include images on mobile devices with slow network connections.
     - `image_size_optimization` : Improve image load time by optimizing images hosted on your domain.
     - `image_resizing` : Provide on-demand resizing, conversion, and optimization for images served through the CIS network.
     - `ip_geolocation` : Include the country code of the visitor location with all requests to your website.
@@ -2378,7 +2378,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - `hotlink_protection` : Protect your images from off-site linking.
     - `http2` : Accelerate your website with HTTP/2.
     - `http3` : Accelerate your website with HTTP/3.
-    - `image_load_optimization` : Improve load time for pages that include images on mobile devices with slow network connections.
+    - `image_load_optimization` : *Deprecated*. Improve load time for pages that include images on mobile devices with slow network connections.
     - `image_size_optimization` : Improve image load time by optimizing images hosted on your domain.
     - `image_resizing` : Provide on-demand resizing, conversion, and optimization for images served through the CIS network.
     - `ip_geolocation` : Include the country code of the visitor location with all requests to your website.
@@ -2431,7 +2431,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `opportunistic_onion` are `on`, `off`.
     - Valid values for `http2` are `on`, `off`.
     - Valid values for `http3` are `on`, `off`.
-    - Valid values for `image_load_optimization` are `on`, `off`.
+    - *Deprecated*. Valid values for `image_load_optimization` are `on`, `off`.
     - Valid values for `image_resizing` are `on`, `off`.
     - Valid values for `image_size_optimization` are `off`, `lossless`, `lossy`.
         - `off`: Disable Image Size Optimization.
@@ -5605,7 +5605,7 @@ ibmcloud cis page-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-
             - `cache_deception_armor`
             - `waf`
             - `forwarding_url`
-            - `image_load_optimization`
+            - *Deprecated*. `image_load_optimization`.
             - `image_size_optimization`
             - `script_load_optimization`
             - `host_header_override`
@@ -5731,7 +5731,7 @@ ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID (--json @JSON_FILE | JS
             - `cache_deception_armor`
             - `waf`
             - `forwarding_url`
-            - `image_load_optimization`
+            - *Deprecated*. `image_load_optimization`
             - `image_size_optimization`
             - `script_load_optimization`
             - `host_header_override`
