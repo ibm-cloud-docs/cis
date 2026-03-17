@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-16"
+lastupdated: "2026-03-17"
 
 keywords:
 
@@ -60,14 +60,14 @@ Ruleset Engine migration
 {: release-note}
 
 QRadar and Splunk Logpush destinations
-:   Released support for configuring CIS Logpush jobs to push logs directly to QRadar and Splunk instances. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
+:   Added support for configuring CIS Logpush jobs to push logs directly to QRadar and Splunk instances. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 05 December 2024
 {: #cis-dec-0524}
 {: release-note}
 
 IBM Cloud Logs and generic Logpush destinations
-:   Released support for configuring CIS Logpush jobs to push logs to IBM Cloud Log (ICL) instances and generic destinations. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
+:   Added support for configuring CIS Logpush jobs to push logs to IBM Cloud Log (ICL) instances and generic destinations. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 21 October 2024
 {: #cis-oct2124}
