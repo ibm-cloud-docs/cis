@@ -37,7 +37,7 @@ Before you create a Logpush job by using the console, review the following infor
 * For Cloud Object Storage only:
    * You must have a Cloud Object Storage instance with a bucket that grants **Object Writer** access to the IBM Cloud account `cislogp@us.ibm.com`. This permission enables CIS to write request logs to the Object Storage bucket.{: cli}{: api}
    * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring encryption of log data in transit.
-   * DNS, Range, and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can use the same destination but must specify different paths with using Cloud Object Storage.  
+   * DNS, Range, and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can use the same destination but must specify different paths with using Cloud Object Storage.
    * After creating a Logpush job with Cloud Object Storage, you must verify ownership. This process is described in the next steps.
 
 * For Splunk only: When you send logs to Splunk, CIS checks the IP address and port for accessibility and validates the certificate of the HTTP Receiver. If all parameters are valid, the Logpush job is created and begins sending events to the HTTP Event Collector (Splunk).
@@ -124,7 +124,7 @@ Where:
 
    | Cloud Object Storage |
    |---------------------|
-   | `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>&ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd` |
+   | `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>` \n \n For example: \n `cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd` |
    {: caption="Cloud Object Storage path" caption-side="bottom"}
    {: #cli-table-22}
    {: tab-title="Cloud Object Storage"}
@@ -248,7 +248,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    | Cloud Object Storage |
    |---------------------|
-   | `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the COS instance. \n * `ibm_api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Object Writer** IAM role on the Cloud Object Storage bucket. \n  |
+   | `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the COS instance. |
    {: caption="Cloud Object Storage destination" caption-side="bottom"}
    {: #pl-table-2}
    {: tab-title="Cloud Object Storage"}
