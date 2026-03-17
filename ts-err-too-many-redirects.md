@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-03-17"
 
 keywords:
 
@@ -174,8 +174,7 @@ A redirect loop occurs when:
 * One rule redirects a request from URL A to URL B.
 * Another rule redirects URL B back to URL A (or to another URL that eventually points back to A).
 * The browser repeatedly follows these redirects.
-* No final destination page is reached.
-As a result, the browser stops the process and displays a redirect error.
+* No final destination page is reached. As a result, the browser stops the process and displays a redirect error.
 
 This typically happens because:
 {: tsCauses}
