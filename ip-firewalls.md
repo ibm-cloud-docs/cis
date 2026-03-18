@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-03-18"
  
 keywords: ip firewall, ip rules, user agent blocking, domain lockdown 
 
@@ -15,7 +15,7 @@ subcollection: cis
 # IP firewalls
 {: #cis-ip-firewall} 
  
-Legacy IP firewall rules are still supported, but custom rules provide greater flexibility and control. You can accomplish 99.99% or more of IP rule use cases using custom rules, along with advanced features like rule sequencing, custom responses, and detailed logging. For new configurations, it is recommended to use [custom rules](/docs/cis?topic=cis-custom-rules-overview) whenever possible.yes,
+Legacy IP firewall rules are still supported, but custom rules provide greater flexibility and control. You can accomplish 99.99% or more of IP rule use cases using custom rules, along with advanced features like rule sequencing, custom responses, and detailed logging. For new configurations, it is recommended to use [custom rules](/docs/cis?topic=cis-custom-rules-overview) whenever possible.
 {: attention}
 
 **Warning:** Since these legacy rules are evaluated earlier in the traffic sequence, allowing an IP, ASN, or country will bypass any configured WAF, custom, or rate limiting rules. 
