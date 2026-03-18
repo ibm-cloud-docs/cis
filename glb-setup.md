@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-03-18"
 
 keywords:
 
@@ -54,8 +54,6 @@ The following steps provide the full procedure for creating health checks, pools
 When you open the Global load balancers page (**Reliability > Global load balancers**), tabs are shown for [Load balancers](#x2788902){: term}, Origin pools, [Health checks](#x4571658){: term}, and Events. The lists in these tabbed views display new or updated global load balancers, or one of its components after you provisioned or updated it.
 
 In the following step-by-step procedure, learn how to configure a setup similar to the following diagram. In this example, the application resources are deployed in two data center locations, one in US West and the other in US East. Users might be accessing this application from all over the world.
-
-![Global load balancer](images/cis-glb1.svg "Diagram showing the global load balancer"){: caption="Diagram of global load balancer example" caption-side="bottom"}
 
 To create and configure a global load balancer in the console, follow these steps:
 
