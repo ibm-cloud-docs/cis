@@ -258,7 +258,7 @@ toc:
           label: CIS API
           topics:
           - link:
-              label: Reference
+              label: API reference
               href: https://{DomainName}/apidocs/cis
           - api-change-log.md
       - topicgroup:
