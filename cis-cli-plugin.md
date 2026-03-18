@@ -4596,7 +4596,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
 :   The ID of the DNS domain. Required.
 
 `--destination`
-:   Specify a destination where data is pushed. For more information on supported destination, see [Managing Logpush jobs](docs/cis?topic=cis-logpush&interface=cli).
+:   Specify a destination where data is pushed. For more information about supported destinations, see [Managing Logpush jobs](docs/cis?topic=cis-logpush&interface=cli).
     - Syntax for Cloud Object Storage Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
       Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
       To separate logs in to daily subfolders, use the special string `{DATE}` in the bucket path.
@@ -4656,7 +4656,7 @@ ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [-
 :   The ID of the DNS domain. Required.
 
 `--destination`
-:   Specify a destination where data is pushed. For more information on supported destination, see [Managing Logpush jobs](docs/cis?topic=cis-logpush&interface=cli).
+:   Specify a destination where data is pushed. For more information about supported destinations, see [Managing Logpush jobs](docs/cis?topic=cis-logpush&interface=cli).
     Syntax for Cloud Object Storage Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
     Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
     To separate logs into daily subfolders, use the special string `{DATE}` in the bucket path.
@@ -8737,7 +8737,7 @@ ibmcloud cis alert-policy pool-toggle-alert-create --name test1 --emails test1@c
 ### `ibmcloud cis alert-policy firewall-events-alert-create`
 {: #firewall-events-alert}
 
-Create an alert policy about spikes in firewall events. Firewall events alerts use a [z-score] (https://en.m.wikipedia.org/wiki/Standard_score) calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score is above the threshold of 3.5. You will not receive duplicate alerts within the same two-hour time frame.
+Create an alert policy about spikes in firewall events. Firewall events alerts use a [z-score] (https://en.m.wikipedia.org/wiki/Standard_score){: external} calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score is greater than the threshold of 3.5. You will not receive duplicate alerts within the same two-hour time frame.
 
 ```sh
 ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) --domains DOMAINS [--services SERVICES] [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
