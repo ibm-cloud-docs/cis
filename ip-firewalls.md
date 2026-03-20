@@ -13,13 +13,8 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # IP firewalls
-<<<<<<< HEAD
 {: #cis-ip-firewall}
 
-=======
-{: #cis-ip-firewall} 
- 
->>>>>>> 763648b1c05dfec0170f0fe06a38db8acc0bc1c0
 Legacy IP firewall rules are still supported, but custom rules provide greater flexibility and control. You can accomplish 99.99% or more of IP rule use cases using custom rules, along with advanced features like rule sequencing, custom responses, and detailed logging. For new configurations, it is recommended to use [custom rules](/docs/cis?topic=cis-custom-rules-overview) whenever possible.
 {: attention}
 
