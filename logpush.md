@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-03-20"
 
 keywords:
 
@@ -26,6 +26,7 @@ Before you create a Logpush job by using the console, review the following infor
 * Currently, the {{site.data.keyword.cis_short_notm}} console supports the following destinations:{: ui}
    - IBM Cloud Logs
    - Cloud Object Storage
+   - IBM QRadar
    - Splunk
 * Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
 * Accepting the Logpush user invitation (`cislogp@us.ibm.com`) is a manual process completed by an authorized CIS team. The status in the console updates after the invitation has been accepted. Until then, the status remains `Pending`.
@@ -40,7 +41,7 @@ Before you create a Logpush job by using the console, review the following infor
    * DNS, Range, and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can use the same destination but must specify different paths with using Cloud Object Storage.
    * After creating a Logpush job with Cloud Object Storage, you must verify ownership. This process is described in the next steps.
 
-* For Splunk only: When you send logs to Splunk, CIS checks the IP address and port for accessibility and validates the certificate of the HTTP Receiver. If all parameters are valid, the Logpush job is created and begins sending events to the HTTP Event Collector (Splunk).
+* For Splunk only: When you send logs to QRadar or Splunk, CIS checks the IP address and port for accessibility and validates the certificate of the HTTP Receiver. If all parameters are valid, the Logpush job is created and begins sending events to the HTTP Receiver log source (QRadar) or the HTTP Event Collector (Splunk).
 
 ## Creating a Logpush job in the console
 {: #logpush-setup-ui}
@@ -68,6 +69,9 @@ To create a Logpush job in the console, follow these steps:
    :   Enter the Cloud Object Storage instance, bucket information (name and region), and bucket path (optional). Then, organize logs into daily folders (optional).
 
       Destination values for Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
+
+   IBM QRader
+   :   Enter the QRader URL, then select a log source port.
 
    Splunk
    :   Enter the Splunk endpoint, channel ID, and authentication token.
@@ -132,6 +136,26 @@ Where:
    {: class="simple-tab-table"}
    {: row-headers}
 
+   | IBM QRadar |
+   |---------------------|
+   | `<QRADAR_URL>:<LOG_SOURCE_PORT>` \n \n For example: \n `https://qradar.example.com:8088` |
+   {: caption="IBM QRadar path" caption-side="bottom"}
+   {: #cli-table-33}
+   {: tab-title="IBM QRadar"}
+   {: tab-group="pla"}
+   {: class="simple-tab-table"}
+   {: row-headers}
+
+   | Splunk |
+   |---------------------|
+   | `splunk://<SPLUNK_ENDPOINT_URL>?channel=<SPLUNK_CHANNEL_ID>&header_Authorization=<SPLUNK_AUTH_TOKEN>&sourcetype=<SOURCE_TYPE>&insecure-skip-verify=<INSECURE_SKIP_VERIFY>` \n \n For example: \n `splunk://cis-analytics.ibm.com:8088/services/collector/raw?header_Authorization=Splunk%20e6d94e8c-5792-4ad1-be3c-29bcaee0197d&channel=f1aafa4f-684f-4c29-a040-7fe184b03712&sourcetype=cloudflare:json&insecure-skip-verify=false` |
+   {: caption="Splunk path" caption-side="bottom"}
+   {: #cli-table-44}
+   {: tab-title="Splunk"}
+   {: tab-group="pla"}
+   {: class="simple-tab-table"}
+   {: row-headers}
+
    | Custom HTTP |
    |---------------------|
    | `https://<HOSTNAME>?header_Authorization=Basic%20REDACTED&tags=host:<DOMAIN_NAME>,dataset:<LOGPUSH_DATASET>` \n \n For example: \n `https://logs.example.com?header_Authorization=a64Vxxxxx5Aq` |
@@ -183,7 +207,23 @@ CLI examples for the supported destinations:
        ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
        ```
        {: pre}
-   
+
+   IBM QRadar
+   :   Example
+
+       ```sh
+       ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination https://qradar.example.com:8088 --name logpushJobQRadar --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+       ```
+       {: pre}
+
+   Splunk
+   :   Example
+
+       ```sh
+       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination splunk://cis-analytics.ibm.com:8088/services/collector/raw?header_Authorization=Splunk%20e6d94e8c-5792-4ad1-be3c-29bcaee0197d&channel=f1aafa4f-684f-4c29-a040-7fe184b03712&sourcetype=cloudflare:json&insecure-skip-verify=false --name logpushJobSplunk --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+       ```
+       {: pre}
+
 
    Custom HTTP
    :   Example
@@ -252,6 +292,16 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
    {: caption="Cloud Object Storage destination" caption-side="bottom"}
    {: #pl-table-2}
    {: tab-title="Cloud Object Storage"}
+   {: tab-group="pl"}
+   {: class="simple-tab-table"}
+   {: row-headers}
+
+   | IBM QRadar |
+   | --------------------- |
+   | `qradar`: Information to identify the QRadar HTTP Receiver where the data is pushed. |
+   {: caption="IBM QRadar destination" caption-side="bottom"}
+   {: #pl-table-3}
+   {: tab-title="IBM QRadar"}
    {: tab-group="pl"}
    {: class="simple-tab-table"}
    {: row-headers}
@@ -332,6 +382,26 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
       "frequency": "low",
       "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
       "ownership_challenge": "xxxxxxx"
+   }'
+   ```
+   {: pre}
+
+   **IBM QRadar**
+
+    ```sh
+   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+   --header "Content-Type: application/json" \
+   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+   --data '{
+      "qradar": {
+         "url": "https://example.qradar.ibmcloud.com",
+         "port": 8088
+      },
+      "dataset": "firewall_events",
+      "enabled": false,
+      "name": "CIS-Firewall-QRadar",
+      "frequency": "low",
+      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
    }'
    ```
    {: pre}
