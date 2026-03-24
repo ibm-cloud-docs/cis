@@ -80,7 +80,6 @@ toc:
           topics:
           - edge-certificates.md
           - origin.md
-          - renew-expire-certificates.md
       - topicgroup:
           label: Working with Range applications
           id: range
