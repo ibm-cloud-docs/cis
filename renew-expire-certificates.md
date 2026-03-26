@@ -23,7 +23,7 @@ Understand how custom certificates are renewed, how expiration is handled, and w
 
 Replace or update custom certificates before they expire, as CIS cannot renew certificates that you upload. If certificates are not replaced in time, users might not be able to connect to your application.
 
-CIS provides certificate‑related alert policy types for TLS certificates such as certificate validation, renewal, and expiration. To receive these alerts, customers must explicitly configure the corresponding CIS alert policies, as certificate alerts are not enabled by default. For more information, see [Alert type](/docs/cis?topic=cis-types-alerts&interface=api).
+CIS provides certificate‑related alert policy types for TLS certificates such as certificate validation, renewal, and expiration. To receive these alerts, customers must explicitly configure the corresponding CIS alert policies, as certificate alerts are not enabled by default. For more information, see [Alert types](/docs/cis?topic=cis-types-alerts&interface=api).
 
 ## Expired certificates
 {: #expired-certificates}
