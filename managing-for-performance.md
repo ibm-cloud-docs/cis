@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-03-31"
 
-keywords:
+keywords: performance, best practices
 
 subcollection: cis
 

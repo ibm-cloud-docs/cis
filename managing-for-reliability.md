@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-08"
+  years: 2018, 2026
+lastupdated: "2026-03-31"
 
-keywords: Page Rules, web content, IBM CIS deployment
+keywords: reliability, best practices
 
 subcollection: cis
 
