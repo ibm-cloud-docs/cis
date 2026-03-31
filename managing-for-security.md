@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-12"
+lastupdated: "2026-03-31"
 
-keywords:
+keywords: security, best practices, waf, owasp
 
 subcollection: cis
 
@@ -64,7 +64,10 @@ The following are some examples of the types of attacks that WAF can protect aga
 * Cross-site scripting
 * Cross-site forgery
 
-CIS provides several preconfigured rulesets within WAF. Each ruleset includes protections that are designed to mitigate the most common web application attacks. You can enable or disable these rulesets and override individual rules as needed to meet your security requirements. For maximum coverage, enable both the CIS Managed Ruleset and the OWASP Ruleset together. For more information, see [WAF actions](/docs/cis?topic=cis-waf-actions) for details about the ruleset and the behavior of each rule.
+CIS provides several preconfigured rulesets within WAF for Layer 7 protection. Each ruleset includes protections to mitigate the most common web application attacks. You can enable or disable these rulesets and override individual rules to meet your security requirements. For optimal protection, enable the CIS Managed Ruleset at the highest priority. You can use the OWASP ruleset for additional coverage, but place it after the CIS Managed Ruleset in your rule execution order. 
+
+The OWASP ruleset is prone to false positives and offers only marginal benefits when placed before the CIS Managed Ruleset and WAF attack score. If you enable the OWASP ruleset, monitor traffic and adjust rule settings as needed to prevent false positives. For more information, see [WAF actions](/docs/cis?topic=cis-waf-actions) for details about the ruleset and the behavior of each rule.
+{: note}
 
 For more information, see [Web Application Firewall (WAF) concepts](/docs/cis?topic=cis-waf-q-and-a).
 
