@@ -283,7 +283,7 @@ These actions allow {{site.data.keyword.cis_short_notm}} to inspect, absorb, and
 {: #ddos-http-protection}
 {: faq}
 
-Yes, you can create a custom rule [override](/docs/cis?topic=cis-custom-rules-fields-and-expressions) and use the expression fields to match against HTTP requests with the User-Agent header. There are a variety of [fields](/docs/cis?topic=cis-custom-rules-fields-and-expressions#custom-rule-available-fields) that you can use.
+Yes, you can create a custom rule [override](/docs/cis?topic=cis-custom-rules-fields-and-expressions) and use the expression fields to match against HTTP requests with the `User-Agent` header. There are a variety of [fields](/docs/cis?topic=cis-custom-rules-fields-and-expressions#custom-rule-available-fields) that you can use.
 
 You can then adjust the [sensitivity level](/docs/cis?topic=cis-http-ddos&interface=api#sensitivity-level) or [mitigation action](/docs/cis?topic=cis-http-ddos&interface=api#ddos-action).
 
@@ -343,7 +343,7 @@ If your origin already uses gzip, {{site.data.keyword.cis_short_notm}} honors th
 
 {{site.data.keyword.cis_short_notm}} only supports gzip for origin content and delivers content as gzip, Brotli, or uncompressed. Its reverse proxy can convert between compressed and uncompressed formats independently of caching.
 
-The Accept-Encoding header from the client is removed and not respected.
+The `Accept-Encoding` header from the client is removed and not respected.
 
 ### What is the payload limit for WAF?
 {: #waf-traffic-limit}
@@ -394,7 +394,7 @@ For outbound traffic control, consider:
 ### What is the CF-Connecting-IP header?
 {: #cf-connecting-ip}
 
-The CF-Connecting-IP header provides the original client IP address to the origin web server. CIS adds this header at the edge, and it is included only in requests that are forwarded from the CIS edge to the origin server.
+The `CF-Connecting-IP` header provides the original client IP address to the origin web server. CIS adds this header at the edge, and it is included only in requests that are forwarded from the CIS edge to the origin server. 
 
 ## Troubleshooting and error codes
 {: #troubleshooting-error-codes}
