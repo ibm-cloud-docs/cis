@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-05"
+lastupdated: "2026-04-06"
 
 keywords:
 
@@ -390,6 +390,11 @@ For outbound traffic control, consider:
 - [VPC Network ACLs (NACLs)](/docs/vpc?topic=vpc-using-acls): Subnet-level inbound/outbound rules.
 - Firewall appliances: Deploy third-party firewalls within your VPC.
 - DNS filtering: Use DNS-based services to restrict domains.
+
+### What is the CF-Connecting-IP header?
+{: #cf-connecting-ip}
+
+The CF-Connecting-IP header provides the original client IP address to the origin web server. CIS adds this header at the edge, and it is included only in requests that are forwarded from the CIS edge to the origin server.
 
 ## Troubleshooting and error codes
 {: #troubleshooting-error-codes}
