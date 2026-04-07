@@ -61,4 +61,4 @@ CIS Security Events currently has the following limitations:
 
 - Security Events uses [sampled data](/docs/cis?topic=cis-sampling). As a result, the dashboard might not display all events.
 - Security Events are pulled using GraphQL. As a result, it is subject to the [GraphQL query limits](/docs/cis?topic=cis-graphql#query-limits).
-- The UI displays up to 10,000 events per query. If the query exceeds this limit, additional events are not displayed.
+- The IBM Cloud Console (UI) displays up to 10,000 events per query. Beyond this limit, additional events are not displayed.
