@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-05-29"
+  years: 2018, 2026
+lastupdated: "2026-04-07"
 
 keywords:
 
@@ -28,11 +28,11 @@ The Security Events table shows you information about web requests that are bloc
     * **Challenge**: A CAPTCHA page that humans can bypass.
     * **Simulate**: A request that is allowed through normally, but is logged.
 
-Sometimes the triggered rule is not identified. In this case the UI shows a `-` instead of the rule ID.
+Sometimes the triggered rule is not identified. In this case, the UI shows a `-` instead of the rule ID.
 * **IP Address**: Shows the source IP address of the web request.
-* **Location**: Shows the country associated with the source IP of the web request.
-* **Host**: Shows the hostname of the server that has been reached by the web request.
-* **Date**: Shows the day the event occurred.
+* **Location**: Shows the country that is associated with the source IP of the web request.
+* **Host**: Shows the hostname of the server that the web request reaches.
+* **Date**: Shows the day that the event occurred.
 
 ## {{site.data.keyword.cis_short_notm}} Security Events details
 {: #cis-security-events-details}
@@ -59,5 +59,6 @@ Enterprise plans retain security events for 90 days. Standard plans retain secur
 
 CIS Security Events currently has the following limitations:
 
-- Security Events uses [sampled data](/docs/cis?topic=cis-sampling). As a result, the dashboard may not display all events.
+- Security Events uses [sampled data](/docs/cis?topic=cis-sampling). As a result, the dashboard might not display all events.
 - Security Events are pulled using GraphQL. As a result, it is subject to the [GraphQL query limits](/docs/cis?topic=cis-graphql#query-limits).
+- The IBM Cloud Console (UI) displays up to 10,000 events per query. Beyond this limit, additional events are not displayed.
