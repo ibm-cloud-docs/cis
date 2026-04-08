@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-09-11"
+  years: 2024, 2026
+lastupdated: "2026-04-08"
 
-keywords:
+keywords: rulesets, entrypoint, phase
 
 subcollection: cis
 
@@ -34,7 +34,7 @@ A phase defines a stage in the life of a request where you can execute rulesets.
 
 Phases exist at the instance level and at the zone level. For the same phase, rules that are defined at the instance level are evaluated before the rules defined at the zone level.
 
-Each phase has, at most, one entry point ruleset at the instance and zone level.
+Each phase has, at most, one entrypoint ruleset at the instance and zone level.
 
 Currently, only phases at the zone level are available. This page is updated as instance and zone level phases become available in subsequent releases.
 
@@ -52,21 +52,21 @@ The following table lists the phases that are available within the Ruleset Engin
 | `http_config_settings` | Configuration rules | API |
 {: caption="Available phases" caption-side="bottom"}
 
-## Entry point ruleset
+## Entrypoint ruleset
 {: #entry-point-ruleset}
 
-Entry point rulesets are abstracted away when you use the {{site.data.keyword.cis_short_notm}} UI. They are required to deploy and override rulesets when using the API, CLI, SDK, or Terraform.
+Entrypoint rulesets are abstracted away when you use the {{site.data.keyword.cis_short_notm}} UI. They are required to deploy and override rulesets when using the API, CLI, SDK, or Terraform.
 {: note}
 
-An entry point ruleset contains a list of ordered rules that run in a phase at the instance or zone level. This ruleset is an entry point for all rules that are executed in a phase. Some of these rules might run other rulesets.
+An entrypoint ruleset contains a list of ordered rules that run in a phase at the instance or zone level. This ruleset is an entrypoint for all rules that are executed in a phase. Some of these rules might run other rulesets.
 
-Each phase has, at most, one entry point ruleset at the instance level and at the zone level.
+Each phase has, at most, one entrypoint ruleset at the instance level and at the zone level.
 
-The `kind` field of a phase entry point ruleset has one of the following values:
+The `kind` field of a phase entrypoint ruleset has one of the following values:
 
-* `root`: Used for a phase entry point ruleset at the instance level
-* `zone`: Used for a phase entry point ruleset at the zone level
+* `root`: Used for a phase entrypoint ruleset at the instance level
+* `zone`: Used for a phase entrypoint ruleset at the zone level
 
-If a 404 status code is received when fetching the phase entry point ruleset, it likely doesn't exist and must be created with the update API for the [zone level entry point](/apidocs/cis#update-zone-entrypoint-ruleset) or [instance level entry point](/apidocs/cis#update-instance-entrypoint-ruleset). When creating the ruleset, Use the intended phase and set the request body to `{ "rules": [] }`.
+If a 404 status code is received when fetching an entrypoint ruleset, the particular ruleset phase likely doesn't exist and must be created with the update API for the [zone level entrypoint](/apidocs/cis#update-zone-entrypoint-ruleset) or [instance level entrypoint](/apidocs/cis#update-instance-entrypoint-ruleset). When creating the ruleset, Use the intended phase and set the request body to `{ "rules": [] }`.
 
-For instructions on deploying rulesets that use entry point rulesets for WAF managed rules, see [Deploying managed rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entry point rulesets, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
+For instructions on deploying rulesets that use entrypoint rulesets for WAF managed rules, see [Deploying managed rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entrypoint rulesets, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
