@@ -97,6 +97,12 @@ toc:
           - auth-origin-pull.md
           - cipher-suites.md
           - total-tls.md
+          - topicgroup:
+              label: Post-quantum
+              id: tls-pqc
+              topics:
+              - about-post-quantum.md
+              - pqc-to-origin.md
       - topicgroup:
           label: Working with DDoS protection
           topics:
