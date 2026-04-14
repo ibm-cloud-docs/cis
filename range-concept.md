@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-08-19"
+  years: 2018, 2026
+lastupdated: "2026-04-14"
 
 keywords:
 
@@ -29,46 +29,6 @@ Unlike standard web applications protected by CIS, Range applications enable you
 
 Range applications are only available to Enterprise customers for an additional cost, and is priced per bandwidth usage.
 {: note}
-
-## Range application use cases
-{: #range-use-cases}
-
-Use cases for Range applications include:
-
-VPN and Remote Access Services
-:   Protect VPN concentrators and gateways that enable secure remote workforce connectivity, helping ensure they remain available and secure during attacks.
-
-Network Address Translation (NAT) Devices
-:   Secure NAT endpoints that manage inbound and outbound traffic flows, preventing abuse and maintaining reliable connectivity.
-
-Database and Application Servers
-:   Extend protection to critical database ports (for example, MySQL, PostgreSQL) and custom TCP-based applications, without directly exposing backend infrastructure to the internet.
-
-Collaboration Tools and Third-Party Services
-:   Protect integrations with services such as Zoom or Microsoft Teams, where traffic typically comes from a limited set of IP ranges, to avoid being mistakenly identified as DDoS activity.
-
-## Supported protocols and use cases
-{: #choosing-protocol-on}
-
-The application type determines how traffic is routed from the CIS edge to your origin:
-
-* TCP or UDP: Use TCP or UDP protocol when you want CIS to proxy traffic directly to your origin.
-* HTTP or HTTPS: Required when using features like Edge functions or Bot Management. In this case, traffic is routed through the CIS pipeline instead of connecting directly to your origin.
-* RDP: Securely connect using Remote Desktop Protocol (RDP), with built-in DDoS protection and access control.
-* SSH: Securely access remote servers over SSH without exposing your origin IP.
-* Minecraft: Protect and accelerate Minecraft servers with DDoS mitigation and improved network performance.
-
-For protocol-specific limitations, see [Known issues and limitations](/docs/cis?topic=cis-known-limitations#limitations-protocols).
-{: note}
-
-### Security and port configuration
-{: #security-port-configuration}
-
-By default, the Range application listens on all ports, which may raise concerns during security audits. However, the Range application only proxies connections from edge ports explicitly configured in CIS.
-
-When a TCP handshake is initiated on any port of a Range application IP, the handshake completes. If the port is configured for a Range application, the connection is proxied to the origin. If no application is configured on that port, the Range application immediately ends the connection without contacting the origin.
-
-The Range application proxies traffic to the origin only when a Range application is configured for the requested port.
 
 ## Related links
 {: #range-application-information}
