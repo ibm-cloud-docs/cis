@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-04-14"
 
 keywords:
 
@@ -28,18 +28,12 @@ Before you create a Logpush job by using the console, review the following infor
    - Cloud Object Storage
    - IBM QRadar
    - Splunk
+
 * Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
-* Accepting the Logpush user invitation (`cislogp@us.ibm.com`) is a manual process completed by an authorized CIS team. The status in the console updates after the invitation has been accepted. Until then, the status remains `Pending`.
 * If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
 
    To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
    {: important}
-
-* For Cloud Object Storage only:
-   * You must have a Cloud Object Storage instance with a bucket that grants **Object Writer** access to the IBM Cloud account `cislogp@us.ibm.com`. This permission enables CIS to write request logs to the Object Storage bucket.{: cli}{: api}
-   * Logpush uses publicly accessible HTTPS endpoints for Cloud Object Storage, ensuring encryption of log data in transit.
-   * DNS, Range, and firewall event logs are not included in HTTP/HTTPS logs and require separate jobs. These jobs can use the same destination but must specify different paths with using Cloud Object Storage.
-   * After creating a Logpush job with Cloud Object Storage, you must verify ownership. This process is described in the next steps.
 
 * For Splunk only: When you send logs to QRadar or Splunk, CIS checks the IP address and port for accessibility and validates the certificate of the HTTP Receiver. If all parameters are valid, the Logpush job is created and begins sending events to the HTTP Receiver log source (QRadar) or the HTTP Event Collector (Splunk).
 
@@ -66,9 +60,9 @@ To create a Logpush job in the console, follow these steps:
        {: important}
 
    Cloud Object Storage
-   :   Enter the Cloud Object Storage instance, bucket information (name and region), and bucket path (optional). Then, organize logs into daily folders (optional).
+   :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (optional), and an API key. Then, organize logs into daily folders (optional).
 
-      Destination values for Cloud Object Storage must be unique. It is recommended to use a bucket path to avoid conflicts.
+      Destination values for Cloud Object Storage must be unique. It is recommended to use a unique bucket path to avoid conflicts.
 
    IBM QRader
    :   Enter the QRader URL, then select a log source port.
@@ -83,10 +77,6 @@ To create a Logpush job in the console, follow these steps:
 
        Make sure the endpoint is properly URL-encoded and any necessary request headers are added as URL parameters formatted as "header_*" (e.g. `header_Authorization`).
        {: important}
-
-1. For Cloud Object Storage jobs only, verify ownership. To do so, download the object that you received in your bucket and paste the token in the Ownership token text area. Then, click **Next**.
-
-   You can resend the file from the Troubleshooting section, or return to the previous step if the bucket path is incorrect.
 
 1. Select log fields:
    1. Verify that the Logpush details are correct.
@@ -172,20 +162,6 @@ Where:
 
 `--enable`: Is the flag to enable or disable the Logpush job. Valid values are `true` or `false` (default).
 
-### Cloud Object Storage: Verifying ownership
-{: #next-step-cloud-object-storage}
-
-After creating a Logpush job to send logs to Cloud Object Storage, you must validate ownership.
-
-When a challenge token is written to a file in the specified Cloud Object Storage bucket, follow these steps:
-
-* Download the file from your Cloud Object Storage bucket and open it.
-* Copy the challenge token from the file and paste it into the command prompt to resolve the ownership challenge.
-
-After {{site.data.keyword.cis_short_notm}} validates the ownership challenge, the Logpush job is created successfully. The job will then push request logs to your Cloud Object Storage bucket every 30 seconds or once 100,000 records are reached, whichever comes first. Note that multiple files might be pushed during a 30-second period or per 100,000 records.
-
-You can also use the `{DATE}` token in the bucket path to organize Logpush logs into daily folders. For example: `cos://mybucket/cislog/{DATE}?region=us-south&instance-id=c84e2a79-ce6d-3c79-a7e4-7e7ab3054cfe`
-{: tip}
 
 ### Command examples
 {: #logpush-job-create-examples}
@@ -204,7 +180,7 @@ CLI examples for the supported destinations:
    :   Example
 
        ```sh
-       ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
+       ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs/{DATE}?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
        ```
        {: pre}
 

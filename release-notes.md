@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-04-14"
 
 keywords:
 
@@ -19,6 +19,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
+## 16 April 2026
+{: #cis-april-1626}
+{: release-note}
+
+Logpush COS job authentication update
+:   Added UI support for creating Logpush jobs with IBM Cloud Object Storage (COS) destinations using IBM Cloud API key authentication. COS destinations no longer require Logpush ownership validation and now use an API key with the Object Writer IAM role, consistent with the model used for IBM Cloud Logs jobs. The API key can be updated in the UI when editing the Logpush job. For more information, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush).
 
 ## 10 March 2026
 {: #cis-march-1026}
