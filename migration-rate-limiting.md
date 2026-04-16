@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-05-22"
+  years: 2024, 2026
+lastupdated: "2026-04-16"
 
 keywords:
 
@@ -49,4 +49,4 @@ The [previous Rate Limiting API](/apidocs/cis#list-all-zone-rate-limits) is bein
 
 It is recommended that you manually migrate your rate-limiting rules by recreating them with the Rulesets API using the `http_ratelimit` phase. This lets you take full advantage of the new features and refine your rate-limiting logic during the transition.
 
-After 30 July 2025, the legacy rate-limiting APIs will no longer support creating or modifying rules. Any existing rate-limiting rules will be automatically migrated to the new framework after this date.
+After 30 July 2025, you can no longer create or modify rules using the legacy rate-limiting APIs. Any existing legacy rate-limiting rules are automatically migrated to the new ruleset-based framework after this date.
