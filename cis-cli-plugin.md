@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-18"
+lastupdated: "2026-04-17"
 
 keywords:
 
@@ -4583,7 +4583,7 @@ ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --start 2020-05-18T12:14:5
 
 [Enterprise Plans Only]{: tag-blue}
 
-Create a new log push job for a domain. Before using this command grant write access to your IBM Cloud Object Storage bucket to the IBM Cloud account cislogp@us.ibm.com.
+Create a new log push job for a domain.
 
 ```sh
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --name NAME [--enable true|false] [--fields FIELDS | all] [--timestamps format][--dataset DATASET] [--frequency FREQUENCY] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4597,12 +4597,12 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
 
 `--destination`
 :   Specify a destination where data is pushed. For more information about supported destinations, see [Managing Logpush jobs](docs/cis?topic=cis-logpush&interface=cli).
-    - Syntax for Cloud Object Storage Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
-      Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
+    - Syntax for Cloud Object Storage Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>&ibm_api_key=<API_KEY>'`
+      Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX'`
       To separate logs in to daily subfolders, use the special string `{DATE}` in the bucket path.
       It is substituted with the date in `YYYYMMDD` format, for example '20190423'.
       Subfolders are created as appropriate, for example:
-      `'cos://cis-test-bucket/logs/{DATE}?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
+      `'cos://cis-test-bucket/logs/{DATE}?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX'`
 
 `--name`
 :   Job name. Required.
@@ -4634,7 +4634,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
 Create a log push job for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
+ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
 ```
 {: pre}
 
@@ -4657,12 +4657,12 @@ ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [-
 
 `--destination`
 :   Specify a destination where data is pushed. For more information about supported destinations, see [Managing Logpush jobs](docs/cis?topic=cis-logpush&interface=cli).
-    Syntax for Cloud Object Storage Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>`
-    Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
+    Syntax for Cloud Object Storage Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>ibm_api_key=<API_KEY>`
+    Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cdibm_api_key=XXX'`
     To separate logs into daily subfolders, use the special string `{DATE}` in the bucket path.
     It is to be substituted with the date in `YYYYMMDD` format, for example '20190423'.
     Subfolders are created as appropriate, for example:
-    `'cos://cis-test-bucket/logs/{DATE}?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd'`
+    `'cos://cis-test-bucket/logs/{DATE}?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cdibm_api_key=XXX'`
 
 `--enable`
 :   Enable the job. The job is disabled by default.
@@ -4694,7 +4694,7 @@ ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [-
 Update `range_events` log push job for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis logpush-job-update 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd --enable true --fields all --timestamps rfc3339 --dataset range_events --frequency high -i cis-demo --output JSON
+ibmcloud cis logpush-job-update 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --enable true --fields all --timestamps rfc3339 --dataset range_events --frequency high -i cis-demo --output JSON
 ```
 {: pre}
 
