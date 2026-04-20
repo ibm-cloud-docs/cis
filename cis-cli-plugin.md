@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-20"
 
 keywords:
 
@@ -93,7 +93,7 @@ ibmcloud cis access-app-create DNS_DOMAIN_ID --name NAME --domain DOMAIN [--sess
 Create an access application for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis access-app-create 31984fea73a15b45779fa0df4ef62f9b --name exampleCreate --domain example.com --session-duration 12h -i cis-demo
+ibmcloud cis access-app-create DNS_DOMAIN_ID --name exampleCreate --domain example.com --session-duration 12h
 ```
 {: pre}
 
@@ -126,7 +126,7 @@ ibmcloud cis access-apps DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMA
 List all access applications for domains `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis access-apps 31984fea73a15b45779fa0df4ef62f9b -i cis-demo
+ibmcloud cis access-apps DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -162,7 +162,7 @@ ibmcloud cis access-app DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance INST
 Show details of access application `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-app 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo
+ibmcloud cis access-app DNS_DOMAIN_ID ACCESS_APPLICATION_ID
 ```
 {: pre}
 
@@ -207,7 +207,7 @@ ibmcloud cis access-app-update DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAME -
 Update access application `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-app-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 --name exampleUpdate --domain example.com --session-duration 24h -i cis-demo
+ibmcloud cis access-app-update DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name exampleUpdate --domain example.com --session-duration 24h
 ```
 {: pre}
 
@@ -240,7 +240,7 @@ ibmcloud cis access-app-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instan
 Delete access application `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-app-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo
+ibmcloud cis access-app-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID
 ```
 {: pre}
 
@@ -285,7 +285,7 @@ ibmcloud cis access-certificate-create DNS_DOMAIN_ID --name NAME --ca-cert-file 
 Create an access certificate for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis access-certificate-create 31984fea73a15b45779fa0df4ef62f9b --name example --ca-cert-file CERT_FILE --associated-hostnames example.com  -i cis-demo
+ibmcloud cis access-certificate-create DNS_DOMAIN_ID --name example --ca-cert-file CERT_FILE --associated-hostnames example.com
 ```
 {: pre}
 
@@ -318,7 +318,7 @@ ibmcloud cis access-certificates DNS_DOMAIN_ID [-i, --instance INSTANCE] [--outp
 List all access certificates for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis access-certificates 31984fea73a15b45779fa0df4ef62f9b -i cis-demo
+ibmcloud cis access-certificates DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -355,7 +355,7 @@ ibmcloud cis access-certificate DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID [-i, --insta
 Show details of access certificate `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-certificate 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo
+ibmcloud cis access-certificate DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID
 ```
 {: pre}
 
@@ -400,7 +400,7 @@ ibmcloud cis access-certificate-update DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID --nam
 Update the access certificate `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-certificate-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 --name example  --associated-hostnames example.com -i cis-demo
+ibmcloud cis access-certificate-update DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID --name example --associated-hostnames example.com
 ```
 {: pre}
 
@@ -436,7 +436,7 @@ Must clear the associated hostnames before you delete the certificate.
 Delete the access certificate `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-certificate-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo
+ibmcloud cis access-certificate-delete DNS_DOMAIN_ID ACCESS_CERTIFICATE_ID
 ```
 {: pre}
 
@@ -469,7 +469,7 @@ ibmcloud cis access-certificates-settings DNS_DOMAIN_ID [-i, --instance INSTANCE
 Get access certificates settings for Domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis access-certificates-settings 31984fea73a15b45779fa0df4ef62f9b -i cis-demo
+ibmcloud cis access-certificates-settings DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -515,7 +515,7 @@ ibmcloud cis access-certificates-settings-update DNS_DOMAIN_ID (-f, --feature FE
 Update access certificates settings for Domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis access-certificates-settings-update 31984fea73a15b45779fa0df4ef62f9b -f client_certificate_forwarding -v mtls1.example.com=on,mtls2.example.com=off -i cis-demo
+ibmcloud cis access-certificates-settings-update DNS_DOMAIN_ID -f client_certificate_forwarding -v mtls1.example.com=on,mtls2.example.com=off
 ```
 {: pre}
 
@@ -563,7 +563,7 @@ ibmcloud cis access-policy-create DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name NAM
 Create an access policy for access application `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-policy-create 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -name examplePolicy --decision non_identity --include certificate  --include common_name=test -i cis-demo
+ibmcloud cis access-policy-create DNS_DOMAIN_ID ACCESS_APPLICATION_ID --name examplePolicy --decision non_identity --include certificate --include common_name=test
 ```
 {: pre}
 
@@ -599,7 +599,7 @@ ibmcloud cis access-policies DNS_DOMAIN_ID ACCESS_APPLICATION_ID [-i, --instance
 List all access policies for access application `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-policies 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo
+ibmcloud cis access-policies DNS_DOMAIN_ID ACCESS_APPLICATION_ID
 ```
 {: pre}
 
@@ -638,7 +638,7 @@ ibmcloud cis access-policy DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POLICY_ID 
 Show details of access policy `a5836c2a7ea72d2e225890caea70ae32`.
 
 ```sh
-ibmcloud cis access-policy 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 65fe21071877669cc69544642bc6c4c4 -i cis-demo
+ibmcloud cis access-policy DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POLICY_ID
 ```
 {: pre}
 
@@ -674,7 +674,7 @@ ibmcloud cis access-policy-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POL
 Delete access policy `65fe21071877669cc69544642bc6c4c4`.
 
 ```sh
-ibmcloud cis access-policy-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 65fe21071877669cc69544642bc6c4c4 -i cis-demo
+ibmcloud cis access-policy-delete DNS_DOMAIN_ID ACCESS_APPLICATION_ID ACCESS_POLICY_ID
 ```
 {: pre}
 
@@ -728,7 +728,7 @@ ibmcloud cis cache-purge DNS_DOMAIN_ID (--all | --file file1 --file file2...｜-
 Clear all cached assets file for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis cache-purge 31984fea73a15b45779fa0df4ef62f9b --all --force -i "cis-demo"
+ibmcloud cis cache-purge DNS_DOMAIN_ID --all --force
 ```
 {: pre}
 
@@ -759,7 +759,7 @@ ibmcloud cis cache-settings DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FO
 Get caching settings for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis cache-settings 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis cache-settings DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -817,7 +817,7 @@ ibmcloud cis cache-settings-update DNS_DOMAIN_ID [--caching-level LEVEL][--brows
 Update caching settings for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis cache-settings-update 31984fea73a15b45779fa0df4ef62f9b --caching-level no-query-string --browser-expiration 1h -i "cis-demo"
+ibmcloud cis cache-settings-update DNS_DOMAIN_ID --caching-level no-query-string --browser-expiration 1h
 ```
 {: pre}
 
@@ -848,7 +848,7 @@ ibmcloud cis custom-lists lists [-i, --instance INSTANCE] [--output FORMAT]
 {: #custom-lists-example}
 
 ```sh
-ibmcloud cis custom-lists lists -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists lists
 ```
 {: pre}
 
@@ -876,7 +876,7 @@ ibmcloud cis custom-lists list LIST_ID [-i, --instance INSTANCE] [--output FORMA
 {: #get-custom-list-example}
 
 ```sh
-ibmcloud cis custom-lists list f93d11a87c4945a0a6bd12820776a66d -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9:: -o json
+ibmcloud cis custom-lists list LIST_ID --output json
 ```
 {: pre}
 
@@ -935,12 +935,12 @@ ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --i
 {: #create-custom-lists-example}
 
 ```sh
-ibmcloud cis custom-lists list-create --kind ip --name iplistone -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists list-create --kind ip --name iplistone
 ```
 {: pre}
 
 ```sh
-ibmcloud cis custom-lists list-create —-json @example.json -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists list-create --json @example.json
 ```
 {: pre}
 
@@ -989,12 +989,12 @@ ibmcloud cis custom-lists list-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 {: #update-custom-list-example}
 
 ```sh
-ibmcloud cis custom-lists list-update a46c54444a97431e810c975bf2db4f83 --description "description example" -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists list-update LIST_ID --description "description example"
 ```
 {: pre}
 
 ```sh
-ibmcloud cis custom-lists list-update a46c54444a97431e810c975bf2db4f83 —-json @example.json -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists list-update LIST_ID --json @example.json
 ```
 {: pre}
 
@@ -1023,7 +1023,7 @@ ibmcloud cis custom-lists list-delete LIST_ID [-f, --force] [-i, --instance INST
 {: #delete-custom-list-example}
 
 ```sh
-custom-lists list-delete 78277700444f4f69aefef78ea2bef013 -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists list-delete LIST_ID
 ```
 {: pre}
 
@@ -1050,7 +1050,7 @@ ibmcloud cis custom-lists items LIST_ID [-i, --instance INSTANCE] [--output FORM
 {: #get-custom-list-items-example}
 
 ```sh
-ibmcloud cis custom-lists items f93d11a87c4945a0a6bd12820776a66d -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists items LIST_ID
 ```
 {: pre}
 
@@ -1082,7 +1082,7 @@ ibmcloud cis custom-lists item LIST_ID ITEM_ID [-i, --instance INSTANCE] [--outp
 {: #view-custom-list-item-example}
 
 ```sh
-ibmcloud cis custom-lists item f93d11a87c4945a0a6bd12820776a66d f550e1d3ede74455bf225a06800bd1be -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists item LIST_ID ITEM_ID
 ```
 {: pre}
 
@@ -1147,12 +1147,12 @@ ibmcloud cis custom-lists item-create LIST_ID (--json @JSON_FILE | JSON_STRING) 
 {: #create-custom-list-item-example}
 
 ```sh
-ibmcloud cis custom-lists item-create f93d11a87c4945a0a6bd12820776a66d --ip 192.0.0.3  -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists item-create LIST_ID --ip 192.0.0.3
 ```
 {: pre}
 
 ```sh
-ibmcloud cis custom-lists item-create f93d11a87c4945a0a6bd12820776a66d --json @example.json -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists item-create LIST_ID --json @example.json
 ```
 {: pre}
 
@@ -1206,7 +1206,7 @@ ibmcloud cis custom-lists item-update LIST_ID (--json @JSON_FILE | JSON_STRING) 
 {: #update-custom-list-item-options}
 
 ```sh
-ibmcloud cis custom-lists item-update f93d11a87c4945a0a6bd12820776a66d —json @example.json -f -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists item-update LIST_ID --json @example.json -f
 ```
 {: pre}
 
@@ -1261,12 +1261,12 @@ ibmcloud cis custom-lists item-delete LIST_ID (--json @JSON_FILE | JSON_STRING) 
 {: #delete-custom-list-item-examples}
 
 ```sh
-ibmcloud cis custom-lists item-delete f93d11a87c4945a0a6bd12820776a66d --item-id —force 42851cc4589746229552ec5a54f9d623 -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists item-delete LIST_ID --item-id CUSTOM_LIST_ITEM_ID --force
 ```
 {: pre}
 
 ```sh
-ibmcloud cis custom-lists item-delete f93d11a87c4945a0a6bd12820776a66d —json @example.json —-force -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9::
+ibmcloud cis custom-lists item-delete LIST_ID --json @example.json --force
 ```
 {: pre}
 
@@ -1295,7 +1295,7 @@ ibmcloud cis custom-lists operation OPERATION_ID [-i, --instance INSTANCE] [--ou
 {: #get-status-custom-list-operation-example}
 
 ```sh
-ibmcloud cis custom-lists operation 04cdb3b267a44ceb895e766fc2affe72 -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9:: -o json
+ibmcloud cis custom-lists operation OPERATION_ID --output json
 ```
 {: pre}
 
@@ -1337,7 +1337,7 @@ ibmcloud cis custom-page-update PAGE_ID PAGE_URL [-d, --domain DNS_DOMAIN_ID] [-
 Update `basic_challenge` page for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis custom-page-update "basic_challenge" "http://www.example.com/example.html" -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis custom-page-update basic_challenge http://www.example.com/example.html -d DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -1371,7 +1371,7 @@ ibmcloud cis custom-page PAGE_ID [-d, --domain DNS_DOMAIN_ID] [-i, --instance IN
 Get `basic_challenge` page for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis custom-page "basic_challenge" -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis custom-page basic_challenge -d DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -1399,10 +1399,10 @@ ibmcloud cis custom-pages [-d, --domain DNS_DOMAIN_ID] [-i, --instance INSTANCE]
 #### Examples
 {: #list-custom-page-examples}
 
-List existing custom pages for domain `31984fea73a15b45779fa0df4ef62f9b`.
+List existing custom pages for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis custom-pages -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis custom-pages -d DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -1624,11 +1624,11 @@ Sample JSON data:
 #### Examples
 {: #create-dns-record-examples}
 
-Create a DNS record in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create a DNS record in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-record-create 31984fea73a15b45779fa0df4ef62f9b --json '{"name": "testCNAME", "type": "CNAME", "content": "example.com"}' -i "cis-demo"
-ibmcloud cis dns-record-create 31984fea73a15b45779fa0df4ef62f9b --type A --name testA --content "127.0.0.1" -i "cis-demo"
+ibmcloud cis dns-record-create DNS_DOMAIN_ID --json '{"name": "testCNAME", "type": "CNAME", "content": "example.com"}'
+ibmcloud cis dns-record-create DNS_DOMAIN_ID --type A --name testA --content "127.0.0.1"
 ```
 {: codeblock}
 
@@ -1848,11 +1848,11 @@ Sample JSON data:
 #### Examples
 {: #update-dns-record-examples}
 
-Update a DNS record in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Update a DNS record in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-record-update 31984fea73a15b45779fa0df4ef62f9b 77335b17ce1853d0d76e08a8379a0376 --json '{"name": "testCNAME", "type": "CNAME", "content": "example.com"}' -i "cis-demo"
-ibmcloud cis dns-record-update 31984fea73a15b45779fa0df4ef62f9b 417e8605a72d3e085020b82c93cd7f82 --type A --name testA --content "127.0.0.1" -i "cis-demo"
+ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID --json '{"name": "testCNAME", "type": "CNAME", "content": "example.com"}'
+ibmcloud cis dns-record-update DNS_DOMAIN_ID DNS_RECORD_ID --type A --name testA --content "127.0.0.1"
 ```
 {: codeblock}
 
@@ -1883,10 +1883,10 @@ ibmcloud cis dns-record DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTANCE] [-
 #### Examples
 {: #get-dns-record-examples}
 
-Get DNS record details in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get DNS record details in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-record 31984fea73a15b45779fa0df4ef62f9b 77335b17ce1853d0d76e08a8379a0376 -i "cis-demo"
+ibmcloud cis dns-record DNS_DOMAIN_ID DNS_RECORD_ID
 ```
 {: pre}
 
@@ -1914,10 +1914,10 @@ ibmcloud cis dns-record-delete DNS_DOMAIN_ID DNS_RECORD_ID [-i, --instance INSTA
 #### Examples
 {: #delete-dns-record-examples}
 
-Delete a DNS record in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Delete a DNS record in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-record-delete 31984fea73a15b45779fa0df4ef62f9b 77335b17ce1853d0d76e08a8379a0376 -i "cis-demo"
+ibmcloud cis dns-record-delete DNS_DOMAIN_ID DNS_RECORD_ID
 ```
 {: pre}
 
@@ -1969,10 +1969,10 @@ ibmcloud cis dns-records DNS_DOMAIN_ID [--type TYPE] [--name NAME] [--content CO
 #### Examples
 {: #list-dns-records-examples}
 
-List all DNS records in domain `31984fea73a15b45779fa0df4ef62f9b`.
+List all DNS records in domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-records 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis dns-records DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -2003,10 +2003,10 @@ ibmcloud cis dns-records-import DNS_DOMAIN_ID --file FILE [-i, --instance INSTAN
 #### Examples
 {: #dns-record-import-examples}
 
-Import BIND config in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Import BIND config in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-records-import 31984fea73a15b45779fa0df4ef62f9b --file bind_config_file.txt -i "cis-demo"
+ibmcloud cis dns-records-import DNS_DOMAIN_ID --file bind_config_file.txt
 ```
 {: pre}
 
@@ -2034,10 +2034,10 @@ ibmcloud cis dns-records-export DNS_DOMAIN_ID [--file FILE] [-i, --instance INST
 #### Examples
 {: #dns-record-export-examples}
 
-Export BIND config for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Export BIND config for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-records-export 31984fea73a15b45779fa0df4ef62f9b --file bind_config_file.txt -i "cis-demo"
+ibmcloud cis dns-records-export DNS_DOMAIN_ID --file bind_config_file.txt
 ```
 {: pre}
 
@@ -2079,10 +2079,10 @@ ibmcloud cis domain-add DNS_DOMAIN_NAME [-i, --instance INSTANCE] [--output FORM
 #### Examples
 {: #add-domain-examples}
 
-Add a domain `test.com` in instance `cis-demo`.
+Add a domain `DNS_DOMAIN_NAME`.
 
 ```sh
-ibmcloud cis domain-add "test.com" -i "cis-demo"
+ibmcloud cis domain-add DNS_DOMAIN_NAME
 ```
 {: pre}
 
@@ -2113,7 +2113,7 @@ ibmcloud cis domain-resume DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FOR
 Resume the specified domain.
 
 ```sh
-ibmcloud cis domain-resume 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-resume DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -2144,7 +2144,7 @@ ibmcloud cis domain-pause DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORM
 Pause the specified domain.
 
 ```sh
-ibmcloud cis domain-pause 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-pause DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -2175,7 +2175,7 @@ ibmcloud cis domain DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 Display the specified domain details.
 
 ```sh
-ibmcloud cis domain 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -2203,7 +2203,7 @@ ibmcloud cis domain-remove DNS_DOMAIN_ID [-i, --instance INSTANCE]
 Remove the specified domain.
 
 ```sh
-ibmcloud cis domain-remove 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-remove DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -2228,10 +2228,10 @@ ibmcloud cis domains [--instance INSTANCE_NAME] [--output FORMAT]
 #### Examples
 {: #list-domain-examples}
 
-List domains for the specified domain `cis-demo`.
+List domains for the service instance.
 
 ```sh
-ibmcloud cis domains -i "cis-demo"
+ibmcloud cis domains
 ```
 {: pre}
 
@@ -2260,7 +2260,7 @@ ibmcloud cis domain-activation-check DNS_DOMAIN_ID [-i, --instance INSTANCE]
 Perform activation check on the specified domain.
 
 ```sh
-ibmcloud cis domain-activation-check 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-activation-check DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -2339,10 +2339,10 @@ ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FE
 #### Examples
 {: #display-domain-settings-example}
 
-Get `ciphers` settings for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get `ciphers` settings for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis domain-settings -f "ciphers" 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-settings DNS_DOMAIN_ID -f ciphers
 ```
 {: pre}
 
@@ -2492,10 +2492,10 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
 #### Examples
 {: #update-domain-settings-example}
 
-Enable `tls_client_auth` for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Enable `tls_client_auth` for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis domain-settings-update -f tls_client_auth -v on 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-settings-update DNS_DOMAIN_ID -f tls_client_auth -v on
 ```
 {: pre}
 
@@ -2525,10 +2525,10 @@ ibmcloud cis edge-functions-actions [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #list-edge-functions-actions-examples}
 
-List all Edge Functions actions in instance `cis-demo`.
+List all Edge Functions actions.
 
 ```sh
-ibmcloud cis edge-functions-actions -i "cis-demo"
+ibmcloud cis edge-functions-actions
 ```
 {: pre}
 
@@ -2553,10 +2553,10 @@ ibmcloud cis edge-functions-action [--name ACTION_NAME] [-i, --instance INSTANCE
 #### Examples
 {: #show-an-edge-functions-action-examples}
 
-Show details of Edge Functions action `action-demo`.
+Show details of Edge Functions action `ACTION_NAME`.
 
 ```sh
-ibmcloud cis edge-functions-action --name "action-demo" -i "cis-demo"
+ibmcloud cis edge-functions-action --name ACTION_NAME
 ```
 {: pre}
 
@@ -2590,10 +2590,10 @@ ibmcloud cis edge-functions-action-create [--name ACTION_NAME] (--javascript-str
 #### Examples
 {: #create-an-edge-functions-action-examples}
 
-Create an Edge Functions action for instance `action-demo`.
+Create an Edge Functions action.
 
 ```sh
-ibmcloud cis edge-functions-action-create --javascript-str "addEventListener('fetch', event => { event.respondWith(fetch(event.request)) })" --name "action-demo" -i "cis-demo"
+ibmcloud cis edge-functions-action-create --name ACTION_NAME --javascript-str "addEventListener('fetch', event => { event.respondWith(fetch(event.request)) })"
 ```
 {: pre}
 
@@ -2627,10 +2627,10 @@ ibmcloud cis edge-functions-action-update (--javascript-str JAVASCRIPT_STR | --j
 #### Examples
 {: #update-an-edge-functions-action-examples}
 
-Update an Edge Functions action for instance `action-demo`.
+Update an Edge Functions action.
 
 ```sh
-ibmcloud cis edge-functions-action-update --javascript-str "addEventListener('fetch', event => { event.respondWith(fetch(event.request)) })" --name "action-demo" -i "cis-demo"
+ibmcloud cis edge-functions-action-update --name ACTION_NAME --javascript-str "addEventListener('fetch', event => { event.respondWith(fetch(event.request)) })"
 ```
 {: pre}
 
@@ -2655,10 +2655,10 @@ ibmcloud cis edge-functions-action-delete [--name ACTION_NAME] [-i, --instance I
 #### Examples
 {: #delete-an-edge-functions-action-examples}
 
-Delete Edge Functions action `action-demo`.
+Delete Edge Functions action `ACTION_NAME`.
 
 ```sh
-ibmcloud cis edge-functions-action-delete --name "action-demo" -i "cis-demo"
+ibmcloud cis edge-functions-action-delete --name ACTION_NAME
 ```
 {: pre}
 
@@ -2686,10 +2686,10 @@ ibmcloud cis edge-functions-triggers DNS_DOMAIN_ID [-i, --instance INSTANCE] [--
 #### Examples
 {: #list-edge-functions-triggers-examples}
 
-List all Edge Functions triggers for domain `31984fea73a15b45779fa0df4ef62f9b`.
+List all Edge Functions triggers for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis edge-functions-triggers 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis edge-functions-triggers DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -2720,10 +2720,10 @@ ibmcloud cis edge-functions-trigger DNS_DOMAIN_ID TRIGGER_ID [-i, --instance INS
 #### Examples
 {: #show-edge-functions-trigger-examples}
 
-Show details of Edge Functions trigger `9a7806061c88ada191ed06f989cc3dac`.
+Show details of Edge Functions trigger `TRIGGER_ID`.
 
 ```sh
-ibmcloud cis edge-functions-trigger 31984fea73a15b45779fa0df4ef62f9b 9a7806061c88ada191ed06f989cc3dac -i "cis-demo"
+ibmcloud cis edge-functions-trigger DNS_DOMAIN_ID TRIGGER_ID
 ```
 {: pre}
 
@@ -2760,10 +2760,10 @@ ibmcloud cis edge-functions-trigger-create DNS_DOMAIN_ID PATTERN_URL [--name ACT
 #### Examples
 {: #create-edge-functions-trigger-examples}
 
-Create an Edge Functions trigger for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create an Edge Functions trigger for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis edge-functions-trigger 31984fea73a15b45779fa0df4ef62f9b "example.net/*" --name "demo-action" -i "cis-demo"
+ibmcloud cis edge-functions-trigger-create DNS_DOMAIN_ID PATTERN_URL --name ACTION_NAME
 ```
 {: pre}
 
@@ -2803,10 +2803,10 @@ ibmcloud cis edge-functions-trigger-update DNS_DOMAIN_ID TRIGGER_ID PATTERN_URL 
 #### Examples
 {: #update-edge-functions-trigger-examples}
 
-Update Edge Functions trigger `9a7806061c88ada191ed06f989cc3dac`.
+Update Edge Functions trigger `TRIGGER_ID`.
 
 ```sh
-ibmcloud cis edge-functions-trigger 31984fea73a15b45779fa0df4ef62f9b 9a7806061c88ada191ed06f989cc3dac "example.net/*" --name "demo-action" -i "cis-demo"
+ibmcloud cis edge-functions-trigger-update DNS_DOMAIN_ID TRIGGER_ID PATTERN_URL --name ACTION_NAME
 ```
 {: pre}
 
@@ -2834,10 +2834,10 @@ ibmcloud cis edge-functions-trigger-delete DNS_DOMAIN_ID TRIGGER_ID [-i, --insta
 #### Examples
 {: #delete-edge-functions-trigger-examples}
 
-Delete Edge Functions trigger `9a7806061c88ada191ed06f989cc3dac`.
+Delete Edge Functions trigger `TRIGGER_ID`.
 
 ```sh
-ibmcloud cis edge-functions-trigger-delete 31984fea73a15b45779fa0df4ef62f9b 9a7806061c88ada191ed06f989cc3dac -i "cis-demo"
+ibmcloud cis edge-functions-trigger-delete DNS_DOMAIN_ID TRIGGER_ID
 ```
 {: pre}
 
@@ -2973,9 +2973,9 @@ Sample JSON data:
 Create firewall rules.
 
 ```sh
-ibmcloud cis firewall-create -t access-rules --json '{"mode": "block", "notes": "This rule is added because of event X that occurred on date xyz", "configuration": {"target": "ip", "value": "127.0.0.1"}}' -i "cis-demo"
-ibmcloud cis firewall-create -t ua-rules -d 31984fea73a15b45779fa0df4ef62f9b --json '{"mode": "block", "configuration": {"target": "ua", "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"}}' -i "cis-demo"
-ibmcloud cis firewall-create -t lockdowns -d 31984fea73a15b45779fa0df4ef62f9b --json '{"urls": ["api.mysite.com/some/endpoint*"], "configurations": [{"target": "ip", "value": "127.0.0.1"}, {"target": "ip_range", "value": "2.2.2.0/24"}]}' -i "cis-demo"
+ibmcloud cis firewall-create -t access-rules --json '{"mode": "block", "notes": "This rule is added because of event X that occurred on date xyz", "configuration": {"target": "ip", "value": "127.0.0.1"}}'
+ibmcloud cis firewall-create -t ua-rules -d DNS_DOMAIN_ID --json '{"mode": "block", "configuration": {"target": "ua", "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"}}'
+ibmcloud cis firewall-create -t lockdowns -d DNS_DOMAIN_ID --json '{"urls": ["api.mysite.com/some/endpoint*"], "configurations": [{"target": "ip", "value": "127.0.0.1"}, {"target": "ip_range", "value": "2.2.2.0/24"}]}'
 ```
 {: codeblock}
 
@@ -3096,9 +3096,9 @@ Sample JSON data:
 Update firewall rules.
 
 ```sh
-ibmcloud cis firewall-update bc014906ccce4e7ea2e28be7df70d0d2 -t access-rules --json '{"mode": "challenge", "notes": "This rule is added because of event X that occurred on date xyz"}' -i "cis-demo"
-ibmcloud cis firewall-update 4af47b1518be478aa2c8f024af1c0bad -t ua-rules -d 31984fea73a15b45779fa0df4ef62f9b --json '{"mode": "block", "configuration": {"target": "ua", "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"}}' -i -i "cis-demo"
-ibmcloud cis firewall-update e6106d7ec58e47ebb2fa053dedcd7dcb -t lockdowns -d 31984fea73a15b45779fa0df4ef62f9b --json '{"urls": ["api.mysite.com/some/endpoint*"], "configurations": [{"target": "ip", "value": "127.0.0.1"}, {"target": "ip_range", "value": "2.2.2.0/24"}]}' -i "cis-demo"
+ibmcloud cis firewall-update FIREWALL_RULE_ID -t access-rules --json '{"mode": "challenge", "notes": "This rule is added because of event X that occurred on date xyz"}'
+ibmcloud cis firewall-update FIREWALL_RULE_ID -t ua-rules -d DNS_DOMAIN_ID --json '{"mode": "block", "configuration": {"target": "ua", "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"}}'
+ibmcloud cis firewall-update FIREWALL_RULE_ID -t lockdowns -d DNS_DOMAIN_ID --json '{"urls": ["api.mysite.com/some/endpoint*"], "configurations": [{"target": "ip", "value": "127.0.0.1"}, {"target": "ip_range", "value": "2.2.2.0/24"}]}'
 ```
 {: codeblock}
 
@@ -3142,9 +3142,9 @@ ibmcloud cis firewalls (-t, --type Type) [-d, --domain DNS_DOMAIN_ID] [--page PA
 List firewall rules.
 
 ```sh
-ibmcloud cis firewalls -t access-rules -i "cis-demo"
-ibmcloud cis firewalls -t ua-rules -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
-ibmcloud cis firewalls -t lockdown -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis firewalls -t access-rules
+ibmcloud cis firewalls -t ua-rules -d DNS_DOMAIN_ID
+ibmcloud cis firewalls -t lockdowns -d DNS_DOMAIN_ID
 ```
 {: codeblock}
 
@@ -3185,10 +3185,10 @@ ibmcloud cis firewall FIREWALL_RULE_ID (-t, --type Type) [-d, --domain DNS_DOMAI
 Get firewall rule details.
 
 ```sh
-ibmcloud cis firewall dc014906ccce4e7ea2e28be7df70d0d2 -t access-rules -i "cis-demo"
-ibmcloud cis firewall bc014906ccce4e7ea2e28be7df70d0d2 -t access-rules -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
-ibmcloud cis firewall 4af47b1518be478aa2c8f024af1c0bad -t ua-rules -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
-ibmcloud cis firewall e6106d7ec58e47ebb2fa053dedcd7dcb -t lockdown -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis firewall FIREWALL_RULE_ID -t access-rules
+ibmcloud cis firewall FIREWALL_RULE_ID -t access-rules -d DNS_DOMAIN_ID
+ibmcloud cis firewall FIREWALL_RULE_ID -t ua-rules -d DNS_DOMAIN_ID
+ibmcloud cis firewall FIREWALL_RULE_ID -t lockdowns -d DNS_DOMAIN_ID
 ```
 {: codeblock}
 
@@ -3226,10 +3226,10 @@ ibmcloud cis firewall-delete FIREWALL_RULE_ID (-t, --type Type) [-d, --domain DN
 Delete a firewall rule.
 
 ```sh
-ibmcloud cis firewall-delete dc014906ccce4e7ea2e28be7df70d0d2 -t access-rules -i "cis-demo"
-ibmcloud cis firewall-delete bc014906ccce4e7ea2e28be7df70d0d2 -t access-rules -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
-ibmcloud cis firewall-delete 4af47b1518be478aa2c8f024af1c0bad -t ua-rules -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
-ibmcloud cis firewall-delete e6106d7ec58e47ebb2fa053dedcd7dcb -t lockdown -d 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis firewall-delete FIREWALL_RULE_ID -t access-rules
+ibmcloud cis firewall-delete FIREWALL_RULE_ID -t access-rules -d DNS_DOMAIN_ID
+ibmcloud cis firewall-delete FIREWALL_RULE_ID -t ua-rules -d DNS_DOMAIN_ID
+ibmcloud cis firewall-delete FIREWALL_RULE_ID -t lockdowns -d DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -3268,10 +3268,10 @@ ibmcloud cis firewall-rules DNS_DOMAIN_ID [--page PAGE] [--per-page PER_PAGE] [-
 #### Examples
 {: #list-firewall-rules-examples}
 
-List existing firewall-rules in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+List existing firewall-rules in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis firewall-rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis firewall-rules DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -3303,10 +3303,10 @@ ibmcloud cis firewall-rule DNS_DOMAIN_ID FIREWALL_RULE_ID [-i, --instance INSTAN
 #### Examples
 {: #show-a-firewall-rule-examples}
 
-Get the details of firewall-rule `372e67954025e0ba6aaa6d586b9e0b60`.
+Get the details of firewall-rule `FIREWALL_RULE_ID`.
 
 ```sh
-ibmcloud cis firewall-rule 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b60 -i "cis-demo"
+ibmcloud cis firewall-rule DNS_DOMAIN_ID FIREWALL_RULE_ID
 ```
 {: pre}
 
@@ -3384,12 +3384,12 @@ ibmcloud cis firewall-rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING
 #### Examples
 {: #create-a-firewall-rule-examples}
 
-Create a firewall-rule in the domain `372e67954025e0ba6aaa6d586b9e0b60`.
+Create a firewall-rule in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis firewall-rule-create 31984fea73a15b45779fa0df4ef62f9b --expression "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\""  --action allow --priority 200 --paused off --description "do not challenge login from office" -i "cis-demo"
+ibmcloud cis firewall-rule-create DNS_DOMAIN_ID --expression "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"" --action allow --priority 200 --paused off --description "do not challenge login from office"
 
-ibmcloud cis firewall-rule-create 31984fea73a15b45779fa0df4ef62f9b --json '{"expression": "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"", "action": "allow", "priority": 100, "paused": false, "description": "do not challenge login from office"}' -i "cis-demo"
+ibmcloud cis firewall-rule-create DNS_DOMAIN_ID --json '{"expression": "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"", "action": "allow", "priority": 100, "paused": false, "description": "do not challenge login from office"}'
 ```
 {: codeblock}
 
@@ -3473,12 +3473,12 @@ Sample JSON data:
 #### Examples
 {: #update-a-firewall-rule-examples}
 
-Update firewall-rule `372e67954025e0ba6aaa6d586b9e0b60`.
+Update firewall-rule `FIREWALL_RULE_ID`.
 
 ```sh
-ibmcloud cis firewall-rule-update 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b60 --expression "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\""  --action allow --priority 200 --paused off --description "do not challenge login from office" -i "cis-demo"
+ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID --expression "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"" --action allow --priority 200 --paused off --description "do not challenge login from office"
 
-ibmcloud cis firewall-rule-update 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b60 --json '{"expression": "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"", "action": "allow", "priority": 100, "paused": false, "description": "do not challenge login from office"}' -i "cis-demo"
+ibmcloud cis firewall-rule-update DNS_DOMAIN_ID FIREWALL_RULE_ID --json '{"expression": "ip.src eq 93.184.216.1 and http.request.uri.path ~ \"^.*/wp-login.php$\"", "action": "allow", "priority": 100, "paused": false, "description": "do not challenge login from office"}'
 ```
 {: pre}
 
@@ -3506,10 +3506,10 @@ ibmcloud cis firewall-rule-delete DNS_DOMAIN_ID FIREWALL_RULE_ID [-i, --instance
 #### Examples
 {: #delete-a-firewall-rule-examples}
 
-Delete firewall-rule `372e67954025e0ba6aaa6d586b9e0b60`.
+Delete firewall-rule `FIREWALL_RULE_ID`.
 
 ```sh
-ibmcloud cis firewall-rule-delete 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b60 -i "cis-demo"
+ibmcloud cis firewall-rule-delete DNS_DOMAIN_ID FIREWALL_RULE_ID
 ```
 {: pre}
 
@@ -3537,10 +3537,10 @@ ibmcloud cis firewall-rule-validate DNS_DOMAIN_ID EXPRESSION [-i, --instance INS
 #### Examples
 {: #validate-a-firewall-rule-expression-examples}
 
-Validate firewall-rule expression `ip.src eq 93.184.216.0`.
+Validate firewall-rule expression.
 
 ```sh
-ibmcloud cis firewall-rule-validate 31984fea73a15b45779fa0df4ef62f9b "ip.src eq 93.184.216.0" -i "cis-demo"
+ibmcloud cis firewall-rule-validate DNS_DOMAIN_ID "ip.src eq 93.184.216.0"
 ```
 {: pre}
 
@@ -3625,10 +3625,10 @@ Sample JSON data:
 #### Examples
 {: #create-glb-examples}
 
-Create a global load balancer in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create a global load balancer in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis glb-create 31984fea73a15b45779fa0df4ef62f9b --json '{"description":"Example global load balancer.","name":"www.example.com","ttl":60,"fallback_pool":"17b5962d775c646f3f9725cbc7a53df4","default_pools":["17b5962d775c646f3f9725cbc7a53df4","9290f38c5d07c2e2f4df57b1f61d4196"],"region_pools":{"WNAM":["de90f38ced07c2e2f4df50b1f61d4194","9290f38c5d07c2e2f4df57b1f61d4196"],"ENAM":["00920f38ce07c2e2f4df50b1f61d4194"]}}' -i "cis-demo"
+ibmcloud cis glb-create DNS_DOMAIN_ID --json '{"description":"Example global load balancer.","name":"www.example.com","ttl":60,"fallback_pool":"17b5962d775c646f3f9725cbc7a53df4","default_pools":["17b5962d775c646f3f9725cbc7a53df4","9290f38c5d07c2e2f4df57b1f61d4196"],"region_pools":{"WNAM":["de90f38ced07c2e2f4df50b1f61d4194","9290f38c5d07c2e2f4df57b1f61d4196"],"ENAM":["00920f38ce07c2e2f4df50b1f61d4194"]}}'
 ```
 {: pre}
 
@@ -3711,10 +3711,10 @@ Sample JSON data:
 #### Examples
 {: #update-glb-examples}
 
-Update the global load balancer `699d98642c564d2e855e9661899b7252` in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Update the global load balancer `GLB_ID` in the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis glb-update 31984fea73a15b45779fa0df4ef62f9b 699d98642c564d2e855e9661899b7252 --json '{"description":"Example global load balancer.","name":"www.example.com","ttl":60,"fallback_pool":"17b5962d775c646f3f9725cbc7a53df4","default_pools":["17b5962d775c646f3f9725cbc7a53df4","9290f38c5d07c2e2f4df57b1f61d4196"],"region_pools":{"WNAM":["de90f38ced07c2e2f4df50b1f61d4194","9290f38c5d07c2e2f4df57b1f61d4196"],"ENAM":["00920f38ce07c2e2f4df50b1f61d4194"]}}' -i "cis-demo"
+ibmcloud cis glb-update DNS_DOMAIN_ID GLB_ID --json '{"description":"Example global load balancer.","name":"www.example.com","ttl":60,"fallback_pool":"17b5962d775c646f3f9725cbc7a53df4","default_pools":["17b5962d775c646f3f9725cbc7a53df4","9290f38c5d07c2e2f4df57b1f61d4196"],"region_pools":{"WNAM":["de90f38ced07c2e2f4df50b1f61d4194","9290f38c5d07c2e2f4df57b1f61d4196"],"ENAM":["00920f38ce07c2e2f4df50b1f61d4194"]}}'
 ```
 {: pre}
 
@@ -3746,10 +3746,10 @@ ibmcloud cis glb DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE] [--output FORMAT
 #### Examples
 {: #show-glb-examples}
 
-Show global load balancer `699d98642c564d2e855e9661899b7252` in domain `31984fea73a15b45779fa0df4ef62f9b`.
+Show global load balancer `GLB_ID` in domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis glb 31984fea73a15b45779fa0df4ef62f9b 699d98642c564d2e855e9661899b7252 -i "cis-demo"
+ibmcloud cis glb DNS_DOMAIN_ID GLB_ID
 ```
 {: pre}
 
@@ -3778,10 +3778,10 @@ ibmcloud cis glb-delete DNS_DOMAIN_ID GLB_ID [-i, --instance INSTANCE]
 #### Examples
 {: #delete-glb-examples}
 
-Delete global load balancer `699d98642c564d2e855e9661899b7252` in domain `31984fea73a15b45779fa0df4ef62f9b`.
+Delete global load balancer `GLB_ID` in domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis glb-delete 31984fea73a15b45779fa0df4ef62f9b 699d98642c564d2e855e9661899b7252 -i "cis-demo"
+ibmcloud cis glb-delete DNS_DOMAIN_ID GLB_ID
 ```
 {: pre}
 
@@ -3810,10 +3810,10 @@ ibmcloud cis glbs DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #list-glb-examples}
 
-List load balancers for domain `31984fea73a15b45779fa0df4ef62f9b`.
+List load balancers for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis glbs 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis glbs DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -3838,10 +3838,10 @@ ibmcloud cis glb-pools [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #list-glb-pools-examples}
 
-List all GLB pools for instance `cis-demo`.
+List all GLB pools.
 
 ```sh
-ibmcloud cis glb-pools -i "cis-demo"
+ibmcloud cis glb-pools
 ```
 {: pre}
 
@@ -3913,10 +3913,10 @@ Sample JSON data:
 #### Examples
 {: #create-glb-pool-examples}
 
-Create a GLB pool for instance `cis-demo`.
+Create a GLB pool.
 
 ```sh
-ibmcloud cis glb-pool-create --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["test.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true,"header":{"host":["example.com"]}}]}'-i "cis-demo"
+ibmcloud cis glb-pool-create --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["test.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true,"header":{"host":["example.com"]}}]}'
 ```
 {: pre}
 
@@ -3944,10 +3944,10 @@ ibmcloud cis glb-pool GLB_POOL_ID [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #show-glb-pool-examples}
 
-Show the details of the GLB pool `17b5962d775c646f3f9725cbc7a53df4`.
+Show the details of the GLB pool `GLB_POOL_ID`.
 
 ```sh
-ibmcloud cis glb-pool 17b5962d775c646f3f9725cbc7a53df4 -i "cis-demo"
+ibmcloud cis glb-pool GLB_POOL_ID
 ```
 {: pre}
 
@@ -3972,10 +3972,10 @@ ibmcloud cis glb-pool-delete GLB_POOL_ID [-i, --instance INSTANCE]
 #### Examples
 {: #delete-glb-pool-examples}
 
-Delete GLB pool `17b5962d775c646f3f9725cbc7a53df4`.
+Delete GLB pool `GLB_POOL_ID`.
 
 ```sh
-ibmcloud cis glb-pool-delete 17b5962d775c646f3f9725cbc7a53df4 -i "cis-demo"
+ibmcloud cis glb-pool-delete GLB_POOL_ID
 ```
 {: pre}
 
@@ -4061,10 +4061,10 @@ Sample JSON data:
 #### Examples
 {: #update-glb-pool-examples}
 
-Update GLB pool `17b5962d775c646f3f9725cbc7a53df4`.
+Update GLB pool `GLB_POOL_ID`.
 
 ```sh
-ibmcloud cis glb-pool-update 17b5962d775c646f3f9725cbc7a53df4 --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["example.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true}]}'-i "cis-demo"
+ibmcloud cis glb-pool-update GLB_POOL_ID --json '{"description":"application server pool in US", "name":"us-pool", "enabled":true, "check_regions":["WNAM"], "minimum_origins":1,"monitor":"f1aba936b94213e5b8dca0c0dbf1f9cc", "origins":[{"name":"us-app-dal01","address":"1.1.1.1","enabled":true,"header":{"host":["example.com"]}}, {"name":"us-app-dal02","address":"2.2.2.2","enabled":true}]}'
 ```
 {: pre}
 
@@ -4090,10 +4090,10 @@ ibmcloud cis glb-monitors [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #list-glb-monitors-examples}
 
-List all GLB monitors for instance `cis-demo`.
+List all GLB monitors.
 
 ```sh
-ibmcloud cis glb-monitors -i "cis-demo"
+ibmcloud cis glb-monitors
 ```
 {: pre}
 
@@ -4191,10 +4191,10 @@ For TCP:
 #### Examples
 {: #create-glb-monitors-examples}
 
-Create a GLB monitors under instance `cis-demo`.
+Create a GLB monitor.
 
 ```sh
-ibmcloud cis glb-monitor-create --json '{"type":"https", "description":"Health monitor of web service", "method":"GET", "path":"/health", "header":{"Host":["example.com"],"X-App-ID":["abc123"]}, "port":8080, "timeout":5, "retries":2, "interval":90, "expected_body":"alive", "expected_codes":"2xx", "follow_redirects":true, "allow_insecure":true}' -i "cis-demo"
+ibmcloud cis glb-monitor-create --json '{"type":"https", "description":"Health monitor of web service", "method":"GET", "path":"/health", "header":{"Host":["example.com"],"X-App-ID":["abc123"]}, "port":8080, "timeout":5, "retries":2, "interval":90, "expected_body":"alive", "expected_codes":"2xx", "follow_redirects":true, "allow_insecure":true}'
 ```
 {: pre}
 
@@ -4222,10 +4222,10 @@ ibmcloud cis glb-monitor GLB_MON_ID [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #show-glb-monitor-examples}
 
-Show the details of the GLB monitor `f1aba936b94213e5b8dca0c0dbf1f9cc`.
+Show the details of the GLB monitor `GLB_MON_ID`.
 
 ```sh
-ibmcloud cis glb-monitor f1aba936b94213e5b8dca0c0dbf1f9cc -i "cis-demo"
+ibmcloud cis glb-monitor GLB_MON_ID
 ```
 {: pre}
 
@@ -4250,10 +4250,10 @@ ibmcloud cis glb-monitor-delete GLB_MON_ID [-i, --instance INSTANCE]
 #### Examples
 {: #delete-glb-monitor-examples}
 
-Delete the GLB monitor `f1aba936b94213e5b8dca0c0dbf1f9cc`.
+Delete the GLB monitor `GLB_MON_ID`.
 
 ```sh
-ibmcloud cis glb-monitor-delete f1aba936b94213e5b8dca0c0dbf1f9cc -i "cis-demo"
+ibmcloud cis glb-monitor-delete GLB_MON_ID
 ```
 {: pre}
 
@@ -4355,10 +4355,10 @@ For TCP:
 #### Examples
 {: #update-glb-monitors-examples}
 
-Update GLB monitors `f1aba936b94213e5b8dca0c0dbf1f9cc` under instance `cis-demo`.
+Update GLB monitor `GLB_MON_ID`.
 
 ```sh
-ibmcloud cis glb-monitor-update f1aba936b94213e5b8dca0c0dbf1f9cc --json '{"type":"https", "description":"Health monitor of web service", "method":"GET", "path":"/health", "header":{"Host":["example.com"],"X-App-ID":["abc123"]}, "port":8080, "timeout":5, "retries":2, "interval":90, "expected_body":"alive", "expected_codes":"2xx", "follow_redirects":true, "allow_insecure":true}' -i "cis-demo"
+ibmcloud cis glb-monitor-update GLB_MON_ID --json '{"type":"https", "description":"Health monitor of web service", "method":"GET", "path":"/health", "header":{"Host":["example.com"],"X-App-ID":["abc123"]}, "port":8080, "timeout":5, "retries":2, "interval":90, "expected_body":"alive", "expected_codes":"2xx", "follow_redirects":true, "allow_insecure":true}'
 ```
 {: pre}
 
@@ -4403,10 +4403,10 @@ ibmcloud cis glb-events [-s, --since START_DATE] [-u, --until END_DATE] [--origi
 #### Examples
 {: #get-glb-events-examples}
 
-Get glb events in instance `cis-demo`.
+Get glb events.
 
 ```sh
-ibmcloud cis glb-events -s "2020-05-20" -u "2020-05-22" --origin-name "dal09" --origin-healthy true -i "cis-demo"
+ibmcloud cis glb-events -s "2020-05-20" -u "2020-05-22" --origin-name "dal09" --origin-healthy true
 ```
 {: pre}
 
@@ -4458,10 +4458,10 @@ You can have only one active Instant Logs session per domain and the maximum ses
 #### Examples
 {: #examples-instant-logs-create}
 
-Create an instant log for `dns-domain`:
+Create an instant log for domain `DNS_DOMAIN_ID`:
 
 ```sh
-cis instant-log-create dns-domain [--fields all] [--filter FILTER] [--sample 1] [-i cis-demo]
+ibmcloud cis instant-log-create DNS_DOMAIN_ID --fields all --sample 1
 ```
 
 The following are three examples of filters:
@@ -4508,10 +4508,10 @@ cis instant-log-get DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT] [-
 #### Example
 {: #examples-instant-logs-get}
 
-Get the instant logs job for `dns-domain`:
+Get the instant logs job for domain `DNS_DOMAIN_ID`:
 
 ```sh
-cis instant-log-get dns-domain [-i cis-demo]
+ibmcloud cis instant-log-get DNS_DOMAIN_ID
 ```
 {: codeblock}
 
@@ -4567,9 +4567,9 @@ ibmcloud cis logpull DNS_DOMAIN_ID --available-fields [--output FORMAT]
 {: #examples-logpull}
 
 ```sh
-ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --available-fields
-ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --ray-id 59348abde87afe50 --all-fields --timestamps rfc3339 --output JSON
-ibmcloud cis logpull 31984fea73a15b45779fa0df4ef62f9b --start 2020-05-18T12:14:58Z --end 2020-05-18T13:14:58Z --fields ClientIP,EdgeServerIP,ClientRequestHost --count 10 --sample 1 --timestamps rfc3339 --output JSON
+ibmcloud cis logpull DNS_DOMAIN_ID --available-fields
+ibmcloud cis logpull DNS_DOMAIN_ID --ray-id 59348abde87afe50 --all-fields --timestamps rfc3339 --output json
+ibmcloud cis logpull DNS_DOMAIN_ID --start 2020-05-18T12:14:58Z --end 2020-05-18T13:14:58Z --fields ClientIP,EdgeServerIP,ClientRequestHost --count 10 --sample 1 --timestamps rfc3339 --output json
 ```
 {: codeblock}
 
@@ -4631,10 +4631,10 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
 #### Examples
 {: #command-example-logpush-job-create}
 
-Create a log push job for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create a log push job for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
+ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low --output json
 ```
 {: pre}
 
@@ -4691,10 +4691,10 @@ ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [-
 #### Examples
 {: #command-example-logpush-job-update}
 
-Update `range_events` log push job for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Update `range_events` log push job for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis logpush-job-update 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --enable true --fields all --timestamps rfc3339 --dataset range_events --frequency high -i cis-demo --output JSON
+ibmcloud cis logpush-job-update DNS_DOMAIN_ID --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --enable true --fields all --timestamps rfc3339 --dataset range_events --frequency high --output json
 ```
 {: pre}
 
@@ -4724,10 +4724,10 @@ ibmcloud cis logpush-jobs DNS_DOMAIN_ID  [-i, --instance INSTANCE] [--output FOR
 #### Examples
 {: #command-example-logpush-jobs}
 
-Get all log push jobs for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get all log push jobs for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis logpush-jobs 31984fea73a15b45779fa0df4ef62f9b -i cis-demo --output JSON
+ibmcloud cis logpush-jobs DNS_DOMAIN_ID --output json
 ```
 {: pre}
 
@@ -4766,7 +4766,7 @@ ibmcloud cis logpush-job DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-i,
 Get details of `http_requests` log push job.
 
 ```sh
-ibmcloud cis logpush-job 31984fea73a15b45779fa0df4ef62f9b --dataset http_requests -i cis-demo --output JSON
+ibmcloud cis logpush-job DNS_DOMAIN_ID --dataset http_requests --output json
 ```
 {: pre}
 
@@ -4802,10 +4802,10 @@ ibmcloud cis logpush-job-delete DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_I
 #### Examples
 {: #command-example-logpush-job-delete}
 
-Delete `http_requests` log push job for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Delete `http_requests` log push job for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis logpush-job-delete 31984fea73a15b45779fa0df4ef62f9b --dataset http_requests -i cis-demo --force
+ibmcloud cis logpush-job-delete DNS_DOMAIN_ID --dataset http_requests --force
 ```
 {: pre}
 
@@ -4838,7 +4838,7 @@ ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --i
 Get all available fields for `http_requests` logs.
 
 ```sh
-ibmcloud cis logpush-available-fields 31984fea73a15b45779fa0df4ef62f9b --dataset http_requests -i cis-demo
+ibmcloud cis logpush-available-fields DNS_DOMAIN_ID --dataset http_requests
 ```
 {: pre}
 
@@ -4871,10 +4871,10 @@ ibmcloud cis log-retention DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FOR
 #### Examples
 {: #examples-log-retention}
 
-Get a log retention setting for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get a log retention setting for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis log-retention 31984fea73a15b45779fa0df4ef62f9b -i cis-demo --output JSON
+ibmcloud cis log-retention DNS_DOMAIN_ID --output json
 ```
 {: pre}
 
@@ -4905,10 +4905,10 @@ ibmcloud cis log-retention-update DNS_DOMAIN_ID (--flag on|off) [-i, --instance 
 #### Examples
 {: #examples-logpull-update}
 
-Enable log retention for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Enable log retention for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis log-retention-update 31984fea73a15b45779fa0df4ef62f9b --flag on -i cis-demo --output JSON
+ibmcloud cis log-retention-update DNS_DOMAIN_ID --flag on --output json
 ```
 {: pre}
 
@@ -4939,7 +4939,7 @@ cis managed-lists [-i, --instance INSTANCE] [--output FORMAT]
 {: #list-managed-lists-example}
 
 ```sh
-ibmcloud cis managed-lists -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9:: -o json
+ibmcloud cis managed-lists --output json
 ```
 {: pre}
 
@@ -5082,11 +5082,10 @@ ibmcloud cis firewall-event-analytics DNS_DOMAIN_ID [--dataset DATA_SET] [--filt
 #### Examples
 {: #firewall-event-analytics-examples}
 
-Get firewall event analytics for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get firewall event analytics for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis firewall-event-analytics 31984fea73a15b45779fa0df4ef62f9b --order datetime_ASC \
-     --filter "datetime_geq:2020-06-28T00:00:00Z"  --filter "datetime_leq:2020-06-29T00:00:00Z" --output json
+ibmcloud cis firewall-event-analytics DNS_DOMAIN_ID --order datetime_ASC --filter "datetime_geq:2020-06-28T00:00:00Z" --filter "datetime_leq:2020-06-29T00:00:00Z" --output json
 ```
 {: pre}
 
@@ -5193,12 +5192,10 @@ ibmcloud cis http-request-analytics DNS_DOMAIN_ID [--dataset DATA_SET] [--filter
 #### Examples
 {: #http-request-analytics-examples}
 
-Get http request analytics for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get http request analytics for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis http-request-analytics 31984fea73a15b45779fa0df4ef62f9b --order date_ASC \
-     --dataset httpRequests1dGroups --limit 500 \
-     --filter "date_geq:2020-06-28"  --filter "date_leq:2020-06-29" --output json
+ibmcloud cis http-request-analytics DNS_DOMAIN_ID --order date_ASC --dataset httpRequests1dGroups --limit 500 --filter "date_geq:2020-06-28" --filter "date_leq:2020-06-29" --output json
 ```
 {: pre}
 
@@ -5232,10 +5229,10 @@ ibmcloud cis web-analytics DNS_DOMAIN_ID [--recent DURATION] [-t, --table reques
 #### Examples
 {: #web-analytics-examples}
 
-Get web analytics for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get web analytics for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis web-analytics 31984fea73a15b45779fa0df4ef62f9b --recent 1d -t requests -i "cis-demo"
+ibmcloud cis web-analytics DNS_DOMAIN_ID --recent 1d -t requests
 ```
 {: pre}
 
@@ -5269,10 +5266,10 @@ ibmcloud cis dns-analytics DNS_DOMAIN_ID DIMENSION [-s, --since TIME] [-i, --ins
 #### Examples
 {: #dns-analytics-examples}
 
-Get DNS analytics for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get DNS analytics for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis dns-analytics 31984fea73a15b45779fa0df4ef62f9b queries-by-response-code -s 6h -i "cis-demo" --output json
+ibmcloud cis dns-analytics DNS_DOMAIN_ID queries-by-response-code -s 6h --output json
 ```
 {: pre}
 
@@ -5306,10 +5303,10 @@ ibmcloud cis ratelimit-analytics DNS_DOMAIN_ID [--recent DURATION] [--time-delta
 #### Examples
 {: #ratelimit-analytics-examples}
 
-Get rate limit analytics for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get rate limit analytics for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis ratelimit-analytics 31984fea73a15b45779fa0df4ef62f9b --recent 6h --time-delta 3600 -i "cis-demo" --output json
+ibmcloud cis ratelimit-analytics DNS_DOMAIN_ID --recent 6h --time-delta 3600 --output json
 ```
 {: pre}
 
@@ -5336,10 +5333,10 @@ ibmcloud cis access-enable [-i, --instance INSTANCE]
 #### Examples
 {: #command-example-access-enable}
 
-Enable Mutual TLS for instance `cis-demo`.
+Enable Mutual TLS.
 
 ```sh
-ibmcloud cis access-enable -i cis-demo
+ibmcloud cis access-enable
 ```
 {: pre}
 
@@ -5370,10 +5367,10 @@ ibmcloud cis origin-certificates DNS_DOMAIN_ID [--instance INSTANCE_NAME] [--out
 #### Examples
 {: #command-example-origin-certificates}
 
-List all origin certificates for domain `31984fea73a15b45779fa0df4ef62f9b`.
+List all origin certificates for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis origin-certificates 31984fea73a15b45779fa0df4ef62f9b -i cis-demo --output JSON
+ibmcloud cis origin-certificates DNS_DOMAIN_ID --output json
 ```
 {: pre}
 
@@ -5446,12 +5443,12 @@ ibmcloud cis origin-certificate-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_S
 #### Examples
 {: #command-example-origin-certificate-create}
 
-Create a CIS-signed certificate for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create a CIS-signed certificate for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis origin-certificate-create 31984fea73a15b45779fa0df4ef62f9b --request-type origin-rsa --hostnames "*.example.com" --hostnames "example.com" --requested-validity 5475 --csr your_csr -i cis-demo --output JSON
+ibmcloud cis origin-certificate-create DNS_DOMAIN_ID --request-type origin-rsa --hostnames "*.example.com" --hostnames "example.com" --requested-validity 5475 --csr your_csr --output json
 
-ibmcloud cis origin-certificate-create 31984fea73a15b45779fa0df4ef62f9b --json '{"hostnames":["example.com","*.example.com"], "requested_validity":5475,"request_type": "origin-rsa","csr":"-----BEGIN CERTIFICATE REQUEST-----\nMIICxzCCAa8CAQAwSDELMAkGA1UEBhMCVVMxFjAUBgNVBAgTDVNhbiBGcmFuY2lz\nY28xCzAJBgNVBAcTAkNBMRQwEgYDVQQDEwtleGFtcGxlLm5ldDCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBALxejtu4b+jPdFeFi6OUsye8TYJQBm3WfCvL\nHu5EvijMO/4Z2TImwASbwUF7Ir8OLgH+mGlQZeqyNvGoSOMEaZVXcYfpR1hlVak8\n4GGVr+04IGfOCqaBokaBFIwzclGZbzKmLGwIQioNxGfqFm6RGYGA3be2Je2iseBc\nN8GV1wYmvYE0RR+yWweJCTJ157exyRzu7sVxaEW9F87zBQLyOnwXc64rflXslRqi\ng7F7w5IaQYOl8yvmk/jEPCAha7fkiUfEpj4N12+oPRiMvleJF98chxjD4MH39c5I\nuOslULhrWunfh7GB1jwWNA9y44H0snrf+xvoy2TcHmxvma9Eln8CAwEAAaA6MDgG\nCSqGSIb3DQEJDjErMCkwJwYDVR0RBCAwHoILZXhhbXBsZS5uZXSCD3d3dy5leGFt\ncGxlLm5ldDANBgkqhkiG9w0BAQsFAAOCAQEAcBaX6dOnI8ncARrI9ZSF2AJX+8mx\npTHY2+Y2C0VvrVDGMtbBRH8R9yMbqWtlxeeNGf//LeMkSKSFa4kbpdx226lfui8/\nauRDBTJGx2R1ccUxmLZXx4my0W5iIMxunu+kez+BDlu7bTT2io0uXMRHue4i6quH\nyc5ibxvbJMjR7dqbcanVE10/34oprzXQsJ/VmSuZNXtjbtSKDlmcpw6To/eeAJ+J\nhXykcUihvHyG4A1m2R6qpANBjnA0pHexfwM/SgfzvpbvUg0T1ubmer8BgTwCKIWs\ndcWYTthM51JIqRBfNqy4QcBnX+GY05yltEEswQI55wdiS3CjTTA67sdbcQ==\n-----END CERTIFICATE REQUEST-----"}' -i cis-demo --output JSON
+ibmcloud cis origin-certificate-create DNS_DOMAIN_ID --json '{"hostnames":["example.com","*.example.com"], "requested_validity":5475,"request_type": "origin-rsa","csr":"-----BEGIN CERTIFICATE REQUEST-----\nMIICxzCCAa8CAQAwSDELMAkGA1UEBhMCVVMxFjAUBgNVBAgTDVNhbiBGcmFuY2lz\nY28xCzAJBgNVBAcTAkNBMRQwEgYDVQQDEwtleGFtcGxlLm5ldDCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBALxejtu4b+jPdFeFi6OUsye8TYJQBm3WfCvL\nHu5EvijMO/4Z2TImwASbwUF7Ir8OLgH+mGlQZeqyNvGoSOMEaZVXcYfpR1hlVak8\n4GGVr+04IGfOCqaBokaBFIwzclGZbzKmLGwIQioNxGfqFm6RGYGA3be2Je2iseBc\nN8GV1wYmvYE0RR+yWweJCTJ157exyRzu7sVxaEW9F87zBQLyOnwXc64rflXslRqi\ng7F7w5IaQYOl8yvmk/jEPCAha7fkiUfEpj4N12+oPRiMvleJF98chxjD4MH39c5I\nuOslULhrWunfh7GB1jwWNA9y44H0snrf+xvoy2TcHmxvma9Eln8CAwEAAaA6MDgG\nCSqGSIb3DQEJDjErMCkwJwYDVR0RBCAwHoILZXhhbXBsZS5uZXSCD3d3dy5leGFt\ncGxlLm5ldDANBgkqhkiG9w0BAQsFAAOCAQEAcBaX6dOnI8ncARrI9ZSF2AJX+8mx\npTHY2+Y2C0VvrVDGMtbBRH8R9yMbqWtlxeeNGf//LeMkSKSFa4kbpdx226lfui8/\nauRDBTJGx2R1ccUxmLZXx4my0W5iIMxunu+kez+BDlu7bTT2io0uXMRHue4i6quH\nyc5ibxvbJMjR7dqbcanVE10/34oprzXQsJ/VmSuZNXtjbtSKDlmcpw6To/eeAJ+J\nhXykcUihvHyG4A1m2R6qpANBjnA0pHexfwM/SgfzvpbvUg0T1ubmer8BgTwCKIWs\ndcWYTthM51JIqRBfNqy4QcBnX+GY05yltEEswQI55wdiS3CjTTA67sdbcQ==\n-----END CERTIFICATE REQUEST-----"}' --output json
 ```
 {: codeblock}
 
@@ -5482,10 +5479,10 @@ ibmcloud cis origin-certificate DNS_DOMAIN_ID CERT_ID [--instance INSTANCE_NAME]
 #### Examples
 {: #command-example-origin-certificate}
 
-Get details of origin certificate `a5836c2a7ea72d2e225890caea70ae32`.
+Get details of origin certificate `CERT_ID`.
 
 ```sh
-ibmcloud cis origin-certificate 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo --output JSON
+ibmcloud cis origin-certificate DNS_DOMAIN_ID CERT_ID --output json
 ```
 {: pre}
 
@@ -5513,10 +5510,10 @@ ibmcloud cis origin-certificate-delete DNS_DOMAIN_ID CERT_ID [--instance INSTANC
 #### Examples
 {: #command-example-origin-certificate-delete}
 
-Delete origin certificate `a5836c2a7ea72d2e225890caea70ae32`.
+Delete origin certificate `CERT_ID`.
 
 ```sh
-ibmcloud cis origin-certificate-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo
+ibmcloud cis origin-certificate-delete DNS_DOMAIN_ID CERT_ID
 ```
 {: pre}
 
@@ -5549,10 +5546,10 @@ ibmcloud cis overview DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #get-overview-examples}
 
-Show the overview information for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Show the overview information for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis overview 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis overview DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -5677,10 +5674,10 @@ Sample JSON data:
 #### Examples
 {: #command-examples-page-rule-create}
 
-Create a page rule for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create a page rule for domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis page-rule-create 31984fea73a15b45779fa0df4ef62f9b --json '{"targets":[{"target":"url", "constraint":{"operator": "matches", "value":"*example.com/images/*"}}], "actions":[{"id":"always_online", "value":"on"}], "priority":1, "status": "active"}' cis-demo --output JSON
+ibmcloud cis page-rule-create DNS_DOMAIN_ID --json '{"targets":[{"target":"url", "constraint":{"operator": "matches", "value":"*example.com/images/*"}}], "actions":[{"id":"always_online", "value":"on"}], "priority":1, "status": "active"}' --output json
 ```
 {: pre}
 
@@ -5803,10 +5800,10 @@ Sample JSON data:
 #### Examples
 {: #command-examples-page-rule-update}
 
-Update page rule `a5836c2a7ea72d2e225890caea70ae32`.
+Update page rule `PAGE_RULE_ID`.
 
 ```sh
-ibmcloud cis page-rule-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 --json '{"targets":[{"target":"url", "constraint":{"operator":"matches", "value":"*example.com/images/*"}}], "actions":[{"id":"always_online", "value":"on"}],"priority":1, "status":"active"}' -i cis-demo --output JSON
+ibmcloud cis page-rule-update DNS_DOMAIN_ID PAGE_RULE_ID --json '{"targets":[{"target":"url", "constraint":{"operator":"matches", "value":"*example.com/images/*"}}], "actions":[{"id":"always_online", "value":"on"}],"priority":1, "status":"active"}' --output json
 ```
 {: pre}
 
@@ -5834,10 +5831,10 @@ ibmcloud cis page-rule-delete DNS_DOMAIN_ID PAGE_RULE_ID [-i, --instance INSTANC
 #### Examples
 {: #command-examples-page-rule-delete}
 
-Delete page rule `a5836c2a7ea72d2e225890caea70ae32`.
+Delete page rule `PAGE_RULE_ID`.
 
 ```sh
-ibmcloud cis page-rule-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo
+ibmcloud cis page-rule-delete DNS_DOMAIN_ID PAGE_RULE_ID
 ```
 {: pre}
 
@@ -5866,10 +5863,10 @@ ibmcloud cis page-rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT
 #### Examples
 {: #command-examples-page-rules}
 
-List all page rules in domain `31984fea73a15b45779fa0df4ef62f9b`.
+List all page rules in domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis page-rules 31984fea73a15b45779fa0df4ef62f9b -i cis-demo --output JSON
+ibmcloud cis page-rules DNS_DOMAIN_ID --output json
 ```
 {: pre}
 
@@ -5900,10 +5897,10 @@ ibmcloud cis page-rule DNS_DOMAIN_ID PAGE_RULE_ID [-i, --instance INSTANCE] [--o
 #### Examples
 {: #command-examples-page-rule}
 
-Get details of page rule `a5836c2a7ea72d2e225890caea70ae32`.
+Get details of page rule `PAGE_RULE_ID`.
 
 ```sh
-ibmcloud cis page-rule 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i cis-demo --output JSON
+ibmcloud cis page-rule DNS_DOMAIN_ID PAGE_RULE_ID --output json
 ```
 {: pre}
 
@@ -6052,10 +6049,10 @@ Sample JSON data:
 #### Examples
 {: #create-range-app-examples}
 
-Create a range app for the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create a range app for the domain `DNS_DOMAIN_ID`.
 
 ```sh
-ibmcloud cis range-app-create 31984fea73a15b45779fa0df4ef62f9b --json '{"protocol":"tcp/22", "dns":{"type":"CNAME","name":"ssh.example.com"}, "origin_direct":["tcp://1.2.3.4:22"], "proxy_protocol":"off", "ip_firewall":true, "tls":"full", "edge_ips":{"type":"dynamic", "connectivity":"all"}, "traffic_type":"direct"}' -i "cis-demo"
+ibmcloud cis range-app-create DNS_DOMAIN_ID --json '{"protocol":"tcp/22", "dns":{"type":"CNAME","name":"ssh.example.com"}, "origin_direct":["tcp://1.2.3.4:22"], "proxy_protocol":"off", "ip_firewall":true, "tls":"full", "edge_ips":{"type":"dynamic", "connectivity":"all"}, "traffic_type":"direct"}'
 ```
 {: pre}
 
@@ -6200,10 +6197,10 @@ Sample JSON data:
 #### Examples
 {: #update-range-app-examples}
 
-Update range app `ea95132c15732412d22c1476fa83f27a`.
+Update range app `APP_ID`.
 
 ```sh
-ibmcloud cis range-app-update 31984fea73a15b45779fa0df4ef62f9b ea95132c15732412d22c1476fa83f27a --json '{"protocol":"tcp/22", "dns":{"type":"CNAME","name":"ssh.example.com"}, "origin_direct":["tcp://1.2.3.4:22"], "proxy_protocol":"off", "ip_firewall":true, "tls":"full", "edge_ips":{"type":"dynamic", "connectivity":"all"}, "traffic_type":"direct"}' -i "cis-demo"
+ibmcloud cis range-app-update DNS_DOMAIN_ID APP_ID --json '{"protocol":"tcp/22", "dns":{"type":"CNAME","name":"ssh.example.com"}, "origin_direct":["tcp://1.2.3.4:22"], "proxy_protocol":"off", "ip_firewall":true, "tls":"full", "edge_ips":{"type":"dynamic", "connectivity":"all"}, "traffic_type":"direct"}'
 ```
 {: pre}
 
@@ -6233,10 +6230,10 @@ ibmcloud cis range-app-delete DNS_DOMAIN_ID APP_ID [--instance INSTANCE]
 #### Examples
 {: #delete-range-app-examples}
 
-Delete range application `ea95132c15732412d22c1476fa83f27a`.
+Delete range application `APP_ID`.
 
 ```sh
-ibmcloud cis range-app-delete 31984fea73a15b45779fa0df4ef62f9b ea95132c15732412d22c1476fa83f27a -i "cis-demo"
+ibmcloud cis range-app-delete DNS_DOMAIN_ID APP_ID
 ```
 {: pre}
 
@@ -6269,10 +6266,10 @@ ibmcloud cis range-app DNS_DOMAIN_ID APP_ID [--instance INSTANCE] [--output FORM
 #### Examples
 {: #show-range-app-examples}
 
-Show details of range application `ea95132c15732412d22c1476fa83f27a`.
+Show details of range application `APP_ID`.
 
 ```sh
-ibmcloud cis range-app 31984fea73a15b45779fa0df4ef62f9b ea95132c15732412d22c1476fa83f27a -i "cis-demo"
+ibmcloud cis range-app DNS_DOMAIN_ID APP_ID
 ```
 {: pre}
 
@@ -6302,10 +6299,10 @@ ibmcloud cis range-apps DNS_DOMAIN_ID [--instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #list-range-app-examples}
 
-List all range applications in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+List all range applications in the domain.
 
 ```sh
-ibmcloud cis range-apps 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis range-apps DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -6368,11 +6365,10 @@ ibmcloud cis range-analytics DNS_DOMAIN_ID --bytime [--time_delta DELTA] [--metr
 #### Examples
 {: #get-analytics-range-app-examples}
 
-Get analytics data for range applications in the domain `31984fea73a15b45779fa0df4ef62f9b`.
+Get analytics data for range applications in the domain.
 
 ```sh
-ibmcloud cis range-analytics 31984fea73a15b45779fa0df4ef62f9b --metrics "count,bytesIngress" --dimensions "event,appID" --since "2020-05-22T02:20:00Z"
---until "2020-05-23T02:20:00Z" -i "cis-demo"
+ibmcloud cis range-analytics DNS_DOMAIN_ID --metrics "count,bytesIngress" --dimensions "event,appID" --since "2020-05-22T02:20:00Z" --until "2020-05-23T02:20:00Z"
 ```
 {: pre}
 
@@ -6505,10 +6501,10 @@ Sample JSON data:
 #### Examples
 {: #create-ratelimit-examples}
 
-Create a rate limiting rule for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Create a rate limiting rule for domain.
 
 ```sh
-ibmcloud cis ratelimit-rule-create 31984fea73a15b45779fa0df4ef62f9b --json '{"id":"372e67954025e0ba6aaa6d586b9e0b59","disabled":false,"description":"Prevent multiple login failures to mitigate brute force attacks","match":{"request":{"methods":["GET","POST"],"schemes":["HTTP","HTTPS"],"url":"*.example.org/path*"},"response":{"status": [403, 401],"headers":[{"name":"Cf-Cache-Status","op":"ne","value":"HIT"}]}},"bypass":[{"name":"url","value":"api.example.com/*"}],"threshold":60,"period":900,"action":{"mode":"challenge","timeout":86400,"response":{"content_type":"text/xml","body":"<error>This request has been rate-limited.</error>"}}}' -i "cis-demo"
+ibmcloud cis ratelimit-rule-create DNS_DOMAIN_ID --json '{"id":"372e67954025e0ba6aaa6d586b9e0b59","disabled":false,"description":"Prevent multiple login failures to mitigate brute force attacks","match":{"request":{"methods":["GET","POST"],"schemes":["HTTP","HTTPS"],"url":"*.example.org/path*"},"response":{"status": [403, 401],"headers":[{"name":"Cf-Cache-Status","op":"ne","value":"HIT"}]}},"bypass":[{"name":"url","value":"api.example.com/*"}],"threshold":60,"period":900,"action":{"mode":"challenge","timeout":86400,"response":{"content_type":"text/xml","body":"<error>This request has been rate-limited.</error>"}}}'
 ```
 {: pre}
 
@@ -6634,10 +6630,10 @@ Sample JSON data:
 #### Examples
 {: #update-ratelimit-examples}
 
-Update rate limiting rule for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Update rate limiting rule for domain.
 
 ```sh
-ibmcloud cis ratelimit-rule-update 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b59 --json '{"disabled":false,"description":"Prevent multiple login failures to mitigate brute force attacks","match":{"request":{"methods":["GET","POST"],"schemes":["HTTP","HTTPS"],"url":"*.example.org/path*"},"response":{"status": [403, 401],"headers":[{"name":"Cf-Cache-Status","op":"ne","value":"HIT"}]}},"bypass":[{"name":"url","value":"api.example.com/*"}],"threshold":60,"period":900,"action":{"mode":"challenge","timeout":86400,"response":{"content_type":"text/xml","body":"<error>This request has been rate-limited.</error>"}}}' -i "cis-demo"
+ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID --json '{"disabled":false,"description":"Prevent multiple login failures to mitigate brute force attacks","match":{"request":{"methods":["GET","POST"],"schemes":["HTTP","HTTPS"],"url":"*.example.org/path*"},"response":{"status": [403, 401],"headers":[{"name":"Cf-Cache-Status","op":"ne","value":"HIT"}]}},"bypass":[{"name":"url","value":"api.example.com/*"}],"threshold":60,"period":900,"action":{"mode":"challenge","timeout":86400,"response":{"content_type":"text/xml","body":"<error>This request has been rate-limited.</error>"}}}'
 ```
 {: pre}
 
@@ -6665,10 +6661,10 @@ ibmcloud cis ratelimit-rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output F
 #### Examples
 {: #llist-ratelimit-rules-examples}
 
-List rate limiting rules in domain `31984fea73a15b45779fa0df4ef62f9b`.
+List rate limiting rules in domain.
 
 ```sh
-ibmcloud cis ratelimit-rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis ratelimit-rules DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -6700,10 +6696,10 @@ ibmcloud cis ratelimit-rule DNS_DOMAIN_ID  RATELIMIT_RULE_ID [-i, --instance INS
 {: #show-ratelimit-rule-examples}
 
 
-Get the details of rate limiting rule `372e67954025e0ba6aaa6d586b9e0b59`.
+Get the details of rate limiting rule.
 
 ```sh
-ibmcloud cis ratelimit-rule 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b59 -i "cis-demo"
+ibmcloud cis ratelimit-rule DNS_DOMAIN_ID RATELIMIT_RULE_ID
 ```
 {: pre}
 
@@ -6731,10 +6727,10 @@ ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID [--instance I
 #### Examples
 {: #delete-ratelimit-rule-examples}
 
-Delete rate limiting rule `372e67954025e0ba6aaa6d586b9e0b60`.
+Delete rate limiting rule.
 
 ```sh
-ibmcloud cis ratelimit-rule-delete 31984fea73a15b45779fa0df4ef62f9b 372e67954025e0ba6aaa6d586b9e0b60 -i "cis-demo"
+ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID
 ```
 {: pre}
 
@@ -6982,10 +6978,10 @@ ibmcloud cis routing DNS_DOMAIN_ID (--smart-routing | --tiered-caching) [-i, --i
 #### Examples
 {: #show-routing-examples}
 
-Get the details of routing settings for domain `372e67954025e0ba6aaa6d586b9e0b60`.
+Get the details of routing settings for domain.
 
 ```sh
-ibmcloud cis routing 31984fea73a15b45779fa0df4ef62f9b --smart-routing -i "cis-demo"
+ibmcloud cis routing DNS_DOMAIN_ID --smart-routing
 ```
 {: pre}
 
@@ -7554,10 +7550,10 @@ Sample JSON data:
 #### Examples
 {: #change-priority-custom-examples}
 
-Change custom certificates' priority for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Change custom certificates' priority for domain.
 
 ```sh
-ibmcloud cis certificate-priority-change 31984fea73a15b45779fa0df4ef62f9b --json '{"certificates": [{"id":"5a7805061c76ada191ed06f989cc3dac", "priority":2},{"id":"9a7806061c88ada191ed06f989cc3dac","priority":1}]}' -i "cis-demo"
+ibmcloud cis certificate-priority-change DNS_DOMAIN_ID --json '{"certificates": [{"id":"5a7805061c76ada191ed06f989cc3dac", "priority":2},{"id":"9a7806061c88ada191ed06f989cc3dac","priority":1}]}'
 ```
 {: pre}
 
@@ -7588,10 +7584,10 @@ ibmcloud cis certificate-delete DNS_DOMAIN_ID CERT_ID [--keyless][-i, --instance
 #### Examples
 {: #delete-cert-examples}
 
-Delete the custom certificate `5a7805061c76ada191ed06f989cc3dac`.
+Delete the custom certificate.
 
 ```sh
-ibmcloud cis certificate-delete 31984fea73a15b45779fa0df4ef62f9b 5a7805061c76ada191ed06f989cc3dac -i "cis-demo"
+ibmcloud cis certificate-delete DNS_DOMAIN_ID CERT_ID
 ```
 {: pre}
 
@@ -7624,10 +7620,10 @@ ibmcloud cis waf-setting DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMA
 #### Examples
 {: #show-waf-setting-examples}
 
-Show WAF settings for domain `372e67954025e0ba6aaa6d586b9e0b60`.
+Show WAF settings for domain.
 
 ```sh
-ibmcloud cis waf-setting 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis waf-setting DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -7658,10 +7654,10 @@ ibmcloud cis waf-setting-update DNS_DOMAIN_ID WAF_MODE [-i, --instance INSTANCE]
 #### Examples
 {: #update-waf-setting-examples}
 
-Enable WAF for domain `372e67954025e0ba6aaa6d586b9e0b60`.
+Enable WAF for domain.
 
 ```sh
-ibmcloud cis waf-setting-update 31984fea73a15b45779fa0df4ef62f9b waf-enable -i "cis-demo"
+ibmcloud cis waf-setting-update DNS_DOMAIN_ID waf-enable
 ```
 {: pre}
 
@@ -7689,10 +7685,10 @@ ibmcloud cis waf-packages DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORM
 #### Examples
 {: #list-waf-packages-examples}
 
-List all WAF packages for domain `372e67954025e0ba6aaa6d586b9e0b60`.
+List all WAF packages for domain.
 
 ```sh
-ibmcloud cis waf-packages 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis waf-packages DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -7723,10 +7719,10 @@ ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID [-i, --instance INSTANCE] 
 #### Examples
 {: #show-waf-package-examples}
 
-Get detail of a WAF package `a25a9a7e9c00afc1fb2e0245519d725b`.
+Get detail of a WAF package.
 
 ```sh
-ibmcloud cis waf-package 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b -i "cis-demo"
+ibmcloud cis waf-package DNS_DOMAIN_ID WAF_PACKAGE_ID
 ```
 {: pre}
 
@@ -7763,10 +7759,10 @@ ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID [--sensitivity SENSI
 #### Examples
 {: #update-waf-owasp-package-examples}
 
-Update the OWASP setting for package `a25a9a7e9c00afc1fb2e0245519d725b`.
+Update the OWASP setting for package.
 
 ```sh
-ibmcloud cis waf-package-set 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b --sensitivity medium --action-mode simulate -i "cis-demo"
+ibmcloud cis waf-package-set DNS_DOMAIN_ID OWASP_PACKAGE_ID --sensitivity medium --action-mode simulate
 ```
 {: pre}
 
@@ -7803,10 +7799,10 @@ ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page N
 #### Examples
 {: #list-waf-groups-examples}
 
-List the WAF groups in a WAF package `a25a9a7e9c00afc1fb2e0245519d725b`.
+List the WAF groups in a WAF package.
 
 ```sh
-ibmcloud cis waf-groups 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b --page 1 --per-page 100 -i "cis-demo"
+ibmcloud cis waf-groups DNS_DOMAIN_ID WAF_PACKAGE_ID --page 1 --per-page 100
 ```
 {: pre}
 
@@ -7840,10 +7836,10 @@ ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID [-i, --instance
 #### Examples
 {: #show-waf-group-examples}
 
-Get details of WAF group `de677e5818985db1285d0e80225f06e5` in WAF package `a25a9a7e9c00afc1fb2e0245519d725b`.
+Get details of WAF group in WAF package.
 
 ```sh
-ibmcloud cis waf-group 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b de677e5818985db1285d0e80225f06e5 -i "cis-demo"
+ibmcloud cis waf-group DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID
 ```
 {: pre}
 
@@ -7880,10 +7876,10 @@ ibmcloud cis waf-group-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID WAF_GR
 #### Examples
 {: #update-waf-group-examples}
 
-Enable the WAF group `de677e5818985db1285d0e80225f06e5` in the WAF package `a25a9a7e9c00afc1fb2e0245519d725b`.
+Enable the WAF group in the WAF package.
 
 ```sh
-ibmcloud cis waf-group-mode-set 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b de677e5818985db1285d0e80225f06e5 on -i "cis-demo"
+ibmcloud cis waf-group-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_GROUP_ID on
 ```
 {: pre}
 
@@ -7920,10 +7916,10 @@ ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID [--page PAGE] [--per-page NU
 #### Examples
 {: #list-waf-rules-examples}
 
-List all WAF rules in the WAF package `a25a9a7e9c00afc1fb2e0245519d725b`.
+List all WAF rules in the WAF package.
 
 ```sh
-ibmcloud cis waf-rules 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b --page 1 --per-page 100 -i "cis-demo"
+ibmcloud cis waf-rules DNS_DOMAIN_ID WAF_PACKAGE_ID --page 1 --per-page 100
 ```
 {: pre}
 
@@ -7957,10 +7953,10 @@ ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID [-i, --instance I
 #### Examples
 {: #show-waf-rule-examples}
 
-Get details of WAF rule `f939de3be84e66e757adcdcb87908023` in WAF package `a25a9a7e9c00afc1fb2e0245519d725b`.
+Get details of WAF rule in WAF package.
 
 ```sh
-ibmcloud cis waf-rule 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b f939de3be84e66e757adcdcb87908023 -i "cis-demo"
+ibmcloud cis waf-rule DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID
 ```
 {: pre}
 
@@ -7997,10 +7993,10 @@ ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID WAF_RULE
 #### Examples
 {: #update-waf-rule-examples}
 
-Disable WAF rule `f939de3be84e66e757adcdcb87908023` in WAF package `a25a9a7e9c00afc1fb2e0245519d725b`.
+Disable WAF rule in WAF package.
 
 ```sh
-ibmcloud cis waf-rule-mode-set 31984fea73a15b45779fa0df4ef62f9b a25a9a7e9c00afc1fb2e0245519d725b f939de3be84e66e757adcdcb87908023 disable -i "cis-demo"
+ibmcloud cis waf-rule-mode-set DNS_DOMAIN_ID WAF_PACKAGE_ID WAF_RULE_ID disable
 ```
 {: pre}
 
@@ -8064,10 +8060,10 @@ Sample JSON data:
 #### Examples
 {: #create-waf-override-examples}
 
-Create a WAF override rule under instance `cis-demo`.
+Create a WAF override rule.
 
 ```sh
-ibmcloud cis waf-override-create 31984fea73a15b45779fa0df4ef62f9b --json '{"description":"Enable IBM Magento ruleset for www.example.com","urls":["www.example.com/*"],"priority":1,"groups":{"ea8687e59929c1fd05ba97574ad43f77":"default"},"rules":{"100015":"disable"},"rewrite_action":{"default":"block","challenge":"block","simulate":"disable"}}' -i "cis-demo"
+ibmcloud cis waf-override-create DNS_DOMAIN_ID --json '{"description":"Enable IBM Magento ruleset for www.example.com","urls":["www.example.com/*"],"priority":1,"groups":{"ea8687e59929c1fd05ba97574ad43f77":"default"},"rules":{"100015":"disable"},"rewrite_action":{"default":"block","challenge":"block","simulate":"disable"}}'
 ```
 {: pre}
 
@@ -8134,10 +8130,10 @@ Sample JSON data:
 #### Examples
 {: #update-waf-override-examples}
 
-Update a WAF override rule under instance `cis-demo`.
+Update a WAF override rule.
 
 ```sh
-ibmcloud cis waf-override-update 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 --json '{"description":"Enable IBM Magento ruleset for www.example.com","urls":["www.example.com/*"],"priority":1,"groups":{"ea8687e59929c1fd05ba97574ad43f77":"default"},"rules":{"100015":"disable"},"rewrite_action":{"default":"block","challenge":"block","simulate":"disable"}}' -i "cis-demo"
+ibmcloud cis waf-override-update DNS_DOMAIN_ID OVERRIDE_WAF_ID --json '{"description":"Enable IBM Magento ruleset for www.example.com","urls":["www.example.com/*"],"priority":1,"groups":{"ea8687e59929c1fd05ba97574ad43f77":"default"},"rules":{"100015":"disable"},"rewrite_action":{"default":"block","challenge":"block","simulate":"disable"}}'
 ```
 {: pre}
 
@@ -8171,10 +8167,10 @@ ibmcloud cis waf-overrides DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, 
 #### Examples
 {: #list-waf-override-examples}
 
-List WAF override rules under instance `cis-demo`.
+List WAF override rules.
 
 ```sh
-ibmcloud cis  waf-overrides 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis waf-overrides DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -8205,10 +8201,10 @@ ibmcloud cis waf-override DNS_DOMAIN_ID OVERRIDE_WAF_ID [-i, --instance INSTANCE
 #### Examples
 {: #get-waf-override-examples}
 
-Get a WAF override rule under instance `cis-demo`.
+Get a WAF override rule.
 
 ```sh
-ibmcloud cis waf-override 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i "cis-demo"
+ibmcloud cis waf-override DNS_DOMAIN_ID OVERRIDE_WAF_ID
 ```
 {: pre}
 
@@ -8239,10 +8235,10 @@ ibmcloud cis waf-override-delete DNS_DOMAIN_ID OVERRIDE_WAF_ID [-i, --instance I
 #### Examples
 {: #delete-waf-override-examples}
 
-Delete a WAF override rule under instance `cis-demo`.
+Delete a WAF override rule.
 
 ```sh
-ibmcloud cis waf-override-delete 31984fea73a15b45779fa0df4ef62f9b a5836c2a7ea72d2e225890caea70ae32 -i "cis-demo"
+ibmcloud cis waf-override-delete DNS_DOMAIN_ID OVERRIDE_WAF_ID
 ```
 {: pre}
 
@@ -8281,10 +8277,10 @@ ibmcloud cis authenticated-origin-pull-settings DNS_DOMAIN_ID [--level zone|host
 #### Examples
 {: #show-authenticated-origin-pull-settings-examples}
 
-List authenticated origin pull settings on zone level for domain `31984fea73a15b45779fa0df4ef62f9b`.
+List authenticated origin pull settings on zone level for domain.
 
 ```sh
-ibmcloud cis authenticated-origin-pull-settings 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis authenticated-origin-pull-settings DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -8324,10 +8320,10 @@ ibmcloud cis authenticated-origin-pull-settings-update DNS_DOMAIN_ID [--level zo
 #### Examples
 {: #update-authenticated-origin-pull-setting-examples}
 
-Update authenticated origin pull setting on zone level for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Update authenticated origin pull setting on zone level for domain.
 
 ```sh
-ibmcloud cis authenticated-origin-pull-settings-update 31984fea73a15b45779fa0df4ef62f9b --enabled on -i "cis-demo"
+ibmcloud cis authenticated-origin-pull-settings-update DNS_DOMAIN_ID --enabled on
 ```
 {: pre}
 
@@ -8358,10 +8354,10 @@ ibmcloud cis authenticated-origin-pull-certificates DNS_DOMAIN_ID [--level zone|
 #### Examples
 {: #show-authenticated-origin-pull-certificates-examples}
 
-Show authenticated origin pull certificates on zone level for domain `31984fea73a15b45779fa0df4ef62f9b`.
+Show authenticated origin pull certificates on zone level for domain.
 
 ```sh
-ibmcloud cis authenticated-origin-pull-certificates 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis authenticated-origin-pull-certificates DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -8395,10 +8391,10 @@ ibmcloud cis authenticated-origin-pull-certificate DNS_DOMAIN_ID CERT_ID [--leve
 #### Examples
 {: #show-authenticated-origin-pull-certificate-examples}
 
-Get an authenticated origin pull certificate `5a7805061c76ada191ed06f989cc3dac` on zone level for domain `31984fea73a15b45779fa0df4ef62f9b` .
+Get an authenticated origin pull certificate on zone level for domain.
 
 ```sh
-ibmcloud cis authenticated-origin-pull-certificate 31984fea73a15b45779fa0df4ef62f9b 5a7805061c76ada191ed06f989cc3dac -i "cis-demo"
+ibmcloud cis authenticated-origin-pull-certificate DNS_DOMAIN_ID CERT_ID
 ```
 {: pre}
 
@@ -8445,10 +8441,10 @@ ibmcloud cis authenticated-origin-pull-certificate-upload DNS_DOMAIN_ID [--level
 #### Examples
 {: #upload-authenticated-origin-pull-certificate-examples}
 
-Upload an authenticated origin pull certificate on zone level for domain `31984fea73a15b45779fa0df4ef62f9b` .
+Upload an authenticated origin pull certificate on zone level for domain.
 
 ```sh
-ibmcloud cis authenticated-origin-pull-certificate-upload 31984fea73a15b45779fa0df4ef62f9b --json '{"certificate": "-----BEGIN CERTIFICATE-----\nMIIDtTCCAp2gAwIBAgIJAMHAwfXZ5/PWMA0GCSqGSIb3DQEBCwUAMEUxCzAJBgNV\nBAYTAkFVMRMwEQYDVQQIEwpTb21lLVN0YXRlMSEwHwYDVQQKExhJbnRlcm5ldCBX\naWRnaXRzIFB0eSBMdGQwHhcNMTYwODI0MTY0MzAxWhcNMTYxMTIyMTY0MzAxWjBF\nMQswCQYDVQQGEwJBVTETMBEGA1UECBMKU29tZS1TdGF0ZTEhMB8GA1UEChMYSW50\nZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB\nCgKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmGdtcGbg/1\nCGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKnabIRuGvB\nKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpidtnKX/a+5\n0GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+pyFxIXjbEI\ndZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pEewooaeO2\nizNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABo4GnMIGkMB0GA1UdDgQWBBT/LbE4\n9rWf288N6sJA5BRb6FJIGDB1BgNVHSMEbjBsgBT/LbE49rWf288N6sJA5BRb6FJI\nGKFJpEcwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgTClNvbWUtU3RhdGUxITAfBgNV\nBAoTGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZIIJAMHAwfXZ5/PWMAwGA1UdEwQF\nMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHHFwl0tH0quUYZYO0dZYt4R7SJ0pCm2\n2satiyzHl4OnXcHDpekAo7/a09c6Lz6AU83cKy/+x3/djYHXWba7HpEu0dR3ugQP\nMlr4zrhd9xKZ0KZKiYmtJH+ak4OM4L3FbT0owUZPyjLSlhMtJVcoRp5CJsjAMBUG\nSvD8RX+T01wzox/Qb+lnnNnOlaWpqu8eoOenybxKp1a9ULzIVvN/LAcc+14vioFq\n2swRWtmocBAs8QR9n4uvbpiYvS8eYueDCWMM4fvFfBhaDZ3N9IbtySh3SpFdQDhw\nYbjM2rxXiyLGxB4Bol7QTv4zHif7Zt89FReT/NBy4rzaskDJY5L6xmY=\n-----END CERTIFICATE-----\n", "private_key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmG\ndtcGbg/1CGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKn\nabIRuGvBKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpid\ntnKX/a+50GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+py\nFxIXjbEIdZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pE\newooaeO2izNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABAoIBACbhTYXBZYKmYPCb\nHBR1IBlCQA2nLGf0qRuJNJZg5iEzXows/6tc8YymZkQE7nolapWsQ+upk2y5Xdp/\naxiuprIs9JzkYK8Ox0r+dlwCG1kSW+UAbX0bQ/qUqlsTvU6muVuMP8vZYHxJ3wmb\n+ufRBKztPTQ/rYWaYQcgC0RWI20HTFBMxlTAyNxYNWzX7RKFkGVVyB9RsAtmcc8g\n+j4OdosbfNoJPS0HeIfNpAznDfHKdxDk2Yc1tV6RHBrC1ynyLE9+TaflIAdo2MVv\nKLMLq51GqYKtgJFIlBRPQqKoyXdz3fGvXrTkf/WY9QNq0J1Vk5ERePZ54mN8iZB7\n9lwy/AkCgYEA6FXzosxswaJ2wQLeoYc7ceaweX/SwTvxHgXzRyJIIT0eJWgx13Wo\n/WA3Iziimsjf6qE+SI/8laxPp2A86VMaIt3Z3mJN/CqSVGw8LK2AQst+OwdPyDMu\niacE8lj/IFGC8mwNUAb9CzGU3JpU4PxxGFjS/eMtGeRXCWkK4NE+G08CgYEA1Kp9\nN2JrVlqUz+gAX+LPmE9OEMAS9WQSQsfCHGogIFDGGcNf7+uwBM7GAaSJIP01zcoe\nVAgWdzXCv3FLhsaZoJ6RyLOLay5phbu1iaTr4UNYm5WtYTzMzqh8l1+MFFDl9xDB\nvULuCIIrglM5MeS/qnSg1uMoH2oVPj9TVst/ir8CgYEAxrI7Ws9Zc4Bt70N1As+U\nlySjaEVZCMkqvHJ6TCuVZFfQoE0r0whdLdRLU2PsLFP+q7qaeZQqgBaNSKeVcDYR\n9B+nY/jOmQoPewPVsp/vQTCnE/R81spu0mp0YI6cIheT1Z9zAy322svcc43JaWB7\nmEbeqyLOP4Z4qSOcmghZBSECgYACvR9Xs0DGn+wCsW4vze/2ei77MD4OQvepPIFX\ndFZtlBy5ADcgE9z0cuVB6CiL8DbdK5kwY9pGNr8HUCI03iHkW6Zs+0L0YmihfEVe\nPG19PSzK9CaDdhD9KFZSbLyVFmWfxOt50H7YRTTiPMgjyFpfi5j2q348yVT0tEQS\nfhRqaQKBgAcWPokmJ7EbYQGeMbS7HC8eWO/RyamlnSffdCdSc7ue3zdVJxpAkQ8W\nqu80pEIF6raIQfAf8MXiiZ7auFOSnHQTXUbhCpvDLKi0Mwq3G8Pl07l+2s6dQG6T\nlv6XTQaMyf6n1yjzL+fzDrH3qXMxHMO/b13EePXpDMpY7HQpoLDi\n-----END RSA PRIVATE KEY-----\n"}'-i "cis-demo"
+ibmcloud cis authenticated-origin-pull-certificate-upload DNS_DOMAIN_ID --json '{"certificate": "-----BEGIN CERTIFICATE-----\nMIIDtTCCAp2gAwIBAgIJAMHAwfXZ5/PWMA0GCSqGSIb3DQEBCwUAMEUxCzAJBgNV\nBAYTAkFVMRMwEQYDVQQIEwpTb21lLVN0YXRlMSEwHwYDVQQKExhJbnRlcm5ldCBX\naWRnaXRzIFB0eSBMdGQwHhcNMTYwODI0MTY0MzAxWhcNMTYxMTIyMTY0MzAxWjBF\nMQswCQYDVQQGEwJBVTETMBEGA1UECBMKU29tZS1TdGF0ZTEhMB8GA1UEChMYSW50\nZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB\nCgKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmGdtcGbg/1\nCGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKnabIRuGvB\nKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpidtnKX/a+5\n0GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+pyFxIXjbEI\ndZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pEewooaeO2\nizNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABo4GnMIGkMB0GA1UdDgQWBBT/LbE4\n9rWf288N6sJA5BRb6FJIGDB1BgNVHSMEbjBsgBT/LbE49rWf288N6sJA5BRb6FJI\nGKFJpEcwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgTClNvbWUtU3RhdGUxITAfBgNV\nBAoTGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZIIJAMHAwfXZ5/PWMAwGA1UdEwQF\nMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHHFwl0tH0quUYZYO0dZYt4R7SJ0pCm2\n2satiyzHl4OnXcHDpekAo7/a09c6Lz6AU83cKy/+x3/djYHXWba7HpEu0dR3ugQP\nMlr4zrhd9xKZ0KZKiYmtJH+ak4OM4L3FbT0owUZPyjLSlhMtJVcoRp5CJsjAMBUG\nSvD8RX+T01wzox/Qb+lnnNnOlaWpqu8eoOenybxKp1a9ULzIVvN/LAcc+14vioFq\n2swRWtmocBAs8QR9n4uvbpiYvS8eYueDCWMM4fvFfBhaDZ3N9IbtySh3SpFdQDhw\nYbjM2rxXiyLGxB4Bol7QTv4zHif7Zt89FReT/NBy4rzaskDJY5L6xmY=\n-----END CERTIFICATE-----\n", "private_key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmG\ndtcGbg/1CGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKn\nabIRuGvBKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpid\ntnKX/a+50GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+py\nFxIXjbEIdZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pE\ewooaeO2izNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABAoIBACbhTYXBZYKmYPCb\nHBR1IBlCQA2nLGf0qRuJNJZg5iEzXows/6tc8YymZkQE7nolapWsQ+upk2y5Xdp/\naxiuprIs9JzkYK8Ox0r+dlwCG1kSW+UAbX0bQ/qUqlsTvU6muVuMP8vZYHxJ3wmb\n+ufRBKztPTQ/rYWaYQcgC0RWI20HTFBMxlTAyNxYNWzX7RKFkGVVyB9RsAtmcc8g\n+j4OdosbfNoJPS0HeIfNpAznDfHKdxDk2Yc1tV6RHBrC1ynyLE9+TaflIAdo2MVv\nKLMLq51GqYKtgJFIlBRPQqKoyXdz3fGvXrTkf/WY9QNq0J1Vk5ERePZ54mN8iZB7\n9lwy/AkCgYEA6FXzosxswaJ2wQLeoYc7ceaweX/SwTvxHgXzRyJIIT0eJWgx13Wo\n/WA3Iziimsjf6qE+SI/8laxPp2A86VMaIt3Z3mJN/CqSVGw8LK2AQst+OwdPyDMu\niacE8lj/IFGC8mwNUAb9CzGU3JpU4PxxGFjS/eMtGeRXCWkK4NE+G08CgYEA1Kp9\nN2JrVlqUz+gAX+LPmE9OEMAS9WQSQsfCHGogIFDGGcNf7+uwBM7GAaSJIP01zcoe\nVAgWdzXCv3FLhsaZoJ6RyLOLay5phbu1iaTr4UNYm5WtYTzMzqh8l1+MFFDl9xDB\nvULuCIIrglM5MeS/qnSg1uMoH2oVPj9TVst/ir8CgYEAxrI7Ws9Zc4Bt70N1As+U\nlySjaEVZCMkqvHJ6TCuVZFfQoE0r0whdLdRLU2PsLFP+q7qaeZQqgBaNSKeVcDYR\n9B+nY/jOmQoPewPVsp/vQTCnE/R81spu0mp0YI6cIheT1Z9zAy322svcc43JaWB7\nmEbeqyLOP4Z4qSOcmghZBSECgYACvR9Xs0DGn+wCsW4vze/2ei77MD4OQvepPIFX\ndFZtlBy5ADcgE9z0cuVB6CiL8DbdK5kwY9pGNr8HUCI03iHkW6Zs+0L0YmihfEVe\nPG19PSzK9CaDdhD9KFZSbLyVFmWfxOt50H7YRTTiPMgjyFpfi5j2q348yVT0tEQS\nfhRqaQKBgAcWPokmJ7EbYQGeMbS7HC8eWO/RyamlnSffdCdSc7ue3zdVJxpAkQ8W\nqu80pEIF6raIQfAf8MXiiZ7auFOSnHQTXUbhCpvDLKi0Mwq3G8Pl07l+2s6dQG6T\nlv6XTQaMyf6n1yjzL+fzDrH3qXMxHMO/b13EePXpDMpY7HQpoLDi\n-----END RSA PRIVATE KEY-----\n"}'
 ```
 {: pre}
 
@@ -8482,10 +8478,10 @@ ibmcloud cis authenticated-origin-pull-certificate-delete DNS_DOMAIN_ID CERT_ID 
 #### Examples
 {: #delete-authenticated-origin-pull-certificate-examples}
 
-Delete authenticated origin pull certificate `5a7805061c76ada191ed06f989cc3dac` on zone level for domain `31984fea73a15b45779fa0df4ef62f9b` .
+Delete authenticated origin pull certificate on zone level for domain.
 
 ```sh
-ibmcloud cis authenticated-origin-pull-certificate-delete 31984fea73a15b45779fa0df4ef62f9b 5a7805061c76ada191ed06f989cc3dac -i "cis-demo"
+ibmcloud cis authenticated-origin-pull-certificate-delete DNS_DOMAIN_ID CERT_ID
 ```
 {: pre}
 
@@ -8515,10 +8511,10 @@ ibmcloud cis alert-policy list [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #list-alert-policies-examples}
 
-List all policies for instance `cis-demo`
+List all policies for instance.
 
 ```sh
-ibmcloud cis alert-policy list -i "cis-demo"
+ibmcloud cis alert-policy list
 ```
 {: pre}
 
@@ -8546,10 +8542,10 @@ ibmcloud cis alert-policy get POLICY_ID [-i, --instance INSTANCE] [--output FORM
 #### Examples
 {: #show-alert-policy-examples}
 
-Show the details of the alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Show the details of the alert policy.
 
 ```sh
-ibmcloud cis alert-policy get a2633e68-1a64-2512-a321-b64a17c7db7a -i "cis-demo"
+ibmcloud cis alert-policy get POLICY_ID
 ```
 {: pre}
 
@@ -8589,10 +8585,10 @@ ibmcloud cis alert-policy ddos-attack-l7-alert-create --name NAME (--emails EMAI
 #### Examples
 {: #create-ddos-attack-l7-alert-examples}
 
-Create a DDoS attack alert policy for instance `cis-demo`.
+Create a DDoS attack alert policy.
 
 ```sh
-ibmcloud cis alert-policy ddos-attack-l7-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy ddos-attack-l7-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -8632,10 +8628,10 @@ ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name NAME (--emails E
 #### Examples
 {: #create-ddos-attack-l3-l4-alert-examples}
 
-Create a DDoS L3/L4 attack alert policy for instance `cis-demo`.
+Create a DDoS L3/L4 attack alert policy.
 
 ```sh
-ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -8675,10 +8671,10 @@ ibmcloud cis alert-policy failing-logpush-job-alert-create --name NAME (--emails
 #### Examples
 {: #create-failing-logpush-job-alert-examples}
 
-Create a failing logpush job disabled alert policy for instance `cis-demo`.
+Create a failing logpush job disabled alert policy.
 
 ```sh
-ibmcloud cis alert-policy failing-logpush-job-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy failing-logpush-job-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -8727,10 +8723,10 @@ ibmcloud cis alert-policy pool-toggle-alert-create --name NAME (--emails EMAILS 
 #### Examples
 {: #create-pool-toggle-alert-examples}
 
-Create a pool toggle alert policy for instance `cis-demo`.
+Create a pool toggle alert policy.
 
 ```sh
-ibmcloud cis alert-policy pool-toggle-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --trigger-condition enabled --include-future-pools true -i "cis-demo"
+ibmcloud cis alert-policy pool-toggle-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --trigger-condition enabled --include-future-pools true
 ```
 {: pre}
 
@@ -8776,10 +8772,10 @@ ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMA
 #### Examples
 {: #firewall-events-alert-examples}
 
-Create a firewall-events alert for instance `cis-demo`.
+Create a firewall-events alert.
 
 ```sh
-ibmcloud cis alert-policy firewall-events-alert-create --name test1 --emails test1@cn.ibm.com --enabled true  --domains d2633e61-1b61-2512-1321-b61a17c3db7e --service waf,ratelimit -i "cis-demo"
+ibmcloud cis alert-policy firewall-events-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --domains d2633e61-1b61-2512-1321-b61a17c3db7e --service waf,ratelimit
 ```
 {: pre}
 
@@ -8822,10 +8818,10 @@ ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated
 #### Examples
 {: #certificate-alert-examples}
 
-Create a certificate alert for instance `cis-demo`.
+Create a certificate alert.
 
 ```sh
-ibmcloud cis alert-policy certificate-alert-create --type universal --name test1 --emails test1@cn.ibm.com --enabled true -i "cis-demo"
+ibmcloud cis alert-policy certificate-alert-create --type universal --name test1 --emails test1@cn.ibm.com --enabled true
 ```
 {: pre}
 
@@ -8877,10 +8873,10 @@ ibmcloud cis alert-policy glb-healthcheck-alert-create --name NAME (--emails EMA
 #### Examples
 {: #create-glb-healthcheck-alert-examples}
 
-Create a glb healthcheck alert policy for instance `cis-demo`.
+Create a glb healthcheck alert policy.
 
 ```sh
-ibmcloud cis alert-policy glb-healthcheck-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --include-future-pools true -i "cis-demo"
+ibmcloud cis alert-policy glb-healthcheck-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --include-future-pools true
 ```
 {: pre}
 
@@ -8921,10 +8917,10 @@ ibmcloud cis alert-policy web-analytics-alert-create --name NAME (--emails EMAIL
 #### Examples
 {: #create-web-analytics-alert-examples}
 
-Create a web metrics report alert policy for instance `cis-demo`.
+Create a web metrics report alert policy.
 
 ```sh
-ibmcloud cis alert-policy web-analytics-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy web-analytics-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -8970,10 +8966,10 @@ ibmcloud cis alert-policy maintenance-event-alert-create --name NAME (--emails E
 #### Examples
 {: #create-maintenance-event-alert-examples}
 
-Create a maintenance event alert policy for instance `cis-demo`.
+Create a maintenance event alert policy.
 
 ```sh
-ibmcloud cis alert-policy maintenance-event-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --event-type  scheduled,changed,canceled --airport-code IAD,AUS  --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy maintenance-event-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --event-type scheduled,changed,canceled --airport-code IAD,AUS --enabled true
 ```
 {: pre}
 
@@ -9016,10 +9012,10 @@ ibmcloud cis alert-policy ddos-attack-l7-alert-update POLICY_ID [--name NAME] [-
 #### Examples
 {: #update-ddos-attack-l7-alert-examples}
 
-Update a DDoS attack alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a DDoS attack alert policy.
 
 ```sh
-ibmcloud cis alert-policy ddos-attack-l7-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy ddos-attack-l7-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -9062,10 +9058,10 @@ ibmcloud cis alert-policy ddos-attack-l3-l4-alert-update POLICY_ID [--name NAME]
 #### Examples
 {: #update-ddos-attack-l3-l4-alert-examples}
 
-Update a DDoS attack alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a DDoS attack alert policy.
 
 ```sh
-ibmcloud cis alert-policy ddos-attack-l3-l4-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy ddos-attack-l3-l4-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -9109,10 +9105,10 @@ ibmcloud cis alert-policy failing-logpush-job-alert-update POLICY_ID [--name NAM
 #### Examples
 {: #update-failing-logpush-job-alert-examples}
 
-Update a failing logpush job alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a failing logpush job alert policy.
 
 ```sh
-ibmcloud cis alert-policy failing-logpush-job-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy failing-logpush-job-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -9165,10 +9161,10 @@ ibmcloud cis alert-policy pool-toggle-alert-update POLICY_ID --name NAME (--emai
 #### Examples
 {: #update-pool-toggle-alert-examples}
 
-Update a pool toggle alert policy for instance `cis-demo`.
+Update a pool toggle alert policy.
 
 ```sh
-ibmcloud cis alert-policy pool-toggle-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --enabled true --pools all --trigger-condition enabled --include-future-pools true -i "cis-demo"
+ibmcloud cis alert-policy pool-toggle-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --enabled true --pools all --trigger-condition enabled --include-future-pools true
 ```
 {: pre}
 
@@ -9220,10 +9216,10 @@ ibmcloud cis alert-policy firewall-events-alert-update POLICY_ID [--name NAME] [
 #### Examples
 {: #update-firewall-events-alert-examples}
 
-Update a firewall-events-alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a firewall-events-alert policy.
 
 ```sh
-ibmcloud cis alert-policy firewall-events-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --domains d2633e61-1b61-2512-1321-b61a17c3db7e  -i "cis-demo"
+ibmcloud cis alert-policy firewall-events-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --domains d2633e61-1b61-2512-1321-b61a17c3db7e
 ```
 {: pre}
 
@@ -9266,10 +9262,10 @@ ibmcloud cis alert-policy certificate-alert-update POLICY_ID [--name NAME] [--em
 #### Examples
 {: #update-certificate-alert-examples}
 
-Update a certificate alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a certificate alert policy.
 
 ```sh
-ibmcloud cis alert-policy certificate-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy certificate-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -9324,10 +9320,10 @@ ibmcloud cis alert-policy glb-healthcheck-alert-update POLICY_ID [--name NAME] [
 #### Examples
 {: #update-glb-healthcheck-alert-examples}
 
-Update a certificate alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a certificate alert policy.
 
 ```sh
-ibmcloud cis alert-policy glb-healthcheck-alert-update  a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --enabled true --pools all --include-future-pools true -i "cis-demo"
+ibmcloud cis alert-policy glb-healthcheck-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --enabled true --pools all --include-future-pools true
 ```
 {: pre}
 
@@ -9370,10 +9366,10 @@ ibmcloud cis alert-policy web-analytics-alert-update POLICY_ID [--name NAME] [--
 #### Examples
 {: #update-web-analytics-alert-examples}
 
-Update a web metric report alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a web metric report alert policy.
 
 ```sh
-ibmcloud cis alert-policy web-analytics-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true  -i "cis-demo"
+ibmcloud cis alert-policy web-analytics-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
 ```
 {: pre}
 
@@ -9422,10 +9418,10 @@ ibmcloud cis alert-policy maintenance-event-alert-update POLICY_ID [--name NAME]
 #### Examples
 {: #update-maintenance-event-alert-examples}
 
-Update a maintenance event alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Update a maintenance event alert policy.
 
 ```sh
-ibmcloud cis alert-policy maintenance-event-alert-update a2633e68-1a64-2512-a321-b64a17c7db7a --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --event-type  scheduled,changed,canceled --airport-code IAD,AUS -i "cis-demo"
+ibmcloud cis alert-policy maintenance-event-alert-update POLICY_ID --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --event-type scheduled,changed,canceled --airport-code IAD,AUS
 ```
 {: pre}
 
@@ -9453,10 +9449,10 @@ cis alert-policy delete POLICY_ID [-i, --instance INSTANCE] [-f, --force]
 #### Examples
 {: #delete-alert-policy-examples}
 
-Delete an alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Delete an alert policy.
 
 ```sh
-ibmcloud cis alert-policy delete  a2633e68-1a64-2512-a321-b64a17c7db7a -f -i "cis-demo"
+ibmcloud cis alert-policy delete POLICY_ID -f
 ```
 {: pre}
 
@@ -9484,10 +9480,10 @@ cis alert-policy test POLICY_ID [-i, --instance INSTANCE] [-f, --force]
 #### Examples
 {: #test-alert-policy-examples}
 
-Send a test notification for an alert policy `a2633e68-1a64-2512-a321-b64a17c7db7a`.
+Send a test notification for an alert policy.
 
 ```sh
-ibmcloud cis alert-policy test a2633e68-1a64-2512-a321-b64a17c7db7a -f -i "cis-demo"
+ibmcloud cis alert-policy test POLICY_ID -f
 ```
 {: pre}
 
@@ -9515,10 +9511,10 @@ ibmcloud cis alert-webhooks [-i, --instance INSTANCE] [--output FORMAT]
 #### Examples
 {: #list-alert-webhooks-examples}
 
-List all webhooks for instance `cis-demo`
+List all webhooks for instance.
 
 ```sh
-ibmcloud cis alert-webhooks -i "cis-demo"
+ibmcloud cis alert-webhooks
 ```
 {: pre}
 
@@ -9546,10 +9542,10 @@ ibmcloud cis alert-webhook WEBHOOK_ID [-i, --instance INSTANCE] [--output FORMAT
 #### Examples
 {: #show-alert-webhook-examples}
 
-Show the details of the alert webhook `b2633e68-9a64-4519-b361-a64a67c8db8e`.
+Show the details of the alert webhook.
 
 ```sh
-ibmcloud cis alert-webhook b2633e68-9a64-4519-b361-a64a67c8db8e -i "cis-demo"
+ibmcloud cis alert-webhook WEBHOOK_ID
 ```
 {: pre}
 
@@ -9583,10 +9579,10 @@ ibmcloud cis alert-webhook-create --name NAME --url URL [--secret SECRET] [-i, -
 #### Examples
 {: #create-alert-webhook-examples}
 
-Create an alert webhook for instance `cis-demo`.
+Create an alert webhook.
 
 ```sh
-ibmcloud cis alert-webhook-create --name testwebhook --url https://hooks.slack.com/services/Ds3fdBFbV/1234568 --secret 007  -i "cis-demo"
+ibmcloud cis alert-webhook-create --name testwebhook --url https://hooks.slack.com/services/Ds3fdBFbV/1234568 --secret 007
 ```
 {: pre}
 
@@ -9623,10 +9619,10 @@ cis alert-webhook-update WEBHOOK_ID [--name NAME] [--url URL] [--secret SECRET] 
 #### Examples
 {: #update-alert-webhook-examples}
 
-Update an alert webhook `b2633e68-9a64-4519-b361-a64a67c8db8e`.
+Update an alert webhook.
 
 ```sh
-ibmcloud cis alert-webhook-update b2633e68-9a64-4519-b361-a64a67c8db8e --name testwebhook --url https://hooks.slack.com/services/Ds3fdBFbV/1234568 -i "cis-demo"
+ibmcloud cis alert-webhook-update WEBHOOK_ID --name testwebhook --url https://hooks.slack.com/services/Ds3fdBFbV/1234568
 ```
 {: pre}
 
@@ -9654,10 +9650,10 @@ ibmcloud cis alert-webhook-delete WEBHOOK_ID [-i, --instance INSTANCE] [-f, --fo
 #### Examples
 {: #delete-alert-webhook-examples}
 
-Delete an alert webhook `b2633e68-9a64-4519-b361-a64a67c8db8e`.
+Delete an alert webhook.
 
 ```sh
-ibmcloud cis alert-webhook-delete  b2633e68-9a64-4519-b361-a64a67c8db8e -f -i "cis-demo"
+ibmcloud cis alert-webhook-delete WEBHOOK_ID -f
 ```
 {: pre}
 
@@ -9690,10 +9686,10 @@ ibmcloud cis advanced-rate-limiting rules DNS_DOMAIN_ID [-i, --instance INSTANCE
 #### Examples
 {: #list-rules-examples}
 
-List all advanced rate limiting rules for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+List all advanced rate limiting rules for domain.
 
 ```sh
-ibmcloud cis advanced-rate-limiting rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis advanced-rate-limiting rules DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -9724,10 +9720,10 @@ ibmcloud cis advanced-rate-limiting rule DNS_DOMAIN_ID RULE_ID [-i, --instance I
 #### Examples
 {: #show-rule-examples}
 
-Show a rule `c2e184081120413c86c3ab7e14069605` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+Show a rule for domain.
 
 ```sh
-ibmcloud cis advanced-rate-limiting rule 31984fea73a15b45779fa0df4ef62f9b  c2e184081120413c86c3ab7e14069605 -i "cis-demo"
+ibmcloud cis advanced-rate-limiting rule DNS_DOMAIN_ID RULE_ID
 ```
 {: pre}
 
@@ -9837,7 +9833,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
 Create an advanced rate limiting rule for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis advanced-rate-limiting rule-create 31984fea73a15b45779fa0df4ef62f9b --name rule-name --match "(http.request.method eq \"POST\")" --action log --same-characteristics ip,ip_nat --requests 100 --period 10 -i "cis-demo"
+ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name rule-name --match "(http.request.method eq \"POST\")" --action log --same-characteristics ip,ip_nat --requests 100 --period 10
 ```
 {: pre}
 
@@ -9951,7 +9947,7 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
 Update an advanced rate limiting rule `c2e184081120413c86c3ab7e14069605` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis advanced-rate-limiting rule-update 31984fea73a15b45779fa0df4ef62f9b c2e184081120413c86c3ab7e14069605 --name rule-name --match "(http.request.method eq \"POST\")" --action log --same-characteristics ip,ip_nat --requests 100 --period 10 -i "cis-demo"
+ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name rule-name --match "(http.request.method eq \"POST\")" --action log --same-characteristics ip,ip_nat --requests 100 --period 10
 ```
 {: pre}
 
@@ -9988,7 +9984,7 @@ ibmcloud cis advanced-rate-limiting rule-delete DNS_DOMAIN_ID RULE_ID [-f, --for
 Delete a rule `c2e184081120413c86c3ab7e14069605` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis advanced-rate-limiting rule-delete 31984fea73a15b45779fa0df4ef62f9b  c2e184081120413c86c3ab7e14069605 -i "cis-demo"
+ibmcloud cis advanced-rate-limiting rule-delete DNS_DOMAIN_ID RULE_ID
 ```
 {: pre}
 
@@ -10024,7 +10020,7 @@ ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID [-i, --instance INSTANCE] [--out
 List all managed WAF rulesets for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf rulesets 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis managed-waf rulesets DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -10058,7 +10054,7 @@ ibmcloud cis managed-waf ruleset DNS_DOMAIN_ID RULESET_ID [-i, --instance INSTAN
 Show a ruleset `c2e184081120413c86c3ab7e14069605` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf ruleset 31984fea73a15b45779fa0df4ef62f9b  c2e184081120413c86c3ab7e14069605 -i "cis-demo"
+ibmcloud cis managed-waf ruleset DNS_DOMAIN_ID RULESET_ID
 ```
 {: pre}
 
@@ -10092,7 +10088,7 @@ ibmcloud cis managed-waf deployment DNS_DOMAIN_ID RULE_ID [-i, --instance INSTAN
 Show a deployment rule `a2121e23-9e68-1218-a356-b78e23a8ec8a` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf deployment 31984fea73a15b45779fa0df4ef62f9b  a2121e23-9e68-1218-a356-b78e23a8ec8a -i "cis-demo"
+ibmcloud cis managed-waf deployment DNS_DOMAIN_ID RULE_ID
 ```
 {: pre}
 
@@ -10123,7 +10119,7 @@ ibmcloud cis managed-waf deployments DNS_DOMAIN_ID [-i, --instance INSTANCE] [--
 List all deployment rules for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf deployments 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis managed-waf deployments DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -10211,7 +10207,7 @@ ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID (--json @JSON_FI
 Create exception rule for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf deployment-add-exception 31984fea73a15b45779fa0df4ef62f9b --match "(http.cookie eq \"example.com/contact?page=1234\")" --skip-rules 'efb7b8c949ac4650a09736fc376e9aee:5de7edfa648c4d6891dc3e7f84534ffa' --enabled false --logging true -i "cis-demo"
+ibmcloud cis managed-waf deployment-add-exception DNS_DOMAIN_ID --match "(http.cookie eq \"example.com/contact?page=1234\")" --skip-rules 'efb7b8c949ac4650a09736fc376e9aee:5de7edfa648c4d6891dc3e7f84534ffa' --enabled false --logging true
 ```
 {: pre}
 
@@ -10302,7 +10298,7 @@ Sample JSON data:
 Update an exception rule `e7ead74deb2b4c30a91c793f502f5e14` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf deployment-add-exception 31984fea73a15b45779fa0df4ef62f9b e7ead74deb2b4c30a91c793f502f5e14 --match "(http.cookie eq \"example.com/contact?page=1234\")" --skip-rules 'efb7b8c949ac4650a09736fc376e9aee:5de7edfa648c4d6891dc3e7f84534ffa' --enabled false --logging true -i "cis-demo"
+ibmcloud cis managed-waf deployment-update-exception DNS_DOMAIN_ID RULE_ID --match "(http.cookie eq \"example.com/contact?page=1234\")" --skip-rules 'efb7b8c949ac4650a09736fc376e9aee:5de7edfa648c4d6891dc3e7f84534ffa' --enabled false --logging true
 ```
 {: pre}
 
@@ -10407,7 +10403,7 @@ Sample JSON data:
 Deploy a managed ruleset for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf deployment-add-ruleset 31984fea73a15b45779fa0df4ef62f9b efb7b8c949ac4650a09736fc376e9aee --match true --enabled true --override-action block --override-status true --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=managed_challenge --override-rules rule=e3a567afc347477d9702d9047e97d760,action=action,enabled=true -i "cis-demo"
+ibmcloud cis managed-waf deployment-add-ruleset DNS_DOMAIN_ID RULESET_ID --match true --enabled true --override-action block --override-status true --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=managed_challenge --override-rules rule=e3a567afc347477d9702d9047e97d760,action=action,enabled=true
 ```
 {: pre}
 
@@ -10514,7 +10510,7 @@ Sample JSON data:
 Update a managed ruleset rule `1a18a1ea7fc043c68761bc69adcbb11c` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis managed-waf deployment-update-ruleset 31984fea73a15b45779fa0df4ef62f9b 1a18a1ea7fc043c68761bc69adcbb11c --match true --enabled true --override-action block --override-status true --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=managed_challenge --override-rules rule=e3a567afc347477d9702d9047e97d760,action=action,enabled=true -i "cis-demo"
+ibmcloud cis managed-waf deployment-update-ruleset DNS_DOMAIN_ID RULE_ID --match true --enabled true --override-action block --override-status true --override-rules rule=5de7edfa648c4d6891dc3e7f84534ffa,action=managed_challenge --override-rules rule=e3a567afc347477d9702d9047e97d760,action=action,enabled=true
 ```
 {: pre}
 
@@ -10550,7 +10546,7 @@ ibmcloud cis custom-waf rules DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output 
 List all custom rules for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis custom-waf rules 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis custom-waf rules DNS_DOMAIN_ID
 ```
 {: pre}
 
@@ -10584,7 +10580,7 @@ ibmcloud cis custom-waf rule DNS_DOMAIN_ID RULE_ID [-i, --instance INSTANCE] [--
 Show a custom rule `b94632a4cd5a49ed830544d91417a98c` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis custom-waf rule 9343630b9bd5c6e6899834d77f9e50ff  b94632a4cd5a49ed830544d91417a98c -i "cis-demo"
+ibmcloud cis custom-waf rule DNS_DOMAIN_ID RULE_ID
 ```
 {: pre}
 
@@ -10680,7 +10676,7 @@ ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 Create a custom rule for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis custom-waf rule-create 9343630b9bd5c6e6899834d77f9e50ff  --action challenge --description "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
+ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID --action challenge --description "rule 1" --enabled true --match "(http.host eq \"www.example.com\")"
 ```
 {: pre}
 
@@ -10767,7 +10763,7 @@ ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRI
 Update a custom rule `b94632a4cd5a49ed830544d91417a98c` for the domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis custom-waf rule-update 9343630b9bd5c6e6899834d77f9e50ff b94632a4cd5a49ed830544d91417a98c --enabled false --description rule-updateion "rule 1" --enabled true --match "(http.host eq \"www.example.com\")" -i "cis-demo"
+ibmcloud cis custom-waf rule-update DNS_DOMAIN_ID RULE_ID --enabled false --description "rule 1" --match "(http.host eq \"www.example.com\")"
 ```
 {: pre}
 
@@ -10810,7 +10806,7 @@ ibmcloud cis custom-waf rule-order-update DNS_DOMAIN_ID RULE_ID [--before RULE_I
 Put custom rule `4eae81b170f644f795da017001383de7` before rule `2ed2dd160cb745feb415414544d97c70` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis custom-waf rule-order-update 9343630b9bd5c6e6899834d77f9e50ff 4eae81b170f644f795da017001383de7 --before 2ed2dd160cb745feb415414544d97c70 -i "cis-demo"
+ibmcloud cis custom-waf rule-order-update DNS_DOMAIN_ID RULE_ID --before RULE_ID
 ```
 {: pre}
 
@@ -10847,7 +10843,7 @@ ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID [-f, --force] [-i, --i
 Delete custom rule `e9fad806880c4c42bd7ebeec8dcba4e6` for domain `9343630b9bd5c6e6899834d77f9e50ff` under instance `cis-demo`.
 
 ```sh
-ibmcloud cis custom-waf rule-delete  9343630b9bd5c6e6899834d77f9e50ff e9fad806880c4c42bd7ebeec8dcba4e6 -i "cis-demo"
+ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID
 ```
 {: pre}
 
