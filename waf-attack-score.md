@@ -2,9 +2,9 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-11"
+lastupdated: "2026-04-23"
 
-keywords: waf 
+keywords: waf
 
 subcollection: cis
 
@@ -38,7 +38,7 @@ The CIS WAF provides the following attack score fields:
 | WAF Attack Score Class \n `cf.waf.score.class` | String | The attack score class of the current request, based on the WAF attack score. Possible values: `attack`, `likely_attack`, `likely_clean`, and `clean`. | All plans |
 {: caption="Available WAF scores" caption-side="bottom"}
 
-You can use these fields in expressions of [custom rules](/docs/cis?topic=cis-custom-rules-fields-and-expressions) and [rate limiting rules](/docs/cis?topic=cis-custom-rules-fields-and-expressions). WAF Attack Score fields use the `Number` data type and range from `1` to `99`, with the following meanings:
+You can use these fields in expressions of [custom rules](/docs/cis?topic=cis-fields-functions-expressions) and [rate limiting rules](/docs/cis?topic=cis-fields-functions-expressions). WAF Attack Score fields use the `Number` data type and range from `1` to `99`, with the following meanings:
 
 * A score of 1 indicates that the request is very likely malicious.
 * A score of 99 indicates that the request is likely clean.

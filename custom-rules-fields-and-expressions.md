@@ -49,7 +49,7 @@ Each field value can be sourced from different places, such as:
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
 |ip.src.subdivision_1_iso_code|String|GB-ENG|The [`ISO 3166-2`](https://en.wikipedia.org/wiki/ISO_3166-2){: external} code for the first-level region associated with the IP address. When the actual value is not available, this field contains an empty string. To use this field, a CIS Enterprise plan is required.|
 |ip.src.subdivision_2_iso_code|String|GB-SWK|The [`ISO 3166-2`](https://en.wikipedia.org/wiki/ISO_3166-2){: external} code for the second-level region associated with the IP address. When the actual value is not available, this field contains an empty string. To use this field, a CIS Enterprise plan is required.|
-|ip.src.is_in_european_union|Boolean| |For more information, see [ip.src.is_in_european_union](/docs/cis?topic=cis-custom-rules-fields-and-expressions#ip-src-eur). |
+|ip.src.is_in_european_union|Boolean| |For more information, see [ip.src.is_in_european_union](/docs/cis?topic=cis-fields-functions-expressions#ip-src-eur). |
 {: caption="Available fields" caption-side="bottom"}
 
 These standard fields follow the naming convention of the Wireshark display field reference. However, some subtle variations might exist in the preceding example values.

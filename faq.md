@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-06"
+lastupdated: "2026-04-23"
 
 keywords:
 
@@ -283,7 +283,7 @@ These actions allow {{site.data.keyword.cis_short_notm}} to inspect, absorb, and
 {: #ddos-http-protection}
 {: faq}
 
-Yes, you can create a custom rule [override](/docs/cis?topic=cis-custom-rules-fields-and-expressions) and use the expression fields to match against HTTP requests with the `User-Agent` header. There are a variety of [fields](/docs/cis?topic=cis-custom-rules-fields-and-expressions#custom-rule-available-fields) that you can use.
+Yes, you can create a custom rule [override](/docs/cis?topic=cis-fields-functions-expressions) and use the expression fields to match against HTTP requests with the `User-Agent` header. There are a variety of [fields](/docs/cis?topic=cis-fields-functions-expressions#custom-rule-available-fields) that you can use.
 
 You can then adjust the [sensitivity level](/docs/cis?topic=cis-http-ddos&interface=api#sensitivity-level) or [mitigation action](/docs/cis?topic=cis-http-ddos&interface=api#ddos-action).
 
@@ -394,7 +394,7 @@ For outbound traffic control, consider:
 ### What is the CF-Connecting-IP header?
 {: #cf-connecting-ip}
 
-The `CF-Connecting-IP` header provides the original client IP address to the origin web server. CIS adds this header at the edge, and it is included only in requests that are forwarded from the CIS edge to the origin server. 
+The `CF-Connecting-IP` header provides the original client IP address to the origin web server. CIS adds this header at the edge, and it is included only in requests that are forwarded from the CIS edge to the origin server.
 
 ## Troubleshooting and error codes
 {: #troubleshooting-error-codes}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-04-23"
 
 keywords:
 
@@ -16,7 +16,7 @@ subcollection: cis
 {: #http-ddos}
 {: api}
 
-The CIS HTTP DDoS Attack Protection managed ruleset is a set of pre-configured rules that are designed to detect and mitigate known Layer 7 (application-layer) DDoS attack vectors across the CIS global network. 
+The CIS HTTP DDoS Attack Protection managed ruleset is a set of pre-configured rules that are designed to detect and mitigate known Layer 7 (application-layer) DDoS attack vectors across the CIS global network.
 
 Currently, the HTTP DDoS Attack Protection ruleset is only available using the CIS API.
 {: note}
@@ -50,22 +50,22 @@ Currently, you can define account-level overrides for the HTTP DDoS Attack Prote
 {: note}
 
 To adjust the rule behavior, use [ruleset APIs](/apidocs/cis#get-zone-entrypoint-ruleset) with the `ddos_l7` phase.
- 
+
 ## Availability
 {: #http-ddos-availability}
 
 The HTTP DDoS Attack Protection managed ruleset protects CIS customers on all plans and applies to all zones. Customers can configure the ruleset at both the zone level and the account level.
 
-Customers on Enterprise plans can create up to 10 overrides (or up to 10 rules when using the API) with custom [expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=cli) to tailor DDoS protection for different categories of incoming requests.
+Customers on Enterprise plans can create up to 10 overrides (or up to 10 rules when using the API) with custom [expressions](/docs/cis?topic=cis-fields-functions-expressions&interface=cli) to tailor DDoS protection for different categories of incoming requests.
 
 Customers on Standard plans can create one override only and cannot customize the rule expression. In this case, the single override (containing one or more configuration settings) applies to all incoming requests.
 
 ## Parameters
 {: #ddos-parameters}
 
-Configure the HTTP DDoS Attack Protection managed ruleset to change the action that is applied to a given attack or modify the sensitivity level of the detection mechanism. 
+Configure the HTTP DDoS Attack Protection managed ruleset to change the action that is applied to a given attack or modify the sensitivity level of the detection mechanism.
 
-You can [define overrides using the Rulesets API](/docs/cis?topic=cis-third-party-ddos#example-sensitivity-level-api). 
+You can [define overrides using the Rulesets API](/docs/cis?topic=cis-third-party-ddos#example-sensitivity-level-api).
 
 The following parameters are available in the HTTP DDoS Attack Protection managed ruleset:
 
@@ -137,7 +137,7 @@ The HTTP DDoS Attack Protection managed rules are grouped into the following cat
 
 ## Related links
 {: #http-ddos-attack-protection-ruleset}
- 
+
 * [DDoS attack concepts](/docs/cis?topic=cis-ddos-attack-concepts)
 * [Preventing DDoS attacks](/docs/cis?topic=cis-preventing-ddos-attacks)
 * [Responding to DDoS attacks](/docs/cis?topic=cis-responding-to-ddos-attacks)

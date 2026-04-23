@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-04-23"
 
 keywords:
 
@@ -22,7 +22,7 @@ You can create many types of WAF custom rules. However, the number of active rul
 
 The number of active rules per plan is fixed. Currently, you can't purchase more active rules.
 
-Before getting started, it's a good idea to review [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=cli).
+Before getting started, it's a good idea to review [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-functions-expressions&interface=cli).
 {: important}
 
 You can create, update, and delete a custom rule by using the console, CLI, API, or Terraform.

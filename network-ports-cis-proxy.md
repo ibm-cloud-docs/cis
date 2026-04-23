@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-26"
+lastupdated: "2026-04-23"
 
 keywords:
 
@@ -96,4 +96,4 @@ cf.edge.server_port eq 8443
 
 Custom rules are evaluated at the application layer (layer 7) and can be used to enforce port based access controls before requests reach the origin server.
 
-For more information about available fields and expression syntax, see [Custom rules fields and expressions](/docs/cis/build/cis-review-output?topic=cis-custom-rules-fields-and-expressions).
+For more information about available fields and expression syntax, see [Custom rules fields and expressions](/docs/cis/build/cis-review-output?topic=cis-fields-functions-expressions).
