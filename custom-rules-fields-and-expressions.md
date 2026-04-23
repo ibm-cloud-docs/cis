@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-12-05"
+  years: 2026
+lastupdated: "2026-04-23"
 
 subcollection: cis
 
@@ -11,7 +11,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Using fields, functions, and expressions
-{: #custom-rules-fields-and-expressions}
+{: #fields-functions-expressions}
 
 Along with actions, fields and expressions are the building blocks of WAF custom rules. These elements work together to define the criteria for matching a custom rule.
 {: shortdesc}
