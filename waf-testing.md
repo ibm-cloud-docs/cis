@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-09-04"
+  years: 2026
+lastupdated: "2026-04-23"
 
-keywords: waf 
+keywords: waf
 
 subcollection: cis
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up and tuning CIS WAF security 
+# Setting up and tuning CIS WAF security
 {: #waf-configuration}
 
 Cloud Internet Services (CIS) inspects incoming web and API traffic and blocks unwanted requests using predefined rulesets. This topic walks you through the initial steps to configure the Web Application Firewall (WAF) and quickly enable protection against the most common web attacks.
@@ -23,30 +23,30 @@ Cloud Internet Services (CIS) inspects incoming web and API traffic and blocks u
 * Enable all managed rules.
    * [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf): Set paranoia level to 4 (`PL4`) and score threshold to **High** (`High-25 and higher`).
    * [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets): Set the default ruleset (for all signatures) to **Block**.
-* Create a custom rule to block any request with an Attack Score less than or equal to `20`. 
+* Create a custom rule to block any request with an Attack Score less than or equal to `20`.
 
    Expression preview: `(cf.waf.score le 20)`
 
-After testing, you can adjust this configuration to accommodate your application's expected behavior and reduce false positives. 
-  
+After testing, you can adjust this configuration to accommodate your application's expected behavior and reduce false positives.
+
 ## Before you begin
 {: #before-you-begin-waf}
 
 Before testing WAF capabilities, make sure that you have a CIS instance set up in your IBM Cloud account and your domain added to CIS.
 
-## Configuring WAF 
+## Configuring WAF
 {: #waf-process}
 
 Follow these high-level steps to configure WAF for your zones:
 
 1. Deploy the CIS managed ruleset.
 
-   The [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets) protects against Common Vulnerabilities and Exposures (CVEs) and attack vectors using signature-based detection to identify common attacks, with a focus on minimizing false positives. 
-   
+   The [CIS managed ruleset](/docs/cis?topic=cis-managed-rules-overview&interface=ui#managed-rulesets) protects against Common Vulnerabilities and Exposures (CVEs) and attack vectors using signature-based detection to identify common attacks, with a focus on minimizing false positives.
+
    CIS updates these rulesets during emergency releases to respond to high-profile, zero-day threats.
    {: note}
 
-   1. In the IBM Cloud console, open the **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg), then click **Resource list** and expand **Security**. 
+   1. In the IBM Cloud console, open the **Navigation Menu** icon![Navigation Menu icon](../icons/icon_hamburger.svg), then click **Resource list** and expand **Security**.
    1. Click your CIS instance name.
    1. Navigate to **Security > WAF** and make sure that the **CIS Managed Ruleset** Status toggle is enabled.
 
@@ -65,7 +65,7 @@ Follow these high-level steps to configure WAF for your zones:
 
    WAF Attack Score is only available to Standard plan customers.
    {: note}
-   
+
    The WAF Attack Score is a machine-learning layer that complements CIS's managed rulesets, providing additional protection against SQL injection (SQLi), cross-site scripting (XSS), and many remote code execution (RCE) attacks. It helps identify rule bypasses and potentially new, undiscovered attacks.
 
    [Create a custom rule](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui) using the Attack Score field:
@@ -76,10 +76,10 @@ Follow these high-level steps to configure WAF for your zones:
       * When incoming requests match:
 
          | Field | Operator | Value |
-         |:------------| :-----------|:----------| 
+         |:------------| :-----------|:----------|
          | WAF Attack Score | less than or equal to | `20` |
          {: caption="Rule conditions for detecting unverified low-score bot requests" caption-side="bottom"}
- 
+
          Expression Preview: `(cf.waf.score le 20)`
 
       * Choose action: **Block**
@@ -91,14 +91,14 @@ Follow these high-level steps to configure WAF for your zones:
    The Bot Score feature is available only to CIS Enterprise Premier customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt). Standard Next and Enterprise Advanced/Usage plans can use Super Bot Fight Mode, but note that no UI is currently available for configuration.
 
    Create a custom rule using the Bot Score and Verified Bot fields:
-   
+
       Bot scores range from `1–99`. A score below `30` typically indicates automation. The Verified Bot field identifies bots that are transparent about their identity and purpose.
       {: note}
 
       * When incoming requests match:
-      
+
          | Field | Operator | Value | Logic |
-         |:------------| :-----------|:----------|:----------| 
+         |:------------| :-----------|:----------|:----------|
          | Bot Score | less than | `20` | And |
          | Verified Bot | equals | Off |   |
          {: caption="Match conditions for applying a managed challenge to suspected bot traffic" caption-side="bottom"}
@@ -127,22 +127,22 @@ Follow these high-level steps to configure WAF for your zones:
       * Strict first: Start with **paranoia level** = `PL4` and **score threshold** = `High - 25 and higher`. Reduce the score threshold and paranoia level until you achieve a good false positives/true positives rate for your incoming traffic.
       * Permissive first: Start from a more permissive configuration (**paranoia level** = `PL1`, **score threshold** = `Low - 60 and higher`) and increase both parameters to adjust your protection, trying to keep a low number of false positives.
 
-      For more information on configuring the OWASP Core Ruleset, see [Using fields, functions, and expressions](/docs/cis?topic=cis-custom-rules-fields-and-expressions&interface=ui).
-   
+      For more information on configuring the OWASP Core Ruleset, see [Using fields, functions, and expressions](/docs/cis?topic=cis-fields-functions-expressions&interface=ui).
+
 1. Review traffic in security dashboards.
 
    After configuring the WAF, monitor how your settings affect incoming traffic:
 
    * Use [CIS metrics](/docs/cis?group=metrics) to explore traffic patterns, including traffic not blocked by WAF rules. All data provided by traffic detections is available (for example, WAF Attack Score and Bot Score).
-   * Use [Security Events](/docs/cis?topic=cis-using-the-cis-security-events-capability) to review mitigated traffic. 
+   * Use [Security Events](/docs/cis?topic=cis-using-the-cis-security-events-capability) to review mitigated traffic.
    * Enterprise plans can access HTTP requests and security events using [CIS Logpush](/docs/cis?topic=cis-logpush&interface=ui).
 
-## Rule recommendations 
+## Rule recommendations
 {: #rule-recommendations}
 
 CIS doesn't recommend blocking traffic solely based on the WAF Attack Score for all values below `50`, since the _Likely attack_ range (scores between `21` and `50`) tends to have false positives. However, if you choose to block traffic based on this score, you might consider one of the following:
 
-* Use a stricter WAF Attack Score value in your expression. For example, block traffic with a WAF Attack Score below `20` or below `15` (you might need to adjust the exact threshold). 
+* Use a stricter WAF Attack Score value in your expression. For example, block traffic with a WAF Attack Score below `20` or below `15` (you might need to adjust the exact threshold).
 * Combine a higher WAF Attack Score threshold with additional filters when blocking incoming traffic. For example, include a check for a specific URI path in your expression or use bot score as part of your criteria.
 
 ## Next steps

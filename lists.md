@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-07-29"
+  years: 2026
+lastupdated: "2026-04-23"
 
 keywords: lists
 
@@ -96,7 +96,7 @@ The fields that you can use vary according to the list type:
 
 | List type	 | Available fields |
 | ------------ | ------------------- |
-| IP address | Fields with type `IP address` listed in the [Fields reference](/docs/cis?topic=cis-custom-rules-fields-and-expressions#custom-rule-fields) |
+| IP address | Fields with type `IP address` listed in the [Fields reference](/docs/cis?topic=cis-fields-functions-expressions#custom-rule-fields) |
 | Hostname | `http.host` |
 | ASN | `ip.src.asnum` |
 {: caption="Available custom list type" caption-side="bottom"}
