@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-24"
+lastupdated: "2026-04-27"
 
 keywords:
 
@@ -4596,7 +4596,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
 :   The ID of the DNS domain. Required.
 
 `--destination`
-:   Specify a destination where data is pushed. For more information about supported destinations, see [Managing Logpush jobs](docs/cis?topic=cis-logpush&interface=cli).
+:   Specify a destination where data is pushed. For more information about supported destinations, see [Managing Logpush jobs](/docs/cis?topic=cis-logpush&interface=cli).
     - Syntax for Cloud Object Storage Path: `cos://<BUCKET_OBJECT_PATH>?region=<REGION>&instance-id=<IBM_ClOUD_OBJECT_STORAGE_INSTANCE_ID>&ibm_api_key=<API_KEY>'`
       Example: `'cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX'`
       To separate logs in to daily subfolders, use the special string `{DATE}` in the bucket path.
