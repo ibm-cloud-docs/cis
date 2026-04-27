@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-27"
 
 keywords:
 
@@ -264,7 +264,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    | Cloud Object Storage |
    | --------------------- |
-   | `cos`: Information to identify the Cloud Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the COS instance. \n * `ibm_api_key`: An API key for the account where the IBM Cloud Logs instance set up is required. You can use a user API key or a service ID API key. This key generates the bearer token for the Logpush job. To rotate the API key, use the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The customer or the service ID must have the **Object Writer** IAM role on the Cloud Object Storage bucket. \n |
+   | `cos`: Information to identify the Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the COS instance. \n * `ibm_api_key`: An API key for the account where the IBM Cloud Logs instance set up is required. You can use a user API key or a service ID API key. This key generates the bearer token for the Logpush job. To rotate the API key, use the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The customer or the service ID must have the **Object Writer** IAM role on the Object Storage bucket. \n |
    {: caption="Cloud Object Storage destination" caption-side="bottom"}
    {: #pl-table-2}
    {: tab-title="Cloud Object Storage"}
