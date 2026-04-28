@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-04-28"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -23,7 +23,7 @@ In this change log, you can learn about the latest changes, improvements, and up
 {: #cis-dec-0325}
 
 Custom and CIS-managed list support
-:    You can now create and manage custom lists or use CIS-managed lists through the API. You can list all [managed](/apidocs/cis#get-managed-lists) and [custom lists](/apidocs/cis#get-custom-lists), [create](/apidocs/cis#create-custom-lists) a custom list, [retrieve](/apidocs/cis#get-custom-list) or [update](/apidocs/cis#update-custom-list) an existing custom list, or [delete](/apidocs/cis#delete-custom-list) one you no longer need. List items can also be managed with the API: you can [get](/apidocs/cis#get-list-items), [create](/apidocs/cis#create-list-items), [update](/apidocs/cis#update-list-items), or [delete](/apidocs/cis#delete-list-items) individual items, update all items at once, [retrieve](/apidocs/cis#get-list-item) a single list item, or [check the status](/apidocs/cis#get-operation-status) of a list operation. 
+:    You can now create and manage custom lists or use CIS-managed lists through the API. You can list all [managed](/apidocs/cis#get-managed-lists) and [custom lists](/apidocs/cis#get-custom-lists), [create](/apidocs/cis#create-custom-lists) a custom list, [retrieve](/apidocs/cis#get-custom-list) or [update](/apidocs/cis#update-custom-list) an existing custom list, or [delete](/apidocs/cis#delete-custom-list) one you no longer need. List items can also be managed with the API: you can [get](/apidocs/cis#get-list-items), [create](/apidocs/cis#create-list-items), [update](/apidocs/cis#update-list-items), or [delete](/apidocs/cis#delete-list-items) individual items, update all items at once, [retrieve](/apidocs/cis#get-list-item) a single list item, or [check the status](/apidocs/cis#get-operation-status) of a list operation.
 
 Learn more about [managed and custom lists](/docs/cis?group=lists) and explore the available API methods to start integrating these capabilities into your workflow.
 
