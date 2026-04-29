@@ -33,5 +33,5 @@ Range applications are only available to Enterprise customers for an additional 
 ## Related links
 {: #range-application-information}
 
-[Working with Range applications](/docs/cis?group=range)
-[About Range applications](/docs/cis?topic=cis-about-cis-range)
+* [Working with Range applications](/docs/cis?group=range)
+* [About Range applications](/docs/cis?topic=cis-about-cis-range)
