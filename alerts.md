@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-04-29"
 
 keywords:
 
@@ -263,7 +263,7 @@ Security alerts and advanced security alerts use the same command. When you crea
 To create an alert policy for certificate events from the CLI, run the following command:
 
 ```sh
-ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated) --name NAME (--emails EMAILS | --webhooks WEBHOOKS) --enabled (true | false) [--description DESCRIPTION] [-i, --instance INSTANCE] [--output FORMAT]
+ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated | custom) --name NAME --emails EMAIL [--emails EMAIL ...] [--webhooks WEBHOOK_ID ...] [--enabled (true | false)] [--include-future-certificates (true | false)] [--certificates CERT_ID ...] [-i, --instance INSTANCE] [-o, --output FORMAT]
 ```
 {: pre}
 

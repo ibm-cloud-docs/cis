@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-04-29"
 
 keywords:
 
@@ -172,7 +172,7 @@ CLI examples for the supported destinations:
    :   Example
 
        ```sh
-       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination "ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=xxxxxxxx" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination "ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=xxxxxxxx" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high --instance 1a9174b6-0106-417a-844b-c8eb43a72f63
        ```
        {: pre}
 
@@ -188,7 +188,7 @@ CLI examples for the supported destinations:
    :   Example
 
        ```sh
-       ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination https://qradar.example.com:8088 --name logpushJobQRadar --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+       ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination https://qradar.example.com:8088 --name logpushJobQRadar --enable true --fields RayID --dataset http_requests --frequency high --instance 1a9174b6-0106-417a-844b-c8eb43a72f63
        ```
        {: pre}
 
@@ -196,7 +196,7 @@ CLI examples for the supported destinations:
    :   Example
 
        ```sh
-       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination splunk://cis-analytics.ibm.com:8088/services/collector/raw?header_Authorization=Splunk%20e6d94e8c-5792-4ad1-be3c-29bcaee0197d&channel=f1aafa4f-684f-4c29-a040-7fe184b03712&sourcetype=cloudflare:json&insecure-skip-verify=false --name logpushJobSplunk --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination splunk://cis-analytics.ibm.com:8088/services/collector/raw?header_Authorization=Splunk%20e6d94e8c-5792-4ad1-be3c-29bcaee0197d&channel=f1aafa4f-684f-4c29-a040-7fe184b03712&sourcetype=cloudflare:json&insecure-skip-verify=false --name logpushJobSplunk --enable true --fields RayID --dataset http_requests --frequency high --instance 1a9174b6-0106-417a-844b-c8eb43a72f63
        ```
        {: pre}
 
@@ -205,7 +205,7 @@ CLI examples for the supported destinations:
    :   Example
 
        ```sh
-       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.example.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high -i 1a9174b6-0106-417a-844b-c8eb43a72f63
+       ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination https://logs.example.com?header_Authorization=a64VuywesDu5Aq" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high --instance 1a9174b6-0106-417a-844b-c8eb43a72f63
        ```
        {: pre}
 

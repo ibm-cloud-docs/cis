@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-04-29"
 
 keywords:
 
@@ -75,31 +75,7 @@ If you require a specific SameSite configuration in your session affinity cookie
 For example:
 
 ```sh
-ibmcloud cis glb-update fc72db47cee8290eaef292cda6e1619a 12b68758126546e0d129c7bbadfa87f0  -s '{
-        "name": "lbtest-updated.cindyuitest01.alan501.cns-foo.com",
-        "fallback_pool": "c7e717109b7cf9240dd10fffc0bd146f",
-        "default_pools": [
-                "c7e717109b7cf9240dd10fffc0bd146f"
-        ],
-        "description": "Load Balancer for www.example.com",
-        "ttl": 30,
-        "region_pools": {
-                "WNAM": [
-                        "c7e717109b7cf9240dd10fffc0bd146f"
-                ],
-                "ENAM": [
-                        "c7e717109b7cf9240dd10fffc0bd146f"
-                ]
-        },
-        "proxied": true,
-        "enabled": true,
-        "session_affinity": "ip_cookie",
-        "session_affinity_attributes": {
-                "samesite": "None",
-                "secure": "Always",
-                "drain_duration": 100
-        }
-}'
+ibmcloud cis glb-update fc72db47cee8290eaef292cda6e1619a 12b68758126546e0d129c7bbadfa87f0 --json '{"session_affinity":"cookie","session_affinity_ttl":1800,"session_affinity_attributes":{"samesite":"Auto","secure":"Auto"}}'
 ```
 {: codeblock}
 
