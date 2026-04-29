@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-28"
+lastupdated: "2026-04-29"
 
 keywords:
 
@@ -935,12 +935,12 @@ ibmcloud cis custom-lists list-create (--json @JSON_FILE | JSON_STRING) [-i, --i
 {: #create-custom-lists-example}
 
 ```sh
-ibmcloud cis custom-lists list-create --kind ip --name iplistone
+ibmcloud cis custom-lists list-create --kind ip --name iplistone --instance INSTANCE
 ```
 {: pre}
 
 ```sh
-ibmcloud cis custom-lists list-create --json @example.json
+ibmcloud cis custom-lists list-create --json @example.json --instance INSTANCE
 ```
 {: pre}
 
@@ -2973,9 +2973,9 @@ Sample JSON data:
 Create firewall rules.
 
 ```sh
-ibmcloud cis firewall-create -t access-rules --json '{"mode": "block", "notes": "This rule is added because of event X that occurred on date xyz", "configuration": {"target": "ip", "value": "127.0.0.1"}}'
-ibmcloud cis firewall-create -t ua-rules -d DNS_DOMAIN_ID --json '{"mode": "block", "configuration": {"target": "ua", "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"}}'
-ibmcloud cis firewall-create -t lockdowns -d DNS_DOMAIN_ID --json '{"urls": ["api.mysite.com/some/endpoint*"], "configurations": [{"target": "ip", "value": "127.0.0.1"}, {"target": "ip_range", "value": "2.2.2.0/24"}]}'
+ibmcloud cis firewall-create --type access-rules --json '{"mode": "block", "notes": "This rule is added because of event X that occurred on date xyz", "configuration": {"target": "ip", "value": "127.0.0.1"}}' --instance INSTANCE
+ibmcloud cis firewall-create --type ua-rules --domain DNS_DOMAIN_ID --json '{"mode": "block", "configuration": {"target": "ua", "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"}}' --instance INSTANCE
+ibmcloud cis firewall-create --type lockdowns --domain DNS_DOMAIN_ID --json '{"urls": ["api.mysite.com/some/endpoint*"], "configurations": [{"target": "ip", "value": "127.0.0.1"}, {"target": "ip_range", "value": "2.2.2.0/24"}]}' --instance INSTANCE
 ```
 {: codeblock}
 
@@ -3142,9 +3142,9 @@ ibmcloud cis firewalls (-t, --type Type) [-d, --domain DNS_DOMAIN_ID] [--page PA
 List firewall rules.
 
 ```sh
-ibmcloud cis firewalls -t access-rules
-ibmcloud cis firewalls -t ua-rules -d DNS_DOMAIN_ID
-ibmcloud cis firewalls -t lockdowns -d DNS_DOMAIN_ID
+ibmcloud cis firewalls --type access-rules --instance INSTANCE
+ibmcloud cis firewalls --type ua-rules --domain DNS_DOMAIN_ID --instance INSTANCE
+ibmcloud cis firewalls --type lockdowns --domain DNS_DOMAIN_ID --instance INSTANCE
 ```
 {: codeblock}
 
@@ -4406,7 +4406,7 @@ ibmcloud cis glb-events [-s, --since START_DATE] [-u, --until END_DATE] [--origi
 Get glb events.
 
 ```sh
-ibmcloud cis glb-events -s "2020-05-20" -u "2020-05-22" --origin-name "dal09" --origin-healthy true
+ibmcloud cis glb-events --since "2020-05-20" --until "2020-05-22" --origin-name "dal09" --origin-healthy true --instance INSTANCE
 ```
 {: pre}
 
@@ -4939,7 +4939,7 @@ cis managed-lists [-i, --instance INSTANCE] [--output FORMAT]
 {: #list-managed-lists-example}
 
 ```sh
-ibmcloud cis managed-lists --output json
+ibmcloud cis managed-lists --output json --instance INSTANCE
 ```
 {: pre}
 
@@ -6847,7 +6847,7 @@ ibmcloud cis instance-delete INSTANCE [-f, --force]
 Delete CIS instance `cis-demo`
 
 ```sh
-ibmcloud cis instance-delete cis-demo -f
+ibmcloud cis instance-delete cis-demo --force
 ```
 {: pre}
 
@@ -7020,7 +7020,7 @@ ibmcloud cis routing-update DNS_DOMAIN_ID (--smart-routing (on|off) | --tiered-c
 Update routing settings for domain `372e67954025e0ba6aaa6d586b9e0b60`.
 
 ```sh
-ibmcloud cis routing-update 31984fea73a15b45779fa0df4ef62f9b --smart-routing on --tiered-caching on -i "cis-demo"
+ibmcloud cis routing-update 31984fea73a15b45779fa0df4ef62f9b --smart-routing on --instance "cis-demo"
 ```
 {: pre}
 
@@ -7056,7 +7056,7 @@ ibmcloud cis routing-analytics DNS_DOMAIN_ID [--colos] [-i, --instance INSTANCE]
 Get analytics of smart-routing latency for domain `372e67954025e0ba6aaa6d586b9e0b60`.
 
 ```sh
-ibmcloud cis routing-analytics 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis routing-analytics 31984fea73a15b45779fa0df4ef62f9b --instance "cis-demo"
 ```
 {: pre}
 
@@ -7185,7 +7185,7 @@ ibmcloud cis tls-settings DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORM
 Get TLS settings for domain `372e67954025e0ba6aaa6d586b9e0b60`.
 
 ```sh
-ibmcloud cis tls-settings 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis tls-settings 31984fea73a15b45779fa0df4ef62f9b --instance "cis-demo"
 ```
 {: pre}
 
@@ -7233,7 +7233,7 @@ ibmcloud cis tls-settings-update DNS_DOMAIN_ID [--mode MODE] [--universal (true|
 Update TLS settings for the domain `372e67954025e0ba6aaa6d586b9e0b60`.
 
 ```sh
-ibmcloud cis tls-settings-update 31984fea73a15b45779fa0df4ef62f9b --mode end-to-end-ca-signed --tls-1-2-only on -i "cis-demo"
+ibmcloud cis tls-settings-update 31984fea73a15b45779fa0df4ef62f9b --mode end-to-end-ca-signed --tls-1-2-only on --instance "cis-demo"
 ```
 {: pre}
 
@@ -7267,7 +7267,7 @@ ibmcloud cis certificates DNS_DOMAIN_ID [--keyless] [-i, --instance INSTANCE] [-
 List all certificates for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis certificates 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis certificates 31984fea73a15b45779fa0df4ef62f9b --instance "cis-demo"
 ```
 {: pre}
 
@@ -7307,9 +7307,9 @@ ibmcloud cis certificate DNS_DOMAIN_ID (--cert-id CERT_ID | --universal) [--keyl
 Show details for a certificate.
 
 ```sh
-ibmcloud cis certificate 31984fea73a15b45779fa0df4ef62f9b --universal -i "cis-demo"
-ibmcloud cis certificate 31984fea73a15b45779fa0df4ef62f9b --cert-id 5a7805061c76ada191ed06f989cc3dac -i "cis-demo"
-ibmcloud cis certificate 31984fea73a15b45779fa0df4ef62f9b --cert-id 5a7805061c76ada191ed06f989cc3dac --keyless -i "cis-demo"
+ibmcloud cis certificate 31984fea73a15b45779fa0df4ef62f9b --universal --instance "cis-demo"
+ibmcloud cis certificate 31984fea73a15b45779fa0df4ef62f9b --cert-id 5a7805061c76ada191ed06f989cc3dac --instance "cis-demo"
+ibmcloud cis certificate 31984fea73a15b45779fa0df4ef62f9b --cert-id 5a7805061c76ada191ed06f989cc3dac --keyless --instance "cis-demo"
 ```
 {: codeblock}
 
@@ -7343,7 +7343,7 @@ ibmcloud cis certificate-order DNS_DOMAIN_ID [--hostnames host1 --hostnames host
 Order a certificate pack for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis certificate-order 31984fea73a15b45779fa0df4ef62f9b --hostnames www.example.com --hostnames api.example.com -i "cis-demo"
+ibmcloud cis certificate-order 31984fea73a15b45779fa0df4ef62f9b --hostnames www.example.com --hostnames api.example.com --instance "cis-demo"
 ```
 {: pre}
 
@@ -8588,7 +8588,7 @@ ibmcloud cis alert-policy ddos-attack-l7-alert-create --name NAME (--emails EMAI
 Create a DDoS attack alert policy.
 
 ```sh
-ibmcloud cis alert-policy ddos-attack-l7-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
+ibmcloud cis alert-policy ddos-attack-l7-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --instance INSTANCE
 ```
 {: pre}
 
@@ -8631,7 +8631,7 @@ ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name NAME (--emails E
 Create a DDoS L3/L4 attack alert policy.
 
 ```sh
-ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
+ibmcloud cis alert-policy ddos-attack-l3-l4-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --instance INSTANCE
 ```
 {: pre}
 
@@ -8674,7 +8674,7 @@ ibmcloud cis alert-policy failing-logpush-job-alert-create --name NAME (--emails
 Create a failing logpush job disabled alert policy.
 
 ```sh
-ibmcloud cis alert-policy failing-logpush-job-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
+ibmcloud cis alert-policy failing-logpush-job-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --instance INSTANCE
 ```
 {: pre}
 
@@ -8726,7 +8726,7 @@ ibmcloud cis alert-policy pool-toggle-alert-create --name NAME (--emails EMAILS 
 Create a pool toggle alert policy.
 
 ```sh
-ibmcloud cis alert-policy pool-toggle-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --trigger-condition enabled --include-future-pools true
+ibmcloud cis alert-policy pool-toggle-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --trigger-condition enabled --include-future-pools true --instance INSTANCE
 ```
 {: pre}
 
@@ -8775,7 +8775,7 @@ ibmcloud cis alert-policy firewall-events-alert-create --name NAME (--emails EMA
 Create a firewall-events alert.
 
 ```sh
-ibmcloud cis alert-policy firewall-events-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --domains d2633e61-1b61-2512-1321-b61a17c3db7e --service waf,ratelimit
+ibmcloud cis alert-policy firewall-events-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --domains d2633e61-1b61-2512-1321-b61a17c3db7e --services waf,ratelimit --instance INSTANCE
 ```
 {: pre}
 
@@ -8821,7 +8821,7 @@ ibmcloud cis alert-policy certificate-alert-create --type (universal | dedicated
 Create a certificate alert.
 
 ```sh
-ibmcloud cis alert-policy certificate-alert-create --type universal --name test1 --emails test1@cn.ibm.com --enabled true
+ibmcloud cis alert-policy certificate-alert-create --type universal --name test1 --emails test1@cn.ibm.com --enabled true --instance INSTANCE
 ```
 {: pre}
 
@@ -8876,7 +8876,7 @@ ibmcloud cis alert-policy glb-healthcheck-alert-create --name NAME (--emails EMA
 Create a glb healthcheck alert policy.
 
 ```sh
-ibmcloud cis alert-policy glb-healthcheck-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --include-future-pools true
+ibmcloud cis alert-policy glb-healthcheck-alert-create --name test1 --emails test1@cn.ibm.com --enabled true --pools all --include-future-pools true --instance INSTANCE
 ```
 {: pre}
 
@@ -8920,7 +8920,7 @@ ibmcloud cis alert-policy web-analytics-alert-create --name NAME (--emails EMAIL
 Create a web metrics report alert policy.
 
 ```sh
-ibmcloud cis alert-policy web-analytics-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true
+ibmcloud cis alert-policy web-analytics-alert-create --name test1 --emails test1@cn.ibm.com --webhooks b2633e68-9a64-4519-b361-a64a67c8db8e --enabled true --instance INSTANCE
 ```
 {: pre}
 
@@ -9582,7 +9582,7 @@ ibmcloud cis alert-webhook-create --name NAME --url URL [--secret SECRET] [-i, -
 Create an alert webhook.
 
 ```sh
-ibmcloud cis alert-webhook-create --name testwebhook --url https://hooks.slack.com/services/Ds3fdBFbV/1234568 --secret 007
+ibmcloud cis alert-webhook-create --name testwebhook --url https://hooks.slack.com/services/Ds3fdBFbV/1234568 --secret 007 --instance INSTANCE
 ```
 {: pre}
 
@@ -10884,6 +10884,6 @@ ibmcloud target -r [region]
 All the commands support private endpoints, for example:
 
 ```sh
-ibmcloud cis domains -i cis-demo
+ibmcloud cis domains --instance cis-demo
 ```
 {: pre}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-08-04"
+  years: 2026
+lastupdated: "2026-04-29"
 
 keywords: managed lists
 
@@ -57,7 +57,7 @@ cis managed-lists [-i, --instance INSTANCE] [--output FORMAT]
 {: #example-listing-managed-lists-cli}
 
 ```sh
-ibmcloud cis managed-lists -i crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9:: -o json
+ibmcloud cis managed-lists --instance crn:v1:staging:public:internet-svcs-ci:global:a/c987fg3e4h278745690dp435683568rp:eg7kb437-4893-56yl-4wn9-c595j8t78gr9:: --output json
 ```
 {: pre}
 

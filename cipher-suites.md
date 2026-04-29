@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-30"
+lastupdated: "2026-04-29"
 
 keywords:
 
@@ -111,7 +111,7 @@ ibmcloud cis domain-settings DNS_DOMAIN_ID [-g, --group GROUP | -f, --feature FE
 Get `ciphers` settings for domain `31984fea73a15b45779fa0df4ef62f9b`.
 
 ```sh
-ibmcloud cis domain-settings -f "ciphers" 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-settings 31984fea73a15b45779fa0df4ef62f9b --feature "ciphers" --instance "cis-demo"
 ```
 {: pre}
 
@@ -171,7 +171,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
 Enable `tls_client_auth` for domain 31984fea73a15b45779fa0df4ef62f9b.
 
 ```sh
-ibmcloud cis domain-settings-update -f tls_client_auth -v on 31984fea73a15b45779fa0df4ef62f9b -i "cis-demo"
+ibmcloud cis domain-settings-update 31984fea73a15b45779fa0df4ef62f9b --feature tls_client_auth --value on --instance "cis-demo"
 ```
 {: pre}
 

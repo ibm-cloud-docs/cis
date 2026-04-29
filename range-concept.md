@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-04-29"
 
 keywords:
 
@@ -34,3 +34,4 @@ Range applications are only available to Enterprise customers for an additional 
 {: #range-application-information}
 
 [Working with Range applications](/docs/cis?group=range)
+[About Range applications](/docs/cis?topic=cis-about-cis-range)
