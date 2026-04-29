@@ -85,6 +85,7 @@ toc:
           label: Working with Range applications
           id: range
           topics:
+          - about-range.md
           - range.md
           - proxy-protocol.md
       - topicgroup:
