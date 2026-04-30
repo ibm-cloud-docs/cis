@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-04-30"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -18,6 +18,18 @@ content-type: release-note
 {: #api-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/apidocs/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+
+## 28 April 2026
+{: #cis-april-2826}
+
+Batch DNS records API enhancements
+:    The Batch DNS records API has been updated to improve consistency and expand record support. The operation ID is now `batch_dns_records`, and the request and response schemas have been renamed for better clarity. Support for DNS record types `PTR` and `DS` has been added, while `SPF` is no longer supported. For more information, see [Batch DNS Records API](/apidocs/cis#batch-dns-records) to understand the updated schema and supported record types.
+
+Custom list items API improvements
+:    The `GET` custom list items endpoint now supports additional query parameters to enhance pagination and filtering. You can use `cursor` and `per_page` for pagination, and the `search` parameter to filter results based on specific criteria. For more information, see [Custom list items API](/apidocs/cis?code=go#get-list-items).
+
+Zone settings API enhancements
+:    Support has been added to the CIS API for retrieving and updating zone-level settings, including the security level and email address obfuscation. For more information, see [Get email address obfuscation](/apidocs/cis#get-email-obfuscation),[Update email address obfuscation](/apidocs/cis#update-email-obfuscation), and [Set security-level setting](/apidocs/cis#set-security-level-setting).
 
 ## 03 December 2025
 {: #cis-dec-0325}
