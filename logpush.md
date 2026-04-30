@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-04-30"
 
 keywords:
 
@@ -62,7 +62,12 @@ To create a Logpush job in the console, follow these steps:
    Cloud Object Storage
    :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (optional), and an API key. Then, organize logs into daily folders (optional).
 
-      Destination values for Cloud Object Storage must be unique. It is recommended to use a unique bucket path to avoid conflicts.
+       Destination values for Cloud Object Storage must be unique. It is recommended to use a unique bucket path to avoid conflicts.
+
+       An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
+
+       For a Cloud Object Storage service, the user or service ID must be granted the **Object Writer** IAM role for the bucket.
+       {: important}
 
    IBM QRader
    :   Enter the QRader URL, then select a log source port.
