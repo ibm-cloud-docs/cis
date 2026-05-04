@@ -2,11 +2,13 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-01"
 
 keywords:
 
 subcollection: cis
+
+content-type: cli-docs
 
 ---
 
