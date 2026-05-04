@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-05-04"
 
 keywords:
 
@@ -4575,7 +4575,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2020-05-18T12:14:58Z --end 2020-05-18
 ```
 {: codeblock}
 
-## Log push
+## Logpush
 {: #log-push-cli-ref}
 
 [Enterprise Plans Only]{: tag-blue}
@@ -4585,7 +4585,7 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2020-05-18T12:14:58Z --end 2020-05-18
 
 [Enterprise Plans Only]{: tag-blue}
 
-Create a new log push job for a domain.
+Create a new logpush job for a domain.
 
 ```sh
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --name NAME [--enable true|false] [--fields FIELDS | all] [--timestamps format][--dataset DATASET] [--frequency FREQUENCY] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4633,7 +4633,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination DESTINATION_URL --na
 #### Examples
 {: #command-example-logpush-job-create}
 
-Create a log push job for domain `DNS_DOMAIN_ID`.
+Create a logpush job for domain `DNS_DOMAIN_ID`.
 
 ```sh
 ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low --output json
@@ -4645,7 +4645,7 @@ ibmcloud cis logpush-job-create DNS_DOMAIN_ID --destination cos://cis-test-bucke
 
 [Enterprise Plans Only]{: tag-blue}
 
-Update a log push job for a domain.
+Update a logpush job for a domain.
 
 ```sh
 ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [--enable true|false] [--fields FIELDS | all] [--timestamps format] [--dataset DATASET] [--jobid JOB_ID] [--frequency FREQUENCY] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4693,7 +4693,7 @@ ibmcloud cis logpush-job-update DNS_DOMAIN_ID [--destination DESTINATION_URL] [-
 #### Examples
 {: #command-example-logpush-job-update}
 
-Update `range_events` log push job for domain `DNS_DOMAIN_ID`.
+Update `range_events` logpush job for domain `DNS_DOMAIN_ID`.
 
 ```sh
 ibmcloud cis logpush-job-update DNS_DOMAIN_ID --destination cos://cis-test-bucket/logs?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --enable true --fields all --timestamps rfc3339 --dataset range_events --frequency high --output json
@@ -4705,7 +4705,7 @@ ibmcloud cis logpush-job-update DNS_DOMAIN_ID --destination cos://cis-test-bucke
 
 [Enterprise Plans Only]{: tag-blue}
 
-Get all log push jobs for a domain.
+Get all logpush jobs for a domain.
 
 ```sh
 ibmcloud cis logpush-jobs DNS_DOMAIN_ID  [-i, --instance INSTANCE] [--output FORMAT]
@@ -4726,7 +4726,7 @@ ibmcloud cis logpush-jobs DNS_DOMAIN_ID  [-i, --instance INSTANCE] [--output FOR
 #### Examples
 {: #command-example-logpush-jobs}
 
-Get all log push jobs for domain `DNS_DOMAIN_ID`.
+Get all logpush jobs for domain `DNS_DOMAIN_ID`.
 
 ```sh
 ibmcloud cis logpush-jobs DNS_DOMAIN_ID --output json
@@ -4738,7 +4738,7 @@ ibmcloud cis logpush-jobs DNS_DOMAIN_ID --output json
 
 [Enterprise Plans Only]{: tag-blue}
 
-Get the details of a log push job for a domain.
+Get the details of a logpush job for a domain.
 
 ```sh
 ibmcloud cis logpush-job DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-i, --instance INSTANCE] [--output FORMAT]
@@ -4765,7 +4765,7 @@ ibmcloud cis logpush-job DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-i,
 #### Examples
 {: #command-example-logpush-job}
 
-Get details of `http_requests` log push job.
+Get details of `http_requests` logpush job.
 
 ```sh
 ibmcloud cis logpush-job DNS_DOMAIN_ID --dataset http_requests --output json
@@ -4777,7 +4777,7 @@ ibmcloud cis logpush-job DNS_DOMAIN_ID --dataset http_requests --output json
 
 [Enterprise Plans Only]{: tag-blue}
 
-Delete a log push job for a domain.
+Delete a logpush job for a domain.
 
 ```sh
 ibmcloud cis logpush-job-delete DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_ID] [-f, --force] [-i, --instance INSTANCE]
@@ -4796,7 +4796,7 @@ ibmcloud cis logpush-job-delete DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_I
 :   JOB_ID is the ID of the logpush job.
 
 `-f, --force`
-:   Delete log push job without prompting for confirmation.
+:   Delete logpush job without prompting for confirmation.
 
 `-i, --instance`
 :   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
@@ -4804,7 +4804,7 @@ ibmcloud cis logpush-job-delete DNS_DOMAIN_ID [--dataset DATASET] [--jobid JOB_I
 #### Examples
 {: #command-example-logpush-job-delete}
 
-Delete `http_requests` log push job for domain `DNS_DOMAIN_ID`.
+Delete `http_requests` logpush job for domain `DNS_DOMAIN_ID`.
 
 ```sh
 ibmcloud cis logpush-job-delete DNS_DOMAIN_ID --dataset http_requests --force
