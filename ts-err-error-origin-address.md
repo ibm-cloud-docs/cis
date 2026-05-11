@@ -43,6 +43,6 @@ To resolve the issue, complete the following actions:
 
 1. Configure the origin with a publicly routable IP address or hostname.
 1. Ensure that the origin is reachable from the internet.
-1. Allow required traffic from CIS/Cloudflare IP ranges.
+1. Allow required traffic from CIS IP ranges.
 1. Verify that firewalls, security groups, and network ACLs allow CIS health checks.
 1. For VPC or Kubernetes workloads, access the application through a public ingress endpoint or public load balancer.
