@@ -21,7 +21,7 @@ content-type: troubleshoot
 The `Origin address is not globally routable` error occurs when the configured origin is not reachable from the CIS global network.
 {: shortdesc}
 
-CIS validates origin addresses when you add them to a load balancer pool. CIS routes traffic and performs health checks from its public global network. Because of this, the origin must use a publicly routable IP address or hostname.
+CIS validates origin addresses when you add them to a load balancer pool. CIS routes traffic and runs health checks from its public global network. Because of this, the origin must use a publicly routable IP address or hostname.
 {: tsSymptoms}
 
 If the origin uses a private IP address, internal hostname, or private-only endpoint, CIS cannot reach the origin and the validation fails.
