@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-05-15"
 
 keywords:
 
@@ -147,7 +147,7 @@ PTR records primarily prevent emails from going to spam folders. Because CIS doe
 
 A Start of Authority (SOA) record stores administrative information about a domain, such as the primary name server, administrator email address, and zone timing parameters.
 
-In CIS, the SOA record is automatically created and managed when you onboard a domain. You don`t have to manually create or configure an SOA record. CIS manages SOA records internally, and they are not available for viewing or modification.
+In CIS, the SOA record is automatically created and managed when you onboard a domain. You don't have to manually create or configure an SOA record. CIS manages SOA records internally, and they are not available for viewing or modification.
 
 ## Updating DNS records
 {: #updating-dns-records}
