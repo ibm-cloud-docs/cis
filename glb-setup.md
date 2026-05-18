@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-05-18"
 
 keywords:
 
@@ -152,7 +152,7 @@ Load balancers help to distribute traffic across multiple origin pools.
    * **Session Affinity**: Always route through the same performance and metrics instance. This option is available only if **Proxy** is enabled.
    * **Geo routes**: A mapping of region or country codes to a list of pools (ordered by their failover priority) for the specified region. Any regions not explicitly defined fall back to using the default pools.
 
-     IBM's geographic regions differ from the regions that {{site.data.keyword.cis_short_notm}} uses. For details about the geographic regions, see "Geo Steering" in [Traffic steering](https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/geo-steering/){: external}.
+     IBM's geographic regions differ from the regions that {{site.data.keyword.cis_short_notm}} uses. For details about the geographic regions, see [Geo steering](/docs/cis?topic=cis-traffic-steering&interface=ui#geo-steering).
      {: note}
 
 1. Click **Create** to complete the global load balancer configuration.
