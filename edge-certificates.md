@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-05-19"
 
 keywords: edge certificates
 
@@ -99,7 +99,7 @@ Custom certificates are for customers who want to use their own SSL certificates
 
 Unlike universal or advanced certificates, {{site.data.keyword.cis_short_notm}} doesn't manage the issuance or renewal of custom certificates. You are responsible for uploading, updating, and tracking the expiration dates of your custom certificates.
 
-The number of certificates you can use depends on your plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information. If you need more, submit a support case. See [Creating support cases](/docs/account?topic=account-open-case&interface=ui)
+The number of certificates you can use depends on your plan. See [Comparing CIS plans](/docs/cis?topic=cis-cis-plan-comparison) for more information. If you need more, submit a support case. For more information, see [Creating support cases](/docs/account?topic=account-open-case&interface=ui).
 {: note}
 
 ### Selecting certificates for a hostname
