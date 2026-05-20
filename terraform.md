@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-16"
+lastupdated: "2026-05-20"
 
 subcollection: cis
 
@@ -81,7 +81,7 @@ Before creating an authorization by using Terraform, complete the following prer
       {: pre}
 
 1. From the [{{site.data.keyword.cloud_notm}} resource list](/resources){: external}, select the {{site.data.keyword.cis_short_notm}} instance that you created and note the instance ID.
-1. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-assign-access-resources&interface=ui#review-your-access-console).
+1. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/iam?topic=iam-assign-access-resources&interface=ui#review-your-access-console).
 
 ## What's next?
 {: #terraform-setup-next}

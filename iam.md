@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2026
+lastupdated: "2026-05-20"
 
 keywords:
 
@@ -30,7 +30,7 @@ Review the following table that outlines what actions each role allows within th
 
 Platform management roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service and create or delete instances.
 
-For more information about IAM roles, see [IBM Cloud IAM roles](/docs/account?topic=account-userroles).
+For more information about IAM roles, see [IBM Cloud IAM roles](/docs/iam?topic=iam-userroles).
 
 | Platform management role | Description of actions |
 |--------------------------|--------------------------|
@@ -40,4 +40,4 @@ For more information about IAM roles, see [IBM Cloud IAM roles](/docs/account?to
 | Writer | Change existing configurations. |
 {: caption="IAM user roles and actions" caption-side="bottom"}
 
-For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources#assign-access-resources).
+For information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources&interface=ui#assign-access-resources).

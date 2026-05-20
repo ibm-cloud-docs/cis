@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-20"
 
 keywords:
 
@@ -431,4 +431,4 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 {: #related-link-logpush}
 {: api}
 
-[Managing user API keys](/docs/account?topic=account-userapikey&interface=api)
+[Managing user API keys](/docs/iam?topic=iam-userapikey&interface=ui)

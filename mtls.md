@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-30"
+  years: 2020, 2026
+lastupdated: "2026-05-20"
 
 keywords: mutual tls, mtls, authentication, certificates
 
@@ -27,7 +27,7 @@ When mTLS is configured, access is granted only to requests with a corresponding
 
 Mutual TLS (mTLS) provides certificate-based client authentication for enhanced security. mTLS is not enabled by default and requires prior authorization on a per-domain basis. To configure mTLS, follow these steps:
 
-1. Request authorization. [Create a support case](/docs/account?topic=account-open-case) to request mTLS enablement for your IBM Cloud account.
+1. Request authorization. [Create a support case](/docs/support?topic=support-open-case&interface=ui) to request mTLS enablement for your IBM Cloud account.
 
    After mTLS is enabled, it can't be disabled.
    {: note}
