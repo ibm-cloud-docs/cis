@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-04"
+  years: 2018, 2026
+lastupdated: "2026-05-20"
 
 keywords: range application, tls encryption, global tcp proxy
 
@@ -40,17 +40,17 @@ For more information, see [Range applications](/docs/cis?topic=cis-range-concept
 {: #range-add-an-application}
 {: ui}
 
-To add a Range application in the console, follow these steps: 
+To add a Range application in the console, follow these steps:
 
 1. In the CIS console, navigate to the **Security** section.
 1. Select the **Range** tab, then click **Create**.
-1. Select an application type from the list: TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft. For more information, see [Protocols and use cases](/docs/cis?topic=cis-range-concept#choosing-protocol-on).
+1. Select an application type from the list: TCP, UDP, HTTP, HTTPS, RDP, SSH, or Minecraft. For more information, see [Protocols and use cases](/docs/cis?topic=cis-about-cis-range).
 1. Enter the application name. This name associates your application with a DNS name on your {{site.data.keyword.cis_short_notm}} domain.
 1. Enter the edge port. {{site.data.keyword.cis_short_notm}} listens for incoming connections on these ports and proxies them to your origin. Connections to these addresses are proxied to your origin.
 
    You can enter a port range for example, (`8080-8090`), but the origin must have an equal number of consecutive ports matching the range.
    {: note}
-   
+
 1. Select the edge IP connectivity.
 1. In the Origin section, enter the origin IP and port of your TCP application, or select an existing load balancer and port.
 1. Optionally, enable custom rules. When enabled, rules with a "block" or "allowlist" action are enforced for the application.
@@ -85,7 +85,7 @@ Use the following examples to create and list the Range applications.
 You can designate an origin in two ways in Range applications:
 
 1. Origin IP - Use the `origin_direct`parameter.
-2. Load balancer - Use the `origin_dns` and `origin_port` parameters. 
+2. Load balancer - Use the `origin_dns` and `origin_port` parameters.
 
 For the origin IP request:
 
