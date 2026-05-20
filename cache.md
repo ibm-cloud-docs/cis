@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-06-03"
+  years: 2018, 2026
+lastupdated: "2026-05-20"
 
 keywords:
 
@@ -59,7 +59,7 @@ CIS provides several options to customize caching:
 - Use CIS [edge functions](/docs/cis?topic=cis-edge-functions-use-cases#caching-using-fetch) or the [API](/docs/cis?topic=cis-edge-functions-use-cases#cache-api) to customize caching.
 - Adjust caching levels, TTL, and more through the [CIS CLI](/docs/cis?topic=cis-cis-cli#cache).
 
-The maximum file size that CIS caches is 512 MB for Trial and Standard Next customers, and 5 GB for Enterprise customers. Enterprise customers can request caching of larger files by [opening a support case](/docs/account?topic=account-open-case&interface=ui).
+The maximum file size that CIS caches is 512 MB for Trial and Standard Next customers, and 5 GB for Enterprise customers. Enterprise customers can request caching of larger files by [opening a support case](/docs/support?topic=support-open-case&interface=ui).
 {: tip}
 
 ## File extensions cached by default

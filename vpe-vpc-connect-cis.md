@@ -26,9 +26,9 @@ VPEs are virtual IP interfaces that are bound to an endpoint gateway created on 
 Before you target a VPE for {{site.data.keyword.cis_short_notm}}, you must complete the following tasks.
 
 * Ensure that a [Virtual Private Cloud is created](/docs/vpc?topic=vpc-getting-started).
-* Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-planning-considerations).
+* Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-vpe-planning-considerations&interface=ui).
 * Ensure that [correct access controls](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways&interface=ui#vpe-configuring-acls) are set for your VPE.
-* Review VPE [limitations](/docs/vpc?topic=vpc-limitations-vpe).
+* Review VPE [limitations](/docs/vpc?topic=vpc-vpe-planning-considerations&interface=ui#vpe-architectural-restrictions).
 
 ## Setting up a VPE for {{site.data.keyword.cis_short_notm}}
 {: #endpoint-setup-cis}

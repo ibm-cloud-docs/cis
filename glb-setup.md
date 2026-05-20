@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-05-20"
 
 keywords:
 
@@ -162,7 +162,7 @@ Load balancers help to distribute traffic across multiple origin pools.
 
 Finally, verify connectivity to your application by accessing the FQDN URL in a browser.
 
-For more information about updating and deleting global load balancers, health checks, and origin pools in the console, see [Managing global load balancers](/docs/cis?topic=cis-glb-features).
+For more information about updating and deleting global load balancers, health checks, and origin pools in the console, see [Managing global load balancers](/docs/cis?topic=cis-configure-glb&interface=ui).
 {: note}
 
 ## Configuring the global load balancers from the CLI

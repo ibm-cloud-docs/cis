@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-03-18"
+lastupdated: "2026-05-20"
 
 keywords: managed rules, rulesets, waf, owasp
 
@@ -52,7 +52,7 @@ These managed rulesets are regularly updated. You can adjust the behavior of spe
 ## Request body inspection limit
 {: #request-body-inspection-limit}
 
-The WAF inspects HTTP request bodies up to 128 KB by default. This limit applies to all managed rulesets, including the CIS Managed Ruleset and OWASP Core Ruleset, and determines how much of each request the WAF can evaluate. Customers can request an increase of the inspection limit to 1 MB by [creating a support case](/docs/account?topic=account-open-case&interface=ui).
+The WAF inspects HTTP request bodies up to 128 KB by default. This limit applies to all managed rulesets, including the CIS Managed Ruleset and OWASP Core Ruleset, and determines how much of each request the WAF can evaluate. Customers can request an increase of the inspection limit to 1 MB by [creating a support case](/docs/support?topic=support-open-case&interface=ui).
 
 Increasing the inspection limit can affect how managed rules evaluate traffic and could impact rule matches. Review ruleset behavior if higher limits are required.
 {: note}
