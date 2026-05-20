@@ -244,6 +244,7 @@ toc:
           - iam.md
           - architecture-workload-isolation.md
           - data-security.md
+          - vpe-vpc-connect-cis.md
       - topicgroup:
           label: Observability
           topics:
