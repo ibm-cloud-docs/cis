@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-05-26"
 
 keywords:
 
@@ -69,8 +69,8 @@ To create a Logpush job in the console, follow these steps:
        For a Cloud Object Storage service, the user or service ID must be granted the **Object Writer** IAM role for the bucket.
        {: important}
 
-   IBM QRader
-   :   Enter the QRader URL, then select a log source port.
+   IBM QRadar
+   :   Enter the QRadar URL, then select a log source port.
 
    Splunk
    :   Enter the Splunk endpoint, channel ID, and authentication token.
