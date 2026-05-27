@@ -98,6 +98,7 @@ toc:
           - auth-origin-pull.md
           - cipher-suites.md
           - total-tls.md
+          - about-post-quantum.md
       - topicgroup:
           label: Working with DDoS protection
           topics:
