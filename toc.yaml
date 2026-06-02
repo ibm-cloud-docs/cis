@@ -67,7 +67,6 @@ toc:
           label: CNAME (partial) configuration
           topics:
           - cname-setup.md
-          - convert-partial-full.md
           - start-with-subdomain.md
           - cname-dns-resolution.md
       - dns.md
