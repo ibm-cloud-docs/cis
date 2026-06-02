@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-12-30"
+  years: 2023, 2026
+lastupdated: "2026-06-02"
 
 keywords:
 
@@ -22,28 +22,27 @@ You can't modify the value of certain headers, such as `server`, `eh-cache-tag`,
 {: note}
 
 ```js
-export default {
-	async fetch(request) {
-		const response = await fetch("https://example.com");
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
 
-		// Clone the response so that it's no longer immutable
-		const newResponse = new Response(response.body, response);
-
-		// Add a custom header with a value
-		newResponse.headers.append(
-			"x-workers-hello",
-			"Hello from CIS Edge Functions",
-		);
-
-		// Delete headers
-		newResponse.headers.delete("x-header-to-delete");
-		newResponse.headers.delete("x-header2-to-delete");
-
-		// Adjust the value for an existing header
-		newResponse.headers.set("x-header-to-change", "NewValue");
-
-		return newResponse;
-	},
-};
+async function handleRequest(request) {
+  const response = await fetch(request)
+  
+  // Clone the response so that it's no longer immutable
+  const newResponse = new Response(response.body, response)
+  
+  // Add a custom header with a value
+  newResponse.headers.append("X-CIS-Functions-Hello", "Hello from CIS Workers")
+  
+  // Delete headers
+  newResponse.headers.delete("x-header-to-delete")
+  newResponse.headers.delete("x-header2-to-delete")
+  
+  // Adjust the value for an existing header
+  newResponse.headers.set("x-header-to-change", "NewValue")
+  
+  return newResponse
+}
 ```
 {: codeblock}
