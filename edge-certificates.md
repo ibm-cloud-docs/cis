@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-06-03"
 
 keywords: edge certificates
 
@@ -90,7 +90,7 @@ For publicly trusted certificates, Cloudflare partners with different certificat
 - Sectigo
    - Used only for backup certificates when {{site.data.keyword.cis_short_notm}} is providing authoritative DNS for your domain.
    - Supports validity periods of 90 days.
-   - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/SSL-Browser-Compatibility-1527076085062/kA01N000000zFJt){: external}
+   - [Compatibility documentation](https://www.sectigo.com/knowledge-base/detail/Sectigo-Root-Certificates){: external}
 
 ## Custom certificates
 {: #custom-certificate-type}
