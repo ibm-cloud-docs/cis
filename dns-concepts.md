@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-06-03"
 
 keywords:
 
@@ -70,7 +70,7 @@ DNSSEC is a technology that digitally "signs" DNS data so you can be confident t
 
 {{site.data.keyword.cis_short_notm}} supports batch DNS record changes, allowing you to update multiple zone records in a single action. This approach reduces manual effort and simplifies domain management tasks, such as migrations, environment setups, or automation workflows. While the {{site.data.keyword.cis_short_notm}} console supports individual changes, batch operations are best performed by using API.
 
-The [Batch DNS records](/apidocs/cis#create-dns-record-0fa00f) API endpoint allows you to perform multiple `DELETES`, `PATCHES`, `PUTS`, and `POSTS` in a single request.
+The [Batch DNS records](/apidocs/cis#batch-dns-records) API endpoint allows you to perform multiple `DELETES`, `PATCHES`, `PUTS`, and `POSTS` in a single request.
 
 Operations that are included in the `/batch` request body are always processed in the following order:
 1. Deletes
@@ -91,7 +91,7 @@ When specifying each operation in the /batch request body, follow these guidelin
 
 * `Puts`: Specify the `id`, `content`, `name`, and `type` of each record. Also specify any other fields that you want to set to non-default values. Any unspecified fields assume the default value for each [Record type](/docs/cis?topic=cis-set-up-your-dns-for-cis#adding-dns-records). This operation works as an overwrite, so all fields in a record are always affected.
 
-* `Posts`: Used to create new records. The `id` field is not required. For field definitions, see the [Create DNS Record](/apidocs/cis#create-dns-record-e2ec84) endpoint and select the appropriate record type from the request body specification.
+* `Posts`: Used to create new records. The `id` field is not required. For field definitions, see the [Create DNS Record](/apidocs/cis#create-dns-record) endpoint and select the appropriate record type from the request body specification.
 
 #### Example request
 {: #example-request}
