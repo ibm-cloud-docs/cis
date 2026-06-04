@@ -258,17 +258,17 @@ toc:
       topics:
       - topicgroup:
           id: api-cis
-          label: CIS API
+          label: CIS API reference
           topics:
           - link:
               label: API reference
               href: https://{DomainName}/apidocs/cis
           - api-change-log.md
       - topicgroup:
-          label: CLI reference
+          label: CIS CLI reference
           topics:
-          - cli-change-log.md
           - cis-cli-plugin.md
+          - cli-change-log.md
       - link:
           label: Terraform
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis
