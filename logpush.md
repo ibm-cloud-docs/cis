@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-06-03"
 
 keywords:
 
@@ -30,9 +30,9 @@ Before you create a Logpush job by using the console, review the following infor
    - Splunk
 
 * Make sure to [enable log retention](/docs/cis?topic=cis-logpull#log-retention) before you use Logpush.
-* If your destination is not explicitly supported by CIS, it might still be accessible by Logpush using a Custom HTTP destination. This includes your own custom HTTP log servers.
+* If your destination is not explicitly supported by CIS, it might still be accessible by Logpush with a Custom HTTP destination. This includes your own custom HTTP log servers.
 
-   To avoid errors, make sure that the destination can accept a gzipped file upload named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
+   To avoid errors, make sure that the destination can accept a gzipped file upload that is named `test.txt.gz`, containing the compressed content `{"content":"tests"}`.
    {: important}
 
 * For Splunk only: When you send logs to QRadar or Splunk, CIS checks the IP address and port for accessibility and validates the certificate of the HTTP Receiver. If all parameters are valid, the Logpush job is created and begins sending events to the HTTP Receiver log source (QRadar) or the HTTP Event Collector (Splunk).
@@ -43,56 +43,71 @@ Before you create a Logpush job by using the console, review the following infor
 
 To create a Logpush job in the console, follow these steps:
 
-1. Select **Account** > **Logs**, then click **Create**.
-1. Select service:
-   1. Select the service type you want from the available options.
-   1. Select the dataset type.
-   1. Optional: Enter a description and name.
-   1. Select **Next**.
-1. Configure destination:
+1. In the CIS console, navigate to **Account** > **Logs**, and then click **Create**.
+1. Select and configure destination service types from the available options:
 
-   IBM Cloud Logs
-   :   Enter the IBM Cloud Logs instance ID, instance region, and API key (user managed).
+   **IBM Cloud Logs**
 
-       An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
+   1. Select **IBM Cloud Logs** from the service type options.
+   1. Click **Next**.
+   1. Enter the **Instance ID**.
+   1. Select the Instance **Region**.
+   1. Enter the **API key**.
 
-       For an IBM Cloud Logs service, the user or service ID must be granted the **Sender** IAM role.
-       {: important}
+      An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
 
-   Cloud Object Storage
-   :   Enter the Cloud Object Storage instance, bucket information (name and region), bucket path (optional), and an API key. Then, organize logs into daily folders (optional).
+      For an IBM Cloud Logs service, the user or service ID must be granted the Sender IAM role.
+      {: important}
 
-       Destination values for Cloud Object Storage must be unique. It is recommended to use a unique bucket path to avoid conflicts.
+   1. Click **Next**.
 
-       An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
+   **Cloud Object Storage**
 
-       For a Cloud Object Storage service, the user or service ID must be granted the **Object Writer** IAM role for the bucket.
-       {: important}
+   1. Select **Cloud Object Storage** from the service type options.
+   1. Click **Next**.
+   1. Enter the Cloud Object Storage instance ID, bucket name, bucket region, bucket path (optional), and API key.
 
-   IBM QRadar
-   :   Enter the QRadar URL, then select a log source port.
+      Optional: Enable Organize logs into daily folders.
 
-   Splunk
-   :   Enter the Splunk endpoint, channel ID, and authentication token.
+      Destination values for Cloud Object Storage must be unique. It is recommended to use a unique bucket path to avoid conflicts.
+
+      An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
+
+      For a Cloud Object Storage service, the user or service ID must be granted the **Object Writer** IAM role for the bucket.
+      {: important}
+
+   1. Click **Next**.
+
+   **IBM QRadar**
+
+   1. Select the **IBM QRadar** from the service type options.
+   1. Click **Next**.
+   1. Enter the QRadar URL and then select the Log source port.
+   1. Click **Next**.
+
+   **Splunk**
+
+   1. Select **Splunk** from the service type options.
+   1. Click **Next**.
+   1. Enter the Splunk raw HTTP event collector URL, Channel ID, and Authentication token.
 
       You can choose to use insecure verification; however, this is not recommended.
 
-   Custom HTTP Destination
-   :   Enter your HTTP endpoint.
+   1. Click **Next**.
 
-       Make sure the endpoint is properly URL-encoded and any necessary request headers are added as URL parameters formatted as "header_*" (e.g. `header_Authorization`).
-       {: important}
+1. Review the logpush job configurations:
 
-1. Select log fields:
    1. Verify that the Logpush details are correct.
-   1. Select the Logpush settings from the Timestamp format and Frequency menus.
+   1. Select the required **Timestamp format** and **Frequency** settings.
    1. Choose whether to enable the Logpush job by toggling the **Enablement** switch to **On**.
    1. Select the log fields to include in the Logpush job.
 
-      You can use the switches to **Select all fields** or **Expand all fields**. You can also revert back to default settings.
+      You can use the switches to **Select all fields** or **Expand all fields**. You can also revert to default settings.
       {: tip}
 
    1. Click **Done** to create your Logpush job.
+
+The Logpush job is created and begins sending logs to the configured destination.
 
 ## Creating a Logpush job from the CLI
 {: #logpush-setup-cli}
@@ -174,15 +189,15 @@ Where:
 CLI examples for the supported destinations:
 
    IBM Cloud Logs
-   :   Example
 
+   :   Example
        ```sh
        ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination "ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=xxxxxxxx" --name logpushJobGen --enable true --fields RayID --dataset http_requests --frequency high --instance 1a9174b6-0106-417a-844b-c8eb43a72f63
        ```
        {: pre}
 
    Cloud Object Storage
-   :   Example
+      :   Example
 
        ```sh
        ibmcloud cis logpush-job-create 31984fea73a15b45779fa0df4ef62f9b --destination cos://cis-test-bucket/logs/{DATE}?region=us&instance-id=f75e6d90-4212-4026-851c-d572071146cd&ibm_api_key=XXX --name logpushcreate --enable true --fields all --timestamps rfc3339 --dataset http_requests --frequency low -i cis-demo --output JSON
@@ -204,7 +219,6 @@ CLI examples for the supported destinations:
        ibmcloud cis logpush-job-create 601b728b86e630c744c81740f72570c3 --destination splunk://cis-analytics.ibm.com:8088/services/collector/raw?header_Authorization=Splunk%20e6d94e8c-5792-4ad1-be3c-29bcaee0197d&channel=f1aafa4f-684f-4c29-a040-7fe184b03712&sourcetype=cloudflare:json&insecure-skip-verify=false --name logpushJobSplunk --enable true --fields RayID --dataset http_requests --frequency high --instance 1a9174b6-0106-417a-844b-c8eb43a72f63
        ```
        {: pre}
-
 
    Custom HTTP
    :   Example
@@ -269,7 +283,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    | Cloud Object Storage |
    | --------------------- |
-   | `cos`: Information to identify the Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the COS instance. \n * `ibm_api_key`: An API key for the account where the IBM Cloud Logs instance set up is required. You can use a user API key or a service ID API key. This key generates the bearer token for the Logpush job. To rotate the API key, use the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The customer or the service ID must have the **Object Writer** IAM role on the Object Storage bucket. \n |
+   | `cos`: Information to identify the Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the Cloud Object Storage instance. \n * `ibm_api_key`: An API key for the account where the IBM Cloud Logs instance set up is required. You can use a user API key or a service ID API key. This key generates the bearer token for the Logpush job. To rotate the API key, use the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The customer or the service ID must have the **Object Writer** IAM role on the Object Storage bucket. \n |
    {: caption="Cloud Object Storage destination" caption-side="bottom"}
    {: #pl-table-2}
    {: tab-title="Cloud Object Storage"}
