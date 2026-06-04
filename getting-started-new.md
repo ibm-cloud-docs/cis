@@ -31,12 +31,12 @@ After you provision a CIS instance on IBM Cloud, you can access and configure th
 Before you begin using {{site.data.keyword.cis_short_notm}}, make sure that you have met the following requirements:
 
 * You need an IBMid to sign in to IBM Cloud and manage CIS. If you don’t have one, you can [create an account](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776){: external} to access trials, demos, and services.
-* You must have a domain registered with a domain registrar. CIS protects and accelerates traffic for this domain.
+* You must have a domain that is registered with a domain registrar. CIS protects and accelerates traffic for this domain.
 * Decide whether you want to protect your entire domain ([full setup](/docs/cis?topic=cis-full-authoritative-zone&interface=cli)) or specific subdomains ([partial setup](/docs/cis?topic=cis-cname-setup&interface=cli)). This decision affects how you’ll configure DNS and what level of protection and optimization you get from CIS.
 * [Compare and select a CIS plan](/docs/cis?topic=cis-cis-plan-comparison) that best meets your needs (Lite, Standard, or Enterprise). Each plan offers different levels of security, performance, and feature access.
 * Familiarize yourself with [CIS core concepts](/docs/cis?group=concepts) and terminology to better understand the configuration steps.
 
-It is recommended that you use Google Chrome when working with {{site.data.keyword.cis_short_notm}}.
+It is recommended that you use Google Chrome when you work with {{site.data.keyword.cis_short_notm}}.
 {: tip}
 
 ## Getting started process
@@ -57,7 +57,7 @@ Updates to your DNS delegation, name servers, or CNAME records can take up to 24
 
    You can import existing DNS records or add them manually. Make sure that required records such as A, AAAA, MX, and CNAME records are present.
 
-1. Configure DNS delegation based on the setup type you selected. After DNS records are in place, update your registrar or DNS provider to route traffic through CIS.
+1. Configure DNS delegation based on the setup type that you selected. After DNS records are in place, update your registrar or DNS provider to route traffic through CIS.
 
    For a full setup:
 
@@ -73,7 +73,7 @@ Updates to your DNS delegation, name servers, or CNAME records can take up to 24
 
 1. Verify DNS delegation and domain resolution. After propagation begins, confirm that your domain is delegated correctly and that CIS is resolving traffic as expected.
 
-   Use a DNS lookup tool, such as `dig` or `nslookup` to verify authoritativee name servers and record resolution. For example:
+   Use a DNS lookup tool, such as `dig` or `nslookup` to verify authoritative name servers and record resolution. For example:
 
       ```bash
       dig NS example.com
