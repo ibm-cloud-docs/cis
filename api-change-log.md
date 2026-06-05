@@ -22,7 +22,7 @@ In this change log, you can learn about the latest changes, improvements, and up
 ## 3 May 2026
 {: #cis-may-030326}
 
-RayID log retrieval API
+Support for RayID log lookup
 :    Support has been added to the CIS API for retrieving logs associated with a specific RayID from your domain's traffic. For more information, see [Get logs by RayID](https://cloud.ibm.com/apidocs/cis?code=go#get-logs-by-rayid).
 
 ## 28 April 2026
