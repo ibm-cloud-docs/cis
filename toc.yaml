@@ -177,16 +177,14 @@ toc:
       - topicgroup:
           label: Working with global load balancers
           topics:
+          - glb-about-glb.md
+          - glb-dns-records.md
+          - glb-origin-pools.md
+          - glb-health-checks.md
+          - glb-traffic-steering.md
+          - glb-proxy-modes.md
+          - glb-session-affinity.md
           - glb-setup.md
-          - topicgroup:
-              label: Global load balancer features
-              topics:
-              - glb-dns-records.md
-              - glb-origin-pools.md
-              - glb-health-checks.md
-              - glb-traffic-steering.md
-              - glb-proxy-modes.md
-              - glb-session-affinity.md
       - custom-page.md
       - topicgroup:
           label: Working with Edge functions
