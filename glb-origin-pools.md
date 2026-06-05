@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-17"
+  years: 2020, 2026
+lastupdated: "2026-06-05"
 
 keywords:
 
@@ -15,25 +15,25 @@ subcollection: cis
 # Setting up origin pools
 {: #glb-features-pools}
 
-An origin pool is a group of origin servers that traffic is intelligently routed to when attached to a global load balancer.
+An origin pool is a group of origin servers that receive traffic from a global load balancer. Origins can be identified by IP address or hostname, and pools can be associated with a specific region or made available globally.
 {: shortdesc}
 
-The minimum number of available origin servers for the pool to be marked healthy is configurable by the user along with which specific health check to use. The origin pool can be associated with a specific region or it can be made available to all regions.
+You can configure the minimum number of healthy origins that must be available for a pool to be considered healthy, as well as the health check used to monitor the pool.
 
-A {{site.data.keyword.cis_short_notm}} load balancer pool represents a group of origin servers, each identified by their IP address or hostname. You can configure multiple pools, as well as failover priority (Pool A > Pool B > Pool C). If you're familiar with DNS terminology, think of a pool as a "record set", except that only addresses that are considered healthy are returned. You can attach health checks to individual pools to tailor monitoring for collections of origin servers.
+If you're familiar with DNS terminology, think of a pool as a record set, except that only healthy origins are returned. You can configure multiple pools and define their failover priority.
 
 * When adding origin servers to a pool, you can identify the origin by hostname or IP address.
 * The order of pools in the load balancer determines the standard failover priority. When the number of healthy origins in a pool drops below the configured threshold, the load balancer routes traffic to the next available pool.
-* By default, pools are ordered by date created. You can reorder them from the global load balancer dashboard and via {{site.data.keyword.cis_short_notm}} API (use the Update Pools command to set a new `origins` array).
+* By default, pools are ordered by date created. You can reorder them from the global load balancer dashboard and by using {{site.data.keyword.cis_short_notm}} API (use the Update Pools command to set a new `origins` array).
 * Dynamic steering uses Round Trip Time (RTT) profiles to determine pool priority. If there is no RTT data for a pool in a region or colocation center, the load balancer uses pool order to determine failover priority.
 * Geo steering directs traffic to pools based on the client’s region or point of presence. If there is no geo steering configuration for a region or pool, the load balancer uses pool order to determine failover priority.
 
 ## Distribution of traffic within a pool
 {: #distribution-of-traffic-within-a-pool}
 
-By default, all traffic is distributed evenly among the origins in the pool using round-robin protocol. This is also true for non-proxied global load balancers.
+By default, traffic is distributed evenly among the origins in the pool using a round-robin algorithm. This is also true for non-proxied global load balancers.
 
-The origins can be configured with weights, and for proxied global load balancers, the weights determine how much traffic each origin server receives relative to other origins in the pool. Weights are configured as numbers between 0 and 1, and specify what fraction of traffic goes to the origin.
+The origins can be configured with weights, and for proxied global load balancers, the weights determine how much traffic each origin server receives relative to other origins in the pool. Weights are configured as decimal values between 0 and 1, and specify what fraction of traffic goes to the origin.
 
 For each origin:
 
@@ -43,7 +43,7 @@ If all origins have weight `1`, traffic is distributed evenly.
 
 Origins with weight `0` do not receive any traffic for this pool. However, session affinity might still override this until all sessions are closed. If the origin is a member in another pool, it might still receive traffic for that pool.
 
-For example, an origin pool is setup with 3 origins that have the following weights: origin-A: 0.4, origin-B: 0.3, and origin-C: 0.3.
+For example, an origin pool is set up with 3 origins that have the following weights: origin-A: 0.4, origin-B: 0.3, and origin-C: 0.3.
 
 * Initially, all origins are healthy. The amount of traffic each origin receives is: origin-A: 40%, origin-B: 30%, and origin-C: 30%.
 * Then origin-A turns critical and it no longer receives traffic. The remaining origins have the same weight, and so traffic is distributed evenly, each receiving 50%.
@@ -53,7 +53,11 @@ For example, an origin pool is setup with 3 origins that have the following weig
 ## Fallback pool
 {: #fallback-pool}
 
-The origin pool with the lowest priority (the largest number) is the designated "fallback pool." When all pools for a region are down, traffic is routed to the fallback pool, regardless of its health.
+A fallback pool is the lowest-priority pool in a load balancer configuration. It receives traffic when higher-priority pools are unavailable and can also receive traffic during normal operation depending on the selected traffic-steering mode. It is not limited to error handling.
 
-When all pools are disabled, the fallback pool is not available.
+Traffic distribution to a fallback pool depends on the configured traffic‑steering mode and the priority that is assigned to each pool. Under certain configurations, the fallback pool can receive traffic even when other pools are healthy.
+
+The fallback pool is defined as the origin pool with the lowest priority, which is represented by the highest numerical value. This designation determines its role when other pools become unavailable. When all primary pools for a region are unavailable, traffic is directed to the fallback pool. This routing occurs regardless of the fallback pool’s health state.
+
+If all pools are disabled, the fallback pool is not available.
 {: note}
