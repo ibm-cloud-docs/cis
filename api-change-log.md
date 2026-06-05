@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-06-05"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -18,6 +18,12 @@ content-type: release-note
 {: #api-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/apidocs/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+
+## 3 May 2026
+{: #cis-may-030326}
+
+RayID log retrieval API
+:    Support has been added to the CIS API for retrieving logs associated with a specific RayID from your domain's traffic. For more information, see [Get logs by RayID](https://cloud.ibm.com/apidocs/cis?code=go#get-logs-by-rayid).
 
 ## 28 April 2026
 {: #cis-april-2826}

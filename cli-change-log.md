@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-06-05"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -20,6 +20,12 @@ content-type: release-note
 
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
+
+## Version 1.19.2
+{: #cli-1192}
+
+Version 1.19.2 of the CLI was released on 23 May 2026.
+:   Upgraded the Go version to v1.26.2.
 
 ## Version 1.19.1
 {: #cli-1191}
