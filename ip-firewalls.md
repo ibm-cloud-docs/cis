@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-20"
+lastupdated: "2026-06-08"
 
 keywords: ip firewall, ip rules, user agent blocking, domain lockdown
 
@@ -36,6 +36,10 @@ For example, if you notice that a particular IP is causing malicious requests, y
 
 IP rules operate at OSI Layer 3 and Layer 4, allowing you to control access for TCP, HTTP, and HTTPS traffic across individual IP addresses, ranges, countries, ASNs, or CIDR blocks.
 {: note}
+
+Allowed IP addresses take precedence over country-based IP rules. However, an allow rule in IP rules does not override a country block that is configured through custom rules.
+
+When you allow a country by using IP rules, requests from that country bypass custom rules, rate limiting rules, and other ruleset-based configurations. Managed Rules and legacy WAF rules still apply.
 
 ## Domain lockdown
 {: #cis-domain-lockdown}
