@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-06-03"
+  years: 2018, 2026
+lastupdated: "2026-06-08"
 
 keywords: origin server, pool implementation, origin servers
 
@@ -59,3 +59,9 @@ After the client connects to the application, the connection path looks like thi
 `[client]<--tls-->[cis]<-->[origin server]`
 
 This setup improves security and allows {{site.data.keyword.cis_short_notm}} to apply extra features like caching, firewall rules, and traffic inspection.
+
+## Related links
+{: #glb-related-information}
+
+* [About global load balancers](/docs/cis?topic=cis-about-global-load-balancers)
+* [Creating global load balancers](/docs/cis?topic=cis-configure-glb&interface=ui)
