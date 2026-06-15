@@ -1,4 +1,12 @@
 
+## WAF - WAF Release - Scheduled changes for 2026-06-15
+**Published on:** Tue, 09 Jun 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-06-09| 2026-06-15| Log| N/A| 439c4ef64b32447989bdf412b4c29bc6 | Ghost CMS - SQLi - CVE:CVE-2026-26980| This is a new detection.
+2026-06-09| 2026-06-15| Log| N/A| 6c64b68ef5ed45e7a622cdaab56f403f | SQLi - Obfuscated Boolean - URI| This is a new detection.
+
 ## WAF - WAF Release - 2026-06-09
 **Published on:** Tue, 09 Jun 2026 00:00:00 GMT
 
@@ -27,15 +35,6 @@ CIS Managed Ruleset| 8a7650b99ec04a91a19b8295fd3857fd | N/A| Drupal - PostgreSQL
 CIS Managed Ruleset| 525c0871787840e6a6193f6caee241d2 | N/A| SQLi - Obfuscated Boolean - Body| N/A| Disabled| This is a new detection.
 CIS Managed Ruleset| 1ec4aeaf7900463397b82b35d8620070 | N/A| SQLi - Obfuscated Boolean - Headers| N/A| Disabled| This is a new detection.
 CIS Managed Ruleset| fb74766654c44ff2a5204dc4e0be4d47 | N/A| Mirasvit Cache Warmer - PHP Object Injection - CVE:CVE-2026-45247| N/A| Block| This is a new detection.
-
-
-## WAF - WAF Release - Scheduled changes for 2026-06-15
-**Published on:** Tue, 09 Jun 2026 00:00:00 GMT
-
-Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
----|---|---|---|---|---|---
-2026-06-09| 2026-06-15| Log| N/A| 439c4ef64b32447989bdf412b4c29bc6 | Ghost CMS - SQLi - CVE:CVE-2026-26980| This is a new detection.
-2026-06-09| 2026-06-15| Log| N/A| 6c64b68ef5ed45e7a622cdaab56f403f | SQLi - Obfuscated Boolean - URI| This is a new detection.
 
 
 ## WAF - WAF Release - 2026-05-20
