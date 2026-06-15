@@ -254,6 +254,7 @@ toc:
   - navgroup:
       id: reference
       topics:
+      - waf-rule-updates.md
       - topicgroup:
           id: api-cis
           label: CIS API reference
