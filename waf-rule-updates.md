@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Change Log: WAF Managed Rule Updates
+# CIS WAF rule change log 
 {: #waf-rule-changelog}
 
 Stay informed with daily updates to CIS WAF managed rules, including newly identified threats, detection improvements, ruleset changes, and enhanced security protections.
