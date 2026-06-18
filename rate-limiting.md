@@ -21,8 +21,6 @@ The _previous_ version of rate-limiting rules is deprecated. Active rules from t
 Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
 {: shortdesc}
 
-Select the type of rate-limiting rule, either a **Custom rule** or **Protect login**.
-
 ## Creating a custom rate limiting rule in the console
 {: #create-a-custom-rate-limiting-rule-ui}
 {: ui}
@@ -56,6 +54,7 @@ The rate limiting rule is created and deployed. The rule takes effect immediatel
 
 ## Updating a rate limiting rule in the console
 {: #rate-limit-ui-update}
+{: ui}
 
 To update a rate-limiting rule, complete the following steps:
 
@@ -67,6 +66,7 @@ To update a rate-limiting rule, complete the following steps:
 
 ## Deleting a rate limiting rule in the console
 {: #rate-limit-ui-delete}
+{: ui}
 
 To delete a rate limiting rule in the console, follow these steps:
 
