@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-15"
+lastupdated: "2026-06-18"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Configuring rate limiting
 {: #cis-rate-limiting}
 
-The _previous_ version of rate-limiting rules is now deprecated. The rate-limiting rules interface for the previous version will remain available until 30 July 2025. After this date, any active rules from the previous version will no longer function.
+The _previous_ version of rate-limiting rules is deprecated. Active rules from the previous version will no longer function.
 {: deprecated}
 
 Rate limiting (Enterprise plan only) protects against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeting the application layer.
@@ -23,97 +23,77 @@ Rate limiting (Enterprise plan only) protects against denial-of-service attacks,
 
 Select the type of rate-limiting rule, either a **Custom rule** or **Protect login**.
 
-## Creating a custom rate-limiting rule in the console
+## Creating a custom rate limiting rule in the console
 {: #create-a-custom-rate-limiting-rule-ui}
 {: ui}
 
-Enter a rule name that helps you remember what the rule does. This field is an optional field.
+To create a custom rate limiting rule, complete the following steps:
 
-In the **Traffic matching criteria** section, enter the following information.
+1. In the {{site.data.keyword.cis_short}} console, navigate to the **Security** > **Rate limiting**, and then click **Create rule**.
+1. Enter a name for the rule.
+1. Define the match condition for the rule:
+   1. Select a request field (for example, URI path, HTTP method, or header).
+   1. Select an operator (for example, equals, contains, or matches).
+   1. Enter or select a value.
+   1. Optional: Use the Expression Builder to create a custom expression for more complex matching logic.
+   1. Optional: Combine multiple conditions by using **And** and **Or** operators to create compound rules.
+   1. Optional: Disable **Cache status** if you want the rate-limiting rule to consider only requests that reach the origin server. By default, cached requests are included in the rate calculation.
+1. In **With the same characteristics**, select the characteristic that {{site.data.keyword.cis_short}} uses to identify matching requests. Common options include IP address, IP with NAT support, session, headers, cookie, query string, or JA3 fingerprint.
+1. Optional: To define a custom counting expression:
+   1. Enable **Use custom counting expression**.
+   1. Enter the counting expression. By default, the counting expression matches the rule expression. A custom counting expression allows you to count requests differently from how they are matched.
+1. In **When rate exceeds**, configure the request threshold:
+   1. Enter the maximum number of requests allowed.
+   1. Select the time period that {{site.data.keyword.cis_short}} uses to evaluate the request rate (for example, 10 seconds, 1 minute, or 1 hour).
+1. In **Then take action**, select the action to apply when the threshold is exceeded. Options include **Block** (reject requests), **Challenge** (present a CAPTCHA), **JS Challenge** (present a JavaScript challenge), **Log** (log without action), or **Managed Challenge** (present an appropriate challenge based on client characteristics). For example, selecting **Block** causes {{site.data.keyword.cis_short}} to reject requests that exceed the configured rate limit.
+1. In **With the following behavior**, select the mitigation behavior:
+   1. Select a mitigation timeout to block requests for a specified duration after the threshold is exceeded (for example, 1 minute, 10 minutes, or 1 hour).
+   1. Enterprise customers with the rate limiting add-on can select **Throttle requests over the maximum configured rate** to limit requests instead of applying the configured action.
+1. In **Place at**, select the rule order. Rules are evaluated in order, so place more specific rules before general rules.
+1. Click **Deploy**.
 
-1. Select the criteria type.
-1. Enter the URL that you are rate limiting.
-1. Select the number of requests to allow before triggering rate limiting.
-1. Select the time period (in seconds) over which the requests can occur before triggering rate limiting.
+The rate limiting rule is created and deployed. The rule takes effect immediately and begins monitoring traffic according to your configuration.
 
-    The range is from 10 to 86,400 seconds.
-    {: note}
+## Updating a rate limiting rule in the console
+{: #rate-limit-ui-update}
 
-The **Advanced Criteria** option allows you to specify which HTTP methods, header responses, and origin response codes to further restrict the matching criteria.
+To update a rate-limiting rule, complete the following steps:
 
-Select a value form the **Method** list menu (ANY is the default).
+1. In the {{site.data.keyword.cis_short}} console, navigate to **Security** > **Rate limiting**.
+1. In the rate limiting ruleset table, locate the rule that you want to modify.
+1. Click Actions menu on the right of the row and then select **Edit**.
+1. Modify the rule settings as needed.
+1. Click **Save** to update the rule.
 
-Update the **HTTP response header**. You can also **Add response header** to include headers returned by your origin web server.
+## Deleting a rate limiting rule in the console
+{: #rate-limit-ui-delete}
 
-If you have more than one header under the **HTTP response header**, an _AND_ Boolean logic applies. To exclude a header from being matched, use the _Not Equal_ option. Also, each header must be an exact match. However, case sensitivity doesn't apply.
-{: note}
+To delete a rate limiting rule in the console, follow these steps:
 
-Under **Origin response code**, type the valid numerical value of each HTTP response code to match. To include two or more response codes, separate each value with a comma. For example, you can enter `401, 403` if you only want those two error codes to count.
+1. In the {{site.data.keyword.cis_short}} console, navigate to **Security** > **Rate limiting**.
+1. In the rate limiting rules table, locate the rule that you want to delete.
+1. Click the Actions menu for the rule, and then select **Delete**.
+1. Review the confirmation message and click **Delete** to confirm.
 
 ## Configuring the response
 {: #rate-limiting-configure-response}
+{: ui}
 
 Select from the actions listed, and specify the timeout period. In this case, the timeout refers to the ban period that the action takes place. A 60-second timeout means that the action is applied for 60 seconds.
 
-|Action| Description|
-|------|------------|
-|Block | Issues a 429 error when the threshold is exceeded|
-|Challenge | User must pass a Google re-Captcha Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.|
-|JS Challenge | The user must pass a JavaScript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked.
-|Simulate| You can use this option to test your rule before applying any of the other options in your live environment.
+| Action | Description |
+| ------ | ------------ |
+| Block | Issues a 429 error when the threshold is exceeded |
+| Challenge | User must pass a Google re-Captcha Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked. |
+| JS Challenge | The user must pass a JavaScript Challenge before proceeding. If successful, the request is accepted. Otherwise, the request gets blocked. |
+| Simulate | You can use this option to test your rule before applying any of the other options in your live environment.
 {: caption="Actions for rate limiting" caption-side="bottom"}
-
-In the **Advanced response** section, specify the response type when a rule's threshold is exceeded.
-
-### Verifying the rate-limiting rules and response consistency by using HTTP status
-{: #verify-rate-limiting-response}
-
-When you apply rate-limiting rules to a web address or service, it’s important to confirm that the rules are enforced correctly. A simple test confirms that the system responds with the following appropriate HTTP status codes:
-
-* `200 OK` or `404 Not Found` for allowed requests
-* `429 Too Many Requests` when rate limits are exceeded.
-
-To verify the rate-limiting rules and response consistency, run the following command:
-
-```sh
-for i in {1..N}; do curl -s -o /dev/null -w "%{http_code}\n" <your-target-url>; done
-```
-{: pre}
-
-#### Command options
-{: #rate-command-options}
-
-`N`
-:   Number of requests you want to send.
-
-`your-target-url`
-:   URL of the service or endpoint you want to test.
-
-This command provides output to the HTTP status code for each request and allows you to observe when the rate limit threshold is reached.
-
-## Bypassing URLs
-{: #rate-limiting-bypass}
-
-Bypass helps you to create the equivalent of an allowlist or exception for a set of URLs. No actions trigger for those URLs, even if the rate-limiting rule is matched.
-
-## Protect login rule
-{: #rate-limiting-protect-login}
-
-Protect login is a predefined rate-limiting rule designed to prevent brute-force attacks on your login endpoint. Clients (by IP address) that attempt to log in more than 5 times within 5 minutes
-are blocked from accessing the login URL for 15 minutes.
-
-To configure this rule:
-
-1. Enter a name for the rule.
-1. Specify the login URL path (for example, `/login`, `/admin/login`).
-
-CIS automatically enforces the rate limits to protect your login page.
 
 ## Getting the rate-limiting rule entrypoint for the API
 {: #get-ratelimit-rule-entry-point-api}
 {: api}
 
-All rate-limiting rule API operations require a `RULESET_ID` of the entrypoint ruleset for the rate-limiting rules phase. This entrypoint ruleset might exist or needs to be created if it does not exist.
+All rate-limiting rule API operations require a `RULESET_ID` of the entrypoint ruleset for the rate-limiting rules phase. This entrypoint ruleset might exist or might need to be created if it does not exist.
 
 Follow these steps to get the rate-limiting rule entrypoint ruleset:
 
@@ -242,11 +222,38 @@ Follow these steps to delete an existing rate-limiting rule with the API:
    ```
    {: pre}
 
-## Creating a rate-limiting rule from the CLI
+### Verifying the rate-limiting rules and response consistency by using HTTP status
+{: #verify-rate-limiting-response}
+{: api}
+
+When you apply rate-limiting rules to a web address or service, it’s important to confirm that the rules are enforced correctly. A simple test confirms that the system responds with the following appropriate HTTP status codes:
+
+* `200 OK` or `404 Not Found` for allowed requests
+* `429 Too Many Requests` when rate limits are exceeded.
+
+To verify the rate-limiting rules and response consistency, run the following command:
+
+```sh
+for i in {1..N}; do curl -s -o /dev/null -w "%{http_code}\n" <your-target-url>; done
+```
+{: pre}
+
+#### Command options
+{: #rate-command-options}
+
+`N`
+:   Number of requests you want to send.
+
+`your-target-url`
+:   URL of the service or endpoint you want to test.
+
+This command provides output to the HTTP status code for each request and allows you to observe when the rate limit threshold is reached.
+
+## Creating a rate limiting rule from the CLI
 {: #create-rate-limit-cli}
 {: cli}
 
-To create a rate-limiting rule from the CLI, follow these steps:
+To create a rate limiting rule from the CLI, follow these steps:
 1. [Set up your CLI environment](/docs/cis?topic=cis-cis-cli#-cli-prereqs).
 1. Log in to your account from the CLI. After you enter the password, the system prompts for the account and region that you want to use:
 
@@ -367,11 +374,11 @@ Sample JSON data:
 `--output`
 :   The output format. Currently, `json` is the only supported value.
 
-## Updating a rate-limiting rule from the CLI
+## Updating a rate limiting rule from the CLI
 {: #updating-rate-limit-cli}
 {: cli}
 
-Run the following command to update a custom rule from the CLI:
+Run the following command to update a rate limiting rule from the CLI:
 ```sh
 ibmcloud cis ratelimit-rule-update DNS_DOMAIN_ID RATELIMIT_RULE_ID [--url URL] [--description DESCRIPTION] [--threshold NUM] [--period SECONDS] [...]
 ```
@@ -484,11 +491,11 @@ Sample JSON data:
 `--output`
 :   Specify output format, only `JSON` is supported.
 
-## Deleting a rate-limiting rule from the CLI
+## Deleting a rate limiting rule from the CLI
 {: #rate-limite-delete-cli}
 {: cli}
 
-Run the following command to delete a rate-limiting rule from the CLI:
+Run the following command to delete a rate limiting rule from the CLI:
 ```sh
 ibmcloud cis ratelimit-rule-delete DNS_DOMAIN_ID RATELIMIT_RULE_ID [--instance INSTANCE]
 ```
