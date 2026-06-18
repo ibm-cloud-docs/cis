@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-07-07"
+  years: 2020, 2026
+lastupdated: "2026-06-18"
 
 keywords: OWASP logging
 
@@ -16,9 +16,9 @@ subcollection: cis
 {: #additional-owasp-logging}
 
 To gain deeper insight into potential threats, you can enable logging for all OWASP events that contribute to the overall threat score, not just those events that exceed the configured sensitivity threshold. Enabling enhanced OWASP logging gives you a more complete view of security activity, which helps with analysis, tuning, and audits.
-{: shortdesc} 
+{: shortdesc}
 
-By default (when disabled), only OWASP events that cross the configured sensitivity threshold are logged. 
+By default (when disabled), only OWASP events that cross the configured sensitivity threshold are logged.
 
 To enable additional OWASP event logging in the console, follow these steps:
 
@@ -29,4 +29,3 @@ To enable additional OWASP event logging in the console, follow these steps:
    {: note}
 
 After you enable this toggle, all OWASP-triggered events appear in both Logpush jobs (Dataset Firewall Events) and Security Events.
-   
