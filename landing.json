@@ -17,6 +17,18 @@
       {
         "title": "Comparing CIS plans",
         "href": "/docs/cis?topic=cis-cis-plan-comparison"
+      },
+      {
+        "title": "CIS WAF rule change log",
+        "href": "/docs/cis?topic=cis-waf-rule-changelog"
+      },
+      {
+        "title": "CIS API change log",
+        "href": "/docs/cis?group=api-cis"
+      },
+      {
+        "title": "CIS CLI change log",
+        "href": "/docs/cis?group=cis-cli-reference"
       }
     ]
   },
