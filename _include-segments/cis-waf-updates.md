@@ -1,4 +1,24 @@
+## WAF - WAF Release - 2026-06-23
+**Published on:** Tue, 23 Jun 2026 00:00:00 GMT
 
+This week's release introduces new managed protection to address a critical pre-authentication OS command injection vulnerability in Ivanti Sentry (CVE-2026-10520).
+
+**Key Findings**
+
+  * CVE-2026-10520: An OS command injection vulnerability in Ivanti Sentry allows remote, unauthenticated attackers to execute arbitrary system commands with root privileges. The flaw stems from improper sanitization of input strings parsed during internal configuration handling.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments  
+---|---|---|---|---|---|---  
+CIS Managed Ruleset| 500a90789f874345b60b0de7242fdf83 | N/A| Ivanti Sentry - Command Injection - CVE:CVE-2026-10520| Log| Block| This is a new detection.
+
+
+## WAF - WAF Release - Scheduled changes for 2026-06-29
+**Published on:** Tue, 23 Jun 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments  
+---|---|---|---|---|---|---  
+2026-06-23| 2026-06-29| Log| N/A| 32075e19b1494117ac5915e8d84c92c9 | Fortinet FortiSandbox - Path Traversal - CVE:CVE-2026-39813| This is a new detection.
+ 
 ## WAF - WAF Release - Scheduled changes for 2026-06-15
 **Published on:** Tue, 09 Jun 2026 00:00:00 GMT
 

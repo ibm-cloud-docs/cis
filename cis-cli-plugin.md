@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-06-23"
 
 keywords:
 
@@ -2843,8 +2843,10 @@ ibmcloud cis edge-functions-trigger-delete DNS_DOMAIN_ID TRIGGER_ID
 ```
 {: pre}
 
-## Firewall
+## Firewall (Deprecated)
 {: #firewall}
+
+Firewall rules are deprecated. CIS moved existing firewall rules to [WAF custom rules](/docs/cis?topic=cis-cis-cli#waf-custom-rules). {: deprecated}
 
 Manipulate firewalls by using the following `firewall` commands.
 
