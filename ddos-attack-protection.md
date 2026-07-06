@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -49,7 +49,7 @@ Certain actions and sensitivity levels are available only on specific CIS plans.
 Currently, you can define account-level overrides for the HTTP DDoS Attack Protection managed ruleset only through the API.
 {: note}
 
-To adjust the rule behavior, use [ruleset APIs](/apidocs/cis#get-zone-entrypoint-ruleset) with the `ddos_l7` phase.
+To adjust the rule behavior, use [ruleset APIs](/docs/apis/cis#get-zone-entrypoint-ruleset) with the `ddos_l7` phase.
 
 ## Availability
 {: #http-ddos-availability}

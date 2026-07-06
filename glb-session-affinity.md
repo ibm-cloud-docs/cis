@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -85,8 +85,8 @@ ibmcloud cis glb-update fc72db47cee8290eaef292cda6e1619a 12b68758126546e0d129c7b
 
 Session affinity is a property of global load balancers, which you can set with the following endpoints:
 
-* [Create a load balancer](/apidocs/cis#create-load-balancer)
-* [Edit a load balancer](/apidocs/cis#edit-load-balancer)
+* [Create a load balancer](/docs/apis/cis#create-load-balancer)
+* [Edit a load balancer](/docs/apis/cis#edit-load-balancer)
 
 Customize the behavior of session affinity by using the `session_affinity`, `session_affinity_ttl`, and `session_affinity_attributes` parameters.
 

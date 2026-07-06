@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-07-06"
 
 keywords: managed rules
 
@@ -38,13 +38,13 @@ To migrate your instance to managed rules, take the following steps:
 1. Click **Deploy** in the side panel to continue.
 1. (Enterprise only) Review security events in the **Security > Events** tab.
 
-   When you select **Deploy**, both WAF implementations are enabled simultaneously, allowing you to validate your new configuration and finish the upgrade. 
+   When you select **Deploy**, both WAF implementations are enabled simultaneously, allowing you to validate your new configuration and finish the upgrade.
 
    After deploying the new WAF configuration, both the old and new WAF Managed Rules run in parallel (called validation mode). During this phase, the WAF tab in the CIS console displays both rulesets, with the new WAF Managed Rules evaluated before the previous version.
 
    1. Use the current validation mode to review the behavior of the new WAF configuration in **Security > Events**.
    1. When you are done reviewing your configuration with both WAFs enabled, click **Ready** to complete the upgrade.
-   
+
 1. Select **Turn off previous version** to finalize the migration (this step can't be undone), or cancel to continue editing. This transition does not incur any downtime.
 
 ## Editing rulesets
@@ -73,7 +73,7 @@ To add your own exceptions, take the following steps.
 {: #managed-rules-faqs}
 
 What if I don't migrate?
-:   Users who don’t manually complete the migration to Managed Rules by 12 June 2025, may be subjected to being automatically migrated, with no expected impact to their current WAF policies or security. From this date forward, you must use the [Ruleset Engine API](/apidocs/cis#get-zone-rulesets) to make WAF and Managed Rules configurations.
+:   Users who don’t manually complete the migration to Managed Rules by 12 June 2025, may be subjected to being automatically migrated, with no expected impact to their current WAF policies or security. From this date forward, you must use the [Ruleset Engine API](/docs/apis/cis#get-zone-rulesets) to make WAF and Managed Rules configurations.
 
     Rules and configuration might be slightly different than before, because the new Managed Rules added more robust OWASP security coverage. This ruleset is updated from OWASP v2.x to OWASP v3.x; which adds paranoia levels and improves false positives rates.
 

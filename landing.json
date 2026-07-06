@@ -33,7 +33,7 @@
     ]
   },
   "section_devtools": {
-    "api": "/apidocs/cis",
+    "api": "/docs/apis/cis",
     "cli": "/docs/cis?topic=cis-cis-cli",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis"
   },

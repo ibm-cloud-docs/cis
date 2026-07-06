@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -530,7 +530,7 @@ Follow these steps to create a global load balancer with the API:
    ```
    {: codeblock}
 
-For more information about creating, updating, and deleting global load balancers, health checks, and origin pools, see [API Global load balancer](/apidocs/cis#create-load-balancer).
+For more information about creating, updating, and deleting global load balancers, health checks, and origin pools, see [API Global load balancer](/docs/apis/cis#create-load-balancer).
 {: note}
 
 ## Configuring global load balancers with Terraform

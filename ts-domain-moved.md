@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -32,7 +32,7 @@ To resolve the condition where your domain remains in `Moved` status longer than
 
 - Check your DNS registrar and ensure that the NS records match with the NS records given by {{site.data.keyword.cis_short_notm}}.
     - Find the NS records in the **CIS name servers** section of the **DNS** tab in the **Reliability** page. For more information, see [Step 6. Configure your name servers with the registrar or existing DNS provider](/docs/cis?topic=cis-getting-started#process-overview-new).
-- Run the activation check API again. You can use the [API endpoint](/apidocs/cis#zone-activation-check) first to initiate the recheck.
+- Run the activation check API again. You can use the [API endpoint](/docs/apis/cis#zone-activation-check) first to initiate the recheck.
     - As long as the NS values for the domain are pointed in the correct direction by a dig, and the reactivation check is done with the API, the domain should go from `Moved` status to `Active`.
 - Remove and replace any previous NS records with the {{site.data.keyword.cis_short_notm}}-provided records in your DNS registrar.
 

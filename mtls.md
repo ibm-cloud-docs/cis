@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-07-06"
 
 keywords: mutual tls, mtls, authentication, certificates
 
@@ -63,7 +63,7 @@ Mutual TLS (mTLS) provides certificate-based client authentication for enhanced 
    The client certificate is forwarded only with the first request in each mTLS connection.
    {: note}
 
-   For an API **curl** example to enable client certificate forwarding, see the [Update access certificates settings](/apidocs/cis#update-access-cert-settings) API.
+   For an API **curl** example to enable client certificate forwarding, see the [Update access certificates settings](/docs/apis/cis#update-access-cert-settings) API.
 
    Client certificate headers sent to your origin server:
 
@@ -138,4 +138,4 @@ All requests to the origin are evaluated for a valid client certificate.
 1. If the client certificate is trusted, a signed JSON Web Token (JWT) is generated for the client that allows the request and subsequent requests to proceed.
 1. If the client doesn't present a valid certificate, the server returns a `403 Forbidden` response.
 
-To retrieve access certificates with the API, see [List access certificates](/apidocs/cis#list-access-certificates).
+To retrieve access certificates with the API, see [List access certificates](/docs/apis/cis#list-access-certificates).

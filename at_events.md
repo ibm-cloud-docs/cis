@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-09-19"
+  years: 2018, 2026
+lastupdated: "2026-07-06"
 
 keywords: CIS activity tracker events
 
@@ -297,4 +297,4 @@ Open a Support case and include the value of the field **requestId** that is ava
 ## Analyzing {{site.data.keyword.cis_short_notm}} activity tracking events
 {: #at_events_iam_analyze}
 
-For more information about calling auditing events with the API, see the Auditing section of each method in the [{{site.data.keyword.cis_short_notm}} API documentation](/apidocs/cis).
+For more information about calling auditing events with the API, see the Auditing section of each method in the [{{site.data.keyword.cis_short_notm}} API documentation](/docs/apis/cis).

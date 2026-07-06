@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -54,7 +54,7 @@ To create a Logpush job in the console, follow these steps:
    1. Select the Instance **Region**.
    1. Enter the **API key**.
 
-      An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
+      An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2).
 
       For an IBM Cloud Logs service, the user or service ID must be granted the Sender IAM role.
       {: important}
@@ -71,7 +71,7 @@ To create a Logpush job in the console, follow these steps:
 
       Destination values for Cloud Object Storage must be unique. It is recommended to use a unique bucket path to avoid conflicts.
 
-      An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2).
+      An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2).
 
       For a Cloud Object Storage service, the user or service ID must be granted the **Object Writer** IAM role for the bucket.
       {: important}
@@ -128,7 +128,7 @@ Where:
 
    | IBM Cloud Logs |
    |---------------------|
-   | `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` \n \n An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/apidocs/cis#update-logpush-job-v2). \n \n **Important:** The user or the service ID must be granted the Sender IAM role on the IBM Cloud Logs service. |
+   | `ibmcl://<INSTANCE_ID>.ingress.<REGION>.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=<IBM_API_KEY>` \n \n For example: \n `ibmcl://604a309c-585c-4a42-955d-76239ccc1905.ingress.us-south.logs.cloud.ibm.com/logs/v1/singles?ibm_api_key=zxzeNQI22dPwxxxxxxxx9jxdtn1EVK` \n \n An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2). \n \n **Important:** The user or the service ID must be granted the Sender IAM role on the IBM Cloud Logs service. |
    {: caption="IBM Cloud Logs path" caption-side="bottom"}
    {: #cli-table-11}
    {: tab-title="IBM Cloud Logs"}
@@ -232,7 +232,7 @@ CLI examples for the supported destinations:
 {: #logpush-create-api}
 {: api}
 
-You can use the [Create a Logpush job](/apidocs/cis#create-logpush-job-v2) API to create a Logpush job when using IBM Cloud Logs, Cloud Object Storage, or Splunk.
+You can use the [Create a Logpush job](/docs/apis/cis#create-logpush-job-v2) API to create a Logpush job when using IBM Cloud Logs, Cloud Object Storage, or Splunk.
 
 ### Getting the available log fields for a dataset with the API
 {: #logpush-setup-fields-api}
@@ -273,7 +273,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    | IBM Cloud Logs |
    | --------------------- |
-   | `ibmcl`: Information to identify the IBM Cloud Logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. \n \n `ibmcl_names`: Optional field to customize the application and subsystem names used in IBM Cloud Logs. Fields within the `ibmcl_names` object are: \n * `application_name`: Custom application name for the job. \n * `subsystem_name`: Custom subsystem name for the job. |
+   | `ibmcl`: Information to identify the IBM Cloud Logs instance where the data is pushed. Fields within the `ibmcl` object are: \n * `instance_id`: ID of the IBM Cloud Logs instance. \n * `region`: Region of the IBM Cloud Logs instance (for example, `us-south`). \n * `api_key`: An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job](/docs/apis/cis#update-logpush-job-v2) API. \n \n **Important**: The user or the service ID must be granted the **Sender** IAM role on the IBM Cloud Logs service. \n \n `ibmcl_names`: Optional field to customize the application and subsystem names used in IBM Cloud Logs. Fields within the `ibmcl_names` object are: \n * `application_name`: Custom application name for the job. \n * `subsystem_name`: Custom subsystem name for the job. |
    {: caption="IBM Cloud Logs destination" caption-side="bottom"}
    {: #pl-table-1}
    {: tab-title="IBM Cloud Logs"}
@@ -283,7 +283,7 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
    | Cloud Object Storage |
    | --------------------- |
-   | `cos`: Information to identify the Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the Cloud Object Storage instance. \n * `ibm_api_key`: An API key for the account where the IBM Cloud Logs instance set up is required. You can use a user API key or a service ID API key. This key generates the bearer token for the Logpush job. To rotate the API key, use the [Update a Logpush job](/apidocs/cis#update-logpush-job-v2) API. \n \n **Important**: The customer or the service ID must have the **Object Writer** IAM role on the Object Storage bucket. \n |
+   | `cos`: Information to identify the Object Storage bucket where the data is pushed. Fields within the `cos` object are: \n * `bucket_name`: Name of your COS bucket where logs are sent (example: `cos-bucket001`). \n * `region`: Region of the Cloud Object Storage instance (for example, `us-south`). \n * `id`: ID of the Cloud Object Storage instance. \n * `ibm_api_key`: An API key for the account where the IBM Cloud Logs instance set up is required. You can use a user API key or a service ID API key. This key generates the bearer token for the Logpush job. To rotate the API key, use the [Update a Logpush job](/docs/apis/cis#update-logpush-job-v2) API. \n \n **Important**: The customer or the service ID must have the **Object Writer** IAM role on the Object Storage bucket. \n |
    {: caption="Cloud Object Storage destination" caption-side="bottom"}
    {: #pl-table-2}
    {: tab-title="Cloud Object Storage"}

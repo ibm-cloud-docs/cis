@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-08-22"
+  years: 2024, 2026
+lastupdated: "2026-07-06"
 
 keywords: custom rules, rulesets, waf, firewall rules
 
@@ -86,16 +86,16 @@ The skip action supports different skip options, according to the security featu
 This section contains examples of different skip rule scenarios for WAF custom rules. Take the following considerations into account:
 
 * The `{zone_id}` value is the ID of the zone where you want to add the rule.
-* The `{ruleset_id}` value is the ID of the entry point ruleset of the `http_request_firewall_custom` phase. For details on obtaining this ruleset ID, see [List and view rulesets](/apidocs/cis#get-zone-rulesets). The following API examples add a skip rule to an existing ruleset by using the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation.
+* The `{ruleset_id}` value is the ID of the entry point ruleset of the `http_request_firewall_custom` phase. For details on obtaining this ruleset ID, see [List and view rulesets](/docs/apis/cis#get-zone-rulesets). The following API examples add a skip rule to an existing ruleset by using the [Create a zone ruleset](/docs/apis/cis#create-zone-ruleset-rule) rule operation.
 
-   However, the entry point ruleset might not exist yet. In this case, use the [Update entrypoint ruleset](/apidocs/cis#update-zone-entrypoint-ruleset) operation to create the entry point ruleset with a skip rule.
+   However, the entry point ruleset might not exist yet. In this case, use the [Update entrypoint ruleset](/docs/apis/cis#update-zone-entrypoint-ruleset) operation to create the entry point ruleset with a skip rule.
 
 * Although each example includes only one action parameter, you can use several skip options in the same rule by specifying the ruleset, phases, and products action parameters simultaneously.
 
 #### Skip the remaining rules in the current ruleset
 {: #cis-skip-remaining-rules}
 
-This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a skip rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. If you do not know your entry point ruleset ID, see [Getting the custom rule entry point for the API](/docs/cis?topic=cis-about-waf-custom-rules&interface=api#get-rule-entry-point-api). The rule skips all remaining rules in the current ruleset for requests that match the rule expression:
+This example uses the [Create a zone ruleset](/docs/apis/cis#create-zone-ruleset-rule) rule operation to add a skip rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. If you do not know your entry point ruleset ID, see [Getting the custom rule entry point for the API](/docs/cis?topic=cis-about-waf-custom-rules&interface=api#get-rule-entry-point-api). The rule skips all remaining rules in the current ruleset for requests that match the rule expression:
 
 ```sh
 curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
@@ -115,7 +115,7 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RUL
 #### Skip a phase
 {: #cis-skip-phase}
 
-This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) to add a rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. The rule skips the `http_ratelimit` phase for requests that match the rule expression:
+This example uses the [Create a zone ruleset](/docs/apis/cis#create-zone-ruleset-rule) to add a rule to the existing `http_request_firewall_custom` phase entry point ruleset with ID `RULESET_ID`. The rule skips the `http_ratelimit` phase for requests that match the rule expression:
 
 ```sh
 curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
@@ -137,7 +137,7 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RUL
 #### Skip a phase and do not log matching requests
 {: #cis-skip-phase-no-matching}
 
-This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a rule that both skips the `http_ratelimit` phase and disables event logging for the current rule:
+This example uses the [Create a zone ruleset](/docs/apis/cis#create-zone-ruleset-rule) rule operation to add a rule that both skips the `http_ratelimit` phase and disables event logging for the current rule:
 
 ```sh
 curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \
@@ -162,7 +162,7 @@ curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RUL
 #### Skip security products
 {: #cis-skip-security-products}
 
-This example uses the [Create a zone ruleset](/apidocs/cis#create-zone-ruleset-rule) rule operation to add a rule that skips the Zone Lockdown and User Agent Blocking products for requests that match the rule expression:
+This example uses the [Create a zone ruleset](/docs/apis/cis#create-zone-ruleset-rule) rule operation to add a rule that skips the Zone Lockdown and User Agent Blocking products for requests that match the rule expression:
 
 ```sh
 curl -X POST "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/$RULESET_ID/rules" \

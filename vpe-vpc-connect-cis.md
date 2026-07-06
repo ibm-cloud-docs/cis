@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-07-06"
 
 keywords: vpe, virtual private endpoints
 
@@ -101,7 +101,7 @@ api.private.cis.cloud.ibm.com
 ```
 {: pre}
 
-For examples of setting the service's FQDN for the specific SDK language, see [SDK API examples](/apidocs/cis?code=go).
+For examples of setting the service's FQDN for the specific SDK language, see [SDK API examples](/docs/apis/cis?code=go).
 
 ### Using an endpoint gateway with Terraform
 {: #vpe-terraform}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -43,9 +43,9 @@ Custom and managed lists
 
 :   This release (v1.7.3) introduces a new Lists tab on the Account page, enabling users to create and manage custom lists or use CIS-managed lists directly from the CIS console. CLI and Terraform support for lists were previously released in July, and full API support is also now available (see the [API change log](/docs/cis?topic=cis-api-change-log&interface=ui#cis-dec-0325) for details).
 
-    * [Custom lists](/apidocs/cis#get-custom-lists) let you define and manage ASN, IP, and hostname entries for use in access rules and other policy configurations. For more information, see [Creating custom lists and adding items](/docs/cis?topic=cis-create-custom-lists-add-items&interface=ui).
+    * [Custom lists](/docs/apis/cis#get-custom-lists) let you define and manage ASN, IP, and hostname entries for use in access rules and other policy configurations. For more information, see [Creating custom lists and adding items](/docs/cis?topic=cis-create-custom-lists-add-items&interface=ui).
 
-    * [Managed lists](/apidocs/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data that is maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
+    * [Managed lists](/docs/apis/cis#get-managed-lists) provide preconfigured threat intelligence and reputation data that is maintained by IBM to simplify policy enforcement. The specific managed lists available depend on your subscription plan.
 
     These features enable more accurate policy targeting and improve operational efficiency within CIS. For more information, see [Working with lists](/docs/cis?group=lists).
 
@@ -63,7 +63,7 @@ X-Request-ID Header for improved CLI request tracing
 {: release-note}
 
 Ruleset Engine migration
-:   Two existing features are now part of the Ruleset Engine rules language, and they are updated to use the [Rulesets API](/apidocs/cis#get-zone-rulesets) (similar to WAF managed rules).
+:   Two existing features are now part of the Ruleset Engine rules language, and they are updated to use the [Rulesets API](/docs/apis/cis#get-zone-rulesets) (similar to WAF managed rules).
 
     * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 

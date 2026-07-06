@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-07-06"
 
 keywords: range application, tls encryption, global tcp proxy
 
@@ -189,7 +189,7 @@ Origin DNS
 Origin Port
 :    The port of your origin service.
 
-For more information, see [Creating Range applications](/apidocs/cis#create-range-app).
+For more information, see [Creating Range applications](/docs/apis/cis#create-range-app).
 
 ### Listing all Range applications
 {: #range-list-all-apps}
@@ -238,7 +238,7 @@ Example response:
 ```
 {: codeblock}
 
-For more information, see [Listing Range applications](/apidocs/cis#list-range-apps).
+For more information, see [Listing Range applications](/docs/apis/cis#list-range-apps).
 
 ### Listing specific Range applications
 {: #range-list-a-specific-range-app}

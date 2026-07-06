@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -14,14 +14,14 @@ subcollection: cis
 
 # Migrating to new rate-limiting rules
 {: #migrating-to-rate-limiting}
- 
+
 The {{site.data.keyword.cis_short_notm}} WAF provides both automatic protection from vulnerabilities and the flexibility to create WAF custom rules.
 
 {{site.data.keyword.cis_short_notm}} recommends that you create new ruleset-based, rate-limiting rules to replace any existing rate-limiting rules that you might have configured in the previous rate-limiting rule handling.
 
-The old and new implementation of rate-limiting rules have separate rules lists because the two implementations do not offer the same set of features. Recreate your rate limiting configuration (in the previous version) by using the new rate-limiting rules with the [Rulesets API](/apidocs/cis#get-instance-rulesets).
+The old and new implementation of rate-limiting rules have separate rules lists because the two implementations do not offer the same set of features. Recreate your rate limiting configuration (in the previous version) by using the new rate-limiting rules with the [Rulesets API](/docs/apis/cis#get-instance-rulesets).
 
-If you're using the older version of rate limiting, you have access to both the legacy and new versions of the product. Both sets of rules are applied to incoming traffic, with the new rate-limiting logic running first. For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/apidocs/cis#list-all-zone-rate-limits).
+If you're using the older version of rate limiting, you have access to both the legacy and new versions of the product. Both sets of rules are applied to incoming traffic, with the new rate-limiting logic running first. For more information on the new rate-limiting implementation, including the available features in each {{site.data.keyword.cis_short_notm}} plan, see the [Rate-limiting rules API](/docs/apis/cis#list-all-zone-rate-limits).
 {: note}
 
 ## Main differences between versions
@@ -42,9 +42,9 @@ In the new version of Rate Limiting, counting and mitigation expressions are sep
 ## Relevant changes for API users
 {: #relevant-changes-for-api-users}
 
-The new rate-limiting rules are based on the [Ruleset Engine rules language](/docs/cis?topic=cis-cis-ruleset-engine). To configure rate-limiting rules with the API, you must use the [Rulesets API](/apidocs/cis#get-instance-rulesets){: external}. The Rulesets API is used on all recent {{site.data.keyword.cis_short_notm}} security products to provide a uniform user experience when interacting with the {{site.data.keyword.cis_short_notm}} API.
+The new rate-limiting rules are based on the [Ruleset Engine rules language](/docs/cis?topic=cis-cis-ruleset-engine). To configure rate-limiting rules with the API, you must use the [Rulesets API](/docs/apis/cis#get-instance-rulesets){: external}. The Rulesets API is used on all recent {{site.data.keyword.cis_short_notm}} security products to provide a uniform user experience when interacting with the {{site.data.keyword.cis_short_notm}} API.
 
-The [previous Rate Limiting API](/apidocs/cis#list-all-zone-rate-limits) is being deprecated. Migrate your API calls to the new [Rulesets API](/apidocs/cis#get-instance-rulesets).{: external}
+The [previous Rate Limiting API](/docs/apis/cis#list-all-zone-rate-limits) is being deprecated. Migrate your API calls to the new [Rulesets API](/docs/apis/cis#get-instance-rulesets).{: external}
 {: deprecated}
 
 It is recommended that you manually migrate your rate-limiting rules by recreating them with the Rulesets API using the `http_ratelimit` phase. This lets you take full advantage of the new features and refine your rate-limiting logic during the transition.

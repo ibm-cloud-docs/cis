@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-03"
+lastupdated: "2026-07-06"
 
 keywords: custom lists
 
@@ -246,7 +246,7 @@ Operations to manage list items are asynchronous. Follow these steps to get the 
    ```
    {: pre}
 
-For more information, see [Lists API](/apidocs/cis#create-custom-lists).
+For more information, see [Lists API](/docs/apis/cis#create-custom-lists).
 
 ## Creating a custom list with Terraform
 {: #create-custom-list-terraform}
