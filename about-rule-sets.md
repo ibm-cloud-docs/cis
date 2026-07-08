@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-07-06"
 
 keywords: rulesets, entrypoint, phase
 
@@ -67,6 +67,6 @@ The `kind` field of a phase entrypoint ruleset has one of the following values:
 * `root`: Used for a phase entrypoint ruleset at the instance level
 * `zone`: Used for a phase entrypoint ruleset at the zone level
 
-If a 404 status code is returned when fetching an entrypoint ruleset, the particular ruleset phase likely doesn't exist. Create it by using the updated API for the [zone level entrypoint](/apidocs/cis#update-zone-entrypoint-ruleset) or [instance level entrypoint](/apidocs/cis#update-instance-entrypoint-ruleset). When you create the ruleset, use the intended phase and set the request body to `{ "rules": [] }`.
+If a 404 status code is returned when fetching an entrypoint ruleset, the particular ruleset phase likely doesn't exist. Create it by using the updated API for the [zone level entrypoint](/docs/apis/cis#update-zone-entrypoint-ruleset) or [instance level entrypoint](/docs/apis/cis#update-instance-entrypoint-ruleset). When you create the ruleset, use the intended phase and set the request body to `{ "rules": [] }`.
 
 For instructions on deploying rulesets that use entrypoint rulesets for WAF managed rules, see [Deploying managed rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entrypoint rulesets, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).

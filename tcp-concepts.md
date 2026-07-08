@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-07-14"
+  years: 2024, 2026
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -54,7 +54,7 @@ Table 2 lists connection limits between CIS and the origin server.
 | TCP ACK Timeout [^2]	| 90	| [522](/docs/cis?topic=cis-html-5xx-errors#522-error)	| No |
 | TCP Keep-Alive Interval [^3]	| 30 | [520](/docs/cis?topic=cis-html-5xx-errors#520-error)	| No |
 | Proxy Idle Timeout [^4]	| 900	| [520](/docs/cis?topic=cis-html-5xx-errors#520-error)	| No |
-| Proxy Read Timeout [^5]	| 100	| [524](/docs/cis?topic=cis-html-5xx-errors#524-error)	| [Yes](/apidocs/cis#get-proxy-read-timeout) |
+| Proxy Read Timeout [^5]	| 100	| [524](/docs/cis?topic=cis-html-5xx-errors#524-error)	| [Yes](/docs/apis/cis#get-proxy-read-timeout) |
 | Proxy Write Timeout [^6]	| 30	| [524](/docs/cis?topic=cis-html-5xx-errors#524-error)	| No |
 | HTTP/2 Pings to Origin	| Off	| N/A	| Yes |
 | HTTP/2 Connection Idle [^7]	| 900	| No	| No |

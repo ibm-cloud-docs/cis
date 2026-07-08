@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-07-22"
+  years: 2025, 2026
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -51,7 +51,7 @@ If your organization uses VPNs, NATs, or third-party services that generate high
 
 * Use expression filters to exclude specific traffic from the rules. You can exclude a combination of source ports, source IP addresses, destination ports, destination IP addresses, and protocol.
 
-* Reduce the sensitivity level of relevant managed rules. Setting a rule to "Essentially Off" prevents the rule from being triggered. For more information on rule adjustments, see the [HTTP DDoS Attack Protection managed ruleset](/apidocs/cis#get-zone-entrypoint-ruleset) (phase `ddos_l7`) and the [Network-layer DDoS Attack Protection managed ruleset](/apidocs/cis#get-zone-entrypoint-ruleset)(phase `ddos_l4`).
+* Reduce the sensitivity level of relevant managed rules. Setting a rule to "Essentially Off" prevents the rule from being triggered. For more information on rule adjustments, see the [HTTP DDoS Attack Protection managed ruleset](/docs/apis/cis#get-zone-entrypoint-ruleset) (phase `ddos_l7`) and the [Network-layer DDoS Attack Protection managed ruleset](/docs/apis/cis#get-zone-entrypoint-ruleset)(phase `ddos_l4`).
 
    To see an example API call for adjusting the L7 ruleset, see [Adjusting the sensitivity of DDoS L7 ruleset with the API](/docs/cis?topic=cis-third-party-ddos&q=expression+filters&tags=cis&loginMethod=federated#example-sensitivity-level-api).
    {: note}

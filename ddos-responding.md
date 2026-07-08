@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -18,7 +18,7 @@ subcollection: cis
 The CIS network automatically mitigates large DDoS attacks, but these attacks can still affect your application. All users should perform the following steps to better secure their application.
 {: shortdesc}
 
-1. Make sure the `ruleset_phase` parameter (with `ddos_l7`) in the [Ruleset API](/apidocs/cis#get-zone-entrypoint-ruleset) is set to the default settings (high sensitivity level and mitigation actions) for optimal DDoS activation.
+1. Make sure the `ruleset_phase` parameter (with `ddos_l7`) in the [Ruleset API](/docs/apis/cis#get-zone-entrypoint-ruleset) is set to the default settings (high sensitivity level and mitigation actions) for optimal DDoS activation.
 1. Deploy WAF custom rules and rate-limiting rules to enforce a combined positive and negative security model.
 1. Limit inbound traffic to what your application actually needs.
 
