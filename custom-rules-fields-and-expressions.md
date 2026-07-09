@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-07-09"
 
 subcollection: cis
 
@@ -274,3 +274,11 @@ Custom rule expressions are inspired by Wireshark display filters. However, the 
 * In Wireshark, `ssl` is a protocol field containing hundreds of other fields of various types that are available for comparison in multiple ways. However in custom rules, `ssl` is a single boolean field used to determine if the connection from the client to CIS is encrypted.
 * The `slice` operator is not supported.
 * Not all functions are supported. Currently, `len()`, and `count()` are not supported.
+
+###  Expression Limitations
+{: #expression-limits}
+
+The following limitations apply to rule expressions:
+* A rule expression can contain up to 4,096 characters.
+  * If you use the Expression Builder in the UI, the same limit applies to the generated expression preview.
+* A rule expression can contain a maximum of 64 regular expressions (regex).
