@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-09"
 
 keywords: rulesets, entrypoint, phase
 
@@ -46,7 +46,7 @@ The following table lists the phases that are available within the Ruleset Engin
 |Phase name|Description|Supported interfaces|
 |----------|-----------|-------------------|
 | `http_request_firewall_managed`| Web Application Firewall (WAF)| API, CLI, UI |
-| `http_request_firewall_custom` | Firewall rules | API, CLI, UI |
+| `http_request_firewall_custom` | Custom rules | API, CLI, UI |
 | `http_ratelimit` | Rate-limiting rules | API, CLI, UI |
 | `ddos_l7` | HTTP DDoS Attack Protection rules | API |
 | `http_config_settings` | Configuration rules | API |
