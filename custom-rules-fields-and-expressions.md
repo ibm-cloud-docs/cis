@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-11"
 
 subcollection: cis
 
@@ -265,20 +265,23 @@ not (http.request.method eq "POST" and http.request.uri.path eq "/login")
 ```
 {: screen}
 
-### Deviations from Wireshark display filters
+### Deviations from wireshark display filters
 {: #custom-rule-deviations}
 
-Custom rule expressions are inspired by Wireshark display filters. However, the implementation deviates in the following ways:
+Custom rule expressions are inspired by wireshark display filters. However, the implementation deviates in the following ways:
 
-* For CIDR IP equality tests, Wireshark allows ranges in the format `ip.src == 1.2.3.0/24`, while CIS only supports equality tests using a single IP address. To compare a CIDR, use the `in` operator; for example, `ip.src in {1.2.3.0/24}`.
+* For CIDR IP equality tests, wireshark allows ranges in the format `ip.src == 1.2.3.0/24`, while CIS only supports equality tests using a single IP address. To compare a CIDR, use the `in` operator; for example, `ip.src in {1.2.3.0/24}`.
 * In Wireshark, `ssl` is a protocol field containing hundreds of other fields of various types that are available for comparison in multiple ways. However in custom rules, `ssl` is a single boolean field used to determine if the connection from the client to CIS is encrypted.
 * The `slice` operator is not supported.
 * Not all functions are supported. Currently, `len()`, and `count()` are not supported.
 
-###  Expression Limitations
+###  Expression limitations
 {: #expression-limits}
 
 The following limitations apply to rule expressions:
 * A rule expression can contain up to 4,096 characters.
-  * If you use the Expression Builder in the UI, the same limit applies to the generated expression preview.
+
+   If you use the Expression Builder in the UI, the same limit applies to the generated expression preview.
+   {: note}
+
 * A rule expression can contain a maximum of 64 regular expressions (regex).
