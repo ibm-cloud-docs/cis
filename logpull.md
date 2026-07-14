@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-04-08"
+  years: 2018, 2026
+lastupdated: "2026-07-14"
 
 keywords: log pull, logpull
 
@@ -85,6 +85,9 @@ ibmcloud cis logpull DNS_DOMAIN_ID --start 2019-01-02T01:00:00+00:00 --end 2019-
 {: pre}
 
 Where `--start` and `--end` is entered as a UNIX timestamp (in seconds or nanoseconds), or as an absolute timestamp that conforms to RFC 3339, with a time duration of a minute or an hour.
+
+You can retrieve data for a maximum time interval of 1 hour.
+{: note}
 
 The response follows:
 
