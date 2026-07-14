@@ -1,10 +1,33 @@
-## WAF - WAF Release - Scheduled changes for 2026-07-13
-**Published on:** Mon, 06 Jul 2026 00:00:00 GMT
+## WAF - WAF Release - 2026-07-14
+**Published on:** Tue, 14 Jul 2026 00:00:00 GMT
+
+This release introduces new rules targeting critical infrastructure vulnerabilities. These include an unauthenticated memory disclosure flaw in Citrix NetScaler ADC and Gateway (CVE-2026-8451) and a high-severity pre-authentication remote code execution (RCE) vulnerability in Progress Kemp LoadMaster (CVE-2026-8037).
+
+**Key Findings**
+
+  * CVE-2026-8451: An insufficient input validation vulnerability affects Citrix NetScaler ADC and NetScaler Gateway appliances configured as a SAML Identity Provider (IdP). Remote, unauthenticated attackers can exploit this flaw by sending malformed requests to trigger a memory overread, allowing them to leak chunks of sensitive data from adjacent appliance memory.
+
+  * CVE-2026-8037: A critical OS command injection vulnerability in Progress Kemp LoadMaster load balancers allows unauthenticated remote attackers to achieve remote code execution (RCE).
+
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 78826e3223b94da493a2ade876973ac4 | N/A| Citrix Netscaler ADC - Insufficient Input Validation - CVE:CVE-2026-8451| Log| Block| This is a new detection.
+CIS Managed Ruleset| 6b64d216620449fbb273d07910233f36 | N/A| Progress Kemp LoadMaster - Remote Code Execution - CVE:CVE-2026-8037| Log| Block| This is a new detection.
+
+## WAF - WAF Release - Scheduled changes for 2026-07-20
+**Published on:** Tue, 14 Jul 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-07-06| 2026-07-13| Log| N/A| 78826e3223b94da493a2ade876973ac4 | Citrix Netscaler ADC - Insufficient Input Validation - CVE:CVE-2026-8451| This is a new detection.
-2026-07-06| 2026-07-13| Log| N/A| 6b64d216620449fbb273d07910233f36 | Progress Kemp LoadMaster - Remote Code Execution - CVE:CVE-2026-8037| This is a new detection.
+2026-07-12| 2026-07-20| Log| N/A| 7fbdc9407bdb4a4eae2b3d91215e7d31 | SSRF - Restricted Protocol| This is a new detection.
+2026-07-12| 2026-07-20| Log| N/A| 6ca512d240d848d6a0c7ef42a935ee5d | SSRF - Obfuscated Host| This is a new detection.
+2026-07-12| 2026-07-20| Log| N/A| a3fb0870c38440d8a9a0eba81b0230ac | LFI - Path Traversal| This is a new detection.
+2026-07-14| 2026-07-20| Log| N/A| 452a04be3f73458c863d8dae61349c8b | Adobe ColdFusion - File Upload Path Traversal - CVE:CVE-2026-48276| This is a new detection.
+2026-07-14| 2026-07-20| Log| N/A| a53a3fb491c64d74908081ee9cb61eac | Adobe ColdFusion - Path Traversal - CVE:CVE-2026-48282| This is a new detection.
+2026-07-14| 2026-07-20| Log| N/A| d8b63828c2344d919b94d2594ac5e21f | XSS — JS Bracket Concat Obfuscation - Body| This is a new detection.
+2026-07-14| 2026-07-20| Log| N/A| 264a83a764be428ca41d516ff31f5559 | XSS — JS Bracket Concat Obfuscation - Headers| This is a new detection.
+2026-07-14| 2026-07-20| Log| N/A| 4ba21a60837244029183b782987984fd | XSS — JS Bracket Concat Obfuscation - URI| This is a new detection.
 
 ## WAF Release - 2026-07-01
 **Published on:** Wednesday, 1 July 2026 00:00:00 GMT
