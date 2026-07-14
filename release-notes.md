@@ -20,13 +20,6 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
-## X July 2026
-{: #cis-july-26}
-{: release-note}
-
-Updates to the 'Plan' and 'Getting started' pages
-:   Both the 'Plan' and 'Getting started' pages are receiving visual updates and improvements.
-
 
 ## 16 April 2026
 {: #cis-april-1626}
