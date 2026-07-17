@@ -161,14 +161,6 @@ toc:
           - waf-managed-rules.md
           - waf-cis-ruleset.md
       - topicgroup:
-          label: Working with legacy firewall rules
-          topics:
-          - migration-custom-rules.md
-          - firewall-rule.md
-          - actions.md
-          - fields-and-expressions.md
-          - order-and-priority.md
-      - topicgroup:
           label: Working with page rules
           topics:
           - using-page-rules.md
