@@ -25,10 +25,10 @@ In this change log, you can learn about the latest changes, improvements, and up
 {: #cli-1200}
 
 Version 1.20.0 of the CLI was released on 17 July 2026.
-:   Added the `log-lookup-rayid` command to retrieve log events for a given RayID.
-:   Added `ai_bots_protection` field support to bot management domain setting.
-:   Added auto-pagination and `--search` filter support for custom list items.
-:   Upgraded Go and Python security dependencies.
+:   Added the `log-lookup-rayid` command to retrieve log events for a given `RayID`.
+:   Added the `ai_bots_protection` field support to bot management domain setting.
+:   Added the auto-pagination and `--search` filter support for custom list items.
+:   Upgraded the Go and Python security dependencies.
 
 ## Version 1.19.2
 {: #cli-1192}
