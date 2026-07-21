@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-21"
 
 keywords: custom rules, rulesets, waf, firewall rules
 
@@ -24,9 +24,6 @@ Like other rules evaluated by the Ruleset Engine, WAF custom rules require the f
 
 Custom rules are evaluated in the order that they are set, from first to last position, in the custom rules table. You can view the table by navigating to **Security > Firewall rules**. Some actions like **Block** stop the evaluation of other rules. For more details on actions and their behavior, see [Ruleset Engine rule actions](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions).
 {: important}
-
-Refer to [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules) to learn more about the differences between firewall rules and WAF custom rules.
-{: note}
 
 ## Common use cases
 {: #custom-rules-use-cases}

@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-07-21"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -20,6 +20,15 @@ content-type: release-note
 
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
+
+## Version 1.20.0
+{: #cli-1200}
+
+Version 1.20.0 of the CLI was released on 17 July 2026.
+:   Added the `log-lookup-rayid` command to retrieve log events for a given RayID.
+:   Added `ai_bots_protection` field support to bot management domain setting.
+:   Added auto-pagination and `--search` filter support for custom list items.
+:   Upgraded Go and Python security dependencies.
 
 ## Version 1.19.2
 {: #cli-1192}
