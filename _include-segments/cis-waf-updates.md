@@ -1,3 +1,23 @@
+
+## WAF - WAF Release - 2026-07-17 - Emergency
+**Published on:** Fri, 17 Jul 2026 00:00:00 GMT
+
+This emergency release adds a new managed rule to block active exploitation of a critical remote code execution (RCE) and SQL injection (SQLi) vulnerability found in popular web frameworks.
+
+**Key Findings**
+
+  * Generic Frameworks - Unauthenticated RCE: Attackers can execute arbitrary system commands with web server privileges by sending malicious input containing invalid path sequences during request processing.
+
+  * Generic Frameworks - SQLi: Attackers can execute unauthorized database queries due to a failure to sanitize input values within request parameters.
+
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 7dfb2bd4708d4b88b9911dc0550664b6 | N/A| Generic Rules - Unauthenticated RCE| N/A| Block| This is a new detection.
+CIS Managed Ruleset| 1c060d3a371549219ee290d7ed933fcc | N/A| Generic Rules - SQLi | N/A| Block| This is a new detection.
+CIS Free Ruleset| ebd3f2df15c74ddcbf6220c9b5ec246a | N/A| Generic Rules - Unauthenticated RCE | N/A| Block| This is a new detection.
+CIS Free Ruleset| db003b39b7774859a8d588ce33697a1a | N/A| Generic Rules - SQLi | N/A| Block| This is a new detection.
+
 ## WAF - WAF Release - 2026-07-14
 **Published on:** Tue, 14 Jul 2026 00:00:00 GMT
 
