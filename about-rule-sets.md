@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-30"
 
 keywords: rulesets, entrypoint, phase
 
@@ -41,15 +41,16 @@ Currently, only phases at the zone level are available. This page is updated as 
 ### Phase list
 {: #phase-list}
 
-The following table lists the phases that are available within the Ruleset Engine APIs.
+The following table lists the phases that are available within the Ruleset Engine APIs and phases execute in the order they appear in the table.
 
 |Phase name|Description|Supported interfaces|
 |----------|-----------|-------------------|
-| `http_request_firewall_managed`| Web Application Firewall (WAF)| API, CLI, UI |
+| `http_config_settings` | Configuration rules | API |
+| `http_request_origin` | Origin rules | API |
+| `ddos_l7` | HTTP DDoS Attack Protection rules | API |
 | `http_request_firewall_custom` | Custom rules | API, CLI, UI |
 | `http_ratelimit` | Rate-limiting rules | API, CLI, UI |
-| `ddos_l7` | HTTP DDoS Attack Protection rules | API |
-| `http_config_settings` | Configuration rules | API |
+| `http_request_firewall_managed`| Web Application Firewall (WAF)| API, CLI, UI |
 {: caption="Available phases" caption-side="bottom"}
 
 ## Entrypoint ruleset
