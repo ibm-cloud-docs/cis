@@ -1,4 +1,32 @@
 
+## WAF - WAF Release - 2026-07-29
+**Published on:** Wed, 29 Jul 2026 00:00:00 GMT
+
+This release introduces new rules and updates existing threat signatures to provide targeted protections for vulnerabilities in Nuxt Server Island components and Alibaba Fastjson deserialization routines, alongside enhanced protections for cloud metadata Server-Side Request Forgery (SSRF) and obfuscated command injection attempts.
+
+**Key Findings**
+
+  * Nuxt Server Island - RCE(GHSA-9473-5f9j-94wq): An unauthenticated vulnerability in Nuxt Server Islands where remote attackers can supply arbitrary component names or props to endpoints. Manipulating these parameters allows unauthenticated component Remote Code Execution (RCE) on the server.
+
+  * Alibaba Fastjson JSONType Remote Code Execution: A unauthenticated remote code execution vulnerability in Alibaba Fastjson (≤ 1.2.83) during JSON deserialization. Under default configurations, attackers can execute arbitrary system commands, bypassing traditional classpath and gadget-based defenses.
+
+  * Generic Protections (SSRF & Command Injection): Added improved detection logic targeting Server-Side Request Forgery (SSRF) in cloud-hosted applications, alongside new rules targeting obfuscated command injection patterns across request parameters.
+
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| ...c2e84e2d| N/A| SSRF - Cloud - Beta| Log| Block| This is an improved detection.
+CIS Managed Ruleset| ...761e7a4c| N/A| Command Injection - Obfuscation| Log| Block| This is a new detection.
+CIS Managed Ruleset| ...7347c892| N/A| Alibaba Fastjson JSONType Remote Code Execution - Body| Log| Block| This is a new detection.
+CIS Managed Ruleset| ...8ec012ea| N/A| Nuxt Server Island - RCE| N/A| Block| This is a new detection.This was labeled as Generic Rules - RCE.
+CIS Managed Ruleset| ...3590a4ad| N/A| Generic Rules - RCE| N/A| Block| This is a new detection.
+CIS Managed Ruleset| ...9c6dff1c| N/A| Generic Rules - XSS| N/A| Block| This is a new detection.
+CIS Managed Ruleset| ...3a5b40d6| N/A| File Upload - RCE| N/A| Block| This is a new detection.
+CIS Free Ruleset| ...cfe1a93c| N/A| Generic Rules - RCE| N/A| Block| This is a new detection.
+CIS Free Ruleset| ...9ab5ed95| N/A| Generic Rules - XSS| N/A| Block| This is a new detection.
+CIS Free Ruleset| ...1b7f9c67| N/A| File Upload - RCE| N/A| Block| This is a new detection.
+
+
 ## WAF - WAF Release - 2026-07-21
 **Published on:** Tue, 21 Jul 2026 00:00:00 GMT
 
