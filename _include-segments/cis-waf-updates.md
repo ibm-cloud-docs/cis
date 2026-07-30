@@ -15,16 +15,16 @@ This release introduces new rules and updates existing threat signatures to prov
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...c2e84e2d| N/A| SSRF - Cloud - Beta| Log| Block| This is an improved detection.
-CIS Managed Ruleset| ...761e7a4c| N/A| Command Injection - Obfuscation| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...7347c892| N/A| Alibaba Fastjson JSONType Remote Code Execution - Body| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...8ec012ea| N/A| Nuxt Server Island - RCE| N/A| Block| This is a new detection.This was labeled as Generic Rules - RCE.
-CIS Managed Ruleset| ...3590a4ad| N/A| Generic Rules - RCE| N/A| Block| This is a new detection.
-CIS Managed Ruleset| ...9c6dff1c| N/A| Generic Rules - XSS| N/A| Block| This is a new detection.
-CIS Managed Ruleset| ...3a5b40d6| N/A| File Upload - RCE| N/A| Block| This is a new detection.
-CIS Free Ruleset| ...cfe1a93c| N/A| Generic Rules - RCE| N/A| Block| This is a new detection.
-CIS Free Ruleset| ...9ab5ed95| N/A| Generic Rules - XSS| N/A| Block| This is a new detection.
-CIS Free Ruleset| ...1b7f9c67| N/A| File Upload - RCE| N/A| Block| This is a new detection.
+CIS Managed Ruleset| `54e1733b10da4a599e06c6fbc2e84e2d` | N/A| SSRF - Cloud - Beta| Log| Block| This is an improved detection.
+CIS Managed Ruleset| `95a84ab1645a49c685648c17761e7a4c` | N/A| Command Injection - Obfuscation| Log| Block| This is a new detection.
+CIS Managed Ruleset| `58df9693db4d454a8764fcda7347c892` | N/A| Alibaba Fastjson JSONType Remote Code Execution - Body| Log| Block| This is a new detection.
+CIS Managed Ruleset| `6159ead63d284147943dc5a18ec012ea` | N/A| Nuxt Server Island - RCE| N/A| Block| This is a new detection.This was labeled as Generic Rules - RCE.
+CIS Managed Ruleset| `dcf635ab2e744e1a994443973590a4ad` | N/A| Generic Rules - RCE| N/A| Block| This is a new detection.
+CIS Managed Ruleset| `d3852d0891634686a46114069c6dff1c` | N/A| Generic Rules - XSS| N/A| Block| This is a new detection.
+CIS Managed Ruleset| `89d0243997d24c6ea1d610a23a5b40d6` | N/A| File Upload - RCE| N/A| Block| This is a new detection.
+CIS Free Ruleset| `6ad9f2049b094c608be0f8adcfe1a93c` | N/A| Generic Rules - RCE| N/A| Block| This is a new detection.
+CIS Free Ruleset| `5bdf578fff504b8cbe3b7f699ab5ed95` | N/A| Generic Rules - XSS| N/A| Block| This is a new detection.
+CIS Free Ruleset| `7ecac499d14a4750aa58c1e21b7f9c67` | N/A| File Upload - RCE| N/A| Block| This is a new detection.
 
 
 ## WAF - WAF Release - 2026-07-21
@@ -40,13 +40,13 @@ Several of the disclosed vulnerabilities are not possible to block at WAF layer,
 
 Advisory| CVE| Severity| Issue| WAF Coverage
 ---|---|---|---|---
-[Denial of Service in App Router using Server Actions](https://github.com/vercel/next.js/security/advisories/GHSA-m99w-x7hq-7vfj)| CVE-2026-64641| High| Crafted requests targeting Next.js applications using App Router with at least one Server Action can lead to excessive CPU usage. The CPU usage blocks processing of further requests in the same process, leading to Denial of Service.| WAF rule Next.js - DoS - CVE-2026-64641 (...90dcdb0a) has been deployed to provide coverage.
+[Denial of Service in App Router using Server Actions](https://github.com/vercel/next.js/security/advisories/GHSA-m99w-x7hq-7vfj)| CVE-2026-64641| High| Crafted requests targeting Next.js applications using App Router with at least one Server Action can lead to excessive CPU usage. The CPU usage blocks processing of further requests in the same process, leading to Denial of Service.| WAF rule Next.js - DoS - CVE-2026-64641 (`b013b67c357547b4b866234390dcdb0a`) has been deployed to provide coverage.
 [Middleware / Proxy bypass in App Router applications using Turbopack and single locale](https://github.com/vercel/next.js/security/advisories/GHSA-6gpp-xcg3-4w24)| CVE-2026-64642| High| Next.js applications using App Router built with Turbopack and a single entry in config.i18n.locales are vulnerable to a middleware/proxy bypass. Accordingly, any authentication or security checks that a middleware/proxy may perform are bypassed.| This is a middleware bypass that unfortunately cannot be covered through CIS WAF signature engine.
 [Server-Side Request Forgery in rewrites via attacker-controlled destination hostname](https://github.com/vercel/next.js/security/advisories/GHSA-p9j2-gv94-2wf4)| CVE-2026-64645| High| A rewrites() or redirects() rule that builds its external destination hostname from request-controlled input can be pointed at an arbitrary hostname, regardless of the rule's hostname suffix. For rewrites, this behavior enables Server-Side Request Forgery (SSRF); for redirects, Open Redirect can be achieved.| Existing SSRF rules provide adequate coverage for this vulnerability, no tailored WAF rule was developed.
-[Server-Side Request Forgery in Server Actions on custom servers](https://github.com/vercel/next.js/security/advisories/GHSA-89xv-2m56-2m9x)| CVE-2026-64649| High| When a Server Action forwards or redirects a request, an attacker can cause the server to send that outbound request to a malicious host (Server-Side Request Forgery). This requires the attacker’s request to control Host-associated headers.| WAF rule Next.js - SSRF - CVE-2026-64649 (...930091a3) has been deployed to provide coverage.
+[Server-Side Request Forgery in Server Actions on custom servers](https://github.com/vercel/next.js/security/advisories/GHSA-89xv-2m56-2m9x)| CVE-2026-64649| High| When a Server Action forwards or redirects a request, an attacker can cause the server to send that outbound request to a malicious host (Server-Side Request Forgery). This requires the attacker's request to control Host-associated headers.| WAF rule Next.js - SSRF - CVE-2026-64649 (`7fe6d6f3df774ae2a0011f20930091a3`) has been deployed to provide coverage.
 [Denial of Service in the Image Optimization API using SVGs](https://github.com/vercel/next.js/security/advisories/GHSA-q8wf-6r8g-63ch)| CVE-2026-64644| Medium| When self-hosting Next.js with the default image loader, the Image Optimization API can optimize remotely hosted images if configured (not enabled by default). If those images contain malicious content, the images can cause CPU exhaustion in the /_next/image endpoint.| Malicious request is unfortunately indistinguishable from a legitimate image optimization request, so no WAF rule has been created to address this vulnerability.
 [Unbounded Server Action payload in Edge runtime](https://github.com/vercel/next.js/security/advisories/GHSA-4c39-4ccg-62r3)| CVE-2026-64646| Medium| A crafted request can lead to memory consumption on Server Actions in the Edge runtime. Next.js applications which use App Router and have at least one Server Action are affected.| Unfortunately there is no one size fits all rule that can be deployed through WAF in lieu of custom bodySizeLimit configurations, so no WAF rule has been created to address this vulnerability.
-[Unauthenticated disclosure of internal Server Function endpoints](https://github.com/vercel/next.js/security/advisories/GHSA-955p-x3mx-jcvp)| CVE-2026-64643| Medium| In Next.js applications using App Router, Server Actions (use server) or use cache endpoint IDs can be globally disclosed. An attacker can use this for reconnaissance and as part of a broader attack chain.| WAF rule Next.js - Information Disclosure - CVE-2026-64643 (...72952826) has been deployed to provide coverage.
+[Unauthenticated disclosure of internal Server Function endpoints](https://github.com/vercel/next.js/security/advisories/GHSA-955p-x3mx-jcvp)| CVE-2026-64643| Medium| In Next.js applications using App Router, Server Actions (use server) or use cache endpoint IDs can be globally disclosed. An attacker can use this for reconnaissance and as part of a broader attack chain.| WAF rule Next.js - Information Disclosure - CVE-2026-64643 (`6c4135d4d9d745e4866ad83672952826`) has been deployed to provide coverage.
 [Cache confusion of response bodies for requests with bodies](https://github.com/vercel/next.js/security/advisories/GHSA-68g3-v927-f742)| CVE-2026-64648| Medium| A server-side fetch with a request body may return a cached response body from a different request to the same URL but different body. This only applies for fetch calls of the shape fetch(new Request(init), aDifferentInit)| This is an application logic bug that unfortunately cannot be covered through CIS WAF signature engine.
 [Cache confusion of response bodies for requests with bodies containing invalid UTF-8 byte sequences](https://github.com/vercel/next.js/security/advisories/GHSA-4633-3j49-mh5q)| CVE-2026-64647| Medium| A server-side fetch with a request body may return a cached response body from a different request to the same URL but different body. This only applies when receiving request bodies which contain invalid UTF-8 characters.| This is an application logic bug that unfortunately cannot be covered through CIS WAF signature engine.
 
@@ -63,25 +63,25 @@ Advisory| CVE| Severity| Issue| WAF Coverage
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...215e7d31| N/A| SSRF - Restricted Protocol| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...a935ee5d| N/A| SSRF - Obfuscated Host| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...1b0230ac| N/A| LFI - Path Traversal| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...61349c8b| N/A| Adobe ColdFusion - File Upload Path Traversal - CVE:CVE-2026-48276| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...9cb61eac| N/A| Adobe ColdFusion - Path Traversal - CVE:CVE-2026-48282| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...4ac5e21f| N/A| XSS — JS Bracket Concat Obfuscation - Body| Log| Disabled| This is a new detection.
-CIS Managed Ruleset| ...f31f5559| N/A| XSS — JS Bracket Concat Obfuscation - Headers| Log| Disabled| This is a new detection.
-CIS Managed Ruleset| ...987984fd| N/A| XSS — JS Bracket Concat Obfuscation - URI| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...ed933fcc| N/A| Wordpress - SQL Injection - CVE:CVE-2026-60137| N/A| Block| This was labeled as Generic Rules - SQLi.
-CIS Managed Ruleset| ...550664b6| N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-63030| N/A| Block| This was labeled as Generic Rules - Unauthenticated RCE.
-CIS Free Ruleset| ...33697a1a| N/A| Wordpress - SQL Injection - CVE:CVE-2026-60137| N/A| Block| This was labeled as Generic Rules - SQLi.
-CIS Free Ruleset| ...b5ec246a| N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-63030| N/A| Block| This was labeled as Generic Rules - Unauthenticated RCE.
-CIS Managed Ruleset| ...72952826| N/A| Next.js - Information Disclosure - CVE-2026-64643| N/A| Block| This was labeled as Generic Rules - Information Disclosure.
-CIS Managed Ruleset| ...930091a3| N/A| Next.js - SSRF - CVE-2026-64649| N/A| Block| This was labeled as Generic Rules - Auth Bypass - 2.
-CIS Managed Ruleset| ...63167195| N/A| Next.js - Remote Code Execution - Cache Components| N/A| Block| This was labeled as Generic Rules - RCE.
-CIS Managed Ruleset| ...90dcdb0a| N/A| Next.js - DoS - CVE-2026-64641| N/A| Block| This was labeled as Generic Rules - DoS.
-CIS Managed Ruleset| ...2049a60c| N/A| Generic Rules - Command Execution - Body - Beta| Disabled|  \- | This detection has been removed.
-CIS Managed Ruleset| ...836855a4| N/A| Generic Rules - Command Execution - Header - Beta| Disabled|  \- | This detection has been removed.
-CIS Managed Ruleset| ...6d060a0d| N/A| Generic Rules - Command Execution - URI - Beta| Disabled|  \- | This detection has been removed.
+CIS Managed Ruleset| `7fbdc9407bdb4a4eae2b3d91215e7d31` | N/A| SSRF - Restricted Protocol| Log| Block| This is a new detection.
+CIS Managed Ruleset| `6ca512d240d848d6a0c7ef42a935ee5d` | N/A| SSRF - Obfuscated Host| Log| Block| This is a new detection.
+CIS Managed Ruleset| `a3fb0870c38440d8a9a0eba81b0230ac` | N/A| LFI - Path Traversal| Log| Block| This is a new detection.
+CIS Managed Ruleset| `452a04be3f73458c863d8dae61349c8b` | N/A| Adobe ColdFusion - File Upload Path Traversal - CVE:CVE-2026-48276| Log| Block| This is a new detection.
+CIS Managed Ruleset| `a53a3fb491c64d74908081ee9cb61eac` | N/A| Adobe ColdFusion - Path Traversal - CVE:CVE-2026-48282| Log| Block| This is a new detection.
+CIS Managed Ruleset| `d8b63828c2344d919b94d2594ac5e21f` | N/A| XSS — JS Bracket Concat Obfuscation - Body| Log| Disabled| This is a new detection.
+CIS Managed Ruleset| `264a83a764be428ca41d516ff31f5559` | N/A| XSS — JS Bracket Concat Obfuscation - Headers| Log| Disabled| This is a new detection.
+CIS Managed Ruleset| `4ba21a60837244029183b782987984fd` | N/A| XSS — JS Bracket Concat Obfuscation - URI| Log| Block| This is a new detection.
+CIS Managed Ruleset| `1c060d3a371549219ee290d7ed933fcc` | N/A| Wordpress - SQL Injection - CVE:CVE-2026-60137| N/A| Block| This was labeled as Generic Rules - SQLi.
+CIS Managed Ruleset| `7dfb2bd4708d4b88b9911dc0550664b6` | N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-63030| N/A| Block| This was labeled as Generic Rules - Unauthenticated RCE.
+CIS Free Ruleset| `db003b39b7774859a8d588ce33697a1a` | N/A| Wordpress - SQL Injection - CVE:CVE-2026-60137| N/A| Block| This was labeled as Generic Rules - SQLi.
+CIS Free Ruleset| `ebd3f2df15c74ddcbf6220c9b5ec246a` | N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-63030| N/A| Block| This was labeled as Generic Rules - Unauthenticated RCE.
+CIS Managed Ruleset| `6c4135d4d9d745e4866ad83672952826` | N/A| Next.js - Information Disclosure - CVE-2026-64643| N/A| Block| This was labeled as Generic Rules - Information Disclosure.
+CIS Managed Ruleset| `7fe6d6f3df774ae2a0011f20930091a3` | N/A| Next.js - SSRF - CVE-2026-64649| N/A| Block| This was labeled as Generic Rules - Auth Bypass - 2.
+CIS Managed Ruleset| `c4ca56c0a6a348299d5a93e663167195` | N/A| Next.js - Remote Code Execution - Cache Components| N/A| Block| This was labeled as Generic Rules - RCE.
+CIS Managed Ruleset| `b013b67c357547b4b866234390dcdb0a` | N/A| Next.js - DoS - CVE-2026-64641| N/A| Block| This was labeled as Generic Rules - DoS.
+CIS Managed Ruleset| `aa21c9b8b97743bfb217748b2049a60c` | N/A| Generic Rules - Command Execution - Body - Beta| Disabled|  \- | This detection has been removed.
+CIS Managed Ruleset| `e7ee67e824844754b513cdf3836855a4` | N/A| Generic Rules - Command Execution - Header - Beta| Disabled|  \- | This detection has been removed.
+CIS Managed Ruleset| `5f2a6681a2b94442b23816286d060a0d` | N/A| Generic Rules - Command Execution - URI - Beta| Disabled|  \- | This detection has been removed.
 
 
 ## WAF - WAF Release - Scheduled changes for 2026-07-27
@@ -89,9 +89,11 @@ CIS Managed Ruleset| ...6d060a0d| N/A| Generic Rules - Command Execution - URI -
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-07-21| 2026-07-27| Log| N/A| ...c2e84e2d| SSRF - Cloud - Beta| This is an improved detection.
-2026-07-21| 2026-07-27| Log| N/A| ...761e7a4c| Command Injection - Obfuscation| This is a new detection.
-2026-07-23| 2026-07-27| Log| N/A| ...7347c892| Alibaba Fastjson JSONType Remote Code Execution - Body| This is a new detection.
+2026-07-28| 2026-08-03| Log| N/A| `158177dec2504acdba1f2da201a076eb` | SSRF - Cloud - Beta| This detection will be removed.
+2026-07-28| 2026-08-03| Log| N/A| `98bfd6bb46074d5b8d1c4b39743a63ec` | SSRF - Local - 2 - Beta| This detection will be removed.
+2026-07-28| 2026-08-03| Log| N/A| `54e1733b10da4a599e06c6fbc2e84e2d` | SSRF - Cloud - Beta| This detection will be removed.
+2026-07-28| 2026-08-03| Log| N/A| `ecd26d61a75e46f6a4449a06ab8af26f` | SSRF - Cloud - 2 - Beta| This detection will be removed.
+2026-07-28| 2026-08-03| Log| N/A| `b013b67c357547b4b866234390dcdb0a` |  Microsoft SharePoint - Remote Code Execution - CVE:CVE-2026-50522| This is a new detection.
 
 
 ## WAF - WAF Release - 2026-07-17 - Emergency
@@ -108,10 +110,10 @@ This emergency release adds a new managed rule to block active exploitation of a
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...550664b6| N/A| Generic Rules - Unauthenticated RCE| N/A| Block| This is a new detection.
-CIS Managed Ruleset| ...ed933fcc| N/A| Generic Rules - SQLi | N/A| Block| This is a new detection.
-CIS Free Ruleset| ...b5ec246a| N/A| Generic Rules - Unauthenticated RCE | N/A| Block| This is a new detection.
-CIS Free Ruleset| ...33697a1a| N/A| Generic Rules - SQLi | N/A| Block| This is a new detection.
+CIS Managed Ruleset| `7dfb2bd4708d4b88b9911dc0550664b6` | N/A| Generic Rules - Unauthenticated RCE| N/A| Block| This is a new detection.
+CIS Managed Ruleset| `1c060d3a371549219ee290d7ed933fcc` | N/A| Generic Rules - SQLi | N/A| Block| This is a new detection.
+CIS Free Ruleset| `ebd3f2df15c74ddcbf6220c9b5ec246a` | N/A| Generic Rules - Unauthenticated RCE | N/A| Block| This is a new detection.
+CIS Free Ruleset| `db003b39b7774859a8d588ce33697a1a` | N/A| Generic Rules - SQLi | N/A| Block| This is a new detection.
 
 
 ## WAF - WAF Release - 2026-07-14
@@ -128,8 +130,8 @@ This release introduces new rules targeting critical infrastructure vulnerabilit
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...76973ac4| N/A| Citrix Netscaler ADC - Insufficient Input Validation - CVE:CVE-2026-8451| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...10233f36| N/A| Progress Kemp LoadMaster - Remote Code Execution - CVE:CVE-2026-8037| Log| Block| This is a new detection.
+CIS Managed Ruleset| `78826e3223b94da493a2ade876973ac4` | N/A| Citrix Netscaler ADC - Insufficient Input Validation - CVE:CVE-2026-8451| Log| Block| This is a new detection.
+CIS Managed Ruleset| `6b64d216620449fbb273d07910233f36` | N/A| Progress Kemp LoadMaster - Remote Code Execution - CVE:CVE-2026-8037| Log| Block| This is a new detection.
 
 
 ## WAF - WAF Release - 2026-07-01
@@ -143,8 +145,8 @@ This release adds targeted coverage for a path traversal flaw in Fortinet FortiS
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...d84c92c9| N/A| Fortinet FortiSandbox - Path Traversal - CVE:CVE-2026-39813| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...c12cf9c8| N/A| Anomaly:Header:User-Agent - Fake Bing or MSN Bot| Enabled| Disabled| We are changing the action for this rule from BLOCK to Disabled
+CIS Managed Ruleset| `32075e19b1494117ac5915e8d84c92c9` | N/A| Fortinet FortiSandbox - Path Traversal - CVE:CVE-2026-39813| Log| Block| This is a new detection.
+CIS Managed Ruleset| `ae20608d93b94e97988db1bbc12cf9c8` | N/A| Anomaly:Header:User-Agent - Fake Bing or MSN Bot| Enabled| Disabled| We are changing the action for this rule from BLOCK to Disabled
 
 
 ## WAF - WAF Release - 2026-06-23
