@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-07-14"
+lastupdated: "2026-07-30"
 
 keywords:
 
@@ -20,6 +20,15 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
+## 28 July 2026
+{: #cis-july-2826}
+{: release-note}
+
+Updates to the Plan and Getting started pages
+:   Updated the **Plan and Getting started pages with improved page logic and refreshed visuals to enhance usability and provide a more streamlined onboarding and planning experience.
+
+Table improvements
+:   Updated the **DNS records**, **Alert policies**, and **Security events** tables to improve how users view, search, filter, and manage information. These updates provide a more streamlined table experience with improved navigation and filtering capabilities, helping users find and manage data more efficiently.
 
 ## 16 April 2026
 {: #cis-april-1626}
