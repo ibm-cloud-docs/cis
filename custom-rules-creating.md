@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-07-30"
 
 keywords:
 
@@ -350,7 +350,7 @@ Follow these steps to get the custom rule entry point ruleset:
    The ruleset ID is in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entry point ruleset for the custom rule phase:
 
    ```sh
-   curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
+   curl -X POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \
    --header "X-Auth-User-Token: Bearer <API_TOKEN>" \
    --header "Content-Type: application/json" \
    --data '{
