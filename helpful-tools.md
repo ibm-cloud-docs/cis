@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2026
+lastupdated: "2026-08-04"
 
 keywords: Helpful tools, whois, IPv4, HAR
 
@@ -43,7 +43,7 @@ HTTP Archive files (HAR files)
 ### Using `whois`
 {: #using-whois}
 
-`whois` is a UNIX system command line tool you can use to look up registrar information for a given domain name or IP address. For example, the domain’s given authoritative servers or the owner of a particular IP address.
+`whois` is a UNIX system command line tool that you can use to look up registrar information for a given domain name or IP address. For example, the domain’s given authoritative servers or the owner of a particular IP address.
 
 Examples:
 
@@ -69,7 +69,7 @@ For example:
 ### Using `cURL`
 {: #use-curl}
 
-`cURL` is a Unix command line tool that lets you transmit data using the URL syntax. It’s commonly used to make HTTP requests or compare server responses.
+`cURL` is a Unix command line tool that lets you transmit data by using the URL syntax. It’s commonly used to make HTTP requests or compare server responses.
 
 The schema for this command is: `curl -option1 -option2 http://example.com/url`
 
