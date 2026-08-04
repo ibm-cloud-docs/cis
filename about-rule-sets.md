@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-04"
 
 keywords: rulesets, entrypoint, phase
 
@@ -25,7 +25,7 @@ The following features apply to rulesets:
 
 * **Powerful syntax**: Rule expressions use a powerful rules language similar to the [`wirefilter`](https://github.com/cloudflare/wirefilter){: external} syntax that allows you to create complex rules.
 * **High-performance rule evaluation**: Allows you to have many rules in {{site.data.keyword.cis_short_notm}} with minimal impact on performance.
-* **Engine powering {{site.data.keyword.cis_short_notm}}**: {{site.data.keyword.cis_short_notm}} continue to build products on top of the Ruleset Engine, which means that you can use the same API methods for configuring different products with the same customization possibilities. The Ruleset Engine also supports the different phases of the request life cycle.
+* **Engine powering {{site.data.keyword.cis_short_notm}}**: {{site.data.keyword.cis_short_notm}} continue to build products on top of the Ruleset Engine, which means that you can use the same API methods for configuring different products with the same customization possibilities. The Ruleset Engine also supports the different phases of the request lifecycle.
 
 ## Phases
 {: #phases}
@@ -68,6 +68,6 @@ The `kind` field of a phase entrypoint ruleset has one of the following values:
 * `root`: Used for a phase entrypoint ruleset at the instance level
 * `zone`: Used for a phase entrypoint ruleset at the zone level
 
-If a 404 status code is returned when fetching an entrypoint ruleset, the particular ruleset phase likely doesn't exist. Create it by using the updated API for the [zone level entrypoint](/docs/apis/cis#update-zone-entrypoint-ruleset) or [instance level entrypoint](/docs/apis/cis#update-instance-entrypoint-ruleset). When you create the ruleset, use the intended phase and set the request body to `{ "rules": [] }`.
+If a 404 status code is returned when you fetch an entrypoint ruleset, the particular ruleset phase likely doesn't exist. Create it by using the updated API for the [zone level entrypoint](/docs/apis/cis#update-zone-entrypoint-ruleset) or [instance level entrypoint](/docs/apis/cis#update-instance-entrypoint-ruleset). When you create the ruleset, use the intended phase and set the request body to `{ "rules": [] }`.
 
 For instructions on deploying rulesets that use entrypoint rulesets for WAF managed rules, see [Deploying managed rulesets](/docs/cis?topic=cis-deploying-rule-sets). To learn how to override rulesets with entrypoint rulesets, see [Overriding managed rulesets](/docs/cis?topic=cis-overriding-rulesets&interface=cli).
