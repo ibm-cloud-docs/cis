@@ -69,7 +69,7 @@ For example:
 ### Using `cURL`
 {: #use-curl}
 
-`cURL` is a Unix command line tool that lets you transmit data using the URL syntax. It’s commonly used to make HTTP requests or compare server responses.
+`cURL` is a Unix command line tool that lets you transmit data by using the URL syntax. It’s commonly used to make HTTP requests or compare server responses.
 
 The schema for this command is: `curl -option1 -option2 http://example.com/url`
 
