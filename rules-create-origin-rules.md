@@ -39,19 +39,19 @@ Complete the following steps to create a orgin rule for a given zone via API:
    * kind: `zone`
    * phase: `http_request_origin`
 
-  ```sh
-  curl -X POST \
-   "https://api.cis.cloud.ibm.com/v1/crn:v1:bluemix:public:internet-svcs:global:a/361583ba4e52947c3e111ba9d29702e3:78345201-a3a7-4de3-abe4-7115e6b0e2f1::/zones/2ce4a192bf5978e6b65a09ed2d36d4c2/rulesets" \
-   --header "X-Auth-User-Token: Bearer xxxx" \
-   --header "Content-Type: application/json" \
-   --data '{
-  "name": "Zone-level phase entrypoint",
-  "kind": "zone",
-  "description": "Config settings ruleset",
-  "phase": "http_request_origin"
-  }'
+   ```sh
+   curl -X POST \
+    "https://api.cis.cloud.ibm.com/v1/crn:v1:bluemix:public:internet-svcs:global:a/361583ba4e52947c3e111ba9d29702e3:78345201-a3a7-4de3-abe4-7115e6b0e2f1::/zones/2ce4a192bf5978e6b65a09ed2d36d4c2/rulesets" \
+    --header "X-Auth-User-Token: Bearer xxxx" \
+    --header "Content-Type: application/json" \
+    --data '{
+   "name": "Zone-level phase entrypoint",
+   "kind": "zone",
+   "description": "Config settings ruleset",
+   "phase": "http_request_origin"
+   }'
 
-  {"result": {"description": "Config settings ruleset", "id": "b19bf5e7c3bd40b890a0302390e86e0c", "kind": "zone", "last_updated": "2026-06-13T14:52:37.636034Z", "name": "Zone-level phase entrypoint", "phase": "http_request_origin", "version": "1"}, "success": true, "errors": [], "messages": []}%
+   {"result": {"description": "Config settings ruleset", "id": "b19bf5e7c3bd40b890a0302390e86e0c", "kind": "zone", "last_updated": "2026-06-13T14:52:37.636034Z", "name": "Zone-level phase entrypoint", "phase": "http_request_origin", "version": "1"}, "success": true, "errors": [], "messages": []}%
    ```
    {: pre}
 
