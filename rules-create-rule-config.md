@@ -55,7 +55,7 @@ Complete the following steps to create a configuration rule for a given zone via
    ```
    {: pre}
 
-1. Add a configuration rule to the ruleset by using the [Update a zone ruleset](/docs/apis/cis#update-zone-ruleset) API. Alternatively, include the rule in the Create a zone ruleset request mentioned in the previous step.
+1. Add a configuration rule to the ruleset by using the [Update a zone ruleset](/docs/apis/cis#update-zone-ruleset) API. Alternatively, include the rule in the Create a zone ruleset request mentioned in the step 2.
    ```sh
    curl -X PUT \
    "https://api.cis.cloud.ibm.com/v1/crn:v1:bluemix:public:internet-svcs:global:a/361583ba4e52947c3e111ba9d29702e3:78345201-a3a7-4de3-abe4-7115e6b0e2f1::/zones/2ce4a192bf5978e6b65a09ed2d36d4c2/rulesets/b19bf5e7c3bd40b890a0302390e86e0c" \
