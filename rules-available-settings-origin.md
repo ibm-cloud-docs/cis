@@ -13,7 +13,7 @@ subcollection: cis
 {{site.data.keyword.attribute-definition-list}}
 
 # Origin rules settings
-{: #config-available-settings}
+{: #origin-available-settings}
 
 You can configure the following settings in an origin rule.
 
