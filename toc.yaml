@@ -161,11 +161,38 @@ toc:
           - waf-managed-rules.md
           - waf-cis-ruleset.md
       - topicgroup:
-          label: Working with page rules
+          label: Working with legacy firewall rules
           topics:
-          - using-page-rules.md
-          - caching-with-page-rules.md
-          - resolve-override-cos.md
+          - migration-custom-rules.md
+          - firewall-rule.md
+          - actions.md
+          - fields-and-expressions.md
+          - order-and-priority.md
+      - topicgroup:
+          label: Working with rules
+          id: rules
+          topics:
+          - rules-cis-about.md
+          - topicgroup:
+              label: Working with configuration rules
+              id: configuration rules
+              topics:
+              - rules-working-with-configuration.md
+              - rules-create-rule-config.md
+              - rules-available-settings-config.md
+          - topicgroup:
+              label: Working with origin rules
+              id: origin rules
+              topics:
+              - rules-working-with-origin.md
+              - rules-create-origin-rules.md
+              - rules-create-rule-api-origin.md
+          - topicgroup:
+              label: Working with page rules
+              topics:
+              - using-page-rules.md
+              - caching-with-page-rules.md
+              - resolve-override-cos.md
       - topicgroup:
           label: Working with global load balancers
           topics:
