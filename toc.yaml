@@ -186,7 +186,7 @@ toc:
               topics:
               - rules-working-with-origin.md
               - rules-create-origin-rules.md
-              - rules-create-rule-api-origin.md
+              - rules-available-settings-origin.md
           - topicgroup:
               label: Working with page rules
               topics:
