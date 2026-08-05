@@ -59,7 +59,7 @@ Use this setting when you serve an application from a specific URL path — for 
 The following examples show DNS records that configure a `resolve.example.com` hostname to point to an external hostname and IP address.
 
 | DNS record type | Name | Target | IPv4 address | TTL | Proxy status |
-| --------------- | ---- | ---- | ------ | ------------ | --- | ------------ |
+| --------------- | ---- | ---- | ------ | ------------ | --- |
 | `CNAME` record | `resolve.example.com` | `domain.s3.amazonaws.com` | | `Auto` | Proxied |
 | `A` record | `resolve.example.com` | | `203.0.113.1` | `Auto` | Proxied |
 {: caption="DNS record type exmples" caption-side="bottom"}
