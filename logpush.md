@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -46,7 +46,7 @@ To create a Logpush job in the console, follow these steps:
 1. In the CIS console, navigate to **Account** > **Logs**, and then click **Create**.
 1. Select and configure destination service types from the available options:
 
-   **IBM Cloud Logs**
+   #### IBM Cloud Logs
 
    1. Select **IBM Cloud Logs** from the service type options.
    1. Click **Next**.
@@ -61,7 +61,7 @@ To create a Logpush job in the console, follow these steps:
 
    1. Click **Next**.
 
-   **Cloud Object Storage**
+   #### Cloud Object Storage
 
    1. Select **Cloud Object Storage** from the service type options.
    1. Click **Next**.
@@ -78,14 +78,14 @@ To create a Logpush job in the console, follow these steps:
 
    1. Click **Next**.
 
-   **IBM QRadar**
+   #### IBM QRadar
 
    1. Select the **IBM QRadar** from the service type options.
    1. Click **Next**.
    1. Enter the QRadar URL and then select the Log source port.
    1. Click **Next**.
 
-   **Splunk**
+   #### Splunk
 
    1. Select **Splunk** from the service type options.
    1. Click **Next**.

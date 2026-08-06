@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -51,7 +51,7 @@ CIS supports the following HTTPS ports:
 ## Traffic on unsupported ports
 {: #enable-cis-proxy-additional}
 
-The CIS proxy does not handle traffic on ports outside the supported lists. If your application uses a different port (for example, SSH on port 22), you must configure access by [creating a Range application](/docs/cis/build/cis-review-output?topic=cis-cis-range&interface=ui) for the hostname. Range applications support traffic on all ports; however, full TCP and UDP port support is available only on the Enterprise plan.
+The CIS proxy does not handle traffic on ports outside the supported lists. If your application uses a different port (for example, SSH on port 22), you must configure access by [creating a Range application](/docs/cis?topic=cis-cis-range&interface=ui) for the hostname. Range applications support traffic on all ports; however, full TCP and UDP port support is available only on the Enterprise plan.
 
 ## Block traffic on other ports
 {: #block-traffic-ports}
@@ -96,4 +96,4 @@ cf.edge.server_port eq 8443
 
 Custom rules are evaluated at the application layer (layer 7) and can be used to enforce port based access controls before requests reach the origin server.
 
-For more information about available fields and expression syntax, see [Custom rules fields and expressions](/docs/cis/build/cis-review-output?topic=cis-fields-functions-expressions).
+For more information about available fields and expression syntax, see [Custom rules fields and expressions](/docs/cis?topic=cis-fields-functions-expressions).

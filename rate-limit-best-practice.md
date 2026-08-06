@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-08-06"
 
 keywords: HA for CIS, DR for CIS, CIS recovery time objective, CIS recovery point objective
 
@@ -319,7 +319,7 @@ These example rules require Advanced Rate Limiting and Bot Management.
 #### Using JA3 fingerprints
 {: #ja3-fingerprint}
 
-If the application does not use a session cookie, you can use JA3 fingerprints to identify individual clients. A [JA3 fingerprint](/docs/cis?topic=cis-fields-functions-expressions&interface=ui#bot-management-fields) is a unique identifier, available to customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli), that allows CIS to identify requests coming from the same client. All clients have an associated fingerprint, whether they are automated or not.
+If the application does not use a session cookie, you can use JA3 fingerprints to identify individual clients. A [JA3 fingerprint](/docs/cis?topic=cis-fields-functions-expressions#bot-manage-field) is a unique identifier, available to customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli), that allows CIS to identify requests coming from the same client. All clients have an associated fingerprint, whether they are automated or not.
 
 | Setting | Value |
 |----------|-----------------------|
