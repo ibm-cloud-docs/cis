@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-02-24"
+  years: 2023, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -25,14 +25,14 @@ Click the editing pane of GraphiQL and add the following depicted base query, re
 
 ![Adding a base query in the GraphiQL pane](images/graphiql-1base-query.png "Adding a base query in the GraphiQL pane"){: caption="Adding a base query in the GraphiQL pane" caption-side="bottom"}
 
-To find the zone's tag, log in to your Cloudflare account and select the site for which you want to obtain the tag. In the Cloudflare dashboard **Overview** page, scroll to the **API** section in the right sidebar. This displays your zone and account tags.
+To find the zone's tag, open your CIS instance in the IBM Cloud console and select the domain for which you want to obtain the tag. In the **Overview** page, scroll to the **API** section in the sidebar. This displays your zone and account tags.
 {: tip}
 
-To assist query building, the GraphiQL client has word completion. Insert your cursor in the query, in this case on the line below `zones`, and start entering a value to engage the feature. For example, when you type `firewall`, a popup menu displays the datasets that return firewall information:
+To assist query building, the GraphiQL client has word completion. Insert your cursor in the query, in this case on the line after `zones`, and start entering a value to engage the feature. For example, when you type `firewall`, a popup menu displays the datasets that return firewall information:
 
 ![GraphiQL word completion assistant to query building](images/graphiql-word-completion.png "GraphiQL word completion assistant to query building"){: caption="GraphiQL word completion assistant to query building"}
 
-The text at the bottom of the list displays a short description of the data that the node returns.
+The text at the end of the list displays a short description of the data that the node returns.
 
 Select the dataset you want to query and insert it. Either select the item in the list, or scroll using arrow keys and press **Return**.
 
@@ -75,7 +75,7 @@ The following example query returns the `action`, `datetime`, `clientRequestHTTP
 
 ![Example query with return fields](images/graphiql-query-return-field-values.png "Example query with return fields"){: caption="Example query with return fields" caption-side="bottom"}
 
-Once you have entered all the fields you want to query, select the **Play** button to submit the query. The response pane will contain the data fetched from the configured GraphQL API endpoint:
+After you enter all the fields you want to query, select the **Play** button to submit the query. The response pane contains the data fetched from the configured GraphQL API endpoint:
 
 ![GraphiQL response pane](images/create-query-fw-data-set-play.dQ7w2sGu_JiL34.png "GraphiQL response pane"){: caption="GraphiQL response pane" caption-side="bottom"}
 

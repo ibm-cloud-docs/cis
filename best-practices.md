@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -61,7 +61,7 @@ You can upload your public and private keys when you create an Enterprise domain
 ### Alternatively, use a certificate provisioned by CIS
 {: #strict-use-cert-cis-provisioned}
 
-IBM {{site.data.keyword.cis_short_notm}} works with several Certificate Authorities (CAs) to provide domain wildcard certificates for our customers, by default. Manual verification might be required for setting up these certificates, and your support team can help you perform these additional steps.
+IBM {{site.data.keyword.cis_short_notm}} works with several Certificate Authorities (CAs) to provide domain wildcard certificates by default. Manual verification might be required for setting up these certificates, and your support team can help you perform these additional steps.
 
 ### Change your TLS setting to End-to-End CA Signed
 {: #strict-change-tls-setting}

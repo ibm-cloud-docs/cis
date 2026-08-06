@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -215,7 +215,7 @@ Specifies the output format; only JSON is supported.
 ### Creating a security alert policy from the CLI
 {: #cli-create-security-alert}
 
-Create an alert policy about spikes in firewall events. Firewall events alerts use a z-score calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score is above 3.5 (the threshold). You don't receive duplicate alerts within the same two-hour timeframe.
+Create an alert policy about spikes in firewall events. Firewall events alerts use a z-score calculation over the last six hours and five-minute buckets of events. An alert is triggered whenever the z-score exceeds 3.5 (the threshold). You don't receive duplicate alerts within the same two-hour timeframe.
 
 To create a security alert from the CLI, run the following command:
 

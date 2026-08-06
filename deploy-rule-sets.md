@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -178,7 +178,7 @@ curl -X GET "https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets/phase
 ```
 {: pre}
 
-The ruleset ID will be in the response of the successful request. If the above call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the custom rule phase:
+The ruleset ID will be in the response of the successful request. If the preceding call returns a 404 Not Found response, use the following API to create the entrypoint ruleset for the custom rule phase:
 
 ```sh
 curl -x POST https://api.cis.cloud.ibm.com/v1/$CRN/zones/$ZONE_ID/rulesets \

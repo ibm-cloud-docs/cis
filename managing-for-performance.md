@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-08-06"
 
 keywords: performance, best practices
 
@@ -49,7 +49,7 @@ If content rarely changes, you can set a conservative TTL to utilize our cache a
 ## Best practice 2: For event-driven content, purge your cache
 {: #best-practice-api-purge-cache}
 
-For example, every time a new post is added to your blog, you could easily purge the {{site.data.keyword.cis_short_notm}} cache. It is common to see event-driven content, and {{site.data.keyword.cis_short_notm}} makes it easy to guarantee that no stale content is reaching your users. The commands to purge the cache immediately across the entire global network are:
+For example, every time a new post is added to your blog, you can purge the {{site.data.keyword.cis_short_notm}} cache. It is common to see event-driven content, and {{site.data.keyword.cis_short_notm}} can guarantee that no stale content is reaching your users. The commands to purge the cache immediately across the entire global network are:
 
 * Purge all files
 * Purge by prefixes (Enterprise only)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -47,7 +47,7 @@ These options are listed in the order from the most secure to the least secure (
 ### End-to-end CA signed
 {: #tls-encryption-modes-end-to-end-ca-signed}
 
-This mode is the default and recommended setup. A secure connection is set up between the visitor and {{site.data.keyword.cis_short_notm}}, and a secure and authenticated connection between {{site.data.keyword.cis_short_notm}} and your web server. Your server must be set up to handle HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority (CA), have an expiration date in the future, and respond for the request domain name (hostname). It is recommended that you use this TLS mode for best security practices, unless you understand the potential security threats of changing to one of the less strict modes.
+This mode is the default and recommended setup. A secure connection is set up between the visitor and {{site.data.keyword.cis_short_notm}}, and a secure and authenticated connection between {{site.data.keyword.cis_short_notm}} and your web server. Your server must be set up to handle HTTPS connections, with a valid TLS certificate. This certificate must be signed by a certificate authority (CA), have an expiration date in the future, and respond for the request domain name (hostname). Use this TLS mode for best security practices, unless you understand the potential security threats of changing to one of the less strict modes.
 
 ![Diagram of End to end CA signed TLS](images/end-to-end-ca-signed.svg "Diagram of End to end CA signed TLS"){: caption="A diagram of end to end CA signed TLS" caption-side="bottom"}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-09"
+  years: 2020, 2026
+lastupdated: "2026-08-06"
 
 keywords: public isolation for cloud internet services, compute isolation for cloud internet services, cis architecture, workload isolation in cis
 
@@ -59,7 +59,7 @@ The following dependencies of {{site.data.keyword.cis_full_notm}} are considered
 | Business Support Services for {{site.data.keyword.cloud_notm}} (BSS) |	Used to access information about the {{site.data.keyword.cloud_notm}} account, service subscription, service usage, and billing. |
 | {{site.data.keyword.cloud_notm}} Command Line (CLI) | Used to run commands from a command prompt. When {{site.data.keyword.cis_full_notm}} runs commands, the service connects to the service API endpoint over the public service endpoint. |
 | {{site.data.keyword.la_full_notm}} | {{site.data.keyword.cis_full_notm}} sends service logs to {{site.data.keyword.la_full_notm}}. The service team uses these logs for analysis to identify issues and malicious activity.  |
-| {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.cis_full_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward auditable events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by the user. For more information, see [Auditing events for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-at_events#at_events). This service is also use by {{site.data.keyword.cis_full_notm}} to store auditable events. |
+| {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.cis_full_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward auditable events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by the user. For more information, see [Auditing events for {{site.data.keyword.cis_short_notm}}](/docs/cis?topic=cis-at_events#at_events). This service is also used by {{site.data.keyword.cis_full_notm}} to store auditable events. |
 | Identity and Access Management (IAM) | {{site.data.keyword.cis_full_notm}} authenticates requests and determines authorization for all user actions based on platform and service access roles and policies in IAM. To learn more, see [Managing access for CIS](/docs/cis?topic=cis-iam-and-cis#iam-and-cis). |
 | {{site.data.keyword.cos_short}} (COS) | Used to store edge logs for a customer's data path traffic. You can also use this service to store operational logs of {{site.data.keyword.cis_full_notm}} itself. |
 {: caption="Critical dependencies" caption-side="bottom"}

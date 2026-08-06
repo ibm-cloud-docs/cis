@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-08-06"
 
 keywords: security, best practices, waf, owasp
 
@@ -105,7 +105,7 @@ With IBM {{site.data.keyword.cis_short_notm}}, you can use custom certificates o
 
 You can upload your custom certificate by clicking **Add Certificate** and entering your certificate, private key, and bundle method. After you upload a custom certificate, you gain immediate compatibility with encrypted traffic and maintain control over your certificate (for example, an Extended Validation (EV) certificate).
 
-{{site.data.keyword.cis_short_notm}} does not support certificate pinning with ordered or Universal certificates. If you want to use certificate pinning, it is recommended that you upload and maintain your own custom certificate.
+{{site.data.keyword.cis_short_notm}} does not support certificate pinning with ordered or Universal certificates. If you want to use certificate pinning, upload and maintain your own custom certificate.
 
 You are responsible for managing your certificate if you upload a custom certificate. For example, {{site.data.keyword.cis_short_notm}} doesn't track the certificate expiration date.
 {: important}

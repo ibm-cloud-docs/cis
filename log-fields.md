@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-06"
 
 keywords: log fields
 
@@ -35,7 +35,7 @@ These available datasets describe the fields available by log category:
 ## Available fields
 {: #logpull-available-fields}
 
-The following tables indicate the fields available by dataset. Log fields are subject to change, so it is recommended to use the [Available Log Fields API](/docs/apis/cis#list-fields-for-dataset-v2) to pull the most up-to-date version of the available fields.
+The following tables indicate the fields available by dataset. Log fields are subject to change. Use the [Available Log Fields API](/docs/apis/cis#list-fields-for-dataset-v2) to pull the most up-to-date version of the available fields.
 
 
 ### HTTP requests

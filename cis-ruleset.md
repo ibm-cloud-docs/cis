@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-02-20"
+  years: 2024, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -40,7 +40,7 @@ Select **View {{site.data.keyword.cis_short_notm}} rules** to reveal the ruleset
 
 [^F]: This ruleset contains more rules that complement the technology-specific protections provided by similar rules in the OWASP ruleset.
 
-The **Specials** ruleset contains a number of rules appropriate for virtually all applications and websites on the internet. This ruleset is the core of the security that our WAF offers, with rules that target common attacks like SQLi, XSS, and LFI. It is recommended that you always enable Specials.
+The **Specials** ruleset contains rules appropriate for virtually all applications and websites on the internet. This ruleset is the core of the WAF security offering, with rules that target common attacks like SQLi, XSS, and LFI. Always enable Specials.
 {: tip}
 
 Enable only the rulesets that correspond to your technology stack. For instance, if you use Wordpress, but no other technologies, enable only the Specials and Wordpress rulesets. Avoid enabling rulesets that are not relevant to your tech stack.

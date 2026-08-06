@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-12-08"
+  years: 2018, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -17,10 +17,6 @@ subcollection: cis
 
 You'll begin by using the Overview page as your working base of operations. It shows all of the current parameters for your deployment.
 {: shortdesc}
-
-
-
-
 
 After you've set up your DNS and configured it, you are ready to go!
 

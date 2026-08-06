@@ -69,7 +69,7 @@ To create a Logpush job in the console, follow these steps:
 
       Optional: Enable Organize logs into daily folders.
 
-      Destination values for Cloud Object Storage must be unique. It is recommended to use a unique bucket path to avoid conflicts.
+      Destination values for Cloud Object Storage must be unique. Use a unique bucket path to avoid conflicts.
 
       An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2).
 

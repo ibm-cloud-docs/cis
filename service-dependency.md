@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-14"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -183,7 +183,7 @@ The table shows a standard cloud deployment. If a special deployment is used lik
 
 Sometimes, the dependency might have a separate control plane and data plane. In these cases, there are separate lines that show the location in relation to the deployed customer instance of the service where these will be provisioned. The lines might have different impacts and different functions. See the **Control or data plane** column to understand what possible impact this type of outage might have.
 
-`Same region` means that the dependent services are in the same region as the provisioned instance. Other values might show `data center` or region names if the service must be used from a specific region, a specific zone, or set of zones. If a service is tied to a specific region or site, and the region goes offline, the service might go offline as well. It is recommended that you go through the high availability and disaster recovery documentation of the dependency to determine if there are any steps that you should take to mitigate these types of risks.
+`Same region` means that the dependent services are in the same region as the provisioned instance. Other values might show `data center` or region names if the service must be used from a specific region, a specific zone, or set of zones. If a service is tied to a specific region or site, and the region goes offline, the service might go offline as well. Review the high availability and disaster recovery documentation of the dependency to determine whether any steps are needed to mitigate these types of risks.
 
 ## Additional resources
 {: #additional-resources}

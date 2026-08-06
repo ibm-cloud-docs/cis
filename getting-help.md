@@ -22,6 +22,7 @@ If you experience an issue or have questions when using {{site.data.keyword.cis_
 * Review [FAQs](/docs/cis?topic=cis-faq) in the product documentation.
 * Review [Troubleshooting](/docs/cis?topic=cis-troubleshoot-your-cis-network-connection) to diagnose and resolve common issues.
 * Check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](/status){: external}.
+
 If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/support?topic=support-open-case&interface=ui). And, if you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
 
 ## Providing support case details for {{site.data.keyword.cis_short_notm}}

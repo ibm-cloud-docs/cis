@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-08-06"
 
 keywords: ddos, distributed denial of service, attack concepts, application layer attacks 
 subcollection: cis
@@ -68,7 +68,7 @@ Generally, attacks fall into two categories:
 
 1. Turn on "Defense mode" from the **Overview** page.
 1. Set your DNS records for maximum security.
-1. Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}, we need the bandwidth to assist you with your situation.
+1. Do not rate-limit or throttle requests from IBM {{site.data.keyword.cis_short_notm}}. The bandwidth is required to assist with your situation.
 1. Block specific countries and visitors if necessary.
 
 ## Related links
@@ -80,4 +80,3 @@ Generally, attacks fall into two categories:
 * [Using Defense mode for DDoS attacks](/docs/cis?topic=cis-defense-mode-attack-ddos)
 * [Third-party services and DDoS protection](/docs/cis?topic=cis-third-party-ddos)
 * [HTTP DDoS Attack Protection managed ruleset](/docs/cis?topic=cis-http-ddos)
-

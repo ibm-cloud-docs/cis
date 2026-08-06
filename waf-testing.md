@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-08-06"
 
 keywords: waf
 
@@ -18,7 +18,7 @@ subcollection: cis
 Cloud Internet Services (CIS) inspects incoming web and API traffic and blocks unwanted requests using predefined rulesets. This topic walks you through the initial steps to configure the Web Application Firewall (WAF) and quickly enable protection against the most common web attacks.
 {: shortdesc}
 
-**Attention**: When performing a _penetration test (pentest)_, it is recommended to start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
+**Attention**: When performing a _penetration test (pentest)_, start with the most restrictive WAF configuration to evaluate the full defensive capabilities of CIS. To achieve this, configure the following settings:
 
 * Enable all managed rules.
    * [CIS OWASP Core Ruleset](/docs/cis?topic=cis-owasp-rule-set-for-waf): Set paranoia level to 4 (`PL4`) and score threshold to **High** (`High-25 and higher`).
@@ -54,7 +54,7 @@ Follow these high-level steps to configure WAF for your zones:
 
       In particular situations, enabling the managed ruleset can cause some false positives. False positives are legitimate requests inadvertently mitigated by the WAF. For information on addressing false positives, see [Handling false positives in managed rules](/docs/cis?topic=cis-handling-false-positives-managed-rules).
 
-      For pentesting, it is recommended to enable all rules with the following settings:
+      For pentesting, enable all rules with the following settings:
 
          * Ruleset action: **Block**
          * Ruleset status: Enabled (enables all rules in the ruleset)

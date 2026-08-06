@@ -138,7 +138,7 @@ The following table lists countries in the EU from geolocation data:
 ## Functions
 {: #custom-rule-functions}
 
-The custom rules language has a number of functions to convert fields.
+The custom rules language has several functions to convert fields.
 
 These are not currently supported in the Expression Builder.
 {: note}

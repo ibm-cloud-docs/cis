@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -24,7 +24,7 @@ Some CIS customers choose to place a third-party CDN in front of CIS to cache an
 
 However, it is "not" recommended to place a third-party CDN in front of CIS. Some CDN providers might introduce discrepancies into HTTP requests that deviate from protocol standards and protocol best practices. Also, because traffic to CIS then originates from a limited set of the CDN's IP addresses, this can (in rare cases) cause the traffic to be misidentified as a DDoS attack. For example, when you use the Akamai CDN in front of CIS, the high volume of traffic from a limited set of IPs can resemble attack behavior to CIS.
 
-Instead, it is recommended to use CIS and the [underlying Cloudflare network](https://www.cloudflare.com/en-gb/network/){: external} and its CDN capabilities, which provide the following benefits:
+Instead, use CIS and the [underlying Cloudflare network](https://www.cloudflare.com/en-gb/network/){: external} and its CDN capabilities, which provide the following benefits:
 * Reduced latency by removing an extra network hop between vendor data centers.
 * Immediate DDoS protection at the first point of contact with the internet (an industry best practice).
 
@@ -34,7 +34,7 @@ If you use a third-party CDN in front of CIS and CIS mitigates a DDoS attack, yo
 ## Recommended DDoS configuration adjustments for CDN or proxy
 {: #recommend-ddos-configuration-cdn}
 
-If you use a CDN or proxy in front of CIS, it is recommended that you change the action and/or sensitivity level of the following DDoS rules named:
+If you use a CDN or proxy in front of CIS, change the action and/or sensitivity level of the following DDoS rules:
 
 * `HTTP requests with unusual HTTP headers or URI path (signature #1) with the rule ID ...3486aee1`
 * `HTTP requests with unusual HTTP headers or URI path (signature #56) with the rule ID ...e269dfd6`

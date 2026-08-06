@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2024
-lastupdated: "2024-10-09"
+  years: 2018, 2026
+lastupdated: "2026-08-06"
 
 keywords: Use Page Rules, standard cache levels, Custom Caching Sets
 
@@ -33,7 +33,7 @@ The `scheme` and `port` components are optional. If the `scheme` component is om
 
 * Only one page rule takes effect on any request.
 * Page rules get priority in an order from top to bottom. After a URL matches a rule, only that rule is applied. In other words, if a page rule triggered already on a request, any subsequent rules that also match the URL pattern do not take effect.
-* Generally, it is recommended to order from most-specific to least-specific rules.
+* Generally, order from most-specific to least-specific rules.
 * Page rules can be disabled, in which case they take no action. However, you can still see the rules in the list and edit them. Setting the **Enabled** toggle to **Off** creates a page rule that is disabled initially.
 
 ## Forwarding (URL redirection)

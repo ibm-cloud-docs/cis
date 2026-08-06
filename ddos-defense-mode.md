@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -53,7 +53,7 @@ To target specific ASNs (hosts/ISPs that own IP addresses), countries, or IP ran
 ## Potential issues
 {: #potential-issues}
 
-Defense mode requires the browser to support JavaScript in order to display and pass the interstitial page. This requirement can affect third‑party analytics tools, which might not record traffic accurately while defense mode is active.
+Defense mode requires the browser to support JavaScript to display and pass the interstitial page. This requirement can affect third‑party analytics tools, which might not record traffic accurately while defense mode is active.
 
 ## Related links
 {: #defense-mode-related-links}
