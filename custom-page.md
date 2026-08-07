@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2025
-lastupdated: "2025-06-30"
+  years: 2019, 2026
+lastupdated: "2026-08-06"
 
 keywords: Custom error page, Cloud Internet Services, Custom page
 
@@ -77,9 +77,9 @@ Each page (challenge, 5xx errors) has a different ID, so use the preview option 
 ## Publishing error pages
 {: #publishing-error-pages}
 
-After you're done customizing your error pages, it's time to publish them to our edge. Publication is done through the [Custom Page CLI](/docs/cis?topic=cis-cis-cli#custom-pages).
+After you're done customizing your error pages, it's time to publish them to the edge. Publication is done through the [Custom Page CLI](/docs/cis?topic=cis-cis-cli#custom-pages).
 
-When you publish, the custom error page is requested once by us, then cached on the cloud's edge.
+When you publish, the custom error page is requested one time, then cached on the cloud's edge.
 
 ## Updating error pages
 {: #updating-error-pages}
@@ -95,4 +95,4 @@ If {{site.data.keyword.cis_short_notm}} can't load your site, or you blocked the
 *  If you encounter errors while attempting to preview or publish your custom error page, run it through a HTML validator and ensure that it is error free.
 *  Make sure that the minimum page size is greater than 0. You must add content to your page.
 *  Make sure that you are serving the custom error page with a 200 status code.
-*  If we can't load your site, or you have blocked the US in the IP firewall, publishing and previewing the error page does not work.
+*  If the site cannot be loaded, or you have blocked the US in the IP firewall, publishing and previewing the error page does not work.

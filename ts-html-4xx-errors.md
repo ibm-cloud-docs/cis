@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-11-17"
+  years: 2024, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -40,7 +40,7 @@ The request was sent without the proper authentication credentials.
 ## Error 403: Forbidden
 {: #403-error}
 
-If you're seeing a 403 error without {{site.data.keyword.cis_short_notm}} branding, this is always returned directly from the origin web server, not {{site.data.keyword.cis_short_notm}}, and is generally related to permission rules on your server. The top reasons for this error are:
+If you're seeing a 403 error without {{site.data.keyword.cis_short_notm}} branding, this is always returned directly from the origin web server, not {{site.data.keyword.cis_short_notm}}, and is generally related to permission rules on your server. The most common reasons for this error are:
 
 * Permission rules you have set on the origin web server (in the Apache .htaccess for example)
 * Mod_security rules

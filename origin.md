@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -47,7 +47,7 @@ To get an origin certificate with the API, see [Get an existing origin certifica
 
 1. Order an origin certificate.
 1. Copy the private key and origin certificate in PEM format into separate files to the directory on your server where you keep your key and certificate files.
-1. Locate your Apache configuration file. Typically, the file names are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file might vary, especially if you use a special interface to manage your server. See Apache's [DistrosDefaultLayout](https://cwiki.apache.org/confluence/display/HTTPD/DistrosDefaultLayout){: external} for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on linux.
+1. Locate your Apache configuration file. Typically, the file names are `httpd.conf` or `apache2.conf` and the locations are `/etc/httpd/` or `/etc/apache2/`. However, your configuration file might vary, especially if you use a special interface to manage your server. See Apache's [DistrosDefaultLayout](https://cwiki.apache.org/confluence/plugins/servlet/mobile){: external} for a complete list of default installation layouts. The following command is one way to search for the SSL configuration file on Linux.
 
     ```sh
     grep -i -r "SSLCertificateFile" /etc/httpd/

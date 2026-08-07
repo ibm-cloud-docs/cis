@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -121,7 +121,7 @@ You can manually trigger a check by selecting **Recheck name servers** on the Ov
 {: #cis-faq-who-is-registrar}
 {: faq}
 
-You can look up your domain registrar using the ICANN WHOIS tool: [https://whois.icann.org/](https://whois.icann.org){: external}
+You can look up your domain registrar using the ICANN WHOIS tool: [https://lookup.icann.org/](https://lookup.icann.org/){: external}
 
 To add your domain to {{site.data.keyword.cis_short_notm}}, you must have administrator privilege to edit the domain's configuration at the registrar to update or add the name servers for your domain. If you don't know who the registrar is for the domain you're trying to add to {{site.data.keyword.cis_short_notm}}, it is unlikely you have the administrator privilege. Work with the owner of the domain in your organization to make the necessary changes.
 {: note}

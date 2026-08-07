@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-02-26"
+  years: 2020, 2026
+lastupdated: "2026-08-06"
 
 keywords: graphql
 
@@ -271,7 +271,7 @@ The volume of data that a query can return is limited, and there are user limits
 * Queries can request up to 30 fields as indicated by `maxNumberOfFields` in `settings`.
 * Responses can return up to 10,000 records. This limit is indicated by `maxPageSize` in `settings`.
 
-Queries must explicitly specify the upper bounds of records to return using the `limit` argument.
+Queries must explicitly specify the maximum number of records to return using the `limit` argument.
 
 ## Sorting
 {: #sorting}

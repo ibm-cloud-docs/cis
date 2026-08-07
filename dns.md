@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-15"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Configuring DNS records and settings
 {: #set-up-your-dns-for-cis}
 
-Before directing traffic to your domain through CIS, it is recommended that you import or manually recreate your existing DNS records within CIS. This action helps ensure that all domain resources, such as subdomains and dependent services, continue to resolve correctly after traffic is routed through CIS. Although this step is optional, failing to configure DNS records in CIS can result in partial service disruption or inaccessible website components.
+Before directing traffic to your domain through CIS, import or manually recreate your existing DNS records within CIS. This action helps ensure that all domain resources, such as subdomains and dependent services, continue to resolve correctly after traffic is routed through CIS. Although this step is optional, failing to configure DNS records in CIS can result in partial service disruption or inaccessible website components.
 {: shortdesc}
 
 You can import your DNS records by uploading a file you’ve exported from your current DNS provider, or you can manually enter each record in CIS. To import, click **Import records** and upload the appropriate file.
@@ -102,7 +102,7 @@ To add this record type, a valid value must exist in the **Name** field. If you 
 ### CAA Type record
 {: #caa-type-record}
 
-To add this record type, valid values must exist in the **Name** and **Value** fields. The Value field correlates to the value of the **Tag** list field, which defaults to "Send violation reports to URL". A **TTL** can can also be specified from the list, with the default value of `Automatic`.
+To add this record type, valid values must exist in the **Name** and **Value** fields. The Value field correlates to the value of the **Tag** list field, which defaults to **Send violation reports to URL**. A **TTL** can also be specified from the list, with the default value of `Automatic`.
 
 * Required Fields: Name, Value (associated to tag)
 * Optional Fields: TTL (default value is `Automatic`), Tag (default is to send violation reports to URL)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-08-06"
 
 keywords: IBM Cloud Internet Services, subdomain, CNAME
 
@@ -20,7 +20,7 @@ Follow these steps to practice using {{site.data.keyword.cis_short_notm}} with a
 
 1. Deploy a {{site.data.keyword.cis_short_notm}} instance by using the {{site.data.keyword.cloud_notm}} console or API.
 
-   It is recommended that you mirror the name of your {{site.data.keyword.cis_short_notm}} instance with the domain or subdomain.
+   Mirror the name of your {{site.data.keyword.cis_short_notm}} instance with the domain or subdomain.
    {: note}
 
 2. Click **Let’s get started**.

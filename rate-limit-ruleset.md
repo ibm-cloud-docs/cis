@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-02-28"
+  years: 2024, 2026
+lastupdated: "2026-08-06"
 
 keywords: rate limiting, rules, rulesets, waf
 
@@ -31,7 +31,7 @@ Rate-limiting rules also require the following additional parameters:
 - **Characteristics:** The set of parameters that define how the rate is tracked for this rule.
 - **Period:** The period of time to consider (in seconds) when evaluating the rate.
 - **Requests per period:** The number of requests over the period of time that will trigger the rate-limiting rule.
-- **Duration (or mitigation timeout):** Once the rate is reached, the rate-limiting rule blocks further requests for the period of time that is defined in this field.
+- **Duration (or mitigation timeout):** After the rate is reached, the rate-limiting rule blocks further requests for the period of time that is defined in this field.
 - **Action behavior:** By default, the rule action is applied for the configured duration (or mitigation timeout), regardless of the request rate during this period.
 
 ## Important considerations

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-08-06"
 
 keywords: domains
 
@@ -45,7 +45,7 @@ To configure a full (authoritiative) zone, follow these steps:
       - CAA and other service-specific records
    1. Verify that all records are correct before updating name servers.
 
-   Missing or incorrect records cause service interruptions once CIS becomes authoritative.
+   Missing or incorrect records cause service interruptions after CIS becomes authoritative.
    {: note}
 
 1. Update name servers at your registrar:

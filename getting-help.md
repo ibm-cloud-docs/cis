@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-08-06"
 
 keywords: support case IBM Cloud development teams support case
 
@@ -22,7 +22,6 @@ If you experience an issue or have questions when using {{site.data.keyword.cis_
 * Review [FAQs](/docs/cis?topic=cis-faq) in the product documentation.
 * Review [Troubleshooting](/docs/cis?topic=cis-troubleshoot-your-cis-network-connection) to diagnose and resolve common issues.
 * Check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](/status){: external}.
-* Review [Stack Overflow](https://stackoverflow.com/search?q=cis+ibm-cloud){: external} to see whether other users ran into the same problem. If you're using the forum to ask a question, tag your question with `ibm-cloud` and `cis` so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
 
 If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/support?topic=support-open-case&interface=ui). And, if you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
 

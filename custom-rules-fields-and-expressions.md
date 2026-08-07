@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-11"
+lastupdated: "2026-08-06"
 
 subcollection: cis
 
@@ -45,7 +45,7 @@ Each field value can be sourced from different places, such as:
 |http.x_forwarded_for|String|_The full X-Forwarded-For HTTP header_ |
 |ip.src|IP address|93.155.208.22|The client TCP IP address, which can be adjusted to reflect the real client IP of the original client as applicable (for example, by using HTTP headers like X-Forwarded-For or X-Real-IP)|
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
-|ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/#search/code/){: external}|
+|ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
 |ip.src.subdivision_1_iso_code|String|GB-ENG|The [`ISO 3166-2`](https://en.wikipedia.org/wiki/ISO_3166-2){: external} code for the first-level region associated with the IP address. When the actual value is not available, this field contains an empty string. To use this field, a CIS Enterprise plan is required.|
 |ip.src.subdivision_2_iso_code|String|GB-SWK|The [`ISO 3166-2`](https://en.wikipedia.org/wiki/ISO_3166-2){: external} code for the second-level region associated with the IP address. When the actual value is not available, this field contains an empty string. To use this field, a CIS Enterprise plan is required.|
@@ -115,7 +115,7 @@ The following table lists countries in the EU from geolocation data:
 {: caption="Country code and name" caption-side="bottom"}
 
 ### Bot management fields
- {: #bot-manage-field}
+{: #bot-manage-field}
 
  Bot Management for Enterprise is a paid add-on that provides sophisticated bot protection for your domain. Customers can identify automated traffic, take appropriate action, and view detailed analytics within the console.
 
@@ -138,7 +138,7 @@ The following table lists countries in the EU from geolocation data:
 ## Functions
 {: #custom-rule-functions}
 
-The custom rules language has a number of functions to convert fields.
+The custom rules language has several functions to convert fields.
 
 These are not currently supported in the Expression Builder.
 {: note}

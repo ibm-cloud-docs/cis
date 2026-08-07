@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-07-07"
+  years: 2022, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -57,7 +57,7 @@ To set up a CNAME, take the following steps.
         ```
         {: pre}
 
-    If you encounter the error message: "Partial zone signup not allowed", contact Support.
+    If you encounter the error message `Partial zone signup not allowed`, contact Support.
 
 1. Get the txt record `verification_key` and `cname_suffix` from the response:
 

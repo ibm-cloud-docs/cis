@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -77,7 +77,7 @@ After the monitor is attached, {{site.data.keyword.cis_short_notm}} begins check
 * The default retry rate is 5 retries per second, and is configurable. It is not recommended to increase the retry rate significantly. Retries use exponential backoff (1, 2, 4, 8, and 16 seconds, by default).
 * You can configure monitoring for specific URLs by sending periodic HTTP requests to the load balancer, taking advantage of customizable intervals, timeouts, and status codes. After an origin server is marked unhealthy, multi-region failover reroutes traffic to the next available server in failover order.
 * Load balancer monitors use the following HTTP user-agent: `"Mozilla/5.0 (compatible; Cloudflare-Traffic-Manager/1.0; +https://www.cloudflare.com/traffic-manager/; pool-id: $poolid)"`. The `$poolid` contains the first 16 characters of the load balancer pool that is the target of the health check.
-* To prevent health checks from failing, and to secure user infrastructure against spoofed checks from bad actors, it is recommended that you do the following:
+* To prevent health checks from failing, and to secure user infrastructure against spoofed checks from bad actors, do the following:
     * Only accept connections to hosts listed in the {{site.data.keyword.cis_short_notm}} IP ranges in your firewall or web-server.
     * Use the {{site.data.keyword.cis_short_notm}} user agent to reject HTTP requests that don't come from these ranges.
     * Ensure that your firewall or web server does not block or rate limit {{site.data.keyword.cis_short_notm}} health checks.

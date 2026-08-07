@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-09-05"
+  years: 2021, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -40,7 +40,7 @@ To configure webhooks in the console, navigate to your **Account** page and sele
 ### Editing a webhook in the console
 {: #update-webhooks-ui}
 
-To edit a webhook in the console, click the Edit icon next to the name of the webhook that you want to update. You can edit only the name of the webhook. If you need to modify a webhook, it is recommended that you delete and re-create the webhook instead of editing it.
+To edit a webhook in the console, click the Edit icon next to the name of the webhook that you want to update. You can edit only the name of the webhook. If you need to modify a webhook, delete and re-create the webhook instead of editing it.
 
 ### Deleting a webhook in the console
 {: #delete-webhooks-ui}

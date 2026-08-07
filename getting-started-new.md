@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-04"
+lastupdated: "2026-08-06"
 
 keywords: IBM Cloud Internet Services, IBM CIS application, CIS
 
@@ -36,7 +36,7 @@ Before you begin using {{site.data.keyword.cis_short_notm}}, make sure that you 
 * [Compare and select a CIS plan](/docs/cis?topic=cis-cis-plan-comparison) that best meets your needs (Lite, Standard, or Enterprise). Each plan offers different levels of security, performance, and feature access.
 * Familiarize yourself with [CIS core concepts](/docs/cis?group=concepts) and terminology to better understand the configuration steps.
 
-It is recommended that you use Google Chrome when you work with {{site.data.keyword.cis_short_notm}}.
+Use Google Chrome when you work with {{site.data.keyword.cis_short_notm}}.
 {: tip}
 
 ## Getting started process

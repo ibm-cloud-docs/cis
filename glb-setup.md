@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -88,7 +88,7 @@ If you don't define any custom health checks, CIS uses `/` as your default healt
 
 1. Expand **Configure request headers (optional)** to add and configure HTTP request headers to send in the health check.
 
-   It is recommended that you set a Host header by default. The `User-Agent` header can't be overridden.
+   Set a Host header by default. The `User-Agent` header can't be overridden.
 
 1. Click **Create** to complete your health check configuration.
 

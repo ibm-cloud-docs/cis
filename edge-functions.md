@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -88,7 +88,7 @@ In addition to the properties on the standard `Request` object, you can use a `r
 ```
 {: codeblock}
 
-If you are using [workers playground](https://cloudflareworkers.com){: external} to write and test your scripts, the `request.cf` content is not available in preview mode. You must be in production to run that content.
+If you are using [workers playground](https://workers.cloudflare.com/playground){: external} to write and test your scripts, the `request.cf` content is not available in preview mode. You must be in production to run that content.
 {: note}
 
 These properties contain special information from an incoming request to help with your app's logic. All plans have access to:
@@ -119,12 +119,12 @@ These properties contain special information from an incoming request to help wi
 
 All plans can set these features on outbound requests.
 
-- `cacheEverything`: This option forces {{site.data.keyword.cis_short_notm}} to cache the response for this request, regardless of what headers are seen on the response. This is equivalent to setting the page rule "Cache Level" to "Cache Everything" (for example, `true`).
+- `cacheEverything`: This option forces {{site.data.keyword.cis_short_notm}} to cache the response for this request, regardless of what headers are seen on the response. This is equivalent to setting the page rule **Cache Level** to **Cache Everything** (for example, `true`).
 - `scrapeShield`: Toggles ScrapeShield (for example, `false`).
 - `polish`: Set Cloudflare Polish mode. The possible values are "lossy", "lossless" or "off" (for example, `lossless`).
-- `minify`: Website optimization to  Enable/disable Cloudflare Autominify for various file types. The value is an object containing Boolean fields for `javascript`, `css`, and `html` (for example, `{ javascript: true, css: true, html: false }`).
+- `minify`: Website optimization to enable/disable Cloudflare Autominify for various file types. The value is an object containing Boolean fields for `javascript`, `css`, and `html` (for example, `{ javascript: true, css: true, html: false }`).
 - `mirage`: Image optimization to enable/disable Cloudflare mirage. When you specify this option, the value should always be `false` (for example, `false`).
-- `cacheTtl`: This option forces {{site.data.keyword.cis_short_notm}} to cache the response for this request, regardless of what headers are seen on the response. This is equivalent to setting two page rules: "Edge Cache TTL" and "Cache Level" (to "Cache Everything"; for example,`300`).
+- `cacheTtl`: This option forces {{site.data.keyword.cis_short_notm}} to cache the response for this request, regardless of what headers are seen on the response. This is equivalent to setting two page rules: **Edge Cache TTL** and **Cache Level** (to **Cache Everything**; for example,`300`).
 - `resolveOverride`: Redirects the request to an alternate origin server. You can use this to implement load balancing across several origins (for example,`us-east.example.com`).
 
     For security reasons, the hostname set in `resolveOverride` must be proxied on the same {{site.data.keyword.cis_short_notm}} zone of the incoming request. Otherwise, the setting is ignored. CNAME hosts are allowed, so to resolve to a host under a different domain or a DNS only domain first declare a CNAME record within your own zone’s DNS mapping to the external hostname, set proxy on {{site.data.keyword.cis_short_notm}}, then set resolveOverride to point to that CNAME record.

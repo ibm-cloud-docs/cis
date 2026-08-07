@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2025
-lastupdated: "2025-07-18"
+  years: 2018, 2026
+lastupdated: "2026-08-06"
 
 keywords: health checks, Free Trial plan, dedicated certificate, known issues
 
@@ -21,9 +21,9 @@ The following information describes some limitations when working with {{site.da
 ## General
 {: #general-limitations}
 
-* It is recommended that you use Chrome.
+* Use Chrome for best compatibility.
 * The free trial plan is limited to one instance per account. After you create a resource instance and add a domain to it, you are not allowed to add new resource instances for CIS. This restriction is enforced even if you delete a trial domain and then attempt to add a domain again to the same resource instance. You'll encounter an error if you attempt to do so.
-* For this service, we support subdomain delegation only using NS records from another provider. CNAME delegation is not supported.
+* For this service, subdomain delegation is supported only by using NS records from another provider. CNAME delegation is not supported.
 * A, AAAA, and CNAME wildcard records ("*") can't be proxied.
 * IP rules created with two letter country codes can only be made with the `Challenge` action. If you want to block visitors from a country, upgrade to the Enterprise plan or place rules on your server to fully block.
 

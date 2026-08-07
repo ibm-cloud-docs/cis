@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-14"
+lastupdated: "2026-08-06"
 
 keywords: log pull, logpull
 
@@ -21,7 +21,7 @@ IBM customers can access the Logpull service on Enterprise accounts. This servic
 ## Enabling log retention
 {: #log-retention}
 
-Edge logs are not retained by default. Before you can pull logs using the Logpull CLI, you must enable log retention. To do so, you must check the current setting, then turn log retention on or off. When enabled, logs are retained for 7 days. If retention is turned off, previously saved logs will be available until the retention period expires.
+Edge logs are not retained by default. Before you can pull logs using the Logpull CLI, you must enable log retention. To do so, you must check the current setting, then turn log retention on or off. When enabled, logs are retained for 7 days. If retention is turned off, previously saved logs remain available until the retention period expires.
 
 1. To check whether log retention is currently turned off, use the `log-retention` CLI:
 

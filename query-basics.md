@@ -46,7 +46,7 @@ The query to the Cloudflare GraphQL API must be sent by an HTTP POST request wit
 }
 ```
 
-From the above structure, the `query` field must contain a GraphQL query formatted as a single line string (which means all newline symbols should be stripped or escaped), when `variables` is an object that contains all values of used placeholders in the query itself.
+In the preceding structure, the `query` field must contain a GraphQL query formatted as a single line string (which means all newline symbols should be stripped or escaped), when `variables` is an object that contains all values of used placeholders in the query itself.
 
 ## A single dataset example
 {: #graphql-single}

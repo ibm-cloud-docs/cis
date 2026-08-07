@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: cis
 # Setting security headers
 {: #setting-security-headers}
 
-To help improve web application security, it is a best practice to set HTTP security headers at the edge or in your application. The following JavaScript example demonstrates how to implement these headers. By modifying the response headers in-flight, you can easily add protections like these common security headers without changing your back-end application.
+To help improve web application security, set HTTP security headers at the edge or in your application. The following JavaScript example demonstrates how to implement these headers. By modifying the response headers in-flight, you can add protections like these common security headers without changing your back-end application.
 
 X-XSS-Protection
 :   Prevents a page from loading if an XSS attack is detected. [Learn more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-XSS-Protection){: external}  For example: 

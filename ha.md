@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-01-24"
+  years: 2024, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -30,7 +30,7 @@ To find out more about responsibility ownership for using CIS between {{site.dat
 ## What level of availability do I need?
 {: #ha-level}
 
-You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the service level agreements (SLAs) that you have with your customers, and the resources that you want to expend.
+You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is appropriate for you depends on several factors, such as your business requirements, the service level agreements (SLAs) that you have with your customers, and the resources that you want to expend.
 
 ## What level of availability does {{site.data.keyword.cloud_notm}} offer?
 {: #ha-service}

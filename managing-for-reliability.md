@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-08-06"
 
 keywords: reliability, best practices
 
@@ -15,10 +15,10 @@ subcollection: cis
 # Managing your {{site.data.keyword.cis_short_notm}} deployment for optimal reliability
 {: #manage-your-ibm-cloud-internet-services-deployment-for-optimal-reliability}
 
-To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and global load balancers. For additional reliability, you can use our page rules to be sure that your web content is delivered to your customers, even if your origin server or the cache has a problem. This document gives details about some best practices for making your {{site.data.keyword.cis_short_notm}} deployment optimally reliable.
+To achieve optimal reliability for your {{site.data.keyword.cis_full}} deployment, you can set up a helpful DNS configuration and global load balancers. For additional reliability, you can use page rules to ensure that your web content is delivered, even if your origin server or the cache has a problem.
 {: shortdesc}
 
-Generally, our recommended best practices are these:
+Generally, the recommended best practices are these:
 
 * Set up your DNS to take advantage of {{site.data.keyword.cis_short_notm}} proxy servers and other features.
 * Use one or more global load balancers to distribute your site traffic evenly.
@@ -80,7 +80,7 @@ To enable **Serve Stale Content**, take the following steps.
 
 * To trigger **Serve Stale Content**, your web server must be returning a standard HTTP Error code of 502 or 504 timeout. Serve Stale Content also works when {{site.data.keyword.cis_short_notm}} encounters issues contacting your origin (Errors 521 and 523), timeouts (522 and 524), SSL errors (525 and 526) or an unknown error (520). **Serve Stale Content** is not triggered for other HTTP response codes, such as 404s, 500, 503, database connection errors, internal server error, or empty replies from server.
 
-* **Serve Stale Content** does not work if a "Cache Everything" page rule is enabled with the "Edge Cache Expire TTL" lower than the caching frequency, because the "Edge Cache Expire TTL" causes the **Serve Stale Content** cache to be purged in the corresponding interval.
+* **Serve Stale Content** does not work if a **Cache Everything** page rule is enabled with the **Edge Cache Expire TTL** set lower than the caching frequency, because the **Edge Cache Expire TTL** causes the **Serve Stale Content** cache to be purged in the corresponding interval.
 
 ## Origin Cache Control
 {: #origin-cache-control}
@@ -144,7 +144,7 @@ Basically, `s-maxage` is intended to be followed ONLY by reverse proxies (so the
 ### Summary on cache control headers and page rules for reliability
 {: #summary-cache-control-headers-page-rules}
 
-To sum up, here are some main areas to consider for reliability with regard to caching:
+The following main areas are important for reliability in caching:
 
 * Check your origin's caching headers to make sure there are no overriding headers for cacheable resources (`Cache-Control` and `Expires`).
 

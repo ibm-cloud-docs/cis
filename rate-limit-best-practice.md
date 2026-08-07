@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-08-06"
 
 keywords: HA for CIS, DR for CIS, CIS recovery time objective, CIS recovery point objective
 
@@ -136,7 +136,7 @@ Rule 3 enforces a stronger penalty to clients exceeding the rule 2 threshold by 
 | Action | Block for 1 day |
 {: caption="Rule 3 configuration" caption-side="bottom"}
 
-All these example rules require a business plan or above.
+All these example rules require a Business plan or higher.
 {: important}
 
 These three rules have a counting expression separate from the rule expression (also known as mitigation expression). When you configure a separate counting expression, the matching criteria is used when an action is triggered. In the counting expression, you can include conditions based on the HTTP response status code and HTTP response headers to integrate the rate limiting with your backend logic.
@@ -208,7 +208,7 @@ This example rule requires Advanced Rate Limiting.
 You might follow the same pattern of rate limiting rules to protect applications handling reservations and bookings.
 
 ### Preventing content scraping by using request body
-{: #prevent-content-scraping}
+{: #prevent-content-scraping-body}
 
 Consider an application that handles the operation and its parameters through the request body in JSON format. For example, the `lookup_price` operation might look like the following:
 
@@ -273,7 +273,7 @@ In this situation, you might configure a rule similar to the following:
 | Action | Managed Challenge |
 {: caption="Rule—Limit requests based on response status codes" caption-side="bottom"}
 
-This example rule requires a Business plan or above.
+This example rule requires a Business plan or higher.
 {: note}
 
 To control the rate of actions performed by automated sources, consider use rate limiting rules together with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli). With Bot Management, you can use the [bot score](/docs/cis?topic=cis-bot-management-fields&interface=cli) as part of the matching criteria to apply the rule only to automated or likely automated traffic. For example, you can use a maximum score (or threshold) of `30` for likely automated traffic and `10` for automated traffic.
@@ -319,7 +319,7 @@ These example rules require Advanced Rate Limiting and Bot Management.
 #### Using JA3 fingerprints
 {: #ja3-fingerprint}
 
-If the application does not use a session cookie, you can use JA3 fingerprints to identify individual clients. A [JA3 fingerprint](/docs/cis?topic=cis-fields-functions-expressions&interface=ui#bot-management-fields) is a unique identifier, available to customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli), that allows CIS to identify requests coming from the same client. All clients have an associated fingerprint, whether they are automated or not.
+If the application does not use a session cookie, you can use JA3 fingerprints to identify individual clients. A [JA3 fingerprint](/docs/cis?topic=cis-fields-functions-expressions#bot-manage-field) is a unique identifier, available to customers with [Bot Management](/docs/cis?topic=cis-about-bot-mgmt&interface=cli), that allows CIS to identify requests coming from the same client. All clients have an associated fingerprint, whether they are automated or not.
 
 | Setting | Value |
 |----------|-----------------------|

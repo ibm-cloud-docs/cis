@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-09-29"
+  years: 2022, 2026
+lastupdated: "2026-08-06"
 
 keywords: HAR files, HAR, HTTP Archive
 
@@ -53,7 +53,7 @@ To generate a HAR file:
 1. Select the Chrome menu (three vertical dots) at the top-right of your browser window, then select **Tools > Developer Tools**.
 1. The Developer Tools open as a docked panel at the side or bottom of the browser window. Click the **Network** tab.
 1. Select the option **Preserve log**.
-1. The recording starts automatically, and a red "Record network log" icon appears at the top left of the Network tab. If not, click the black "Stop recording network log" icon, to start recording activity in your browser.
+1. The recording starts automatically, and a red **Record network log** icon appears at the top left of the Network tab. If not, click the black **Stop recording network log** icon to start recording activity in your browser.
 1. Refresh the {{site.data.keyword.cis_short_notm}} page you are on or go through the steps to reproduce the problem you've been experiencing while Chrome is recording activity.
 1. After you have successfully reproduced the issue while recording, right-click any of the items within the Network tab and select **Save all as HAR with Content** to save a copy of the activity that you recorded.
 1. Save the HAR file in a location you choose, and send the file to [IBM support](/docs/cis?topic=cis-gettinghelp).
@@ -63,7 +63,7 @@ To generate a HAR file:
 
 To generate a HAR file:
 
-1. In Safari, first check to see if you have a "Develop" menu at the top of the page. If not, go to **Safari > Preferences > Advanced** and check "Show Develop Menu in menu bar".
+1. In Safari, first check to see if you have a **Develop** menu at the top of the page. If not, go to **Safari > Preferences > Advanced** and select **Show Develop Menu in menu bar**.
 1. In Safari, go to the page within {{site.data.keyword.cis_short_notm}} where you are experiencing trouble.
 1. Navigate to **Develop > Show Web Inspector**.
 
@@ -90,5 +90,5 @@ To generate a HAR file:
     {: note}
 
 1. Refresh the {{site.data.keyword.cis_short_notm}} page you are on or go through the steps to reproduce the problem you've been experiencing while Edge is recording activity.
-1. After you have reproduced the issue, right-click anywhere on the grid of network requests and choose **"Save as HAR with Content"**.
+1. After you have reproduced the issue, right-click anywhere on the grid of network requests and choose **Save as HAR with Content**.
 1. Save the HAR file in a location you choose, and send the file to [IBM support](/docs/cis?topic=cis-gettinghelp).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-08-25"
+  years: 2024, 2026
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -52,7 +52,7 @@ The paranoia level settings are part of the core ruleset. The paranoia level (PL
 
 A request can trigger a set of OWASP rules that have a high to low severity score associated with them. The final score is calculated based on all the rules triggered. After calculating the final score, {{site.data.keyword.cis_short_notm}} compares it to the sensitivity threshold selected in the beginning, and then either blocks, challenges, or logs the request based on the option selected.
 
-It is recommended that you set OWASP sensitivity to `low` initially, then review for false positives before increasing the sensitivity. If you set it to `high`, check the logs on {{site.data.keyword.cis_short_notm}}, and fine-tune the OWASP ruleset to work for your application.
+Set OWASP sensitivity to `low` initially, then review for false positives before increasing the sensitivity. If you set it to `high`, check the logs on {{site.data.keyword.cis_short_notm}}, and fine-tune the OWASP ruleset to work for your application.
 
 Keep in mind that you can only toggle OWASP rules on or off, unlike rules in the {{site.data.keyword.cis_short_notm}} rulesets, which can be set to **Disable**, **Simulate**, **Challenge**, or **Block**.
 

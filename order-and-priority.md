@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-08-06"
 
 subcollection: cis
 
@@ -21,7 +21,7 @@ By default, the action you specify in a rule determines the evaluation sequence 
 
 You can manage a priority by using the firewall rules UI in the {{site.data.keyword.cis_short_notm}} dashboard. Priority management is also available from the firewall rules API.
 
-The firewall rules engine processes rules in parallel. If you do not specify priority in a large ruleset, a matching conflict is possible. To avoid any conflicts, it is recommended that you explicitly control the evaluation sequence of your ruleset by using a priority.
+The firewall rules engine processes rules in parallel. If you do not specify priority in a large ruleset, a matching conflict is possible. To avoid any conflicts, explicitly control the evaluation sequence of your ruleset by using a priority.
 {: note}
 
 Firewall rules don't have default priorities and do not force you to have a priority for every rule. This gives you the freedom to organize your ruleset the way you want. The numbering can be relatively arbitrary, as long as it makes sense for your particular situation. However, keep in mind the following issues:
@@ -31,7 +31,7 @@ Firewall rules don't have default priorities and do not force you to have a prio
 * Avoid using the number 1 as a priority. Because no other rule can go above it, it makes it harder to renumber your rules.
 * Rules with no priorities are evaluated last.
 
-It is recommended that you group ranges of priority numbers into meaningful categories. For example:
+Group ranges of priority numbers into meaningful categories. For example:
 
 * 5000-9999 - Trusted IP addresses
 * 10000-19999 - Blocking rules for bad crawlers
