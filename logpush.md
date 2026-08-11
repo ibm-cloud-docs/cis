@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-11"
 
 keywords:
 
@@ -46,54 +46,50 @@ To create a Logpush job in the console, follow these steps:
 1. In the CIS console, navigate to **Account** > **Logs**, and then click **Create**.
 1. Select and configure destination service types from the available options:
 
-   #### IBM Cloud Logs
+   IBM Cloud Logs
+   :   1. Select **IBM Cloud Logs** from the service type options.
+       1. Click **Next**.
+       1. Enter the **Instance ID**.
+       1. Select the Instance **Region**.
+       1. Enter the **API key**.
 
-   1. Select **IBM Cloud Logs** from the service type options.
-   1. Click **Next**.
-   1. Enter the **Instance ID**.
-   1. Select the Instance **Region**.
-   1. Enter the **API key**.
+          An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2).
 
-      An API key for the account where the IBM Cloud Logs instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2).
+          For an IBM Cloud Logs service, the user or service ID must be granted the Sender IAM role.
+          {: important}
 
-      For an IBM Cloud Logs service, the user or service ID must be granted the Sender IAM role.
-      {: important}
+       1. Click **Next**.
 
-   1. Click **Next**.
+   Cloud Object Storage
+   :   1. Select **Cloud Object Storage** from the service type options.
+       1. Click **Next**.
+       1. Enter the Cloud Object Storage instance ID, bucket name, bucket region, bucket path (optional), and API key.
 
-   #### Cloud Object Storage
+          Optional: Enable Organize logs into daily folders.
 
-   1. Select **Cloud Object Storage** from the service type options.
-   1. Click **Next**.
-   1. Enter the Cloud Object Storage instance ID, bucket name, bucket region, bucket path (optional), and API key.
+          Destination values for Cloud Object Storage must be unique. Use a unique bucket path to avoid conflicts.
 
-      Optional: Enable Organize logs into daily folders.
+          An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2).
 
-      Destination values for Cloud Object Storage must be unique. Use a unique bucket path to avoid conflicts.
+          For a Cloud Object Storage service, the user or service ID must be granted the **Object Writer** IAM role for the bucket.
+          {: important}
 
-      An API key for the account where the Cloud Object Storage instance is set up is required. You can use either a user API key or a service ID API key. This key is used to generate a bearer token for the Logpush job. The API key can be rotated by using the [Update a Logpush job API](/docs/apis/cis#update-logpush-job-v2).
+       1. Click **Next**.
 
-      For a Cloud Object Storage service, the user or service ID must be granted the **Object Writer** IAM role for the bucket.
-      {: important}
+   IBM QRadar
+   :   1. Select the **IBM QRadar** from the service type options.
+       1. Click **Next**.
+       1. Enter the QRadar URL and then select the Log source port.
+       1. Click **Next**.
 
-   1. Click **Next**.
+   Splunk
+   :   1. Select **Splunk** from the service type options.
+       1. Click **Next**.
+       1. Enter the Splunk raw HTTP event collector URL, Channel ID, and Authentication token.
 
-   #### IBM QRadar
+          You can choose to use insecure verification; however, this is not recommended.
 
-   1. Select the **IBM QRadar** from the service type options.
-   1. Click **Next**.
-   1. Enter the QRadar URL and then select the Log source port.
-   1. Click **Next**.
-
-   #### Splunk
-
-   1. Select **Splunk** from the service type options.
-   1. Click **Next**.
-   1. Enter the Splunk raw HTTP event collector URL, Channel ID, and Authentication token.
-
-      You can choose to use insecure verification; however, this is not recommended.
-
-   1. Click **Next**.
+       1. Click **Next**.
 
 1. Review the logpush job configurations:
 
@@ -333,113 +329,108 @@ To create a Logpush job to your destination (IBM Cloud Logs, Cloud Object Storag
 
 1. When all variables are initiated, create the Logpush job:
 
-   **IBM Cloud Logs**
+   IBM Cloud Logs
+   :   ```sh
+       curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+       --header "Content-Type: application/json" \
+       --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+       --data '{
+          "ibmcl": {
+             "instance_id": "f8k3309c-585c-4a42-955d-76239cccf8k3",
+             "region": "us-south",
+             "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
+          },
+          "ibmcl_names": {
+             "application_name": "cis-edge-logs",
+             "subsystem_name": "stage-firewall-logs"
+          }
+          "dataset": "http_requests",
+          "enabled": true,
+          "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
+          "name": "CIS-Edge-Requests",
+          "frequency": "low"
+       }'
+       ```
+       {: pre}
 
-   ```sh
-   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
-   --header "Content-Type: application/json" \
-   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
-   --data '{
-      "ibmcl": {
-         "instance_id": "f8k3309c-585c-4a42-955d-76239cccf8k3",
-         "region": "us-south",
-         "api_key": "f8k3NQI22dPwNVCcmS62YFL1tm9vaehY6C9jxdtnf8k3"
-      },
-      "ibmcl_names": {
-         "application_name": "cis-edge-logs",
-         "subsystem_name": "stage-firewall-logs"
-      }
-      "dataset": "http_requests",
-      "enabled": true,
-      "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
-      "name": "CIS-Edge-Requests",
-      "frequency": "low"
-   }'
-   ```
-   {: pre}
+   Cloud Object Storage
+   :   ```sh
+       curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+       --header "Content-Type: application/json" \
+       --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+       --data '{
+          "cos": {
+             "bucket_name": "example_bucket",
+             "path": "temp/",
+             "id": "cos_instance_id",
+             "region": "us-east"
+          },
+          "dataset": "firewall_events",
+          "enabled": false,
+          "name": "CIS-Firewall-COS",
+          "frequency": "low",
+          "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
+          "ownership_challenge": "xxxxxxx"
+       }'
+       ```
+       {: pre}
 
-   **Cloud Object Storage**
+   IBM QRadar
+   :   ```sh
+       curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+       --header "Content-Type: application/json" \
+       --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+       --data '{
+          "qradar": {
+             "url": "https://example.qradar.ibmcloud.com",
+             "port": 8088
+          },
+          "dataset": "firewall_events",
+          "enabled": false,
+          "name": "CIS-Firewall-QRadar",
+          "frequency": "low",
+          "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
+       }'
+       ```
+       {: pre}
 
-   ```sh
-   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
-   --header "Content-Type: application/json" \
-   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
-   --data '{
-      "cos": {
-         "bucket_name": "example_bucket",
-         "path": "temp/",
-         "id": "cos_instance_id",
-         "region": "us-east"
-      },
-      "dataset": "firewall_events",
-      "enabled": false,
-      "name": "CIS-Firewall-COS",
-      "frequency": "low",
-      "logpull_options": "fields=RayID,ZoneID&timestamps=rfc3339",
-      "ownership_challenge": "xxxxxxx"
-   }'
-   ```
-   {: pre}
+   Splunk
+   :   ```sh
+       curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+       --header "Content-Type: application/json" \
+       --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+       --data '{
+          "splunk": {
+             "endpoint_url": "example.splunkcloud.com:8088/services/collector/raw",
+             "channel_id": "def3c136-7a01-4655-b17f-8e25a780ef2c",
+             "skip_verify": false,
+             "source_type": "cloudflare:json",
+             "auth_token": "Splunk fake3585-0f38-4d62-8b43-c4b78584fake"
+          },
+          "dataset": "http_requests",
+          "enabled": true,
+          "name": "CIS-Splunk-Logpush",
+          "frequency": "high",
+          "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
+       }'
+       ```
+       {: pre}
 
-   **IBM QRadar**
-
-    ```sh
-   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
-   --header "Content-Type: application/json" \
-   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
-   --data '{
-      "qradar": {
-         "url": "https://example.qradar.ibmcloud.com",
-         "port": 8088
-      },
-      "dataset": "firewall_events",
-      "enabled": false,
-      "name": "CIS-Firewall-QRadar",
-      "frequency": "low",
-      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
-   }'
-   ```
-   {: pre}
-
-   **Splunk**
-
-   ```sh
-   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
-   --header "Content-Type: application/json" \
-   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
-   --data '{
-      "splunk": {
-         "endpoint_url": "example.splunkcloud.com:8088/services/collector/raw",
-         "channel_id": "def3c136-7a01-4655-b17f-8e25a780ef2c",
-         "skip_verify": false,
-         "source_type": "cloudflare:json",
-         "auth_token": "Splunk fake3585-0f38-4d62-8b43-c4b78584fake"
-      },
-      "dataset": "http_requests",
-      "enabled": true,
-      "name": "CIS-Splunk-Logpush",
-      "frequency": "high",
-      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
-   }'
-   ```
-   {: pre}
-
-   **Custom HTTP**
-
-   ```sh
-   curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
-   --header "Content-Type: application/json" \
-   --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
-   --data '{
-      "destination_conf": "https://logs.example.com?header_Authorization=a64VuywesDu5Aq",
-      "dataset": "http_requests",
-      "enabled": true,
-      "name": "CIS-Custom-Logpush",
-      "frequency": "high",
-      "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
-   }'
-   ```
-   {: pre}
+   Custom HTTP
+   :   ```sh
+       curl -X POST https://api.cis.cloud.ibm.com/v2/$CRN/zones/$ZONE_ID/logpush/jobs \
+       --header "Content-Type: application/json" \
+       --header "X-Auth-User-Token: Bearer $IAM_TOKEN" \
+       --data '{
+          "destination_conf": "https://logs.example.com?header_Authorization=a64VuywesDu5Aq",
+          "dataset": "http_requests",
+          "enabled": true,
+          "name": "CIS-Custom-Logpush",
+          "frequency": "high",
+          "logpull_options": "fields=RayID,CacheResponseBytes,CacheResponseStatus,CacheCacheStatus&timestamps=rfc3339"
+       }'
+       ```
+       {: pre}
 
 ### Related link
 {: #related-link-logpush}
