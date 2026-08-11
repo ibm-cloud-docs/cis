@@ -1,4 +1,37 @@
 
+## WAF - WAF Release - 2026-08-04
+**Published on:** Tue, 04 Aug 2026 00:00:00 GMT
+
+This release introduces new rules and updates Microsoft SharePoint RCE alongside enhanced SSRF cloud protection rule actions.
+
+**Key Findings**
+
+  * CVE-2026-50522: An insecure deserialization vulnerability in Microsoft SharePoint Server. This may allow an unauthenticated attacker to execute arbitrary code using crafted requests.
+  * CVE-2026-66066: An improper input processing vulnerability in Ruby on Rails Active Storage image variant transformations. This may allow an unauthenticated attacker to perform arbitrary file reads and achieve Remote Code Execution (RCE) using maliciously crafted payload requests.
+  * Generic Cloud Protections: Added improved detection logic targeting Server-Side Request Forgery (SSRF) in cloud-hosted applications.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| `91aee93c31944828bf86f068052b07cf` | N/A| Microsoft SharePoint - Remote Code Execution - CVE:CVE-2026-50522| Log| Block| This is a new detection.
+CIS Managed Ruleset| `89d0243997d24c6ea1d610a23a5b40d6` | N/A| Rails - Arbitrary File Read & RCE - CVE:CVE-2026-66066| Block| Block| This was labeled as File Upload - RCE.
+CIS Managed Ruleset| `ae40661b4ef24f9c8abd98338242627b` | N/A| SSRF - Local| Disabled|  \- | This detection has been removed.
+CIS Managed Ruleset| `98bfd6bb46074d5b8d1c4b39743a63ec` | N/A| SSRF - Local - 2 - Beta| Disabled|  \- | This detection has been removed.
+CIS Managed Ruleset| `54e1733b10da4a599e06c6fbc2e84e2d` | N/A| SSRF - Cloud - Beta| Disabled|  \- | This detection has been removed.
+CIS Managed Ruleset| `ecd26d61a75e46f6a4449a06ab8af26f` | N/A| SSRF - Cloud - 2 - Beta| Disabled|  \- | This detection has been removed.
+CIS Managed Ruleset| `281a1b7086b84db7a695220725ba9d7c` | N/A| SSRF - Cloud| Disabled| Block| We are changing the action for this rule from Disabled to BLOCK
+CIS Managed Ruleset| `158177dec2504acdba1f2da201a076eb` | N/A| SSRF - Local - Beta| Disabled|  \- | This detection has been removed.
+
+
+## WAF - WAF Release - Scheduled changes for 2026-08-10
+**Published on:** Tue, 04 Aug 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-08-04| 2026-08-10| Log| N/A| `1b0775f0f092483387cfb23f94f3006b` | vBulletin - Remote Code Execution - CVE:CVE-2026-61511| This is a new detection.
+2026-08-04| 2026-08-10| Log| N/A| `784d3824b6cf419db6af0b64098b749e` | Version Control - Information Disclosure - Beta| This is a beta detection and will replace the action on original detection "Version Control - Information Disclosure" (ID: `23548ee2b36547a1be09bb2c0550c529`)
+2026-08-04| 2026-08-10| Log| N/A| `a561c9138b46470ca6db96edd56225d8` | vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132 - Beta| This is a beta detection and will replace the action on original detection "vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132" (ID: `5137834eb8634842852273a08fe9f1c7`)
+
+
 ## WAF - WAF Release - 2026-07-29
 **Published on:** Wed, 29 Jul 2026 00:00:00 GMT
 
