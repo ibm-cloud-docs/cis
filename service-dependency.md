@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-11"
 
 keywords:
 
@@ -47,7 +47,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.cis_full}} | Availability, Disaster recovery, Operations, Security compliance | No | control-plane |  Same region  |
 | IBM Cloud Global Resource Catalog | Availability, Instance control | No | control-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Service Endpoints | Availability, Disaster recovery, Instance control | No | control-plane |  Same data center  |
-| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud | Availability, Change management, Disaster recovery, Instance control, Operations, Security compliance | No | control-plane |  Same region  |
+| IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud and ROVS | Availability, Change management, Disaster recovery, Instance control, Operations, Security compliance | No | control-plane |  Same region  |
 | {{site.data.keyword.iamlong}} | Access management, Availability, Disaster recovery, Instance control, Security compliance | No | control-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.keymanagementservicefull}} | Access management, Availability, Disaster recovery, Instance control, Security compliance | No | control-plane |  Same region  |
 | {{site.data.keyword.BluVirtServers}} | Availability, Change management, Disaster recovery, Instance control | No | control-plane |  Same data center  |
@@ -65,7 +65,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | IBM Cloud Console | Availability, Instance control, Operations | No | control-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.secrets-manager_full}} | Availability, Change management, configuration-management, Disaster recovery, Instance control, Operations, Security compliance | No | control-plane |  Same region  |
 | IBM Cloud Virtual Private Endpoint for VPC | Availability, Disaster recovery, Instance control | No | control-plane |  Same zone  |
-| IBM Log Analysis Log Routing | Availability, Operations | No | control-plane |  Same region  |
+| IBM Cloud Log Routing | Availability, Operations | No | control-plane |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Internet Services - CIS Control Plane service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
