@@ -13,9 +13,9 @@ Successful exploitation of CVE-2026-61511 may lead to remote code execution on a
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...94f3006b| N/A| vBulletin - Remote Code Execution - CVE:CVE-2026-61511| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...098b749e| N/A| Version Control - Information Disclosure - Beta| Log| Block| This rule is merged into the original rule "Version Control - Information Disclosure" (ID: ...0550c529)
-CIS Managed Ruleset| ...d56225d8| N/A| vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132 - Beta| Log| Block| This rule is merged into the original rule "vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132" (ID: ...8fe9f1c7)
+CIS Managed Ruleset| `1b0775f0f092483387cfb23f94f3006b`| N/A| vBulletin - Remote Code Execution - CVE:CVE-2026-61511| Log| Block| This is a new detection.
+CIS Managed Ruleset| `784d3824b6cf419db6af0b64098b749e`| N/A| Version Control - Information Disclosure - Beta| Log| Block| This rule is merged into the original rule "Version Control - Information Disclosure" (ID: `23548ee2b36547a1be09bb2c0550c529`)
+CIS Managed Ruleset| `a561c9138b46470ca6db96edd56225d8`| N/A| vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132 - Beta| Log| Block| This rule is merged into the original rule "vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132" (ID: `5137834eb8634842852273a08fe9f1c7`)
 
 ## WAF - WAF Release - 2026-08-07
 
@@ -31,9 +31,9 @@ The WordPress changes update rule metadata only; detection behavior and actions 
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...9c6dff1c| N/A| Wordpress - XSS - CVE:CVE-2026-64638| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Free Ruleset| ...9ab5ed95| N/A| Wordpress - XSS - CVE:CVE-2026-64638| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Managed Ruleset| ...761e7a4c| N/A| Command Injection - Obfuscation| Block| Disabled| Detection logic has been deprecated.
+CIS Managed Ruleset| `d3852d0891634686a46114069c6dff1c`| N/A| Wordpress - XSS - CVE:CVE-2026-64638| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| `5bdf578fff504b8cbe3b7f699ab5ed95`| N/A| Wordpress - XSS - CVE:CVE-2026-64638| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| `95a84ab1645a49c685648c17761e7a4c`| N/A| Command Injection - Obfuscation| Block| Disabled| Detection logic has been deprecated.
 
 ## WAF - WAF Release - 2026-08-04
 **Published on:** Tue, 04 Aug 2026 00:00:00 GMT
