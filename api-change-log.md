@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-14"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -18,6 +18,16 @@ content-type: release-note
 {: #api-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/docs/apis/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
+{: shortdesc}
+
+## 12 August 2026
+{: #cis-august-1226}
+
+Support for CIS Request Trace
+:    The CIS API now supports simulating an HTTP or HTTPS request through the CIS network to your application's origin server. Use this feature to understand how your CIS configuration affects a specific request.
+
+Support for NAPTR type DNS records
+:   The CIS API now supports Name Authority Pointer (NAPTR) type DNS records. NAPTR records map a domain name to a rewrite rule, enabling dynamic delegation and protocol and service discovery.
 
 ## 3 May 2026
 {: #cis-may-030326}
