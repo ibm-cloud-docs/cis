@@ -1,3 +1,39 @@
+## WAF - WAF Release - 2026-08-11
+
+This release introduces new protection for a remote code execution vulnerability in vBulletin and improves two existing detections.
+
+**Key Findings**
+
+  * A new detection provides protection against vBulletin CVE-2026-61511.
+  * Two existing detections have been improved to strengthen coverage.
+
+**Impact**
+
+Successful exploitation of CVE-2026-61511 may lead to remote code execution on affected vBulletin systems, potentially resulting in unauthorized access, data exposure, service disruption, and broader compromise of the hosting environment. Administrators are strongly encouraged to apply vendor updates and recommended mitigations.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| `1b0775f0f092483387cfb23f94f3006b`| N/A| vBulletin - Remote Code Execution - CVE:CVE-2026-61511| Log| Block| This is a new detection.
+CIS Managed Ruleset| `784d3824b6cf419db6af0b64098b749e`| N/A| Version Control - Information Disclosure - Beta| Log| Block| This rule is merged into the original rule "Version Control - Information Disclosure" (ID: `23548ee2b36547a1be09bb2c0550c529`)
+CIS Managed Ruleset| `a561c9138b46470ca6db96edd56225d8`| N/A| vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132 - Beta| Log| Block| This rule is merged into the original rule "vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132" (ID: `5137834eb8634842852273a08fe9f1c7`)
+
+## WAF - WAF Release - 2026-08-07
+
+This release updates WordPress XSS rule metadata in the CIS Managed Ruleset and CIS Free Ruleset to identify XSS2Shell (CVE-2026-64638). It also disables the Command Injection - Obfuscation rule.
+
+**Key Findings**
+
+  * CVE-2026-64638: A pre-authentication reflected cross-site scripting vulnerability affecting the WordPress login screen. Exploitation requires social engineering and explicit interaction by the target user. Under additional conditions, it may be escalated to remote code execution.
+
+**Impact**
+
+The WordPress changes update rule metadata only; detection behavior and actions remain unchanged.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| `d3852d0891634686a46114069c6dff1c`| N/A| Wordpress - XSS - CVE:CVE-2026-64638| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| `5bdf578fff504b8cbe3b7f699ab5ed95`| N/A| Wordpress - XSS - CVE:CVE-2026-64638| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| `95a84ab1645a49c685648c17761e7a4c`| N/A| Command Injection - Obfuscation| Block| Disabled| Detection logic has been deprecated.
 
 ## WAF - WAF Release - 2026-08-04
 **Published on:** Tue, 04 Aug 2026 00:00:00 GMT
@@ -20,17 +56,6 @@ CIS Managed Ruleset| `54e1733b10da4a599e06c6fbc2e84e2d` | N/A| SSRF - Cloud - Be
 CIS Managed Ruleset| `ecd26d61a75e46f6a4449a06ab8af26f` | N/A| SSRF - Cloud - 2 - Beta| Disabled|  \- | This detection has been removed.
 CIS Managed Ruleset| `281a1b7086b84db7a695220725ba9d7c` | N/A| SSRF - Cloud| Disabled| Block| We are changing the action for this rule from Disabled to BLOCK
 CIS Managed Ruleset| `158177dec2504acdba1f2da201a076eb` | N/A| SSRF - Local - Beta| Disabled|  \- | This detection has been removed.
-
-
-## WAF - WAF Release - Scheduled changes for 2026-08-10
-**Published on:** Tue, 04 Aug 2026 00:00:00 GMT
-
-Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
----|---|---|---|---|---|---
-2026-08-04| 2026-08-10| Log| N/A| `1b0775f0f092483387cfb23f94f3006b` | vBulletin - Remote Code Execution - CVE:CVE-2026-61511| This is a new detection.
-2026-08-04| 2026-08-10| Log| N/A| `784d3824b6cf419db6af0b64098b749e` | Version Control - Information Disclosure - Beta| This is a beta detection and will replace the action on original detection "Version Control - Information Disclosure" (ID: `23548ee2b36547a1be09bb2c0550c529`)
-2026-08-04| 2026-08-10| Log| N/A| `a561c9138b46470ca6db96edd56225d8` | vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132 - Beta| This is a beta detection and will replace the action on original detection "vBulletin - Code Injection - Invalid image format - CVE:CVE-2019-17132" (ID: `5137834eb8634842852273a08fe9f1c7`)
-
 
 ## WAF - WAF Release - 2026-07-29
 **Published on:** Wed, 29 Jul 2026 00:00:00 GMT
