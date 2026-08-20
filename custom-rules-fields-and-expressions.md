@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-20"
 
 subcollection: cis
 
@@ -44,6 +44,7 @@ Each field value can be sourced from different places, such as:
 |http.user_agent|String|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36|The whole HTTP user agent|
 |http.x_forwarded_for|String|_The full X-Forwarded-For HTTP header_ |
 |ip.src|IP address|93.155.208.22|The client TCP IP address, which can be adjusted to reflect the real client IP of the original client as applicable (for example, by using HTTP headers like X-Forwarded-For or X-Real-IP)|
+|ip.src.region|String|Texas|The geolocation region associated with the IP address of the incoming request.|
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
 |ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
