@@ -1,3 +1,33 @@
+
+## WAF - WAF Release - 2026-08-17
+**Published on:** Mon, 17 Aug 2026 00:00:00 GMT
+
+This release updates WordPress remote code execution rule metadata in the CIS Managed Ruleset and CIS Free Ruleset to identify CVE-2026-65640.
+
+**Key Findings**
+
+  * CVE-2026-65640: A remote code execution vulnerability affecting WordPress core and plugin components. Remote, unauthenticated attackers can execute arbitrary system commands to gain unauthorized access or establish backdoors on host servers.
+
+**Impact**
+
+The WordPress changes update rule metadata only; detection behavior and actions remain unchanged.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| dcf635ab2e744e1a994443973590a4ad| N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-65640| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| 6ad9f2049b094c608be0f8adcfe1a93c| N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-65640| Block| N/A| Rule metadata description refined. Detection unchanged.
+
+## WAF - WAF Release - Scheduled changes for 2026-08-24
+**Published on:** Mon, 17 Aug 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-08-17| 2026-08-24| Log| N/A| a80f214f0947435dabb2ba2d1489d892| HTTP/2 Request Smuggling - Request Body Anomaly| This is a new detection.
+2026-08-17| 2026-08-24| Log| N/A| 58a184412d2b4113bca6379b20646260| XSS - JavaScript Event Handler Coercion - Headers| This is a new detection.
+2026-08-17| 2026-08-24| Log| N/A| e79cb939d6aa41db984e6db3d706d517| XSS - JavaScript Event Handler Coercion - Body| This is a new detection.
+2026-08-17| 2026-08-24| Log| N/A| 7e3249c7a5d8469697478746660886c8| XSS - JavaScript Event Handler Coercion - URI| This is a new detection.
+2026-08-17| 2026-08-24| Log| N/A| d34bc5db8cbc4e18a44ed115c293b926| XSS, HTML Injection - Script Tag - Beta| This rule will be merged into the original rule "XSS, HTML Injection - Script Tag" (ID: ...7b58420b).
+
 ## WAF - WAF Release - 2026-08-11
 
 This release introduces new protection for a remote code execution vulnerability in vBulletin and improves two existing detections.
