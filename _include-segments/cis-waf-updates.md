@@ -1,6 +1,6 @@
 
 
-## WAF - Leaked credentials detection now scans Authorization headers
+## WAF - Leaked credentials detection now scans Authorization headers - 2026-08-20
 **Published on:** Thu, 20 Aug 2026 00:00:00 GMT
 
 [Leaked credentials detection](https://developers.cloudflare.com/waf/detections/leaked-credentials/) now scans the `Authorization` request header for Basic Authentication credentials. Previously, the detection only inspected request bodies, query strings, and headers for well-known web applications or custom detection locations, which meant credentials sent through HTTP Basic Authentication were not covered by default.
