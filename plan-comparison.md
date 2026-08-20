@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-20"
 
 keywords:
 
@@ -43,11 +43,12 @@ The numbers in these tables are quotas or resource limits for the associated fea
 |**Range**|No|No|Yes  \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes  \n * 10 unique FQDNs \n * Overage fees incurred past 5 TB of traffic|Yes  \n * 10 unique FQDNs|
 |**Edge functions**|1 action \n (must be named after domain) \n \n 1 M Edge function requests|Unlimited actions|Unlimited actions|Unlimited actions|Unlimited actions|
 |**Custom rules**|* 100 active rules \n * Does not support Log action \n * Does not support matches operator|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators|* 1000 active rules \n * Supports all actions \n * Supports all operators  \n * Supports bot management|* 1000 active rules \n * Supports all actions \n * Supports all operators|
+|**Lists**|**Managed Lists**\n Not available\n**Custom Lists**\n * 10 lists \n * 10000 items (across all lists) \n * List types: IP \n|**Managed Lists**\n * Open Proxies\n**Custom Lists**\n * 1000 lists \n * 500000 items (across all lists) \n * List types: IP, ASN, Hostname|**Managed Lists**\n * Open Proxies\n * Anonymizers\n * VPNs\n * Malware\n * Botnets, Command and Control Servers\n \n**Custom Lists**\n * 1000 lists \n * 500000 items (across all lists) \n * List types: IP, ASN, Hostname|**Managed Lists**\n * Open Proxies\n * Anonymizers\n * VPNs\n * Malware\n * Botnets, Command and Control Servers\n \n**Custom Lists**\n * 1000 lists \n * 500000 items (across all lists) \n * List types: IP, ASN, Hostname|**Managed Lists**\n * Open Proxies\n**Custom Lists**\n * 1000 lists \n * 500000 items (across all lists) \n * List types: IP, ASN, Hostname|
 |**GraphQL**|No|Yes|Yes|Yes|Yes|
 |**Smart routing**|No|Yes|Yes|Yes|Yes|
 |**Logging**|No|Yes|Yes|Yes|Yes|
 |**Alerts**|No|Yes|Yes|Yes|Yes|
-|**Rate limiting**|No|No|Yes|Yes|Yes|
+|**Rate limiting**|No|No|Advanced|Advanced|Default|
 |**Bot management**|No|No|No|Yes|No|
 {: caption="CIS plan comparison" caption-side="bottom"}
 
