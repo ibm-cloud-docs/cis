@@ -1,4 +1,16 @@
 
+
+## WAF - Leaked credentials detection now scans Authorization headers
+**Published on:** Thu, 20 Aug 2026 00:00:00 GMT
+
+[Leaked credentials detection](https://developers.cloudflare.com/waf/detections/leaked-credentials/) now scans the `Authorization` request header for Basic Authentication credentials. Previously, the detection only inspected request bodies, query strings, and headers for well-known web applications or custom detection locations, which meant credentials sent through HTTP Basic Authentication were not covered by default.
+
+This new default scan location decodes the `Authorization: Basic <credentials>` header and compares the extracted username and password against CIS's database of leaked credentials, the same way as other default scan locations. Matches populate the existing [leaked credentials fields](https://developers.cloudflare.com/waf/detections/leaked-credentials/#leaked-credentials-fields), such as `cf.waf.credential_check.password_leaked`, and trigger the [`Exposed-Credential-Check` managed transform header](https://developers.cloudflare.com/rules/transform/managed-transforms/reference/#add-leaked-credentials-checks-header) if configured, so you can reuse existing [custom rules](https://developers.cloudflare.com/waf/custom-rules/) and [rate limiting rules](https://developers.cloudflare.com/waf/rate-limiting-rules/) without changes.
+
+This change was applied automatically for zones with leaked credentials detection enabled. No configuration changes are required.
+
+For more information, refer to [Leaked credentials detection](https://developers.cloudflare.com/waf/detections/leaked-credentials/).
+
 ## WAF - WAF Release - 2026-08-17
 **Published on:** Mon, 17 Aug 2026 00:00:00 GMT
 
@@ -170,19 +182,6 @@ CIS Managed Ruleset| `b013b67c357547b4b866234390dcdb0a` | N/A| Next.js - DoS - C
 CIS Managed Ruleset| `aa21c9b8b97743bfb217748b2049a60c` | N/A| Generic Rules - Command Execution - Body - Beta| Disabled|  \- | This detection has been removed.
 CIS Managed Ruleset| `e7ee67e824844754b513cdf3836855a4` | N/A| Generic Rules - Command Execution - Header - Beta| Disabled|  \- | This detection has been removed.
 CIS Managed Ruleset| `5f2a6681a2b94442b23816286d060a0d` | N/A| Generic Rules - Command Execution - URI - Beta| Disabled|  \- | This detection has been removed.
-
-
-## WAF - WAF Release - Scheduled changes for 2026-07-27
-**Published on:** Tue, 21 Jul 2026 00:00:00 GMT
-
-Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
----|---|---|---|---|---|---
-2026-07-28| 2026-08-03| Log| N/A| `158177dec2504acdba1f2da201a076eb` | SSRF - Cloud - Beta| This detection will be removed.
-2026-07-28| 2026-08-03| Log| N/A| `98bfd6bb46074d5b8d1c4b39743a63ec` | SSRF - Local - 2 - Beta| This detection will be removed.
-2026-07-28| 2026-08-03| Log| N/A| `54e1733b10da4a599e06c6fbc2e84e2d` | SSRF - Cloud - Beta| This detection will be removed.
-2026-07-28| 2026-08-03| Log| N/A| `ecd26d61a75e46f6a4449a06ab8af26f` | SSRF - Cloud - 2 - Beta| This detection will be removed.
-2026-07-28| 2026-08-03| Log| N/A| `b013b67c357547b4b866234390dcdb0a` |  Microsoft SharePoint - Remote Code Execution - CVE:CVE-2026-50522| This is a new detection.
-
 
 ## WAF - WAF Release - 2026-07-17 - Emergency
 **Published on:** Fri, 17 Jul 2026 00:00:00 GMT
