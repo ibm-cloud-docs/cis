@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-20"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -29,11 +29,17 @@ Support for CIS Request Trace
 Support for NAPTR type DNS records
 :   The CIS API now supports Name Authority Pointer (NAPTR) type DNS records. NAPTR records map a domain name to a rewrite rule, enabling dynamic delegation and protocol and service discovery.
 
+## 2 June 2026
+{: #cis-june-0226}
+
+Support for Leaked credentials detection
+:    The Leaked credentials detection APIs can be configured to automatically check incoming authentication requests against known compromised username/password pairs, flagging or blocking logins where the credentials have been exposed in public data breaches. As opposed to the existing [Exposed Credentials Check ruleset](docs/cis?topic=cis-exposed-credentials-check-ruleset), this allows users to define exactly which fields in your own login requests to check.
+
 ## 3 May 2026
-{: #cis-may-030326}
+{: #cis-may-0326}
 
 Support for RayID log lookup
-:    Support has been added to the CIS API for retrieving logs associated with a specific RayID from your domain's traffic. For more information, see [Get logs by RayID](https://cloud.ibm.com/docs/apis/cis?code=go#get-logs-by-rayid).
+:    Support has been added to the CIS API for retrieving logs associated with a specific RayID from your domain's traffic. For more information, see [Get logs by RayID](/docs/apis/cis?code=go#get-logs-by-rayid).
 
 ## 28 April 2026
 {: #cis-april-2826}
