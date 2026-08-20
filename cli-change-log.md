@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-07-21"
+lastupdated: "2026-08-20"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
+
+## Version 1.21.0
+{: #cli-1210}
+
+Version 1.21.0 of the CLI was released on 19 August 2026.
+:   Added the `leaked-credential-checks` commands to manage leaked credential detection for a zone, including enabling/disabling the feature and managing custom detection rules.
+:   Fixed the `log-lookup-rayid` command to correctly display log fields and resolve the status message showing raw template placeholders instead of values.
 
 ## Version 1.20.0
 {: #cli-1200}
