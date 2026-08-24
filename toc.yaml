@@ -148,6 +148,7 @@ toc:
               - cis-ruleset.md
               - owasp-rule-set-for-waf.md
               - exposed-credentials-check-ruleset.md
+              - leaked-credential-checks.md
               - owasp-evaluation-example.md
       - topicgroup:
           label: Working with rate-limiting rules
@@ -224,6 +225,7 @@ toc:
           id: logs
           topics:
           - logpull.md
+          - log-lookup-rayid.md
           - logpush.md
           - log-fields.md
           - instant-logs.md

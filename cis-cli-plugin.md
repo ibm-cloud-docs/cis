@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-30"
+lastupdated: "2026-08-24"
 
 keywords:
 
@@ -4520,8 +4520,331 @@ ibmcloud cis instant-log-get DNS_DOMAIN_ID
 ```
 {: codeblock}
 
+## Leaked credential checks
+{: #leaked-credential-checks-cli-ref}
+
+[Enterprise Plans Only]{: tag-blue}
+
+Manage leaked credential checks and custom detections for a DNS domain by using the following `leaked-credential-checks` commands.
+
+### `ibmcloud cis leaked-credential-checks status-get`
+{: #leaked-credential-checks-status-get}
+
+Get the leaked credential checks status for a DNS domain.
+
+```sh
+ibmcloud cis leaked-credential-checks status-get DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+#### Command options
+{: #leaked-credential-checks-status-get-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Example
+{: #leaked-credential-checks-status-get-example}
+
+```sh
+ibmcloud cis leaked-credential-checks status-get DNS_DOMAIN_ID
+```
+{: pre}
+
+### `ibmcloud cis leaked-credential-checks status-update`
+{: #leaked-credential-checks-status-update}
+
+Enable or disable leaked credential checks for a DNS domain.
+
+```sh
+ibmcloud cis leaked-credential-checks status-update DNS_DOMAIN_ID (--enabled true|false) [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+You can also provide JSON input from a file or directly as a string.
+
+```sh
+ibmcloud cis leaked-credential-checks status-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+#### Command options
+{: #leaked-credential-checks-status-update-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`--enabled`
+:   Indicates whether leaked credential checks are enabled for the DNS domain. Valid values are `true` and `false`.
+
+`--json`
+:   The JSON file or JSON string that describes the leaked credential checks configuration. The required field is `enabled`.
+
+    ```json
+    {
+      "enabled": true
+    }
+    ```
+    {: codeblock}
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #leaked-credential-checks-status-update-examples}
+
+```sh
+ibmcloud cis leaked-credential-checks status-update DNS_DOMAIN_ID --enabled true
+ibmcloud cis leaked-credential-checks status-update DNS_DOMAIN_ID --json @status.json --output json
+```
+{: pre}
+
+### `ibmcloud cis leaked-credential-checks detection-list`
+{: #leaked-credential-checks-detection-list}
+
+List custom leaked credential detections for a DNS domain.
+
+```sh
+ibmcloud cis leaked-credential-checks detection-list DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+#### Command options
+{: #leaked-credential-checks-detection-list-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Example
+{: #leaked-credential-checks-detection-list-example}
+
+```sh
+ibmcloud cis leaked-credential-checks detection-list DNS_DOMAIN_ID --output json
+```
+{: pre}
+
+### `ibmcloud cis leaked-credential-checks detection-get`
+{: #leaked-credential-checks-detection-get}
+
+Get a custom leaked credential detection.
+
+```sh
+ibmcloud cis leaked-credential-checks detection-get DNS_DOMAIN_ID DETECTION_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+#### Command options
+{: #leaked-credential-checks-detection-get-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`DETECTION_ID`
+:   The ID of the custom leaked credential detection. Required.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Example
+{: #leaked-credential-checks-detection-get-example}
+
+```sh
+ibmcloud cis leaked-credential-checks detection-get DNS_DOMAIN_ID DETECTION_ID
+```
+{: pre}
+
+### `ibmcloud cis leaked-credential-checks detection-create`
+{: #leaked-credential-checks-detection-create}
+
+Create a custom leaked credential detection.
+
+```sh
+ibmcloud cis leaked-credential-checks detection-create DNS_DOMAIN_ID (--username EXPRESSION) (--password EXPRESSION) [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+You can also provide JSON input from a file or directly as a string.
+
+```sh
+ibmcloud cis leaked-credential-checks detection-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+#### Command options
+{: #leaked-credential-checks-detection-create-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`--username`
+:   The ruleset expression that locates the username in a request. Required when `--json` is not used.
+
+`--password`
+:   The ruleset expression that locates the password in a request. Required when `--json` is not used.
+
+`--json`
+:   The JSON file or JSON string that describes the custom detection. The required fields are `username` and `password`.
+
+    ```json
+    {
+      "username": "lookup_json_string(http.request.body.raw, \"username\")",
+      "password": "lookup_json_string(http.request.body.raw, \"password\")"
+    }
+    ```
+    {: codeblock}
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #leaked-credential-checks-detection-create-examples}
+
+```sh
+ibmcloud cis leaked-credential-checks detection-create DNS_DOMAIN_ID --username 'lookup_json_string(http.request.body.raw, "username")' --password 'lookup_json_string(http.request.body.raw, "password")'
+ibmcloud cis leaked-credential-checks detection-create DNS_DOMAIN_ID --json @detection.json --output json
+```
+{: pre}
+
+### `ibmcloud cis leaked-credential-checks detection-update`
+{: #leaked-credential-checks-detection-update}
+
+Update a custom leaked credential detection. Specify at least one of `--username` or `--password`, or provide JSON input.
+
+```sh
+ibmcloud cis leaked-credential-checks detection-update DNS_DOMAIN_ID DETECTION_ID [--username EXPRESSION] [--password EXPRESSION] [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+You can also provide JSON input from a file or directly as a string.
+
+```sh
+ibmcloud cis leaked-credential-checks detection-update DNS_DOMAIN_ID DETECTION_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+#### Command options
+{: #leaked-credential-checks-detection-update-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`DETECTION_ID`
+:   The ID of the custom leaked credential detection. Required.
+
+`--username`
+:   The ruleset expression that locates the username in a request.
+
+`--password`
+:   The ruleset expression that locates the password in a request.
+
+`--json`
+:   The JSON file or JSON string that describes the custom detection. The optional fields are `username` and `password`; specify at least one.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #leaked-credential-checks-detection-update-examples}
+
+```sh
+ibmcloud cis leaked-credential-checks detection-update DNS_DOMAIN_ID DETECTION_ID --username 'lookup_json_string(http.request.body.raw, "email")'
+ibmcloud cis leaked-credential-checks detection-update DNS_DOMAIN_ID DETECTION_ID --json @detection.json --output json
+```
+{: pre}
+
+### `ibmcloud cis leaked-credential-checks detection-delete`
+{: #leaked-credential-checks-detection-delete}
+
+Delete a custom leaked credential detection.
+
+```sh
+ibmcloud cis leaked-credential-checks detection-delete DNS_DOMAIN_ID DETECTION_ID [-f, --force] [-i, --instance INSTANCE]
+```
+
+#### Command options
+{: #leaked-credential-checks-detection-delete-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`DETECTION_ID`
+:   The ID of the custom leaked credential detection. Required.
+
+`-f, --force`
+:   Delete the detection without prompting for confirmation.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+#### Example
+{: #leaked-credential-checks-detection-delete-example}
+
+```sh
+ibmcloud cis leaked-credential-checks detection-delete DNS_DOMAIN_ID DETECTION_ID --force
+```
+{: pre}
+
 ## Logpull
 {: #logpull-section}
+
+### `ibmcloud cis log-lookup-rayid`
+{: #cli-log-lookup-rayid}
+
+[Enterprise Plans Only]{: tag-blue}
+
+Retrieve the log event that is associated with a specific Ray ID. Log retention must be enabled for the DNS domain before you use this command.
+
+If the Ray ID includes a data center suffix, such as `-XXX`, remove the suffix before you run the command.
+{: note}
+
+```sh
+ibmcloud cis log-lookup-rayid DNS_DOMAIN_ID RAY_ID [--fields FIELDS] [--timestamps FORMAT] [-i, --instance INSTANCE] [--output FORMAT]
+```
+
+#### Command options
+{: #command-options-log-lookup-rayid}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain. Required.
+
+`RAY_ID`
+:   The Ray ID of the request. Required.
+
+`--fields`
+:   A comma-separated list of case-sensitive log fields to return.
+
+`--timestamps`
+:   The format for timestamp fields. Valid values are `unix`, `unixnano`, and `rfc3339`. The default value is `unix`.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #examples-log-lookup-rayid}
+
+```sh
+ibmcloud cis log-lookup-rayid DNS_DOMAIN_ID RAY_ID
+ibmcloud cis log-lookup-rayid DNS_DOMAIN_ID RAY_ID --fields RayID,ClientIP,EdgeResponseStatus --timestamps rfc3339 --output json
+```
+{: pre}
 
 ### `ibmcloud cis logpull`
 {: #cli-logpull}
