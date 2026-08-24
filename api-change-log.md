@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-24"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -33,7 +33,7 @@ Support for NAPTR type DNS records
 {: #cis-june-0226}
 
 Support for Leaked credentials detection
-:    The Leaked credentials detection APIs can be configured to automatically check incoming authentication requests against known compromised username/password pairs, flagging or blocking logins where the credentials have been exposed in public data breaches. As opposed to the existing [Exposed Credentials Check ruleset](docs/cis?topic=cis-exposed-credentials-check-ruleset), this allows users to define exactly which fields in your own login requests to check.
+:    The Leaked credentials detection APIs can be configured to automatically check incoming authentication requests against known compromised username/password pairs, flagging or blocking logins where the credentials have been exposed in public data breaches. As opposed to the existing [Exposed Credentials Check ruleset](/docs/cis?topic=cis-exposed-credentials-check-ruleset), this allows users to define exactly which fields in your own login requests to check.
 
 ## 3 May 2026
 {: #cis-may-0326}

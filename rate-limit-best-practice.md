@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-24"
 
 keywords: HA for CIS, DR for CIS, CIS recovery time objective, CIS recovery point objective
 
@@ -84,7 +84,7 @@ This example rule requires Advanced Rate Limiting.
 ## Protecting against credential stuffing
 {: #protect-against-credentials}
 
-You can use rate limiting to protect login endpoints from [`credential stuffing`](https://www.ibm.com/docs/en/gdp/12.x?topic=policies-credential-stuffing-attack){: external} attacks. Credential stuffing occurs when attackers use automated scripts to try multiple username and password combinations on a login form. Rate limiting helps mitigate these attacks by restricting repeated failed login attempts from the same IP address.
+You can use rate limiting to protect login endpoints from credential stuffing attacks. Credential stuffing occurs when attackers use automated scripts to try multiple username and password combinations on a login form. Rate limiting helps mitigate these attacks by restricting repeated failed login attempts from the same IP address.
 
 The following examples show three rate-limiting rules that increase restrictions and penalties based on the number of failed login attempts.
 
