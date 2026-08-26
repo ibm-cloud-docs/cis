@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-26"
 
 keywords:
 
@@ -19,6 +19,15 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
+## 25 August 2026
+{: #cis-august25-2026}
+{: release-note}
+
+Table improvements
+:   The follow tables have been updated:
+    * **DNS records** - The **Proxy** is now available within the Create/Edit record flow. The table will continue to show the Proxy status of records and to display the Proxy status of each record. Optionally, you can add a **Last modified** column using the table settings (⚙).
+    * **Logpush jobs** - A new **Delivery health** column was added to the table to show the health status of each job. The **Last successful delivery** and **Last failed delivery** columns remain available and can be added to the table using the table settings (⚙).
 
 ## 28 July 2026
 {: #cis-july-2826}
