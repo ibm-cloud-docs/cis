@@ -1,4 +1,55 @@
 
+## WAF - WAF Release - 2026-08-26 - Emergency
+**Published on:** Wed, 26 Aug 2026 00:00:00 GMT
+
+This emergency release updates an existing Next.js remote code execution rule to identify CVE-2026-75604 and adds a new rule for remote code execution in the Next.js Image Optimizer via crafted AVIF images.
+
+**Key Findings**
+
+  * CVE-2026-75604 affects Windows-hosted Next.js applications using both the Pages Router and App Router without Cache Components and can lead to unauthenticated remote code execution.
+
+  * GHSA-2xp9-vwfh-vxw4 affects the Next.js Image Optimizer and can lead to unauthenticated remote code execution when it optimizes an attacker-controlled AVIF image.
+
+
+**Impact**
+
+Next.js recommends updating to version 16.3.3 or 15.5.24 to address these vulnerabilities.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 2b6b94ec864d47f99630ecf72ca6cce3| N/A| Next.js - Remote Code Execution - CVE:CVE-2026-75604| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| 18b22b0bd423423c945b3a0180256efe| N/A| Next.js - Image Optimizer Remote Code Execution via Crafted AVIF| N/A| Block| This is a new detection.
+
+
+## WAF - WAF Release - 2026-08-25
+**Published on:** Tue, 25 Aug 2026 00:00:00 GMT
+
+This release moves four new detections from Log to Block, merges the XSS, HTML Injection - Script Tag - Beta rule into the original rule, and adds a Generic Rules - Remote Code Execution rule in Block mode.
+
+**Key Findings**
+
+  * Four new detections move from Log to Block: HTTP/2 Request Smuggling - Request Body Anomaly and XSS - JavaScript Event Handler Coercion across Headers, Body, and URI.
+
+  * The XSS, HTML Injection - Script Tag - Beta rule is merged into the original rule.
+
+  * A Generic Rules - Remote Code Execution detection is added in Block mode.
+
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| a80f214f0947435dabb2ba2d1489d892| N/A| HTTP/2 Request Smuggling - Request Body Anomaly| Log| Block| This is a new detection.
+CIS Managed Ruleset| 58a184412d2b4113bca6379b20646260| N/A| XSS - JavaScript Event Handler Coercion - Headers| Log| Block| This is a new detection.
+CIS Managed Ruleset| e79cb939d6aa41db984e6db3d706d517| N/A| XSS - JavaScript Event Handler Coercion - Body| Log| Block| This is a new detection.
+CIS Managed Ruleset| 7e3249c7a5d8469697478746660886c8| N/A| XSS - JavaScript Event Handler Coercion - URI| Log| Block| This is a new detection.
+CIS Managed Ruleset| d34bc5db8cbc4e18a44ed115c293b926| N/A| XSS, HTML Injection - Script Tag - Beta| Log| Block| This rule is merged into the original rule "XSS, HTML Injection - Script Tag" (ID: ...7b58420b).
+CIS Managed Ruleset| 2b6b94ec864d47f99630ecf72ca6cce3| N/A| Generic Rules - Remote Code Execution| N/A| Block| This is a new detection.
+
+## WAF - WAF Release - Scheduled changes for 2026-09-01
+**Published on:** Tue, 25 Aug 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-08-25| 2026-09-01| Log| N/A| d2d75b2f0614405f9fab0354bcfa0966| SQLi - WHERE Comparison With WITH Clause| This is a new detection.
 
 ## WAF - Leaked credentials detection now scans Authorization headers - 2026-08-20
 **Published on:** Thu, 20 Aug 2026 00:00:00 GMT
