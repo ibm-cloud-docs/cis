@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-26"
 
 keywords: log fields
 
@@ -157,9 +157,9 @@ This table contains the fields available for dns_logs.
 |EDNSSubnet|IPv4 or IPv6 address information corresponding to the [EDNS Client Subnet (ECS)](https://www.rfc-editor.org/rfc/rfc7871.html#section-4){: external} forwarded by recursive resolvers. Not all resolvers send this information.|string|
 |EDNSSubnetLength|Size of the EDNS Client Subnet (ECS) in bits. For example, if the last octet of an IPv4 address is omitted (`192.0.2.x.`), the subnet length will be `24`.|int|
 |QueryName|Name of the query that was sent.|string|
-|QueryType|Integer value of query type. For more information refer to [Query type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).|int|
+|QueryType|Integer value of query type. For more information, see [Query type](https://www.iana.org/assignments/dns-parameters#dns-parameters-4){: external}.|int|
 |ResponseCached|Whether the response was cached or not.|bool|
-|ResponseCode|Integer value of response code. For more information refer to  [Response code](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6).|int|
+|ResponseCode|Integer value of response code. For more information, see [Response code](https://www.iana.org/assignments/dns-parameters#dns-parameters-6){: external}.|int|
 |SourceIP|IP address of the client (IPv4 or IPv6).|string|
 |Timestamp|Timestamp at which the query occurred.|int or string|
 {: caption="Available log fields for DNS logs" caption-side="bottom"}

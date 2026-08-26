@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-26"
 
 subcollection: cis
 
@@ -46,7 +46,7 @@ Each field value can be sourced from different places, such as:
 |ip.src|IP address|93.155.208.22|The client TCP IP address, which can be adjusted to reflect the real client IP of the original client as applicable (for example, by using HTTP headers like X-Forwarded-For or X-Real-IP)|
 |ip.src.region|String|Texas|The geolocation region associated with the IP address of the incoming request.|
 |ip.geoip.asnum|Number|222|The [Autonomous System](https://ibm.biz/BdzqdD) (AS) number|
-|ip.geoip.country|String|GB|The [2-letter country code](https://www.iso.org/obp/ui/){: external}|
+|ip.geoip.country|String|GB|The [2-letter country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2){: external}|
 |ssl|Boolean|true|Whether the HTTP connection to the client is encrypted|
 |ip.src.subdivision_1_iso_code|String|GB-ENG|The [`ISO 3166-2`](https://en.wikipedia.org/wiki/ISO_3166-2){: external} code for the first-level region associated with the IP address. When the actual value is not available, this field contains an empty string. To use this field, a CIS Enterprise plan is required.|
 |ip.src.subdivision_2_iso_code|String|GB-SWK|The [`ISO 3166-2`](https://en.wikipedia.org/wiki/ISO_3166-2){: external} code for the second-level region associated with the IP address. When the actual value is not available, this field contains an empty string. To use this field, a CIS Enterprise plan is required.|
