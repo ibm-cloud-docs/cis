@@ -284,3 +284,5 @@ The following limitations apply to rule expressions:
 
    If you use the Expression Builder in the UI, the same limit applies to the generated expression preview.
    {: note}
+
+* A rule expression can contain a maximum of 64 regular expressions (regex).
