@@ -733,7 +733,7 @@ CIS Managed Ruleset| ...9131ec2f| N/A| Generic Rules - Command Execution - 5 - H
 CIS Managed Ruleset| ...551eb9e5| N/A| Generic Rules - Command Execution - 5 - URI| Log| Block| This is a new detection.
 CIS Managed Ruleset| ...d46229eb| N/A| MCP Server - Remote Code Execution - CVE:CVE-2026-23744| Log| Block| This is a new detection.
 CIS Managed Ruleset| ...a864b9c2| N/A| XSS - OnEvents - Cookies| Log| Block| This is a new detection.
-CIS Managed Ruleset| ...a78ad04e| N/A| SQLi - Evasion - Body| Log| Disabled| This is a new detection.
+CIS Managed Ruleset| ...9712a863| N/A| SQLi - Evasion - Body| Log| Disabled| This is a new detection.
 CIS Managed Ruleset| ...40732d48| N/A| SQLi - Evasion - Headers| Log| Disabled| This is a new detection.
 CIS Managed Ruleset| ...e68a99b5| N/A| SQLi - Evasion - URI| Log| Disabled| This is a new detection.
 CIS Managed Ruleset| ...3e8143d2| N/A| SQLi - LIKE 3 - Body| Log| Disabled| This is a new detection.
