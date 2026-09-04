@@ -1,4 +1,25 @@
 
+## WAF - WAF Release - 2026-09-01
+**Published on:** Tue, 01 Sep 2026 00:00:00 GMT
+
+This release introduces a new threat detection to enhance protection against SQL injection (SQLi) attempts exploiting complex query syntax.
+
+**Key Findings**
+
+  * SQLi Protection: Improved coverage for SQL injection patterns involving WHERE comparisons combined with WITH clauses.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| ...bcfa0966| N/A| SQLi - WHERE Comparison With WITH Clause| Log| Block| This is a new detection.
+
+## WAF - WAF Release - Scheduled changes for 2026-09-08
+**Published on:** Tue, 01 Sep 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-09-01| 2026-09-08| Log| N/A| ...c76ba662| Next.js - Image Optimizer Remote Code Execution via Crafted AVIF - Beta| This rule will be merged into the original rule "Next.js - Image Optimizer Remote Code Execution via Crafted AVIF" (ID: ...80256efe).
+2026-09-01| 2026-09-08| Log| N/A| ...208457cf| Next.js - Remote Code Execution - CVE:CVE-2026-75604 - Beta| This rule will be merged into the original rule "Next.js - Remote Code Execution - CVE:CVE-2026-75604" (ID: ...2ca6cce3).
+
 ## WAF - WAF Release - 2026-08-26 - Emergency
 **Published on:** Wed, 26 Aug 2026 00:00:00 GMT
 
@@ -44,13 +65,6 @@ CIS Managed Ruleset| 7e3249c7a5d8469697478746660886c8| N/A| XSS - JavaScript Eve
 CIS Managed Ruleset| d34bc5db8cbc4e18a44ed115c293b926| N/A| XSS, HTML Injection - Script Tag - Beta| Log| Block| This rule is merged into the original rule "XSS, HTML Injection - Script Tag" (ID: ...7b58420b).
 CIS Managed Ruleset| 2b6b94ec864d47f99630ecf72ca6cce3| N/A| Generic Rules - Remote Code Execution| N/A| Block| This is a new detection.
 
-## WAF - WAF Release - Scheduled changes for 2026-09-01
-**Published on:** Tue, 25 Aug 2026 00:00:00 GMT
-
-Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
----|---|---|---|---|---|---
-2026-08-25| 2026-09-01| Log| N/A| d2d75b2f0614405f9fab0354bcfa0966| SQLi - WHERE Comparison With WITH Clause| This is a new detection.
-
 ## WAF - Leaked credentials detection now scans Authorization headers - 2026-08-20
 **Published on:** Thu, 20 Aug 2026 00:00:00 GMT
 
@@ -79,17 +93,6 @@ Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comm
 ---|---|---|---|---|---|---
 CIS Managed Ruleset| dcf635ab2e744e1a994443973590a4ad| N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-65640| Block| N/A| Rule metadata description refined. Detection unchanged.
 CIS Free Ruleset| 6ad9f2049b094c608be0f8adcfe1a93c| N/A| Wordpress - Remote Code Execution - CVE:CVE-2026-65640| Block| N/A| Rule metadata description refined. Detection unchanged.
-
-## WAF - WAF Release - Scheduled changes for 2026-08-24
-**Published on:** Mon, 17 Aug 2026 00:00:00 GMT
-
-Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
----|---|---|---|---|---|---
-2026-08-17| 2026-08-24| Log| N/A| a80f214f0947435dabb2ba2d1489d892| HTTP/2 Request Smuggling - Request Body Anomaly| This is a new detection.
-2026-08-17| 2026-08-24| Log| N/A| 58a184412d2b4113bca6379b20646260| XSS - JavaScript Event Handler Coercion - Headers| This is a new detection.
-2026-08-17| 2026-08-24| Log| N/A| e79cb939d6aa41db984e6db3d706d517| XSS - JavaScript Event Handler Coercion - Body| This is a new detection.
-2026-08-17| 2026-08-24| Log| N/A| 7e3249c7a5d8469697478746660886c8| XSS - JavaScript Event Handler Coercion - URI| This is a new detection.
-2026-08-17| 2026-08-24| Log| N/A| d34bc5db8cbc4e18a44ed115c293b926| XSS, HTML Injection - Script Tag - Beta| This rule will be merged into the original rule "XSS, HTML Injection - Script Tag" (ID: ...7b58420b).
 
 ## WAF - WAF Release - 2026-08-11
 
