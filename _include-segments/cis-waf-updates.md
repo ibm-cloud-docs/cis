@@ -10,15 +10,15 @@ This release introduces a new threat detection to enhance protection against SQL
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...bcfa0966| N/A| SQLi - WHERE Comparison With WITH Clause| Log| Block| This is a new detection.
+CIS Managed Ruleset| d2d75b2f0614405f9fab0354bcfa0966| N/A| SQLi - WHERE Comparison With WITH Clause| Log| Block| This is a new detection.
 
 ## WAF - WAF Release - Scheduled changes for 2026-09-08
 **Published on:** Tue, 01 Sep 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-09-01| 2026-09-08| Log| N/A| ...c76ba662| Next.js - Image Optimizer Remote Code Execution via Crafted AVIF - Beta| This rule will be merged into the original rule "Next.js - Image Optimizer Remote Code Execution via Crafted AVIF" (ID: ...80256efe).
-2026-09-01| 2026-09-08| Log| N/A| ...208457cf| Next.js - Remote Code Execution - CVE:CVE-2026-75604 - Beta| This rule will be merged into the original rule "Next.js - Remote Code Execution - CVE:CVE-2026-75604" (ID: ...2ca6cce3).
+2026-09-01| 2026-09-08| Log| N/A| d5d9f863e50b416faf43934dc76ba662| Next.js - Image Optimizer Remote Code Execution via Crafted AVIF - Beta| This rule will be merged into the original rule "Next.js - Image Optimizer Remote Code Execution via Crafted AVIF" (ID: 18b22b0bd423423c945b3a0180256ef).
+2026-09-01| 2026-09-08| Log| N/A| 771ac3761dcd485cb0e91ea0208457cf| Next.js - Remote Code Execution - CVE:CVE-2026-75604 - Beta| This rule will be merged into the original rule "Next.js - Remote Code Execution - CVE:CVE-2026-75604" (ID: 2b6b94ec864d47f99630ecf72ca6cce3).
 
 ## WAF - WAF Release - 2026-08-26 - Emergency
 **Published on:** Wed, 26 Aug 2026 00:00:00 GMT
