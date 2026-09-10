@@ -230,7 +230,7 @@ The following table lists the actions that are related to range applications and
 |`internet-svcs.range-apps.delete`|Delete a range application.|
 {: caption="Actions that generate range events" caption-side="bottom"}
 
-## Events for Logpush
+## Events for logpush
 {: #at_actions_logpush}
 
 The following table lists the actions that are related to Logpush and generate an event:
