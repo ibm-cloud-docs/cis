@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-09-10"
 
 keywords: CIS activity tracker events
 
@@ -142,6 +142,8 @@ The following table lists the actions that are related to firewalls and generate
 |`internet-svcs.domain-lockdown-rules.delete`|Delete a domain lockdown rule.|
 {: caption="Actions that generate firewall events" caption-side="bottom"}
 
+
+
 ## Events for rate limiting
 {: #at_actions_rate-limiting}
 
@@ -199,6 +201,8 @@ The following table lists the actions that are related to origin certificates an
 |`internet-svcs.origin-certificates.delete`|Revoke an origin certificate.|
 {: caption="Actions that generate origin certificate events" caption-side="bottom"}
 
+
+
 ## Events for edge functions
 {: #at_actions_edge-functions}
 
@@ -239,6 +243,8 @@ The following table lists the actions that are related to Logpush and generate a
 |`internet-svcs.logpush-jobs.update`|Update a Logpush job.|
 |`internet-svcs.logpush-jobs.delete`|Delete a Logpush job.|
 {: caption="Actions that generate logpush events" caption-side="bottom"}
+
+
 
 ## Events for custom error pages
 {: #at_actions_custom-error-pages}
@@ -286,6 +292,10 @@ The following table lists the actions that are related to configuring settings a
 |`internet-svcs.origin-error-page-pass-thru-setting.update`|Enable or disable the proxy of 502 and 504 error pages that are returned from origin server.|
 |`internet-svcs.bot-management.update`|Change Bot Management settings.|
 {: caption="Actions that generate settings events" caption-side="bottom"}
+
+
+
+
 
 ## Additional information
 {: #info}
