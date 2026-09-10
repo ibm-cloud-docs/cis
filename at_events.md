@@ -233,7 +233,7 @@ The following table lists the actions that are related to range applications and
 ## Events for logpush
 {: #at_actions_logpush}
 
-The following table lists the actions that are related to Logpush and generate an event:
+The following table lists the actions that are related to logpush and generate an event:
 
 |Action|Description|
 |-|-|
