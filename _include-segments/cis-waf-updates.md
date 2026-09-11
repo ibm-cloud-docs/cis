@@ -5,7 +5,7 @@
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
 2026-09-08| 2026-09-15| Log| N/A| b2170b7b1a2c4b8eba0b498eca453d31| SSRF - Cloud - 3| This is a new detection.
-2026-09-08| 2026-09-15| Log| N/A| 02c818297e6d42aaa55e67f5e540f17f| Version Control - Information Disclosure - Beta| This rule will be merged into the original rule "Version Control - Information Disclosure" (ID: ...0550c529).
+2026-09-08| 2026-09-15| Log| N/A| 02c818297e6d42aaa55e67f5e540f17f| Version Control - Information Disclosure - Beta| This rule will be merged into the original rule "Version Control - Information Disclosure" (ID: 23548ee2b36547a1be09bb2c0550c529).
 2026-09-08| 2026-09-15| Log| N/A| 93793848937f4f988f1dfdabba458b4b| Command Injection - Generic 10| This is a new detection.
 
 ## WAF - WAF Release - 2026-09-10 - Emergency
