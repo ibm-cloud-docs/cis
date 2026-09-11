@@ -1,4 +1,40 @@
 
+## WAF - WAF Release - Scheduled changes for 2026-09-15
+**Published on:** Tue, 08 Sep 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-09-08| 2026-09-15| Log| N/A| b2170b7b1a2c4b8eba0b498eca453d31| SSRF - Cloud - 3| This is a new detection.
+2026-09-08| 2026-09-15| Log| N/A| 02c818297e6d42aaa55e67f5e540f17f| Version Control - Information Disclosure - Beta| This rule will be merged into the original rule "Version Control - Information Disclosure" (ID: ...0550c529).
+2026-09-08| 2026-09-15| Log| N/A| 93793848937f4f988f1dfdabba458b4b| Command Injection - Generic 10| This is a new detection.
+
+## WAF - WAF Release - 2026-09-10 - Emergency
+**Published on:** Thu, 10 Sep 2026 00:00:00 GMT
+
+This update provides immediate defense against a high-severity, actively exploited zero-day vulnerability targeting Adobe Commerce and Magento Open Source storefronts.
+
+**Key Findings**
+
+  * Adobe Commerce and Magento RCE (CVE-2026-75650 / "StyleSmuggler"): Unauthenticated Remote Code Execution (RCE) vulnerability caused by improper neutralization of special elements in the platform's template engine. Unauthenticated attackers can inject arbitrary PHP payloads through style properties to execute system commands and deploy persistent malware.
+
+**Impact**
+
+This emergency rule provides immediate edge-level mitigation and virtual patching, origin applications must be urgently updated. We strongly recommend to apply the hotfix outlined in Adobe Security Bulletin [APSB26-146](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/announcements/commerce-apsb26-146) and immediately rotate all potentially exposed encryption keys, integration tokens, and system credentials, as patching alone does not remediate an existing compromise.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| f9a3026b0fdc4d63b7338346440f5c55| N/A| Adobe Commerce - Remote Code Execution - CVE:CVE-2026-75650| N/A| Block| This is a new detection.
+
+## WAF - WAF Release - 2026-09-08
+**Published on:** Tue, 08 Sep 2026 00:00:00 GMT
+
+This release enhances detection logic for existing rules targeting Next.js remote code execution (RCE) vulnerabilities by consolidating active beta rules into baseline signatures.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| d5d9f863e50b416faf43934dc76ba662| N/A| Next.js - Image Optimizer Remote Code Execution via Crafted AVIF - Beta| Log| Block| This rule is merged into the original rule "Next.js - Image Optimizer Remote Code Execution via Crafted AVIF" (ID: ...80256efe).
+CIS Managed Ruleset| 771ac3761dcd485cb0e91ea0208457cf| N/A| Next.js - Remote Code Execution - CVE:CVE-2026-75604 - Beta| Log| Block| This rule is merged into the original rule "Next.js - Remote Code Execution - CVE:CVE-2026-75604" (ID: ...2ca6cce3).
+
 ## WAF - WAF Release - 2026-09-01
 **Published on:** Tue, 01 Sep 2026 00:00:00 GMT
 
