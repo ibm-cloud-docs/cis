@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-02-24"
+  years: 2021, 2026
+lastupdated: "2026-09-11"
 
 keywords:
 
@@ -326,11 +326,11 @@ Make sure that the rewritten URI path is not empty and that it starts with a `/`
 
 For example, the following URI path rewrite expression is not valid:
 
-`concat(lower(ip.geoip.country), http.request.uri.path)`
+`concat(lower(ip.src.country), http.request.uri.path)`
 
 To fix the expression, add a `/` prefix:
 
-`concat("/", lower(ip.geoip.country), http.request.uri.path)`
+`concat("/", lower(ip.src.country), http.request.uri.path)`
 
 ## Error 1036: Invalid request rewrite (maximum length exceeded)
 {: #1036-error}

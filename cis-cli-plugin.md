@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-09-09"
+lastupdated: "2026-09-11"
 
 keywords:
 
@@ -10132,7 +10132,7 @@ ibmcloud cis advanced-rate-limiting rule-create DNS_DOMAIN_ID --name NAME --matc
                      "cf.colo.id"
                   ],
                   "requests_to_origin": false,
-                  "counting_expression": "(ip.geoip.continent in {\"AN\"})",
+                  "counting_expression": "(ip.src.continent in {\"AN\"})",
                   "requests_per_period": 10,
                   "period": 10,
                   "mitigation_timeout": 120
@@ -10246,7 +10246,7 @@ ibmcloud cis advanced-rate-limiting rule-update DNS_DOMAIN_ID RULE_ID --name NAM
                      "cf.colo.id"
                   ],
                   "requests_to_origin": false,
-                  "counting_expression": "(ip.geoip.continent in {\"AN\"})",
+                  "counting_expression": "(ip.src.continent in {\"AN\"})",
                   "requests_per_period": 10,
                   "period": 10,
                   "mitigation_timeout": 120

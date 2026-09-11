@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-09-11"
 
 keywords:
 
@@ -32,7 +32,7 @@ IBM Cloud is committed to complying with all applicable laws and regulations, in
 CIS custom rules help you to define conditions that allow or block traffic. To block the traffic from US-embargoed countries, create the country-blocking custom rule and place it first in the custom rules order. Use the following commands to create the rule and add it as the first custom rule.
 
    ```sh
-   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID -i INSTANCE --match "(ip.geoip.country in {\"CU\" \"IR\" \"SY\" \"KP\"})" --action block --description "Embargo" --enabled true
+   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID -i INSTANCE --match "(ip.src.country in {\"CU\" \"IR\" \"SY\" \"KP\"})" --action block --description "Embargo" --enabled true
    ibmcloud cis custom-waf rule-order-update $DNS_DOMAIN_ID -i INSTANCE RULE_ID --index 1
    ```
    {: pre}
@@ -64,7 +64,7 @@ To add a custom rule with the API, follow these steps:
    --header 'Content-Type: application/json' \
    --data '[
         {
-                "expression": "(ip.geoip.country in {"IR" "CU" "SY" "KP"})",
+                "expression": "(ip.src.country in {"IR" "CU" "SY" "KP"})",
                 "description": "Block Traffic from US Embargoed Countries",
                 "paused": false
         }
