@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-09-10"
+lastupdated: "2026-09-16"
 
 keywords: CIS activity tracker events
 
@@ -69,6 +69,9 @@ The following table lists the actions that are related to DNS records and genera
 |`internet-svcs.dns-records.update`|Update a DNS record.|
 |`internet-svcs.dns-records.delete`|Delete a DNS record.|
 |`internet-svcs.dns-records-bulk.create`|Import DNS records from zone file.|
+|`internet-svcs.dns-records-batch.create`|Create DNS records in batch.|
+|`internet-svcs.dns-records-batch.update`|Update DNS records in batch.|
+|`internet-svcs.dns-records-batch.delete`|Delete DNS records in batch.|
 {: caption="Actions that generate DNS record events" caption-side="bottom"}
 
 ## Events for load balancers
@@ -100,6 +103,7 @@ The following table lists the actions that are related to purging the cache and 
 |`internet-svcs.purge-cache-by-urls.update`|Purge cached assets by URLs from edge server.|
 |`internet-svcs.purge-cache-by-cache-tags.update`|Purge cached assets by cache tags from edge server.|
 |`internet-svcs.purge-cache-by-hosts.update`|Purge cached assets by hostnames from edge server.|
+|`internet-svcs.purge-cache-by-prefixes.update`|Purge cache by URL prefixes.|
 {: caption="Actions that generate cache purge events" caption-side="bottom"}
 
 
@@ -142,9 +146,64 @@ The following table lists the actions that are related to firewalls and generate
 |`internet-svcs.domain-lockdown-rules.delete`|Delete a domain lockdown rule.|
 {: caption="Actions that generate firewall events" caption-side="bottom"}
 
+## Events for WAF overrides
+{: #at_actions_waf-overrides}
 
+The following table lists the actions that are related to WAF overrides and generate an event:
 
+|Action|Description|
+|-|-|
+|`internet-svcs.waf-overrides.create`|Create a WAF package override.|
+|`internet-svcs.waf-overrides.update`|Update a WAF package override.|
+|`internet-svcs.waf-overrides.delete`|Delete a WAF package override.|
+{: caption="Actions that generate WAF override events" caption-side="bottom"}
 
+## Events for WAF rulesets
+{: #at_actions_waf-rulesets}
+
+The following table lists the actions that are related to WAF rulesets and generate an event:
+
+|Action|Description|
+|-|-|
+|`internet-svcs.zone-rulesets.create`|Create a zone-level WAF ruleset.|
+|`internet-svcs.zone-rulesets.update`|Update a zone-level WAF ruleset.|
+|`internet-svcs.zone-rulesets.delete`|Delete a zone-level WAF ruleset.|
+|`internet-svcs.zone-rulesets-rules.create`|Create a rule in a zone ruleset.|
+|`internet-svcs.zone-rulesets-rules.update`|Update a rule in a zone ruleset.|
+|`internet-svcs.zone-rulesets-rules.delete`|Delete a rule from a zone ruleset.|
+|`internet-svcs.zone-rulesets-phases.create`|Create a zone ruleset phase entry.|
+|`internet-svcs.zone-rulesets-phases.update`|Update a zone ruleset phase entry.|
+|`internet-svcs.zone-rulesets-phases.delete`|Delete a zone ruleset phase entry.|
+|`internet-svcs.zone-rulesets-phases-entrypoint.update`|Update the zone ruleset phase entrypoint.|
+{: caption="Actions that generate WAF ruleset events" caption-side="bottom"}
+
+## Events for custom lists
+{: #at_actions_custom-lists}
+
+The following table lists the actions that are related to custom lists and generate an event:
+
+|Action|Description|
+|-|-|
+|`internet-svcs.custom-lists.create`|Create a custom IP/ASN/hostname list.|
+|`internet-svcs.custom-lists.update`|Update a custom list.|
+|`internet-svcs.custom-lists.delete`|Delete a custom list.|
+|`internet-svcs.custom-lists-items.create`|Add items to a custom list.|
+|`internet-svcs.custom-lists-items.update`|Update items in a custom list.|
+|`internet-svcs.custom-lists-items.delete`|Delete items from a custom list.|
+|`internet-svcs.custom-lists-operations.create`|Perform a bulk operation on a custom list.|
+{: caption="Actions that generate custom list events" caption-side="bottom"}
+
+## Events for managed lists
+{: #at_actions_managed-lists}
+
+The following table lists the actions that are related to managed lists and generate an event:
+
+|Action|Description|
+|-|-|
+|`internet-svcs.managed-lists.create`|Create a managed IP list.|
+|`internet-svcs.managed-lists.update`|Update a managed list.|
+|`internet-svcs.managed-lists.delete`|Delete a managed list.|
+{: caption="Actions that generate managed list events" caption-side="bottom"}
 
 ## Events for rate limiting
 {: #at_actions_rate-limiting}
@@ -190,6 +249,7 @@ The following table lists the actions that are related to custom certificates an
 |`internet-svcs.custom-certificates.create`|Upload a custom certificate.|
 |`internet-svcs.custom-certificates.update`|Update a custom certificate.|
 |`internet-svcs.custom-certificates.delete`|Delete a custom certificate.|
+|`internet-svcs.custom-certificates-prioritize.update`|Re-order custom SSL certificate priority.|
 {: caption="Actions that generate custom certificate events" caption-side="bottom"}
 
 ## Events for origin certificates
@@ -203,7 +263,20 @@ The following table lists the actions that are related to origin certificates an
 |`internet-svcs.origin-certificates.delete`|Revoke an origin certificate.|
 {: caption="Actions that generate origin certificate events" caption-side="bottom"}
 
+## Events for authenticated origin pull
+{: #at_actions_origin-tls-client-auth}
 
+The following table lists the actions that are related to authenticated origin pull and generate an event:
+
+|Action|Description|
+|-|-|
+|`internet-svcs.origin-tls-client-auth.create`|Upload a zone-level client auth certificate.|
+|`internet-svcs.origin-tls-client-auth.delete`|Delete a zone-level client auth certificate.|
+|`internet-svcs.origin-tls-client-auth-settings.update`|Toggle authenticated origin Pull for a zone.|
+|`internet-svcs.origin-tls-client-auth-hostnames.update`|Configure per-hostname Authenticated Origin Pull.|
+|`internet-svcs.origin-tls-client-auth-hostname-certificates.create`|Upload a per-hostname client auth certificate.|
+|`internet-svcs.origin-tls-client-auth-hostname-certificates.delete`|Delete a per-hostname client auth certificate.|
+{: caption="Actions that generate authenticated origin pull events" caption-side="bottom"}
 
 ## Events for edge functions
 {: #at_actions_edge-functions}
@@ -246,7 +319,17 @@ The following table lists the actions that are related to logpush and generate a
 |`internet-svcs.logpush-jobs.delete`|Delete a Logpush job.|
 {: caption="Actions that generate logpush events" caption-side="bottom"}
 
+## Events for instant logs
+{: #at_actions_instant-logs}
 
+The following table lists the actions that are related to instant logs and generate an event:
+
+|Action|Description|
+|-|-|
+|`internet-svcs.instant-logs-jobs.create`|Create an instant logs job.|
+|`internet-svcs.instant-logs-jobs.update`|Update an instant logs job.|
+|`internet-svcs.instant-logs-jobs.delete`|Delete an instant logs job.|
+{: caption="Actions that generate instant logs events" caption-side="bottom"}
 
 ## Events for custom error pages
 {: #at_actions_custom-error-pages}
@@ -293,9 +376,24 @@ The following table lists the actions that are related to configuring settings a
 |`internet-svcs.max-upload-setting.update`|Change the amount of data that visitors can upload to the website in a single request.|
 |`internet-svcs.origin-error-page-pass-thru-setting.update`|Enable or disable the proxy of 502 and 504 error pages that are returned from origin server.|
 |`internet-svcs.bot-management.update`|Change Bot Management settings.|
+|`internet-svcs.universal-ssl-setting.update`|Toggle Universal SSL.|
+|`internet-svcs.logs-retention.update`|Update log retention settings.|
 {: caption="Actions that generate settings events" caption-side="bottom"}
 
+## Events for alerting
+{: #at_actions_alerting}
 
+The following table lists the actions that are related to alert notifications and generate an event:
+
+|Action|Description|
+|-|-|
+|`internet-svcs.alerting-policies.create`|Create an alert notification policy.|
+|`internet-svcs.alerting-policies.update`|Update an alert notification policy.|
+|`internet-svcs.alerting-policies.delete`|Delete an alert notification policy.|
+|`internet-svcs.alerting-webhooks.create`|Create an alert webhook destination.|
+|`internet-svcs.alerting-webhooks.update`|Update an alert webhook destination.|
+|`internet-svcs.alerting-webhooks.delete`|Delete an alert webhook destination.|
+{: caption="Actions that generate alerting events" caption-side="bottom"}
 
 
 
