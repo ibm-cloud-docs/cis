@@ -1,12 +1,24 @@
 
-## WAF - WAF Release - Scheduled changes for 2026-09-15
-**Published on:** Tue, 08 Sep 2026 00:00:00 GMT
+## WAF - WAF Release - Scheduled changes for 2026-09-22
+**Published on:** Tue, 15 Sep 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-09-08| 2026-09-15| Log| N/A| b2170b7b1a2c4b8eba0b498eca453d31| SSRF - Cloud - 3| This is a new detection.
-2026-09-08| 2026-09-15| Log| N/A| 02c818297e6d42aaa55e67f5e540f17f| Version Control - Information Disclosure - Beta| This rule will be merged into the original rule "Version Control - Information Disclosure" (ID: 23548ee2b36547a1be09bb2c0550c529).
-2026-09-08| 2026-09-15| Log| N/A| 93793848937f4f988f1dfdabba458b4b| Command Injection - Generic 10| This is a new detection.
+2026-09-15| 2026-09-22| Log| N/A| 40b93de7a8f848709c4ec3e60f0313d6| SSRF - Block jar HTTP loopback payload| This is a new detection.
+2026-09-15| 2026-09-22| Log| N/A| ca05d6c847834f75a317c33b5f21b651 | SSRF - Cloud,Link-Local non-standard IP notation| This is a new detection.
+2026-09-15| 2026-09-22| Log| N/A| 48dfa3e5bef84063914edfe175cd912a| SSRF - Local non-standard IP notation| This is a new detection.
+2026-09-15| 2026-09-22| Log| N/A| cd1de1fd21c443508f9073f2a1ba83f| SSTI - Jinja Dangerous Globals Chain| This is a new detection.
+
+## WAF - WAF Release - 2026-09-15
+**Published on:** Tue, 15 Sep 2026 00:00:00 GMT
+
+This release introduces new threat detections to enhance protection against command injection attempts, Server-Side Request Forgery (SSRF) targeting cloud metadata, and information disclosure within version control history.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| b2170b7b1a2c4b8eba0b498eca453d31| N/A| SSRF - Cloud - 3| Log| Block| This is a new detection.
+CIS Managed Ruleset| 02c818297e6d42aaa55e67f5e540f17f| N/A| Version Control - Information Disclosure - Beta| Log| Block| This rule is merged into the original rule "Version Control - Information Disclosure" (ID: 23548ee2b36547a1be09bb2c0550c529).
+CIS Managed Ruleset| 93793848937f4f988f1dfdabba458b4b| N/A| Command Injection - Generic 10| Log| Block| This is a new detection.
 
 ## WAF - WAF Release - 2026-09-10 - Emergency
 **Published on:** Thu, 10 Sep 2026 00:00:00 GMT
