@@ -1,6 +1,39 @@
 
-## WAF - WAF Release - Scheduled changes for 2026-09-22
-**Published on:** Tue, 15 Sep 2026 00:00:00 GMT
+## WAF - WAF Release - Scheduled changes for 2026-09-29
+**Published on:** Tue, 22 Sep 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-09-22| 2026-09-29| Log| N/A| f2445b9131214302a11477a2cb14ded8| Broken Access Control - Directory Traversal| This is a new detection.
+2026-09-22| 2026-09-29| Log| N/A| 5c1ba1fdb0a742d4beaaefd00364bd7e| HTTP Request Smuggling - Request Body Anomaly - Beta| This rule will be merged into the original rule "HTTP/2 Request Smuggling - Request Body Anomaly" (ID: a80f214f0947435dabb2ba2d1489d892).
+2026-09-22| 2026-09-29| Disabled| N/A| 09055ff9f80046419a3c0be5d498a69a| Command Injection - Generic 8 - body - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - body" (ID: 5b3ce84c099040c6a25cee2d413592e2).
+2026-09-22| 2026-09-29| Log| N/A| e6fd9291701d4fea96741ba1a056caff| Command Injection - Generic 8 - uri - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - uri" (ID: ff8df24181aa4573a81be531ee159e2e).
+2026-09-22| 2026-09-29| Log| N/A| c825487afc274e34966052bb87ae8cfc| GitLab - Path Traversal- CVE:CVE-2026-85706| This is a new detection.
+
+## WAF - WAF Release - 2026-09-25 - Emergency
+**Published on:** Thu, 25 Sep 2026 00:00:00 GMT
+
+This update provides immediate defense against critical vulnerabilities affecting WordPress and JFrog Artifactory, including path traversal, local file inclusion (LFI), cross-site scripting (XSS), and authentication bypass exploits.
+
+**Key Findings**
+
+  * **CVE-2026-87902:** A high-severity Path Traversal and Local File Inclusion (LFI) vulnerability affecting WordPress. Unauthenticated attackers can exploit this flaw to read arbitrary files on the host server, potentially exposing sensitive configuration data or system files.
+
+  * **CVE-2026-42018 & CVE-2026-82329:** Critical authentication bypass vulnerabilities affecting JFrog Artifactory. Successful exploitation allows unauthenticated attackers to bypass security controls and achieve unauthorized access to the Artifactory instance.
+
+**Impact**
+
+We strongly recommend that administrators apply the latest vendor patches for WordPress and JFrog Artifactory to fully secure origin servers.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+Cloudflare Managed Ruleset| 64bcec36a74e445891d08a9870a43f96| N/A| Wordpress - Path Traversal, Local File Inclusion - CVE:CVE-2026-87902| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 755ce44008cd482a964cb96e909a4db4| N/A| Wordpress - XSS - Comment| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 76f7d07e2ff549789ab222cac797ef03| N/A| JFrog Artifactory - Authentication Bypass - CVE:CVE-2026-42018| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| c6dafaadb861478dbca81469a813ac74| N/A| JFrog Artifactory - Authentication Bypass - CVE:CVE-2026-82329| N/A| Block| This is a new detection.
+
+## WAF - WAF Release - 2026-09-22
+**Published on:** Tue, 22 Sep 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
@@ -46,6 +79,19 @@ Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comm
 ---|---|---|---|---|---|---
 CIS Managed Ruleset| d5d9f863e50b416faf43934dc76ba662| N/A| Next.js - Image Optimizer Remote Code Execution via Crafted AVIF - Beta| Log| Block| This rule is merged into the original rule "Next.js - Image Optimizer Remote Code Execution via Crafted AVIF" (ID: 18b22b0bd423423c945b3a0180256ef).
 CIS Managed Ruleset| 771ac3761dcd485cb0e91ea0208457cf| N/A| Next.js - Remote Code Execution - CVE:CVE-2026-75604 - Beta| Log| Block| This rule is merged into the original rule "Next.js - Remote Code Execution - CVE:CVE-2026-75604" (ID: 2b6b94ec864d47f99630ecf72ca6cce3).
+
+## WAF - Enforce positive security with Application Profiles
+**Published on:** Mon, 07 Sep 2026 00:00:00 GMT
+
+Application Profiles add a positive-security layer to CIS WAF. Instead of looking only for requests that resemble known attacks, Application Profiles learn what valid requests to your application look like and identify traffic that deviates from the expected structure.
+
+The first available profile type, Schema Profiles, can learn path variables, query parameters, headers, cookies, JSON bodies, and form-encoded bodies. Profiles model field types and constraints such as numeric ranges, string lengths, and character classes. After a profile becomes available, an always-on detection classifies requests as conforming or non-conforming without blocking traffic.
+
+Use **Profile Analysis** in [Security Analytics](https://developers.cloudflare.com/waf/analytics/security-analytics/) to review conformance trends and sampled violation details before enforcing a profile. When you are ready to mitigate traffic, use a [Custom Rule](https://developers.cloudflare.com/waf/custom-rules/) to scope enforcement by hostname, path, operation, or other security signals such as Attack Score.
+
+Customers with API Security already have access to Schema Profiles through Schema Learning and Schema Validation. CIS is also opening a closed beta to invited Enterprise customers without API Security. Contact your CIS account team to express interest.
+
+For more information, refer to [Application Profiles](https://developers.cloudflare.com/waf/detections/application-profiles/).
 
 ## WAF - WAF Release - 2026-09-01
 **Published on:** Tue, 01 Sep 2026 00:00:00 GMT
