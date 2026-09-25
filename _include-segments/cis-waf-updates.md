@@ -10,6 +10,28 @@ Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Desc
 2026-09-22| 2026-09-29| Log| N/A| e6fd9291701d4fea96741ba1a056caff| Command Injection - Generic 8 - uri - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - uri" (ID: ff8df24181aa4573a81be531ee159e2e).
 2026-09-22| 2026-09-29| Log| N/A| c825487afc274e34966052bb87ae8cfc| GitLab - Path Traversal- CVE:CVE-2026-85706| This is a new detection.
 
+## WAF - WAF Release - 2026-09-25 - Emergency
+**Published on:** Thu, 25 Sep 2026 00:00:00 GMT
+
+This update provides immediate defense against critical vulnerabilities affecting WordPress and JFrog Artifactory, including path traversal, local file inclusion (LFI), cross-site scripting (XSS), and authentication bypass exploits.
+
+**Key Findings**
+
+  * **CVE-2026-87902:** A high-severity Path Traversal and Local File Inclusion (LFI) vulnerability affecting WordPress. Unauthenticated attackers can exploit this flaw to read arbitrary files on the host server, potentially exposing sensitive configuration data or system files.
+
+  * **CVE-2026-42018 & CVE-2026-82329:** Critical authentication bypass vulnerabilities affecting JFrog Artifactory. Successful exploitation allows unauthenticated attackers to bypass security controls and achieve unauthorized access to the Artifactory instance.
+
+**Impact**
+
+We strongly recommend that administrators apply the latest vendor patches for WordPress and JFrog Artifactory to fully secure origin servers.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+Cloudflare Managed Ruleset| 64bcec36a74e445891d08a9870a43f96| N/A| Wordpress - Path Traversal, Local File Inclusion - CVE:CVE-2026-87902| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 755ce44008cd482a964cb96e909a4db4| N/A| Wordpress - XSS - Comment| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 76f7d07e2ff549789ab222cac797ef03| N/A| JFrog Artifactory - Authentication Bypass - CVE:CVE-2026-42018| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| c6dafaadb861478dbca81469a813ac74| N/A| JFrog Artifactory - Authentication Bypass - CVE:CVE-2026-82329| N/A| Block| This is a new detection.
+
 ## WAF - WAF Release - 2026-09-22
 **Published on:** Tue, 22 Sep 2026 00:00:00 GMT
 
