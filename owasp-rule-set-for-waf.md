@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-01"
 
 keywords:
 
@@ -20,7 +20,7 @@ The OWASP Core Ruleset for WAF contains generic attack detection rules. The OWAS
 OWASP is an industry standard that provides a good security baseline. For more information, see:
 
 * [OWASP on GitHub](https://github.com/coreruleset/coreruleset){: external}
-* [OWASP.org](https://owasp.org/www-project-modsecurity-core-rule-set/){: external}
+* [OWASP Core Ruleset](https://coreruleset.org/){: external}
 * [OWASP Core Ruleset Documentation](https://coreruleset.org/docs/){: external}
 * [OWASP Core Ruleset Changelog](https://github.com/coreruleset/coreruleset/blob/main/CHANGES.md){: external}
 
