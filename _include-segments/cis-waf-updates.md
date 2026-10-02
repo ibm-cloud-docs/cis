@@ -1,25 +1,58 @@
 
-## WAF - WAF Release - Scheduled changes for 2026-09-29
-**Published on:** Tue, 22 Sep 2026 00:00:00 GMT
+## WAF - WAF Release - Scheduled changes for 2026-10-06
+**Published on:** Wed, 30 Sep 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-09-22| 2026-09-29| Log| N/A| f2445b9131214302a11477a2cb14ded8| Broken Access Control - Directory Traversal| This is a new detection.
-2026-09-22| 2026-09-29| Log| N/A| 5c1ba1fdb0a742d4beaaefd00364bd7e| HTTP Request Smuggling - Request Body Anomaly - Beta| This rule will be merged into the original rule "HTTP/2 Request Smuggling - Request Body Anomaly" (ID: a80f214f0947435dabb2ba2d1489d892).
-2026-09-22| 2026-09-29| Disabled| N/A| 09055ff9f80046419a3c0be5d498a69a| Command Injection - Generic 8 - body - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - body" (ID: 5b3ce84c099040c6a25cee2d413592e2).
-2026-09-22| 2026-09-29| Log| N/A| e6fd9291701d4fea96741ba1a056caff| Command Injection - Generic 8 - uri - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - uri" (ID: ff8df24181aa4573a81be531ee159e2e).
-2026-09-22| 2026-09-29| Log| N/A| c825487afc274e34966052bb87ae8cfc| GitLab - Path Traversal- CVE:CVE-2026-85706| This is a new detection.
+2026-09-22| 2026-10-06| Log| N/A| e6fd9291701d4fea96741ba1a056caff| Command Injection - Generic 8 - uri - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - uri" (ID: ...ee159e2e).
+2026-09-30| 2026-10-06| Log| N/A| f0c31de76290471e842c77ca7206c737| F5 BIG-IP - UnAuth Heap-Overflow - CVE:CVE-2026-94127| This is a new detection.
+
+## WAF - WAF Release - 2026-10-01 - Emergency
+**Published on:** Thu, 01 Oct 2026 00:00:00 GMT
+
+This update provides immediate defense against a vulnerability affecting Citrix NetScaler ADC and Gateway appliances, deploying protection against improper input validation vectors.
+
+**Key Findings**
+
+  * CVE-2026-88771: An improper input validation vulnerability affecting Citrix NetScaler ADC and Gateway allows an unauthenticated attacker to execute arbitrary commands.
+
+**Impact**
+
+We strongly recommend that administrators apply the latest versions to fully secure origin servers. Additionally, customers should review configurations against applicable preconditions and follow standard incident response processes if signs of compromise are identified.
+
+Detailed Rule Changes
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 6802845374ea41a289fd4f43827ab216| N/A| Citrix Netscaler ADC and Gateway - Improper input validation - CVE:CVE-2026-88771| N/A| Block| This is a new detection.
+
+## WAF - WAF Release - 2026-09-30
+**Published on:** Wed, 30 Sep 2026 00:00:00 GMT
+
+This release introduces new detections to enhance protection against a specific GitLab path traversal vulnerability, alongside advanced generic rules targeting HTTP request smuggling, directory traversal, and command injection attempts.
+
+**Key Findings**
+
+  * CVE-2026-85706: A path traversal vulnerability affecting GitLab.
+
+  Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| f2445b9131214302a11477a2cb14ded8| N/A| Broken Access Control - Directory Traversal| Log| Block| This is a new detection.
+CIS Managed Ruleset| 5c1ba1fdb0a742d4beaaefd00364bd7e| N/A| HTTP Request Smuggling - Request Body Anomaly - Beta| Log| Block| This rule is merged into the original rule "HTTP/2 Request Smuggling - Request Body Anomaly" (ID: a80f214f0947435dabb2ba2d1489d892).
+CIS Managed Ruleset| 09055ff9f80046419a3c0be5d498a69a| N/A| Command Injection - Generic 8 - body - Beta| Disabled| Disabled| This rule is merged into the original rule "Command Injection - Generic 8 - body" (ID: 5b3ce84c099040c6a25cee2d413592e2).
+CIS Managed Ruleset| c825487afc274e34966052bb87ae8cfc| N/A| GitLab - Path Traversal- CVE:CVE-2026-85706| Log| Block| This is a new detection.
+CIS Managed Ruleset| 86b0681d72234ef7bd6f67c7549f7356| N/A| Generic - Request routing cache inconsistency| N/A| Block| This is a new detection.
 
 ## WAF - WAF Release - 2026-09-25 - Emergency
-**Published on:** Thu, 25 Sep 2026 00:00:00 GMT
+**Published on:** Fri, 25 Sep 2026 00:00:00 GMT
 
 This update provides immediate defense against critical vulnerabilities affecting WordPress and JFrog Artifactory, including path traversal, local file inclusion (LFI), cross-site scripting (XSS), and authentication bypass exploits.
 
 **Key Findings**
 
-* CVE-2026-87902: A high-severity Path Traversal and Local File Inclusion (LFI) vulnerability affecting WordPress. Unauthenticated attackers can exploit this flaw to read arbitrary files on the host server, potentially exposing sensitive configuration data or system files.
+  * CVE-2026-87902: A high-severity Path Traversal and Local File Inclusion (LFI) vulnerability affecting WordPress. Unauthenticated attackers can exploit this flaw to read arbitrary files on the host server, potentially exposing sensitive configuration data or system files.
 
-* CVE-2026-42018 & CVE-2026-82329: Critical authentication bypass vulnerabilities affecting JFrog Artifactory. Successful exploitation allows unauthenticated attackers to bypass security controls and achieve unauthorized access to the Artifactory instance.
+  * CVE-2026-42018 & CVE-2026-82329: Critical authentication bypass vulnerabilities affecting JFrog Artifactory. Successful exploitation allows unauthenticated attackers to bypass security controls and achieve unauthorized access to the Artifactory instance.
 
 **Impact**
 
