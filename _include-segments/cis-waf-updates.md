@@ -33,9 +33,9 @@ This release introduces new detections to enhance protection against a specific 
 
 **Key Findings**
 
-  * CVE-2026-85706: A path traversal vulnerability affecting GitLab.
+* CVE-2026-85706: A path traversal vulnerability affecting GitLab.
 
-  Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
 CIS Managed Ruleset| f2445b9131214302a11477a2cb14ded8| N/A| Broken Access Control - Directory Traversal| Log| Block| This is a new detection.
 CIS Managed Ruleset| 5c1ba1fdb0a742d4beaaefd00364bd7e| N/A| HTTP Request Smuggling - Request Body Anomaly - Beta| Log| Block| This rule is merged into the original rule "HTTP/2 Request Smuggling - Request Body Anomaly" (ID: a80f214f0947435dabb2ba2d1489d892).
