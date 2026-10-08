@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-10-08"
 
 subcollection: cis
 
@@ -139,16 +139,28 @@ The following table lists countries in the EU from geolocation data:
 ## Functions
 {: #custom-rule-functions}
 
-The custom rules language has several functions to convert fields.
+CIS expressions are formatted using the [Cloudflare Wirefilter syntax](https://github.com/cloudflare/wirefilter){: external}. The expression language supports transformation functions that manipulate values extracted from HTTP requests.
 
-These are not currently supported in the Expression Builder.
+These functions are not supported in the Expression Builder UI. You can use them by manually typing them in the Expression Editor in the CIS console. You can also use them in rule expressions that are created through the CLI or API.
 {: note}
 
-| Function name| Argument types | Return type | Usage example | Notes|
-| ------- | :--------- | :------------ | :--------- | :--------- |
-|lower|String|String|lower(http.host) == `"www.example.com"`|Converts a string field to lowercase. Only uppercase ASCII bytes are being converted, every other bytes are left as-is.|
-|upper|String|String|upper(http.host) == `"www.example.com"`|Converts a string field to uppercase. Only lowercase ASCII bytes are being converted, every other bytes are left as-is.|
-{: caption="Custom rules functions" caption-side="bottom"}
+| Function | Signature | Description | Example |
+| ------- | :--------- | :------------ | :--------- |
+| `any` | `any(Array<Boolean>): Boolean` | Returns `true` when the comparison operator returns `true` for any value in the argument array. | `any(url_decode(http.request.body.form.values[*])[*] contains "xss")` |
+| `all` | `all(Array<Boolean>): Boolean` | Returns `true` when the comparison operator returns `true` for all values in the argument array. | `all(http.request.headers["content-type"][*] == "application/json")` |
+| `concat` | `concat(String \| Bytes \| Array): String \| Array` | Concatenates the argument values into a single string or array. | `concat("foo", "-", "bar")` returns `"foo-bar"` |
+| `ends_with` | `ends_with(source String, substring String): Boolean` | Returns `true` when the source ends with a given substring. The source cannot be a literal value. | `ends_with(http.request.uri.path, ".html")` |
+| `len` | `len(String \| Bytes \| Array): Integer` | Returns the byte length of a string or bytes value, or the number of elements in an array. | `len(http.host)` returns `11` when the host is `"example.com"` |
+| `lower` | `lower(String): String` | Converts a string field to lowercase. Only uppercase ASCII bytes are converted. All other bytes are unaffected. | `lower(http.host) == "www.example.com"` |
+| `lookup_json_integer` | `lookup_json_integer(field String, key String \| Integer, ...): Integer` | Returns the integer value associated with the supplied key in a JSON field. | `lookup_json_integer(http.request.body.raw, "version")` returns `2` |
+| `lookup_json_string` | `lookup_json_string(field String, key String \| Integer, ...): String` | Returns the string value associated with the supplied key in a JSON field. | `lookup_json_string(http.request.body.raw, "company") == "example"` |
+| `remove_bytes` | `remove_bytes(Bytes): Bytes` | Returns a new byte array with all occurrences of the given bytes removed. | `remove_bytes(http.host, "\x2e\x77")` |
+| `starts_with` | `starts_with(source String, substring String): Boolean` | Returns `true` when the source starts with a given substring. The source cannot be a literal value. | `starts_with(http.request.uri.path, "/blog")` |
+| `substring` | `substring(field String \| Bytes, start Integer [, end Integer]): String` | Returns part of the field value from the start byte index up to, but not including, the end byte index. Supports negative indexes to count from the end of the string. | `substring(http.request.uri.path, 0, 5)` |
+| `to_string` | `to_string(Integer \| Boolean \| IP address): String` | Returns the string representation of an integer, boolean, or IP address value. | `to_string(cf.threat_score)` returns `"10"` |
+| `upper` | `upper(String): String` | Converts a string field to uppercase. Only lowercase ASCII bytes are converted. All other bytes are unaffected. | `upper(http.host)` returns `"WWW.CLOUDFLARE.COM"` |
+| `url_decode` | `url_decode(source String [, options String]): String` | Decodes a URL-formatted string. The source must be a field, not a literal. Supports optional `"r"` (recursive) and `"u"` (Unicode) flags. | `url_decode(http.request.uri.path)` |
+{: caption="Ruleset Engine transformation functions" caption-side="bottom"}
 
 ## Expressions
 {: #custom-rule-expressions}
