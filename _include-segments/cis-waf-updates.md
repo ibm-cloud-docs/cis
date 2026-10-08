@@ -1,6 +1,26 @@
 
-## WAF - WAF Release - Scheduled changes for 2026-10-06
-**Published on:** Wed, 30 Sep 2026 00:00:00 GMT
+
+## WAF - WAF Release - Scheduled changes for 2026-10-12
+**Published on:** Tue, 06 Oct 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-10-06| 2026-10-12| Disable| N/A| ...02751ef3| Generic Rules - Template Injection - 2 - Beta| This rule will be merged into the original rule "Generic Rules - Template Injection - 2" (ID: ...d3ed0123).
+
+## WAF - WAF Release - 2026-10-06
+**Published on:** Tue, 06 Oct 2026 00:00:00 GMT
+
+This release introduces a new detection to mitigate a heap-based buffer overflow vulnerability in F5 BIG-IP, and enhances existing command injection protections by incorporating tested beta logic into the baseline rule.
+
+**Key Findings**
+
+  * CVE-2026-94127: A heap-based buffer overflow vulnerability in F5 BIG-IP. Attackers can exploit this flaw to execute arbitrary code on the affected system.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| e6fd9291701d4fea96741ba1a056caff| N/A| Command Injection - Generic 8 - uri - Beta| Log| Block| This rule is merged into the original rule "Command Injection - Generic 8 - uri" (ID: ...ee159e2e).
+CIS Managed Ruleset| f0c31de76290471e842c77ca7206c737| N/A| F5 BIG-IP - UnAuth Heap-Overflow - CVE:CVE-2026-94127| Log| Block| This is a new detection.
+CIS Managed Ruleset| 86b0681d72234ef7bd6f67c7549f7356| N/A| Next.js - Cache Poisoning - CVE:CVE-2026-94543| Block| Block| Rule metadata description refined. Detection unchanged.
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
