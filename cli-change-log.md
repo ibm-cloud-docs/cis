@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-10-13"
 
 keywords: change log for cis cli, updates to cis-cli-plugin
 
@@ -20,6 +20,8 @@ content-type: release-note
 
 In this change log, you can learn about the latest changes, improvements, and updates for the {{site.data.keyword.cis_full_notm}} CLI.
 {: shortdesc}
+
+
 
 ## Version 1.21.0
 {: #cli-1210}

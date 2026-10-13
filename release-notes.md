@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-10-13"
 
 keywords:
 
@@ -19,6 +19,7 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
+
 
 ## 25 August 2026
 {: #cis-august25-2026}
