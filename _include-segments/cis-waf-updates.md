@@ -1,11 +1,67 @@
 
 
-## WAF - WAF Release - Scheduled changes for 2026-10-12
-**Published on:** Tue, 06 Oct 2026 00:00:00 GMT
+
+## WAF - WAF Release - Scheduled changes for 2026-10-19
+**Published on:** Mon, 12 Oct 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-10-06| 2026-10-12| Disable| N/A| ...02751ef3| Generic Rules - Template Injection - 2 - Beta| This rule will be merged into the original rule "Generic Rules - Template Injection - 2" (ID: ...d3ed0123).
+2026-10-12| 2026-10-19| Log| N/A| d60e605ed36842df9ca0232f5ea9966d| Broken Access Control - Directory Traversal (Beta)| This rule will be merged into the original rule "Broken Access Control - Directory Traversal" (ID: f2445b9131214302a11477a2cb14ded8).
+
+## WAF - WAF Release - 2026-10-12
+**Published on:** Mon, 12 Oct 2026 00:00:00 GMT
+
+This release introduces new detections to mitigate recent vulnerabilities affecting TanStack and Atlassian products.
+
+**Key Findings**
+
+* CVE-2026-102989: A reflected Cross-Site Scripting (XSS) vulnerability affecting TanStack. Unauthenticated attackers can exploit this flaw to inject malicious scripts into web pages viewed by other users, potentially leading to session hijacking or unauthorized actions.
+
+* CVE-2026-21589: An arbitrary file access vulnerability affecting Atlassian products. Threat actors can exploit this flaw to read unauthorized files on the target system, risking the exposure of sensitive configuration data.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 50873c55387d4882aba7ea3d02751ef3| N/A| Generic Rules - Template Injection - 2 - Beta| Disabled| Disabled| This rule is merged into the original rule "Generic Rules - Template Injection - 2" (ID: 00a9a0d663da4add95b863abd3ed0123).
+CIS Managed Ruleset| 22220c5e2682463daa5536214ee560b2| N/A| TanStack - Reflected XSS - CVE:CVE-2026-102989| N/A| Block| This is a new detection.
+CIS Managed Ruleset| 272b2eec72c04313a6f0da2ee919cd31| N/A| Atlassian - Arbitrary File Access - CVE:CVE-2026-21589| N/A| Block| This is a new detection.
+
+## WAF - WAF Release - 2026-10-09
+**Published on:** Fri, 09 Oct 2026 00:00:00 GMT
+
+Failed detections field available in Rules
+
+You can now use `cf.appsec.request.failed_detections` to control how your rules handle requests when a security detection reports a failure.
+
+The field is an `Array<String>` of detection IDs that reports failures from content scanning, WAF attack score, attack signature detection, leaked credentials detection, and AI prompt detections for personally identifiable information (PII), prompt injection, custom topics, and unsafe topics.
+
+The field does not alter the existing behavior of detections. Use it in rules to choose how to handle requests with reported failures.
+
+When no failures are reported, the field returns `[]`. You can use it on all plans, but your plan must still include the detections and rule features you want to use.
+
+Supported rules:
+
+* Custom rules at the zone and account levels
+* Rate limiting rules at the zone and account levels
+* Request Header Transform Rules at the zone level
+
+Match any reported failure:
+
+`len(cf.appsec.request.failed_detections) gt 0`
+
+Match a reported leaked credentials detection failure:
+
+`any(cf.appsec.request.failed_detections[*] eq "waf_credential_check")`
+
+For more information, refer to the [Failed detections field reference](https://developers.cloudflare.com/ruleset-engine/rules-language/fields/reference/cf.appsec.request.failed_detections/){: external}.
+
+## WAF - Updated unsafe topic detection for AI Security for Apps
+**Published on:** Wed, 07 Oct 2026 00:00:00 GMT
+
+AI Security for Apps now supports an updated set of categories for detecting unsafe topics in incoming prompts.
+
+The values available in [`cf.llm.prompt.unsafe_topic_categories`](https://developers.cloudflare.com/ruleset-engine/rules-language/fields/reference/cf.llm.prompt.unsafe_topic_categories/) have changed. Existing WAF custom rules remain valid, but rules that reference a removed or renamed category will no longer match that category. Review any rules that use this field and update their expressions to use the currently supported values.
+
+For category descriptions and configuration guidance, refer to [Unsafe topics](https://developers.cloudflare.com/waf/detections/ai-security-for-apps/unsafe-topics/){: external}.
 
 ## WAF - WAF Release - 2026-10-06
 **Published on:** Tue, 06 Oct 2026 00:00:00 GMT
@@ -18,13 +74,13 @@ This release introduces a new detection to mitigate a heap-based buffer overflow
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| e6fd9291701d4fea96741ba1a056caff| N/A| Command Injection - Generic 8 - uri - Beta| Log| Block| This rule is merged into the original rule "Command Injection - Generic 8 - uri" (ID: ...ee159e2e).
+CIS Managed Ruleset| e6fd9291701d4fea96741ba1a056caff| N/A| Command Injection - Generic 8 - uri - Beta| Log| Block| This rule is merged into the original rule "Command Injection - Generic 8 - uri" (ID: ff8df24181aa4573a81be531ee159e2e).
 CIS Managed Ruleset| f0c31de76290471e842c77ca7206c737| N/A| F5 BIG-IP - UnAuth Heap-Overflow - CVE:CVE-2026-94127| Log| Block| This is a new detection.
 CIS Managed Ruleset| 86b0681d72234ef7bd6f67c7549f7356| N/A| Next.js - Cache Poisoning - CVE:CVE-2026-94543| Block| Block| Rule metadata description refined. Detection unchanged.
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-09-22| 2026-10-06| Log| N/A| e6fd9291701d4fea96741ba1a056caff| Command Injection - Generic 8 - uri - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - uri" (ID: ...ee159e2e).
+2026-09-22| 2026-10-06| Log| N/A| e6fd9291701d4fea96741ba1a056caff| Command Injection - Generic 8 - uri - Beta| This rule will be merged into the original rule "Command Injection - Generic 8 - uri" (ID: ff8df24181aa4573a81be531ee159e2e).
 2026-09-30| 2026-10-06| Log| N/A| f0c31de76290471e842c77ca7206c737| F5 BIG-IP - UnAuth Heap-Overflow - CVE:CVE-2026-94127| This is a new detection.
 
 ## WAF - WAF Release - 2026-10-01 - Emergency
@@ -201,7 +257,7 @@ CIS Managed Ruleset| a80f214f0947435dabb2ba2d1489d892| N/A| HTTP/2 Request Smugg
 CIS Managed Ruleset| 58a184412d2b4113bca6379b20646260| N/A| XSS - JavaScript Event Handler Coercion - Headers| Log| Block| This is a new detection.
 CIS Managed Ruleset| e79cb939d6aa41db984e6db3d706d517| N/A| XSS - JavaScript Event Handler Coercion - Body| Log| Block| This is a new detection.
 CIS Managed Ruleset| 7e3249c7a5d8469697478746660886c8| N/A| XSS - JavaScript Event Handler Coercion - URI| Log| Block| This is a new detection.
-CIS Managed Ruleset| d34bc5db8cbc4e18a44ed115c293b926| N/A| XSS, HTML Injection - Script Tag - Beta| Log| Block| This rule is merged into the original rule "XSS, HTML Injection - Script Tag" (ID: ...7b58420b).
+CIS Managed Ruleset| d34bc5db8cbc4e18a44ed115c293b926| N/A| XSS, HTML Injection - Script Tag - Beta| Log| Block| This rule is merged into the original rule "XSS, HTML Injection - Script Tag" (ID: 9c8dda9708cc4452ac76e7be7b58420b).
 CIS Managed Ruleset| 2b6b94ec864d47f99630ecf72ca6cce3| N/A| Generic Rules - Remote Code Execution| N/A| Block| This is a new detection.
 
 ## WAF - Leaked credentials detection now scans Authorization headers - 2026-08-20
@@ -1021,11 +1077,11 @@ CIS Managed Ruleset| ...8d667511| N/A| NoSQL, MongoDB - SQLi - Comparison - 2| B
 ## WAF - WAF Release - 2026-01-26
 **Published on:** Mon, 26 Jan 2026 00:00:00 GMT
 
-This week’s release introduces new detections for denial-of-service attempts targeting React CVE-2026-23864 (<https://www.cve.org/CVERecord?id=CVE-2026-23864>[ ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864)).
+This week’s release introduces new detections for denial-of-service attempts targeting React CVE-2026-23864.
 
 **Key Findings**
 
-  * CVE-2026-23864 (<https://www.cve.org/CVERecord?id=CVE-2026-23864>[ ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864)) affects `react-server-dom-parcel`, `react-server-dom-turbopack`, and `react-server-dom-webpack` packages.
+  * CVE-2026-23864 affects `react-server-dom-parcel`, `react-server-dom-turbopack`, and `react-server-dom-webpack` packages.
   * Attackers can send crafted HTTP requests to Server Function endpoints, causing server crashes, out-of-memory exceptions, or excessive CPU usage.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -1033,7 +1089,6 @@ Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comm
 CIS Managed Ruleset| ...61680354| N/A| React Server - DOS - CVE:CVE-2026-23864 - 1| N/A| Block| This is a new detection.
 CIS Managed Ruleset| ...dcdffcf8| N/A| React Server - DOS - CVE:CVE-2026-23864 - 2| N/A| Block| This is a new detection.
 CIS Managed Ruleset| ...349edbc6| N/A| React Server - DOS - CVE:CVE-2026-23864 - 3| N/A| Block| This is a new detection.
-
 
 ## WAF - WAF Release - 2026-01-20
 **Published on:** Tue, 20 Jan 2026 00:00:00 GMT

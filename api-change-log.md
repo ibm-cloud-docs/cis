@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-10-13"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -19,6 +19,8 @@ content-type: release-note
 
 In this change log, you can learn about the latest changes, improvements, and updates for the [{{site.data.keyword.cis_full_notm}} API](/docs/apis/cis). The change log lists changes that have been made, ordered by the date they were released. Changes to existing API versions are designed to be compatible with existing client applications.
 {: shortdesc}
+
+
 
 ## 12 August 2026
 {: #cis-august-1226}
