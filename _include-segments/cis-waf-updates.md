@@ -1,12 +1,23 @@
 
-
-
 ## WAF - WAF Release - Scheduled changes for 2026-10-19
 **Published on:** Mon, 12 Oct 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
 2026-10-12| 2026-10-19| Log| N/A| d60e605ed36842df9ca0232f5ea9966d| Broken Access Control - Directory Traversal (Beta)| This rule will be merged into the original rule "Broken Access Control - Directory Traversal" (ID: f2445b9131214302a11477a2cb14ded8).
+
+## WAF - WAF Release - 2026-10-14 - Emergency
+**Published on:** Wed, 14 Oct 2026 00:00:00 GMT
+
+This emergency release adds a new managed rule to block active exploitation of a critical remote code execution (RCE) vulnerability found in popular web frameworks.
+
+**Key Findings**
+
+  * Generic Rules - Remote Code Execution: Attackers can execute arbitrary system commands with web server privileges by sending malicious input containing invalid path sequences during request processing.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 44131076d2fa41fb97c61ec2fd1bf420| N/A| Generic Rules - Remote Code Execution| N/A| Block| This is a new detection.
 
 ## WAF - WAF Release - 2026-10-12
 **Published on:** Mon, 12 Oct 2026 00:00:00 GMT
@@ -15,9 +26,9 @@ This release introduces new detections to mitigate recent vulnerabilities affect
 
 **Key Findings**
 
-* CVE-2026-102989: A reflected Cross-Site Scripting (XSS) vulnerability affecting TanStack. Unauthenticated attackers can exploit this flaw to inject malicious scripts into web pages viewed by other users, potentially leading to session hijacking or unauthorized actions.
+  * CVE-2026-102989: A reflected Cross-Site Scripting (XSS) vulnerability affecting TanStack. Unauthenticated attackers can exploit this flaw to inject malicious scripts into web pages viewed by other users, potentially leading to session hijacking or unauthorized actions.
 
-* CVE-2026-21589: An arbitrary file access vulnerability affecting Atlassian products. Threat actors can exploit this flaw to read unauthorized files on the target system, risking the exposure of sensitive configuration data.
+  * CVE-2026-21589: An arbitrary file access vulnerability affecting Atlassian products. Threat actors can exploit this flaw to read unauthorized files on the target system, risking the exposure of sensitive configuration data.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
@@ -54,12 +65,14 @@ Match a reported leaked credentials detection failure:
 
 For more information, refer to the [Failed detections field reference](https://developers.cloudflare.com/ruleset-engine/rules-language/fields/reference/cf.appsec.request.failed_detections/){: external}.
 
-## WAF - Updated unsafe topic detection for AI Security for Apps
+## WAF - WAF Release - 2026-10-07
 **Published on:** Wed, 07 Oct 2026 00:00:00 GMT
+
+Updated unsafe topic detection for AI Security for Apps
 
 AI Security for Apps now supports an updated set of categories for detecting unsafe topics in incoming prompts.
 
-The values available in [`cf.llm.prompt.unsafe_topic_categories`](https://developers.cloudflare.com/ruleset-engine/rules-language/fields/reference/cf.llm.prompt.unsafe_topic_categories/) have changed. Existing WAF custom rules remain valid, but rules that reference a removed or renamed category will no longer match that category. Review any rules that use this field and update their expressions to use the currently supported values.
+The values available in `cf.llm.prompt.unsafe_topic_categories` have changed. Existing WAF custom rules remain valid, but rules that reference a removed or renamed category will no longer match that category. Review any rules that use this field and update their expressions to use the currently supported values.
 
 For category descriptions and configuration guidance, refer to [Unsafe topics](https://developers.cloudflare.com/waf/detections/ai-security-for-apps/unsafe-topics/){: external}.
 
@@ -502,7 +515,7 @@ CIS Managed Ruleset| ...242fdf83| N/A| Ivanti Sentry - Command Injection - CVE:C
 ## WAF - Use Cloudforce One threat intelligence in WAF rules
 **Published on:** Mon, 15 Jun 2026 00:00:00 GMT
 
-You can now match incoming requests against Cloudforce One threat intelligence in your WAF rules. A new detection looks up the client IP address of each request against the threat intelligence database. If the IP was involved in threat activity in the past seven days, CIS populates `cf.intel.ip.*` fields that you can use in [custom rules](https://developers.cloudflare.com/waf/custom-rules/) and [rate limiting rules](https://developers.cloudflare.com/waf/rate-limiting-rules/).
+You can now match incoming requests against Cloudforce One threat intelligence in your WAF rules. A new detection looks up the client IP address of each request against the threat intelligence database. If the IP was involved in threat activity in the past seven days, CIS populates `cf.intel.ip.*` fields that you can use in custom rules and rate limiting rules.
 
 The detection populates the following fields. Use the [`any()`](https://developers.cloudflare.com/ruleset-engine/rules-language/functions/#any) function with the `[*]` wildcard to match array values:
 
@@ -1077,11 +1090,11 @@ CIS Managed Ruleset| ...8d667511| N/A| NoSQL, MongoDB - SQLi - Comparison - 2| B
 ## WAF - WAF Release - 2026-01-26
 **Published on:** Mon, 26 Jan 2026 00:00:00 GMT
 
-This week’s release introduces new detections for denial-of-service attempts targeting React CVE-2026-23864.
+This week’s release introduces new detections for denial-of-service attempts targeting React CVE-2026-23864 (<https://www.cve.org/CVERecord?id=CVE-2026-23864>[ ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864)).
 
 **Key Findings**
 
-  * CVE-2026-23864 affects `react-server-dom-parcel`, `react-server-dom-turbopack`, and `react-server-dom-webpack` packages.
+  * CVE-2026-23864 (<https://www.cve.org/CVERecord?id=CVE-2026-23864>[ ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864)) affects `react-server-dom-parcel`, `react-server-dom-turbopack`, and `react-server-dom-webpack` packages.
   * Attackers can send crafted HTTP requests to Server Function endpoints, causing server crashes, out-of-memory exceptions, or excessive CPU usage.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -1089,6 +1102,7 @@ Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comm
 CIS Managed Ruleset| ...61680354| N/A| React Server - DOS - CVE:CVE-2026-23864 - 1| N/A| Block| This is a new detection.
 CIS Managed Ruleset| ...dcdffcf8| N/A| React Server - DOS - CVE:CVE-2026-23864 - 2| N/A| Block| This is a new detection.
 CIS Managed Ruleset| ...349edbc6| N/A| React Server - DOS - CVE:CVE-2026-23864 - 3| N/A| Block| This is a new detection.
+
 
 ## WAF - WAF Release - 2026-01-20
 **Published on:** Tue, 20 Jan 2026 00:00:00 GMT
