@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-10-16"
 
 keywords:
 
@@ -29,9 +29,9 @@ The numbers in these tables are quotas or resource limits for the associated fea
 {: tip}
 
 | |Standard Next|Enterprise Essentials|Enterprise Advanced|Enterprise Premier|Enterprise Usage|
-| :-------- | :----- | :---- | :---- | :---- | :---- |
+| :-------- |:----- | :---- | :---- | :---- | :---- | :---- |
 |**Domain** \n \n Overage charges apply|1 included \n \n More available for monthly cost per domain|1 included  \n \n More available for monthly cost per domain|2 included  \n \n More available for monthly cost per domain|2 included  \n More available for monthly cost per domain|Up to 1000, but recommend no more than 20|
-|**Included protected traffic**  \n (does not include traffic that is related to an attack)  \n \n Overage charges apply|0.5 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
+|**Included protected traffic**  \n (does not include traffic that is related to an attack)  \n \n Overage charges apply|1 TB |5 TB|5 TB|5 TB |Not applicable  \n (usage based)|
 |**Included requests and queries**  \n \n Overage charges apply|5 M requests \n 1 M queries|150 M requests and queries combined|150 M requests and queries combined|150 M requests and queries combined|Not applicable  \n (usage based)|
 |**DNS**|250 records|3500 records|3500 records|3500 records|3500 records|
 |**Global load balancers**|* 3 pools \n * 3 origin servers \n * 5 Health checks \n * 60s health checks \n * Geo Routing \n * Health checks from single region \n * 60s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers \n (more origins available for charge) \n * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers |* 20 pools  \n * 20 origin servers  \n (more origins available for charge) \n  * 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|* 20 pools  \n * 20 origin servers  \n (more origins available for charge)  \n * 100 health checks  \n * 5s health checks  \n * Smart Routing  \n * Health checks from multiple regions  \n * 10s minimum TTL for nonproxied global load balancers|* Up to 100 pools \n * 100 origin servers \n * Up to 100 health checks \n * 5s health checks \n * Smart Routing \n * Health checks from multiple regions \n * 10s minimum TTL for nonproxied global load balancers|
@@ -54,6 +54,8 @@ The numbers in these tables are quotas or resource limits for the associated fea
 
 
 [^fn1]: One legacy custom certificate without Server Name Indication (non-SNI) is supported across all plans.
+
+
 
 ## Additional details
 {: #additional-details}

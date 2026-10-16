@@ -13,7 +13,7 @@ This emergency release adds a new managed rule to block active exploitation of a
 
 **Key Findings**
 
-  * Generic Rules - Remote Code Execution: Attackers can execute arbitrary system commands with web server privileges by sending malicious input containing invalid path sequences during request processing.
+* Generic Rules - Remote Code Execution: Attackers can execute arbitrary system commands with web server privileges by sending malicious input containing invalid path sequences during request processing.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
@@ -26,9 +26,9 @@ This release introduces new detections to mitigate recent vulnerabilities affect
 
 **Key Findings**
 
-  * CVE-2026-102989: A reflected Cross-Site Scripting (XSS) vulnerability affecting TanStack. Unauthenticated attackers can exploit this flaw to inject malicious scripts into web pages viewed by other users, potentially leading to session hijacking or unauthorized actions.
+* CVE-2026-102989: A reflected Cross-Site Scripting (XSS) vulnerability affecting TanStack. Unauthenticated attackers can exploit this flaw to inject malicious scripts into web pages viewed by other users, potentially leading to session hijacking or unauthorized actions.
 
-  * CVE-2026-21589: An arbitrary file access vulnerability affecting Atlassian products. Threat actors can exploit this flaw to read unauthorized files on the target system, risking the exposure of sensitive configuration data.
+* CVE-2026-21589: An arbitrary file access vulnerability affecting Atlassian products. Threat actors can exploit this flaw to read unauthorized files on the target system, risking the exposure of sensitive configuration data.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
@@ -83,7 +83,7 @@ This release introduces a new detection to mitigate a heap-based buffer overflow
 
 **Key Findings**
 
-  * CVE-2026-94127: A heap-based buffer overflow vulnerability in F5 BIG-IP. Attackers can exploit this flaw to execute arbitrary code on the affected system.
+* CVE-2026-94127: A heap-based buffer overflow vulnerability in F5 BIG-IP. Attackers can exploit this flaw to execute arbitrary code on the affected system.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
@@ -103,7 +103,7 @@ This update provides immediate defense against a vulnerability affecting Citrix 
 
 **Key Findings**
 
-  * CVE-2026-88771: An improper input validation vulnerability affecting Citrix NetScaler ADC and Gateway allows an unauthenticated attacker to execute arbitrary commands.
+* CVE-2026-88771: An improper input validation vulnerability affecting Citrix NetScaler ADC and Gateway allows an unauthenticated attacker to execute arbitrary commands.
 
 **Impact**
 
@@ -139,9 +139,9 @@ This update provides immediate defense against critical vulnerabilities affectin
 
 **Key Findings**
 
-  * CVE-2026-87902: A high-severity Path Traversal and Local File Inclusion (LFI) vulnerability affecting WordPress. Unauthenticated attackers can exploit this flaw to read arbitrary files on the host server, potentially exposing sensitive configuration data or system files.
+* CVE-2026-87902: A high-severity Path Traversal and Local File Inclusion (LFI) vulnerability affecting WordPress. Unauthenticated attackers can exploit this flaw to read arbitrary files on the host server, potentially exposing sensitive configuration data or system files.
 
-  * CVE-2026-42018 & CVE-2026-82329: Critical authentication bypass vulnerabilities affecting JFrog Artifactory. Successful exploitation allows unauthenticated attackers to bypass security controls and achieve unauthorized access to the Artifactory instance.
+* CVE-2026-42018 & CVE-2026-82329: Critical authentication bypass vulnerabilities affecting JFrog Artifactory. Successful exploitation allows unauthenticated attackers to bypass security controls and achieve unauthorized access to the Artifactory instance.
 
 **Impact**
 
@@ -182,7 +182,7 @@ This update provides immediate defense against a high-severity, actively exploit
 
 **Key Findings**
 
-  * Adobe Commerce and Magento RCE (CVE-2026-75650 / "StyleSmuggler"): Unauthenticated Remote Code Execution (RCE) vulnerability caused by improper neutralization of special elements in the platform's template engine. Unauthenticated attackers can inject arbitrary PHP payloads through style properties to execute system commands and deploy persistent malware.
+* Adobe Commerce and Magento RCE (CVE-2026-75650 / "StyleSmuggler"): Unauthenticated Remote Code Execution (RCE) vulnerability caused by improper neutralization of special elements in the platform's template engine. Unauthenticated attackers can inject arbitrary PHP payloads through style properties to execute system commands and deploy persistent malware.
 
 **Impact**
 
@@ -222,7 +222,7 @@ This release introduces a new threat detection to enhance protection against SQL
 
 **Key Findings**
 
-  * SQLi Protection: Improved coverage for SQL injection patterns involving WHERE comparisons combined with WITH clauses.
+* SQLi Protection: Improved coverage for SQL injection patterns involving WHERE comparisons combined with WITH clauses.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
@@ -235,9 +235,9 @@ This emergency release updates an existing Next.js remote code execution rule to
 
 **Key Findings**
 
-  * CVE-2026-75604 affects Windows-hosted Next.js applications using both the Pages Router and App Router without Cache Components and can lead to unauthenticated remote code execution.
+* CVE-2026-75604 affects Windows-hosted Next.js applications using both the Pages Router and App Router without Cache Components and can lead to unauthenticated remote code execution.
 
-  * GHSA-2xp9-vwfh-vxw4 affects the Next.js Image Optimizer and can lead to unauthenticated remote code execution when it optimizes an attacker-controlled AVIF image.
+* GHSA-2xp9-vwfh-vxw4 affects the Next.js Image Optimizer and can lead to unauthenticated remote code execution when it optimizes an attacker-controlled AVIF image.
 
 
 **Impact**
@@ -257,11 +257,11 @@ This release moves four new detections from Log to Block, merges the XSS, HTML I
 
 **Key Findings**
 
-  * Four new detections move from Log to Block: HTTP/2 Request Smuggling - Request Body Anomaly and XSS - JavaScript Event Handler Coercion across Headers, Body, and URI.
+* Four new detections move from Log to Block: HTTP/2 Request Smuggling - Request Body Anomaly and XSS - JavaScript Event Handler Coercion across Headers, Body, and URI.
 
-  * The XSS, HTML Injection - Script Tag - Beta rule is merged into the original rule.
+* The XSS, HTML Injection - Script Tag - Beta rule is merged into the original rule.
 
-  * A Generic Rules - Remote Code Execution detection is added in Block mode.
+* A Generic Rules - Remote Code Execution detection is added in Block mode.
 
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -291,7 +291,7 @@ This release updates WordPress remote code execution rule metadata in the CIS Ma
 
 **Key Findings**
 
-  * CVE-2026-65640: A remote code execution vulnerability affecting WordPress core and plugin components. Remote, unauthenticated attackers can execute arbitrary system commands to gain unauthorized access or establish backdoors on host servers.
+* CVE-2026-65640: A remote code execution vulnerability affecting WordPress core and plugin components. Remote, unauthenticated attackers can execute arbitrary system commands to gain unauthorized access or establish backdoors on host servers.
 
 **Impact**
 
@@ -308,8 +308,8 @@ This release introduces new protection for a remote code execution vulnerability
 
 **Key Findings**
 
-  * A new detection provides protection against vBulletin CVE-2026-61511.
-  * Two existing detections have been improved to strengthen coverage.
+* A new detection provides protection against vBulletin CVE-2026-61511.
+* Two existing detections have been improved to strengthen coverage.
 
 **Impact**
 
@@ -327,7 +327,7 @@ This release updates WordPress XSS rule metadata in the CIS Managed Ruleset and 
 
 **Key Findings**
 
-  * CVE-2026-64638: A pre-authentication reflected cross-site scripting vulnerability affecting the WordPress login screen. Exploitation requires social engineering and explicit interaction by the target user. Under additional conditions, it may be escalated to remote code execution.
+* CVE-2026-64638: A pre-authentication reflected cross-site scripting vulnerability affecting the WordPress login screen. Exploitation requires social engineering and explicit interaction by the target user. Under additional conditions, it may be escalated to remote code execution.
 
 **Impact**
 
@@ -346,9 +346,9 @@ This release introduces new rules and updates Microsoft SharePoint RCE alongside
 
 **Key Findings**
 
-  * CVE-2026-50522: An insecure deserialization vulnerability in Microsoft SharePoint Server. This may allow an unauthenticated attacker to execute arbitrary code using crafted requests.
-  * CVE-2026-66066: An improper input processing vulnerability in Ruby on Rails Active Storage image variant transformations. This may allow an unauthenticated attacker to perform arbitrary file reads and achieve Remote Code Execution (RCE) using maliciously crafted payload requests.
-  * Generic Cloud Protections: Added improved detection logic targeting Server-Side Request Forgery (SSRF) in cloud-hosted applications.
+* CVE-2026-50522: An insecure deserialization vulnerability in Microsoft SharePoint Server. This may allow an unauthenticated attacker to execute arbitrary code using crafted requests.
+* CVE-2026-66066: An improper input processing vulnerability in Ruby on Rails Active Storage image variant transformations. This may allow an unauthenticated attacker to perform arbitrary file reads and achieve Remote Code Execution (RCE) using maliciously crafted payload requests.
+* Generic Cloud Protections: Added improved detection logic targeting Server-Side Request Forgery (SSRF) in cloud-hosted applications.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
@@ -368,11 +368,11 @@ This release introduces new rules and updates existing threat signatures to prov
 
 **Key Findings**
 
-  * Nuxt Server Island - RCE(GHSA-9473-5f9j-94wq): An unauthenticated vulnerability in Nuxt Server Islands where remote attackers can supply arbitrary component names or props to endpoints. Manipulating these parameters allows unauthenticated component Remote Code Execution (RCE) on the server.
+* Nuxt Server Island - RCE(GHSA-9473-5f9j-94wq): An unauthenticated vulnerability in Nuxt Server Islands where remote attackers can supply arbitrary component names or props to endpoints. Manipulating these parameters allows unauthenticated component Remote Code Execution (RCE) on the server.
 
-  * Alibaba Fastjson JSONType Remote Code Execution: A unauthenticated remote code execution vulnerability in Alibaba Fastjson (≤ 1.2.83) during JSON deserialization. Under default configurations, attackers can execute arbitrary system commands, bypassing traditional classpath and gadget-based defenses.
+* Alibaba Fastjson JSONType Remote Code Execution: A unauthenticated remote code execution vulnerability in Alibaba Fastjson (≤ 1.2.83) during JSON deserialization. Under default configurations, attackers can execute arbitrary system commands, bypassing traditional classpath and gadget-based defenses.
 
-  * Generic Protections (SSRF & Command Injection): Added improved detection logic targeting Server-Side Request Forgery (SSRF) in cloud-hosted applications, alongside new rules targeting obfuscated command injection patterns across request parameters.
+* Generic Protections (SSRF & Command Injection): Added improved detection logic targeting Server-Side Request Forgery (SSRF) in cloud-hosted applications, alongside new rules targeting obfuscated command injection patterns across request parameters.
 
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
