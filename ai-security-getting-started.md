@@ -27,7 +27,7 @@ AI security for apps is available only on CIS Enterprise plans. Contact your IBM
 ## Before you begin
 {: #ai-security-gs-prereqs}
 
-- You must have an Enterprise CIS instance with WAF enabled.
+- You must have a CIS Enterprise instance with WAF enabled.
 - You must have an LLM-powered endpoint that is proxied through CIS.
 - You must have Manager or Administrator access to the CIS instance.
 
