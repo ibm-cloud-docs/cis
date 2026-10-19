@@ -50,10 +50,8 @@ The numbers in these tables are quotas or resource limits for the associated fea
 |**Alerts**|No|Yes|Yes|Yes|Yes|
 |**Rate limiting**|No|No|Advanced|Advanced|Default|
 |**Bot management**|No|No|No|Yes|No|
-
 |**Endpoint Management** [Beta]{: tag-cyan}|No|Yes|Yes|Yes|Yes|
 |**AI Security for Apps** [^fn2] [Beta]{: tag-cyan}|No|Yes|Yes|Yes|Yes|
-
 {: caption="CIS plan comparison" caption-side="bottom"}
 
 
