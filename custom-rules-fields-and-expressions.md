@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-19"
 
 subcollection: cis
 
@@ -134,7 +134,8 @@ The following table lists countries in the EU from geolocation data:
 | `cf.bot_management.score` | Number | This field represents the likelihood that a request originates from a bot by using a score from 1–99. A low score indicates that the request comes from a bot or an automated agent. A high score indicates that a human issued the request. To use this field, a CIS Enterprise plan is required with [Bot management](/docs/cis?topic=cis-about-bot-mgmt) enabled. |
 | `cf.bot_management.static_resource` | Number | Indicates whether static resources should be included when you create a rule by using `cf.bot_management.score`. To use this field, a CIS Enterprise plan is required with [Bot management](/docs/cis?topic=cis-about-bot-mgmt) enabled.|
 | `cf.verified_bot_category` | String | This field provides the type and purpose of a verified bot. For more information, see [Verified bot categories](/docs/cis?topic=cis-bot-management-fields). |
-{: caption="Available Cloufare bot management fields" caption side="bottom"}
+{: caption="Available Cloudflare bot management fields" caption-side="bottom"}
+
 
 ## Functions
 {: #custom-rule-functions}
