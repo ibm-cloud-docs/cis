@@ -21,22 +21,6 @@ In this change log, you can learn about the latest changes, improvements, and up
 {: shortdesc}
 
 
-## 19 October 2026
-{: #cis-october-1926}
-
-[Beta]{: tag-cyan} Support for AI Security for Apps and Endpoint Management
-:   The CIS API now supports Endpoint Management (all plans) and AI Security for Apps and its mitigation features (Enterprise plans only), which are available for evaluation and testing.
-
-    To enable or disable AI security on a zone, you can [get](/docs/apis/cis#get-ai-security-for-apps-settings) and [update](/docs/apis/cis#update-ai-security-for-apps-settings) the AI Security for Apps setting.
-
-    To work with discovered endpoints, you can [get the API Gateway discovery](/docs/apis/cis#get-api-gateway-discovery) schema, [list discovered operations](/docs/apis/cis#list-api-gateway-discovery-operations), and [bulk update discovered operation states](/docs/apis/cis#bulk-update-discovered-operation-states). You can also [get API Gateway schemas](/docs/apis/cis#get-api-gateway-schemas) for saved operations.
-
-    To manage endpoint operations, you can [list](/docs/apis/cis#list-api-gateway-operations), [retrieve](/docs/apis/cis#retrieve-information-about-an-operation), [create a single operation](/docs/apis/cis#create-a-single-api-gateway-operation), [create operations in bulk](/docs/apis/cis#create-api-gateway-operations-in-bulk), and [delete](/docs/apis/cis#delete-an-operation) operations. You can also [bulk-delete all operations](/docs/apis/cis#bulk-delete-all-api-gateway-operations-for-a-zone) for a zone.
-
-    To manage operation labels, you can [attach](/docs/apis/cis#attach-labels-to-a-single-operation), [replace](/docs/apis/cis#replace-labels-on-a-single-operation), or [remove](/docs/apis/cis#remove-labels-from-a-single-operation) labels on a single operation. In bulk, you can [add or remove](/docs/apis/cis#add-or-remove-labels-from-api-gateway-operations), [replace](/docs/apis/cis#replace-labels-on-api-gateway-operations-in-bulk), or [remove](/docs/apis/cis#remove-labels-from-api-gateway-operations-in-bulk) labels.
-
-    For more information, see [About AI security for apps](/docs/cis?topic=cis-ai-security-overview) and [About endpoint management](/docs/cis?topic=cis-endpoint-management-overview).
-
 
 ## 12 August 2026
 {: #cis-august-1226}

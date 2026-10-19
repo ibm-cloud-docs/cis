@@ -22,13 +22,6 @@ In this change log, you can learn about the latest changes, improvements, and up
 {: shortdesc}
 
 
-## Version 1.22.0
-{: #cli-1220}
-
-Version 1.22.0 of the CLI was released on 19 October 2026.
-:   [Beta]{: tag-cyan} Added the [`ai-security`](/docs/cis?topic=cis-cis-cli#ai-security-cli) commands to get and update AI Security for Apps settings for a zone.
-:   [Beta]{: tag-cyan} Added the [`api-gateway`](/docs/cis?topic=cis-cis-cli#api-gateway-cli) commands to manage endpoint management for a zone. You can use these commands to view discovered endpoints and update their states, get API Gateway schemas, list, create, and delete operations individually or in bulk, and add, replace, or remove operation labels individually or in bulk.
-
 
 ## Version 1.21.0
 {: #cli-1210}
