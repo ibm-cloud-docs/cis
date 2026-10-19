@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-19"
 
 keywords: health checks, Free Trial plan, dedicated certificate, known issues
 
@@ -68,7 +68,7 @@ The following information describes some limitations when working with {{site.da
     {: codeblock}
 
     These records must be converted from HEX to string or removed and added manually before importing.
-  
+
 ## Edge functions
 {: #known-limitations-edge-functions}
 
@@ -98,9 +98,9 @@ Before changing your CIS instance from an Enterprise plan to a Standard plan, yo
 
 ## Protocols
 {: #limitations-protocols}
- 
+
 The following limitations apply to supported protocols:
 
 * HTTPS: Currently, HTTPS applications do not support HTTP/3.
 * UDP: Currently, CIS doesn't support UDP packet fragmentation. Fragmented UDP packets are dropped at the CIS edge.
-* Minecraft: Only Minecraft Java Edition is supported; Minecraft Bedrock Edition isn't supported. 
+* Minecraft: Only Minecraft Java Edition is supported; Minecraft Bedrock Edition isn't supported.
