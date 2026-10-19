@@ -396,31 +396,6 @@ The following table lists the actions that are related to alert notifications an
 {: caption="Actions that generate alerting events" caption-side="bottom"}
 
 
-## Events for AI security and API gateway
-{: #at_actions_ai-security-api-gateway}
-
-[Beta]{: tag-cyan}
-
-The following table lists the actions that are related to AI security and API gateway and generate an event.
-
-CIS uses coarse IAM actions for authorization and fine-grained AT events for auditing. These two identifiers serve different purposes and are not identical by design. For a full cross-reference, see [IAM and Activity Tracker actions by API](/docs/cis?topic=cis-at_iam_CIS).
-{: note}
-
-|Action|Description|
-|-|-|
-|`internet-svcs.ai_security.settings.read`|Get AI security for apps settings.|
-|`internet-svcs.ai_security.settings.update`|Update AI security for apps settings.|
-|`internet-svcs.api_gateway_discovery.read`|Get the API Gateway discovery summary.|
-|`internet-svcs.api_gateway_discovery_operations.read`|List discovered API Gateway operations.|
-|`internet-svcs.api_gateway_discovery_operations.update`|Update one or more discovered API Gateway operations.|
-|`internet-svcs.api_gateway_schemas.read`|Get API Gateway schemas.|
-|`internet-svcs.api_gateway_operations.create`|Create API Gateway operations in bulk.|
-|`internet-svcs.api_gateway_operation_item.create`|Create a single API Gateway operation.|
-|`internet-svcs.api_gateway_operations_labels.update`|Add or remove labels on API Gateway operations.|
-|`internet-svcs.api_gateway_operation.read`|Get a single API Gateway operation.|
-|`internet-svcs.api_gateway_operation.delete`|Delete an API Gateway operation.|
-{: caption="Actions that generate AI security and API gateway events" caption-side="bottom"}
-
 
 ## Additional information
 {: #info}

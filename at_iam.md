@@ -481,29 +481,3 @@ List of IAM actions and Activity Tracker actions by API method.
 | Get the ciphers settings | `get_ciphers` | `GET /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.read` | `internet-svcs.ciphers-setting.read` |
 | Update the ciphers settings | `update_ciphers` | `PUT /v1/{crn}/zones/{domain_id}/setting/ciphers` | `internet-svcs.security.update` | `internet-svcs.ciphers-setting.update` |
 {: caption="Domain settings" caption-side="bottom"}
-
-
-
-## AI Security and API Gateway
-{: #at_iam_CIS_ai-security-api-gateway}
-
-[Beta]{: tag-cyan}
-
-CIS uses **coarse IAM actions** (for example, `internet-svcs.security.read`) for authorization and **fine-grained Activity Tracker (AT) events** for auditing. The IAM action controls whether a request is permitted; the AT event records exactly which operation was performed.
-{: note}
-
-| Action | Operation ID | Method | IAM ACTION | AT ACTION |
-|--------|-------------|--------|------------|-----------|
-| Get AI security settings | `get_ai_security_settings` | `GET /v1/{crn}/zones/{domain_id}/ai_security/settings` | `internet-svcs.security.read` | `internet-svcs.ai_security.settings.read` |
-| Update AI security settings | `replace_zone_ai_security_settings` | `PUT /v1/{crn}/zones/{domain_id}/ai_security/settings` | `internet-svcs.security.update` | `internet-svcs.ai_security.settings.update` |
-| Get API Gateway discovery summary | `get_api_gateway_discovery` | `GET /v1/{crn}/zones/{domain_id}/api_gateway/discovery` | `internet-svcs.security.read` | `internet-svcs.api_gateway_discovery.read` |
-| List discovered API Gateway operations | `list_api_gateway_discovery_operations` | `GET /v1/{crn}/zones/{domain_id}/api_gateway/discovery/operations` | `internet-svcs.security.read` | `internet-svcs.api_gateway_discovery_operations.read` |
-| Bulk-update discovered API Gateway operations | `update_zone_api_gateway_discovery_operation` | `PATCH /v1/{crn}/zones/{domain_id}/api_gateway/discovery/operations` | `internet-svcs.security.update` | `internet-svcs.api_gateway_discovery_operations.update` |
-| Update a single discovered API Gateway operation | `update_zone_api_gateway_discovery_operation_single` | `PATCH /v1/{crn}/zones/{domain_id}/api_gateway/discovery/operations/{operation_id}` | `internet-svcs.security.update` | `internet-svcs.api_gateway_discovery_operations.update` |
-| Get API Gateway schemas | `get_api_gateway_schemas` | `GET /v1/{crn}/zones/{domain_id}/api_gateway/schemas` | `internet-svcs.security.read` | `internet-svcs.api_gateway_schemas.read` |
-| Create API Gateway operations in bulk | `create_zone_api_gateway_operation` | `POST /v1/{crn}/zones/{domain_id}/api_gateway/operations` | `internet-svcs.security.update` | `internet-svcs.api_gateway_operations.create` |
-| Create a single API Gateway operation | `create_api_gateway_operation_item` | `POST /v1/{crn}/zones/{domain_id}/api_gateway/operations/item` | `internet-svcs.security.update` | `internet-svcs.api_gateway_operation_item.create` |
-| Add or remove labels on API Gateway operations | `update_api_gateway_operation_labels` | `POST /v1/{crn}/zones/{domain_id}/api_gateway/operations/labels` | `internet-svcs.security.update` | `internet-svcs.api_gateway_operations_labels.update` |
-| Get a single API Gateway operation | `get_zone_api_gateway_operation` | `GET /v1/{crn}/zones/{domain_id}/api_gateway/operations/{operation_id}` | `internet-svcs.security.read` | `internet-svcs.api_gateway_operation.read` |
-| Delete an API Gateway operation | `delete_zone_api_gateway_operation` | `DELETE /v1/{crn}/zones/{domain_id}/api_gateway/operations/{operation_id}` | `internet-svcs.security.update` | `internet-svcs.api_gateway_operation.delete` |
-{: caption="AI Security and API Gateway" caption-side="bottom"}
