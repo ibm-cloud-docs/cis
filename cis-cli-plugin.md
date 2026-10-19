@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-10-19"
 
 keywords:
 
@@ -11172,6 +11172,863 @@ Delete custom rule `e9fad806880c4c42bd7ebeec8dcba4e6` for domain `9343630b9bd5c6
 
 ```sh
 ibmcloud cis custom-waf rule-delete DNS_DOMAIN_ID RULE_ID
+```
+{: pre}
+
+
+
+## AI security (Beta)
+{: #ai-security-cli}
+
+Manage AI Security for Apps settings on a zone by using the following `ai-security` commands. AI Security for Apps must be enabled before any endpoint scanning can occur.
+
+### `ibmcloud cis ai-security settings`
+{: #ai-security-settings-get-cmd}
+
+[Beta]{: tag-cyan}
+
+Get the AI Security for Apps enabled or disabled setting for a zone.
+
+```sh
+ibmcloud cis ai-security settings DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #ai-security-settings-get-cmd-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #ai-security-settings-get-cmd-examples}
+
+Get the AI Security for Apps setting for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis ai-security settings DNS_DOMAIN_ID -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis ai-security settings-update`
+{: #ai-security-settings-update-cmd}
+
+[Beta]{: tag-cyan}
+
+Enable or disable AI Security for Apps on a zone.
+
+```sh
+ibmcloud cis ai-security settings-update DNS_DOMAIN_ID (--enabled true|false) [-i, --instance INSTANCE] [--output FORMAT]
+
+ibmcloud cis ai-security settings-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #ai-security-settings-update-cmd-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--enabled`
+:   Set to `true` to enable AI Security for Apps on the zone, or `false` to disable it.
+
+`--json`
+:   The JSON file or JSON string that is used to update AI Security for Apps settings. The required field is `enabled`.
+
+   Sample JSON data:
+   ```json
+   {
+     "enabled": true
+   }
+   ```
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #ai-security-settings-update-cmd-examples}
+
+Enable AI Security for Apps for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis ai-security settings-update DNS_DOMAIN_ID --enabled true -i cis-demo
+```
+{: pre}
+
+## API gateway (Beta)
+{: #api-gateway-cli}
+
+Manage API Gateway discovery, endpoint operations, schemas, and labels by using the following `api-gateway` commands. Applying the `cf-llm` label to a saved operation activates AI Security for Apps scanning on that endpoint.
+
+### `ibmcloud cis api-gateway discovery`
+{: #api-gateway-discovery}
+
+[Beta]{: tag-cyan}
+
+Retrieve all API operations automatically discovered by CIS traffic analysis for a zone, rendered as an OpenAPI schema document.
+
+```sh
+ibmcloud cis api-gateway discovery DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-discovery-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-discovery-examples}
+
+Retrieve discovered API operations as an OpenAPI schema for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway discovery DNS_DOMAIN_ID -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway discovery-operations`
+{: #api-gateway-discovery-operations}
+
+[Beta]{: tag-cyan}
+
+List the most up-to-date discovered operations for a zone, with optional filters.
+
+```sh
+ibmcloud cis api-gateway discovery-operations DNS_DOMAIN_ID [--diff true|false] [--direction asc|desc] [--endpoint ENDPOINT] [--host HOST] [--method METHOD] [--order ORDER_BY] [--origin ML|SessionIdentifier|LabelDiscovery] [--state review|saved|ignored] [--page PAGE_NUMBER] [--per-page PAGE_SIZE] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-discovery-operations-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--diff`
+:   When `true`, return only operations not yet saved to Endpoint Management. Valid values: `true`, `false`.
+
+`--direction`
+:   Sort direction. Valid values are `asc` and `desc`.
+
+`--endpoint`
+:   Filter results to only include endpoints containing this pattern.
+
+`--host`
+:   Filter results to only include the specified hostname. This option is repeatable.
+
+`--method`
+:   Filter results to only include the specified HTTP method. This option is repeatable.
+
+`--order`
+:   Field to order results by. Valid values are `host`, `method`, `endpoint`, `traffic_stats.requests`, and `traffic_stats.last_updated`.
+
+`--origin`
+:   Filter by discovery engine. Valid values are `ML`, `SessionIdentifier`, and `LabelDiscovery`.
+
+`--state`
+:   Filter results by state. Valid values are `review`, `saved`, and `ignored`.
+
+`--page`
+:   Page number of paginated results. Minimum value is `1`.
+
+`--per-page`
+:   Maximum number of results per page. Minimum value is `5`, maximum is `100`.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-discovery-operations-examples}
+
+List discovered operations in `review` state for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway discovery-operations DNS_DOMAIN_ID --state review -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway discovery-operations-update`
+{: #api-gateway-discovery-operations-update}
+
+[Beta]{: tag-cyan}
+
+Bulk update the state of one or more discovered operations. Use to mark operations as `ignored` or requeue them back to `review`.
+
+```sh
+ibmcloud cis api-gateway discovery-operations-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-discovery-operations-update-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--json`
+:   The JSON file or JSON string that describes the state updates. The format is a map of operation UUID to new state object.
+
+   Sample JSON data:
+   ```json
+   {
+     "f174e90a-fafe-4643-bbbc-4a0ed4fc8415": { "state": "ignored" }
+   }
+   ```
+
+   Valid state values are `ignored` and `review`.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-discovery-operations-update-examples}
+
+Mark a discovered operation as ignored for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway discovery-operations-update DNS_DOMAIN_ID --json '{"f174e90a-fafe-4643-bbbc-4a0ed4fc8415": {"state": "ignored"}}' -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway schemas`
+{: #api-gateway-schemas}
+
+[Beta]{: tag-cyan}
+
+Retrieve OpenAPI schemas for operations already saved to API Gateway Endpoint Management.
+
+```sh
+ibmcloud cis api-gateway schemas DNS_DOMAIN_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-schemas-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-schemas-examples}
+
+Retrieve API Gateway schemas for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway schemas DNS_DOMAIN_ID -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operations`
+{: #api-gateway-operations}
+
+[Beta]{: tag-cyan}
+
+List all API Gateway operations saved to Endpoint Management for a zone.
+
+```sh
+ibmcloud cis api-gateway operations DNS_DOMAIN_ID [--host HOST] [--method METHOD] [--endpoint ENDPOINT] [--labels LABEL] [--direction asc|desc] [--order ORDER_BY] [--page PAGE_NUMBER] [--per-page PAGE_SIZE] [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operations-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--host`
+:   Filter results to only include the specified hostname. This option is repeatable.
+
+`--method`
+:   Filter results to only include the specified HTTP method. This option is repeatable.
+
+`--endpoint`
+:   Filter results to only include endpoints containing this pattern.
+
+`--labels`
+:   Filter results to only include operations with these labels applied. This option is repeatable.
+
+`--direction`
+:   Sort direction. Valid values are `asc` and `desc`.
+
+`--order`
+:   Field to order results by. Valid values are `host`, `method`, `endpoint`, and `last_updated`.
+
+`--page`
+:   Page number of paginated results.
+
+`--per-page`
+:   Maximum number of results per page.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operations-examples}
+
+List all API Gateway operations for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operations DNS_DOMAIN_ID -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operation`
+{: #api-gateway-operation}
+
+[Beta]{: tag-cyan}
+
+Retrieve information about a single API Gateway operation.
+
+```sh
+ibmcloud cis api-gateway operation DNS_DOMAIN_ID OPERATION_ID [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operation-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`OPERATION_ID`
+:   The UUID of the API Gateway operation.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operation-examples}
+
+Retrieve information about operation `f174e90a-fafe-4643-bbbc-4a0ed4fc8415` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operation DNS_DOMAIN_ID f174e90a-fafe-4643-bbbc-4a0ed4fc8415 -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operation-create`
+{: #api-gateway-operation-create}
+
+[Beta]{: tag-cyan}
+
+Create a single API Gateway operation, saving it to Endpoint Management.
+
+```sh
+ibmcloud cis api-gateway operation-create DNS_DOMAIN_ID (--method METHOD --host HOST --endpoint ENDPOINT) [-i, --instance INSTANCE] [--output FORMAT]
+
+ibmcloud cis api-gateway operation-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operation-create-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--method`
+:   The HTTP method. Valid values are `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, and `OPTIONS`.
+
+`--host`
+:   The RFC3986-compliant hostname. Minimum length is `1`, maximum is `253`.
+
+`--endpoint`
+:   The path pattern. Must start with `/`.
+
+`--json`
+:   The JSON file or JSON string that describes the operation to create. The required fields are `method`, `host`, and `endpoint`.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operation-create-examples}
+
+Create a single operation for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operation-create DNS_DOMAIN_ID --method POST --host api.example.com --endpoint /v1/messages -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operation-delete`
+{: #api-gateway-operation-delete}
+
+[Beta]{: tag-cyan}
+
+Delete a single API Gateway operation from Endpoint Management.
+
+```sh
+ibmcloud cis api-gateway operation-delete DNS_DOMAIN_ID OPERATION_ID [-f, --force] [-i, --instance INSTANCE]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operation-delete-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`OPERATION_ID`
+:   The UUID of the API Gateway operation.
+
+`-f, --force`
+:   Attempt to delete the operation without prompting for confirmation.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+#### Examples
+{: #api-gateway-operation-delete-examples}
+
+Delete operation `f174e90a-fafe-4643-bbbc-4a0ed4fc8415` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operation-delete DNS_DOMAIN_ID f174e90a-fafe-4643-bbbc-4a0ed4fc8415 -f -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operation-labels-create`
+{: #api-gateway-operation-labels-create}
+
+[Beta]{: tag-cyan}
+
+Attach labels to a single API Gateway operation.
+
+```sh
+ibmcloud cis api-gateway operation-labels-create DNS_DOMAIN_ID OPERATION_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operation-labels-create-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`OPERATION_ID`
+:   The UUID of the API Gateway operation.
+
+`--json`
+:   The JSON file or JSON string that specifies labels to attach. The format is a map of label type to array of label strings.
+
+   Sample JSON data:
+   ```json
+   {
+     "managed": ["cf-llm"],
+     "user": ["my-label"]
+   }
+   ```
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operation-labels-create-examples}
+
+Attach the `cf-llm` label to operation `f174e90a-fafe-4643-bbbc-4a0ed4fc8415` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operation-labels-create DNS_DOMAIN_ID f174e90a-fafe-4643-bbbc-4a0ed4fc8415 --json '{"managed": ["cf-llm"]}' -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operation-labels-replace`
+{: #api-gateway-operation-labels-replace}
+
+[Beta]{: tag-cyan}
+
+Replace all labels on a single API Gateway operation with the specified set.
+
+```sh
+ibmcloud cis api-gateway operation-labels-replace DNS_DOMAIN_ID OPERATION_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operation-labels-replace-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`OPERATION_ID`
+:   The UUID of the API Gateway operation.
+
+`--json`
+:   The JSON file or JSON string that specifies the replacement labels. The format is a map of label type to array of label strings.
+
+   Sample JSON data:
+   ```json
+   {
+     "managed": ["cf-llm"],
+     "user": []
+   }
+   ```
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operation-labels-replace-examples}
+
+Replace labels on operation `f174e90a-fafe-4643-bbbc-4a0ed4fc8415` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operation-labels-replace DNS_DOMAIN_ID f174e90a-fafe-4643-bbbc-4a0ed4fc8415 --json '{"managed": ["cf-llm"], "user": []}' -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operation-labels-delete`
+{: #api-gateway-operation-labels-delete}
+
+[Beta]{: tag-cyan}
+
+Remove labels from a single API Gateway operation.
+
+```sh
+ibmcloud cis api-gateway operation-labels-delete DNS_DOMAIN_ID OPERATION_ID [(--json @JSON_FILE | JSON_STRING)] [-f, --force] [-i, --instance INSTANCE]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operation-labels-delete-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`OPERATION_ID`
+:   The UUID of the API Gateway operation.
+
+`--json`
+:   Optional. The JSON file or JSON string that specifies which labels to remove. Omit to remove all labels from the operation.
+
+   Sample JSON data:
+   ```json
+   {
+     "managed": ["cf-llm"]
+   }
+   ```
+
+`-f, --force`
+:   Attempt to remove labels from the operation without prompting for confirmation.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+#### Examples
+{: #api-gateway-operation-labels-delete-examples}
+
+Remove the `cf-llm` label from operation `f174e90a-fafe-4643-bbbc-4a0ed4fc8415` for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operation-labels-delete DNS_DOMAIN_ID f174e90a-fafe-4643-bbbc-4a0ed4fc8415 --json '{"managed": ["cf-llm"]}' -f -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operations-create`
+{: #api-gateway-operations-create}
+
+[Beta]{: tag-cyan}
+
+Create API Gateway operations in bulk (1–100 at a time), saving them to Endpoint Management.
+
+```sh
+ibmcloud cis api-gateway operations-create DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operations-create-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--json`
+:   The JSON file or JSON string that describes the operations to create. The format is an array of operation objects.
+
+   - The required fields in each operation object are `method`, `host`, and `endpoint`.
+
+      - `method` : The HTTP method. Valid values are `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, and `OPTIONS`.
+      - `host` : The RFC3986-compliant hostname. Minimum length is `1`, maximum is `253`.
+      - `endpoint` : The path pattern. Must start with `/`.
+
+   Sample JSON data:
+   ```json
+   [
+     {
+       "method": "POST",
+       "host": "api.example.com",
+       "endpoint": "/v1/messages"
+     }
+   ]
+   ```
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operations-create-examples}
+
+Create bulk operations for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operations-create DNS_DOMAIN_ID --json '[{"method": "POST", "host": "api.example.com", "endpoint": "/v1/messages"}]' -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operations-delete-all`
+{: #api-gateway-operations-delete-all}
+
+[Beta]{: tag-cyan}
+
+Bulk-delete all API Gateway operations for a zone, or a specific subset by providing operation IDs.
+
+```sh
+ibmcloud cis api-gateway operations-delete-all DNS_DOMAIN_ID [(--json @JSON_FILE | JSON_STRING)] [-f, --force] [-i, --instance INSTANCE]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operations-delete-all-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--json`
+:   Optional. The JSON file or JSON string that specifies which operation IDs to delete. Omit to delete all operations for the zone.
+
+   Sample JSON data:
+   ```json
+   {
+     "operation_ids": ["f174e90a-fafe-4643-bbbc-4a0ed4fc8415"]
+   }
+   ```
+
+`-f, --force`
+:   Attempt to bulk-delete all API Gateway operations without prompting for confirmation.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+#### Examples
+{: #api-gateway-operations-delete-all-examples}
+
+Delete all API Gateway operations for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operations-delete-all DNS_DOMAIN_ID -f -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operations-labels-update`
+{: #api-gateway-operations-labels-update}
+
+[Beta]{: tag-cyan}
+
+Add or remove managed and user-defined labels from one or more saved API Gateway operations. Applying the `cf-llm` managed label enables AI Security for Apps to scan that endpoint's traffic.
+
+```sh
+ibmcloud cis api-gateway operations-labels-update DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operations-labels-update-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--json`
+:   The JSON file or JSON string that describes the label update. The required field is `selector.include.operation_ids`.
+
+   - The required fields in JSON data are under `selector`.
+
+      - `selector.include.operation_ids` : Array of operation UUIDs to label. Minimum one item required.
+
+   - The optional fields are `managed` and `user`.
+
+      - `managed.labels` : Managed label strings such as `cf-llm`.
+      - `user.labels` : User-defined label strings.
+
+   Sample JSON data:
+   ```json
+   {
+     "selector": {
+       "include": {
+         "operation_ids": ["f174e90a-fafe-4643-bbbc-4a0ed4fc8415"]
+       }
+     },
+     "managed": {
+       "labels": ["cf-llm"]
+     }
+   }
+   ```
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operations-labels-update-examples}
+
+Apply the `cf-llm` label to an operation for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operations-labels-update DNS_DOMAIN_ID --json '{"selector":{"include":{"operation_ids":["f174e90a-fafe-4643-bbbc-4a0ed4fc8415"]}},"managed":{"labels":["cf-llm"]}}' -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operations-labels-replace`
+{: #api-gateway-operations-labels-replace}
+
+[Beta]{: tag-cyan}
+
+Replace labels on API Gateway operations in bulk.
+
+```sh
+ibmcloud cis api-gateway operations-labels-replace DNS_DOMAIN_ID (--json @JSON_FILE | JSON_STRING) [-i, --instance INSTANCE] [--output FORMAT]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operations-labels-replace-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--json`
+:   The JSON file or JSON string that describes the label replacement. The format includes a `selector` field to target operations and label type fields (`managed`, `user`) with the replacement label arrays.
+
+   - `selector.include.operation_ids`: Array of operation UUIDs to target.
+   - `managed.labels`: Replacement managed label strings.
+   - `user.labels`: Replacement user-defined label strings.
+
+   Sample JSON data:
+   ```json
+   {
+     "managed": { "labels": ["cf-llm"] },
+     "user": { "labels": [] },
+     "selector": {
+       "include": {
+         "operation_ids": ["f174e90a-fafe-4643-bbbc-4a0ed4fc8415"]
+       }
+     }
+   }
+   ```
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+`--output`
+:   The output format. Currently, `json` is the only supported value.
+
+#### Examples
+{: #api-gateway-operations-labels-replace-examples}
+
+Replace labels on a set of operations for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operations-labels-replace DNS_DOMAIN_ID --json '{"managed":{"labels":["cf-llm"]},"user":{"labels":[]},"selector":{"include":{"operation_ids":["f174e90a-fafe-4643-bbbc-4a0ed4fc8415"]}}}' -i cis-demo
+```
+{: pre}
+
+### `ibmcloud cis api-gateway operations-labels-delete-all`
+{: #api-gateway-operations-labels-delete-all}
+
+[Beta]{: tag-cyan}
+
+Remove labels from API Gateway operations in bulk.
+
+```sh
+ibmcloud cis api-gateway operations-labels-delete-all DNS_DOMAIN_ID [(--json @JSON_FILE | JSON_STRING)] [-f, --force] [-i, --instance INSTANCE]
+```
+{: pre}
+
+#### Command options
+{: #api-gateway-operations-labels-delete-all-options}
+
+`DNS_DOMAIN_ID`
+:   The ID of the DNS domain.
+
+`--json`
+:   Optional. The JSON file or JSON string that specifies which operations and labels to target. Omit to remove all labels from all operations.
+
+   Sample JSON data:
+   ```json
+   {
+     "managed": { "labels": ["cf-llm"] },
+     "selector": {
+       "include": {
+         "operation_ids": ["f174e90a-fafe-4643-bbbc-4a0ed4fc8415"]
+       }
+     }
+   }
+   ```
+
+`-f, --force`
+:   Attempt to remove all labels from operations without prompting for confirmation.
+
+`-i, --instance`
+:   Instance name or ID. If instance name or ID is not set, the context instance that is specified by `ibmcloud cis instance-set INSTANCE` is used.
+
+#### Examples
+{: #api-gateway-operations-labels-delete-all-examples}
+
+Remove all labels from all operations for domain `31984fea73a15b45779fa0df4ef62f9b` under instance `cis-demo`.
+
+```sh
+ibmcloud cis api-gateway operations-labels-delete-all DNS_DOMAIN_ID -f -i cis-demo
 ```
 {: pre}
 
