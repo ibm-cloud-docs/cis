@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-10-13"
+lastupdated: "2026-10-19"
 
 keywords:
 
@@ -20,6 +20,15 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
+
+## 19 October 2026
+{: #cis-october-1926}
+{: release-note}
+
+AI Security for Apps and Endpoint Management
+:   [Beta]{: tag-cyan} Endpoint Management and AI Security for Apps are beta features available for evaluation and testing. Endpoint Management helps you discover and manage API endpoints. AI Security for Apps helps protect applications by scanning traffic for prompt injection, personally identifiable information (PII), and unsafe topics. To use AI Security for Apps, enable it on a zone and apply the `cf-llm` label to endpoint operations to identify traffic for scanning. Endpoint Management is available on all plans, while AI Security for Apps and its mitigation features are available on Enterprise plans only.
+
+    For more information, see [About AI Security for Apps](/docs/cis?topic=cis-ai-security-overview) and [About endpoint management](/docs/cis?topic=cis-endpoint-management-overview). To provide feedback or report issues, open a support case in the [IBM Cloud Support Center](/docs/support?topic=support-open-case&interface=ui). For IBM internal users, post in [#ibmcloud-cis](https://ibm.enterprise.slack.com/archives/C8XKQ9FPB).
 
 ## 25 August 2026
 {: #cis-august25-2026}

@@ -258,6 +258,21 @@ toc:
           - javascript-detections.md
           - bot-management-fields.md
       - topicgroup:
+          label: Working with AI Security for Apps (Beta)
+          topics:
+          - ai-security-overview.md
+          - ai-security-getting-started.md
+          - ai-security-settings.md
+          - ai-security-fields.md
+          - ai-security-examples.md
+      - topicgroup:
+          label: Working with Endpoint Management (Beta)
+          topics:
+          - endpoint-management-overview.md
+          - endpoint-management-labeling.md
+          - endpoint-management-discovery.md
+          - endpoint-management-creating.md
+      - topicgroup:
           label: Enhancing security
           topics:
           - iam.md

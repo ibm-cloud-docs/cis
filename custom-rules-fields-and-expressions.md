@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-08"
+lastupdated: "2026-10-19"
 
 subcollection: cis
 
@@ -134,7 +134,29 @@ The following table lists countries in the EU from geolocation data:
 | `cf.bot_management.score` | Number | This field represents the likelihood that a request originates from a bot by using a score from 1–99. A low score indicates that the request comes from a bot or an automated agent. A high score indicates that a human issued the request. To use this field, a CIS Enterprise plan is required with [Bot management](/docs/cis?topic=cis-about-bot-mgmt) enabled. |
 | `cf.bot_management.static_resource` | Number | Indicates whether static resources should be included when you create a rule by using `cf.bot_management.score`. To use this field, a CIS Enterprise plan is required with [Bot management](/docs/cis?topic=cis-about-bot-mgmt) enabled.|
 | `cf.verified_bot_category` | String | This field provides the type and purpose of a verified bot. For more information, see [Verified bot categories](/docs/cis?topic=cis-bot-management-fields). |
-{: caption="Available Cloufare bot management fields" caption side="bottom"}
+{: caption="Available Cloudflare bot management fields" caption-side="bottom"}
+
+
+### AI Security for Apps fields
+{: #ai-security-for-apps-fields}
+
+AI Security for Apps is a paid add-on available on eligible CIS Enterprise plans that protects LLM-powered applications from prompt injection, PII exposure, and unsafe topics. When AI Security for Apps is enabled and an endpoint is labeled `cf-llm`, the following fields are populated and available in WAF custom rule expressions.
+
+For the full field reference including PII categories and unsafe topic categories, see [AI Security for Apps fields](/docs/cis?topic=cis-ai-security-fields).
+
+| Field name | Type | Notes |
+|---|---|---|
+| `cf.llm.prompt.detected` | Boolean | Indicates whether {{site.data.keyword.cis_short}} detected an LLM prompt in the incoming request. |
+| `cf.llm.prompt.pii_detected` | Boolean | Indicates whether any personally identifiable information (PII) was detected in the LLM prompt. To use this field, a CIS Enterprise plan is required with AI Security for Apps enabled. |
+| `cf.llm.prompt.pii_categories` | Array&lt;String&gt; | Array of PII category strings found in the LLM prompt, such as `CREDIT_CARD`, `US_SSN`, and `EMAIL_ADDRESS`. To use this field, a CIS Enterprise plan is required with AI Security for Apps enabled. |
+| `cf.llm.prompt.unsafe_topic_detected` | Boolean | Indicates whether the request includes an unsafe topic category in the LLM prompt. To use this field, a CIS Enterprise plan is required with AI Security for Apps enabled. |
+| `cf.llm.prompt.unsafe_topic_categories` | Array&lt;String&gt; | Array of unsafe topic category strings detected in the LLM prompt, such as `S1` (violent crimes) and `S10` (hate speech). To use this field, a CIS Enterprise plan is required with AI Security for Apps enabled. |
+| `cf.llm.prompt.injection_score` | Number | A score from 1–99 that represents the likelihood that the LLM prompt is a prompt injection attack. Lower scores indicate higher risk. To use this field, a CIS Enterprise plan is required with AI Security for Apps enabled. |
+| `cf.llm.prompt.token_count` | Number | An estimated token count for the LLM prompt in the request. To use this field, a CIS Enterprise plan is required with AI Security for Apps enabled. |
+| `cf.llm.prompt.custom_topic_categories` | Map&lt;Number&gt; | A map of custom topic labels to relevance scores (1–99). Lower scores indicate the prompt is more relevant to that topic. Populated only when custom topics are configured. To use this field, a CIS Enterprise plan is required with AI Security for Apps enabled. |
+{: caption="Available AI Security for Apps fields" caption-side="bottom"}
+
+
 
 ## Functions
 {: #custom-rule-functions}

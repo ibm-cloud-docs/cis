@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-10-16"
+lastupdated: "2026-10-19"
 
 keywords:
 
@@ -50,11 +50,17 @@ The numbers in these tables are quotas or resource limits for the associated fea
 |**Alerts**|No|Yes|Yes|Yes|Yes|
 |**Rate limiting**|No|No|Advanced|Advanced|Default|
 |**Bot management**|No|No|No|Yes|No|
+
+|**Endpoint Management** [Beta]{: tag-cyan}|No|Yes|Yes|Yes|Yes|
+|**AI Security for Apps** [^fn2] [Beta]{: tag-cyan}|No|Yes|Yes|Yes|Yes|
+
 {: caption="CIS plan comparison" caption-side="bottom"}
 
 
 [^fn1]: One legacy custom certificate without Server Name Indication (non-SNI) is supported across all plans.
 
+
+[^fn2]: AI Security for Apps is available as an add-on for Enterprise plans. This beta feature is a free add-on for the beta period.
 
 
 ## Additional details
