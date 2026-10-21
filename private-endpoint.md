@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-10-21"
 
 keywords: isolation for cis, service endpoints for cis, private network for cis, network isolation in cis, non-public routes for cis, private connection for cis, private connectivity for cis
 
@@ -81,8 +81,7 @@ Prepare your virtual server instance or test server by configuring your routing 
 ### Step 2. Target the {{site.data.keyword.cis_short_notm}} private endpoint
 {: #target-private-endpoint}
 
-After you configure your virtual server instance to accept {{site.data.keyword.cloud_notm}} private network traffic, you can target the private endpoint for
-{{site.data.keyword.cis_short_notm}} by using the {{site.data.keyword.cis_short_notm}} API or {{site.data.keyword.cis_short_notm}} CLI plug-in.
+After you configure your virtual server instance to accept {{site.data.keyword.cloud_notm}} private network traffic, you can target the private endpoint for {{site.data.keyword.cis_short_notm}} by using the {{site.data.keyword.cis_short_notm}} API or {{site.data.keyword.cis_short_notm}} CLI plug-in.
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console.
 

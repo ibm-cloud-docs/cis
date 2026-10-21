@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-01"
+lastupdated: "2026-10-21"
 
 keywords: managed rules, rulesets, waf, owasp
 
@@ -40,7 +40,7 @@ Better rule browsing and configuration
 ## Rulesets
 {: #managed-rulesets}
 
-These managed rulesets are regularly updated. You can adjust the behavior of specific rules in these rulesets, choosing from several possible actions.
+These managed rulesets are regularly updated and viewed in the [CIS WAF rules Changelog](docs/cis?topic=cis-waf-rule-changelog). You can adjust the behavior of specific rules in these rulesets, choosing from several possible actions.
 
 |Ruleset name | Description | Ruleset ID|
 |:------------| :-----------|:----------|

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-05-07"
+  years: 2024, 2026
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -15,8 +15,7 @@ subcollection: cis
 # Deleting a {{site.data.keyword.cis_short_notm}} instance
 {: #cis-delete-instance}
 
-Removing your domain cancels all active subscriptions, which will not be refunded per our billing policy. If you add this domain back, you must re-purchase all subscriptions. Removing your domain does not change your
-domain registration.
+Removing your domain cancels all active subscriptions, which will not be refunded per our billing policy. If you add this domain back, you must re-purchase all subscriptions. Removing your domain does not change your domain registration.
 {: shortdesc}
 
 ## Before you begin

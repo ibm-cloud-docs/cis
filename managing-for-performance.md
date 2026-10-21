@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-21"
 
 keywords: performance, best practices
 
@@ -22,14 +22,14 @@ With {{site.data.keyword.cis_short_notm}}, you can enhance your site's performan
 
 **Recommended and best practices:**
 
-* Cache as much of your static and semi-static web content as possible
-* For event-driven content, purge your cache with the API
+* Cache as much of your static and semi-static web content as possible.
+* For event-driven content, purge your cache with the API.
 
 ## Best practice 1: Cache as much static and semi-static content as possible
 {: #best-practice-cache-static-content}
 
-* Enable **Cache Everything** for static HTML web pages
-* Use conservative **Time-to-live (TTL)** for your content that changes occasionally
+* Enable **Cache Everything** for static HTML web pages.
+* Use conservative **Time-to-live (TTL)** for your content that changes occasionally.
 
 ### Utilize conservative TTLs (Time-to-Lives) for content that changes occasionally
 {: #utilize-conservative-ttl}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -53,7 +53,7 @@ By default, alert policies are enabled when created. You can disable alerts that
 To create an advanced security alert policy in the console, follow these steps:
 
 1. In the CIS console, navigate to the **Account** page, then select the **Alerts** tab.
-1. Select the **Alerting policies**, then click **Create**
+1. Select the **Alerting policies**, then click **Create**.
 1. Select **Advanced security events alert**, then click **Next**.
 1. Enter a name for your alerting policy, and optionally enter a description.
 1. Choose an alerting method. You can either select a webhook, or enter an email address to send alerts to, or both. Only one notification is required to complete configuration.

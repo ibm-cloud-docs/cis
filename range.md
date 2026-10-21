@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-10-21"
 
 keywords: range application, tls encryption, global tcp proxy
 
@@ -26,7 +26,7 @@ Range is only available to Enterprise customers for an additional cost, and is p
 
 Review the following planning considerations:
 
-* You can create up to 10 Range applications, each with a unique origin. Every Range application with a unique origin requires a unique IP address, which are a limited resource. If you need more than 10 Range applications, submit a support case to IBM. Requests to increase the limit require a use case review and may take several days
+* You can create up to 10 Range applications, each with a unique origin. Every Range application with a unique origin requires a unique IP address, which are a limited resource. If you need more than 10 Range applications, submit a support case to IBM. Requests to increase the limit require a use case review and may take several days.
 
    You can create more than 10 applications if they share an existing origin, but use different ports.
    {: tip}
@@ -55,7 +55,7 @@ To add a Range application in the console, follow these steps:
 1. In the Origin section, enter the origin IP and port of your TCP application, or select an existing load balancer and port.
 1. Optionally, enable custom rules. When enabled, rules with a "block" or "allowlist" action are enforced for the application.
 1. Optionally, enable edge TLS termination. When enabled, select the type of TLS termination you want to use from the list.
-1. Optionally, select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy inline that supports it. This is useful if you are running a service that requires knowledge of the true client IP. Usually, this setting remains `off`. 
+1. Optionally, select a [PROXY Protocol](/docs/cis?topic=cis-enable-proxy-protocol) if you have a proxy inline that supports it. This is useful if you are running a service that requires knowledge of the true client IP. Usually, this setting remains `off`.
 1. Click **Create**.
 
 Provisioning a Range application incurs additional costs, based on the amount of bandwidth used per application.

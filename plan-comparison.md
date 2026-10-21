@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -62,9 +62,9 @@ The numbers in these tables are quotas or resource limits for the associated fea
 ## Additional details
 {: #additional-details}
 
-* Traffic is protected when it is traffic through proxied CIS components, metered as traffic from the edge to the origin
-* HTTP request made on proxied resources (for example, DNS records and load balancers) count toward your protected traffic
-* When traffic is not proxied, it will only consume DNS queries during hostname resolution
+* Traffic is protected when it is traffic through proxied CIS components, metered as traffic from the edge to the origin.
+* HTTP request made on proxied resources (for example, DNS records and load balancers) count toward your protected traffic.
+* When traffic is not proxied, it will only consume DNS queries during hostname resolution.
 
 ## Deprecated plans
 {: #deprecated-plans}

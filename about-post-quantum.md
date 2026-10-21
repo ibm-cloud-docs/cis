@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-27"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -53,7 +53,7 @@ CIS uses this standards‑aligned approach for connections from CIS to customer 
 CIS supports post‑quantum hybrid key agreement for securing connections between the CIS edge and customer origin servers. This protects backend traffic from long‑term cryptographic risks and aligns CIS with industry efforts to adopt quantum‑resistant primitives.
 
 Post‑quantum key material is typically larger than classical cryptographic parameters. As a result:
-* TLS handshake messages might increase in size
+* TLS handshake messages might increase in size.
 * Initial handshake messages might span multiple network packets.
 
 Although this behavior is defined in the TLS 1.3 specification, it can reveal implementation issues in legacy infrastructure such as middle boxes, firewalls, and load balancers that incorrectly assume fixed message sizes. These considerations are relevant for origin connectivity, where customer‑controlled infrastructure plays a role, and factored into architecture and testing strategies.
