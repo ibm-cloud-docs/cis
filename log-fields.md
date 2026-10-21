@@ -45,11 +45,7 @@ This table contains the fields available for http_requests.
 
 | Field | Description | Type |
 |-------|-------------|------|
-|AISecurityCustomTopicCategories|Customer-defined AI Security topic labels and their relevance scores. A score of 1 indicates the highest relevance, and 99 indicates the lowest relevance. [Beta]{: tag-cyan}|object|
-|AISecurityInjectionScore|The score indicating the likelihood of a prompt injection attack in the request, as determined by AI Security. [Beta]{: tag-cyan}|int|
-|AISecurityPIICategories|List of PII categories detected in the request by AI Security. [Beta]{: tag-cyan}|array[string]|
-|AISecurityTokenCount|The number of tokens in the request, as counted by AI Security. [Beta]{: tag-cyan}|int|
-|AISecurityUnsafeTopicCategories|List of unsafe topic categories detected in the request by AI Security. [Beta]{: tag-cyan}|array[string]|
+
 |BotDetectionIDs|List of IDs that correlate to the Bot Management Heuristic detections made on a request. Available only for Bot Management customers. To enable this feature, contact your account team.|array[int]|
 |BotDetectionTags|List of tags that correlate to the Bot Management Heuristic detections made on a request. Available only for Bot Management customers. To enable this feature, contact your account team.|array[string]|
 |BotScore|Cloudflare Bot Score. Scores below 30 are commonly associated with automated traffic. Available only for Bot Management customers. To enable this feature, contact your account team.|int|
@@ -217,11 +213,7 @@ This table contains the fields available for firewall_events.
 | Field | Description | Type |
 |-------|-------------|------|
 |Action|`allow` \| `block` \| `challenge` \| `jschallenge` \| `log` \| `connectionclose` \| `challengesolved` \| `challengebypassed` \| `jschallengesolved` \| `jschallengebypassed` \| `bypass` \| `managedchallenge` \| `managedchallengenoninteractivesolved` \| `managedchallengeinteractivesolved` \| `managedchallengebypassed`.|string|
-|AISecurityCustomTopicCategories|Customer-defined AI Security topic labels and their relevance scores. A score of 1 indicates the highest relevance, and 99 indicates the lowest relevance. [Beta]{: tag-cyan}|object|
-|AISecurityInjectionScore|The score indicating the likelihood of a prompt injection attack in the request, as determined by AI Security. [Beta]{: tag-cyan}|int|
-|AISecurityPIICategories|List of PII categories detected in the request by AI Security. [Beta]{: tag-cyan}|array[string]|
-|AISecurityTokenCount|The number of tokens in the request, as counted by AI Security. [Beta]{: tag-cyan}|int|
-|AISecurityUnsafeTopicCategories|List of unsafe topic categories detected in the request by AI Security. [Beta]{: tag-cyan}|array[string]|
+
 |ClientASN|The ASN number of the visitor.|int|
 |ClientASNDescription|The ASN of the visitor as string.|string|
 |ClientCountry|Country from which request originated.|string|
