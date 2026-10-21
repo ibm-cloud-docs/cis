@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -43,7 +43,7 @@ content-type: troubleshoot
 Common causes for 1001 errors are:
 
 * A web request was sent to a {{site.data.keyword.cis_short_notm}} IP address for a non-existent {{site.data.keyword.cis_short_notm}} domain.
-* An external domain that is not on using {{site.data.keyword.cis_short_notm}} has a CNAME record to a domain active on {{site.data.keyword.cis_short_notm}}
+* An external domain that is not on using {{site.data.keyword.cis_short_notm}} has a CNAME record to a domain active on {{site.data.keyword.cis_short_notm}}.
 * The target of the DNS CNAME record does not resolve.
 * A CNAME record in your {{site.data.keyword.cis_short_notm}} DNS requires resolution via a DNS provider that is currently offline. 
 
@@ -90,9 +90,9 @@ The most common cause of 1002: Restricted errors is when the {{site.data.keyword
 
 If you own the website:
 
-1. Confirm your origin web server IP addresses with your hosting provider
-2. Log in to your {{site.data.keyword.cis_short_notm}} account
-3. Update the A records in the {{site.data.keyword.cis_short_notm}} DNS to the IP address confirmed by your hosting provider
+1. Confirm your origin web server IP addresses with your hosting provider.
+2. Log in to your {{site.data.keyword.cis_short_notm}} account.
+3. Update the A records in the {{site.data.keyword.cis_short_notm}} DNS to the IP address confirmed by your hosting provider.
 
 ## Error 1003 Access denied: Direct IP access not allowed
 {: #1003-error}
@@ -280,7 +280,7 @@ If you are not the website owner, provide the website owner with a screenshot of
 
 If you are the website owner:
 
-1. Retrieve a screenshot of the 1020 error from your customer
+1. Retrieve a screenshot of the 1020 error from your customer.
 1. Search the Firewall Events Log within the Overview tab of your Firewall app for the RayID or client IP Address from the visitor’s 1020 error message.
 1. Convert the UTC timestamp of the 1020 error to your local timezone when searching in the Firewall Events Log.
 1. Assess the cause of the block and either update the Firewall Rule or allow the visitor’s IP address in IP Access Rules.

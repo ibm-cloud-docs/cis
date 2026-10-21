@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -72,7 +72,7 @@ To add a custom rule with the API, follow these steps:
    ```
    {: codeblock}
 
-1. Create a firewall rule to block traffic from these countries
+1. Create a firewall rule to block traffic from these countries.
 
    ```sh
    curl --request POST \

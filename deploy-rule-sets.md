@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -44,7 +44,7 @@ To deploy managed rulesets in the CIS console, follow these steps:
 1. Enter a name for your managed rules exception.
 1. Define the match condition by building an expression:
    * Choose the request field, select an operator, and provide a value.
-   * You can also use the Expression Builder to manually write expressions
+   * You can also use the Expression Builder to manually write expressions.
    * Combine multiple conditions using **And** and **Or** operators to create complex logic.
 1. Choose whether to log requests that match the expression.
 1. Decide how the ruleset should behave for matching requests:

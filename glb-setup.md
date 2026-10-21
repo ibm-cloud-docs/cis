@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -171,7 +171,7 @@ For more information about updating and deleting global load balancers, health c
 
 To create and configure a global load balancer from the CLI, follow these steps in this order:
 
-1. Create a health check. (optional)
+1. Create a health check (optional).
 1. Create an origin pool.
 1. Create a global load balancer.
 
@@ -394,7 +394,7 @@ For more information about creating, updating, and deleting global load balancer
 
 To create and configure a global load balancer with the API, follow these steps in this order:
 
-1. Create a health check. (optional)
+1. Create a health check (optional).
 1. Create an origin pool.
 1. Create a global load balancer.
 
@@ -541,9 +541,9 @@ Before you begin, make sure that you complete the steps to [set up Terraform for
 
 To create and configure a global load balancer with Terraform, follow these steps in order:
 
-1. Create a health check
-1. Create an origin pool
-1. Create a global load balancer
+1. Create a health check.
+1. Create an origin pool.
+1. Create a global load balancer.
 
 ### Step 1: Creating a health check with Terraform (optional)
 {: #create-glb-monitor-terraform}

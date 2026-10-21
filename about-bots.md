@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-07-17"
+  years: 2023, 2026
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -100,7 +100,7 @@ These bot activities are not always considered "malicious," but a bot manager sh
 
 Cloudflare Bot Management uses the following detection mechanisms, each producing their own scores, which are then combined to form a single score:
 
-* Machine learning: A highly accurate bot identification machine learning model trained on trillions of requests with minimal impact to request processing speed
+* Machine learning: A highly accurate bot identification machine learning model trained on trillions of requests with minimal impact to request processing speed.
 * Heuristics engine: Detects bots by screening requests through a set of simple rules that capture bots based on certain attibutes of the requests made.
 * Behavioral analysis: Detects bots that have never been seen, calculating and analyzing normal visitor behavior over an extended period of time.
 * Verified bots: A way to avoid accidental blocks of useful bots using several validators and a bots directory of unique good bot identities.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -90,8 +90,7 @@ Session affinity is a property of global load balancers, which you can set with 
 
 Customize the behavior of session affinity by using the `session_affinity`, `session_affinity_ttl`, and `session_affinity_attributes` parameters.
 
-To enable session affinity by HTTP header, set the `session_affinity` value to `header` and add your
-HTTP header names to `session_affinity_attributes.headers`.
+To enable session affinity by HTTP header, set the `session_affinity` value to `header` and add your HTTP header names to `session_affinity_attributes.headers`.
 
 When you create a global load balancer using the API, take the following steps to set the session affinity:
 

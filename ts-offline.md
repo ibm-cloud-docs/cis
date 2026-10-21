@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-02-24"
+  years: 2021, 2026
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -25,7 +25,7 @@ Here is what you might see: `IBM CIS can't connect to the origin server (error 5
 
 
 1. The server is online, but it is blocking the {{site.data.keyword.cis_short_notm}} request.
-2. The origin server is offline and {{site.data.keyword.cis_short_notm}}S does not have a backup website image
+2. The origin server is offline and {{site.data.keyword.cis_short_notm}}S does not have a backup website image.
 {: tsCauses}
 
 

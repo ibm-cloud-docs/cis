@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -73,8 +73,8 @@ The requirement of having two rules to address this common scenario no longer ap
 
 With the Skip action you can do the following:
 
-* Stop running all the remaining WAF custom rules (equivalent to the Allow action)
-* Avoid running other security products (equivalent to the Bypass action)
+* Stop running all the remaining WAF custom rules (equivalent to the Allow action).
+* Avoid running other security products (equivalent to the Bypass action).
 * A combination of both.
 
 You can also select whether you want to log events matching the custom rule with the Skip action or not. This is especially useful when creating a positive security model to avoid logging large amounts of legitimate traffic.

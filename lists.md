@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-10-21"
 
 keywords: lists
 
@@ -73,7 +73,7 @@ Additional details and exceptions apply by plan:
 All user-defined lists must follow these formatting and usage rules:
 
 * You can have a maximum number of 10,000 list items across all custom lists.
-* For a list name, use only lowercase letters, numbers, and the underscore `(_)` character in the name. A valid name satisfies this regular expression: `^[a-z0-9_]+$.`
+* For a list name, use only lowercase letters, numbers, and the underscore `(_)` character in the name. A valid name satisfies this regular expression: `^[a-z0-9_]+$`.
 * The maximum length of a list name is 50 characters.
 * You can only delete a list when there are no rules (enabled or disabled) that reference that list.
 

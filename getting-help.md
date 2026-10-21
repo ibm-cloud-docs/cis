@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-21"
 
 keywords: support case IBM Cloud development teams support case
 
@@ -34,9 +34,9 @@ Provide the following details:
 
 1. Provide your CRN:
     * In the console, navigate to your CIS instance and go to the **Overview** page.
-    * In the CLI, run `ibmcloud resource service-instances --long`
+    * In the CLI, run `ibmcloud resource service-instances --long`.
 2. Provide your Domain name or ID.
 3. Depending on the issue the following information might also be helpful:
-    * Account ID: Log into https://cloud.ibm.com and go to **View Profile > Billing**
-    * Instance ID: Run the CLI command `ibmcloud resource service-instances --long`
+    * Account ID: Log into https://cloud.ibm.com and go to **View Profile > Billing**.
+    * Instance ID: Run the CLI command `ibmcloud resource service-instances --long`.
     * Geo location

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -43,8 +43,8 @@ You can restore user IP addresses by using various tools for infrastructures suc
 
 Take the following two steps:
 
-* Remove any rate limiting of {{site.data.keyword.cis_short_notm}} IP addresses
-* Set up your ACLs to allow only {{site.data.keyword.cis_short_notm}} IP addresses and other trusted parties
+* Remove any rate limiting of {{site.data.keyword.cis_short_notm}} IP addresses.
+* Set up your ACLs to allow only {{site.data.keyword.cis_short_notm}} IP addresses and other trusted parties.
 
 You can find the updated list of IP ranges for IBM {{site.data.keyword.cis_short_notm}} [at this location](/docs/cis?topic=cis-cis-allowlisted-ip-addresses).
 

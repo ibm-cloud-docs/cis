@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2025
-lastupdated: "2025-05-07"
+  years: 2021, 2026
+lastupdated: "2026-10-21"
 
 keywords:
 
@@ -65,9 +65,9 @@ There are two possible causes:
 
 If the 502/504 error is from your origin web server, CIS returns a HTTP 502 or 504 error when your origin web server responds with a standard HTTP 502 bad gateway or 504 gateway timeout error. Check the origin logs to troubleshoot these common causes at your origin web server:
 
-* Ensure the origin server responds to requests for the hostname and domain within the visitor’s URL that generated the 502 or 504 error
-* Investigate excessive server loads, crashes, or network failures
-* Identify applications or services that timed out or were blocked
+* Ensure the origin server responds to requests for the hostname and domain within the visitor’s URL that generated the 502 or 504 error.
+* Investigate excessive server loads, crashes, or network failures.
+* Identify applications or services that timed out or were blocked.
 
 If the 502/504 error comes from Cloudflare, provide these required details to Support:
 
@@ -137,11 +137,11 @@ The two most common causes of 521 errors are:
 
 Check your origin web server error logs to eliminate these common causes:
 
-* Ensure your origin web server is responsive
+* Ensure your origin web server is responsive.
 * Review origin web server error logs to identify web server application crashes or outages.
-* Confirm CIS IP addresses are not blocked or rate limited
-* Allow all CIS IP ranges in your origin web server's firewall or other security software
-* Confirm that — if you have your TLS mode set to **End-to-end flexible**, **End-to-end CA Signed** or **HTTPS only origin pull** — you have installed a CIS Origin Certificate
+* Confirm CIS IP addresses are not blocked or rate limited.
+* Allow all CIS IP ranges in your origin web server's firewall or other security software.
+* Confirm that — if you have your TLS mode set to **End-to-end flexible**, **End-to-end CA Signed** or **HTTPS only origin pull** — you have installed a CIS Origin Certificate.
 
 ## Error 522: connection timed out
 {: #522-error}
@@ -157,10 +157,10 @@ Error 522 occurs when the connection to the origin web server times out. Two dif
 Check your origin web server error logs for the following common causes at your origin web server:
 
 * (Most common cause) CIS IP addresses are rate limited or blocked in `.htaccess`, `iptables`, or `firewalls`. Confirm that your origin configuration allows CIS IP addresses
-* An overloaded or offline origin web server drops incoming requests
-* Keepalives are disabled at the origin web server
-* The origin IP address in CIS does not match the IP address currently provisioned to your origin web server
-* Packets were dropped at your origin web server
+* An overloaded or offline origin web server drops incoming requests.
+* Keepalives are disabled at the origin web server.
+* The origin IP address in CIS does not match the IP address currently provisioned to your origin web server.
+* Packets were dropped at your origin web server.
 
 If none of these leads to a resolution, attempt to gather the following information before contacting support:
 
@@ -177,8 +177,8 @@ Error 523 occurs when CIS can't contact your origin web server. This occurs when
 
 Check your origin web server error logs to eliminate these common causes at your origin web server:
 
-- Confirm the correct origin IP address is listed for A or AAAA records
-- Troubleshoot internet routing issues between your origin and CIS, or with the origin itself
+- Confirm the correct origin IP address is listed for A or AAAA records.
+- Troubleshoot internet routing issues between your origin and CIS, or with the origin itself.
 
 If none of the previous tips leads to a resolution, request an MTR or traceroute from your origin web server to a CIS IP address that most commonly connected to your origin web server _before_ the issue occurred. Identify a connecting CIS IP from the logs of the origin web server.
 
@@ -208,8 +208,8 @@ If you regularly run HTTP requests that take over 100 seconds to complete (for e
 
 525 errors are often caused by a configuration issue on the origin web server. Error 525 occurs when these two conditions are true:
 
-1. The SSL handshake fails between CIS and the origin web server
-1. Your TLS setting is **End-to-end flexible**, **End-to-end CA Signed** or **HTTPS only origin pull**
+1. The SSL handshake fails between CIS and the origin web server.
+1. Your TLS setting is **End-to-end flexible**, **End-to-end CA Signed** or **HTTPS only origin pull**.
 
 ### Error 525 resolution
 {: #525-resolution}
@@ -227,8 +227,8 @@ If 525 errors occur intermittently, review the origin web server error logs to d
 {: #526-error}
 
 Error 526 occurs when the following two conditions are true:
-1. CIS can't validate the TLS certificate at your origin web server
-1. Your TLS setting is **End-to-end CA Signed** or **HTTPS only origin pull**
+1. CIS can't validate the TLS certificate at your origin web server.
+1. Your TLS setting is **End-to-end CA Signed** or **HTTPS only origin pull**.
 
 ### Error 526 resolution
 {: #526-resolution}
@@ -237,12 +237,12 @@ Set your TLS to **End-to-end flexible** instead of **End-to-end CA Signed** or *
 
 Review the origin web server’s TLS certificates and verify that:
 
-1. The certificate is not expired
-1. The certificate is not revoked
-1. The certificate is signed by a Certificate Authority (not self-signed)
-1. The requested or target domain name and hostname are in the certificate's Common Name or Subject Alternative Name
-1. Your origin web server accepts connections over port 443
-1. Temporarily pause CIS and go to `https://www.sslshopper.com/ssl-checker.html#hostname=www.example.com` (replace `www.example.com` with your hostname and domain) to verify no issues exists with the origin TLS certificate
+1. The certificate is not expired.
+1. The certificate is not revoked.
+1. The certificate is signed by a Certificate Authority (not self-signed).
+1. The requested or target domain name and hostname are in the certificate's Common Name or Subject Alternative Name.
+1. Your origin web server accepts connections over port 443.
+1. Temporarily pause CIS and go to `https://www.sslshopper.com/ssl-checker.html#hostname=www.example.com` (replace `www.example.com` with your hostname and domain) to verify no issues exists with the origin TLS certificate.
 
 
 ## Error 530
