@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-22"
 
 keywords:
 
@@ -20,6 +20,28 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.cis_full}} that are grouped by date.
 {: shortdesc}
 
+
+
+## 21 September 2026
+{: #cis-sept21-2026}
+{: release-note}
+
+List item uploads
+:   Users can now upload items to custom lists in the CIS dashboard. To upload items, go to the **Account page > Lists tab** and click **Upload CSV** when creating or editing a custom list.
+
+Dashboard Expression Builder improvements
+:   The following changes have been made to the Expression Builder in the CIS dashboard:
+* Added support for the `ip.src.city` field.
+* Added support for the `ip.src.region` field.
+* Mapped the following legacy fields to their new equivalents:
+  * `ip.geoip.asnum` → `ip.src.asnum`
+  * `ip.geoip.country` → `ip.src.country`
+  * `ip.geoip.continent` → `ip.src.continent`
+  * `ip.geoip.is_in_european_union` → `ip.src.is_in_european_union`
+  * `ip.geoip.subdivision_1_iso_code` → `ip.src.subdivision_1_iso_code`
+  * `ip.geoip.subdivision_2_iso_code` → `ip.src.subdivision_2_iso_code`
+ 
+The legacy fields remain supported, so existing expressions that use the old field names continue to work.    
 
 ## 25 August 2026
 {: #cis-august25-2026}
