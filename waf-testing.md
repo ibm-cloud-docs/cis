@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-22"
 
 keywords: waf
 
@@ -58,8 +58,6 @@ Follow these high-level steps to configure WAF for your zones:
 
          * Ruleset action: **Block**
          * Ruleset status: Enabled (enables all rules in the ruleset)
-
-      For more information, see [Working with WAF managed rules](/docs/cis?group=working-with-waf-managed-rules).
 
 1. Create a custom rule based on WAF Attack Score.
 
