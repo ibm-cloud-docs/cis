@@ -45,7 +45,6 @@ This table contains the fields available for http_requests.
 
 | Field | Description | Type |
 |-------|-------------|------|
-
 |BotDetectionIDs|List of IDs that correlate to the Bot Management Heuristic detections made on a request. Available only for Bot Management customers. To enable this feature, contact your account team.|array[int]|
 |BotDetectionTags|List of tags that correlate to the Bot Management Heuristic detections made on a request. Available only for Bot Management customers. To enable this feature, contact your account team.|array[string]|
 |BotScore|Cloudflare Bot Score. Scores below 30 are commonly associated with automated traffic. Available only for Bot Management customers. To enable this feature, contact your account team.|int|
@@ -145,6 +144,11 @@ This table contains the fields available for http_requests.
 |WorkerSubrequestCount|Number of subrequests issued by a Edge function when handling this request.|int|
 |WorkerWallTimeUs|The elapsed time in microseconds between the start of a Edge function invocation, and when the Edge functions Runtime determines that no more JavaScript needs to run. Specifically, this measures the wall-clock time that the JavaScript context remained open. For example, when returning a response with a large body, the Edge functions runtime can, in some cases, determine that no more JavaScript needs to run, and closes the JS context before all the bytes have passed through and been sent. Alternatively, if you use the `waitUntil()` API to perform work without blocking the return of a response, this work may continue executing after the response has been returned, and will be included in `Edge functionWallTimeUs`.|int|
 |ZoneName|The human-readable name of the zone (for example, 'cloudflare.com').|string|
+
+
+
+
+
 {: caption="Available log fields for HTTP requests" caption-side="bottom"}
 
 ### DNS logs
@@ -213,7 +217,6 @@ This table contains the fields available for firewall_events.
 | Field | Description | Type |
 |-------|-------------|------|
 |Action|`allow` \| `block` \| `challenge` \| `jschallenge` \| `log` \| `connectionclose` \| `challengesolved` \| `challengebypassed` \| `jschallengesolved` \| `jschallengebypassed` \| `bypass` \| `managedchallenge` \| `managedchallengenoninteractivesolved` \| `managedchallengeinteractivesolved` \| `managedchallengebypassed`.|string|
-
 |ClientASN|The ASN number of the visitor.|int|
 |ClientASNDescription|The ASN of the visitor as string.|string|
 |ClientCountry|Country from which request originated.|string|
@@ -246,4 +249,9 @@ This table contains the fields available for firewall_events.
 |Ref|The user-defined identifier for the rule triggered by this request. Use refs to label your rules individually alongside the Cloudflare-provided RuleID. You can set refs via the Rulesets API for some security products.|string|
 |RuleID|The Cloudflare security product-specific RuleID triggered by this request.|string|
 |Source|`asn` \| `country` \| `ip` \| `iprange` \| `securitylevel` \| `zonelockdown` \| `waf` \| `firewallrules` \| `uablock` \| `ratelimit` \| `bic` \| `hot` \| `l7ddos` \| `validation` \| `botfight` \| `apishield` \| `botmanagement` \| `dlp` \| `firewallmanaged` \| `firewallcustom` \| `apishieldschemavalidation` \| `apishieldtokenvalidation` \| `apishieldsequencemitigation`.|string|
+
+
+
+
+
 {: caption="Available log fields for Firewall events" caption-side="bottom"}
