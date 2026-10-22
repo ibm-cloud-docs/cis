@@ -1,4 +1,4 @@
-﻿
+
 ## WAF - WAF Release - 2026-10-21 - Emergency - CIS Managed Ruleset
 {: #waf-waf-release-2026-10-21-emergency-cis-managed-ruleset}
 **Published on:** Wed, 21 Oct 2026 00:00:00 GMT
@@ -1177,11 +1177,11 @@ CIS Managed Ruleset| ...8d667511| N/A| NoSQL, MongoDB - SQLi - Comparison - 2| B
 {: #waf-waf-release-2026-01-26}
 **Published on:** Mon, 26 Jan 2026 00:00:00 GMT
 
-This week's release introduces new detections for denial-of-service attempts targeting React CVE-2026-23864 (<https://www.cve.org/CVERecord?id=CVE-2026-23864>[↗](https://www.cve.org/CVERecord?id=CVE-2026-23864)).
+This week's release introduces new detections for denial-of-service attempts targeting React [`CVE-2026-23864` ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864).
 
 **Key Findings**
 
-    * CVE-2026-23864 (<https://www.cve.org/CVERecord?id=CVE-2026-23864>[↗](https://www.cve.org/CVERecord?id=CVE-2026-23864)) affects `react-server-dom-parcel`, `react-server-dom-turbopack`, and `react-server-dom-webpack` packages.
+    * [`CVE-2026-23864` ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864) affects `react-server-dom-parcel`, `react-server-dom-turbopack`, and `react-server-dom-webpack` packages.
     * Attackers can send crafted HTTP requests to Server Function endpoints, causing server crashes, out-of-memory exceptions, or excessive CPU usage.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
