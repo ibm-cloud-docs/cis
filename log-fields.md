@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-22"
 
 keywords: log fields
 
@@ -39,7 +39,7 @@ The following tables indicate the fields available by dataset. Log fields are su
 
 
 ### HTTP requests
- {: #http-requests}
+{: #http-requests}
 
 This table contains the fields available for http_requests.
 
@@ -148,7 +148,7 @@ This table contains the fields available for http_requests.
 {: caption="Available log fields for HTTP requests" caption-side="bottom"}
 
 ### DNS logs
- {: #dns-logs}
+{: #dns-logs}
 
 This table contains the fields available for dns_logs.
 
@@ -166,7 +166,7 @@ This table contains the fields available for dns_logs.
 {: caption="Available log fields for DNS logs" caption-side="bottom"}
 
 ### Range requests
- {: #range-requests}
+{: #range-requests}
 
 This table contains the fields available for range_events.
 
@@ -206,7 +206,7 @@ This table contains the fields available for range_events.
 {: caption="Available log fields for Range requests" caption-side="bottom"}
 
 ### Firewall events
- {: #firewall-events}
+{: #firewall-events}
 
 This table contains the fields available for firewall_events.
 
