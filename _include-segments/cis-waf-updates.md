@@ -1,3 +1,38 @@
+﻿
+## WAF - WAF Release - 2026-10-22 - Emergency - CIS Managed Ruleset
+**Published on:** Thu, 22 Oct 2026 00:00:00 GMT
+
+This emergency release updates the names and metadata of seven existing rules in the CIS Managed Ruleset to identify CVE-2026-109618 and CVE-2026-109619. Detection logic and rule actions remain unchanged.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| ...c438d5dd| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619)| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| ...0a0c2f64| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| ...545d163c| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| ...212afcc9| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| ...1867b12e| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #5| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| ...9d9c073d| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #6| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| ...48143645| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #7| Block| N/A| Rule metadata description refined. Detection unchanged.
+
+For more information, refer to [WAF Managed Rules](https://developers.cloudflare.com/waf/managed-rules/).
+
+
+## WAF - WAF Release - 2026-10-22 - Emergency - CIS Free Ruleset
+**Published on:** Thu, 22 Oct 2026 00:00:00 GMT
+
+This emergency release updates the names and metadata of seven existing rules in the CIS Free Ruleset to identify CVE-2026-109618 and CVE-2026-109619. Detection logic and rule actions remain unchanged.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Free Ruleset| ...b5ccf32f| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619)| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| ...bcd95984| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| ...82dab691| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| ...24b1a4c6| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| ...302ede46| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #5| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| ...7975ce1b| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #6| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| ...e8d613fa| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #7| Block| N/A| Rule metadata description refined. Detection unchanged.
+
+For more information, refer to [WAF Managed Rules](https://developers.cloudflare.com/waf/managed-rules/).
 
 ## WAF - WAF Release - 2026-10-21 - Emergency - CIS Managed Ruleset
 {: #waf-waf-release-2026-10-21-emergency-cis-managed-ruleset}
