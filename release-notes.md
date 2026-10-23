@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-10-22"
+lastupdated: "2026-10-23"
 
 keywords:
 
@@ -34,12 +34,12 @@ Dashboard Expression Builder improvements
 * Added support for the `ip.src.city` field.
 * Added support for the `ip.src.region` field.
 * Mapped the following legacy fields to their new equivalents:
-  * `ip.geoip.asnum` → `ip.src.asnum`
-  * `ip.geoip.country` → `ip.src.country`
-  * `ip.geoip.continent` → `ip.src.continent`
-  * `ip.geoip.is_in_european_union` → `ip.src.is_in_european_union`
-  * `ip.geoip.subdivision_1_iso_code` → `ip.src.subdivision_1_iso_code`
-  * `ip.geoip.subdivision_2_iso_code` → `ip.src.subdivision_2_iso_code`
+    * `ip.geoip.asnum` → `ip.src.asnum`
+    * `ip.geoip.country` → `ip.src.country`
+    * `ip.geoip.continent` → `ip.src.continent`
+    * `ip.geoip.is_in_european_union` → `ip.src.is_in_european_union`
+    * `ip.geoip.subdivision_1_iso_code` → `ip.src.subdivision_1_iso_code`
+    * `ip.geoip.subdivision_2_iso_code` → `ip.src.subdivision_2_iso_code`
  
 The legacy fields remain supported, so existing expressions that use the old field names continue to work.    
 

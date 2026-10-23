@@ -1,5 +1,7 @@
 ﻿
 ## WAF - WAF Release - 2026-10-22 - Emergency - CIS Managed Ruleset
+{: #waf-waf-release-2026-10-22-emergency-cis-managed-ruleset}
+
 **Published on:** Thu, 22 Oct 2026 00:00:00 GMT
 
 This emergency release updates the names and metadata of seven existing rules in the CIS Managed Ruleset to identify CVE-2026-109618 and CVE-2026-109619. Detection logic and rule actions remain unchanged.
@@ -18,6 +20,8 @@ For more information, refer to [WAF Managed Rules](https://developers.cloudflare
 
 
 ## WAF - WAF Release - 2026-10-22 - Emergency - CIS Free Ruleset
+{: #waf-waf-release-2026-10-22-emergency-cis-free-ruleset}
+
 **Published on:** Thu, 22 Oct 2026 00:00:00 GMT
 
 This emergency release updates the names and metadata of seven existing rules in the CIS Free Ruleset to identify CVE-2026-109618 and CVE-2026-109619. Detection logic and rule actions remain unchanged.
@@ -36,6 +40,7 @@ For more information, refer to [WAF Managed Rules](https://developers.cloudflare
 
 ## WAF - WAF Release - 2026-10-21 - Emergency - CIS Managed Ruleset
 {: #waf-waf-release-2026-10-21-emergency-cis-managed-ruleset}
+
 **Published on:** Wed, 21 Oct 2026 00:00:00 GMT
 
 This emergency release adds four rules to the CIS Managed Ruleset to detect anomalous request patterns.
@@ -55,6 +60,7 @@ For more information, refer to [WAF Managed Rules](https://developers.cloudflare
 
 ## WAF - WAF Release - 2026-10-21 - Emergency - CIS Free Ruleset
 {: #waf-waf-release-2026-10-21-emergency-cis-free-ruleset}
+
 **Published on:** Wed, 21 Oct 2026 00:00:00 GMT
 
 This emergency release adds two rules to the CIS Free Ruleset to block anomalous request patterns.
@@ -73,6 +79,7 @@ For more information, refer to [WAF Managed Rules](https://developers.cloudflare
 
 ## WAF - WAF Release - Scheduled changes for 2026-10-19
 {: #waf-waf-release-scheduled-changes-for-2026-10-19}
+
 **Published on:** Mon, 12 Oct 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
@@ -81,11 +88,12 @@ Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Desc
 
 ## WAF - WAF Release - 2026-10-14 - Emergency
 {: #waf-waf-release-2026-10-14-emergency}
+
 **Published on:** Wed, 14 Oct 2026 00:00:00 GMT
 
 This emergency release adds a new managed rule to block active exploitation of a critical remote code execution (RCE) vulnerability found in popular web frameworks.
 
-**Key Findings**
+**Key Findings:**
 
 * Generic Rules - Remote Code Execution: Attackers can execute arbitrary system commands with web server privileges by sending malicious input containing invalid path sequences during request processing.
 
@@ -95,11 +103,12 @@ CIS Managed Ruleset| 44131076d2fa41fb97c61ec2fd1bf420| N/A| Generic Rules - Remo
 
 ## WAF - WAF Release - 2026-10-12
 {: #waf-waf-release-2026-10-12}
+
 **Published on:** Mon, 12 Oct 2026 00:00:00 GMT
 
 This release introduces new detections to mitigate recent vulnerabilities affecting TanStack and Atlassian products.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-102989: A reflected Cross-Site Scripting (XSS) vulnerability affecting TanStack. Unauthenticated attackers can exploit this flaw to inject malicious scripts into web pages viewed by other users, potentially leading to session hijacking or unauthorized actions.
 
@@ -113,6 +122,7 @@ CIS Managed Ruleset| 272b2eec72c04313a6f0da2ee919cd31| N/A| Atlassian - Arbitrar
 
 ## WAF - WAF Release - 2026-10-09
 {: #waf-waf-release-2026-10-09}
+
 **Published on:** Fri, 09 Oct 2026 00:00:00 GMT
 
 Failed detections field available in Rules
@@ -143,6 +153,7 @@ For more information, refer to the [Failed detections field reference](https://d
 
 ## WAF - WAF Release - 2026-10-07
 {: #waf-waf-release-2026-10-07}
+
 **Published on:** Wed, 07 Oct 2026 00:00:00 GMT
 
 Updated unsafe topic detection for AI Security for Apps
@@ -155,11 +166,12 @@ For category descriptions and configuration guidance, refer to [Unsafe topics](h
 
 ## WAF - WAF Release - 2026-10-06
 {: #waf-waf-release-2026-10-06}
+
 **Published on:** Tue, 06 Oct 2026 00:00:00 GMT
 
 This release introduces a new detection to mitigate a heap-based buffer overflow vulnerability in F5 BIG-IP, and enhances existing command injection protections by incorporating tested beta logic into the baseline rule.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-94127: A heap-based buffer overflow vulnerability in F5 BIG-IP. Attackers can exploit this flaw to execute arbitrary code on the affected system.
 
@@ -176,15 +188,16 @@ Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Desc
 
 ## WAF - WAF Release - 2026-10-01 - Emergency
 {: #waf-waf-release-2026-10-01-emergency}
+
 **Published on:** Thu, 01 Oct 2026 00:00:00 GMT
 
 This update provides immediate defense against a vulnerability affecting Citrix NetScaler ADC and Gateway appliances, deploying protection against improper input validation vectors.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-88771: An improper input validation vulnerability affecting Citrix NetScaler ADC and Gateway allows an unauthenticated attacker to execute arbitrary commands.
 
-**Impact**
+**Impact:**
 
 We strongly recommend that administrators apply the latest versions to fully secure origin servers. Additionally, customers should review configurations against applicable preconditions and follow standard incident response processes if signs of compromise are identified.
 
@@ -196,11 +209,12 @@ CIS Managed Ruleset| 6802845374ea41a289fd4f43827ab216| N/A| Citrix Netscaler ADC
 
 ## WAF - WAF Release - 2026-09-30
 {: #waf-waf-release-2026-09-30}
+
 **Published on:** Wed, 30 Sep 2026 00:00:00 GMT
 
 This release introduces new detections to enhance protection against a specific GitLab path traversal vulnerability, alongside advanced generic rules targeting HTTP request smuggling, directory traversal, and command injection attempts.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-85706: A path traversal vulnerability affecting GitLab.
 
@@ -214,17 +228,18 @@ CIS Managed Ruleset| 86b0681d72234ef7bd6f67c7549f7356| N/A| Generic - Request ro
 
 ## WAF - WAF Release - 2026-09-25 - Emergency
 {: #waf-waf-release-2026-09-25-emergency}
+
 **Published on:** Fri, 25 Sep 2026 00:00:00 GMT
 
 This update provides immediate defense against critical vulnerabilities affecting WordPress and JFrog Artifactory, including path traversal, local file inclusion (LFI), cross-site scripting (XSS), and authentication bypass exploits.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-87902: A high-severity Path Traversal and Local File Inclusion (LFI) vulnerability affecting WordPress. Unauthenticated attackers can exploit this flaw to read arbitrary files on the host server, potentially exposing sensitive configuration data or system files.
 
 * CVE-2026-42018 & CVE-2026-82329: Critical authentication bypass vulnerabilities affecting JFrog Artifactory. Successful exploitation allows unauthenticated attackers to bypass security controls and achieve unauthorized access to the Artifactory instance.
 
-**Impact**
+**Impact:**
 
 We strongly recommend that administrators apply the latest vendor patches for WordPress and JFrog Artifactory to fully secure origin servers.
 
@@ -237,6 +252,7 @@ Cloudflare Managed Ruleset| c6dafaadb861478dbca81469a813ac74| N/A| JFrog Artifac
 
 ## WAF - WAF Release - 2026-09-22
 {: #waf-waf-release-2026-09-22}
+
 **Published on:** Tue, 22 Sep 2026 00:00:00 GMT
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
@@ -248,6 +264,7 @@ Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Desc
 
 ## WAF - WAF Release - 2026-09-15
 {: #waf-waf-release-2026-09-15}
+
 **Published on:** Tue, 15 Sep 2026 00:00:00 GMT
 
 This release introduces new threat detections to enhance protection against command injection attempts, Server-Side Request Forgery (SSRF) targeting cloud metadata, and information disclosure within version control history.
@@ -260,15 +277,16 @@ CIS Managed Ruleset| 93793848937f4f988f1dfdabba458b4b| N/A| Command Injection - 
 
 ## WAF - WAF Release - 2026-09-10 - Emergency
 {: #waf-waf-release-2026-09-10-emergency}
+
 **Published on:** Thu, 10 Sep 2026 00:00:00 GMT
 
 This update provides immediate defense against a high-severity, actively exploited zero-day vulnerability targeting Adobe Commerce and Magento Open Source storefronts.
 
-**Key Findings**
+**Key Findings:**
 
 * Adobe Commerce and Magento RCE (CVE-2026-75650 / "StyleSmuggler"): Unauthenticated Remote Code Execution (RCE) vulnerability caused by improper neutralization of special elements in the platform's template engine. Unauthenticated attackers can inject arbitrary PHP payloads through style properties to execute system commands and deploy persistent malware.
 
-**Impact**
+**Impact:**
 
 This emergency rule provides immediate edge-level mitigation and virtual patching, origin applications must be urgently updated. We strongly recommend to apply the hotfix outlined in Adobe Security Bulletin [APSB26-146](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/announcements/commerce-apsb26-146) and immediately rotate all potentially exposed encryption keys, integration tokens, and system credentials, as patching alone does not remediate an existing compromise.
 
@@ -278,6 +296,7 @@ CIS Managed Ruleset| f9a3026b0fdc4d63b7338346440f5c55| N/A| Adobe Commerce - Rem
 
 ## WAF - WAF Release - 2026-09-08
 {: #waf-waf-release-2026-09-08}
+
 **Published on:** Tue, 08 Sep 2026 00:00:00 GMT
 
 This release enhances detection logic for existing rules targeting Next.js remote code execution (RCE) vulnerabilities by consolidating active beta rules into baseline signatures.
@@ -289,6 +308,7 @@ CIS Managed Ruleset| 771ac3761dcd485cb0e91ea0208457cf| N/A| Next.js - Remote Cod
 
 ## WAF - Enforce positive security with Application Profiles
 {: #waf-enforce-positive-security-with-application-profiles}
+
 **Published on:** Mon, 07 Sep 2026 00:00:00 GMT
 
 Application Profiles add a positive-security layer to CIS WAF. Instead of looking only for requests that resemble known attacks, Application Profiles learn what valid requests to your application look like and identify traffic that deviates from the expected structure.
@@ -303,11 +323,12 @@ For more information, refer to [Application Profiles](https://developers.cloudfl
 
 ## WAF - WAF Release - 2026-09-01
 {: #waf-waf-release-2026-09-01}
+
 **Published on:** Tue, 01 Sep 2026 00:00:00 GMT
 
 This release introduces a new threat detection to enhance protection against SQL injection (SQLi) attempts exploiting complex query syntax.
 
-**Key Findings**
+**Key Findings:**
 
 * SQLi Protection: Improved coverage for SQL injection patterns involving WHERE comparisons combined with WITH clauses.
 
@@ -317,18 +338,19 @@ CIS Managed Ruleset| d2d75b2f0614405f9fab0354bcfa0966| N/A| SQLi - WHERE Compari
 
 ## WAF - WAF Release - 2026-08-26 - Emergency
 {: #waf-waf-release-2026-08-26-emergency}
+
 **Published on:** Wed, 26 Aug 2026 00:00:00 GMT
 
 This emergency release updates an existing Next.js remote code execution rule to identify CVE-2026-75604 and adds a new rule for remote code execution in the Next.js Image Optimizer via crafted AVIF images.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-75604 affects Windows-hosted Next.js applications using both the Pages Router and App Router without Cache Components and can lead to unauthenticated remote code execution.
 
 * GHSA-2xp9-vwfh-vxw4 affects the Next.js Image Optimizer and can lead to unauthenticated remote code execution when it optimizes an attacker-controlled AVIF image.
 
 
-**Impact**
+**Impact:**
 
 Next.js recommends updating to version 16.3.3 or 15.5.24 to address these vulnerabilities.
 
@@ -340,11 +362,12 @@ CIS Managed Ruleset| 18b22b0bd423423c945b3a0180256efe| N/A| Next.js - Image Opti
 
 ## WAF - WAF Release - 2026-08-25
 {: #waf-waf-release-2026-08-25}
+
 **Published on:** Tue, 25 Aug 2026 00:00:00 GMT
 
 This release moves four new detections from Log to Block, merges the XSS, HTML Injection - Script Tag - Beta rule into the original rule, and adds a Generic Rules - Remote Code Execution rule in Block mode.
 
-**Key Findings**
+**Key Findings:**
 
 * Four new detections move from Log to Block: HTTP/2 Request Smuggling - Request Body Anomaly and XSS - JavaScript Event Handler Coercion across Headers, Body, and URI.
 
@@ -364,6 +387,7 @@ CIS Managed Ruleset| 2b6b94ec864d47f99630ecf72ca6cce3| N/A| Generic Rules - Remo
 
 ## WAF - Leaked credentials detection now scans Authorization headers - 2026-08-20
 {: #waf-leaked-credentials-detection-now-scans-authorization-headers-2026-08-20}
+
 **Published on:** Thu, 20 Aug 2026 00:00:00 GMT
 
 [Leaked credentials detection](https://developers.cloudflare.com/waf/detections/leaked-credentials/) now scans the `Authorization` request header for Basic Authentication credentials. Previously, the detection only inspected request bodies, query strings, and headers for well-known web applications or custom detection locations, which meant credentials sent through HTTP Basic Authentication were not covered by default.
@@ -376,15 +400,16 @@ For more information, refer to [Leaked credentials detection](https://developers
 
 ## WAF - WAF Release - 2026-08-17
 {: #waf-waf-release-2026-08-17}
+
 **Published on:** Mon, 17 Aug 2026 00:00:00 GMT
 
 This release updates WordPress remote code execution rule metadata in the CIS Managed Ruleset and CIS Free Ruleset to identify CVE-2026-65640.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-65640: A remote code execution vulnerability affecting WordPress core and plugin components. Remote, unauthenticated attackers can execute arbitrary system commands to gain unauthorized access or establish backdoors on host servers.
 
-**Impact**
+**Impact:**
 
 The WordPress changes update rule metadata only; detection behavior and actions remain unchanged.
 
@@ -398,12 +423,12 @@ CIS Free Ruleset| 6ad9f2049b094c608be0f8adcfe1a93c| N/A| Wordpress - Remote Code
 
 This release introduces new protection for a remote code execution vulnerability in vBulletin and improves two existing detections.
 
-**Key Findings**
+**Key Findings:**
 
 * A new detection provides protection against vBulletin CVE-2026-61511.
 * Two existing detections have been improved to strengthen coverage.
 
-**Impact**
+**Impact:**
 
 Successful exploitation of CVE-2026-61511 may lead to remote code execution on affected vBulletin systems, potentially resulting in unauthorized access, data exposure, service disruption, and broader compromise of the hosting environment. Administrators are strongly encouraged to apply vendor updates and recommended mitigations.
 
@@ -418,11 +443,11 @@ CIS Managed Ruleset| `a561c9138b46470ca6db96edd56225d8`| N/A| vBulletin - Code I
 
 This release updates WordPress XSS rule metadata in the CIS Managed Ruleset and CIS Free Ruleset to identify XSS2Shell (CVE-2026-64638). It also disables the Command Injection - Obfuscation rule.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-64638: A pre-authentication reflected cross-site scripting vulnerability affecting the WordPress login screen. Exploitation requires social engineering and explicit interaction by the target user. Under additional conditions, it may be escalated to remote code execution.
 
-**Impact**
+**Impact:**
 
 The WordPress changes update rule metadata only; detection behavior and actions remain unchanged.
 
@@ -434,11 +459,12 @@ CIS Managed Ruleset| `95a84ab1645a49c685648c17761e7a4c`| N/A| Command Injection 
 
 ## WAF - WAF Release - 2026-08-04
 {: #waf-waf-release-2026-08-04}
+
 **Published on:** Tue, 04 Aug 2026 00:00:00 GMT
 
 This release introduces new rules and updates Microsoft SharePoint RCE alongside enhanced SSRF cloud protection rule actions.
 
-**Key Findings**
+**Key Findings:**
 
 * CVE-2026-50522: An insecure deserialization vulnerability in Microsoft SharePoint Server. This may allow an unauthenticated attacker to execute arbitrary code using crafted requests.
 * CVE-2026-66066: An improper input processing vulnerability in Ruby on Rails Active Storage image variant transformations. This may allow an unauthenticated attacker to perform arbitrary file reads and achieve Remote Code Execution (RCE) using maliciously crafted payload requests.
@@ -457,11 +483,12 @@ CIS Managed Ruleset| `158177dec2504acdba1f2da201a076eb` | N/A| SSRF - Local - Be
 
 ## WAF - WAF Release - 2026-07-29
 {: #waf-waf-release-2026-07-29}
+
 **Published on:** Wed, 29 Jul 2026 00:00:00 GMT
 
 This release introduces new rules and updates existing threat signatures to provide targeted protections for vulnerabilities in Nuxt Server Island components and Alibaba Fastjson deserialization routines, alongside enhanced protections for cloud metadata Server-Side Request Forgery (SSRF) and obfuscated command injection attempts.
 
-**Key Findings**
+**Key Findings:**
 
 * Nuxt Server Island - RCE(GHSA-9473-5f9j-94wq): An unauthenticated vulnerability in Nuxt Server Islands where remote attackers can supply arbitrary component names or props to endpoints. Manipulating these parameters allows unauthenticated component Remote Code Execution (RCE) on the server.
 
@@ -486,11 +513,12 @@ CIS Free Ruleset| `7ecac499d14a4750aa58c1e21b7f9c67` | N/A| File Upload - RCE| N
 
 ## WAF - WAF Release - 2026-07-21
 {: #waf-waf-release-2026-07-21}
+
 **Published on:** Tue, 21 Jul 2026 00:00:00 GMT
 
 This release introduces new rules for vulnerabilities in Adobe ColdFusion, Next.js, WordPress alongside updates to existing rules thereby providing enhanced generic protections against Server-Side Request Forgery (SSRF), Local File Inclusion (LFI), and Cross-Site Scripting (XSS).
 
-**WAF and framework adapter mitigations for Next.js vulnerabilities**
+**WAF and framework adapter mitigations for Next.js vulnerabilities:**
 
 Multiple [security vulnerabilities ↗](https://nextjs.org/blog/july-2026-security-release) were disclosed and patched by the Next.js team through July 2026 security release. These include denial of service, middleware and proxy bypass, server-side request forgery, information disclosure, and cache poisoning across a range of severities.
 
@@ -508,7 +536,7 @@ Advisory| CVE| Severity| Issue| WAF Coverage
 [Cache confusion of response bodies for requests with bodies](https://github.com/vercel/next.js/security/advisories/GHSA-68g3-v927-f742)| CVE-2026-64648| Medium| A server-side fetch with a request body may return a cached response body from a different request to the same URL but different body. This only applies for fetch calls of the shape fetch(new Request(init), aDifferentInit)| This is an application logic bug that unfortunately cannot be covered through CIS WAF signature engine.
 [Cache confusion of response bodies for requests with bodies containing invalid UTF-8 byte sequences](https://github.com/vercel/next.js/security/advisories/GHSA-4633-3j49-mh5q)| CVE-2026-64647| Medium| A server-side fetch with a request body may return a cached response body from a different request to the same URL but different body. This only applies when receiving request bodies which contain invalid UTF-8 characters.| This is an application logic bug that unfortunately cannot be covered through CIS WAF signature engine.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-48276: A path traversal vulnerability in Adobe ColdFusion file upload mechanisms allows unauthenticated attackers to write or upload files to arbitrary locations outside designated directories on the origin server.
 
@@ -543,11 +571,12 @@ CIS Managed Ruleset| `5f2a6681a2b94442b23816286d060a0d` | N/A| Generic Rules - C
 
 ## WAF - WAF Release - 2026-07-17 - Emergency
 {: #waf-waf-release-2026-07-17-emergency}
+
 **Published on:** Fri, 17 Jul 2026 00:00:00 GMT
 
 This emergency release adds a new managed rule to block active exploitation of a critical remote code execution (RCE) and SQL injection (SQLi) vulnerability found in popular web frameworks.
 
-**Key Findings**
+**Key Findings:**
 
     * Generic Frameworks - Unauthenticated RCE: Attackers can execute arbitrary system commands with web server privileges by sending malicious input containing invalid path sequences during request processing.
 
@@ -564,11 +593,12 @@ CIS Free Ruleset| `db003b39b7774859a8d588ce33697a1a` | N/A| Generic Rules - SQLi
 
 ## WAF - WAF Release - 2026-07-14
 {: #waf-waf-release-2026-07-14}
+
 **Published on:** Tue, 14 Jul 2026 00:00:00 GMT
 
 This release introduces new rules targeting critical infrastructure vulnerabilities. These include an unauthenticated memory disclosure flaw in Citrix NetScaler ADC and Gateway (CVE-2026-8451) and a high-severity pre-authentication remote code execution (RCE) vulnerability in Progress Kemp LoadMaster (CVE-2026-8037).
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-8451: An insufficient input validation vulnerability affects Citrix NetScaler ADC and NetScaler Gateway appliances configured as a SAML Identity Provider (IdP). Remote, unauthenticated attackers can exploit this flaw by sending malformed requests to trigger a memory overread, allowing them to leak chunks of sensitive data from adjacent appliance memory.
 
@@ -583,11 +613,12 @@ CIS Managed Ruleset| `6b64d216620449fbb273d07910233f36` | N/A| Progress Kemp Loa
 
 ## WAF - WAF Release - 2026-07-01
 {: #waf-waf-release-2026-07-01}
+
 **Published on:** Wed, 01 Jul 2026 00:00:00 GMT
 
 This release adds targeted coverage for a path traversal flaw in Fortinet FortiSandbox (CVE-2026-39813) and transitions the Anomaly:Header:User-Agent - Fake Bing or MSN Bot rule action from Block to Disabled.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-39813: A path traversal vulnerability in Fortinet FortiSandbox allows remote, unauthenticated attackers to read arbitrary files from the underlying filesystem due to insufficient validation of user-supplied input paths.
 
@@ -599,11 +630,12 @@ CIS Managed Ruleset| `ae20608d93b94e97988db1bbc12cf9c8` | N/A| Anomaly:Header:Us
 
 ## WAF - WAF Release - 2026-06-23
 {: #waf-waf-release-2026-06-23}
+
 **Published on:** Tue, 23 Jun 2026 00:00:00 GMT
 
 This week's release introduces new managed protection to address a critical pre-authentication OS command injection vulnerability in Ivanti Sentry (CVE-2026-10520).
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-10520: An OS command injection vulnerability in Ivanti Sentry allows remote, unauthenticated attackers to execute arbitrary system commands with root privileges. The flaw stems from improper sanitization of input strings parsed during internal configuration handling.
 
@@ -614,6 +646,7 @@ CIS Managed Ruleset| ...242fdf83| N/A| Ivanti Sentry - Command Injection - CVE:C
 
 ## WAF - Use Cloudforce One threat intelligence in WAF rules
 {: #waf-use-cloudforce-one-threat-intelligence-in-waf-rules}
+
 **Published on:** Mon, 15 Jun 2026 00:00:00 GMT
 
 You can now match incoming requests against Cloudforce One threat intelligence in your WAF rules. A new detection looks up the client IP address of each request against the threat intelligence database. If the IP was involved in threat activity in the past seven days, CIS populates `cf.intel.ip.*` fields that you can use in custom rules and rate limiting rules.
@@ -640,11 +673,12 @@ The threat intelligence detection is available to customers with an active [Clou
 
 ## WAF - WAF Release - 2026-06-15
 {: #waf-waf-release-2026-06-15}
+
 **Published on:** Mon, 15 Jun 2026 00:00:00 GMT
 
 This week's release introduces new managed protection to address a critical SQL injection vulnerability in Ghost CMS (CVE-2026-26980) and a new generic rule designed to identify and block sophisticated SQL Injection (SQLi) bypass attempts leveraging obfuscated boolean logic. These rules protect affected installations from unauthorized data exfiltration at the network edge.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-26980: A blind SQL injection vulnerability in the Ghost CMS Content API (versions 3.24.0 to 6.19.0) allows unauthenticated remote attackers to inject malicious SQL commands via query parameters due to improper input validation.
 
@@ -656,11 +690,12 @@ CIS Managed Ruleset| ...b56f403f| N/A| SQLi - Obfuscated Boolean - URI| Log| Dis
 
 ## WAF - WAF Release - 2026-06-09
 {: #waf-waf-release-2026-06-09}
+
 **Published on:** Tue, 09 Jun 2026 00:00:00 GMT
 
 This release introduces new detections for a critical SQL injection vulnerability in Drupal installations utilizing PostgreSQL (CVE-2026-9082), alongside targeted protection for an unsafe deserialization flaw in the Mirasvit Cache Warmer extension (CVE-2026-45247). Additionally, this release includes coverage for a prototype pollution vector in Axios (CVE-2026-40175) and a new generic rule designed to identify and block sophisticated SQL Injection (SQLi) bypass attempts leveraging obfuscated boolean logic.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-9082: A database abstraction vulnerability affects Drupal sites configured with a PostgreSQL backend. Remote, unauthenticated attackers can exploit this flaw via crafted inputs to inject malicious SQL commands and access or manipulate backend data.
 
@@ -671,7 +706,7 @@ This release introduces new detections for a critical SQL injection vulnerabilit
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation of these vulnerabilities could allow unauthenticated attackers to execute arbitrary code, manipulate database contents, or induce application crashes, leading to severe operational disruption or complete server compromise. These newly deployed signatures intercept these advanced malicious payloads at the edge before they can interact with vulnerable software configurations.
 
@@ -687,15 +722,16 @@ CIS Managed Ruleset| ...e0be4d47| N/A| Mirasvit Cache Warmer - PHP Object Inject
 
 ## WAF - WAF Release - 2026-05-20
 {: #waf-waf-release-2026-05-20}
+
 **Published on:** Wed, 20 May 2026 00:00:00 GMT
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against broad classes of web attacks and strengthen behavioral coverage.
 
 
 
-**Continuous Rule Improvements**
+**Continuous Rule Improvements:**
 
 We are continuously refining our managed rules to provide more resilient protection and deeper insights into attack patterns. To ensure an optimal security posture, we recommend consistently monitoring the Security Events dashboard and adjusting rule actions as these enhancements are deployed.
 
@@ -706,11 +742,12 @@ CIS Managed Ruleset| ...9e9c068d| N/A| Sitecore - Cache Poisoning - CVE:CVE-2025
 
 ## WAF - WAF Release - 2026-05-15 - Emergency
 {: #waf-waf-release-2026-05-15-emergency}
+
 **Published on:** Fri, 15 May 2026 00:00:00 GMT
 
 This emergency release introduces two new rules to detect nginx heap buffer overflow and heap spray exploitation attempts targeting the rewrite module's `is_args` stale-state bug (CVE-2026-42945).
 
-**Key Findings**
+**Key Findings:**
 
 CVE-2026-42945: nginx Heap Buffer Overflow via Stale `is_args` in Rewrite Module
 
@@ -726,15 +763,16 @@ CIS Managed Ruleset| ...9df0ee6c| N/A| nginx - Remote Code Execution - Heap Spra
 
 ## WAF - WAF Release - 2026-05-11
 {: #waf-waf-release-2026-05-11}
+
 **Published on:** Mon, 11 May 2026 00:00:00 GMT
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against broad classes of web attacks and strengthen behavioral coverage.
 
 
 
-**Continuous Rule Improvements**
+**Continuous Rule Improvements:**
 
 We are continuously refining our managed rules to provide more resilient protection and deeper insights into attack patterns. To ensure an optimal security posture, we recommend consistently monitoring the Security Events dashboard and adjusting rule actions as these enhancements are deployed.
 
@@ -745,6 +783,7 @@ CIS Managed Ruleset| ...68b3c389| N/A| Remote Code Execution - Java Deserializat
 
 ## Workers, WAF - WAF and framework adapter mitigations for React and Next.js vulnerabilities
 {: #workers-waf-waf-and-framework-adapter-mitigations-for-react-and-nextjs-vulnerabi}
+
 **Published on:** Thu, 07 May 2026 12:00:00 GMT
 
 Multiple security vulnerabilities were disclosed by the React team and Vercel affecting React Server Components and Next.js. These include denial of service, middleware and proxy bypass, server-side request forgery, cross-site scripting, and cache poisoning issues across a range of severity levels.
@@ -804,11 +843,12 @@ CIS is investigating additional managed WAF coverage
 
 ## WAF - WAF Release - 2026-05-07 - Emergency
 {: #waf-waf-release-2026-05-07-emergency}
+
 **Published on:** Thu, 07 May 2026 00:00:00 GMT
 
 This emergency release introduces a new rule to detect Next.js App Router middleware and proxy bypass attempts via segment-prefetch routes (CVE-2026-44575).
 
-**Key Findings**
+**Key Findings:**
 
 CVE-2026-44575: Next.js Middleware / Proxy Bypass in App Router Applications via Segment-Prefetch Routes
 
@@ -823,17 +863,18 @@ CIS Managed Ruleset| ...e77e4a53| N/A| Next.js - Middleware Bypass via Invalid R
 
 ## WAF - WAF Release - 2026-05-04
 {: #waf-waf-release-2026-05-04}
+
 **Published on:** Mon, 04 May 2026 00:00:00 GMT
 
 This week's release focuses on new detections to expand coverage across command injection, SQL injection, PHP object injection, remote code execution, and XSS attack vectors.
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against broad classes of web attacks and strengthen behavioral coverage.
 
 
 
-**Continuous Rule Improvements**
+**Continuous Rule Improvements:**
 
 We are continuously refining our managed rules to provide more resilient protection and deeper insights into attack patterns. To ensure an optimal security posture, we recommend consistently monitoring the Security Events dashboard and adjusting rule actions as these enhancements are deployed.
 
@@ -869,17 +910,18 @@ CIS Managed Ruleset| ...26cc211f| N/A| SQLi - String Concatenation - URI| Block|
 
 ## WAF - WAF Release - 2026-04-30 - Emergency
 {: #waf-waf-release-2026-04-30-emergency}
+
 **Published on:** Thu, 30 Apr 2026 00:00:00 GMT
 
 This emergency release introduces a new rule to block a cPanel & WHM Authentication Bypass related to CVE-2026-41940.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-41940: A critical authentication bypass vulnerability in cPanel & WHM allows unauthenticated remote attackers to bypass authentication mechanisms and gain unauthorized administrative access to the web hosting control panel. This vulnerability affects the session validation logic, enabling attackers to craft malicious requests that circumvent normal authentication checks.
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation allows unauthenticated attackers to gain administrative control over affected cPanel & WHM installations. This leads to complete server compromise, potential theft or manipulation of hosted data, and significant service disruption across managed environments.
 
@@ -892,17 +934,18 @@ CIS Managed Ruleset| ...eb2b9e2f| N/A| cPanel - Auth Bypass - CVE:CVE-2026-41940
 
 ## WAF - WAF Release - 2026-04-27
 {: #waf-waf-release-2026-04-27}
+
 **Published on:** Mon, 27 Apr 2026 00:00:00 GMT
 
 This week's release focuses on new improvements to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against broad classes of web attacks and strengthen behavioral coverage.
 
 
 
-**Continuous Rule Improvements**
+**Continuous Rule Improvements:**
 
 We are continuously refining our managed rules to provide more resilient protection and deeper insights into attack patterns. To ensure an optimal security posture, we recommend consistently monitoring the Security Events dashboard and adjusting rule actions as these enhancements are deployed.
 
@@ -943,11 +986,12 @@ CIS Managed Ruleset| ...9fe4eff5| N/A| SQLi - Destructive Operations| Log| Block
 
 ## WAF - WAF Release - 2026-04-21
 {: #waf-waf-release-2026-04-21}
+
 **Published on:** Tue, 21 Apr 2026 00:00:00 GMT
 
 This week's release introduces a new detection for a Remote Code Execution (RCE) vulnerability in Apache ActiveMQ (CVE-2026-34197) and an updated signature for Magento 2 - Unrestricted File Upload. Alongside these detections, we are continuing our work on rule refinements to provide deeper security insights for our customers.
 
-**Key Findings**
+**Key Findings:**
 
     * Apache ActiveMQ (CVE-2026-34197): A vulnerability in Apache ActiveMQ allows an unauthenticated, remote attacker to execute arbitrary code. This flaw occurs during the processing of specially crafted network packets, leading to potential full system compromise.
 
@@ -956,11 +1000,11 @@ This week's release introduces a new detection for a Remote Code Execution (RCE)
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation of these vulnerabilities could allow unauthenticated attackers to execute arbitrary code or gain full administrative control over affected servers. We strongly recommend applying official vendor patches for Apache ActiveMQ and Magento to address the underlying vulnerabilities.
 
-**Continuous Rule Improvements**
+**Continuous Rule Improvements:**
 
 We are continuously refining our managed rules to provide more resilient protection and deeper insights into attack patterns. To ensure an optimal security posture, we recommend consistently monitoring the Security Events dashboard and adjusting rule actions as these enhancements are deployed.
 
@@ -991,11 +1035,12 @@ CIS Managed Ruleset| ...ebd81645| N/A| XSS, HTML Injection - Link Tag - URI| Dis
 
 ## WAF - WAF Release - 2026-04-15
 {: #waf-waf-release-2026-04-15}
+
 **Published on:** Wed, 15 Apr 2026 00:00:00 GMT
 
 This week's release introduces a new detection for a critical Remote Code Execution (RCE) vulnerability in Mesop (CVE-2026-33057), alongside protections for high-impact vulnerabilities in Cisco Secure Firewall Management Center (CVE-2026-20079) and FortiClient EMS (CVE-2026-21643). Additionally, this release includes an update to our existing React Server DoS coverage to address recently identified resource exhaustion vectors (CVE-2026-23869).
 
-**Key Findings**
+**Key Findings:**
 
     * Cisco Secure FMC (CVE-2026-20079): A vulnerability in the web-based management interface of Cisco Secure Firewall Management Center (FMC) that allows an unauthenticated, remote attacker to execute arbitrary commands or bypass security filters.
 
@@ -1006,7 +1051,7 @@ This week's release introduces a new detection for a critical Remote Code Execut
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation of these vulnerabilities could allow unauthenticated attackers to execute arbitrary code, gain administrative control over network management infrastructure, or trigger server-side resource exhaustion. Administrators are strongly encouraged to apply official vendor updates.
 
@@ -1022,6 +1067,7 @@ CIS Managed Ruleset| ...0af34bba| N/A| XSS, HTML Injection - Embed Tag - URI (be
 
 ## WAF - Email obfuscation decode script is now non-render-blocking
 {: #waf-email-obfuscation-decode-script-is-now-non-render-blocking}
+
 **Published on:** Tue, 14 Apr 2026 00:00:00 GMT
 
 The decode script injected by [Email Address Obfuscation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/) now loads with the `defer` attribute. This means the script no longer blocks page rendering. It downloads in parallel with HTML parsing and executes after the document is fully parsed, before the `DOMContentLoaded` event.
@@ -1033,11 +1079,12 @@ If you have custom JavaScript that depends on email addresses being decoded at a
 
 ## WAF - WAF Release - 2026-04-07
 {: #waf-waf-release-2026-04-07}
+
 **Published on:** Tue, 07 Apr 2026 00:00:00 GMT
 
 This week's release introduces new detections for a critical Remote Code Execution (RCE) vulnerability in MCP Server (CVE-2026-23744), alongside targeted protection for an authentication bypass vulnerability in SolarWinds products (CVE-2025-40552). Additionally, this release includes a new generic detection rule designed to identify and block Cross-Site Scripting (XSS) injection attempts leveraging "OnEvent" handlers within HTTP cookies.
 
-**Key Findings**
+**Key Findings:**
 
     * MCP Server (CVE-2026-23744): A vulnerability in the Model Context Protocol (MCP) server implementation where malformed input payloads can trigger a memory corruption state, allowing for arbitrary code execution.
 
@@ -1048,7 +1095,7 @@ This week's release introduces new detections for a critical Remote Code Executi
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation of the MCP Server and SolarWinds vulnerabilities could allow unauthenticated attackers to execute arbitrary code or gain administrative control, leading to a full system takeover. Additionally, the new generic XSS detection prevents attackers from leveraging browser event handlers in cookies to hijack user sessions or execute malicious scripts.
 
@@ -1071,11 +1118,12 @@ CIS Managed Ruleset| ...cf33ea10| N/A| SolarWinds - Auth Bypass - CVE:CVE-2025-4
 
 ## WAF - WAF Release - 2026-03-30
 {: #waf-waf-release-2026-03-30}
+
 **Published on:** Mon, 30 Mar 2026 00:00:00 GMT
 
 This week's release introduces new detections for a critical authentication bypass vulnerability in Fortinet products (CVE-2025-59718), alongside three new generic detection rules designed to identify and block HTTP Parameter Pollution attempts. Additionally, this release includes targeted protection for a high-impact unrestricted file upload vulnerability in Magento and Adobe Commerce.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2025-59718: An improper cryptographic signature verification vulnerability in Fortinet FortiOS, FortiProxy, and FortiSwitchManager. This may allow an unauthenticated attacker to bypass the FortiCloud SSO login authentication using a maliciously crafted SAML message, if that feature is enabled on the device.
 
@@ -1084,7 +1132,7 @@ This week's release introduces new detections for a critical authentication bypa
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation of the Fortinet and Magento vulnerabilities could allow unauthenticated attackers to gain administrative control or deploy webshells, leading to complete server compromise and data theft.
 
@@ -1099,11 +1147,12 @@ CIS Managed Ruleset| ...2ffcca9f| N/A| Fortinet FortiCloud SSO - Authentication 
 
 ## WAF - WAF Release - 2026-03-23
 {: #waf-waf-release-2026-03-23}
+
 **Published on:** Mon, 23 Mar 2026 00:00:00 GMT
 
 This week's release focuses on new improvements to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against broad classes of web attacks and strengthen behavioral coverage.
 
@@ -1117,18 +1166,19 @@ CIS Managed Ruleset| ...479da68f| N/A| PHP, vBulletin, jQuery File Upload - Code
 
 ## WAF - WAF Release - 2026-03-12 - Emergency
 {: #waf-waf-release-2026-03-12-emergency}
+
 **Published on:** Thu, 12 Mar 2026 00:00:00 GMT
 
 This week's release introduces new detections for vulnerabilities in Ivanti Endpoint Manager Mobile (CVE-2026-1281 and CVE-2026-1340), alongside a new generic detection rule designed to identify and block Cross-Site Scripting (XSS) injection attempts within the `Content-Security-Policy` (CSP) HTTP request header.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2026-1281 & CVE-2026-1340: Ivanti Endpoint Manager Mobile processes HTTP requests through Apache RevwriteMap directives that pass user-controlled input to Bash scripts (`/mi/bin/map-appstore-url` and `/mi/bin/map-aft-store-url`). Bash scripts do not sanitize user input and are vulnerable to shell arithmetic expansion thereby allowing attackers to achieve unauthenticated remote code execution.
     * Generic XSS in CSP Header: This rule identifies malicious payloads embedded within the request's `Content-Security-Policy` header. It specifically targets scenarios where web frameworks or applications trust and extract values directly from the CSP header in the incoming request without sufficient validation. Attackers can provide crafted header values to inject scripts or malicious directives that are subsequently processed by the server.
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation of Ivanti EPMM vulnerability allows unauthenticated remote code execution and generic XSS in CSP header allows attackers to inject malicious scripts during page rendering. In environments using server-side caching, this poisoned XSS content can subsequently be cached and automatically served to all visitors.
 
@@ -1140,18 +1190,19 @@ CIS Managed Ruleset| ...ee964a8c| N/A| Anomaly:Header:Content-Security-Policy| N
 
 ## WAF - WAF Release - 2026-03-02
 {: #waf-waf-release-2026-03-02}
+
 **Published on:** Mon, 02 Mar 2026 00:00:00 GMT
 
 This week's release introduces new detections for vulnerabilities in SmarterTools SmarterMail (CVE-2025-52691 and CVE-2026-23760), alongside improvements to an existing Command Injection (nslookup) detection to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2025-52691: SmarterTools SmarterMail mail server is vulnerable to Arbitrary File Upload, allowing an unauthenticated attacker to upload files to any location on the mail server, potentially enabling remote code execution.
     * CVE-2026-23760: SmarterTools SmarterMail versions prior to build 9511 contain an authentication bypass vulnerability in the password reset API permitting unaunthenticated to reset system administrator accounts failing to verify existing password or reset token.
 
 
 
-**Impact**
+**Impact:**
 
 Successful exploitation of these SmarterMail vulnerabilities could lead to full system compromise or unauthorized administrative access to mail servers. Administrators are strongly encouraged to apply vendor patches without delay.
 
@@ -1164,11 +1215,12 @@ CIS Managed Ruleset| ...75b64d99| N/A| Command Injection - Nslookup - Beta| Log|
 
 ## WAF - WAF Release - 2026-02-16
 {: #waf-waf-release-2026-02-16}
+
 **Published on:** Mon, 16 Feb 2026 00:00:00 GMT
 
 This week’s release introduces new detections for CVE-2025-68645 and CVE-2025-31125.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2025-68645: A Local File Inclusion (LFI) vulnerability in the Webmail Classic UI of Zimbra Collaboration Suite (ZCS) 10.0 and 10.1 allows unauthenticated remote attackers to craft requests to the `/h/rest` endpoint, improperly influence internal dispatching, and include arbitrary files from the WebRoot directory.
     * CVE-2025-31125: Vite, the JavaScript frontend tooling framework, exposes content of non-allowed files via `?inline&import` when its development server is network-exposed, enabling unauthorized attackers to read arbitrary files and potentially leak sensitive information.
@@ -1181,6 +1233,7 @@ CIS Managed Ruleset| ...950ed8c8| N/A| Vite - WASM Import Path Traversal - CVE:C
 
 ## WAF - WAF Release - 2026-02-10
 {: #waf-waf-release-2026-02-10}
+
 **Published on:** Tue, 10 Feb 2026 00:00:00 GMT
 
 This week’s release changes the rule action from BLOCK to Disabled for Anomaly:Header:User-Agent - Fake Google Bot.
@@ -1192,11 +1245,12 @@ CIS Managed Ruleset| ...6aa0bef8| N/A| Anomaly:Header:User-Agent - Fake Google B
 
 ## WAF - WAF Release - 2026-02-02
 {: #waf-waf-release-2026-02-02}
+
 **Published on:** Mon, 02 Feb 2026 00:00:00 GMT
 
 This week’s release introduces new detections for CVE-2025-64459 and CVE-2025-24893.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2025-64459: Django versions prior to 5.1.14, 5.2.8, and 4.2.26 are vulnerable to SQL injection via crafted dictionaries passed to QuerySet methods and the `Q()` class.
     * CVE-2025-24893: XWiki allows unauthenticated remote code execution through crafted requests to the SolrSearch endpoint, affecting the entire installation.
@@ -1210,11 +1264,12 @@ CIS Managed Ruleset| ...8d667511| N/A| NoSQL, MongoDB - SQLi - Comparison - 2| B
 
 ## WAF - WAF Release - 2026-01-26
 {: #waf-waf-release-2026-01-26}
+
 **Published on:** Mon, 26 Jan 2026 00:00:00 GMT
 
 This week's release introduces new detections for denial-of-service attempts targeting React [`CVE-2026-23864` ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864).
 
-**Key Findings**
+**Key Findings:**
 
     * [`CVE-2026-23864` ↗](https://www.cve.org/CVERecord?id=CVE-2026-23864) affects `react-server-dom-parcel`, `react-server-dom-turbopack`, and `react-server-dom-webpack` packages.
     * Attackers can send crafted HTTP requests to Server Function endpoints, causing server crashes, out-of-memory exceptions, or excessive CPU usage.
@@ -1228,11 +1283,12 @@ CIS Managed Ruleset| ...349edbc6| N/A| React Server - DOS - CVE:CVE-2026-23864 -
 
 ## WAF - WAF Release - 2026-01-20
 {: #waf-waf-release-2026-01-20}
+
 **Published on:** Tue, 20 Jan 2026 00:00:00 GMT
 
 This week's release focuses on improvements to existing detections to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against SQL injection.
 
@@ -1244,11 +1300,12 @@ CIS Managed Ruleset| ...faa045cf| N/A | SQLi - Comparison - Beta | Log | Block| 
 
 ## WAF - WAF Release - 2026-01-15
 {: #waf-waf-release-2026-01-15}
+
 **Published on:** Thu, 15 Jan 2026 00:00:00 GMT
 
 This week's release focuses on improvements to existing detections to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against SQL Injection.
 
@@ -1260,11 +1317,12 @@ CIS Managed Ruleset| ...9e553ad3| N/A | SQLi - Sub Query - Beta | Log | Block| T
 
 ## WAF - WAF Release - 2026-01-12
 {: #waf-waf-release-2026-01-12}
+
 **Published on:** Mon, 12 Jan 2026 00:00:00 GMT
 
 This week's release focuses on improvements to existing detections to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against SQL Injection.
 
@@ -1276,11 +1334,12 @@ CIS Managed Ruleset| ...9e553ad3| N/A | SQLi - Benchmark Function - Beta | Log |
 
 ## WAF - WAF Release - 2025-12-18
 {: #waf-waf-release-2025-12-18}
+
 **Published on:** Thu, 18 Dec 2025 00:00:00 GMT
 
 This week's release focuses on improvements to existing detections to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * Existing rule enhancements have been deployed to improve detection resilience against broad classes of web attacks and strengthen behavioral coverage.
 
@@ -1299,15 +1358,16 @@ CIS Managed Ruleset| ...03b2f3fe| N/A| SQLi - Equation 2 - Beta| Log| Block| Thi
 
 ## WAF - WAF Release - 2025-12-11 - Emergency
 {: #waf-waf-release-2025-12-11-emergency}
+
 **Published on:** Thu, 11 Dec 2025 00:00:00 GMT
 
 This emergency release introduces rules for CVE-2025-55183 and CVE-2025-55184, targeting server-side function exposure and resource-exhaustion patterns, respectively.
 
-**Key Findings**
+**Key Findings:**
 
 Added coverage for Leaking Server Functions (CVE-2025-55183) and React Function DoS detection (CVE-2025-55184).
 
-**Impact**
+**Impact:**
 
 These updates strengthen protection for server-function abuse techniques (CVE-2025-55183, CVE-2025-55184) that may expose internal logic or disrupt application availability.
 
@@ -1320,15 +1380,16 @@ CIS Managed Ruleset| ...102ec699| N/A| React - DoS - CVE:CVE-2025-55184| N/A| Di
 
 ## WAF - WAF Release - 2025-12-10 - Emergency
 {: #waf-waf-release-2025-12-10-emergency}
+
 **Published on:** Wed, 10 Dec 2025 00:00:00 GMT
 
 This additional week's emergency release introduces improvements to our existing rule for React – Remote Code Execution – CVE-2025-55182 - 2, along with two new generic detections covering server-side function exposure and resource-exhaustion patterns.
 
-**Key Findings**
+**Key Findings:**
 
 Enhanced detection logic for React – RCE – CVE-2025-55182, added Generic – Server Function Source Code Exposure, and added Generic – Server Function Resource Exhaustion.
 
-**Impact**
+**Impact:**
 
 These updates strengthen protection against React RCE exploitation attempts and broaden coverage for common server-function abuse techniques that may expose internal logic or disrupt application availability.
 
@@ -1343,11 +1404,12 @@ CIS Managed Ruleset| ...102ec699| N/A| Generic - Server Function Resource Exhaus
 
 ## WAF - Increased WAF payload limit for all plans
 {: #waf-increased-waf-payload-limit-for-all-plans}
+
 **Published on:** Fri, 05 Dec 2025 00:00:00 GMT
 
 CIS WAF now inspects request-payload size of up to 1 MB across all plans to enhance our detection capabilities for React RCE (CVE-2025-55182).
 
-**Key Findings**
+**Key Findings:**
 
 React payloads commonly have a default maximum size of 1 MB. CIS WAF previously inspected up to 128 KB on Enterprise plans, with even lower limits on other plans.
 
@@ -1356,32 +1418,34 @@ React payloads commonly have a default maximum size of 1 MB. CIS WAF previously 
 
 ## WAF - Updating the WAF maximum payload values
 {: #waf-updating-the-waf-maximum-payload-values}
+
 **Published on:** Fri, 05 Dec 2025 00:00:00 GMT
 
 We are reinstating the maximum request-payload size the CIS WAF inspects, with WAF on Enterprise zones inspecting up to 128 KB.
 
-**Key Findings**
+**Key Findings:**
 
 On [December 5, 2025](https://developers.cloudflare.com/changelog/2025-12-05-rcs-vuln/), we initially attempted to increase the maximum WAF payload limit to 1 MB across all plans. However, an automatic rollout for all customers proved impractical because the increase led to a surge in false positives for existing managed rules.
 
 This issue was particularly notable within the CIS Managed Ruleset and the CIS OWASP Core Ruleset, impacting customer traffic.
 
-**Impact**
+**Impact:**
 
 Customers on paid plans can increase the limit to 1 MB for any of their zones by contacting CIS Support. Free zones are already protected up to 1 MB and do not require any action.
 
 
 ## WAF - WAF Release - 2025-12-03 - Emergency
 {: #waf-waf-release-2025-12-03-emergency}
+
 **Published on:** Wed, 03 Dec 2025 00:00:00 GMT
 
 The WAF rule deployed yesterday to block unsafe deserialization-based RCE has been updated. The rule description now reads “React – RCE – CVE-2025-55182”, explicitly mapping to the recently disclosed React Server Components vulnerability. Detection logic remains unchanged.
 
-**Key Findings**
+**Key Findings:**
 
 Rule description updated to reference React – RCE – CVE-2025-55182 while retaining existing unsafe-deserialization detection.
 
-**Impact**
+**Impact:**
 
 Improved classification and traceability with no change to coverage against remote code execution attempts.
 
@@ -1393,15 +1457,16 @@ CIS Free Ruleset| ...99702280| N/A| React - RCE - CVE:CVE-2025-55182| N/A| Block
 
 ## WAF - WAF Release - 2025-12-02 - Emergency
 {: #waf-waf-release-2025-12-02-emergency}
+
 **Published on:** Tue, 02 Dec 2025 00:00:00 GMT
 
 This week's emergency release introduces a new rule to block a critical RCE vulnerability in widely-used web frameworks through unsafe deserialization patterns.
 
-**Key Findings**
+**Key Findings:**
 
 New WAF rule deployed for RCE Generic Framework to block malicious POST requests containing unsafe deserialization patterns. If successfully exploited, this vulnerability allows attackers with network access via HTTP to execute arbitrary code remotely.
 
-**Impact**
+**Impact:**
 
     * Successful exploitation allows unauthenticated attackers to execute arbitrary code remotely through crafted serialization payloads, enabling complete system compromise, data exfiltration, and potential lateral movement within affected environments.
 
@@ -1413,17 +1478,18 @@ CIS Free Ruleset| ...99702280| N/A| RCE Generic - Framework| N/A| Block| This is
 
 ## WAF - WAF Release - 2025-12-01
 {: #waf-waf-release-2025-12-01}
+
 **Published on:** Mon, 01 Dec 2025 00:00:00 GMT
 
 This week’s release introduces new detections for remote code execution attempts targeting Monsta FTP (CVE-2025-34299), alongside improvements to an existing XSS detection to enhance coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2025-34299 is a critical remote code execution flaw in Monsta FTP, arising from improper handling of user-supplied parameters within the file-handling interface. Certain builds allow crafted requests to bypass sanitization and reach backend PHP functions that execute arbitrary commands. Attackers can send manipulated parameters through the web panel to trigger command execution within the application’s runtime environment.
 
 
 
-**Impact**
+**Impact:**
 
 If exploited, the vulnerability enables full remote command execution on the underlying server, allowing takeover of the hosting environment, unauthorized file access, and potential lateral movement. As the flaw can be triggered without authentication on exposed Monsta FTP instances, it represents a severe risk for publicly reachable deployments.
 
@@ -1435,15 +1501,16 @@ CIS Managed Ruleset| ...b7492846| N/A| XSS - JS Context Escape - Beta| Log| Bloc
 
 ## WAF - WAF Release - 2025-11-24
 {: #waf-waf-release-2025-11-24}
+
 **Published on:** Mon, 24 Nov 2025 00:00:00 GMT
 
 This week highlights enhancements to detection signatures improving coverage for vulnerabilities in FortiWeb, linked to CVE-2025-64446, alongside new detection logic expanding protection against PHP Wrapper Injection techniques.
 
-**Key Findings**
+**Key Findings:**
 
 This vulnerability enables an unauthenticated attacker to bypass access controls by abusing the `CGIINFO` header. The latest update strengthens detection logic to ensure a reliable identification of crafted requests attempting to exploit this flaw.
 
-**Impact**
+**Impact:**
 
     * FortiWeb (CVE-2025-64446): Exploitation allows a remote unauthenticated adversary to circumvent authentication mechanisms by sending a manipulated `CGIINFO` header to FortiWeb’s backend CGI handler. Successful exploitation grants unintended access to restricted administrative functionality, potentially enabling configuration tampering or system-level actions.
 
@@ -1456,15 +1523,16 @@ CIS Managed Ruleset| ...900f4015| N/A| PHP Wrapper Injection - URI - Beta| Log| 
 
 ## WAF - WAF Release - 2025-11-21
 {: #waf-waf-release-2025-11-21}
+
 **Published on:** Fri, 21 Nov 2025 00:00:00 GMT
 
 This week’s release introduces a critical detection for CVE-2025-61757, a vulnerability in the Oracle Identity Manager REST WebServices component.
 
-**Key Findings**
+**Key Findings:**
 
 This flaw allows unauthenticated attackers with network access over HTTP to fully compromise the Identity Manager, potentially leading to a complete takeover.
 
-**Impact**
+**Impact:**
 
 Oracle Identity Manager (CVE-2025-61757): Exploitation could allow an unauthenticated remote attacker to bypass security checks by sending specially crafted requests to the application's message processor. This enables the creation of arbitrary employee accounts, which can be leveraged to modify system configurations and achieve full system compromise.
 
@@ -1475,15 +1543,16 @@ CIS Managed Ruleset| ...39fdbe7e| N/A| Oracle Identity Manager - Pre-Auth RCE - 
 
 ## WAF - WAF Release - 2025-11-17
 {: #waf-waf-release-2025-11-17}
+
 **Published on:** Mon, 17 Nov 2025 00:00:00 GMT
 
 This week highlights enhancements to detection signatures improving coverage for vulnerabilities in DELMIA Apriso, linked to CVE-2025-6205.
 
-**Key Findings**
+**Key Findings:**
 
 This vulnerability allows unauthenticated attackers to gain privileged access to the application. The latest update provides enhanced detection logic for resilient protection against exploitation attempts.
 
-**Impact**
+**Impact:**
 
     * DELMIA Apriso (CVE-2025-6205): Exploitation could allow an unauthenticated remote attacker to bypass security checks by sending specially crafted requests to the application's message processor. This enables the creation of arbitrary employee accounts, which can be leveraged to modify system configurations and achieve full system compromise.
 
@@ -1496,17 +1565,18 @@ CIS Managed Ruleset| ...8f76bd74| N/A| PHP Wrapper Injection - URI| N/A| Disable
 
 ## WAF - WAF Release - 2025-11-10
 {: #waf-waf-release-2025-11-10}
+
 **Published on:** Mon, 10 Nov 2025 00:00:00 GMT
 
 This week’s release introduces new detections for Prototype Pollution across three common vectors: URI, Body, and Header/Form.
 
-**Key Findings**
+**Key Findings:**
 
     * These attacks can affect both API and web applications by altering normal behavior or bypassing security controls.
 
 
 
-**Impact**
+**Impact:**
 
 Exploitation may allow attackers to change internal logic or cause unexpected behavior in applications using JavaScript or Node.js frameworks. Developers should sanitize input keys and avoid merging untrusted data structures.
 
@@ -1519,15 +1589,16 @@ CIS Managed Ruleset| ...7efbeb39| N/A| Generic Rules - Prototype Pollution - Hea
 
 ## WAF - WAF Release - 2025-11-05 - Emergency
 {: #waf-waf-release-2025-11-05-emergency}
+
 **Published on:** Wed, 05 Nov 2025 00:00:00 GMT
 
 This week’s emergency release introduces a new detection signature that enhances coverage for a critical vulnerability in the React Native Metro Development Server, tracked as CVE-2025-11953.
 
-**Key Findings**
+**Key Findings:**
 
 The Metro Development Server exposes an HTTP endpoint that is vulnerable to OS command injection (CWE-78). An unauthenticated network attacker can send a crafted request to this endpoint and execute arbitrary commands on the host running Metro. The vulnerability affects Metro/cli-server-api builds used by React Native Community CLI in pre-patch development releases.
 
-**Impact**
+**Impact:**
 
 Successful exploitation of CVE-2025-11953 may result in remote command execution on developer workstations or CI/build agents, leading to credential and secret exposure, source tampering, and potential lateral movement into internal networks. Administrators and developers are strongly advised to apply the vendor's patches and restrict Metro’s network exposure to reduce this risk.
 
@@ -1538,15 +1609,16 @@ CIS Managed Ruleset| ...c8e30c5b| N/A| React Native Metro - Command Injection - 
 
 ## WAF - WAF Release - 2025-11-03
 {: #waf-waf-release-2025-11-03}
+
 **Published on:** Mon, 03 Nov 2025 00:00:00 GMT
 
 This week highlights enhancements to detection signatures improving coverage for vulnerabilities in Adobe Commerce and Magento Open Source, linked to CVE-2025-54236.
 
-**Key Findings**
+**Key Findings:**
 
 This vulnerability allows unauthenticated attackers to take over customer accounts through the Commerce REST API and, in certain configurations, may lead to remote code execution. The latest update provides enhanced detection logic for resilient protection against exploitation attempts.
 
-**Impact**
+**Impact:**
 
     * Adobe Commerce (CVE-2025-54236): Exploitation may allow attackers to hijack sessions, execute arbitrary commands, steal data, and disrupt storefronts, resulting in confidentiality and integrity risks for merchants. Administrators are strongly encouraged to apply vendor patches without delay.
 
@@ -1557,15 +1629,16 @@ CIS Managed Ruleset| ...cb6d5fe5| 100774C| Adobe Commerce - Remote Code Executio
 
 ## WAF - WAF Release - 2025-10-30 - Emergency
 {: #waf-waf-release-2025-10-30-emergency}
+
 **Published on:** Thu, 30 Oct 2025 00:00:00 GMT
 
 This week’s release introduces a new detection signature that enhances coverage for a critical vulnerability in Oracle E-Business Suite, tracked as CVE-2025-61884.
 
-**Key Findings**
+**Key Findings:**
 
 The flaw is easily exploitable and allows an unauthenticated attacker with network access to compromise Oracle Configurator, which can grant access to sensitive resources and configuration data. The affected versions include 12.2.3 through 12.2.14.
 
-**Impact**
+**Impact:**
 
 Successful exploitation of CVE-2025-61884 may result in unauthorized access to critical business data or full exposure of information accessible through Oracle Configurator. Administrators are strongly advised to apply vendor's patches and recommended mitigations to reduce this exposure.
 
@@ -1576,15 +1649,16 @@ CIS Managed Ruleset| ...8827402f| N/A| Oracle E-Business Suite - SSRF - CVE:CVE-
 
 ## WAF - WAF Release - 2025-10-24 - Emergency
 {: #waf-waf-release-2025-10-24-emergency}
+
 **Published on:** Fri, 24 Oct 2025 00:00:00 GMT
 
 This week’s release introduces a new detection signature that enhances coverage for a critical vulnerability in Windows Server Update Services (WSUS), tracked as CVE-2025-59287.
 
-**Key Findings**
+**Key Findings:**
 
 The vulnerability allows unauthenticated attackers to potentially achieve remote code execution. The updated detection logic strengthens defenses by improving resilience against exploitation attempts targeting this flaw.
 
-**Impact**
+**Impact:**
 
 Successful exploitation of CVE-2025-59287 could enable attackers to hijack sessions, execute arbitrary commands, exfiltrate sensitive data, and disrupt storefront operations. These actions pose significant confidentiality and integrity risks to affected environments. Administrators should apply vendor patches immediately to mitigate exposure.
 
@@ -1595,15 +1669,16 @@ CIS Managed Ruleset| ...bd72ba08| N/A| Windows Server - Deserialization - CVE:CV
 
 ## WAF - WAF Release - 2025-10-23 - Emergency
 {: #waf-waf-release-2025-10-23-emergency}
+
 **Published on:** Thu, 23 Oct 2025 00:00:00 GMT
 
 This week highlights enhancements to detection signatures improving coverage for vulnerabilities in Adobe Commerce and Magento Open Source, linked to CVE-2025-54236.
 
-**Key Findings**
+**Key Findings:**
 
 This vulnerability allows unauthenticated attackers to take over customer accounts through the Commerce REST API and, in certain configurations, may lead to remote code execution. The latest update enhances detection logic to provide more resilient protection against exploitation attempts.
 
-**Impact**
+**Impact:**
 
 Adobe Commerce (CVE-2025-54236): Exploitation may allow attackers to hijack sessions, execute arbitrary commands, steal data, and disrupt storefronts, resulting in confidentiality and integrity risks for merchants. Administrators are strongly encouraged to apply vendor patches without delay.
 
@@ -1614,15 +1689,16 @@ CIS Managed Ruleset| ...c6ef59a1| N/A| Adobe Commerce - Remote Code Execution - 
 
 ## WAF - WAF Release - 2025-10-20
 {: #waf-waf-release-2025-10-20}
+
 **Published on:** Mon, 20 Oct 2025 00:00:00 GMT
 
 This week’s update introduces an enhanced rule that expands detection coverage for a critical vulnerability in Oracle E-Business Suite. It also improves an existing rule to provide more reliable coverage in request processing.
 
-**Key Findings**
+**Key Findings:**
 
 New WAF rule deployed for Oracle E-Business Suite (CVE-2025-61882) to block unauthenticated attacker's network access via HTTP to compromise Oracle Concurrent Processing. If successfully exploited, this vulnerability may result in remote code execution.
 
-**Impact**
+**Impact:**
 
     * Successful exploitation of CVE-2025-61882 allows unauthenticated attackers to execute arbitrary code remotely by chaining multiple weaknesses, enabling lateral movement into internal services, data exfiltration, and large-scale extortionware deployment within Oracle E-Business Suite environments.
 
@@ -1635,11 +1711,12 @@ CIS Managed Ruleset| ...c22b51d3| N/A| HTTP Truncated| N/A| Disabled| This is a 
 
 ## WAF - New detections released for WAF managed rulesets
 {: #waf-new-detections-released-for-waf-managed-rulesets}
+
 **Published on:** Fri, 17 Oct 2025 00:00:00 GMT
 
 This week we introduced several new detections across CIS Managed Rulesets, expanding coverage for high-impact vulnerability classes such as SSRF, SQLi, SSTI, Reverse Shell attempts, and Prototype Pollution. These rules aim to improve protection against attacker-controlled payloads that exploit misconfigurations or unvalidated input in web applications.
 
-**Key Findings**
+**Key Findings:**
 
 New detections added for multiple exploit categories:
 
@@ -1657,7 +1734,7 @@ PHP Wrapper Injection and HTTP Parameter Pollution detections — to catch path 
 
 Anomaly Header Checks — detecting CRLF injection attempts in header names.
 
-**Impact**
+**Impact:**
 
 These updates help detect multi-vector payloads that blend SSRF + RCE or SQLi + SSTI attacks, especially in cloud-hosted applications with exposed metadata endpoints or unsafe template rendering.
 
@@ -1689,15 +1766,16 @@ CIS Managed Ruleset| ...e34214ef| N/A| Prototype Pollution - Common Payloads - B
 
 ## WAF - WAF Release - 2025-10-13
 {: #waf-waf-release-2025-10-13}
+
 **Published on:** Mon, 13 Oct 2025 00:00:00 GMT
 
 This week’s highlights include a new JinJava rule targeting a sandbox-bypass flaw that could allow malicious template input to escape execution controls. The rule improves detection for unsafe template rendering paths.
 
-**Key Findings**
+**Key Findings:**
 
 New WAF rule deployed for JinJava (CVE-2025-59340) to block a sandbox bypass in the template engine that permits attacker-controlled type construction and arbitrary class instantiation; in vulnerable environments this can escalate to remote code execution and full server compromise.
 
-**Impact**
+**Impact:**
 
     * CVE-2025-59340 — Exploitation enables attacker-supplied type descriptors / Jackson `ObjectMapper` abuse, allowing arbitrary class loading, file/URL access (LFI/SSRF primitives) and, with suitable gadget chains, potential remote code execution and system compromise.
 
@@ -1708,6 +1786,7 @@ CIS Managed Ruleset| ...c04bab5f| 100892| JinJava - SSTI - CVE:CVE-2025-59340| L
 
 ## WAF - WAF Release - 2025-10-07 - Emergency
 {: #waf-waf-release-2025-10-07-emergency}
+
 **Published on:** Tue, 07 Oct 2025 00:00:00 GMT
 
 This week highlights multiple critical Cisco vulnerabilities (CVE-2025-20363, CVE-2025-20333, CVE-2025-20362). This flaw stems from improper input validation in HTTP(S) requests. An authenticated VPN user could send crafted requests to execute code as root, potentially compromising the device. The initial two rules were made available on September 28, with a third rule added today, October 7, for more robust protection.
@@ -1716,7 +1795,7 @@ This week highlights multiple critical Cisco vulnerabilities (CVE-2025-20363, CV
 
 
 
-**Impact**
+**Impact:**
 
 Cisco (CVE-2025-20333, CVE-2025-20362, CVE-2025-20363): Exploitation enables attackers to escalate privileges or achieve remote code execution via command injection. Administrators are strongly advised to apply vendor updates immediately.
 
@@ -1727,11 +1806,12 @@ CIS Managed Ruleset| ...3a4d1bd6| 100788B| Cisco Secure Firewall Adaptive Securi
 
 ## WAF - WAF Release - 2025-10-06
 {: #waf-waf-release-2025-10-06}
+
 **Published on:** Mon, 06 Oct 2025 00:00:00 GMT
 
 This week’s highlights prioritise an emergency Oracle E-Business Suite RCE rule deployed to block active, high-impact exploitation. Also addressed are high-severity Chaos Mesh controller command-injection flaws that enable unauthenticated in-cluster RCE and potential cluster compromise, plus a form-data multipart boundary issue that permits HTTP Parameter Pollution (HPP). Two new generic SQLi detections were added to catch inline-comment obfuscation and information disclosure techniques.
 
-**Key Findings**
+**Key Findings:**
 
     * New emergency rule released for Oracle E-Business Suite (CVE-2025-61882) addressing an actively exploited remote code execution vulnerability in core business application modules. Immediate mitigation deployed to protect enterprise workloads.
 
@@ -1744,7 +1824,7 @@ This week’s highlights prioritise an emergency Oracle E-Business Suite RCE rul
 
 
 
-**Impact**
+**Impact:**
 
     * CVE-2025-61882 — Oracle E-Business Suite remote code execution (emergency detection): attacker-controlled input can yield full system compromise, data exfiltration, and operational outage; immediate blocking enforced.
 
@@ -1767,9 +1847,10 @@ CIS Managed Ruleset| ...73c10b6f| 100918| Generic Rules - SQLi - Information Dis
 
 ## WAF - WAF Release - 2025-10-03
 {: #waf-waf-release-2025-10-03}
+
 **Published on:** Fri, 03 Oct 2025 00:00:00 GMT
 
-**Managed Ruleset Updated**
+**Managed Ruleset Updated:**
 
 This update introduces 21 new detections in the CIS Managed Ruleset (all currently set to Disabled mode to preserve remediation logic and allow quick activation if needed). The rules cover a broad spectrum of threats - SQL injection techniques, command and code injection, information disclosure of common files, URL anomalies, and cross-site scripting.
 
@@ -1800,11 +1881,12 @@ CIS Managed Ruleset| ...dc55cdb6| 100900| Relative Paths - Anomaly Headers| N/A|
 
 ## WAF - WAF Release - 2025-09-29
 {: #waf-waf-release-2025-09-29}
+
 **Published on:** Mon, 29 Sep 2025 00:00:00 GMT
 
 This week highlights four important vendor- and component-specific issues: an authentication bypass in SimpleHelp (CVE-2024-57727), an information-disclosure flaw in Flowise Cloud (CVE-2025-58434), an SSRF in the WordPress plugin Ditty (CVE-2025-8085), and a directory-traversal bug in Vite (CVE-2025-30208). These are paired with improvements to our generic detection coverage (SQLi, SSRF) to raise the baseline and reduce noisy gaps.
 
-**Key Findings**
+**Key Findings:**
 
     * SimpleHelp (CVE-2024-57727): Authentication bypass in SimpleHelp that can allow unauthorized access to management interfaces or sessions.
 
@@ -1817,7 +1899,7 @@ This week highlights four important vendor- and component-specific issues: an au
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities allow attackers to gain access, escalate privileges, or execute actions that were previously unavailable:
 
@@ -1840,17 +1922,18 @@ CIS Managed Ruleset| ...ddc329dd| 100887| Vite - Directory Traversal - CVE:CVE-2
 
 ## WAF - WAF Release - 2025-09-28 - Emergency
 {: #waf-waf-release-2025-09-28-emergency}
+
 **Published on:** Sun, 28 Sep 2025 00:00:00 GMT
 
 This week highlights multiple critical Cisco vulnerabilities (CVE-2025-20363, CVE-2025-20333, CVE-2025-20362). This flaw stems from improper input validation in HTTP(S) requests. An authenticated VPN user could send crafted requests to execute code as root, potentially compromising the device.
 
-**Key Findings**
+**Key Findings:**
 
     * Cisco (CVE-2025-20333, CVE-2025-20362, CVE-2025-20363): Multiple vulnerabilities that could allow attackers to exploit unsafe deserialization and input validation flaws. Successful exploitation may result in arbitrary code execution, privilege escalation, or command injection on affected systems.
 
 
 
-**Impact**
+**Impact:**
 
 Cisco (CVE-2025-20333, CVE-2025-20362, CVE-2025-20363): Exploitation enables attackers to escalate privileges or achieve remote code execution via command injection.
 
@@ -1862,9 +1945,10 @@ CIS Managed Ruleset| ...d30f768e| 100788A| Cisco Secure Firewall Adaptive Securi
 
 ## WAF - WAF Release - 2025-09-26
 {: #waf-waf-release-2025-09-26}
+
 **Published on:** Fri, 26 Sep 2025 00:00:00 GMT
 
-**Managed Ruleset Updated**
+**Managed Ruleset Updated:**
 
 This update introduces 11 new detections in the CIS Managed Ruleset (all currently set to Disabled mode to preserve remediation logic and allow quick activation if needed). The rules cover a broad spectrum of threats - SQL injection techniques, command and code injection, information disclosure of common files, URL anomalies, and cross-site scripting.
 
@@ -1885,17 +1969,18 @@ CIS Managed Ruleset| ...b4026c88| 100900| SQLi - Probing| N/A| Disabled| This is
 
 ## WAF - WAF Release - 2025-09-24 - Emergency
 {: #waf-waf-release-2025-09-24-emergency}
+
 **Published on:** Wed, 24 Sep 2025 00:00:00 GMT
 
 This week highlights a critical vendor-specific vulnerability: a deserialization flaw in the License Servlet of Fortra’s GoAnywhere MFT. By forging a license response signature, an attacker can trigger deserialization of arbitrary objects, potentially leading to command injection.
 
-**Key Findings**
+**Key Findings:**
 
     * GoAnywhere MFT (CVE-2025-10035): Deserialization vulnerability in the License Servlet that allows attackers with a forged license response signature to deserialize arbitrary objects, potentially resulting in command injection.
 
 
 
-**Impact**
+**Impact:**
 
 GoAnywhere MFT (CVE-2025-10035): Exploitation enables attackers to escalate privileges or achieve remote code execution via command injection.
 
@@ -1906,11 +1991,12 @@ CIS Managed Ruleset| ...e08b39f3| 100787| Fortra GoAnywhere - Auth Bypass - CVE:
 
 ## WAF - WAF Release - 2025-09-22
 {: #waf-waf-release-2025-09-22}
+
 **Published on:** Mon, 22 Sep 2025 00:00:00 GMT
 
 This week emphasizes two critical vendor-specific vulnerabilities: a full elevation-of-privilege in Microsoft Azure Networking (CVE-2025-54914) and a server-side template injection (SSTI) leading to remote code execution (RCE) in Skyvern (CVE-2025-49619). These are complemented by enhancements in generic detections (SQLi, SSRF) to improve baseline coverage.
 
-**Key Findings**
+**Key Findings:**
 
     * Azure (CVE-2025-54914): Vulnerability in Azure Networking allowing elevation of privileges.
 
@@ -1921,7 +2007,7 @@ This week emphasizes two critical vendor-specific vulnerabilities: a full elevat
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities allow attackers to escalate privileges or execute code under conditions where previously they could not:
 
@@ -1946,13 +2032,14 @@ CIS Managed Ruleset| ...0380a1a6| 100800_BETA| SQLi - Obfuscated Boolean - Beta|
 
 ## WAF - WAF Release - 2025-09-15
 {: #waf-waf-release-2025-09-15}
+
 **Published on:** Mon, 15 Sep 2025 00:00:00 GMT
 
-**This week's update**
+**This week's update:**
 
 This week's focus highlights newly disclosed vulnerabilities in DevOps tooling, data visualization platforms, and enterprise CMS solutions. These issues include sensitive information disclosure and remote code execution, putting organizations at risk of credential leakage, unauthorized access, and full system compromise.
 
-**Key Findings**
+**Key Findings:**
 
     * Argo CD (CVE-2025-55190): Exposure of sensitive information could allow attackers to access credential data stored in configurations, potentially leading to compromise of Kubernetes workloads and secrets.
 
@@ -1963,7 +2050,7 @@ This week's focus highlights newly disclosed vulnerabilities in DevOps tooling, 
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities expose organizations to serious risks, including credential theft, unauthorized access, and full system compromise. Argo CD's flaw may expose Kubernetes secrets, DataEase exploitation could give attackers remote execution capabilities, and Sitecore's disclosure issue increases the likelihood of sensitive data leakage and business impact.
 
@@ -1978,13 +2065,14 @@ CIS Managed Ruleset| ...005a12fd| 100880| Sitecore - Information Disclosure - CV
 
 ## WAF - WAF Release - 2025-09-08
 {: #waf-waf-release-2025-09-08}
+
 **Published on:** Mon, 08 Sep 2025 00:00:00 GMT
 
-**This week's update**
+**This week's update:**
 
 This week’s focus highlights newly disclosed vulnerabilities in web frameworks, enterprise applications, and widely deployed CMS plugins. The vulnerabilities include SSRF, authentication bypass, arbitrary file upload, and remote code execution (RCE), exposing organizations to high-impact risks such as unauthorized access, system compromise, and potential data exposure. In addition, security rule enhancements have been deployed to cover general command injection and server-side injection attacks, further strengthening protections.
 
-**Key Findings**
+**Key Findings:**
 
     * Next.js (CVE-2025-57822): Improper handling of redirects in custom middleware can lead to server-side request forgery (SSRF) when user-supplied headers are forwarded. Attackers could exploit this to access internal services or cloud metadata endpoints. The issue has been resolved in versions 14.2.32 and 15.4.7. Developers using custom middleware should upgrade and verify proper redirect handling in `next()` calls.
 
@@ -1999,7 +2087,7 @@ This week’s focus highlights newly disclosed vulnerabilities in web frameworks
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities could allow attackers to gain unauthorized access, execute malicious code, or take full control of affected systems. The Next.js SSRF flaw may expose internal services or cloud metadata endpoints to attackers. Exploitations of ScriptCase and Sar2HTML could result in remote code execution, administrative takeover, and full server compromise. In Zhiyuan OA, the arbitrary file upload vulnerability allows attackers to execute malicious code on the web server, potentially exposing sensitive data and applications. The authentication bypass in WordPress InfiniteWP Client enables attackers to gain administrative access, risking data exposure and unauthorized control of connected sites.
 
@@ -2020,13 +2108,14 @@ CIS Managed Ruleset| ...f24c0fbe| 100875| Zhiyuan OA - Remote Code Execution - C
 
 ## WAF - WAF Release - 2025-09-04 - Emergency
 {: #waf-waf-release-2025-09-04-emergency}
+
 **Published on:** Thu, 04 Sep 2025 00:00:00 GMT
 
-**This week's update**
+**This week's update:**
 
 This week, new critical vulnerabilities were disclosed in Sitecore’s Sitecore Experience Manager (XM), Sitecore Experience Platform (XP), specifically versions 9.0 through 9.3, and 10.0 through 10.4. These flaws are caused by unsafe data deserialization and code reflection, leaving affected systems at high risk of exploitation.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2025-53690: Remote Code Execution through Insecure Deserialization
     * CVE-2025-53691: Remote Code Execution through Insecure Deserialization
@@ -2034,7 +2123,7 @@ This week, new critical vulnerabilities were disclosed in Sitecore’s Sitecore 
 
 
 
-**Impact**
+**Impact:**
 
 Exploitation could allow attackers to execute arbitrary code remotely on the affected system and conduct cache poisoning attacks, potentially leading to further compromise. Applying the latest vendor-released solution without delay is strongly recommended.
 
@@ -2047,19 +2136,20 @@ CIS Managed Ruleset| ...6c410240| 100879| Sitecore - Remote Code Execution - CVE
 
 ## WAF - WAF Release - 2025-09-01
 {: #waf-waf-release-2025-09-01}
+
 **Published on:** Mon, 01 Sep 2025 00:00:00 GMT
 
-**This week's update**
+**This week's update:**
 
 This week, a critical vulnerability was disclosed in Fortinet FortiWeb (versions 7.6.3 and below, versions 7.4.7 and below, versions 7.2.10 and below, and versions 7.0.10 and below), linked to improper parameter handling that could allow unauthorized access.
 
-**Key Findings**
+**Key Findings:**
 
     * Fortinet FortiWeb (CVE-2025-52970): A vulnerability may allow an unauthenticated remote attacker with access to non-public information to log in as any existing user on the device via a specially crafted request.
 
 
 
-**Impact**
+**Impact:**
 
 Exploitation could allow an unauthenticated attacker to impersonate any existing user on the device, potentially enabling them to modify system settings or exfiltrate sensitive information, posing a serious security risk. Upgrading to the latest vendor-released version is strongly recommended.
 
@@ -2071,13 +2161,14 @@ CIS Managed Ruleset| ...790c9dde| 100136C| XSS - JavaScript - Headers and Body| 
 
 ## WAF - WAF Release - 2025-08-29 - Emergency
 {: #waf-waf-release-2025-08-29-emergency}
+
 **Published on:** Fri, 29 Aug 2025 00:00:00 GMT
 
-**This week's update**
+**This week's update:**
 
 This week, new critical vulnerabilities were disclosed in Next.js’s image optimization functionality, exposing a broad range of production environments to risks of data exposure and cache manipulation.
 
-**Key Findings**
+**Key Findings:**
 
     * CVE-2025-55173: Arbitrary file download from the server via image optimization.
 
@@ -2086,7 +2177,7 @@ This week, new critical vulnerabilities were disclosed in Next.js’s image opti
 
 
 
-**Impact**
+**Impact:**
 
 Exploitation could expose sensitive files, leak user or backend data, and undermine application trust. Given Next.js’s wide use, immediate patching and cache hardening are strongly advised.
 
@@ -2098,13 +2189,14 @@ CIS Managed Ruleset| ...69b9ea7d| 100616| Next.js - Information Disclosure - CVE
 
 ## WAF - WAF Release - 2025-08-25
 {: #waf-waf-release-2025-08-25}
+
 **Published on:** Mon, 25 Aug 2025 00:00:00 GMT
 
-**This week's update**
+**This week's update:**
 
 This week, critical vulnerabilities were disclosed that impact widely used open-source infrastructure, creating high-risk scenarios for code execution and operational disruption.
 
-**Key Findings**
+**Key Findings:**
 
     * Apache HTTP Server – Code Execution (CVE-2024-38474): A flaw in Apache HTTP Server allows attackers to achieve remote code execution, enabling full compromise of affected servers. This vulnerability threatens the confidentiality, integrity, and availability of critical web services.
 
@@ -2113,7 +2205,7 @@ This week, critical vulnerabilities were disclosed that impact widely used open-
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities pose severe risks to enterprise environments and open-source ecosystems. Remote code execution enables attackers to gain deep system access, steal data, disrupt services, and establish persistent footholds for broader intrusions. Given the widespread deployment of Apache HTTP Server and Laravel in production systems, timely patching and mitigation are critical.
 
@@ -2126,6 +2218,7 @@ CIS Managed Ruleset| ...02eaac5b| 100846| Laravel - Remote Code Execution - CVE:
 
 ## WAF - WAF Release - 2025-08-22
 {: #waf-waf-release-2025-08-22}
+
 **Published on:** Fri, 22 Aug 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2156,13 +2249,14 @@ CIS Managed Ruleset| ...d2dd41b5| 100871| SQLi - LIKE 3| N/A| Disabled| This is 
 
 ## WAF - WAF Release - 2025-08-18
 {: #waf-waf-release-2025-08-18}
+
 **Published on:** Mon, 18 Aug 2025 00:00:00 GMT
 
-**This week's update**
+**This week's update:**
 
 This week, a series of critical vulnerabilities were discovered impacting core enterprise and open-source infrastructure. These flaws present a range of risks, providing attackers with distinct pathways for remote code execution, methods to breach internal network boundaries, and opportunities for critical data exposure and operational disruption.
 
-**Key Findings**
+**Key Findings:**
 
     * SonicWall SMA (CVE-2025-32819, CVE-2025-32820, CVE-2025-32821): A remote authenticated attacker with SSLVPN user privileges can bypass path traversal protections. These vulnerabilities enable a attacker to bypass security checks to read, modify, or delete arbitrary files. An attacker with administrative privileges can escalate this further, using a command injection flaw to upload malicious files, which could ultimately force the appliance to reboot to its factory default settings.
 
@@ -2181,7 +2275,7 @@ This week, a series of critical vulnerabilities were discovered impacting core e
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities affect core infrastructure, from network security appliances like SonicWall to data platforms such as Apache Druid and ML frameworks like BentoML. The code execution and deserialization flaws are particularly severe, offering deep system access that allows attackers to steal data, disrupt services, and establish a foothold for broader intrusions. Simultaneously, SSRF and XXE vulnerabilities undermine network boundaries, exposing sensitive internal data and creating pathways for lateral movement. Beyond data-centric threats, flaws in edge devices like the Tenda router introduce the tangible risk of operational disruption, highlighting a multi-faceted threat to the security and stability of key enterprise systems.
 
@@ -2202,11 +2296,12 @@ CIS Managed Ruleset| ...96f34ce3| 100845A| Adobe Experience Manager Forms - XSS 
 
 ## WAF - WAF Release - 2025-08-11
 {: #waf-waf-release-2025-08-11}
+
 **Published on:** Mon, 11 Aug 2025 00:00:00 GMT
 
 This week's update focuses on a wide range of enterprise software, from network infrastructure and security platforms to content management systems and development frameworks. Flaws include unsafe deserialization, OS command injection, SSRF, authentication bypass, and arbitrary file upload — many of which allow unauthenticated remote code execution. Notable risks include Cisco Identity Services Engine and Ivanti EPMM, where successful exploitation could grant attackers full administrative control of core network infrastructure and popular web services such as WordPress, SharePoint, and Ingress-Nginx, where security bypasses and arbitrary file uploads could lead to complete site or server compromise.
 
-**Key Findings**
+**Key Findings:**
 
     * Cisco Identity Services Engine (CVE-2025-20281): Insufficient input validation in a specific API of Cisco Identity Services Engine (ISE) and ISE-PIC allows an unauthenticated, remote attacker to execute arbitrary code with root privileges on an affected device.
 
@@ -2241,7 +2336,7 @@ This week's update focuses on a wide range of enterprise software, from network 
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities span a broad range of enterprise technologies, including network access control systems, monitoring platforms, web servers, CMS platforms, cloud services, and collaboration tools. Exploitation techniques range from remote code execution and command injection to authentication bypass, SQL injection, path traversal, and configuration weaknesses.
 
@@ -2271,11 +2366,12 @@ CIS Managed Ruleset| ...4cefeeda| 100829A| WordPress:Plugin:Simple File List - R
 
 ## WAF - WAF Release - 2025-08-07 - Emergency
 {: #waf-waf-release-2025-08-07-emergency}
+
 **Published on:** Thu, 07 Aug 2025 00:00:00 GMT
 
 This week’s highlight focuses on two critical vulnerabilities affecting key infrastructure and enterprise content management platforms. Both flaws present significant remote code execution risks that can be exploited with minimal or no user interaction.
 
-**Key Findings**
+**Key Findings:**
 
     * Squid (≤6.3) — CVE-2025-54574: A heap buffer overflow occurs when processing Uniform Resource Names (URNs). This vulnerability may allow remote attackers to execute arbitrary code on the server. The issue has been resolved in version 6.4.
 
@@ -2284,7 +2380,7 @@ This week’s highlight focuses on two critical vulnerabilities affecting key in
 
 
 
-**Impact**
+**Impact:**
 
 Both vulnerabilities expose critical attack vectors that can lead to full server compromise. The Squid heap buffer overflow allows remote code execution by crafting malicious URNs, which can lead to server takeover or denial of service. Given Squid’s widespread use as a caching proxy, this flaw could be exploited to disrupt network traffic or gain footholds inside secure environments.
 
@@ -2300,11 +2396,12 @@ CIS Managed Ruleset| ...baec057a| 100840| Squid - Buffer Overflow - CVE:CVE-2025
 
 ## WAF - WAF Release - 2025-08-04
 {: #waf-waf-release-2025-08-04}
+
 **Published on:** Mon, 04 Aug 2025 00:00:00 GMT
 
 This week's highlight focuses on a series of significant vulnerabilities identified across widely adopted web platforms, from enterprise-grade CMS to essential backend administration tools. The findings reveal multiple vectors for attack, including critical flaws that allow for full server compromise and others that enable targeted attacks against users.
 
-**Key Findings**
+**Key Findings:**
 
     * Sitecore (CVE-2025-34509, CVE-2025-34510, CVE-2025-34511): A hardcoded credential allows remote attackers to access administrative APIs. Once authenticated, they can exploit an additional vulnerability to upload arbitrary files, leading to remote code execution.
 
@@ -2323,7 +2420,7 @@ This week's highlight focuses on a series of significant vulnerabilities identif
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities pose a multi-layered threat to widely adopted web technologies, ranging from enterprise-grade platforms like Sitecore to everyday solutions such as WordPress, and backend tools like CentOS WebPanel. The most severe risks originate in remote code execution (RCE) flaws found in Sitecore, CentOS WebPanel, LaRecipe, and the WPBookit plugin. These allow attackers to bypass security controls and gain deep access to the server, enabling them to steal sensitive data, deface websites, install persistent malware, or use the compromised server as a launchpad for further attacks.
 
@@ -2347,11 +2444,12 @@ CIS Managed Ruleset| ...0bf1b661| 100823| WordPress:Theme:Motors - Privilege Esc
 
 ## WAF - WAF Release - 2025-07-28
 {: #waf-waf-release-2025-07-28}
+
 **Published on:** Mon, 28 Jul 2025 00:00:00 GMT
 
 This week’s update spotlights several vulnerabilities across Apache Tomcat, MongoDB, and Fortinet FortiWeb. Several flaws related with a memory leak in Apache Tomcat can lead to a denial-of-service attack. Additionally, a code injection flaw in MongoDB's Mongoose library allows attackers to bypass security controls to access restricted data.
 
-**Key Findings**
+**Key Findings:**
 
     * Fortinet FortiWeb (CVE-2025-25257): An improper neutralization of special elements used in a SQL command vulnerability in Fortinet FortiWeb versions allows an unauthenticated attacker to execute unauthorized SQL code or commands.
 
@@ -2362,7 +2460,7 @@ This week’s update spotlights several vulnerabilities across Apache Tomcat, Mo
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities target user-facing components, web application servers, and back-end databases. A SQL injection flaw in Fortinet FortiWeb can lead to data theft or system compromise. A separate issue in Apache Tomcat involves a memory leak from improper input validation, which could be exploited for a denial-of-service (DoS) attack. Finally, a vulnerability in MongoDB's Mongoose library allows attackers to bypass security filters and access unauthorized data through malicious search queries.
 
@@ -2377,18 +2475,19 @@ CIS Managed Ruleset| ...688f8e79| 100816| MongoDB - Remote Code Execution - CVE:
 
 ## WAF - WAF Release - 2025-07-21 - Emergency
 {: #waf-waf-release-2025-07-21-emergency}
+
 **Published on:** Mon, 21 Jul 2025 00:00:00 GMT
 
 This week's update highlights several high-impact vulnerabilities affecting Microsoft SharePoint Server. These flaws, involving unsafe deserialization, allow unauthenticated remote code execution over the network, posing a critical threat to enterprise environments relying on SharePoint for collaboration and document management.
 
-**Key Findings**
+**Key Findings:**
 
     * Microsoft SharePoint Server (CVE-2025-53770): A critical vulnerability involving unsafe deserialization of untrusted data, enabling unauthenticated remote code execution over the network. This flaw allows attackers to execute arbitrary code on vulnerable SharePoint servers without user interaction.
     * Microsoft SharePoint Server (CVE-2025-53771): A closely related deserialization issue that can be exploited by unauthenticated attackers, potentially leading to full system compromise. The vulnerability highlights continued risks around insecure serialization logic in enterprise collaboration platforms.
 
 
 
-**Impact**
+**Impact:**
 
 Together, these vulnerabilities significantly weaken the security posture of on-premise Microsoft SharePoint Server deployments. By enabling remote code execution without authentication, they open the door for attackers to gain persistent access, deploy malware, and move laterally across enterprise environments.
 
@@ -2402,11 +2501,12 @@ For more details, also refer to [our blog ↗](https://blog.cloudflare.com/cloud
 
 ## WAF - WAF Release - 2025-07-21
 {: #waf-waf-release-2025-07-21}
+
 **Published on:** Mon, 21 Jul 2025 00:00:00 GMT
 
 This week's update spotlights several critical vulnerabilities across Citrix NetScaler Memory Disclosure, FTP servers and network application. Several flaws enable unauthenticated remote code execution or sensitive data exposure, posing a significant risk to enterprise security.
 
-**Key Findings**
+**Key Findings:**
 
     * Wing FTP Server (CVE-2025-47812): A critical Remote Code Execution (RCE) vulnerability that enables unauthenticated attackers to execute arbitrary code with root/SYSTEM-level privileges by exploiting a Lua injection flaw.
     * Infoblox NetMRI (CVE-2025-32813): A remote unauthenticated command injection flaw that allows an attacker to execute arbitrary commands, potentially leading to unauthorized access.
@@ -2415,7 +2515,7 @@ This week's update spotlights several critical vulnerabilities across Citrix Net
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities affect critical enterprise infrastructure, from file transfer services and network management appliances to application delivery controllers. The Wing FTP RCE and Infoblox command injection flaws offer direct paths to deep system compromise, while the Citrix "Bleed2" and Akamai XXE vulnerabilities undermine system integrity by enabling session hijacking and sensitive data theft.
 
@@ -2431,18 +2531,19 @@ CIS Managed Ruleset| ...6e70469f| 100810| Akamai CloudTest - XXE - CVE:CVE-2025-
 
 ## WAF - WAF Release - 2025-07-14
 {: #waf-waf-release-2025-07-14}
+
 **Published on:** Mon, 14 Jul 2025 00:00:00 GMT
 
 This week’s vulnerability analysis highlights emerging web application threats that exploit modern JavaScript behavior and SQL parsing ambiguities. Attackers continue to refine techniques such as attribute overloading and obfuscated logic manipulation to evade detection and compromise front-end and back-end systems.
 
-**Key Findings**
+**Key Findings:**
 
     * XSS – Attribute Overloading: A novel cross-site scripting technique where attackers abuse custom or non-standard HTML attributes to smuggle payloads into the DOM. These payloads evade traditional sanitization logic, especially in frameworks that loosely validate attributes or trust unknown tokens.
     * XSS – onToggle Event Abuse: Exploits the lesser-used onToggle event (triggered by elements like `<details>`) to execute arbitrary JavaScript when users interact with UI elements. This vector is often overlooked by static analyzers and can be embedded in seemingly benign components.
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities target both user-facing components and back-end databases, introducing potential vectors for credential theft, session hijacking, or full data exfiltration. The XSS variants bypass conventional filters through overlooked HTML behaviors, while the obfuscated SQLi enables attackers to stealthily probe back-end logic, making them especially difficult to detect and block.
 
@@ -2454,6 +2555,7 @@ CIS Managed Ruleset| ...37548d06| 100799| XSS - OnToggle| Log| Block| This is a 
 
 ## WAF - Increased IP List Limits for Enterprise Accounts
 {: #waf-increased-ip-list-limits-for-enterprise-accounts}
+
 **Published on:** Mon, 07 Jul 2025 00:00:00 GMT
 
 We have significantly increased the limits for [IP Lists](https://developers.cloudflare.com/waf/tools/lists/) on Enterprise plans to provide greater flexibility and control:
@@ -2468,11 +2570,12 @@ Limits for other list types and plans remain unchanged. For more details, refer 
 
 ## WAF - WAF Release - 2025-07-07
 {: #waf-waf-release-2025-07-07}
+
 **Published on:** Mon, 07 Jul 2025 00:00:00 GMT
 
 This week’s roundup uncovers critical vulnerabilities affecting enterprise VoIP systems, webmail platforms, and a popular JavaScript framework. The risks range from authentication bypass to remote code execution (RCE) and buffer handling flaws, each offering attackers a path to elevate access or fully compromise systems.
 
-**Key Findings**
+**Key Findings:**
 
     * Next.js - Auth Bypass: A newly detected authentication bypass flaw in the Next.js framework allows attackers to access protected routes or APIs without proper authorization, undermining application access controls.
     * Fortinet FortiVoice (CVE-2025-32756): A buffer error vulnerability in FortiVoice systems that could lead to memory corruption and potential code execution or service disruption in enterprise telephony environments.
@@ -2480,7 +2583,7 @@ This week’s roundup uncovers critical vulnerabilities affecting enterprise VoI
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities affect core business infrastructure, from web interfaces to voice communications and email platforms. The Roundcube RCE and FortiVoice buffer flaw offer potential for deep system access, while the Next.js auth bypass undermines trust boundaries in modern web apps.
 
@@ -2493,11 +2596,12 @@ CIS Managed Ruleset| ...ab314023| 100797| Roundcube - Remote Code Execution - CV
 
 ## WAF - WAF Release - 2025-06-16
 {: #waf-waf-release-2025-06-16}
+
 **Published on:** Mon, 16 Jun 2025 00:00:00 GMT
 
 This week’s roundup highlights multiple critical vulnerabilities across popular web frameworks, plugins, and enterprise platforms. The focus lies on remote code execution (RCE), server-side request forgery (SSRF), and insecure file upload vectors that enable full system compromise or data exfiltration.
 
-**Key Findings**
+**Key Findings:**
 
     * Cisco IOS XE (CVE-2025-20188): Critical RCE vulnerability enabling unauthenticated attackers to execute arbitrary commands on network infrastructure devices, risking total router compromise.
     * Axios (CVE-2024-39338): SSRF flaw impacting server-side request control, allowing attackers to manipulate internal service requests when misconfigured with unsanitized user input.
@@ -2510,7 +2614,7 @@ This week’s roundup highlights multiple critical vulnerabilities across popula
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities span core systems — from routers to e-commerce to email. RCE in Cisco IOS XE, Roundcube, and vBulletin poses full system compromise. SSRF in Axios and CrushFTP supports internal pivoting, while WooCommerce’s file upload bug opens doors to mass WordPress exploitation.
 
@@ -2528,11 +2632,12 @@ CIS Managed Ruleset| ...fa338296| 100794| WordPress WooCommerce Plugin - Dangero
 
 ## WAF - WAF Release - 2025-06-09
 {: #waf-waf-release-2025-06-09}
+
 **Published on:** Mon, 09 Jun 2025 00:00:00 GMT
 
 This week’s update spotlights four critical vulnerabilities across CMS platforms, VoIP systems, and enterprise applications. Several flaws enable remote code execution or privilege escalation, posing significant enterprise risks.
 
-**Key Findings**
+**Key Findings:**
 
     * WordPress OttoKit Plugin (CVE-2025-27007): Privilege escalation flaw allows unauthenticated attackers to create or elevate user accounts, compromising WordPress administrative control.
     * SAP NetWeaver (CVE-2025-42999): Remote Code Execution vulnerability enables attackers to execute arbitrary code on SAP NetWeaver systems, threatening core ERP and business operations.
@@ -2541,7 +2646,7 @@ This week’s update spotlights four critical vulnerabilities across CMS platfor
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities target widely deployed CMS, ERP, and VoIP systems. RCE flaws in SAP NetWeaver and Camaleon CMS allow full takeover of business-critical applications. Privilege escalation in OttoKit exposes WordPress environments to full administrative compromise. FortiVoice buffer handling issues risk destabilizing or fully compromising enterprise telephony systems.
 
@@ -2555,11 +2660,12 @@ CIS Managed Ruleset| ...3b840107| 100780| Camaleon CMS - Remote Code Execution -
 
 ## WAF - WAF Release - 2025-06-02
 {: #waf-waf-release-2025-06-02}
+
 **Published on:** Mon, 02 Jun 2025 00:00:00 GMT
 
 This week’s roundup highlights five high-risk vulnerabilities affecting SD-WAN, load balancers, and AI platforms. Several flaws enable unauthenticated remote code execution or authentication bypass.
 
-**Key Findings**
+**Key Findings:**
 
     * Versa Concerto SD-WAN (CVE-2025-34026, CVE-2025-34027): Authentication bypass vulnerabilities allow attackers to gain unauthorized access to SD-WAN management interfaces, compromising network segmentation and control.
     * Kemp LoadMaster (CVE-2024-7591): Remote Code Execution vulnerability enables attackers to execute arbitrary commands, potentially leading to full device compromise within enterprise load balancing environments.
@@ -2569,7 +2675,7 @@ This week’s roundup highlights five high-risk vulnerabilities affecting SD-WAN
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities expose critical infrastructure across networking, AI platforms, and SaaS integrations. Unauthenticated RCE and auth bypass flaws in Versa Concerto, Kemp LoadMaster, and Anyscale Ray allow full system compromise. AnythingLLM and SSRF payload variants expand attack surfaces into internal cloud resources, sensitive APIs, and metadata services, increasing risk of privilege escalation, data theft, and persistent access.
 
@@ -2586,6 +2692,7 @@ CIS Managed Ruleset| ...5c963d9d| 100782| SSRF - Obfuscated Payloads| N/A| Disab
 
 ## WAF - Updated attack score model
 {: #waf-updated-attack-score-model}
+
 **Published on:** Wed, 28 May 2025 00:00:00 GMT
 
 We have deployed an updated attack score model focused on enhancing the detection of multiple false positives (FPs).
@@ -2595,11 +2702,12 @@ As a result of this improvement, some changes in observed attack scores are expe
 
 ## WAF - WAF Release - 2025-05-27
 {: #waf-waf-release-2025-05-27}
+
 **Published on:** Tue, 27 May 2025 00:00:00 GMT
 
 This week’s roundup covers nine vulnerabilities, including six critical RCEs and one dangerous file upload. Affected platforms span cloud services, CI/CD pipelines, CMSs, and enterprise backup systems. Several are now addressed by updated WAF managed rulesets.
 
-**Key Findings**
+**Key Findings:**
 
     * Ingress-Nginx (CVE-2025-1098): Unauthenticated RCE via unsafe annotation handling. Impacts Kubernetes clusters.
     * GitHub Actions (CVE-2025-30066): RCE through malicious workflow inputs. Targets CI/CD pipelines.
@@ -2613,7 +2721,7 @@ This week’s roundup covers nine vulnerabilities, including six critical RCEs a
 
 
 
-**Impact**
+**Impact:**
 
 These vulnerabilities expose critical components across Kubernetes, CI/CD pipelines, and enterprise systems to severe threats including unauthenticated remote code execution, authentication bypass, and information leaks. High-impact flaws in Ingress-Nginx, Craft CMS, F5 BIG-IP, and NAKIVO Backup enable full system compromise, while SAP NetWeaver and AJ-Report allow remote shell deployment and template-based attacks. Ivanti EPMM’s auth bypass further risks unauthorized control over mobile device fleets.
 
@@ -2634,11 +2742,12 @@ CIS Managed Ruleset| ...ebafdfe6| 100763| F5 Big IP - Remote Code Execution - CV
 
 ## WAF - WAF Release - 2025-05-19
 {: #waf-waf-release-2025-05-19}
+
 **Published on:** Mon, 19 May 2025 00:00:00 GMT
 
 This week's analysis covers four vulnerabilities, with three rated critical due to their Remote Code Execution (RCE) potential. One targets a high-traffic frontend platform, while another targets a popular content management system. These detections are now part of the CIS Managed Ruleset in _Block_ mode.
 
-**Key Findings**
+**Key Findings:**
 
     * Commvault Command Center (CVE-2025-34028) exposes an unauthenticated RCE via insecure command injection paths in the web UI. This is critical due to its use in enterprise backup environments.
     * BentoML (CVE-2025-27520) reveals an exploitable vector where serialized payloads in model deployment APIs can lead to arbitrary command execution. This targets modern AI/ML infrastructure.
@@ -2647,7 +2756,7 @@ This week's analysis covers four vulnerabilities, with three rated critical due 
 
 
 
-**Impact**
+**Impact:**
 
 These newly detected vulnerabilities introduce critical risk across modern web stacks, AI infrastructure, and content platforms: unauthenticated RCEs in Commvault, BentoML, and Craft CMS enable full system compromise with minimal attacker effort.
 
@@ -2663,6 +2772,7 @@ CIS Managed Ruleset| ...f15bfda4| 100753| Craft CMS - Remote Code Execution - CV
 
 ## WAF - Improved Payload Logging for WAF Managed Rules
 {: #waf-improved-payload-logging-for-waf-managed-rules}
+
 **Published on:** Thu, 08 May 2025 00:00:00 GMT
 
 We have upgraded WAF Payload Logging to enhance rule diagnostics and usability:
@@ -2671,8 +2781,7 @@ We have upgraded WAF Payload Logging to enhance rule diagnostics and usability:
     * **Visual highlighting** : Matched content is visually highlighted in the UI for faster identification.
     * **Enhanced context** : Logs now include surrounding context to make diagnostics more effective.
 
-![Log entry showing payload logging details](https://developers.cloudflare.com/_astro/2025-05-payload-logging-update.1M29LjNm_Z23wApX.webp)
-{: caption="Log entry showing payload logging details" caption-side="bottom"}
+![Log entry showing payload logging details](https://developers.cloudflare.com/_astro/2025-05-payload-logging-update.1M29LjNm_Z23wApX.webp){: caption="Log entry showing payload logging details" caption-side="bottom"}
 
 Payload Logging is available to all Enterprise customers. If you have not used Payload Logging before, check how you can [get started](https://developers.cloudflare.com/waf/managed-rules/payload-logging/).
 
@@ -2681,17 +2790,18 @@ Payload Logging is available to all Enterprise customers. If you have not used P
 
 ## WAF - WAF Release - 2025-05-05
 {: #waf-waf-release-2025-05-05}
+
 **Published on:** Mon, 05 May 2025 00:00:00 GMT
 
 This week's analysis covers five CVEs with varying impact levels. Four are rated critical, while one is rated high severity. Remote Code Execution vulnerabilities dominate this set.
 
-**Key Findings**
+**Key Findings:**
 
 GFI KerioControl (CVE-2024-52875) contains an unauthenticated Remote Code Execution (RCE) vulnerability that targets firewall appliances. This vulnerability can let attackers gain root level system access, making this CVE particularly attractive for threat actors.
 
 The SonicWall SMA vulnerabilities remain concerning due to their continued exploitation since 2021. These critical vulnerabilities in remote access solutions create dangerous entry points to networks.
 
-**Impact**
+**Impact:**
 
 Customers using the Managed Ruleset will receive rule coverage following this week's release. Below is a breakdown of the recommended prioritization based on current exploitation trends:
 
@@ -2712,6 +2822,7 @@ CIS Managed Ruleset| ...caa7b208| 100752| MinIO - Auth Bypass - CVE:CVE-2025-314
 
 ## WAF - WAF Release - 2025-04-26 - Emergency
 {: #waf-waf-release-2025-04-26-emergency}
+
 **Published on:** Sat, 26 Apr 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2721,6 +2832,7 @@ CIS Managed Ruleset| ...19fcc883| 100755| React.js - Router and Remix Vulnerabil
 
 ## WAF - WAF Release - 2025-04-22
 {: #waf-waf-release-2025-04-22}
+
 **Published on:** Tue, 22 Apr 2025 00:00:00 GMT
 
 Each of this week's rule releases covers a distinct CVE, with half of the rules targeting Remote Code Execution (RCE) attacks. Of the 6 CVEs covered, four were scored as critical, with the other two scored as high.
@@ -2741,6 +2853,7 @@ CIS Managed Ruleset| ...d52139a8| 100744| Oracle Access Manager - Remote Code Ex
 
 ## WAF - WAF Release - 2025-04-14
 {: #waf-waf-release-2025-04-14}
+
 **Published on:** Mon, 14 Apr 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2750,6 +2863,7 @@ CIS Managed Ruleset| ...d6b2d36c| 100739A| Next.js - Auth Bypass - CVE:CVE-2025-
 
 ## WAF - WAF Release - 2025-04-02
 {: #waf-waf-release-2025-04-02}
+
 **Published on:** Wed, 02 Apr 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2778,6 +2892,7 @@ CIS Managed Ruleset| ...fcea5ed2| 100734| Apache Camel - Remote Code Execution -
 
 ## WAF - WAF Release - 2025-03-22 - Emergency
 {: #waf-waf-release-2025-03-22-emergency}
+
 **Published on:** Sat, 22 Mar 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2787,6 +2902,7 @@ CIS Managed Ruleset| ...f472013e| 100739| Next.js - Auth Bypass - CVE:CVE-2025-2
 
 ## Workers, Pages, WAF - New Managed WAF rule for Next.js CVE-2025-29927.
 {: #workers-pages-waf-new-managed-waf-rule-for-nextjs-cve-2025-29927}
+
 **Published on:** Sat, 22 Mar 2025 00:00:00 GMT
 
 **Update: Mon Mar 24th, 11PM UTC** : Next.js has made further changes to address a smaller vulnerability introduced in the patches made to its middleware handling. Users should upgrade to Next.js versions `15.2.4`, `14.2.26`, `13.5.10` or `12.3.6`. **If you are unable to immediately upgrade or are running an older version of Next.js, you can enable the WAF rule described in this changelog as a mitigation**.
@@ -2839,8 +2955,7 @@ To create a custom rule:
     4. Set the action to 'block'. If you want to observe the impact before blocking requests, set the action to 'log' (and edit the rule later).
     5. **Deploy** the rule.
 
-![Next.js CVE-2025-29927 WAF rule](https://developers.cloudflare.com/_astro/waf-rule-cve-2025-29927.0i0XiweZ_Z8mlyw.webp)
-{: caption="Next.js CVE-2025-29927 WAF rule" caption-side="bottom"}
+![Next.js CVE-2025-29927 WAF rule](https://developers.cloudflare.com/_astro/waf-rule-cve-2025-29927.0i0XiweZ_Z8mlyw.webp){: caption="Next.js CVE-2025-29927 WAF rule" caption-side="bottom"}
 
 ### Next.js CVE-2025-29927
 {: #nextjs-cve-2025-29927}
@@ -2863,6 +2978,7 @@ The managed WAF rule mitigates this by blocking _external_ user requests with th
 
 ## WAF - WAF Release - 2025-03-19 - Emergency
 {: #waf-waf-release-2025-03-19-emergency}
+
 **Published on:** Wed, 19 Mar 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2872,6 +2988,7 @@ CIS Managed Ruleset| ...a2cafae7| 100736| Generic HTTP Request Smuggling| N/A| D
 
 ## WAF - WAF Release - 2025-03-17
 {: #waf-waf-release-2025-03-17}
+
 **Published on:** Mon, 17 Mar 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2887,6 +3004,7 @@ CIS Managed Ruleset| ...69fe1e0d| 100700| Apache SSRF vulnerability CVE-2021-404
 
 ## WAF - WAF Release - 2025-03-11 - Emergency
 {: #waf-waf-release-2025-03-11-emergency}
+
 **Published on:** Tue, 11 Mar 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2896,6 +3014,7 @@ CIS Managed Ruleset| ...73febb31| 100731| Apache Camel - Code Injection - CVE:CV
 
 ## WAF - WAF Release - 2025-03-10
 {: #waf-waf-release-2025-03-10}
+
 **Published on:** Mon, 10 Mar 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2906,6 +3025,7 @@ CIS Managed Ruleset| ...259073d5| 100723| Cisco IOS XE - Information Disclosure 
 
 ## WAF - Updated leaked credentials database
 {: #waf-updated-leaked-credentials-database}
+
 **Published on:** Fri, 07 Mar 2025 00:00:00 GMT
 
 Added new records to the leaked credentials database. The record sources are: Have I Been Pwned (HIBP) database, RockYou 2024 dataset, and another third-party database.
@@ -2913,6 +3033,7 @@ Added new records to the leaked credentials database. The record sources are: Ha
 
 ## WAF - WAF Release - 2025-03-03
 {: #waf-waf-release-2025-03-03}
+
 **Published on:** Mon, 03 Mar 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2923,6 +3044,7 @@ CIS Managed Ruleset| ...cac42ce2| 100596| Citrix Content Collaboration ShareFile
 
 ## WAF - WAF Release - 2025-02-24
 {: #waf-waf-release-2025-02-24}
+
 **Published on:** Mon, 24 Feb 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2933,6 +3055,7 @@ CIS Managed Ruleset| ...c382fdec| 100720| Palo Alto Networks - Auth Bypass - CVE
 
 ## WAF - WAF Release - 2025-02-18
 {: #waf-waf-release-2025-02-18}
+
 **Published on:** Tue, 18 Feb 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2946,6 +3069,7 @@ CIS Managed Ruleset| ...9184699f| 100719| Yeti Platform - Auth Bypass - CVE:CVE-
 
 ## WAF - WAF Release - 2025-02-11
 {: #waf-waf-release-2025-02-11}
+
 **Published on:** Tue, 11 Feb 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2960,6 +3084,7 @@ CIS Managed Ruleset| ...bf72cf8a| 100713| FortiOS - Auth Bypass - CVE:CVE-2022-4
 
 ## WAF - Updated leaked credentials database (Feb 2025)
 {: #waf-updated-leaked-credentials-database-feb-2025}
+
 **Published on:** Tue, 04 Feb 2025 00:00:00 GMT
 
 Added new records to the leaked credentials database from a third-party database.
@@ -2967,6 +3092,7 @@ Added new records to the leaked credentials database from a third-party database
 
 ## WAF - WAF Release - 2025-01-21
 {: #waf-waf-release-2025-01-21}
+
 **Published on:** Tue, 21 Jan 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2977,6 +3103,7 @@ CIS Managed Ruleset| ...49e6b538| 100534| Web Shell Activity| Log| Block| This w
 
 ## WAF - WAF Release - 2025-01-13
 {: #waf-waf-release-2025-01-13}
+
 **Published on:** Mon, 13 Jan 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
@@ -2990,6 +3117,7 @@ CIS Managed Ruleset| ...e31d972a| 100007C_BETA| Command Injection - Common Attac
 
 ## WAF - WAF Release - 2025-01-06
 {: #waf-waf-release-2025-01-06}
+
 **Published on:** Mon, 06 Jan 2025 00:00:00 GMT
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
