@@ -22,8 +22,8 @@ Review your existing ruleset overrides before deployment. If you want to evaluat
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...ca706f3c| N/A| Brotli - Request Content-Encoding - CVE:CVE-2026-111497| N/A| Log| This is a new detection.
-CIS Managed Ruleset| ...402fe5bb| N/A| Next.js - Image Optimizer Path - CVE:CVE-2026-111497| N/A| Log| This is a new detection.
+CIS Managed Ruleset| 8f252673b69d47afb21f88acca706f3c| N/A| Brotli - Request Content-Encoding - CVE:CVE-2026-111497| N/A| Log| This is a new detection.
+CIS Managed Ruleset| 33dc63d3171649ed8f267455402fe5bb| N/A| Next.js - Image Optimizer Path - CVE:CVE-2026-111497| N/A| Log| This is a new detection.
 
 ## WAF - WAF Release - 2026-10-22 - Emergency - CIS Managed Ruleset
 {: #waf-waf-release-2026-10-22-emergency-cis-managed-ruleset}
