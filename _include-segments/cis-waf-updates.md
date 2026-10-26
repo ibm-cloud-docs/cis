@@ -8,15 +8,11 @@ This emergency release will add two rules related to the Brotli vulnerability **
   * **Brotli rule:** Matches incoming requests that declare Brotli request-body encoding (`Content-Encoding: br`), including legitimate clients submitting Brotli-encoded request bodies. It does not match `Accept-Encoding: br` or affect CIS's Brotli response-compression settings. The rule's default action is **Log**.
   * **Next.js rule:** Matches requests to the Next.js image optimization endpoint (`/_next/image`), including legitimate image optimization traffic. The default action is **Log** and does not block requests. Changing the action to **Block** may prevent optimized images from loading and disrupt image delivery for applications using this endpoint.
 
-
-
 **Default behavior**
 
   * Both rules will log matching requests without blocking them when the ruleset defaults are used.
   * Customers will be able to review matches in analytics and configure a blocking action for either rule if desired.
   * Enabling these rules in **Log** mode provides visibility only; it does not block requests matching these rules.
-
-
 
 **Important: Check existing action overrides**
 
@@ -38,13 +34,13 @@ This emergency release updates the names and metadata of seven existing rules in
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Managed Ruleset| ...c438d5dd| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619)| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Managed Ruleset| ...0a0c2f64| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Managed Ruleset| ...545d163c| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Managed Ruleset| ...212afcc9| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Managed Ruleset| ...1867b12e| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #5| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Managed Ruleset| ...9d9c073d| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #6| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Managed Ruleset| ...48143645| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #7| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| c1d409ad838f47f59446f21cc438d5dd| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619)| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| f9a45927414245e3a64bb12d0a0c2f64| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| 771c654ae1154d4daa72f4e1545d163c| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| 217005865f0145f392300bac212afcc9| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| 38efdb17ea594501bb55a1d71867b12e| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #5| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| 4148ae686fdb4d01be673fab9d9c073d| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #6| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Managed Ruleset| 1389aa259617437392ce149c48143645| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #7| Block| N/A| Rule metadata description refined. Detection unchanged.
 
 For more information, refer to [WAF Managed Rules](https://developers.cloudflare.com/waf/managed-rules/).
 
@@ -58,13 +54,13 @@ This emergency release updates the names and metadata of seven existing rules in
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-CIS Free Ruleset| ...b5ccf32f| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619)| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Free Ruleset| ...bcd95984| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Free Ruleset| ...82dab691| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Free Ruleset| ...24b1a4c6| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Free Ruleset| ...302ede46| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #5| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Free Ruleset| ...7975ce1b| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #6| Block| N/A| Rule metadata description refined. Detection unchanged.
-CIS Free Ruleset| ...e8d613fa| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #7| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| 4e315666e8e344cdb64119a3b5ccf32f| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619)| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| 00c10e6cc4da4bd08722adeebcd95984| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| 48ddf592361e4fdb97a8a85982dab691| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| 3556683d512a47f2937899c524b1a4c6| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| da07c85852e34625bb478496302ede46| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #5| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| 19373a83abb840e18ab3ce5a7975ce1b| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #6| Block| N/A| Rule metadata description refined. Detection unchanged.
+CIS Free Ruleset| 07f0b6ddaabf40b1b2042dade8d613fa| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #7| Block| N/A| Rule metadata description refined. Detection unchanged.
 
 For more information, refer to [WAF Managed Rules](https://developers.cloudflare.com/waf/managed-rules/).
 
