@@ -1,4 +1,5 @@
-﻿## WAF - WAF Release - 2026-10-25 - Emergency - CIS Managed Ruleset
+﻿
+## WAF - WAF Release - 2026-10-25 - Emergency - CIS Managed Ruleset
 {: #waf-release-2026-10-25}
 
 **Published on:** Sun, 25 Oct 2026 00:00:00 GMT
