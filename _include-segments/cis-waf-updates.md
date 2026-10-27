@@ -1,18 +1,20 @@
 ﻿## WAF - WAF Release - 2026-10-25 - Emergency - CIS Managed Ruleset
+{: #waf-release-2026-10-25}
+
 **Published on:** Sun, 25 Oct 2026 00:00:00 GMT
 
 This emergency release will add two rules related to the Brotli vulnerability **CVE-2026-111497** to the CIS Managed Ruleset. Both rules will be **enabled by default** with their action set to **Log** , providing visibility into matching requests so customers can evaluate the impact before choosing to block them.
 
 **Rule behavior**
 
-  * **Brotli rule:** Matches incoming requests that declare Brotli request-body encoding (`Content-Encoding: br`), including legitimate clients submitting Brotli-encoded request bodies. It does not match `Accept-Encoding: br` or affect CIS's Brotli response-compression settings. The rule's default action is **Log**.
-  * **Next.js rule:** Matches requests to the Next.js image optimization endpoint (`/_next/image`), including legitimate image optimization traffic. The default action is **Log** and does not block requests. Changing the action to **Block** may prevent optimized images from loading and disrupt image delivery for applications using this endpoint.
+* **Brotli rule:** Matches incoming requests that declare Brotli request-body encoding (`Content-Encoding: br`), including legitimate clients submitting Brotli-encoded request bodies. It does not match `Accept-Encoding: br` or affect CIS's Brotli response-compression settings. The rule's default action is **Log**.
+* **Next.js rule:** Matches requests to the Next.js image optimization endpoint (`/_next/image`), including legitimate image optimization traffic. The default action is **Log** and does not block requests. Changing the action to **Block** may prevent optimized images from loading and disrupt image delivery for applications using this endpoint.
 
 **Default behavior**
 
-  * Both rules will log matching requests without blocking them when the ruleset defaults are used.
-  * Customers will be able to review matches in analytics and configure a blocking action for either rule if desired.
-  * Enabling these rules in **Log** mode provides visibility only; it does not block requests matching these rules.
+* Both rules will log matching requests without blocking them when the ruleset defaults are used.
+* Customers will be able to review matches in analytics and configure a blocking action for either rule if desired.
+* Enabling these rules in **Log** mode provides visibility only; it does not block requests matching these rules.
 
 **Important: Check existing action overrides**
 
