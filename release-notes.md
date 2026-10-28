@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-28"
 
 keywords:
 
@@ -40,8 +40,8 @@ Dashboard Expression Builder improvements
     * `ip.geoip.is_in_european_union` → `ip.src.is_in_european_union`
     * `ip.geoip.subdivision_1_iso_code` → `ip.src.subdivision_1_iso_code`
     * `ip.geoip.subdivision_2_iso_code` → `ip.src.subdivision_2_iso_code`
- 
-The legacy fields remain supported, so existing expressions that use the old field names continue to work.    
+
+The legacy fields remain supported, so existing expressions that use the old field names continue to work.
 
 ## 25 August 2026
 {: #cis-august25-2026}
@@ -109,7 +109,7 @@ Ruleset Engine migration
 
     * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 
-    * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
+    * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Rate-limiting rules](/docs/cis?topic=cis-rate-limiting).
 
 ## 13 January 2025
 {: #cis-jan-1325}

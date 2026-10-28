@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-26"
+lastupdated: "2026-10-28"
 
 keywords: custom lists
 
@@ -31,7 +31,7 @@ Follow these steps to create a custom list in the console:
 1. Enter a name for your list and then select the [Type](/docs/cis?topic=cis-custom-list-types) of list.
 1. Optionally, enter a description to clarify the purpose of the list.
 1. Click **Create custom list**.
-1. [REVIEW]{: tag-red} Select one of the following options:
+1. Select one of the following options:
 
    * To add items to the list by using a CSV file:
       1. Click **Upload CSV**.

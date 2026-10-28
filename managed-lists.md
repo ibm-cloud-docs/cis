@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-10-28"
 
 keywords: managed lists
 
@@ -31,7 +31,15 @@ You can access CIS IP threat intelligence through managed IP lists. CIS offers s
 | Cloudflare Botnets, Command and Control Servers | `cf.botnetcc` | IP addresses of known botnet command-and-control servers. |
 {: caption="Available managed IP lists" caption-side="bottom"}
 
+## Listing managed lists in an instance in the console
+{: #listing-managed-lists-ui}
+{: ui}
 
+Follow these steps to view managed lists in the console:
+
+1. In the CIS console, navigate to the **Account** page.
+1. Select the **Lists** tab.
+1. Select the **Managed Lists** tab to view the available managed lists.
 
 ## Listing managed lists in an instance from the CLI
 {: #listing-managed-lists-cli}
