@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-09-07"
+lastupdated: "2026-10-28"
 
 keywords:
 
@@ -23,7 +23,6 @@ Transmission Control Protocol (TCP) connections are established between clients 
 
 CIS acts as an intermediary between the user and the origin by routing user requests through CIS/Cloudflare to the application's origin server. User traffic is routed to the nearest point of presence (PoP); where the request is then processed.
 In case a request is not served from one of Cloudflare's data centers, a connection will be opened to the origin server to forward the request.
-
 
 ## Connection limits
 {: #connection-limits}

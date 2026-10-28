@@ -2,7 +2,7 @@
 
 copyright:
   years:  2024, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-10-28"
 
 keywords: change log for cloud internet services API, updates to CIS API
 
@@ -72,7 +72,7 @@ Ruleset Engine migration
 
     * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 
-    * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Migrating to new rate-limiting rules](/docs/cis?topic=cis-migrating-to-rate-limiting).
+    * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Rate-limiting rules](/docs/cis?topic=cis-rate-limiting).
 
 ## 16 December 2024
 {: #16-dec-2024}
