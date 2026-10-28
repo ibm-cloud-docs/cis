@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-28"
 
 keywords:
 
@@ -40,8 +40,8 @@ Dashboard Expression Builder improvements
     * `ip.geoip.is_in_european_union` → `ip.src.is_in_european_union`
     * `ip.geoip.subdivision_1_iso_code` → `ip.src.subdivision_1_iso_code`
     * `ip.geoip.subdivision_2_iso_code` → `ip.src.subdivision_2_iso_code`
- 
-The legacy fields remain supported, so existing expressions that use the old field names continue to work.    
+
+The legacy fields remain supported, so existing expressions that use the old field names continue to work.
 
 ## 25 August 2026
 {: #cis-august25-2026}
