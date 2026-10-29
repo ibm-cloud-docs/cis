@@ -145,7 +145,7 @@ PTR records primarily prevent emails from going to spam folders. Because CIS doe
 ### NAPTR type record
 {: #naptr-type-record}
 
-A Naming Authority Pointer (NAPTR) record maps domains to specific services. NAPTR records can be used in conjunction with Service (SRV) records to specify the host and port for a service, and are commonly used with the Session Initiation Protocol (SIP).
+A Naming Authority Pointer (NAPTR) record maps domains to specific services. you can use NAPTR records with Service (SRV) records to specify the host and port for the service. NAPTR records are commonly used with the Session Initiation Protocol (SIP).
 
 ### SOA type record
 {: #soa-record-type}
