@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-10-29"
 
 keywords:
 
@@ -141,6 +141,11 @@ The PTR record option that is shown in the DNS Records list menu is not for addi
 {: note}
 
 PTR records primarily prevent emails from going to spam folders. Because CIS doesn't support email traffic by default, you must set the PTR record to the location of your email server. Contact your email provider for assistance.
+
+### NAPTR type record
+{: #naptr-type-record}
+
+A Naming Authority Pointer (NAPTR) record maps domains to specific services. NAPTR records can be used in conjunction with Service (SRV) records to specify the host and port for a service, and are commonly used with the Session Initiation Protocol (SIP).
 
 ### SOA type record
 {: #soa-record-type}
