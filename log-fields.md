@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-23"
+lastupdated: "2026-10-30"
 
 keywords: log fields
 
@@ -25,12 +25,15 @@ ibmcloud cis logpush-available-fields DNS_DOMAIN_ID [--dataset DATASET] [-i, --i
 ## Datasets
 {: #log-datasets}
 
-These available datasets describe the fields available by log category:
+The following datasets describe the types of logs and events captured by {{site.data.keyword.cis_short_notm}} Logpush:
 
-- HTTP/ HTTPS requests (`http_requests`)
-- Firewall events (`firewall_events`)
-- Range events (`range_events`)
-- DNS logs (`dns_logs`)
+| Dataset | Description |
+| ------- | ----------- |
+| `http_requests` | Logs HTTP and HTTPS requests processed by CIS, including request details, response codes, cache status, and origin performance. |
+| `firewall_events` | Logs CIS security events, including Web Application Firewall (WAF) actions, custom rules, rate limiting, Bot Management, IP Access Rules and blocked or challenged requests. |
+| `range_events` | Logs TCP and UDP connections and traffic handled by CIS Range applications. |
+| `dns_logs` | Logs DNS queries and responses processed by CIS authoritative DNS. |
+{: caption="Logpush datasets and descriptions" caption-side="bottom"}
 
 ## Available fields
 {: #logpull-available-fields}
