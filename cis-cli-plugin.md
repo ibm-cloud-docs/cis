@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-10-19"
+lastupdated: "2026-11-02"
 
 keywords:
 
@@ -2479,7 +2479,7 @@ ibmcloud cis domain-settings-update DNS_DOMAIN_ID (-f, --feature FEATURE) (-v, -
     - Valid values for `true_client_ip_header` are `on`, `off`.
     - Valid values for `waf` are `on`, `off`.
     - Valid values for `websockets` are `on`, `off`.
-    - Valid values for `proxy_read_timeout`, 1-6000, default: 100.
+    - Valid values for `proxy_read_timeout`, 1-6000, default: 125.
     - Valid values for `ciphers` are `ECDHE-ECDSA-AES128-GCM-SHA256`, `ECDHE-ECDSA-CHACHA20-POLY1305`, `ECDHE-RSA-AES128-GCM-SHA256`, `ECDHE-RSA-CHACHA20-POLY1305`, `ECDHE-ECDSA-AES128-SHA256`, `ECDHE-ECDSA-AES128-SHA`, `ECDHE-RSA-AES128-SHA256`, `ECDHE-RSA-AES128-SHA`, `AES128-GCM-SHA256`, `AES128-SHA256`, `AES128-SHA`, `ECDHE-ECDSA-AES256-GCM-SHA384`, `ECDHE-ECDSA-AES256-SHA384`, `ECDHE-RSA-AES256-GCM-SHA384`, `ECDHE-RSA-AES256-SHA384`, `ECDHE-RSA-AES256-SHA`, `AES256-GCM-SHA384`, `AES256-SHA256`, `AES256-SHA`, `DES-CBC3-SHA`, `default`. For example, `-v AES256-SHA256,AES256-SHA`, using `-v default` to reset configured cipher suites to the default value.
     - Valid values for `url_normalization` are "type", "scope". For example, -v type=cis,scope=both
          - `type` : Selects the type of URL normalization that is performed by CIS. Valid values for `type` are `cis`, `rfc3986`.
