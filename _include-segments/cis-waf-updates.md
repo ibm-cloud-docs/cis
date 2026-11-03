@@ -862,8 +862,6 @@ Multiple security vulnerabilities were disclosed by the React team and Vercel af
 ### WAF protections
 {: #waf-protections}
 
-[](https://developers.cloudflare.com/changelog/rss/waf.xml#waf-protections)
-
 CIS WAF rules deployed in response to prior React Server Component CVEs ([`CVE-2025-55184` ↗](https://github.com/facebook/react/security/advisories/GHSA-2m3v-v2m8-q956) and [`CVE-2026-23864` ↗](https://github.com/facebook/react/security/advisories/GHSA-83fc-fqcc-2hmg)) already provide coverage for the newly disclosed denial-of-service vulnerabilities. These rules are enabled by default with a Block action for all customers using the CIS Managed Ruleset, including Free plan customers using the Free Managed Ruleset.
 
 Ruleset | Rule description | Rule ID | Default action
@@ -882,16 +880,12 @@ Customers on Pro, Business, or Enterprise plans should ensure that [Managed Rule
 ### Next.js adapters
 {: #nextjs-adapters}
 
-[](https://developers.cloudflare.com/changelog/rss/waf.xml#nextjs-adapters)
-
 **Vinext:** [Vinext ↗](https://github.com/cloudflare/vinext) is a Vite plugin that reimplements the Next.js API surface. Vinext's latest release is not vulnerable to any of the disclosed CVEs. Vinext's architecture differs from stock Next.js in ways that sidestep the affected code paths. For example, it does not implement the PPR resume protocol, does not expose Pages Router data-route endpoints, and strips internal headers such as `x-nextjs-data` at request boundaries. As an extra layer of defense, we added a React `19.2.6` or later requirement when running `vinext init` ([PR #1118 ↗](https://github.com/cloudflare/vinext/pull/1118), [PR #1112 ↗](https://github.com/cloudflare/vinext/pull/1112)) to prevent accidentally running a vulnerable version of React with Vinext.
 
 **OpenNext on CIS:** OpenNext is an adapter that lets you deploy Next.js apps to the CIS Workers platform. OpenNext itself is not directly vulnerable to the React denial-of-service CVE, but users must update the Next.js version in their application. The OpenNext team has updated the adapter to further harden against these vectors and released a new version of the CIS adapter. Test fixtures and examples have been updated to use patched versions ([PR #1255 ↗](https://github.com/opennextjs/opennextjs-cloudflare/pull/1255)).
 
 ### Summary of disclosed vulnerabilities
 {: #summary-of-disclosed-vulnerabilities}
-
-[](https://developers.cloudflare.com/changelog/rss/waf.xml#summary-of-disclosed-vulnerabilities)
 
 Advisory | Severity | Issue | WAF status
 ---|---|---|---
@@ -2985,8 +2979,6 @@ CIS Managed Ruleset| ...f472013e| 100739| Next.js - Auth Bypass - CVE:CVE-2025-2
 ### Enable the Managed Rule (strongly recommended)
 {: #enable-the-managed-rule-strongly-recommended}
 
-[](https://developers.cloudflare.com/changelog/rss/waf.xml#enable-the-managed-rule-strongly-recommended)
-
 This rule is opt-in only for sites on the Pro plan or above in the [WAF managed ruleset](https://developers.cloudflare.com/waf/managed-rules/).
 
 To enable the rule:
@@ -3005,8 +2997,6 @@ This will enable the WAF rule and block requests with the `x-middleware-subreque
 
 ### Create a WAF rule (manual)
 {: #create-a-waf-rule-manual}
-
-[](https://developers.cloudflare.com/changelog/rss/waf.xml#create-a-waf-rule-manual)
 
 For users on the Free plan, or who want to define a more specific rule, you can create a [Custom WAF rule](https://developers.cloudflare.com/waf/custom-rules/create-dashboard/) to block requests with the `x-middleware-subrequest` header regardless of Next.js version.
 
@@ -3028,8 +3018,6 @@ To create a custom rule:
 
 ### Next.js CVE-2025-29927
 {: #nextjs-cve-2025-29927}
-
-[](https://developers.cloudflare.com/changelog/rss/waf.xml#nextjs-cve-2025-29927)
 
 We've made a WAF (Web Application Firewall) rule available to all sites on CIS to protect against the [Next.js authentication bypass vulnerability ↗](https://github.com/advisories/GHSA-f82v-jwr5-mffw) (`CVE-2025-29927`) published on March 21st, 2025.
 

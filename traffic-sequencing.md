@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-06"
+lastupdated: "2026-11-03"
 
 subcollection: cis
 
@@ -25,7 +25,7 @@ When you work with {{site.data.keyword.cis_short_notm}}, it can sometimes be con
 1. [Bot management](/docs/cis?topic=cis-about-bot-mgmt) - Identifies and manages automated traffic.
 1. WAF and custom rules, which generally process in this order:
    1. [Custom rules](/docs/cis?topic=cis-about-waf-custom-rules&interface=ui)
-   1. [WAF rules](/docs/cis?topic=cis-waf-actions)
+   1. [WAF rules](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions)
    1. [Rate limiting](/docs/cis?topic=cis-cis-rate-limiting)
 
     Based on the actions and priority settings of the rules, steps in the firewall sequence can be bypassed. For example, a firewall rule with an early priority that allows certain traffic is processed first, and then skips over the rest of the rules in the sequence.

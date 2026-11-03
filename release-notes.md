@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-10-28"
+lastupdated: "2026-11-03"
 
 keywords:
 
@@ -109,7 +109,7 @@ Ruleset Engine migration
 
     * Firewall rules: Now known as WAF custom rules, these rules provide similar protections to the previous handling, but also include a few extra features. For more information, see [Migrating to WAF custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
 
-    * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Rate-limiting rules](/docs/cis?topic=cis-rate-limiting).
+    * Rate-limiting rules: The new version of these rules allows you to apply rate-limiting to more specific kinds of traffic. For more information, see [Rate-limiting rules](/docs/cis?topic=cis-cis-rate-limiting).
 
 ## 13 January 2025
 {: #cis-jan-1325}
@@ -137,7 +137,7 @@ Enhanced security
 {: release-note}
 
 Managed Rules
-:   Released the new [managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which replaces the current WAF. Enterprise plans have a [Migration to managed rules](/docs/cis?topic=cis-migrating-to-managed-rules) that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
+:   Released the new [managed rules](/docs/cis?topic=cis-managed-rules-overview) feature, which replaces the current WAF. Enterprise plans have a migration to managed rules that allows an intermediary step where you can compare security events. Standard Next plans migrate directly to Managed rules without the intermediary review step.
 
 ## 21 June 2023
 {: #cis-jun2123}

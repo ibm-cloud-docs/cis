@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-11-03"
 
 keywords: support case IBM Cloud development teams support case
 
@@ -18,7 +18,7 @@ subcollection: cis
 If you experience an issue or have questions when using {{site.data.keyword.cis_short_notm}}, you can use the following resources before you open a support case.
 {: shortdesc}
 
-* Ask a question in the [AI assistant](/docs/overview?topic=overview-ask-ai-assistant) from the console or the {{site.data.keyword.cloud_notm}} CLI.
+* Ask a question in the AI assistant from the console or the {{site.data.keyword.cloud_notm}} CLI.
 * Review [FAQs](/docs/cis?topic=cis-faq) in the product documentation.
 * Review [Troubleshooting](/docs/cis?topic=cis-troubleshoot-your-cis-network-connection) to diagnose and resolve common issues.
 * Check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](/status){: external}.
