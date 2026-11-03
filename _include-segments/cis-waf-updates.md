@@ -46,18 +46,21 @@ CIS Free Ruleset| 19373a83abb840e18ab3ce5a7975ce1b| N/A| PHP Remote Code Executi
 
 This emergency release will add two rules related to the Brotli vulnerability **CVE-2026-111497** to the CIS Managed Ruleset. Both rules will be **enabled by default** with their action set to **Log** , providing visibility into matching requests so customers can evaluate the impact before choosing to block them.
 
-**Rule behavior**
+### Rule behavior
+{: #waf-rule-behavior}
 
 * **Brotli rule:** Matches incoming requests that declare Brotli request-body encoding (`Content-Encoding: br`), including legitimate clients submitting Brotli-encoded request bodies. It does not match `Accept-Encoding: br` or affect CIS's Brotli response-compression settings. The rule's default action is **Log**.
 * **Next.js rule:** Matches requests to the Next.js image optimization endpoint (`/_next/image`), including legitimate image optimization traffic. The default action is **Log** and does not block requests. Changing the action to **Block** may prevent optimized images from loading and disrupt image delivery for applications using this endpoint.
 
-**Default behavior**
+### Default behavior
+{: #waf-default-behavior}
 
 * Both rules will log matching requests without blocking them when the ruleset defaults are used.
 * Customers will be able to review matches in analytics and configure a blocking action for either rule if desired.
 * Enabling these rules in **Log** mode provides visibility only; it does not block requests matching these rules.
 
-**Important: Check existing action overrides**
+### Important: Check existing action overrides
+{: #important-check-existing-action-overrides}
 
 If you have configured a ruleset-level action override that applies **Block** to these rules, matching requests may be blocked as soon as the rules are deployed, despite their default **Log** action. This may result in false positives and block legitimate traffic.
 

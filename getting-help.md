@@ -18,7 +18,7 @@ subcollection: cis
 If you experience an issue or have questions when using {{site.data.keyword.cis_short_notm}}, you can use the following resources before you open a support case.
 {: shortdesc}
 
-* Ask a question in the AI assistant from the console or the {{site.data.keyword.cloud_notm}} CLI.
+* Troubleshoot with {{site.data.keyword.paver_full}}{: external}. {{site.data.keyword.paver}} is an embedded AI operator that understands your account context, creates a resolution plan, and executes changes on your behalf, while always requiring your approval before touching your live environment.
 * Review [FAQs](/docs/cis?topic=cis-faq) in the product documentation.
 * Review [Troubleshooting](/docs/cis?topic=cis-troubleshoot-your-cis-network-connection) to diagnose and resolve common issues.
 * Check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](/status){: external}.
