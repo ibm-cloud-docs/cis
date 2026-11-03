@@ -1,4 +1,44 @@
 ﻿
+## WAF - WAF Release - 2026-10-30 - Emergency
+{: #waf-release-2026-10-30-emergency}
+
+**Published on:** Fri, 30 Oct 2026 00:00:00 GMT
+
+This emergency release adds a new rule to the CIS Managed Ruleset, disabled by default, for a vulnerability in Nuxt Image and IPX. The rule offers partial coverage. Please follow the advisory and patch to the latest version.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| ae8259332dc441288c46211f5b82bffe| N/A| Nuxt Image / IPX - Explicit GIF or Animation Modifier Exposure| N/A| Disabled| This is a new detection.
+
+
+## WAF - WAF Release - 2026-10-30
+{: #waf-release-2026-10-30}
+
+**Published on:** Fri, 30 Oct 2026 00:00:00 GMT
+
+This release introduces updates to the underlying rule expressions for PHP out-of-memory (OOM) vulnerabilities CVE-2026-109618, CVE-2026-109619 and CVE-2026-115560. The improvements are iterative changes based on reports from Security Researchers as part of [PHP Capture the Flag (CTF) challenge ↗︎](https://blog.cloudflare.com/php-ctf).
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 771c654ae1154d4daa72f4e1545d163c| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| Block| Rule detection updated.
+CIS Free Ruleset| 48ddf592361e4fdb97a8a85982dab691| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| Block| Rule detection updated.
+CIS Managed Ruleset| 217005865f0145f392300bac212afcc9| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| Block| Rule detection updated.
+CIS Free Ruleset| 3556683d512a47f2937899c524b1a4c6| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #4| Block| Block| Rule detection updated.
+CIS Response Ruleset| afffe22785674c80a31875c848d2242a| N/A| Default block for High confidence Signatures| Block| Block| Rule detection updated.
+
+
+## WAF - WAF Release - 2026-10-28
+{: #waf-release-2026-10-28}
+
+**Published on:** Wed, 28 Oct 2026 00:00:00 GMT
+
+This release introduces updates to the underlying rule expressions for PHP out-of-memory (OOM) vulnerabilities CVE-2026-109618, CVE-2026-109619 and CVE-2026-115560. The improvements are iterative changes based on reports from Security Researchers as part of [PHP Capture the Flag (CTF) challenge ↗︎](https://blog.cloudflare.com/php-ctf).
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Managed Ruleset| 4148ae686fdb4d01be673fab9d9c073d| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560) #6| Block| Block| Rule detection updated.
+CIS Free Ruleset| 19373a83abb840e18ab3ce5a7975ce1b| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560) #6| Block| Block| Rule detection updated.
+
 ## WAF - WAF Release - 2026-10-25 - Emergency - CIS Managed Ruleset
 {: #waf-release-2026-10-25}
 
