@@ -1,4 +1,30 @@
 ﻿
+## WAF - WAF Release - 2026-11-03
+{: #waf-release-2026-11-03}
+
+**Published on:** Tue, 03 Nov 2026 00:00:00 GMT
+
+This release introduces updates to the underlying rule expressions for PHP out-of-memory (OOM) vulnerabilities CVE-2026-109618, CVE-2026-109619 and CVE-2026-115560. The improvements are iterative changes based on reports from Security Researchers as part of [PHP Capture the Flag (CTF) challenge ↗︎](https://blog.cloudflare.com/php-ctf).
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+CIS Free Ruleset| 00c10e6cc4da4bd08722adeebcd95984| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| Block| Rule detection updated.
+CIS Free Ruleset| 48ddf592361e4fdb97a8a85982dab691| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| Block| Rule detection updated.
+CIS Managed Ruleset| f9a45927414245e3a64bb12d0a0c2f64| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #2| Block| Block| Rule detection updated.
+CIS Managed Ruleset| 771c654ae1154d4daa72f4e1545d163c| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #3| Block| Block| Rule detection updated.
+CIS Managed Ruleset| 96284f85f5984e29be0616f013f91633| N/A| phpMyAdmin - Authentication Bypass| N/A| Disabled| This is a new detection.
+
+
+## WAF - WAF Release - Scheduled changes for 2026-11-10
+{: #waf-release-2026-11-10-schedule}
+
+**Published on:** Tue, 03 Nov 2026 00:00:00 GMT
+
+Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
+---|---|---|---|---|---|---
+2026-10-12| 2026-11-10| Log| N/A| d60e605ed36842df9ca0232f5ea9966d| Broken Access Control - Directory Traversal (Beta)| This rule will be merged into the original rule "Broken Access Control - Directory Traversal" (ID: ...cb14ded8).
+2026-11-03| 2026-11-10| Log| N/A| 404d332215a44743bf3b812b7178209b| Generic Rules - Dangerous File Upload| This is a new detection.
+
 ## WAF - WAF Release - 2026-10-30 - Emergency
 {: #waf-release-2026-10-30-emergency}
 
