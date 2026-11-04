@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-11-03"
 
 keywords:
 
@@ -248,7 +248,7 @@ Where:
 - **$RULESET_PHASE** is the ruleset phase that will be deployed. Use `http_request_firewall_managed` to deploy managed WAF rulesets.
 - **-d** is the object of attributes that are required to create the ruleset.
    - **rules** is the array of rules to deploy with the ruleset. For example:
-     - **action** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-waf-actions) for a description of actions that can be used.
+     - **action** is the action for the rule to take. See [Rules actions](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions) for a description of actions that can be used.
      - **action_parameters** is the object for defining what the action should operate on.
        - **id** is the ID of the ruleset to run. This ID is retrieved from the `list zone rulesets` operation.
    - **expression** is the condition under which the rule runs. Using `true` means that this rule always run.

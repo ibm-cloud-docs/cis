@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-09-05"
+  years: 2024, 2026
+lastupdated: "2026-11-03"
 
 keywords:
 
@@ -75,6 +75,55 @@ You can override the following rule properties.
 Some managed rulesets can have extra override requirements, or they might override other rule properties.
 
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
+
+## Overriding workflow (Terraform)
+{: #override-workflow-tf}
+{: terraform}
+
+To apply an override for a managed ruleset, take the following steps.
+
+1. List the available rulesets by using the [`ibm_cis_rulesets`](#terraform-override-list-rule-sets) data source.
+1. List the rules for that ruleset by using the [`ibm_cis_ruleset`](#terraform-override-list-rule-sets-rules) resource.
+1. Create the entry point for the `http_request_firewall_managed` phase by using the `ibm_cis_ruleset_entrypoint_version` resource. If an entry point exists, skip this step.
+1. Add or update a rule that executes your managed ruleset by using the `ibm_cis_ruleset_rule` resource. Specify the overrides in the `action_parameters` block of the rule.
+
+   ```sh
+   action_parameters {
+     id = "<RULESET_ID>"
+     overrides {
+       # ruleset overrides
+       action  = "<ACTION>"
+       enabled = <true_or_false>
+       # tag overrides
+       categories {
+         category = "<TAG_NAME>"
+         action   = "<ACTION>"
+         enabled  = <true_or_false>
+       }
+       # rule overrides
+       override_rules {
+         rule_id = "<RULE_ID>"
+         action  = "<ACTION>"
+         enabled = <true_or_false>
+       }
+     }
+   }
+   ```
+   {: codeblock}
+
+You can override the following rule properties.
+
+* `action`
+* `enabled`
+
+In the `override_rules` block, you can also set `score_threshold` for rules that support it. Allowed values are `25` (high sensitivity), `40` (medium), and `60` (low).
+
+If you update a rule in the `ibm_cis_ruleset_entrypoint_version` resource, you must provide the data for all other rules in the entry point. Otherwise, the update replaces the previous configuration. To add or update an individual rule, use the `ibm_cis_ruleset_rule` resource.
+{: note}
+
+It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
+
+For complete examples, see [Overriding a rule with Terraform](#terraform-override-entry-point-rule-set). For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
 
 ## Overriding managed rulesets in the console
 {: #ui-override-rule-sets}
@@ -237,7 +286,7 @@ Where:
 * **`-d`** is the object of attributes that are required to create the ruleset.
     * **`description`** defines your own summary of what a ruleset is accomplishing.
     * **`rules`** is the array of rules to deploy with the ruleset.
-      * **`action`** is the action for the rule to take. See [WAF ruleset actions](/docs/cis?topic=cis-waf-actions) for a description of available actions.
+      * **`action`** is the action for the rule to take. See [WAF ruleset actions](/docs/cis?topic=cis-cis-ruleset-engine#ruleset-engine-actions) for a description of available actions.
       * **`action_parameters`** is the object for defining what the action operates on.
         * **`id`** is the ID of the ruleset to execute. This ID is retrieved from the list zone rulesets operation.
         * **`overrides`** is the object of overrides to set upon the selected ruleset.
