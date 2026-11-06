@@ -15,7 +15,7 @@ subcollection: cis
 # Adhering to IBM Cloud sanctions on embargoed countries
 {: #adhering-to-embargoed-countries}
 
-Compliance with IBM Cloud sanctions involves the following restrictions that are related to specific embargoed countries: **Iran**, **Cuba**, **North Korea**, and **Syria**. Adhering to these sanctions is crucial for maintaining compliance with international laws and regulations.
+Compliance with IBM Cloud sanctions involves the following restrictions that are related to specific embargoed countries: **Iran**, **Cuba**, and **North Korea**. Adhering to these sanctions is crucial for maintaining compliance with international laws and regulations.
 {: shortdesc}
 
 ## Understanding sanctions and embargoes
@@ -32,7 +32,7 @@ IBM Cloud is committed to complying with all applicable laws and regulations, in
 CIS custom rules help you to define conditions that allow or block traffic. To block the traffic from US-embargoed countries, create the country-blocking custom rule and place it first in the custom rules order. Use the following commands to create the rule and add it as the first custom rule.
 
    ```sh
-   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID -i INSTANCE --match "(ip.src.country in {\"CU\" \"IR\" \"SY\" \"KP\"})" --action block --description "Embargo" --enabled true
+   ibmcloud cis custom-waf rule-create DNS_DOMAIN_ID -i INSTANCE --match "(ip.src.country in {\"CU\" \"IR\" \"KP\"})" --action block --description "Embargo" --enabled true
    ibmcloud cis custom-waf rule-order-update $DNS_DOMAIN_ID -i INSTANCE RULE_ID --index 1
    ```
    {: pre}
@@ -64,7 +64,7 @@ To add a custom rule with the API, follow these steps:
    --header 'Content-Type: application/json' \
    --data '[
         {
-                "expression": "(ip.src.country in {"IR" "CU" "SY" "KP"})",
+                "expression": "(ip.src.country in {"IR" "CU" "KP"})",
                 "description": "Block Traffic from US Embargoed Countries",
                 "paused": false
         }
