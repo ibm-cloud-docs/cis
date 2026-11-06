@@ -22,7 +22,7 @@ CIS Managed Ruleset| 96284f85f5984e29be0616f013f91633| N/A| phpMyAdmin - Authent
 
 Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
 ---|---|---|---|---|---|---
-2026-10-12| 2026-11-10| Log| N/A| d60e605ed36842df9ca0232f5ea9966d| Broken Access Control - Directory Traversal (Beta)| This rule will be merged into the original rule "Broken Access Control - Directory Traversal" (ID: ...cb14ded8).
+2026-10-12| 2026-11-10| Log| N/A| d60e605ed36842df9ca0232f5ea9966d| Broken Access Control - Directory Traversal (Beta)| This rule will be merged into the original rule "Broken Access Control - Directory Traversal" (ID: f2445b9131214302a11477a2cb14ded8).
 2026-11-03| 2026-11-10| Log| N/A| 404d332215a44743bf3b812b7178209b| Generic Rules - Dangerous File Upload| This is a new detection.
 
 ## WAF - WAF Release - 2026-10-30 - Emergency
