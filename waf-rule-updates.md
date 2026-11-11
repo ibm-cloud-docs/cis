@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-15"
+lastupdated: "2026-11-11"
 
 keywords: waf rule updates
 
@@ -12,7 +12,7 @@ subcollection: cis
 
 {{site.data.keyword.attribute-definition-list}}
 
-# CIS WAF rule change log 
+# CIS WAF rule change log
 {: #waf-rule-changelog}
 
 Stay informed with daily updates to CIS WAF managed rules, including newly identified threats, detection improvements, ruleset changes, and enhanced security protections.
