@@ -1,4 +1,53 @@
 ﻿
+## WAF - WAF Release - 2026-11-19 - Emergency
+{: #waf-release-2026-11-19-emergency}
+
+**Published on:** Thu, 19 Nov 2026 00:00:00 GMT
+
+This release introduces updates to an existing PHP Remote Code Execution rule to improve detection accuracy, as well as a few new generic, PHP and Ruby CVE specific rules. The new PHP rules are being deployed in log mode by default (in lieu of False Positive risk) and can be overridden after evaluating requests matching the rules. Supplementary information around the CVEs are available through [Zero Wire phpAfterShell and six other PHP critical flaws ↗︎](https://radar.cloudflare.com/zero-wire/php-november-2026-security-release-phpaftershell) and [ruby2shell: heap overflow in Ruby string case conversion ↗︎](https://radar.cloudflare.com/zero-wire/ruby2shell).
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+Cloudflare Free Ruleset| 19373a83abb840e18ab3ce5a7975ce1b| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560, CVE-2026-126714) #6| N/A| Block| Rule detection and description updated.
+Cloudflare Free Ruleset| 7328f23691e44b07892ebd25b19210f1| N/A| Ruby - Heap Overflow - CVE:CVE-2026-13282| N/A| Block| This is a new detection.
+Cloudflare Free Ruleset| 8660e37e86444f9f9267ba22e9855f05| N/A| Ruby - Integer Overflow - GHSA-87fm-7w84-j2px| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 4148ae686fdb4d01be673fab9d9c073d| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560, CVE-2026-126714) #6| N/A| Block| Rule detection and description updated.
+Cloudflare Managed Ruleset| 1afa543a1ed84893b01df04c34402c88| N/A| Ruby - Heap Overflow - CVE:CVE-2026-13282| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 6defac6a52334542adf4a162daf25922| N/A| Ruby - Integer Overflow - GHSA-87fm-7w84-j2px| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 8ef1c34a424b4ccfa6f6fe186c6f42b2| N/A| PHP-FPM - CVE:CVE-2026-129289| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 5c5a9d6397e44837a3214b5ba54028d4| N/A| PHP SOAP - CVE:CVE-2026-15353| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 00a23de67a684876ba67c5d44521b819| N/A| PHP SOAP - CVE:CVE-2026-129506| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| ab34e00582934bceaa5239af3f53db3c| N/A| Generic Rules - Authentication Bypass| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 09e86df4f32e41269f99fbc936ba9f71| N/A| Anomaly - Embedded Application Request| N/A| Block| This is a new detection.
+
+
+## WAF - WAF Release - 2026-11-18 - Emergency
+{: #waf-release-2026-11-18-emergency}
+
+**Published on:** Wed, 18 Nov 2026 00:00:00 GMT
+
+This release introduces 6 new malformed base64 Cloudflare Managed Ruleset detections for Java4Shell CVE-2026-114938. The rules are being deployed in log mode by default (in lieu of False Positive risk) and can be overridden if needed with supplementary information around the same available through blog post [How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938) ↗︎](https://blog.cloudflare.com/java4shell-waf-protection/).
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+Cloudflare Managed Ruleset| 5de9b20a45ea45d3841919ab4d718bf4| N/A| Java4Shell - Malformed Base64 Header - CVE-2026-114938| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 46bb4172813e471ea62d31c02337b51d| N/A| Java4Shell - Malformed Base64 Query Value - CVE-2026-114938| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| d4dc3f71f1bc44a0811ae570e5e5836c| N/A| Java4Shell - Malformed Base64 Body Value - CVE-2026-114938| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 0dceaf0684b54fd0b085fcfb6fd6f152| N/A| Java4Shell - Malformed Base64 Path Segment - CVE-2026-114938| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 0ddd0eb664a040779f2f19065a25d991| N/A| Java4Shell - Malformed Base64url JWT Component - CVE-2026-114938| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 4fce1ea79a614c07a27348d167d74ebb| N/A| Java4Shell - Malformed Base64 WebAuthn Value - CVE-2026-114938| N/A| Log| This is a new detection.
+
+## WAF - Payload logging for WAF custom rules - 2026-11-12
+{: #waf-payload-logging-for-waf-custom-rules}
+
+**Published on:** Thu, 12 Nov 2026 00:00:00 GMT
+
+[Payload logging](https://developers.cloudflare.com/waf/payload-logging/) now supports WAF custom rules. Enterprise customers can configure an account-level public key, or a zone-level public key that takes precedence, to encrypt matched payloads for supported managed rules and custom rules.
+
+This release does not add payload logging support for rate limiting rules.
+
+Refer to [Configure payload logging via API](https://developers.cloudflare.com/waf/managed-rules/payload-logging/api/) for configuration details.
+
 ## WAF - WAF Release - Scheduled changes for 2026-11-10
 {: #waf-release-2026-11-10-schedule}
 
