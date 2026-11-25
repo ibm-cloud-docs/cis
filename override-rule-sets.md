@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-11-03"
+lastupdated: "2026-11-25"
 
 keywords:
 
@@ -82,8 +82,8 @@ It is not effective to enable all the rules in a managed ruleset at the instance
 
 To apply an override for a managed ruleset, take the following steps.
 
-1. List the available rulesets by using the [`ibm_cis_rulesets`](#terraform-override-list-rule-sets) data source.
-1. List the rules for that ruleset by using the [`ibm_cis_ruleset`](#terraform-override-list-rule-sets-rules) resource.
+1. List the available rulesets by using the [`ibm_cis_rulesets`](/docs/cis?topic=cis-overriding-rulesets&interface=terraform#terraform-override-list-rule-sets) data source.
+1. List the rules for that ruleset by using the [`ibm_cis_ruleset`](/docs/cis?topic=cis-overriding-rulesets&interface=terraform#terraform-override-list-rule-sets-rules) resource.
 1. Create the entry point for the `http_request_firewall_managed` phase by using the `ibm_cis_ruleset_entrypoint_version` resource. If an entry point exists, skip this step.
 1. Add or update a rule that executes your managed ruleset by using the `ibm_cis_ruleset_rule` resource. Specify the overrides in the `action_parameters` block of the rule.
 
@@ -123,7 +123,7 @@ If you update a rule in the `ibm_cis_ruleset_entrypoint_version` resource, you m
 
 It is not effective to enable all the rules in a managed ruleset at the instance level by using an override. This change can affect all the zones in your instance. Some rules are disabled by default because they eventually affect legitimate traffic. Do not enable these rules across zones without previous consideration.
 
-For complete examples, see [Overriding a rule with Terraform](#terraform-override-entry-point-rule-set). For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
+For complete examples, see [Overriding a rule with Terraform](/docs/cis?topic=cis-overriding-rulesets&interface=terraform#terraform-override-entry-point-rule-set). For more information about the arguments and attributes, see [`ibm_cis_ruleset_rule`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cis_ruleset_rule){: external} in the Terraform registry.
 
 ## Overriding managed rulesets in the console
 {: #ui-override-rule-sets}
