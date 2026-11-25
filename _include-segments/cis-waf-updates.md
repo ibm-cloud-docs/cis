@@ -9,14 +9,14 @@ This release introduces updates to an existing PHP Remote Code Execution rule to
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
 Cloudflare Free Ruleset| 19373a83abb840e18ab3ce5a7975ce1b| N/A| PHP Remote Code Execution Attack ([CVE-2026-109618](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-109618), [CVE-2026-109619](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-109619), [CVE-2026-115560](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-115560), [CVE-2026-126714](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-126714)) #6| N/A| Block| Rule detection and description updated.
-Cloudflare Free Ruleset| 7328f23691e44b07892ebd25b19210f1| N/A| Ruby - Heap Overflow - CVE:CVE-2026-13282| N/A| Block| This is a new detection.
+Cloudflare Free Ruleset| 7328f23691e44b07892ebd25b19210f1| N/A| Ruby - Heap Overflow - CVE:[CVE-2026-132825](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-132825)| N/A| Block| This is a new detection.
 Cloudflare Free Ruleset| 8660e37e86444f9f9267ba22e9855f05| N/A| Ruby - Integer Overflow - GHSA-87fm-7w84-j2px| N/A| Block| This is a new detection.
-Cloudflare Managed Ruleset| 4148ae686fdb4d01be673fab9d9c073d| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560, CVE-2026-126714) #6| N/A| Block| Rule detection and description updated.
-Cloudflare Managed Ruleset| 1afa543a1ed84893b01df04c34402c88| N/A| Ruby - Heap Overflow - CVE:CVE-2026-13282| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 4148ae686fdb4d01be673fab9d9c073d| N/A| PHP Remote Code Execution Attack ([CVE-2026-109618](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-109618), [CVE-2026-109619](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-109619), [CVE-2026-115560](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-115560), [CVE-2026-126714](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-126714)) #6| N/A| Block| Rule detection and description updated.
+Cloudflare Managed Ruleset| 1afa543a1ed84893b01df04c34402c88| N/A| Ruby - Heap Overflow - CVE:[CVE-2026-132825](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-132825)| N/A| Block| This is a new detection.
 Cloudflare Managed Ruleset| 6defac6a52334542adf4a162daf25922| N/A| Ruby - Integer Overflow - GHSA-87fm-7w84-j2px| N/A| Block| This is a new detection.
-Cloudflare Managed Ruleset| 8ef1c34a424b4ccfa6f6fe186c6f42b2| N/A| PHP-FPM - CVE:CVE-2026-129289| N/A| Log| This is a new detection.
-Cloudflare Managed Ruleset| 5c5a9d6397e44837a3214b5ba54028d4| N/A| PHP SOAP - CVE:CVE-2026-15353| N/A| Log| This is a new detection.
-Cloudflare Managed Ruleset| 00a23de67a684876ba67c5d44521b819| N/A| PHP SOAP - CVE:CVE-2026-129506| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 8ef1c34a424b4ccfa6f6fe186c6f42b2| N/A| PHP-FPM - CVE:[CVE-2026-129289](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-129289)| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 5c5a9d6397e44837a3214b5ba54028d4| N/A| PHP SOAP - CVE:[CVE-2026-15353](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-15353)| N/A| Log| This is a new detection.
+Cloudflare Managed Ruleset| 00a23de67a684876ba67c5d44521b819| N/A| PHP SOAP - CVE:[CVE-2026-129506](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-129506)| N/A| Log| This is a new detection.
 Cloudflare Managed Ruleset| ab34e00582934bceaa5239af3f53db3c| N/A| Generic Rules - Authentication Bypass| N/A| Block| This is a new detection.
 Cloudflare Managed Ruleset| 09e86df4f32e41269f99fbc936ba9f71| N/A| Anomaly - Embedded Application Request| N/A| Block| This is a new detection.
 
