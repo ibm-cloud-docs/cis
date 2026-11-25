@@ -1,4 +1,4 @@
-
+﻿
 ## WAF - WAF Release - 2026-11-24 - Emergency
 {: #waf-release-2026-11-24-emergency}
 
@@ -8,15 +8,15 @@ This release introduces two new detections in the Cloudflare Free Ruleset.
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-Cloudflare Free Ruleset| ...63c3ebd4| N/A| Anomaly - Embedded Application Request| N/A| Block| This is a new detection.
-Cloudflare Free Ruleset| ...8a1681fb| N/A| Generic Rules - Authentication Bypass| N/A| Block| This is a new detection.
+Cloudflare Free Ruleset| dbf3eed87710452b8eaccb3263c3ebd4| N/A| Anomaly - Embedded Application Request| N/A| Block| This is a new detection.
+Cloudflare Free Ruleset| ed9ff428605646f4a1672ff08a1681fb| N/A| Generic Rules - Authentication Bypass| N/A| Block| This is a new detection.
 
 ## WAF - WAF Release - 2026-11-20 - Emergency
 {: #waf-release-2026-11-20-emergency}
 
 **Published on:** Fri, 20 Nov 2026 00:00:00 GMT
 
-This release introduces new Ruby and WordPress security advisory mapped rules. Supplementary information around the security advisories covered are available through [Zero Wire ruby2shell: heap overflow in Ruby string case conversion ↗︎](https://radar.cloudflare.com/zero-wire/ruby2shell) and WordPress 7.1.5: Template Part flaw can turn an administrator's click into code execution.
+This release introduces new Ruby and WordPress security advisory mapped rules. Supplementary information around the security advisories covered are available through Zero Wire [ruby2shell: heap overflow in Ruby string case conversion ↗︎](https://radar.cloudflare.com/zero-wire/ruby2shell) and [WordPress 7.1.5: Template Part flaw can turn an administrator's click into code execution](https://radar.cloudflare.com/zero-wire/wordpress-7-1-5-template-part-privilege-escalation).
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
