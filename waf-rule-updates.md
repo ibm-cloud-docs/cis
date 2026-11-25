@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-11-11"
+lastupdated: "2026-11-25"
 
 keywords: waf rule updates
 
