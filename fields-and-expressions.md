@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-11-03"
+lastupdated: "2026-11-25"
 
 subcollection: cis
 
@@ -14,7 +14,7 @@ subcollection: cis
 {: #fields-and-expressions}
 
 Firewall rules are deprecated. CIS moved existing firewall rules to WAF custom rules. For more information on this change, see [Migrating to custom rules](/docs/cis?topic=cis-migrating-to-custom-rules).
-{: deprecated} 
+{: deprecated}
 
 Along with actions, fields and expressions are the building blocks of firewall rules. These two elements work together when defining the criteria to use when a firewall rule is matched.
 {: shortdesc}
