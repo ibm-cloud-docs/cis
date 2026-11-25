@@ -8,7 +8,7 @@ This release introduces updates to an existing PHP Remote Code Execution rule to
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-Cloudflare Free Ruleset| 19373a83abb840e18ab3ce5a7975ce1b| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560, CVE-2026-126714) #6| N/A| Block| Rule detection and description updated.
+Cloudflare Free Ruleset| 19373a83abb840e18ab3ce5a7975ce1b| N/A| PHP Remote Code Execution Attack ([CVE-2026-109618](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-109618), [CVE-2026-109619](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-109619), [CVE-2026-115560](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-115560), [CVE-2026-126714](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-126714)) #6| N/A| Block| Rule detection and description updated.
 Cloudflare Free Ruleset| 7328f23691e44b07892ebd25b19210f1| N/A| Ruby - Heap Overflow - CVE:CVE-2026-13282| N/A| Block| This is a new detection.
 Cloudflare Free Ruleset| 8660e37e86444f9f9267ba22e9855f05| N/A| Ruby - Integer Overflow - GHSA-87fm-7w84-j2px| N/A| Block| This is a new detection.
 Cloudflare Managed Ruleset| 4148ae686fdb4d01be673fab9d9c073d| N/A| PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619, CVE-2026-115560, CVE-2026-126714) #6| N/A| Block| Rule detection and description updated.
