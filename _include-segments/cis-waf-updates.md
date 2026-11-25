@@ -1,4 +1,34 @@
-﻿
+
+## WAF - WAF Release - 2026-11-24 - Emergency
+{: #waf-release-2026-11-24-emergency}
+
+**Published on:** Tue, 24 Nov 2026 00:00:00 GMT
+
+This release introduces two new detections in the Cloudflare Free Ruleset.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+Cloudflare Free Ruleset| ...63c3ebd4| N/A| Anomaly - Embedded Application Request| N/A| Block| This is a new detection.
+Cloudflare Free Ruleset| ...8a1681fb| N/A| Generic Rules - Authentication Bypass| N/A| Block| This is a new detection.
+
+## WAF - WAF Release - 2026-11-20 - Emergency
+{: #waf-release-2026-11-20-emergency}
+
+**Published on:** Fri, 20 Nov 2026 00:00:00 GMT
+
+This release introduces new Ruby and WordPress security advisory mapped rules. Supplementary information around the security advisories covered are available through [Zero Wire ruby2shell: heap overflow in Ruby string case conversion ↗︎](https://radar.cloudflare.com/zero-wire/ruby2shell) and WordPress 7.1.5: Template Part flaw can turn an administrator's click into code execution.
+
+Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
+---|---|---|---|---|---|---
+Cloudflare Free Ruleset| ...b01ffb6b| N/A| Ruby - Regexp Character Class Intersection - GHSA-7x2q-68qv-6p8x| N/A| Block| This is a new detection.
+Cloudflare Free Ruleset| ...d5ec80f7| N/A| Ruby - Regexp Compiled Program Size - GHSA-3p8q-wmhx-vm2w| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| ...aa981883| N/A| Ruby - Regexp Character Class Intersection - GHSA-7x2q-68qv-6p8x| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| ...1bd84008| N/A| Ruby - Regexp Compiled Program Size - GHSA-3p8q-wmhx-vm2w| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| ...e12fd7b1| N/A| WordPress - DoS - GHSA-56j2-5mp6-wr3x| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| ...a8ad193f| N/A| WordPress - Broken Access Control - GHSA-pmp8-6cv8-q323| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| ...4755597d| N/A| WordPress - Stored XSS - GHSA-cr2m-2j4r-3v3x| N/A| Block| This is a new detection.
+
+
 ## WAF - WAF Release - 2026-11-19 - Emergency
 {: #waf-release-2026-11-19-emergency}
 
