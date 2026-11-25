@@ -1,4 +1,16 @@
 ﻿
+## WAF - WAF Release - Scheduled changes for 2026-12-01**
+{: #waf-release-2026-12-01-schedule}
+
+**Published on:** Tue, 24 Nov 2026 00:00:00 GMT
+
+| Announcement Date | Release Date | Release Behavior | Legacy Rule ID | Rule ID | Description | Comments |
+| ----------------- | ------------ | ---------------- | -------------- | ------- | ----------- | -------- |
+| 2026-10-12 | 2026-12-01 | Log | N/A | d60e605ed36842df9ca0232f5ea9966d | Broken Access Control - Directory Traversal (Beta) | This rule will be merged into the original rule "Broken Access Control - Directory Traversal" (ID: f2445b9131214302a11477a2cb14ded8). |
+| 2026-11-03 | 2026-12-01 | Log | N/A | 404d332215a44743bf3b812b7178209b | Generic Rules - Dangerous File Upload | This is a new detection. |
+| 2026-11-24 | 2026-12-01 | Log | N/A | 69ddac10162940f38fabcf658c710a44 | Magento - Template Injection - CVE:[CVE-2026-103849 ↗︎](https://radar.cloudflare.com/zero-wire/cves/CVE-2026-103849) | This is a new detection. |
+| 2026-11-24 | 2026-12-01 | Log | N/A | b8dacae3431048b7866b1b39ba332ed | PHP - Code Injection #3 | This is a new detection. |
+
 ## WAF - WAF Release - 2026-11-24 - Emergency
 {: #waf-release-2026-11-24-emergency}
 
@@ -20,14 +32,13 @@ This release introduces new Ruby and WordPress security advisory mapped rules. S
 
 Ruleset| Rule ID| Legacy Rule ID| Description| Previous Action| New Action| Comments
 ---|---|---|---|---|---|---
-Cloudflare Free Ruleset| ...b01ffb6b| N/A| Ruby - Regexp Character Class Intersection - GHSA-7x2q-68qv-6p8x| N/A| Block| This is a new detection.
-Cloudflare Free Ruleset| ...d5ec80f7| N/A| Ruby - Regexp Compiled Program Size - GHSA-3p8q-wmhx-vm2w| N/A| Block| This is a new detection.
-Cloudflare Managed Ruleset| ...aa981883| N/A| Ruby - Regexp Character Class Intersection - GHSA-7x2q-68qv-6p8x| N/A| Block| This is a new detection.
-Cloudflare Managed Ruleset| ...1bd84008| N/A| Ruby - Regexp Compiled Program Size - GHSA-3p8q-wmhx-vm2w| N/A| Block| This is a new detection.
-Cloudflare Managed Ruleset| ...e12fd7b1| N/A| WordPress - DoS - GHSA-56j2-5mp6-wr3x| N/A| Block| This is a new detection.
-Cloudflare Managed Ruleset| ...a8ad193f| N/A| WordPress - Broken Access Control - GHSA-pmp8-6cv8-q323| N/A| Block| This is a new detection.
-Cloudflare Managed Ruleset| ...4755597d| N/A| WordPress - Stored XSS - GHSA-cr2m-2j4r-3v3x| N/A| Block| This is a new detection.
-
+Cloudflare Free Ruleset| 924dc0767eaf4d2ca834401ab01ffb6b| N/A| Ruby - Regexp Character Class Intersection - GHSA-7x2q-68qv-6p8x| N/A| Block| This is a new detection.
+Cloudflare Free Ruleset| d2bd5c254c28482aa7deafd1d5ec80f7| N/A| Ruby - Regexp Compiled Program Size - GHSA-3p8q-wmhx-vm2w| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| b2042ffccbce4851a35e660eaa981883| N/A| Ruby - Regexp Character Class Intersection - GHSA-7x2q-68qv-6p8x| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| b4101c3cb767476c9d74bcd41bd84008| N/A| Ruby - Regexp Compiled Program Size - GHSA-3p8q-wmhx-vm2w| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 80a2b88845c24262bbd05c2fe12fd7b1| N/A| WordPress - DoS - GHSA-56j2-5mp6-wr3x| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| 5f7c30de03d647e5b0b6d9daa8ad193f| N/A| WordPress - Broken Access Control - GHSA-pmp8-6cv8-q323| N/A| Block| This is a new detection.
+Cloudflare Managed Ruleset| e33720d9a9ee401b8a2cc1f54755597d| N/A| WordPress - Stored XSS - GHSA-cr2m-2j4r-3v3x| N/A| Block| This is a new detection.
 
 ## WAF - WAF Release - 2026-11-19 - Emergency
 {: #waf-release-2026-11-19-emergency}
@@ -77,16 +88,6 @@ Cloudflare Managed Ruleset| 4fce1ea79a614c07a27348d167d74ebb| N/A| Java4Shell - 
 This release does not add payload logging support for rate limiting rules.
 
 Refer to [Configure payload logging via API](https://developers.cloudflare.com/waf/managed-rules/payload-logging/api/) for configuration details.
-
-## WAF - WAF Release - Scheduled changes for 2026-11-10
-{: #waf-release-2026-11-10-schedule}
-
-**Published on:** Tue, 03 Nov 2026 00:00:00 GMT
-
-Announcement Date| Release Date| Release Behavior| Legacy Rule ID| Rule ID| Description| Comments
----|---|---|---|---|---|---
-2026-10-12| 2026-11-10| Log| N/A| d60e605ed36842df9ca0232f5ea9966d| Broken Access Control - Directory Traversal (Beta)| This rule will be merged into the original rule "Broken Access Control - Directory Traversal" (ID: f2445b9131214302a11477a2cb14ded8).
-2026-11-03| 2026-11-10| Log| N/A| 404d332215a44743bf3b812b7178209b| Generic Rules - Dangerous File Upload| This is a new detection.
 
 ## WAF - WAF Release - 2026-11-03
 {: #waf-release-2026-11-03}
