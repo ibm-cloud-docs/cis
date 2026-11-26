@@ -1,8 +1,8 @@
 ﻿
-## WAF - WAF Release - Scheduled changes for 2026-12-01**
+## WAF - WAF Release - Scheduled changes for 2026-12-01
 {: #waf-release-2026-12-01-schedule}
 
-**Published on:** Tue, 24 Nov 2026 00:00:00 GMT
+**Published on:** Tues, 24 Nov 2026 00:00:00 GMT
 
 | Announcement Date | Release Date | Release Behavior | Legacy Rule ID | Rule ID | Description | Comments |
 | ----------------- | ------------ | ---------------- | -------------- | ------- | ----------- | -------- |
